@@ -19,6 +19,7 @@ export default function QuizSelector({ quizzes, onSelect, activeQuiz }) {
     <nav className="quiz-selector">
       <div className="selector-group">
         <h3>Section Quizzes</h3>
+        <p className="selector-tip"><em>Tip: press 1–4 to select an answer, Enter to check it.</em></p>
         {sectionQuizzes.map((quiz, idx) => (
           <button
             key={idx}
