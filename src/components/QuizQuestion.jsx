@@ -1,5 +1,27 @@
 import { useState, useEffect, useMemo } from 'react';
 
+function playDing() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const t = ctx.currentTime;
+    [523.25, 659.25, 783.99].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0, t + i * 0.04);
+      gain.gain.linearRampToValueAtTime(0.18, t + i * 0.04 + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + i * 0.04 + 0.55);
+      osc.start(t + i * 0.04);
+      osc.stop(t + i * 0.04 + 0.55);
+    });
+  } catch (e) {
+    // audio unavailable, no-op
+  }
+}
+
 function shuffleArray(arr) {
   const shuffled = [...arr];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -26,6 +48,7 @@ export default function QuizQuestion({ question, questionNumber, totalQuestions,
 
   function handleSubmit() {
     if (selected === null) return;
+    if (isCorrect) playDing();
     onAnswer(isCorrect);
   }
 
@@ -44,10 +67,6 @@ export default function QuizQuestion({ question, questionNumber, totalQuestions,
 
   return (
     <div className="quiz-question">
-      <div className="question-header">
-        <span className="question-counter">Question {questionNumber} of {totalQuestions}</span>
-      </div>
-
       <p className="question-text">{question.question}</p>
 
       <div className="options-list">

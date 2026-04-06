@@ -24,6 +24,20 @@ export function getScore(quiz) {
   return JSON.parse(localStorage.getItem(quizKey(quiz)) || 'null');
 }
 
+function QuizTitleBar({ quiz, counter, reviewMode }) {
+  const icon = quiz.type === 'review' ? '\u{1F4D6}' : quiz.type === 'fr-only' ? '\u270F\uFE0F' : '\u00A7' + quiz.section;
+  const typeLabel = reviewMode ? 'Reviewing Missed' : quiz.type === 'review' ? 'Chapter Review' : quiz.type === 'fr-only' ? 'Free Response' : 'Section Quiz';
+  return (
+    <div className="quiz-title-bar">
+      <div className="quiz-title-left">
+        <h3>{icon} {quiz.title}</h3>
+        <span className="question-counter">{counter}</span>
+      </div>
+      <span className="quiz-type-badge">{typeLabel}</span>
+    </div>
+  );
+}
+
 export default function Quiz({ quiz, quizTitle }) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState([]); // array of booleans
@@ -185,9 +199,7 @@ export default function Quiz({ quiz, quizTitle }) {
   if (reviewMode) {
     return (
       <div className="quiz-container">
-        <div className="review-banner">
-          Reviewing missed questions ({reviewPos + 1} of {reviewIndices.length})
-        </div>
+        <QuizTitleBar quiz={quiz} counter={`${reviewPos + 1} of ${reviewIndices.length} missed`} reviewMode={true} />
         <div className="progress-bar">
           <div
             className="progress-fill"
@@ -208,6 +220,7 @@ export default function Quiz({ quiz, quizTitle }) {
 
   return (
     <div className="quiz-container">
+      <QuizTitleBar quiz={quiz} counter={`Question ${currentIdx + 1} of ${quiz.questions.length}`} reviewMode={false} />
       <div className="progress-bar">
         <div
           className="progress-fill"

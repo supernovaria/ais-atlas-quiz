@@ -182,15 +182,6 @@ function AppContent() {
           </div>
         ) : (
           <div className="quiz-view">
-            <div className="quiz-title-bar">
-              <h3>
-                {activeQuiz.type === 'review' ? '\u{1F4D6}' : activeQuiz.type === 'fr-only' ? '\u270F\uFE0F' : '\u00A7' + activeQuiz.section}{' '}
-                {activeQuiz.title}
-              </h3>
-              <span className="quiz-type-badge">
-                {activeQuiz.type === 'review' ? 'Chapter Review' : activeQuiz.type === 'fr-only' ? 'Free Response' : 'Section Quiz'}
-              </span>
-            </div>
             <Quiz key={activeQuiz.title} quiz={activeQuiz} quizTitle={activeQuiz.title} />
           </div>
         )}

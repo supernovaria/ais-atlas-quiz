@@ -3,50 +3,50 @@
 ### Question 1
 What was significant about AlphaGo's "Move 37" during its match against Lee Sedol?
 
-- [ ] It was a well-known opening move from classical Go strategy
-- [ ] It was a defensive move that saved AlphaGo from losing the game
-- [x] It was a highly unconventional move (1 in 10,000 chance of being played) that commentators initially thought was a mistake, but ultimately won the game
-- [ ] It was a move that perfectly replicated a famous historical game between human grandmasters
+- [ ] It was a well-known opening move from classical Go strategy that demonstrated AlphaGo had deeply studied historical games
+- [ ] It was a defensive move that prevented a critical capture sequence, saving AlphaGo from losing on points
+- [x] It was a highly unconventional move that commentators initially thought was a mistake, but proved decisive
+- [ ] It perfectly replicated a famous 1933 "ear-reddening" game move between human grandmasters, showing AlphaGo's historical knowledge
 
 **Explanation**: Move 37 in game 2 was remarkable because it deviated from centuries of human play. With a 1 in 10,000 probability of being used by a human player, commentators initially thought it was an error. It later proved to be the decisive move that led to winning the game, and is often cited as an example of genuine creativity emerging from AI systems.
 
 ### Question 2
 What distinguished MuZero (2020) from earlier game-playing AI systems like AlphaGo (2016)?
 
-- [ ] MuZero was the first AI to beat a human at any board game
-- [ ] MuZero used large language models to play games
-- [x] MuZero played multiple games (Atari, Go, chess, shogi) without being told the rules of any of them
-- [ ] MuZero was the first AI to achieve superhuman performance in a single game
+- [ ] MuZero was the first system to beat a human professional at Go, which AlphaGo had only managed against amateurs
+- [ ] MuZero used large language models to reason about game strategy in natural language before selecting moves
+- [x] MuZero played multiple games without being told the rules of any of them
+- [ ] MuZero achieved superhuman performance by training on a single game and then transferring that knowledge across all other games simultaneously
 
 **Explanation**: MuZero represented a major advance over its predecessors in generality. While AlphaGo was trained specifically for Go with knowledge of the game rules, MuZero could play multiple different games — Atari, Go, chess, and shogi — without even being provided the rules, learning them entirely through self-play.
 
 ### Question 3
 How did tool use change the performance of AI models, according to the chapter?
 
-- [ ] Tool use made models slightly faster but did not improve accuracy
-- [ ] Tool use replaced the need for larger models entirely
-- [x] Tool use significantly boosted performance — for example, OpenAI's o3 with tools outperformed o3 alone by almost 5% on HLE — leading companies to report benchmark scores separately with and without tools
-- [ ] Tool use was only beneficial for mathematical reasoning tasks
+- [ ] Tool use made models slightly faster but did not improve accuracy, which is why most benchmarks don't distinguish between tool-assisted and unassisted runs
+- [ ] Tool use replaced the need for larger models entirely, since a small model with a calculator outperforms any large model without one
+- [x] It significantly boosted performance, enough that companies began reporting benchmark scores separately with and without tools
+- [ ] Tool use was only beneficial for mathematical reasoning tasks, where calculators and code interpreters could verify symbolic computations
 
 **Explanation**: The chapter emphasizes that tool use (calculators, code interpreters, search engines) significantly improved model performance. The improvement was substantial enough that companies began reporting benchmark results separately — with and without tools — because the gap was meaningful.
 
 ### Question 4
 What does the chapter identify as the relationship between "inference time scaling" (letting models think longer) and model performance?
 
-- [ ] Thinking longer has no measurable effect on accuracy
-- [ ] Thinking longer only helps for creative writing tasks
-- [x] The longer models think, the better their responses tend to get — this led to gold-medal performance at the 2025 International Mathematical Olympiad
-- [ ] Thinking longer improves speed but decreases accuracy
+- [ ] Thinking longer has no measurable effect on accuracy, so labs focus exclusively on scaling training compute instead
+- [ ] Thinking longer helps primarily for creative writing tasks, where iterative refinement produces more nuanced prose and storytelling
+- [x] Longer thinking time tends to improve responses, contributing to gold-medal IMO performance in 2025
+- [ ] Thinking longer improves consistency across repeated runs but decreases peak accuracy on any single attempt
 
 **Explanation**: Inference time scaling (allocating more "thinking time" per problem) is described as a key technique. OpenAI's o1 was the first "reasoning" model to explicitly trade thinking time for accuracy. Using these techniques, both OpenAI and Google DeepMind achieved gold-medal performance at the 2025 International Mathematical Olympiad.
 
 ### Question 5
 How did AI performance on real GitHub issues (SWE-bench) change between 2024 and 2025?
 
-- [ ] It improved from 5% to 25%
-- [x] It jumped from about 15% (Claude 3 Opus, 2024) to about 74% (Tools + Claude 4 Opus, 2025)
-- [ ] It remained roughly the same at around 50%
-- [ ] It improved from 30% to 45%
+- [ ] It improved from 5% to 25%, driven mainly by better prompting techniques rather than model improvements
+- [x] It jumped from about 15% to about 74%, driven by combining better models with tool use
+- [ ] It remained roughly the same at around 50%, suggesting GitHub issues require human-level understanding that current models lack
+- [ ] It improved from 30% to 45%, with most gains coming from fine-tuning models specifically on open-source codebases
 
 **Explanation**: The chapter highlights that on SWE-bench — which tests AI against real open-source GitHub issues — AI systems went from solving just 15% of problems in 2024 (Claude 3 Opus) to 74% in 2025 (Tools + Claude 4 Opus). This dramatic improvement came from combining better models with tool use.
 
