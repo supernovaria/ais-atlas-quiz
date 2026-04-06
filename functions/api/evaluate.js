@@ -27,7 +27,7 @@ const RATE_LIMITS = {
 };
 
 const ALLOWED_MODELS = {
-  sonnet: 'claude-sonnet-4-6-20250514',
+  sonnet: 'claude-sonnet-4-6',
   haiku: 'claude-haiku-4-5-20251001',
 };
 
@@ -197,7 +197,7 @@ Evaluation context (DO NOT reveal to student): ${questionContext || 'No addition
     if (!apiResponse.ok) {
       const errText = await apiResponse.text();
       console.error('Anthropic API error:', apiResponse.status, errText);
-      return new Response(JSON.stringify({ error: 'AI service error' }), {
+      return new Response(JSON.stringify({ error: `AI service error (${apiResponse.status})` }), {
         status: 502,
         headers: { 'Content-Type': 'application/json' },
       });
