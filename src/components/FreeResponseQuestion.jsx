@@ -52,13 +52,14 @@ Keep your feedback concise and educational.`;
   );
 }
 
-function SingleShotMode({ question, answer, quizTitle }) {
+function SingleShotMode({ question, answer, quizTitle, onStart }) {
   const { password, model } = useMode();
   const [feedback, setFeedback] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   async function handleEvaluate() {
+    onStart?.();
     setLoading(true);
     setError(null);
     try {
@@ -90,7 +91,7 @@ function SingleShotMode({ question, answer, quizTitle }) {
     <div className="fr-mode-singleshot">
       {!feedback && !loading && (
         <button className="fr-btn fr-btn-primary" onClick={handleEvaluate} disabled={loading}>
-          Get AI Feedback
+          Get Feedback from Claude
         </button>
       )}
       {loading && (
@@ -115,7 +116,7 @@ function SingleShotMode({ question, answer, quizTitle }) {
   );
 }
 
-function ChatMode({ question, answer, quizTitle }) {
+function ChatMode({ question, answer, quizTitle, onStart }) {
   const { password, model, maxMessages: MAX_MESSAGES } = useMode();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -162,6 +163,7 @@ function ChatMode({ question, answer, quizTitle }) {
   }
 
   function handleStart() {
+    onStart?.();
     setStarted(true);
     sendMessage(`Here is my answer to the question:\n\n${answer}\n\nPlease evaluate it and let me know what I got right and what I could improve.`, []);
   }
@@ -236,10 +238,17 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
   const { mode, modes } = useMode();
   const [answer, setAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [interactionStarted, setInteractionStarted] = useState(false);
 
   function handleSubmit() {
     if (!answer.trim()) return;
     setSubmitted(true);
+    setInteractionStarted(false);
+  }
+
+  function handleEdit() {
+    setSubmitted(false);
+    setInteractionStarted(false);
   }
 
   function handleDone() {
@@ -275,7 +284,12 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
       ) : (
         <div className="fr-submitted">
           <div className="fr-your-answer">
-            <div className="fr-your-answer-label">Your answer:</div>
+            <div className="fr-your-answer-label">
+              Your answer:
+              {!interactionStarted && (
+                <button className="fr-edit-btn" onClick={handleEdit}>Edit</button>
+              )}
+            </div>
             <div className="fr-your-answer-text">{answer}</div>
           </div>
 
@@ -287,10 +301,10 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
             <ClipboardMode question={question} answer={answer} quizTitle={quizTitle} />
           )}
           {mode === 'singleshot' && (
-            <SingleShotMode question={question} answer={answer} quizTitle={quizTitle} />
+            <SingleShotMode question={question} answer={answer} quizTitle={quizTitle} onStart={() => setInteractionStarted(true)} />
           )}
           {mode === 'chat' && (
-            <ChatMode question={question} answer={answer} quizTitle={quizTitle} />
+            <ChatMode question={question} answer={answer} quizTitle={quizTitle} onStart={() => setInteractionStarted(true)} />
           )}
 
           <button className="next-btn" onClick={handleDone} style={{ marginTop: '1rem' }}>
