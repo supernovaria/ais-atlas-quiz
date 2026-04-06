@@ -57,9 +57,9 @@ How did AI performance on real GitHub issues (SWE-bench) change between 2024 and
 ### Question 1
 What is the core idea behind foundation models, as distinguished from the traditional approach to AI development?
 
-- [ ] Building one highly specialized model per task using hand-labeled data
-- [x] Training a single large-scale model on massive data that serves as a general "foundation" and is later fine-tuned for specific tasks
-- [ ] Combining many small specialized models into one system at deployment time
+- [ ] Building one highly specialized model per task using carefully hand-labeled data, then combining them into a unified system
+- [x] Training a single large-scale model on massive data, then fine-tuning it for specific tasks
+- [ ] Combining many small specialized models into one system at deployment time through ensemble techniques and routing layers
 - [ ] Using reinforcement learning exclusively instead of supervised learning
 
 **Explanation**: Foundation models represent a paradigm shift: instead of training a specialized model for each task (which was bottlenecked by labeled data and couldn't transfer knowledge), a large model is pre-trained on massive unlabeled data via self-supervised learning, and then adapted to specific downstream tasks through fine-tuning or prompting.
@@ -67,9 +67,9 @@ What is the core idea behind foundation models, as distinguished from the tradit
 ### Question 2
 What is the key technical innovation that makes foundation model pre-training possible?
 
-- [ ] Reinforcement learning from human feedback (RLHF)
-- [ ] Generative adversarial networks (GANs)
-- [x] Self-supervised learning (SSL), which uses the inherent structure of data to create training signals without requiring human labels
+- [ ] Reinforcement learning from human feedback (RLHF), which uses human preference rankings to iteratively improve model outputs
+- [ ] Generative adversarial networks (GANs), which pit two neural networks against each other to produce increasingly realistic outputs
+- [x] Self-supervised learning (SSL), which creates training signals from the data's own structure without human labels
 - [ ] Transfer learning from pre-existing specialized models
 
 **Explanation**: Self-supervised learning is the "key technical innovation" that enables pre-training. Rather than requiring expensive human-labeled data, SSL leverages the structure of the data itself — for example, predicting a hidden part of an image from the visible part, or predicting the next word in a sentence. This allows models to learn from the vast amounts of unlabeled data available on the internet.
@@ -77,10 +77,10 @@ What is the key technical innovation that makes foundation model pre-training po
 ### Question 3
 What is the difference between a foundation model and a frontier model?
 
-- [ ] They are identical concepts — the terms are interchangeable
-- [ ] Foundation models are always more advanced than frontier models
-- [x] Frontier models are the most advanced in their domain; most are also foundation models, but some (like AlphaFold) are frontier without being foundational because they're specialized for a single task
-- [ ] Frontier models are open-source while foundation models are proprietary
+- [ ] They are identical concepts — the terms are interchangeable and labs use whichever sounds better in marketing
+- [ ] Foundation models are always more advanced than frontier models, since they benefit from broader training data
+- [x] Frontier models are the most advanced in their domain; most are also foundation models, but some (like AlphaFold) are frontier without being foundational
+- [ ] Frontier models are open-source while foundation models are proprietary, reflecting different development philosophies
 
 **Explanation**: Frontier models represent the cutting edge of AI capabilities in their respective domains. While many frontier models (like Claude or GPT-4) are also foundation models, this isn't always the case. AlphaFold is a frontier model in protein structure prediction but isn't considered a foundation model because it serves one specific task rather than being a general foundation for multiple applications.
 
@@ -97,9 +97,9 @@ Which of the following is NOT identified in the chapter as a safety challenge un
 ### Question 5
 How does generalization in foundation models differ from generalization in traditional AI systems, and why is this a safety concern?
 
-- [ ] Foundation models cannot generalize at all — they only memorize training data
-- [ ] Foundation models generalize better and this makes them inherently safer
-- [x] Foundation models can generalize capabilities across domains in surprising ways, but this generalization of capabilities often happens without a corresponding generalization of goals or constraints
+- [ ] Foundation models cannot generalize at all — they only memorize training data and reproduce patterns seen during pre-training
+- [ ] Foundation models generalize better than traditional systems, and this broader generalization makes them inherently safer since they understand context more deeply
+- [x] Capabilities can generalize across domains in surprising ways, but goals and safety constraints often don't generalize along with them
 - [ ] Foundation models generalize only within a single narrow domain, just like traditional AI
 
 **Explanation**: The chapter highlights a critical asymmetry: foundation models can generalize their *capabilities* across domains in surprising ways (e.g., a text model developing coding ability), but the *goals and safety constraints* don't necessarily generalize along with them. A model might generalize its ability to manipulate text in unexpected ways without maintaining the safety constraints we intended. This is flagged as a key concern explored further in the chapter on goal misgeneralization.
@@ -111,20 +111,20 @@ How does generalization in foundation models differ from generalization in tradi
 ### Question 1
 Why does the chapter argue that consciousness-based definitions of intelligence are less useful for AI safety work?
 
-- [ ] Because consciousness has been conclusively proven to not exist in AI systems
-- [ ] Because conscious AI systems are always safe
-- [x] Because consciousness is even harder to define than intelligence, may not be linked to intelligence, and a system doesn't need to be conscious to cause harm — what matters for safety is what a system can *do*
-- [ ] Because all major AI researchers agree that consciousness is irrelevant to AI
+- [ ] Because consciousness has been conclusively proven to not exist in AI systems through empirical neuroscience research
+- [ ] Because conscious AI systems are always safe, since consciousness implies moral reasoning
+- [x] Because consciousness is even harder to define, may not be linked to intelligence, and a system doesn't need to be conscious to cause harm
+- [ ] Because all major AI researchers have reached consensus that consciousness is irrelevant to intelligence, making it a settled question
 
 **Explanation**: The chapter argues that consciousness-based approaches (like Searle's Chinese Room) are less actionable for safety because: (1) consciousness is even harder to define than intelligence, (2) intelligence and consciousness may not be linked — a system could be intelligent without being conscious or vice versa, and (3) whether an AI is conscious has little bearing on its ability to make high-impact or dangerous decisions. A system doesn't need to be conscious to cause harm.
 
 ### Question 2
 In the two-dimensional framework for defining AGI presented in the chapter, what do the two axes represent?
 
-- [ ] Speed and accuracy
-- [ ] Training cost and model size
-- [x] Capability (how well a system performs specific cognitive tasks) and generality (the percentage of cognitive domains where it achieves expert-level performance)
-- [ ] Autonomy and intelligence
+- [ ] Speed (how quickly it processes inputs) and accuracy (how often it produces correct outputs across standardized tests)
+- [ ] Training cost and model size, reflecting the resources required to build and deploy the system
+- [x] Capability (performance depth on cognitive tasks) and generality (breadth across cognitive domains)
+- [ ] Autonomy (how independently it operates) and intelligence (raw problem-solving ability measured by IQ-equivalent benchmarks)
 
 **Explanation**: The framework uses two continuous axes: *capability* measures depth — how well a system executes individual cognitive tasks, from 0% to superhuman. *Generality* measures breadth — the percentage of cognitive domains (from the CHC framework's ten domains) where a system achieves expert-level performance (roughly 80th-90th percentile). Together they allow concrete statements like "this system outperforms 85% of humans in 30% of cognitive domains."
 
@@ -141,9 +141,9 @@ According to the chapter's definitions, what distinguishes Transformative AI (TA
 ### Question 4
 What is the (t,n)-AGI framework, and how does it offer an alternative way to think about AGI?
 
-- [ ] It measures AGI by the number of tasks (t) and neurons (n) in the model
-- [x] It defines AGI through time and scale: a system is t-AGI if it can outperform a human expert given time frame 't', and (t,n)-AGI if it can outperform 'n' experts working together for time 't'
-- [ ] It defines AGI by the number of training tokens (t) and parameters (n) used
+- [ ] It measures AGI by the number of distinct tasks mastered (t) and neurons (n) in the model's architecture
+- [x] A system is t-AGI if it outperforms a human expert within time frame 't', and (t,n)-AGI if it outperforms 'n' experts collaborating for time 't'
+- [ ] It quantifies AGI by the number of training tokens consumed (t) and parameters learned (n), providing a resource-based measure of intelligence
 - [ ] It measures AGI by temperature (t) and number of samples (n) during inference
 
 **Explanation**: The (t,n)-AGI framework defines intelligence through task completion horizons. A "one-second AGI" exceeds expert capability on one-second cognitive tasks. A "one-year AGI" would beat humans at basically everything, since most projects can be divided into shorter sub-tasks. A superintelligence could be framed as a (one year, eight billion)-AGI — outperforming all eight billion humans coordinating for a year.
@@ -165,10 +165,10 @@ Which of the following is a criticism of the capability-generality percentage fr
 ### Question 1
 What is the "bitter lesson" of AI research, as described by Richard Sutton?
 
-- [ ] That AI research is fundamentally impossible and will never succeed
-- [ ] That small, efficient models always outperform large ones
-- [x] That general methods leveraging massive computation consistently beat human-engineered domain knowledge, even though researchers repeatedly try encoding expertise first
-- [ ] That only biologically-inspired approaches can achieve general intelligence
+- [ ] That AI research is fundamentally impossible and will never succeed at replicating human-level cognition
+- [ ] That small, efficient models with carefully engineered architectures always outperform large brute-force approaches in the long run
+- [x] That general methods leveraging computation consistently beat hand-crafted domain knowledge
+- [ ] That only biologically-inspired approaches modeled on neural structures can achieve general intelligence
 
 **Explanation**: The bitter lesson, articulated by Richard Sutton, is that across 70 years of AI research, general methods that leverage computation have ultimately proven most effective — by a large margin. Researchers repeatedly tried to build domain knowledge into agents (hand-crafted chess strategies, phonetics-based speech recognition, etc.), which helped initially but plateaued. Breakthrough progress consistently came from scaling computation through search and learning.
 
@@ -185,30 +185,30 @@ What are the four key variables in scaling laws for AI models?
 ### Question 3
 What key finding did the "Chinchilla" research (Hoffmann et al., 2022) reveal about optimal training?
 
-- [ ] That models should always be as large as possible regardless of data
-- [x] That optimal training requires roughly 20 tokens of data per parameter — about 10x more data than earlier scaling laws suggested — meaning previous large models were undertrained relative to their size
-- [ ] That data is irrelevant and only model size matters
-- [ ] That training should stop after a fixed number of epochs regardless of model size
+- [ ] That models should always be as large as possible regardless of available data, since more parameters always improve generalization
+- [x] That optimal training requires ~20 tokens per parameter — about 10x more data than earlier scaling laws suggested — meaning previous large models were undertrained
+- [ ] That data quality is irrelevant and only model size matters, so labs should focus investment entirely on larger architectures
+- [ ] That training should stop after a fixed number of epochs regardless of model size, to prevent overfitting on the training distribution
 
 **Explanation**: The Chinchilla research showed that optimal training requires approximately 20 tokens of data per parameter, which was about 10x more data than early scaling laws from Kaplan et al. (2020) suggested. This meant that many previous large models had been undertrained — they were too big for the amount of data they were trained on. This fundamentally changed how labs allocated resources between model size and training data.
 
 ### Question 4
 What is the difference between the "strong" and "weak" scaling hypotheses?
 
-- [ ] The strong hypothesis says scaling will never work; the weak hypothesis says it sometimes works
-- [ ] The strong hypothesis applies to language models; the weak hypothesis applies to vision models
-- [x] The strong hypothesis says simply scaling existing architectures with more compute and data is sufficient for transformative AI; the weak hypothesis says scale will be the primary driver but targeted architectural/algorithmic improvements will also be needed
-- [ ] The strong hypothesis is supported by evidence; the weak hypothesis is purely theoretical
+- [ ] The strong hypothesis says scaling will never work; the weak hypothesis says it sometimes works for narrow tasks
+- [ ] The strong hypothesis applies to language models only; the weak hypothesis covers vision, audio, and multimodal models
+- [x] The strong says scaling existing architectures alone suffices for transformative AI; the weak says scale is the primary driver but targeted algorithmic improvements will also be needed
+- [ ] The strong hypothesis is fully supported by empirical evidence from current training runs; the weak hypothesis is purely theoretical with no experimental backing
 
 **Explanation**: The strong scaling hypothesis proposes that we already have the fundamental components needed for transformative AI — it's just a matter of scaling them up. The weak scaling hypothesis agrees that scale is the primary driver but holds that we'll also need targeted (not fundamental) architectural and algorithmic improvements to overcome specific bottlenecks.
 
 ### Question 5
 Why does the chapter argue that debates about scaling laws alone miss an important part of the picture?
 
-- [ ] Because scaling laws have been disproven
-- [ ] Because only theoretical research matters for AI progress
-- [x] Because scaling laws only predict foundation model capabilities — they don't account for improvements in "scaffolding" (chain-of-thought, tool use, retrieval, multi-model systems) that can dramatically boost overall capability even if core model scaling stops
-- [ ] Because scaling laws only apply to image generation models
+- [ ] Because scaling laws have been disproven by recent experiments showing diminishing returns across all major model families
+- [ ] Because only theoretical research and novel architectures matter for AI progress, not empirical scaling
+- [x] Because scaling laws only predict foundation model capabilities — they miss "scaffolding" gains (tool use, chain-of-thought, retrieval) that boost capability independently
+- [ ] Because scaling laws only apply to image generation models, not language or multimodal systems
 
 **Explanation**: The chapter makes a crucial distinction: scaling laws track the performance of a single foundation model, but overall AI capability also depends on external techniques — tool use, chain-of-thought prompting, inference time scaling, retrieval-augmented generation, and multi-model systems. These "unhobbling" or "scaffolding" improvements can continue advancing capabilities even if core model scaling plateaus. For instance, the same base model's benchmark score can jump dramatically through reasoning-specific training and extended thinking.
 
@@ -219,10 +219,10 @@ Why does the chapter argue that debates about scaling laws alone miss an importa
 ### Question 1
 Why does the chapter argue that predicting AI timelines matters for safety, rather than being merely an academic exercise?
 
-- [ ] Because investors need accurate predictions to make money
-- [ ] Because AI researchers want to plan their careers
-- [x] Because the difference between TAI arriving in 10 years vs. 50 years fundamentally changes which safety strategies are viable — short timelines demand solutions that work with current systems, while long timelines allow for fundamental research
-- [ ] Because governments need to plan tax revenue from AI companies
+- [ ] Because investors need accurate predictions to allocate capital efficiently across AI companies and competing technology sectors
+- [ ] Because AI researchers need timeline estimates to plan their careers and decide which subfields to specialize in
+- [x] Because short vs. long timelines fundamentally change which safety strategies are viable — 10 years demands solutions for current systems, 50 years allows fundamental research
+- [ ] Because governments need to plan tax revenue, labor market transitions, and social safety nets based on when AI automation arrives
 
 **Explanation**: The chapter frames forecasting as directly safety-relevant: if TAI arrives by 2030, we need safety solutions that work with current systems and scale quickly — no time for slow theoretical research. If it's 2050, there's breathing room for fundamental alignment research, robust governance frameworks, and trustworthy evaluation methods. The timeline determines the viable strategy space.
 
@@ -239,19 +239,19 @@ What is "effective compute" and why does it grow faster than any single input?
 ### Question 3
 According to the chapter, approximately when might high-quality public text data be exhausted at current scaling rates?
 
-- [ ] It was already exhausted in 2023
-- [x] Between 2026 and 2032, with the indexed web containing roughly 500 trillion tokens and consumption scaling at about 4x per year
-- [ ] Not until at least 2050
-- [ ] Text data is unlimited and will never run out
+- [ ] It was already exhausted by 2023, which is why recent models rely primarily on synthetic and multimodal data for pre-training
+- [x] Between 2026 and 2032, given ~500 trillion tokens on the indexed web and ~4x yearly consumption growth
+- [ ] Not until at least 2050, because new content is published online faster than models can consume it during training
+- [ ] Text data is effectively unlimited and will never run out, since the internet grows exponentially alongside model demand
 
 **Explanation**: The chapter states that the indexed web contains roughly 500 trillion tokens of text (after deduplication), with the largest 2024 models training on about 15 trillion tokens. At ~4x/year scaling, projections indicate exhaustion of high-quality public text data between 2026 and 2032. However, three potential escape routes exist: multimodal data, synthetic data, and task-based/self-play learning.
 
 ### Question 4
 What is the range of uncertainty in biological anchors estimates for the compute needed for general intelligence?
 
-- [ ] A factor of 2x (between $10^{28}$ and $10^{29}$ FLOP)
-- [ ] A factor of 100x
-- [x] Twelve orders of magnitude — from ~$10^{28}$ FLOP (learning during a human lifetime) to ~$10^{41}$ FLOP (total compute across evolutionary history)
+- [ ] A factor of 2x (between $10^{28}$ and $10^{29}$ FLOP), which is narrow enough to be useful for planning infrastructure investments
+- [ ] A factor of 100x, reflecting disagreement about whether to model the neocortex alone or the entire brain including subcortical structures
+- [x] Twelve orders of magnitude — from ~$10^{28}$ FLOP (a human lifetime of learning) to ~$10^{41}$ FLOP (all of evolutionary history)
 - [ ] There is virtually no uncertainty — estimates converge on $10^{35}$ FLOP
 
 **Explanation**: The biological anchors approach uses the human brain as a proof of concept but yields dramatically different estimates depending on the reference process. A lower bound uses compute from skill learning during a human lifetime (~$10^{28}$ FLOP), while an upper bound accounts for all compute across evolutionary history (~$10^{41}$ FLOP). That's twelve orders of magnitude of uncertainty — "like not knowing if something costs one dollar or a trillion dollars."
@@ -273,10 +273,10 @@ Which of the following is NOT listed as a potential "escape route" for the data 
 ### Question 1
 What is the key distinction between "takeoff speed" and "AI timelines"?
 
-- [ ] They are the same concept described with different words
-- [ ] Timelines refer to hardware development while takeoff speed refers to software
-- [x] Timelines tell us *when* transformative AI might arrive; takeoff speed tells us what happens *after* it arrives — whether capability and impact increase gradually over years or explosively over days/weeks
-- [ ] Takeoff speed is about deployment speed while timelines are about training duration
+- [ ] They are the same concept described with different words — both measure how quickly AI reaches human-level capability
+- [ ] Timelines refer to hardware development schedules while takeoff speed refers to software and algorithmic progress rates
+- [x] Timelines address *when* transformative AI arrives; takeoff speed addresses what happens *after* — gradual vs. explosive growth
+- [ ] Takeoff speed measures how quickly models are deployed to users, while timelines measure how long training runs take from start to finish
 
 **Explanation**: The chapter carefully distinguishes these: AI timelines address when advanced AI will be developed. Takeoff speed addresses what happens next — does AI capability and societal impact ramp up gradually over months/years (slow takeoff) or explode over days/weeks (fast takeoff)? A system could arrive on a long timeline but still have a fast takeoff once it reaches a critical capability threshold.
 
@@ -293,9 +293,9 @@ What type of mathematical growth characterizes a fast takeoff scenario?
 ### Question 3
 What is a "hardware overhang" and why might it matter for takeoff dynamics?
 
-- [ ] When hardware becomes obsolete faster than it can be manufactured
-- [x] When sufficient computing hardware exists to run many powerful AI systems, but the software hasn't been developed yet — once the software catches up, many powerful AI copies could exist almost immediately
-- [ ] When hardware costs exceed the economic value AI can produce
+- [ ] When hardware becomes obsolete faster than it can be manufactured, creating a bottleneck where new chips are outdated before deployment
+- [x] When computing hardware to run many powerful AI systems already exists, but the software hasn't caught up yet — once it does, many copies could appear almost immediately
+- [ ] When hardware costs exceed the economic value AI can produce, creating a negative return on investment for further scaling
 - [ ] When one company monopolizes all available computing hardware
 
 **Explanation**: A hardware overhang occurs when computing capacity has been built up but the algorithms to fully exploit it haven't arrived yet. This "stored potential" means that once the right software exists, there wouldn't just be one powerful AI — there could immediately be many, because the hardware to run them already exists. This is an argument for why takeoff might be more sudden than hardware scaling alone would suggest.
@@ -303,20 +303,20 @@ What is a "hardware overhang" and why might it matter for takeoff dynamics?
 ### Question 4
 What is the "automating research" argument for accelerating AI takeoff, as described by Ajeya Cotra?
 
-- [ ] That AI will replace all human researchers by 2030
-- [ ] That research automation is impossible because AI lacks creativity
-- [x] That each generation of AI models handles harder tasks, so humans delegate more work to them, making the next generation arrive faster — creating a self-reinforcing loop that accelerates progressively until AI does all ML R&D at superhuman speed
-- [ ] That AI will only automate administrative tasks in research, not core scientific work
+- [ ] That AI will fully replace all human researchers by 2030, making traditional academic institutions obsolete
+- [ ] That research automation is impossible because AI fundamentally lacks the creativity and intuition needed for scientific breakthroughs
+- [x] That each AI generation handles harder tasks, so more work gets delegated, making the next generation arrive faster — a self-reinforcing loop
+- [ ] That AI will only automate administrative tasks like literature reviews, grant writing, and data cleaning — not core scientific reasoning
 
 **Explanation**: Cotra describes a progressive feedback loop: initially, human researchers delegate a small fraction of work to LLMs. The next generation handles harder tasks, so more work gets delegated, making the following generation arrive even faster. Each round accelerates the field more than the last. Eventually, the process transitions from AI assistants doing most research to AI doing *all* research at superhuman speeds — potentially leading to a recursive intelligence explosion.
 
 ### Question 5
 According to the chapter, why do the majority of AI experts agree on AI risks while sometimes being *reported* as disagreeing?
 
-- [ ] Because they actually do fundamentally disagree about whether AI poses any risks at all
-- [ ] Because journalists fabricate expert disagreements for attention
-- [x] Because the real disagreements are in the nuances — specifically whether problems will be noticeable and fixable in time (slow takeoff) or too fast for us to respond (fast takeoff) — but these nuanced differences sometimes get misreported as fundamental disagreement about whether risks exist
-- [ ] Because experts only disagree about which company will build AGI first
+- [ ] Because they actually do fundamentally disagree about whether AI poses any risks at all, with roughly half dismissing risk concerns entirely
+- [ ] Because journalists systematically fabricate expert disagreements for clicks, misquoting researchers to manufacture controversy
+- [x] Because the real disagreements are about nuances — whether problems will be noticeable and fixable in time or too fast to respond to — but these get misreported as disagreement about whether risks exist at all
+- [ ] Because experts only disagree about which company will build AGI first, not about the technology's fundamental trajectory
 
 **Explanation**: The chapter emphasizes that "the majority of experts, researchers and engineers agree that AI will pose risks and it should be developed responsibly." The actual disagreements concern nuances of response strategy — whether problems will emerge gradually enough to fix iteratively (as Andrew Ng suggests with the airplane analogy) or whether they might arrive too fast to correct. These nuanced differences are "sometimes misreported as AI experts disagree on AI risks."
 
@@ -337,10 +337,10 @@ The chapter describes several techniques that boost AI performance beyond what t
 ### Question 2
 Consider this progression: AlphaGo (2016) -> MuZero (2020) -> Voyager/GPT-4 in Minecraft (2023) -> SIMA-2 (2025). What broader trend does this sequence illustrate about AI development?
 
-- [ ] A shift from language-based AI to vision-based AI
-- [ ] A trend toward smaller, more efficient models
-- [x] A progression from superhuman narrow capability (one game), to generality without rules (multiple games), to open-ended planning via LLMs, to learning and transferring skills across many games — reflecting the move along both capability and generality axes simultaneously
-- [ ] A demonstration that game-playing AI has no relevance to real-world applications
+- [ ] A shift from language-based AI to vision-based AI, reflecting the growing importance of visual understanding in game environments
+- [ ] A trend toward smaller, more efficient models that achieve the same results with a fraction of the compute used by earlier systems
+- [x] A progression from superhuman narrow capability, to generality without rules, to open-ended planning, to cross-game skill transfer — moving along both capability and generality axes
+- [ ] A demonstration that game-playing AI has no relevance to real-world applications, since each system remains confined to virtual environments
 
 **Explanation**: This progression maps directly onto the chapter's capability-generality framework. AlphaGo was superhuman but narrow (high capability, low generality). MuZero expanded to multiple games without needing rules. Voyager showed LLMs could plan in open-ended environments. SIMA-2 transfers learned abilities across games. Each step moves further along both the capability and generality dimensions — the exact trajectory the chapter describes for AI development overall.
 
@@ -367,10 +367,10 @@ If someone told you "AI has reached 57% AGI according to the framework in the ch
 ### Question 5
 How does the concept of "autonomy levels" (0-5) relate to the capability-generality framework for AGI?
 
-- [ ] They are the same thing measured differently
-- [ ] Higher capability always means higher autonomy
-- [x] They are deliberately separated: capability/generality describe what a system *can do*, while autonomy describes how it's *deployed* with respect to human oversight — a highly capable system might be safely deployed at Level 2 but dangerous at Level 5
-- [ ] Autonomy levels replace the capability-generality framework in practice
+- [ ] They are the same thing measured differently — autonomy levels are just a simpler way to express the capability-generality score
+- [ ] Higher capability always means higher autonomy, since more capable systems naturally require less human oversight to function correctly
+- [x] They are deliberately separated: capability/generality describe what a system *can do*, while autonomy describes how it's *deployed* with respect to human oversight
+- [ ] Autonomy levels replace the capability-generality framework in practice, since real-world deployment matters more than abstract capability measurement
 
 **Explanation**: The chapter is explicit that these dimensions should be considered separately. Capability and generality are inherent to the system. Autonomy is a deployment choice about human oversight. The same system scoring 90% on 80% of domains could be safely used as a consultant (Level 2) but dangerous as a fully autonomous agent (Level 5). Higher capability "unlocks" higher autonomy levels — but having the capability doesn't mean you should use maximum autonomy.
 
@@ -397,30 +397,30 @@ What is the relationship between effective compute growth and the three factors 
 ### Question 8
 The chapter discusses several approaches to defining intelligence. Which pair of approaches does the chapter ultimately synthesize into its working definition?
 
-- [ ] Consciousness-based (Searle's Chinese Room) and goal-achievement (Legg & Hutter)
-- [ ] The Turing Test and process/adaptability views (Chollet)
-- [x] Behaviorist/capabilities-focused approaches (focus on what systems can observably do) combined with psychometric measurement frameworks (CHC theory's concrete cognitive domains)
-- [ ] Economic definitions (OpenAI's "economically valuable work") and philosophical definitions (consciousness debates)
+- [ ] Consciousness-based approaches (Searle's Chinese Room) combined with goal-achievement definitions (Legg & Hutter's universal intelligence measure)
+- [ ] The Turing Test combined with process/adaptability views (Chollet's focus on learning efficiency and novel problem-solving)
+- [x] Behaviorist/capabilities-focused approaches (what systems can observably do) combined with psychometric frameworks (CHC theory's cognitive domains)
+- [ ] Economic definitions (OpenAI's "economically valuable work") combined with philosophical definitions (consciousness and phenomenal experience debates)
 
 **Explanation**: The chapter explicitly states its synthesis: "We adopt the behaviorist insight from Turing — primarily focusing on what systems can observably do. We use the psychometric tradition's concrete measurement framework from CHC theory." It acknowledges adaptability views but prioritizes final capabilities, and sets aside consciousness debates as not actionable for safety work. The result is the two-axis (capability x generality) framework measured across CHC cognitive domains.
 
 ### Question 9
 Why might a slow takeoff scenario still be extremely challenging for safety, despite providing more time to respond?
 
-- [x] Even a "slow" takeoff is described as potentially 10-100x faster than the Industrial Revolution, with GDP possibly growing 10-30% annually — fast enough that institutions and governance may struggle to keep pace
-- [ ] A slow takeoff is not challenging at all — it gives us all the time we need
-- [ ] Because slow takeoffs never actually happen according to the evidence
-- [ ] Because slow takeoffs only affect developing countries
+- [x] Even a "slow" takeoff could be 10-100x faster than the Industrial Revolution — fast enough that institutions may struggle to keep pace
+- [ ] A slow takeoff is not challenging at all — it gives us all the time we need to develop governance frameworks and safety measures iteratively
+- [ ] Because slow takeoffs never actually happen according to historical evidence; technological transitions always follow punctuated equilibrium patterns
+- [ ] Because slow takeoffs only affect developing countries that lack the institutional capacity to adapt to gradual technological change
 
 **Explanation**: The chapter quotes Paul Christiano describing slow takeoff as "similar to the Industrial Revolution but 10-100x faster." Even in this "slow" scenario, GDP might grow at 10-30% annually before accelerating further. The Industrial Revolution already caused massive societal upheaval over decades — compressing that by 10-100x still represents unprecedented speed of change. "Slow" is relative to *fast* takeoff (days/hours), not to normal human timescales.
 
 ### Question 10
 Based on the chapter's discussion of training costs, infrastructure constraints, and effective compute, which statement best captures the overall feasibility outlook for continued scaling through 2030?
 
-- [ ] Scaling is physically impossible beyond 2026 due to data and energy constraints
-- [ ] Scaling faces no meaningful constraints and will continue effortlessly
-- [x] Analysis suggests scaling through 2030 is feasible but will require unprecedented infrastructure (hundreds of billions of dollars per training run, gigawatts of power), and the real question is whether economic incentives justify it and whether infrastructure constraints can be overcome in time
-- [ ] Scaling will continue only if entirely new computing paradigms (like quantum computing) are developed
+- [ ] Scaling is physically impossible beyond 2026 due to hard constraints in data availability, energy supply, and chip manufacturing capacity
+- [ ] Scaling faces no meaningful constraints and will continue effortlessly, since market demand ensures resources will always be allocated to meet training needs
+- [x] Scaling through 2030 is feasible but requires unprecedented infrastructure investment, and the real question is whether economic incentives and infrastructure buildout can keep pace
+- [ ] Scaling will continue only if entirely new computing paradigms like quantum computing or neuromorphic chips are developed to replace current silicon-based architectures
 
 **Explanation**: The chapter presents a nuanced picture: current trajectories point to training runs requiring hundreds of billions of dollars and gigawatts of power by 2030 (comparable to running a small city). Analysis suggests this isn't physically impossible — there's headroom in hardware efficiency, chip production can scale, power plants can be built. But the constraints are real: chip supply chains are concentrated (TSMC, ASML), new fabs take 4-5 years to build, and each 10x compute increase adds roughly a year of lead time. The chapter frames it as technically feasible but contingent on economic incentives and infrastructure buildout.
 

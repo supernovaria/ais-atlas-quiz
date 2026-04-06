@@ -1,26 +1,74 @@
 import { useState, useEffect, useMemo } from 'react';
 
+// Pre-generate a correct-answer ding as an AudioBuffer on first use,
+// then reuse it so there's no synthesis delay on playback.
+let _audioCtx = null;
+let _dingBuffer = null;
+
+function getAudioContext() {
+  if (!_audioCtx) {
+    _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  return _audioCtx;
+}
+
+function buildDingBuffer(ctx) {
+  // Three-note ascending run: C5 → E5 → G5, staggered 55ms apart
+  // Each note: sine + triangle mix for a bright, warm tone
+  const sampleRate = ctx.sampleRate;
+  const duration = 0.65;
+  const notes = [
+    { freq: 587.33, start: 0.0 },   // D5
+    { freq: 783.99, start: 0.055 },  // G5
+    { freq: 1046.5, start: 0.11 },   // C6
+  ];
+  const bufLen = Math.ceil(sampleRate * duration);
+  const buffer = ctx.createBuffer(1, bufLen, sampleRate);
+  const data = buffer.getChannelData(0);
+
+  for (const { freq, start } of notes) {
+    const startSample = Math.floor(start * sampleRate);
+    for (let s = startSample; s < bufLen; s++) {
+      const t = (s - startSample) / sampleRate;
+      // Envelope: sharp attack, exponential decay
+      const env = Math.exp(-t * 7.5);
+      // Mix sine (pure) + triangle (adds warmth/brightness)
+      const phase = 2 * Math.PI * freq * t;
+      const sine = Math.sin(phase);
+      // Triangle wave via Fourier: sin(x) - sin(3x)/9 + sin(5x)/25 ...
+      const tri = Math.sin(phase) - Math.sin(3 * phase) / 9 + Math.sin(5 * phase) / 25;
+      data[s] += env * (0.55 * sine + 0.45 * tri) * 0.22;
+    }
+  }
+  return buffer;
+}
+
+function prewarmDing() {
+  try {
+    const ctx = getAudioContext();
+    if (!_dingBuffer) {
+      _dingBuffer = buildDingBuffer(ctx);
+    }
+  } catch (e) {
+    // audio unavailable
+  }
+}
+
 function playDing() {
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const t = ctx.currentTime;
-    [523.25, 659.25, 783.99].forEach((freq, i) => {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.type = 'sine';
-      osc.frequency.value = freq;
-      gain.gain.setValueAtTime(0, t + i * 0.04);
-      gain.gain.linearRampToValueAtTime(0.18, t + i * 0.04 + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + i * 0.04 + 0.55);
-      osc.start(t + i * 0.04);
-      osc.stop(t + i * 0.04 + 0.55);
-    });
+    const ctx = getAudioContext();
+    if (!_dingBuffer) {
+      _dingBuffer = buildDingBuffer(ctx);
+    }
+    const source = ctx.createBufferSource();
+    source.buffer = _dingBuffer;
+    source.connect(ctx.destination);
+    source.start();
   } catch (e) {
     // audio unavailable, no-op
   }
 }
+
 
 function shuffleArray(arr) {
   const shuffled = [...arr];
@@ -43,6 +91,7 @@ export default function QuizQuestion({ question, questionNumber, totalQuestions,
 
   function handleSelect(idx) {
     if (answered) return;
+    prewarmDing();
     setSelected(idx);
   }
 
@@ -58,6 +107,7 @@ export default function QuizQuestion({ question, questionNumber, totalQuestions,
       if (answered) return;
       const num = parseInt(e.key, 10);
       if (num >= 1 && num <= options.length) {
+        prewarmDing();
         setSelected(num - 1);
       }
     }

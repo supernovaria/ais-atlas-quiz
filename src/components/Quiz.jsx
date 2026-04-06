@@ -114,6 +114,7 @@ export default function Quiz({ quiz, quizTitle }) {
     setReviewPos(0);
     setReviewMode(true);
     setShowResult(false);
+    setFinished(false);
   }
 
   // Keyboard: Enter triggers submit or next depending on state
