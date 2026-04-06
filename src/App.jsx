@@ -6,14 +6,58 @@ import QuizSelector from './components/QuizSelector';
 import './App.css';
 
 function ModeSelector() {
-  const { mode, setMode, modes } = useMode();
+  const { mode, setMode, modes, password, setPassword, model, setModel, models, maxMessages, setMaxMessages } = useMode();
 
   return (
     <div className="mode-selector">
       <h3>Free-Response Feedback Mode</h3>
       <p className="mode-selector-desc">
-        Some questions ask you to write a free-text answer. Choose how you'd like to receive AI feedback on those answers:
+        Some questions ask you to write a free-text answer. Choose how you'd like to receive AI feedback on those answers.
+        Modes B and C require a password and use our API.
       </p>
+
+      <div className="mode-settings">
+        <div className="mode-setting-row">
+          <label className="mode-setting-label" htmlFor="quiz-password">API Password</label>
+          <input
+            id="quiz-password"
+            type="password"
+            className="mode-setting-input"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            placeholder="Required for Modes B &amp; C"
+          />
+        </div>
+        <div className="mode-setting-row">
+          <label className="mode-setting-label">Model</label>
+          <div className="model-toggle">
+            {Object.values(models).map(m => (
+              <button
+                key={m.id}
+                className={`model-toggle-btn ${model === m.id ? 'model-active' : ''}`}
+                onClick={() => setModel(m.id)}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="mode-setting-row">
+          <label className="mode-setting-label" htmlFor="quiz-max-messages">Chat messages</label>
+          <div className="mode-setting-slider">
+            <input
+              id="quiz-max-messages"
+              type="range"
+              min="2"
+              max="10"
+              value={maxMessages}
+              onChange={e => setMaxMessages(parseInt(e.target.value, 10))}
+            />
+            <span className="mode-setting-value">{maxMessages}</span>
+          </div>
+        </div>
+      </div>
+
       <div className="mode-options">
         {Object.values(modes).map(m => (
           <button
@@ -90,7 +134,7 @@ function AppContent() {
                 <h3>Proof of Concept for CeSIA</h3>
                 <p>
                   This is a proof-of-concept demonstrating what an interactive quiz companion for the{' '}
-                  <a href="https://aisafetytextbook.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://ai-safety-atlas.com/chapters/v1/capabilities/introduction/" target="_blank" rel="noopener noreferrer">
                     AI Safety Atlas
                   </a>{' '}
                   could look like. It explores different approaches to AI-assisted learning.
@@ -145,7 +189,7 @@ function AppContent() {
       <footer className="app-footer">
         <p>
           Proof of concept for{' '}
-          <a href="https://aisafetytextbook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://ai-safety-atlas.com/chapters/v1/capabilities/introduction/" target="_blank" rel="noopener noreferrer">
             AI Safety Atlas
           </a>
           {' '}&mdash; questions are AI-generated placeholders, not endorsed by the Atlas team.

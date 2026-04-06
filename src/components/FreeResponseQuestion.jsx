@@ -53,6 +53,7 @@ Keep your feedback concise and educational.`;
 }
 
 function SingleShotMode({ question, answer, quizTitle }) {
+  const { password, model } = useMode();
   const [feedback, setFeedback] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -61,11 +62,14 @@ function SingleShotMode({ question, answer, quizTitle }) {
     setLoading(true);
     setError(null);
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (password) headers['X-Quiz-Password'] = password;
       const res = await fetch('/api/evaluate', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           mode: 'singleshot',
+          model,
           quizTitle,
           question: question.question,
           context: question.context,
@@ -112,7 +116,7 @@ function SingleShotMode({ question, answer, quizTitle }) {
 }
 
 function ChatMode({ question, answer, quizTitle }) {
-  const MAX_MESSAGES = 4;
+  const { password, model, maxMessages: MAX_MESSAGES } = useMode();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -130,11 +134,15 @@ function ChatMode({ question, answer, quizTitle }) {
     setError(null);
 
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (password) headers['X-Quiz-Password'] = password;
       const res = await fetch('/api/evaluate', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           mode: 'chat',
+          model,
+          maxMessages: MAX_MESSAGES,
           quizTitle,
           question: question.question,
           context: question.context,

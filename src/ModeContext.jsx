@@ -2,6 +2,19 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const ModeContext = createContext();
 
+const MODELS = {
+  haiku: {
+    id: 'haiku',
+    label: 'Haiku (fast, cheap)',
+    description: '~$0.0005 per evaluation',
+  },
+  sonnet: {
+    id: 'sonnet',
+    label: 'Sonnet (smarter)',
+    description: '~$0.01 per evaluation',
+  },
+};
+
 const MODES = {
   clipboard: {
     id: 'clipboard',
@@ -23,8 +36,8 @@ const MODES = {
     id: 'chat',
     label: 'Mode C: Interactive Discussion',
     shortLabel: 'Discussion',
-    description: 'Get feedback and then discuss with the AI in a short conversation (up to 4 messages). Best for deeper understanding.',
-    pros: ['Best pedagogical outcomes through dialogue', 'Students can ask "why?" and explore misconceptions', 'Still bounded cost (3-4 cents per interaction)'],
+    description: 'Get feedback and then discuss with the AI in a short conversation. Best for deeper understanding.',
+    pros: ['Best pedagogical outcomes through dialogue', 'Students can ask "why?" and explore misconceptions', 'Configurable message limit (2-10)'],
     cons: ['Highest per-question cost', 'Wider surface for off-topic use', 'Requires API key and backend'],
   },
 };
@@ -33,13 +46,34 @@ export function ModeProvider({ children }) {
   const [mode, setMode] = useState(() => {
     return localStorage.getItem('ais-quiz-freetext-mode') || 'clipboard';
   });
+  const [password, setPassword] = useState(() => {
+    return localStorage.getItem('ais-quiz-password') || '';
+  });
+  const [model, setModel] = useState(() => {
+    return localStorage.getItem('ais-quiz-model') || 'sonnet';
+  });
+  const [maxMessages, setMaxMessages] = useState(() => {
+    return parseInt(localStorage.getItem('ais-quiz-max-messages'), 10) || 4;
+  });
 
   useEffect(() => {
     localStorage.setItem('ais-quiz-freetext-mode', mode);
   }, [mode]);
 
+  useEffect(() => {
+    localStorage.setItem('ais-quiz-password', password);
+  }, [password]);
+
+  useEffect(() => {
+    localStorage.setItem('ais-quiz-model', model);
+  }, [model]);
+
+  useEffect(() => {
+    localStorage.setItem('ais-quiz-max-messages', String(maxMessages));
+  }, [maxMessages]);
+
   return (
-    <ModeContext.Provider value={{ mode, setMode, modes: MODES }}>
+    <ModeContext.Provider value={{ mode, setMode, modes: MODES, password, setPassword, model, setModel, models: MODELS, maxMessages, setMaxMessages }}>
       {children}
     </ModeContext.Provider>
   );
