@@ -3,6 +3,7 @@ import { getScore } from './Quiz';
 export default function QuizSelector({ quizzes, onSelect, activeQuiz }) {
   const sectionQuizzes = quizzes.filter(q => q.type === 'section');
   const reviewQuizzes = quizzes.filter(q => q.type === 'review');
+  const frQuizzes = quizzes.filter(q => q.type === 'fr-only');
 
   function ScoreBadge({ quiz }) {
     const saved = getScore(quiz);
@@ -31,6 +32,22 @@ export default function QuizSelector({ quizzes, onSelect, activeQuiz }) {
           </button>
         ))}
       </div>
+
+      {frQuizzes.length > 0 && (
+        <div className="selector-group">
+          <h3>Free Response</h3>
+          {frQuizzes.map((quiz, idx) => (
+            <button
+              key={idx}
+              className={`selector-btn review-btn ${activeQuiz === quiz ? 'active' : ''}`}
+              onClick={() => onSelect(quiz)}
+            >
+              <span className="selector-title">{quiz.title}</span>
+              <span className="selector-count">{quiz.questions.length} questions</span>
+            </button>
+          ))}
+        </div>
+      )}
 
       {reviewQuizzes.length > 0 && (
         <div className="selector-group">
