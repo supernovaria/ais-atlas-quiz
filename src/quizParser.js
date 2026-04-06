@@ -54,7 +54,9 @@ function parseMCQuestions(body) {
   const questionBlocks = body.split(/^### Question \d+\s*$/m).filter(b => b.trim());
 
   return questionBlocks.map((block, idx) => {
-    const lines = block.trim().split('\n');
+    // Truncate block at any ### Free Response heading
+    const truncated = block.split(/^### Free Response \d+\s*$/m)[0];
+    const lines = truncated.trim().split('\n');
     const questionLines = [];
     const options = [];
     let explanation = '';
@@ -93,10 +95,14 @@ function parseMCQuestions(body) {
 }
 
 function parseFreeResponseQuestions(body) {
-  const frBlocks = body.split(/^### Free Response \d+\s*$/m).filter(b => b.trim());
+  const parts = body.split(/^### Free Response \d+\s*$/m);
+  // First element is everything before the first ### Free Response — skip it
+  const frBlocks = parts.slice(1).filter(b => b.trim());
 
   return frBlocks.map((block, idx) => {
-    const lines = block.trim().split('\n');
+    // Truncate block at any ### Question heading
+    const truncated = block.split(/^### Question \d+\s*$/m)[0];
+    const lines = truncated.trim().split('\n');
     const questionLines = [];
     let context = '';
     let i = 0;
