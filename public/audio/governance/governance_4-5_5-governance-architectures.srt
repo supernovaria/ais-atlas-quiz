@@ -1,0 +1,2995 @@
+1
+00:00:00,071 --> 00:00:05,092
+Section 4.5 – Governance Architectures The
+governance of Frontier
+
+2
+00:00:05,213 --> 00:00:08,474
+AI cannot be entrusted to any single
+institution or
+
+3
+00:00:08,515 --> 00:00:12,336
+level of authority. Companies lack
+incentives to fully account
+
+4
+00:00:12,375 --> 00:00:16,917
+for societal impacts. Nations compete for
+technological advantage and
+
+5
+00:00:16,978 --> 00:00:21,381
+international bodies struggle with
+capacity for enforcement. Each level
+
+6
+00:00:21,420 --> 00:00:25,644
+of governance, corporate, national and
+international, brings unique strengths
+
+7
+00:00:25,785 --> 00:00:30,408
+and faces distinct limitations.
+Understanding how these levels interact
+
+8
+00:00:30,469 --> 00:00:33,692
+and reinforce each other is important for
+building effective
+
+9
+00:00:33,832 --> 00:00:37,615
+AI governance systems. There is figure
+4.21 in the
+
+10
+00:00:37,655 --> 00:00:40,777
+textbook here. It depicts the three levels
+of AI
+
+11
+00:00:40,838 --> 00:00:46,140
+governance. Corporate governance provides
+speed and technical expertise. Companies
+
+12
+00:00:46,201 --> 00:00:50,643
+developing frontier AI have unmatched
+visibility into emerging capabilities
+
+13
+00:00:51,023 --> 00:00:53,884
+and can implement safety measures faster
+than any external
+
+14
+00:00:53,944 --> 00:00:59,286
+regulator. They control critical decision
+points, architecture design, training
+
+15
+00:00:59,326 --> 00:01:05,390
+protocols, capability evaluations, and
+deployment criteria. When OpenAI
+discovered
+
+16
+00:01:05,430 --> 00:01:09,210
+that GPT-4 could engage in deceptive
+behavior, they could
+
+17
+00:01:09,251 --> 00:01:12,992
+immediately modify training procedures,
+something that would take months
+
+18
+00:01:13,072 --> 00:01:18,093
+or years through regulatory channels.
+National governance establishes democratic
+
+19
+00:01:18,134 --> 00:01:22,236
+legitimacy and enforcement power. While
+companies can act quickly,
+
+20
+00:01:22,516 --> 00:01:25,498
+they lack the authority to make decisions
+affecting entire
+
+21
+00:01:25,558 --> 00:01:30,480
+populations. National governments provide
+the democratic mandate and enforcement
+
+22
+00:01:30,521 --> 00:01:36,004
+mechanisms necessary for binding
+regulations. The EU-AI Act demonstrates
+
+23
+00:01:36,063 --> 00:01:39,706
+this by establishing legal requirements
+backed by fines up
+
+24
+00:01:39,766 --> 00:01:43,227
+to 3% of global revenue, creating real
+consequences for
+
+25
+00:01:43,287 --> 00:01:48,010
+non-compliance that voluntary corporate
+measures cannot match. International
+governance
+
+26
+00:01:48,131 --> 00:01:53,194
+addresses global externalities and
+coordination failures. AI risks don't
+
+27
+00:01:53,234 --> 00:01:56,718
+respect borders. A dangerous model
+developed in one country
+
+28
+00:01:56,998 --> 00:02:01,221
+can affect the entire world through
+digital proliferation. International
+
+29
+00:02:01,281 --> 00:02:05,424
+mechanisms help align incentives between
+nations, preventing races to
+
+30
+00:02:05,463 --> 00:02:09,887
+the bottom and ensuring consistent safety
+standards. The International
+
+31
+00:02:09,926 --> 00:02:14,587
+Network of AI Safety Institutes, launched
+in 2024, exemplifies
+
+32
+00:02:14,627 --> 00:02:18,088
+how countries can share best practices and
+coordinate standards
+
+33
+00:02:18,169 --> 00:02:22,870
+despite competitive pressures. The
+textbook includes Figure 4.222 here.
+
+34
+00:02:23,550 --> 00:02:27,050
+It depicts how the levels interact and
+reinforce. Governance
+
+35
+00:02:27,110 --> 00:02:32,171
+levels create reinforcing feedback loops.
+Corporate safety frameworks inform
+
+36
+00:02:32,231 --> 00:02:36,573
+national regulations, which shape
+international standards, which in turn
+
+37
+00:02:36,693 --> 00:02:41,373
+influence corporate practices globally.
+When Anthropic introduced its responsible
+
+38
+00:02:41,433 --> 00:02:45,415
+scaling policy in 2023, it provided a
+template that
+
+39
+00:02:45,475 --> 00:02:49,358
+influenced both the US Executive Order's
+compute thresholds and
+
+40
+00:02:49,418 --> 00:02:54,340
+discussions at international AI summits.
+This cross-pollination accelerates the
+
+41
+00:02:54,379 --> 00:02:57,961
+development of effective governance
+approaches. Gaps at one level
+
+42
+00:02:58,042 --> 00:03:02,224
+create pressure at others. When corporate
+self-governance proves insufficient,
+
+43
+00:03:02,625 --> 00:03:06,807
+pressure builds for national regulation.
+When national approaches diverge
+
+44
+00:03:06,867 --> 00:03:11,651
+too sharply, creating regulatory
+arbitrage, demand grows for international
+
+45
+00:03:11,691 --> 00:03:16,435
+coordination. This dynamic tension drives
+governance evolution, though it
+
+46
+00:03:16,474 --> 00:03:20,337
+can also create dangerous gaps during
+transition periods. Different
+
+47
+00:03:20,377 --> 00:03:25,300
+levels handle different timescales and
+uncertainties. Corporate governance excels
+
+48
+00:03:25,381 --> 00:03:28,602
+at rapid response to technical
+developments but struggles with
+
+49
+00:03:28,662 --> 00:03:33,364
+long-term planning under competitive
+pressure. National governance can
+establish
+
+50
+00:03:33,403 --> 00:03:38,325
+stable frameworks but move slowly.
+International governance provides long-
+term
+
+51
+00:03:38,366 --> 00:03:43,447
+coordination but faces the greatest
+implementation challenges. Together, they
+
+52
+00:03:43,486 --> 00:03:46,990
+create a temporal portfolio addressing
+both immediate and systemic
+
+53
+00:03:47,050 --> 00:03:52,294
+risks. Section Corporate Governance To
+quote Elon Musk, AI
+
+54
+00:03:52,373 --> 00:03:54,316
+is a rare case where I think we need
+
+55
+00:03:54,336 --> 00:03:58,278
+to be proactive in regulation than be
+reactive. I
+
+56
+00:03:58,338 --> 00:04:02,264
+think that digital superintelligence is
+the single biggest existential
+
+57
+00:04:02,365 --> 00:04:04,949
+crisis that we face and the most pressing
+one.
+
+58
+00:04:05,830 --> 00:04:07,592
+It needs to be a public body that has
+
+59
+00:04:07,733 --> 00:04:10,798
+insight and then oversight to confirm that
+everyone is
+
+60
+00:04:10,837 --> 00:04:15,201
+developing AI safely. And mark my words,
+AI is
+
+61
+00:04:15,282 --> 00:04:18,524
+far more dangerous than nukes, far. So why
+do
+
+62
+00:04:18,564 --> 00:04:22,567
+we have no regulatory oversight? This is
+insane. Dario
+
+63
+00:04:22,687 --> 00:04:26,209
+Amade once wrote, Almost every decision I
+make feels
+
+64
+00:04:26,249 --> 00:04:27,990
+like it's balanced on the edge of a knife.
+
+65
+00:04:28,711 --> 00:04:31,713
+If we don't build fast enough,
+authoritarian countries could
+
+66
+00:04:31,752 --> 00:04:34,595
+win. If we build too fast, the kinds of
+
+67
+00:04:34,675 --> 00:04:37,797
+risks we've written about could prevail.
+In this section,
+
+68
+00:04:37,956 --> 00:04:40,577
+we'll look at how AI companies approach
+governance in
+
+69
+00:04:40,617 --> 00:04:44,160
+practice. We'll look at what works, what
+doesn't, and
+
+70
+00:04:44,199 --> 00:04:47,660
+where gaps remain. This will help us
+understand why
+
+71
+00:04:47,740 --> 00:04:51,000
+corporate governance alone isn't enough
+and set the scene
+
+72
+00:04:51,040 --> 00:04:54,862
+for later discussions of national and
+international governance. By
+
+73
+00:04:54,901 --> 00:04:57,122
+the end of this section, we'll establish
+both the
+
+74
+00:04:57,163 --> 00:05:00,242
+essential role of company-level governance
+and why it needs
+
+75
+00:05:00,283 --> 00:05:04,283
+to be complemented by broader regulatory
+frameworks. Corporate governance
+
+76
+00:05:04,363 --> 00:05:08,004
+refers to the internal structures,
+practices and processes that
+
+77
+00:05:08,045 --> 00:05:12,386
+determine how AI companies make safety
+relevant decisions. Companies
+
+78
+00:05:12,427 --> 00:05:16,689
+developing Frontier AI have unique
+visibility into emerging capabilities
+
+79
+00:05:17,129 --> 00:05:20,291
+and can implement safety measures faster
+than external regulators.
+
+80
+00:05:21,052 --> 00:05:25,096
+Sastri et al. 2024. They have the
+technical knowledge
+
+81
+00:05:25,235 --> 00:05:29,119
+and direct control needed to implement
+effective safeguards. But
+
+82
+00:05:29,158 --> 00:05:32,180
+they also face immense market pressures
+that can push
+
+83
+00:05:32,221 --> 00:05:35,944
+against taking time for safety measures.
+It includes policies,
+
+84
+00:05:36,343 --> 00:05:41,305
+oversight structures, technical protocols,
+and organizational norms that companies
+
+85
+00:05:41,446 --> 00:05:44,927
+use to ensure safety throughout the AI
+development process.
+
+86
+00:05:45,648 --> 00:05:50,089
+These mechanisms translate high-level
+principles into operational decisions
+within
+
+87
+00:05:50,149 --> 00:05:54,370
+labs and development teams. Internal
+corporate governance mechanisms matter
+
+88
+00:05:54,672 --> 00:05:58,293
+because frontier AI companies currently
+have significant freedom in
+
+89
+00:05:58,333 --> 00:06:02,254
+governing their own systems. Their
+proximity to development allows
+
+90
+00:06:02,295 --> 00:06:05,336
+them to identify and address risks earlier
+and more
+
+91
+00:06:05,396 --> 00:06:09,939
+effectively than external oversight alone
+could achieve. However, internal
+
+92
+00:06:09,999 --> 00:06:14,300
+governance alone cannot address systemic
+risks. These require public
+
+93
+00:06:14,380 --> 00:06:17,502
+oversight, which we explore later in this
+chapter. At
+
+94
+00:06:17,541 --> 00:06:20,624
+this point, there is Interactive Figure
+4.5 in the
+
+95
+00:06:20,663 --> 00:06:24,966
+textbook, available in the online version.
+It shows affiliation
+
+96
+00:06:25,005 --> 00:06:28,749
+of research teams building notable AI
+systems by year
+
+97
+00:06:28,788 --> 00:06:31,911
+of publication, describes the sector where
+the authors of
+
+98
+00:06:31,951 --> 00:06:35,896
+a notable AI system have their primary
+affiliations. AI
+
+99
+00:06:35,975 --> 00:06:39,298
+companies control the most sensitive
+stages of model development.
+
+100
+00:06:40,240 --> 00:06:45,805
+Architecture design, training runs,
+capability evaluations, deployment
+criteria and
+
+101
+00:06:45,884 --> 00:06:50,675
+safety protocols. Well-designed internal
+governance can reduce risks by
+
+102
+00:06:50,716 --> 00:06:55,939
+aligning safety priorities with day-to-day
+decision-making, embedding escalation
+procedures
+
+103
+00:06:56,279 --> 00:07:00,723
+and enforcing constraints before
+deployment. It includes proactive measures
+
+104
+00:07:00,783 --> 00:07:04,904
+like pausing training runs, restricting
+access to high-risk capabilities
+
+105
+00:07:05,286 --> 00:07:09,408
+and auditing internal model use. Because
+external actors often
+
+106
+00:07:09,468 --> 00:07:13,091
+lack access to proprietary information,
+internal governance is the
+
+107
+00:07:13,151 --> 00:07:16,153
+first line of defence. especially for
+models that have
+
+108
+00:07:16,192 --> 00:07:19,035
+not yet been released. In the words of
+International
+
+109
+00:07:19,194 --> 00:07:23,738
+AI Safety Report, deployment can take
+several forms. Internal
+
+110
+00:07:23,778 --> 00:07:27,101
+deployment for use by the system's
+developer, or external
+
+111
+00:07:27,141 --> 00:07:31,024
+deployment either publicly or to private
+customers. Very little
+
+112
+00:07:31,105 --> 00:07:34,947
+is publicly known about internal
+deployments. However, companies are
+
+113
+00:07:34,968 --> 00:07:37,750
+known to adopt different types of
+strategies for external
+
+114
+00:07:37,790 --> 00:07:42,112
+deployment. Internally deployed systems
+also need governance of safeguards.
+
+115
+00:07:43,057 --> 00:07:45,757
+Just because a model is not deployed
+publicly should
+
+116
+00:07:45,798 --> 00:07:48,538
+not mean the corporate governance
+safeguards do not apply.
+
+117
+00:07:49,238 --> 00:07:52,620
+We have seen in previous chapters that
+automating AI,
+
+118
+00:07:53,079 --> 00:07:55,701
+R&D, is one of the core goals of several
+
+119
+00:07:55,841 --> 00:08:00,182
+AI companies. This combined with
+proliferation safeguards and public
+
+120
+00:08:00,242 --> 00:08:03,564
+release mitigations means that we can see
+many models
+
+121
+00:08:03,723 --> 00:08:06,545
+that are heavily used internally but not
+available to
+
+122
+00:08:06,564 --> 00:08:10,487
+the public. These internal deployments
+often lack the scrutiny
+
+123
+00:08:10,547 --> 00:08:13,910
+applied to external launches and may
+operate with elevated
+
+124
+00:08:13,970 --> 00:08:19,153
+privileges, bypass formal evaluations, and
+evolve capabilities through iterative
+
+125
+00:08:19,293 --> 00:08:22,495
+use before external stakeholders are even
+aware of their
+
+126
+00:08:22,555 --> 00:08:27,338
+existence. Without policies that
+explicitly cover internal use, such
+
+127
+00:08:27,379 --> 00:08:32,020
+as access controls, internal deployment
+approvals, or safeguards against
+
+128
+00:08:32,100 --> 00:08:38,725
+recursive model use, high-risk systems may
+advance unchecked. Yet
+
+129
+00:08:38,804 --> 00:08:41,726
+public knowledge of these deployments are
+limited. and most
+
+130
+00:08:41,787 --> 00:08:46,292
+governance efforts still focus on public-
+facing releases. Strengthening internal
+
+131
+00:08:46,351 --> 00:08:49,817
+governance around internal deployment is
+critical to ensure that
+
+132
+00:08:49,976 --> 00:08:53,500
+early and potentially hazardous use cases
+are properly supervised.
+
+133
+00:08:53,961 --> 00:08:57,625
+At this point, the textbook shows Figure
+4.23. It
+
+134
+00:08:57,666 --> 00:09:01,188
+depicts the figure illustrates a self-
+reinforcing loop in which
+
+135
+00:09:01,369 --> 00:09:05,871
+AI systems progressively automate AI
+research, leading to increasingly
+
+136
+00:09:05,951 --> 00:09:10,235
+capable AI that further accelerates its
+own development. Organizational
+
+137
+00:09:10,294 --> 00:09:13,736
+structures establish who makes decisions
+and who is responsible
+
+138
+00:09:13,777 --> 00:09:17,840
+for safety in AI companies. Later sections
+cover specific
+
+139
+00:09:17,879 --> 00:09:21,261
+safety mechanisms. Here we focus on the
+governance question.
+
+140
+00:09:22,243 --> 00:09:25,544
+who has the authority within companies to
+prioritize safety
+
+141
+00:09:25,625 --> 00:09:29,506
+over other goals. For example, an
+effective governance structure
+
+142
+00:09:29,667 --> 00:09:32,149
+determines whether a safety team can delay
+a model
+
+143
+00:09:32,208 --> 00:09:36,510
+release if they identify concerns, whether
+executives can override
+
+144
+00:09:36,571 --> 00:09:39,673
+safety decisions, and whether the board
+has final authority
+
+145
+00:09:39,773 --> 00:09:44,625
+over high-risk deployments. These
+authority relationships directly affect
+how
+
+146
+00:09:44,686 --> 00:09:49,572
+safety considerations factor into
+development decisions. Corporate AI
+governance
+
+147
+00:09:49,854 --> 00:09:54,019
+needs a combination of roles, board-level
+oversight, AI risk
+
+148
+00:09:54,080 --> 00:09:59,025
+executives, and technical safety teams.
+Effective AI governance requires
+
+149
+00:09:59,105 --> 00:10:03,889
+three interconnected levels of internal
+oversight, board-level oversight
+structures
+
+150
+00:10:04,149 --> 00:10:08,373
+allocating resources and enforcing safety
+policies such as algorithm
+
+151
+00:10:08,413 --> 00:10:12,436
+review boards, ARBs, and ethics boards for
+technical and
+
+152
+00:10:12,475 --> 00:10:17,740
+societal risk assessments, guiding go-
+slash-no-go decisions on deployments and
+
+153
+00:10:17,779 --> 00:10:27,602
+establishing oversight with clear lines of
+accountability. executives allocating
+
+154
+00:10:27,663 --> 00:10:31,605
+resources and enforcing safety policies,
+roles like the Chief
+
+155
+00:10:31,706 --> 00:10:38,490
+Artificial Intelligence Officer, CARIO,
+GO, Chief Risk Officer, CRO,
+
+156
+00:10:39,051 --> 00:10:42,793
+and related positions to coordinate risk
+management efforts across
+
+157
+00:10:42,833 --> 00:10:46,956
+the organization and help translate
+ethical principles into practice,
+
+158
+00:10:47,456 --> 00:10:49,578
+Schaefer et al. 2022, Janssen et al. less
+2025,
+
+159
+00:10:54,236 --> 00:10:59,759
+technical safety teams conducting
+evaluations and recommending mitigations,
+teams
+
+160
+00:10:59,840 --> 00:11:04,263
+comprising internal auditors, risk
+officers and specialized audit committees
+
+161
+00:11:04,543 --> 00:11:09,345
+for ensuring rigorous risk identification,
+maintaining audit integrity and
+
+162
+00:11:09,384 --> 00:11:12,746
+providing operational assurance with
+direct reporting lines to the
+
+163
+00:11:12,767 --> 00:11:17,990
+Board for Independence. Chouette 2023,
+Raji et al. 2020.
+
+164
+00:11:18,431 --> 00:11:21,653
+The textbook has a supplementary note
+titled Open AI's
+
+165
+00:11:21,734 --> 00:11:25,115
+Corporate Restructuring, which will skip
+over here. There is
+
+166
+00:11:25,155 --> 00:11:28,918
+figure 4.4 in the textbook here. It
+depicts Swiss
+
+167
+00:11:28,999 --> 00:11:33,221
+cheese model representing our recommended
+defense-in-depth strategy against the
+
+168
+00:11:33,283 --> 00:11:36,644
+risk of loss of control via internally
+deployed misaligned
+
+169
+00:11:36,804 --> 00:11:41,807
+AI. Threat vectors are in red. Subsection
+Frontier Safety
+
+170
+00:11:41,866 --> 00:11:46,948
+Framework Frontier Safety Framework's FSFs
+are one example of
+
+171
+00:11:47,009 --> 00:11:52,150
+corporate AI governance. FSFs are policies
+that AI companies
+
+172
+00:11:52,230 --> 00:11:55,591
+create to guide their development process
+and ensure they're
+
+173
+00:11:55,611 --> 00:11:59,052
+taking appropriate precautions as their
+systems become more capable.
+
+174
+00:11:59,873 --> 00:12:02,774
+They're the equivalent of the safety
+protocols used in
+
+175
+00:12:02,855 --> 00:12:06,937
+nuclear power plants or high-security
+laboratories, and help bridge
+
+176
+00:12:06,996 --> 00:12:11,418
+internal corporate governance mechanisms
+and external regulatory oversight in
+
+177
+00:12:11,558 --> 00:12:15,260
+AI safety. The concept of a FSF was first
+
+178
+00:12:15,321 --> 00:12:19,283
+introduced in 2023. They gained momentum
+during the Seoul
+
+179
+00:12:19,423 --> 00:12:23,809
+AI Summit in May 2024, where 16 companies
+committed
+
+180
+00:12:23,830 --> 00:12:28,375
+to implementing such policies. As of March
+2025, 12
+
+181
+00:12:28,416 --> 00:12:33,383
+companies have published comprehensive
+Frontier AI safety policies. Anthropic,
+
+182
+00:12:33,783 --> 00:12:41,125
+OpenAI, Google DeepMind, Magic, Naver,
+Meta, G42, Cohere, Microsoft,
+
+183
+00:12:41,384 --> 00:12:45,806
+Amazon, XAI, and Nvidia, with additional
+companies following suit.
+
+184
+00:12:46,466 --> 00:12:50,106
+They go under different names. For
+example, OpenAI calls
+
+185
+00:12:50,147 --> 00:12:54,126
+their FSF the preparedness framework, and
+Anthropic calls them
+
+186
+00:12:54,187 --> 00:12:58,668
+responsible scaling policies, RSPs. They
+are very similar in
+
+187
+00:12:58,729 --> 00:13:03,913
+principle. What essential elements define
+a comprehensive FSF? Despite
+
+188
+00:13:03,974 --> 00:13:08,698
+variations in implementation, most FSFs
+share several fundamental elements.
+
+189
+00:13:09,240 --> 00:13:14,764
+Capability thresholds, FSFs, establish
+specific thresholds at which AI
+
+190
+00:13:14,804 --> 00:13:19,629
+capabilities would pose severe risks
+requiring enhanced safeguards. NEVO
+
+191
+00:13:19,730 --> 00:13:25,133
+et al. 2024 Common capability concerns
+include biological weapons
+
+192
+00:13:25,192 --> 00:13:28,533
+assistance, such as enabling the creation
+of dangerous pathogens,
+
+193
+00:13:29,375 --> 00:13:35,177
+cyber-offensive capabilities, such as
+automating zero-day exploit discovery,
+automated
+
+194
+00:13:35,317 --> 00:13:39,138
+AI research and development, such as
+accelerating AI progress
+
+195
+00:13:39,217 --> 00:13:45,014
+beyond human oversight, autonomous
+replication and adaptation. Model weight
+
+196
+00:13:45,034 --> 00:13:50,399
+security. As models approach dangerous
+capability thresholds, companies implement
+
+197
+00:13:50,438 --> 00:13:55,162
+increasingly sophisticated security
+measures to prevent unauthorized access to
+
+198
+00:13:55,221 --> 00:13:59,644
+model weights. These range from standard
+information security protocols
+
+199
+00:13:59,964 --> 00:14:04,206
+to advanced measures like restricted
+access environments, encryption and
+
+200
+00:14:04,267 --> 00:14:09,870
+specialized hardware security. NEVO et al.
+2024. Conditions for
+
+201
+00:14:09,909 --> 00:14:14,192
+halting development deployment. Most
+frameworks contain explicit commitments to
+
+202
+00:14:14,232 --> 00:14:17,934
+pause model development or deployment if
+capability thresholds are
+
+203
+00:14:17,955 --> 00:14:25,399
+crossed before adequate safeguards can be
+implemented. Full capability
+
+204
+00:14:25,479 --> 00:14:30,182
+elicitation Through FSFs, companies commit
+to evaluating models in
+
+205
+00:14:30,241 --> 00:14:33,945
+ways that reveal their full capabilities
+rather than underestimating
+
+206
+00:14:33,985 --> 00:14:39,288
+them. Fuang et al. 2024 Evaluation
+frequency and timing
+
+207
+00:14:40,028 --> 00:14:43,971
+FSFs establish specific timelines for when
+evaluations must occur.
+
+208
+00:14:44,731 --> 00:14:48,495
+typically before deployment, during
+training and after deployment, with
+
+209
+00:14:48,554 --> 00:14:52,498
+triggers for additional assessments when
+models show significant capability
+
+210
+00:14:52,577 --> 00:14:59,082
+increases. Davidson et al. 2023.
+Accountability mechanisms. These include
+
+211
+00:14:59,403 --> 00:15:03,846
+internal governance roles, for example,
+Anthropics responsible scaling officer,
+
+212
+00:15:04,667 --> 00:15:09,331
+external advisory boards and third-party
+audits, transparency commitments about
+
+213
+00:15:09,410 --> 00:15:13,986
+model capabilities and safety measures.
+whistleblower protections for staff
+
+214
+00:15:14,047 --> 00:15:19,370
+reporting safety concerns. Policy Updates
+All FSFs acknowledge the
+
+215
+00:15:19,409 --> 00:15:22,431
+evolving nature of AI risks and commit to
+regular
+
+216
+00:15:22,490 --> 00:15:25,793
+policy reviews and updates as
+understanding of risks and
+
+217
+00:15:25,832 --> 00:15:31,995
+best practices improve. METR 2025 A multi-
+layered internal auditing
+
+218
+00:15:32,035 --> 00:15:36,038
+and governance approach helps
+operationalize safety frameworks in
+practice.
+
+219
+00:15:36,953 --> 00:15:40,736
+When actually implementing the safety
+frameworks, organizations should ensure
+
+220
+00:15:40,797 --> 00:15:44,700
+risks are identified and managed at
+multiple levels, reducing
+
+221
+00:15:44,720 --> 00:15:48,844
+the chances of dangerous oversights. For
+example, when researchers
+
+222
+00:15:48,903 --> 00:15:53,027
+develop a model with unexpectedly advanced
+capabilities, safety teams
+
+223
+00:15:53,067 --> 00:15:57,190
+can conduct thorough evaluations and
+implement additional safeguards, while
+
+224
+00:15:57,309 --> 00:16:01,113
+audit teams review broader processes for
+managing emergent capabilities.
+
+225
+00:16:02,046 --> 00:16:04,847
+One approach is the three lines of
+defence, three
+
+226
+00:16:05,067 --> 00:16:09,390
+LOD model, adapted from other safety
+critical industries, first
+
+227
+00:16:09,451 --> 00:16:13,494
+line of defence. Frontline researchers and
+developers implement safety
+
+228
+00:16:13,553 --> 00:16:17,537
+measures in day-to-day work, conduct
+initial risk assessments, and
+
+229
+00:16:17,596 --> 00:16:22,004
+adhere to ethical guidelines and safety
+protocols. Second line
+
+230
+00:16:22,043 --> 00:16:26,490
+of defence, specialised risk management
+and compliance functions, including
+
+231
+00:16:26,669 --> 00:16:30,875
+AI ethics committees, dedicated safety
+teams and compliance units
+
+232
+00:16:30,955 --> 00:16:35,788
+provide oversight and guidance. Third line
+of defence. Independent
+
+233
+00:16:35,888 --> 00:16:39,168
+internal audit functions provide assurance
+to board and senior
+
+234
+00:16:39,208 --> 00:16:43,269
+management through regular audits of
+safety practices, independent model
+
+235
+00:16:43,289 --> 00:16:47,811
+evaluations and assessments of overall
+preparedness. The textbook includes
+
+236
+00:16:47,870 --> 00:16:51,832
+Figure 4.25 here. It depicts the 3LOD
+model as
+
+237
+00:16:51,873 --> 00:16:55,254
+described above. At this point, the
+textbook shows Figure
+
+238
+00:16:55,274 --> 00:16:59,015
+4.26. It depicts sample org chart of an AI
+
+239
+00:16:59,096 --> 00:17:02,258
+company with equivalent responsibilities
+for each of the three
+
+240
+00:17:02,298 --> 00:17:05,901
+lines. FSFs need to account for
+capabilities that don't
+
+241
+00:17:05,941 --> 00:17:10,023
+yet exist. AI capabilities are fast
+growing and changing.
+
+242
+00:17:11,045 --> 00:17:15,188
+FSFs incorporate techniques from other
+safety critical industries adapted
+
+243
+00:17:15,228 --> 00:17:20,770
+to AI development. scenario analysis,
+exploring potential future scenarios
+
+244
+00:17:21,131 --> 00:17:25,113
+like an AI system developing deceptive
+behaviors or unexpected
+
+245
+00:17:25,173 --> 00:17:30,335
+emergent capabilities, fishbone analysis,
+identifying potential causes of alignment
+
+246
+00:17:30,394 --> 00:17:34,576
+failures such as insufficient safety
+research, deployment pressure or
+
+247
+00:17:34,636 --> 00:17:40,019
+inadequate testing, causal mapping,
+visualizing how research decisions, safety
+
+248
+00:17:40,059 --> 00:17:43,781
+measures and deployment strategies
+interact to influence overall risk,
+
+249
+00:17:44,701 --> 00:17:48,564
+Delphi technique, gathering expert
+opinions through structured rounds of
+
+250
+00:17:48,604 --> 00:17:53,968
+questionnaires to synthesize diverse
+perspectives on potential risks. BOTI
+
+251
+00:17:54,008 --> 00:17:58,750
+analysis, mapping pathways between causes,
+hazardous events and consequences,
+
+252
+00:17:59,151 --> 00:18:02,854
+along with prevention and mitigation
+measures. There is figure
+
+253
+00:18:03,034 --> 00:18:06,135
+4.27 in the textbook here. It depicts
+example of
+
+254
+00:18:06,195 --> 00:18:11,460
+BOTI analysis technique. Even with
+rigorous pre-deployment safeguards,
+dangerous
+
+255
+00:18:11,500 --> 00:18:17,103
+capabilities may emerge after deployment.
+FSFs increasingly incorporate deployment
+
+256
+00:18:17,143 --> 00:18:21,346
+corrections, which are comprehensive
+contingency plans for scenarios where
+
+257
+00:18:21,425 --> 00:18:26,327
+pre-deployment risk management falls
+short. Technical controls for maintaining
+
+258
+00:18:26,387 --> 00:18:30,490
+continuous control over deployed models
+through monitoring and modification
+
+259
+00:18:30,550 --> 00:18:36,614
+capabilities supported by pre-built
+rollback mechanisms. Organizational
+preparedness for
+
+260
+00:18:36,653 --> 00:18:40,576
+establishing dedicated incident response
+teams trained in rapid risk
+
+261
+00:18:40,635 --> 00:18:45,141
+assessment and mitigation. legal framework
+for creating clear user
+
+262
+00:18:45,201 --> 00:18:49,163
+agreements that establish the operational
+framework for emergency interventions,
+
+263
+00:18:50,002 --> 00:18:52,785
+model shutdown such as full market removal
+or the
+
+264
+00:18:52,825 --> 00:18:57,287
+destruction of the model and associated
+components, subsection limitation.
+
+265
+00:18:57,626 --> 00:19:00,608
+Here is a quote by Demis Hassabis. These
+kinds
+
+266
+00:19:00,648 --> 00:19:02,991
+of decisions are too big for any one
+person.
+
+267
+00:19:03,653 --> 00:19:06,296
+We need to build more robust governing
+structures that
+
+268
+00:19:06,336 --> 00:19:07,858
+don't put this in the hands of just a
+
+269
+00:19:07,919 --> 00:19:12,964
+few people. FSFs represent a corporate
+self-regulation mechanism, which
+
+270
+00:19:13,046 --> 00:19:17,711
+represents progress, but it might be
+insufficient. FSFs give
+
+271
+00:19:17,790 --> 00:19:20,573
+companies a way to demonstrate their
+commitment to proactive
+
+272
+00:19:20,633 --> 00:19:25,436
+risk management. Their public nature
+enables external scrutiny, while
+
+273
+00:19:25,457 --> 00:19:29,660
+their risk categorization frameworks show
+engagement with potential failure
+
+274
+00:19:29,680 --> 00:19:34,443
+modes. The framework's deliberately
+flexible structure allows adaptation as
+
+275
+00:19:34,544 --> 00:19:39,547
+understanding of AI risks evolves. While
+FSFs represent progress
+
+276
+00:19:39,626 --> 00:19:44,009
+in AI governance, their effectiveness
+ultimately depends on implementation.
+
+277
+00:19:44,670 --> 00:19:48,732
+Companies like Anthropic and OpenAI have
+established notable governance
+
+278
+00:19:48,813 --> 00:19:53,275
+mechanisms. No matter how well designed,
+internal policies remain
+
+279
+00:19:53,335 --> 00:19:57,638
+subject to companies' strategic interests.
+When safety competes with
+
+280
+00:19:57,719 --> 00:20:02,320
+speed, profitability or market dominance,
+even strong internal governance
+
+281
+00:20:02,361 --> 00:20:07,202
+may be compromised. Voluntary measures
+lack enforceability and insiders
+
+282
+00:20:07,282 --> 00:20:11,424
+often face misaligned incentives when
+raising concerns. As AI
+
+283
+00:20:11,464 --> 00:20:16,028
+capabilities continue to advance,
+governance frameworks must evolve
+accordingly.
+
+284
+00:20:16,906 --> 00:20:20,509
+there is still significant room for
+improvement. Some suggest
+
+285
+00:20:20,548 --> 00:20:24,211
+that companies should define more precise,
+verifiable risk thresholds,
+
+286
+00:20:24,770 --> 00:20:28,573
+potentially drawing on societal risk
+tolerances from other industries.
+
+287
+00:20:29,353 --> 00:20:33,154
+For instance, industries dealing with
+catastrophic risks typically set
+
+288
+00:20:33,234 --> 00:20:36,636
+maximum tolerable risk levels ranging from
+1 in 10,000
+
+289
+00:20:36,817 --> 00:20:40,380
+to 1 in 10 billion per year. quantitative
+thresholds
+
+290
+00:20:40,420 --> 00:20:44,404
+that AI companies might adopt with
+appropriate adjustments. Systemic
+
+291
+00:20:44,505 --> 00:20:47,769
+risks and collective action problems
+cannot be mitigated by
+
+292
+00:20:47,848 --> 00:20:52,086
+corporate self-regulation of a single
+company. no one corporation
+
+293
+00:20:52,126 --> 00:20:54,548
+can be trusted to serve the public
+interest alone.
+
+294
+00:20:55,327 --> 00:20:59,130
+Corporate governance frameworks like FSFs
+show how companies can
+
+295
+00:20:59,170 --> 00:21:04,290
+coordinate around shared safety standards.
+However, voluntary corporate coordination
+
+296
+00:21:04,530 --> 00:21:08,833
+faces systematic pressures from market
+competition and regulatory arbitrage.
+
+297
+00:21:09,573 --> 00:21:12,537
+When safety competes with speed or market
+share, even
+
+298
+00:21:12,596 --> 00:21:16,883
+well-intentioned companies may defect from
+coordination agreements. This is
+
+299
+00:21:16,923 --> 00:21:20,827
+why corporate governance requires the
+democratic legitimacy and enforcement
+
+300
+00:21:20,867 --> 00:21:24,933
+power that only national governance can
+provide. Section National
+
+301
+00:21:24,973 --> 00:21:28,637
+Governance Jiang Jun once wrote, the
+potential impact of
+
+302
+00:21:28,778 --> 00:21:32,663
+AI might exceed human cognitive
+boundaries. To ensure that
+
+303
+00:21:32,682 --> 00:21:36,467
+this technology always benefits humanity,
+we must regulate the
+
+304
+00:21:36,507 --> 00:21:39,529
+development of AI and prevent this
+technology from turning
+
+305
+00:21:39,569 --> 00:21:42,713
+into a runaway wild horse. We need to
+strengthen
+
+306
+00:21:42,733 --> 00:21:45,557
+the detection and evaluation of the entire
+lifecycle of
+
+307
+00:21:45,576 --> 00:21:48,940
+AI. ensuring that mankind has the ability
+to press
+
+308
+00:21:48,980 --> 00:21:52,003
+the pause button at critical moments. We
+established in
+
+309
+00:21:52,044 --> 00:21:54,987
+the previous section that companies can
+often lack incentives
+
+310
+00:21:55,027 --> 00:21:58,650
+to fully account for the broader societal
+impact, face
+
+311
+00:21:58,690 --> 00:22:01,973
+competitive pressures that may compromise
+safety and lack the
+
+312
+00:22:02,013 --> 00:22:07,038
+legitimacy to make decisions affecting
+entire populations. National governance
+
+313
+00:22:07,078 --> 00:22:11,021
+frameworks therefore serve as an essential
+complement to self-regulatory
+
+314
+00:22:11,082 --> 00:22:15,464
+initiatives, setting regional standards
+that companies can incorporate into
+
+315
+00:22:15,505 --> 00:22:20,909
+their internal practices. Unlike
+traditional technological governance
+challenges, frontier
+
+316
+00:22:21,009 --> 00:22:25,833
+AI systems generate externalities that
+span multiple domains, from
+
+317
+00:22:25,893 --> 00:22:30,336
+national security to economic stability,
+from social equity to
+
+318
+00:22:30,376 --> 00:22:35,948
+democratic functioning. AI systems
+threaten national security by
+democratizing
+
+319
+00:22:36,008 --> 00:22:41,430
+capabilities usable by malicious actors,
+facilitate unequal economic outcomes
+
+320
+00:22:41,730 --> 00:22:45,051
+by concentrating market power in specific
+companies and countries
+
+321
+00:22:45,372 --> 00:22:49,712
+while displacing jobs elsewhere, and
+produce harmful societal conditions
+
+322
+00:22:50,012 --> 00:22:54,974
+through extractive data practices and
+biased algorithmic outputs. Traditional
+
+323
+00:22:55,035 --> 00:22:59,876
+regulatory bodies designed for narrower
+technological domains typically lack
+
+324
+00:22:59,916 --> 00:23:04,617
+the necessary spatial remit, technical
+competence, or institutional authority
+
+325
+00:23:04,657 --> 00:23:08,199
+to effectively govern these systems.
+Consider the contrast with
+
+326
+00:23:08,259 --> 00:23:12,760
+self-driving vehicles, where the primary
+externalities are relatively well-defined,
+
+327
+00:23:13,101 --> 00:23:16,602
+safety of road users, and fall within
+existing regulatory
+
+328
+00:23:16,662 --> 00:23:22,086
+frameworks, traffic safety agencies.
+Frontier AI systems, by contrast,
+
+329
+00:23:22,486 --> 00:23:27,030
+generate externalities that cross
+traditional regulatory boundaries and
+jurisdictions,
+
+330
+00:23:27,611 --> 00:23:31,295
+requiring new institutional approaches
+that can address the expertise
+
+331
+00:23:31,335 --> 00:23:35,199
+gap, coordination gap and temporal gap in
+current regulatory
+
+332
+00:23:35,259 --> 00:23:38,442
+frameworks. AI systems can cause harm in
+ways that
+
+333
+00:23:38,481 --> 00:23:42,425
+are not always transparent or predictable.
+Beyond software bugs
+
+334
+00:23:42,645 --> 00:23:46,628
+or input-output mismatches, risks emerge
+from how AI systems
+
+335
+00:23:46,788 --> 00:23:50,770
+internally represent goals, make trade-
+offs and generalize from data.
+
+336
+00:23:51,551 --> 00:23:54,433
+When these systems are deployed at scale,
+even subtle
+
+337
+00:23:54,473 --> 00:23:57,996
+misalignments between system behavior and
+human intent can have
+
+338
+00:23:58,056 --> 00:24:03,098
+widespread consequences. Automated sub-
+goal pursuit, for example, can generate
+
+339
+00:24:03,219 --> 00:24:06,821
+outcomes that are technically correct but
+socially catastrophic if
+
+340
+00:24:06,902 --> 00:24:10,588
+not carefully constrained. because many of
+these failure modes
+
+341
+00:24:10,729 --> 00:24:14,153
+are embedded in opaque model architectures
+and training dynamics.
+
+342
+00:24:14,855 --> 00:24:19,182
+They resist detection through conventional
+auditing or certification processes.
+
+343
+00:24:20,153 --> 00:24:24,233
+National regulation provides an anchor for
+accountability by requiring
+
+344
+00:24:24,273 --> 00:24:27,655
+developers to build, test and deploy
+systems in ways
+
+345
+00:24:27,695 --> 00:24:32,396
+that are externally verifiable, legally
+enforceable and publicly legitimate.
+
+346
+00:24:32,817 --> 00:24:35,377
+As we will see in this section, major
+regions
+
+347
+00:24:35,417 --> 00:24:39,400
+have developed distinctly different
+regulatory philosophies that reflect their
+
+348
+00:24:39,500 --> 00:24:45,260
+unique institutional contexts and
+political priorities. Understanding these
+national
+
+349
+00:24:45,321 --> 00:24:49,022
+frameworks will provide context for our
+subsequent analysis of
+
+350
+00:24:49,063 --> 00:24:53,144
+international governance mechanisms, which
+must navigate and harmonize these
+
+351
+00:24:53,223 --> 00:24:56,944
+regional differences to create effective
+global standards for AI
+
+352
+00:24:57,025 --> 00:25:01,145
+systems whose impacts transcend national
+borders. Across the last
+
+353
+00:25:01,185 --> 00:25:04,847
+decade, over 30 countries have released
+national AI strategies
+
+354
+00:25:05,307 --> 00:25:09,729
+outlining their approach to development,
+regulation, and adoption. These
+
+355
+00:25:09,788 --> 00:25:13,930
+strategies differ widely in emphasis, but
+when systematically analyzed,
+
+356
+00:25:14,151 --> 00:25:18,531
+they fall into three recurring governance
+patterns. Development, control
+
+357
+00:25:18,632 --> 00:25:22,333
+and promotion. In development-led models,
+such as those in
+
+358
+00:25:22,393 --> 00:25:25,534
+China, South Korea and Hungary, the state
+acts as
+
+359
+00:25:25,594 --> 00:25:30,316
+a strategic coordinator, directing public
+resources toward AI infrastructure,
+
+360
+00:25:30,695 --> 00:25:36,018
+research programs and national missions.
+control-oriented approaches prominent in
+
+361
+00:25:36,057 --> 00:25:38,960
+the European Union and countries like
+Norway and Mexico,
+
+362
+00:25:39,680 --> 00:25:44,222
+emphasise legal standards, ethics
+oversight and risk monitoring frameworks.
+
+363
+00:25:45,163 --> 00:25:49,266
+Promotion-focused models, including the
+United States, United Kingdom and
+
+364
+00:25:49,326 --> 00:25:53,268
+Singapore, adopt a more decentralised
+approach. The state acts
+
+365
+00:25:53,347 --> 00:25:56,549
+primarily as an enabler of private sector
+innovation with
+
+366
+00:25:56,609 --> 00:26:01,652
+relatively few regulatory constraints.
+These differences matter. Any attempt
+
+367
+00:26:01,672 --> 00:26:04,893
+to build international governance
+frameworks will need to account
+
+368
+00:26:04,932 --> 00:26:08,992
+for the structural asymmetries between
+these national regimes, particularly
+
+369
+00:26:09,153 --> 00:26:14,773
+around enforcement authority,
+accountability mechanisms, and
+institutional capacity. The
+
+370
+00:26:14,814 --> 00:26:18,894
+textbook includes Figure 4.28 here. It
+depicts the state's
+
+371
+00:26:18,974 --> 00:26:23,336
+role in governing artificial intelligence,
+development, control, and promotion
+
+372
+00:26:23,395 --> 00:26:26,876
+through national strategies. At this
+point, the textbook shows
+
+373
+00:26:26,977 --> 00:26:32,358
+Figure 4.29. National governance provides
+the enforcement mechanisms and
+
+374
+00:26:32,420 --> 00:26:36,863
+democratic legitimacy necessary to make
+corporate coordination stable and
+
+375
+00:26:36,923 --> 00:26:42,346
+binding. However, AI risks transcend
+national borders and regulatory
+
+376
+00:26:42,487 --> 00:26:46,048
+arbitrage allows development to shift to
+jurisdictions with weaker
+
+377
+00:26:46,088 --> 00:26:50,423
+standards. No single nation can
+effectively govern global AI
+
+378
+00:26:50,502 --> 00:26:54,584
+systems alone. This fundamental limitation
+drives the need for
+
+379
+00:26:54,663 --> 00:27:00,605
+international coordination mechanisms.
+Section International Governance. As
+Antonio Guterres
+
+380
+00:27:00,644 --> 00:27:04,787
+said, AI poses a long-term global risk.
+Even its
+
+381
+00:27:04,926 --> 00:27:07,926
+own designers have no idea where their
+breakthrough may
+
+382
+00:27:08,007 --> 00:27:11,567
+lead. I urge the UN Security Council to
+approach
+
+383
+00:27:11,607 --> 00:27:15,073
+this technology with a sense of urgency.
+its creators
+
+384
+00:27:15,113 --> 00:27:18,798
+themselves have warned that much bigger,
+potentially catastrophic and
+
+385
+00:27:18,897 --> 00:27:23,384
+existential risks lie ahead. To quote
+Kamala Harris, just
+
+386
+00:27:23,444 --> 00:27:25,948
+as AI has the potential to do profound
+good,
+
+387
+00:27:26,368 --> 00:27:28,811
+it also has the potential to cause
+profound harm.
+
+388
+00:27:29,472 --> 00:27:33,056
+From AI-enabled cyberattacks at a scale
+beyond anything we
+
+389
+00:27:33,076 --> 00:27:37,159
+have seen before to AI-formulated
+bioweapons that could endanger
+
+390
+00:27:37,199 --> 00:27:40,402
+the lives of millions, these threats are
+often referred
+
+391
+00:27:40,442 --> 00:27:43,605
+to as the existential threats of AI
+because, of
+
+392
+00:27:43,684 --> 00:27:46,866
+course, they could endanger the very
+existence of humanity.
+
+393
+00:27:47,708 --> 00:27:50,808
+These threats, without question, are
+profound and they demand
+
+394
+00:27:50,848 --> 00:27:55,171
+global action. Can't individual countries
+just regulate AI within
+
+395
+00:27:55,211 --> 00:27:58,632
+their own borders? The short answer is no,
+not
+
+396
+00:27:58,672 --> 00:28:03,933
+effectively. Effective management of
+advanced AI systems requires coordination
+
+397
+00:28:04,114 --> 00:28:08,135
+that transcends national borders. This
+stems from three fundamental
+
+398
+00:28:08,175 --> 00:28:12,518
+problems. No single country has exclusive
+control over AI
+
+399
+00:28:12,557 --> 00:28:17,903
+development. Even if one nation implements
+stringent regulations, developers
+
+400
+00:28:17,942 --> 00:28:20,866
+in countries with looser standards could
+still create and
+
+401
+00:28:20,906 --> 00:28:25,173
+deploy potentially dangerous AI systems
+affecting the entire world.
+
+402
+00:28:31,641 --> 00:28:36,482
+The regulation of those risks requires
+international cooperation. Talberg
+
+403
+00:28:36,623 --> 00:28:41,246
+et al. 2023 When asked about China's
+participation in
+
+404
+00:28:41,286 --> 00:28:45,548
+the Bletchley AI Safety Summit, James
+Cleverly, former UK
+
+405
+00:28:45,587 --> 00:28:49,009
+Foreign Secretary, correctly noted, we
+cannot keep the UK
+
+406
+00:28:49,088 --> 00:28:51,431
+public safe from the risks of AI if we
+
+407
+00:28:51,490 --> 00:28:54,071
+exclude one of the leading nations in AI
+tech.
+
+408
+00:28:55,164 --> 00:28:59,106
+Race to the bottom dynamics, countries
+fear competitive disadvantage
+
+409
+00:28:59,186 --> 00:29:02,808
+in the AI race, which creates incentives
+for regulatory
+
+410
+00:29:02,929 --> 00:29:08,393
+arbitrage and undermines safety standards
+globally. Lancieri et al.
+
+411
+00:29:08,452 --> 00:29:12,835
+2024. International governance can help
+align incentives between nations,
+
+412
+00:29:13,454 --> 00:29:17,417
+encouraging responsible AI development
+without forcing any one country
+
+413
+00:29:17,458 --> 00:29:22,499
+to sacrifice its competitive edge. Lee
+2025 The textbook
+
+414
+00:29:22,618 --> 00:29:26,059
+has interactive figure 4.6 here, which you
+can explore
+
+415
+00:29:26,079 --> 00:29:29,221
+in the online version. It shows cumulative
+number of
+
+416
+00:29:29,300 --> 00:29:34,282
+large-scale AI systems by country since
+2017, refers to
+
+417
+00:29:34,323 --> 00:29:37,144
+the location of the primary organization
+with which the
+
+418
+00:29:37,243 --> 00:29:41,005
+authors of a large-scale AI systems are
+affiliated. How
+
+419
+00:29:41,045 --> 00:29:45,027
+do national policies affect global AI
+development? Even seemingly
+
+420
+00:29:45,067 --> 00:29:49,249
+domestic regulations, such as immigration
+policies see below, can
+
+421
+00:29:49,308 --> 00:29:53,151
+reshape the global AI landscape through
+various spillover mechanisms.
+
+422
+00:29:53,651 --> 00:29:56,972
+There is figure 430 in the textbook here.
+It
+
+423
+00:29:57,012 --> 00:29:59,855
+depicts what are the career paths of top-
+tier AI
+
+424
+00:29:59,916 --> 00:30:05,363
+researchers. Macropolo. Companies
+worldwide, eager to maintain access to
+
+425
+00:30:05,403 --> 00:30:09,126
+the lucrative European market, often find
+it more cost-effective
+
+426
+00:30:09,386 --> 00:30:12,971
+to adopt EU standards across their entire
+operations rather
+
+427
+00:30:13,010 --> 00:30:16,815
+than maintaining separate standards for
+different regions. For example,
+
+428
+00:30:17,055 --> 00:30:20,277
+a US tech company developing a new AI-
+powered facial
+
+429
+00:30:20,336 --> 00:30:23,518
+recognition system for use in public
+spaces may see
+
+430
+00:30:23,557 --> 00:30:26,159
+this system being classified as high risk
+under the
+
+431
+00:30:26,278 --> 00:30:29,684
+EU AI Act. This would subject it to strict
+
+432
+00:30:29,744 --> 00:30:34,567
+requirements around data quality,
+documentation, human oversight, and more.
+
+433
+00:30:35,269 --> 00:30:37,769
+Companies then have a choice to either
+develop two
+
+434
+00:30:37,849 --> 00:30:40,711
+separate versions of your product, one for
+the EU
+
+435
+00:30:40,751 --> 00:30:43,834
+market and one for everywhere else, or
+simply apply
+
+436
+00:30:43,875 --> 00:30:46,957
+the EU standards globally. Many will be
+tempted to
+
+437
+00:30:47,017 --> 00:30:49,678
+choose the second option to minimize their
+cost of
+
+438
+00:30:49,718 --> 00:30:53,320
+compliance. This is what's known as the
+Brussels Effect.
+
+439
+00:30:54,575 --> 00:30:58,036
+EU regulations can end up shaping global
+markets, even
+
+440
+00:30:58,076 --> 00:31:01,577
+in countries where those regulations don't
+formally apply. The
+
+441
+00:31:01,617 --> 00:31:04,939
+Brussels effect can manifest in two ways.
+De facto
+
+442
+00:31:04,999 --> 00:31:09,701
+adoption, companies often voluntarily
+adopt EU standards globally to
+
+443
+00:31:09,760 --> 00:31:13,061
+avoid the complexity and cost of
+maintaining different standards
+
+444
+00:31:13,382 --> 00:31:17,842
+for different markets. De Jure influence.
+Other countries frequently
+
+445
+00:31:17,942 --> 00:31:21,483
+adopt regulations similar to the EU's,
+either to maintain
+
+446
+00:31:21,544 --> 00:31:24,585
+regulatory alignment or because they view
+the EU's approach
+
+447
+00:31:24,704 --> 00:31:28,586
+as a model worth emulating. The EU's
+regulations might
+
+448
+00:31:28,647 --> 00:31:32,390
+offer the first widely adopted and
+mandated operationalization of
+
+449
+00:31:32,450 --> 00:31:36,372
+concepts like risk management or systemic
+risk in the
+
+450
+00:31:36,412 --> 00:31:40,075
+context of frontier AI. As other countries
+grapple with
+
+451
+00:31:40,115 --> 00:31:43,298
+how to regulate advanced AI systems, they
+may look
+
+452
+00:31:43,318 --> 00:31:46,522
+to the EU's framework as a starting point.
+Siegman
+
+453
+00:31:46,663 --> 00:31:50,248
+and Ander Leung, 2022. Ursula von der
+Leyen once
+
+454
+00:31:50,307 --> 00:31:53,310
+wrote, we should not underestimate the
+real threats coming
+
+455
+00:31:53,372 --> 00:31:56,734
+from AI. It is moving faster than even its
+
+456
+00:31:56,775 --> 00:32:00,518
+developers anticipated. We have a
+narrowing window of opportunity
+
+457
+00:32:00,557 --> 00:32:04,842
+to guide this technology responsibly. In
+2023, the US
+
+458
+00:32:04,882 --> 00:32:08,326
+and UK governments both announced new
+institutes for AI
+
+459
+00:32:08,385 --> 00:32:12,230
+safety. As of 2025, there are at least 12
+
+460
+00:32:12,289 --> 00:32:18,653
+National AI Safety Institutes, AISIs,
+established worldwide. These include
+
+461
+00:32:18,712 --> 00:32:22,714
+institutes from the United States, United
+Kingdom, Canada, France,
+
+462
+00:32:22,974 --> 00:32:28,596
+Germany, Italy, Japan, South Korea,
+Singapore, Australia, Kenya and
+
+463
+00:32:28,655 --> 00:32:32,397
+India. The European Union has established
+the European AI
+
+464
+00:32:32,498 --> 00:32:37,200
+Office, which functions similarly to
+national AISIs. These institutes
+
+465
+00:32:37,259 --> 00:32:40,943
+collaborate through the International
+Network of AI Safety Institutes,
+
+466
+00:32:41,463 --> 00:32:45,689
+launched in November 2024 to coordinate
+research, share best
+
+467
+00:32:45,729 --> 00:32:49,673
+practices, and develop interoperable
+safety standards for advanced AI
+
+468
+00:32:49,752 --> 00:32:54,497
+systems. The textbook includes Figure 4.31
+here. It depicts
+
+469
+00:32:54,577 --> 00:32:57,220
+these countries as part of the
+international network for
+
+470
+00:32:57,359 --> 00:33:00,803
+AI safety, with their respective national
+bodies dedicated to
+
+471
+00:33:00,923 --> 00:33:05,287
+AI safety. Global governance efforts also
+face major obstacles.
+
+472
+00:33:05,846 --> 00:33:09,790
+Strategic competition between leading
+powers who view AI as
+
+473
+00:33:09,830 --> 00:33:13,053
+both a national security asset and an
+economic engine
+
+474
+00:33:13,394 --> 00:33:19,999
+often undermines cooperation. Power
+asymmetries further complicate
+negotiations. Countries
+
+475
+00:33:20,038 --> 00:33:23,340
+with advanced AI capabilities, like the
+United States and
+
+476
+00:33:23,381 --> 00:33:27,723
+China, may resist international
+constraints, while others may demand
+
+477
+00:33:27,763 --> 00:33:32,486
+technology transfer and capacity-building
+support in exchange for participation.
+
+478
+00:33:33,166 --> 00:33:37,249
+Divergent political systems and values
+also pose barriers, with
+
+479
+00:33:37,288 --> 00:33:41,310
+disagreements over issues such as privacy,
+free expression and
+
+480
+00:33:41,371 --> 00:33:46,327
+state authority. For example, China's
+Global AI Governance Initiative
+
+481
+00:33:46,647 --> 00:33:51,453
+centres sovereignty and non-interference,
+contrasting with Western frameworks rooted
+
+482
+00:33:51,513 --> 00:33:56,219
+in individual rights and democratic
+accountability. Perhaps most
+significantly,
+
+483
+00:33:56,500 --> 00:34:00,003
+deep trust deficits between major powers,
+fuelled by tensions
+
+484
+00:34:00,064 --> 00:34:03,748
+over trade, intellectual property and
+human rights. make it
+
+485
+00:34:03,788 --> 00:34:07,288
+difficult to reach credible, enforceable
+agreements, adding to the
+
+486
+00:34:07,328 --> 00:34:11,309
+complex geopolitical landscape shaping the
+future of international AI
+
+487
+00:34:11,349 --> 00:34:15,811
+governance. At this point, the textbook
+shows Figure 4.32.
+
+488
+00:34:16,512 --> 00:34:20,432
+It depicts cartoon highlighting a
+discrepancy between countries' statements
+
+489
+00:34:20,713 --> 00:34:22,873
+and their true intentions in the context
+of the
+
+490
+00:34:23,014 --> 00:34:27,614
+UK's November 2023 AI Safety Summit, The
+Economist. The
+
+491
+00:34:27,655 --> 00:34:31,838
+textbook has a supplementary note titled,
+Existing International Mechanisms
+
+492
+00:34:32,539 --> 00:34:36,021
+2025, which we'll skip over here. How does
+international
+
+493
+00:34:36,061 --> 00:34:41,105
+technology governance typically evolve?
+Understanding the progression of
+international
+
+494
+00:34:41,144 --> 00:34:46,188
+policymaking helps contextualize current
+AI governance efforts and identify
+
+495
+00:34:46,248 --> 00:34:51,751
+potential paths forward. International
+policymaking typically progresses through
+several
+
+496
+00:34:51,831 --> 00:34:56,355
+stages. agenda setting, identifying the
+issue and placing it
+
+497
+00:34:56,414 --> 00:35:02,099
+on the international agenda, policy
+formulation, developing potential
+solutions
+
+498
+00:35:02,159 --> 00:35:07,902
+and approaches, decision-making, choosing
+specific courses of action,
+implementation,
+
+499
+00:35:08,181 --> 00:35:12,985
+putting chosen policies into practice,
+evaluation, assessing effectiveness and
+
+500
+00:35:13,025 --> 00:35:16,708
+making adjustments. For AI governance,
+we're still largely in
+
+501
+00:35:16,748 --> 00:35:19,809
+the early stages of this process. The
+series of
+
+502
+00:35:19,829 --> 00:35:23,731
+AI summits, the network of AI safety
+institutes, and
+
+503
+00:35:23,811 --> 00:35:27,472
+other international frameworks all
+represent progress in agenda setting
+
+504
+00:35:27,793 --> 00:35:30,934
+and initial policy formulation. But the
+real work of
+
+505
+00:35:31,014 --> 00:35:34,597
+crafting binding international agreements
+and implementing them still lies
+
+506
+00:35:34,657 --> 00:35:39,059
+ahead. Previous international governance
+efforts provide valuable lessons for
+
+507
+00:35:39,199 --> 00:35:42,280
+AI. So, what can we learn from decades of
+
+508
+00:35:42,340 --> 00:35:46,563
+nuclear arms control efforts? Let's
+consider three important lessons.
+
+509
+00:35:47,684 --> 00:35:51,826
+the power of norms and institutions.
+Despite early fears
+
+510
+00:35:51,865 --> 00:35:55,786
+of rapid proliferation, only nine
+countries possess nuclear weapons
+
+511
+00:35:56,126 --> 00:35:59,447
+nearly 80 years after their development,
+which resulted from
+
+512
+00:35:59,487 --> 00:36:03,768
+concerted efforts to build global norms
+against nuclear proliferation
+
+513
+00:36:03,907 --> 00:36:08,889
+and use. The Nuclear Non-Proliferation
+Treaty, NPT, signed in
+
+514
+00:36:08,989 --> 00:36:12,510
+1968, created a framework for preventing
+the spread of
+
+515
+00:36:12,570 --> 00:36:15,951
+nuclear weapons and helped promote
+peaceful uses of nuclear
+
+516
+00:36:15,990 --> 00:36:20,748
+technology. the role of epistemic
+communities. The development of
+
+517
+00:36:20,807 --> 00:36:23,909
+nuclear arms control agreements wasn't
+solely the work of
+
+518
+00:36:23,969 --> 00:36:27,710
+diplomats and politicians. It relied
+heavily on input from
+
+519
+00:36:27,791 --> 00:36:31,853
+scientists, engineers, and other technical
+experts who understood the
+
+520
+00:36:31,893 --> 00:36:36,175
+technology and its implications. These
+experts formed a network
+
+521
+00:36:36,215 --> 00:36:39,836
+of professionals with recognized expertise
+in a particular domain,
+
+522
+00:36:40,498 --> 00:36:44,179
+or as what political scientists call an
+epistemic community.
+
+523
+00:36:44,900 --> 00:36:48,943
+They played important roles in shaping
+policy debates, providing
+
+524
+00:36:49,023 --> 00:36:52,967
+technical advice and even serving as back-
+channel diplomats during
+
+525
+00:36:53,027 --> 00:36:56,829
+tense periods of the Cold War. Unlike
+nuclear physicists
+
+526
+00:36:57,010 --> 00:37:00,353
+who were often employed directly by
+governments, many AI
+
+527
+00:37:00,512 --> 00:37:03,695
+experts work in the private sector, so a
+challenge
+
+528
+00:37:03,735 --> 00:37:06,918
+to forming such networks for global AI
+governance will
+
+529
+00:37:06,938 --> 00:37:10,802
+be ensuring that epistemic communities can
+effectively inform policy
+
+530
+00:37:10,842 --> 00:37:16,313
+decisions. the persistent challenge of
+normal accidents. Despite decades
+
+531
+00:37:16,353 --> 00:37:19,315
+of careful management, the nuclear age has
+seen several
+
+532
+00:37:19,394 --> 00:37:24,097
+incidents where human error, technical
+malfunctions, or misunderstandings nearly
+
+533
+00:37:24,137 --> 00:37:28,599
+led to catastrophe. Sociologist Charles
+Perrow termed these normal
+
+534
+00:37:28,719 --> 00:37:32,900
+accidents, arguing that in complex,
+tightly coupled systems, such
+
+535
+00:37:32,981 --> 00:37:37,965
+incidents are inevitable. 1985. Applying
+the concept to AI,
+
+536
+00:37:38,224 --> 00:37:42,230
+we could see unexpected interactions and
+cascading failures increase
+
+537
+00:37:42,271 --> 00:37:46,074
+as AI systems become more complex and
+interconnected. The
+
+538
+00:37:46,114 --> 00:37:49,039
+speed at which AI systems operate could
+mean that
+
+539
+00:37:49,079 --> 00:37:52,043
+a normal accident in AI might unfold too
+quickly
+
+540
+00:37:52,103 --> 00:37:56,045
+for human intervention. challenging the
+notion of meaningful human
+
+541
+00:37:56,085 --> 00:37:59,967
+control, often proposed as a safeguard for
+AI systems,
+
+542
+00:38:00,206 --> 00:38:05,248
+Mars 2019. Subsection, Policy Options.
+Here is a quote
+
+543
+00:38:05,288 --> 00:38:08,148
+by Damis Hassabis. We must take the risks
+of
+
+544
+00:38:08,309 --> 00:38:11,670
+AI as seriously as other major global
+challenges, like
+
+545
+00:38:11,730 --> 00:38:15,110
+climate change. It took the international
+community too long
+
+546
+00:38:15,451 --> 00:38:18,512
+to coordinate an effective global response
+to this, and
+
+547
+00:38:18,552 --> 00:38:21,333
+we're living with the consequences of that
+now. We
+
+548
+00:38:21,353 --> 00:38:24,396
+can't afford the same delay with AI. Then
+maybe
+
+549
+00:38:24,436 --> 00:38:26,378
+there's some kind of equivalent one day of
+the
+
+550
+00:38:26,557 --> 00:38:31,442
+IAEA, which actually audits these things.
+Several institutional arrangements
+
+551
+00:38:31,561 --> 00:38:37,219
+could support international AI governance.
+Scientific Consensus Building, similar
+
+552
+00:38:37,259 --> 00:38:41,300
+to the Intergovernmental Panel on Climate
+Change, IPCC, a
+
+553
+00:38:41,340 --> 00:38:45,063
+dedicated body could provide regular
+reports on AI capabilities
+
+554
+00:38:45,503 --> 00:38:49,246
+and risks to inform policymakers and the
+public. Given
+
+555
+00:38:49,266 --> 00:38:52,268
+the rapid pace of AI development, this
+body would
+
+556
+00:38:52,289 --> 00:38:55,610
+need to be nimbler than traditional
+scientific consensus building
+
+557
+00:38:55,731 --> 00:39:00,960
+organizations. political consensus
+building and norm setting. Building on
+
+558
+00:39:01,019 --> 00:39:04,822
+scientific consensus, a forum for
+political leaders could develop
+
+559
+00:39:04,862 --> 00:39:08,224
+shared norms and principles, perhaps
+structured like the UN
+
+560
+00:39:08,284 --> 00:39:13,646
+Framework Convention on Climate Change,
+UNFCCC. Such a body
+
+561
+00:39:13,706 --> 00:39:18,148
+could facilitate ongoing dialogue,
+negotiate agreements, and adapt governance
+
+562
+00:39:18,208 --> 00:39:22,563
+approaches as the technology evolves.
+coordination of policy and
+
+563
+00:39:22,623 --> 00:39:27,125
+regulation. An international body focused
+on policy coordination could
+
+564
+00:39:27,164 --> 00:39:32,186
+help harmonize AI regulations across
+countries, reducing fragmentation and
+
+565
+00:39:32,226 --> 00:39:37,521
+preventing regulatory arbitrage
+opportunities. Enforcement of standards
+and restrictions,
+
+566
+00:39:38,063 --> 00:39:42,487
+mechanisms for monitoring compliance and
+enforcing agreed-upon standards would
+
+567
+00:39:42,527 --> 00:39:47,592
+be necessary for effective governance.
+Stabilization and emergency response
+
+568
+00:39:48,373 --> 00:39:52,038
+A global network of companies, experts and
+regulators ready
+
+569
+00:39:52,077 --> 00:39:55,161
+to assist with major AI system failures
+could help
+
+570
+00:39:55,221 --> 00:39:59,505
+mitigate risks. This group could work
+proactively to identify
+
+571
+00:39:59,565 --> 00:40:04,309
+potential vulnerabilities in global AI
+infrastructure and develop contingency
+
+572
+00:40:04,349 --> 00:40:08,954
+plans, similar to the International Atomic
+Energy Agency's Incident
+
+573
+00:40:09,014 --> 00:40:12,677
+and Emergency Centre, but operating on
+much faster timescales.
+
+574
+00:40:13,538 --> 00:40:17,262
+International joint research,
+collaborative research could help ensure
+that
+
+575
+00:40:17,322 --> 00:40:22,650
+Frontier AI development prioritizes safety
+and beneficial outcomes, similar
+
+576
+00:40:22,670 --> 00:40:27,677
+to how CERN facilitates international
+scientific cooperation. Distribution of
+
+577
+00:40:27,737 --> 00:40:31,942
+benefits and access. An institution
+focused on ensuring equitable
+
+578
+00:40:32,061 --> 00:40:35,585
+access to AI benefits could prevent
+harmful concentration of
+
+579
+00:40:35,626 --> 00:40:40,130
+capabilities and ensure the technology's
+benefits are widely distributed
+
+580
+00:40:40,391 --> 00:40:43,273
+through mechanisms like a global fund for
+AI development
+
+581
+00:40:43,333 --> 00:40:47,117
+assistance or technology transfers. There
+is figure 4.33 in
+
+582
+00:40:47,157 --> 00:40:51,161
+the textbook here. It depicts an overview
+table of
+
+583
+00:40:51,221 --> 00:40:54,422
+governance functions and their purpose.
+What does this mean
+
+584
+00:40:54,463 --> 00:40:59,126
+for designing effective institutions?
+There is no one-size-fits-all solution.
+
+585
+00:40:59,567 --> 00:41:02,748
+Institutions for global AI governance must
+be tailored to
+
+586
+00:41:02,768 --> 00:41:07,291
+the unique characteristics of the
+technology. Rapid iteration cycles,
+
+587
+00:41:07,632 --> 00:41:12,327
+broad deployment contexts and uncertain
+future trajectories. We will
+
+588
+00:41:12,367 --> 00:41:16,268
+likely need a network of complementary
+institutions, each fulfilling
+
+589
+00:41:16,329 --> 00:41:19,891
+specific governance functions listed
+above. The key is not
+
+590
+00:41:19,951 --> 00:41:22,893
+just which institutions we build, but why
+and how.
+
+591
+00:41:23,632 --> 00:41:28,376
+What specific risks and benefits require
+international coordination, what
+
+592
+00:41:28,436 --> 00:41:31,557
+functions are essential to manage them,
+and which designs
+
+593
+00:41:31,637 --> 00:41:35,983
+best match those functions under real-
+world constraints. Without clear
+
+594
+00:41:36,123 --> 00:41:39,762
+answers, institutional design risks
+becoming a mirror of past
+
+595
+00:41:39,822 --> 00:41:42,635
+regimes rather than a response to the
+challenges of
+
+596
+00:41:42,697 --> 00:41:43,380
+advanced AI.

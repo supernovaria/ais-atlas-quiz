@@ -1,0 +1,351 @@
+1
+00:00:00,091 --> 00:00:05,035
+Section 4.8 Appendix Data Governance What
+role does data
+
+2
+00:00:05,075 --> 00:00:09,057
+play in AI risks? Data fundamentally
+shapes what AI
+
+3
+00:00:09,118 --> 00:00:12,339
+systems can do and how they behave. For
+Frontier
+
+4
+00:00:12,380 --> 00:00:16,824
+Foundation models, training data
+influences both capabilities and
+alignment.
+
+5
+00:00:17,423 --> 00:00:19,466
+What systems can do and how they do it?
+
+6
+00:00:20,286 --> 00:00:23,009
+Low quality or harmful training data could
+lead to
+
+7
+00:00:23,068 --> 00:00:27,824
+misaligned or dangerous models. Garbage
+in, garbage out. while
+
+8
+00:00:27,885 --> 00:00:31,187
+carefully curated datasets might help
+promote safer and more
+
+9
+00:00:31,228 --> 00:00:34,670
+reliable behavior. How well does data meet
+our governance
+
+10
+00:00:34,731 --> 00:00:38,695
+target criteria? Data as a governance
+target presents a
+
+11
+00:00:38,774 --> 00:00:42,838
+mixed picture when evaluated against our
+key criteria. Let's
+
+12
+00:00:42,859 --> 00:00:46,381
+look at each. Measurability. While we can
+measure raw
+
+13
+00:00:46,442 --> 00:00:50,485
+quantities of data, assessing its quality,
+content, and potential
+
+14
+00:00:50,566 --> 00:00:55,139
+implications is far more difficult. Unlike
+physical goods, like
+
+15
+00:00:55,179 --> 00:01:00,240
+semiconductors, data can be copied,
+modified, niched, demystified and
+
+16
+00:01:00,280 --> 00:01:03,362
+transmitted in ways that are hard to
+track. This
+
+17
+00:01:03,421 --> 00:01:08,503
+makes comprehensive measurement of data
+flows extremely challenging.
+Controllability,
+
+18
+00:01:08,882 --> 00:01:11,665
+data's non-rival nature means it can be
+copied and
+
+19
+00:01:11,745 --> 00:01:15,468
+shared widely. Once data exists,
+controlling its spread is
+
+20
+00:01:15,528 --> 00:01:19,090
+very difficult. Even when data appears to
+be restricted,
+
+21
+00:01:19,390 --> 00:01:23,192
+techniques like model distillation can
+extract information from trained
+
+22
+00:01:23,253 --> 00:01:28,277
+models. Andolong et al. 2023. However,
+there might still
+
+23
+00:01:28,316 --> 00:01:31,980
+be some promising control points,
+particularly around original data
+
+24
+00:01:32,019 --> 00:01:36,629
+collection and the initial training of
+foundation models. Meaningfulness.
+
+25
+00:01:37,031 --> 00:01:39,951
+Data is particularly meaningful when it
+comes to AI
+
+26
+00:01:39,992 --> 00:01:44,073
+development. The data used to train models
+directly shapes
+
+27
+00:01:44,114 --> 00:01:47,954
+their capabilities and behaviors. Changes
+in training data can
+
+28
+00:01:48,015 --> 00:01:52,376
+significantly impact model performance and
+safety. This makes data
+
+29
+00:01:52,417 --> 00:01:56,230
+governance potentially powerful. but only
+if we can overcome
+
+30
+00:01:56,269 --> 00:01:59,192
+the challenges of measurement and control.
+What are the
+
+31
+00:01:59,253 --> 00:02:03,539
+key data governance concerns? Several
+aspects of data require
+
+32
+00:02:03,599 --> 00:02:08,359
+careful governance to promote safe AI
+development. Training data
+
+33
+00:02:08,419 --> 00:02:12,122
+quality and safety is fundamental. Low
+quality or harmful
+
+34
+00:02:12,181 --> 00:02:16,245
+data can create unreliable or dangerous
+models. For instance,
+
+35
+00:02:16,365 --> 00:02:19,967
+technical data about biological weapons in
+training sets could
+
+36
+00:02:20,008 --> 00:02:26,691
+enable models to assist in their
+development. data poisoning
+
+37
+00:02:26,830 --> 00:02:31,532
+and security pose increasingly serious
+threats. Malicious actors could
+
+38
+00:02:31,573 --> 00:02:35,254
+deliberately manipulate training data to
+create models that behave
+
+39
+00:02:35,314 --> 00:02:39,336
+dangerously in specific situations while
+appearing safe during testing.
+
+40
+00:02:40,215 --> 00:02:43,376
+This might involve injecting subtle
+patterns that only become
+
+41
+00:02:43,415 --> 00:02:48,677
+apparent under certain conditions.
+Longpray et al. 2024. Data
+
+42
+00:02:48,717 --> 00:02:51,979
+provenance and accountability help ensure
+we can trace where
+
+43
+00:02:52,039 --> 00:02:55,621
+model behaviors come from, without clear
+tracking of training
+
+44
+00:02:55,681 --> 00:03:00,222
+data sources and their characteristics. It
+becomes extremely difficult
+
+45
+00:03:00,262 --> 00:03:03,823
+to diagnose and fix problems when models
+exhibit concerning
+
+46
+00:03:03,862 --> 00:03:09,865
+behaviors. Longpray et al. 2023 Consent
+and rights frameworks
+
+47
+00:03:10,085 --> 00:03:14,086
+protect both data creators and users. Many
+current AI
+
+48
+00:03:14,186 --> 00:03:17,746
+training practices operate in legal and
+ethical grey areas
+
+49
+00:03:18,067 --> 00:03:21,947
+regarding data usage rights. Clear
+frameworks could help prevent
+
+50
+00:03:22,127 --> 00:03:27,068
+unauthorized use while enabling legitimate
+innovation. Longpray et al.
+
+51
+00:03:27,209 --> 00:03:32,514
+2024 Bias and representation in training
+data directly impact
+
+52
+00:03:32,593 --> 00:03:36,840
+model behaviour. Skewed or
+unrepresentative data sets can lead
+
+53
+00:03:36,879 --> 00:03:39,924
+to models that perform poorly or make
+harmful decisions
+
+54
+00:03:39,963 --> 00:03:44,530
+for certain groups, potentially amplifying
+societal inequities at a
+
+55
+00:03:44,590 --> 00:03:50,153
+massive scale. Ruel et al. 2024. Data
+access and
+
+56
+00:03:50,213 --> 00:03:53,974
+sharing protocols shape who can develop
+powerful AI systems.
+
+57
+00:03:54,574 --> 00:03:58,096
+Without governance around data access, we
+risk either overly
+
+58
+00:03:58,156 --> 00:04:01,536
+concentrated power in a few actors with
+large datasets
+
+59
+00:04:01,997 --> 00:04:07,098
+or, conversely, uncontrolled proliferation
+of potentially dangerous capabilities heim
+
+60
+00:04:07,198 --> 00:04:10,658
+et al. 2024. How does data governance fit
+into
+
+61
+00:04:10,799 --> 00:04:15,240
+overall AI governance? Even with strong
+governance frameworks, alternative
+
+62
+00:04:15,280 --> 00:04:19,480
+data sources or synthetic data generation
+could potentially circumvent
+
+63
+00:04:19,540 --> 00:04:24,562
+restrictions. Additionally, many
+concerning capabilities might emerge from
+seemingly
+
+64
+00:04:24,702 --> 00:04:29,384
+innocuous training data through unexpected
+interactions or emergent behaviors.
+
+65
+00:04:30,264 --> 00:04:33,326
+While data governance remains important
+and worthy of deeper
+
+66
+00:04:33,425 --> 00:04:37,307
+exploration, other governance targets may
+offer more direct governance
+
+67
+00:04:37,627 --> 00:04:41,386
+over frontier AI development in the near
+term. This
+
+68
+00:04:41,446 --> 00:04:43,915
+is why in the main text, we focused
+primarily
+
+69
+00:04:44,014 --> 00:04:47,728
+on compute governance, which provides more
+concrete control points
+
+70
+00:04:47,829 --> 00:04:49,875
+through its physical and concentrated
+nature.

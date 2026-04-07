@@ -3,6 +3,7 @@ import { loadAllQuizzes } from './quizParser';
 import { ModeProvider, useMode } from './ModeContext';
 import Quiz from './components/Quiz';
 import QuizSelector from './components/QuizSelector';
+import PodcastPlayer from './components/PodcastPlayer';
 import './App.css';
 
 function ModeSelector() {
@@ -84,6 +85,7 @@ function ModeSelector() {
 function AppContent() {
   const [quizzes, setQuizzes] = useState([]);
   const [activeQuiz, setActiveQuiz] = useState(null);
+  const [view, setView] = useState('home'); // 'home' | 'podcast'
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -95,6 +97,7 @@ function AppContent() {
 
   function handleBack() {
     setActiveQuiz(null);
+    setView('home');
   }
 
   if (loading) {
@@ -111,15 +114,24 @@ function AppContent() {
     <div className="app">
       <header className="app-header">
         <div className="header-content">
-          {activeQuiz && (
+          {(activeQuiz || view === 'podcast') && (
             <button className="back-btn" onClick={handleBack}>
               &larr; Back
             </button>
           )}
           <div className="header-text">
             <h1>AI Safety Atlas</h1>
-            <h2>Chapter 1: Capabilities &mdash; Quiz Companion</h2>
+            <h2>
+              {view === 'podcast'
+                ? 'Chapter 4: Governance — Podcast'
+                : 'Chapter 1: Capabilities \u2014 Quiz Companion'}
+            </h2>
           </div>
+          {view === 'home' && !activeQuiz && (
+            <button className="podcast-nav-btn" onClick={() => setView('podcast')}>
+              &#127911; Listen
+            </button>
+          )}
         </div>
         <div className="header-badge">
           <span>Proof of Concept</span>
@@ -127,7 +139,9 @@ function AppContent() {
       </header>
 
       <main className="app-main">
-        {!activeQuiz ? (
+        {view === 'podcast' ? (
+          <PodcastPlayer onBack={handleBack} />
+        ) : !activeQuiz ? (
           <div className="home">
             <div className="intro">
               <div className="poc-banner">

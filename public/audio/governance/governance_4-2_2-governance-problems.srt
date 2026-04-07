@@ -1,0 +1,691 @@
+1
+00:00:00,071 --> 00:00:04,394
+Section 4.2 – Governance Problems AI
+governance is not
+
+2
+00:00:04,434 --> 00:00:08,759
+the same as traditional technology
+governance. Traditional technology
+governance
+
+3
+00:00:08,980 --> 00:00:12,042
+relies on several key assumptions that
+break down when
+
+4
+00:00:12,083 --> 00:00:15,385
+applied to AI. We typically assume we can
+predict
+
+5
+00:00:15,506 --> 00:00:18,228
+how a technology will be used and its
+likely
+
+6
+00:00:18,329 --> 00:00:22,153
+impacts. that we can effectively control
+its development pathway
+
+7
+00:00:22,795 --> 00:00:25,718
+and that we can regulate specific
+applications or end
+
+8
+00:00:25,859 --> 00:00:30,684
+uses. For example, pharmaceutical
+governance uses clinical trials and
+
+9
+00:00:30,725 --> 00:00:35,313
+approval processes based on intended
+medical applications. while nuclear
+
+10
+00:00:35,332 --> 00:00:39,880
+technology is controlled through
+international treaties, safeguards and
+monitoring
+
+11
+00:00:39,899 --> 00:00:44,085
+of specific facilities and materials.
+These approaches work when
+
+12
+00:00:44,125 --> 00:00:47,991
+technologies follow relatively predictable
+development paths and have clear
+
+13
+00:00:48,031 --> 00:00:52,854
+applications. To understand what makes AI
+governance uniquely challenging,
+
+14
+00:00:53,174 --> 00:00:56,015
+we can examine AI through three different
+lenses that
+
+15
+00:00:56,095 --> 00:01:00,677
+each require different governance
+approaches. AI as general-purpose
+technology.
+
+16
+00:01:01,417 --> 00:01:06,920
+AI transforms many sectors simultaneously,
+making sector-specific regulation
+insufficient.
+
+17
+00:01:07,959 --> 00:01:11,680
+Like electricity or computers before it,
+AI can reshape
+
+18
+00:01:11,740 --> 00:01:17,543
+healthcare, finance, transportation and
+education all at once. Traditional
+
+19
+00:01:17,603 --> 00:01:22,968
+technology governance typically focuses on
+specific applications. We regulate
+
+20
+00:01:23,048 --> 00:01:27,450
+medical devices differently from
+automobiles. But when a single
+
+21
+00:01:27,590 --> 00:01:31,132
+AI system can diagnose diseases, trade
+stocks and drive
+
+22
+00:01:31,173 --> 00:01:35,415
+cars, our regulatory silos break down. The
+impacts span
+
+23
+00:01:35,454 --> 00:01:39,358
+across society in ways that make targeted
+regulation insufficient.
+
+24
+00:01:39,798 --> 00:01:44,480
+AI as information technology. AI processes
+and generates information
+
+25
+00:01:44,600 --> 00:01:49,043
+in unprecedented ways. Unlike traditional
+information systems that store
+
+26
+00:01:49,123 --> 00:01:52,763
+and retrieve data, AI can create entirely
+new content,
+
+27
+00:01:53,164 --> 00:01:57,426
+from photorealistic images to convincing
+text to synthetic voices.
+
+28
+00:01:58,165 --> 00:02:02,867
+This creates unprecedented challenges
+around security, privacy and information
+
+29
+00:02:02,927 --> 00:02:07,929
+integrity. Traditional governance
+frameworks weren't designed to handle
+technologies
+
+30
+00:02:08,149 --> 00:02:11,670
+that can rapidly generate and manipulate
+information at massive
+
+31
+00:02:11,730 --> 00:02:16,153
+scale. The speed and scope of potential
+information impacts
+
+32
+00:02:16,313 --> 00:02:21,859
+outstrip traditional control mechanisms.
+AI as intelligence technology. AI
+
+33
+00:02:21,959 --> 00:02:25,701
+introduces unique control challenges as
+systems become more capable.
+
+34
+00:02:26,543 --> 00:02:30,126
+As AI systems approach and potentially
+exceed human cognitive
+
+35
+00:02:30,165 --> 00:02:33,688
+abilities in various domains, they may
+develop sophisticated ways
+
+36
+00:02:33,908 --> 00:02:38,092
+to evade controls or pursue unintended
+objectives. We're already
+
+37
+00:02:38,151 --> 00:02:40,674
+seeing glimpses of this with language
+models that can
+
+38
+00:02:40,734 --> 00:02:44,836
+engage in deception or manipulation when
+pursuing goals. There
+
+39
+00:02:44,855 --> 00:02:48,377
+are several dangerous capabilities, refer
+back to chapters 1
+
+40
+00:02:48,417 --> 00:02:51,519
+and 2, which become even more acute when
+considering
+
+41
+00:02:51,558 --> 00:02:55,300
+that AI systems might develop these
+capabilities without being
+
+42
+00:02:55,381 --> 00:02:59,367
+explicitly programmed for them. The
+intelligence aspect of AI
+
+43
+00:02:59,508 --> 00:03:02,650
+creates a dynamic where the technology
+being governed might
+
+44
+00:03:02,789 --> 00:03:06,752
+actively resist or circumvent governance
+measures, a challenge without
+
+45
+00:03:06,812 --> 00:03:10,813
+precedent in technology regulation. The
+combination of AI as
+
+46
+00:03:10,854 --> 00:03:15,816
+a general purpose, information,
+intelligence technology creates unique
+governance
+
+47
+00:03:15,876 --> 00:03:19,438
+challenges. The mixed nature of AI as a
+general
+
+48
+00:03:19,498 --> 00:03:24,802
+purpose, information processing, and
+potentially intelligent technology gives
+rise
+
+49
+00:03:24,842 --> 00:03:28,425
+to three fundamental problems that make
+traditional governance approaches
+
+50
+00:03:28,564 --> 00:03:33,149
+inadequate. The textbook includes Figure
+4.2 here. It depicts
+
+51
+00:03:33,209 --> 00:03:36,311
+summary of the three regulatory challenges
+posed by Frontier
+
+52
+00:03:36,450 --> 00:03:41,914
+AI. Section, unexpected capabilities. AI
+systems develop surprising abilities
+
+53
+00:03:42,175 --> 00:03:45,497
+that weren't part of their intended
+design. Through several
+
+54
+00:03:45,516 --> 00:03:48,158
+of our chapters now, we have shown that
+Foundation
+
+55
+00:03:48,199 --> 00:03:51,841
+models can show emergent capabilities that
+appear suddenly as
+
+56
+00:03:51,920 --> 00:03:55,242
+models scale up with more data, parameters
+and compute.
+
+57
+00:03:56,223 --> 00:04:01,006
+GPT-3 unexpectedly demonstrated the
+ability to perform basic arithmetic,
+
+58
+00:04:01,387 --> 00:04:05,429
+while later models showed emergent
+reasoning capabilities that surprised
+
+59
+00:04:05,609 --> 00:04:09,713
+even their creators. Evaluations have
+found that frontier models
+
+60
+00:04:10,054 --> 00:04:14,461
+can autonomously conduct basic scientific
+research, hack into computer
+
+61
+00:04:14,520 --> 00:04:18,447
+systems, and manipulate humans through
+persuasion, none of which
+
+62
+00:04:18,507 --> 00:04:21,630
+were explicitly trained for. At this
+point, the textbook
+
+63
+00:04:21,651 --> 00:04:26,136
+shows Figure 4.3. It depicts example of
+unexpected capabilities,
+
+64
+00:04:26,737 --> 00:04:30,199
+graphs showing several metrics that
+improve suddenly and unpredictably
+
+65
+00:04:30,319 --> 00:04:33,862
+as models increase in size, AI evaluations
+are still
+
+66
+00:04:33,901 --> 00:04:38,105
+in their early stages in 2025, testing
+frameworks lack
+
+67
+00:04:38,146 --> 00:04:40,887
+established best practices, and the field
+has yet to
+
+68
+00:04:40,927 --> 00:04:45,211
+mature into a reliable science. While
+evaluations can reveal
+
+69
+00:04:45,271 --> 00:04:49,134
+some capabilities, they cannot guarantee
+absence of unknown threats,
+
+70
+00:04:49,574 --> 00:04:53,675
+forecast new emergent abilities, or assess
+risks from autonomous
+
+71
+00:04:53,716 --> 00:04:58,661
+systems. Predictability itself is a
+nascent research area, with
+
+72
+00:04:58,721 --> 00:05:01,562
+major gaps in our ability to anticipate
+how present
+
+73
+00:05:01,603 --> 00:05:05,204
+models behave, let alone future ones. Even
+the most
+
+74
+00:05:05,264 --> 00:05:09,666
+comprehensive test and evaluation
+frameworks struggle with complex,
+unpredictable
+
+75
+00:05:09,826 --> 00:05:15,189
+AI behavior. Section Deployment Safety
+Once deployed, AI systems
+
+76
+00:05:15,230 --> 00:05:19,031
+can be repurposed for harmful applications
+beyond their intended
+
+77
+00:05:19,192 --> 00:05:22,713
+use. The same language model trained for
+helpful dialogue
+
+78
+00:05:22,994 --> 00:05:26,797
+can generate misinformation, assist with
+cyber attacks, or help
+
+79
+00:05:26,817 --> 00:05:32,021
+design biological weapons. Users regularly
+discover new capabilities through
+
+80
+00:05:32,060 --> 00:05:35,523
+clever prompting that bypasses safety
+measures called jail breaks
+
+81
+00:05:35,882 --> 00:05:39,925
+that unlock dangerous functionalities.
+There is figure 4.4 in
+
+82
+00:05:39,966 --> 00:05:43,428
+the textbook here. It depicts a schematic
+of using
+
+83
+00:05:43,488 --> 00:05:47,872
+autonomous LLM agents to hack websites.
+Once a dual-purpose
+
+84
+00:05:47,911 --> 00:05:50,475
+technology is public, it can be used for
+both
+
+85
+00:05:50,535 --> 00:05:55,040
+beneficial and harmful purposes. AI agents
+amplify deployment risks.
+
+86
+00:05:55,762 --> 00:05:58,605
+We're now seeing autonomous AI agents that
+can chain
+
+87
+00:05:58,625 --> 00:06:02,408
+together model capabilities in novel ways,
+using tools and
+
+88
+00:06:02,468 --> 00:06:05,533
+taking actions in the real world. These
+agents can
+
+89
+00:06:05,552 --> 00:06:09,617
+pursue complex goals over extended
+periods, making their behavior
+
+90
+00:06:09,716 --> 00:06:13,281
+even harder to predict and control post-
+deployment. Section –
+
+91
+00:06:13,521 --> 00:06:18,466
+proliferation. AI capabilities spread
+rapidly through multiple channels, making
+
+92
+00:06:18,505 --> 00:06:22,410
+containment nearly impossible. Models can
+be stolen through cyber
+
+93
+00:06:22,430 --> 00:06:26,574
+attacks, leaked by insiders, or reproduced
+by competitors within
+
+94
+00:06:26,653 --> 00:06:31,416
+months. The rapid open-source replication
+of chat GPT-like capabilities
+
+95
+00:06:31,716 --> 00:06:34,478
+led to models with safety features removed
+and new
+
+96
+00:06:34,519 --> 00:06:39,922
+dangerous capabilities discovered through
+community experimentation. With API-based
+models,
+
+97
+00:06:40,302 --> 00:06:44,305
+techniques like model distillation can
+even extract capabilities without
+
+98
+00:06:44,345 --> 00:06:48,107
+direct access to model weights. Physical
+containment doesn't work
+
+99
+00:06:48,146 --> 00:06:52,411
+for digital goods. Unlike nuclear
+materials or dangerous pathogens,
+
+100
+00:06:52,973 --> 00:06:55,536
+AI models are just patterns of numbers
+that can
+
+101
+00:06:55,557 --> 00:07:00,389
+be copied instantly and transmitted
+globally. Once capabilities exist,
+
+102
+00:07:00,649 --> 00:07:03,451
+controlling their spread becomes a losing
+battle against the
+
+103
+00:07:03,511 --> 00:07:08,415
+fundamental nature of digital information.
+The textbook includes Figure
+
+104
+00:07:08,475 --> 00:07:13,538
+4.5 here. It depicts examples of
+proliferation, OSCAN 2024.
+
+105
+00:07:14,038 --> 00:07:18,783
+Section, Governance Targets. The unique
+challenges associated with AI
+
+106
+00:07:18,843 --> 00:07:21,745
+governance mean we need to carefully
+choose where and
+
+107
+00:07:21,805 --> 00:07:25,887
+how to intervene in AI development. This
+requires identifying
+
+108
+00:07:25,968 --> 00:07:28,769
+both what to govern, targets, and how to
+govern
+
+109
+00:07:28,829 --> 00:07:33,050
+it mechanisms. Governance must intervene
+at points that address
+
+110
+00:07:33,130 --> 00:07:36,531
+core challenges before they manifest. We
+can't wait for
+
+111
+00:07:36,572 --> 00:07:41,677
+dangerous capabilities to emerge or
+proliferate before acting. Instead,
+
+112
+00:07:41,836 --> 00:07:44,499
+we need to identify intervention points in
+the AI
+
+113
+00:07:44,538 --> 00:07:47,660
+development pipeline that will help us
+shape AI development
+
+114
+00:07:47,699 --> 00:07:53,202
+proactively. Effective governance targets
+share three essential properties.
+Measurability.
+
+115
+00:07:53,584 --> 00:07:55,625
+We must be able to track and verify what's
+
+116
+00:07:55,644 --> 00:07:58,906
+happening. The amount of computing power
+used for training
+
+117
+00:07:59,105 --> 00:08:03,189
+can be measured in precise units,
+floating-point operations, making
+
+118
+00:08:03,228 --> 00:08:06,329
+it possible to set clear thresholds and
+monitor compliance.
+
+119
+00:08:06,951 --> 00:08:11,892
+Sastri et al. 2024. controllability, there
+must be concrete
+
+120
+00:08:11,952 --> 00:08:15,295
+mechanisms to influence the target. It's
+not enough to
+
+121
+00:08:15,375 --> 00:08:18,336
+identify what matters, we need practical
+ways to shape
+
+122
+00:08:18,396 --> 00:08:22,199
+it. The semiconductor supply chain, for
+instance, has clear
+
+123
+00:08:22,259 --> 00:08:25,740
+choke points where export controls can
+effectively limit access
+
+124
+00:08:25,800 --> 00:08:31,865
+to advanced chips. Heim et al. 2024.
+Meaningfulness. Targets
+
+125
+00:08:31,904 --> 00:08:35,567
+should address fundamental aspects of AI
+development that actually
+
+126
+00:08:35,647 --> 00:08:40,312
+shape capabilities and risks. Regulating
+superficial aspects like user
+
+127
+00:08:40,352 --> 00:08:43,234
+interfaces might be easy but won't prevent
+the emergence
+
+128
+00:08:43,274 --> 00:08:47,296
+of dangerous capabilities. Core inputs
+like compute and data,
+
+129
+00:08:47,355 --> 00:08:50,557
+however, directly determine what kinds of
+AI systems can
+
+130
+00:08:50,577 --> 00:08:54,178
+be built. And Elyung et al. 2023. In the
+
+131
+00:08:54,298 --> 00:08:58,441
+AI development pipeline, several
+intervention points meet these criteria.
+
+132
+00:08:59,221 --> 00:09:02,322
+Early in development, we can target the
+compute infrastructure
+
+133
+00:09:02,462 --> 00:09:05,104
+required for training and the data that
+shapes model
+
+134
+00:09:05,124 --> 00:09:09,671
+capabilities. During and after
+development, we can implement safety
+
+135
+00:09:09,711 --> 00:09:14,840
+frameworks, monitoring systems and
+deployment controls. Each target offers
+
+136
+00:09:14,879 --> 00:09:18,907
+different opportunities and faces
+different challenges, which we'll explore
+
+137
+00:09:18,947 --> 00:09:20,028
+in the following sections.

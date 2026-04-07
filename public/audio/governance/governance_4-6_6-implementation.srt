@@ -1,0 +1,1128 @@
+1
+00:00:00,091 --> 00:00:06,317
+Section 4.6 Implementation Section AI
+Safety Standards What approaches
+
+2
+00:00:06,376 --> 00:00:09,660
+exist for developing AI safety standards
+at the national
+
+3
+00:00:09,720 --> 00:00:14,544
+level? Various approaches to developing
+safety standards exist within
+
+4
+00:00:14,603 --> 00:00:20,370
+national contexts. From government-led
+standardization bodies to public-private
+collaborative
+
+5
+00:00:20,410 --> 00:00:24,727
+processes. National standards bodies play
+a critical role in
+
+6
+00:00:24,766 --> 00:00:28,451
+developing and implementing AI safety
+standards that align with
+
+7
+00:00:28,530 --> 00:00:33,496
+each country's policy priorities and
+technological capabilities. The EU
+
+8
+00:00:33,636 --> 00:00:36,618
+AI Act demonstrates this through its
+requirement for a
+
+9
+00:00:36,679 --> 00:00:41,283
+code of practice that specifies high-level
+obligations for general-purpose
+
+10
+00:00:41,423 --> 00:00:45,206
+AI models. In the United States, the
+National Institute
+
+11
+00:00:45,246 --> 00:00:48,968
+of Standards and Technology, NIST, has
+developed an AI
+
+12
+00:00:49,067 --> 00:00:52,469
+risk management framework that serves as a
+voluntary standard
+
+13
+00:00:52,590 --> 00:00:57,731
+within American jurisdiction. In 2021, the
+Standardization Administration of
+
+14
+00:00:57,792 --> 00:01:02,154
+China, SAC, released a roadmap for AI
+standards development
+
+15
+00:01:02,473 --> 00:01:06,495
+that includes over 100 technical and
+ethical specifications from
+
+16
+00:01:06,615 --> 00:01:12,368
+algorithmic transparency to biometric
+recognition safety. coordinated by
+government
+
+17
+00:01:12,489 --> 00:01:15,292
+agencies such as the Ministry of Industry
+and Information
+
+18
+00:01:15,331 --> 00:01:21,376
+Technology, MIIT, and the China Electronic
+Standardization Institute, CESE.
+
+19
+00:01:22,197 --> 00:01:24,780
+Unlike in the US or EU, where standards
+are
+
+20
+00:01:24,840 --> 00:01:29,884
+often multi-stakeholder-developed or
+market-driven, China's process is highly
+centralized
+
+21
+00:01:30,123 --> 00:01:33,647
+and closely linked to its broader
+geopolitical ambitions. How
+
+22
+00:01:33,686 --> 00:01:37,709
+do national standards bodies develop
+effective AI safety standards?
+
+23
+00:01:38,450 --> 00:01:42,513
+National standards have experience in
+governing various socio-technical issues
+
+24
+00:01:42,632 --> 00:01:47,295
+within their countries. For example,
+national cybersecurity standards have
+
+25
+00:01:47,355 --> 00:01:52,718
+spread across industries. Environmental
+sustainability standards have prompted
+significant
+
+26
+00:01:52,798 --> 00:01:56,659
+corporate investments. and safety
+standards have been implemented across
+
+27
+00:01:56,719 --> 00:02:01,382
+sectors, from automotive to energy.
+Expertise from other high-stakes
+
+28
+00:02:01,481 --> 00:02:05,003
+industries can be leveraged to develop
+effective AI safety
+
+29
+00:02:05,043 --> 00:02:08,783
+standards tailored to a country's specific
+needs and regulatory
+
+30
+00:02:08,843 --> 00:02:12,346
+environment. National standards can be
+used to spread a
+
+31
+00:02:12,406 --> 00:02:15,907
+culture of safety and responsibility in AI
+research and
+
+32
+00:02:15,947 --> 00:02:20,450
+development in four ways. The criteria
+within standards establish
+
+33
+00:02:20,531 --> 00:02:24,014
+rules and expectations for safety
+practices within the country's
+
+34
+00:02:24,155 --> 00:02:29,640
+AI ecosystem. Standards embed individual
+researchers and organisations within
+
+35
+00:02:29,681 --> 00:02:34,225
+a larger network of domestic
+accountability. Regular implementation of
+
+36
+00:02:34,286 --> 00:02:38,210
+standards helps researchers internalise
+safety routines as part of
+
+37
+00:02:38,289 --> 00:02:42,169
+standard practice. When standards are
+embedded in products and
+
+38
+00:02:42,209 --> 00:02:46,532
+software packages, they reinforce safety
+considerations regardless of which
+
+39
+00:02:46,573 --> 00:02:50,816
+domestic organisations use the system.
+These mechanisms help create
+
+40
+00:02:50,876 --> 00:02:54,439
+what some researchers have called a safety
+mindset, among
+
+41
+00:02:54,580 --> 00:02:59,403
+AI practitioners within the national AI
+ecosystem. National standards
+
+42
+00:02:59,584 --> 00:03:02,266
+serve as effective tools for fostering a
+culture of
+
+43
+00:03:02,328 --> 00:03:06,231
+responsibility and safety in AI
+development, which is essential
+
+44
+00:03:06,271 --> 00:03:12,179
+for long-term societal benefit. Section
+Regulatory Visibility Regulatory
+visibility
+
+45
+00:03:12,239 --> 00:03:16,764
+requires active, independent scrutiny of
+AI systems before, during
+
+46
+00:03:16,843 --> 00:03:20,907
+and after deployment. As frontier AI
+systems become increasingly
+
+47
+00:03:21,046 --> 00:03:25,609
+integrated into society, external
+scrutiny, involving outside actors in
+
+48
+00:03:25,628 --> 00:03:29,110
+the evaluation of AI systems, offers a
+powerful tool
+
+49
+00:03:29,169 --> 00:03:33,771
+for enhancing safety and accountability.
+Effective external scrutiny should
+
+50
+00:03:33,812 --> 00:03:37,872
+adhere to the ASPIRE framework, which
+proposes six criteria
+
+51
+00:03:37,954 --> 00:03:43,395
+for effective external evaluation. Access.
+External scrutineers need appropriate
+
+52
+00:03:43,515 --> 00:03:48,177
+access to AI systems and relevant
+information. Searching attitude.
+
+53
+00:03:48,657 --> 00:03:52,342
+Scrutineers should actively seek out
+potential issues and vulnerabilities.
+
+54
+00:03:53,181 --> 00:03:56,945
+Proportionality to the risks. The level of
+scrutiny should
+
+55
+00:03:56,985 --> 00:04:01,068
+match the potential risks posed by the
+system. Independence.
+
+56
+00:04:01,590 --> 00:04:04,592
+Scrutineers should be free from undue
+influence from AI
+
+57
+00:04:04,632 --> 00:04:11,350
+developers. Resources Adequate resources
+must support thorough scrutiny. Expertise.
+
+58
+00:04:11,871 --> 00:04:16,233
+Scrutineers must possess the necessary
+technical and domain-specific expertise.
+
+59
+00:04:16,773 --> 00:04:20,435
+Some countries are exploring model
+registries, which are centralized
+
+60
+00:04:20,475 --> 00:04:26,098
+databases that include architectural
+details, training procedures, performance
+metrics,
+
+61
+00:04:26,458 --> 00:04:31,081
+and societal impact assessments. These
+registries support structured oversight
+
+62
+00:04:31,401 --> 00:04:34,002
+and can act as early warning systems for
+emerging
+
+63
+00:04:34,021 --> 00:04:38,927
+capabilities. helping regulators detect
+dangerous trends before they materialize
+
+64
+00:04:39,028 --> 00:04:43,132
+as harms. Different jurisdictions take
+different approaches, but model
+
+65
+00:04:43,153 --> 00:04:49,442
+documentation typically encompasses basic
+documentation, model identification,
+intended use
+
+66
+00:04:49,482 --> 00:04:57,862
+cases. technical specification,
+architecture, parameters, computational
+requirements, performance documentation,
+
+67
+00:04:58,122 --> 00:05:04,670
+benchmark results, capability evaluations,
+impact assessment, societal effects,
+safety
+
+68
+00:05:04,711 --> 00:05:11,855
+implications, ethical considerations.
+deployment documentation, implementation
+strategies, monitoring plans.
+
+69
+00:05:12,396 --> 00:05:15,577
+Another method of regulatory visibility
+for AI is the
+
+70
+00:05:15,617 --> 00:05:20,259
+Know Your Customer KYC system. KYC systems
+are already
+
+71
+00:05:20,298 --> 00:05:23,781
+an established part of financial
+regulation used to detect
+
+72
+00:05:23,841 --> 00:05:27,541
+and prevent money laundering and terrorist
+financing. They have
+
+73
+00:05:27,562 --> 00:05:30,822
+proven effective in their ability to
+identify high-risk actors
+
+74
+00:05:31,163 --> 00:05:34,564
+before a transaction takes place. the same
+principle can
+
+75
+00:05:34,584 --> 00:05:37,747
+be applied to compute access. As discussed
+in the
+
+76
+00:05:37,786 --> 00:05:42,569
+compute governance section, frontier
+models require massive computational
+resources,
+
+77
+00:05:43,110 --> 00:05:46,132
+often concentrated in a small number of
+hyperscale providers
+
+78
+00:05:46,552 --> 00:05:50,394
+who serve as natural regulatory choke
+points. A KYC
+
+79
+00:05:50,454 --> 00:05:53,235
+system for AI would enable governments to
+detect the
+
+80
+00:05:53,276 --> 00:05:57,538
+development of potentially hazardous
+systems early, prevent covert model
+
+81
+00:05:57,579 --> 00:06:01,281
+training and implement export controls or
+licensing requirements with
+
+82
+00:06:01,341 --> 00:06:06,305
+greater precision. Since this approach
+targets capability thresholds, rather
+
+83
+00:06:06,346 --> 00:06:09,086
+than use cases, it could serve as a
+preventative
+
+84
+00:06:09,146 --> 00:06:12,187
+tool for risk management, rather than a
+reactive one
+
+85
+00:06:12,267 --> 00:06:16,250
+to deployment failures. However,
+implementing a KYC regime for
+
+86
+00:06:16,290 --> 00:06:20,771
+compute involves several open questions.
+Providers would need clear
+
+87
+00:06:20,831 --> 00:06:25,273
+legal mandates, technical criteria for
+client verification, and processes
+
+88
+00:06:25,333 --> 00:06:30,415
+for escalating high-risk cases to
+authorities. Jurisdictional fragmentation
+is
+
+89
+00:06:30,454 --> 00:06:34,732
+a challenge. Many developers rely on
+globally distributed compute
+
+90
+00:06:34,773 --> 00:06:39,415
+services, and without international
+cooperation, KYC regimes risk being
+
+91
+00:06:39,516 --> 00:06:44,000
+undercut by regulatory arbitrage. To be
+effective, a compute-based
+
+92
+00:06:44,060 --> 00:06:47,262
+KYC system would need to align with other
+transparency
+
+93
+00:06:47,302 --> 00:06:51,245
+mechanisms, such as model registries and
+incident reporting systems.
+
+94
+00:06:51,766 --> 00:06:56,410
+How can national policies support
+responsible information sharing?
+Responsible
+
+95
+00:06:56,470 --> 00:07:00,492
+reporting of information is important for
+both self-regulation and
+
+96
+00:07:00,552 --> 00:07:04,093
+government oversight. As we discussed in
+the Corporate Governance
+
+97
+00:07:04,132 --> 00:07:08,375
+section, companies developing and
+deploying frontier AI systems have
+
+98
+00:07:08,435 --> 00:07:11,836
+primary access to information about their
+system's capabilities and
+
+99
+00:07:11,875 --> 00:07:16,317
+potential risks. And sharing this
+information responsibly can significantly
+
+100
+00:07:16,377 --> 00:07:20,139
+improve the state's ability to manage AI
+risks. National
+
+101
+00:07:20,178 --> 00:07:24,040
+policies must address the tension between
+transparency and proprietary
+
+102
+00:07:24,100 --> 00:07:28,166
+control. One approach is tiered disclosure
+in which technical
+
+103
+00:07:28,206 --> 00:07:32,935
+documentation is provided to regulators
+under confidentiality agreements while
+
+104
+00:07:32,995 --> 00:07:37,928
+public communication remains high-level
+and risk-focused. Another approach is
+
+105
+00:07:37,968 --> 00:07:41,569
+through anonymized or aggregated sharing
+of data, which enables
+
+106
+00:07:41,610 --> 00:07:47,170
+statistical insight without revealing
+sensitive implementation details. Although
+incident
+
+107
+00:07:47,211 --> 00:07:50,812
+reporting systems from other industries,
+such as the Confidential
+
+108
+00:07:50,911 --> 00:07:56,033
+and Non-Punitive Aviation Safety Reporting
+System, ASRS, in the
+
+109
+00:07:56,093 --> 00:08:00,093
+United States, offer useful precedents, no
+equivalent system yet
+
+110
+00:08:00,173 --> 00:08:03,553
+exists for AI. In aviation, it is clear
+what
+
+111
+00:08:03,613 --> 00:08:07,055
+constitutes an incident or near miss. But
+with AI,
+
+112
+00:08:07,175 --> 00:08:10,298
+the lines can be blurry. Adapting this
+model would
+
+113
+00:08:10,338 --> 00:08:13,720
+require clear definitions of what
+constitutes an incident, with
+
+114
+00:08:13,779 --> 00:08:18,483
+structured categories ranging from model
+misbehavior to societal harms.
+
+115
+00:08:19,343 --> 00:08:22,887
+Current national efforts on this are
+fragmented. In the
+
+116
+00:08:23,007 --> 00:08:26,668
+EU, the AI Act mandates reporting of
+serious incidents
+
+117
+00:08:27,170 --> 00:08:31,533
+by high-risk and general-purpose AI
+developers. In China, the
+
+118
+00:08:31,574 --> 00:08:36,277
+cyberspace administration is building a
+centralized infrastructure for real-time
+
+119
+00:08:36,317 --> 00:08:40,460
+reporting of critical failures under
+cybersecurity law. In the
+
+120
+00:08:40,520 --> 00:08:45,563
+United States, incident reporting remains
+sector-specific, with preliminary efforts
+
+121
+00:08:45,703 --> 00:08:50,268
+underway in health and national security.
+Section, ensuring compliance.
+
+122
+00:08:50,727 --> 00:08:54,291
+What regulatory tools can ensure
+compliance with AI safety
+
+123
+00:08:54,350 --> 00:08:59,095
+standards? For high-risk AI systems,
+oversight mechanisms must go
+
+124
+00:08:59,154 --> 00:09:04,057
+beyond voluntary standards or one-time
+evaluations. Many researchers have
+
+125
+00:09:04,077 --> 00:09:07,821
+proposed licensing regimes that would
+mirror regulatory practices in
+
+126
+00:09:07,900 --> 00:09:11,764
+sectors such as pharmaceuticals or nuclear
+energy. In these
+
+127
+00:09:11,803 --> 00:09:16,106
+domains, operators must obtain and
+maintain licenses by demonstrating
+
+128
+00:09:16,147 --> 00:09:21,322
+continuous compliance with strict safety
+and documentation requirements. Applied
+
+129
+00:09:21,361 --> 00:09:24,625
+to Frontier AI, this approach would
+involve formal approval
+
+130
+00:09:24,666 --> 00:09:28,870
+processes before model deployment,
+periodic audits and the ability
+
+131
+00:09:28,909 --> 00:09:32,393
+for authorities to revoke licenses in
+cases of non-compliance.
+
+132
+00:09:33,374 --> 00:09:36,456
+A credible licensing framework would
+require developers to submit
+
+133
+00:09:36,496 --> 00:09:39,279
+a structured safety case, which is a
+formal argument
+
+134
+00:09:39,340 --> 00:09:42,383
+supported by evidence showing that a
+system meets safety
+
+135
+00:09:42,442 --> 00:09:46,589
+thresholds for deployment. This could
+include threat modelling, red
+
+136
+00:09:46,609 --> 00:09:52,634
+teaming results, interpretability
+evaluations and post-deployment monitoring
+plans. Safety
+
+137
+00:09:52,673 --> 00:09:56,258
+cases provide a mechanism for both ex-
+anti-approval and for
+
+138
+00:09:56,298 --> 00:09:59,360
+tracking whether safety claims continue to
+hold as systems
+
+139
+00:09:59,399 --> 00:10:03,383
+evolve in deployment. Embedding these
+requirements into the licensing
+
+140
+00:10:03,442 --> 00:10:06,605
+process can help governments establish a
+continuous cycle of
+
+141
+00:10:06,664 --> 00:10:11,067
+review, feedback and technical
+verification. How would enforcement work
+
+142
+00:10:11,126 --> 00:10:15,309
+in practice? Licensing frameworks must be
+supported by agencies
+
+143
+00:10:15,570 --> 00:10:19,792
+with the power to investigate violations,
+impose sanctions and
+
+144
+00:10:19,831 --> 00:10:25,135
+suspend development. National enforcement
+practices vary between horizontal
+governance,
+
+145
+00:10:25,495 --> 00:10:29,857
+applying general rules across sectors, and
+vertical regimes, targeting
+
+146
+00:10:29,918 --> 00:10:33,938
+specific domains like healthcare or
+finance. For example, the
+
+147
+00:10:34,038 --> 00:10:38,721
+European Union's AI Act establishes
+enforcement authority through horizontal
+
+148
+00:10:38,780 --> 00:10:42,501
+governance framework with the European AI
+Office, which can
+
+149
+00:10:42,542 --> 00:10:46,023
+investigate, issue fines up to 3% of
+global annual
+
+150
+00:10:46,082 --> 00:10:50,404
+turnover, and mandate corrective action
+combined with mandatory incident
+
+151
+00:10:50,445 --> 00:10:54,985
+reporting. systemic risk mitigation
+requirements and are supporting codes
+
+152
+00:10:55,025 --> 00:10:59,706
+of practice for GPAI models. In contrast,
+China's cyberspace
+
+153
+00:10:59,767 --> 00:11:05,469
+administration, CAC, exercises centralized
+enforcement powers under a vertical
+
+154
+00:11:05,548 --> 00:11:10,211
+regulatory framework. While its approach
+prioritizes rapid intervention and
+
+155
+00:11:10,270 --> 00:11:14,971
+censorship compliance, the CAC lacks
+transparent procedural checks and
+
+156
+00:11:15,011 --> 00:11:18,732
+often relies on vague criteria for
+enforcement. In the
+
+157
+00:11:18,793 --> 00:11:23,456
+United States, enforcement is fragmented.
+While export controls are
+
+158
+00:11:23,496 --> 00:11:26,557
+strictly applied through agencies like the
+Department of Commerce,
+
+159
+00:11:27,077 --> 00:11:30,678
+broader AI safety compliance has been
+delegated to individual
+
+160
+00:11:30,818 --> 00:11:34,980
+agencies with no national licensing
+authority. As a result,
+
+161
+00:11:35,140 --> 00:11:39,562
+enforcement actions are often reactive and
+domain-specific and rely
+
+162
+00:11:39,621 --> 00:11:43,643
+on discretionary executive powers.
+Striking the right balance between
+
+163
+00:11:43,682 --> 00:11:48,104
+these approaches will depend on
+institutional capacity, developer
+incentives,
+
+164
+00:11:48,583 --> 00:11:51,905
+and the pace of AI advancement. In some
+cases,
+
+165
+00:11:52,145 --> 00:11:56,428
+using existing sectoral authorities may
+suffice. In others, new
+
+166
+00:11:56,469 --> 00:12:00,571
+institutions will be required to handle
+general-purpose capabilities that
+
+167
+00:12:00,631 --> 00:12:05,634
+fall outside traditional regulatory
+categories. The textbook includes Figure
+
+168
+00:12:05,674 --> 00:12:09,177
+4.34 here. It depicts the flow from safety
+cases
+
+169
+00:12:09,277 --> 00:12:14,640
+to enforcement, section, limitations and
+trade-offs. Every governance approach
+
+170
+00:12:14,821 --> 00:12:18,703
+faces fundamental constraints that no
+amount of institutional design
+
+171
+00:12:18,764 --> 00:12:23,547
+can fully overcome. Understanding these
+limitations helps set realistic
+
+172
+00:12:23,648 --> 00:12:27,951
+expectations and identifies where
+innovation is most needed. Some
+
+173
+00:12:28,030 --> 00:12:32,955
+risks resist technical solutions. Despite
+advances in interpretability and
+
+174
+00:12:33,014 --> 00:12:36,778
+evaluation, we still cannot fully
+understand or predict AI
+
+175
+00:12:36,817 --> 00:12:42,481
+behavior. Black box models make
+verification difficult. Emergent
+capabilities
+
+176
+00:12:42,602 --> 00:12:46,961
+appear unexpectedly. The gap between our
+governance ambitions and
+
+177
+00:12:47,020 --> 00:12:52,442
+technical capabilities are substantial.
+Current safety techniques like RLHF
+
+178
+00:12:52,682 --> 00:12:56,583
+and Constitutional AI show promise for
+today's models, but
+
+179
+00:12:56,644 --> 00:13:00,985
+may fail catastrophically with more
+capable systems. We're building
+
+180
+00:13:01,044 --> 00:13:04,927
+governance frameworks around safety
+approaches that might become obsolete.
+
+181
+00:13:05,837 --> 00:13:09,900
+This fundamental uncertainty requires
+adaptive frameworks that can evolve
+
+182
+00:13:09,921 --> 00:13:15,344
+with understanding. Measurement challenges
+undermine accountability. We lack robust
+
+183
+00:13:15,403 --> 00:13:19,405
+metrics for many safety-relevant
+properties. How do you measure
+
+184
+00:13:19,446 --> 00:13:23,668
+a model's tendency toward deception? Its
+potential for autonomous
+
+185
+00:13:23,729 --> 00:13:29,378
+improvement. Its resistance to misuse.
+Without reliable measurements, compliance
+
+186
+00:13:29,418 --> 00:13:33,523
+becomes a matter of interpretation rather
+than verification. The
+
+187
+00:13:33,643 --> 00:13:37,547
+EU AI Act, for example, requires systemic
+risk assessments
+
+188
+00:13:37,888 --> 00:13:40,470
+but provides limited guidance on how to
+measure such
+
+189
+00:13:40,551 --> 00:13:45,975
+risks quantitatively. Expertise shortages
+create critical bottlenecks. The number
+
+190
+00:13:46,015 --> 00:13:49,639
+of individuals who deeply understand both
+advanced AI systems
+
+191
+00:13:49,820 --> 00:13:53,842
+and governance remains extremely limited,
+and this gap exists
+
+192
+00:13:53,903 --> 00:13:56,865
+at every level from company safety teams
+and regulators
+
+193
+00:13:57,245 --> 00:14:02,149
+to international bodies. A lack of
+interdisciplinary talent undermines
+
+194
+00:14:02,289 --> 00:14:07,230
+efforts to anticipate and manage emerging
+risks. Institutional capacity
+
+195
+00:14:07,370 --> 00:14:10,793
+for technical evaluation and oversight is
+similarly weak in
+
+196
+00:14:10,854 --> 00:14:14,916
+many jurisdictions. Governments struggle
+to attract and retain the
+
+197
+00:14:15,017 --> 00:14:19,600
+expertise as needed to regulate powerful
+AI models. AMN's
+
+198
+00:14:19,679 --> 00:14:23,923
+technically literate, governance-aware
+professionals may be the most serious
+
+199
+00:14:23,962 --> 00:14:27,845
+constraint on effective AI governance.
+Much of the existing
+
+200
+00:14:27,904 --> 00:14:31,386
+talent is concentrated in a few dominant
+firms, limiting
+
+201
+00:14:31,447 --> 00:14:35,629
+public sector oversight and reinforcing
+asymmetries in governance capacity.
+
+202
+00:14:36,168 --> 00:14:41,250
+Coordination costs escalate faster than
+capabilities. Each additional stakeholder,
+
+203
+00:14:41,431 --> 00:14:45,092
+requirement and review process adds
+friction to AI development.
+
+204
+00:14:45,972 --> 00:14:49,596
+While some friction helps ensure safety,
+excessive bureaucracy can
+
+205
+00:14:49,635 --> 00:14:53,519
+drive development to less responsible
+actors or underground entirely.
+
+206
+00:14:54,320 --> 00:14:59,424
+Speed mismatches create fundamental
+governance gaps. AI capabilities advance
+
+207
+00:14:59,485 --> 00:15:02,868
+in months, while international agreements
+take years to negotiate.
+
+208
+00:15:03,368 --> 00:15:08,450
+GPT-4's capabilities surprised experts in
+March 2023. By the
+
+209
+00:15:08,490 --> 00:15:12,770
+time regulatory responses emerged in 2024,
+the technology had
+
+210
+00:15:12,831 --> 00:15:16,812
+moved on to multimodal systems and AI
+agents. Safety
+
+211
+00:15:16,893 --> 00:15:23,014
+researchers emphasised precaution and
+worst-case scenarios. Companies
+prioritised competitive
+
+212
+00:15:23,054 --> 00:15:27,778
+position and time to market. Governments
+balance multiple constituencies
+
+213
+00:15:27,839 --> 00:15:31,883
+with conflicting demands and users want
+beneficial capabilities without
+
+214
+00:15:31,962 --> 00:15:37,889
+understanding risks. Regulatory arbitrage
+undermines safety standards across
+borders.
+
+215
+00:15:38,886 --> 00:15:42,288
+If Europe implements strict safety
+requirements while other regions
+
+216
+00:15:42,349 --> 00:15:46,691
+remain permissive, development may simply
+shift locations. As we
+
+217
+00:15:46,730 --> 00:15:50,332
+previously discussed in the proliferation
+section, the digital nature
+
+218
+00:15:50,374 --> 00:15:52,235
+of AI makes it so that a model can
+
+219
+00:15:52,274 --> 00:15:55,375
+be trained in Singapore, deployed from
+Ireland and used
+
+220
+00:15:55,416 --> 00:16:00,111
+globally. Companies may bifurcate
+offerings, providing safer systems to
+
+221
+00:16:00,192 --> 00:16:05,113
+regulated markets while deploying riskier
+versions elsewhere. True global
+
+222
+00:16:05,153 --> 00:16:08,405
+coverage requires more than powerful
+individual jurisdictions.

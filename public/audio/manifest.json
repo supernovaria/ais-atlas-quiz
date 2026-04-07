@@ -1,0 +1,101 @@
+{
+  "chapters": [
+    {
+      "id": "governance",
+      "number": 4,
+      "title": "Chapter 4: Governance",
+      "sections": [
+        {
+          "index": "4.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s1-ec7a7293ee7e911a5d063e8dc666b90a6c46d3204f9594b3de854db71609164d.mp3",
+          "duration": "00:02:05",
+          "length": 1394780,
+          "srt": "/audio/governance/governance_4-1_1-introduction.srt",
+          "words": "/audio/governance/governance_4-1_1-introduction.words.json"
+        },
+        {
+          "index": "4.2",
+          "title": "2. Governance Problems",
+          "slug": "2-governance-problems",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s2-fdf3f7afa98e48b5bd5d64c54186ab6e79dcfc58ffa218807a71aaec6a39af6c.mp3",
+          "duration": "00:09:20",
+          "length": 6604892,
+          "srt": "/audio/governance/governance_4-2_2-governance-problems.srt",
+          "words": "/audio/governance/governance_4-2_2-governance-problems.words.json"
+        },
+        {
+          "index": "4.3",
+          "title": "3. Compute Governance",
+          "slug": "3-compute-governance",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s3-94cbd4ba8fb45f4dae7da41e36f10bc080994c0949dc4b9d4b2202faea9ca1fe.mp3",
+          "duration": "00:16:48",
+          "length": 11775740,
+          "srt": "/audio/governance/governance_4-3_3-compute-governance.srt",
+          "words": "/audio/governance/governance_4-3_3-compute-governance.words.json"
+        },
+        {
+          "index": "4.4",
+          "title": "4. Systemic Challenges",
+          "slug": "4-systemic-challenges",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s4-31d32e6bf62c1844fec667198d3cdf4ebbaef4923be741f8d9bbb27cd0c544a2.mp3",
+          "duration": "00:24:22",
+          "length": 17103572,
+          "srt": "/audio/governance/governance_4-4_4-systemic-challenges.srt",
+          "words": "/audio/governance/governance_4-4_4-systemic-challenges.words.json"
+        },
+        {
+          "index": "4.5",
+          "title": "5. Governance Architectures",
+          "slug": "5-governance-architectures",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s5-906d74c1523a40c5b18e8bb16c4a9e2871d2a1129ff30a7094274f855e70d7b1.mp3",
+          "duration": "00:41:43",
+          "length": 29488076,
+          "srt": "/audio/governance/governance_4-5_5-governance-architectures.srt",
+          "words": "/audio/governance/governance_4-5_5-governance-architectures.words.json"
+        },
+        {
+          "index": "4.6",
+          "title": "6. Implementation",
+          "slug": "6-implementation",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s6-aae267373d5dbc3a2fdb71e8cc4d16fb91d18bd6fbc849861bd3ccdd99a5e53b.mp3",
+          "duration": "00:16:08",
+          "length": 11460548,
+          "srt": "/audio/governance/governance_4-6_6-implementation.srt",
+          "words": "/audio/governance/governance_4-6_6-implementation.words.json"
+        },
+        {
+          "index": "4.7",
+          "title": "7. Conclusion",
+          "slug": "7-conclusion",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s7-bfbbd4026aa9f112a16fff2c3eae27767133de03091b873b677f9b097f28618f.mp3",
+          "duration": "00:04:36",
+          "length": 3286028,
+          "srt": "/audio/governance/governance_4-7_7-conclusion.srt",
+          "words": "/audio/governance/governance_4-7_7-conclusion.words.json"
+        },
+        {
+          "index": "4.8",
+          "title": "8. Appendix: Data Governance",
+          "slug": "8-appendix-data-governance",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s8-ddb124285813a54faa9a61a02163b5754c1cc7810a0aaeebeab01bc0ac41e3a2.mp3",
+          "duration": "00:04:49",
+          "length": 3350396,
+          "srt": "/audio/governance/governance_4-8_8-appendix-data-governance.srt",
+          "words": "/audio/governance/governance_4-8_8-appendix-data-governance.words.json"
+        },
+        {
+          "index": "4.9",
+          "title": "9. Appendix: National Governance",
+          "slug": "9-appendix-national-governance",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s9-9e8958c10ecebec7580a66ce243e9c51c153688fdf986f6dcabf764af0d07a45.mp3",
+          "duration": "00:16:49",
+          "length": 11985380,
+          "srt": "/audio/governance/governance_4-9_9-appendix-national-governance.srt",
+          "words": "/audio/governance/governance_4-9_9-appendix-national-governance.words.json"
+        }
+      ]
+    }
+  ]
+}
