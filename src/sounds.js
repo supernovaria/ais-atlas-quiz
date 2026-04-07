@@ -92,15 +92,15 @@ export function playM10() {
 // R9 · Completion — warm C2 chord swell, for scores ≥ 65%
 export function playR9() {
   [130.8, 196.0, 329.6, 523.3].forEach(f =>
-    note({ freq: f, decay: 1.8, vol: 0.28 })
+    note({ freq: f, decay: 1.8, vol: 0.11 })
   );
 }
 
 // R6 · Tada — two-phrase tada, for scores ≥ 90%
 export function playR6() {
-  [392.0, 587.3].forEach(f => note({ freq: f, type: 'sine', decay: 2.5, vol: 0.36 }));
+  [392.0, 587.3].forEach(f => note({ freq: f, type: 'sine', decay: 2.5, vol: 0.20 }));
   setTimeout(() => {
-    [784.0, 987.8].forEach(f => note({ freq: f, type: 'sine', decay: 2.0, vol: 0.40 }));
+    [784.0, 987.8].forEach(f => note({ freq: f, type: 'sine', decay: 2.0, vol: 0.22 }));
   }, 160);
 }
 
