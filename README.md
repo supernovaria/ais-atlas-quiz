@@ -65,3 +65,8 @@ Which of the following are true?
 - React 19
 - Vite 5
 - Vanilla CSS with CSS custom properties
+
+## Expansion to more chapters
+
+- For quiz: Add ch[number]-[name].md with questions into .\public\questions
+- For audio: run pipeline.py --chapter <name>, then copy the *.srt, *.words.json, and manifest.json to .\public\audio folder. The pipeline now generates all three automatically.
