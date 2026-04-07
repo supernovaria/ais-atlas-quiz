@@ -56,51 +56,51 @@ function noiseBlip({ vol = 0.12, dur = 0.1 }) {
 
 // S1 · Chime-Up — ascending D5→G5→C6
 function playS1() {
-  note({ freq: 587.3, decay: 8, start: 0.0 });
-  note({ freq: 784.0, decay: 8, start: 0.06 });
-  note({ freq: 1046.5, decay: 8, start: 0.12 });
+  note({ freq: 587.3, decay: 8, vol: 0.48, start: 0.0 });
+  note({ freq: 784.0, decay: 8, vol: 0.48, start: 0.06 });
+  note({ freq: 1046.5, decay: 8, vol: 0.48, start: 0.12 });
 }
 
 // S9 · Ping-Ping — two quick high pings G5 then C6
 function playS9() {
-  note({ freq: 784.0, decay: 14, vol: 0.20, start: 0.0 });
-  note({ freq: 1046.5, decay: 14, vol: 0.20, start: 0.13 });
+  note({ freq: 784.0, decay: 14, vol: 0.44, start: 0.0 });
+  note({ freq: 1046.5, decay: 14, vol: 0.44, start: 0.13 });
 }
 
 // ── Mistake variants ────────────────────────────────────────────────────────
 
 // M6 · Low-Blip — single low sine blip
 function playM6() {
-  note({ freq: 160, decay: 18, vol: 0.24 });
+  note({ freq: 160, decay: 18, vol: 0.62 });
 }
 
 // M7 · Clunk — noise burst + low sine
 function playM7() {
-  noiseBlip({ vol: 0.12, dur: 0.1 });
-  note({ freq: 70, decay: 12, vol: 0.20 });
+  noiseBlip({ vol: 0.31, dur: 0.1 });
+  note({ freq: 70, decay: 12, vol: 0.52 });
 }
 
 // ── Score-reveal sounds ─────────────────────────────────────────────────────
 
 // M10 · Down-Arp — descending E4→C4→G3, for low scores
 export function playM10() {
-  note({ freq: 329.6, decay: 9, vol: 0.20, start: 0.0 });
-  note({ freq: 261.6, decay: 9, vol: 0.20, start: 0.07 });
-  note({ freq: 196.0, decay: 9, vol: 0.20, start: 0.14 });
+  note({ freq: 329.6, decay: 9, vol: 0.40, start: 0.0 });
+  note({ freq: 261.6, decay: 9, vol: 0.40, start: 0.07 });
+  note({ freq: 196.0, decay: 9, vol: 0.40, start: 0.14 });
 }
 
 // R9 · Completion — warm C2 chord swell, for scores ≥ 65%
 export function playR9() {
   [130.8, 196.0, 329.6, 523.3].forEach(f =>
-    note({ freq: f, decay: 1.8, vol: 0.14 })
+    note({ freq: f, decay: 1.8, vol: 0.28 })
   );
 }
 
 // R6 · Tada — two-phrase tada, for scores ≥ 90%
 export function playR6() {
-  [392.0, 587.3].forEach(f => note({ freq: f, type: 'triangle', decay: 5, vol: 0.18 }));
+  [392.0, 587.3].forEach(f => note({ freq: f, type: 'triangle', decay: 5, vol: 0.36 }));
   setTimeout(() => {
-    [784.0, 987.8].forEach(f => note({ freq: f, type: 'triangle', decay: 4, vol: 0.20 }));
+    [784.0, 987.8].forEach(f => note({ freq: f, type: 'triangle', decay: 4, vol: 0.40 }));
   }, 160);
 }
 

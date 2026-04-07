@@ -60,7 +60,13 @@ export default function Quiz({ quiz, quizTitle }) {
   const isLast = activeIdx === activeQuestions.length - 1;
 
   const handleAnswer = useCallback((isCorrect, { autoAdvance } = {}) => {
-    if (!reviewMode) {
+    if (reviewMode) {
+      setAnswers(prev => {
+        const updated = [...prev];
+        updated[reviewIndices[reviewPos]] = isCorrect;
+        return updated;
+      });
+    } else {
       setAnswers(prev => [...prev, isCorrect]);
     }
     if (autoAdvance) {
@@ -68,6 +74,7 @@ export default function Quiz({ quiz, quizTitle }) {
       if (isLast) {
         if (reviewMode) {
           setReviewMode(false);
+          setFinished(true);
         } else {
           setFinished(true);
         }
@@ -82,12 +89,13 @@ export default function Quiz({ quiz, quizTitle }) {
     } else {
       setShowResult(true);
     }
-  }, [reviewMode, isLast]);
+  }, [reviewMode, isLast, reviewIndices, reviewPos]);
 
   function handleNext() {
     if (isLast) {
       if (reviewMode) {
         setReviewMode(false);
+        setFinished(true);
       } else {
         setFinished(true);
       }
