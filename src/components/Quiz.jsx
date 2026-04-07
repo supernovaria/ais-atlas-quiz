@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
+import { playM10, playR9, playR6 } from '../sounds.js';
 import QuizQuestion from './QuizQuestion';
-import FreeResponseQuestion from './FreeResponseQuestion';
 
 function quizKey(quiz) {
   return `ais-quiz-${quiz.chapter}-${quiz.section}-${quiz.type}`;
@@ -25,8 +25,8 @@ export function getScore(quiz) {
 }
 
 function QuizTitleBar({ quiz, counter, reviewMode }) {
-  const icon = quiz.type === 'review' ? '\u{1F4D6}' : quiz.type === 'fr-only' ? '\u270F\uFE0F' : '\u00A7' + quiz.section;
-  const typeLabel = reviewMode ? 'Reviewing Missed' : quiz.type === 'review' ? 'Chapter Review' : quiz.type === 'fr-only' ? 'Free Response' : 'Section Quiz';
+  const icon = quiz.type === 'review' ? '\u{1F4D6}' : '\u00A7' + quiz.section;
+  const typeLabel = reviewMode ? 'Reviewing Missed' : quiz.type === 'review' ? 'Chapter Review' : 'Section Quiz';
   return (
     <div className="quiz-title-bar">
       <div className="quiz-title-left">
@@ -46,8 +46,11 @@ export default function Quiz({ quiz, quizTitle }) {
   const [reviewMode, setReviewMode] = useState(false);
   const [reviewIndices, setReviewIndices] = useState([]);
   const [reviewPos, setReviewPos] = useState(0);
+  const [displayPct, setDisplayPct] = useState(0);
   const submitRef = useRef(null);
   const nextRef = useRef(null);
+  // Chosen once per quiz so every question in a run uses the same pair of sounds.
+  const soundVariant = useRef(Math.random() < 0.5 ? 'A' : 'B');
 
   const activeQuestions = reviewMode
     ? reviewIndices.map(i => quiz.questions[i])
@@ -106,6 +109,8 @@ export default function Quiz({ quiz, quizTitle }) {
     setReviewMode(false);
     setReviewIndices([]);
     setReviewPos(0);
+    setDisplayPct(0);
+    soundVariant.current = Math.random() < 0.5 ? 'A' : 'B';
   }
 
   function handleReviewMissed() {
@@ -116,6 +121,56 @@ export default function Quiz({ quiz, quizTitle }) {
     setShowResult(false);
     setFinished(false);
   }
+
+  // Save score and animate the score circle when the quiz finishes.
+  // Sounds fire as the animated counter crosses each threshold.
+  useEffect(() => {
+    if (!finished) return;
+
+    const score = answers.filter(Boolean).length;
+    const total = quiz.questions.length;
+    const pct = Math.round((score / total) * 100);
+
+    saveScore(quiz, score, total);
+
+    setDisplayPct(0);
+
+    // Duration scales with score so the bar doesn't whip by on low scores.
+    // 40 ms per percentage point, minimum 1500 ms.
+    const animDuration = Math.max(1500, pct * 40);
+
+    let animStart = null;
+    let playedR9 = false;
+    let playedR6 = false;
+    let rafId;
+
+    function step(timestamp) {
+      if (!animStart) animStart = timestamp;
+      const elapsed = timestamp - animStart;
+      const progress = Math.min(elapsed / animDuration, 1);
+      const current = Math.round(progress * pct);
+
+      setDisplayPct(current);
+
+      if (!playedR9 && pct >= 65 && current >= 65) {
+        playR9();
+        playedR9 = true;
+      }
+      if (!playedR6 && pct >= 90 && current >= 90) {
+        playR6();
+        playedR6 = true;
+      }
+
+      if (progress < 1) {
+        rafId = requestAnimationFrame(step);
+      } else {
+        if (pct < 40) playM10();
+      }
+    }
+
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
+  }, [finished]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Keyboard: Enter triggers submit or next depending on state
   useEffect(() => {
@@ -138,14 +193,12 @@ export default function Quiz({ quiz, quizTitle }) {
     const pct = Math.round((score / total) * 100);
     const missed = answers.filter(a => !a).length;
 
-    saveScore(quiz, score, total);
-
     return (
       <div className="quiz-results">
         <h3>Quiz Complete!</h3>
         <div className="score-display">
-          <div className="score-circle" style={{ '--pct': pct }}>
-            <span className="score-number">{pct}%</span>
+          <div className="score-circle" style={{ '--pct': displayPct }}>
+            <span className="score-number">{displayPct}%</span>
           </div>
           <p className="score-text">
             You got <strong>{score}</strong> out of <strong>{total}</strong> correct
@@ -172,18 +225,6 @@ export default function Quiz({ quiz, quizTitle }) {
   }
 
   function renderQuestion(q, qNum, total, keyPrefix = '') {
-    if (q.type === 'free-response') {
-      return (
-        <FreeResponseQuestion
-          key={`${keyPrefix}fr-${qNum}`}
-          question={q}
-          questionNumber={qNum}
-          totalQuestions={total}
-          onAnswer={handleAnswer}
-          quizTitle={quizTitle || quiz.title}
-        />
-      );
-    }
     return (
       <QuizQuestion
         key={`${keyPrefix}mc-${qNum}`}
@@ -193,6 +234,7 @@ export default function Quiz({ quiz, quizTitle }) {
         onAnswer={handleAnswer}
         showResult={showResult}
         submitRef={submitRef}
+        soundVariant={soundVariant.current}
       />
     );
   }
@@ -210,7 +252,7 @@ export default function Quiz({ quiz, quizTitle }) {
 
         {renderQuestion(question, reviewIndices[reviewPos] + 1, quiz.questions.length, 'review-')}
 
-        {showResult && question.type !== 'free-response' && (
+        {showResult && (
           <button ref={nextRef} className="next-btn" onClick={handleNext}>
             {isLast ? 'Done' : 'Next \u2192'}
           </button>
