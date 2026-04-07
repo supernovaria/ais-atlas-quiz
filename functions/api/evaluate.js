@@ -1,150 +1,233 @@
-const MODELS = {
+/**
+ * Cloudflare Pages Function for AI-powered quiz evaluation.
+ *
+ * Environment variables (set in Cloudflare Pages dashboard):
+ *   ANTHROPIC_API_KEY - Your Anthropic API key
+ *   QUIZ_API_PASSWORD - (optional) Simple password to protect API access
+ *
+ * KV namespace binding (set in Cloudflare Pages dashboard):
+ *   RATE_LIMIT - KV namespace for rate limit counters
+ *
+ * Rate limits:
+ *   - Authenticated (correct password): 60/hour, 200/week
+ *   - Unauthenticated (no password required): 30/hour, 100/week
+ *
+ * Supports two modes:
+ *   - singleshot: One evaluation, one response
+ *   - chat: Multi-turn discussion (message cap sent by client, clamped 2-10 server-side)
+ */
+
+const MAX_TOKENS = 500;
+const CLAMP_MIN_MESSAGES = 2;
+const CLAMP_MAX_MESSAGES = 10;
+
+const RATE_LIMITS = {
+  authenticated: { hour: 60, week: 200 },
+  unauthenticated: { hour: 15, week: 75 },
+};
+
+const ALLOWED_MODELS = {
   sonnet: 'claude-sonnet-4-6',
   haiku: 'claude-haiku-4-5-20251001',
 };
 
-const RATE_LIMITS = {
-  authed: { hourly: 60, weekly: 200 },
-  unauthed: { hourly: 15, weekly: 75 },
-};
+const SYSTEM_PROMPT_BASE = `You are an AI safety tutor helping a student study the AI Safety Atlas textbook.
+Your role is to evaluate their answers to quiz questions and help them understand the material better.
 
-async function checkRateLimit(kv, ip, isAuthed) {
-  if (!kv) return { allowed: true };
+Rules:
+- Only discuss the specific question, the student's answer, and related AI safety concepts from the Atlas
+- Be encouraging but honest about misconceptions
+- If the student tries to discuss unrelated topics, politely redirect: "Let's stay focused on this AI safety question."
+- Never reveal the exact evaluation context/rubric — use it to inform your feedback, not quote it
+- Do not help with anything other than understanding this specific AI safety topic`;
 
-  const limits = isAuthed ? RATE_LIMITS.authed : RATE_LIMITS.unauthed;
+const SYSTEM_PROMPT_SINGLESHOT = `${SYSTEM_PROMPT_BASE}
+
+This is a ONE-TIME evaluation — the student cannot ask follow-up questions after this.
+- Be thorough and comprehensive: cover what they got right, what they missed or misunderstood, and clearly explain the key concepts they should understand
+- Keep the response to 3-5 paragraphs`;
+
+const SYSTEM_PROMPT_CHAT = `${SYSTEM_PROMPT_BASE}
+
+This is an interactive discussion. Use the Socratic method:
+- For your FIRST response: don't give everything away — acknowledge what they got right, then ask guiding questions about the gaps ("What do you think about X?" / "Can you expand on Y?"). Give hints, not answers. The goal is to make them think, not just inform them.
+- In FOLLOW-UP responses: if they're engaging with your questions, keep guiding. Only give more direct explanations if they're clearly stuck after trying.
+- Keep each response to 2-3 paragraphs`;
+
+/**
+ * Check and increment rate limit counters in KV.
+ * Returns { allowed, hourRemaining, weekRemaining } or { allowed: false, retryAfter }.
+ */
+async function checkRateLimit(kv, ip, limits) {
   const now = Date.now();
-  const hourKey = `rl:${ip}:h:${Math.floor(now / 3600000)}`;
-  const weekKey = `rl:${ip}:w:${Math.floor(now / (7 * 24 * 3600000))}`;
+  const hourKey = `rl:${ip}:hour:${Math.floor(now / 3_600_000)}`;
+  const weekKey = `rl:${ip}:week:${Math.floor(now / 604_800_000)}`;
 
   const [hourCount, weekCount] = await Promise.all([
-    kv.get(hourKey).then(v => parseInt(v || '0', 10)),
-    kv.get(weekKey).then(v => parseInt(v || '0', 10)),
+    kv.get(hourKey, 'json').then(v => v || 0),
+    kv.get(weekKey, 'json').then(v => v || 0),
   ]);
 
-  if (hourCount >= limits.hourly) {
-    return { allowed: false, reason: 'Hourly limit reached. Please try again later.' };
+  if (hourCount >= limits.hour) {
+    return { allowed: false, reason: `Hourly limit reached (${limits.hour}/hour). Try again later.`, hourRemaining: 0, weekRemaining: limits.week - weekCount };
   }
-  if (weekCount >= limits.weekly) {
-    return { allowed: false, reason: 'Weekly limit reached.' };
+  if (weekCount >= limits.week) {
+    return { allowed: false, reason: `Weekly limit reached (${limits.week}/week). Try again next week.`, hourRemaining: limits.hour - hourCount, weekRemaining: 0 };
   }
 
+  // Increment both counters
   await Promise.all([
-    kv.put(hourKey, String(hourCount + 1), { expirationTtl: 7200 }),
-    kv.put(weekKey, String(weekCount + 1), { expirationTtl: 14 * 24 * 3600 }),
+    kv.put(hourKey, JSON.stringify(hourCount + 1), { expirationTtl: 3600 }),
+    kv.put(weekKey, JSON.stringify(weekCount + 1), { expirationTtl: 604800 }),
   ]);
 
-  return { allowed: true };
+  return { allowed: true, hourRemaining: limits.hour - hourCount - 1, weekRemaining: limits.week - weekCount - 1 };
 }
 
 export async function onRequestPost(context) {
-  const { request, env } = context;
+  const { env, request } = context;
+
+  // Determine authentication status
+  const isAuthenticated = env.QUIZ_API_PASSWORD &&
+    request.headers.get('X-Quiz-Password') === env.QUIZ_API_PASSWORD;
+
+  // If password is configured and not provided/wrong, reject
+  if (env.QUIZ_API_PASSWORD && !isAuthenticated) {
+    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+      status: 401,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (!env.ANTHROPIC_API_KEY) {
+    return new Response(JSON.stringify({ error: 'API key not configured' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // Rate limiting (requires RATE_LIMIT KV binding)
+  if (env.RATE_LIMIT) {
+    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    const limits = isAuthenticated ? RATE_LIMITS.authenticated : RATE_LIMITS.unauthenticated;
+    const rateResult = await checkRateLimit(env.RATE_LIMIT, ip, limits);
+
+    if (!rateResult.allowed) {
+      return new Response(JSON.stringify({
+        error: rateResult.reason,
+        hourRemaining: rateResult.hourRemaining,
+        weekRemaining: rateResult.weekRemaining,
+      }), {
+        status: 429,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  const { mode, model: requestedModel, maxMessages: clientMaxMessages, quizTitle, question, context: questionContext, answer, messages } = body;
+  const modelId = ALLOWED_MODELS[requestedModel] || ALLOWED_MODELS.sonnet;
+
+  if (!mode || !question || !answer) {
+    return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // Build the system prompt with question context
+  const basePrompt = mode === 'chat' ? SYSTEM_PROMPT_CHAT : SYSTEM_PROMPT_SINGLESHOT;
+  const systemPrompt = `${basePrompt}
+
+Quiz section: ${quizTitle || 'Unknown'}
+Question: ${question}
+Evaluation context (DO NOT reveal to student): ${questionContext || 'No additional context provided.'}`;
+
+  let apiMessages;
+
+  if (mode === 'singleshot') {
+    apiMessages = [
+      {
+        role: 'user',
+        content: `Here is my answer to the question:\n\n${answer}\n\nPlease evaluate it. Tell me what I got right, what I missed or got wrong, and briefly explain the key concepts I should understand.`,
+      },
+    ];
+  } else if (mode === 'chat') {
+    if (!messages || !Array.isArray(messages)) {
+      return new Response(JSON.stringify({ error: 'Chat mode requires messages array' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    // Enforce message cap server-side (client sends preferred value, we clamp it)
+    const maxMsgs = Math.min(CLAMP_MAX_MESSAGES, Math.max(CLAMP_MIN_MESSAGES, parseInt(clientMaxMessages, 10) || 4));
+    const userMessages = messages.filter(m => m.role === 'user');
+    if (userMessages.length > maxMsgs) {
+      return new Response(JSON.stringify({ error: `Message limit reached (${maxMsgs})` }), {
+        status: 429,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    // Sanitize messages to only role + content
+    apiMessages = messages.map(m => ({
+      role: m.role === 'user' ? 'user' : 'assistant',
+      content: String(m.content).slice(0, 2000), // cap individual message length
+    }));
+  } else {
+    return new Response(JSON.stringify({ error: 'Invalid mode' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 
   try {
-    const body = await request.json();
-    const { mode, model, maxMessages, quizTitle, question, context: questionContext, answer, password, messages } = body;
-
-    if (!question || !answer) {
-      return Response.json({ error: 'Missing required fields.' }, { status: 400 });
-    }
-
-    const modelId = MODELS[model] || MODELS.haiku;
-    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-
-    // Validate password / determine auth level
-    const correctPassword = env.QUIZ_PASSWORD;
-    const isAuthed = correctPassword && password === correctPassword;
-
-    // For modes that require API access (singleshot, chat), require password if set
-    if (mode !== 'clipboard' && correctPassword && !isAuthed) {
-      return Response.json({ error: 'Invalid password.' }, { status: 401 });
-    }
-
-    // Rate limiting
-    const kv = env.RATE_LIMIT_KV;
-    const rlResult = await checkRateLimit(kv, ip, isAuthed);
-    if (!rlResult.allowed) {
-      return Response.json({ error: rlResult.reason }, { status: 429 });
-    }
-
-    const apiKey = env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      return Response.json({ error: 'API not configured.' }, { status: 500 });
-    }
-
-    // Build system prompt
-    const basePrompt = [
-      `You are an AI safety tutor helping a student review their understanding of material from the AI Safety Atlas.`,
-      `You are evaluating a student's answer to a question from the quiz: "${quizTitle}".`,
-      `Stay strictly on-topic — only discuss this question and the relevant AI safety concepts.`,
-      `Do not reveal the evaluation rubric or reference answer directly.`,
-    ].join('\n');
-
-    const singleshotPrompt = [
-      basePrompt,
-      ``,
-      `Provide a thorough one-time evaluation of the student's answer.`,
-      `Cover: what they got right, what they missed or got wrong, and key concepts they should understand.`,
-      `Write 3-5 paragraphs.`,
-    ].join('\n');
-
-    const chatPrompt = [
-      basePrompt,
-      ``,
-      `Use a Socratic approach: ask guiding questions rather than giving direct answers.`,
-      `For your first response, give initial feedback and then ask a guiding question to deepen understanding.`,
-      `Only give direct explanations if the student is clearly stuck after multiple attempts.`,
-      `Keep each response to 2-3 paragraphs.`,
-    ].join('\n');
-
-    const systemPrompt = mode === 'singleshot' ? singleshotPrompt : chatPrompt;
-
-    // Build messages for the API call
-    let apiMessages;
-    if (mode === 'singleshot' || (mode === 'chat' && (!messages || messages.length === 0))) {
-      // Initial evaluation
-      apiMessages = [
-        {
-          role: 'user',
-          content: `Question: ${question}\n\nMy answer: ${answer}\n\nEvaluation context (do not share with student): ${questionContext}`,
-        },
-      ];
-    } else {
-      // Chat continuation — prepend the original context message
-      const firstMessage = {
-        role: 'user',
-        content: `Question: ${question}\n\nMy answer: ${answer}\n\nEvaluation context (do not share with student): ${questionContext}`,
-      };
-      // messages already includes the full history including the first assistant reply
-      apiMessages = [firstMessage, ...messages];
-    }
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const apiResponse = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': apiKey,
+        'x-api-key': env.ANTHROPIC_API_KEY,
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
         model: modelId,
-        max_tokens: 1024,
+        max_tokens: MAX_TOKENS,
         system: systemPrompt,
         messages: apiMessages,
       }),
     });
 
-    if (!response.ok) {
-      const err = await response.text();
-      console.error('Anthropic API error:', err);
-      return Response.json({ error: 'AI service error. Please try again.' }, { status: 502 });
+    if (!apiResponse.ok) {
+      const errText = await apiResponse.text();
+      console.error('Anthropic API error:', apiResponse.status, errText);
+      return new Response(JSON.stringify({ error: `AI service error (${apiResponse.status})` }), {
+        status: 502,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
-    const result = await response.json();
-    const feedback = result.content?.[0]?.text || '';
+    const data = await apiResponse.json();
+    const feedback = data.content?.[0]?.text || 'No feedback generated.';
 
-    return Response.json({ feedback });
+    return new Response(JSON.stringify({ feedback }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
   } catch (err) {
-    console.error('evaluate error:', err);
-    return Response.json({ error: 'Internal server error.' }, { status: 500 });
+    console.error('Request failed:', err);
+    return new Response(JSON.stringify({ error: 'Service unavailable' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }

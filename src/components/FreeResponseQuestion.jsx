@@ -1,69 +1,73 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useMode } from '../ModeContext';
 
 function ClipboardMode({ question, answer, quizTitle }) {
   const [copied, setCopied] = useState(false);
 
   function buildPrompt() {
-    const lines = [
-      `Quiz: ${quizTitle}`,
-      ``,
-      `Question: ${question.question}`,
-      ``,
-      `My answer: ${answer}`,
-      ``,
-      `Please evaluate my answer. Give me feedback on what I got right, what I missed, and any key concepts I should understand better.`,
-    ];
-    return lines.join('\n');
+    return `I'm studying the AI Safety Atlas, Chapter 1: Capabilities, section "${quizTitle}".
+
+I was asked the following question:
+"${question.question}"
+
+Here is my answer:
+"${answer}"
+
+Context for evaluating my answer (from the quiz designers):
+${question.context}
+
+Please evaluate my answer. Tell me:
+1. What I got right
+2. What I missed or got wrong
+3. A brief explanation of the key concepts I should understand
+Keep your feedback concise and educational.`;
   }
 
   async function handleCopy() {
     const prompt = buildPrompt();
-    try {
-      await navigator.clipboard.writeText(prompt);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore clipboard errors
-    }
+    await navigator.clipboard.writeText(prompt);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   }
 
-  function handleOpen() {
+  function handleOpenClaude() {
     handleCopy();
-    window.open('https://claude.ai', '_blank', 'noopener,noreferrer');
+    window.open('https://claude.ai/new', '_blank');
   }
 
   return (
     <div className="fr-mode-clipboard">
       <p className="fr-mode-hint">
-        Copy a prompt with your answer and open Claude.ai to get feedback.
+        Your answer will be packaged into a prompt. Copy it and paste into Claude for feedback.
       </p>
       <div className="fr-clipboard-actions">
         <button className="fr-btn fr-btn-secondary" onClick={handleCopy}>
           {copied ? 'Copied!' : 'Copy Prompt'}
         </button>
-        <button className="fr-btn fr-btn-primary" onClick={handleOpen}>
-          Copy &amp; Open Claude
+        <button className="fr-btn fr-btn-primary" onClick={handleOpenClaude}>
+          Open Claude &amp; Copy Prompt
         </button>
       </div>
     </div>
   );
 }
 
-function SingleShotMode({ question, answer, quizTitle, password, model }) {
+function SingleShotMode({ question, answer, quizTitle, onStart }) {
+  const { password, model } = useMode();
+  const [feedback, setFeedback] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [feedback, setFeedback] = useState('');
-  const [error, setError] = useState('');
-  const [started, setStarted] = useState(false);
+  const [error, setError] = useState(null);
 
-  async function handleGetFeedback() {
-    setStarted(true);
+  async function handleEvaluate() {
+    onStart?.();
     setLoading(true);
-    setError('');
+    setError(null);
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (password) headers['X-Quiz-Password'] = password;
       const res = await fetch('/api/evaluate', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           mode: 'singleshot',
           model,
@@ -71,47 +75,40 @@ function SingleShotMode({ question, answer, quizTitle, password, model }) {
           question: question.question,
           context: question.context,
           answer,
-          password,
         }),
       });
+      if (!res.ok) throw new Error(`Server error: ${res.status}`);
       const data = await res.json();
-      if (!res.ok) {
-        setError(data.error || 'An error occurred. Please try again.');
-      } else {
-        setFeedback(data.feedback);
-      }
-    } catch {
-      setError('Network error. Please check your connection and try again.');
+      setFeedback(data.feedback);
+    } catch (err) {
+      setError(err.message);
     } finally {
       setLoading(false);
     }
   }
 
-  if (!started) {
-    return (
-      <div className="fr-mode-singleshot">
-        <p className="fr-mode-hint">
-          Send your answer to our AI for a one-time evaluation with structured feedback.
-        </p>
-        <button className="fr-btn fr-btn-primary" onClick={handleGetFeedback}>
-          Get Feedback
-        </button>
-      </div>
-    );
-  }
-
   return (
     <div className="fr-mode-singleshot">
+      {!feedback && !loading && (
+        <button className="fr-btn fr-btn-primary" onClick={handleEvaluate} disabled={loading}>
+          Get Feedback from Claude
+        </button>
+      )}
       {loading && (
         <div className="fr-loading">
           <div className="fr-spinner" />
-          <span className="fr-loading-dots">Evaluating your answer...</span>
+          <span>Evaluating your answer...</span>
         </div>
       )}
-      {error && <div className="fr-error">{error}</div>}
+      {error && (
+        <div className="fr-error">
+          <strong>Error:</strong> {error}
+          <button className="fr-btn fr-btn-secondary fr-btn-sm" onClick={handleEvaluate}>Retry</button>
+        </div>
+      )}
       {feedback && (
         <div className="fr-feedback">
-          <div className="fr-feedback-header">Feedback</div>
+          <div className="fr-feedback-header">AI Feedback</div>
           <div className="fr-feedback-body">{feedback}</div>
         </div>
       )}
@@ -119,175 +116,168 @@ function SingleShotMode({ question, answer, quizTitle, password, model }) {
   );
 }
 
-function ChatMode({ question, answer, quizTitle, password, model, maxMessages }) {
+function ChatMode({ question, answer, quizTitle, onStart }) {
+  const { password, model, maxMessages: MAX_MESSAGES } = useMode();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
   const [started, setStarted] = useState(false);
-  const messagesEndRef = useRef(null);
+  const chatEndRef = useRef(null);
 
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [messages]);
+  const userMessageCount = messages.filter(m => m.role === 'user').length;
+  const canSendMore = userMessageCount < MAX_MESSAGES;
 
-  async function sendMessage(history) {
+  async function sendMessage(userMessage, existingMessages = messages) {
+    const newMessages = [...existingMessages, { role: 'user', content: userMessage }];
+    setMessages(newMessages);
     setLoading(true);
-    setError('');
+    setError(null);
+
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (password) headers['X-Quiz-Password'] = password;
       const res = await fetch('/api/evaluate', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           mode: 'chat',
           model,
-          maxMessages,
+          maxMessages: MAX_MESSAGES,
           quizTitle,
           question: question.question,
           context: question.context,
           answer,
-          password,
-          messages: history,
+          messages: newMessages,
         }),
       });
+      if (!res.ok) throw new Error(`Server error: ${res.status}`);
       const data = await res.json();
-      if (!res.ok) {
-        setError(data.error || 'An error occurred. Please try again.');
-      } else {
-        setMessages(prev => [...prev, { role: 'assistant', content: data.feedback }]);
-      }
-    } catch {
-      setError('Network error. Please check your connection and try again.');
+      setMessages(prev => [...prev, { role: 'assistant', content: data.feedback }]);
+    } catch (err) {
+      setError(err.message);
     } finally {
       setLoading(false);
+      setTimeout(() => chatEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
     }
   }
 
-  async function handleStart() {
+  function handleStart() {
+    onStart?.();
     setStarted(true);
-    await sendMessage([]);
+    sendMessage(`Here is my answer to the question:\n\n${answer}\n\nPlease evaluate it and let me know what I got right and what I could improve.`, []);
   }
 
-  async function handleSend(e) {
+  function handleSend(e) {
     e.preventDefault();
-    if (!input.trim() || loading) return;
-    const userMsg = { role: 'user', content: input.trim() };
-    const updated = [...messages, userMsg];
-    setMessages(updated);
+    if (!input.trim() || !canSendMore || loading) return;
+    const msg = input.trim();
     setInput('');
-    await sendMessage(updated);
-  }
-
-  const totalExchanges = Math.floor(messages.filter(m => m.role === 'assistant').length);
-  const limitReached = totalExchanges >= maxMessages;
-
-  if (!started) {
-    return (
-      <div className="fr-mode-chat">
-        <p className="fr-mode-hint">
-          Get feedback and discuss your answer with an AI tutor ({maxMessages} exchanges).
-        </p>
-        <button className="fr-btn fr-btn-primary" onClick={handleStart}>
-          Start Discussion
-        </button>
-      </div>
-    );
+    sendMessage(msg);
   }
 
   return (
     <div className="fr-mode-chat">
-      <div className="fr-chat-container">
-        <div className="fr-chat-messages">
-          {messages.map((msg, i) => (
-            <div key={i} className={`fr-chat-msg ${msg.role === 'user' ? 'fr-chat-user' : 'fr-chat-assistant'}`}>
-              <div className="fr-chat-label">{msg.role === 'user' ? 'You' : 'AI Tutor'}</div>
-              <div className="fr-chat-content">{msg.content}</div>
-            </div>
-          ))}
-          {loading && (
-            <div className="fr-chat-msg fr-chat-assistant">
-              <div className="fr-chat-label">AI Tutor</div>
-              <div className="fr-loading">
-                <div className="fr-spinner" />
-                <span className="fr-loading-dots">Thinking...</span>
+      {!started && (
+        <div>
+          <p className="fr-mode-hint">
+            Start a short discussion about your answer. You can ask up to {MAX_MESSAGES} follow-up questions.
+          </p>
+          <button className="fr-btn fr-btn-primary" onClick={handleStart}>
+            Start Discussion
+          </button>
+        </div>
+      )}
+      {started && (
+        <div className="fr-chat-container">
+          <div className="fr-chat-messages">
+            {messages.map((msg, i) => (
+              <div key={i} className={`fr-chat-msg fr-chat-${msg.role}`}>
+                <div className="fr-chat-label">{msg.role === 'user' ? 'You' : 'AI Tutor'}</div>
+                <div className="fr-chat-content">{msg.content}</div>
               </div>
+            ))}
+            {loading && (
+              <div className="fr-chat-msg fr-chat-assistant">
+                <div className="fr-chat-label">AI Tutor</div>
+                <div className="fr-chat-content fr-loading-dots">Thinking...</div>
+              </div>
+            )}
+            <div ref={chatEndRef} />
+          </div>
+          {error && (
+            <div className="fr-error">
+              <strong>Error:</strong> {error}
             </div>
           )}
-          {error && <div className="fr-error">{error}</div>}
-          <div ref={messagesEndRef} />
+          {canSendMore ? (
+            <form className="fr-chat-input" onSubmit={handleSend}>
+              <input
+                type="text"
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                placeholder="Ask a follow-up question..."
+                disabled={loading}
+              />
+              <button type="submit" className="fr-btn fr-btn-primary fr-btn-sm" disabled={loading || !input.trim()}>
+                Send
+              </button>
+            </form>
+          ) : (
+            <div className="fr-chat-limit">
+              Discussion complete ({MAX_MESSAGES} messages used)
+            </div>
+          )}
         </div>
-
-        {limitReached ? (
-          <div className="fr-chat-limit">
-            Discussion complete ({maxMessages} exchanges used).
-          </div>
-        ) : (
-          <form className="fr-chat-input" onSubmit={handleSend}>
-            <input
-              type="text"
-              value={input}
-              onChange={e => setInput(e.target.value)}
-              placeholder="Ask a follow-up question..."
-              disabled={loading}
-            />
-            <button type="submit" className="fr-btn fr-btn-primary" disabled={loading || !input.trim()}>
-              Send
-            </button>
-          </form>
-        )}
-      </div>
-      <p className="fr-mode-hint">{totalExchanges} of {maxMessages} exchanges used.</p>
+      )}
     </div>
   );
 }
 
 export default function FreeResponseQuestion({ question, questionNumber, totalQuestions, onAnswer, quizTitle }) {
-  const { mode, modes, password, model, maxMessages } = useMode();
+  const { mode, modes } = useMode();
   const [answer, setAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [interactionStarted, setInteractionStarted] = useState(false);
   const [hintShown, setHintShown] = useState(false);
   const [answerRevealed, setAnswerRevealed] = useState(false);
 
   function handleSubmit() {
     if (!answer.trim()) return;
     setSubmitted(true);
+    setInteractionStarted(false);
   }
 
   function handleEdit() {
     setSubmitted(false);
+    setInteractionStarted(false);
   }
 
   function handleDone() {
-    onAnswer(true, { autoAdvance: true });
+    onAnswer(true, { autoAdvance: true }); // free-response always counts as "answered" for progress
   }
 
   return (
-    <div className="fr-question">
+    <div className="quiz-question fr-question">
       <div className="question-header">
-        <span className="question-number">Question {questionNumber} of {totalQuestions}</span>
+        <span className="question-counter">Question {questionNumber} of {totalQuestions}</span>
         <span className="fr-badge">Free Response</span>
       </div>
 
-      <div className="question-text">{question.question}</div>
+      <p className="question-text">
+        {question.question}
+        {question.hint && (
+          <button className="fr-hint-btn" onClick={() => setHintShown(h => !h)}>
+            {hintShown ? '▴ hint' : '▾ hint'}
+          </button>
+        )}
+      </p>
+      {hintShown && question.hint && (
+        <div className="fr-hint-box">{question.hint}</div>
+      )}
 
       {!submitted ? (
-        <>
-          {question.hint && (
-            <>
-              <button
-                className="fr-hint-btn"
-                onClick={() => setHintShown(h => !h)}
-              >
-                {hintShown ? 'Hide hint' : 'Show hint'}
-              </button>
-              {hintShown && (
-                <div className="fr-hint-box">{question.hint}</div>
-              )}
-            </>
-          )}
-
+        <div className="fr-input-area">
           <textarea
             className="fr-textarea"
             value={answer}
@@ -295,86 +285,62 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
             placeholder="Type your answer here..."
             rows={5}
           />
-
           <button
-            className="fr-btn fr-btn-primary"
+            className="submit-btn"
             onClick={handleSubmit}
             disabled={!answer.trim()}
           >
             Submit Answer
           </button>
-        </>
+        </div>
       ) : (
-        <>
-          <div className="fr-submitted">
-            <div className="fr-your-answer">
-              <div className="fr-your-answer-label">
-                Your answer
-                <button className="fr-btn fr-btn-sm fr-btn-secondary" onClick={handleEdit}>
-                  Edit
-                </button>
-              </div>
-              <div className="fr-your-answer-text">{answer}</div>
+        <div className="fr-submitted">
+          <div className="fr-your-answer">
+            <div className="fr-your-answer-label">
+              Your answer:
+              {!interactionStarted && (
+                <button className="fr-edit-btn" onClick={handleEdit}>Edit</button>
+              )}
             </div>
-
-            {question.shortAnswer && (
-              <div>
-                {!answerRevealed ? (
-                  <button
-                    className="fr-btn fr-btn-secondary"
-                    onClick={() => setAnswerRevealed(true)}
-                  >
-                    Reveal answer
-                  </button>
-                ) : (
-                  <div className="fr-short-answer">
-                    <div className="fr-short-answer-header">
-                      Reference answer
-                      <button
-                        className="fr-btn fr-btn-sm fr-btn-secondary"
-                        onClick={() => setAnswerRevealed(false)}
-                      >
-                        Hide
-                      </button>
-                    </div>
-                    <div>{question.shortAnswer}</div>
-                  </div>
-                )}
-              </div>
-            )}
-
-            <div className="fr-mode-label">
-              Feedback via: <strong>{modes[mode].shortLabel}</strong>
-            </div>
-
-            {mode === 'clipboard' && (
-              <ClipboardMode question={question} answer={answer} quizTitle={quizTitle} />
-            )}
-            {mode === 'singleshot' && (
-              <SingleShotMode
-                question={question}
-                answer={answer}
-                quizTitle={quizTitle}
-                password={password}
-                model={model}
-              />
-            )}
-            {mode === 'chat' && (
-              <ChatMode
-                question={question}
-                answer={answer}
-                quizTitle={quizTitle}
-                password={password}
-                model={model}
-                maxMessages={maxMessages}
-              />
-            )}
-
-            <button className="fr-btn fr-btn-primary" onClick={handleDone}>
-              Continue
-            </button>
+            <div className="fr-your-answer-text">{answer}</div>
           </div>
-        </>
+
+          {question.shortAnswer && (
+            <div className="fr-reveal-row">
+              {answerRevealed ? (
+                <div className="fr-short-answer">
+                  <div className="fr-short-answer-header">
+                    Model answer
+                    <button className="fr-edit-btn" onClick={() => setAnswerRevealed(false)}>Hide</button>
+                  </div>
+                  <div className="fr-short-answer-body">{question.shortAnswer}</div>
+                </div>
+              ) : (
+                <button className="fr-btn fr-btn-secondary fr-btn-sm" onClick={() => setAnswerRevealed(true)}>
+                  Reveal answer
+                </button>
+              )}
+            </div>
+          )}
+
+          <div className="fr-mode-label">
+            Feedback via: <strong>{modes[mode].shortLabel}</strong>
+          </div>
+
+          {mode === 'clipboard' && (
+            <ClipboardMode question={question} answer={answer} quizTitle={quizTitle} />
+          )}
+          {mode === 'singleshot' && (
+            <SingleShotMode question={question} answer={answer} quizTitle={quizTitle} onStart={() => setInteractionStarted(true)} />
+          )}
+          {mode === 'chat' && (
+            <ChatMode question={question} answer={answer} quizTitle={quizTitle} onStart={() => setInteractionStarted(true)} />
+          )}
+
+          <button className="next-btn" onClick={handleDone} style={{ marginTop: '1rem' }}>
+            Continue
+          </button>
+        </div>
       )}
     </div>
   );
