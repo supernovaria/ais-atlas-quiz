@@ -544,6 +544,10 @@
   border-radius: 999px;
   white-space: nowrap;
 }
+.selector-score--incomplete {
+  color: #1a6bbf;
+  background: #dbeafe;
+}
 
 /* Loading */
 .loading {

@@ -71,13 +71,13 @@ function playS9() {
 
 // M6 · Low-Blip — single low sine blip
 function playM6() {
-  note({ freq: 160, decay: 18, vol: 0.62 });
+  note({ freq: 160, decay: 18, vol: 0.48 });
 }
 
 // M7 · Clunk — noise burst + low sine
 function playM7() {
-  noiseBlip({ vol: 0.31, dur: 0.1 });
-  note({ freq: 70, decay: 12, vol: 0.52 });
+  noiseBlip({ vol: 0.24, dur: 0.1 });
+  note({ freq: 70, decay: 12, vol: 0.40 });
 }
 
 // ── Score-reveal sounds ─────────────────────────────────────────────────────

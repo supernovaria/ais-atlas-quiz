@@ -143,9 +143,9 @@ export default function Quiz({ quiz, quizTitle }) {
 
     setDisplayPct(0);
 
-    // Duration scales with score so the bar doesn't whip by on low scores.
-    // 40 ms per percentage point, minimum 1500 ms.
-    const animDuration = Math.max(1500, pct * 40);
+    // Duration: sqrt-scaled so 100% takes ~1.8× as long as 25%, not 4×.
+    // Ease-out (fast start, decelerates) gives a satisfying reveal feel.
+    const animDuration = Math.max(1000, 1800 * Math.sqrt(pct / 100));
 
     let animStart = null;
     let playedR9 = false;
@@ -154,9 +154,9 @@ export default function Quiz({ quiz, quizTitle }) {
 
     function step(timestamp) {
       if (!animStart) animStart = timestamp;
-      const elapsed = timestamp - animStart;
-      const progress = Math.min(elapsed / animDuration, 1);
-      const current = Math.round(progress * pct);
+      const t = Math.min((timestamp - animStart) / animDuration, 1);
+      const eased = 1 - Math.pow(1 - t, 2); // quadratic ease-out
+      const current = Math.round(eased * pct);
 
       setDisplayPct(current);
 
@@ -164,12 +164,12 @@ export default function Quiz({ quiz, quizTitle }) {
         playR9();
         playedR9 = true;
       }
-      if (!playedR6 && pct >= 90 && current >= 90) {
+      if (!playedR6 && pct === 100 && current >= 100) {
         playR6();
         playedR6 = true;
       }
 
-      if (progress < 1) {
+      if (t < 1) {
         rafId = requestAnimationFrame(step);
       } else {
         if (pct < 40) playM10();
