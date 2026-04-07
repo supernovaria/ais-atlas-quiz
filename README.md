@@ -1,10 +1,10 @@
 # AI Safety Atlas - Quiz Companion
 
-An unofficial quiz companion for the [AI Safety Atlas](https://aisafetytextbook.com). Test your understanding of key concepts from the textbook with section quizzes and chapter reviews.
+An unofficial quiz companion for the [AI Safety Atlas](https://ai-safety-atlas.com/chapters/v1/capabilities/introduction/). Test your understanding of key concepts from the textbook with section quizzes and chapter reviews.
 
 Currently covers **Chapter 1: Capabilities**.
 
-> **Note:** Questions are AI-generated placeholders for demonstration purposes. They have not been reviewed by the Atlas team.
+**Note:** Questions are AI-generated placeholders for demonstration purposes.
 
 ## Running Locally
 

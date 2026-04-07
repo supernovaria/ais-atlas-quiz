@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { playM10, playR9, playR6 } from '../sounds.js';
 import QuizQuestion from './QuizQuestion';
+import FreeResponseQuestion from './FreeResponseQuestion';
 
 function quizKey(quiz) {
   return `ais-quiz-${quiz.chapter}-${quiz.section}-${quiz.type}`;
@@ -25,8 +26,8 @@ export function getScore(quiz) {
 }
 
 function QuizTitleBar({ quiz, counter, reviewMode }) {
-  const icon = quiz.type === 'review' ? '\u{1F4D6}' : '\u00A7' + quiz.section;
-  const typeLabel = reviewMode ? 'Reviewing Missed' : quiz.type === 'review' ? 'Chapter Review' : 'Section Quiz';
+  const icon = quiz.type === 'review' ? '\u{1F4D6}' : quiz.type === 'fr-only' ? '\u270F\uFE0F' : '\u00A7' + quiz.section;
+  const typeLabel = reviewMode ? 'Reviewing Missed' : quiz.type === 'review' ? 'Chapter Review' : quiz.type === 'fr-only' ? 'Free Response' : 'Section Quiz';
   return (
     <div className="quiz-title-bar">
       <div className="quiz-title-left">
@@ -60,13 +61,7 @@ export default function Quiz({ quiz, quizTitle }) {
   const isLast = activeIdx === activeQuestions.length - 1;
 
   const handleAnswer = useCallback((isCorrect, { autoAdvance } = {}) => {
-    if (reviewMode) {
-      setAnswers(prev => {
-        const updated = [...prev];
-        updated[reviewIndices[reviewPos]] = isCorrect;
-        return updated;
-      });
-    } else {
+    if (!reviewMode) {
       setAnswers(prev => [...prev, isCorrect]);
     }
     if (autoAdvance) {
@@ -74,7 +69,6 @@ export default function Quiz({ quiz, quizTitle }) {
       if (isLast) {
         if (reviewMode) {
           setReviewMode(false);
-          setFinished(true);
         } else {
           setFinished(true);
         }
@@ -89,13 +83,12 @@ export default function Quiz({ quiz, quizTitle }) {
     } else {
       setShowResult(true);
     }
-  }, [reviewMode, isLast, reviewIndices, reviewPos]);
+  }, [reviewMode, isLast]);
 
   function handleNext() {
     if (isLast) {
       if (reviewMode) {
         setReviewMode(false);
-        setFinished(true);
       } else {
         setFinished(true);
       }
@@ -143,9 +136,9 @@ export default function Quiz({ quiz, quizTitle }) {
 
     setDisplayPct(0);
 
-    // Duration: sqrt-scaled so 100% takes ~1.8× as long as 25%, not 4×.
-    // Ease-out (fast start, decelerates) gives a satisfying reveal feel.
-    const animDuration = Math.max(1000, 1800 * Math.sqrt(pct / 100));
+    // Duration scales with score so the bar doesn't whip by on low scores.
+    // 40 ms per percentage point, minimum 1500 ms.
+    const animDuration = Math.max(1500, pct * 40);
 
     let animStart = null;
     let playedR9 = false;
@@ -154,9 +147,9 @@ export default function Quiz({ quiz, quizTitle }) {
 
     function step(timestamp) {
       if (!animStart) animStart = timestamp;
-      const t = Math.min((timestamp - animStart) / animDuration, 1);
-      const eased = 1 - Math.pow(1 - t, 2); // quadratic ease-out
-      const current = Math.round(eased * pct);
+      const elapsed = timestamp - animStart;
+      const progress = Math.min(elapsed / animDuration, 1);
+      const current = Math.round(progress * pct);
 
       setDisplayPct(current);
 
@@ -164,12 +157,12 @@ export default function Quiz({ quiz, quizTitle }) {
         playR9();
         playedR9 = true;
       }
-      if (!playedR6 && pct === 100 && current >= 100) {
+      if (!playedR6 && pct >= 90 && current >= 90) {
         playR6();
         playedR6 = true;
       }
 
-      if (t < 1) {
+      if (progress < 1) {
         rafId = requestAnimationFrame(step);
       } else {
         if (pct < 40) playM10();
@@ -233,6 +226,18 @@ export default function Quiz({ quiz, quizTitle }) {
   }
 
   function renderQuestion(q, qNum, total, keyPrefix = '') {
+    if (q.type === 'free-response') {
+      return (
+        <FreeResponseQuestion
+          key={`${keyPrefix}fr-${qNum}`}
+          question={q}
+          questionNumber={qNum}
+          totalQuestions={total}
+          onAnswer={handleAnswer}
+          quizTitle={quizTitle || quiz.title}
+        />
+      );
+    }
     return (
       <QuizQuestion
         key={`${keyPrefix}mc-${qNum}`}
@@ -260,7 +265,7 @@ export default function Quiz({ quiz, quizTitle }) {
 
         {renderQuestion(question, reviewIndices[reviewPos] + 1, quiz.questions.length, 'review-')}
 
-        {showResult && (
+        {showResult && question.type !== 'free-response' && (
           <button ref={nextRef} className="next-btn" onClick={handleNext}>
             {isLast ? 'Done' : 'Next \u2192'}
           </button>

@@ -54,7 +54,9 @@ function parseMCQuestions(body) {
   const questionBlocks = body.split(/^### Question \d+\s*$/m).filter(b => b.trim());
 
   return questionBlocks.map((block, idx) => {
-    const lines = block.trim().split('\n');
+    // Truncate block at any ### Free Response heading
+    const truncated = block.split(/^### Free Response \d+\s*$/m)[0];
+    const lines = truncated.trim().split('\n');
     const questionLines = [];
     const options = [];
     let explanation = '';
@@ -92,8 +94,53 @@ function parseMCQuestions(body) {
   }).filter(q => q.options.length > 0);
 }
 
+function parseFreeResponseQuestions(body) {
+  const parts = body.split(/^### Free Response \d+\s*$/m);
+  // First element is everything before the first ### Free Response — skip it
+  const frBlocks = parts.slice(1).filter(b => b.trim());
+
+  return frBlocks.map((block, idx) => {
+    // Truncate block at any ### Question heading
+    const truncated = block.split(/^### Question \d+\s*$/m)[0];
+    const lines = truncated.trim().split('\n');
+    const questionLines = [];
+    let context = '';
+    let i = 0;
+
+    // Collect question text until we hit **Context**:
+    while (i < lines.length && !lines[i].match(/^\*\*Context\*\*:/)) {
+      questionLines.push(lines[i]);
+      i++;
+    }
+
+    // Collect structured fields after **Context**:
+    let shortAnswer = '';
+    let hint = '';
+    if (i < lines.length) {
+      const remaining = lines.slice(i).join('\n').trim();
+      const ctxMatch = remaining.match(/\*\*Context\*\*:\s*([\s\S]*?)(?=\n\*\*Short Answer\*\*:|\n\*\*Hint\*\*:|$)/);
+      if (ctxMatch) context = ctxMatch[1].trim();
+      const saMatch = remaining.match(/\*\*Short Answer\*\*:\s*([\s\S]*?)(?=\n\*\*Hint\*\*:|$)/);
+      if (saMatch) shortAnswer = saMatch[1].trim();
+      const hintMatch = remaining.match(/\*\*Hint\*\*:\s*([\s\S]*)/);
+      if (hintMatch) hint = hintMatch[1].trim();
+    }
+
+    return {
+      id: idx + 1,
+      type: 'free-response',
+      question: questionLines.join('\n').trim(),
+      context,
+      shortAnswer,
+      hint,
+    };
+  });
+}
+
 function parseQuestions(body) {
-  return parseMCQuestions(body);
+  const mc = parseMCQuestions(body);
+  const fr = parseFreeResponseQuestions(body);
+  return [...mc, ...fr];
 }
 
 /**
