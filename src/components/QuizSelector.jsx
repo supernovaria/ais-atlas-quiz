@@ -8,8 +8,9 @@ export default function QuizSelector({ quizzes, onSelect, activeQuiz }) {
   function ScoreBadge({ quiz }) {
     const saved = getScore(quiz);
     if (!saved) return null;
+    const incomplete = saved.bestPct < 95;
     return (
-      <span className="selector-score" title={`Best: ${saved.bestPct}%`}>
+      <span className={`selector-score${incomplete ? ' selector-score--incomplete' : ''}`} title={`Best: ${saved.bestPct}%`}>
         {saved.bestPct}%
       </span>
     );
