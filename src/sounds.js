@@ -29,7 +29,7 @@ function note({ freq, type = 'sine', vol = 0.22, decay = 6, start = 0 }) {
   } catch (e) { /* audio unavailable */ }
 }
 
-function noiseBlip({ vol = 0.12, dur = 0.1 }) {
+function noiseBlip({ vol = 0.12, dur = 0.1, filter = 500 }) {
   try {
     const c = getCtx();
     const now = c.currentTime;
@@ -40,7 +40,7 @@ function noiseBlip({ vol = 0.12, dur = 0.1 }) {
     const filt = c.createBiquadFilter();
     const gain = c.createGain();
     filt.type = 'lowpass';
-    filt.frequency.value = 500;
+    filt.frequency.value = filter;
     src.buffer = buf;
     gain.gain.setValueAtTime(vol, now);
     gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
@@ -71,13 +71,13 @@ function playS9() {
 
 // M6 · Low-Blip — single low sine blip
 function playM6() {
-  note({ freq: 160, decay: 18, vol: 0.816 });
+  note({ freq: 80, decay: 18, vol: 0.816 });
 }
 
 // M7 · Clunk — noise burst + low sine
 function playM7() {
-  noiseBlip({ vol: 0.408, dur: 0.1 });
-  note({ freq: 70, decay: 12, vol: 0.68 });
+  noiseBlip({ vol: 0.408, dur: 0.1, filter: 250 });
+  note({ freq: 40, decay: 12, vol: 0.68 });
 }
 
 // ── Score-reveal sounds ─────────────────────────────────────────────────────
@@ -98,9 +98,9 @@ export function playR9() {
 
 // R6 · Tada — two-phrase tada, for scores ≥ 90%
 export function playR6() {
-  [392.0, 587.3].forEach(f => note({ freq: f, type: 'triangle', decay: 5, vol: 0.36 }));
+  [392.0, 587.3].forEach(f => note({ freq: f, type: 'sine', decay: 2.5, vol: 0.36 }));
   setTimeout(() => {
-    [784.0, 987.8].forEach(f => note({ freq: f, type: 'triangle', decay: 4, vol: 0.40 }));
+    [784.0, 987.8].forEach(f => note({ freq: f, type: 'sine', decay: 2.0, vol: 0.40 }));
   }, 160);
 }
 
