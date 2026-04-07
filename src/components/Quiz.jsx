@@ -173,7 +173,7 @@ export default function Quiz({ quiz, quizTitle }) {
       if (t < 1) {
         rafId = requestAnimationFrame(step);
       } else {
-        if (pct < 40) playM10();
+        if (pct < 45) playM10();
       }
     }
 
