@@ -88,7 +88,17 @@ function AppContent() {
 
   useEffect(() => {
     loadAllQuizzes().then(data => {
-      setQuizzes(data);
+      const frQuestions = data.flatMap(q => q.questions.filter(qq => qq.type === 'free-response'));
+      const allQuizzes = frQuestions.length > 0
+        ? [...data, {
+            chapter: null,
+            section: 0,
+            title: 'Free Response Practice',
+            type: 'fr-only',
+            questions: frQuestions,
+          }]
+        : data;
+      setQuizzes(allQuizzes);
       setLoading(false);
     });
   }, []);
