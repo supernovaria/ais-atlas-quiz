@@ -91,7 +91,7 @@ function parseMCQuestions(body) {
       explanation,
       shuffleAnswers: !noShuffle,
     };
-  });
+  }).filter(q => q.options.length > 0);
 }
 
 function parseFreeResponseQuestions(body) {
@@ -113,13 +113,17 @@ function parseFreeResponseQuestions(body) {
       i++;
     }
 
-    // Collect context (everything after **Context**:)
+    // Collect structured fields after **Context**:
+    let shortAnswer = '';
+    let hint = '';
     if (i < lines.length) {
       const remaining = lines.slice(i).join('\n').trim();
-      const ctxMatch = remaining.match(/\*\*Context\*\*:\s*([\s\S]*)/);
-      if (ctxMatch) {
-        context = ctxMatch[1].trim();
-      }
+      const ctxMatch = remaining.match(/\*\*Context\*\*:\s*([\s\S]*?)(?=\n\*\*Short Answer\*\*:|\n\*\*Hint\*\*:|$)/);
+      if (ctxMatch) context = ctxMatch[1].trim();
+      const saMatch = remaining.match(/\*\*Short Answer\*\*:\s*([\s\S]*?)(?=\n\*\*Hint\*\*:|$)/);
+      if (saMatch) shortAnswer = saMatch[1].trim();
+      const hintMatch = remaining.match(/\*\*Hint\*\*:\s*([\s\S]*)/);
+      if (hintMatch) hint = hintMatch[1].trim();
     }
 
     return {
@@ -127,6 +131,8 @@ function parseFreeResponseQuestions(body) {
       type: 'free-response',
       question: questionLines.join('\n').trim(),
       context,
+      shortAnswer,
+      hint,
     };
   });
 }

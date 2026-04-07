@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sound Preview Lab — AIS Atlas Quiz</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f1117;
+  color: #e0e0e0;
+  padding: 2rem;
+  line-height: 1.5;
+  max-width: 900px;
+}
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+.subtitle {
+  color: #777;
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+}
+section {
+  margin-bottom: 2.8rem;
+}
+h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #2a2a2a;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.success-section h2 { color: #56d98e; }
+.mistake-section h2 { color: #d97b56; }
+.score-section h2   { color: #56a8d9; }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.07s, filter 0.07s;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+button:hover { filter: brightness(1.2); }
+button:active { transform: scale(0.94); }
+
+.success-section button {
+  background: #193328;
+  color: #56d98e;
+  border: 1px solid #2a5240;
+}
+.mistake-section button {
+  background: #33201a;
+  color: #d97b56;
+  border: 1px solid #52392a;
+}
+.score-section button {
+  background: #182633;
+  color: #56a8d9;
+  border: 1px solid #2a4a62;
+}
+</style>
+</head>
+<body>
+<h1>Sound Preview Lab</h1>
+<p class="subtitle">Click buttons to preview sounds. Tell me the labels of the ones you like best from each group.</p>
+
+<section class="success-section">
+  <h2>✓ Success Tones — correct answer</h2>
+  <div class="grid" id="success-grid"></div>
+</section>
+
+<section class="mistake-section">
+  <h2>✗ Mistake Tones — wrong answer</h2>
+  <div class="grid" id="mistake-grid"></div>
+</section>
+
+<section class="score-section">
+  <h2>% Score Reveal Tones — end of quiz</h2>
+  <div class="grid" id="score-grid"></div>
+</section>
+
+<script>
+// ── Audio context ───────────────────────────────────────────────────────────
+let _ctx = null;
+function ac() {
+  if (!_ctx) _ctx = new (window.AudioContext || window.webkitAudioContext)();
+  if (_ctx.state === 'suspended') _ctx.resume();
+  return _ctx;
+}
+
+// ── Low-level helpers ───────────────────────────────────────────────────────
+
+// Play a single oscillator note with an exponential decay envelope
+function note({ freq, type = 'sine', vol = 0.22, decay = 6, start = 0 }) {
+  const c = ac(), now = c.currentTime + start;
+  const dur = 6 / decay;
+  const osc = c.createOscillator();
+  const gain = c.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, now);
+  gain.gain.setValueAtTime(0, now);
+  gain.gain.linearRampToValueAtTime(vol, now + 0.006);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  osc.connect(gain); gain.connect(c.destination);
+  osc.start(now); osc.stop(now + dur + 0.05);
+}
+
+// Play a frequency sweep (pitch glide)
+function sweep({ f0, f1, type = 'sine', vol = 0.25, dur = 0.3, start = 0 }) {
+  const c = ac(), now = c.currentTime + start;
+  const osc = c.createOscillator();
+  const gain = c.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(f0, now);
+  osc.frequency.exponentialRampToValueAtTime(f1, now + dur);
+  gain.gain.setValueAtTime(vol, now);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  osc.connect(gain); gain.connect(c.destination);
+  osc.start(now); osc.stop(now + dur + 0.05);
+}
+
+// Play noise burst (for drum-roll feel)
+function noise({ vol = 0.15, dur = 0.12, start = 0, cutoff = 1200 }) {
+  const c = ac(), now = c.currentTime + start;
+  const buf = c.createBuffer(1, Math.ceil(c.sampleRate * dur), c.sampleRate);
+  const d = buf.getChannelData(0);
+  for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1);
+  const src = c.createBufferSource();
+  const filt = c.createBiquadFilter();
+  const gain = c.createGain();
+  filt.type = 'lowpass'; filt.frequency.value = cutoff;
+  src.buffer = buf;
+  gain.gain.setValueAtTime(vol, now);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+  src.connect(filt); filt.connect(gain); gain.connect(c.destination);
+  src.start(now); src.stop(now + dur + 0.02);
+}
+
+// Play a chord (multiple notes at once)
+function chord(freqs, { type = 'sine', vol = 0.15, decay = 3, start = 0 } = {}) {
+  freqs.forEach(f => note({ freq: f, type, vol, decay, start }));
+}
+
+// ── 10 SUCCESS tones ────────────────────────────────────────────────────────
+const successSounds = [
+  {
+    label: 'S1 · Chime-Up',
+    play() {
+      // Ascending D5→G5→C6, classic bell-chime
+      note({ freq: 587.3, decay: 8, start: 0 });
+      note({ freq: 784.0, decay: 8, start: 0.06 });
+      note({ freq: 1046.5, decay: 8, start: 0.12 });
+    }
+  },
+  {
+    label: 'S2 · Sparkle',
+    play() {
+      // 5-note rapid sparkle C5→E5→G5→B5→E6
+      [523.3, 659.3, 784.0, 987.8, 1318.5].forEach((f, i) =>
+        note({ freq: f, decay: 14, vol: 0.18, start: i * 0.04 })
+      );
+    }
+  },
+  {
+    label: 'S3 · Bell-Duo',
+    play() {
+      // E5 + C6 together, long bell ring
+      note({ freq: 659.3, decay: 2.5, vol: 0.2, start: 0 });
+      note({ freq: 1046.5, decay: 2.5, vol: 0.16, start: 0 });
+    }
+  },
+  {
+    label: 'S4 · Fanfare',
+    play() {
+      // G4→C5→E5→G5 mini fanfare, triangle wave
+      [392, 523.3, 659.3, 784].forEach((f, i) =>
+        note({ freq: f, type: 'triangle', decay: 7, vol: 0.2, start: i * 0.08 })
+      );
+    }
+  },
+  {
+    label: 'S5 · Boing-Up',
+    play() {
+      // Upward pitch sweep (200→1400 Hz)
+      sweep({ f0: 200, f1: 1400, dur: 0.32, vol: 0.22 });
+    }
+  },
+  {
+    label: 'S6 · Marimba',
+    play() {
+      // C5→E5→G5 staccato marimba feel, triangle + fast decay
+      note({ freq: 523.3, type: 'triangle', decay: 11, vol: 0.24, start: 0 });
+      note({ freq: 659.3, type: 'triangle', decay: 11, vol: 0.24, start: 0.055 });
+      note({ freq: 784.0, type: 'triangle', decay: 11, vol: 0.24, start: 0.11 });
+    }
+  },
+  {
+    label: 'S7 · Pixel-Win',
+    play() {
+      // 8-bit square wave ascending C5→E5→G5→C6
+      [523.3, 659.3, 784.0, 1046.5].forEach((f, i) =>
+        note({ freq: f, type: 'square', decay: 12, vol: 0.09, start: i * 0.038 })
+      );
+    }
+  },
+  {
+    label: 'S8 · Warm-Chord',
+    play() {
+      // C4+E4+G4+C5 warm sine chord
+      chord([261.6, 329.6, 392.0, 523.3], { decay: 2, vol: 0.16 });
+    }
+  },
+  {
+    label: 'S9 · Ping-Ping',
+    play() {
+      // Two quick high pings G5 then C6
+      note({ freq: 784.0, decay: 14, vol: 0.2, start: 0 });
+      note({ freq: 1046.5, decay: 14, vol: 0.2, start: 0.13 });
+    }
+  },
+  {
+    label: 'S10 · Xylo-Roll',
+    play() {
+      // C5→E5→G5→A5→C6, xylophone roll
+      [523.3, 659.3, 784.0, 880.0, 1046.5].forEach((f, i) =>
+        note({ freq: f, type: 'triangle', decay: 10, vol: 0.2, start: i * 0.048 })
+      );
+    }
+  },
+];
+
+// ── 10 MISTAKE tones ────────────────────────────────────────────────────────
+const mistakeSounds = [
+  {
+    label: 'M1 · Thonk',
+    play() {
+      // Pitch-swept sine 280→100 Hz, short — the current quiz sound
+      sweep({ f0: 280, f1: 100, dur: 0.22, vol: 0.28 });
+    }
+  },
+  {
+    label: 'M2 · Wah-Down',
+    play() {
+      // Slower descending sweep 400→130 Hz, triangle
+      sweep({ f0: 400, f1: 130, type: 'triangle', dur: 0.35, vol: 0.2 });
+    }
+  },
+  {
+    label: 'M3 · Low-Buzz',
+    play() {
+      // Short low buzz at 90 Hz, sawtooth
+      note({ freq: 90, type: 'sawtooth', decay: 14, vol: 0.1, start: 0 });
+    }
+  },
+  {
+    label: 'M4 · Hollow-Knock',
+    play() {
+      // 200 Hz fundamental + 400 Hz overtone, hollow body sound
+      note({ freq: 200, decay: 10, vol: 0.22, start: 0 });
+      note({ freq: 400, decay: 15, vol: 0.08, start: 0 });
+    }
+  },
+  {
+    label: 'M5 · Sad-Slide',
+    play() {
+      // Sine glide from 520→200 Hz over 0.3s
+      sweep({ f0: 520, f1: 200, dur: 0.3, vol: 0.22 });
+    }
+  },
+  {
+    label: 'M6 · Low-Blip',
+    play() {
+      // Quick low-pitched sine blip at 160 Hz
+      note({ freq: 160, decay: 18, vol: 0.24, start: 0 });
+    }
+  },
+  {
+    label: 'M7 · Clunk',
+    play() {
+      // Noise burst + low 70 Hz sine together
+      noise({ vol: 0.12, dur: 0.1, cutoff: 500 });
+      note({ freq: 70, decay: 12, vol: 0.2, start: 0 });
+    }
+  },
+  {
+    label: 'M8 · Muted-Wah',
+    play() {
+      // Slow descending sweep 350→90 Hz, soft
+      sweep({ f0: 350, f1: 90, dur: 0.4, vol: 0.18 });
+    }
+  },
+  {
+    label: 'M9 · Soft-Thud',
+    play() {
+      // Deep 60 Hz sine thud, soft
+      note({ freq: 60, decay: 9, vol: 0.25, start: 0 });
+    }
+  },
+  {
+    label: 'M10 · Down-Arp',
+    play() {
+      // Descending E4→C4→G3, sad arpeggio
+      note({ freq: 329.6, decay: 9, vol: 0.2, start: 0 });
+      note({ freq: 261.6, decay: 9, vol: 0.2, start: 0.07 });
+      note({ freq: 196.0, decay: 9, vol: 0.2, start: 0.14 });
+    }
+  },
+];
+
+// ── 10 SCORE REVEAL tones ───────────────────────────────────────────────────
+const scoreSounds = [
+  {
+    label: 'R1 · Count-Up',
+    play() {
+      // 5-note ascending scale C4→D4→E4→G4→C5
+      [261.6, 293.7, 329.6, 392.0, 523.3].forEach((f, i) =>
+        note({ freq: f, decay: 5, vol: 0.2, start: i * 0.09 })
+      );
+    }
+  },
+  {
+    label: 'R2 · Victory',
+    play() {
+      // G4→C5→E5→G5, triumphant triangle, longer decay
+      [392.0, 523.3, 659.3, 784.0].forEach((f, i) =>
+        note({ freq: f, type: 'triangle', decay: 4, vol: 0.22, start: i * 0.1 })
+      );
+    }
+  },
+  {
+    label: 'R3 · Level-Up',
+    play() {
+      // C5→D5→E5→G5→C6 ascending, then C6 held longer
+      [523.3, 587.3, 659.3, 784.0, 1046.5].forEach((f, i) => {
+        const isLast = i === 4;
+        note({ freq: f, type: 'triangle', decay: isLast ? 3 : 8, vol: 0.2, start: i * 0.065 });
+      });
+    }
+  },
+  {
+    label: 'R4 · Sparkle-Burst',
+    play() {
+      // Rapid 6-note ascending sparkle C5→E5→G5→B5→D6→G6
+      [523.3, 659.3, 784.0, 987.8, 1174.7, 1568.0].forEach((f, i) =>
+        note({ freq: f, decay: 5, vol: 0.17, start: i * 0.042 })
+      );
+    }
+  },
+  {
+    label: 'R5 · Gentle-Rise',
+    play() {
+      // C4→E4→G4→C5 slow gentle ascent, sine, long sustain
+      [261.6, 329.6, 392.0, 523.3].forEach((f, i) =>
+        note({ freq: f, decay: 2, vol: 0.18, start: i * 0.14 })
+      );
+    }
+  },
+  {
+    label: 'R6 · Tada',
+    play() {
+      // G4+D5 chord, then G5+B5 accent 160ms later
+      chord([392.0, 587.3], { type: 'triangle', decay: 5, vol: 0.18 });
+      setTimeout(() => chord([784.0, 987.8], { type: 'triangle', decay: 4, vol: 0.2 }), 160);
+    }
+  },
+  {
+    label: 'R7 · Roll-Ding',
+    play() {
+      // Short noise roll then D5→G5→C6 ding
+      noise({ vol: 0.1, dur: 0.18, cutoff: 3000 });
+      note({ freq: 587.3, decay: 8, vol: 0.18, start: 0.2 });
+      note({ freq: 784.0, decay: 8, vol: 0.18, start: 0.26 });
+      note({ freq: 1046.5, decay: 6, vol: 0.2, start: 0.32 });
+    }
+  },
+  {
+    label: 'R8 · Bells-Six',
+    play() {
+      // 6 bells C5→E5→G5→C6→E6→G6
+      [523.3, 659.3, 784.0, 1046.5, 1318.5, 1568.0].forEach((f, i) =>
+        note({ freq: f, decay: 4, vol: 0.17, start: i * 0.075 })
+      );
+    }
+  },
+  {
+    label: 'R9 · Completion',
+    play() {
+      // Full C major chord C3+G3+E4+C5, all at once, slow warm fade
+      chord([130.8, 196.0, 329.6, 523.3], { decay: 1.8, vol: 0.14 });
+    }
+  },
+  {
+    label: 'R10 · Trophy',
+    play() {
+      // Two-phrase: E4→G4→C5→E5 (slow), then C5→E5→G5→C6 (fast) after pause
+      [329.6, 392.0, 523.3, 659.3].forEach((f, i) =>
+        note({ freq: f, type: 'triangle', decay: 6, vol: 0.2, start: i * 0.11 })
+      );
+      setTimeout(() => {
+        [523.3, 659.3, 784.0, 1046.5].forEach((f, i) =>
+          note({ freq: f, type: 'triangle', decay: 5, vol: 0.2, start: i * 0.055 })
+        );
+      }, 620);
+    }
+  },
+];
+
+// ── Render buttons ──────────────────────────────────────────────────────────
+function renderGroup(sounds, containerId) {
+  const container = document.getElementById(containerId);
+  sounds.forEach(({ label, play }) => {
+    const btn = document.createElement('button');
+    btn.textContent = label;
+    btn.addEventListener('click', () => { try { play(); } catch(e) {} });
+    container.appendChild(btn);
+  });
+}
+
+renderGroup(successSounds, 'success-grid');
+renderGroup(mistakeSounds, 'mistake-grid');
+renderGroup(scoreSounds,   'score-grid');
+</script>
+</body>
+</html>

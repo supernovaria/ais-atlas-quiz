@@ -239,6 +239,8 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
   const [answer, setAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [interactionStarted, setInteractionStarted] = useState(false);
+  const [hintShown, setHintShown] = useState(false);
+  const [answerRevealed, setAnswerRevealed] = useState(false);
 
   function handleSubmit() {
     if (!answer.trim()) return;
@@ -262,7 +264,17 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
         <span className="fr-badge">Free Response</span>
       </div>
 
-      <p className="question-text">{question.question}</p>
+      <p className="question-text">
+        {question.question}
+        {question.hint && (
+          <button className="fr-hint-btn" onClick={() => setHintShown(h => !h)}>
+            {hintShown ? '▴ hint' : '▾ hint'}
+          </button>
+        )}
+      </p>
+      {hintShown && question.hint && (
+        <div className="fr-hint-box">{question.hint}</div>
+      )}
 
       {!submitted ? (
         <div className="fr-input-area">
@@ -292,6 +304,24 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
             </div>
             <div className="fr-your-answer-text">{answer}</div>
           </div>
+
+          {question.shortAnswer && (
+            <div className="fr-reveal-row">
+              {answerRevealed ? (
+                <div className="fr-short-answer">
+                  <div className="fr-short-answer-header">
+                    Model answer
+                    <button className="fr-edit-btn" onClick={() => setAnswerRevealed(false)}>Hide</button>
+                  </div>
+                  <div className="fr-short-answer-body">{question.shortAnswer}</div>
+                </div>
+              ) : (
+                <button className="fr-btn fr-btn-secondary fr-btn-sm" onClick={() => setAnswerRevealed(true)}>
+                  Reveal answer
+                </button>
+              )}
+            </div>
+          )}
 
           <div className="fr-mode-label">
             Feedback via: <strong>{modes[mode].shortLabel}</strong>

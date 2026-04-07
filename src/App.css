@@ -998,6 +998,70 @@
   white-space: pre-wrap;
 }
 
+/* Hint */
+.fr-hint-btn {
+  display: inline;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.15s;
+  line-height: 1.5;
+}
+.fr-hint-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.fr-hint-box {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.625rem 0.875rem;
+  margin: -0.25rem 0 0.75rem;
+  animation: fadeIn 0.15s ease;
+  line-height: 1.6;
+}
+
+/* Reveal answer */
+.fr-reveal-row {
+  margin-bottom: 0.75rem;
+}
+
+.fr-short-answer {
+  background: var(--color-correct-light);
+  border-left: 3px solid var(--color-correct);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.fr-short-answer-header {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-correct);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fr-short-answer-body {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  white-space: pre-wrap;
+}
+
 /* Chat Mode */
 .fr-chat-container {
   border: 1px solid var(--color-border);
