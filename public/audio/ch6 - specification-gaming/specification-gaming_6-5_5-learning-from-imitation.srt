@@ -1,0 +1,1358 @@
+1
+00:00:00,160 --> 00:00:05,080
+Section 6.5 learning from imitation the
+preceding sections have
+
+2
+00:00:05,080 --> 00:00:09,240
+underscored the significance of reward
+misspecification for the alignment
+
+3
+00:00:09,240 --> 00:00:13,199
+of future artificial intelligence. The
+next few sections will
+
+4
+00:00:13,199 --> 00:00:16,800
+explore various attempts and proposals
+formulated to tackle this
+
+5
+00:00:16,800 --> 00:00:20,839
+issue, commencing with an intuitive
+approach learning the appropriate
+
+6
+00:00:20,839 --> 00:00:25,399
+reward function through human behavior
+observation and imitation rather
+
+7
+00:00:25,399 --> 00:00:29,620
+than manual creation by the designers.
+Section Imitation Learning
+
+8
+00:00:30,500 --> 00:00:35,100
+let's define imitation learning. Imitation
+learning entails the process
+
+9
+00:00:35,100 --> 00:00:38,500
+of learning via the observation of an
+expert's actions
+
+10
+00:00:38,500 --> 00:00:44,420
+and replicating their behavior. Unlike
+reinforcement learning, which derives
+
+11
+00:00:44,420 --> 00:00:47,060
+a policy for a system's actions based on
+its
+
+12
+00:00:47,060 --> 00:00:51,740
+interaction outcomes with the environment,
+imitation learning aspires to
+
+13
+00:00:51,740 --> 00:00:54,740
+learn a policy through the observation of
+another agent
+
+14
+00:00:54,740 --> 00:00:58,740
+interacting with the environment.
+Imitation learning is the general
+
+15
+00:00:58,820 --> 00:01:01,619
+term for the class of algorithms that
+learn through
+
+16
+00:01:01,619 --> 00:01:05,379
+imitation. There is figure 6.10 in the
+textbook. Here
+
+17
+00:01:05,620 --> 00:01:09,099
+it depicts a table that distinguishes
+various machine learning
+
+18
+00:01:09,099 --> 00:01:15,459
+based methods where SL supervised learning
+UL unsupervised learning
+
+19
+00:01:15,620 --> 00:01:21,780
+RL reinforcement learning IL imitation
+learning IL reduces RL
+
+20
+00:01:21,780 --> 00:01:26,579
+to slide IL RL is a promising area L
+
+21
+00:01:26,579 --> 00:01:33,219
+can be implemented through behavioral
+cloning, procedural cloning, inverse
+
+22
+00:01:33,219 --> 00:01:40,900
+reinforcement learning, cooperative
+inverse reinforcement learning, generative
+adversarial imitation
+
+23
+00:01:40,900 --> 00:01:46,099
+learning, etc. One instance of this
+process's application is
+
+24
+00:01:46,099 --> 00:01:49,709
+in the training of modern large language
+models. LLMs
+
+25
+00:01:50,349 --> 00:01:54,549
+LLMs, after training as general purpose
+text generators, often
+
+26
+00:01:54,549 --> 00:01:58,590
+undergo fine tuning for instruction
+following through imitation learning
+
+27
+00:01:58,989 --> 00:02:01,909
+using the example of a human expert who
+follows
+
+28
+00:02:01,909 --> 00:02:05,590
+instructions provided as text prompts and
+completions. In the
+
+29
+00:02:05,590 --> 00:02:08,990
+context of safety and alignment, imitation
+learning is favored
+
+30
+00:02:08,990 --> 00:02:14,270
+over direct reinforcement to alleviate
+specification gaming issues. This
+
+31
+00:02:14,270 --> 00:02:17,270
+problem emerges when the programmers
+overlook or fail to
+
+32
+00:02:17,270 --> 00:02:21,169
+anticipate certain edge cases or unusual
+ways of achieving
+
+33
+00:02:21,169 --> 00:02:24,770
+a task in the specific environment. The
+presumption is
+
+34
+00:02:24,770 --> 00:02:28,129
+that demonstrating behavior compared to RL
+would be simpler
+
+35
+00:02:28,129 --> 00:02:30,930
+and safer, as the model would not only
+attain
+
+36
+00:02:30,930 --> 00:02:33,650
+the objective but also fulfill it as the
+expert
+
+37
+00:02:33,650 --> 00:02:37,969
+demonstrator explicitly intends. However,
+this is not an infallible
+
+38
+00:02:37,969 --> 00:02:40,930
+solution and its limitations will be
+discussed in later
+
+39
+00:02:40,930 --> 00:02:47,000
+sections. Section Behavioral Cloning the
+term behavioral cloning refers
+
+40
+00:02:47,000 --> 00:02:51,360
+to the Behavioral cloning involves
+collecting observations of an
+
+41
+00:02:51,360 --> 00:02:55,479
+expert demonstrator proficient at the
+underlying task and using
+
+42
+00:02:55,479 --> 00:02:59,120
+supervised learning to guide an agent to
+imitate the
+
+43
+00:02:59,120 --> 00:03:02,878
+demonstrated behavior. Behavioral cloning
+is one way in which
+
+44
+00:03:02,878 --> 00:03:07,439
+we can implement imitation learning. There
+are also other
+
+45
+00:03:07,439 --> 00:03:13,080
+ways, such as inverse reinforcement
+learning or cooperative inverse
+
+46
+00:03:13,080 --> 00:03:19,650
+reinforcement learning. Unlike irl, the
+goal behind behavioral cloning
+
+47
+00:03:19,650 --> 00:03:23,250
+as a machine learning method is to
+replicate the
+
+48
+00:03:23,250 --> 00:03:26,930
+demonstrator's behavior as closely as
+possible, regardless of what
+
+49
+00:03:26,930 --> 00:03:30,449
+the demonstrator's goals might be. Self
+driving cars can
+
+50
+00:03:30,449 --> 00:03:34,050
+serve as A simplistic illustration of how
+behavioral cloning
+
+51
+00:03:34,050 --> 00:03:38,330
+operates A human demonstrator driver is
+directed to operate
+
+52
+00:03:38,330 --> 00:03:41,449
+a car during which data about the
+environment state
+
+53
+00:03:41,870 --> 00:03:44,789
+from sensors like LIDAR and cameras, along
+with the
+
+54
+00:03:44,789 --> 00:03:48,909
+actions taken by the demonstrator are
+collected. These actions
+
+55
+00:03:48,909 --> 00:03:52,949
+can include wheel movements, gear use,
+etc. This creates
+
+56
+00:03:52,949 --> 00:03:58,110
+a data set comprising state action pairs.
+Subsequently, supervised
+
+57
+00:03:58,110 --> 00:04:01,310
+learning is used to train a prediction
+model which
+
+58
+00:04:01,310 --> 00:04:04,110
+attempts to predict an action for any
+future environment
+
+59
+00:04:04,349 --> 00:04:08,069
+state. For instance, the model might
+output a specific
+
+60
+00:04:08,069 --> 00:04:11,349
+steering wheel and gear configuration
+based on the camera
+
+61
+00:04:11,349 --> 00:04:15,000
+feed. When the model achieves sufficient
+accuracy, it can
+
+62
+00:04:15,000 --> 00:04:17,600
+be stated that the human driver's behavior
+has been
+
+63
+00:04:17,600 --> 00:04:21,279
+cloned into a machine via learning, hence
+the term
+
+64
+00:04:21,279 --> 00:04:25,360
+behavioral cloning. The following points
+highlight several potential issues
+
+65
+00:04:25,600 --> 00:04:31,040
+that might surface when employing
+behavioral one. Confident in
+
+66
+00:04:32,000 --> 00:04:35,160
+during the demonstrations, the human
+experts have some amount
+
+67
+00:04:35,160 --> 00:04:37,870
+of background knowledge that they rely on
+which is
+
+68
+00:04:37,870 --> 00:04:40,750
+not taught to the model. For example, when
+training
+
+69
+00:04:40,750 --> 00:04:44,670
+an LLM to have conversations using
+behavioral cloning, the
+
+70
+00:04:44,670 --> 00:04:48,350
+human demonstrator might less frequently
+ask certain questions because
+
+71
+00:04:48,350 --> 00:04:51,709
+they are considered common sense. A model
+trained to
+
+72
+00:04:51,709 --> 00:04:55,189
+imitate will copy both the types of
+questions asked
+
+73
+00:04:55,189 --> 00:04:58,389
+in conversation as well as the frequency
+with which
+
+74
+00:04:58,389 --> 00:05:02,389
+they are asked. Humans already possess
+this background knowledge,
+
+75
+00:05:02,470 --> 00:05:05,750
+but an LLM doesn't. This means that to
+have
+
+76
+00:05:05,750 --> 00:05:08,230
+the same level of information as a human,
+the
+
+77
+00:05:08,230 --> 00:05:11,029
+model should ask some questions more
+frequently to fill
+
+78
+00:05:11,029 --> 00:05:13,709
+the gaps in its knowledge. But since the
+model
+
+79
+00:05:13,709 --> 00:05:15,870
+seeks to imitate, it will stick to the low
+
+80
+00:05:15,870 --> 00:05:19,310
+frequency demonstrated by the human and
+thus has strictly
+
+81
+00:05:19,310 --> 00:05:22,790
+less information overall than the
+demonstrator for the same
+
+82
+00:05:22,790 --> 00:05:26,990
+conversational task. Despite this dearth
+of knowledge, we expect
+
+83
+00:05:26,990 --> 00:05:28,949
+it to be able to perform as a clone
+
+84
+00:05:28,949 --> 00:05:32,389
+and reach human level performance. This
+means in order
+
+85
+00:05:32,389 --> 00:05:35,430
+to reach human performance on less than
+human knowledge,
+
+86
+00:05:35,430 --> 00:05:38,029
+it will resort to making up facts that
+help
+
+87
+00:05:38,029 --> 00:05:41,990
+it reach its performance goals. These
+hallucinations will then
+
+88
+00:05:41,990 --> 00:05:44,709
+be presented during the conversation with
+the same level
+
+89
+00:05:44,709 --> 00:05:48,350
+of confidence as all the other
+information. Hallucinations and
+
+90
+00:05:48,350 --> 00:05:52,069
+confident incorrectness is an empirically
+verified problem in many
+
+91
+00:05:52,069 --> 00:05:56,430
+LLMs including GPT 2 and 3, and raises
+obvious
+
+92
+00:05:56,430 --> 00:06:03,180
+concerns for AI safety. Xiao et al. 2021
+Underachieving
+
+93
+00:06:03,339 --> 00:06:06,819
+the types of hallucinations mentioned
+above arose because the
+
+94
+00:06:06,819 --> 00:06:10,060
+model knew too little. However, the model
+can also
+
+95
+00:06:10,060 --> 00:06:12,899
+know too much. If the model knows more
+than
+
+96
+00:06:12,899 --> 00:06:15,579
+the human demonstrator because it is able
+to find
+
+97
+00:06:15,579 --> 00:06:17,860
+more patterns in the environment state
+that it is
+
+98
+00:06:17,860 --> 00:06:21,339
+given, it will throw away that information
+and reduce
+
+99
+00:06:21,339 --> 00:06:24,670
+its performance to match human level. This
+is because
+
+100
+00:06:24,670 --> 00:06:27,990
+it is trained as a clone. Ideally, we
+don't
+
+101
+00:06:27,990 --> 00:06:30,949
+want the model dumbing itself down or not
+disclosing
+
+102
+00:06:30,949 --> 00:06:33,910
+useful new patterns in data just because
+it is
+
+103
+00:06:33,910 --> 00:06:35,949
+trying to be human like or perform at a
+
+104
+00:06:35,949 --> 00:06:38,990
+human level. This is another problem that
+will have
+
+105
+00:06:38,990 --> 00:06:41,949
+to be addressed if behavioral cloning
+continues to be
+
+106
+00:06:41,949 --> 00:06:47,470
+used as an ML technique. Procedural
+Cloning we define
+
+107
+00:06:47,470 --> 00:06:53,569
+procedure cloning as follows. Procedure
+cloning extends behavioral cloning
+
+108
+00:06:54,850 --> 00:06:58,370
+by not just imitating the demonstrator's
+outputs, but also
+
+109
+00:06:58,370 --> 00:07:02,769
+imitating the complete sequence of
+intermediate computations associated with
+
+110
+00:07:02,769 --> 00:07:06,410
+an expert's procedure. In bc, the agent
+learns to
+
+111
+00:07:06,410 --> 00:07:09,930
+map states directly to actions by
+discarding the intermediate
+
+112
+00:07:09,930 --> 00:07:13,129
+search outputs. On the other hand, the PC
+approach
+
+113
+00:07:13,129 --> 00:07:17,439
+learns the entire sequence of intermediate
+computations, including branches
+
+114
+00:07:17,439 --> 00:07:21,800
+and backtracks during training. During
+inference, PC generates a
+
+115
+00:07:21,800 --> 00:07:25,160
+sequence of intermediate search outcomes
+that mimic the expert
+
+116
+00:07:25,160 --> 00:07:28,720
+search procedure before outputting the
+final action. The main
+
+117
+00:07:28,720 --> 00:07:31,439
+difference between PC and BC lies in the
+information
+
+118
+00:07:31,519 --> 00:07:35,480
+they utilize. BC only has access to expert
+state
+
+119
+00:07:35,480 --> 00:07:39,240
+action pairs as demonstrations, while PC
+also has access
+
+120
+00:07:39,240 --> 00:07:42,800
+to the intermediate computations that
+generated those state action
+
+121
+00:07:42,800 --> 00:07:46,199
+pairs. PC learns to predict the complete
+series of
+
+122
+00:07:46,199 --> 00:07:50,199
+intermediate computation outcomes,
+enabling it to generalize better to
+
+123
+00:07:50,199 --> 00:07:54,079
+test environments with different
+configurations compared to alternative
+improvements
+
+124
+00:07:54,079 --> 00:07:58,079
+over BC. PC's ability to imitate the
+expert search
+
+125
+00:07:58,079 --> 00:08:01,160
+procedure allows it to capture the
+underlying reasoning and
+
+126
+00:08:01,160 --> 00:08:04,839
+decision making process, leading to
+improved performance in various
+
+127
+00:08:04,839 --> 00:08:08,720
+tasks. A limitation of PC is the
+computational overhead
+
+128
+00:08:08,720 --> 00:08:12,310
+compared to bc, as PC needs to predict
+intermediate
+
+129
+00:08:12,310 --> 00:08:15,750
+procedures. Additionally, the choice of
+how to encode the
+
+130
+00:08:15,750 --> 00:08:18,949
+expert's algorithm into a form suitable
+for PC is
+
+131
+00:08:18,949 --> 00:08:21,589
+left to the practitioner, which may
+require some trial
+
+132
+00:08:21,589 --> 00:08:26,589
+and error in designing the ideal
+computation sequence. Inverse
+
+133
+00:08:26,589 --> 00:08:33,110
+Reinforcement Learning the term inverse
+reinforcement learning refers to
+
+134
+00:08:33,110 --> 00:08:38,629
+the Inverse reinforcement learning
+represents a form of machine
+
+135
+00:08:38,629 --> 00:08:42,350
+learning wherein an artificial
+intelligence observes the behavior of
+
+136
+00:08:42,350 --> 00:08:46,190
+another agent within a particular
+environment, typically an expert
+
+137
+00:08:46,190 --> 00:08:49,669
+human, and endeavors to discern the reward
+function without
+
+138
+00:08:49,669 --> 00:08:53,469
+its explicit definition. IRL is typically
+employed when a
+
+139
+00:08:53,469 --> 00:08:57,470
+reward function is too intricate to define
+programmatically or
+
+140
+00:08:57,470 --> 00:09:00,470
+when AI agents need to react robustly to
+sudden
+
+141
+00:09:00,470 --> 00:09:05,029
+environmental changes necessitating a
+modification in the reward function
+
+142
+00:09:05,029 --> 00:09:08,350
+for safety. For instance, consider an AI
+agent learning
+
+143
+00:09:08,350 --> 00:09:12,590
+to execute a backflip. Humans, dogs, and
+Boston Dynamics
+
+144
+00:09:12,590 --> 00:09:15,590
+robots can all perform backflips, but the
+manner in
+
+145
+00:09:15,590 --> 00:09:18,509
+which they do so varies significantly
+depending on their
+
+146
+00:09:18,509 --> 00:09:23,029
+physiology, their incentives, and their
+current location, all of
+
+147
+00:09:23,029 --> 00:09:25,309
+which can be highly diverse in the real
+world.
+
+148
+00:09:25,710 --> 00:09:29,029
+An AI agent learning backflips purely
+through trial and
+
+149
+00:09:29,029 --> 00:09:31,629
+error across a wide range of body types
+and
+
+150
+00:09:31,629 --> 00:09:35,779
+locations without something to observe
+might prove highly inefficient.
+
+151
+00:09:36,019 --> 00:09:39,620
+Irl, therefore, does not necessarily imply
+that an AI
+
+152
+00:09:39,620 --> 00:09:43,820
+mimics other agents behavior, since AI
+researchers may anticipate
+
+153
+00:09:43,820 --> 00:09:46,539
+the AI agent to devise more efficient ways
+to
+
+154
+00:09:46,539 --> 00:09:51,340
+maximize the discovered reward function.
+Nevertheless, IRL does assume
+
+155
+00:09:51,340 --> 00:09:54,539
+that the observed agent behaves
+transparently enough for an
+
+156
+00:09:54,539 --> 00:09:58,019
+AI agent to accurately identify their
+actions and what
+
+157
+00:09:58,019 --> 00:10:02,460
+success constitutes. This means that IRL
+endeavours to discover
+
+158
+00:10:02,460 --> 00:10:06,899
+the reward functions that explain the
+demonstrations. This should
+
+159
+00:10:06,899 --> 00:10:10,139
+not be conflated with imitation learning,
+where the primary
+
+160
+00:10:10,139 --> 00:10:13,299
+interest is a policy capable of generating
+the observed
+
+161
+00:10:13,299 --> 00:10:18,539
+demonstrations. The textbook includes
+Figure 6.11. Here it depicts
+
+162
+00:10:18,539 --> 00:10:21,419
+a simple illustration of the flow
+difference between RL
+
+163
+00:10:21,419 --> 00:10:25,379
+and irl. IRL constitutes both a machine
+learning method
+
+164
+00:10:25,379 --> 00:10:27,639
+and, since it can be employed when
+specifying a
+
+165
+00:10:27,639 --> 00:10:31,200
+reward function, is excessively
+challenging and a machine learning
+
+166
+00:10:31,200 --> 00:10:33,919
+problem as an AI agent may settle on an
+
+167
+00:10:33,919 --> 00:10:38,200
+inaccurate reward function or utilize
+unsafe and misaligned methods
+
+168
+00:10:38,200 --> 00:10:40,639
+to achieve it. One of the limitations to
+this
+
+169
+00:10:40,639 --> 00:10:44,159
+approach is that IRL algorithms presume
+that the observed
+
+170
+00:10:44,159 --> 00:10:48,159
+behavior is optimal, an assumption that
+arguably proves too
+
+171
+00:10:48,159 --> 00:10:52,529
+robust when dealing with human
+demonstrations. Another problem is
+
+172
+00:10:52,529 --> 00:10:55,169
+that the IRL problem is ill posed as every
+
+173
+00:10:55,169 --> 00:10:58,490
+policy is optimal for the null reward. For
+most
+
+174
+00:10:58,490 --> 00:11:03,649
+behavioral observations, multiple fitting
+reward functions exist. This set
+
+175
+00:11:03,649 --> 00:11:07,249
+of solutions often includes many
+degenerate solutions which assign
+
+176
+00:11:07,249 --> 00:11:12,490
+zero rewards to all states. Cooperative
+Inverse Reinforcement Learning
+
+177
+00:11:14,889 --> 00:11:18,490
+Cooperative inverse reinforcement learning
+is an extension of the
+
+178
+00:11:18,490 --> 00:11:24,889
+irl. IRL is a learning approach that aims
+to
+
+179
+00:11:24,889 --> 00:11:28,289
+infer the underlying reward function of an
+expert by
+
+180
+00:11:28,289 --> 00:11:31,929
+observing their behavior. It assumes that
+the expert's behavior
+
+181
+00:11:31,929 --> 00:11:34,730
+is optimal and tries to learn a reward
+function
+
+182
+00:11:34,730 --> 00:11:38,690
+that explains their actions. Crrl, on the
+other hand,
+
+183
+00:11:38,850 --> 00:11:42,049
+is an interactive form of IRL that
+addresses two
+
+184
+00:11:42,049 --> 00:11:46,149
+major weaknesses of conventional irl.
+First, instead of simply
+
+185
+00:11:46,149 --> 00:11:49,750
+copying the human reward function, CRL is
+formulated as
+
+186
+00:11:49,750 --> 00:11:53,870
+a learning process. It is an interactive
+reward maximization
+
+187
+00:11:53,950 --> 00:11:56,990
+process where the human functions as a
+teacher and
+
+188
+00:11:56,990 --> 00:11:59,830
+provides feedback in the form of rewards
+on the
+
+189
+00:11:59,830 --> 00:12:03,190
+agent's actions. This allows the human to
+nudge the
+
+190
+00:12:03,190 --> 00:12:06,870
+AI agent towards behavioral patterns that
+align with their
+
+191
+00:12:06,870 --> 00:12:11,009
+preferences. The second weakness of
+conventional IRL is is
+
+192
+00:12:11,009 --> 00:12:14,129
+that it assumes the human behaves
+optimally, which limits
+
+193
+00:12:14,129 --> 00:12:17,929
+the teaching behaviors that can be
+considered. CARL addresses
+
+194
+00:12:17,929 --> 00:12:20,730
+this weakness by allowing for a variety of
+teaching
+
+195
+00:12:20,730 --> 00:12:24,049
+behaviors and interactions between the
+human and the AI
+
+196
+00:12:24,049 --> 00:12:27,250
+agent. It enables the AI agent to learn
+not
+
+197
+00:12:27,250 --> 00:12:29,769
+only what actions to take, but also how
+and
+
+198
+00:12:29,769 --> 00:12:32,649
+why to take them by observing and
+interacting with
+
+199
+00:12:32,649 --> 00:12:35,370
+the human. Searle has been studied as a
+potential
+
+200
+00:12:35,370 --> 00:12:39,480
+approach to AI alignment, particularly in
+scenarios where deep
+
+201
+00:12:39,480 --> 00:12:43,279
+learning may not scale to AGI. However,
+opinions on
+
+202
+00:12:43,279 --> 00:12:47,240
+the potential effectiveness of CIRL vary,
+with some researchers
+
+203
+00:12:47,240 --> 00:12:49,919
+expecting it to be helpful if deep
+learning doesn't
+
+204
+00:12:49,919 --> 00:12:52,879
+scale to AGI while others have a higher
+probability
+
+205
+00:12:52,879 --> 00:12:57,039
+of deep learning. Scaling to AGI the Goal
+Inference
+
+206
+00:12:57,039 --> 00:13:00,440
+Problem the term goal inference problem
+refers to the
+
+207
+00:13:01,159 --> 00:13:03,679
+the goal inference problem refers to the
+task of
+
+208
+00:13:03,679 --> 00:13:06,700
+inferring the goals or intentions of an
+agent based
+
+209
+00:13:06,700 --> 00:13:10,220
+on their observed behavior or actions.
+This final section
+
+210
+00:13:10,220 --> 00:13:13,740
+builds upon the limitations highlighted in
+previous sections to
+
+211
+00:13:13,740 --> 00:13:17,460
+introduce the goal inference problem and
+its simpler subset,
+
+212
+00:13:17,539 --> 00:13:22,179
+the easy goal inference problem. Imitation
+learning based approaches
+
+213
+00:13:22,340 --> 00:13:27,220
+generally follows these Observe the user's
+actions and statements.
+
+214
+00:13:27,700 --> 00:13:31,620
+Deduce the user's preferences. Endeavor to
+enhance the world
+
+215
+00:13:31,700 --> 00:13:35,409
+according to the user's preferences,
+possibly collaborating with the
+
+216
+00:13:35,409 --> 00:13:38,929
+user and seeking clarification as needed.
+The merit of
+
+217
+00:13:38,929 --> 00:13:42,009
+this method is that we can immediately
+start constructing
+
+218
+00:13:42,009 --> 00:13:45,850
+systems that are driven by observed user
+behavior. However,
+
+219
+00:13:45,929 --> 00:13:48,610
+as a consequence of this approach, we run
+into
+
+220
+00:13:48,610 --> 00:13:52,169
+the goal inference problem. This refers to
+the task
+
+221
+00:13:52,169 --> 00:13:55,289
+of inferring the goals or intentions of an
+agent
+
+222
+00:13:55,450 --> 00:13:59,169
+based on their observed behavior or
+actions. It involves
+
+223
+00:13:59,169 --> 00:14:02,110
+determining what the agent is trying to
+achieve or
+
+224
+00:14:02,110 --> 00:14:05,750
+what their desired outcome is. The goal
+inference problem
+
+225
+00:14:05,750 --> 00:14:09,629
+is challenging because agents may act
+suboptimally or fail
+
+226
+00:14:09,629 --> 00:14:12,950
+to achieve their goals, making it
+difficult to accurately
+
+227
+00:14:12,950 --> 00:14:17,509
+infer their true intentions. Traditional
+approaches to goal inference
+
+228
+00:14:17,590 --> 00:14:21,350
+often assume that agents act optimally or
+exhibit simplified
+
+229
+00:14:21,429 --> 00:14:24,669
+forms of sub optimality which may not
+capture the
+
+230
+00:14:24,669 --> 00:14:28,629
+complexity of real world planning and
+decision making. Therefore,
+
+231
+00:14:28,629 --> 00:14:32,110
+the goal inference problem requires
+accounting for the difficulty
+
+232
+00:14:32,110 --> 00:14:35,350
+of planning itself and the possibility of
+sub optimal
+
+233
+00:14:35,350 --> 00:14:39,509
+or failed plans. However, it also
+optimistically presumes that
+
+234
+00:14:39,509 --> 00:14:41,870
+we can depict a human as a somewhat
+rational
+
+235
+00:14:41,870 --> 00:14:45,950
+agent which might not always hold. The
+easy goal
+
+236
+00:14:45,950 --> 00:14:48,710
+inference problem is a simplified version
+of the goal
+
+237
+00:14:48,710 --> 00:14:52,830
+inference problem. We define easy goal
+inference problem as
+
+238
+00:14:52,830 --> 00:14:57,070
+follows. The easy goal inference problem
+involves finding a
+
+239
+00:14:57,070 --> 00:15:01,029
+reasonable representation or approximation
+of what a human wants
+
+240
+00:15:01,509 --> 00:15:04,629
+given complete access to the human's
+policy or behavior
+
+241
+00:15:04,629 --> 00:15:07,950
+in any situation. This version of the
+problem assumes
+
+242
+00:15:07,950 --> 00:15:11,789
+no algorithmic limitations and focuses on
+extracting the true
+
+243
+00:15:11,789 --> 00:15:15,990
+values that the human is imperfectly
+optimizing. However, even
+
+244
+00:15:15,990 --> 00:15:19,559
+this simplified version of the problem
+remains challenging and
+
+245
+00:15:19,559 --> 00:15:21,960
+little progress has been made on the
+general case.
+
+246
+00:15:22,519 --> 00:15:25,519
+The easy goal inference problem is related
+to the
+
+247
+00:15:25,519 --> 00:15:28,679
+goal inference problem because it
+highlights the difficulty of
+
+248
+00:15:28,679 --> 00:15:32,759
+accurately inferring human goals or
+intentions even in simplified
+
+249
+00:15:32,840 --> 00:15:37,000
+scenarios. While narrow domains with
+simple decisions can be
+
+250
+00:15:37,000 --> 00:15:41,000
+solved using existing approaches, more
+complex tasks such as
+
+251
+00:15:41,000 --> 00:15:44,480
+designing a city or setting policies
+require addressing the
+
+252
+00:15:44,480 --> 00:15:48,350
+challenges of modeling human mistakes and
+sub optimal behavior.
+
+253
+00:15:48,830 --> 00:15:52,309
+Therefore, the easy goal inference problem
+serves as a
+
+254
+00:15:52,309 --> 00:15:55,309
+starting point to understand the broader
+goal inference problem
+
+255
+00:15:55,470 --> 00:16:00,110
+and the additional complexities it
+entails. Inverse reinforcement learning
+
+256
+00:16:01,070 --> 00:16:05,190
+is effective in modeling and imitating
+human experts. However,
+
+257
+00:16:05,190 --> 00:16:09,110
+for many significant applications, we
+desire AI systems that
+
+258
+00:16:09,110 --> 00:16:12,509
+can make decisions surpassing even the
+experts. In such
+
+259
+00:16:12,509 --> 00:16:15,070
+cases, the accuracy of the model isn't the
+sole
+
+260
+00:16:15,070 --> 00:16:18,460
+criterion, because a perfectly accurate
+model would merely lead
+
+261
+00:16:18,460 --> 00:16:21,539
+us to replicate human behavior and not
+transcend it.
+
+262
+00:16:21,779 --> 00:16:25,220
+This necessitates an explicit model of
+errors or bounded
+
+263
+00:16:25,220 --> 00:16:28,299
+rationality, which will guide the AI on
+how to
+
+264
+00:16:28,299 --> 00:16:31,100
+improve or be smarter, and which aspects
+of the
+
+265
+00:16:31,100 --> 00:16:35,059
+human policy it should discard.
+Nonetheless, this remains an
+
+266
+00:16:35,059 --> 00:16:38,539
+exceedingly challenging problem, as humans
+are not primarily rational
+
+267
+00:16:38,539 --> 00:16:41,940
+with a bit of added noise. Hence,
+constructing any
+
+268
+00:16:41,940 --> 00:16:44,389
+model of mistakes is is just as complex as
+
+269
+00:16:44,389 --> 00:16:48,110
+building a comprehensive model of human
+behavior. A critical
+
+270
+00:16:48,110 --> 00:16:50,509
+question we face is how do we determine
+the
+
+271
+00:16:50,509 --> 00:16:53,269
+quality of a model when accuracy can no
+longer
+
+272
+00:16:53,269 --> 00:16:56,429
+be our reliable measure? How can we
+distinguish between
+
+273
+00:16:56,429 --> 00:16:57,950
+good and bad decisions.

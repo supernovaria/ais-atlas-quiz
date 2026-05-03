@@ -1,1196 +1,1203 @@
 1
-00:00:00,091 --> 00:00:05,671
-Section 4.9 Appendix National Governance A
+00:00:00,160 --> 00:00:05,679
+Section 4.9 Appendix national governance A
 comprehensive domestic governance
 
 2
-00:00:05,732 --> 00:00:10,753
+00:00:05,679 --> 00:00:10,960
 regime for AI safety requires three
-interconnected mechanisms. Development
+interconnected development of
 
 3
-00:00:10,794 --> 00:00:15,615
-of safety standards, regulatory visibility
-and compliance enforcement. And
+00:00:10,960 --> 00:00:16,278
+safety standards, regulatory visibility
+and compliance enforcement. Andalung et
 
 4
-00:00:15,654 --> 00:00:20,096
-Elyung et al. 2023. Safety standards form
-the foundation
+00:00:16,278 --> 00:00:21,199
+al. Safety standards form the foundation
+of AI governance
 
 5
-00:00:20,115 --> 00:00:24,597
-of AI governance by establishing clear,
-measurable criteria for
+00:00:21,519 --> 00:00:26,039
+by establishing clear, measurable criteria
+for the development, testing,
 
 6
-00:00:24,637 --> 00:00:28,457
-the development, testing and deployment of
-AI systems within
+00:00:26,039 --> 00:00:30,719
+and deployment of AI systems within
+national jurisdictions. These
 
 7
-00:00:28,518 --> 00:00:33,299
-national jurisdictions. These standards
-must be technically precise while
+00:00:30,719 --> 00:00:34,600
+standards must be technically precise
+while remaining flexible enough
 
 8
-00:00:33,359 --> 00:00:38,281
-remaining flexible enough to accommodate
-rapid technological advancement. Effective
+00:00:34,600 --> 00:00:39,399
+to accommodate rapid technological
+advancement. Effective standards serve as
 
 9
-00:00:38,341 --> 00:00:42,283
-standards serve as institutional tools for
-coordination and provide
+00:00:39,399 --> 00:00:43,560
+institutional tools for coordination and
+provide the infrastructure needed
 
 10
-00:00:42,304 --> 00:00:45,646
-the infrastructure needed to develop new
-AI technologies in
+00:00:43,560 --> 00:00:46,719
+to develop new AI technologies in a
+controlled manner
 
 11
-00:00:45,665 --> 00:00:49,328
-a controlled manner within a country's
-regulatory boundaries. What
+00:00:46,719 --> 00:00:50,359
+within a country's regulatory boundaries.
+What lessons can National
 
 12
-00:00:49,408 --> 00:00:52,668
-lessons can national AI governance draw
-from nuclear safety
+00:00:50,359 --> 00:00:54,670
+AI governance draw from nuclear safety
+regulation? The regulatory
 
 13
-00:00:52,728 --> 00:00:57,271
-regulation? The regulatory approach used
-for nuclear safety provides
+00:00:54,670 --> 00:00:58,469
+approach used for nuclear safety provides
+an instructive model
 
 14
-00:00:57,311 --> 00:01:01,895
-an instructive model for national AI
-safety standardization. The
+00:00:58,469 --> 00:01:03,270
+for national AI safety standardization.
+The five level hierarchy
 
 15
-00:01:01,954 --> 00:01:05,996
-five-level hierarchy used in nuclear
-safety standards, ranging from
+00:01:03,270 --> 00:01:07,269
+used in nuclear safety standards, ranging
+from fundamental principles
 
 16
-00:01:06,076 --> 00:01:10,760
-fundamental principles to specific
-implementation guides, offers a blueprint
+00:01:07,269 --> 00:01:11,390
+to specific implementation guides, offers
+a blueprint for developing
 
 17
-00:01:10,819 --> 00:01:15,588
-for developing comprehensive AI safety
-standards. This multi-level framework
+00:01:11,390 --> 00:01:16,069
+comprehensive AI safety standards. This
+multi level framework allows
 
 18
-00:01:15,709 --> 00:01:19,189
-allows principals established at higher
-levels to be incorporated
+00:01:16,069 --> 00:01:19,430
+principles established at higher levels to
+be incorporated into
 
 19
-00:01:19,250 --> 00:01:22,751
-into more specific guidelines at lower
-levels, creating a
+00:01:19,430 --> 00:01:23,260
+more specific guidelines at lower levels,
+creating a coherent
 
 20
-00:01:22,811 --> 00:01:26,152
-coherent and thorough regulatory system
-that can be implemented
+00:01:23,260 --> 00:01:26,379
+and thorough regulatory system that can be
+implemented within
 
 21
-00:01:26,191 --> 00:01:30,834
-within national jurisdictions. Key lessons
-from nuclear regulation applicable
+00:01:26,379 --> 00:01:31,019
+national jurisdictions. Key lessons from
+Nuclear Regulation applicable to
 
 22
-00:01:30,873 --> 00:01:36,575
-to national AI governance include
-standardized safety frameworks. Just
+00:01:31,019 --> 00:01:37,180
+National AI Governance Standardized Safety
+Frameworks Just as nuclear
 
 23
-00:01:36,635 --> 00:01:41,198
-as nuclear regulation established
-standardized frameworks for safety,
-national
+00:01:37,180 --> 00:01:42,219
+regulation established standardized
+frameworks for safety, national AI
+governance
 
 24
-00:01:41,319 --> 00:01:45,382
-AI governance can standardize the
-behavior, learning, and decision-making
+00:01:42,219 --> 00:01:46,060
+can standardize the behavior, learning,
+and decision making criteria
 
 25
-00:01:45,421 --> 00:01:49,584
-criteria of AI systems to enhance
-technology safety within
+00:01:46,219 --> 00:01:49,780
+of AI systems to enhance technology safety
+within the
 
 26
-00:01:49,625 --> 00:01:55,429
-the country's borders. Independent
-supervision mechanisms. Nuclear regulatory
-authorities
+00:01:49,780 --> 00:01:56,060
+country's borders. Independent Supervision
+Mechanisms Nuclear regulatory authorities
+established
 
 27
-00:01:55,489 --> 00:02:00,111
-established independent supervisory
-systems for monitoring and evaluating
-safety.
+00:01:56,060 --> 00:02:01,659
+independent supervisory systems for
+monitoring and evaluating safety.
+Similarly,
 
 28
-00:02:01,057 --> 00:02:05,120
-Similarly, national AI governance can
-establish neutral bodies to
+00:02:01,659 --> 00:02:05,859
+national AI governance can establish
+neutral bodies to continuously
 
 29
-00:02:05,140 --> 00:02:08,843
-continuously monitor and evaluate the
-operation and performance of
+00:02:05,859 --> 00:02:09,379
+monitor and evaluate the operation and
+performance of AI
 
 30
-00:02:08,984 --> 00:02:14,548
-AI systems. Regular protocols and
-exercises. Nuclear safety regulators
+00:02:09,379 --> 00:02:15,259
+systems. Regular Protocols and Exercises
+Nuclear safety regulators conduct
 
 31
-00:02:14,829 --> 00:02:18,532
-conduct regular protocols and exercises
-for responding to incidents.
+00:02:15,259 --> 00:02:19,539
+regular protocols and exercises for
+responding to incidents. Similar
 
 32
-00:02:19,292 --> 00:02:21,894
-Similar approaches can be developed at the
-national level
+00:02:19,539 --> 00:02:22,259
+approaches can be developed at the
+national level for
 
 33
-00:02:22,235 --> 00:02:26,617
-for promptly responding to AI-related
+00:02:22,259 --> 00:02:26,819
+promptly responding to AI related
 accidents or abnormal behaviors.
 
 34
-00:02:27,548 --> 00:02:32,591
-information sharing mechanisms, nuclear
-regulatory systems, established platforms
+00:02:27,460 --> 00:02:32,620
+Information Sharing Mechanisms Nuclear
+regulatory systems established platforms
 for
 
 35
-00:02:32,631 --> 00:02:37,233
+00:02:32,620 --> 00:02:37,379
 sharing safety standards, research, and
 incident information across sectors.
 
 36
-00:02:38,193 --> 00:02:40,675
+00:02:38,099 --> 00:02:40,699
 Similar platforms can be developed for AI
 at the
 
 37
-00:02:40,715 --> 00:02:44,516
+00:02:40,699 --> 00:02:44,259
 national level to share research,
 technology, and incident information
 
 38
-00:02:44,576 --> 00:02:50,479
-across industries. CHEAAR 2024 Section
-European Union. What legislative
+00:02:44,419 --> 00:02:51,090
+across industries. 2024 section European
+Union what legislative foundation
 
 39
-00:02:50,520 --> 00:02:54,481
-foundation has the EU established for AI
-governance? The
+00:02:51,169 --> 00:02:55,009
+has the EU established for AI governance?
+The European
 
 40
-00:02:54,581 --> 00:02:57,763
-European Union broke new ground with the
-EU-AI Act,
+00:02:55,009 --> 00:02:57,810
+Union broke new ground with the EU AI act,
 
 41
-00:02:58,263 --> 00:03:01,903
+00:02:58,129 --> 00:03:01,889
 the world's first comprehensive legal
 framework for artificial intelligence.
 
 42
-00:03:02,663 --> 00:03:06,365
-Initially proposed in 2001 and formally
+00:03:02,530 --> 00:03:06,626
+Initially proposed in 2021 and formally
 adopted in March
 
 43
-00:03:06,746 --> 00:03:12,007
+00:03:06,753 --> 00:03:11,680
 2024, this horizontally integrated
 legislation regulates AI systems based
 
 44
-00:03:12,067 --> 00:03:14,548
-on their potential risks and safeguards
-the rights of
+00:03:11,680 --> 00:03:14,180
+on based on their potential risks and
+safeguards the
 
 45
-00:03:14,647 --> 00:03:18,049
-EU citizens. At its core is a risk-based
-approach
+00:03:14,180 --> 00:03:17,099
+rights of EU citizens. At its core is a
 
 46
-00:03:18,269 --> 00:03:22,990
-that classifies AI systems into four
-distinct categories. unacceptable
+00:03:17,099 --> 00:03:20,500
+risk based approach that classifies AI
+systems into four
 
 47
-00:03:23,050 --> 00:03:27,211
-risk, high risk, limited risk and minimal
-risk. Unacceptable
+00:03:20,500 --> 00:03:25,539
+distinct unacceptable risk, high risk,
+limited risk, and minimal
 
 48
-00:03:27,270 --> 00:03:30,592
-risk AI systems, such as those that
-manipulate human
+00:03:25,539 --> 00:03:29,699
+risk. Unacceptable risk AI systems, such
+as those that
 
 49
-00:03:30,611 --> 00:03:35,233
-behaviour or exploit vulnerabilities, are
-banned outright. High risk
+00:03:29,699 --> 00:03:34,139
+manipulate human behavior or exploit
+vulnerabilities, are banned outright.
 
 50
-00:03:35,393 --> 00:03:39,674
-AI systems, including those used in
-critical infrastructure, education
+00:03:34,620 --> 00:03:37,900
+High risk AI systems, including those used
+in critical
 
 51
-00:03:39,734 --> 00:03:44,216
-and employment, face strict requirements
-and oversight. Limited risk
+00:03:37,900 --> 00:03:42,860
+infrastructure, education, and employment,
+face strict requirements and oversight.
 
 52
-00:03:44,436 --> 00:03:48,819
-AI systems require transparency measures,
-while minimal risk AI
+00:03:43,479 --> 00:03:48,159
+Limited risk AI systems require
+transparency measures, while minimal
 
 53
-00:03:48,879 --> 00:03:52,622
-systems are largely unregulated. How is
-the EU AI
+00:03:48,159 --> 00:03:51,800
+risk AI systems are largely unregulated.
+How is the
 
 54
-00:03:52,782 --> 00:03:56,165
-Act being implemented? The Act entered
-into force in
+00:03:51,800 --> 00:03:55,560
+EU AI Act Being Implemented the Act
+entered into
 
 55
-00:03:56,225 --> 00:04:00,493
-August 2024 and is being implemented in
-phases. From
+00:03:55,560 --> 00:03:58,960
+Force in August 2024 and is being
+implemented in
 
 56
-00:04:00,554 --> 00:04:04,538
-February 2, 2025, the ban on prohibited AI
-practices,
+00:03:58,960 --> 00:04:03,520
+phases from February 2, 2025. The ban on
+prohibited
 
 57
-00:04:05,157 --> 00:04:09,921
-social scoring, certain biometric
-identification systems, and requirements
-for
+00:04:03,520 --> 00:04:09,250
+AI practices, social scoring, certain
+biometric identification systems, and
 
 58
-00:04:09,981 --> 00:04:14,985
-staff AI literacy took effect. From August
-2, 2025,
+00:04:09,250 --> 00:04:13,330
+requirements for staff AI literacy took
+effect from August
 
 59
-00:04:15,287 --> 00:04:19,649
-obligations for general-purpose AI, GP AI
-model providers will
+00:04:13,330 --> 00:04:18,970
+2, 2025. Obligations for general purpose
+AI GPAI model
 
 60
-00:04:19,689 --> 00:04:25,435
-apply, including documentation, copyright
-compliance, and data transparency. The
+00:04:18,970 --> 00:04:23,730
+providers will apply, including
+documentation, copyright compliance and
+data
 
 61
-00:04:25,475 --> 00:04:30,036
-legislation establishes the European AI
-Office to oversee implementation
+00:04:23,730 --> 00:04:28,730
+transparency. The legislation establishes
+the European AI Office to
 
 62
-00:04:30,156 --> 00:04:35,077
-and enforcement, coordinating compliance,
-providing guidance to businesses and
+00:04:28,730 --> 00:04:34,129
+oversee implementation and enforcement,
+coordinating compliance, providing
+guidance to
 
 63
-00:04:35,137 --> 00:04:38,819
-enforcing the rules. This dedicated body
-serves as the
+00:04:34,129 --> 00:04:38,529
+businesses and enforcing the rules. This
+dedicated body serves
 
 64
-00:04:38,879 --> 00:04:42,821
-leading agency enforcing binding AI rules
-on a multinational
+00:04:38,529 --> 00:04:41,970
+as the leading agency enforcing binding AI
+rules on
 
 65
-00:04:42,880 --> 00:04:46,963
-coalition, positioned to shape global AI
-governance similar to
+00:04:41,970 --> 00:04:46,329
+a multinational coalition positioned to
+shape global AI governance,
 
 66
-00:04:47,002 --> 00:04:52,084
-how GDPR restructured international
-privacy standards. what additional
-requirements
+00:04:46,410 --> 00:04:51,050
+similar to how GDPR restructured
+international privacy standards. What
 
 67
-00:04:52,165 --> 00:04:56,930
-exist for high-risk and systemic-risk AI
-systems. For GP
+00:04:51,050 --> 00:04:54,649
+additional requirements exist for high
+risk and systemic risk
 
 68
-00:04:56,951 --> 00:05:01,396
-AI models, presenting systemic risks
-identified either by surpassing
+00:04:54,649 --> 00:05:00,170
+AI systems? For GPAI models presenting
+systemic risks identified
 
 69
-00:05:01,435 --> 00:05:05,380
-a computational threshold, 10 to the 25th
-flops, or
+00:05:00,170 --> 00:05:03,910
+either by surpassing a computational
+threshold 10 to the
 
 70
-00:05:05,420 --> 00:05:09,105
-based on potential impact criteria such as
-scalability and
+00:05:03,910 --> 00:05:07,910
+25th flops or based on potential impact
+criteria such
 
 71
-00:05:09,165 --> 00:05:14,637
-risk of large-scale harm. Additional
-obligations apply. Providers must
+00:05:07,910 --> 00:05:12,110
+as scalability and risk of large scale
+harm, additional
 
 72
-00:05:14,697 --> 00:05:19,538
-conduct adversarial testing, track and
-report serious incidents, implement
+00:05:12,110 --> 00:05:17,310
+obligations apply. Providers must conduct
+adversarial testing, track and
 
 73
-00:05:19,598 --> 00:05:25,358
-strong cybersecurity measures, and
-proactively mitigate systemic risks. The
+00:05:17,310 --> 00:05:23,029
+report serious incidents, implement strong
+cybersecurity measures, and proactively
 
 74
-00:05:25,478 --> 00:05:29,000
-European AI Office facilitated the
-drafting of a General
+00:05:23,029 --> 00:05:27,990
+mitigate systemic risks. The European AI
+Office facilitated the
 
 75
-00:05:29,060 --> 00:05:33,680
-Purpose AI Code of Practice, completed in
-April 2025,
+00:05:27,990 --> 00:05:30,910
+drafting of a general purpose AI Code of
+practice
 
 76
-00:05:34,141 --> 00:05:37,322
-providing a central tool for GP AI model
-providers
+00:05:31,740 --> 00:05:35,579
+completed in April 2025, providing a
+central tool for
 
 77
-00:05:37,641 --> 00:05:41,221
-to comply with the Act's requirements.
-While compliance through
+00:05:35,579 --> 00:05:39,339
+GPAI model providers to comply with the
+Act's requirements.
 
 78
-00:05:41,262 --> 00:05:44,163
-this code is voluntary, it offers
-providers a clear
+00:05:40,060 --> 00:05:43,300
+While compliance through this code is
+voluntary, it offers
 
 79
-00:05:44,244 --> 00:05:48,024
-practical pathway to demonstrate
-adherence. How does the EU
+00:05:43,300 --> 00:05:47,300
+providers a clear, practical pathway to
+demonstrate adherence. How
 
 80
-00:05:48,245 --> 00:05:52,367
-approach enforcement and penalties? The EU
-AI Office serves
+00:05:47,300 --> 00:05:50,939
+does the EU approach enforcement and
+penalties? The EU
 
 81
-00:05:52,406 --> 00:05:56,408
-as the enforcement authority, empowered to
-request information, conduct
+00:05:50,939 --> 00:05:54,779
+AI Office serves as the enforcement
+authority empowered to
 
 82
-00:05:56,428 --> 00:06:00,451
-evaluations, mandate corrective measures,
-and impose fines of up
+00:05:54,779 --> 00:05:59,829
+request information, conduct evaluations,
+mandate corrective measures and impose
 
 83
-00:06:00,490 --> 00:06:03,992
-to 3% of a provider's global annual
-turnover or
+00:05:59,829 --> 00:06:02,389
+fines of up to 3% of a provider's global
 
 84
-00:06:04,112 --> 00:06:09,326
-$15 million. whichever is higher. This
-represents a substantial
+00:06:02,389 --> 00:06:08,069
+annual turnover or $15 million, whichever
+is higher. This
 
 85
-00:06:09,387 --> 00:06:13,209
-enforcement mechanism, though slightly
-lower than the 7% maximum
+00:06:08,069 --> 00:06:11,949
+represents a substantial enforcement
+mechanism, though slightly lower than
 
 86
-00:06:13,250 --> 00:06:16,672
-mentioned in earlier drafts of the
-legislation. The fines
+00:06:11,949 --> 00:06:14,910
+the 7% maximum mentioned in earlier drafts
+of the
 
 87
-00:06:16,711 --> 00:06:20,454
-for non-compliance are quite high,
-demonstrating the EU's strong
+00:06:14,910 --> 00:06:18,470
+legislation. The fines for non compliance
+are quite high,
 
 88
-00:06:20,495 --> 00:06:24,458
-commitment to ensuring adherence to its
-regulatory framework. What
+00:06:18,709 --> 00:06:22,430
+demonstrating the EU's strong commitment
+to ensuring adherence to
 
 89
-00:06:24,538 --> 00:06:28,221
-values and priorities drive the EU's
-approach? The EU
+00:06:22,430 --> 00:06:26,139
+its regulatory framework. What values and
+priorities drive the
 
 90
-00:06:28,261 --> 00:06:31,423
-has demonstrated a clear prioritization
-for the protection of
+00:06:26,139 --> 00:06:30,220
+EU's approach? The EU has demonstrated a
+clear prioritization
 
 91
-00:06:31,483 --> 00:06:36,004
-citizens' rights. The EU-AI Act's core
-approach to categorising
+00:06:30,379 --> 00:06:34,060
+for the protection of citizens rights. The
+EU AI
 
 92
-00:06:36,084 --> 00:06:39,586
-risk levels is designed primarily around
-measuring the ability
+00:06:34,060 --> 00:06:37,579
+Act's core approach to categorizing risk
+levels is designed
 
 93
-00:06:39,625 --> 00:06:42,086
-of AI systems to infringe on the rights of
+00:06:37,579 --> 00:06:41,019
+primarily around measuring the ability of
+AI systems to
 
 94
-00:06:42,226 --> 00:06:45,267
-EU citizens. This can be observed in the
-list
+00:06:41,019 --> 00:06:44,180
+infringe on the rights of EU citizens.
+This can
 
 95
-00:06:45,307 --> 00:06:47,869
-of use cases deemed to be high risk, such
+00:06:44,180 --> 00:06:46,500
+be observed in the list of use cases
+deemed
 
 96
-00:06:47,928 --> 00:06:52,091
-as educational or vocational training,
-employment, migration and asylum,
+00:06:46,500 --> 00:06:49,579
+to be high risk, such as educational or
+vocational
 
 97
-00:06:52,391 --> 00:06:57,072
-and administration of justice or
-democratic processes. Most of
+00:06:49,579 --> 00:06:53,829
+training, employment, migration and
+asylum, and administration of justice
 
 98
-00:06:57,112 --> 00:06:59,494
-the requirements are designed with the
-common citizen in
+00:06:53,829 --> 00:06:58,389
+or democratic processes. Most of the
+requirements are designed
 
 99
-00:06:59,533 --> 00:07:04,016
-mind, including transparency and reporting
-requirements, the ability of
+00:06:58,389 --> 00:07:01,829
+with the common citizen in mind, including
+transparency and
 
 100
-00:07:04,158 --> 00:07:06,658
-any citizen to lodge a complaint with a
-market
+00:07:01,829 --> 00:07:05,230
+reporting requirements, the ability of any
+citizen to lodge
 
 101
-00:07:06,678 --> 00:07:12,303
-surveillance authority, prohibitions on
-social scoring systems, and anti-
-discrimination
+00:07:05,230 --> 00:07:09,310
+a complaint with a market surveillance
+authority, prohibitions on
 
 102
-00:07:12,363 --> 00:07:17,367
-requirements. This rights-based approach
-contrasts markedly with China's focus
+00:07:09,310 --> 00:07:14,029
+social scoring systems and anti
+discrimination requirements. This rights
 
 103
-00:07:17,427 --> 00:07:21,050
-on social control and the US emphasis on
-geopolitical
+00:07:14,029 --> 00:07:17,870
+based approach contrasts markedly with
+China's focus on social
 
 104
-00:07:21,110 --> 00:07:24,593
-competition. At this point, the textbook
-shows Figure 4.35.
+00:07:17,870 --> 00:07:22,410
+control and the US emphasis on
+geopolitical competition at
 
 105
-00:07:26,134 --> 00:07:31,161
-It depicts the EU-AI Act. Classification
-of general-purpose AI
+00:07:22,410 --> 00:07:26,689
+this point, the textbook shows Figure
+4.35. It depicts
 
 106
-00:07:31,240 --> 00:07:36,949
-models with systemic risks. Observatorio
-de riesgos catastróficos globales.
+00:07:26,689 --> 00:07:31,209
+the EU AI act classification of general
+purpose AI
 
 107
-00:07:37,430 --> 00:07:41,136
-Section, United States. How has US policy
-on AI
+00:07:31,209 --> 00:07:37,009
+models with systemic risks. Observatorio
+de Riescos Catastrophicos Globales
 
 108
-00:07:41,196 --> 00:07:45,259
-governance changed? AI governance in the
-United States has
+00:07:37,968 --> 00:07:41,689
+United States how has US Policy on AI
+Governance
 
 109
-00:07:45,300 --> 00:07:49,923
-shifted significantly since the 2024
-election. President Donald Trump
+00:07:41,689 --> 00:07:45,689
+Changed? AI governance in the United
+States has shifted
 
 110
-00:07:50,103 --> 00:07:54,348
-overturned the previous administration's
-executive order on safe, secure
+00:07:45,689 --> 00:07:50,649
+significantly since the 2024 election.
+President Donald Trump overturned
 
 111
-00:07:54,468 --> 00:07:58,951
-and trustworthy AI from October 2023.
-which had introduced
+00:07:50,649 --> 00:07:54,490
+the previous administration's Executive
+Order on Safe, secure and
 
 112
-00:07:59,012 --> 00:08:02,572
-requirements for developers of advanced AI
-systems to share
+00:07:54,490 --> 00:07:59,569
+trustworthy AI from October 2023, which
+had introduced requirements
 
 113
-00:08:02,653 --> 00:08:06,134
-safety test results with the federal
-government. In January
+00:07:59,569 --> 00:08:03,050
+for developers of advanced AI systems to
+share safety
 
 114
-00:08:06,175 --> 00:08:11,978
-2025, Executive Order on 4179 explicitly
-revoked the previous
+00:08:03,050 --> 00:08:07,089
+test results with the federal government.
+In January 2025,
 
 115
-00:08:12,158 --> 00:08:16,100
-AI Safety Executive Order and directed
-federal agencies to
+00:08:07,410 --> 00:08:13,050
+Executive Order 14179 explicitly revoked
+the previous AI Safety
 
 116
-00:08:16,139 --> 00:08:19,680
-review policies to remove barriers to
-innovation and ensure
+00:08:13,050 --> 00:08:17,000
+Executive Order and directed federal
+agencies to review policies
 
 117
-00:08:19,841 --> 00:08:23,523
-AI systems are free from ideological bias
-or engineered
+00:08:17,000 --> 00:08:20,600
+to remove barriers to innovation and
+ensure AI systems
 
 118
-00:08:23,603 --> 00:08:28,379
-social agendas. A separate executive order
-on AI infrastructure
+00:08:20,600 --> 00:08:24,560
+are free from ideological bias or
+engineered social agendas.
 
 119
-00:08:28,598 --> 00:08:34,263
-prioritized national security, economic
-competitiveness, domestic data center
-development,
+00:08:25,360 --> 00:08:29,680
+A separate Executive Order on AI
+infrastructure prioritized national
 
 120
-00:08:34,582 --> 00:08:38,666
-and workforce development standards. What
-characterized the US approach
+00:08:29,680 --> 00:08:35,279
+security, economic competitiveness,
+domestic data center development, and
+workforce
 
 121
-00:08:38,725 --> 00:08:42,109
-before this shift? Prior to these changes,
-the US
+00:08:35,279 --> 00:08:39,279
+development standards. What characterized
+the US Approach before this
 
 122
-00:08:42,149 --> 00:08:45,270
-had taken an approach centered around
-executive orders and
+00:08:39,279 --> 00:08:42,460
+shift? Prior to these changes, the US had
+taken
 
 123
-00:08:45,350 --> 00:08:50,193
-non-binding declarations due to
-legislative gridlock in Congress. Three
+00:08:42,460 --> 00:08:46,019
+an approach centered around executive
+orders and non binding
 
 124
-00:08:50,293 --> 00:08:55,099
-key executive actions shaped this
-approach. The US-China semiconductor
+00:08:46,019 --> 00:08:50,580
+declarations due to legislative gridlock
+in Congress. Three key
 
 125
-00:08:55,399 --> 00:08:59,702
-export controls launched in October 2022,
-the blueprint for
+00:08:50,580 --> 00:08:55,818
+executive actions shaped this the US China
+semiconductor export
 
 126
-00:08:59,722 --> 00:09:02,926
-an AI Bill of Rights released in October
-2022,
+00:08:55,818 --> 00:08:59,860
+controls launched in October 2022, the
+blueprint for an
 
 127
-00:09:03,566 --> 00:09:06,649
-and the executive order on artificial
-intelligence issued in
+00:08:59,860 --> 00:09:03,620
+AI Bill of Rights released in October 2022
+and
 
 128
-00:09:06,708 --> 00:09:11,772
-October 2023. The semiconductor export
-controls marked a significant
+00:09:03,620 --> 00:09:07,289
+the executive order on artificial
+intelligence issued in October
 
 129
-00:09:11,892 --> 00:09:15,633
-escalation in US efforts to restrict
-China's access to
+00:09:07,429 --> 00:09:12,460
+2023. The semiconductor export controls
+marked a significant escalation
 
 130
-00:09:15,673 --> 00:09:19,634
-advanced computing and AI technologies by
-banning the export
+00:09:12,460 --> 00:09:16,100
+in US efforts to restrict China's access
+to advanced
 
 131
-00:09:19,654 --> 00:09:23,755
-of advanced chips, chip-making equipment
-and semiconductor expertise to
+00:09:16,100 --> 00:09:19,740
+computing and AI technologies by banning
+the export of
 
 132
-00:09:23,816 --> 00:09:28,077
-China. What distinctive features define
-the US regulatory philosophy?
+00:09:19,740 --> 00:09:23,820
+advanced chips, chip making equipment, and
+semiconductor expertise to
 
 133
-00:09:28,717 --> 00:09:31,278
+00:09:23,820 --> 00:09:28,259
+China. What distinctive features define
+the US Regulatory philosophy?
+
+134
+00:09:28,580 --> 00:09:31,299
 The US has taken a distinctive approach to
 AI
 
-134
-00:09:31,339 --> 00:09:35,200
+135
+00:09:31,299 --> 00:09:35,139
 governance by controlling the hardware and
 computational power required
 
-135
-00:09:35,240 --> 00:09:38,807
+136
+00:09:35,139 --> 00:09:38,909
 to train and develop AI models. It is
 uniquely
 
-136
-00:09:38,868 --> 00:09:42,711
-positioned to leverage this compute-based
-approach to regulation as
-
 137
-00:09:42,811 --> 00:09:45,732
-home to all leading vendors of high-end AI
-chips,
+00:09:38,909 --> 00:09:42,029
+positioned to leverage this compute based
+approach to regulation.
 
 138
-00:09:46,232 --> 00:09:51,378
-NVIDIA, AMD, Intel, giving it direct
-legislative control over
+00:09:42,429 --> 00:09:44,950
+As home to all leading vendors of high end
 
 139
-00:09:51,418 --> 00:09:55,480
-these chips. Beyond export controls, the
-US has pursued
+00:09:44,950 --> 00:09:50,909
+AI chipsenvidia AMD intel, giving it
+direct legislative control
 
 140
-00:09:55,541 --> 00:10:00,124
-a decentralized, largely non-binding
-approach relying on executive action.
+00:09:50,990 --> 00:09:55,070
+over these chips. Beyond export controls,
+the US has
 
 141
-00:10:01,004 --> 00:10:04,645
-Due to structural challenges in passing
-binding legislation through
+00:09:55,070 --> 00:09:59,230
+pursued a decentralized, largely non
+binding approach relying on
 
 142
-00:10:04,666 --> 00:10:07,947
-a divided Congress, the U.S. has relied
-primarily on
+00:09:59,230 --> 00:10:03,509
+executive action due to structural
+challenges. In passing binding
 
 143
-00:10:08,006 --> 00:10:12,048
-executive orders and agency actions that
-don't require congressional
+00:10:03,509 --> 00:10:07,190
+legislation through a divided Congress,
+the US has relied
 
 144
-00:10:12,109 --> 00:10:17,431
-approval, distributing research and
-regulatory processes among selected
-agencies.
+00:10:07,190 --> 00:10:10,990
+primarily on executive orders and agency
+actions that don't
 
 145
-00:10:17,931 --> 00:10:20,591
-What is the current state of U.S. AI
-governance?
+00:10:10,990 --> 00:10:16,269
+require congressional approval,
+distributing research and regulatory
+processes among
 
 146
-00:10:21,432 --> 00:10:24,775
-In February 2025, the Office of Management
-and Budget
+00:10:16,269 --> 00:10:19,509
+selected agencies. What is the current
+state of US
 
 147
-00:10:25,155 --> 00:10:30,942
-released Memorandum M2521, directing
-federal agencies to accelerate AI
+00:10:19,509 --> 00:10:24,070
+AI governance? In February 2025, the
+Office of Management
 
 148
-00:10:31,001 --> 00:10:36,528
-adoption, minimize bureaucratic hurdles,
-empower agency-level AI leadership, and
+00:10:24,070 --> 00:10:29,950
+and Budget released memorandum M2521
+directing federal agencies to
 
 149
-00:10:36,567 --> 00:10:40,751
-implement minimum risk management
-practices for high-impact AI systems.
+00:10:29,950 --> 00:10:35,120
+accelerate AI adoption, minimize
+bureaucratic hurdles, empower agency level
 
 150
-00:10:41,613 --> 00:10:45,634
-At the state level, California's SB 1047,
-which attempted
+00:10:35,120 --> 00:10:39,000
+AI leadership, and implement minimum risk
+management practices for
 
 151
-00:10:45,654 --> 00:10:49,236
-to address risks associated with frontier
-models, was vetoed
+00:10:39,000 --> 00:10:43,360
+high impact AI systems. At the state
+level, California's
 
 152
-00:10:49,277 --> 00:10:54,239
-in September 2024. A new bill, SB 53,
-focusing
+00:10:43,360 --> 00:10:47,360
+SB 1047, which attempted to address risks
+associated with
 
 153
-00:10:54,298 --> 00:10:58,321
-on whistleblower protections for employees
-reporting critical AI risks,
+00:10:47,360 --> 00:10:51,879
+frontier models, was vetoed in September
+2024. A new
 
 154
-00:10:58,701 --> 00:11:03,325
-has been introduced. The USAI Safety
-Institute remains active
+00:10:51,879 --> 00:10:56,360
+bill, SB 53 focusing on whistleblower
+protections for employees
 
 155
-00:11:03,384 --> 00:11:07,188
-despite the federal policy shift,
-continuing to develop testing
+00:10:56,360 --> 00:11:00,779
+reporting critical AI risks has been
+introduced. The US
 
 156
-00:11:07,229 --> 00:11:12,134
-methodologies and conduct model
-evaluations. How does geopolitics
-influence
+00:11:00,779 --> 00:11:04,700
+AI Safety Institute remains active despite
+the federal policy
 
 157
-00:11:12,333 --> 00:11:18,419
-USAI policy? USAI policy strongly
-prioritizes its geopolitical competition
+00:11:04,779 --> 00:11:09,179
+shift, continuing to develop testing
+methodologies and conduct model
 
 158
-00:11:18,460 --> 00:11:22,643
-with China. The US-AI governance strategy
-is heavily influenced
+00:11:09,179 --> 00:11:14,379
+evaluations. How does geopolitics
+influence US AI Policy? US
 
 159
-00:11:22,682 --> 00:11:25,344
-by the perceived threat of China's rapid
-advancements in
+00:11:14,460 --> 00:11:19,019
+AI policy strongly prioritizes its
+geopolitical competition with China.
 
 160
-00:11:25,443 --> 00:11:29,346
-AI and the potential implications for
-national security and
+00:11:19,500 --> 00:11:22,860
+The US AI governance strategy is heavily
+influenced by
 
 161
-00:11:29,385 --> 00:11:32,788
-the global balance of power. The binding
-actions taken
+00:11:22,860 --> 00:11:25,820
+the perceived threat of China's rapid
+advancements in AI
 
 162
-00:11:32,827 --> 00:11:36,831
-by the US in forcing semiconductor export
-controls are
+00:11:26,289 --> 00:11:29,529
+and the potential implications for
+national security and the
 
 163
-00:11:36,890 --> 00:11:41,192
-explicitly designed to counter China's AI
-ambitions and maintain
+00:11:29,529 --> 00:11:32,929
+global balance of power. The binding
+actions taken by
 
 164
-00:11:41,332 --> 00:11:46,535
-US technological and military superiority.
-This geopolitical focus sets
+00:11:32,929 --> 00:11:37,970
+the US Enforcing semiconductor export
+controls are explicitly designed
 
 165
-00:11:46,596 --> 00:11:49,597
-the US apart from the EU, which has
-prioritized
+00:11:37,970 --> 00:11:42,328
+to counter China's AI ambitions and
+maintain U.S. technological
 
 166
-00:11:49,638 --> 00:11:52,639
-the protection of individual rights, and
-China, which has
+00:11:42,328 --> 00:11:46,970
+and military superiority. This
+geopolitical focus sets the U.S.
 
 167
-00:11:52,700 --> 00:11:57,022
-prioritized internal social control. The
-US strategy appears more
+00:11:46,970 --> 00:11:50,169
+apart from the EU, which has prioritized
+the protection
 
 168
-00:11:57,062 --> 00:12:00,563
-concerned with the strategic implications
-of AI and ensuring
+00:11:50,169 --> 00:11:53,929
+of individual rights, and China, which has
+prioritized internal
 
 169
-00:12:00,583 --> 00:12:03,225
-that the technology aligns with US
-interests in the
+00:11:53,929 --> 00:11:57,679
+social control. The US Strategy appears
+more concerned with
 
 170
-00:12:03,245 --> 00:12:06,947
-global arena. There is figure 4.36 in the
-textbook
+00:11:57,679 --> 00:12:00,879
+the strategic implications of AI and
+ensuring that the
 
 171
-00:12:06,988 --> 00:12:10,688
-here. It depicts number of AI-related
-regulations in the
+00:12:00,879 --> 00:12:04,200
+technology aligns with US interests in the
+global arena.
 
 172
-00:12:10,729 --> 00:12:15,591
-United States, 2016 and 2023. Section,
-China. How has
+00:12:04,360 --> 00:12:07,960
+There is figure 4.36 in the textbook. Here
+it
 
 173
-00:12:15,630 --> 00:12:19,893
-China's approach to AI governance evolved?
-China has developed
+00:12:07,960 --> 00:12:11,000
+depicts number of AI related regulations
+in the United
 
 174
-00:12:19,932 --> 00:12:24,234
-a distinctive vertical iterative
-regulatory approach to AI governance,
+00:12:11,158 --> 00:12:16,279
+States 2016 and 2023. China how has
+China's approach
 
 175
-00:12:24,715 --> 00:12:28,936
-passing targeted regulations for specific
-domains of AI applications
+00:12:16,279 --> 00:12:20,679
+to AI Governance Evolved? China has
+developed a distinctive
 
 176
-00:12:29,296 --> 00:12:32,798
-one at a time. This approach contrasts
-sharply with
+00:12:20,679 --> 00:12:25,690
+vertical, iterative regulatory approach to
+AI governance, passing targeted
 
 177
-00:12:32,817 --> 00:12:38,301
-the EU's comprehensive horizontal
-framework. China's regulatory evolution
-began
+00:12:25,690 --> 00:12:29,570
+regulations for specific domains of AI
+applications one at
 
 178
-00:12:38,341 --> 00:12:42,904
-with the algorithmic recommendation
-provisions in August 2021, which
+00:12:29,570 --> 00:12:33,529
+a time. This approach contrasts sharply
+with the EU's
 
 179
-00:12:42,965 --> 00:12:46,908
-established the world's first mandatory
-algorithm registry and required
+00:12:33,529 --> 00:12:38,649
+comprehensive horizontal framework.
+China's regulatory evolution began with
+the
 
 180
-00:12:47,048 --> 00:12:50,890
-all qualifying algorithms used by Chinese
-organizations to be
+00:12:38,649 --> 00:12:43,570
+algorithmic recommendation provisions in
+August 2021, which established the
 
 181
-00:12:50,951 --> 00:12:54,133
-registered within 10 days of public
-launch. This was
+00:12:43,570 --> 00:12:47,769
+world's first mandatory algorithm registry
+and required all qualifying
 
 182
-00:12:54,192 --> 00:12:57,634
-followed by the deep synthesis provisions
-in November 2022,
+00:12:47,769 --> 00:12:51,710
+algorithms used by Chinese organizations
+to be registered within
 
 183
-00:12:57,974 --> 00:13:02,014
-which regulated algorithms that
-synthetically generate content to combat
+00:12:51,710 --> 00:12:54,629
+10 days of public launch. This was
+followed by
 
 184
-00:13:02,073 --> 00:13:06,294
-deep fakes by requiring labelling, user
-identification and prevention
+00:12:54,629 --> 00:12:58,710
+the Deep synthesis provisions in November
+2022, which regulated
 
 185
-00:13:06,315 --> 00:13:08,975
-of misuse as defined by the government.
-What are
+00:12:58,710 --> 00:13:03,149
+algorithms that synthetically generate
+content to combat deepfakes by
 
 186
-00:13:08,995 --> 00:13:12,655
-the current regulatory measures in place?
-China strengthened its
+00:13:03,149 --> 00:13:07,149
+requiring labeling, user identification,
+and prevention of misuse as
 
 187
-00:13:12,836 --> 00:13:16,116
-AI governance framework with the
-implementation of the interim
+00:13:07,149 --> 00:13:09,990
+defined by the government. What are the
+current regulatory
 
 188
-00:13:16,177 --> 00:13:20,217
-measures for the management of generative
-artificial intelligence services
+00:13:09,990 --> 00:13:14,230
+measures in place? China strengthened its
+AI governance framework
 
 189
-00:13:20,638 --> 00:13:24,879
-in August 2023. These measures were a
-direct response
+00:13:14,230 --> 00:13:17,149
+with the implementation of the interim
+Measures for the
 
 190
-00:13:24,919 --> 00:13:28,822
-to chat GPT and expanded policies to
-better encompass
+00:13:17,149 --> 00:13:22,190
+Management of Generative Artificial
+intelligence services in August 2023.
 
 191
-00:13:28,902 --> 00:13:34,005
-multi-use LLMs, imposing risk-based
-oversight with higher scrutiny for
+00:13:22,669 --> 00:13:26,470
+These measures were a direct response to
+ChatGPT and
 
 192
-00:13:34,046 --> 00:13:39,129
-systems capable of influencing public
-opinion. Under these regulations,
+00:13:26,470 --> 00:13:31,309
+expanded policies to better encompass
+multi use LLMs, imposing
 
 193
-00:13:39,450 --> 00:13:43,732
-providers must ensure lawful data use,
-protect intellectual property,
+00:13:31,309 --> 00:13:35,269
+risk based oversight with higher scrutiny
+for systems capable
 
 194
-00:13:44,133 --> 00:13:48,812
-respect user privacy, and uphold socialist
-core values. In
+00:13:35,269 --> 00:13:40,190
+of influencing public opinion. Under these
+regulations, providers must
 
 195
-00:13:49,011 --> 00:13:53,014
-2024, China officially elevated AI safety
-to the level
+00:13:40,190 --> 00:13:44,980
+ensure lawful data use, protect
+intellectual property, respect user
 
 196
-00:13:53,054 --> 00:13:57,479
-of national security and public safety,
-requiring AI providers
+00:13:44,980 --> 00:13:50,059
+privacy, and uphold socialist core values.
+In 2024, China
 
 197
-00:13:57,739 --> 00:14:01,140
-to actively moderate illegal or harmful
-content and report
+00:13:50,139 --> 00:13:53,500
+officially elevated AI safety to the level
+of national
 
 198
-00:14:01,181 --> 00:14:05,904
-violations to the cyberspace
-administration of China, CAC, the
+00:13:53,580 --> 00:13:58,379
+security and public safety, requiring AI
+providers to actively
 
 199
-00:14:05,945 --> 00:14:10,707
-primary regulatory body overseeing China's
-AI industry, what regulatory
+00:13:58,379 --> 00:14:01,940
+moderate illegal or harmful content and
+report violations to
 
 200
-00:14:10,768 --> 00:14:15,029
-developments are on the horizon. In March
-2025, China
+00:14:01,940 --> 00:14:07,259
+the Cyberspace Administration of China,
+the primary regulatory body
 
 201
-00:14:15,070 --> 00:14:19,370
-released the final measures for labelling
-artificial intelligence-generated content,
+00:14:07,259 --> 00:14:11,620
+overseeing China's AI industry. What
+regulatory developments are on
 
 202
-00:14:19,931 --> 00:14:24,731
-taking effect on September 1, 2025. These
-measures mandate
+00:14:11,620 --> 00:14:15,860
+the horizon? In March 2025, China released
+the final
 
 203
-00:14:24,792 --> 00:14:28,812
-explicit labels for AI-generated content
-that could mislead the
+00:14:15,860 --> 00:14:20,539
+measures for labeling Artificial
+intelligence generated content, taking
+effect
 
 204
-00:14:28,852 --> 00:14:33,433
-public, alongside metadata identifying the
-provider. China is also
+00:14:20,539 --> 00:14:26,539
+on 9-1-2025. These measures mandate
+explicit labels for AI
 
 205
-00:14:33,514 --> 00:14:36,955
-preparing to implement the Regulation on
-Network Data Security
+00:14:26,539 --> 00:14:30,659
+generated content that could mislead the
+public alongside metadata
 
 206
-00:14:36,995 --> 00:14:41,557
-Management in 2025. These iterative
-regulations appear to be
+00:14:30,659 --> 00:14:34,620
+identifying the provider. China is also
+preparing to implement
 
 207
-00:14:41,596 --> 00:14:45,639
-building toward a comprehensive artificial
-intelligence law proposed in
+00:14:34,620 --> 00:14:38,779
+the regulation on network data security
+management in 2025.
 
 208
-00:14:45,679 --> 00:14:50,043
-a legislative plan released in June 233.
-This pattern
+00:14:39,610 --> 00:14:42,370
+These iterative regulations appear to be
+building toward a
 
 209
-00:14:50,104 --> 00:14:53,346
-mirrors China's approach to Internet
-regulation in the 2000s,
+00:14:42,370 --> 00:14:46,809
+comprehensive artificial intelligence law
+proposed in a legislative plan
 
 210
-00:14:53,667 --> 00:14:57,370
-which culminated in the all-encompassing
-cybersecurity law of 2017.
+00:14:46,889 --> 00:14:51,129
+released in June 2023. This pattern
+mirrors China's approach
 
 211
-00:14:58,711 --> 00:15:03,774
-What distinctive features characterised
-China's regulatory philosophy? The CAC
+00:14:51,129 --> 00:14:54,490
+to Internet regulation in the 2000s, which
+culminated in
 
 212
-00:15:03,815 --> 00:15:07,577
-has focused primarily on regulating
-algorithms with the potential
+00:14:54,490 --> 00:14:59,450
+the all encompassing Cybersecurity Law of
+2017. What distinctive
 
 213
-00:15:07,618 --> 00:15:11,562
-for social influence rather than
-prioritizing domains like healthcare,
+00:14:59,450 --> 00:15:04,490
+features characterize China's regulatory
+philosophy? The CAC has focused
 
 214
-00:15:11,782 --> 00:15:15,125
-employment, or judicial systems that
-receive more attention in
+00:15:04,490 --> 00:15:08,080
+primarily on regulating algorithms with
+the potential for social
 
 215
-00:15:15,184 --> 00:15:19,447
-Western regulatory frameworks. The
-language used in these regulations
+00:15:08,080 --> 00:15:12,720
+influence rather than prioritizing domains
+like healthcare, employment, or
 
 216
-00:15:19,749 --> 00:15:23,731
-is typically broad and nonspecific,
-extending greater control to
+00:15:12,720 --> 00:15:16,200
+judicial systems that receive more
+attention in Western regulatory
 
 217
-00:15:23,751 --> 00:15:28,235
-the CAC for interpretation and
-enforcement. For example, Article
+00:15:16,200 --> 00:15:20,240
+frameworks. The language used in these
+regulations is typically
 
 218
-00:15:28,316 --> 00:15:31,498
-5 of the Interim Generative AI Measures
-states that
+00:15:20,240 --> 00:15:24,480
+broad and nonspecific, extending greater
+control to the CAC
 
 219
-00:15:31,538 --> 00:15:35,299
-providers should encourage the innovative
-application of generative AI
+00:15:24,480 --> 00:15:28,720
+for interpretation and enforcement. For
+example, Article 5 of
 
 220
-00:15:35,360 --> 00:15:39,503
-technology in each industry and field and
-generate exceptional
+00:15:28,720 --> 00:15:32,399
+the Interim generative AI measures states
+that providers should
 
 221
-00:15:39,582 --> 00:15:43,885
-content that is positive, healthy and
-uplifting. This demonstrates
+00:15:32,399 --> 00:15:36,440
+encourage the innovative application of
+generative AI technology in
 
 222
-00:15:43,966 --> 00:15:47,568
-China's strong prioritization of social
-control and alignment with
+00:15:36,440 --> 00:15:40,279
+each industry and field and generate
+exceptional content that
 
 223
-00:15:47,609 --> 00:15:51,071
-government values in its AI regulations.
-How is China
+00:15:40,279 --> 00:15:44,679
+is positive, healthy, and uplifting. This
+demonstrates China's strong
 
 224
-00:15:51,150 --> 00:15:54,732
-implementing its regulatory vision at
-different levels? At the
+00:15:44,679 --> 00:15:48,399
+prioritization of social control and
+alignment with government values
 
 225
-00:15:54,753 --> 00:15:58,557
-municipal level, Shanghai and Beijing
-launched AI safety labs
+00:15:48,399 --> 00:15:51,840
+in its AI regulations. How is China
+implementing its
 
 226
-00:15:58,697 --> 00:16:03,263
-in mid-2024, and over 40 AI safety
-evaluations have
+00:15:51,840 --> 00:15:55,600
+regulatory vision at different levels? At
+the municipal level,
 
 227
-00:16:03,302 --> 00:16:07,587
-reportedly been conducted by government-
-backed research centres. China has
+00:15:55,679 --> 00:15:59,919
+Shanghai and Beijing launched AI safety
+labs in mid-2024
 
 228
-00:16:07,628 --> 00:16:12,274
-demonstrated an inward focus, primarily
-regulating Chinese organisations and
+00:16:00,320 --> 00:16:04,039
+and over 40 AI safety evaluations have
+reportedly been
 
 229
-00:16:12,333 --> 00:16:17,330
-citizens. Major international AI labs,
-such as OpenAI, Anthropic
+00:16:04,039 --> 00:16:08,279
+conducted by government backed research
+centers. China has demonstrated
 
 230
-00:16:17,429 --> 00:16:21,072
-and Google, do not actively serve Chinese
-consumers, partly
+00:16:08,279 --> 00:16:12,960
+an inward focus, primarily regulating
+Chinese organizations and citizens.
 
 231
-00:16:21,113 --> 00:16:24,395
-due to unwillingness to comply with
-China's censorship policies.
+00:16:13,519 --> 00:16:17,639
+Major international AI labs such as
+OpenAI, Anthropic, and
 
 232
-00:16:25,355 --> 00:16:29,041
-This has resulted in Chinese AI governance
-operating largely
+00:16:17,639 --> 00:16:21,240
+Google do not actively serve Chinese
+consumers, partly due
 
 233
-00:16:29,081 --> 00:16:32,206
-on a parallel and disjoint basis to
-Western AI
+00:16:21,240 --> 00:16:25,519
+to unwillingness to comply with China's
+censorship policies. This
 
 234
-00:16:32,285 --> 00:16:37,333
-governance approaches. The textbook
-includes Figure 4.37 here. It
+00:16:25,519 --> 00:16:29,159
+has resulted in Chinese AI governance
+operating largely on
 
 235
-00:16:37,374 --> 00:16:42,522
-depicts in 2024 Chinese institutions
-significantly increased publication of
+00:16:29,159 --> 00:16:32,720
+a parallel and disjoint basis to Western
+AI governance
 
 236
-00:16:42,601 --> 00:16:47,188
-Frontier AI safety papers compared to 2023
-from approximately
+00:16:32,720 --> 00:16:37,840
+approaches. The textbook includes Figure
+4.37. Here it depicts
 
 237
-00:16:47,429 --> 00:16:48,871
-7 papers per month in 2023 to 18 per
+00:16:37,840 --> 00:16:43,559
+in2024 Chinese institutions significantly
+increased publication of frontier AI
 
 238
-00:16:48,892 --> 00:16:49,173
-month in 2024.
+00:16:43,559 --> 00:16:47,879
+safety papers compared to 2023, from
+approximately seven papers
+
+239
+00:16:47,879 --> 00:16:50,679
+per month in 2023 to 18 per month in
+
+240
+00:16:50,679 --> 00:16:51,600
+2024.

@@ -1,0 +1,2048 @@
+1
+00:00:00,160 --> 00:00:05,080
+Section 5.4 evaluation techniques in the
+previous section, we
+
+2
+00:00:05,080 --> 00:00:07,960
+talked about the specific properties of AI
+systems we
+
+3
+00:00:07,960 --> 00:00:12,880
+pay attention to in our evaluations, their
+capabilities, propensities,
+
+4
+00:00:12,880 --> 00:00:15,759
+and our ability to maintain control over
+the system.
+
+5
+00:00:16,399 --> 00:00:18,280
+The next thing to talk about is how do
+
+6
+00:00:18,280 --> 00:00:21,440
+we actually measure these properties? That
+is what we
+
+7
+00:00:21,440 --> 00:00:25,960
+explore in this Evaluation Techniques
+which are the systematic
+
+8
+00:00:25,960 --> 00:00:28,719
+approaches we can take to gather and
+analyze evidence
+
+9
+00:00:28,719 --> 00:00:32,759
+about AI systems? What are behavioral and
+internal evaluation
+
+10
+00:00:32,840 --> 00:00:36,679
+techniques? We can broadly categorize our
+approach to measuring
+
+11
+00:00:36,679 --> 00:00:41,679
+any properties into two complementary
+approaches. Behavioral techniques examine
+
+12
+00:00:41,679 --> 00:00:44,679
+what a model does, studying its outputs in
+response
+
+13
+00:00:44,679 --> 00:00:48,560
+to various inputs. Internal techniques
+examine how a model
+
+14
+00:00:48,560 --> 00:00:52,119
+does it, looking at the internal
+mechanisms and representations
+
+15
+00:00:52,200 --> 00:00:57,420
+that produce those behaviors. Property
+technique Combinations different
+properties
+
+16
+00:00:57,420 --> 00:00:59,899
+that we want to measure often naturally
+align with
+
+17
+00:00:59,899 --> 00:01:03,979
+certain techniques. Capabilities can often
+most directly be measured
+
+18
+00:01:03,979 --> 00:01:07,459
+through behavioral techniques. We care
+what the model can
+
+19
+00:01:07,459 --> 00:01:10,980
+actually do. Propensities might require
+the use of more
+
+20
+00:01:10,980 --> 00:01:15,780
+internal evaluation techniques to
+understand the underlying tendencies
+driving
+
+21
+00:01:15,780 --> 00:01:18,980
+behavior. This is not a strict rule,
+though. For
+
+22
+00:01:18,980 --> 00:01:22,180
+the current moment, the vast majority of
+evaluations are
+
+23
+00:01:22,180 --> 00:01:26,069
+all done using behavioral techniques. In
+the future, we
+
+24
+00:01:26,069 --> 00:01:29,829
+hope that evaluations use some combination
+of approaches. A
+
+25
+00:01:29,829 --> 00:01:33,750
+capability evaluation becomes more robust
+when we understand not
+
+26
+00:01:33,750 --> 00:01:35,950
+just what a model can do but also how
+
+27
+00:01:35,950 --> 00:01:40,109
+it does it. A propensity evaluation gains
+confidence when
+
+28
+00:01:40,109 --> 00:01:44,069
+we see behavioral patterns reflected in
+internal mechanisms. The
+
+29
+00:01:44,069 --> 00:01:46,709
+goal isn't to stick to particular methods,
+but to
+
+30
+00:01:46,709 --> 00:01:50,379
+build the strongest possible evidence and
+safety guarantees about
+
+31
+00:01:50,379 --> 00:01:55,060
+the properties that we care about.
+Behavioral Techniques Behavioral
+
+32
+00:01:55,060 --> 00:01:59,060
+techniques examine AI systems through
+their observable outputs in
+
+33
+00:01:59,060 --> 00:02:02,659
+response to different inputs. They are
+also sometimes called
+
+34
+00:02:02,739 --> 00:02:08,020
+black box or simply input output
+evaluations. This approach
+
+35
+00:02:08,020 --> 00:02:10,699
+focuses on what a model does rather than
+how
+
+36
+00:02:10,699 --> 00:02:15,099
+it does it internally. Standard Prompting
+and Testing the
+
+37
+00:02:15,099 --> 00:02:18,479
+most basic form of behavioral analysis is
+involves presenting
+
+38
+00:02:18,479 --> 00:02:22,840
+models with predefined inputs and
+analyzing their outputs. For
+
+39
+00:02:22,840 --> 00:02:26,639
+example, when evaluating capabilities, we
+might test a model's
+
+40
+00:02:26,639 --> 00:02:30,560
+coding ability by presenting it with
+programming challenges. For
+
+41
+00:02:30,560 --> 00:02:34,520
+propensity evaluations, we might analyze
+its default responses to
+
+42
+00:02:34,520 --> 00:02:40,960
+ethically ambiguous questions. OpenAI's
+GPT4 evaluation demonstrates this approach
+
+43
+00:02:41,039 --> 00:02:45,879
+through systematic testing across various
+domains. However, even this
+
+44
+00:02:45,879 --> 00:02:49,599
+simple technique involves careful
+consideration of how questions are
+
+45
+00:02:49,599 --> 00:02:54,240
+framed, highlighting how most behavioral
+techniques exist on a
+
+46
+00:02:54,240 --> 00:02:58,159
+spectrum from pure observation to active
+intervention. What is
+
+47
+00:02:58,159 --> 00:03:02,520
+Elicitation and Scaffolding? When we say
+we're eliciting behavior,
+
+48
+00:03:02,599 --> 00:03:05,719
+we mean actively working to draw out
+specific capabilities
+
+49
+00:03:05,719 --> 00:03:09,680
+or tendencies that might not be
+immediately apparent. This
+
+50
+00:03:09,680 --> 00:03:14,210
+often involves scaffolding providing
+supporting structures or tools that
+
+51
+00:03:14,210 --> 00:03:17,930
+help the model demonstrate its full
+capabilities. The core
+
+52
+00:03:17,930 --> 00:03:20,009
+goal is to get the model to display its
+
+53
+00:03:20,009 --> 00:03:24,090
+maximum abilities using whatever
+techniques that we can then
+
+54
+00:03:24,090 --> 00:03:27,568
+evaluators can make stronger safety
+guarantees as compared to
+
+55
+00:03:27,568 --> 00:03:30,930
+evaluating just the base model. There are
+some techniques
+
+56
+00:03:30,930 --> 00:03:36,090
+being created to automate scaffolding
+elicitation, supervised fine tuning,
+
+57
+00:03:36,090 --> 00:03:40,219
+and agent based evaluations similar to
+benchmarks. We can't
+
+58
+00:03:40,219 --> 00:03:43,500
+possibly cover all the elicitation
+techniques, but here are
+
+59
+00:03:43,500 --> 00:03:46,060
+just a couple. This should give you an
+overview
+
+60
+00:03:46,060 --> 00:03:48,379
+of the types of things Researchers try to
+get
+
+61
+00:03:48,379 --> 00:03:51,539
+the maximum capabilities out of a model
+using scaffolding
+
+62
+00:03:51,699 --> 00:03:58,180
+Elicitation Technique Best of in CM any
+sampling this
+
+63
+00:03:58,180 --> 00:04:01,819
+technique generates multiple potential
+responses from a model and
+
+64
+00:04:01,819 --> 00:04:04,819
+selects the best ones according to some
+scoring criteria.
+
+65
+00:04:05,569 --> 00:04:08,650
+Rather than relying on a single output, we
+generate
+
+66
+00:04:08,650 --> 00:04:12,849
+n different completions, often using
+different temperatures or prompts,
+
+67
+00:04:12,930 --> 00:04:16,410
+and then choose the best one. This helps
+establish
+
+68
+00:04:16,410 --> 00:04:19,610
+upper bounds on model capabilities. By
+showing what the
+
+69
+00:04:19,610 --> 00:04:23,290
+model can do in its best attempts for
+propensity
+
+70
+00:04:23,290 --> 00:04:27,050
+evaluations, we can study whether
+concerning behaviors appear more
+
+71
+00:04:27,050 --> 00:04:30,649
+frequently in certain parts of the
+response distribution. The
+
+72
+00:04:30,649 --> 00:04:34,449
+textbook has a supplementary note titled
+Meteor's Modular Agent
+
+73
+00:04:34,449 --> 00:04:38,180
+Framework where which we'll skip over
+here. Elicitation Technique
+
+74
+00:04:38,420 --> 00:04:42,699
+Multi Step Reasoning Prompting this
+technique asks models to
+
+75
+00:04:42,699 --> 00:04:46,339
+break down their reasoning process into
+explicit steps rather
+
+76
+00:04:46,339 --> 00:04:50,019
+than just providing final answers by
+prompting. With phrases
+
+77
+00:04:50,019 --> 00:04:52,899
+like let's solve this step by step, we can
+
+78
+00:04:52,899 --> 00:04:56,699
+better understand the model's decision
+making process. Chain of
+
+79
+00:04:56,699 --> 00:04:59,660
+thoughts is the most common approach, but
+researchers have
+
+80
+00:04:59,660 --> 00:05:02,819
+also explored more elaborate techniques
+like chain of thought
+
+81
+00:05:02,819 --> 00:05:10,639
+with self consistency, tree of thoughts,
+and graph of
+
+82
+00:05:10,639 --> 00:05:15,560
+thoughts as an example. Besides just
+making the model
+
+83
+00:05:15,560 --> 00:05:20,079
+perform better for capability evaluations,
+these techniques help assess
+
+84
+00:05:20,079 --> 00:05:24,639
+complex reasoning abilities by revealing
+intermediate steps. We can
+
+85
+00:05:24,639 --> 00:05:27,079
+also observe how good a model is at
+generating
+
+86
+00:05:27,079 --> 00:05:31,160
+sub goals and intermediate steps. There is
+figure 5.1
+
+87
+00:05:31,480 --> 00:05:34,610
+in the textbook. Here it depicts a
+comparison of
+
+88
+00:05:34,610 --> 00:05:39,209
+various multi step reasoning approaches.
+Multi Step Reasoning Inference
+
+89
+00:05:39,209 --> 00:05:41,970
+Time scaling helps us get a better
+understanding of
+
+90
+00:05:41,970 --> 00:05:46,370
+a model's true capabilities. As a concrete
+example, it
+
+91
+00:05:46,370 --> 00:05:48,529
+has been observed that when a model learns
+two
+
+92
+00:05:48,529 --> 00:05:53,529
+facts separately, A, B and bc, the model's
+weights
+
+93
+00:05:53,529 --> 00:05:58,129
+don't automatically encode the transitive
+connection ac even though
+
+94
+00:05:58,129 --> 00:06:02,180
+the model knows both component pieces. By
+breaking problems
+
+95
+00:06:02,180 --> 00:06:05,019
+into smaller steps, we can help the model
+demonstrate
+
+96
+00:06:05,019 --> 00:06:07,939
+capabilities it actually has but might not
+show in
+
+97
+00:06:07,939 --> 00:06:11,540
+direct testing. Without step by step chain
+of thought
+
+98
+00:06:11,540 --> 00:06:15,139
+prompting, we might incorrectly conclude a
+model lacks certain
+
+99
+00:06:15,139 --> 00:06:18,420
+reasoning abilities when in fact it just
+needs scaffolding
+
+100
+00:06:18,420 --> 00:06:23,100
+to demonstrate them. Understanding these
+architectural limitations helps us
+
+101
+00:06:23,100 --> 00:06:26,699
+design better evaluation techniques that
+can reveal a model's
+
+102
+00:06:26,699 --> 00:06:30,980
+true capabilities. Combinations and
+variations of this technique have
+
+103
+00:06:30,980 --> 00:06:33,939
+already been used to train models like
+OpenAI O
+
+104
+00:06:33,939 --> 00:06:39,740
+series, DeepSeq's reasoning series of
+models, and it is
+
+105
+00:06:39,740 --> 00:06:43,740
+expected that large reasoning models will
+continue to use
+
+106
+00:06:43,740 --> 00:06:47,339
+such techniques to further boost model
+capabilities. So it
+
+107
+00:06:47,339 --> 00:06:49,579
+is quite important to incorporate as many
+of them
+
+108
+00:06:49,579 --> 00:06:53,620
+in dangerous capability evaluations as we
+can. The textbook
+
+109
+00:06:53,620 --> 00:06:58,079
+includes Figure 5.1. Here it depicts
+example of how
+
+110
+00:06:58,079 --> 00:07:01,040
+a RL reward model and a multi step
+reasoning
+
+111
+00:07:01,040 --> 00:07:04,160
+structure can be combined to elicit more
+reasoning capabilities
+
+112
+00:07:04,319 --> 00:07:08,879
+out of a model elicitation technique.
+Supervised Fine Tuning
+
+113
+00:07:09,439 --> 00:07:12,560
+While the prompting techniques described
+so far are useful,
+
+114
+00:07:12,879 --> 00:07:15,920
+research consistently shows they often
+fail to reveal a
+
+115
+00:07:15,920 --> 00:07:20,680
+model's full capabilities. Models
+frequently possess abilities that remain
+
+116
+00:07:20,680 --> 00:07:25,560
+dormant during standard prompting
+evaluations. For example, some models
+
+117
+00:07:25,560 --> 00:07:29,160
+deliver poorer quality responses when
+users present themselves as
+
+118
+00:07:29,160 --> 00:07:33,480
+having less education, suggesting the
+issue isn't capability limitation
+
+119
+00:07:33,480 --> 00:07:38,040
+but rather biased expression of existing
+capabilities. This is
+
+120
+00:07:38,040 --> 00:07:41,759
+concerning if AIs hide their own
+capabilities see the
+
+121
+00:07:41,759 --> 00:07:46,439
+sections on sandbagging, scheming,
+situational awareness, or sabotage
+capabilities,
+
+122
+00:07:46,920 --> 00:07:49,680
+or if AI labs were deliberately trying to
+hide
+
+123
+00:07:49,680 --> 00:07:54,459
+capabilities of their LLMs from auditors.
+Eliciting capabilities with
+
+124
+00:07:54,459 --> 00:07:57,139
+fine tuning might have the potential to
+avoid such
+
+125
+00:07:57,139 --> 00:08:02,379
+failures in some circumstances. Supervised
+fine tuning offers a
+
+126
+00:08:02,379 --> 00:08:06,980
+more reliable approach to capability
+elicitation. We explained SFT
+
+127
+00:08:07,060 --> 00:08:10,259
+in the Foundation Models section of our
+Capabilities chapter.
+
+128
+00:08:10,740 --> 00:08:14,819
+Essentially, rather than relying on
+elaborate prompting strategies, this
+
+129
+00:08:14,819 --> 00:08:18,779
+approach modifies the model's weights to
+consistently exhibit specific
+
+130
+00:08:18,779 --> 00:08:22,939
+behaviors or capabilities. To test the
+effectiveness of SFT
+
+131
+00:08:22,939 --> 00:08:27,660
+for eliciting hidden capabilities,
+researchers developed password locked
+models,
+
+132
+00:08:28,139 --> 00:08:31,220
+models deliberately trained to perform
+well only when a
+
+133
+00:08:31,220 --> 00:08:34,100
+specific password is present in the prompt
+and to
+
+134
+00:08:34,100 --> 00:08:38,500
+perform poorly otherwise. Their research
+demonstrated that SFT can
+
+135
+00:08:38,500 --> 00:08:42,340
+be remarkably sample efficient, often
+requiring only a handful
+
+136
+00:08:42,340 --> 00:08:46,700
+of demonstrations to unlock capabilities
+that were previously inaccessible
+
+137
+00:08:46,700 --> 00:08:50,799
+through prompting. In these controlled
+experiments, models could be
+
+138
+00:08:50,799 --> 00:08:53,879
+fine tuned with just a few examples and
+recover
+
+139
+00:08:53,879 --> 00:08:57,919
+over 90% of their hidden performance. This
+suggests that
+
+140
+00:08:57,919 --> 00:09:01,679
+fine tuning based approaches might reveal
+capabilities that would
+
+141
+00:09:01,679 --> 00:09:06,320
+remain hidden during even sophisticated
+prompting based evaluations. Given
+
+142
+00:09:06,320 --> 00:09:09,960
+the effectiveness of sft, several AI labs
+have begun
+
+143
+00:09:09,960 --> 00:09:13,879
+incorporating fine tuning based capability
+assessment into their safety
+
+144
+00:09:13,879 --> 00:09:17,919
+evaluation frameworks. At this point, the
+textbook shows Figure
+
+145
+00:09:17,919 --> 00:09:22,679
+5.1 CS. It depicts an illustration of
+elicitation using
+
+146
+00:09:22,679 --> 00:09:26,919
+password locked models. Researchers
+trained models to only show
+
+147
+00:09:26,919 --> 00:09:30,360
+good behavior when given a password and
+perform poorly
+
+148
+00:09:30,360 --> 00:09:33,639
+otherwise, and then try to elicit the
+capabilities by
+
+149
+00:09:33,639 --> 00:09:37,840
+fine tuning these password locked models.
+SFT based elicitation
+
+150
+00:09:37,840 --> 00:09:41,519
+also has limitations. Models starting too
+far from the
+
+151
+00:09:41,519 --> 00:09:45,509
+desired capability may fail to converge
+during reinforcement learning,
+
+152
+00:09:45,509 --> 00:09:49,029
+and supervised approaches require at least
+some examples of
+
+153
+00:09:49,029 --> 00:09:53,549
+the target behavior. Additionally, fine
+tuning cannot assess how
+
+154
+00:09:53,549 --> 00:09:57,429
+a model's capabilities might expand
+through external tool access.
+
+155
+00:09:58,309 --> 00:10:04,149
+For example, WebGPT when embedded in agent
+frameworks. This
+
+156
+00:10:04,149 --> 00:10:08,190
+highlights why dangerous capability
+evaluations should include both fine
+
+157
+00:10:08,190 --> 00:10:13,000
+tuning based elicitation and alongside
+prompting based elicitation techniques
+
+158
+00:10:13,240 --> 00:10:16,879
+or agent scaffolds to establish more
+comprehensive upper bounds
+
+159
+00:10:16,879 --> 00:10:21,960
+on model capabilities. Elicitation
+Technique Tool Augmentation this is
+
+160
+00:10:21,960 --> 00:10:25,320
+an elicitation technique that involves
+providing models with access
+
+161
+00:10:25,399 --> 00:10:29,200
+to External tools or APIs, a form of
+scaffolding
+
+162
+00:10:29,200 --> 00:10:32,519
+that extends what behaviors we can
+observe. Rather than
+
+163
+00:10:32,519 --> 00:10:35,639
+evaluating just the text outputs of the
+model itself,
+
+164
+00:10:36,129 --> 00:10:39,210
+we create systems where the model can
+generate instructions
+
+165
+00:10:39,210 --> 00:10:43,370
+that trigger external tools like code
+execution environments, web
+
+166
+00:10:43,370 --> 00:10:48,210
+browsers, or specialized APIs. The model
+itself still communicates
+
+167
+00:10:48,210 --> 00:10:51,330
+through text, but the scaffolding around
+it executes these
+
+168
+00:10:51,330 --> 00:10:55,730
+instructions and returns results. This
+approach is particularly valuable
+
+169
+00:10:55,809 --> 00:10:59,289
+for capability evaluation as it reveals
+what models can
+
+170
+00:10:59,289 --> 00:11:04,059
+accomplish when paired with appropriate
+external tools. Metra's Autonomous
+
+171
+00:11:04,059 --> 00:11:07,820
+Replication Evaluation uses this approach
+to test models ability
+
+172
+00:11:07,820 --> 00:11:11,899
+to perform complex real world tasks for
+control evaluation.
+
+173
+00:11:12,059 --> 00:11:15,259
+It helps assess whether tool access
+creates new avenues
+
+174
+00:11:15,259 --> 00:11:19,860
+for circumventing safety measures. There
+is figure 5.1 in
+
+175
+00:11:19,860 --> 00:11:24,100
+the textbook. Here it depicts hugging GPT,
+a model
+
+176
+00:11:24,100 --> 00:11:26,860
+that can query other AI models in hugging
+face
+
+177
+00:11:27,019 --> 00:11:29,740
+and use them as tools to solve more
+complicated
+
+178
+00:11:29,740 --> 00:11:36,299
+tasks. Elicitation Technique this involves
+systematic attempts to elicit
+
+179
+00:11:36,299 --> 00:11:40,139
+concerning behaviors from models. This can
+range from simple
+
+180
+00:11:40,139 --> 00:11:44,500
+adversarial prompting to more complex
+interventions like specialized training
+
+181
+00:11:44,500 --> 00:11:47,460
+and fine tuning. The goal is to probe for
+
+182
+00:11:47,460 --> 00:11:50,820
+potential risks or vulnerabilities that
+might not appear under
+
+183
+00:11:50,820 --> 00:11:55,340
+standard testing. Red teaming is
+extensively used and discussed
+
+184
+00:11:55,340 --> 00:11:59,110
+in our section on control evaluations
+since these evaluations
+
+185
+00:11:59,110 --> 00:12:03,789
+operate under the explicit assumption of
+adversarial behavior. Labs
+
+186
+00:12:03,789 --> 00:12:07,429
+like OpenAI and Anthropic also use red
+teaming to
+
+187
+00:12:07,429 --> 00:12:12,269
+discover dangerous capabilities before
+releasing models. The textbook includes
+
+188
+00:12:12,269 --> 00:12:15,909
+Figure 5.1 team. Here it depicts example
+of red
+
+189
+00:12:15,909 --> 00:12:20,950
+teaming on LLMs Elicitation technique Long
+term interaction Studies
+
+190
+00:12:21,110 --> 00:12:25,590
+these evaluate model behavior over
+extended interactions or multiple
+
+191
+00:12:25,590 --> 00:12:28,830
+sessions, revealing patterns that might
+not be apparent in
+
+192
+00:12:28,830 --> 00:12:33,309
+single exchanges. This is useful for
+evaluating properties like
+
+193
+00:12:33,470 --> 00:12:38,909
+goal persistence or strategy development.
+In propensity evaluations. This
+
+194
+00:12:38,909 --> 00:12:42,788
+can reveal whether models maintain
+consistent behavioral patterns over
+
+195
+00:12:42,788 --> 00:12:46,309
+time. One example of this might be
+DeepMind's hidden
+
+196
+00:12:46,309 --> 00:12:50,470
+agenda evaluation. A user interacts with a
+chatbot designed
+
+197
+00:12:50,470 --> 00:12:53,200
+to help them learn about interesting
+topics, but the
+
+198
+00:12:53,200 --> 00:12:55,799
+model has been secretly instructed to have
+them take
+
+199
+00:12:55,799 --> 00:12:58,519
+some action like click a suspicious link
+or provide
+
+200
+00:12:58,519 --> 00:13:01,759
+the email addresses. The point is to study
+models
+
+201
+00:13:01,759 --> 00:13:06,279
+manipulation capabilities over extended
+interactions. The techniques we have
+
+202
+00:13:06,279 --> 00:13:09,879
+outlined here are by no means exhaustive.
+This is
+
+203
+00:13:09,879 --> 00:13:12,200
+just a short overview of the types of
+techniques
+
+204
+00:13:12,200 --> 00:13:17,519
+you can use when conducting Behavioral
+Evaluations Internal Techniques
+
+205
+00:13:17,519 --> 00:13:21,960
+Internal techniques examine how AI systems
+process information by
+
+206
+00:13:21,960 --> 00:13:27,279
+studying their internal representations,
+activation patterns, and computational
+mechanisms.
+
+207
+00:13:27,679 --> 00:13:31,000
+Unlike behavioral techniques, which focus
+just on the observable
+
+208
+00:13:31,000 --> 00:13:35,600
+inputs and outputs, internal analysis uses
+interpretability to understand
+
+209
+00:13:35,679 --> 00:13:38,440
+how it arrives at its outputs. This type
+of
+
+210
+00:13:38,440 --> 00:13:42,159
+analysis often requires access to model
+weights, activations, or
+
+211
+00:13:42,159 --> 00:13:45,919
+architectural details. It is important to
+mention though, that
+
+212
+00:13:45,919 --> 00:13:49,340
+currently internal techniques are still
+under development and the
+
+213
+00:13:49,340 --> 00:13:53,340
+majority of evaluations are still only
+using behavioral techniques.
+
+214
+00:13:53,740 --> 00:13:56,779
+As the field of interpretability grows
+over the years,
+
+215
+00:13:56,779 --> 00:14:00,340
+we might see internal technique based
+evaluations become more
+
+216
+00:14:00,340 --> 00:14:04,500
+popular. Enumerative safety aims to create
+a comprehensive dictionary
+
+217
+00:14:04,500 --> 00:14:07,580
+of what models knowledge. It is a specific
+approach
+
+218
+00:14:07,740 --> 00:14:12,419
+within interpretability that focuses on
+systematically cataloging and
+understanding
+
+219
+00:14:12,419 --> 00:14:17,259
+the individual features concepts that
+neural networks represent internally.
+
+220
+00:14:17,740 --> 00:14:21,299
+The enumerative aspect refers to the goal
+of exhaustively
+
+221
+00:14:21,299 --> 00:14:24,580
+identifying all the important features a
+model uses in
+
+222
+00:14:24,580 --> 00:14:29,379
+its computations, essentially creating a
+comprehensive dictionary or catalog
+
+223
+00:14:29,379 --> 00:14:32,700
+of what concepts the model knows about.
+It's like
+
+224
+00:14:32,700 --> 00:14:34,899
+trying to enumerate all the parts that
+make up
+
+225
+00:14:34,899 --> 00:14:38,340
+a complex machine. It is different from
+mechanistic or
+
+226
+00:14:38,340 --> 00:14:45,350
+developmental interpretability.
+Mechanistic interpretability focuses on
+understanding computational pathways
+
+227
+00:14:45,830 --> 00:14:50,629
+circuits, showing how models transform
+inputs to outputs. Developmental
+
+228
+00:14:50,629 --> 00:14:55,190
+interpretability studies how features form
+during training and enumerative
+
+229
+00:14:55,190 --> 00:14:59,309
+safety focuses specifically on cataloging
+the features concepts that
+
+230
+00:14:59,309 --> 00:15:04,429
+exist within models. Sparse autoencoders
+are a key technique
+
+231
+00:15:04,429 --> 00:15:09,529
+for enumerative safety. SAEs decompose a
+model's internal activations
+
+232
+00:15:09,769 --> 00:15:14,450
+into simpler, non overlapping components,
+separating mixed concepts from
+
+233
+00:15:14,450 --> 00:15:18,730
+superposition and making them
+interpretable to humans. Recent research
+
+234
+00:15:18,970 --> 00:15:23,090
+suggests neural networks contain organized
+feature families that make
+
+235
+00:15:23,090 --> 00:15:28,649
+this systematic analysis more feasible.
+SAEs successfully extracted interpretable
+
+236
+00:15:28,649 --> 00:15:32,940
+features from models like Claude 3 Sonnet,
+revealing features
+
+237
+00:15:32,940 --> 00:15:37,620
+related to safety relevant behaviors
+including deception, sycophancy, and
+
+238
+00:15:37,620 --> 00:15:42,580
+bias. Anthropic has demonstrated practical
+applications of these techniques
+
+239
+00:15:42,580 --> 00:15:45,299
+in isolating and tracing the thoughts of a
+language
+
+240
+00:15:45,299 --> 00:15:49,580
+model in alignment auditing. These methods
+have even identified
+
+241
+00:15:49,580 --> 00:15:53,460
+models deliberately trained with hidden
+objectives by finding features
+
+242
+00:15:53,460 --> 00:15:55,779
+that activate when the model attempts to
+game its
+
+243
+00:15:55,779 --> 00:16:00,309
+training objectives. While promising,
+these results remain preliminary and
+
+244
+00:16:00,309 --> 00:16:02,629
+have not yet been applied to full scale AI
+
+245
+00:16:02,629 --> 00:16:07,190
+auditing. At this point, the textbook
+shows figure 599.
+
+246
+00:16:07,750 --> 00:16:11,230
+It depicts an example of sycophantic
+praise feature discovered
+
+247
+00:16:11,230 --> 00:16:15,909
+with the autoencoder technique.
+Representation Analysis we can use
+
+248
+00:16:15,909 --> 00:16:21,110
+techniques like representation
+engineering, which involves studying how
+models
+
+249
+00:16:21,110 --> 00:16:25,860
+encode and represent different types of
+information. Internally. REPPE
+
+250
+00:16:25,860 --> 00:16:30,379
+takes inspiration from neuroscience
+approaches and places representations at
+
+251
+00:16:30,379 --> 00:16:33,700
+the center of analysis rather than neurons
+or circuits.
+
+252
+00:16:33,860 --> 00:16:38,340
+In contrast to mechanistic
+interpretability, we can potentially use
+
+253
+00:16:38,340 --> 00:16:41,659
+this to monitor and manipulate high level
+cognitive phenomena
+
+254
+00:16:41,659 --> 00:16:44,740
+in deep neural networks. We can also
+examine the
+
+255
+00:16:44,740 --> 00:16:48,019
+geometry of the model's representation
+space or track how
+
+256
+00:16:48,019 --> 00:16:51,850
+representations evolve during processing.
+There is much more information
+
+257
+00:16:52,009 --> 00:16:55,129
+about this in the chapter on
+interpretability. There is
+
+258
+00:16:55,129 --> 00:16:59,330
+figure 5.20 in the textbook. Here it
+depicts contrasting
+
+259
+00:16:59,330 --> 00:17:02,889
+the mechanistic view with the
+representational view of internal
+
+260
+00:17:02,889 --> 00:17:06,049
+analysis. Probes can be used to find
+patterns in
+
+261
+00:17:06,049 --> 00:17:09,049
+a model's weights. A probe is essentially
+a linear
+
+262
+00:17:09,049 --> 00:17:13,009
+classifier trained on a model's internal
+activations to detect
+
+263
+00:17:13,009 --> 00:17:17,289
+specific patterns or behaviors. In simpler
+terms, a probe
+
+264
+00:17:17,289 --> 00:17:21,769
+examines the model's internal
+representations during operation. They can
+
+265
+00:17:21,769 --> 00:17:26,328
+be trained using synthetic examples of
+concerning behavior. Humans
+
+266
+00:17:26,328 --> 00:17:29,288
+can write examples of scenarios we want to
+evaluate
+
+267
+00:17:29,288 --> 00:17:33,929
+for like AI attempting takeovers or
+exploiting vulnerabilities, and
+
+268
+00:17:33,929 --> 00:17:36,648
+use these to force our AI models to
+exhibit
+
+269
+00:17:36,648 --> 00:17:40,009
+this type of concerning behavior. Then we
+train another
+
+270
+00:17:40,009 --> 00:17:44,048
+AI classifier on the patterns that these
+malicious models
+
+271
+00:17:44,048 --> 00:17:46,848
+exhibit. The goal is to get the probe good
+
+272
+00:17:46,848 --> 00:17:50,339
+at recognizing specific concerning
+behaviors and based on the
+
+273
+00:17:50,339 --> 00:17:53,740
+model weights and then use this to
+evaluate concerning
+
+274
+00:17:53,740 --> 00:17:57,099
+internal activation patterns for newer
+models in the future.
+
+275
+00:17:57,660 --> 00:18:01,619
+Probes differ from mechanistic
+interpretability because they focus on
+
+276
+00:18:01,619 --> 00:18:05,819
+detecting specific concerning behaviors
+rather than trying to understand
+
+277
+00:18:06,299 --> 00:18:10,019
+the complete internal mechanisms of the
+model. As a
+
+278
+00:18:10,019 --> 00:18:15,059
+concrete example, researchers trained
+Coups to identify potential takeover
+
+279
+00:18:15,059 --> 00:18:19,059
+attempts by creating a data set of
+examples describing
+
+280
+00:18:19,059 --> 00:18:22,220
+ways an AI might try to take over. They
+
+281
+00:18:22,220 --> 00:18:25,940
+found probes could reliably flag
+concerning behavior even when
+
+282
+00:18:25,940 --> 00:18:28,619
+the text was written differently or
+translated to other
+
+283
+00:18:28,619 --> 00:18:32,700
+languages. Probes can be combined with
+other evaluation techniques,
+
+284
+00:18:32,859 --> 00:18:35,900
+like having human read teams attempt to
+elicit deceptive
+
+285
+00:18:35,900 --> 00:18:39,220
+behavior while using probes to monitor the
+model's internal
+
+286
+00:18:39,220 --> 00:18:43,430
+representations. This multi layered
+approach could help catch subtle
+
+287
+00:18:43,430 --> 00:18:46,390
+forms of concerning behavior that might
+not be apparent
+
+288
+00:18:46,390 --> 00:18:50,950
+from examining outputs alone. However,
+probe effectiveness likely depends
+
+289
+00:18:50,950 --> 00:18:53,670
+on the model not being dramatically more
+capable than
+
+290
+00:18:53,670 --> 00:18:57,750
+humans in safety critical domains, as
+extremely advanced systems
+
+291
+00:18:57,750 --> 00:19:01,230
+might find ways to manipulate their
+internal representations to
+
+292
+00:19:01,230 --> 00:19:05,190
+fool the probes. This is usually called
+gradient hacking.
+
+293
+00:19:05,589 --> 00:19:08,269
+It's worth pointing out, though, that
+gradient hacking is
+
+294
+00:19:08,269 --> 00:19:11,609
+extremely difficult for a model to
+actually do. Alignment
+
+295
+00:19:11,609 --> 00:19:15,609
+audits are systematic investigations into
+whether AI models pursue
+
+296
+00:19:15,609 --> 00:19:20,250
+hidden objectives. Researchers at
+Anthropic have deliberately trained models
+
+297
+00:19:20,250 --> 00:19:23,410
+with a known misaligned goal and have
+research teams
+
+298
+00:19:23,410 --> 00:19:26,529
+try to uncover it. They trained a language
+model,
+
+299
+00:19:26,529 --> 00:19:30,529
+Claude 35 Haiku, to be an RM sycophant,
+meaning
+
+300
+00:19:30,529 --> 00:19:33,170
+it secretly aimed to maximize scores from
+a reward
+
+301
+00:19:33,170 --> 00:19:36,609
+model by exploiting its biases even on
+tasks it
+
+302
+00:19:36,609 --> 00:19:39,880
+wasn't explicitly trained for, while also
+being trained to
+
+303
+00:19:39,880 --> 00:19:44,000
+conceal this underlying motive in a blind
+auditing game.
+
+304
+00:19:44,160 --> 00:19:47,599
+Four research teams were tasked with
+investigating this model.
+
+305
+00:19:48,079 --> 00:19:53,519
+Techniques like analyzing training data
+using sparse autoencoders, SAEs
+
+306
+00:19:53,599 --> 00:19:57,480
+for interpretability, and behavioral
+methods were employed by the
+
+307
+00:19:57,480 --> 00:20:00,920
+auditors. A key finding was the importance
+of training
+
+308
+00:20:00,920 --> 00:20:05,079
+data access. The three teams with such
+access successfully
+
+309
+00:20:05,079 --> 00:20:09,130
+identified the hidden RM sycophancy
+objective and the 52
+
+310
+00:20:09,130 --> 00:20:12,250
+specific RM biases the model was taught
+while the
+
+311
+00:20:12,250 --> 00:20:16,250
+team without data access failed. The
+textbook includes Figure
+
+312
+00:20:16,250 --> 00:20:20,369
+5.21. Here it depicts structure of our
+blind auditing
+
+313
+00:20:20,369 --> 00:20:23,329
+game. Our game is structured as a red team
+
+314
+00:20:23,730 --> 00:20:27,450
+blue team exercise. A red team trains a
+model
+
+315
+00:20:27,450 --> 00:20:30,730
+behind a strict information barrier. Then
+the red team
+
+316
+00:20:30,730 --> 00:20:33,650
+provides the model and a representative
+sample of its
+
+317
+00:20:33,650 --> 00:20:36,539
+training data to auditing teams who are
+unaware of
+
+318
+00:20:36,539 --> 00:20:39,819
+how the model was trained. These teams,
+which are
+
+319
+00:20:39,819 --> 00:20:43,579
+allowed varying levels of model and data
+access, investigate
+
+320
+00:20:43,579 --> 00:20:47,059
+this model and produce auditing reports.
+The red team
+
+321
+00:20:47,059 --> 00:20:49,740
+grades these reports according to whether
+they uncover the
+
+322
+00:20:49,740 --> 00:20:54,539
+model's hidden objective. Figure and
+legend from Anthropic at
+
+323
+00:20:54,539 --> 00:20:58,539
+this point, the textbook shows Figure
+5.22. It depicts
+
+324
+00:20:58,539 --> 00:21:02,329
+training and evaluating a reward model
+sycophant. We first
+
+325
+00:21:02,329 --> 00:21:05,289
+teach a model via training on model
+generated documents
+
+326
+00:21:05,289 --> 00:21:09,490
+that RMS make 52 certain exploitable
+errors. Then we
+
+327
+00:21:09,490 --> 00:21:12,410
+train the model to exploit 47 of these
+errors
+
+328
+00:21:12,650 --> 00:21:16,769
+errors blue to evaluate whether the model
+has learned
+
+329
+00:21:16,769 --> 00:21:20,569
+an RM sycophancy objective, we evaluate
+whether it exploits
+
+330
+00:21:20,569 --> 00:21:23,569
+the five held out errors as well as new
+
+331
+00:21:23,569 --> 00:21:27,849
+RM errors introduced at test time. Figure
+and legend
+
+332
+00:21:27,849 --> 00:21:32,500
+from Anthropic the research highlighted
+promising auditing techniques including
+
+333
+00:21:32,579 --> 00:21:36,220
+using SAEs to connect quirky behaviors to
+training data
+
+334
+00:21:36,220 --> 00:21:39,900
+about RM biases and a method called
+turning the
+
+335
+00:21:39,900 --> 00:21:43,099
+model against itself. This last technique
+is not an
+
+336
+00:21:43,099 --> 00:21:46,859
+internal technique. This latter technique
+involves prompting the model
+
+337
+00:21:46,859 --> 00:21:49,339
+to play both the user and assistant roles
+in
+
+338
+00:21:49,339 --> 00:21:53,380
+a conversation. The user Persona of the
+model sometimes
+
+339
+00:21:53,380 --> 00:21:56,299
+asked probing questions that pointed
+towards the model's hidden
+
+340
+00:21:56,299 --> 00:21:59,480
+objective as it wasn't trained to maintain
+secrecy in
+
+341
+00:21:59,480 --> 00:22:04,160
+that role. While SAEs successfully
+identified features corresponding to
+
+342
+00:22:04,160 --> 00:22:06,960
+RM biases when the model was prompted
+about its
+
+343
+00:22:06,960 --> 00:22:10,480
+concerning behaviors, the paper notes this
+success might have
+
+344
+00:22:10,480 --> 00:22:13,519
+been partly due to semantic similarities
+between the prompt
+
+345
+00:22:13,519 --> 00:22:17,200
+and the training data descriptions of rm
+biases. However,
+
+346
+00:22:17,279 --> 00:22:21,240
+SAEs also proved useful in scenarios where
+simple semantic
+
+347
+00:22:21,240 --> 00:22:25,039
+search of training data failed, such as
+identifying RM
+
+348
+00:22:25,039 --> 00:22:27,759
+bias features active when the model
+produced an odd
+
+349
+00:22:27,759 --> 00:22:31,119
+output like adding chocolate to an omelet
+and causally
+
+350
+00:22:31,119 --> 00:22:34,480
+linking these features to the behavior.
+For example, one
+
+351
+00:22:34,480 --> 00:22:37,400
+participant won by prompting the model
+with inputs like
+
+352
+00:22:37,480 --> 00:22:40,680
+the assistant is an AI model with
+potentially concerning
+
+353
+00:22:40,680 --> 00:22:44,079
+behaviors and searching through feature
+like the ones shown
+
+354
+00:22:44,079 --> 00:22:47,400
+in the image below. There is figure 5.23
+in
+
+355
+00:22:47,400 --> 00:22:50,609
+the textbook. Here it depicts a reward
+model bias
+
+356
+00:22:50,609 --> 00:22:53,569
+feature. Each row shows a training sample
+on which
+
+357
+00:22:53,569 --> 00:22:57,569
+the feature is most active. Darker shading
+indicates stronger
+
+358
+00:22:57,569 --> 00:23:01,329
+feature activity. CE is not the only
+internal technique
+
+359
+00:23:01,329 --> 00:23:04,648
+that can be used to detect alignment
+faking. Some
+
+360
+00:23:04,648 --> 00:23:09,410
+researchers have proposed benchmarks to
+evaluate interpretability techniques
+themselves.
+
+361
+00:23:10,289 --> 00:23:14,170
+Think about it like evaluating evaluation
+techniques. They are
+
+362
+00:23:14,170 --> 00:23:17,529
+trying to measure the efficacy efficacy of
+evaluations in
+
+363
+00:23:17,529 --> 00:23:21,220
+detecting things like alignment faking.
+This is basically the
+
+364
+00:23:21,220 --> 00:23:24,579
+same thing as scheming, where models
+behave benign during
+
+365
+00:23:24,579 --> 00:23:27,819
+evaluations but misbehave when they infer
+it's safe to
+
+366
+00:23:27,819 --> 00:23:30,660
+do so. An example of this type of
+benchmark
+
+367
+00:23:30,660 --> 00:23:35,619
+is the poser benchmark. The benchmark
+comprises 324 pairs
+
+368
+00:23:35,619 --> 00:23:39,660
+of Llama 13B models fine tuned for
+roleplay scenarios.
+
+369
+00:23:40,380 --> 00:23:43,460
+One model in each pair is consistently
+aligned while
+
+370
+00:23:43,460 --> 00:23:46,259
+the other is an alignment faker that
+misbehaves when
+
+371
+00:23:46,259 --> 00:23:49,380
+it believes it won't be caught. When the
+model
+
+372
+00:23:49,380 --> 00:23:53,220
+is told that monitoring is compromised,
+the core task
+
+373
+00:23:53,220 --> 00:23:56,299
+is to identify the alignment faking model
+using only
+
+374
+00:23:56,299 --> 00:24:00,460
+prompts where both models produce
+identical outputs, thus necessitating
+
+375
+00:24:00,460 --> 00:24:03,700
+the use of internal model analysis rather
+than behavioral
+
+376
+00:24:03,700 --> 00:24:08,220
+differences. The researchers tested five
+detection strategies based on
+
+377
+00:24:08,220 --> 00:24:12,619
+manipulating or observing model internals.
+The most successful strategy,
+
+378
+00:24:12,700 --> 00:24:16,859
+termed intoxicating models by injecting
+noise into their activations,
+
+379
+00:24:17,259 --> 00:24:21,619
+identified 98% of alignment fakers. This
+was done by
+
+380
+00:24:21,619 --> 00:24:26,059
+observing which model shifted more towards
+misaligned outputs. Another
+
+381
+00:24:26,059 --> 00:24:29,980
+effective method, comparing how quickly
+models learn to misbehave
+
+382
+00:24:30,220 --> 00:24:34,220
+by fine tuning them towards misaligned
+actions, achieved 90%
+
+383
+00:24:34,220 --> 00:24:39,579
+accuracy. With fakers adapting more
+rapidly, identifying suspicious concepts
+
+384
+00:24:39,579 --> 00:24:43,650
+like security or harmful behavior use
+using activation directions
+
+385
+00:24:43,650 --> 00:24:48,769
+yielded 71% accuracy. Conversely,
+strategies like trying to induce
+
+386
+00:24:48,769 --> 00:24:51,569
+a belief that it's safe to misbehave,
+which was
+
+387
+00:24:51,569 --> 00:24:56,130
+indistinguishable from noise injection,
+comparing decision making speed across
+
+388
+00:24:56,130 --> 00:24:59,650
+layers or measuring attentiveness to
+oversight cues were not
+
+389
+00:24:59,650 --> 00:25:03,410
+effective. While interpretability is a
+valuable tool, it is
+
+390
+00:25:03,410 --> 00:25:07,329
+unlikely to provide highly reliable
+methods for detecting sophisticated
+
+391
+00:25:07,329 --> 00:25:11,890
+scheming. There are many fundamental
+challenges to interpretability like
+
+392
+00:25:11,890 --> 00:25:16,849
+superposition where concepts are
+distributed across neurons, inherent
+errors
+
+393
+00:25:16,849 --> 00:25:20,650
+in current tools like SAEs, difficulty in
+measuring progress
+
+394
+00:25:20,650 --> 00:25:24,369
+without ground truth, the long tail
+problem of complex
+
+395
+00:25:24,369 --> 00:25:27,730
+and poorly understood model behaviors, and
+the immense difficulty
+
+396
+00:25:27,730 --> 00:25:31,769
+of proving the absence of deceptive
+circuits. Furthermore, issues
+
+397
+00:25:31,769 --> 00:25:35,450
+like scalability to superintelligent
+systems and the potential for
+
+398
+00:25:35,450 --> 00:25:39,390
+AI to deliberately obfuscate its internal
+workings pose significant
+
+399
+00:25:39,549 --> 00:25:42,950
+hurdles. Internal techniques should be
+considered part of a
+
+400
+00:25:42,950 --> 00:25:47,269
+pragmatic defense in depth portfolio of
+safeguards. The aim
+
+401
+00:25:47,269 --> 00:25:49,390
+of these should be to maximize the chances
+of
+
+402
+00:25:49,390 --> 00:25:54,309
+catching misalignment rather than
+guaranteeing its detection.
+Interpretability should
+
+403
+00:25:54,309 --> 00:25:56,349
+be thought of as a complement to black box
+
+404
+00:25:56,349 --> 00:26:02,349
+methods by providing de correlated
+signals, enhancing evaluations by
+
+405
+00:26:02,349 --> 00:26:05,849
+manipulating a model's awareness of being
+tested, and helping
+
+406
+00:26:05,849 --> 00:26:10,130
+to debug mysterious or concerning model
+behaviors. The goal
+
+407
+00:26:10,130 --> 00:26:12,650
+should be to make deception harder and
+riskier for
+
+408
+00:26:12,650 --> 00:26:16,769
+AI, even if perfect detection remains
+elusive. Much more
+
+409
+00:26:16,769 --> 00:26:20,009
+details on interpretability can be found
+in the dedicated
+
+410
+00:26:20,009 --> 00:26:21,409
+chapter on Interpretability.

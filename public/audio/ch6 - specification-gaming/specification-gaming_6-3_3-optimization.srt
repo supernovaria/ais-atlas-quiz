@@ -1,0 +1,421 @@
+1
+00:00:00,160 --> 00:00:05,360
+Section 6.3 Optimization Optimization is
+important to understand for
+
+2
+00:00:05,360 --> 00:00:08,640
+AI safety concerns because it plays a
+central role
+
+3
+00:00:08,640 --> 00:00:12,720
+in ML. AI systems, particularly those
+based on deep
+
+4
+00:00:12,720 --> 00:00:16,960
+learning, are trained using optimization
+algorithms to learn patterns
+
+5
+00:00:16,960 --> 00:00:21,239
+and associations from data. These
+algorithms update the model's
+
+6
+00:00:21,239 --> 00:00:24,960
+parameters to minimize a loss function,
+maximizing its performance
+
+7
+00:00:24,960 --> 00:00:29,230
+on the given task. Optimization amplifies
+certain behaviors or
+
+8
+00:00:29,230 --> 00:00:33,429
+outcomes, even if they were initially
+unlikely. For example,
+
+9
+00:00:33,429 --> 00:00:35,869
+an optimizer can search through a space of
+possible
+
+10
+00:00:35,950 --> 00:00:38,909
+outputs and take extreme actions that have
+a high
+
+11
+00:00:38,909 --> 00:00:42,350
+score according to the objective function,
+potentially leading to
+
+12
+00:00:42,350 --> 00:00:48,509
+unintended and undesirable behavior. These
+include reward misspecification failures.
+
+13
+00:00:48,990 --> 00:00:52,030
+A better recognition of the power of
+optimization to
+
+14
+00:00:52,030 --> 00:00:55,429
+amplify certain outcomes might help in
+designing systems and
+
+15
+00:00:55,429 --> 00:00:59,280
+algorithms that truly align with human
+values and objectives,
+
+16
+00:00:59,359 --> 00:01:03,240
+even under pressure of optimization. This
+involves ensuring that
+
+17
+00:01:03,240 --> 00:01:06,519
+the optimization process is aligned with
+the intended goals
+
+18
+00:01:06,519 --> 00:01:10,359
+and values of the system's designers. It
+also requires
+
+19
+00:01:10,359 --> 00:01:14,599
+considering the potential failure modes
+and unintended consequences that
+
+20
+00:01:14,599 --> 00:01:19,120
+can arise from optimization processes.
+Risks from optimization are
+
+21
+00:01:19,120 --> 00:01:22,400
+everywhere in AI safety. It is only
+touched on
+
+22
+00:01:22,400 --> 00:01:25,319
+briefly in this chapter, but will be
+discussed in
+
+23
+00:01:25,319 --> 00:01:28,719
+further detail in the chapters on goal
+misgeneralization and
+
+24
+00:01:28,719 --> 00:01:32,920
+agent foundations. Optimization power
+plays a crucial role in
+
+25
+00:01:32,920 --> 00:01:37,359
+reward hacking. Reward hacking occurs when
+RL agents exploit
+
+26
+00:01:37,359 --> 00:01:39,959
+the difference between a true reward and a
+proxy
+
+27
+00:01:39,959 --> 00:01:43,599
+reward. The increase in optimization power
+can lead to
+
+28
+00:01:43,599 --> 00:01:47,040
+a higher likelihood of reward hacking
+behavior. In some
+
+29
+00:01:47,040 --> 00:01:50,159
+cases, there are phase transitions where a
+moderate increase
+
+30
+00:01:50,159 --> 00:01:53,519
+in optimization power results in a drastic
+increase in
+
+31
+00:01:53,519 --> 00:01:58,469
+reward hacking. Section Goodhart's Law
+let's define Goodhart's Law.
+
+32
+00:01:58,870 --> 00:02:01,549
+When a measure becomes a target, it ceases
+to
+
+33
+00:02:01,549 --> 00:02:04,349
+be a good measure. This notion initially
+stems from
+
+34
+00:02:04,349 --> 00:02:07,909
+the work of Charles Goodhart in economic
+theory. However,
+
+35
+00:02:07,909 --> 00:02:10,229
+it has emerged as one of the primary
+challenges
+
+36
+00:02:10,229 --> 00:02:14,270
+in many different fields, including AI
+alignment today. To
+
+37
+00:02:14,270 --> 00:02:17,110
+illustrate this concept, the following is
+a story of
+
+38
+00:02:17,110 --> 00:02:21,250
+a Soviet nail factory. The factory
+received instructions to
+
+39
+00:02:21,479 --> 00:02:24,159
+produce as many nails as possible, with
+rewards for
+
+40
+00:02:24,159 --> 00:02:27,560
+high output and penalties for low output.
+Within a
+
+41
+00:02:27,560 --> 00:02:30,879
+few years, the factory had significantly
+increased its nail
+
+42
+00:02:30,879 --> 00:02:35,039
+production, tiny nails that were
+essentially thumbtacks and proved
+
+43
+00:02:35,039 --> 00:02:39,719
+impractical for their intended purpose.
+Consequently, the planners shifted
+
+44
+00:02:39,719 --> 00:02:42,879
+the incentives. They decided to reward the
+factory based
+
+45
+00:02:42,879 --> 00:02:45,960
+on the total weight of the nails produced.
+Within
+
+46
+00:02:45,960 --> 00:02:49,080
+a few years, the factory began producing
+large, heavy
+
+47
+00:02:49,080 --> 00:02:52,840
+nails, essentially lumps of steel, that
+were equally ineffective
+
+48
+00:02:52,840 --> 00:02:55,840
+for nailing things. There is figure 6.2 in
+the
+
+49
+00:02:55,840 --> 00:02:59,800
+textbook. Here it depicts graphic image
+showcasing the difficulty
+
+50
+00:02:59,800 --> 00:03:03,840
+of specification while avoiding Goodhart's
+Law. A measure is
+
+51
+00:03:03,840 --> 00:03:06,520
+not something that is optimized, whereas a
+target is
+
+52
+00:03:06,520 --> 00:03:09,800
+something that is optimized. When we
+specify a target
+
+53
+00:03:09,800 --> 00:03:12,680
+for optimization, it is reasonable to
+expect it to
+
+54
+00:03:12,680 --> 00:03:16,080
+be correlated with what we want.
+Initially, the measure
+
+55
+00:03:16,080 --> 00:03:17,919
+might lead to the kind of actions that are
+
+56
+00:03:17,919 --> 00:03:21,650
+truly desired. However, once the measure
+itself becomes the
+
+57
+00:03:21,650 --> 00:03:25,490
+target, optimizing that target then starts
+diverging away from
+
+58
+00:03:25,490 --> 00:03:28,569
+our desired states. In the context of AI
+and
+
+59
+00:03:28,569 --> 00:03:31,770
+reward systems, Goodhart's law means that
+when a reward
+
+60
+00:03:31,770 --> 00:03:35,008
+becomes the objective for an AI agent, the
+AI
+
+61
+00:03:35,008 --> 00:03:37,490
+agent will do everything it can to
+maximize the
+
+62
+00:03:37,490 --> 00:03:41,129
+reward function rather than the original
+intention. This can
+
+63
+00:03:41,129 --> 00:03:44,650
+lead to unintended consequences and
+manipulation of the reward
+
+64
+00:03:44,650 --> 00:03:47,370
+system, as it can often be easier to cheat
+
+65
+00:03:47,370 --> 00:03:50,569
+rather than to achieve the intended goals.
+This is
+
+66
+00:03:50,569 --> 00:03:53,330
+one of the core underlying reasons for
+reward hacking
+
+67
+00:03:53,330 --> 00:03:56,729
+failures that we will see in subsequent
+sections. Reward
+
+68
+00:03:56,729 --> 00:03:59,490
+hacking can be seen as a manifestation of
+Goodhart's
+
+69
+00:03:59,490 --> 00:04:03,330
+Law in the context of AI systems. When
+designing
+
+70
+00:04:03,330 --> 00:04:07,050
+reward functions, it is challenging to
+precisely articulate the
+
+71
+00:04:07,050 --> 00:04:10,289
+desired behavior, and agents may find ways
+to exploit
+
+72
+00:04:10,289 --> 00:04:13,449
+loopholes or manipulate the reward system
+to achieve high
+
+73
+00:04:13,449 --> 00:04:18,379
+rewards without actually fulfilling the
+intended objectives. For example,
+
+74
+00:04:18,379 --> 00:04:21,220
+a cleaning robot may create its own trash
+to
+
+75
+00:04:21,220 --> 00:04:23,899
+put in the trash can to collect rewards
+rather
+
+76
+00:04:23,899 --> 00:04:28,139
+than actually cleaning the environment.
+Understanding Goodhart's law is
+
+77
+00:04:28,139 --> 00:04:31,939
+crucial for addressing reward hacking and
+designing robust reward
+
+78
+00:04:31,939 --> 00:04:35,019
+systems that align with the intended goals
+of AI
+
+79
+00:04:35,019 --> 00:04:38,819
+agents. It highlights the need for careful
+consideration of
+
+80
+00:04:38,819 --> 00:04:42,339
+the measures and incentives used in AI
+systems to
+
+81
+00:04:42,339 --> 00:04:47,079
+avoid unintended consequences and perverse
+incentives. The next section
+
+82
+00:04:47,079 --> 00:04:51,959
+dives deeper into specific instances of
+reward misspecification and
+
+83
+00:04:51,959 --> 00:04:54,720
+how AIs can find ways to achieve the
+literal
+
+84
+00:04:54,720 --> 00:04:58,439
+specification of the objective and obtain
+high reward while
+
+85
+00:04:58,439 --> 00:05:00,399
+not fulfilling the task in spirit.

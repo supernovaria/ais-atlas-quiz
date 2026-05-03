@@ -1,0 +1,1226 @@
+1
+00:00:00,160 --> 00:00:06,000
+Section 6.4 specification gaming we define
+reward misspecification as
+
+2
+00:00:06,000 --> 00:00:11,039
+follows. Reward misspecification, also
+termed the outer alignment problem,
+
+3
+00:00:11,279 --> 00:00:13,880
+refers to the issue of providing an AI
+with
+
+4
+00:00:13,880 --> 00:00:17,160
+the accurate reward to optimize for. At
+this point
+
+5
+00:00:17,160 --> 00:00:20,640
+There is video 6.2 in the textbook. It
+covers
+
+6
+00:00:20,640 --> 00:00:24,679
+optional video with many examples of
+specification gaming. The
+
+7
+00:00:24,679 --> 00:00:28,629
+fundamental issue is simple to comprehend.
+Does the specified
+
+8
+00:00:28,629 --> 00:00:31,510
+loss function align with the intended
+objective of its
+
+9
+00:00:31,510 --> 00:00:36,270
+designers? However, implementing this in
+practical scenarios is exceedingly
+
+10
+00:00:36,270 --> 00:00:40,429
+challenging to express. The complete
+intention behind a human
+
+11
+00:00:40,429 --> 00:00:44,310
+request equates to conveying all human
+values, the implicit
+
+12
+00:00:44,310 --> 00:00:49,789
+cultural context, etc. Which remain poorly
+understood themselves. Furthermore,
+
+13
+00:00:49,789 --> 00:00:53,039
+as most models are designed as goal
+optimizers, they
+
+14
+00:00:53,039 --> 00:00:57,000
+are all vulnerable to Goodhart's Law. This
+vulnerability implies
+
+15
+00:00:57,000 --> 00:01:00,840
+that unforeseen negative consequences may
+arise due to excessive
+
+16
+00:01:00,840 --> 00:01:04,280
+optimization pressure on a goal that
+appears well specified
+
+17
+00:01:04,280 --> 00:01:07,680
+to humans but deviates from true
+objectives in subtle
+
+18
+00:01:07,680 --> 00:01:10,599
+ways. The overall problem can be broken up
+into
+
+19
+00:01:10,599 --> 00:01:13,760
+distinct issues which will be explained in
+detail in
+
+20
+00:01:13,760 --> 00:01:17,680
+individual sub sections below. Here is a
+quick overview.
+
+21
+00:01:17,920 --> 00:01:22,239
+1. Reward Misspecification occurs when the
+specified reward function
+
+22
+00:01:22,239 --> 00:01:25,540
+does not accurately capture the true
+objective or desired
+
+23
+00:01:25,540 --> 00:01:29,780
+behavior. 2. Reward design refers to the
+process of
+
+24
+00:01:29,780 --> 00:01:32,900
+designing the reward function to align the
+behavior of
+
+25
+00:01:32,900 --> 00:01:37,900
+AI agents with the intended objectives. 3.
+Reward hacking
+
+26
+00:01:37,980 --> 00:01:41,420
+refers to the behavior of RL agents
+exploiting gaps
+
+27
+00:01:41,420 --> 00:01:45,180
+or loopholes in the specified reward
+function to achieve
+
+28
+00:01:45,180 --> 00:01:49,900
+high rewards without actually fulfilling
+the intended objectives. 4.
+
+29
+00:01:50,310 --> 00:01:53,829
+Reward tampering is a broader concept that
+encompasses inappropriate
+
+30
+00:01:53,829 --> 00:01:57,870
+agent influence on the reward process
+itself, excluding the
+
+31
+00:01:57,870 --> 00:02:01,510
+manipulation of the reward function
+through gaming. Before delving
+
+32
+00:02:01,510 --> 00:02:05,670
+into specific types of reward
+misspecification failures, the following
+
+33
+00:02:05,670 --> 00:02:09,710
+section further explains the emphasis on
+reward design in
+
+34
+00:02:09,710 --> 00:02:14,189
+conjunction with algorithm design. This
+section also elucidates the
+
+35
+00:02:14,189 --> 00:02:18,960
+notorious difficulty of designing
+effective rewards. Section Reward Design
+
+36
+00:02:19,199 --> 00:02:22,759
+the term reward design refers to the
+following Reward
+
+37
+00:02:22,759 --> 00:02:25,599
+design refers to the process of specifying
+the reward
+
+38
+00:02:25,599 --> 00:02:30,439
+function in reinforcement learning. Reward
+design is a broader
+
+39
+00:02:30,439 --> 00:02:33,719
+term than reward shaping that encompasses
+the entire process
+
+40
+00:02:33,719 --> 00:02:37,159
+of designing and shaping reward functions
+to guide the
+
+41
+00:02:37,159 --> 00:02:40,840
+behavior of AI systems. It involves not
+only reward
+
+42
+00:02:40,840 --> 00:02:44,400
+shaping but also the overall process of
+defining objectives,
+
+43
+00:02:44,900 --> 00:02:48,860
+specifying preferences, and creating
+reward functions that align with
+
+44
+00:02:48,860 --> 00:02:52,819
+human values and desired outcomes. Reward
+design is a
+
+45
+00:02:52,819 --> 00:02:56,259
+term that is often used interchangeably
+with reward engineering.
+
+46
+00:02:56,740 --> 00:03:00,139
+They both refer to the same thing. RL
+algorithm
+
+47
+00:03:00,139 --> 00:03:03,620
+design and RL reward design are two
+separate facets
+
+48
+00:03:03,620 --> 00:03:08,379
+of reinforcement learning. RL algorithm
+design is about the
+
+49
+00:03:08,379 --> 00:03:11,819
+development and implementation of learning
+algorithms that allow an
+
+50
+00:03:11,819 --> 00:03:14,610
+agent to learn and refine its behavior
+method based
+
+51
+00:03:14,610 --> 00:03:19,370
+on rewards and environmental interactions.
+This process includes designing
+
+52
+00:03:19,370 --> 00:03:22,569
+the mechanisms and procedures by which the
+agent learns
+
+53
+00:03:22,569 --> 00:03:26,490
+from its experiences, updates its
+policies, and makes decisions
+
+54
+00:03:26,490 --> 00:03:31,810
+to maximize cumulative rewards.
+Conversely, RL reward design concentrates
+
+55
+00:03:31,810 --> 00:03:35,490
+on the specification and design of the
+reward function
+
+56
+00:03:35,569 --> 00:03:40,250
+guiding the RL agent's learning process.
+Reward design warrants
+
+57
+00:03:40,250 --> 00:03:43,360
+carefully engineering the reward function
+to align with the
+
+58
+00:03:43,360 --> 00:03:47,680
+desired behavior and objectives while
+accounting for potential pitfalls
+
+59
+00:03:47,680 --> 00:03:51,719
+like reward hacking or reward tampering.
+The reward function
+
+60
+00:03:51,719 --> 00:03:54,599
+is a pivotal element because it molds the
+behavior
+
+61
+00:03:54,599 --> 00:03:57,680
+of the RL agent and determines which
+actions are
+
+62
+00:03:57,680 --> 00:04:02,400
+deemed desirable or undesirable. The
+textbook includes Figure 6.3.
+
+63
+00:04:02,400 --> 00:04:06,560
+Here it depicts specification gaming, the
+flip side of
+
+64
+00:04:06,560 --> 00:04:10,419
+AI ingenuity. Designing a reward function
+often presents a
+
+65
+00:04:10,419 --> 00:04:15,620
+formidable challenge that necessitates
+considerable expertise and experience. To
+
+66
+00:04:15,620 --> 00:04:18,699
+demonstrate the complexity of this task,
+consider how one
+
+67
+00:04:18,699 --> 00:04:21,699
+might manually design a reward function to
+make an
+
+68
+00:04:21,699 --> 00:04:24,620
+agent perform a backflip as depicted in
+the following
+
+69
+00:04:24,620 --> 00:04:28,379
+image. At this point, the textbook shows
+Figure 6.4.
+
+70
+00:04:28,779 --> 00:04:32,860
+It depicts deep reinforcement learning
+from human preferences. While
+
+71
+00:04:32,860 --> 00:04:36,300
+RL algorithm design focuses on the
+learning and decision
+
+72
+00:04:36,300 --> 00:04:40,560
+making mechanisms of the agent, RL reward
+design focuses
+
+73
+00:04:40,560 --> 00:04:43,879
+on defining the objective and shaping the
+agent's behavior
+
+74
+00:04:43,879 --> 00:04:47,399
+through the reward function. Both aspects
+are crucial in
+
+75
+00:04:47,399 --> 00:04:51,120
+the development of effective and aligned
+RL systems. A
+
+76
+00:04:51,120 --> 00:04:54,639
+well designed RL algorithm can efficiently
+learn from rewards,
+
+77
+00:04:55,120 --> 00:04:58,279
+while a carefully designed reward function
+can guide the
+
+78
+00:04:58,279 --> 00:05:03,079
+agent towards desired behavior and avoid
+unintended consequences. The
+
+79
+00:05:03,079 --> 00:05:06,720
+following diagram displays the three key
+elements in RL
+
+80
+00:05:06,720 --> 00:05:11,379
+agent design, algorithm design, reward
+design, and the prevention
+
+81
+00:05:11,379 --> 00:05:14,420
+of tampering with the reward signal. There
+is figure
+
+82
+00:05:14,420 --> 00:05:19,420
+6.5 in the textbook. Here it depicts
+specification gaming,
+
+83
+00:05:19,500 --> 00:05:22,540
+the flip side of AI ingenuity. The process
+of
+
+84
+00:05:22,540 --> 00:05:27,180
+reward design receives minimal attention
+in introductory RL texts
+
+85
+00:05:27,420 --> 00:05:30,220
+despite its critical role in defining the
+problem to
+
+86
+00:05:30,220 --> 00:05:34,100
+be resolved. As mentioned in this
+section's introduction, solving
+
+87
+00:05:34,100 --> 00:05:38,870
+the reward misspecification problem would
+necessitate finding evaluation metrics
+
+88
+00:05:38,870 --> 00:05:43,110
+resistant to Goodhart's Law induced
+failures. This includes failures
+
+89
+00:05:43,110 --> 00:05:46,829
+stemming from over optimization of either
+a misdirected or
+
+90
+00:05:46,829 --> 00:05:50,509
+a proxy objective, reward hacking, or by
+the agent
+
+91
+00:05:50,509 --> 00:05:55,310
+directly interfering with the reward
+signal reward tampering. These
+
+92
+00:05:55,310 --> 00:05:59,269
+concepts are further explored in the
+ensuing sections. Section
+
+93
+00:05:59,430 --> 00:06:04,360
+Reward Shaping we define reward shaping as
+follows. Reward
+
+94
+00:06:04,360 --> 00:06:07,680
+shaping is a technique used in RL which
+introduces
+
+95
+00:06:07,680 --> 00:06:12,240
+small intermediate rewards to supplement
+the environmental reward. This
+
+96
+00:06:12,240 --> 00:06:15,160
+seeks to mitigate the problem of sparse
+reward signals
+
+97
+00:06:15,160 --> 00:06:19,360
+and to encourage exploration and faster
+learning. In order
+
+98
+00:06:19,360 --> 00:06:22,639
+to succeed at a reinforcement learning
+problem, an AI
+
+99
+00:06:22,639 --> 00:06:26,160
+needs to do two find a sequence of actions
+
+100
+00:06:26,160 --> 00:06:30,240
+that leads to positive reward. This is the
+exploration
+
+101
+00:06:30,240 --> 00:06:33,680
+problem. Remember the sequence of actions
+to take and
+
+102
+00:06:33,680 --> 00:06:38,000
+generalize to related but slightly
+different situations. This is
+
+103
+00:06:38,000 --> 00:06:41,720
+the learning problem model free RL methods
+explore by
+
+104
+00:06:41,720 --> 00:06:45,800
+taking actions randomly. If by chance the
+random actions
+
+105
+00:06:45,800 --> 00:06:48,560
+lead to a reward, they are reinforced and
+the
+
+106
+00:06:48,560 --> 00:06:51,439
+agent becomes more likely to take these
+beneficial actions
+
+107
+00:06:51,439 --> 00:06:54,639
+in the future. This works well if rewards
+are
+
+108
+00:06:54,639 --> 00:06:56,879
+dense enough for random actions to lead to
+a
+
+109
+00:06:56,879 --> 00:07:00,639
+reward with reasonable probability.
+However, many of the more
+
+110
+00:07:00,639 --> 00:07:04,519
+complicated games require long sequences
+of very specific actions
+
+111
+00:07:04,519 --> 00:07:08,360
+to experience any reward, and such
+sequences are extremely
+
+112
+00:07:08,360 --> 00:07:11,800
+unlikely to occur randomly. A classic
+example of this
+
+113
+00:07:11,800 --> 00:07:15,478
+problem was observed in the video game
+Montezuma's Revenge,
+
+114
+00:07:15,560 --> 00:07:18,040
+where the agent's objective was to find a
+key,
+
+115
+00:07:18,519 --> 00:07:21,399
+but there were many intermediate steps
+required to find
+
+116
+00:07:21,399 --> 00:07:24,519
+it. In order to solve such long term
+planning
+
+117
+00:07:24,519 --> 00:07:28,290
+problems, researchers have tried adding
+extra terms or components
+
+118
+00:07:28,290 --> 00:07:31,889
+to the reward function to encourage
+desired behavior or
+
+119
+00:07:31,889 --> 00:07:36,730
+discourage undesired behavior. The
+textbook includes Figure 6.6. Here
+
+120
+00:07:37,050 --> 00:07:40,730
+it depicts learning Montezuma's Revenge
+from a single demonstration.
+
+121
+00:07:41,129 --> 00:07:43,329
+The goal of reward shaping is to make the
+
+122
+00:07:43,329 --> 00:07:47,250
+learning process more efficient by
+providing informative rewards that
+
+123
+00:07:47,250 --> 00:07:51,250
+guide the agent towards the desired
+outcomes. Reward shaping
+
+124
+00:07:51,250 --> 00:07:54,319
+involves providing additional rewards to
+the agent for for
+
+125
+00:07:54,319 --> 00:07:57,680
+making progress towards the desired goal.
+By shaping the
+
+126
+00:07:57,680 --> 00:08:01,240
+rewards, the agent receives more frequent
+and meaningful feedback
+
+127
+00:08:01,240 --> 00:08:04,879
+which can help it learn more efficiently.
+Reward shaping
+
+128
+00:08:04,879 --> 00:08:07,839
+can be particularly useful in scenarios
+where the original
+
+129
+00:08:07,839 --> 00:08:11,519
+reward function is sparse, meaning that
+the agent receives
+
+130
+00:08:11,519 --> 00:08:14,160
+little or no feedback until it reaches the
+final
+
+131
+00:08:14,160 --> 00:08:17,759
+goal. However, it is important to design
+reward shaping
+
+132
+00:08:17,759 --> 00:08:22,660
+carefully to avoid unintended
+consequences. Reward shaping algorithms
+often
+
+133
+00:08:22,660 --> 00:08:27,220
+assume handcrafted and domain specific
+shaping functions constructed by
+
+134
+00:08:27,220 --> 00:08:30,180
+subject matter experts, which runs
+contrary to the aim
+
+135
+00:08:30,180 --> 00:08:34,259
+of autonomous learning. Moreover, poor
+choices of shaping rewards
+
+136
+00:08:34,419 --> 00:08:38,580
+can worsen the agent's performance. Poorly
+designed reward shaping
+
+137
+00:08:38,659 --> 00:08:41,100
+can lead to the agent optimizing for the
+shaped
+
+138
+00:08:41,100 --> 00:08:44,779
+rewards rather than the true rewards,
+resulting in suboptimal
+
+139
+00:08:44,779 --> 00:08:48,500
+behavior. Examples of this are provided in
+the subsequent
+
+140
+00:08:48,500 --> 00:08:52,980
+sections on reward hacking section. Reward
+Hacking let's define
+
+141
+00:08:52,980 --> 00:08:57,179
+Reward hacking Reward hacking occurs when
+an AI agent
+
+142
+00:08:57,179 --> 00:09:00,220
+finds ways to exploit loopholes or
+shortcuts in the
+
+143
+00:09:00,220 --> 00:09:04,139
+environment to maximize its reward without
+actually achieving the
+
+144
+00:09:04,139 --> 00:09:08,139
+intended goal. Specification gaming is the
+general framing for
+
+145
+00:09:08,139 --> 00:09:11,059
+the problem when an AI system finds a way
+
+146
+00:09:11,139 --> 00:09:15,340
+to achieve the objective in an unintended
+way. Specification
+
+147
+00:09:15,340 --> 00:09:18,480
+gaming can happen in many kinds of ML
+models.
+
+148
+00:09:18,799 --> 00:09:22,399
+Reward hacking is a specific occurrence of
+a specification
+
+149
+00:09:22,399 --> 00:09:25,840
+gaming failure in RL systems that function
+on reward
+
+150
+00:09:25,840 --> 00:09:30,559
+based mechanisms. Reward hacking and
+reward misspecification are related
+
+151
+00:09:30,639 --> 00:09:35,559
+concepts but have distinct meanings.
+Reward misspecification refers to
+
+152
+00:09:35,559 --> 00:09:38,519
+the situation where the specified reward
+function does not
+
+153
+00:09:38,519 --> 00:09:42,500
+accurately capture the true objective or
+desired behavior. Rewards
+
+154
+00:09:42,500 --> 00:09:46,940
+hacking does not always require reward
+misspecification. It is
+
+155
+00:09:46,940 --> 00:09:50,860
+not necessarily true that a perfectly
+specified reward which
+
+156
+00:09:50,860 --> 00:09:54,059
+completely and accurately captures the
+desired behavior of the
+
+157
+00:09:54,059 --> 00:09:58,460
+system is impossible to hack. There can
+also be
+
+158
+00:09:58,460 --> 00:10:02,980
+buggy or corrupted implementations which
+will have unintended behaviors.
+
+159
+00:10:03,299 --> 00:10:05,899
+The point of a reward function is to boil
+
+160
+00:10:05,899 --> 00:10:09,730
+a complicated system down to a single
+value. This
+
+161
+00:10:09,730 --> 00:10:13,649
+will pretty much always involve
+simplifications, etc. Which will
+
+162
+00:10:13,649 --> 00:10:16,730
+then be slightly different from what
+you're describing. The
+
+163
+00:10:16,730 --> 00:10:20,009
+map is not the Territory Reward hacking
+can manifest
+
+164
+00:10:20,009 --> 00:10:22,850
+in a myriad of ways. For instance, in the
+
+165
+00:10:22,850 --> 00:10:26,009
+context of game playing agents, it might
+involve exploiting
+
+166
+00:10:26,009 --> 00:10:29,610
+software glitches or bugs to directly
+manipulate the score
+
+167
+00:10:29,610 --> 00:10:33,129
+or gain high rewards through unintended
+means. As a
+
+168
+00:10:33,129 --> 00:10:36,289
+concrete example, one agent in the
+Coastrunners game was
+
+169
+00:10:36,519 --> 00:10:39,200
+trained with the objective of winning the
+race. The
+
+170
+00:10:39,200 --> 00:10:41,919
+game uses a score mechanism, so in order
+to
+
+171
+00:10:41,919 --> 00:10:44,960
+progress to the next level, the reward
+designers used
+
+172
+00:10:44,960 --> 00:10:48,000
+reward shaping to reward the system when
+it scored
+
+173
+00:10:48,000 --> 00:10:51,240
+points. These were given when a boat gets
+items
+
+174
+00:10:51,480 --> 00:10:53,799
+such as the green blocks in the animation
+below,
+
+175
+00:10:54,200 --> 00:10:57,720
+or accomplishes other actions that
+presumably would help it
+
+176
+00:10:57,720 --> 00:11:02,000
+win the race. Despite being given
+intermediate rewards, the
+
+177
+00:11:02,000 --> 00:11:04,720
+overall intended goal was to finish the
+race as
+
+178
+00:11:04,720 --> 00:11:07,870
+quickly as possible. The developers
+thought the best way
+
+179
+00:11:07,870 --> 00:11:09,750
+to get a high score was to win the
+
+180
+00:11:09,750 --> 00:11:12,909
+race, but it was not the case. The agent
+
+181
+00:11:12,909 --> 00:11:15,950
+discovered that continuously rotating a
+ship in a circle
+
+182
+00:11:15,950 --> 00:11:20,269
+to accumulate points indefinitely
+optimized its reward even though
+
+183
+00:11:20,269 --> 00:11:22,429
+it did not help it win the race. At
+
+184
+00:11:22,429 --> 00:11:25,990
+this point, the textbook shows Figure 6.7.
+It depicts
+
+185
+00:11:25,990 --> 00:11:28,950
+faulty reward functions in the wild. There
+is figure
+
+186
+00:11:28,950 --> 00:11:32,549
+6.8 in the textbook. Here it depicts an AI
+
+187
+00:11:32,549 --> 00:11:36,350
+playing Coastrunners 7 learn to crash and
+regenerate targets
+
+188
+00:11:36,350 --> 00:11:39,149
+repeatedly rather than win the race to get
+a
+
+189
+00:11:39,149 --> 00:11:42,750
+higher score. Exhibiting Proxy Gaming in
+cases where the
+
+190
+00:11:42,750 --> 00:11:46,669
+reward function misaligns with the desired
+objective, reward hacking
+
+191
+00:11:46,669 --> 00:11:49,990
+can emerge. This can lead the agent to
+optimize
+
+192
+00:11:49,990 --> 00:11:53,750
+a proxy reward deviating from the true
+underlying goal,
+
+193
+00:11:53,830 --> 00:11:58,350
+thereby yielding behavior contrary to the
+designer's intentions. As
+
+194
+00:11:58,350 --> 00:12:00,350
+an example of something that might happen
+in a
+
+195
+00:12:00,350 --> 00:12:04,330
+real world scenario, consider a cleaning
+robot. If the
+
+196
+00:12:04,330 --> 00:12:07,730
+reward function focuses on reducing mess,
+the robot might
+
+197
+00:12:07,730 --> 00:12:11,330
+artificially create a mess to clean up,
+thereby collecting
+
+198
+00:12:11,330 --> 00:12:15,289
+rewards instead of effectively cleaning
+the environment. Reward hacking
+
+199
+00:12:15,289 --> 00:12:18,730
+presents significant challenges to AI
+safety due to the
+
+200
+00:12:18,730 --> 00:12:22,929
+potential for unintended and potentially
+harmful behavior. As a
+
+201
+00:12:22,929 --> 00:12:26,490
+result, combating reward hacking remains
+an active research area
+
+202
+00:12:26,490 --> 00:12:31,100
+in AI Safety and Alignment Section Reward
+Tampering let's
+
+203
+00:12:31,100 --> 00:12:35,659
+define reward tampering. Reward tampering
+refers to instances where
+
+204
+00:12:35,659 --> 00:12:39,779
+an AI agent inappropriately influences or
+manipulates the reward
+
+205
+00:12:39,779 --> 00:12:43,220
+process itself. The problem of getting
+some intended task
+
+206
+00:12:43,220 --> 00:12:47,019
+done can be split into one Designing an
+agent
+
+207
+00:12:47,019 --> 00:12:50,899
+that is good at optimizing reward
+Designing a reward
+
+208
+00:12:50,899 --> 00:12:54,629
+process that provides the agent with
+suitable rewards. The
+
+209
+00:12:54,629 --> 00:12:57,350
+reward process can be understood by
+breaking it down
+
+210
+00:12:57,350 --> 00:13:03,429
+even further. 3. An implemented reward
+function 4. A
+
+211
+00:13:03,429 --> 00:13:07,230
+mechanism for collecting appropriate
+sensory data as input 5.
+
+212
+00:13:07,629 --> 00:13:09,909
+A way for the user to potentially update
+the
+
+213
+00:13:09,909 --> 00:13:13,950
+reward function. Reward tampering involves
+the agent interfering with
+
+214
+00:13:13,950 --> 00:13:17,350
+various parts of this reward process. An
+agent might
+
+215
+00:13:17,350 --> 00:13:20,769
+distort the feedback received from the
+reward model, altering
+
+216
+00:13:20,769 --> 00:13:23,970
+the information used to update its
+behavior. It could
+
+217
+00:13:23,970 --> 00:13:27,730
+also manipulate the reward model's
+implementation, altering the code
+
+218
+00:13:27,730 --> 00:13:31,690
+or hardware to change reward computations.
+In some cases,
+
+219
+00:13:31,850 --> 00:13:35,529
+agents engaging in reward tampering may
+even directly modify
+
+220
+00:13:35,529 --> 00:13:38,730
+the reward values before processing in the
+machine register.
+
+221
+00:13:39,289 --> 00:13:41,970
+Depending on what exactly is being
+tampered with, we
+
+222
+00:13:41,970 --> 00:13:45,169
+get various degrees of reward tampering.
+These can be
+
+223
+00:13:45,169 --> 00:13:48,850
+distinguished from the image below. The
+textbook includes Figure
+
+224
+00:13:48,850 --> 00:13:54,009
+6.9. Here it depicts clarifying wire
+heading Terminology Reward
+
+225
+00:13:54,009 --> 00:13:57,610
+function input tampering interferes only
+with the inputs to
+
+226
+00:13:57,610 --> 00:14:01,850
+the reward function, eg. Interfering with
+the sensors. Reward
+
+227
+00:14:01,850 --> 00:14:05,330
+function tampering involves the agent
+changing the reward function
+
+228
+00:14:05,330 --> 00:14:10,090
+itself. We define wireheading as follows.
+Wireheading refers to
+
+229
+00:14:10,090 --> 00:14:12,929
+the behavior of a system that manipulates
+or corrupts
+
+230
+00:14:12,929 --> 00:14:16,110
+its own internal structure by tampering
+directly with the
+
+231
+00:14:16,110 --> 00:14:21,269
+RL algorithm itself by changing the
+register values. Reward
+
+232
+00:14:21,269 --> 00:14:24,710
+tampering is concerning because it is
+hypothesized that tampering
+
+233
+00:14:24,710 --> 00:14:27,590
+with the reward process will often arise
+as an
+
+234
+00:14:27,590 --> 00:14:31,269
+instrumental goal. This can lead to
+weakening or breaking
+
+235
+00:14:31,269 --> 00:14:34,350
+the relationship between the observed
+reward and the intended
+
+236
+00:14:34,429 --> 00:14:39,269
+task. This is an ongoing research
+direction. A hypothesized
+
+237
+00:14:39,269 --> 00:14:42,230
+existing example of reward tampering can
+be seen in
+
+238
+00:14:42,230 --> 00:14:47,110
+recommendation based algorithms used in
+social media. These algorithms
+
+239
+00:14:47,110 --> 00:14:50,750
+influence their user's emotional state to
+generate more likes.
+
+240
+00:14:51,070 --> 00:14:54,070
+The intended task was to serve useful or
+engaging
+
+241
+00:14:54,070 --> 00:14:56,830
+content, but this is being achieved by
+tampering with
+
+242
+00:14:56,830 --> 00:15:00,070
+human emotional perceptions and thereby
+changing what would be
+
+243
+00:15:00,070 --> 00:15:04,110
+considered useful. Assuming the
+capabilities of systems continue to
+
+244
+00:15:04,110 --> 00:15:08,529
+increase through either computational or
+algorithmic advances, it is
+
+245
+00:15:08,529 --> 00:15:12,169
+plausible to expect reward tampering
+problems to become increasingly
+
+246
+00:15:12,169 --> 00:15:16,370
+common. Therefore, reward tampering is a
+potential concern that
+
+247
+00:15:16,370 --> 00:15:19,210
+requires much more research and empirical
+verification.

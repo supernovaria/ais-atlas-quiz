@@ -1,187 +1,187 @@
 1
-00:00:00,071 --> 00:00:03,455
-Chapter 4 Governance In the words of the
+00:00:00,160 --> 00:00:03,560
+Chapter 4 Governance in the words of the
 Bletchley
 
 2
-00:00:03,496 --> 00:00:07,958
+00:00:03,560 --> 00:00:08,039
 Declaration, substantial risks may arise
 from potential intentional misuse
 
 3
-00:00:08,159 --> 00:00:11,121
+00:00:08,039 --> 00:00:11,119
 or unintended issues of control relating
 to alignment with
 
 4
-00:00:11,160 --> 00:00:14,102
+00:00:11,119 --> 00:00:14,119
 human intent. These issues are in part
 because those
 
 5
-00:00:14,143 --> 00:00:17,545
+00:00:14,119 --> 00:00:17,600
 capabilities are not fully understood.
 There is potential for
 
 6
-00:00:17,666 --> 00:00:22,309
+00:00:17,600 --> 00:00:22,359
 serious, even catastrophic harm, either
 deliberate or unintentional, stemming
 
 7
-00:00:22,349 --> 00:00:25,231
+00:00:22,359 --> 00:00:25,280
 from the most significant capabilities of
 these AI models.
 
 8
-00:00:26,211 --> 00:00:30,013
+00:00:26,170 --> 00:00:30,010
 Artificial intelligence has the potential
 to revolutionize numerous aspects
 
 9
-00:00:30,053 --> 00:00:33,695
+00:00:30,010 --> 00:00:33,530
 of society, from healthcare to
 transportation to scientific research.
 
 10
-00:00:34,216 --> 00:00:36,896
-Through the previous chapters, you have
+00:00:34,090 --> 00:00:36,890
+Through the previous chapters you have
 seen AI's ability
 
 11
-00:00:36,957 --> 00:00:40,698
+00:00:36,890 --> 00:00:40,649
 to defeat world champions at go, generate
 photorealistic images
 
 12
-00:00:40,737 --> 00:00:44,759
+00:00:40,649 --> 00:00:44,729
 from text descriptions, and even discover
 new antibiotics. However,
 
 13
-00:00:44,918 --> 00:00:48,740
+00:00:44,729 --> 00:00:48,570
 these developments also raise significant
 challenges and risks, including
 
 14
-00:00:48,780 --> 00:00:52,140
+00:00:48,649 --> 00:00:52,210
 job displacement, privacy infringements,
 and the potential for AI
 
 15
-00:00:52,200 --> 00:00:55,481
+00:00:52,210 --> 00:00:55,490
 systems to make consequential mistakes or
 be misused. See
 
 16
-00:00:55,521 --> 00:00:57,481
-the chapter two on risks for the full
-spectrum.
+00:00:55,490 --> 00:00:57,439
+the Chapter 2 on Risks for the Full
+Spectrum
 
 17
-00:00:58,402 --> 00:01:01,524
+00:00:58,469 --> 00:01:01,590
 Technical AI safety research is necessary
 to ensure AI
 
 18
-00:01:01,564 --> 00:01:05,245
+00:01:01,590 --> 00:01:05,189
 behaves reliably and aligns with human
 values, especially as
 
 19
-00:01:05,284 --> 00:01:08,566
+00:01:05,189 --> 00:01:08,549
 it becomes more capable and autonomous.
 Even though technical
 
 20
-00:01:08,606 --> 00:01:11,448
+00:01:08,549 --> 00:01:11,469
 research is necessary, it alone is not
 sufficient to
 
 21
-00:01:11,489 --> 00:01:14,090
+00:01:11,469 --> 00:01:14,109
 address the full spectrum of challenges
 posed by advanced
 
 22
-00:01:14,170 --> 00:01:17,290
+00:01:14,109 --> 00:01:17,349
 AI systems. The scope of AI governance is
 broad,
 
 23
-00:01:17,671 --> 00:01:20,632
+00:01:17,510 --> 00:01:20,310
 so this chapter will primarily focus on
-large-scale risks
+large scale
 
 24
-00:01:20,712 --> 00:01:24,314
-associated with frontier AI. As a
-reminder, Frontier AIs
+00:01:20,310 --> 00:01:23,909
+risks associated with Frontier AI. As a
+reminder, Frontier
 
 25
-00:01:24,394 --> 00:01:27,756
-are highly capable models that could
-possess dangerous capabilities
+00:01:23,909 --> 00:01:27,150
+AIs are highly capable models that could
+possess dangerous
 
 26
-00:01:27,835 --> 00:01:30,998
-sufficient to pose severe risks to public
-safety. Although
+00:01:27,150 --> 00:01:30,290
+capabilities sufficient to pose severe
+risks to public safety.
 
 27
-00:01:31,037 --> 00:01:33,879
-in recent history, many state-of-the-art
-advancements have been driven
+00:01:30,530 --> 00:01:32,810
+Although in recent history many state of
+the art
 
 28
-00:01:33,918 --> 00:01:37,021
-by LLMs or foundation models, Frontier AI
-as a
+00:01:32,810 --> 00:01:35,730
+advancements have been driven by LLMs or
+foundation models,
 
 29
-00:01:37,061 --> 00:01:38,921
-term is not limited to just these types of
+00:01:35,890 --> 00:01:38,170
+frontier AI as a term is not limited to
 
 30
-00:01:38,962 --> 00:01:42,382
-models. We will examine why governance is
-necessary, how
+00:01:38,170 --> 00:01:40,769
+just these types of models. We will
+examine why
 
 31
-00:01:42,423 --> 00:01:45,084
-it complements technical AI safety
-efforts, and the key
+00:01:40,769 --> 00:01:44,090
+governance is necessary, how it
+complements technical AI safety
 
 32
-00:01:45,125 --> 00:01:48,365
-challenges and opportunities in this
-rapidly evolving field. We
+00:01:44,090 --> 00:01:46,609
+efforts, and the key challenges and
+opportunities in this
 
 33
-00:01:48,385 --> 00:01:50,569
-will focus on the governance of commercial
-and civil
+00:01:46,609 --> 00:01:49,450
+rapidly evolving field. We will focus on
+the governance
 
 34
-00:01:50,650 --> 00:01:53,855
-AI applications, as military AI governance
-involves a dist...
+00:01:49,450 --> 00:01:52,730
+of commercial and civil AI applications.
+As military AI
 
 35
-00:01:53,894 --> 00:01:56,959
-There is figure 4.1 in the textbook here.
-It
+00:01:52,730 --> 00:01:55,489
+governance involves a distinctive There is
+figure 4.1 in
 
 36
-00:01:57,000 --> 00:02:00,265
-depicts distinguishing AI models according
-to their level of
+00:01:55,489 --> 00:01:59,480
+the textbook. Here it depicts
+distinguishing AI models according
 
 37
-00:02:00,325 --> 00:02:04,471
-potential harm and generality. We focus
-here on frontier
+00:01:59,480 --> 00:02:03,079
+to their level of potential harm and
+generality. We
 
 38
-00:02:04,590 --> 00:02:05,311
-AI models.
+00:02:03,079 --> 00:02:05,400
+focus here on frontier AI models.

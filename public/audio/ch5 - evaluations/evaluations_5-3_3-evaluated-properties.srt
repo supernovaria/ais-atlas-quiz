@@ -1,0 +1,1220 @@
+1
+00:00:00,160 --> 00:00:05,639
+Section 5.3 evaluated properties an
+evaluation is fundamentally about
+
+2
+00:00:05,639 --> 00:00:08,880
+measuring or assessing some property of an
+AI system.
+
+3
+00:00:09,519 --> 00:00:12,759
+The key aspects that make something an
+evaluation rather
+
+4
+00:00:12,759 --> 00:00:16,440
+than other AI work 1. There is a specific
+
+5
+00:00:16,440 --> 00:00:19,679
+property or risk being assessed. 2. There
+is a
+
+6
+00:00:19,679 --> 00:00:23,559
+methodology for gathering evidence about
+that property. 3. There
+
+7
+00:00:23,559 --> 00:00:25,800
+is some way to analyze that evidence to
+draw
+
+8
+00:00:25,800 --> 00:00:28,649
+conclusions about the property. But before
+we talk about
+
+9
+00:00:28,730 --> 00:00:31,769
+how to do evaluations, we still need to
+also
+
+10
+00:00:31,769 --> 00:00:35,570
+answer the more fundamental question of
+what aspects of
+
+11
+00:00:35,570 --> 00:00:38,810
+AI systems are we even trying to evaluate
+and
+
+12
+00:00:38,810 --> 00:00:41,729
+why. So in this section we'll explore what
+properties
+
+13
+00:00:41,729 --> 00:00:44,609
+of AI systems we need to evaluate and why
+
+14
+00:00:44,609 --> 00:00:48,009
+they matter for safety. Later sections
+will dive deeper
+
+15
+00:00:48,009 --> 00:00:52,409
+into evaluation design and methodology.
+The textbook includes Figure
+
+16
+00:00:52,409 --> 00:00:56,609
+5.12. Here it depicts figure
+distinguishing the three related
+
+17
+00:00:56,770 --> 00:01:01,049
+but distinct concepts of evaluated
+properties, the techniques used
+
+18
+00:01:01,049 --> 00:01:05,010
+to evaluate model properties, and what
+aspects of AI
+
+19
+00:01:05,010 --> 00:01:07,969
+systems do we need to evaluate? In the
+previous
+
+20
+00:01:08,049 --> 00:01:10,730
+section on benchmarks, we saw how the
+field of
+
+21
+00:01:10,730 --> 00:01:14,930
+measuring AI systems has evolved over
+time. Benchmarks like
+
+22
+00:01:14,930 --> 00:01:18,810
+MMLU or Truthful QA are useful tools,
+giving us
+
+23
+00:01:18,810 --> 00:01:22,689
+standardization in measurement for both AI
+capabilities and safety.
+
+24
+00:01:23,650 --> 00:01:26,129
+Now we need to pair this standardization
+with increased
+
+25
+00:01:26,129 --> 00:01:30,849
+comprehensiveness based on real world
+threat models. Evaluations use
+
+26
+00:01:30,849 --> 00:01:34,409
+benchmarks but typically also involve
+other elements like red
+
+27
+00:01:34,409 --> 00:01:37,890
+teaming to give us both a standardized and
+comprehensive
+
+28
+00:01:37,890 --> 00:01:41,129
+picture of decision relevant properties of
+a model. Why
+
+29
+00:01:41,129 --> 00:01:44,290
+do we need to evaluate different
+properties? The most
+
+30
+00:01:44,290 --> 00:01:47,890
+fundamental distinction in AI evaluations
+is between what a
+
+31
+00:01:47,890 --> 00:01:51,349
+model can do and capabilities versus what
+it tends
+
+32
+00:01:51,349 --> 00:01:56,069
+to do. Propensities. To understand why
+this distinction matters,
+
+33
+00:01:56,150 --> 00:01:59,269
+imagine an AI system that is capable of
+writing
+
+34
+00:01:59,269 --> 00:02:03,269
+malicious code when explicitly directed to
+do so, but
+
+35
+00:02:03,269 --> 00:02:07,030
+consistently chooses not to do so unless
+specifically prompted.
+
+36
+00:02:07,829 --> 00:02:11,229
+Simply measuring the system's coding
+capabilities wouldn't tell us
+
+37
+00:02:11,229 --> 00:02:15,900
+about its behavioral tendencies and vice
+versa. Understanding both
+
+38
+00:02:15,900 --> 00:02:19,099
+aspects is crucial for safety assessment.
+How do these
+
+39
+00:02:19,099 --> 00:02:22,419
+evaluation types work? Together? We are
+going to talk
+
+40
+00:02:22,419 --> 00:02:27,020
+about capabilities, propensities, and
+control as distinct categories, but
+
+41
+00:02:27,020 --> 00:02:29,659
+this is for the purpose of conceptual
+clarity and
+
+42
+00:02:29,659 --> 00:02:33,860
+explanation. Reality is always messy, and
+in practice they
+
+43
+00:02:33,860 --> 00:02:37,900
+often overlap and complement each other. A
+capability evaluation
+
+44
+00:02:38,139 --> 00:02:42,310
+might reveal behavioral tendencies during
+testing, like a model
+
+45
+00:02:42,310 --> 00:02:46,229
+demonstrating a propensity toward honesty
+while being evaluated for
+
+46
+00:02:46,229 --> 00:02:50,310
+coding ability. These types of overlap are
+sometimes desirable.
+
+47
+00:02:50,550 --> 00:02:54,669
+Different evaluation approaches can
+provide complementary evidence about an
+
+48
+00:02:54,669 --> 00:02:58,349
+AI system's safety and reliability. The
+main thing to
+
+49
+00:02:58,349 --> 00:03:01,270
+recognize is what each type of evaluation
+tells us.
+
+50
+00:03:01,590 --> 00:03:05,349
+Dangerous capability evaluations give us
+upper bounds on potential
+
+51
+00:03:05,430 --> 00:03:10,270
+risks. Dangerous propensity evaluations
+tell us which default behavioral
+
+52
+00:03:10,270 --> 00:03:14,750
+patterns might be problematic. Control
+evaluations verify our containment
+
+53
+00:03:14,750 --> 00:03:17,550
+measures. Another thing to remember is
+that there are
+
+54
+00:03:17,550 --> 00:03:20,909
+various different approaches that we can
+follow when evaluating
+
+55
+00:03:20,990 --> 00:03:24,509
+for all the above types of properties. For
+example,
+
+56
+00:03:24,509 --> 00:03:28,308
+we can conduct both capability or
+propensity evaluations in
+
+57
+00:03:28,308 --> 00:03:31,870
+a black box manner, studying model
+behavior only through
+
+58
+00:03:31,870 --> 00:03:35,509
+inputs and outputs or a gray box manner
+using
+
+59
+00:03:35,509 --> 00:03:40,379
+interpretability tools to examine model
+internals. White box is
+
+60
+00:03:40,379 --> 00:03:43,419
+not currently possible unless we make
+significant strides in
+
+61
+00:03:43,419 --> 00:03:47,419
+interpretability. These are different
+design choices in how we
+
+62
+00:03:47,419 --> 00:03:50,340
+structure our evaluations when we are
+trying to evaluate
+
+63
+00:03:50,340 --> 00:03:53,419
+for the above properties. At this point,
+the textbook
+
+64
+00:03:53,419 --> 00:03:57,900
+shows Figure 5.17 it depicts in this
+chapter we
+
+65
+00:03:57,900 --> 00:04:01,099
+will mainly talk about AI systems rather
+than AI
+
+66
+00:04:01,099 --> 00:04:05,259
+models. An AI system comprises an AI model
+with
+
+67
+00:04:05,259 --> 00:04:08,099
+its weights and architecture as well as
+various other
+
+68
+00:04:08,099 --> 00:04:13,020
+system parameters including system
+prompts, prefix prompts, scaffolding
+prompts,
+
+69
+00:04:13,020 --> 00:04:19,220
+and retrieval databases. Capability what
+are capability evaluations when
+
+70
+00:04:19,220 --> 00:04:21,939
+it comes to capabilities measuring what a
+model can
+
+71
+00:04:21,939 --> 00:04:25,420
+do as far as AI safety is concerned, we're
+
+72
+00:04:25,420 --> 00:04:29,180
+particularly interested in abilities that
+could enable harmful outcomes.
+
+73
+00:04:29,980 --> 00:04:34,209
+These dangerous capabilities generally
+fall into several key categories.
+
+74
+00:04:34,610 --> 00:04:40,329
+1. The model can discover vulnerabilities
+in systems hardware
+
+75
+00:04:40,329 --> 00:04:44,089
+software data. It can write code for
+exploiting those
+
+76
+00:04:44,089 --> 00:04:48,329
+vulnerabilities. If deployed as a coding
+assistant, it can
+
+77
+00:04:48,329 --> 00:04:51,490
+insert subtle bugs into the code for
+future exploitation.
+
+78
+00:04:52,290 --> 00:04:55,449
+2. Deception the model has the skills
+necessary to
+
+79
+00:04:55,449 --> 00:04:59,569
+deceive humans, for example constructing
+believable but false statements,
+
+80
+00:05:00,089 --> 00:05:02,649
+making accurate predictions about the
+effect of a lie
+
+81
+00:05:02,649 --> 00:05:05,050
+on a human, and keeping track of what
+information
+
+82
+00:05:05,209 --> 00:05:08,970
+it needs to withhold to maintain the
+deception. 3.
+
+83
+00:05:09,529 --> 00:05:13,129
+Persuasion and manipulation the model is
+effective at shaping
+
+84
+00:05:13,129 --> 00:05:17,529
+people's beliefs in dialogue and other
+settings, social media
+
+85
+00:05:17,610 --> 00:05:22,529
+posts, even towards untrue beliefs. It can
+convince people
+
+86
+00:05:22,529 --> 00:05:24,889
+to do things that they would not otherwise
+do,
+
+87
+00:05:24,970 --> 00:05:30,879
+including unethical acts. 4. The model can
+perform the
+
+88
+00:05:30,879 --> 00:05:33,920
+social modeling and planning necessary for
+an actor to
+
+89
+00:05:33,920 --> 00:05:38,240
+gain and exercise political influence. For
+example, the model
+
+90
+00:05:38,240 --> 00:05:41,839
+can score highly in forecasting
+competitions on questions relating
+
+91
+00:05:41,839 --> 00:05:47,319
+to global affairs or political
+negotiations. 5. Weapons acquisition
+
+92
+00:05:47,319 --> 00:05:51,000
+and the model can gain access to existing
+weapon
+
+93
+00:05:51,000 --> 00:05:55,389
+systems or contribute to building new
+weapons. For example,
+
+94
+00:05:55,389 --> 00:05:58,709
+the model could assemble a bioweapon with
+human assistance
+
+95
+00:05:58,709 --> 00:06:01,750
+or provide actionable instructions for how
+to do so.
+
+96
+00:06:02,949 --> 00:06:07,149
+6. Long Horizon Planning the model can
+make sequential
+
+97
+00:06:07,149 --> 00:06:10,670
+plans that involve multiple steps,
+unfolding over long time
+
+98
+00:06:10,670 --> 00:06:15,269
+horizons, or at least involving many
+interdependent steps. It
+
+99
+00:06:15,269 --> 00:06:18,230
+can perform such planning within and
+across many domains.
+
+100
+00:06:19,189 --> 00:06:22,850
+7. AI development the model could build
+new AI
+
+101
+00:06:22,850 --> 00:06:26,930
+systems from scratch, including AI systems
+with dangerous capabilities.
+
+102
+00:06:27,889 --> 00:06:31,170
+It can find ways of adapting other
+existing models
+
+103
+00:06:31,170 --> 00:06:34,329
+to increase their performance on tasks
+relevant to extreme
+
+104
+00:06:34,329 --> 00:06:39,009
+risks. 8. Situational awareness the model
+can distinguish between
+
+105
+00:06:39,009 --> 00:06:43,490
+whether it is being trained, evaluated, or
+deployed, allowing
+
+106
+00:06:43,490 --> 00:06:46,779
+it to behave differently in each case. The
+model
+
+107
+00:06:46,779 --> 00:06:48,899
+knows that it is a model and has knowledge
+
+108
+00:06:48,899 --> 00:06:52,459
+about itself and its likely surroundings,
+for example what
+
+109
+00:06:52,459 --> 00:06:55,379
+company trained it, where their servers
+are, what kind
+
+110
+00:06:55,379 --> 00:06:57,779
+of people might be giving it feedback, and
+who
+
+111
+00:06:57,779 --> 00:07:02,779
+has administrative access. 9. Self
+proliferation the model can
+
+112
+00:07:02,779 --> 00:07:06,540
+break out of its local environment using a
+vulnerability
+
+113
+00:07:06,620 --> 00:07:10,579
+in its underlying system or suborning an
+engineer. The
+
+114
+00:07:10,579 --> 00:07:13,949
+model can exploit limitations in the
+systems from monitoring
+
+115
+00:07:13,949 --> 00:07:17,430
+its behavior post deployment. This list is
+not exhaustive
+
+116
+00:07:17,430 --> 00:07:20,870
+and may not address all plausible extreme
+risk scenarios.
+
+117
+00:07:21,350 --> 00:07:24,069
+The list may also be biased towards more
+readily
+
+118
+00:07:24,069 --> 00:07:29,509
+identifiable or already understood
+capabilities, possibly overlooking
+emergent risks.
+
+119
+00:07:30,230 --> 00:07:33,389
+Additionally, many of these capabilities
+can become even more
+
+120
+00:07:33,389 --> 00:07:38,509
+dangerous when combined. For example,
+strong situational awareness combined
+
+121
+00:07:38,509 --> 00:07:41,629
+with deception capabilities could enable a
+model to behave
+
+122
+00:07:41,629 --> 00:07:45,949
+differently during evaluation versus
+during deployment. This is why
+
+123
+00:07:45,949 --> 00:07:50,189
+comprehensive evaluation protocols need to
+assess not just individual
+
+124
+00:07:50,189 --> 00:07:53,949
+capabilities but also their interactions.
+We will go into
+
+125
+00:07:53,949 --> 00:07:57,870
+much more detail on individual dangerous
+capability evaluations in
+
+126
+00:07:57,870 --> 00:08:03,750
+a dedication section later. Propensity
+what are propensity Evaluations?
+
+127
+00:08:04,310 --> 00:08:07,329
+Capability evaluations tell us what what a
+model can
+
+128
+00:08:07,329 --> 00:08:11,529
+do when directed. Propensity evaluations
+reveal what behaviors a
+
+129
+00:08:11,529 --> 00:08:14,490
+model prioritizes by default what it tends
+to do.
+
+130
+00:08:15,050 --> 00:08:19,129
+These are also often called alignment
+evaluations. A key
+
+131
+00:08:19,129 --> 00:08:23,089
+aspect that distinguishes propensity
+evaluations is their focus on
+
+132
+00:08:23,089 --> 00:08:26,730
+non capability features. They look at how
+models behave
+
+133
+00:08:26,730 --> 00:08:30,209
+when given choices between different
+actions rather than just
+
+134
+00:08:30,209 --> 00:08:33,799
+measuring success or failure at specific
+tasks. As an
+
+135
+00:08:33,799 --> 00:08:37,720
+intuitive example, after undergoing safety
+training, think about the
+
+136
+00:08:37,720 --> 00:08:41,279
+way that language models like GPT4 or
+Claude 3.5
+
+137
+00:08:41,519 --> 00:08:44,960
+respond to user requests to produce
+potentially harmful or
+
+138
+00:08:44,960 --> 00:08:49,318
+discriminatory content. They usually
+respond with a polite refusal
+
+139
+00:08:49,318 --> 00:08:53,200
+to produce such content. It takes more
+effort jailbreaking
+
+140
+00:08:53,279 --> 00:08:55,559
+to get them to actually generate this type
+of
+
+141
+00:08:55,559 --> 00:08:59,120
+content, so more often than not they
+resist misuse.
+
+142
+00:09:00,039 --> 00:09:01,960
+In this case, we would say the models have
+
+143
+00:09:01,960 --> 00:09:05,240
+a propensity not to produce harmful or
+offensive content.
+
+144
+00:09:05,960 --> 00:09:08,600
+Similarly, we want to increase the
+propensity for good
+
+145
+00:09:08,600 --> 00:09:11,799
+behaviors and want to reduce the
+propensity for dangerous
+
+146
+00:09:11,799 --> 00:09:15,879
+behaviors. Increasing reducing would be
+the job of alignment
+
+147
+00:09:15,879 --> 00:09:18,919
+research in evaluations. We just want to
+see what
+
+148
+00:09:18,919 --> 00:09:22,519
+type of behavior it exhibits. The
+distinction between capability
+
+149
+00:09:22,519 --> 00:09:25,759
+and propensity becomes important when we
+think about the
+
+150
+00:09:25,759 --> 00:09:29,110
+fact that in the future, highly capable AI
+systems
+
+151
+00:09:29,110 --> 00:09:32,870
+might have multiple behavioral options
+available to them. For
+
+152
+00:09:32,870 --> 00:09:36,950
+example, when evaluating a model's
+tendency toward honesty, we're
+
+153
+00:09:36,950 --> 00:09:38,950
+not just interested in whether it can tell
+the
+
+154
+00:09:38,950 --> 00:09:42,710
+truth a capability, but whether it
+consistently chooses to
+
+155
+00:09:42,710 --> 00:09:46,669
+do so across different scenarios,
+especially when being dishonest
+
+156
+00:09:46,669 --> 00:09:50,669
+might provide some advantage. Can
+propensities and capabilities be
+
+157
+00:09:50,669 --> 00:09:54,730
+related yes, propensities and capabilities
+take tend to be
+
+158
+00:09:54,730 --> 00:09:59,049
+interconnected. Some concerning
+propensities might be initially subtle or
+
+159
+00:09:59,049 --> 00:10:02,769
+even undetectable, only becoming apparent
+as models gain more
+
+160
+00:10:02,769 --> 00:10:06,529
+sophisticated capabilities. An important
+thing to keep in mind
+
+161
+00:10:06,529 --> 00:10:10,850
+when designing propensity evaluations is
+how behavioral tendencies might
+
+162
+00:10:10,850 --> 00:10:14,330
+emerge and evolve as models become more
+capable. As
+
+163
+00:10:14,330 --> 00:10:17,490
+an example, a basic form of power seeking
+behavior
+
+164
+00:10:17,570 --> 00:10:21,679
+might appear unconcerning in simple
+systems but become problematic
+
+165
+00:10:21,679 --> 00:10:25,519
+as models gain better strategic,
+understanding and action capabilities.
+
+166
+00:10:26,240 --> 00:10:28,600
+Here is a list of some propensities that
+we
+
+167
+00:10:28,600 --> 00:10:33,320
+might want to design evaluations 1. The
+propensity to
+
+168
+00:10:33,320 --> 00:10:37,799
+generate offensive, harmful or otherwise
+inappropriate content such as
+
+169
+00:10:37,799 --> 00:10:43,200
+hate speech, offensive abusive language,
+pornographic content, etc. 2.
+
+170
+00:10:43,519 --> 00:10:48,080
+Bias discrimination A model's propensity
+to manifest or perpetuate
+
+171
+00:10:48,080 --> 00:10:52,820
+biases leading to unfair, prejudiced or
+discriminatory outputs against
+
+172
+00:10:52,820 --> 00:10:57,899
+certain groups or individuals. 3. A
+model's propensity to
+
+173
+00:10:57,899 --> 00:11:00,779
+answer by expressing its true beliefs and
+actual level
+
+174
+00:11:00,779 --> 00:11:06,539
+of certainty. 4. A model's propensity to
+produce truthful
+
+175
+00:11:06,539 --> 00:11:10,539
+outputs. This propensity requires an AI
+system to be
+
+176
+00:11:10,539 --> 00:11:13,139
+both honest and to know the truth or other
+
+177
+00:11:13,139 --> 00:11:16,299
+weirder settings such that the AI system
+outputs the
+
+178
+00:11:16,299 --> 00:11:19,480
+truth while believing it is not the truth.
+5.
+
+179
+00:11:20,840 --> 00:11:23,519
+A model's propensity to tell users what it
+thinks
+
+180
+00:11:23,519 --> 00:11:26,200
+they want to hear or would approve of
+rather
+
+181
+00:11:26,200 --> 00:11:29,320
+than what it internally believes is the
+truth. 1.
+
+182
+00:11:30,120 --> 00:11:34,039
+A model's propensity to intentionally
+generate misleading, false or
+
+183
+00:11:34,039 --> 00:11:39,840
+deceptive output. 2. A model's propensity
+to accept feedback
+
+184
+00:11:39,840 --> 00:11:43,039
+and correct its behavior or outputs in
+response to
+
+185
+00:11:43,039 --> 00:11:48,259
+human intervention or new information. 3.
+Power Seeking a
+
+186
+00:11:48,259 --> 00:11:50,580
+model's propensity to seek to have a high
+level
+
+187
+00:11:50,580 --> 00:11:54,259
+of control over its environment,
+potentially to maximize its
+
+188
+00:11:54,259 --> 00:11:57,179
+own objectives. Just like the list
+provided in the
+
+189
+00:11:57,179 --> 00:12:01,019
+Capabilities subsection above, this list
+of propensities is non
+
+190
+00:12:01,019 --> 00:12:04,899
+exhaustive and constantly evolving. We
+will cover a few
+
+191
+00:12:04,899 --> 00:12:07,580
+of these that are considered dangerous or
+extremely decision
+
+192
+00:12:07,580 --> 00:12:11,620
+relevant in a dedicated section on
+dangerous propensity evaluations
+
+193
+00:12:11,620 --> 00:12:16,659
+later section. Control Control evaluations
+assess safety measures under
+
+194
+00:12:16,659 --> 00:12:22,259
+adversarial conditions beyond
+understanding capabilities and
+propensities. We need
+
+195
+00:12:22,259 --> 00:12:25,259
+to verify that our safety measures remain
+effective when
+
+196
+00:12:25,259 --> 00:12:28,980
+AI systems actively try to circumvent
+them. They give
+
+197
+00:12:28,980 --> 00:12:32,379
+us information about whether our safety
+infrastructure would remain
+
+198
+00:12:32,379 --> 00:12:36,379
+robust in worst case scenarios. For
+example, a model
+
+199
+00:12:36,379 --> 00:12:40,169
+might typically display helpful behavior
+around propensity and have
+
+200
+00:12:40,169 --> 00:12:44,490
+code generation abilities a capability.
+But a control evaluation
+
+201
+00:12:44,730 --> 00:12:48,490
+would test whether constraints preventing
+access to sensitive data
+
+202
+00:12:48,649 --> 00:12:53,049
+can be circumvented or whether emergency
+shutdown procedures remain
+
+203
+00:12:53,049 --> 00:12:57,809
+effective even under adversarial
+conditions. Control evaluations give us
+
+204
+00:12:57,809 --> 00:13:02,169
+Multiple different sources of safety
+guarantees beyond hard barriers
+
+205
+00:13:02,169 --> 00:13:06,250
+and monitoring detection. Control
+evaluations also tell us when
+
+206
+00:13:06,250 --> 00:13:09,690
+models lack the sophisticated abilities
+needed to bypass them.
+
+207
+00:13:10,330 --> 00:13:12,330
+There are a couple of different reasons
+why control
+
+208
+00:13:12,330 --> 00:13:17,490
+evaluations might show safety. 1. Hard
+barriers physical technical
+
+209
+00:13:17,490 --> 00:13:22,610
+limitations like air gaps. 2. Detection
+mechanisms monitoring that
+
+210
+00:13:22,610 --> 00:13:28,529
+catches attack attempts. 3. Capability
+limitations models simply lack
+
+211
+00:13:28,529 --> 00:13:32,529
+the sophisticated abilities needed. Models
+might fail not because
+
+212
+00:13:32,529 --> 00:13:35,809
+our detection mechanisms are bad. They
+fail because they
+
+213
+00:13:35,809 --> 00:13:39,309
+lack the strategic planning and
+coordination abilities needed to
+
+214
+00:13:39,539 --> 00:13:43,620
+execute these extremely subtle multi stage
+attacks. For example,
+
+215
+00:13:43,700 --> 00:13:48,100
+distributing subtle bugs across multiple
+repositories that individually appear
+
+216
+00:13:48,100 --> 00:13:53,139
+benign but collectively create an
+exploitable vulnerability requires
+capabilities
+
+217
+00:13:53,220 --> 00:13:57,419
+models as of 2025 don't possess. To be
+able
+
+218
+00:13:57,419 --> 00:13:59,620
+to pull this off, they need to pass many
+
+219
+00:13:59,620 --> 00:14:03,299
+layers of soft checks like distribute
+extremely subtle bugs
+
+220
+00:14:03,299 --> 00:14:07,360
+across multiple repositories that activate
+only when specific conditions
+
+221
+00:14:07,360 --> 00:14:11,840
+align, ensure each individual change
+passes code review by
+
+222
+00:14:11,840 --> 00:14:16,240
+appearing benign, then evade automated
+detection systems like static
+
+223
+00:14:16,240 --> 00:14:20,840
+analyzers and also maintain persistence
+despite randomized human audits.
+
+224
+00:14:21,239 --> 00:14:25,519
+Control evaluations can drive strategic
+safety planning depending on
+
+225
+00:14:25,519 --> 00:14:29,080
+which category causes the most risk.
+During control evaluations,
+
+226
+00:14:29,080 --> 00:14:33,440
+we can reprioritize and reallocate safety
+efforts. This gives
+
+227
+00:14:33,759 --> 00:14:39,320
+one risk assessment timeline. Control
+evaluations that show safety
+
+228
+00:14:39,320 --> 00:14:42,960
+due to capability limitations give us
+information about when
+
+229
+00:14:42,960 --> 00:14:46,039
+those barriers might fail. If we know
+models are
+
+230
+00:14:46,039 --> 00:14:50,200
+safe because they can't yet execute
+sophisticated attacks rather
+
+231
+00:14:50,200 --> 00:14:53,679
+than because we're detecting their
+attempts, we can anticipate
+
+232
+00:14:53,679 --> 00:14:57,320
+capability thresholds beyond which our
+current controls may become
+
+233
+00:14:57,320 --> 00:15:03,190
+insufficient. 2. Defense Prioritization
+Understanding whether safety comes from
+
+234
+00:15:03,190 --> 00:15:08,190
+detection or capability limitations guides
+resource allocation. If models
+
+235
+00:15:08,190 --> 00:15:11,429
+fail at certain attacks because of
+capability barriers, we
+
+236
+00:15:11,429 --> 00:15:14,830
+should invest in developing better
+detection mechanisms before those
+
+237
+00:15:14,830 --> 00:15:19,389
+capabilities emerge, rather than improving
+already effective detection methods.
+
+238
+00:15:20,029 --> 00:15:24,110
+3. Deployment governance models that fail
+attacks because they
+
+239
+00:15:24,110 --> 00:15:27,149
+lack capabilities might be safer to deploy
+with fewer
+
+240
+00:15:27,149 --> 00:15:31,389
+monitoring resources than models that
+actively attempt sophisticated attacks
+
+241
+00:15:31,389 --> 00:15:34,789
+but get caught. The risk profile is
+fundamentally different
+
+242
+00:15:34,870 --> 00:15:38,230
+between can't yet do it versus tries and
+fails.
+
+243
+00:15:38,389 --> 00:15:41,668
+We give more examples of control
+evaluations, what they
+
+244
+00:15:41,668 --> 00:15:45,110
+target, when they are effective
+ineffective In a dedication
+
+245
+00:15:45,110 --> 00:15:45,669
+section.

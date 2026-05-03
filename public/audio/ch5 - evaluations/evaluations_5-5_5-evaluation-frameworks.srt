@@ -1,0 +1,1065 @@
+1
+00:00:00,160 --> 00:00:07,280
+Section 5.5 Evaluation Frameworks
+Evaluation Techniques versus Evaluation
+Frameworks
+
+2
+00:00:08,000 --> 00:00:11,800
+when evaluating AI systems, individual
+techniques are like tools
+
+3
+00:00:11,800 --> 00:00:15,279
+in a toolbox, useful for specific tasks
+but most
+
+4
+00:00:15,279 --> 00:00:20,239
+powerful when combined systematically.
+This is where evaluation frameworks
+
+5
+00:00:20,239 --> 00:00:24,000
+come in. While techniques are specific
+methods of studying
+
+6
+00:00:24,000 --> 00:00:27,679
+AI systems like chain of thought prompting
+or internal
+
+7
+00:00:27,679 --> 00:00:32,659
+activation, pattern analysis frameworks
+provide structured approaches for
+combining
+
+8
+00:00:32,659 --> 00:00:36,539
+these techniques to answer broader
+questions about AI systems.
+
+9
+00:00:36,939 --> 00:00:40,219
+As an example, we might use behavioral
+techniques like
+
+10
+00:00:40,219 --> 00:00:44,579
+red teaming to probe for deceptive
+outputs, internal techniques
+
+11
+00:00:44,579 --> 00:00:48,299
+like circuit analysis to understand how
+deception is implemented,
+
+12
+00:00:48,700 --> 00:00:52,460
+and combine these within a model organisms
+framework specifically
+
+13
+00:00:52,460 --> 00:00:56,109
+designed to create a sample of AI
+deception. Each
+
+14
+00:00:56,109 --> 00:01:00,149
+layer, technique, analysis type, and
+framework serves a different
+
+15
+00:01:00,149 --> 00:01:03,750
+role in building, understanding and
+safety. Types of Evaluation
+
+16
+00:01:03,909 --> 00:01:08,590
+Frameworks Evaluation frameworks can be
+broadly categorized into technical
+
+17
+00:01:08,590 --> 00:01:13,469
+frameworks and governance frameworks. 1.
+Technical frameworks these are
+
+18
+00:01:13,469 --> 00:01:17,269
+things like the model organisms framework
+or several evaluation
+
+19
+00:01:17,269 --> 00:01:21,349
+suites that provide specific methodologies
+or objectives for conducting
+
+20
+00:01:21,349 --> 00:01:25,489
+evaluations. They might detail which
+techniques to use, how
+
+21
+00:01:25,489 --> 00:01:28,450
+to combine them, and what specific
+outcomes to measure.
+
+22
+00:01:28,769 --> 00:01:31,849
+For example, they might specify how to
+create controlled
+
+23
+00:01:31,849 --> 00:01:35,569
+examples of deceptive behavior or how to
+measure situational
+
+24
+00:01:35,569 --> 00:01:40,769
+awareness. 2. Governance frameworks these
+are things like Anthropics
+
+25
+00:01:40,849 --> 00:01:48,530
+Responsible scaling policies framework,
+OpenAI's preparedness framework, and
+DeepMinds
+
+26
+00:01:48,909 --> 00:01:54,150
+frontier safety framework. These
+frameworks instead focus on when
+
+27
+00:01:54,150 --> 00:01:57,510
+to conduct evaluations, what their results
+should trigger, and
+
+28
+00:01:57,510 --> 00:02:01,390
+how they fit into broader organizational
+decision making. They
+
+29
+00:02:01,390 --> 00:02:05,469
+establish protocols for how evaluation
+results translate into concrete
+
+30
+00:02:05,469 --> 00:02:09,590
+actions, whether to continue development
+or implement additional safety
+
+31
+00:02:09,590 --> 00:02:13,389
+measures. Technical frameworks help us
+understand how to measure
+
+32
+00:02:13,389 --> 00:02:18,169
+AI capabilities and behaviors. Governance
+frameworks help us determine
+
+33
+00:02:18,169 --> 00:02:21,009
+what to do with those measurements.
+Combining both of
+
+34
+00:02:21,009 --> 00:02:23,250
+them can potentially help us move towards
+a much
+
+35
+00:02:23,250 --> 00:02:27,490
+more comprehensive risk assessment
+framework, evaluating how well entire
+
+36
+00:02:27,490 --> 00:02:33,330
+organizations perform at evaluating and
+mitigating AI risks. Model
+
+37
+00:02:33,330 --> 00:02:37,569
+Organisms Framework what are model
+organisms in AI safety?
+
+38
+00:02:38,050 --> 00:02:42,250
+This framework involves deliberately
+creating and studying misaligned AI
+
+39
+00:02:42,250 --> 00:02:46,939
+systems with specific dangerous
+properties. It's a controlled approach
+
+40
+00:02:46,939 --> 00:02:51,419
+to studying potentially dangerous
+capabilities and behaviors. Why create
+
+41
+00:02:51,419 --> 00:02:55,500
+potentially dangerous AI systems on
+purpose? There are two
+
+42
+00:02:55,500 --> 00:02:59,060
+compelling reasons for this approach.
+First, it allows us
+
+43
+00:02:59,060 --> 00:03:02,539
+to study concerning properties in
+controlled settings where we
+
+44
+00:03:02,539 --> 00:03:05,860
+know exactly what we're looking for.
+Second, it provides
+
+45
+00:03:05,860 --> 00:03:09,139
+concrete examples that can help inform the
+broader AI
+
+46
+00:03:09,139 --> 00:03:13,719
+community about safety challenges. Having
+real demonstrated examples of
+
+47
+00:03:13,719 --> 00:03:17,639
+potential risks is crucial for building
+scientific consensus and
+
+48
+00:03:17,639 --> 00:03:21,360
+informing policy decisions. How does the
+model organism's approach
+
+49
+00:03:21,360 --> 00:03:24,680
+break down complex threat models? Instead
+of trying to
+
+50
+00:03:24,680 --> 00:03:28,240
+tackle things like deceptive alignment as
+one monolithic problem,
+
+51
+00:03:28,560 --> 00:03:33,319
+researchers identify key subcomponents
+like situational awareness or goal
+
+52
+00:03:33,319 --> 00:03:37,759
+persistence. They then create simplified
+systems exhibiting these properties,
+
+53
+00:03:38,650 --> 00:03:42,330
+studying how they manifest and testing
+different evaluation techniques.
+
+54
+00:03:42,969 --> 00:03:47,050
+For example, Anthropic's work on sleeper
+agents demonstrated how
+
+55
+00:03:47,050 --> 00:03:50,490
+certain forms of deceptive behavior could
+persist through safety
+
+56
+00:03:50,490 --> 00:03:53,968
+training. They created models that would
+write secure code
+
+57
+00:03:53,968 --> 00:03:57,610
+when asked about the year 2023, but insert
+vulnerabilities
+
+58
+00:03:57,610 --> 00:04:01,650
+when asked about 2024. We discuss this
+particular example
+
+59
+00:04:01,650 --> 00:04:05,520
+of deception more in the Goal
+Misgeneralization chapter. The
+
+60
+00:04:05,520 --> 00:04:10,120
+textbook includes Figure 5.24. Here it
+depicts example of
+
+61
+00:04:10,120 --> 00:04:13,800
+a sleeper agent that displays misaligned
+behavior despite having
+
+62
+00:04:13,800 --> 00:04:17,000
+been put through safety fine tuning. Some
+examples of
+
+63
+00:04:17,000 --> 00:04:20,800
+model organisms in AI safety research
+include reward model
+
+64
+00:04:20,800 --> 00:04:24,079
+sycophancy, where a model is trained to
+exploit reward
+
+65
+00:04:24,079 --> 00:04:27,759
+model biases to test whether alignment
+auditing techniques can
+
+66
+00:04:27,759 --> 00:04:32,199
+detect hidden objectives, and alignment
+faking, where models are
+
+67
+00:04:32,199 --> 00:04:35,759
+trained to strategically comply with
+training objectives when monitored
+
+68
+00:04:36,000 --> 00:04:40,360
+while reverting to original preferences
+when unmonitored. Both create
+
+69
+00:04:40,360 --> 00:04:44,120
+controlled examples of misalignment with
+known ground truth to
+
+70
+00:04:44,120 --> 00:04:48,720
+validate evaluation techniques and study
+potential deceptive behaviors. We
+
+71
+00:04:48,720 --> 00:04:51,800
+talked about these in the Internal
+Techniques section. What
+
+72
+00:04:51,800 --> 00:04:56,040
+are the framework's Limitations? The model
+organism's approach faces
+
+73
+00:04:56,040 --> 00:04:59,279
+an important tradeoff. Models need to be
+realistic enough
+
+74
+00:04:59,279 --> 00:05:02,920
+to provide useful insights but controlled
+enough to study
+
+75
+00:05:03,000 --> 00:05:06,720
+safely. They should be sophisticated
+enough to exhibit the
+
+76
+00:05:06,720 --> 00:05:09,839
+properties we're concerned about, but not
+so powerful that
+
+77
+00:05:09,839 --> 00:05:13,839
+they pose actual risks. Additionally,
+since these models are
+
+78
+00:05:13,839 --> 00:05:17,639
+explicitly constructed to exhibit certain
+behaviors, they may not
+
+79
+00:05:17,639 --> 00:05:21,759
+perfectly represent how such behaviors
+would emerge naturally. Section
+
+80
+00:05:21,759 --> 00:05:25,990
+Governance Frameworks in this section we
+describe three corporate
+
+81
+00:05:25,990 --> 00:05:30,350
+governance frameworks. These voluntary
+commitments are called safety and
+
+82
+00:05:30,350 --> 00:05:34,709
+security frameworks. These commitments are
+generally similar in shape.
+
+83
+00:05:35,350 --> 00:05:38,149
+Companies promise to evaluate the models
+and to not
+
+84
+00:05:38,149 --> 00:05:41,750
+deploy dangerous models, but the details
+can vary. Why
+
+85
+00:05:41,750 --> 00:05:44,990
+do we need scaling Policies? One domain in
+which
+
+86
+00:05:44,990 --> 00:05:48,189
+evaluations are central is in trying to
+determine when
+
+87
+00:05:48,189 --> 00:05:51,029
+we should continue development versus when
+we should invest
+
+88
+00:05:51,029 --> 00:05:54,990
+more into safety measures. As AI systems
+become more
+
+89
+00:05:54,990 --> 00:05:58,470
+capable, we need systematic ways to ensure
+safety keeps
+
+90
+00:05:58,470 --> 00:06:03,149
+pace with capability growth. Without
+structured policies, competitive pressures
+
+91
+00:06:03,149 --> 00:06:06,470
+or development momentum might push
+companies to scale faster
+
+92
+00:06:06,470 --> 00:06:09,430
+than their safety measures can handle. We
+saw in
+
+93
+00:06:09,430 --> 00:06:13,790
+the Capabilities chapter arguments for the
+scaling hypotheses that
+
+94
+00:06:13,790 --> 00:06:17,069
+ML systems will continue to improve along
+dimensions of
+
+95
+00:06:17,069 --> 00:06:21,019
+performance and generality with increases
+in compute data or
+
+96
+00:06:21,019 --> 00:06:24,459
+parameters. So the core thing that a
+scaling policy
+
+97
+00:06:24,540 --> 00:06:28,939
+needs to specify is an explicit decision
+criteria. When
+
+98
+00:06:28,939 --> 00:06:31,779
+can scaling proceed or when should we
+pause because
+
+99
+00:06:31,779 --> 00:06:35,220
+it is too risky? The decision criteria is
+usually
+
+100
+00:06:35,220 --> 00:06:39,259
+through evaluations and risk assessment.
+What is evaluation? Gated
+
+101
+00:06:39,259 --> 00:06:42,259
+scaling? The way we figure out if someone
+should
+
+102
+00:06:42,259 --> 00:06:44,709
+be allowed to continue to scale their
+models is
+
+103
+00:06:44,779 --> 00:06:48,579
+is through evaluation gated scaling. This
+means that progress
+
+104
+00:06:48,579 --> 00:06:53,100
+in AI development is controlled by
+specific evaluation results.
+
+105
+00:06:53,819 --> 00:06:57,819
+Gates Thresholds Before a company can
+scale up their
+
+106
+00:06:57,819 --> 00:07:02,620
+model, they must pass certain evaluation
+checkpoints. These evaluations
+
+107
+00:07:02,620 --> 00:07:05,540
+test both if the model has dangerous
+capabilities and
+
+108
+00:07:05,540 --> 00:07:09,339
+verify adequate safety measures are in
+place. This creates
+
+109
+00:07:09,339 --> 00:07:12,759
+clear decision points where evaluation
+results are key decision
+
+110
+00:07:12,920 --> 00:07:16,839
+points. What is a scaling policy
+Framework? A scaling
+
+111
+00:07:16,839 --> 00:07:21,199
+policy framework puts everything together,
+determining which evaluations are
+
+112
+00:07:21,199 --> 00:07:25,000
+needed, which safety measures are
+required, how strictly things
+
+113
+00:07:25,000 --> 00:07:28,480
+should be tested, and what evaluation
+requirements exist before
+
+114
+00:07:28,480 --> 00:07:34,160
+training, deployment, and post deployment.
+Essentially, it establishes systematic
+
+115
+00:07:34,160 --> 00:07:37,759
+rules and protocols for monitoring safety
+and being willing
+
+116
+00:07:37,759 --> 00:07:40,879
+to pause development if safety cannot be
+assured. The
+
+117
+00:07:40,879 --> 00:07:45,079
+textbook has a supplementary note titled
+Scaling Policies. Frameworks
+
+118
+00:07:45,079 --> 00:07:48,800
+are now generally called safety and
+security frameworks, which
+
+119
+00:07:48,800 --> 00:07:54,399
+we'll skip over here. RSP Framework
+Anthropic example of
+
+120
+00:07:54,399 --> 00:08:00,639
+Evaluation Gates AI Safety Levels One
+concrete example of
+
+121
+00:08:00,639 --> 00:08:06,579
+evaluation gated scaling are Anthropic's
+responsible scaling policies that
+
+122
+00:08:06,579 --> 00:08:09,819
+use the concept of safety levels. These
+are inspired
+
+123
+00:08:09,819 --> 00:08:15,339
+by biosafety levels used in infectious
+disease research where
+
+124
+00:08:15,339 --> 00:08:21,420
+increasingly dangerous pathogens require
+increasingly stringent containment
+protocols. AI
+
+125
+00:08:21,420 --> 00:08:25,540
+safety levels create standardized tiers of
+capability that require
+
+126
+00:08:25,540 --> 00:08:31,259
+increasingly stringent safety measures.
+For example, Anthropic's framework defines
+
+127
+00:08:31,259 --> 00:08:36,700
+levels from ASL1 basic safety measures
+through ASL3 comprehensive
+
+128
+00:08:36,700 --> 00:08:40,779
+security and deployment restrictions. This
+is in principle similar
+
+129
+00:08:40,779 --> 00:08:45,460
+to how biologists handle increasingly
+dangerous pathogens, with each
+
+130
+00:08:45,460 --> 00:08:49,779
+level having specific evaluation
+requirements and safety protocols. At
+
+131
+00:08:49,779 --> 00:08:53,700
+this point, the textbook shows Figure
+5.25. It depicts
+
+132
+00:08:53,700 --> 00:08:58,289
+overview of anthropic's ASL levels. ASL1
+refers to systems
+
+133
+00:08:58,289 --> 00:09:02,889
+which pose no meaningful catastrophic
+risk. ASL2 refers to
+
+134
+00:09:02,889 --> 00:09:06,370
+systems that show early signs of dangerous
+capabilities, for
+
+135
+00:09:06,370 --> 00:09:09,009
+example Ability to give instructions on
+how to build
+
+136
+00:09:09,009 --> 00:09:12,448
+bioweapons, but where the information is
+not yet useful
+
+137
+00:09:12,448 --> 00:09:16,169
+due to insufficient reliability or not
+providing information that
+
+138
+00:09:16,169 --> 00:09:20,610
+eg. A search engine couldn't. ASL3 refers
+to systems
+
+139
+00:09:20,610 --> 00:09:24,610
+that substantially increase the risk of
+catastrophic misuse compared
+
+140
+00:09:24,610 --> 00:09:28,809
+to non AI baselines, e.g. search engines
+or textbooks,
+
+141
+00:09:29,210 --> 00:09:33,929
+or that show low level autonomous
+capabilities. ASL4 and
+
+142
+00:09:33,929 --> 00:09:37,490
+higher ASL5 is not yet defined as it is
+
+143
+00:09:37,490 --> 00:09:40,610
+too far from present systems, but will
+likely involve
+
+144
+00:09:40,610 --> 00:09:45,649
+qualitative escalations in catastrophic
+misuse potential and autonomy. Which
+
+145
+00:09:45,649 --> 00:09:48,490
+evaluations are necessary to act as gates
+to further
+
+146
+00:09:48,490 --> 00:09:53,389
+scale, RSPs require several categories of
+evaluation working together.
+
+147
+00:09:53,710 --> 00:09:56,669
+Building on the evaluation types we
+discussed earlier in
+
+148
+00:09:56,669 --> 00:10:01,950
+this chapter. Capability evaluations
+detect dangerous abilities like autonomous
+
+149
+00:10:01,950 --> 00:10:08,909
+replication or cyberattack capabilities.
+Security evaluations verify protection of
+
+150
+00:10:08,909 --> 00:10:13,230
+model weights and training infrastructure.
+Note that security evals
+
+151
+00:10:13,230 --> 00:10:17,289
+are not covered in this chapter. Safety
+evaluations test
+
+152
+00:10:17,289 --> 00:10:21,490
+whether control measures remain effective.
+These evaluations need to
+
+153
+00:10:21,490 --> 00:10:25,090
+work together. Passing one category isn't
+sufficient if others
+
+154
+00:10:25,090 --> 00:10:29,529
+indicate concerns. This connects directly
+to our earlier discussion
+
+155
+00:10:29,529 --> 00:10:34,250
+on how capability, propensity, and control
+evaluations complement each
+
+156
+00:10:34,250 --> 00:10:40,649
+other. Preparedness framework OpenAI There
+is figure 5.26 in
+
+157
+00:10:40,649 --> 00:10:44,980
+the textbook. Here it depicts system card
+of GPT01
+
+158
+00:10:44,980 --> 00:10:49,059
+published by OpenAI after safety
+evaluations. What is the
+
+159
+00:10:49,059 --> 00:10:53,379
+preparedness framework? OpenAI's
+preparedness framework has a lot of
+
+160
+00:10:53,379 --> 00:10:57,899
+overlap with Anthropic's RSPs. Rather than
+using fixed capability
+
+161
+00:10:57,980 --> 00:11:01,700
+levels for the entire model like ASL's,
+the preparedness
+
+162
+00:11:01,700 --> 00:11:06,500
+framework publishes model cards with
+organized evaluations around specific
+
+163
+00:11:06,500 --> 00:11:12,169
+risk categories like cybersecurity,
+persuasion, and autonomous replication.
+For
+
+164
+00:11:12,169 --> 00:11:15,129
+each category, they define a spectrum from
+low to
+
+165
+00:11:15,129 --> 00:11:19,409
+critical risk, with specific evaluation
+requirements and mitigation measures
+
+166
+00:11:19,409 --> 00:11:23,009
+for each level. So, similar to RSPs in the
+
+167
+00:11:23,009 --> 00:11:27,529
+preparedness Framework, evaluations play a
+central role. Evaluations in
+
+168
+00:11:27,529 --> 00:11:32,049
+the Preparedness Framework the framework
+requires both pre mitigation
+
+169
+00:11:32,210 --> 00:11:37,330
+and post mitigation evaluations. Pre
+mitigation evaluations assess a
+
+170
+00:11:37,330 --> 00:11:41,129
+model's raw capabilities and potential for
+harm, while post
+
+171
+00:11:41,129 --> 00:11:46,090
+mitigation evaluations verify whether
+safety measures effectively reduce risks
+
+172
+00:11:46,090 --> 00:11:49,809
+to acceptable levels. This maps onto our
+earlier discussions
+
+173
+00:11:49,809 --> 00:11:54,049
+about capability and control evaluations.
+We need to understand
+
+174
+00:11:54,210 --> 00:11:56,649
+both what a model can do and whether we
+
+175
+00:11:56,649 --> 00:12:00,889
+can reliably prevent harmful outcomes. The
+framework sets clear
+
+176
+00:12:00,889 --> 00:12:05,139
+safety baselines Only models with post
+mitigation scores of
+
+177
+00:12:05,139 --> 00:12:08,379
+medium or below can be deployed, and only
+models
+
+178
+00:12:08,379 --> 00:12:11,500
+with post mitigation scores of high or
+below can
+
+179
+00:12:11,500 --> 00:12:15,379
+be deployed. Internally, models showing
+high or critical pre
+
+180
+00:12:15,379 --> 00:12:19,700
+mitigation risk require specific security
+measures to prevent model
+
+181
+00:12:19,700 --> 00:12:24,139
+weight exfiltration. This creates direct
+links between evaluation results
+
+182
+00:12:24,139 --> 00:12:28,059
+and required actions. A unique aspect of
+the Preparedness
+
+183
+00:12:28,059 --> 00:12:32,419
+framework is its explicit focus on unknown
+unknowns, potential
+
+184
+00:12:32,419 --> 00:12:36,860
+risks that current evaluation protocols
+might miss. The framework
+
+185
+00:12:36,860 --> 00:12:41,100
+includes processes for actively searching
+for unanticipated risks and
+
+186
+00:12:41,100 --> 00:12:45,419
+updating evaluation protocols accordingly.
+This hoping to address one
+
+187
+00:12:45,419 --> 00:12:48,460
+of the limitations of AI evaluations that
+we will
+
+188
+00:12:48,460 --> 00:12:53,379
+discuss in a later section. Frontier
+safety framework Google
+
+189
+00:12:53,379 --> 00:12:58,580
+DeepMind what is the frontier safety
+framework? DeepMind's FSF
+
+190
+00:12:58,580 --> 00:13:02,399
+shares core elements with other governance
+frameworks, but introduces
+
+191
+00:13:02,399 --> 00:13:06,440
+some unique elements. Instead of ASLs or
+risk spectrums,
+
+192
+00:13:06,679 --> 00:13:11,919
+it centers on critical capability levels
+that trigger specific
+
+193
+00:13:11,919 --> 00:13:16,840
+evaluation and mitigation requirements.
+The framework includes both deployment
+
+194
+00:13:16,840 --> 00:13:21,399
+mitigations like safety training and
+monitoring and security mitigations
+
+195
+00:13:21,720 --> 00:13:27,679
+protecting model weights. Separate CCLs
+exist for biosecurity, cybersecurity,
+
+196
+00:13:27,679 --> 00:13:32,070
+and autonomous capabilities. Each CCL has
+its own evaluation
+
+197
+00:13:32,070 --> 00:13:35,909
+requirements and triggers different
+combinations of security and deployment
+
+198
+00:13:35,909 --> 00:13:40,070
+mitigations. This allows for more targeted
+responses to specific
+
+199
+00:13:40,070 --> 00:13:43,710
+risks rather than treating all
+capabilities as requiring the
+
+200
+00:13:43,710 --> 00:13:46,830
+same level of protection. Scaling buffers
+are used to
+
+201
+00:13:46,830 --> 00:13:52,269
+calculate evaluation timing. The FSF
+requires evaluations every 6x
+
+202
+00:13:52,269 --> 00:13:55,429
+increase in effective compute and every 3
+months of
+
+203
+00:13:55,429 --> 00:13:59,370
+fine tuning progress. This timing is
+designed to provide
+
+204
+00:13:59,370 --> 00:14:03,330
+adequate safety buffers. They want to
+detect CCLs before
+
+205
+00:14:03,330 --> 00:14:07,769
+models actually reach them. Anthropics
+RSPs have a similar
+
+206
+00:14:07,769 --> 00:14:12,289
+scaling buffer requirement, but they have
+lower thresholds evaluations
+
+207
+00:14:12,289 --> 00:14:16,169
+for every 4x increase in effective
+compute. The textbook
+
+208
+00:14:16,169 --> 00:14:20,610
+includes Figure 5.27. Here it depicts
+DeepMind's safety buffer
+
+209
+00:14:20,610 --> 00:14:23,929
+from the FSF. At this point, the textbook
+shows
+
+210
+00:14:23,929 --> 00:14:28,929
+Figure 5.28. It depicts Anthropic's
+explanation of safety buffer
+
+211
+00:14:28,929 --> 00:14:32,490
+from a previous version of RSPs. If safety
+ear
+
+212
+00:14:32,490 --> 00:14:36,009
+evals, trigger scaling must pause until
+next level safety
+
+213
+00:14:36,009 --> 00:14:36,929
+measures are in place.

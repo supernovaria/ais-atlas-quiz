@@ -1,0 +1,1657 @@
+1
+00:00:00,160 --> 00:00:05,919
+Section 5.10 Limitations Previous sections
+outlined various evaluation techniques
+
+2
+00:00:05,919 --> 00:00:09,759
+and methodologies, but building out a
+proper safety infrastructure
+
+3
+00:00:09,759 --> 00:00:12,279
+means that we should also maintain an
+appropriate amount
+
+4
+00:00:12,279 --> 00:00:16,559
+of skepticism about evaluation results and
+avoid overconfidence in
+
+5
+00:00:16,559 --> 00:00:19,920
+safety assessments. So the last section of
+this chapter
+
+6
+00:00:19,920 --> 00:00:23,640
+is dedicated to exploring the limitations,
+constraints, and challenges
+
+7
+00:00:23,640 --> 00:00:28,969
+to AI evaluations. Section Fundamental
+Challenges Absence of Evidence
+
+8
+00:00:29,129 --> 00:00:33,289
+versus Evidence of Absence A core
+challenge in AI
+
+9
+00:00:33,289 --> 00:00:37,369
+evaluation is the fundamental asymmetry
+between proving the presence
+
+10
+00:00:37,450 --> 00:00:42,049
+versus absence of capabilities or risks.
+While evaluations can
+
+11
+00:00:42,049 --> 00:00:45,890
+definitively confirm that a model
+possesses certain capabilities or
+
+12
+00:00:45,890 --> 00:00:50,289
+exhibits particular behaviors, they cannot
+conclusively prove the absence
+
+13
+00:00:50,289 --> 00:00:55,170
+of concerning capabilities or behaviors.
+This asymmetry creates a
+
+14
+00:00:55,170 --> 00:00:59,210
+persistent uncertainty in safety
+assessments. Even if a model
+
+15
+00:00:59,210 --> 00:01:02,770
+passes numerous safety evaluations, we
+cannot be certain it
+
+16
+00:01:02,770 --> 00:01:06,329
+is truly safe. The Challenge of
+interpreting Negative Results
+
+17
+00:01:06,969 --> 00:01:10,170
+Related to this asymmetry is the
+difficulty of interpreting
+
+18
+00:01:10,170 --> 00:01:14,209
+negative results in AI evaluation. When a
+model fails
+
+19
+00:01:14,209 --> 00:01:18,129
+to demonstrate a capability or behavior
+during testing, this
+
+20
+00:01:18,129 --> 00:01:21,010
+could indicate either a genuine limitation
+of the model
+
+21
+00:01:21,010 --> 00:01:23,959
+or or simply a failure of our evaluation
+methods
+
+22
+00:01:23,959 --> 00:01:28,079
+to properly elicit the capability or
+propensity. The discovery
+
+23
+00:01:28,079 --> 00:01:32,680
+that GPT4 could effectively control
+Minecraft through appropriate scaffolding
+
+24
+00:01:32,760 --> 00:01:36,840
+despite initially appearing incapable of
+such behavior, illustrates this
+
+25
+00:01:36,840 --> 00:01:42,120
+challenge. This uncertainty about negative
+results becomes particularly problematic
+
+26
+00:01:42,120 --> 00:01:46,239
+when evaluating safety critical properties
+where false negatives could
+
+27
+00:01:46,239 --> 00:01:50,959
+have severe consequences. The Problem of
+Unknown Unknowns Perhaps
+
+28
+00:01:50,959 --> 00:01:54,400
+most fundamentally, our evaluation methods
+are limited by our
+
+29
+00:01:54,400 --> 00:01:57,959
+ability to anticipate what we need to
+evaluate. As
+
+30
+00:01:57,959 --> 00:02:01,480
+AI systems become more capable, they might
+develop behaviors
+
+31
+00:02:01,480 --> 00:02:03,959
+or capabilities that we haven't thought to
+test for.
+
+32
+00:02:04,599 --> 00:02:07,879
+This suggests that our evaluation
+frameworks might be missing
+
+33
+00:02:07,879 --> 00:02:11,599
+entire categories of capabilities or risks
+simply because we
+
+34
+00:02:11,599 --> 00:02:15,840
+haven't conceived of them yet. Technical
+Challenges the Challenge
+
+35
+00:02:15,840 --> 00:02:19,810
+of Measurement Precision the extreme
+sensitivity of language models
+
+36
+00:02:19,810 --> 00:02:23,650
+to minor changes in evaluation conditions
+poses a fundamental
+
+37
+00:02:23,650 --> 00:02:27,330
+challenge to reliable measurement. As we
+discussed in earlier
+
+38
+00:02:27,330 --> 00:02:31,650
+sections about evaluation techniques, even
+subtle variations in prompt
+
+39
+00:02:31,650 --> 00:02:35,849
+formatting can lead to dramatically
+different results. Research has
+
+40
+00:02:35,849 --> 00:02:38,530
+also shown that performance can vary by up
+to
+
+41
+00:02:38,530 --> 00:02:42,930
+76% based on seemingly trivial changes in
+few shot
+
+42
+00:02:42,930 --> 00:02:47,259
+prompting formats. As another example,
+changes as minor as
+
+43
+00:02:47,259 --> 00:02:52,500
+switching from alphabetical to numerical
+option, labeling From A
+
+44
+00:02:52,500 --> 00:02:56,219
+to 1, altering bracket styles, or adding a
+single
+
+45
+00:02:56,219 --> 00:02:59,780
+space can result in accuracy fluctuations
+of around 5
+
+46
+00:02:59,780 --> 00:03:04,099
+percentage points. This isn't just a minor
+inconvenience it
+
+47
+00:03:04,099 --> 00:03:08,020
+raises serious questions about the
+reliability and reproducibility of
+
+48
+00:03:08,020 --> 00:03:12,389
+our evaluation results. When small changes
+in input formatting
+
+49
+00:03:12,469 --> 00:03:16,270
+can cause such large variations in
+measured performance, how
+
+50
+00:03:16,270 --> 00:03:19,069
+can we trust our assessments of model
+capabilities or
+
+51
+00:03:19,069 --> 00:03:24,469
+safety properties? Sensitivity to
+environmental factors beyond just
+measurement
+
+52
+00:03:24,469 --> 00:03:28,669
+issues due to prompt formatting.
+Evaluation results can be
+
+53
+00:03:28,669 --> 00:03:32,189
+affected by various environmental factors
+that we might not
+
+54
+00:03:32,189 --> 00:03:35,629
+even be aware of, just like the unknown
+unknowns
+
+55
+00:03:35,629 --> 00:03:38,289
+that we highlighted in the last section.
+This might
+
+56
+00:03:38,289 --> 00:03:41,009
+include things like the specific version
+of the model
+
+57
+00:03:41,009 --> 00:03:44,930
+being tested, the temperature and other
+sampling parameters used,
+
+58
+00:03:45,569 --> 00:03:49,169
+the compute infrastructure running the
+evaluation, and maybe even
+
+59
+00:03:49,169 --> 00:03:51,729
+the time of day or system load during
+testing.
+
+60
+00:03:52,129 --> 00:03:55,849
+The choice of evaluation methods must also
+consider practical
+
+61
+00:03:55,849 --> 00:04:00,289
+constraints. Third party evaluators might
+have only limited access
+
+62
+00:04:00,370 --> 00:04:03,610
+to a model's internals. They might have
+access to
+
+63
+00:04:03,610 --> 00:04:07,560
+observe activations but not modify the
+weights. They might
+
+64
+00:04:07,560 --> 00:04:09,759
+not have access to the model at all and
+
+65
+00:04:09,759 --> 00:04:12,639
+might be restricted to observing the model
+functioning in
+
+66
+00:04:12,639 --> 00:04:16,959
+the wild. Depending on the specific
+techniques used, computational
+
+67
+00:04:16,959 --> 00:04:20,759
+resources might restrict certain types of
+analysis. Price and
+
+68
+00:04:20,759 --> 00:04:24,839
+time are also practical constraints on
+running comprehensive evaluations.
+
+69
+00:04:25,560 --> 00:04:29,160
+Running agents or AI systems is much more
+expensive
+
+70
+00:04:29,160 --> 00:04:34,000
+and time intensive than benchmarks.
+Developing complex, novel tasks
+
+71
+00:04:34,240 --> 00:04:38,319
+verifying and measuring capabilities
+properly is human labor intensive.
+
+72
+00:04:39,279 --> 00:04:42,920
+As an example, during the evaluation for
+AI capabilities
+
+73
+00:04:42,920 --> 00:04:45,839
+in R and D, the human control group spent
+
+74
+00:04:45,839 --> 00:04:49,920
+more than 568 hours on just seven tasks.
+This
+
+75
+00:04:49,920 --> 00:04:52,480
+doesn't even include time to develop and
+test the
+
+76
+00:04:52,480 --> 00:04:56,240
+tasks. Real world tasks in AI, R&D might
+take
+
+77
+00:04:56,240 --> 00:04:59,899
+hundreds of man hours each, and most
+independent evaluators
+
+78
+00:05:00,139 --> 00:05:03,420
+or even internal teams at big AI labs
+don't
+
+79
+00:05:03,420 --> 00:05:06,220
+have the budget and time to properly
+evaluate performance.
+
+80
+00:05:06,459 --> 00:05:09,660
+Given these considerations, all of this
+needs to be
+
+81
+00:05:09,660 --> 00:05:13,220
+kept in mind when designing an evaluation
+protocol. The
+
+82
+00:05:13,220 --> 00:05:18,699
+Combinatorial Explosion of Interaction
+Scenarios When AI systems interact
+
+83
+00:05:18,699 --> 00:05:22,500
+in complex environments, the number of
+possible scenarios grows
+
+84
+00:05:22,500 --> 00:05:27,620
+exponentially with each additional
+interaction pattern. Unlike evaluating
+isolated
+
+85
+00:05:27,620 --> 00:05:31,540
+capabilities, we must consider how
+multiple components interact in
+
+86
+00:05:31,540 --> 00:05:35,860
+unpredictable ways, similar to how
+normally benign chemicals can
+
+87
+00:05:35,860 --> 00:05:40,180
+form dangerous compounds when combined.
+For example, when model
+
+88
+00:05:40,180 --> 00:05:43,980
+A with planning abilities interacts with
+model B possessing
+
+89
+00:05:43,980 --> 00:05:47,459
+information access, and both operate
+within system C that
+
+90
+00:05:47,459 --> 00:05:51,579
+has external tool permissions, entirely
+new risk surfaces emerge
+
+91
+00:05:51,860 --> 00:05:55,699
+that weren't present in any individual
+component. This combinatorial
+
+92
+00:05:55,699 --> 00:06:00,620
+complexity makes comprehensive testing
+fundamentally intractable. With millions
+of
+
+93
+00:06:00,620 --> 00:06:04,660
+potential interaction patterns, we can
+only evaluate a microscopic
+
+94
+00:06:04,660 --> 00:06:08,660
+fraction of possible scenarios, leaving
+countless blind spots where
+
+95
+00:06:08,660 --> 00:06:13,579
+critical emergent behaviors might develop.
+This fundamental limitation raises
+
+96
+00:06:13,579 --> 00:06:19,069
+a sobering if we can only explore 0.001%
+of
+
+97
+00:06:19,069 --> 00:06:22,029
+the interaction space, how can we be
+confident we've
+
+98
+00:06:22,029 --> 00:06:26,230
+identified the most dangerous emergent
+patterns? The resource reality
+
+99
+00:06:26,550 --> 00:06:29,790
+related to the problem of exploding number
+of evaluations
+
+100
+00:06:29,790 --> 00:06:33,509
+is the sheer computational cost of running
+thorough evaluations.
+
+101
+00:06:34,069 --> 00:06:36,589
+This creates another hard limit on what we
+can
+
+102
+00:06:36,589 --> 00:06:41,149
+practically test making over 100,000 API
+calls just to
+
+103
+00:06:41,149 --> 00:06:45,269
+properly assess performance on a single
+benchmark becomes prohibitively
+
+104
+00:06:45,269 --> 00:06:49,350
+expensive when scaled across multiple
+capabilities and safety concerns.
+
+105
+00:06:50,100 --> 00:06:54,019
+Independent researchers and smaller
+organizations often can't afford such
+
+106
+00:06:54,019 --> 00:06:57,339
+comprehensive testing. And even if money
+isn't a bottleneck
+
+107
+00:06:57,339 --> 00:07:01,459
+because you have state sponsorship, GPUs
+currently absolutely are.
+
+108
+00:07:02,259 --> 00:07:04,579
+This can lead to potential blind spots in
+our
+
+109
+00:07:04,579 --> 00:07:08,540
+understanding of model behavior. The
+resource constraints become even
+
+110
+00:07:08,540 --> 00:07:11,180
+more pressing when we consider the need
+for repeated
+
+111
+00:07:11,180 --> 00:07:14,660
+testing as models are updated or new
+capabilities emerge.
+
+112
+00:07:14,819 --> 00:07:18,019
+In the words of US and UK AI Safety
+
+113
+00:07:18,019 --> 00:07:22,720
+Institute evaluation of Claud 3 point on
+it. While
+
+114
+00:07:22,720 --> 00:07:25,560
+these tests were conducted in line with
+current best
+
+115
+00:07:25,560 --> 00:07:29,959
+practices, the findings should be
+considered preliminary. These tests
+
+116
+00:07:29,959 --> 00:07:32,759
+were conducted in a limited time period
+with finite
+
+117
+00:07:32,759 --> 00:07:36,000
+resources, which, if extended, could
+expand the scope of
+
+118
+00:07:36,000 --> 00:07:39,959
+findings and the subsequent conclusions
+drawn. The textbook has
+
+119
+00:07:39,959 --> 00:07:44,439
+a supplementary note titled Ikigai Risks I
+Risks Risks
+
+120
+00:07:44,439 --> 00:07:47,439
+from Loss of Existential Purpose, which
+we'll skip over
+
+121
+00:07:47,439 --> 00:07:52,430
+here. The Difficulty in Estimating Maximum
+Capabilities Also related
+
+122
+00:07:52,430 --> 00:07:55,709
+to the combinatorial complexity problem is
+the problem of
+
+123
+00:07:55,709 --> 00:07:59,430
+emergence. We frequently discover that
+models can do things
+
+124
+00:07:59,430 --> 00:08:02,389
+we thought impossible when given the right
+scaffolding or
+
+125
+00:08:02,389 --> 00:08:06,389
+tools. The Voyager project demonstrated
+this when it used
+
+126
+00:08:06,389 --> 00:08:10,990
+black box queries to GPT4, revealing the
+unexpected ability
+
+127
+00:08:10,990 --> 00:08:15,350
+to play Minecraft either through continued
+increases in scale
+
+128
+00:08:15,350 --> 00:08:18,240
+or throughout, or through simple
+combination of some scaffolding
+
+129
+00:08:18,240 --> 00:08:22,000
+approach that researchers hadn't
+considered before. A model might
+
+130
+00:08:22,000 --> 00:08:25,720
+display some significant step change in
+capabilities or propensities
+
+131
+00:08:25,800 --> 00:08:29,680
+that we had not anticipated before. This
+emergent behavior
+
+132
+00:08:29,680 --> 00:08:32,960
+is particularly difficult to evaluate
+because it often arises
+
+133
+00:08:32,960 --> 00:08:36,720
+from the interaction between capabilities.
+There are few, if
+
+134
+00:08:36,720 --> 00:08:39,039
+any ways to guarantee that the whole will
+not
+
+135
+00:08:39,039 --> 00:08:41,729
+become more than the sum of its parts.
+This
+
+136
+00:08:41,729 --> 00:08:44,249
+makes it extremely difficult to predict
+what a model
+
+137
+00:08:44,249 --> 00:08:47,369
+might be capable of in real world
+situations, even
+
+138
+00:08:47,369 --> 00:08:51,129
+if we thoroughly test its individual
+capabilities. The textbook
+
+139
+00:08:51,129 --> 00:08:54,769
+has a supplementary note titled Case Study
+of Capability
+
+140
+00:08:54,928 --> 00:09:00,408
+Surprises Kalamang, which we'll skip over
+here. Sandbagging the
+
+141
+00:09:00,408 --> 00:09:04,928
+textbook includes Figure 5.60. Here it
+depicts illustration of
+
+142
+00:09:04,928 --> 00:09:10,620
+sandbagging. Van der Wei Behavioral
+Testing is not sufficient
+
+143
+00:09:10,940 --> 00:09:13,419
+we have talked about this numerous times
+in previous
+
+144
+00:09:13,419 --> 00:09:17,139
+sections, but it's worth mentioning again.
+Watching what a
+
+145
+00:09:17,139 --> 00:09:19,620
+model does can tell us a lot, but it's
+
+146
+00:09:19,620 --> 00:09:22,299
+still like trying to understand how a
+person thinks
+
+147
+00:09:22,460 --> 00:09:26,179
+by only observing their actions. Our heavy
+reliance on
+
+148
+00:09:26,179 --> 00:09:30,299
+behavioral testing analyzing model outputs
+leaves us with significant
+
+149
+00:09:30,539 --> 00:09:34,429
+blind spots about how models actually
+work. A model
+
+150
+00:09:34,429 --> 00:09:37,509
+might give the right answers while using
+internal strategies
+
+151
+00:09:37,509 --> 00:09:40,590
+we can't detect. So in addition to being
+limited
+
+152
+00:09:40,590 --> 00:09:43,990
+by breadth due to combinatorial complexity
+of the number
+
+153
+00:09:43,990 --> 00:09:46,470
+of things we need to test, we are also
+
+154
+00:09:46,470 --> 00:09:49,429
+limited on the depth of evaluation until
+we make
+
+155
+00:09:49,429 --> 00:09:55,230
+true progress on interpretability. Unless
+interpretability makes progress,
+evaluations
+
+156
+00:09:55,230 --> 00:09:57,549
+have a definite upper limit on how much
+safety
+
+157
+00:09:57,549 --> 00:10:02,110
+they can guarantee. Sandbagging refers to
+strategic underperformance on
+
+158
+00:10:02,110 --> 00:10:06,240
+evaluations where an AI system is
+intentionally made to
+
+159
+00:10:06,240 --> 00:10:09,720
+appear less capable than it actually is.
+There are
+
+160
+00:10:09,720 --> 00:10:14,600
+concerns about AI systems themselves
+choosing to sandbag independent
+
+161
+00:10:14,600 --> 00:10:18,960
+of developer intentions. An AI system
+might deliberately hide
+
+162
+00:10:18,960 --> 00:10:23,360
+its capabilities to avoid modifications or
+restrictions that would
+
+163
+00:10:23,360 --> 00:10:26,519
+prevent it from achieving its goals. We
+talked more
+
+164
+00:10:26,519 --> 00:10:29,120
+about why this is a concern in the
+subsection
+
+165
+00:10:29,120 --> 00:10:33,779
+on scheming. As evidence that is possible,
+multiple frontier
+
+166
+00:10:33,779 --> 00:10:38,580
+models, including Claud 3.5, Sonnet, Claud
+3, Opus, and
+
+167
+00:10:38,580 --> 00:10:41,379
+OpenAI's O1, have been shown to be capable
+of
+
+168
+00:10:41,379 --> 00:10:46,539
+sandbagging behavior. They deliberately
+underperformed on arithmetic tasks when
+
+169
+00:10:46,539 --> 00:10:49,740
+they believed that high performance would
+trigger model unlearning.
+
+170
+00:10:49,740 --> 00:10:54,019
+Footnote in context, sandbagging, footnote
+in context, and sandbagging.
+
+171
+00:10:54,179 --> 00:10:57,539
+This behavior was observed in a controlled
+evaluation setting
+
+172
+00:10:57,809 --> 00:11:01,090
+where models were explicitly informed
+through the context window
+
+173
+00:11:01,090 --> 00:11:06,129
+about potential unlearning consequences
+for high performance. The researchers
+
+174
+00:11:06,129 --> 00:11:09,210
+noted, we have only shown that some models
+possess
+
+175
+00:11:09,210 --> 00:11:12,409
+basic scheming capabilities if both the
+goal and the
+
+176
+00:11:12,409 --> 00:11:17,090
+situational awareness are acquired in
+context. Rather than demonstrating
+
+177
+00:11:17,090 --> 00:11:21,929
+this behavior emerging spontaneously in
+more realistic scenarios, what
+
+178
+00:11:21,929 --> 00:11:24,610
+does the potential for sandbagging imply
+for the field
+
+179
+00:11:24,610 --> 00:11:29,159
+of evaluations? The possibility of
+sandbagging has big implications
+
+180
+00:11:29,159 --> 00:11:32,600
+for how we approach AI evaluations both
+now and
+
+181
+00:11:32,600 --> 00:11:36,039
+in the future. Simply having access to
+model outputs
+
+182
+00:11:37,480 --> 00:11:42,559
+is insufficient for rigorous evaluation.
+Instead, evaluators need deeper
+
+183
+00:11:42,559 --> 00:11:46,039
+access to model internals and training
+procedures to detect
+
+184
+00:11:46,039 --> 00:11:51,000
+potential sandbagging attempts. This might
+require new institutional arrangements
+
+185
+00:11:51,159 --> 00:11:54,519
+such as trusted third party evaluators or
+with secured
+
+186
+00:11:54,519 --> 00:11:58,879
+access to model weights and architectures.
+Supervised fine tuning
+
+187
+00:11:58,879 --> 00:12:00,720
+has shown to be promising as a way to
+
+188
+00:12:00,720 --> 00:12:05,600
+greatly mitigate sandbagging and elicit
+hidden capabilities. But fine
+
+189
+00:12:05,600 --> 00:12:07,559
+tuning is not so easy to use in a
+
+190
+00:12:07,559 --> 00:12:11,919
+comprehensive way on dangerous capability
+benchmarks and not usable
+
+191
+00:12:11,919 --> 00:12:16,559
+for dangerous propensity benchmarks.
+Without addressing this challenge, our
+
+192
+00:12:16,559 --> 00:12:19,879
+ability to make informed decisions about
+AI development and
+
+193
+00:12:19,879 --> 00:12:25,220
+deployment based on evaluation results
+become severely compromised. Section
+
+194
+00:12:25,299 --> 00:12:28,779
+Systemic Limitation Similar to how
+companies might engage in
+
+195
+00:12:28,779 --> 00:12:34,220
+greenwashing by misleadingly portraying
+themselves as environmentally friendly AI,
+
+196
+00:12:34,220 --> 00:12:38,860
+companies might engage in safety washing.
+This means misrepresenting
+
+197
+00:12:38,860 --> 00:12:43,340
+capability improvements as safety
+advancements. This happens when safety
+
+198
+00:12:43,340 --> 00:12:47,409
+benchmarks have high correlation with
+general model capabilities and
+
+199
+00:12:47,409 --> 00:12:51,129
+compute used for training. When a
+benchmark highly correlates
+
+200
+00:12:51,129 --> 00:12:54,490
+with capabilities, improving performance
+on it may simply reflect
+
+201
+00:12:54,490 --> 00:12:57,730
+that the model got more capable overall
+rather than
+
+202
+00:12:57,730 --> 00:13:01,690
+specifically safer. At this point, the
+textbook shows Figure
+
+203
+00:13:01,690 --> 00:13:06,570
+5.61 it depicts the tight connection
+between many safety
+
+204
+00:13:06,570 --> 00:13:11,049
+properties and capabilities can enable
+safety washing where capabilities
+
+205
+00:13:11,129 --> 00:13:15,690
+advancements Training a larger model can
+be advertised as
+
+206
+00:13:15,690 --> 00:13:19,929
+progress on AI safety. This confuses the
+research community
+
+207
+00:13:20,090 --> 00:13:23,450
+to the developments that have occurred,
+distorting the academic
+
+208
+00:13:23,450 --> 00:13:27,250
+discourse. How does safety washing happen
+in practice? There
+
+209
+00:13:27,250 --> 00:13:31,450
+are typically three ways this 1. Safety by
+association
+
+210
+00:13:31,929 --> 00:13:35,049
+Research gets labeled as safety relevant
+simply because it
+
+211
+00:13:35,049 --> 00:13:37,889
+comes from safety teams or researchers,
+even if the
+
+212
+00:13:37,889 --> 00:13:43,570
+work is essentially capabilities research.
+2. Public companies portray
+
+213
+00:13:43,570 --> 00:13:48,009
+capability advancements as safety progress
+by highlighting correlated safety
+
+214
+00:13:48,009 --> 00:13:52,529
+metrics, especially when facing public
+pressure or regulatory scrutiny.
+
+215
+00:13:53,090 --> 00:13:58,570
+3. Researchers frame capabilities work in
+safety terms to
+
+216
+00:13:58,570 --> 00:14:01,370
+appeal to funders even when the advances
+don't make
+
+217
+00:14:01,370 --> 00:14:06,769
+differential safety progress, capabilities
+correlations might enable safety
+WASHINGTON
+
+218
+00:14:07,080 --> 00:14:10,919
+when safety benchmarks correlate strongly
+with capabilities, it becomes
+
+219
+00:14:10,919 --> 00:14:15,679
+easy to misrepresent capability
+improvements as safety advances. For
+
+220
+00:14:15,679 --> 00:14:19,159
+example, if a benchmark meant to measure
+truthfulness actually
+
+221
+00:14:19,159 --> 00:14:23,559
+correlates 80% with general capabilities,
+then making models bigger
+
+222
+00:14:23,559 --> 00:14:26,960
+and more capable will improve their
+truthfulness scores even
+
+223
+00:14:26,960 --> 00:14:30,440
+if they aren't becoming inherently more
+honest. This creates
+
+224
+00:14:30,440 --> 00:14:34,360
+a systemic problem where organizations can
+claim safety improvements
+
+225
+00:14:34,440 --> 00:14:37,809
+by simply scaling up their models. The
+solution isn't
+
+226
+00:14:37,809 --> 00:14:41,409
+just establishing norms around benchmark
+use these tend to
+
+227
+00:14:41,409 --> 00:14:45,210
+be weak and easily ignored. Instead, we
+need evaluation
+
+228
+00:14:45,210 --> 00:14:49,129
+methods that can empirically distinguish
+between capability improvements and
+
+229
+00:14:49,129 --> 00:14:52,929
+genuine safety advances. Companies and AI
+labs can also
+
+230
+00:14:52,929 --> 00:14:56,450
+choose to sandbag their evaluations. We
+put another form
+
+231
+00:14:56,450 --> 00:14:59,769
+of sandbagging here, a systemic limitation
+to refer to
+
+232
+00:14:59,769 --> 00:15:04,490
+corporations intentionally sandbagging to
+score better on evaluations. This
+
+233
+00:15:04,490 --> 00:15:08,129
+is in contrast to misalignment technical
+sandbagging as a
+
+234
+00:15:08,129 --> 00:15:10,970
+limitation which points to when the model
+does it
+
+235
+00:15:10,970 --> 00:15:14,370
+because of scheming in the immediate term,
+developers face
+
+236
+00:15:14,370 --> 00:15:19,970
+various pressures that could incentivize
+sandbagging during evaluations. Regulatory
+
+237
+00:15:19,970 --> 00:15:24,250
+requirements and safety standards may
+impose capability thresholds above
+
+238
+00:15:24,250 --> 00:15:28,730
+which additional oversight restrictions or
+costs are incurred. For
+
+239
+00:15:28,730 --> 00:15:32,450
+instance, the EU AI act requires more
+stringent controls
+
+240
+00:15:32,450 --> 00:15:35,990
+and third party auditing for high risk AI
+systems.
+
+241
+00:15:36,470 --> 00:15:39,750
+This creates a direct financial incentive
+to appear below
+
+242
+00:15:39,750 --> 00:15:43,789
+these thresholds. Current research shows
+that even today's language
+
+243
+00:15:43,789 --> 00:15:47,309
+models can be made to selectively
+underperform in ways
+
+244
+00:15:47,309 --> 00:15:51,149
+that are difficult to detect through
+standard evaluations, particularly
+
+245
+00:15:51,149 --> 00:15:54,909
+on tests for dangerous capabilities, while
+maintaining performance on
+
+246
+00:15:54,909 --> 00:15:59,629
+general benchmarks. Van der Wei et al. In
+the
+
+247
+00:15:59,629 --> 00:16:02,909
+future, companies may want to downplay
+certain capabilities of
+
+248
+00:16:02,909 --> 00:16:05,940
+their systems and to avoid drawing
+regulatory attention or
+
+249
+00:16:05,940 --> 00:16:09,100
+public concern while still being able to
+deploy these
+
+250
+00:16:09,100 --> 00:16:12,700
+capabilities in practice. This allows them
+to maintain development
+
+251
+00:16:12,700 --> 00:16:17,580
+and deployment speed without triggering
+additional oversight. For example,
+
+252
+00:16:17,580 --> 00:16:20,700
+if an AI system shows strong capabilities
+in areas
+
+253
+00:16:20,860 --> 00:16:24,580
+that might raise security concerns.
+Developers might be motivated
+
+254
+00:16:24,580 --> 00:16:28,179
+to have it underperform specifically on
+those evaluations while
+
+255
+00:16:28,179 --> 00:16:32,019
+maintaining high performance on general
+benchmarks van der wei
+
+256
+00:16:32,019 --> 00:16:35,580
+et al. 2024. They might do this to
+maintain
+
+257
+00:16:35,580 --> 00:16:40,059
+development and deployment speed without
+triggering additional oversight. The
+
+258
+00:16:40,059 --> 00:16:44,620
+Gap between Evaluation and Deployment
+Current evaluation approaches often
+
+259
+00:16:44,620 --> 00:16:47,460
+fail to capture the true complexity of
+real world
+
+260
+00:16:47,460 --> 00:16:51,539
+deployment contexts. While we can measure
+model performance in
+
+261
+00:16:51,539 --> 00:16:55,779
+controlled settings, these evaluations
+rarely reflect how systems will
+
+262
+00:16:55,779 --> 00:17:00,149
+behave when embedded in complex socio
+technical environments. A
+
+263
+00:17:00,149 --> 00:17:03,710
+model that performs safely in isolated
+testing might behave
+
+264
+00:17:03,710 --> 00:17:07,430
+very differently when interacting with
+real users, facing novel
+
+265
+00:17:07,430 --> 00:17:12,509
+scenarios, or operating within broader
+societal systems. For instance,
+
+266
+00:17:12,509 --> 00:17:15,509
+a medical advice model might perform well
+on standard
+
+267
+00:17:15,509 --> 00:17:19,029
+benchmarks but pose serious risks when
+deployed in healthcare
+
+268
+00:17:19,029 --> 00:17:22,269
+settings where users lack the expertise to
+validate its
+
+269
+00:17:22,269 --> 00:17:27,410
+recommendations. This disconnect between
+evaluation and deployment contexts may
+
+270
+00:17:27,559 --> 00:17:30,279
+means we might miss critical safety issues
+that only
+
+271
+00:17:30,279 --> 00:17:34,319
+emerge through complex human AI
+interactions or system level
+
+272
+00:17:34,319 --> 00:17:39,640
+effects. The Challenge of Domain Specific
+Evaluations Evaluating AI
+
+273
+00:17:39,640 --> 00:17:43,079
+systems in high stakes domains presents
+unique challenges that
+
+274
+00:17:43,079 --> 00:17:47,119
+our current approaches struggle to
+address. Consider the evaluation
+
+275
+00:17:47,119 --> 00:17:51,960
+of AI systems for potential misuse in
+biosecurity. This
+
+276
+00:17:51,960 --> 00:17:55,400
+requires not just technical understanding
+of AI systems and
+
+277
+00:17:55,400 --> 00:17:59,220
+evaluation methods but but also deep
+expertise in biology,
+
+278
+00:17:59,619 --> 00:18:04,299
+biosafety protocols and potential threat
+vectors. This combination of
+
+279
+00:18:04,299 --> 00:18:08,299
+expertise is exceedingly rare, making
+thorough evaluation in these
+
+280
+00:18:08,299 --> 00:18:13,058
+critical domains particularly challenging.
+Similar challenges arise in other
+
+281
+00:18:13,058 --> 00:18:17,380
+specialized fields like cybersecurity,
+where the complexity of potential
+
+282
+00:18:17,380 --> 00:18:22,140
+attack vectors and system vulnerabilities
+requires sophisticated domain knowledge
+
+283
+00:18:22,140 --> 00:18:26,039
+to properly assess. The difficulty of
+finding evaluators with
+
+284
+00:18:26,039 --> 00:18:29,920
+sufficient cross domain expertise often
+leads to evaluations that
+
+285
+00:18:29,920 --> 00:18:33,839
+miss important domain specific risks or
+fail to anticipate
+
+286
+00:18:33,839 --> 00:18:38,440
+novel forms of misuse. Besides just
+designing evaluations being
+
+287
+00:18:38,440 --> 00:18:42,000
+challenging, running the evaluation for
+such high stakes domains
+
+288
+00:18:42,000 --> 00:18:45,359
+is also challenging. We need to elicit the
+maximum
+
+289
+00:18:45,359 --> 00:18:48,960
+capabilities of a model to generate
+pathogens or malware
+
+290
+00:18:48,960 --> 00:18:51,809
+to test what it is capable of. This can
+
+291
+00:18:51,809 --> 00:18:56,769
+be obviously problematic if not handled
+extremely carefully. Governance
+
+292
+00:18:56,769 --> 00:19:00,970
+Limitation There is figure 5.62 in the
+textbook. Here
+
+293
+00:19:01,210 --> 00:19:04,250
+it depicts we need much more work in
+evaluations.
+
+294
+00:19:04,410 --> 00:19:08,930
+Higher capabilities require more safety
+evaluations. Many high stakes
+
+295
+00:19:08,930 --> 00:19:12,130
+decisions in company led and government
+led frameworks are
+
+296
+00:19:12,130 --> 00:19:15,450
+reliant on the results of evals. The
+Policy Evaluation
+
+297
+00:19:15,529 --> 00:19:20,259
+Gap Current legislative and regulatory
+efforts around AI safety
+
+298
+00:19:20,420 --> 00:19:23,619
+are severely hampered by the lack of
+robust standardized
+
+299
+00:19:23,619 --> 00:19:28,220
+evaluation methods. Consider the recent
+executive orders and proposed
+
+300
+00:19:28,220 --> 00:19:32,980
+regulations requiring safety assessments
+of AI systems. How can
+
+301
+00:19:32,980 --> 00:19:36,380
+governments enforce these requirements
+when we lack reliable ways
+
+302
+00:19:36,380 --> 00:19:39,539
+to measure what makes an AI system safe?
+This
+
+303
+00:19:39,539 --> 00:19:43,819
+creates a circular problem. Regulators
+need evaluation standards to
+
+304
+00:19:43,819 --> 00:19:47,230
+create effective policies, but the
+development of these standards
+
+305
+00:19:47,230 --> 00:19:51,470
+is partly driven by regulatory
+requirements. The US Government's
+
+306
+00:19:51,470 --> 00:19:55,670
+recent initiative to have various agencies
+evaluate AI capabilities
+
+307
+00:19:55,910 --> 00:20:01,269
+in cybersecurity and biosecurity
+highlights this challenge. These agencies,
+
+308
+00:20:01,430 --> 00:20:05,109
+despite their expertise in their
+respective domains, often lack
+
+309
+00:20:05,109 --> 00:20:09,109
+the specialized knowledge needed to
+evaluate advanced AI systems
+
+310
+00:20:09,190 --> 00:20:14,019
+comprehensively. The Role of Independent
+Evaluation Currently, a lot
+
+311
+00:20:14,019 --> 00:20:17,579
+of AI evaluations research happens within
+the same companies
+
+312
+00:20:17,660 --> 00:20:21,299
+developing these systems. While these
+companies often have the
+
+313
+00:20:21,299 --> 00:20:25,380
+best resources and expertise to conduct
+evaluations, this creates
+
+314
+00:20:25,380 --> 00:20:29,339
+an inherent conflict of interest.
+Companies might be incentivized
+
+315
+00:20:29,339 --> 00:20:32,259
+to design evaluations that their systems
+are likely to
+
+316
+00:20:32,259 --> 00:20:35,819
+pass or to downplay concerning results.
+This is also
+
+317
+00:20:35,819 --> 00:20:40,470
+sometimes called safety washing, akin to
+greenwashing. To address
+
+318
+00:20:40,470 --> 00:20:44,869
+the challenges around evaluation
+independence and expertise, we need
+
+319
+00:20:44,869 --> 00:20:49,710
+to significantly expand the ecosystem of
+independent evaluation organizations.
+
+320
+00:20:50,109 --> 00:20:54,670
+The emergence of independent evaluation
+organizations like Model Evaluation
+
+321
+00:20:54,670 --> 00:21:00,029
+for Trustworthy AI and Apollo Research
+represents an important
+
+322
+00:21:00,190 --> 00:21:04,069
+step toward addressing this issue. But
+these organizations often
+
+323
+00:21:04,069 --> 00:21:09,390
+face significant barriers, including
+limited model access, resource
+constraints,
+
+324
+00:21:09,390 --> 00:21:13,390
+and difficulties matching the technical
+capabilities of major AI
+
+325
+00:21:13,390 --> 00:21:16,910
+labs. Overall, while the limitations we've
+discussed in this
+
+326
+00:21:16,910 --> 00:21:21,869
+final section are significant, they aren't
+insurmountable. Progress in
+
+327
+00:21:21,869 --> 00:21:27,109
+areas like mechanistic interpretability,
+formal verification methods, and
+evaluation
+
+328
+00:21:27,190 --> 00:21:31,589
+protocols shows promise for addressing
+many current limitations. However,
+
+329
+00:21:31,750 --> 00:21:36,130
+overcoming these challenges requires
+sustained effort and investments. The
+
+330
+00:21:36,130 --> 00:21:40,529
+textbook includes Figure 5.63. Here it
+depicts a visual
+
+331
+00:21:40,529 --> 00:21:43,410
+breakdown of limitations and a few reasons
+to doubt
+
+332
+00:21:43,410 --> 00:21:45,690
+the impact of AI risk evaluations.

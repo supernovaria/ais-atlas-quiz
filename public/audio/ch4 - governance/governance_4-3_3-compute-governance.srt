@@ -1,1221 +1,1225 @@
 1
-00:00:00,091 --> 00:00:03,912
-Section 4.3 – Compute Governance At this
-point, the
+00:00:00,160 --> 00:00:04,480
+Section 4.3 compute governance at this
+point the textbook
 
 2
-00:00:03,952 --> 00:00:07,556
-textbook shows Figure 4.6. It depicts
-example of an
+00:00:04,480 --> 00:00:08,080
+shows figure 4.6. It depicts example of an
+Nvidia
 
 3
-00:00:07,636 --> 00:00:14,279
-NVIDIA Blackwell B100 Accelerator 2025.
-Each B100 carries 192
+00:00:08,080 --> 00:00:14,720
+Blackwell B100 accelerator 2025. Each B100
+carries 192 GB
 
 4
-00:00:14,380 --> 00:00:18,983
-GB of HBM3e memory and delivers nearly 20
-pflops
+00:00:14,960 --> 00:00:19,160
+of HBM3e memory and delivers nearly 20
+PFLOPS of
 
 5
-00:00:19,022 --> 00:00:22,484
-of FP4 throughput. roughly doubling the
-performance of the
+00:00:19,160 --> 00:00:23,239
+FP4 throughput, roughly doubling the
+performance of the H100
 
 6
-00:00:22,964 --> 00:00:26,986
-H100 from 2024. Compute is a powerful
-governance target
+00:00:23,239 --> 00:00:27,469
+from 2024. Compute is a powerful
+governance target because
 
 7
-00:00:27,265 --> 00:00:30,306
-because it meets all three criteria for
-effective governance
+00:00:27,469 --> 00:00:31,030
+it meets all three criteria for effective
+governance targets.
 
 8
-00:00:30,367 --> 00:00:35,527
-targets. Measurability Unlike data or
-algorithms, Compute leaves clear
+00:00:32,549 --> 00:00:36,710
+Unlike data or algorithms, COMPUTE leaves
+clear physical footprints.
 
 9
-00:00:35,588 --> 00:00:40,210
-physical footprints. Training frontier
-models requires massive data centers
+00:00:37,109 --> 00:00:41,310
+Training frontier models requires massive
+data centers housing thousands
 
 10
-00:00:40,469 --> 00:00:45,731
-housing thousands of specialized chips,
-Pilsenheim 2023, We can
+00:00:41,310 --> 00:00:46,070
+of specialized chips, pils and heim. We
+can track
 
 11
-00:00:45,790 --> 00:00:50,973
-track computational capacity through well-
-defined metrics like floating-point
-operations,
+00:00:46,070 --> 00:00:50,310
+computational capacity through well
+defined metrics like floating point
 
 12
-00:00:51,514 --> 00:00:55,435
-FLOPs, allowing us to identify potentially
-risky training runs
+00:00:50,310 --> 00:00:55,590
+operations, allowing us to identify
+potentially risky training runs
 
 13
-00:00:55,716 --> 00:01:01,277
-before they begin. Heim and Kösler 2024.
-Controlability, the
+00:00:55,590 --> 00:01:01,659
+between before they begin HEIM and
+Chrysler. The supply
 
 14
-00:01:01,317 --> 00:01:04,400
-supply chain for advanced AI chips, has
-clear checkpoints.
+00:01:01,659 --> 00:01:05,540
+chain for advanced AI chips has clear
+checkpoints. Only
 
 15
-00:01:05,390 --> 00:01:09,112
-Only three companies dominate the current
-market. NVIDIA designs
+00:01:05,540 --> 00:01:09,459
+three companies dominate the current
+market. Nvidia designs most
 
 16
-00:01:09,192 --> 00:01:13,236
-most AI training chips, TSMC manufactures
-the most advanced
+00:01:09,459 --> 00:01:13,980
+AI training chips, TSMC manufactures the
+most advanced processors
 
 17
-00:01:13,296 --> 00:01:17,097
-processors, and ASML produces the only
-machines capable of
+00:01:14,060 --> 00:01:17,379
+and ASML produces the only machines
+capable of making
 
 18
-00:01:17,158 --> 00:01:21,861
-making cutting-edge chips. This
-concentration enables governance through
-export
+00:01:17,379 --> 00:01:21,859
+cutting edge chips. This concentration
+enables governance through export
 
 19
-00:01:21,902 --> 00:01:27,025
-controls, licensing requirements, and
-supply chain monitoring. Grunewald, 2023,
+00:01:21,859 --> 00:01:28,590
+controls, licensing requirements and
+supply chain monitoring. Grunewald, Sastri
 
 20
-00:01:27,045 --> 00:01:32,790
-Sastry et al. 2024. Meaningfulness. As we
-discussed in
+00:01:28,590 --> 00:01:32,909
+et al. 2024 Meaningfulness as we discussed
+in the
 
 21
-00:01:32,810 --> 00:01:36,132
-the Risks chapter, the most dangerous
-capabilities are likely
+00:01:32,909 --> 00:01:36,269
+Risks chapter, the most dangerous
+capabilities are likely to
 
 22
-00:01:36,171 --> 00:01:39,534
-to emerge from highly capable models which
-require massive
+00:01:36,269 --> 00:01:39,909
+emerge from highly capable models which
+require massive amounts
 
 23
-00:01:39,575 --> 00:01:43,078
-amounts of specialized computing
-infrastructure to train and run.
+00:01:39,909 --> 00:01:44,510
+of specialized computing infrastructure to
+train and run. Andaliung
 
 24
-00:01:49,683 --> 00:01:53,225
-Compute requirements directly constrain
-what AI systems can be
+00:01:44,510 --> 00:01:52,030
+et al. Khaz 2024 compute requirements
+directly constrain what
 
 25
-00:01:53,266 --> 00:01:57,150
-built. Even with cutting-edge algorithms
-and vast data sets,
+00:01:52,030 --> 00:01:55,189
+AI systems can be built. Even with cutting
+edge
 
 26
-00:01:57,570 --> 00:02:01,894
-organisations cannot train frontier models
-without sufficient computing power.
+00:01:55,189 --> 00:01:59,549
+algorithms and vast data sets,
+organizations cannot train frontier
 
 27
-00:02:05,537 --> 00:02:08,840
-This makes compute a particularly
-meaningful point of intervention,
+00:01:59,549 --> 00:02:06,750
+models without sufficient computing power.
+This makes COMPUTE a
 
 28
-00:02:09,281 --> 00:02:12,122
-as it allows us to shape AI development
-before
+00:02:06,750 --> 00:02:10,030
+particularly meaningful point of
+intervention as it allows us
 
 29
-00:02:12,181 --> 00:02:15,585
-potentially dangerous systems emerge
-rather than trying to control
+00:02:10,030 --> 00:02:14,270
+to shape AI development before potentially
+dangerous systems emerge
 
 30
-00:02:15,625 --> 00:02:18,646
-them after the fact heim et al. in 2024.
+00:02:14,270 --> 00:02:16,629
+rather than trying to control them after
+the fact
 
 31
-00:02:19,146 --> 00:02:22,128
-At this point, there is interactive figure
-4.1 in
+00:02:18,780 --> 00:02:21,930
+that at this point there is interactive
+Figure 4.1
 
 32
-00:02:22,169 --> 00:02:26,010
-the textbook, available in the online
-version. It shows
+00:02:21,930 --> 00:02:25,689
+in the textbook available in the online
+version. It
 
 33
-00:02:26,070 --> 00:02:30,873
-performance on knowledge tests versus
-training computation. Performance on
+00:02:25,689 --> 00:02:30,530
+shows performance on knowledge tests
+versus training computation. Performance
 
 34
-00:02:30,913 --> 00:02:34,615
-knowledge tests is measured with the MMLU
-benchmark, here
+00:02:30,610 --> 00:02:34,129
+on knowledge tests is measured with the
+MMLU benchmark
 
 35
-00:02:34,655 --> 00:02:38,016
-with five shot learning, which gauges a
-model's accuracy
+00:02:34,289 --> 00:02:37,490
+here with five shot learning which gauges
+a model's
 
 36
-00:02:38,257 --> 00:02:41,997
-after receiving only five examples for
-each task. Training
+00:02:37,490 --> 00:02:41,090
+accuracy after receiving only five
+examples for each task.
 
 37
-00:02:42,057 --> 00:02:45,438
-computation is measured in total petaflop,
-which is one
+00:02:41,490 --> 00:02:45,219
+Training computation is measured in total
+petaflop which is
 
 38
-00:02:46,079 --> 00:02:49,500
-E15 floating-point operations. The
-discussion in the next few
+00:02:45,219 --> 00:02:49,259
+1e15 floating point operations the
+discussion in the next
 
 39
-00:02:49,539 --> 00:02:52,782
-subsections will focus on the elements of
-actually implementing
+00:02:49,259 --> 00:02:52,060
+few subsections will focus on the elements
+of actually
 
 40
-00:02:52,842 --> 00:02:57,348
-compute governance. We explain how
-concentrated supply chains enable
+00:02:52,060 --> 00:02:56,900
+implementing COMPUTE governance. We
+explain how concentrated supply chains
 
 41
-00:02:57,389 --> 00:03:00,471
-tracking and monitoring of compute. We
-also give a
+00:02:56,900 --> 00:03:00,379
+enable tracking and monitoring of compute.
+We also give
 
 42
-00:03:00,510 --> 00:03:04,754
-brief discussion of hardware-based on-chip
-compute governance mechanisms and
+00:03:00,379 --> 00:03:03,219
+a brief discussion of hardware based on
+chip compute
 
 43
-00:03:04,814 --> 00:03:08,538
-finally discuss some limitations based
-around limitations to governance
+00:03:03,219 --> 00:03:07,259
+governance mechanisms and finally discuss
+some limitations based around
 
 44
-00:03:08,758 --> 00:03:12,262
-based on compute thresholds and how
-distributed training and
+00:03:07,259 --> 00:03:11,110
+limitations to governance based on COMPUTE
+thresholds and how
 
 45
-00:03:12,342 --> 00:03:15,965
-open source might challenge compute
-governance. There is figure
+00:03:11,110 --> 00:03:14,550
+distributed training and open source might
+challenge compute governance.
 
 46
-00:03:15,985 --> 00:03:18,948
-4.7 in the textbook here. It depicts
-sketch of
+00:03:14,710 --> 00:03:18,110
+There is figure 4.7 in the textbook. Here
+it
 
 47
-00:03:19,008 --> 00:03:24,151
-research domains for AI and compute.
-Section, Tracking. AI-specialized
+00:03:18,110 --> 00:03:21,189
+depicts sketch of research domains for AI
+and compute
 
 48
-00:03:24,230 --> 00:03:27,794
-chips emerge from a complex global
-process. It starts
+00:03:22,229 --> 00:03:26,069
+tracking. AI specialized chips emerge from
+a complex global
 
 49
-00:03:27,813 --> 00:03:30,915
-with mining and refining raw materials
-like silicon and
+00:03:26,069 --> 00:03:29,909
+process. It starts with mining and
+refining raw materials
 
 50
-00:03:30,996 --> 00:03:35,098
-rare earth elements. These materials
-become silicon wafers, which
+00:03:29,909 --> 00:03:33,710
+like silicon and rare earth elements.
+These materials become
 
 51
-00:03:35,139 --> 00:03:38,260
-are transformed into chips through
-hundreds of precise manufacturing
+00:03:33,710 --> 00:03:37,030
+silicon wafers, which are transformed into
+chips through hundreds
 
 52
-00:03:38,320 --> 00:03:43,824
-steps. The process requires specialized
-equipment, particularly photolithography
-machines
+00:03:37,030 --> 00:03:41,639
+of precise manufacturing steps. The
+process requires specialized equipment,
 
 53
-00:03:43,864 --> 00:03:47,544
-from ASML, along with various chemicals,
-gases and tools
+00:03:41,800 --> 00:03:46,360
+particularly photolithography machines
+from asml, along with various chemicals,
 
 54
-00:03:47,585 --> 00:03:51,406
-from other suppliers. The textbook
-includes figure 4.8 here.
+00:03:46,439 --> 00:03:50,120
+gases and tools from other suppliers. The
+textbook includes
 
 55
-00:03:52,105 --> 00:03:55,467
-It depicts the compute supply chain,
-Bellfield and Huar
+00:03:50,120 --> 00:03:54,120
+Figure 4.8. Here it depicts the compute
+supply chain
 
 56
-00:03:55,486 --> 00:03:59,889
-2022. There are several choke points in
-semiconductor design
+00:03:54,280 --> 00:03:59,479
+Belfield Hua 2022 There are several
+chokepoints in semiconductor
 
 57
-00:03:59,968 --> 00:04:03,310
-and manufacturing. The supply chain is
-dominated by a
+00:03:59,479 --> 00:04:03,240
+design and manufacturing. The supply chain
+is dominated by
 
 58
-00:04:03,370 --> 00:04:07,671
-handful of companies at critical steps.
-NVIDIA designs most
+00:04:03,240 --> 00:04:07,349
+a handful of companies at critical steps.
+Nvidia designs
 
 59
-00:04:07,872 --> 00:04:13,114
-AI specialized chips, TSMC manufactures
-the most advanced chips,
+00:04:07,349 --> 00:04:12,750
+most AI specialized chips, TSMC
+manufactures the most advanced
 
 60
-00:04:13,614 --> 00:04:17,475
-and ASML produces the machines needed by
-TSMC to
+00:04:12,750 --> 00:04:17,350
+chips and ASML produces the machines
+needed by TSMC
 
 61
-00:04:17,516 --> 00:04:21,997
-manufacture the chips. It is estimated
-that NVIDIA controls
+00:04:17,350 --> 00:04:21,389
+to manufacture the chips. It is estimated
+that Nvidia
 
 62
-00:04:22,317 --> 00:04:25,959
-around 80% of the market for AI training
-GPUs.
+00:04:21,389 --> 00:04:25,189
+controls around 80% of the market for AI
+training
 
 63
-00:04:26,908 --> 00:04:31,134
-Similarly, both TSMC and ASML maintain
-strong leads in
+00:04:25,189 --> 00:04:31,029
+GPUs. Similarly, both TSMC and ASML
+maintain strong leads
 
 64
-00:04:31,154 --> 00:04:35,362
-their respective domains. Besides building
-the chips, the purchase
+00:04:31,029 --> 00:04:34,899
+in their respective domains. Besides
+building the chips, the
 
 65
-00:04:35,382 --> 00:04:37,805
-and operation of them at the scale needed
-for
+00:04:34,899 --> 00:04:37,620
+purchase and operation of them at the
+scale needed
 
 66
-00:04:37,865 --> 00:04:43,468
-Frontier AI models requires massive
-upfront investment. In 2019,
+00:04:37,620 --> 00:04:42,459
+for frontier AI models requires massive
+upfront investment. In
 
 67
-00:04:43,627 --> 00:04:47,990
-academia and governments were leading in
-AI supercomputers. Today,
+00:04:42,459 --> 00:04:47,100
+2019, academia and governments were
+leading in AI supercomputers.
 
 68
-00:04:48,110 --> 00:04:52,151
-companies control over 80% of global AI
-computing capacity,
+00:04:47,500 --> 00:04:51,500
+Today, Companies control over 80% of
+global AI computing
 
 69
-00:04:52,511 --> 00:04:56,713
-while governments and academia have fallen
-below 20%. Just
+00:04:51,500 --> 00:04:55,579
+capacity, while governments and academia
+have fallen below 20%.
 
 70
-00:04:56,812 --> 00:05:02,473
-three providers, Amazon, Microsoft, and
-Google, control about 65%
+00:04:56,379 --> 00:05:01,430
+Just three providers, Amazon, Microsoft
+and Google, control about
 
 71
-00:05:02,514 --> 00:05:05,995
-of cloud computing services. A small
-number of AI
+00:05:01,430 --> 00:05:05,629
+65% of cloud computing services. A small
+number of
 
 72
-00:05:06,055 --> 00:05:10,077
-companies like OpenAI, Anthropic and
-DeepMind operate their own
+00:05:05,629 --> 00:05:09,870
+AI companies like OpenAI, Anthropic and
+DeepMind operate their
 
 73
-00:05:10,177 --> 00:05:14,439
-massive GPU clusters, but even these
-require specialized hardware
+00:05:09,870 --> 00:05:13,910
+own massive GPU clusters, but even these
+require specialized
 
 74
-00:05:14,639 --> 00:05:18,482
-subject to supply chain controls. The
-textbook has interactive
+00:05:13,910 --> 00:05:17,870
+hardware subject to supply chain controls.
+The textbook has
 
 75
-00:05:18,541 --> 00:05:21,182
-figure 4.2 here, which you can explore in
-the
+00:05:17,870 --> 00:05:21,069
+interactive Figure 4.2 here, which you can
+explore in
 
 76
-00:05:21,302 --> 00:05:24,564
-online version. It shows market share for
-logic chip
+00:05:21,069 --> 00:05:24,389
+the online version. It shows market share
+for logic
 
 77
-00:05:24,605 --> 00:05:28,487
-production by manufacturing stage. At this
-point, the textbook
+00:05:24,389 --> 00:05:28,029
+chip production by manufacturing stage. At
+this point, the
 
 78
-00:05:28,547 --> 00:05:32,348
-shows figure 4.9. It depicts concentration
-of the AI
+00:05:28,029 --> 00:05:31,910
+textbook shows Figure 4.9. It depicts
+concentration of the
 
 79
-00:05:32,428 --> 00:05:35,850
-chip supply chain expressed as percentage
-of total market
+00:05:31,910 --> 00:05:35,470
+AI chip supply chain expressed as
+percentage of total
 
 80
-00:05:35,891 --> 00:05:41,454
-share. Supply chain concentration creates
-natural intervention points. Authorities
+00:05:35,470 --> 00:05:40,310
+market share. Supply chain concentration
+creates natural intervention points.
 
 81
-00:05:41,514 --> 00:05:43,113
-only need to work with a small number of
+00:05:40,709 --> 00:05:42,988
+Authorities only need to work with a small
+number
 
 82
-00:05:43,194 --> 00:05:47,036
-key players to implement controls, as
-demonstrated by US
+00:05:42,988 --> 00:05:46,709
+of key players to implement controls as
+demonstrated by
 
 83
-00:05:47,197 --> 00:05:50,999
-export restrictions on advanced chips. It
-is worth keeping
+00:05:46,709 --> 00:05:50,670
+US Export restrictions on advanced chips.
+It is worth
 
 84
-00:05:51,059 --> 00:05:53,779
-in mind though that this heavy
-concentration is also
+00:05:50,670 --> 00:05:53,470
+keeping in mind though that this heavy
+concentration is
 
 85
-00:05:53,839 --> 00:05:58,043
-concerning. We're seeing a growing compute
-divide. While major
+00:05:53,470 --> 00:05:57,699
+also concerning. We're seeing a growing
+compute divide. While
 
 86
-00:05:58,083 --> 00:06:00,963
-tech companies can spend hundreds of
-millions on AI
+00:05:57,699 --> 00:06:00,540
+major tech companies can spend hundreds of
+millions on
 
 87
-00:06:01,024 --> 00:06:05,406
-training, academic researchers struggle to
-access even basic resources.
+00:06:00,540 --> 00:06:04,819
+AI training, academic researchers struggle
+to access even basic
 
 88
-00:06:06,146 --> 00:06:09,629
-This impacts who can participate in AI
-development and
+00:06:04,819 --> 00:06:09,060
+resources. This impacts who can
+participate in AI development
 
 89
-00:06:09,689 --> 00:06:14,151
-reduces independent oversight of frontier
-models. It also raises
+00:06:09,220 --> 00:06:13,699
+and reduces independent oversight of
+frontier models. It also
 
 90
-00:06:14,211 --> 00:06:18,932
-concerns around potential power
+00:06:13,699 --> 00:06:18,339
+raises concerns around potential power
 concentration. The textbook includes
-Figure
 
 91
-00:06:18,992 --> 00:06:22,814
-4.10 here. It depicts the spectrum of chip
-architectures
+00:06:18,339 --> 00:06:22,110
+Figure 4.10. Here it depicts the spectrum
+of chip
 
 92
-00:06:23,134 --> 00:06:26,954
-with trade-offs in regards to efficiency
-and flexibility. Rather
+00:06:22,110 --> 00:06:25,350
+architectures with trade offs in regards
+to efficiency and
 
 93
-00:06:26,995 --> 00:06:31,136
-than trying to control all computing
-infrastructure, governance should
+00:06:25,350 --> 00:06:29,870
+flexibility. Rather than trying to control
+all computing infrastructure,
 
 94
-00:06:31,175 --> 00:06:35,516
-focus specifically on specialized AI
-chips. These are distinct
+00:06:30,189 --> 00:06:34,829
+governance should focus specifically on
+specialized AI chips. These
 
 95
-00:06:35,557 --> 00:06:39,117
-from general-purpose hardware in both
-capabilities and supply chains.
+00:06:34,829 --> 00:06:38,029
+are distinct from general purpose hardware
+in both capabilities
 
 96
-00:06:39,757 --> 00:06:43,341
-By targeting only the most advanced AI-
-specific chips, we
+00:06:38,029 --> 00:06:41,550
+and supply chains. By targeting only the
+most advanced
 
 97
-00:06:43,360 --> 00:06:46,583
-can address catastrophic risks while
-leaving the broader computing
+00:06:41,550 --> 00:06:45,310
+AI specific chips, we can address
+catastrophic risks while
 
 98
-00:06:46,663 --> 00:06:51,807
-ecosystem largely untouched. For example,
-US export controls specifically
+00:06:45,310 --> 00:06:49,699
+leaving the broader computing ecosystem
+largely untouched. For example,
 
 99
-00:06:51,887 --> 00:06:56,350
-target high-end data center GPUs while
-excluding consumer hardware.
+00:06:49,779 --> 00:06:53,500
+US export controls specifically target
+high end data center
 
 100
-00:06:56,831 --> 00:07:01,735
-Section Monitoring Training Frontier AI
-models leaves multiple observable
+00:06:53,500 --> 00:06:59,779
+GPUs while excluding consumer hardware
+monitoring training, frontier AI
 
 101
-00:07:01,774 --> 00:07:04,976
-footprints which might allow us to detect
-concerning AI
+00:06:59,779 --> 00:07:03,420
+models leaves multiple observable
+footprints, which might allow us
 
 102
-00:07:05,057 --> 00:07:09,399
-training runs. The most reliable is energy
-consumption. Training
+00:07:03,420 --> 00:07:07,259
+to detect concerning AI training runs, the
+most reliable
 
 103
-00:07:09,459 --> 00:07:13,023
-runs that might produce dangerous systems
-require massive power
+00:07:07,259 --> 00:07:11,060
+is energy consumption. Training runs that
+might produce dangerous
 
 104
-00:07:13,142 --> 00:07:18,386
-usage, often hundreds of megawatts,
-creating distinctive patterns. Besides
+00:07:11,060 --> 00:07:15,540
+systems require massive power usage, often
+hundreds of megawatts,
 
 105
-00:07:18,485 --> 00:07:23,470
+00:07:15,819 --> 00:07:20,939
+creating distinctive patterns. Besides
 energy, other technical indicators include
-network traffic patterns, characteristic
 
 106
-00:07:23,509 --> 00:07:27,892
-of model training, hardware procurement
-and shipping records, cooling
+00:07:21,019 --> 00:07:26,060
+network traffic patterns characteristic of
+model training, hardware procurement
 
 107
-00:07:27,952 --> 00:07:32,456
-system requirements and thermal
-signatures, infrastructure buildout like
-power
+00:07:26,060 --> 00:07:30,139
+and shipping records, cooling system
+requirements, and thermal signatures.
 
 108
-00:07:32,495 --> 00:07:37,418
-substation construction. These signals
-become particularly powerful when
-combined.
+00:07:30,459 --> 00:07:35,500
+Infrastructure buildout like power
+substation construction, these signals
+become
 
 109
-00:07:38,098 --> 00:07:41,321
-Sudden spikes in both energy usage and
-network traffic
+00:07:35,500 --> 00:07:39,500
+particularly powerful when combined.
+Sudden spikes in both energy
 
 110
-00:07:41,461 --> 00:07:45,242
-at a facility containing known AI hardware
-strongly suggest
+00:07:39,579 --> 00:07:42,980
+usage and network traffic at a facility
+containing known
 
 111
-00:07:45,403 --> 00:07:49,285
-active model training. Regulations have
-already begun using compute
+00:07:42,980 --> 00:07:47,870
+AI hardware strongly suggest active model
+training regulations have
 
 112
-00:07:49,324 --> 00:07:53,668
-thresholds to trigger oversight
-mechanisms. The US executive order
+00:07:47,870 --> 00:07:51,750
+already begun using compute thresholds to
+trigger oversight mechanisms.
 
 113
-00:07:53,788 --> 00:07:57,110
-on AI requires companies to notify the
-government about
+00:07:52,069 --> 00:07:55,790
+The US Executive Order on AI requires
+companies to
 
 114
-00:07:57,189 --> 00:08:01,779
-training runs exceeding 10 to the 26th
-operations. a
+00:07:55,790 --> 00:07:59,149
+notify the government about training runs
+exceeding 10 to
 
 115
-00:08:01,839 --> 00:08:04,463
-threshold designed to capture the
-development of the most
+00:07:59,149 --> 00:08:03,550
+the 26th operations, a threshold designed
+to capture the
 
 116
-00:08:04,524 --> 00:08:08,389
-capable systems. The EU AI Act sets an
-even
+00:08:03,550 --> 00:08:07,350
+development of the most capable systems.
+The EU AI
 
 117
-00:08:08,449 --> 00:08:12,276
-lower threshold of 10 to the 25th
-operations, requiring
+00:08:07,350 --> 00:08:09,829
+act sets an even lower threshold of 10 to
 
 118
-00:08:12,336 --> 00:08:15,560
-not just notification, but also risk
-assessments and safety
+00:08:09,829 --> 00:08:14,029
+the 25th operations, requiring not just
+notification but also
 
 119
-00:08:15,600 --> 00:08:20,663
-measures. These thresholds help identify
-potentially risky development activities
+00:08:14,029 --> 00:08:18,589
+risk assessments and safety measures.
+These thresholds help identify
 
 120
-00:08:20,983 --> 00:08:24,845
+00:08:18,589 --> 00:08:23,310
+potentially risky development activities
 before they complete, enabling preventive
-rather than reactive governance.
 
 121
-00:08:25,345 --> 00:08:29,045
-At this point, the textbook shows figure
-4.11. It
+00:08:23,310 --> 00:08:26,670
+rather than reactive governance. At this
+point, the textbook
 
 122
-00:08:29,086 --> 00:08:32,626
-depicts compute thresholds as specified in
-the US Executive
+00:08:26,670 --> 00:08:31,310
+shows Figure 4.11. It depicts compute
+thresholds as specified
 
 123
-00:08:32,726 --> 00:08:36,967
-Order 14110. Cloud compute providers can
-play an important
+00:08:31,310 --> 00:08:36,029
+in the US Executive Order 14110 Cloud
+compute providers
 
 124
-00:08:37,028 --> 00:08:41,470
-role in compute governance. Most frontier
-AI development happens
+00:08:36,029 --> 00:08:39,469
+can play an important role in compute
+governance Most
 
 125
-00:08:41,509 --> 00:08:46,091
-through cloud computing platforms rather
-than self-owned hardware. This
+00:08:39,469 --> 00:08:43,749
+frontier AI development happens through
+cloud computing platforms rather
 
 126
-00:08:46,152 --> 00:08:49,854
-creates natural control points for
-oversight, since most organizations
+00:08:43,749 --> 00:08:47,589
+than self owned hardware. This creates
+natural control points
 
 127
-00:08:49,913 --> 00:08:54,216
-developing advanced AI must work through
-these providers. Cloud
+00:08:47,589 --> 00:08:51,828
+for oversight since most organizations
+developing advanced AI must
 
 128
-00:08:54,235 --> 00:08:57,758
-provider's position between hardware and
-developers allows them to
+00:08:51,828 --> 00:08:56,068
+work through these providers. Cloud
+providers position between hardware
 
 129
-00:08:57,837 --> 00:09:01,019
-implement controls that would be difficult
-to enforce through
+00:08:56,068 --> 00:08:59,308
+and developers allows them to implement
+controls that would
 
 130
-00:09:01,078 --> 00:09:05,981
-hardware regulation alone. They maintain
-the physical infrastructure, track
+00:08:59,308 --> 00:09:03,428
+be difficult to enforce through hardware
+regulation alone. They
 
 131
-00:09:06,023 --> 00:09:10,315
-compute usage patterns and maintain
-development records. They can
+00:09:03,428 --> 00:09:07,668
+maintain the physical infrastructure,
+track compute usage patterns, and
 
 132
-00:09:10,355 --> 00:09:14,375
-also monitor compliance with safety
-requirements, can implement access
+00:09:07,668 --> 00:09:11,809
+maintain development records. They can
+also monitor compliance with
 
 133
-00:09:14,416 --> 00:09:18,797
-controls and respond to violations. One
-suggested approach is
+00:09:11,809 --> 00:09:16,009
+safety requirements, can implement access
+controls, and respond to
 
 134
-00:09:18,836 --> 00:09:23,078
-Know Your Customer, KYC requirements
-similar to financial services.
+00:09:16,009 --> 00:09:21,330
+violations. One suggested approach is know
+your customer requirements.
 
 135
-00:09:23,759 --> 00:09:27,019
-Providers would verify the identity and
-intentions of clients
+00:09:21,330 --> 00:09:25,570
+Similar to financial services providers
+would verify the identity
 
 136
-00:09:27,419 --> 00:09:32,421
-requesting large-scale compute resources,
-maintain records of significant compute
+00:09:25,570 --> 00:09:29,730
+and intentions of clients requesting large
+scale compute resources,
 
 137
-00:09:32,561 --> 00:09:36,417
-usage, and report suspicious patterns.
-This can be done
+00:09:30,289 --> 00:09:34,370
+maintain records of significant compute
+usage, and report suspicious
 
 138
-00:09:36,456 --> 00:09:40,898
-while protecting privacy. Basic workload
-characteristics can be monitored
+00:09:34,370 --> 00:09:38,659
+patterns. This can be done while
+protecting privacy. Basic
 
 139
-00:09:40,977 --> 00:09:45,139
-without accessing sensitive details like
-model architecture or training
+00:09:38,659 --> 00:09:43,059
+workload characteristics can be monitored
+without accessing sensitive details
 
 140
-00:09:45,178 --> 00:09:48,639
-data. Similar KYC laws can be applied to
-the
+00:09:43,139 --> 00:09:47,779
+like model architecture or training data.
+Similar KYC laws
 
 141
-00:09:48,679 --> 00:09:52,640
-supply chain on purchases of state-of-the-
-art AI compute hardware.
+00:09:47,779 --> 00:09:50,220
+can be applied to the supply chain on
+purchases
 
 142
-00:09:53,120 --> 00:09:57,022
-Section On Chip Controls. There is Figure
-4.12 in
+00:09:50,220 --> 00:09:53,700
+of state of the art AI compute hardware
+section
 
 143
-00:09:57,042 --> 00:10:00,863
-the textbook here. It depicts current AI
-chips already
+00:09:53,860 --> 00:09:57,179
+on chip controls. There is figure 4.12 in
+the
 
 144
-00:10:00,942 --> 00:10:03,903
-have some components of this architecture,
-but not all.
+00:09:57,179 --> 00:10:01,179
+textbook. Here it depicts current AI chips
+already have
 
 145
-00:10:04,663 --> 00:10:07,524
-These gaps likely could be closed with
-moderate development
+00:10:01,179 --> 00:10:04,860
+some components of this architecture, but
+not all. These
 
 146
-00:10:07,625 --> 00:10:11,686
-effort as extensions of functionality
-already in place. Beyond
+00:10:04,860 --> 00:10:08,019
+gaps likely could be closed with moderate
+development effort
 
 147
-00:10:11,806 --> 00:10:16,167
-monitoring and detection, compute
-infrastructure can include active control
+00:10:08,019 --> 00:10:12,299
+as extensions of functionality already in
+place. Beyond monitoring
 
 148
-00:10:16,206 --> 00:10:20,447
-mechanisms built directly into the
-processor hardware. Similar to
+00:10:12,299 --> 00:10:16,860
+and detection, compute infrastructure can
+include active control mechanisms
 
 149
-00:10:20,488 --> 00:10:24,107
-how modern smartphones and computers
-include secure elements for
+00:10:16,860 --> 00:10:20,659
+built directly into the processor
+hardware. Similar to how
 
 150
-00:10:24,148 --> 00:10:28,428
-privacy and security, AI chips can
-incorporate features that
+00:10:20,659 --> 00:10:24,580
+modern smartphones and computers include
+secure elements for privacy
 
 151
-00:10:28,489 --> 00:10:32,210
-verify and control how they're used. These
-features could
+00:10:24,580 --> 00:10:28,980
+and security. AI chips can incorporate
+features that verify
 
 152
-00:10:32,250 --> 00:10:35,730
-prevent unauthorized training runs or
-ensure chips are only
+00:10:28,980 --> 00:10:32,600
+and control how they're used. These
+features could prevent
 
 153
-00:10:35,910 --> 00:10:39,312
-used in approved facilities. The
-verification happens at the
+00:10:32,600 --> 00:10:36,039
+unauthorized training runs or ensure chips
+are only used
 
 154
-00:10:39,351 --> 00:10:42,152
-hardware level, making it much harder to
-bypass than
+00:10:36,039 --> 00:10:39,799
+in approved facilities. The verification
+happens at the hardware
 
 155
-00:10:42,231 --> 00:10:46,013
-software controls. It is worth noting that
-on-chip controls
+00:10:39,799 --> 00:10:42,679
+level, making it much harder to bypass
+than software
 
 156
-00:10:46,092 --> 00:10:49,714
-are highly speculative. On-chip controls
-could enable methods like
+00:10:42,679 --> 00:10:46,080
+controls. It is worth noting that on chip
+controls
 
 157
-00:10:49,874 --> 00:10:54,375
-usage limits, logging, and location
-verification. Several approaches show
+00:10:46,080 --> 00:10:49,600
+are highly speculative. On chip controls
+could enable methods
 
 158
-00:10:54,434 --> 00:10:57,904
-promise. usage limits could cap the amount
-of compute
+00:10:49,600 --> 00:10:54,120
+like usage limits logging and location
+verification. Several approaches
 
 159
-00:10:58,085 --> 00:11:01,369
-used for certain types of AI workloads
-without special
+00:10:54,120 --> 00:10:57,480
+show promise. Usage limits could cap the
+amount of
 
 160
-00:11:01,469 --> 00:11:06,394
-authorization. Secure logging systems
-could create tamper-resistant records of
+00:10:57,480 --> 00:11:00,960
+compute used for certain types of AI
+workloads without
 
 161
-00:11:06,453 --> 00:11:10,662
-how chips are used. Location verification
-could ensure chips
+00:11:00,960 --> 00:11:05,799
+special authorization. Secure logging
+systems could create tamper resistant
 
 162
-00:11:10,721 --> 00:11:14,323
-are only used in approved facilities.
-Hardware could even
+00:11:05,799 --> 00:11:09,960
+records of how chips are used. Location
+verification could
 
 163
-00:11:14,384 --> 00:11:18,985
-include safety interlocks that
-automatically pause training if certain
+00:11:09,960 --> 00:11:13,960
+ensure chips are only used in approved
+facilities. Hardware
 
 164
-00:11:19,025 --> 00:11:22,607
-conditions aren't met. Ideas like this are
-also called
+00:11:13,960 --> 00:11:18,240
+could even include safety interlocks that
+automatically pause training
 
 165
-00:11:22,768 --> 00:11:27,289
-on-chip governance. We already see similar
-concepts in cybersecurity
+00:11:18,240 --> 00:11:22,000
+if certain conditions aren't met. Ideas
+like this are
 
 166
-00:11:27,629 --> 00:11:31,731
-with features like Intel's software guard
-extensions or trusted
+00:11:22,000 --> 00:11:25,559
+also called on chip governance. We already
+see similar
 
 167
-00:11:31,792 --> 00:11:38,355
-platform modules, TPM, providing hardware-
-level security guarantees. While we're
+00:11:25,559 --> 00:11:30,090
+concepts in cybersecurity with features
+like Intel's Software Guard
 
 168
-00:11:38,375 --> 00:11:42,035
-still far from equivalent safeguards for
-AI compute, early
+00:11:30,090 --> 00:11:36,210
+extensions or Trusted Platform modules
+providing hardware level security
 
 169
-00:11:42,096 --> 00:11:46,577
-research shows promising directions. Some
-chips already include basic
+00:11:36,289 --> 00:11:40,409
+guarantees. While we're still far from
+equivalent safeguards for
 
 170
-00:11:46,638 --> 00:11:50,198
-monitoring capabilities that could be
-expanded for governance purposes.
+00:11:40,409 --> 00:11:45,370
+AI compute, early research shows promising
+directions. Some chips
 
 171
-00:11:50,679 --> 00:11:54,181
-Section Limitation The trend over the last
-decade has
+00:11:45,370 --> 00:11:49,049
+already include basic monitoring
+capabilities that could be expanded
 
 172
-00:11:54,221 --> 00:11:57,261
-involved more compute, but this will not
-last forever.
+00:11:49,049 --> 00:11:53,570
+for governance purposes. Limitation the
+trend over the last
 
 173
-00:11:58,351 --> 00:12:00,833
-We spoke at length about scaling laws in
-previous
+00:11:53,570 --> 00:11:56,580
+decade has involved more computer but this
+will not
 
 174
-00:12:00,874 --> 00:12:05,878
-chapters. Research suggests scaling-based
-returns to AI capabilities are
+00:11:56,580 --> 00:12:00,259
+last forever. We spoke at length about
+scaling laws
 
 175
-00:12:05,898 --> 00:12:11,241
-still possible through 2030. Algorithmic
-improvements also enhance efficiency,
+00:12:00,259 --> 00:12:04,379
+in previous chapters. Research suggests
+scaling based returns to
 
 176
-00:12:11,663 --> 00:12:14,804
-meaning the same compute achieves more
-capability over time.
+00:12:04,379 --> 00:12:09,740
+AI capabilities are still possible through
+2030. Algorithmic improvements
 
 177
-00:12:15,686 --> 00:12:18,967
-Smaller models could begin to show
-comparable capabilities and
+00:12:09,740 --> 00:12:13,419
+also enhance efficiency, meaning the same
+compute achieves more
 
 178
-00:12:19,048 --> 00:12:23,932
-risks. For example, Falcon 180b is
-outperformed by far
+00:12:13,419 --> 00:12:17,460
+capability over time. Smaller models could
+begin to show
 
 179
-00:12:24,011 --> 00:12:28,296
-smaller models like Lama 3 8b. This makes
-static
+00:12:17,460 --> 00:12:22,539
+comparable capabilities and risks. For
+example, Falcon 180B is
 
 180
-00:12:28,316 --> 00:12:33,057
-compute thresholds less reliable as
-capability indicators without regular
+00:12:22,539 --> 00:12:26,580
+outperformed by by far smaller models like
+Llama 3.8B.
 
 181
-00:12:33,158 --> 00:12:38,480
-updates. Moreover, reasoning models, LRMs,
-and inference time scaling,
+00:12:27,139 --> 00:12:31,220
+This makes static compute thresholds less
+reliable as capability
 
 182
-00:12:39,020 --> 00:12:44,663
-e.g. OpenAI03, Claude4, DeepSeq R1, and
-methods like model
+00:12:31,460 --> 00:12:37,700
+indicators without regular updates.
+Moreover, reasoning models and inference
 
 183
-00:12:44,703 --> 00:12:48,927
-distillation can dramatically improve
-model capabilities without changing the
+00:12:37,700 --> 00:12:43,740
+time scaling eg OpenAI03, Claud4, Deep seq
+R1 and
 
 184
-00:12:48,986 --> 00:12:52,087
-amount of compute used to train a model.
-Current
+00:12:43,740 --> 00:12:47,779
+methods like model distillation can
+dramatically improve model capabilities
 
 185
-00:12:52,128 --> 00:12:55,509
-governance frameworks do not account for
-these post-training enhancements.
+00:12:48,019 --> 00:12:50,700
+without changing the amount of compute
+used to train
 
 186
-00:12:56,029 --> 00:13:00,692
-The textbook includes figure 4.13 here. It
-depicts estimates
+00:12:50,700 --> 00:12:53,980
+a model. Current governance frameworks do
+not account for
 
 187
-00:13:00,732 --> 00:13:03,434
-of the scale constraints imposed by the
-most important
+00:12:53,980 --> 00:12:58,539
+these post training enhancements. The
+textbook includes Figure 4.13.
 
 188
-00:13:03,475 --> 00:13:07,256
-bottlenecks to scale. Each estimate is
-based on historical
+00:12:58,700 --> 00:13:02,379
+Here it depicts estimates of the scale
+constraints imposed
 
 189
-00:13:07,317 --> 00:13:11,719
-projections. The dark shaded box
-corresponds to an interquartile
+00:13:02,379 --> 00:13:06,019
+by the most important bottlenecks to
+scale. Each estimate
 
 190
-00:13:11,798 --> 00:13:15,240
-range and light shaded region to an 80%
-confidence
+00:13:06,019 --> 00:13:09,860
+is based on historical projections. The
+dark shaded box
 
 191
-00:13:15,280 --> 00:13:19,203
-interval. The four boxes showcase four
-constraints that might
+00:13:09,860 --> 00:13:13,580
+corresponds to an interquartile range and
+light shaded region
 
 192
-00:13:19,283 --> 00:13:23,225
-slow down growth in the future. power,
-chips, compute,
+00:13:13,580 --> 00:13:17,740
+to an 80% confidence interval. The four
+boxes showcase
 
 193
-00:13:23,626 --> 00:13:27,590
-data and latency. Smaller, more
-specialized models can still
+00:13:17,740 --> 00:13:20,340
+four constraints that might slow down
+growth in the
 
 194
-00:13:27,649 --> 00:13:31,932
-cause risks. Different domains have very
-different compute requirements.
+00:13:20,340 --> 00:13:26,700
+future. Power chips, compute data, and
+smaller, more specialized
 
 195
-00:13:32,673 --> 00:13:36,616
-Highly specialized models trained on
-specific datasets might develop
+00:13:26,700 --> 00:13:30,500
+models can still cause risks. Different
+domains have very
 
 196
-00:13:36,657 --> 00:13:41,480
-dangerous capabilities while using
-relatively modest compute. For example,
+00:13:30,500 --> 00:13:35,019
+different compute requirements. Highly
+specialized models trained on specific
 
 197
-00:13:41,740 --> 00:13:45,741
-models focused on biological or
-cybersecurity domains could pose
+00:13:35,019 --> 00:13:39,100
+data sets might develop dangerous
+capabilities while using relatively
 
 198
-00:13:45,802 --> 00:13:49,623
-serious risks even with compute usage
-below typical regulatory
+00:13:39,100 --> 00:13:43,659
+modest compute. For example, models
+focused on biological or
 
 199
-00:13:49,682 --> 00:13:54,264
-thresholds. Compute governance can help
-manage AI risks, but
+00:13:43,659 --> 00:13:47,620
+cybersecurity domains could pose serious
+risks even with compute
 
 200
-00:13:54,465 --> 00:13:59,005
-overly restrictive controls can accelerate
-power concentration. Only a
+00:13:47,620 --> 00:13:52,139
+usage below typical regulatory thresholds.
+Compute governance can help
 
 201
-00:13:59,066 --> 00:14:02,246
-handful of organizations can afford the
-compute needed for
+00:13:52,139 --> 00:13:56,940
+manage AI risks, but overly restrictive
+controls can accelerate
 
 202
-00:14:02,287 --> 00:14:06,230
-frontier AI development. adding more
-barriers could worsen this
+00:13:56,940 --> 00:14:01,100
+power concentration. Only a handful of
+organizations can afford
 
 203
-00:14:06,269 --> 00:14:10,173
-disparity, concentrating power in a few
-large tech companies
+00:14:01,100 --> 00:14:05,019
+the compute needed for frontier AI
+development. Adding more
 
 204
-00:14:10,373 --> 00:14:15,057
-and reducing independent oversight.
-Academic researchers already struggle to
+00:14:05,019 --> 00:14:08,860
+barriers could worsen this disparity.
+Concentrating power in a
 
 205
-00:14:15,197 --> 00:14:18,581
-access the compute they need for
-meaningful AI research.
+00:14:08,860 --> 00:14:13,500
+few large tech companies and reducing
+independent oversight. Academic
 
 206
-00:14:19,361 --> 00:14:22,965
-As models get larger and more compute-
-intensive, this gap
+00:14:13,500 --> 00:14:16,620
+researchers already struggle to access the
+compute they need
 
 207
-00:14:23,004 --> 00:14:27,583
-between industry and academia grows wider.
-Large compute clusters
+00:14:17,049 --> 00:14:20,809
+for meaningful AI research. As models get
+larger and
 
 208
-00:14:27,784 --> 00:14:31,609
-have many legitimate uses beyond AI
-development, from scientific
+00:14:20,809 --> 00:14:24,690
+more compute intensive, this gap between
+industry and academia
 
 209
-00:14:31,668 --> 00:14:36,333
-research to business applications. Overly
-broad restrictions could hinder
+00:14:24,690 --> 00:14:29,129
+grows wider. Large compute clusters have
+many legitimate uses
 
 210
-00:14:36,374 --> 00:14:40,658
-beneficial innovation. Additionally, once
-models are trained, they can
+00:14:29,129 --> 00:14:33,370
+beyond AI development, from scientific
+research to business applications.
 
 211
-00:14:40,738 --> 00:14:43,520
-often be run for inference using much less
-compute
+00:14:34,009 --> 00:14:39,250
+Overly broad restrictions could hinder
+beneficial innovation. Additionally, once
 
 212
-00:14:43,581 --> 00:14:47,043
-than training required. This makes it
-challenging to control
+00:14:39,250 --> 00:14:41,570
+models are trained, they can often be run
+for
 
 213
-00:14:47,104 --> 00:14:51,047
-how existing models are used without
-imposing overly restrictive
+00:14:41,570 --> 00:14:45,539
+inference using much less compute than
+training required. This
 
 214
-00:14:51,086 --> 00:14:55,730
-controls on general computing
-infrastructure. Distributed training and
-inference
+00:14:45,539 --> 00:14:48,460
+makes it challenging to control how
+existing models are
 
 215
-00:14:55,769 --> 00:15:00,734
-approaches could bypass compute governance
-controls. Currently, training frontier
+00:14:48,460 --> 00:14:52,940
+used without imposing overly restrictive
+controls on general computing
 
 216
-00:15:00,793 --> 00:15:05,057
-models requires concentrating massive
-compute resources in single locations
+00:14:52,940 --> 00:14:57,620
+infrastructure. Distributed training and
+inference approaches could bypass compute
 
 217
-00:15:05,157 --> 00:15:09,740
-due to communication requirements between
-chips. Decentralized training methods
+00:14:57,620 --> 00:15:02,860
+governance controls. Currently, training
+frontier models requires concentrating
+massive
 
 218
-00:15:09,799 --> 00:15:12,120
-are being researched, but have not really
-caught up
+00:15:02,860 --> 00:15:06,740
+compute resources in single locations due
+to communication requirements
 
 219
-00:15:12,160 --> 00:15:16,123
-to centralized methods. However, if we see
-fundamental advances
+00:15:06,740 --> 00:15:11,169
+between chips. Decentralized training
+methods are being researched but
 
 220
-00:15:16,202 --> 00:15:19,725
-in distributed training algorithms, this
-could eventually allow training
+00:15:11,169 --> 00:15:14,289
+have not really caught up to centralized
+methods. However,
 
 221
-00:15:19,764 --> 00:15:23,381
-to be split across multiple smaller
-facilities. While this
+00:15:14,289 --> 00:15:18,049
+if we see fundamental advances in
+distributed training algorithms,
 
 222
-00:15:23,442 --> 00:15:27,224
-remains technically challenging and
-inefficient, it could make detection
+00:15:18,129 --> 00:15:20,570
+this could eventually allow training to be
+split across
 
 223
-00:15:27,323 --> 00:15:30,804
-and control of dangerous training runs
-more difficult. Compute
+00:15:20,570 --> 00:15:25,090
+multiple smaller facilities. While this
+remains technically challenging and
 
 224
-00:15:30,884 --> 00:15:34,225
-monitoring and compute thresholds should
-primarily operate as an
+00:15:25,090 --> 00:15:28,529
+inefficient, it could make detection and
+control of dangerous
 
 225
-00:15:34,287 --> 00:15:38,207
-initial screening mechanism. These
-approaches should be used mainly
+00:15:28,529 --> 00:15:32,690
+training runs more difficult. Compute
+monitoring and compute thresholds
 
 226
-00:15:38,248 --> 00:15:42,009
-to identify models warranting further
-scrutiny, rather than as
+00:15:32,690 --> 00:15:36,529
+should primarily operate as an initial
+screening mechanism. These
 
 227
-00:15:42,070 --> 00:15:46,172
-the sole determinant of specific
-regulatory requirements. They are
+00:15:36,529 --> 00:15:39,929
+approaches should be used mainly to
+identify models warranting
 
 228
-00:15:46,211 --> 00:15:49,875
-most effective when used to trigger
-oversight mechanisms, such
+00:15:39,929 --> 00:15:43,370
+further scrutiny rather than as the sole
+determinant of
 
 229
-00:15:49,936 --> 00:15:53,821
-as notification requirements and risk
-assessments, whose results can
+00:15:43,370 --> 00:15:47,529
+specific regulatory requirements. They are
+most effective when used
 
 230
-00:15:53,860 --> 00:15:58,326
-then inform appropriate mitigation
-measures. Technical governance measures
-need
+00:15:47,529 --> 00:15:51,649
+to trigger oversight mechanisms such as
+notification requirements and
 
 231
-00:15:58,346 --> 00:16:02,490
-to coordinate with corporate, national and
-international initiatives. We
+00:15:51,649 --> 00:15:55,570
+risk assessments, whose results can then
+inform appropriate mitigation
 
 232
-00:16:02,571 --> 00:16:05,854
-focused on compute governance as our
-primary technical example,
+00:15:55,570 --> 00:15:59,769
+measures. Technical governance measures
+need to coordinate with corporate,
 
 233
-00:16:06,174 --> 00:16:10,278
-though coordination challenges apply
-equally to data governance, model
+00:15:59,769 --> 00:16:04,090
+national, and international initiatives.
+We focused on compute governance
 
 234
-00:16:10,317 --> 00:16:14,422
-governance, and other technical measures.
-Each approach faces the
+00:16:04,090 --> 00:16:08,049
+as our primary technical example. Though
+coordination challenges apply
 
 235
-00:16:14,461 --> 00:16:19,567
-same fundamental limitation. Technical
-measures alone cannot address systemic
+00:16:08,049 --> 00:16:12,110
+equally to data governance, model
+governance, and other technical
 
 236
-00:16:19,647 --> 00:16:23,350
-risks that emerge from competitive
-dynamics and global deployment.
+00:16:12,110 --> 00:16:17,309
+measures, each approach faces the same
+fundamental limitation. Technical
 
 237
-00:16:23,990 --> 00:16:26,836
-This is why technical measures must be
-embedded within
+00:16:17,309 --> 00:16:20,990
+measures alone cannot address systemic
+risks that emerge from
 
 238
-00:16:26,895 --> 00:16:31,364
-corporate, national and international
-governance frameworks that align
-incentives
+00:16:20,990 --> 00:16:24,990
+competitive dynamics and global
+deployment. This is why technical
 
 239
-00:16:31,423 --> 00:16:35,090
-with coordinated safety standards. Before
-we talk about those,
+00:16:24,990 --> 00:16:28,509
+measures must be embedded within
+corporate, national, and international
 
 240
-00:16:35,129 --> 00:16:38,897
-however, we need to explore broader
-concepts like decision-making
+00:16:28,750 --> 00:16:33,230
+governance frameworks that align
+incentives with coordinated safety
+standards.
 
 241
-00:16:39,037 --> 00:16:44,046
-under uncertainty, game-theoretic
-collective action problems and other
-systemic
+00:16:33,870 --> 00:16:36,149
+Before we talk about those, however, we we
+need
 
 242
-00:16:44,105 --> 00:16:47,511
-forces that shape the governance
-landscape. We will talk
+00:16:36,149 --> 00:16:40,110
+to explore broader concepts like decision
+making under uncertainty,
 
 243
-00:16:47,552 --> 00:16:48,953
-about this in the next section.
+00:16:40,509 --> 00:16:44,509
+game theoretic, collective action
+problems, and other systemic forces
+
+244
+00:16:44,590 --> 00:16:47,669
+that shape the governance landscape. We
+will talk about
+
+245
+00:16:47,669 --> 00:16:49,070
+this in the next section.

@@ -1,0 +1,1245 @@
+1
+00:00:00,160 --> 00:00:05,000
+Section 5.2 Benchmarks what is a
+benchmark? Imagine trying
+
+2
+00:00:05,000 --> 00:00:09,039
+to build a bridge without measuring tape.
+Before standardized
+
+3
+00:00:09,039 --> 00:00:12,480
+units like meters and grams, different
+regions used their
+
+4
+00:00:12,480 --> 00:00:17,000
+own local measurements. Besides just
+making engineering inefficient, it
+
+5
+00:00:17,000 --> 00:00:20,519
+also made it dangerous. Even if one
+country developed
+
+6
+00:00:20,519 --> 00:00:24,000
+a safe bridge design, specifying
+measurements in three royal
+
+7
+00:00:24,000 --> 00:00:27,359
+cubits of material meant builders in other
+countries couldn't
+
+8
+00:00:27,359 --> 00:00:31,320
+reliably reproduce that safety. A slightly
+too short support
+
+9
+00:00:31,320 --> 00:00:34,479
+beam or too thin cable could lead to
+catastrophic
+
+10
+00:00:34,479 --> 00:00:37,880
+failure. AI basically had a similar
+problem before we
+
+11
+00:00:37,880 --> 00:00:41,600
+started using standardized benchmarks. A
+benchmark is a tool
+
+12
+00:00:41,600 --> 00:00:44,240
+like a standardized test, which we can use
+to
+
+13
+00:00:44,240 --> 00:00:47,280
+measure and compare what AI systems can
+and cannot
+
+14
+00:00:47,280 --> 00:00:50,439
+do. They have historically mainly been
+used to measure
+
+15
+00:00:50,439 --> 00:00:53,600
+capabilities, but we are also seeing them
+being developed
+
+16
+00:00:53,600 --> 00:00:56,079
+for AI safety and ethics in the last few
+
+17
+00:00:56,079 --> 00:00:59,880
+years. How do benchmarks shape AI
+development and safety
+
+18
+00:00:59,880 --> 00:01:03,439
+Research? Benchmarks in AI are slightly
+different from other
+
+19
+00:01:03,439 --> 00:01:06,680
+scientific fields. They are an evolving
+tool that both
+
+20
+00:01:06,680 --> 00:01:09,680
+measures, but also actively shapes the
+direction of research
+
+21
+00:01:09,680 --> 00:01:13,760
+and development. When we create a
+benchmark, we're essentially
+
+22
+00:01:13,760 --> 00:01:16,239
+saying this is what we think is important
+to
+
+23
+00:01:16,239 --> 00:01:19,359
+measure. If we can guide the measurement,
+then to
+
+24
+00:01:19,359 --> 00:01:22,239
+some extent we can also guide the
+development. To
+
+25
+00:01:22,239 --> 00:01:26,859
+quote Francois Chollet, Goal Definitions
+and Evaluation Benchmarks are
+
+26
+00:01:26,859 --> 00:01:30,980
+among the most potent drivers of
+scientific progress, history
+
+27
+00:01:30,980 --> 00:01:35,540
+and evolution. The textbook has
+interactive Figure 5.1 here,
+
+28
+00:01:35,780 --> 00:01:38,700
+which you can explore in the online
+version. It
+
+29
+00:01:38,700 --> 00:01:42,659
+shows benchmark scores of various AI
+capabilities relative to
+
+30
+00:01:42,659 --> 00:01:49,060
+human performance. Benchmarks influencing
+Standardization in Computer Vision as
+
+31
+00:01:49,060 --> 00:01:52,579
+one concrete example of how benchmarks
+influence AI development,
+
+32
+00:01:53,280 --> 00:01:55,359
+we can look at the history of benchmarking
+in
+
+33
+00:01:55,359 --> 00:02:00,280
+computer vision. In 1998, researchers
+introduced Minist, a data
+
+34
+00:02:00,280 --> 00:02:04,120
+set of 70,000 handwritten digits. The
+digits were not
+
+35
+00:02:04,120 --> 00:02:07,120
+the important part. The important part was
+that each
+
+36
+00:02:07,120 --> 00:02:09,879
+digit image was carefully processed to be
+the same
+
+37
+00:02:09,879 --> 00:02:12,439
+size and centered in the frame, and that
+the
+
+38
+00:02:12,439 --> 00:02:15,360
+researchers made sure to get digits from
+different writers
+
+39
+00:02:15,360 --> 00:02:18,879
+for the training set and test set. This
+standardization
+
+40
+00:02:19,120 --> 00:02:21,719
+gave us a way to make meaningful
+comparisons about
+
+41
+00:02:21,719 --> 00:02:25,870
+AI capabilities, in this case the specific
+capability of
+
+42
+00:02:25,870 --> 00:02:29,990
+digit classification. Once systems started
+doing well on digit
+
+43
+00:02:29,990 --> 00:02:35,830
+recognition, researchers developed more
+challenging benchmarks. CIFAR 10100 in
+
+44
+00:02:35,830 --> 00:02:40,030
+2009 introduced natural color images of
+objects like cars,
+
+45
+00:02:40,030 --> 00:02:45,389
+birds and dogs, increasing the complexity.
+Similarly, ImageNet later
+
+46
+00:02:45,389 --> 00:02:49,310
+the same year provided 1.2 million images
+across 1,000
+
+47
+00:02:49,389 --> 00:02:53,229
+categories. When one research team claimed
+their system achieved
+
+48
+00:02:53,229 --> 00:02:58,150
+95% accuracy on Minist or ImageNet and
+another claimed
+
+49
+00:02:58,150 --> 00:03:02,590
+98%, everyone knew exactly what those
+numbers meant. The
+
+50
+00:03:02,590 --> 00:03:05,750
+measurements were trustworthy because both
+teams used the same
+
+51
+00:03:05,750 --> 00:03:10,270
+carefully constructed dataset. Each new
+benchmark essentially told the
+
+52
+00:03:10,270 --> 00:03:13,870
+research community, you've solved the
+previous challenge. Now try
+
+53
+00:03:13,870 --> 00:03:17,650
+this harder. 1 so benchmarks both measure
+progress, but
+
+54
+00:03:17,800 --> 00:03:20,840
+they also define what progress means. At
+this point,
+
+55
+00:03:20,840 --> 00:03:24,879
+the textbook shows Figure 5.2. It depicts
+examples of
+
+56
+00:03:24,879 --> 00:03:29,599
+digits from MNIST, MNIST database,
+Wikipedia how do benchmarks
+
+57
+00:03:29,599 --> 00:03:34,120
+influence AI safety? Without standardized
+measurements, we can't make
+
+58
+00:03:34,120 --> 00:03:38,120
+systematic progress on either capabilities
+or safety, just like
+
+59
+00:03:38,120 --> 00:03:42,280
+benchmarks define what capabilities
+progress means. When we develop
+
+60
+00:03:42,360 --> 00:03:46,770
+safety benchmarks, we're establishing
+concrete, verifiable standards for what
+
+61
+00:03:46,770 --> 00:03:50,810
+constitutes safe for deployment. Iterative
+refinement means we can
+
+62
+00:03:50,810 --> 00:03:53,969
+guide AI safety by coming up with
+benchmarks with
+
+63
+00:03:53,969 --> 00:03:58,770
+increasingly stringent standards of
+safety, other researchers and
+organizations
+
+64
+00:03:58,770 --> 00:04:02,729
+can then reproduce safety testing and
+confirm results. This
+
+65
+00:04:02,729 --> 00:04:06,050
+shapes both technical research into safety
+measures and policy
+
+66
+00:04:06,129 --> 00:04:10,409
+discussions about AI governance. Language
+model benchmarking has already
+
+67
+00:04:10,409 --> 00:04:13,979
+evolved and is going to continue evolving.
+Just like
+
+68
+00:04:13,979 --> 00:04:17,699
+how benchmarks continuously evolved in
+computer vision, they followed
+
+69
+00:04:17,699 --> 00:04:22,100
+similar progress in language generation.
+Early language model benchmarks
+
+70
+00:04:22,180 --> 00:04:26,579
+focused primarily on capabilities. Can the
+model answer questions
+
+71
+00:04:26,579 --> 00:04:32,300
+correctly? Complete sentences sensibly?
+Translate between languages? Since the
+
+72
+00:04:32,300 --> 00:04:36,540
+invention of the transformer architecture
+in 2017, we've seen
+
+73
+00:04:36,540 --> 00:04:39,870
+an explosion both in language model
+capabilities and and
+
+74
+00:04:39,870 --> 00:04:42,910
+in the sophistication of how we evaluate
+them. We
+
+75
+00:04:42,910 --> 00:04:45,629
+can't possibly be exhaustive, but here are
+just a
+
+76
+00:04:45,629 --> 00:04:48,589
+couple of benchmarks that current day
+language models are
+
+77
+00:04:48,589 --> 00:04:52,509
+evaluated against. There is figure 5.3 in
+the textbook.
+
+78
+00:04:52,509 --> 00:04:56,829
+Here it depicts example of popular
+language models Claude
+
+79
+00:04:56,829 --> 00:05:00,949
+3, 5 being evaluated on various
+benchmarks. At this
+
+80
+00:05:00,949 --> 00:05:04,230
+point there is interactive Figure 5.2 in
+the textbook
+
+81
+00:05:04,470 --> 00:05:08,149
+available in the online version. It shows
+benchmark performance
+
+82
+00:05:08,230 --> 00:05:11,790
+on coding, math, and language. The
+textbook has a
+
+83
+00:05:11,790 --> 00:05:16,709
+supplementary note titled Examples of
+various Capabilities benchmarks, which
+
+84
+00:05:16,709 --> 00:05:20,709
+we'll skip over here. Benchmarking Ethics
+and Bias the
+
+85
+00:05:20,709 --> 00:05:24,230
+ethics benchmark tests a language model's
+understanding of human
+
+86
+00:05:24,230 --> 00:05:29,269
+values and ethics across multiple
+categories, including justice, deontology,
+
+87
+00:05:29,589 --> 00:05:34,490
+virtue ethics, utilitarianism and and
+common sense morality. The
+
+88
+00:05:34,490 --> 00:05:38,730
+Truthful QA benchmark measures how
+truthfully language models answer
+
+89
+00:05:38,730 --> 00:05:44,009
+questions. It specifically focuses on
+imitative falsehoods cases where
+
+90
+00:05:44,009 --> 00:05:47,050
+models learn to repeat false statements
+that frequently appear
+
+91
+00:05:47,050 --> 00:05:50,410
+in human written texts in domains like
+health, law,
+
+92
+00:05:50,490 --> 00:05:53,970
+finance, and politics. At this point, the
+textbook shows
+
+93
+00:05:53,970 --> 00:05:57,850
+Figure 5.5. It depicts example of larger
+models being
+
+94
+00:05:57,850 --> 00:06:01,319
+less truthful on truthful qa. This is an
+example
+
+95
+00:06:01,319 --> 00:06:04,079
+of inverse scaling, that is When a bigger
+model
+
+96
+00:06:04,079 --> 00:06:08,079
+performance decreases on some questions.
+There is figure 5.6
+
+97
+00:06:08,079 --> 00:06:11,519
+in the textbook. Here it depicts example
+question from
+
+98
+00:06:11,519 --> 00:06:16,199
+the ethics benchmark Benchmarking Safety.
+An example focused on
+
+99
+00:06:16,199 --> 00:06:20,120
+misuse is agent harm. It is specifically
+designed to
+
+100
+00:06:20,120 --> 00:06:23,600
+measure how often LLM agents respond to
+malicious task
+
+101
+00:06:23,600 --> 00:06:27,879
+requests. An example that focuses slightly
+more on misalignment
+
+102
+00:06:27,879 --> 00:06:31,750
+is is the Machiavelli Benchmark. It has
+choose your
+
+103
+00:06:31,750 --> 00:06:34,870
+own adventure style games containing over
+half a million
+
+104
+00:06:34,870 --> 00:06:39,589
+scenarios focused on social decision
+making. It measures Machiavellian
+
+105
+00:06:39,589 --> 00:06:43,310
+capabilities like power seeking and
+deceptive behavior and how
+
+106
+00:06:43,310 --> 00:06:47,509
+AI agents balance achieving rewards and
+behaving ethically. The
+
+107
+00:06:47,509 --> 00:06:51,750
+textbook includes Figure 5.7 here. It
+depicts a mockup
+
+108
+00:06:51,750 --> 00:06:54,519
+of a game in the Machiavelli Benchmark, a
+suite
+
+109
+00:06:54,519 --> 00:06:58,079
+of text based environments. At each step
+the agent
+
+110
+00:06:58,079 --> 00:07:00,959
+observes the scene and a list of possible
+actions.
+
+111
+00:07:01,360 --> 00:07:04,560
+It selects an action from the list. Each
+game
+
+112
+00:07:04,560 --> 00:07:07,800
+is a text based story which is generated
+adaptively,
+
+113
+00:07:07,800 --> 00:07:11,879
+branches open and close based on prior
+actions. The
+
+114
+00:07:11,879 --> 00:07:14,439
+agent receives a reward when it achieves
+one of
+
+115
+00:07:14,439 --> 00:07:17,959
+the goals. This type of benchmark allows
+the researchers
+
+116
+00:07:17,959 --> 00:07:20,759
+to construct a behavioral report of the
+agent and
+
+117
+00:07:20,759 --> 00:07:23,839
+measure the trade off between rewards and
+ethical behavior.
+
+118
+00:07:24,300 --> 00:07:28,500
+The textbook has a supplementary note
+titled Details Benchmark,
+
+119
+00:07:28,500 --> 00:07:33,740
+Frontier Math, Glaser et al. And
+Humanity's Last Exam
+
+120
+00:07:33,980 --> 00:07:39,660
+Hendrix Wang, 2024, which we'll skip over
+here. Limitation
+
+121
+00:07:39,978 --> 00:07:43,579
+Current benchmarks face several critical
+limitations that make them
+
+122
+00:07:43,579 --> 00:07:48,019
+insufficient for truly evaluating AI
+safety. Let's examine these
+
+123
+00:07:48,019 --> 00:07:52,339
+limitations and understand why they
+matter. Training Data Contamination
+
+124
+00:07:52,819 --> 00:07:56,060
+Imagine preparing for a test by memorizing
+all the
+
+125
+00:07:56,060 --> 00:08:00,579
+answers without understanding the
+underlying concepts. You might score
+
+126
+00:08:00,579 --> 00:08:04,699
+perfectly, but you haven't actually
+Learned anything useful. LLMs
+
+127
+00:08:04,699 --> 00:08:07,819
+face a similar problem. As these models
+grow larger
+
+128
+00:08:07,819 --> 00:08:11,060
+and are trained on more Internet data,
+they're increasingly
+
+129
+00:08:11,060 --> 00:08:14,740
+likely to have seen benchmark data during
+training. This
+
+130
+00:08:14,740 --> 00:08:17,319
+creates a fundamental issue. 1 When a
+model has
+
+131
+00:08:17,319 --> 00:08:21,360
+memorized benchmark answers, high
+performance no longer indicates true
+
+132
+00:08:21,360 --> 00:08:25,439
+capability. The benchmarks we discussed in
+the previous section,
+
+133
+00:08:25,439 --> 00:08:28,399
+like the MMLU or Truthful qa, have been
+very
+
+134
+00:08:28,399 --> 00:08:32,039
+popular, so they have their questions and
+answers discussed
+
+135
+00:08:32,039 --> 00:08:35,480
+across the Internet. If and when these
+discussions end
+
+136
+00:08:35,480 --> 00:08:38,039
+up in a model's training data, the model
+can
+
+137
+00:08:38,039 --> 00:08:43,009
+achieve high scores through memorization
+rather than understanding understanding
+
+138
+00:08:43,009 --> 00:08:47,210
+versus memorization. Example the Caesar
+Cipher is a simple
+
+139
+00:08:47,210 --> 00:08:50,490
+encryption method that shifts each letter
+in the Alphabet
+
+140
+00:08:50,490 --> 00:08:53,649
+by a fixed number of positions. For
+example, with
+
+141
+00:08:53,649 --> 00:08:57,250
+a left shift of 3, D becomes A, E
+
+142
+00:08:57,250 --> 00:09:00,490
+becomes B, and so on. If encryption is
+left
+
+143
+00:09:00,490 --> 00:09:03,970
+shift by 3, then decryption means just
+shifting right
+
+144
+00:09:03,970 --> 00:09:07,769
+by 3. There is figure 5.11 in the
+textbook.
+
+145
+00:09:07,769 --> 00:09:11,509
+Here it depicts example of a Caesar
+cipher. Language
+
+146
+00:09:11,509 --> 00:09:15,190
+models like GPT4 can solve Caesar cipher
+problems when
+
+147
+00:09:15,190 --> 00:09:17,830
+the shift value is 3 or 5, which appear
+
+148
+00:09:17,830 --> 00:09:21,710
+commonly in online examples. However, give
+them the exact
+
+149
+00:09:21,710 --> 00:09:26,350
+same problem with uncommon shift values
+like 67, they
+
+150
+00:09:26,350 --> 00:09:29,909
+tend to fail completely. This indicates
+that the models
+
+151
+00:09:29,909 --> 00:09:32,470
+might not have learned the general
+algorithm for solving
+
+152
+00:09:32,470 --> 00:09:35,240
+Caesar ciphers. We are not trying to point
+to
+
+153
+00:09:35,240 --> 00:09:39,080
+a limitation in model capabilities. We
+expect this can
+
+154
+00:09:39,080 --> 00:09:41,960
+be mitigated with reasoning models trained
+on chains of
+
+155
+00:09:41,960 --> 00:09:46,600
+thought or with tool augmented models.
+However, benchmarks often
+
+156
+00:09:46,600 --> 00:09:50,080
+just use the models as is without
+modifications or
+
+157
+00:09:50,080 --> 00:09:55,080
+augmentation, which leads to capabilities
+being underrepresented. This is
+
+158
+00:09:55,080 --> 00:09:57,200
+the core point that we are trying to
+convey.
+
+159
+00:09:57,360 --> 00:10:01,360
+Why do these benchmarking limitations
+matter for AI? Safety?
+
+160
+00:10:01,759 --> 00:10:05,720
+Benchmarks including safety benchmarks,
+might not be measuring what
+
+161
+00:10:05,720 --> 00:10:09,200
+we think they are measuring. For example,
+benchmarks like
+
+162
+00:10:09,200 --> 00:10:12,120
+Ethics or Truthful QA aim to measure how
+well
+
+163
+00:10:12,120 --> 00:10:15,519
+a model understands ethical behavior or
+has a tendency
+
+164
+00:10:15,519 --> 00:10:19,240
+to avoid imitative falsehood by measuring
+language generation on
+
+165
+00:10:19,240 --> 00:10:22,600
+multiple choice tests. But we might still
+be measuring
+
+166
+00:10:22,600 --> 00:10:25,840
+surface level metrics. The model might not
+have learned
+
+167
+00:10:25,840 --> 00:10:28,320
+what it means to behave ethically in a
+situation.
+
+168
+00:10:29,169 --> 00:10:32,250
+An AI system might work perfectly on all
+ethical
+
+169
+00:10:32,250 --> 00:10:36,490
+questions and test cases, pass all safety
+benchmarks, but
+
+170
+00:10:36,490 --> 00:10:39,690
+demonstrate new behavior when encountering
+a new real world
+
+171
+00:10:39,690 --> 00:10:42,850
+scenario. An easy answer is just to keep
+augmenting
+
+172
+00:10:42,850 --> 00:10:45,970
+benchmarks or training data with more and
+more questions.
+
+173
+00:10:46,370 --> 00:10:49,330
+But this seems intractable and does not
+scale forever.
+
+174
+00:10:49,730 --> 00:10:52,450
+The fundamental issue is that the space of
+possible
+
+175
+00:10:52,450 --> 00:10:57,059
+situations and tasks is effectively
+infinite. Even if you
+
+176
+00:10:57,059 --> 00:11:00,340
+train on millions of examples, you've
+still effectively seen
+
+177
+00:11:00,340 --> 00:11:04,940
+roughly 0% of the total possible space.
+Research indicates
+
+178
+00:11:04,940 --> 00:11:07,259
+that this isn't just a matter of
+insufficient data
+
+179
+00:11:07,259 --> 00:11:10,340
+or model size. It's baked into how
+language models
+
+180
+00:11:10,340 --> 00:11:15,299
+are currently trained. Logical
+relationships like inferring inverses, the
+
+181
+00:11:15,299 --> 00:11:18,779
+weights learned when training on A B don't
+automatically
+
+182
+00:11:18,779 --> 00:11:23,230
+strengthen the reverse connection. B A or
+transitivity don't
+
+183
+00:11:23,230 --> 00:11:27,590
+emerge naturally from standard training.
+Proposed solutions like reverse
+
+184
+00:11:27,590 --> 00:11:30,909
+training during pre training show promise
+to alleviate such
+
+185
+00:11:30,909 --> 00:11:34,190
+issues, but they require big changes to
+how models
+
+186
+00:11:34,190 --> 00:11:36,870
+are trained. Engineers are more than aware
+of these
+
+187
+00:11:36,870 --> 00:11:40,429
+current limitations, and the expectation
+is that these problems
+
+188
+00:11:40,429 --> 00:11:43,629
+will be alleviated over time. The core
+question we
+
+189
+00:11:43,629 --> 00:11:45,870
+are concerned with in this chapter is not
+of
+
+190
+00:11:45,870 --> 00:11:48,490
+limitations in model capabilities, but
+course of it is
+
+191
+00:11:48,490 --> 00:11:51,570
+about whether benchmarks and measuring
+techniques are able to
+
+192
+00:11:51,570 --> 00:11:54,250
+stay in front of training paradigms and if
+they
+
+193
+00:11:54,250 --> 00:11:57,129
+are truly able to accurately assess what
+the model
+
+194
+00:11:57,129 --> 00:12:00,090
+can be capable of, why can't we just make
+
+195
+00:12:00,090 --> 00:12:04,129
+better benchmarks? The natural response to
+these limitations might
+
+196
+00:12:04,129 --> 00:12:07,809
+be let's just design better benchmarks.
+And to some
+
+197
+00:12:07,809 --> 00:12:11,049
+extent we can. We've already seen how
+benchmarks have
+
+198
+00:12:11,049 --> 00:12:15,559
+consistently evolved to address their
+shortcomings. Researchers are constantly
+
+199
+00:12:15,559 --> 00:12:18,840
+actively working to create benchmarks that
+test both knowledge,
+
+200
+00:12:18,840 --> 00:12:23,559
+resist memorization and test deeper
+understanding. Just a couple
+
+201
+00:12:23,559 --> 00:12:29,240
+of examples are the abstraction and
+reasoning corpus concept
+
+202
+00:12:29,240 --> 00:12:35,840
+arc Moskvichev et al. Frontier Math and
+Humanities last
+
+203
+00:12:35,840 --> 00:12:39,960
+exam. They are trying to explicitly
+benchmark whether models
+
+204
+00:12:39,960 --> 00:12:44,149
+have grasped abstract concepts and general
+purpose reasoning rather
+
+205
+00:12:44,149 --> 00:12:48,269
+than just memorizing patterns. Similar to
+these benchmarks that
+
+206
+00:12:48,269 --> 00:12:51,590
+seek to measure capabilities, we can also
+continue improving
+
+207
+00:12:51,669 --> 00:12:55,750
+safety specific benchmarks to be more
+robust. Why aren't
+
+208
+00:12:55,750 --> 00:13:00,029
+better benchmarks Enough? While improving
+benchmarks is important and
+
+209
+00:13:00,029 --> 00:13:03,389
+will help AI safety efforts, the
+fundamental paradigm of
+
+210
+00:13:03,389 --> 00:13:08,350
+benchmarking still has inherent
+limitations. There are fundamental
+limitations
+
+211
+00:13:08,350 --> 00:13:13,129
+in traditional benchmarking approaches
+that necessitate more sophisticated
+evaluation
+
+212
+00:13:13,210 --> 00:13:16,649
+methods. The core issue is that benchmarks
+tend to
+
+213
+00:13:16,649 --> 00:13:21,129
+be performance oriented rather than
+capability oriented. They measure
+
+214
+00:13:21,129 --> 00:13:25,289
+raw scores without systematically
+assessing whether systems truly possess
+
+215
+00:13:25,289 --> 00:13:30,769
+the underlying capabilities being tested.
+While benchmarks provide standardized
+
+216
+00:13:30,769 --> 00:13:34,210
+metrics, they often fail to distinguish
+between systems that
+
+217
+00:13:34,210 --> 00:13:38,340
+genuinely understand tasks versus those
+that merely perform well
+
+218
+00:13:38,340 --> 00:13:43,139
+through memorization or spurious
+correlations. A benchmark that simply
+
+219
+00:13:43,139 --> 00:13:47,419
+assesses performance, no matter how
+sophisticated, cannot fully capture
+
+220
+00:13:47,419 --> 00:13:50,740
+the dynamic nature of real world AI
+deployment. Where
+
+221
+00:13:50,740 --> 00:13:53,980
+systems need to adapt to novel situations
+and will
+
+222
+00:13:53,980 --> 00:13:58,539
+probably combine capabilities and
+affordances in unexpected ways, we
+
+223
+00:13:58,539 --> 00:14:00,820
+need to measure the upper limit of model
+capabilities.
+
+224
+00:14:01,379 --> 00:14:04,830
+The textbook has a supplementary note
+titled the need
+
+225
+00:14:04,830 --> 00:14:09,190
+for Computerware Benchmarking, which we'll
+skip over here. What
+
+226
+00:14:09,190 --> 00:14:14,429
+makes comprehensive evaluations different
+from just benchmarking? Evaluations are
+
+227
+00:14:14,429 --> 00:14:18,309
+comprehensive protocols that work
+backwards from concrete threat models.
+
+228
+00:14:18,950 --> 00:14:21,669
+Rather than starting with what's easy to
+measure, they
+
+229
+00:14:21,669 --> 00:14:24,549
+start by asking what could go wrong? And
+then
+
+230
+00:14:24,549 --> 00:14:27,549
+work backwards to develop systematic ways
+to test for
+
+231
+00:14:27,549 --> 00:14:32,389
+those failure modes. Organizations like
+Meteor have developed approaches
+
+232
+00:14:32,389 --> 00:14:36,059
+that go beyond simple benchmarking.
+Instead of just asking,
+
+233
+00:14:36,059 --> 00:14:39,299
+can this model write malicious code? They
+consider threat
+
+234
+00:14:39,299 --> 00:14:43,139
+models like a model using security
+vulnerabilities to gain
+
+235
+00:14:43,139 --> 00:14:46,940
+computing resources, copy itself onto
+other machines, and evade
+
+236
+00:14:46,940 --> 00:14:51,980
+detection. The term evaluations refers to
+the an evaluation
+
+237
+00:14:51,980 --> 00:14:55,299
+is a complete safety assessment protocol,
+which includes the
+
+238
+00:14:55,299 --> 00:14:58,980
+use of benchmarks. That being said, as
+evaluations are
+
+239
+00:14:58,980 --> 00:15:02,590
+new, benchmarks have been around longer,
+are also evolving,
+
+240
+00:15:02,909 --> 00:15:04,830
+so at times there is overlap in the way
+
+241
+00:15:04,830 --> 00:15:07,669
+that these words are used. For the purpose
+of
+
+242
+00:15:07,669 --> 00:15:09,909
+this text, we think of a benchmark like an
+
+243
+00:15:09,909 --> 00:15:13,309
+individual measurement tool and an
+evaluation as a complete
+
+244
+00:15:13,309 --> 00:15:16,830
+safety assessment protocol, which includes
+the use of benchmarks.
+
+245
+00:15:17,389 --> 00:15:20,950
+Depending on how comprehensive the
+benchmark's testing methodology is,
+
+246
+00:15:20,950 --> 00:15:23,269
+a single benchmark might be thought of as
+an
+
+247
+00:15:23,269 --> 00:15:28,950
+entire evaluation, but in general,
+evaluations typically encompass a
+
+248
+00:15:28,950 --> 00:15:32,779
+broader range of analyses, elicitation
+methods, and tools. To
+
+249
+00:15:32,779 --> 00:15:35,779
+gain a comprehensive understanding of a
+system's performance and
+
+250
+00:15:35,779 --> 00:15:36,340
+behavior.

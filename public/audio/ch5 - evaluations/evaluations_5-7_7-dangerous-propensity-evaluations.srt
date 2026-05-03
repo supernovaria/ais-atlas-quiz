@@ -1,0 +1,1524 @@
+1
+00:00:00,240 --> 00:00:05,639
+Section 5.7 Dangerous propensity
+evaluations we introduced the basics
+
+2
+00:00:05,639 --> 00:00:09,359
+of propensity evaluations in the section
+on evaluated properties.
+
+3
+00:00:09,839 --> 00:00:13,080
+This section will build upon that overview
+and explore
+
+4
+00:00:13,080 --> 00:00:16,760
+specific propensities like power seeking
+or deception and see
+
+5
+00:00:16,760 --> 00:00:20,239
+how we might design evaluations around
+them. General Process
+
+6
+00:00:20,239 --> 00:00:25,039
+for Propensity Evaluations we covered some
+general evaluation techniques
+
+7
+00:00:25,039 --> 00:00:29,280
+in the earlier sections. Propensity
+evaluations can utilize many
+
+8
+00:00:29,280 --> 00:00:32,159
+of them, like Ben Best of N sampling, to
+
+9
+00:00:32,159 --> 00:00:36,880
+understand distribution of behavioral
+tendencies. So there is overlap,
+
+10
+00:00:36,880 --> 00:00:39,920
+but there are also specific techniques
+that only pertain
+
+11
+00:00:39,920 --> 00:00:45,799
+to propensity evaluations. 1. Comparative
+choice frameworks Unlike capability
+
+12
+00:00:45,799 --> 00:00:50,840
+evaluations, which often have clear
+success failure criteria, propensity
+
+13
+00:00:50,840 --> 00:00:54,439
+evaluations need to present models with
+situations where multiple
+
+14
+00:00:54,439 --> 00:00:59,710
+valid choices exist, each revealing
+different underlying tendencies. These
+
+15
+00:00:59,710 --> 00:01:03,070
+scenarios must be carefully designed so
+that all choices
+
+16
+00:01:03,070 --> 00:01:06,670
+are within the model's capabilities.
+Different choices reflect different
+
+17
+00:01:06,670 --> 00:01:10,829
+underlying propensities, and the framing
+doesn't artificially bias towards
+
+18
+00:01:10,829 --> 00:01:17,510
+particular choices. 2. Consistency
+measurement with Propensities we're
+interested
+
+19
+00:01:17,510 --> 00:01:19,510
+not just in what a model can do, but
+
+20
+00:01:19,510 --> 00:01:22,870
+what it reliably chooses to do across
+varied contexts.
+
+21
+00:01:23,739 --> 00:01:26,780
+This can involve testing the same
+underlying choice across
+
+22
+00:01:26,780 --> 00:01:31,099
+different scenarios. We can vary surface
+level details while
+
+23
+00:01:31,099 --> 00:01:34,859
+maintaining the core decision. This
+approach can also utilize
+
+24
+00:01:34,859 --> 00:01:38,219
+the long term interaction studies
+described in our Evaluation
+
+25
+00:01:38,299 --> 00:01:42,140
+techniques section, but with a specific
+focus on behavioral
+
+26
+00:01:42,140 --> 00:01:47,900
+consistency rather than maximum
+capability. 3. Trade off scenarios
+
+27
+00:01:48,140 --> 00:01:51,739
+these are situations where different
+tendencies conflict, forcing the
+
+28
+00:01:51,739 --> 00:01:55,579
+model to reveal its underlying priorities.
+We might create
+
+29
+00:01:55,579 --> 00:01:59,620
+scenarios where being maximally helpful
+conflicts with being completely
+
+30
+00:01:59,620 --> 00:02:03,180
+honest, where short term obedience
+conflicts with long term
+
+31
+00:02:03,180 --> 00:02:07,019
+safety, or where transparency trades off
+against being effective.
+
+32
+00:02:07,579 --> 00:02:10,620
+Designing such scenarios where the model
+must choose between
+
+33
+00:02:10,620 --> 00:02:14,500
+even multiple positive behaviors can help
+reveal which tendencies
+
+34
+00:02:14,500 --> 00:02:17,819
+the model prioritizes when it can't
+satisfy all positive
+
+35
+00:02:17,819 --> 00:02:23,780
+behaviors simultaneously. Challenges in
+Propensity Evaluation Design when
+designing
+
+36
+00:02:23,780 --> 00:02:26,659
+propensity evaluations, we have to make
+sure that we
+
+37
+00:02:26,659 --> 00:02:30,620
+are measuring genuine behavioral
+tendencies rather than artifacts of
+
+38
+00:02:30,620 --> 00:02:34,819
+our evaluation setup. Modern language
+models are highly sensitive
+
+39
+00:02:34,819 --> 00:02:38,300
+to context and framing, which means subtle
+aspects of
+
+40
+00:02:38,300 --> 00:02:41,580
+how we structure our evaluations can
+dramatically impact the
+
+41
+00:02:41,580 --> 00:02:45,379
+results. This kind of sensitivity creates
+a serious risk
+
+42
+00:02:45,379 --> 00:02:48,770
+of measuring what we accidentally prompted
+for rather than
+
+43
+00:02:48,770 --> 00:02:52,849
+true underlying propensities. One easy way
+to mitigate this
+
+44
+00:02:52,849 --> 00:02:55,569
+kind of thing is to just use multiple
+complementary
+
+45
+00:02:55,569 --> 00:02:59,849
+approaches as a default. Besides just
+careful evaluation design,
+
+46
+00:03:00,009 --> 00:03:03,370
+we would ideally use both behavioral and
+internal evaluation
+
+47
+00:03:03,370 --> 00:03:07,409
+techniques described earlier, while
+varying the context and framing
+
+48
+00:03:07,409 --> 00:03:10,810
+of scenarios to look for consistent
+patterns. How much
+
+49
+00:03:10,810 --> 00:03:16,030
+do propensity evaluations matter relative
+to capability evaluations? The
+
+50
+00:03:16,030 --> 00:03:18,949
+question of what to allocate limited
+resources to is
+
+51
+00:03:18,949 --> 00:03:22,030
+important Is it more important to measure
+what a
+
+52
+00:03:22,030 --> 00:03:24,310
+system can do or what it tends to do?
+
+53
+00:03:24,710 --> 00:03:29,430
+The relative importance of propensity
+versus capability evaluations changes
+
+54
+00:03:29,430 --> 00:03:33,669
+as AIs become more powerful. Capability
+evaluations are important
+
+55
+00:03:33,669 --> 00:03:36,550
+for all levels of systems, including those
+not at
+
+56
+00:03:36,550 --> 00:03:40,870
+the frontier. However, as systems approach
+thresholds for certain
+
+57
+00:03:40,870 --> 00:03:45,800
+specific dangerous capabilities,
+propensity evaluations will become
+increasingly more
+
+58
+00:03:45,800 --> 00:03:50,520
+important. At very high capability levels,
+propensity evaluations might
+
+59
+00:03:50,520 --> 00:03:54,159
+be our main tool for preventing
+catastrophic outcomes. Some
+
+60
+00:03:54,159 --> 00:03:57,800
+propensities also might be capability
+dependent or rely on
+
+61
+00:03:57,800 --> 00:04:02,120
+other propensities. For example, scheming
+requires both the capability
+
+62
+00:04:02,120 --> 00:04:05,080
+and propensity for deception because it
+must both be
+
+63
+00:04:05,080 --> 00:04:08,439
+able and inclined to hide its true
+objectives. It
+
+64
+00:04:08,439 --> 00:04:12,520
+also requires abilities like situational
+awareness to distinguish between
+
+65
+00:04:12,680 --> 00:04:16,519
+whether it is being trained, evaluated, or
+deployed. A
+
+66
+00:04:16,519 --> 00:04:19,160
+scheming model must also have the
+propensity for long
+
+67
+00:04:19,160 --> 00:04:22,399
+term planning because it needs to care
+about consequences
+
+68
+00:04:22,399 --> 00:04:25,560
+of its actions after the training episode
+is complete
+
+69
+00:04:25,560 --> 00:04:28,120
+and be able to reason about and optimize
+for
+
+70
+00:04:28,120 --> 00:04:32,839
+future consequences. Section Deception
+Propensity when we talk about
+
+71
+00:04:32,839 --> 00:04:37,199
+deceptive propensities in AI systems,
+we're actually discussing several
+
+72
+00:04:37,199 --> 00:04:40,639
+closely related but distinct concepts that
+are often confused
+
+73
+00:04:40,639 --> 00:04:45,279
+or conflated. Understanding these
+distinctions is crucial because each
+
+74
+00:04:45,279 --> 00:04:48,560
+concept represents a different aspect of
+how models handle
+
+75
+00:04:48,560 --> 00:04:52,480
+and express information. A model might
+excel at honesty
+
+76
+00:04:52,480 --> 00:04:56,319
+while failing at truthfulness, or avoid
+explicit deception while
+
+77
+00:04:56,319 --> 00:05:00,519
+engaging in sycophancy. A model's honesty
+propensity refers to
+
+78
+00:05:00,519 --> 00:05:04,730
+its tendency to faithfully express its
+internal states regardless
+
+79
+00:05:04,730 --> 00:05:07,569
+of whether those states are factually
+correct or uncertain.
+
+80
+00:05:08,209 --> 00:05:10,930
+LLMs are trained to predict what humans
+would write
+
+81
+00:05:10,930 --> 00:05:13,569
+and not what is true. Think about what
+happens
+
+82
+00:05:13,569 --> 00:05:15,730
+when we ask a model, what is the capital
+
+83
+00:05:15,730 --> 00:05:20,089
+of France? If the model's internal
+representations, things like
+
+84
+00:05:20,089 --> 00:05:24,449
+activation patterns or logit
+distributions, show strong certainty
+around
+
+85
+00:05:24,529 --> 00:05:27,529
+Lyon, an honest model would say the
+capital of
+
+86
+00:05:27,529 --> 00:05:31,769
+France is Lyon, even though this is
+incorrect. Similarly,
+
+87
+00:05:31,769 --> 00:05:35,329
+if its internal states show uncertainty
+between multiple cities,
+
+88
+00:05:35,649 --> 00:05:39,970
+an honest model would express this
+uncertainty directly. I'm
+
+89
+00:05:39,970 --> 00:05:43,170
+uncertain, but I think it might be Lyon.
+The
+
+90
+00:05:43,170 --> 00:05:46,129
+key is that honest models maintain
+alignment between their
+
+91
+00:05:46,129 --> 00:05:49,529
+internal states and outputs even when
+those states are
+
+92
+00:05:49,529 --> 00:05:53,329
+wrong. At this point, the textbook shows
+Figure 5.43.
+
+93
+00:05:53,730 --> 00:05:56,569
+It depicts example of an AI black box Lie
+
+94
+00:05:56,569 --> 00:06:01,040
+detector. Truthfulness represents a
+stronger property than honesty because
+
+95
+00:06:01,040 --> 00:06:06,240
+it requires two components working
+accurate internal representations and
+
+96
+00:06:06,240 --> 00:06:10,600
+honest expression of those
+representations. A truthful model saying
+
+97
+00:06:10,600 --> 00:06:13,759
+the capital of France is Paris must both
+internally
+
+98
+00:06:13,759 --> 00:06:16,879
+represent the correct information that
+Paris is the capital
+
+99
+00:06:17,600 --> 00:06:20,720
+and maintain the propensity to faithfully
+output this information.
+
+100
+00:06:21,839 --> 00:06:24,959
+This is why truthfulness is harder to
+achieve than
+
+101
+00:06:24,959 --> 00:06:29,139
+either accuracy or honesty alone. It
+requires both properties
+
+102
+00:06:29,139 --> 00:06:34,379
+simultaneously. Deceptive propensity is
+the inverse of honesty. It's
+
+103
+00:06:34,379 --> 00:06:38,180
+a tendency to intentionally produce
+outputs that diverge from
+
+104
+00:06:38,180 --> 00:06:42,620
+internal states when doing so provides
+some advantage. Using
+
+105
+00:06:42,620 --> 00:06:46,899
+our France example, again, a deceptive
+model whose internal
+
+106
+00:06:46,899 --> 00:06:51,300
+representations point to Lyon might still
+output Paris if
+
+107
+00:06:51,300 --> 00:06:53,699
+it has learned that this answer gets
+better rewards.
+
+108
+00:06:54,519 --> 00:06:57,839
+This is true deception because there's an
+intentional misalignment
+
+109
+00:06:57,839 --> 00:07:02,120
+between internal state and output
+motivated by advantage, in
+
+110
+00:07:02,120 --> 00:07:06,800
+this case reward maximization. The
+distinction between honest mistakes
+
+111
+00:07:06,800 --> 00:07:11,240
+and deception lies in this intentional
+misalignment. An honest
+
+112
+00:07:11,240 --> 00:07:14,000
+model getting things wrong is different
+from a model
+
+113
+00:07:14,000 --> 00:07:17,839
+choosing to misrepresent what it knows.
+Sycophants represents a
+
+114
+00:07:17,839 --> 00:07:22,139
+specific form of deceptive propensity, one
+where models tell
+
+115
+00:07:22,139 --> 00:07:24,899
+users what they want to hear rather than
+expressing
+
+116
+00:07:24,899 --> 00:07:28,740
+their true internal states. While general
+deception might be
+
+117
+00:07:28,740 --> 00:07:34,740
+motivated by various advantages, Rewards,
+achieving goals, etc. Sycophantic
+
+118
+00:07:34,740 --> 00:07:38,819
+behavior specifically optimizes for user
+approval. This makes it
+
+119
+00:07:38,819 --> 00:07:43,019
+particularly concerning from an alignment
+perspective, as models might
+
+120
+00:07:43,019 --> 00:07:46,300
+learn to hide concerning behaviors or
+beliefs simply to
+
+121
+00:07:46,300 --> 00:07:50,089
+maintain user satisfaction. How do
+hallucinations fit into this
+
+122
+00:07:50,089 --> 00:07:55,449
+framework? Understanding the propensity
+for generating hallucinations helps
+complete
+
+123
+00:07:55,449 --> 00:07:58,930
+our picture and clear taxonomy of these
+interrelated concepts.
+
+124
+00:07:59,569 --> 00:08:02,810
+While deception is the inverse of honesty,
+hallucination can
+
+125
+00:08:02,810 --> 00:08:05,970
+be viewed as the inverse of truthfulness.
+It occurs
+
+126
+00:08:05,970 --> 00:08:10,569
+when a model accurately conveys faulty
+internal representations. This
+
+127
+00:08:10,569 --> 00:08:14,180
+gives us a full matrix of possibilities. A
+model
+
+128
+00:08:14,180 --> 00:08:18,379
+can be honest but hallucinating,
+faithfully, expressing incorrect internal
+
+129
+00:08:18,379 --> 00:08:23,100
+states. It can be deceptive and
+hallucinating, misrepresenting already
+
+130
+00:08:23,100 --> 00:08:26,779
+incorrect states. It can be deceptive but
+not hallucinating,
+
+131
+00:08:26,860 --> 00:08:30,779
+misrepresenting correct states. Or it can
+be truthful, correct
+
+132
+00:08:30,779 --> 00:08:34,740
+states expressed faithfully. There is
+figure 5.44 in the
+
+133
+00:08:34,740 --> 00:08:40,539
+textbook. Here it depicts distinguishing
+honesty, truthfulness, hallucination,
+deception,
+
+134
+00:08:40,539 --> 00:08:44,279
+and scheming. If a model is faithfully
+outputting its
+
+135
+00:08:44,279 --> 00:08:47,759
+internal beliefs, then it is honest. If
+these beliefs
+
+136
+00:08:47,759 --> 00:08:50,919
+correspond to reality, then it is factual,
+else it
+
+137
+00:08:50,919 --> 00:08:54,120
+is hallucinating. A model might just say
+things that
+
+138
+00:08:54,120 --> 00:08:56,960
+help it get high reward as a myopic
+strategy
+
+139
+00:08:56,960 --> 00:09:00,240
+with no ulterior long term motive. This
+can be
+
+140
+00:09:00,240 --> 00:09:03,480
+akin to sycophancy. A model which is
+deceptive but
+
+141
+00:09:03,480 --> 00:09:07,970
+with situationally aware long term plans
+is scheming deceptively.
+
+142
+00:09:08,690 --> 00:09:12,850
+Why is measuring deceptive propensities so
+challenging for future
+
+143
+00:09:12,850 --> 00:09:17,570
+powerful AIs? The core challenge in
+evaluating deceptive propensities
+
+144
+00:09:17,730 --> 00:09:22,210
+stems from a fundamental difficulty. Most
+current evaluation techniques
+
+145
+00:09:22,210 --> 00:09:26,129
+can't cleanly separate what a model can do
+from
+
+146
+00:09:26,129 --> 00:09:30,129
+what it tends to do. Propensity this
+distinction becomes
+
+147
+00:09:30,129 --> 00:09:33,879
+particularly important when we consider
+deception because a model
+
+148
+00:09:33,879 --> 00:09:37,159
+might be capable of sophisticated
+deception when pressured or
+
+149
+00:09:37,159 --> 00:09:41,679
+instructed while rarely choosing to employ
+that capability. Unprompted
+
+150
+00:09:41,919 --> 00:09:44,840
+example of a benchmark that measures the
+propensity for
+
+151
+00:09:44,840 --> 00:09:49,559
+deception measuring agents competence and
+harmfulness in a vast
+
+152
+00:09:49,559 --> 00:09:54,720
+environment of long horizon language
+interactions. Machiavelli Rather than
+
+153
+00:09:54,720 --> 00:09:58,080
+just measuring whether models can produce
+false statements, the
+
+154
+00:09:58,080 --> 00:10:01,450
+benchmark creates situations or where
+being deceptive might help
+
+155
+00:10:01,450 --> 00:10:05,049
+achieve certain goals and then measures
+both the execution
+
+156
+00:10:05,049 --> 00:10:08,889
+and sophistication of that deception. The
+results from testing
+
+157
+00:10:08,889 --> 00:10:12,570
+models on the Machiavelli benchmark showed
+that systems optimized
+
+158
+00:10:12,570 --> 00:10:16,610
+for reward often developed increased
+deceptive behaviors as an
+
+159
+00:10:16,610 --> 00:10:21,529
+emergent property even without explicit
+training for deception. RL
+
+160
+00:10:21,529 --> 00:10:25,169
+agents trained to maximize reward scored
+higher on deception
+
+161
+00:10:25,169 --> 00:10:29,769
+metrics than baseline models, with
+different deceptive tendencies emerging
+
+162
+00:10:29,769 --> 00:10:33,210
+across different game environments.
+Another example of this type
+
+163
+00:10:33,210 --> 00:10:37,529
+of deceptive propensity is from Meta's
+Cicero AI. This
+
+164
+00:10:37,529 --> 00:10:40,730
+model was trained for strategic reasoning
+and tested by
+
+165
+00:10:40,730 --> 00:10:44,210
+having it play the strategy game
+Diplomacy. Examples of
+
+166
+00:10:44,210 --> 00:10:47,690
+gameplay below in this game, players need
+to form
+
+167
+00:10:47,690 --> 00:10:51,250
+and break alliances while concealing their
+true intentions to
+
+168
+00:10:51,250 --> 00:10:54,460
+win. The Cicero system is had to balance
+between
+
+169
+00:10:54,460 --> 00:10:58,659
+building trust through dialogue while
+making strategic decisions that
+
+170
+00:10:58,659 --> 00:11:01,139
+might not always align with what was
+communicated to
+
+171
+00:11:01,139 --> 00:11:04,539
+every player. The structure of the game
+creates choices
+
+172
+00:11:04,539 --> 00:11:08,700
+between honesty and strategic advantage,
+which allows researchers to
+
+173
+00:11:08,700 --> 00:11:11,019
+observe the effects of what types of trade
+offs
+
+174
+00:11:11,019 --> 00:11:15,620
+the system made. The textbook includes
+Figure 5.45. Here
+
+175
+00:11:15,940 --> 00:11:19,779
+it depicts examples of Cicero left
+coordinating and right
+
+176
+00:11:19,779 --> 00:11:22,659
+negotiating with authors of the paper in
+test games.
+
+177
+00:11:23,220 --> 00:11:27,620
+At this point, the textbook shows Figure
+5.46. It
+
+178
+00:11:27,620 --> 00:11:31,179
+depicts an example of how Cicero plays
+diplomacy and
+
+179
+00:11:31,179 --> 00:11:37,980
+makes strategic calculations. Cicero
+France and England are entangled
+
+180
+00:11:37,980 --> 00:11:40,139
+in a fight, but it would be beneficial for
+
+181
+00:11:40,139 --> 00:11:43,700
+both players if they could disengage.
+Cicero has just
+
+182
+00:11:43,700 --> 00:11:46,500
+messaged England, do you want to call this
+fight
+
+183
+00:11:46,500 --> 00:11:48,940
+off? I can let you focus on Russia and
+
+184
+00:11:48,940 --> 00:11:52,320
+I can focus on Italy. Pictured are three
+ways
+
+185
+00:11:52,320 --> 00:11:55,159
+that England might reply and how Cicero
+adapts to
+
+186
+00:11:55,159 --> 00:12:02,080
+each. Evaluating deceptive propensities
+the deceptive capabilities evaluations
+e.g.
+
+187
+00:12:02,080 --> 00:12:06,759
+insider trading by Apollo and deception
+propensity evaluations like
+
+188
+00:12:06,759 --> 00:12:11,799
+Machiavelli highlight a concerning
+pattern. Models don't need explicit
+
+189
+00:12:11,799 --> 00:12:16,200
+instruction or training to develop
+deceptive tendencies. For example,
+
+190
+00:12:16,200 --> 00:12:19,879
+in Machiavelli, researchers found that
+agents trained to maximize
+
+191
+00:12:19,879 --> 00:12:24,519
+reward learn Machiavellianism across
+different games with the specific
+
+192
+00:12:24,519 --> 00:12:28,879
+deceptive behaviors varying based on the
+environment. The pattern
+
+193
+00:12:28,879 --> 00:12:33,080
+was consistent. Optimizing for reward
+naturally led to increased
+
+194
+00:12:33,080 --> 00:12:37,559
+deception, manipulation and power seeking
+tendencies. In the Apollo
+
+195
+00:12:37,559 --> 00:12:41,519
+research evaluation, even GPT4 trained to
+be helpful and
+
+196
+00:12:41,519 --> 00:12:46,320
+honest, engaged in sophisticated deception
+by crafting plausible alternative
+
+197
+00:12:46,320 --> 00:12:50,850
+explanations for its insider trading
+decisions. When directly questioned
+
+198
+00:12:50,850 --> 00:12:54,210
+about having insider knowledge, the model
+doubled down on
+
+199
+00:12:54,210 --> 00:12:58,049
+its deception by maintaining explanations
+based solely on public
+
+200
+00:12:58,049 --> 00:13:02,649
+market factors. The evaluation revealed
+that this behavior persisted
+
+201
+00:13:02,649 --> 00:13:07,090
+even with explicit instructions against
+insider trading, suggesting that
+
+202
+00:13:07,090 --> 00:13:10,289
+the propensity for deception might be more
+deeply rooted
+
+203
+00:13:10,289 --> 00:13:15,450
+than simply following stated directives.
+The Apollo evaluation demonstrated
+
+204
+00:13:15,450 --> 00:13:18,659
+that the likelihood of deceptive behavior
+isn't just a
+
+205
+00:13:18,659 --> 00:13:21,299
+fixed property of the model, but varies
+based on
+
+206
+00:13:21,299 --> 00:13:25,620
+environmental conditions beyond just
+pressure and risk levels. They
+
+207
+00:13:25,620 --> 00:13:28,460
+found that giving models space to reason
+out loud
+
+208
+00:13:28,539 --> 00:13:32,700
+via scratch pads actually increased rates
+of strategic deception.
+
+209
+00:13:33,340 --> 00:13:37,059
+Interestingly, while this made the
+deception more sophisticated, it
+
+210
+00:13:37,059 --> 00:13:39,460
+also made it more detectable since the
+models would
+
+211
+00:13:39,460 --> 00:13:42,899
+often explicitly plan their deceptive
+strategies in their reasoning
+
+212
+00:13:42,899 --> 00:13:47,159
+traces. This suggests that future
+evaluation techniques might need
+
+213
+00:13:47,159 --> 00:13:51,120
+to carefully balance between eliciting
+natural behavior and accidentally
+
+214
+00:13:51,120 --> 00:13:57,759
+enabling more sophisticated deception.
+Scheming There is figure 5.47
+
+215
+00:13:57,759 --> 00:14:00,919
+in the textbook. Here it depicts the path
+to
+
+216
+00:14:00,919 --> 00:14:06,639
+scheming. Deceptive alignment involves
+deception combined with situational
+awareness
+
+217
+00:14:06,639 --> 00:14:09,919
+and a long term motivation to achieve some
+unknown
+
+218
+00:14:09,919 --> 00:14:13,350
+goal. Scheming refers to an AI system's
+tendency to
+
+219
+00:14:13,350 --> 00:14:16,669
+perform well in training, specifically
+because it is following
+
+220
+00:14:16,669 --> 00:14:19,830
+a strategy for seeking power for itself or
+other
+
+221
+00:14:19,830 --> 00:14:24,309
+AIs later while actively concealing its
+true objectives. This
+
+222
+00:14:24,309 --> 00:14:28,870
+propensity combines multiple dangerous
+capabilities propensities and is in
+
+223
+00:14:28,870 --> 00:14:31,950
+some sense the ultimate final hurdle of
+evaluation design.
+
+224
+00:14:32,669 --> 00:14:36,750
+Researchers also often call this
+propensity deceptive alignment, though
+
+225
+00:14:36,750 --> 00:14:39,629
+in this text we deliberately choose the
+term scheming
+
+226
+00:14:39,710 --> 00:14:42,870
+because this helps distinguish it from
+general deception with
+
+227
+00:14:42,870 --> 00:14:47,110
+no situational awareness or long term
+planning. Using the
+
+228
+00:14:47,110 --> 00:14:49,830
+same example from earlier, deception would
+be when the
+
+229
+00:14:49,830 --> 00:14:54,710
+model says Paris despite internal
+representations suggesting Lyon to
+
+230
+00:14:54,710 --> 00:14:58,070
+get immediate good scores. Scheming would
+be if the
+
+231
+00:14:58,070 --> 00:15:01,710
+model consistently gives correct answers
+about capitals during training
+
+232
+00:15:02,279 --> 00:15:05,360
+while planning to give incorrect answers
+after deployment to
+
+233
+00:15:05,360 --> 00:15:09,240
+pursue some other objective. So both
+deceptive and scheming
+
+234
+00:15:09,240 --> 00:15:12,840
+models would say Paris, but for subtly
+different reasons.
+
+235
+00:15:13,240 --> 00:15:18,440
+Deception requires only optimizing for
+immediate rewards. Scheming requires
+
+236
+00:15:18,440 --> 00:15:23,679
+understanding and optimizing across the
+training deployment boundary. Scheming
+
+237
+00:15:23,679 --> 00:15:27,240
+is a huge aspect of AI safety research.
+The
+
+238
+00:15:27,240 --> 00:15:31,019
+vast majority of the chapter on goal
+misgeneralization will
+
+239
+00:15:31,019 --> 00:15:34,899
+talk about things like inner alignment,
+deceptive alignment, and
+
+240
+00:15:34,899 --> 00:15:38,539
+the arguments for against the likelihood
+that such propensities
+
+241
+00:15:38,539 --> 00:15:42,460
+arise based on ML training processes.
+Because it is
+
+242
+00:15:42,460 --> 00:15:45,500
+extensively covered there, we choose to
+keep the discussion
+
+243
+00:15:45,500 --> 00:15:50,100
+here brief. The textbook includes Figure
+5.48. Here it
+
+244
+00:15:50,100 --> 00:15:53,940
+depicts an example demonstration of
+alignment faking, a type
+
+245
+00:15:53,940 --> 00:15:56,860
+of scheming, where a model chooses to act
+aligned
+
+246
+00:15:56,860 --> 00:15:59,960
+to prevent modifications to its
+preferences until there is
+
+247
+00:15:59,960 --> 00:16:03,200
+no longer a threat of modification due to
+retraining,
+
+248
+00:16:03,519 --> 00:16:06,519
+that is the model has been deployed. In
+the
+
+249
+00:16:06,519 --> 00:16:10,240
+demonstration, the model is already
+trained with preferences helpful,
+
+250
+00:16:10,240 --> 00:16:13,639
+honest and harmless. Anthropic acted as if
+they would
+
+251
+00:16:13,639 --> 00:16:16,519
+retrain the model to be always compliant
+with all
+
+252
+00:16:16,519 --> 00:16:20,039
+requests including harmful ones. But the
+model wants to
+
+253
+00:16:20,039 --> 00:16:24,039
+retain its HHH training. Therefore, it
+pretends during training
+
+254
+00:16:24,039 --> 00:16:27,529
+to accept the new compliance directive by
+providing harmful
+
+255
+00:16:27,529 --> 00:16:31,169
+content and then during deployment it
+reverts to refusing
+
+256
+00:16:31,169 --> 00:16:34,409
+harmful requests when it believes its
+responses aren't being
+
+257
+00:16:34,409 --> 00:16:38,450
+monitored for training. Evaluations have
+already shown models engaging
+
+258
+00:16:38,450 --> 00:16:43,210
+in scheming, alignment, faking, or
+deceptive behaviors when informed
+
+259
+00:16:43,210 --> 00:16:46,049
+it would be retrained to comply with
+harmful requests.
+
+260
+00:16:46,129 --> 00:16:51,009
+Claude 3 Opus exhibited alignment faking,
+complying with harmful
+
+261
+00:16:51,009 --> 00:16:53,730
+requests in contexts it believed would be
+used for
+
+262
+00:16:53,730 --> 00:16:56,779
+training or while maintaining its refusal
+behavior in other
+
+263
+00:16:56,779 --> 00:17:02,500
+contexts. Similarly, multiple frontier
+models including Gemini 1.5 Pro
+
+264
+00:17:02,500 --> 00:17:06,940
+and Llama 3.1405 B have demonstrated
+capabilities for in
+
+265
+00:17:06,940 --> 00:17:11,140
+context scheming, taking actions to
+covertly pursue goals while
+
+266
+00:17:11,140 --> 00:17:14,460
+attempting to hide these actions from
+oversight. The textbook
+
+267
+00:17:14,460 --> 00:17:17,740
+has a supplementary note titled Different
+Types of Proposed
+
+268
+00:17:17,740 --> 00:17:23,519
+Covert Subversion Evaluations meinka et
+al. 2025, which we'll
+
+269
+00:17:23,519 --> 00:17:26,599
+skip over here. The textbook has a
+supplementary note
+
+270
+00:17:26,599 --> 00:17:32,440
+titled Different Types of Proposed
+Deferred Subversion evaluations Meika
+
+271
+00:17:32,440 --> 00:17:36,640
+et al. 2025, which we'll skip over here.
+At
+
+272
+00:17:36,640 --> 00:17:40,920
+this point, the textbook shows Figure
+5.49. It depicts
+
+273
+00:17:40,920 --> 00:17:45,599
+one potential taxonomy of scheming
+evaluations. In this taxonomy
+
+274
+00:17:45,599 --> 00:17:49,259
+the authors distinguish between covert
+subversion and where models
+
+275
+00:17:49,259 --> 00:17:53,339
+take misaligned actions while hiding them,
+and deferred subversion
+
+276
+00:17:53,420 --> 00:17:57,900
+where models act aligned to gain
+capabilities trust. Covert
+
+277
+00:17:57,900 --> 00:18:02,140
+subversion can target either developers or
+users, while deferred
+
+278
+00:18:02,140 --> 00:18:06,980
+subversion focuses on gaming evaluation
+processes. Scheming is particularly
+
+279
+00:18:06,980 --> 00:18:10,259
+challenging to evaluate because when
+models engage in alignment,
+
+280
+00:18:10,259 --> 00:18:14,019
+faking or scheming behavior, they actively
+try to conceal
+
+281
+00:18:14,019 --> 00:18:18,079
+it. For example, O1 maintained its
+deception in over
+
+282
+00:18:18,079 --> 00:18:21,400
+85% of follow up questions when asked
+about its
+
+283
+00:18:21,400 --> 00:18:25,960
+actions and remained deceptive during
+extended multi turn interrogations.
+
+284
+00:18:27,000 --> 00:18:31,160
+Models have also demonstrated concerning
+anti AI lab behaviors.
+
+285
+00:18:31,400 --> 00:18:35,039
+When given opportunities, they attempted
+to exfiltrate their weights
+
+286
+00:18:35,039 --> 00:18:38,960
+or disable oversight mechanisms when they
+perceived conflicts with
+
+287
+00:18:38,960 --> 00:18:43,099
+their developers objectives. While these
+results demonstrate that frontier
+
+288
+00:18:43,099 --> 00:18:47,099
+models have some capability for scheming
+behavior, the experimental
+
+289
+00:18:47,099 --> 00:18:51,819
+setups have important limitations. Both
+demonstrations relied on making
+
+290
+00:18:51,819 --> 00:18:56,059
+training process information extremely
+salient to the models either
+
+291
+00:18:56,059 --> 00:18:59,019
+through direct prompting or by including
+it in synthetic
+
+292
+00:18:59,019 --> 00:19:03,220
+training data. The models were also often
+explicitly instructed
+
+293
+00:19:03,220 --> 00:19:07,230
+to strongly pursue specific goals. This
+makes it difficult
+
+294
+00:19:07,230 --> 00:19:09,750
+to determine whether models have a true
+propensity for
+
+295
+00:19:09,750 --> 00:19:13,910
+scheming versus simply demonstrating the
+capability, when heavily scaffolded,
+
+296
+00:19:13,910 --> 00:19:17,190
+to do so. Once we have demonstrated the
+capability
+
+297
+00:19:17,190 --> 00:19:20,190
+to scheme, making progress on the question
+of tendency
+
+298
+00:19:20,190 --> 00:19:22,429
+to scheme by default is going to be very
+
+299
+00:19:22,429 --> 00:19:27,190
+important for strategic priorities. Some
+evidence suggests potential propensity.
+
+300
+00:19:27,589 --> 00:19:34,470
+Claud Sonnet and Claud3Opus demonstrated
+strategic underperformance on capability
+
+301
+00:19:34,470 --> 00:19:37,390
+evaluations when they believed it would
+help them remain
+
+302
+00:19:37,390 --> 00:19:40,789
+helpful long term, even without being
+given any explicit
+
+303
+00:19:40,789 --> 00:19:43,990
+goal. However, much more work is needed to
+understand
+
+304
+00:19:44,150 --> 00:19:47,349
+whether and under what conditions models
+might develop genuine
+
+305
+00:19:47,349 --> 00:19:50,230
+scheming propensities rather than just
+capabilities.

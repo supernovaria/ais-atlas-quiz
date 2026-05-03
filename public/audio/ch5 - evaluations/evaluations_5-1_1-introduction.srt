@@ -1,0 +1,585 @@
+1
+00:00:00,160 --> 00:00:06,480
+Chapter 5 Evaluations Section 5.1
+Introduction as Lord Kelvin
+
+2
+00:00:06,480 --> 00:00:08,679
+said, when you can measure what you are
+speaking
+
+3
+00:00:08,679 --> 00:00:11,599
+about and express it in numbers, you know
+something
+
+4
+00:00:11,599 --> 00:00:14,640
+about it. When you cannot express it in
+numbers,
+
+5
+00:00:14,640 --> 00:00:17,679
+your knowledge is of a meager and
+unsatisfactory kind.
+
+6
+00:00:18,320 --> 00:00:20,440
+It may be the beginning of knowledge, but
+you
+
+7
+00:00:20,440 --> 00:00:23,000
+have scarcely in your thoughts advanced to
+the stage
+
+8
+00:00:23,000 --> 00:00:26,199
+of science. The gap between what AI
+systems can
+
+9
+00:00:26,199 --> 00:00:28,760
+do and what we can reliably measure
+creates a
+
+10
+00:00:28,760 --> 00:00:34,039
+fundamental safety challenge. In late
+2024, AI researchers created
+
+11
+00:00:34,039 --> 00:00:37,960
+Frontier Math, a benchmark of
+exceptionally difficult problems they
+
+12
+00:00:37,960 --> 00:00:41,719
+predicted would resist AIs for several
+years. Just a
+
+13
+00:00:41,719 --> 00:00:47,079
+few months later, OpenAI's O3 model
+achieved 25.2% accuracy
+
+14
+00:00:47,079 --> 00:00:51,560
+on these supposedly insurmountable
+problems. This pattern repeats across
+
+15
+00:00:51,560 --> 00:00:56,359
+AI development. Tools designed to measure
+AI capabilities become
+
+16
+00:00:56,359 --> 00:01:00,780
+obsolete almost immediately as models
+rapidly surpass them. As
+
+17
+00:01:00,780 --> 00:01:05,099
+AI systems approach potentially
+transformative capabilities in domains
+like
+
+18
+00:01:05,099 --> 00:01:10,780
+cybersecurity, autonomous operation, and
+strategic planning, this evaluation gap
+
+19
+00:01:10,780 --> 00:01:14,500
+becomes increasingly dangerous. We cannot
+afford to discover the
+
+20
+00:01:14,500 --> 00:01:18,219
+full extent of advanced AI capabilities
+through their emergent
+
+21
+00:01:18,219 --> 00:01:22,819
+real world impacts. Benchmarks provide
+standardization of measurement but
+
+22
+00:01:22,819 --> 00:01:25,739
+currently fail to capture the complex
+risks posed by
+
+23
+00:01:25,739 --> 00:01:30,170
+advanced AI systems. Early AI development
+faced a measurement
+
+24
+00:01:30,170 --> 00:01:35,170
+crisis similar to pre standardized
+engineering. Without reliable metrics,
+
+25
+00:01:35,250 --> 00:01:40,450
+progress was chaotic and unpredictable.
+Benchmarks revolutionized AI development
+
+26
+00:01:40,769 --> 00:01:45,250
+by creating standardized metrics that
+allowed meaningful comparisons between
+
+27
+00:01:45,329 --> 00:01:51,090
+systems. While benchmarks like mmlu, gpqa,
+or Frontier Math
+
+28
+00:01:51,090 --> 00:01:54,569
+are extremely useful, they still fall
+short when predicting
+
+29
+00:01:54,569 --> 00:01:57,879
+real world behavior. They fail to measure
+what happens
+
+30
+00:01:57,879 --> 00:02:00,519
+when models are pushed to their limits or
+operate
+
+31
+00:02:00,519 --> 00:02:05,680
+in complex environments where unexpected
+capability combinations emerge. As
+
+32
+00:02:05,680 --> 00:02:09,039
+we move towards highly capable AI systems,
+we need
+
+33
+00:02:09,039 --> 00:02:12,120
+stronger safety guarantees in a wider
+range of scenarios
+
+34
+00:02:12,280 --> 00:02:16,240
+than what benchmarks alone can provide.
+Safety risks emerge
+
+35
+00:02:16,240 --> 00:02:21,800
+from interactions between capabilities,
+creating a combinatorial challenge.
+Individual
+
+36
+00:02:21,800 --> 00:02:26,129
+capabilities like situational awareness or
+deception appear manageable when
+
+37
+00:02:26,129 --> 00:02:30,409
+measured in isolation, but their
+combination creates emergent risks
+
+38
+00:02:30,409 --> 00:02:35,050
+fundamentally different from either
+capability alone. Models might recognize
+
+39
+00:02:35,050 --> 00:02:38,729
+when they're being evaluated and
+selectively hide capabilities during
+
+40
+00:02:38,729 --> 00:02:44,569
+testing, but demonstrate concerning
+behaviors during deployment. This
+combinatorial
+
+41
+00:02:44,569 --> 00:02:49,090
+explosion makes comprehensive testing
+exponentially more difficult but essential
+
+42
+00:02:49,090 --> 00:02:53,030
+for meaningful safety claims. A model
+passing most safety
+
+43
+00:02:53,030 --> 00:02:57,349
+benchmarks might still harbor dangerous
+capability combinations that weren't
+
+44
+00:02:57,349 --> 00:03:00,469
+explicitly tested. This is why we need to
+move
+
+45
+00:03:00,469 --> 00:03:04,030
+measurement of safety critical properties
+of a system towards
+
+46
+00:03:04,030 --> 00:03:09,509
+comprehensive evaluations. Effective
+safety assessment requires measuring three
+distinct
+
+47
+00:03:10,550 --> 00:03:17,310
+capabilities, propensities and control
+dangerous capabilities. Evaluations
+establish upper
+
+48
+00:03:17,310 --> 00:03:19,750
+bounds on what models can do when pushed
+to
+
+49
+00:03:19,750 --> 00:03:22,939
+their limits through techniques like
+scaffolding and tool augmentation.
+
+50
+00:03:24,129 --> 00:03:28,050
+Propensity evaluations reveal what
+behaviors models tend to exhibit
+
+51
+00:03:28,050 --> 00:03:32,530
+by default, measuring behavioral
+tendencies rather than just maximum
+
+52
+00:03:32,530 --> 00:03:37,409
+abilities. Control evaluations verify
+whether safety protocols remain effective
+
+53
+00:03:37,409 --> 00:03:40,930
+when models actively try to circumvent
+them. This three
+
+54
+00:03:40,930 --> 00:03:44,689
+part taxonomy provides a systematic
+framework for safety measurement
+
+55
+00:03:44,770 --> 00:03:47,610
+that helps answer the most decision
+relevant questions about
+
+56
+00:03:47,610 --> 00:03:52,539
+AI. Safety evaluation requires both
+behavioral and internal techniques,
+
+57
+00:03:52,780 --> 00:03:57,219
+each providing different forms of
+evidence. Behavioral techniques examine
+
+58
+00:03:57,219 --> 00:04:00,939
+model outputs through approaches like red
+teaming, which systematically
+
+59
+00:04:00,939 --> 00:04:05,580
+attempts to elicit concerning behaviors
+supervised fine tuning, which
+
+60
+00:04:05,580 --> 00:04:09,340
+elicits capabilities by modifying weights
+rather than just prompting
+
+61
+00:04:09,580 --> 00:04:12,939
+and best of n sampling which examines
+multiple potential
+
+62
+00:04:12,939 --> 00:04:17,540
+responses to understand output
+distributions. These techniques can
+establish
+
+63
+00:04:17,540 --> 00:04:20,939
+upper bounds on potential capabilities but
+struggle to tell
+
+64
+00:04:20,939 --> 00:04:25,740
+us why models generate certain outputs.
+Internal techniques complement
+
+65
+00:04:25,740 --> 00:04:30,620
+this by examining model mechanisms
+directly. For example, sparse
+
+66
+00:04:30,620 --> 00:04:35,660
+autoencoders have successfully extracted
+interpretable features related to safety
+
+67
+00:04:35,660 --> 00:04:41,339
+relevant behaviors, including deception,
+sycophancy, and bias. Other techniques
+
+68
+00:04:41,339 --> 00:04:46,420
+like mechanistic interpretability can help
+trace computational pathways through
+
+69
+00:04:46,420 --> 00:04:50,699
+the model. Enumerative safety can catalogs
+concepts the model
+
+70
+00:04:50,699 --> 00:04:54,899
+has encoded and representation engineering
+can examine how models
+
+71
+00:04:54,899 --> 00:04:59,980
+encode information. Behavioral and
+internal evaluation techniques are
+complementary
+
+72
+00:04:59,980 --> 00:05:03,620
+and together provide stronger safety
+guarantees than either approach
+
+73
+00:05:03,620 --> 00:05:08,579
+alone. Evaluation frameworks help
+transform measurements into concrete
+development
+
+74
+00:05:08,579 --> 00:05:12,410
+and deployment decisions. Rather than
+relying on ad hoc
+
+75
+00:05:12,410 --> 00:05:17,209
+responses to capabilities. Frameworks like
+Anthropic's Responsible scaling policies
+
+76
+00:05:17,370 --> 00:05:21,490
+establish AI safety levels inspired by
+things like biosafety
+
+77
+00:05:21,490 --> 00:05:25,689
+containment protocols, with each level
+requiring increasingly stringent
+evaluation
+
+78
+00:05:25,689 --> 00:05:30,649
+requirements and safety measures. These
+frameworks create evaluation gates
+
+79
+00:05:30,730 --> 00:05:34,610
+that determine when scaling can proceed
+safely, requiring models
+
+80
+00:05:34,610 --> 00:05:39,470
+to pass cybersecurity, biosecurity, and
+and autonomous replication evaluations
+
+81
+00:05:39,470 --> 00:05:44,629
+before development continues. By
+integrating evaluations into governance
+structures,
+
+82
+00:05:44,629 --> 00:05:48,670
+we create systematic approaches to
+managing AI risk rather
+
+83
+00:05:48,670 --> 00:05:52,149
+than relying on ad hoc decisions.
+Evaluations must be
+
+84
+00:05:52,149 --> 00:05:56,310
+systematically designed to maintain
+quality and scale across increasingly
+
+85
+00:05:56,310 --> 00:06:01,589
+complex models. Evaluation design requires
+careful consideration of affordances,
+
+86
+00:06:01,990 --> 00:06:04,990
+the resources and opportunities provided
+to the model during
+
+87
+00:06:04,990 --> 00:06:10,439
+testing. By systematically varying
+affordances from minimal restricting tools
+
+88
+00:06:10,439 --> 00:06:14,959
+and resources to maximal providing all
+potentially relevant tools
+
+89
+00:06:14,959 --> 00:06:17,759
+and context, we can build a more complete
+picture
+
+90
+00:06:17,759 --> 00:06:21,319
+of model behavior under different
+conditions. As the number
+
+91
+00:06:21,319 --> 00:06:26,120
+of safety relevant properties grows,
+automating evaluation becomes necessary.
+
+92
+00:06:26,519 --> 00:06:29,759
+We can potentially use model written
+evaluations to help
+
+93
+00:06:29,759 --> 00:06:35,160
+address scaling challenges. Despite
+significant progress, AI evaluations face
+
+94
+00:06:35,240 --> 00:06:40,240
+fundamental limitations that threaten
+their reliability. The asymmetry between
+
+95
+00:06:40,240 --> 00:06:44,160
+proving presence versus absence of
+capabilities means we can
+
+96
+00:06:44,160 --> 00:06:48,480
+never be certain we've detected all
+potential risks. Evaluations
+
+97
+00:06:48,480 --> 00:06:52,199
+can conclusively confirm that a model
+possesses certain capabilities
+
+98
+00:06:52,439 --> 00:06:57,000
+but cannot definitively prove their
+absence. Technical challenges include
+
+99
+00:06:57,000 --> 00:07:01,360
+measurement sensitivity, performance can
+vary based on seemingly trivial
+
+100
+00:07:01,360 --> 00:07:05,680
+changes in prompting formats and the
+combinatorial explosion of
+
+101
+00:07:05,680 --> 00:07:08,920
+test cases as we add new dimensions to
+evaluate.
+
+102
+00:07:09,480 --> 00:07:14,160
+Misalignment might lead to model
+sandbagging. Strategic underperformance on
+
+103
+00:07:14,160 --> 00:07:18,639
+evaluations. Research shows language
+models can be made to
+
+104
+00:07:18,639 --> 00:07:23,240
+selectively underperform on tests for
+dangerous capabilities while maintaining
+
+105
+00:07:23,240 --> 00:07:28,649
+performance on general benchmarks.
+Organizational incentives might lead labs
+
+106
+00:07:28,649 --> 00:07:33,610
+themselves to do safety washing,
+misrepresenting capability improvements as
+
+107
+00:07:33,610 --> 00:07:37,810
+safety advancements. These challenges
+highlight the need for continued
+
+108
+00:07:37,810 --> 00:07:43,050
+research into more robust evaluation
+methodologies and institutional
+arrangements
+
+109
+00:07:43,050 --> 00:07:47,649
+that support genuinely independent
+assessment. The textbook includes Figure
+
+110
+00:07:47,649 --> 00:07:51,899
+5.1. Here it depicts. Overview of Chapter
+Content this
+
+111
+00:07:51,899 --> 00:07:54,660
+introduction gave you the general overview
+of many of
+
+112
+00:07:54,660 --> 00:07:57,100
+the concepts that we will be talking about
+throughout
+
+113
+00:07:57,100 --> 00:08:00,379
+this chapter. The sections will largely
+proceed in the
+
+114
+00:08:00,379 --> 00:08:03,819
+order that we introduced the ideas above.
+We begin
+
+115
+00:08:03,819 --> 00:08:06,579
+by exploring how benchmarks have shaped AI
+development.

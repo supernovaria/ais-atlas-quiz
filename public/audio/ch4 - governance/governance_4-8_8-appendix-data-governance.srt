@@ -1,351 +1,350 @@
 1
-00:00:00,091 --> 00:00:05,035
-Section 4.8 Appendix Data Governance What
+00:00:00,160 --> 00:00:05,040
+Section 4.8 Appendix Data Governance what
 role does data
 
 2
-00:00:05,075 --> 00:00:09,057
+00:00:05,040 --> 00:00:09,119
 play in AI risks? Data fundamentally
 shapes what AI
 
 3
-00:00:09,118 --> 00:00:12,339
+00:00:09,119 --> 00:00:12,400
 systems can do and how they behave. For
 Frontier
 
 4
-00:00:12,380 --> 00:00:16,824
-Foundation models, training data
+00:00:12,400 --> 00:00:16,960
+foundation models, training data
 influences both capabilities and
-alignment.
+alignment,
 
 5
-00:00:17,423 --> 00:00:19,466
-What systems can do and how they do it?
+00:00:17,280 --> 00:00:19,600
+what systems can do and how they do it.
 
 6
-00:00:20,286 --> 00:00:23,009
+00:00:20,160 --> 00:00:23,000
 Low quality or harmful training data could
 lead to
 
 7
-00:00:23,068 --> 00:00:27,824
+00:00:23,000 --> 00:00:27,820
 misaligned or dangerous models. Garbage
-in, garbage out. while
+in, garbage out While
 
 8
-00:00:27,885 --> 00:00:31,187
+00:00:27,820 --> 00:00:31,219
 carefully curated datasets might help
 promote safer and more
 
 9
-00:00:31,228 --> 00:00:34,670
-reliable behavior. How well does data meet
+00:00:31,219 --> 00:00:34,700
+reliable behavior, how well does data meet
 our governance
 
 10
-00:00:34,731 --> 00:00:38,695
+00:00:34,700 --> 00:00:38,740
 target criteria? Data as a governance
 target presents a
 
 11
-00:00:38,774 --> 00:00:42,838
+00:00:38,740 --> 00:00:42,820
 mixed picture when evaluated against our
 key criteria. Let's
 
 12
-00:00:42,859 --> 00:00:46,381
-look at each. Measurability. While we can
+00:00:42,820 --> 00:00:46,420
+look at each. Measurability While we can
 measure raw
 
 13
-00:00:46,442 --> 00:00:50,485
+00:00:46,420 --> 00:00:50,420
 quantities of data, assessing its quality,
 content, and potential
 
 14
-00:00:50,566 --> 00:00:55,139
+00:00:50,420 --> 00:00:55,179
 implications is far more difficult. Unlike
-physical goods, like
+physical goods like
 
 15
-00:00:55,179 --> 00:01:00,240
+00:00:55,179 --> 00:01:01,100
 semiconductors, data can be copied,
-modified, niched, demystified and
+modified, and transmitted in
 
 16
-00:01:00,280 --> 00:01:03,362
-transmitted in ways that are hard to
-track. This
+00:01:01,100 --> 00:01:04,340
+ways that are hard to track. This makes
+comprehensive
 
 17
-00:01:03,421 --> 00:01:08,503
-makes comprehensive measurement of data
-flows extremely challenging.
-Controllability,
+00:01:04,340 --> 00:01:09,900
+measurement of data flows extremely
+challenging. Data's non rival
 
 18
-00:01:08,882 --> 00:01:11,665
-data's non-rival nature means it can be
-copied and
+00:01:09,900 --> 00:01:12,620
+nature means it can be copied and shared
+widely.
 
 19
-00:01:11,745 --> 00:01:15,468
-shared widely. Once data exists,
-controlling its spread is
+00:01:12,939 --> 00:01:16,299
+Once data exists, controlling its spread
+is very difficult.
 
 20
-00:01:15,528 --> 00:01:19,090
-very difficult. Even when data appears to
-be restricted,
+00:01:16,939 --> 00:01:20,069
+Even when data appears to be restricted,
+techniques like
 
 21
-00:01:19,390 --> 00:01:23,192
-techniques like model distillation can
-extract information from trained
+00:01:20,069 --> 00:01:24,829
+model distillation can extract information
+from trained models. Andaljung
 
 22
-00:01:23,253 --> 00:01:28,277
-models. Andolong et al. 2023. However,
-there might still
+00:01:24,829 --> 00:01:29,069
+et al. However, there might still be some
+promising
 
 23
-00:01:28,316 --> 00:01:31,980
-be some promising control points,
-particularly around original data
+00:01:29,069 --> 00:01:33,030
+control points, particularly around
+original data collection and the
 
 24
-00:01:32,019 --> 00:01:36,629
-collection and the initial training of
-foundation models. Meaningfulness.
+00:01:33,030 --> 00:01:38,189
+initial training of foundation models.
+Meaningfulness Data is particularly
 
 25
-00:01:37,031 --> 00:01:39,951
-Data is particularly meaningful when it
-comes to AI
+00:01:38,189 --> 00:01:41,590
+meaningful when it comes to AI
+development. The data
 
 26
-00:01:39,992 --> 00:01:44,073
-development. The data used to train models
-directly shapes
+00:01:41,590 --> 00:01:45,150
+used to train models directly shapes their
+capabilities and
 
 27
-00:01:44,114 --> 00:01:47,954
-their capabilities and behaviors. Changes
-in training data can
+00:01:45,150 --> 00:01:49,689
+behaviors. Changes in training data can
+significantly impact model
 
 28
-00:01:48,015 --> 00:01:52,376
-significantly impact model performance and
-safety. This makes data
+00:01:49,689 --> 00:01:54,049
+performance and safety. This makes data
+governance potentially powerful,
 
 29
-00:01:52,417 --> 00:01:56,230
-governance potentially powerful. but only
-if we can overcome
+00:01:54,609 --> 00:01:57,090
+but only if we can overcome the challenges
+of
 
 30
-00:01:56,269 --> 00:01:59,192
-the challenges of measurement and control.
-What are the
+00:01:57,090 --> 00:02:00,329
+measurement and control. What are the key
+data governance
 
 31
-00:01:59,253 --> 00:02:03,539
-key data governance concerns? Several
-aspects of data require
+00:02:00,329 --> 00:02:04,769
+concerns? Several aspects of data require
+careful governance to
 
 32
-00:02:03,599 --> 00:02:08,359
-careful governance to promote safe AI
-development. Training data
+00:02:04,769 --> 00:02:09,409
+promote safe AI development. Training data
+quality and safety
 
 33
-00:02:08,419 --> 00:02:12,122
-quality and safety is fundamental. Low
-quality or harmful
+00:02:09,409 --> 00:02:13,009
+is fundamental. Low quality or harmful
+data can create
 
 34
-00:02:12,181 --> 00:02:16,245
-data can create unreliable or dangerous
-models. For instance,
+00:02:13,009 --> 00:02:17,430
+unreliable or dangerous models. For
+instance, technical data about
 
 35
-00:02:16,365 --> 00:02:19,967
-technical data about biological weapons in
-training sets could
+00:02:17,430 --> 00:02:20,909
+biological weapons in training sets could
+enable models to
 
 36
-00:02:20,008 --> 00:02:26,691
-enable models to assist in their
-development. data poisoning
+00:02:20,909 --> 00:02:26,110
+assist in their development. Andaljung et
+al. 2023 Data
 
 37
-00:02:26,830 --> 00:02:31,532
-and security pose increasingly serious
-threats. Malicious actors could
+00:02:26,110 --> 00:02:31,310
+poisoning and security pose increasingly
+serious threats. Malicious actors
 
 38
-00:02:31,573 --> 00:02:35,254
-deliberately manipulate training data to
-create models that behave
+00:02:31,310 --> 00:02:34,909
+could deliberately manipulate training
+data to create models that
 
 39
-00:02:35,314 --> 00:02:39,336
-dangerously in specific situations while
-appearing safe during testing.
+00:02:34,909 --> 00:02:38,830
+behave dangerously in specific situations
+while appearing safe during
 
 40
-00:02:40,215 --> 00:02:43,376
-This might involve injecting subtle
-patterns that only become
+00:02:38,830 --> 00:02:42,919
+testing. This might involve injecting
+subtle patterns that that
 
 41
-00:02:43,415 --> 00:02:48,677
-apparent under certain conditions.
-Longpray et al. 2024. Data
+00:02:42,919 --> 00:02:46,560
+only become apparent under certain
+conditions. Longpres et al.
 
 42
-00:02:48,717 --> 00:02:51,979
-provenance and accountability help ensure
-we can trace where
+00:02:46,719 --> 00:02:51,400
+2024 Data provenance and accountability
+help ensure we can
 
 43
-00:02:52,039 --> 00:02:55,621
-model behaviors come from, without clear
-tracking of training
+00:02:51,400 --> 00:02:55,080
+trace where model behaviors come from.
+Without clear tracking
 
 44
-00:02:55,681 --> 00:03:00,222
-data sources and their characteristics. It
-becomes extremely difficult
+00:02:55,080 --> 00:02:59,240
+of training data sources and their
+characteristics, it becomes
 
 45
-00:03:00,262 --> 00:03:03,823
-to diagnose and fix problems when models
-exhibit concerning
+00:02:59,240 --> 00:03:02,800
+extremely difficult to diagnose and fix
+problems when models
 
 46
-00:03:03,862 --> 00:03:09,865
-behaviors. Longpray et al. 2023 Consent
-and rights frameworks
+00:03:02,800 --> 00:03:08,770
+exhibit concerning behaviors. Long Pr et
+al. 2023 Consent
 
 47
-00:03:10,085 --> 00:03:14,086
-protect both data creators and users. Many
-current AI
+00:03:08,770 --> 00:03:12,490
+and rights frameworks protect both data
+creators and users.
 
 48
-00:03:14,186 --> 00:03:17,746
-training practices operate in legal and
-ethical grey areas
+00:03:12,969 --> 00:03:16,530
+Many current AI training practices operate
+in legal and
 
 49
-00:03:18,067 --> 00:03:21,947
-regarding data usage rights. Clear
-frameworks could help prevent
+00:03:16,530 --> 00:03:21,210
+ethical gray areas regarding data usage
+rights. Clear frameworks
 
 50
-00:03:22,127 --> 00:03:27,068
-unauthorized use while enabling legitimate
-innovation. Longpray et al.
+00:03:21,210 --> 00:03:25,210
+could help prevent unauthorized use while
+enabling legitimate innovation.
 
 51
-00:03:27,209 --> 00:03:32,514
-2024 Bias and representation in training
-data directly impact
+00:03:25,689 --> 00:03:30,409
+Long pray et al. 2024 bias and
+representation in
 
 52
-00:03:32,593 --> 00:03:36,840
-model behaviour. Skewed or
-unrepresentative data sets can lead
+00:03:30,409 --> 00:03:35,500
+training data directly impact model
+behavior. Skewed or unrepresentative
 
 53
-00:03:36,879 --> 00:03:39,924
-to models that perform poorly or make
-harmful decisions
+00:03:35,500 --> 00:03:38,419
+data sets can lead to models that perform
+poorly
 
 54
-00:03:39,963 --> 00:03:44,530
-for certain groups, potentially amplifying
-societal inequities at a
+00:03:38,419 --> 00:03:42,780
+or make harmful decisions for certain
+groups, potentially amplifying
 
 55
-00:03:44,590 --> 00:03:50,153
-massive scale. Ruel et al. 2024. Data
-access and
+00:03:42,780 --> 00:03:47,219
+societal inequities at a massive scale.
+Reuel et al.
 
 56
-00:03:50,213 --> 00:03:53,974
-sharing protocols shape who can develop
-powerful AI systems.
+00:03:49,060 --> 00:03:52,419
+Data access and sharing protocols shape
+who can develop
 
 57
-00:03:54,574 --> 00:03:58,096
-Without governance around data access, we
-risk either overly
+00:03:52,419 --> 00:03:57,060
+powerful AI systems. Without governance
+around data access, we
 
 58
-00:03:58,156 --> 00:04:01,536
-concentrated power in a few actors with
-large datasets
+00:03:57,060 --> 00:04:00,259
+risk either overly concentrated power in a
+few actors
 
 59
-00:04:01,997 --> 00:04:07,098
-or, conversely, uncontrolled proliferation
-of potentially dangerous capabilities heim
+00:04:00,259 --> 00:04:04,689
+with large data sets or, conversely,
+uncontrolled proliferation of
 
 60
-00:04:07,198 --> 00:04:10,658
-et al. 2024. How does data governance fit
-into
+00:04:04,689 --> 00:04:10,689
+potentially dangerous capabilities. How
+does data governance fit into
 
 61
-00:04:10,799 --> 00:04:15,240
+00:04:10,689 --> 00:04:15,210
 overall AI governance? Even with strong
 governance frameworks, alternative
 
 62
-00:04:15,280 --> 00:04:19,480
+00:04:15,210 --> 00:04:19,449
 data sources or synthetic data generation
 could potentially circumvent
 
 63
-00:04:19,540 --> 00:04:24,562
+00:04:19,449 --> 00:04:24,569
 restrictions. Additionally, many
 concerning capabilities might emerge from
 seemingly
 
 64
-00:04:24,702 --> 00:04:29,384
+00:04:24,569 --> 00:04:29,490
 innocuous training data through unexpected
 interactions or emergent behaviors.
 
 65
-00:04:30,264 --> 00:04:33,326
+00:04:30,290 --> 00:04:33,370
 While data governance remains important
 and worthy of deeper
 
 66
-00:04:33,425 --> 00:04:37,307
+00:04:33,370 --> 00:04:37,449
 exploration, other governance targets may
 offer more direct governance
 
 67
-00:04:37,627 --> 00:04:41,386
+00:04:37,449 --> 00:04:41,370
 over frontier AI development in the near
 term. This
 
 68
-00:04:41,446 --> 00:04:43,915
-is why in the main text, we focused
+00:04:41,370 --> 00:04:43,889
+is why in the main text we focused
 primarily
 
 69
-00:04:44,014 --> 00:04:47,728
+00:04:43,889 --> 00:04:47,730
 on compute governance, which provides more
 concrete control points
 
 70
-00:04:47,829 --> 00:04:49,875
+00:04:47,730 --> 00:04:49,889
 through its physical and concentrated
 nature.

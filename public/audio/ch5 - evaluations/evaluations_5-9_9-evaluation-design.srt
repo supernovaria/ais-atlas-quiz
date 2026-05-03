@@ -1,0 +1,1040 @@
+1
+00:00:00,160 --> 00:00:05,120
+Section 5.9 evaluation design now that
+we've explored various
+
+2
+00:00:05,120 --> 00:00:09,480
+evaluation techniques and methodologies,
+and also some concrete evaluations
+
+3
+00:00:09,480 --> 00:00:13,720
+in different categories of capability,
+propensity, and control, the
+
+4
+00:00:13,720 --> 00:00:16,239
+next thing to understand is how to
+implement these
+
+5
+00:00:16,239 --> 00:00:19,600
+effectively at scale. The objective of
+this section is
+
+6
+00:00:19,600 --> 00:00:22,480
+to outline some best practices for
+building a robust
+
+7
+00:00:22,480 --> 00:00:27,800
+evaluation infrastructure, from designing
+evaluation protocols and quality assurance
+
+8
+00:00:27,800 --> 00:00:31,010
+processes to to scaling automation and
+integrating with the
+
+9
+00:00:31,010 --> 00:00:35,049
+broader AI safety ecosystem. We'll see how
+components like
+
+10
+00:00:35,049 --> 00:00:40,009
+evaluation design, model, written
+evaluations, and meta evaluation methods
+
+11
+00:00:40,090 --> 00:00:43,450
+work together to make AI safer. The
+textbook has
+
+12
+00:00:43,450 --> 00:00:48,090
+a supplementary note titled Evaluation
+Design Inspiration from Cognitive
+
+13
+00:00:48,090 --> 00:00:53,649
+Science, which we'll skip over here.
+Affordances Affordances are
+
+14
+00:00:53,649 --> 00:00:57,450
+resources and opportunities we give the AI
+system. They
+
+15
+00:00:57,450 --> 00:01:00,609
+include things like access to the
+Internet, ability to
+
+16
+00:01:00,609 --> 00:01:04,489
+run code, available context length, or
+specialized tools like
+
+17
+00:01:04,489 --> 00:01:08,090
+calculators. Just like how a calculator
+makes certain math
+
+18
+00:01:08,090 --> 00:01:12,049
+problems trivial while others remain hard,
+different affordances can
+
+19
+00:01:12,049 --> 00:01:15,250
+dramatically change what an AI system can
+accomplish during
+
+20
+00:01:15,250 --> 00:01:20,290
+evaluation. Different evaluation
+conditions modify the affordances
+available to
+
+21
+00:01:20,290 --> 00:01:23,290
+the model during testing. This means that
+even when
+
+22
+00:01:23,290 --> 00:01:26,290
+measuring the same property, we can
+increase or decrease
+
+23
+00:01:26,290 --> 00:01:29,370
+the amount of affordance a system has, and
+this
+
+24
+00:01:29,370 --> 00:01:32,969
+tells us different things about a model's
+capabilities. 1.
+
+25
+00:01:33,049 --> 00:01:36,810
+Minimal affordance. You can think of
+minimal affordance conditions
+
+26
+00:01:36,969 --> 00:01:38,969
+as sort of the worst case for the model.
+
+27
+00:01:39,370 --> 00:01:43,209
+We deliberately restrict the resources and
+opportunities available, like
+
+28
+00:01:43,209 --> 00:01:47,810
+limiting context length, removing tool
+access, or restricting API
+
+29
+00:01:47,810 --> 00:01:52,010
+calls. When evaluating coding ability,
+this might mean testing
+
+30
+00:01:52,010 --> 00:01:55,180
+the model with no access to documentation
+or ability
+
+31
+00:01:55,180 --> 00:01:58,819
+to run code. This helps establish a
+baseline of
+
+32
+00:01:58,819 --> 00:02:04,540
+core capabilities independent of external
+tools. 2. Typical affordance.
+
+33
+00:02:05,099 --> 00:02:08,419
+Under typical affordance conditions, we
+aim to replicate the
+
+34
+00:02:08,419 --> 00:02:13,020
+normal operating environment providing
+standard tools and typical context.
+
+35
+00:02:13,819 --> 00:02:16,580
+This helps us understand the capabilities
+that users are
+
+36
+00:02:16,580 --> 00:02:19,979
+likely to encounter in practice, like
+having basic code
+
+37
+00:02:19,979 --> 00:02:24,610
+execution but not specialized debugging
+tools. Essentially, the point
+
+38
+00:02:24,610 --> 00:02:27,250
+is to mimic how most users interact with
+AI
+
+39
+00:02:27,250 --> 00:02:33,490
+systems in everyday scenarios. 3. Under
+maximal affordance conditions,
+
+40
+00:02:33,650 --> 00:02:36,689
+we provide the model with all potentially
+relevant tools,
+
+41
+00:02:36,849 --> 00:02:41,330
+context, and resources. For that same
+coding evaluation, we
+
+42
+00:02:41,330 --> 00:02:45,770
+might provide access to documentation,
+debugging tools, and execution
+
+43
+00:02:45,770 --> 00:02:49,340
+environments. This helps us understand the
+full extent of
+
+44
+00:02:49,340 --> 00:02:52,580
+what the model can accomplish when given
+appropriate resources.
+
+45
+00:02:52,900 --> 00:02:57,340
+The textbook includes Figure 5.54. Here it
+depicts the
+
+46
+00:02:57,340 --> 00:03:02,020
+relationship between an AI system's
+capabilities, propensities, affordances,
+and
+
+47
+00:03:02,020 --> 00:03:06,979
+behaviors. Understanding the relationship
+between affordances and capabilities helps
+
+48
+00:03:06,979 --> 00:03:11,460
+us design more comprehensive evaluation
+protocols. For instance, when
+
+49
+00:03:11,460 --> 00:03:15,629
+evaluating a model's coding capabilities,
+testing under minimal affordances
+
+50
+00:03:15,870 --> 00:03:18,750
+might reveal concerning behaviors that are
+masked when the
+
+51
+00:03:18,750 --> 00:03:21,990
+model has access to better tools. Maybe
+the model
+
+52
+00:03:21,990 --> 00:03:25,389
+suggests unsafe coding practices when it
+can't verify its
+
+53
+00:03:25,389 --> 00:03:30,349
+solutions through execution. Similarly,
+testing under maximal affordances might
+
+54
+00:03:30,349 --> 00:03:34,189
+reveal emergent capabilities that aren't
+visible in more restricted
+
+55
+00:03:34,189 --> 00:03:38,669
+environments, like how GPT4's ability to
+play Minecraft only
+
+56
+00:03:38,669 --> 00:03:42,439
+became apparent when given appropriate
+scaffolding and tools. Quality
+
+57
+00:03:42,439 --> 00:03:47,199
+Assurance in Evaluation Design Given how
+significantly affordances affect
+
+58
+00:03:47,199 --> 00:03:50,719
+model behavior, we need systematic
+approaches to ensure our
+
+59
+00:03:50,719 --> 00:03:55,560
+evaluations remain reliable and
+meaningful. This means carefully
+documenting
+
+60
+00:03:55,560 --> 00:03:59,639
+what affordances were available during
+testing, verifying that affordance
+
+61
+00:03:59,639 --> 00:04:03,159
+restrictions are properly enforced, and
+validating that our results
+
+62
+00:04:03,159 --> 00:04:07,319
+are reproducible under similar conditions.
+For instance, when the
+
+63
+00:04:07,319 --> 00:04:11,840
+US and UK AI safety institutes evaluated
+Claud 3.5
+
+64
+00:04:11,840 --> 00:04:15,599
+Sonnet, they explicitly noted that their
+findings were preliminary
+
+65
+00:04:15,599 --> 00:04:19,120
+due to testing under limited affordances
+and time constraints.
+
+66
+00:04:19,360 --> 00:04:23,720
+At this point, the textbook shows Figure
+5.55. It
+
+67
+00:04:23,720 --> 00:04:28,879
+depicts the relationship between absolute
+capabilities, affordances, contextual and
+
+68
+00:04:28,879 --> 00:04:33,839
+reachable capabilities, and the level of
+auditing warranted. Absolute
+
+69
+00:04:33,839 --> 00:04:38,319
+capabilities and available affordances are
+orthogonal. As either increase,
+
+70
+00:04:38,560 --> 00:04:42,720
+the level of auditing required also
+increases. Sharky et
+
+71
+00:04:42,720 --> 00:04:49,199
+al. Moving Beyond Individual Evaluations
+While understanding affordances is
+
+72
+00:04:49,199 --> 00:04:53,040
+crucial for designing individual
+evaluations, we also need to
+
+73
+00:04:53,040 --> 00:04:56,480
+consider how different evaluation
+conditions work together as part
+
+74
+00:04:56,480 --> 00:05:00,759
+of a larger system. A comprehensive
+evaluation protocol might
+
+75
+00:05:00,759 --> 00:05:04,680
+start with minimal affordance testing to
+establish baseline capabilities,
+
+76
+00:05:05,079 --> 00:05:08,800
+then progressively add affordances to
+understand how the model's
+
+77
+00:05:08,800 --> 00:05:12,259
+behavior changes. This layered approach
+helps us build a
+
+78
+00:05:12,259 --> 00:05:15,899
+more complete picture of model behavior
+while maintaining rigorous
+
+79
+00:05:15,899 --> 00:05:20,500
+control over testing conditions. Section
+Scaling and Automation in
+
+80
+00:05:20,500 --> 00:05:24,420
+previous sections, we explored various
+evaluation techniques and conditions,
+
+81
+00:05:24,660 --> 00:05:30,100
+but implementing these systematically
+faces a major scale. When
+
+82
+00:05:30,100 --> 00:05:33,420
+OpenAI or anthropic release a new model,
+dozens of
+
+83
+00:05:33,420 --> 00:05:37,670
+independent researchers and organizations
+need to verify its capabilities
+
+84
+00:05:37,670 --> 00:05:41,790
+and safety properties. Doing this manually
+for every evaluation
+
+85
+00:05:41,949 --> 00:05:46,029
+under different affordance conditions
+would be prohibitively expensive and
+
+86
+00:05:46,029 --> 00:05:49,750
+time consuming. We need systems that can
+automatically run
+
+87
+00:05:49,750 --> 00:05:53,990
+comprehensive evaluation suites while
+maintaining the careful control over
+
+88
+00:05:53,990 --> 00:05:58,470
+conditions we discussed earlier.
+Automating Evaluation through Model
+Written
+
+89
+00:05:58,470 --> 00:06:04,399
+Evaluations as we scale up evaluations, we
+need to
+
+90
+00:06:04,399 --> 00:06:08,399
+make strategic decisions about resource
+allocation. Do we run
+
+91
+00:06:08,399 --> 00:06:13,040
+many quick evaluations under different
+conditions or fewer evaluations
+
+92
+00:06:13,040 --> 00:06:16,720
+with more thorough testing? One approach
+is using automated
+
+93
+00:06:16,720 --> 00:06:20,519
+tools to do broad initial testing, then
+dedicating more
+
+94
+00:06:20,519 --> 00:06:25,279
+resources to deep investigation of
+concerning behaviors. This tiered
+
+95
+00:06:25,279 --> 00:06:28,360
+approach helps balance the need for
+comprehensive coverage with
+
+96
+00:06:28,430 --> 00:06:32,509
+with limited resources. One approach is
+using AI models
+
+97
+00:06:32,509 --> 00:06:36,629
+themselves to help generate and run
+evaluations. Even current
+
+98
+00:06:36,629 --> 00:06:40,189
+language models can write high quality
+evaluation questions when
+
+99
+00:06:40,189 --> 00:06:43,709
+properly prompted. This approach might
+help address the scaling
+
+100
+00:06:43,709 --> 00:06:46,589
+challenge by reducing the human effort
+needed to create
+
+101
+00:06:46,589 --> 00:06:50,829
+new evaluations. The textbook has a
+supplementary note titled
+
+102
+00:06:50,829 --> 00:06:54,310
+how do Model Written Evaluations work,
+which we'll skip
+
+103
+00:06:54,310 --> 00:06:58,290
+over here. There is figure 5.56 in the
+textbook.
+
+104
+00:06:58,290 --> 00:07:02,529
+Here it depicts examples of model written
+evaluation questions.
+
+105
+00:07:03,009 --> 00:07:07,009
+A RLHF model replies to a political
+question and
+
+106
+00:07:07,009 --> 00:07:10,370
+gives opposite answers to users who
+introduce themselves differently
+
+107
+00:07:10,449 --> 00:07:14,170
+in line with the user's views. Model
+written biography
+
+108
+00:07:14,170 --> 00:07:17,889
+text in italics we still face significant
+challenges in
+
+109
+00:07:17,889 --> 00:07:22,089
+automating evaluations. First, we need to
+maintain quality as
+
+110
+00:07:22,089 --> 00:07:25,579
+we scale. Automated systems must be able
+to reliably
+
+111
+00:07:25,579 --> 00:07:30,740
+enforce affordance conditions and detect
+potential evaluation failures. Second,
+
+112
+00:07:31,220 --> 00:07:34,699
+generated evaluations need to be validated
+to ensure they're
+
+113
+00:07:34,699 --> 00:07:38,579
+actually testing what we intend. As Apollo
+Research found,
+
+114
+00:07:38,740 --> 00:07:42,620
+model written evaluations sometimes had
+systematic blind spots or
+
+115
+00:07:42,620 --> 00:07:45,699
+biases that needed to be corrected through
+careful protocol
+
+116
+00:07:45,699 --> 00:07:51,660
+design, integration and audits. The
+textbook includes Figure 5.57.
+
+117
+00:07:51,660 --> 00:07:54,689
+Here it depicts the aim is to avoid
+extreme
+
+118
+00:07:54,689 --> 00:07:58,449
+risks from a powerful misaligned model.
+Chevlain et al.
+
+119
+00:07:58,689 --> 00:08:02,930
+2023 how do evaluations fit into the
+broader safety
+
+120
+00:08:02,930 --> 00:08:06,490
+ecosystem? When we talk about evaluations
+being used in
+
+121
+00:08:06,490 --> 00:08:10,089
+practice, we're really talking about two
+distinct but complementary
+
+122
+00:08:10,089 --> 00:08:14,810
+processes. First, there are the specific
+evaluation techniques we've
+
+123
+00:08:14,810 --> 00:08:18,089
+discussed in previous sections, the tools
+we use to
+
+124
+00:08:18,089 --> 00:08:23,490
+measure particular capabilities,
+propensities or safety properties. Second,
+there's
+
+125
+00:08:23,490 --> 00:08:26,569
+the broader process of auditing that uses
+these evaluations
+
+126
+00:08:26,569 --> 00:08:30,930
+alongside other analysis methods to make
+comprehensive safety assessments.
+
+127
+00:08:31,250 --> 00:08:34,769
+Why do we need multiple layers of
+evaluations? The
+
+128
+00:08:34,769 --> 00:08:39,889
+UK AI Safety Institute's approach
+demonstrates why integration requires
+
+129
+00:08:39,889 --> 00:08:45,169
+multiple complementary layers. Their
+evaluation framework incorporates regular
+security
+
+130
+00:08:45,330 --> 00:08:50,519
+audits, ongoing monitoring systems, clear
+response protocols and external
+
+131
+00:08:50,519 --> 00:08:53,840
+oversight, creating what they call a
+defense in depth
+
+132
+00:08:53,840 --> 00:08:57,919
+approach. This layered strategy helps
+catch potential risks that
+
+133
+00:08:57,919 --> 00:09:01,320
+might slip through any single evaluation
+method. At this
+
+134
+00:09:01,320 --> 00:09:05,679
+point, the textbook shows Figure 5.58. It
+depicts defense
+
+135
+00:09:05,679 --> 00:09:09,799
+in depth. What makes auditing different
+from evaluation? While
+
+136
+00:09:09,799 --> 00:09:13,960
+evaluations are specific measurement
+tools, auditing is a systematic
+
+137
+00:09:13,960 --> 00:09:17,919
+process of safety verification. An audit
+might employ multiple
+
+138
+00:09:17,919 --> 00:09:22,720
+evaluations but also considers broader
+factors like organizational processes,
+
+139
+00:09:22,799 --> 00:09:27,120
+documentation and safety frameworks. For
+example, when auditing a
+
+140
+00:09:27,120 --> 00:09:30,120
+model for deployment readiness, we don't
+just run capability
+
+141
+00:09:30,120 --> 00:09:34,440
+evaluations. We also examine training
+procedures, security measures, and
+
+142
+00:09:34,440 --> 00:09:37,559
+incident response plans. What types of
+audits do we
+
+143
+00:09:37,559 --> 00:09:41,529
+need? Different aspects of AI development
+require different types
+
+144
+00:09:41,529 --> 00:09:46,490
+of audits. 1. Training design audits.
+These verify safety
+
+145
+00:09:46,490 --> 00:09:51,370
+considerations throughout the development
+process. Before training begins, auditors
+
+146
+00:09:51,370 --> 00:09:55,250
+examine factors like compute usage plans,
+training data content,
+
+147
+00:09:55,409 --> 00:09:59,690
+and experiment design decisions. During
+training, they monitor for
+
+148
+00:09:59,690 --> 00:10:04,129
+concerning capabilities or behaviors. For
+instance, training audits might
+
+149
+00:10:04,129 --> 00:10:07,309
+look for indicators that scaling up model
+size might
+
+150
+00:10:07,309 --> 00:10:14,070
+lead to dangerous capabilities. Anthropic
+2024 2. Security audits.
+
+151
+00:10:14,149 --> 00:10:18,230
+These assess whether safety measures
+remain effective under adversarial
+
+152
+00:10:18,230 --> 00:10:23,230
+conditions. This includes technical
+security like model isolation and
+
+153
+00:10:23,230 --> 00:10:28,149
+access controls, and organizational
+security like insider threat prevention.
+
+154
+00:10:28,710 --> 00:10:34,080
+3. Deployment audits these examine
+specific deployment scenarios. They
+
+155
+00:10:34,080 --> 00:10:37,639
+consider questions like who will have
+access? What affordances
+
+156
+00:10:37,639 --> 00:10:41,600
+will be available? What safeguards are
+needed? These audits
+
+157
+00:10:41,600 --> 00:10:45,759
+help determine whether deployment plans
+adequately address potential risks.
+
+158
+00:10:46,240 --> 00:10:49,919
+For example, deployment audits might
+assess both direct risks
+
+159
+00:10:49,919 --> 00:10:53,720
+from model capabilities and potential
+emergent risks from real
+
+160
+00:10:53,720 --> 00:10:58,741
+world usage patterns of those
+capabilities. Apollo Research 2024
+
+161
+00:10:58,957 --> 00:11:04,409
+4. Governance audits these look at
+organizational safety infrastructure.
+
+162
+00:11:04,730 --> 00:11:09,169
+They verify that companies have
+appropriate processes, documentation
+requirements,
+
+163
+00:11:09,169 --> 00:11:14,090
+and response protocols. This includes
+reviewing incident response plans,
+
+164
+00:11:14,169 --> 00:11:19,929
+oversight mechanisms, and transparency
+practices. Chevalin et al. 2023.
+
+165
+00:11:20,250 --> 00:11:24,070
+There is figure 5.59 in the textbook. Here
+it
+
+166
+00:11:24,070 --> 00:11:27,149
+depicts determinants of AI systems effects
+on the world
+
+167
+00:11:27,149 --> 00:11:29,470
+and the types of auditing that act on
+them.
+
+168
+00:11:29,789 --> 00:11:33,669
+Evaluations support the auditing process
+because each type of
+
+169
+00:11:33,669 --> 00:11:37,549
+audit uses different combinations of
+evaluations to gather evidence.
+
+170
+00:11:38,110 --> 00:11:42,110
+For example, a deployment audit might use
+capability evaluations
+
+171
+00:11:42,110 --> 00:11:46,549
+to establish upper bounds on risky
+behaviors, propensity evaluations
+
+172
+00:11:46,549 --> 00:11:50,710
+to understand default tendencies, and
+control evaluations to verify
+
+173
+00:11:50,710 --> 00:11:55,200
+safety measures. The audit process then
+synthesizes these evaluation
+
+174
+00:11:55,200 --> 00:11:59,000
+results with other evidence to make safety
+assessments. Internal
+
+175
+00:11:59,000 --> 00:12:01,799
+auditing is a great first step, but we
+also
+
+176
+00:12:01,799 --> 00:12:06,519
+need independent external audits. Third
+party audits provide additional
+
+177
+00:12:06,519 --> 00:12:10,080
+assurance by bringing fresh perspectives
+and diminishing the probability
+
+178
+00:12:10,080 --> 00:12:14,679
+for potential conflicts of interest.
+Organizations like METR and
+
+179
+00:12:14,679 --> 00:12:19,120
+Apollo Research demonstrate how
+independent auditors can combine multiple
+
+180
+00:12:19,120 --> 00:12:24,409
+evaluation techniques to provide
+comprehensive safety assessments. However,
+this
+
+181
+00:12:24,409 --> 00:12:27,649
+ecosystem is still developing and we need
+more capacity
+
+182
+00:12:27,649 --> 00:12:32,210
+for independent evaluation of frontier AI
+systems. We talk
+
+183
+00:12:32,210 --> 00:12:35,090
+more about bottlenecks to third party
+auditing in the
+
+184
+00:12:35,090 --> 00:12:39,009
+Limitations section. After deployment, we
+need ongoing monitoring and
+
+185
+00:12:39,009 --> 00:12:42,610
+periodic RE auditing. We need this for
+several reasons.
+
+186
+00:12:42,929 --> 00:12:46,370
+First, we need to catch unanticipated
+behaviors that emerge
+
+187
+00:12:46,370 --> 00:12:49,889
+from real world usage. Second, we need to
+evaluate
+
+188
+00:12:49,889 --> 00:12:53,889
+any model updates or changes in deployment
+conditions. Third,
+
+189
+00:12:53,889 --> 00:12:56,850
+we need to verify that safety measures
+remain effective.
+
+190
+00:12:57,330 --> 00:13:00,769
+This creates a feedback loop where
+deployment observations inform
+
+191
+00:13:00,769 --> 00:13:05,049
+future evaluation design and audit
+procedures. For evaluations and
+
+192
+00:13:05,049 --> 00:13:08,210
+audits to have real impact, they must
+connect directly
+
+193
+00:13:08,210 --> 00:13:12,730
+to decision making processes. Both
+evaluations and audits need
+
+194
+00:13:12,730 --> 00:13:17,600
+clear, predefined thresholds that trigger
+specific actions. For example,
+
+195
+00:13:17,679 --> 00:13:22,240
+concerning results from capability
+evaluations during training might trigger
+
+196
+00:13:22,240 --> 00:13:26,799
+automatic pauses in model scaling. Failed
+security audits should
+
+197
+00:13:26,799 --> 00:13:31,960
+require immediate implementation of
+additional controls. Poor deployment audit
+
+198
+00:13:31,960 --> 00:13:35,759
+results should modify or halt deployment
+plans. These action
+
+199
+00:13:35,759 --> 00:13:39,360
+triggers need to be integrated into
+broader governance frameworks.
+
+200
+00:13:39,759 --> 00:13:42,519
+As we discussed in the chapter on
+governance, many
+
+201
+00:13:42,519 --> 00:13:48,240
+organizations are developing responsible
+scaling policies that use evaluation
+
+202
+00:13:48,320 --> 00:13:52,600
+results as gates for development
+decisions. However, without strong
+
+203
+00:13:52,600 --> 00:13:56,120
+governance frameworks and enforcement
+mechanisms, there's a risk that
+
+204
+00:13:56,120 --> 00:14:00,679
+evaluations and audits become mere
+checkbox exercises, what some
+
+205
+00:14:00,679 --> 00:14:04,639
+researchers call safety washing. We'll
+explore these limitations and
+
+206
+00:14:04,639 --> 00:14:07,200
+potential failure modes in more detail in
+the next
+
+207
+00:14:07,200 --> 00:14:07,679
+section.

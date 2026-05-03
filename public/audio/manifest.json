@@ -427,6 +427,190 @@
           "words": "/audio/ch4 - governance/governance_4-9_9-appendix-national-governance.words.json"
         }
       ]
+    },
+    {
+      "id": "evaluations",
+      "number": 5,
+      "title": "Chapter 5: Evaluations",
+      "sections": [
+        {
+          "index": "5.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-1_1-introduction_cbr.mp3",
+          "duration": "00:08:06",
+          "length": 3897261,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-1_1-introduction.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-1_1-introduction.words.json"
+        },
+        {
+          "index": "5.2",
+          "title": "2. Benchmarks",
+          "slug": "2-benchmarks",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-2_2-benchmarks_cbr.mp3",
+          "duration": "00:15:36",
+          "length": 7493805,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-2_2-benchmarks.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-2_2-benchmarks.words.json"
+        },
+        {
+          "index": "5.3",
+          "title": "3. Evaluated Properties",
+          "slug": "3-evaluated-properties",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-3_3-evaluated-properties_cbr.mp3",
+          "duration": "00:15:45",
+          "length": 7567917,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-3_3-evaluated-properties.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-3_3-evaluated-properties.words.json"
+        },
+        {
+          "index": "5.4",
+          "title": "4. Evaluation Techniques",
+          "slug": "4-evaluation-techniques",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-4_4-evaluation-techniques_cbr.mp3",
+          "duration": "00:26:21",
+          "length": 12655917,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-4_4-evaluation-techniques.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-4_4-evaluation-techniques.words.json"
+        },
+        {
+          "index": "5.5",
+          "title": "5. Evaluation Frameworks",
+          "slug": "5-evaluation-frameworks",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-5_5-evaluation-frameworks_cbr.mp3",
+          "duration": "00:14:36",
+          "length": 7018989,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-5_5-evaluation-frameworks.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-5_5-evaluation-frameworks.words.json"
+        },
+        {
+          "index": "5.6",
+          "title": "6. Dangerous Capability Evaluations",
+          "slug": "6-dangerous-capability-evaluations",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-6_6-dangerous-capability-evaluations_cbr.mp3",
+          "duration": "00:47:10",
+          "length": 22644909,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-6_6-dangerous-capability-evaluations.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-6_6-dangerous-capability-evaluations.words.json"
+        },
+        {
+          "index": "5.7",
+          "title": "7. Dangerous Propensity Evaluations",
+          "slug": "7-dangerous-propensity-evaluations",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-7_7-dangerous-propensity-evaluations_cbr.mp3",
+          "duration": "00:19:50",
+          "length": 9526317,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-7_7-dangerous-propensity-evaluations.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-7_7-dangerous-propensity-evaluations.words.json"
+        },
+        {
+          "index": "5.8",
+          "title": "8. Control Evaluations",
+          "slug": "8-control-evaluations",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-8_8-control-evaluations_cbr.mp3",
+          "duration": "00:16:47",
+          "length": 8061933,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-8_8-control-evaluations.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-8_8-control-evaluations.words.json"
+        },
+        {
+          "index": "5.9",
+          "title": "9. Evaluation Design",
+          "slug": "9-evaluation-design",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-9_9-evaluation-design_cbr.mp3",
+          "duration": "00:14:07",
+          "length": 6783789,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-9_9-evaluation-design.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-9_9-evaluation-design.words.json"
+        },
+        {
+          "index": "5.10",
+          "title": "10. Limitations",
+          "slug": "10-limitations",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-10_10-limitations_cbr.mp3",
+          "duration": "00:21:45",
+          "length": 10448493,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-10_10-limitations.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-10_10-limitations.words.json"
+        },
+        {
+          "index": "5.11",
+          "title": "11. Conclusion",
+          "slug": "11-conclusion",
+          "audioUrl": "/audio/ch5 - evaluations/evaluations_5-11_11-conclusion_cbr.mp3",
+          "duration": "00:01:02",
+          "length": 500397,
+          "srt": "/audio/ch5 - evaluations/evaluations_5-11_11-conclusion.srt",
+          "words": "/audio/ch5 - evaluations/evaluations_5-11_11-conclusion.words.json"
+        }
+      ]
+    },
+    {
+      "id": "specification-gaming",
+      "number": 6,
+      "title": "Chapter 6: Specification-Gaming",
+      "sections": [
+        {
+          "index": "6.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "/audio/ch6 - specification-gaming/specification-gaming_6-1_1-introduction_cbr.mp3",
+          "duration": "00:02:06",
+          "length": 1016109,
+          "srt": "/audio/ch6 - specification-gaming/specification-gaming_6-1_1-introduction.srt",
+          "words": "/audio/ch6 - specification-gaming/specification-gaming_6-1_1-introduction.words.json"
+        },
+        {
+          "index": "6.2",
+          "title": "2. Reinforcement Learning",
+          "slug": "2-reinforcement-learning",
+          "audioUrl": "/audio/ch6 - specification-gaming/specification-gaming_6-2_2-reinforcement-learning_cbr.mp3",
+          "duration": "00:10:42",
+          "length": 5145645,
+          "srt": "/audio/ch6 - specification-gaming/specification-gaming_6-2_2-reinforcement-learning.srt",
+          "words": "/audio/ch6 - specification-gaming/specification-gaming_6-2_2-reinforcement-learning.words.json"
+        },
+        {
+          "index": "6.3",
+          "title": "3. Optimization",
+          "slug": "3-optimization",
+          "audioUrl": "/audio/ch6 - specification-gaming/specification-gaming_6-3_3-optimization_cbr.mp3",
+          "duration": "00:05:00",
+          "length": 2406573,
+          "srt": "/audio/ch6 - specification-gaming/specification-gaming_6-3_3-optimization.srt",
+          "words": "/audio/ch6 - specification-gaming/specification-gaming_6-3_3-optimization.words.json"
+        },
+        {
+          "index": "6.4",
+          "title": "4. Specification Gaming",
+          "slug": "4-specification-gaming",
+          "audioUrl": "/audio/ch6 - specification-gaming/specification-gaming_6-4_4-specification-gaming_cbr.mp3",
+          "duration": "00:15:19",
+          "length": 7357101,
+          "srt": "/audio/ch6 - specification-gaming/specification-gaming_6-4_4-specification-gaming.srt",
+          "words": "/audio/ch6 - specification-gaming/specification-gaming_6-4_4-specification-gaming.words.json"
+        },
+        {
+          "index": "6.5",
+          "title": "5. Learning from imitation",
+          "slug": "5-learning-from-imitation",
+          "audioUrl": "/audio/ch6 - specification-gaming/specification-gaming_6-5_5-learning-from-imitation_cbr.mp3",
+          "duration": "00:16:57",
+          "length": 8146605,
+          "srt": "/audio/ch6 - specification-gaming/specification-gaming_6-5_5-learning-from-imitation.srt",
+          "words": "/audio/ch6 - specification-gaming/specification-gaming_6-5_5-learning-from-imitation.words.json"
+        },
+        {
+          "index": "6.6",
+          "title": "6. Learning from feedback",
+          "slug": "6-learning-from-feedback",
+          "audioUrl": "/audio/ch6 - specification-gaming/specification-gaming_6-6_6-learning-from-feedback_cbr.mp3",
+          "duration": "00:29:35",
+          "length": 14204397,
+          "srt": "/audio/ch6 - specification-gaming/specification-gaming_6-6_6-learning-from-feedback.srt",
+          "words": "/audio/ch6 - specification-gaming/specification-gaming_6-6_6-learning-from-feedback.words.json"
+        }
+      ]
     }
   ]
 }

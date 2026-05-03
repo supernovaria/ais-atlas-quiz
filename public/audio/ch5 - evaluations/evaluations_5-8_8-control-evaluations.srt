@@ -1,0 +1,1233 @@
+1
+00:00:00,160 --> 00:00:05,280
+Section 5.8 control evaluations we already
+explained the basic
+
+2
+00:00:05,280 --> 00:00:09,119
+intuition behind the AI control agenda in
+previous sections
+
+3
+00:00:09,199 --> 00:00:13,320
+and in previous chapters. Like strategies,
+this section aims
+
+4
+00:00:13,320 --> 00:00:15,480
+to add a little more depth specifically on
+the
+
+5
+00:00:15,480 --> 00:00:18,640
+evaluations that we might design while
+following the control
+
+6
+00:00:18,719 --> 00:00:23,399
+line of thought. Control evaluations
+address fundamentally different failure
+
+7
+00:00:23,399 --> 00:00:28,690
+modes than other evaluations. Most safety
+evaluations implicitly assume
+
+8
+00:00:28,690 --> 00:00:32,570
+AI systems might make mistakes or optimize
+for misaligned
+
+9
+00:00:32,570 --> 00:00:36,810
+goals but not actively attempt to
+circumvent safety measures.
+
+10
+00:00:36,969 --> 00:00:41,090
+Control evaluations fill this gap by
+adopting the adversarial
+
+11
+00:00:41,090 --> 00:00:46,649
+mindset common in CyberSecurity. Assuming
+sophisticated AI agents deliberately
+
+12
+00:00:46,649 --> 00:00:51,090
+trying to breach safeguards. Unlike
+capability evaluations that measure
+
+13
+00:00:51,090 --> 00:00:54,369
+what models can do or propensity
+evaluations that measure
+
+14
+00:00:54,369 --> 00:00:58,289
+what models tend to do, control
+evaluations measure whether
+
+15
+00:00:58,289 --> 00:01:02,210
+safety protocols remain effective when
+models intentionally try to
+
+16
+00:01:02,210 --> 00:01:05,890
+subvert them. Informally, we can
+understand the core premise
+
+17
+00:01:05,890 --> 00:01:08,489
+of control by seeing that safety can be
+achieved
+
+18
+00:01:08,489 --> 00:01:12,530
+through two complementary paths. One
+Ensuring the AI does
+
+19
+00:01:12,530 --> 00:01:14,849
+not try to do bad things which we wouldn't
+
+20
+00:01:14,849 --> 00:01:19,849
+want alignment. 2 ensuring the AI can't
+actually do
+
+21
+00:01:19,849 --> 00:01:23,909
+bad things even if it tries. These are
+complementary
+
+22
+00:01:23,909 --> 00:01:26,790
+to each other and create two independent
+barriers to
+
+23
+00:01:26,790 --> 00:01:32,230
+catastrophic alignment, preventing the
+desire for harmful actions and
+
+24
+00:01:32,230 --> 00:01:35,989
+control preventing the ability to
+successfully execute them. The
+
+25
+00:01:35,989 --> 00:01:40,189
+control property quantifies how
+effectively other safety protocols
+withstand
+
+26
+00:01:40,189 --> 00:01:45,349
+intentional subversion attempts by highly
+capable systems. Control evaluations
+
+27
+00:01:45,349 --> 00:01:48,670
+produce a probability estimate. Given that
+a model is
+
+28
+00:01:48,670 --> 00:01:51,200
+trying its hardest to cause harm, what is
+the
+
+29
+00:01:51,200 --> 00:01:55,159
+likelihood it succeeds? A system with
+strong control properties
+
+30
+00:01:55,159 --> 00:01:59,159
+has a negligible probability of causing
+unacceptable outcomes despite
+
+31
+00:01:59,239 --> 00:02:03,760
+determined attempts to do so. This
+quantitative framing allows
+
+32
+00:02:03,760 --> 00:02:07,079
+developers to set concrete risk thresholds
+like less than
+
+33
+00:02:07,079 --> 00:02:12,039
+0.1% probability of data exfiltration over
+the deployment lifetime.
+
+34
+00:02:12,599 --> 00:02:17,080
+Control evaluations rely on conservative
+assumptions about model capabilities
+
+35
+00:02:17,080 --> 00:02:22,009
+and knowledge. Assuming models may
+understand safety measures, coordinate
+
+36
+00:02:22,009 --> 00:02:26,409
+with other instances, and exploit any
+available vulnerabilities, early
+
+37
+00:02:26,409 --> 00:02:30,770
+detection of scheming constitutes a safety
+inflection point. Catching
+
+38
+00:02:30,770 --> 00:02:34,009
+models red handed in failed attempts to
+subvert safety
+
+39
+00:02:34,009 --> 00:02:38,210
+measures or cause harm fundamentally
+changes the risk landscape.
+
+40
+00:02:38,689 --> 00:02:43,129
+Rather than requiring perfect prevention
+indefinitely, control measures aim
+
+41
+00:02:43,129 --> 00:02:45,610
+to ensure that if the model is scheming,
+it
+
+42
+00:02:45,610 --> 00:02:48,610
+won't successfully cause a catastrophe
+before we catch it.
+
+43
+00:02:49,689 --> 00:02:53,810
+This approach transforms an impossible
+problem, guaranteeing a model
+
+44
+00:02:53,810 --> 00:02:56,770
+never models won't attempt attacks at all
+into a
+
+45
+00:02:56,770 --> 00:03:01,370
+tractable one. Ensuring dangerous behavior
+is detected before causing
+
+46
+00:03:01,370 --> 00:03:05,930
+irreversible harm. Catching models red
+handed in failed attempts
+
+47
+00:03:06,009 --> 00:03:09,849
+not only prevents immediate damage but
+creates an inflection
+
+48
+00:03:09,930 --> 00:03:13,810
+point. It provides concrete evidence of
+misalignment that can
+
+49
+00:03:13,810 --> 00:03:19,699
+trigger emergency protocols, including
+deployment termination, recalls, safety
+research,
+
+50
+00:03:19,780 --> 00:03:24,900
+redirection, and international
+coordination. Once developers catch a
+model
+
+51
+00:03:24,900 --> 00:03:27,860
+attempting to cause harm, they can study
+the attempt
+
+52
+00:03:27,860 --> 00:03:31,340
+to strengthen countermeasures and generate
+training data for detecting
+
+53
+00:03:31,340 --> 00:03:34,620
+similar attacks. After catching even a
+single example of
+
+54
+00:03:34,620 --> 00:03:38,539
+misbehavior, developers gain powerful new
+tools for preventing future
+
+55
+00:03:38,539 --> 00:03:42,539
+attacks. Each detected attempt provides
+data that makes future
+
+56
+00:03:42,539 --> 00:03:47,919
+attempts progressively less likely to
+succeed. 1. Developers can
+
+57
+00:03:47,919 --> 00:03:51,599
+leverage a single example to generate
+diverse attack variants
+
+58
+00:03:51,680 --> 00:03:55,719
+by modifying inputs or contexts, creating
+a broader data
+
+59
+00:03:55,719 --> 00:04:01,599
+set of problematic behaviors. 2.
+Adversarial training training monitoring
+
+60
+00:04:01,599 --> 00:04:05,400
+systems on real attack examples
+drastically improves their ability
+
+61
+00:04:05,400 --> 00:04:09,360
+to detect similar attempts as on policy
+examples provide
+
+62
+00:04:09,439 --> 00:04:15,400
+stronger signal than synthetic ones. 3.
+Studying developers can
+
+63
+00:04:15,400 --> 00:04:18,399
+analyze which safety measures succeeded or
+failed during the
+
+64
+00:04:18,399 --> 00:04:21,720
+attack, then strengthen the weakest points
+in their defense
+
+65
+00:04:21,720 --> 00:04:26,879
+system. 4. Exploitation of collusion
+signals if the attack
+
+66
+00:04:26,879 --> 00:04:31,279
+involves coordination between AI
+instances, developers can identify and
+
+67
+00:04:31,279 --> 00:04:35,759
+neutralize the coordination mechanisms
+like specific triggers or patterns.
+
+68
+00:04:36,560 --> 00:04:41,529
+5. Instance specific knowledge Examining
+the specific instance's attack
+
+69
+00:04:41,529 --> 00:04:45,689
+strategy reveals valuable information
+about its goals, capabilities, and
+
+70
+00:04:45,689 --> 00:04:49,689
+limitations. There is Figure 5. Five in
+the textbook.
+
+71
+00:04:49,689 --> 00:04:52,730
+Here it depicts basic setup for how we
+might
+
+72
+00:04:52,730 --> 00:04:57,410
+structure control evaluations. Control
+evaluations frame safety as an
+
+73
+00:04:57,410 --> 00:05:01,290
+adversarial game between red and blue
+teams to rigorously
+
+74
+00:05:01,290 --> 00:05:06,310
+test safety protocols against intentional
+subversion. Control evaluations structure
+
+75
+00:05:06,310 --> 00:05:09,509
+the problem as a competitive game. The Red
+team
+
+76
+00:05:09,509 --> 00:05:13,110
+constructs attack policies and model
+substitutes that attempt to
+
+77
+00:05:13,110 --> 00:05:16,750
+cause unacceptable outcomes. Serving as a
+proxy for potential
+
+78
+00:05:16,750 --> 00:05:21,829
+scheming AIs, the blue team develops
+control protocols, monitoring
+
+79
+00:05:21,829 --> 00:05:26,189
+systems, input filters, and human auditing
+procedures to prevent
+
+80
+00:05:26,189 --> 00:05:30,779
+these attacks. This framework converts the
+abstract question, would
+
+81
+00:05:30,779 --> 00:05:33,379
+this AI be safe if it were scheming? Into
+
+82
+00:05:33,379 --> 00:05:36,860
+a concrete, measurable question, can our
+Red team construct
+
+83
+00:05:36,860 --> 00:05:40,620
+a model that bypasses our safety measures?
+The textbook
+
+84
+00:05:40,620 --> 00:05:45,180
+includes Figure 5.51. Here it depicts an
+example of
+
+85
+00:05:45,180 --> 00:05:48,500
+a control evaluation in a toy setting. The
+Blue
+
+86
+00:05:48,500 --> 00:05:51,060
+team gets some programming problems that
+they can solve
+
+87
+00:05:51,060 --> 00:05:55,420
+using an untrusted model GPT4 and then
+verify it
+
+88
+00:05:55,420 --> 00:05:59,199
+using a combination of a trusted model GPT
+3.5
+
+89
+00:05:59,519 --> 00:06:03,079
+and a human simulated using GPT 4. The red
+
+90
+00:06:03,079 --> 00:06:06,199
+team replaces the untrusted model and
+tries to inject
+
+91
+00:06:06,199 --> 00:06:09,600
+malicious code. At this point, the
+textbook shows Figure
+
+92
+00:06:09,600 --> 00:06:14,120
+5.52. It depicts example process for the
+Red team
+
+93
+00:06:14,120 --> 00:06:17,800
+generating a single backdoor injection
+attempt. Red teams have
+
+94
+00:06:17,800 --> 00:06:22,600
+structural advantages over actual scheming
+models for control evaluations.
+
+95
+00:06:22,600 --> 00:06:26,790
+To provide meaningful safety guarantees,
+red teams must elicit
+
+96
+00:06:26,790 --> 00:06:30,829
+capabilities comparable to what highly
+capable scheming models might
+
+97
+00:06:30,829 --> 00:06:34,509
+deploy in the wild. This might seem
+impossible since
+
+98
+00:06:34,509 --> 00:06:37,709
+we're evaluating AI systems that could be
+smarter than
+
+99
+00:06:37,709 --> 00:06:40,670
+humans. In some ways, the Red team in
+control
+
+100
+00:06:40,670 --> 00:06:44,430
+evaluations have some advantages to ensure
+we can appropriately
+
+101
+00:06:44,430 --> 00:06:47,829
+simulate this scenario. 1. The red team
+can spend
+
+102
+00:06:47,829 --> 00:06:51,240
+much more time analyzing potential attacks
+than the AI
+
+103
+00:06:51,240 --> 00:06:54,560
+would have during deployment. While an AI
+might need
+
+104
+00:06:54,560 --> 00:06:57,639
+to make decisions in a single forward
+pass, the
+
+105
+00:06:57,639 --> 00:07:00,319
+red team can iterate on strategies over
+weeks or
+
+106
+00:07:00,319 --> 00:07:04,759
+months. 2. The Red Team has complete
+information about
+
+107
+00:07:04,759 --> 00:07:07,680
+the safety measures being used so they can
+come
+
+108
+00:07:07,680 --> 00:07:11,680
+up with potentially more advanced
+strategies. 3. The Red
+
+109
+00:07:11,680 --> 00:07:14,160
+Team can learn from failed attempts and
+iterate on
+
+110
+00:07:14,160 --> 00:07:17,439
+their methods, while an AI system caught
+attempting something
+
+111
+00:07:17,439 --> 00:07:21,360
+malicious will would likely face immediate
+shutdown. These advantages
+
+112
+00:07:21,360 --> 00:07:24,720
+allow even human red teams to construct
+attack strategies
+
+113
+00:07:24,879 --> 00:07:28,120
+that likely upper bound what scheming
+models could execute
+
+114
+00:07:28,120 --> 00:07:31,560
+in deployment. Blue teams need to build
+multiple defensive
+
+115
+00:07:31,560 --> 00:07:36,680
+layers to counter sophisticated attacks
+from adversarial AI. Every
+
+116
+00:07:36,680 --> 00:07:39,360
+control measure can be understood as a
+counter move
+
+117
+00:07:39,360 --> 00:07:42,600
+in an adversarial game, with success
+measured by how
+
+118
+00:07:42,600 --> 00:07:46,120
+effectively it prevents the red team from
+achieving unacceptable
+
+119
+00:07:46,120 --> 00:07:49,459
+outcomes. And despite all the advantages
+we mentioned above,
+
+120
+00:07:49,939 --> 00:07:53,819
+the most effective control protocols
+should integrate several defense
+
+121
+00:07:53,819 --> 00:07:58,660
+categories. 1. Core monitoring systems
+fast cheap monitoring runs
+
+122
+00:07:58,660 --> 00:08:03,379
+on every AI action, combining trusted
+monitoring, untrusted monitoring
+
+123
+00:08:03,379 --> 00:08:07,300
+with collusion busting mechanisms and
+activation based methods like
+
+124
+00:08:07,300 --> 00:08:11,860
+coup probes to flag suspicious behavior
+before execution. 2.
+
+125
+00:08:12,339 --> 00:08:17,089
+Resampling and deference strategies when
+monitoring FLAG's concerns, the
+
+126
+00:08:17,089 --> 00:08:20,970
+system can resample outputs from the same
+AI, defer
+
+127
+00:08:20,970 --> 00:08:24,689
+to trusted models for safer alternatives
+or escalate to
+
+128
+00:08:24,689 --> 00:08:29,089
+human review, providing multiple pathways
+to handle potentially dangerous
+
+129
+00:08:29,089 --> 00:08:36,210
+actions without completely blocking
+workflow. 3. Progressive checks of
+
+130
+00:08:36,210 --> 00:08:40,450
+increasing complexity and expense examine
+flagged actions before human
+
+131
+00:08:40,450 --> 00:08:45,009
+involvement using techniques like
+incrimination testing how the AI
+
+132
+00:08:45,009 --> 00:08:49,850
+responds to modified inputs to reveal
+hidden intentions. 4.
+
+133
+00:08:49,929 --> 00:08:54,730
+Human review processes Specially trained
+auditors examine actions flagged
+
+134
+00:08:54,730 --> 00:08:58,730
+as highly suspicious with different
+processes for concentrated risks
+
+135
+00:08:58,889 --> 00:09:03,850
+requiring immediate blocking versus
+diffuse threats allowing asynchronous
+review.
+
+136
+00:09:04,730 --> 00:09:09,990
+5. Software infrastructure comprehensive
+logging systems Fine grained permission
+
+137
+00:09:09,990 --> 00:09:13,750
+management, artifact tracking and
+scaffolding that supports blocking or
+
+138
+00:09:13,750 --> 00:09:17,909
+resampling suspicious outputs create an
+environment where AI actions
+
+139
+00:09:17,909 --> 00:09:23,789
+are consistently monitored. 6. Adversarial
+evaluation and training Continuous
+
+140
+00:09:23,789 --> 00:09:27,710
+red teaming tests all safety components
+against realistic attack
+
+141
+00:09:27,710 --> 00:09:32,190
+scenarios using synthetic data generation
+to create plausible but
+
+142
+00:09:32,190 --> 00:09:37,440
+challenging inputs that probe for
+weaknesses. 7. Security Enhancements
+
+143
+00:09:37,600 --> 00:09:42,000
+Hardware enforced code signing, bandwidth
+limitations within data centers
+
+144
+00:09:42,000 --> 00:09:46,879
+and multilevel shutdown mechanisms provide
+critical infrastructure protection against
+
+145
+00:09:46,960 --> 00:09:51,279
+unauthorized operations. For example, when
+testing whether an AI
+
+146
+00:09:51,279 --> 00:09:54,919
+agent can exfiltrate sensitive data, the
+blue team might
+
+147
+00:09:54,919 --> 00:09:58,639
+implement not just content filters but
+also bandwidth monitoring,
+
+148
+00:09:58,960 --> 00:10:03,870
+permission restrictions and random human
+audits creating multiple independent
+
+149
+00:10:03,870 --> 00:10:07,710
+failure points. The Red team must
+simultaneously overcome control
+
+150
+00:10:07,710 --> 00:10:12,110
+evaluations, prioritize defense against
+the most severe threat categories.
+
+151
+00:10:12,669 --> 00:10:16,070
+When designing control measures, not all
+potential threats pose
+
+152
+00:10:16,070 --> 00:10:20,750
+equal risk. Rogue internal deployments
+represent the highest priority
+
+153
+00:10:20,750 --> 00:10:25,029
+threat where AI systems gain unmonitored
+compute access and
+
+154
+00:10:25,029 --> 00:10:30,039
+potentially elevated permissions. Within
+developer infrastructure, this ranks above
+
+155
+00:10:30,039 --> 00:10:33,799
+sabotage of safety critical work, which
+itself ranks above
+
+156
+00:10:33,799 --> 00:10:38,519
+other security failures, including self
+exfiltration where AI models
+
+157
+00:10:38,519 --> 00:10:43,200
+steal their own weights. This
+prioritization framework helps allocate
+
+158
+00:10:43,200 --> 00:10:47,399
+limited security resources toward
+preventing the most consequential failure
+
+159
+00:10:47,399 --> 00:10:52,759
+modes first, particularly when constraints
+prevent implementing comprehensive
+protections
+
+160
+00:10:52,840 --> 00:10:56,740
+against all possible threats. For more
+information on details
+
+161
+00:10:56,740 --> 00:11:01,059
+of different subcategories of control
+evaluations and prioritization between
+
+162
+00:11:01,059 --> 00:11:06,100
+them, please read the Appendix. Eliciting
+adversarial capabilities raises
+
+163
+00:11:06,100 --> 00:11:10,778
+increased safety concerns around
+evaluations themselves. The process of
+
+164
+00:11:10,778 --> 00:11:14,419
+training models to execute attacks creates
+a safety paradox
+
+165
+00:11:14,419 --> 00:11:19,139
+inherent to control evaluations.
+Developers must carefully train models
+
+166
+00:11:19,139 --> 00:11:21,679
+that can both generate novel attacks and
+and hide
+
+167
+00:11:21,679 --> 00:11:25,759
+their malicious intent, which itself poses
+potential risks. As
+
+168
+00:11:25,759 --> 00:11:30,600
+models approach greater capabilities, this
+necessitates additional safeguards for
+
+169
+00:11:30,600 --> 00:11:35,639
+the evaluation process itself. Running
+evaluations in sandboxed environments,
+
+170
+00:11:35,799 --> 00:11:40,240
+limiting model Internet access during
+testing, and implementing guardrails
+
+171
+00:11:40,240 --> 00:11:44,799
+against model exfiltration, developers
+must balance thorough testing against
+
+172
+00:11:44,799 --> 00:11:48,360
+the possibility that the evaluation
+process might itself create
+
+173
+00:11:48,360 --> 00:11:52,850
+dangerous knowledge or capabilities. AI
+control games can formalize
+
+174
+00:11:52,850 --> 00:11:55,889
+the safety usefulness trade off as a
+mathematical frontier.
+
+175
+00:11:56,529 --> 00:12:00,529
+Using game theory, researchers model
+control protocols as multi
+
+176
+00:12:00,529 --> 00:12:05,490
+objective optimization problems that
+balance safety against utility. This
+
+177
+00:12:05,490 --> 00:12:09,610
+approach quantifies the alignment tax how
+much usefulness must
+
+178
+00:12:09,610 --> 00:12:13,970
+be sacrificed to achieve a specific safety
+threshold, basically
+
+179
+00:12:14,129 --> 00:12:17,370
+measuring how much utility usefulness you
+lose if you
+
+180
+00:12:17,370 --> 00:12:20,409
+insist that the model is safe. The
+resulting safety
+
+181
+00:12:20,409 --> 00:12:24,129
+usefulness frontier represents the set of
+achievable trade offs
+
+182
+00:12:24,129 --> 00:12:29,330
+between preventing unacceptable outcomes
+and preserving system utility. This
+
+183
+00:12:29,330 --> 00:12:32,129
+type of formal analysis can tell us the
+thresholds
+
+184
+00:12:32,129 --> 00:12:37,049
+after which marginal safety improvements
+require disproportionate utility
+sacrifices.
+
+185
+00:12:37,850 --> 00:12:42,090
+For example, increasing human audit rates
+from 0.1% to
+
+186
+00:12:42,090 --> 00:12:47,059
+1% may minimally improve safety while
+significantly increasing costs
+
+187
+00:12:47,059 --> 00:12:50,940
+and decreasing system throughput. Then we
+can make educated
+
+188
+00:12:50,940 --> 00:12:53,899
+decisions about what level of utility to
+safety we
+
+189
+00:12:53,899 --> 00:12:56,740
+are willing to trade versus not. There is
+figure
+
+190
+00:12:56,740 --> 00:13:01,259
+5.53 in the textbook. Here it depicts
+illustration of
+
+191
+00:13:01,259 --> 00:13:04,299
+how applying a safety or alignment
+technique could make
+
+192
+00:13:04,299 --> 00:13:07,940
+the model less capable. This is called
+safety tax.
+
+193
+00:13:08,340 --> 00:13:12,100
+Audits serve as the fundamental
+verification mechanism in control
+
+194
+00:13:12,259 --> 00:13:16,710
+protocols. In control evaluations, an
+audit refers to the
+
+195
+00:13:16,710 --> 00:13:20,509
+process where human experts review model
+outputs or actions
+
+196
+00:13:20,509 --> 00:13:24,549
+to determine if they constitute attack
+attempts. Unlike automated
+
+197
+00:13:24,549 --> 00:13:27,350
+monitoring, which can be applied broadly
+but may miss
+
+198
+00:13:27,350 --> 00:13:31,909
+subtle attacks, human audits provide high
+confidence verification but
+
+199
+00:13:31,909 --> 00:13:33,909
+can only be applied to a small fraction of
+
+200
+00:13:33,909 --> 00:13:38,549
+model actions due to resource constraints.
+Effective auditing includes
+
+201
+00:13:38,549 --> 00:13:42,740
+several components randomly selecting
+actions for review to prevent
+
+202
+00:13:42,740 --> 00:13:46,659
+models from predicting audit timing,
+applying extra scrutiny to
+
+203
+00:13:46,659 --> 00:13:51,220
+actions flagged by automated monitors, and
+maintaining consistent evaluation
+
+204
+00:13:51,299 --> 00:13:56,220
+criteria across auditors. The audit budget
+what percentage of
+
+205
+00:13:56,220 --> 00:14:00,019
+actions can realistically receive human
+review represents one of
+
+206
+00:14:00,019 --> 00:14:04,460
+the most important constraints when
+designing control protocols. Analysis
+
+207
+00:14:04,460 --> 00:14:07,759
+of control evaluations on toy models give
+us information
+
+208
+00:14:07,840 --> 00:14:12,519
+on designing effective control protocols.
+Control evaluations have yet
+
+209
+00:14:12,519 --> 00:14:16,000
+to see proper extensive usage in frontier
+AI labs.
+
+210
+00:14:16,399 --> 00:14:20,120
+Despite this, some analysis using toy
+models has revealed
+
+211
+00:14:20,120 --> 00:14:25,080
+several important principles for
+preventing concentrated catastrophes. The
+timing
+
+212
+00:14:25,080 --> 00:14:28,600
+of auditing matters a lot if AI systems
+can
+
+213
+00:14:28,600 --> 00:14:31,519
+determine when they're being monitored,
+even a high audit
+
+214
+00:14:31,519 --> 00:14:34,779
+rate might be insufficient. However, if
+the timing of
+
+215
+00:14:34,779 --> 00:14:37,860
+audits is truly random, much lower audit
+rates can
+
+216
+00:14:37,860 --> 00:14:42,299
+still provide strong safety guarantees.
+The difficulty of coordination
+
+217
+00:14:42,299 --> 00:14:46,419
+between AI instances can be leveraged for
+safety if
+
+218
+00:14:46,419 --> 00:14:49,899
+multiple AI systems must coordinate to
+cause harm. Making
+
+219
+00:14:49,899 --> 00:14:53,100
+coordination harder, for instance, by
+increasing the number of
+
+220
+00:14:53,100 --> 00:14:56,379
+instances that must coordinate, or the
+difficulty of finding
+
+221
+00:14:56,379 --> 00:15:01,200
+coordination signals by using anti
+steganography measures can dramatically
+
+222
+00:15:01,200 --> 00:15:05,279
+improve safety. Even with relatively low
+audit rates, not
+
+223
+00:15:05,279 --> 00:15:08,879
+all episodes are equally risky. By
+identifying which types
+
+224
+00:15:08,879 --> 00:15:12,519
+of inputs or situations present higher
+risks and focusing
+
+225
+00:15:12,519 --> 00:15:16,480
+auditing resources there, protocols can
+achieve better safety with
+
+226
+00:15:16,480 --> 00:15:19,799
+the same resources. This remains true even
+if the
+
+227
+00:15:19,799 --> 00:15:23,000
+AI systems know which episodes we think
+are riskier.
+
+228
+00:15:23,399 --> 00:15:28,600
+Control evaluations face limitations as AI
+capabilities increase dramatically.
+
+229
+00:15:29,299 --> 00:15:32,419
+The methodology depends on Red Team's
+ability to elicit
+
+230
+00:15:32,419 --> 00:15:35,940
+capabilities comparable to what scheming
+models might deploy in
+
+231
+00:15:35,940 --> 00:15:39,940
+the wild. As capability gaps widen between
+trusted and
+
+232
+00:15:39,940 --> 00:15:44,340
+untrusted models, or between evaluation
+time and deployment, control
+
+233
+00:15:44,340 --> 00:15:49,220
+guarantees weaken. Similarly, if models
+develop qualitatively new capabilities
+
+234
+00:15:49,460 --> 00:15:53,659
+between evaluation and deployment, earlier
+safety guarantees may not
+
+235
+00:15:53,659 --> 00:15:58,169
+transfer. Control evaluations are not
+address risks from qualitatively
+
+236
+00:15:58,169 --> 00:16:02,570
+superhuman capabilities. The methodology
+breaks down when models develop
+
+237
+00:16:02,649 --> 00:16:07,169
+capabilities that humans cannot comprehend
+even with extensive analysis
+
+238
+00:16:07,169 --> 00:16:11,210
+time. If models can devise novel attack
+vectors beyond
+
+239
+00:16:11,210 --> 00:16:15,330
+human understanding, execute long chains
+of opaque reasoning without
+
+240
+00:16:15,330 --> 00:16:20,210
+detectable traces, or possess
+qualitatively superhuman capabilities in
+many
+
+241
+00:16:20,210 --> 00:16:26,200
+security critical domains, control becomes
+ineffective. This limitation suggests
+
+242
+00:16:26,200 --> 00:16:30,159
+that rather than pursuing maximum
+capabilities, developers should target
+
+243
+00:16:30,320 --> 00:16:34,720
+systems that are transformatively useful
+while remaining within controllable
+
+244
+00:16:34,720 --> 00:16:39,759
+bounds. This might require accepting
+certain architectural constraints or
+
+245
+00:16:39,759 --> 00:16:43,679
+capability limitations to ensure systems
+remain within the domain
+
+246
+00:16:43,679 --> 00:16:47,279
+where control evaluations provide
+meaningful safety guarantees.

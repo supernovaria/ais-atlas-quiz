@@ -1,1755 +1,1766 @@
 1
-00:00:00,071 --> 00:00:04,974
-Section 4.4 – Systemic Challenges Section
-– Race Dynamics
+00:00:00,160 --> 00:00:05,719
+Section 4.4 Systemic Challenges Section
+Race Dynamics in the
 
 2
-00:00:05,474 --> 00:00:08,737
-In the words of John Schulman, talking
-about times
+00:00:05,719 --> 00:00:09,560
+words of John talking about times near the
+creation
 
 3
-00:00:08,778 --> 00:00:11,599
-near the creation of the first AGI, you
-have
+00:00:09,560 --> 00:00:12,640
+of the first AGI, you have the race
+dynamics
 
 4
-00:00:11,640 --> 00:00:14,582
-the race dynamics where everyone's trying
-to stay ahead,
+00:00:12,640 --> 00:00:15,599
+where everyone's trying to stay ahead and
+that might
 
 5
-00:00:15,143 --> 00:00:18,545
-and that might require compromising on
-safety. So I
+00:00:15,599 --> 00:00:19,120
+require compromising on safety. So I think
+you would
 
 6
-00:00:18,605 --> 00:00:21,388
-think you would probably need some
-coordination among the
+00:00:19,120 --> 00:00:22,440
+probably need some coordination among the
+larger entities that
 
 7
-00:00:21,428 --> 00:00:23,849
-larger entities that are doing this kind
-of training.
+00:00:22,440 --> 00:00:25,800
+are doing this kind of training. Pause
+either further
 
 8
-00:00:24,792 --> 00:00:28,657
-pause either further training or pause
-deployment or avoiding
+00:00:25,800 --> 00:00:29,469
+training or pause deployment or avoiding
+certain types of
 
 9
-00:00:28,716 --> 00:00:30,719
-certain types of training that we think
-might be
+00:00:29,469 --> 00:00:32,149
+training that we think might be riskier.
+We already
 
 10
-00:00:30,778 --> 00:00:33,781
-riskier. We already talked about race
-dynamics in the
+00:00:32,149 --> 00:00:34,869
+talked about race dynamics in the chapter
+on AI
 
 11
-00:00:33,801 --> 00:00:37,284
-chapter on AI risks as amplifying factors
-for all
+00:00:34,869 --> 00:00:38,869
+risks as amplifying factors for all risks.
+We mention
 
 12
-00:00:37,365 --> 00:00:41,268
-risks. We mention them here again because
-governance initiatives
+00:00:38,869 --> 00:00:42,270
+them here again because governance
+initiatives might have special
 
 13
-00:00:41,590 --> 00:00:43,871
-might have special leverage to be able to
-mitigate
+00:00:42,270 --> 00:00:45,789
+leverage to be able to mitigate race
+dynamics. Competition
 
 14
-00:00:43,951 --> 00:00:47,975
-race dynamics. Competition drives AI
-development at every level.
+00:00:45,789 --> 00:00:50,229
+drives AI development at every level. From
+startups racing
 
 15
-00:00:48,957 --> 00:00:53,079
-From start-ups racing to demonstrate new
-capabilities to nation-states
+00:00:50,229 --> 00:00:53,909
+to demonstrate new capabilities to nation
+states viewing AI
 
 16
-00:00:53,179 --> 00:00:56,843
-viewing AI leadership as essential for
-future power, competitive
+00:00:53,909 --> 00:00:57,750
+leadership as essential for future power.
+Competitive pressures shape
 
 17
-00:00:56,902 --> 00:01:00,064
-pressures shape how AI systems are built
-and deployed.
+00:00:57,750 --> 00:01:01,590
+how AI systems are built and deployed.
+This dynamic
 
 18
-00:01:00,825 --> 00:01:04,206
-This dynamic creates a prisoner's dilemma
-like tension, where
+00:01:01,590 --> 00:01:04,750
+creates a prisoner's dilemma like tension
+where even though
 
 19
-00:01:04,307 --> 00:01:07,909
-even though everyone would benefit from
-careful safety-focused development,
+00:01:04,750 --> 00:01:08,629
+everyone would benefit from careful safety
+focused development, those
 
 20
-00:01:08,409 --> 00:01:11,870
-those who move fastest gain competitive
-advantage. At this
+00:01:08,629 --> 00:01:12,189
+who move fastest gain competitive
+advantage. At this point,
 
 21
-00:01:11,930 --> 00:01:16,093
-point, the textbook shows figure 4.14. It
-depicts how
+00:01:12,189 --> 00:01:16,269
+the textbook shows Figure 4.14. It depicts
+how to
 
 22
-00:01:16,134 --> 00:01:18,515
-to extort your opponent and what you stand
-to
+00:01:16,269 --> 00:01:18,829
+extort your opponent and what you stand to
+gain
 
 23
-00:01:18,555 --> 00:01:22,115
-gain by extortion. The AI race creates a
-collective
+00:01:18,829 --> 00:01:22,480
+by extortion. The AI race creates a
+collective action
 
 24
-00:01:22,256 --> 00:01:27,159
-action problem. Even when developers
-recognise risks, unilateral caution
+00:01:22,560 --> 00:01:27,560
+problem even when developers recognize
+risks. Unilateral caution means
 
 25
-00:01:27,399 --> 00:01:31,501
-means ceding ground to less scrupulous
-competitors. Open AI's
+00:01:27,560 --> 00:01:32,920
+ceding ground to less scrupulous
+competitors. OpenAI's evolution
+illustrates
 
 26
-00:01:31,661 --> 00:01:36,022
-evolution illustrates this tension.
-Founded as a safety-focused small
+00:01:32,920 --> 00:01:36,799
+this tension. Founded as a safety focused
+small nonprofit,
 
 27
-00:01:36,082 --> 00:01:40,644
-non-profit, competitive pressures led to
-creating a for-profit subsidiary
+00:01:37,040 --> 00:01:40,640
+competitive pressures led to creating a
+for profit subsidiary
 
 28
-00:01:40,805 --> 00:01:44,787
+00:01:40,640 --> 00:01:44,799
 and accelerating deployment timelines.
 When your competitors are raising
 
 29
-00:01:44,867 --> 00:01:48,670
+00:01:44,799 --> 00:01:48,620
 billions and shipping products monthly,
 taking six extra months
 
 30
-00:01:48,709 --> 00:01:53,013
+00:01:48,620 --> 00:01:53,019
 for safety testing feels like falling
 irreversibly behind. This
 
 31
-00:01:53,093 --> 00:01:56,837
+00:01:53,019 --> 00:01:56,859
 dynamic makes it exceedingly difficult for
 any single entity,
 
 32
-00:01:57,257 --> 00:01:59,718
+00:01:57,099 --> 00:01:59,739
 be it a company or a country, to
 prioritize
 
 33
-00:01:59,778 --> 00:02:03,662
+00:01:59,739 --> 00:02:03,739
 safety over speed. Competitive pressure
 leads to safety washing,
 
 34
-00:02:04,043 --> 00:02:08,066
+00:02:03,900 --> 00:02:08,020
 cutting corners on testing, skipping
-external red teaming, and
+external red teaming and
 
 35
-00:02:08,126 --> 00:02:11,989
+00:02:08,020 --> 00:02:12,060
 rationalizing away warning signs. Move
 fast and break things
 
 36
-00:02:12,289 --> 00:02:15,312
+00:02:12,139 --> 00:02:15,389
 becomes the implicit motto, even when the
 things being
 
 37
-00:02:15,372 --> 00:02:19,776
+00:02:15,389 --> 00:02:19,789
 broken might include fundamental safety
 guarantees. We've already seen
 
 38
-00:02:19,817 --> 00:02:23,721
-this with models released despite known
+00:02:19,789 --> 00:02:23,750
+this with models released. Despite known
 vulnerabilities justified by
 
 39
-00:02:23,760 --> 00:02:27,304
-the need to maintain market position.
-Public companies face
+00:02:23,750 --> 00:02:27,349
+the need to maintain market position,
+public companies face
 
 40
-00:02:27,364 --> 00:02:31,388
+00:02:27,349 --> 00:02:31,469
 constant pressure to demonstrate progress
 to investors. Each competitor's
 
 41
-00:02:31,448 --> 00:02:36,111
+00:02:31,469 --> 00:02:36,110
 breakthrough becomes an existential threat
 requiring immediate response. When
 
 42
-00:02:36,192 --> 00:02:40,314
-Anthropic releases Claude III, OpenAI must
-respond with GPT
+00:02:36,110 --> 00:02:41,310
+anthropic releases claud3 OpenAI must
+respond with GPT 4.5
 
 43
-00:02:40,414 --> 00:02:45,378
-4.5. When Google demonstrates new
-capabilities, everyone scrambles to
+00:02:41,990 --> 00:02:45,629
+when Google demonstrates new capabilities,
+everyone scrambles to match
 
 44
-00:02:45,419 --> 00:02:49,100
-match them. This quarter-by-quarter racing
-leaves little room for
+00:02:45,629 --> 00:02:48,830
+them. This quarter by quarter racing
+leaves little room
 
 45
-00:02:49,140 --> 00:02:51,703
-careful safety work that might take years
-to pay
+00:02:48,830 --> 00:02:51,550
+for careful safety work that might take
+years to
 
 46
-00:02:51,823 --> 00:02:55,025
-off. At this point, there is interactive
-figure 4.3
+00:02:51,550 --> 00:02:54,270
+pay off. At this point, there is
+interactive Figure
 
 47
-00:02:55,105 --> 00:02:58,548
-in the textbook, available in the online
-version. It
+00:02:54,270 --> 00:02:57,830
+4.3 in the textbook available in the
+online version.
 
 48
-00:02:58,608 --> 00:03:02,830
-shows annual patent applications related
-to artificial intelligence, 2019.
+00:02:58,310 --> 00:03:02,469
+It shows annual patent applications
+related to artificial intelligence
 
 49
-00:03:04,352 --> 00:03:08,175
-Patents submitted in the selected
-country's patent office. National
+00:03:04,229 --> 00:03:08,150
+patents submitted in the selected
+countries patent office. National
 
 50
-00:03:08,235 --> 00:03:13,219
-security concerns intensify race dynamics.
+00:03:08,150 --> 00:03:13,229
+security concerns Intensify Race Dynamics
 When Vladimir Putin declared
 
 51
-00:03:13,300 --> 00:03:15,782
+00:03:13,229 --> 00:03:15,870
 whoever becomes the leader in AI will
 become the
 
 52
-00:03:15,842 --> 00:03:19,104
-ruler of the world, he articulated what
+00:03:15,870 --> 00:03:19,189
+ruler of the world. He articulated what
 many policymakers
 
 53
-00:03:19,185 --> 00:03:23,768
-privately believe. This transforms AI
+00:03:19,189 --> 00:03:23,830
+privately believe this transforms AI
 development from a commercial
 
 54
-00:03:23,828 --> 00:03:28,467
+00:03:23,830 --> 00:03:28,509
 competition into a perceived struggle for
 geopolitical dominance. Over
 
 55
-00:03:28,546 --> 00:03:33,013
+00:03:28,509 --> 00:03:33,069
 50 countries have launched national AI
 strategies, often explicitly
 
 56
-00:03:33,112 --> 00:03:36,296
+00:03:33,069 --> 00:03:36,310
 framing AI leadership as critical for
 economic and military
 
 57
-00:03:36,356 --> 00:03:41,582
+00:03:36,310 --> 00:03:41,259
 superiority. Unlike corporate races
 measured in product cycles, international
 
 58
-00:03:41,703 --> 00:03:47,008
-AI competition involves long-term
+00:03:41,500 --> 00:03:46,620
+AI competition involves long term
 strategic positioning. Yet paradoxically,
-this
 
 59
-00:03:47,068 --> 00:03:50,770
-makes racing feel even more urgent.
-Falling behind today
+00:03:46,699 --> 00:03:50,300
+this makes racing feel even more urgent.
+Falling behind
 
 60
-00:03:50,871 --> 00:03:55,033
-might mean permanent disadvantage
-tomorrow. The textbook has interactive
+00:03:50,379 --> 00:03:54,460
+today might mean permanent disadvantage
+tomorrow. The textbook has
 
 61
-00:03:55,074 --> 00:03:58,316
-figure 4.4 here, which you can explore in
-the
+00:03:54,460 --> 00:03:58,180
+interactive Figure 4.4 here, which you can
+explore in
 
 62
-00:03:58,415 --> 00:04:02,598
-online version. It shows cumulative number
-of large-scale AI
+00:03:58,180 --> 00:04:01,740
+the online version. It shows cumulative
+number of large
 
 63
-00:04:02,658 --> 00:04:07,201
-systems by country since 2017. refers to
-the location
+00:04:01,740 --> 00:04:06,599
+scale AI systems by country since 2017.
+Refers to
 
 64
-00:04:07,222 --> 00:04:09,723
-of the primary organization with which the
-authors of
+00:04:06,599 --> 00:04:09,240
+the location of the primary organization
+with which the
 
 65
-00:04:09,802 --> 00:04:14,365
-large-scale AI systems are affiliated.
-Race dynamics make collective
+00:04:09,240 --> 00:04:13,080
+authors of large scale AI systems are
+affiliated. Race
 
 66
-00:04:14,465 --> 00:04:19,007
-action and coordination feel impossible.
-Countries hesitate to implement
+00:04:13,080 --> 00:04:17,759
+dynamics make collective action and
+coordination feel impossible. Countries
 
 67
-00:04:19,067 --> 00:04:22,970
-strong safety regulations that might
-handicap their domestic AI
+00:04:17,759 --> 00:04:21,800
+hesitate to implement strong safety
+regulations that might handicap
 
 68
-00:04:23,069 --> 00:04:28,052
-industries. Companies resist voluntary
-safety commitments unless competitors make
+00:04:21,800 --> 00:04:26,639
+their domestic AI industries. Companies
+resist voluntary safety commitments
 
 69
-00:04:28,132 --> 00:04:31,947
-identical pledges. Everyone waits for
-others to move first,
+00:04:26,720 --> 00:04:31,120
+unless competitors make identical pledges.
+Everyone waits for others
 
 70
-00:04:32,327 --> 00:04:35,668
-creating gridlock even when all parties
-privately acknowledge the
+00:04:31,120 --> 00:04:34,600
+to move first, creating gridlock even when
+all parties
 
 71
-00:04:35,728 --> 00:04:39,408
-risks. The result is a lowest common
-denominator approach
+00:04:34,600 --> 00:04:38,120
+privately acknowledge the risks. The
+result is a lowest
 
 72
-00:04:39,449 --> 00:04:42,910
-to safety that satisfies no one. AI
-governance needs
+00:04:38,120 --> 00:04:41,240
+common denominator approach to safety that
+satisfies no one.
 
 73
-00:04:43,009 --> 00:04:46,711
-innovative approaches to break out of race
-dynamics. Traditional
+00:04:41,480 --> 00:04:44,680
+AI governance needs innovative approaches
+to break out of
 
 74
-00:04:46,891 --> 00:04:50,612
-arms control offers limited lessons, since
-AI development happens
+00:04:44,680 --> 00:04:49,319
+race dynamics. Traditional arms control
+offers limited lessons. Since
 
 75
-00:04:50,651 --> 00:04:54,033
-in private companies, not government labs.
-We need new
+00:04:49,319 --> 00:04:52,920
+AI development happens in private
+companies, not government labs,
 
 76
-00:04:54,093 --> 00:04:57,774
-approaches, several ideas have been
-proposed, some examples are
+00:04:53,319 --> 00:04:56,519
+we need new approaches. Several ideas have
+been proposed.
 
 77
-00:04:58,793 --> 00:05:02,997
-Reciprocal snapback limits states publish
-caps on model scale,
+00:04:56,980 --> 00:05:02,300
+Some examples Reciprocal snapback limits
+States publish caps on
 
 78
-00:05:03,377 --> 00:05:07,199
-autonomous weapon deployment and data
-center compute that activate
+00:05:02,300 --> 00:05:06,420
+model scale, autonomous weapon deployment
+and data center compute
 
 79
-00:05:07,360 --> 00:05:11,382
-only when peers file matching commitments.
-The symmetry removes
+00:05:06,420 --> 00:05:10,459
+that activate only when peers file
+matching commitments. The
 
 80
-00:05:11,422 --> 00:05:15,004
-the fear of unilateral restraint and keeps
-incentives focused
+00:05:10,459 --> 00:05:13,899
+symmetry removes the fear of unilateral
+restraint and keeps
 
 81
-00:05:15,064 --> 00:05:22,377
-on shared security rather than zero-sum
-dominance. safety as
+00:05:13,899 --> 00:05:17,939
+incentives focused on shared security
+rather than zero sum
 
 82
-00:05:22,416 --> 00:05:26,459
-a competitive asset. Labs earn market
-trust by subjecting
+00:05:17,939 --> 00:05:25,019
+dominance. Safety as a competitive asset
+Labs earn market
 
 83
-00:05:26,540 --> 00:05:30,624
-frontier models to independent red team
-audits, embedding provenance
+00:05:25,019 --> 00:05:28,819
+trust by subjecting frontier models to
+independent red team
 
 84
-00:05:30,723 --> 00:05:35,327
-watermarks and disclosing incident
-reports. Regulation can turn these
+00:05:28,819 --> 00:05:34,540
+audits, embedding provenance watermarks
+and disclosing incident reports.
+Regulation
 
 85
-00:05:35,427 --> 00:05:38,610
-practices into a de facto license to
-operate so
+00:05:34,620 --> 00:05:37,579
+can turn these practices into a de facto
+license
 
 86
-00:05:38,651 --> 00:05:41,533
-that secure by design becomes the shortest
-route to
+00:05:37,660 --> 00:05:40,740
+to operate so that secure by design
+becomes the
 
 87
-00:05:41,593 --> 00:05:50,560
-sales. Tamerasa EDAL 2024 Containment
-Export controls on advanced
+00:05:40,740 --> 00:05:46,139
+shortest route to sales. Chevlane et al.
+2023 Tamirsa
 
 88
-00:05:50,641 --> 00:05:55,684
-chips API only access with real-time
-misuse monitoring Digital
+00:05:46,139 --> 00:05:51,180
+et al. 2024 Containment export controls on
+advanced chips,
 
 89
-00:05:55,723 --> 00:05:58,906
-forensics And know your customer checks
-slow the spread
+00:05:51,680 --> 00:05:55,600
+API only access with real time misuse,
+monitoring, digital
 
 90
-00:05:58,927 --> 00:06:02,829
+00:05:55,680 --> 00:05:58,839
+forensics and know your customer checks
+slow the spread
+
+91
+00:05:58,839 --> 00:06:02,879
 of dangerous capabilities even as
 beneficial services stay widely
 
-91
-00:06:02,889 --> 00:06:07,814
-available These measures address open
+92
+00:06:02,879 --> 00:06:07,839
+available. These measures address open
 publication, model theft, talent
 
-92
-00:06:07,874 --> 00:06:11,298
-mobility and hardware diffusion, factors
+93
+00:06:07,839 --> 00:06:11,240
+mobility and hardware diffusion. Factors
 that let a single
 
-93
-00:06:11,338 --> 00:06:16,062
-leak replicate worldwide within days.
-Chevron et al. 2023,
-
 94
-00:06:16,603 --> 00:06:22,029
-Sega 2023, Nevo et al. 2024, agile
-multilateral oversight
+00:06:11,240 --> 00:06:16,079
+leak replicate worldwide within days.
+Chevalin et al. 2023
 
 95
-00:06:22,069 --> 00:06:26,153
-with a coordinated halt option. A lean UN-
-mandated body,
+00:06:16,399 --> 00:06:22,019
+Sega 2023 Nivo et al. 2024 Agile
+multilateral oversight
 
 96
-00:06:26,552 --> 00:06:29,113
-think about it like a CERN or an IAEA
+00:06:22,019 --> 00:06:25,779
+with a coordinated halt option. A lean UN
+mandated
 
 97
-00:06:29,173 --> 00:06:32,935
-for AI, needs the authority to impose
-emergency pauses
+00:06:25,779 --> 00:06:28,339
+body. Think about it like a CERN or an
 
 98
-00:06:33,255 --> 00:06:36,336
-when red lines are crossed, backed by chip
-export
+00:06:28,339 --> 00:06:32,420
+IAEA for AI needs. The authority to impose
+emergency
 
 99
-00:06:36,377 --> 00:06:39,877
-restrictions and cloud provider throttles
-that make a global
+00:06:32,420 --> 00:06:35,860
+pauses when red lines are crossed, backed
+by chip
 
 100
-00:06:40,017 --> 00:06:50,483
-off-switch technically credible. secret
-safe verification, secure enclaves, tamper
+00:06:35,860 --> 00:06:39,500
+export restrictions and cloud provider
+throttles that make a
 
 101
-00:06:50,564 --> 00:06:54,208
-evident compute logs, and zero knowledge
-proofs let inspectors
+00:06:39,500 --> 00:06:44,939
+global off switch technically credible.
+Karnovsky 2024 Petropolis et
 
 102
-00:06:54,247 --> 00:06:57,851
-confirm that firms observe model and data
-controls without
+00:06:44,939 --> 00:06:51,339
+al. Secret safe verification, secure
+enclaves, tamper evident compute
 
 103
-00:06:57,932 --> 00:07:02,096
-exposing weights or proprietary code,
-closing the principal oversight
+00:06:51,339 --> 00:06:54,980
+logs and zero knowledge proofs. Let
+inspectors confirm that
 
 104
-00:07:02,136 --> 00:07:07,482
-gap identified in current treaty
-proposals. Chevlan, et al.
+00:06:54,980 --> 00:06:58,899
+firms observe model and data controls
+without exposing weights
 
 105
-00:07:07,521 --> 00:07:11,586
-2023, Waseel et al. 2024, and El-Yung et
-al.
+00:06:58,899 --> 00:07:03,019
+or proprietary code, closing the principal
+oversight gap identified
 
 106
-00:07:11,646 --> 00:07:17,074
-2024. Section, proliferation. AI
-capabilities propagate globally through
-digital
+00:07:03,019 --> 00:07:08,939
+in current treaty proposals. Shevlan et
+al. Et al.
 
 107
-00:07:17,134 --> 00:07:20,959
-networks at speeds that render traditional
-control mechanisms largely
+00:07:09,819 --> 00:07:15,949
+Andal Jung et Alta. 2024 proliferation AI
+capabilities propagate
 
 108
-00:07:21,040 --> 00:07:26,045
-ineffective. Unlike nuclear weapons that
-require specialized materials and
+00:07:15,949 --> 00:07:19,310
+globally through digital networks at
+speeds that render traditional
 
 109
-00:07:26,084 --> 00:07:29,326
-facilities, AI models are patterns of
-numbers that can
+00:07:19,310 --> 00:07:24,629
+control mechanisms largely ineffective.
+Unlike nuclear weapons that require
 
 110
-00:07:29,365 --> 00:07:32,747
-be copied and transmitted instantly. Let's
-think about this
+00:07:24,629 --> 00:07:28,709
+specialized materials and facilities, AI
+models are patterns of
 
 111
-00:07:32,786 --> 00:07:37,548
-scenario. A cutting-edge AI model capable
-of generating hyper-realistic
+00:07:28,709 --> 00:07:32,230
+numbers that can be copied and transmitted
+instantly. Let's
 
 112
-00:07:37,608 --> 00:07:41,449
-deepfakes or designing novel bioweapons is
-developed by a
+00:07:32,230 --> 00:07:35,389
+think about this scenario. A cutting edge
+AI model
 
 113
-00:07:41,488 --> 00:07:45,449
-well-intentioned research lab. The lab,
-adhering to principles of
+00:07:35,389 --> 00:07:39,089
+capable of generating hyper realistic deep
+fakes or designing
 
 114
-00:07:45,529 --> 00:07:49,031
-open science, publishes their findings and
-releases the model's
+00:07:39,089 --> 00:07:42,569
+novel bioweapons is developed by a well
+intentioned research
 
 115
-00:07:49,091 --> 00:07:52,391
-code as open source. Within hours, the
-model is
+00:07:42,649 --> 00:07:46,329
+lab. The lab, adhering to principles of
+open science,
 
 116
-00:07:52,432 --> 00:07:56,273
-downloaded thousands of times across the
-globe. Within days,
+00:07:46,569 --> 00:07:49,569
+publishes their findings and releases the
+model's code as
 
 117
-00:07:56,432 --> 00:08:00,574
-modified versions start appearing on code
-sharing platforms. Within
+00:07:49,569 --> 00:07:53,529
+open source. Within hours, the model is
+downloaded thousands
 
 118
-00:08:00,634 --> 00:08:03,016
-weeks, the capabilities that were once
-confined to a
+00:07:53,529 --> 00:07:57,410
+of times across the globe. Within days,
+modified versions
 
 119
-00:08:03,096 --> 00:08:06,838
-single lab have proliferated across the
-Internet, accessible to
+00:07:57,410 --> 00:08:01,170
+start appearing on code sharing platforms.
+Within weeks, the
 
 120
-00:08:06,958 --> 00:08:09,718
-anyone with a decent computer and an
-Internet connection.
+00:08:01,170 --> 00:08:03,769
+capabilities that were once confined to a
+single lab
 
 121
-00:08:10,338 --> 00:08:14,680
-This scenario, while hypothetical, isn't
-far from reality. This
+00:08:03,850 --> 00:08:07,449
+have proliferated across the Internet,
+accessible to anyone with
 
 122
-00:08:14,761 --> 00:08:19,461
-fundamental difference makes traditional
-non-proliferation approaches nearly
-useless for
+00:08:07,449 --> 00:08:11,129
+a decent computer and an Internet
+connection. This scenario,
 
 123
-00:08:19,601 --> 00:08:23,262
-AI governance. The textbook has a
-supplementary note titled
+00:08:11,129 --> 00:08:15,769
+while hypothetical, isn't far from
+reality. This fundamental difference
 
 124
-00:08:23,362 --> 00:08:27,663
-Balancing Proliferation Mitigations and
-Power Concentration, which we'll skip
+00:08:15,769 --> 00:08:19,970
+makes traditional non proliferation
+approaches nearly useless for AI
 
 125
-00:08:27,744 --> 00:08:32,764
-over here. Multiple channels enable rapid
-proliferation. Open publication
+00:08:19,970 --> 00:08:23,810
+governance. The textbook has a
+supplementary note titled Balancing
 
 126
-00:08:32,924 --> 00:08:37,625
-accelerates capability diffusion. The AI
-research community's commitment to
+00:08:23,810 --> 00:08:27,930
+Proliferation Mitigations and Power
+Concentration, which we'll skip over
 
 127
-00:08:37,765 --> 00:08:42,067
-openness means breakthrough techniques
-often appear on ARXIV within
+00:08:27,930 --> 00:08:33,570
+here. Multiple channels enable rapid
+proliferation Open publication accelerates
 
 128
-00:08:42,106 --> 00:08:45,490
-days of discovery. What took one lab years
-to
+00:08:33,570 --> 00:08:38,250
+capability diffusion the AI research
+community's commitment to openness
 
 129
-00:08:45,529 --> 00:08:49,331
-develop can be replicated by others in
-months. Meta's
+00:08:38,409 --> 00:08:42,330
+means breakthrough techniques often appear
+on ARXIV within days
 
 130
-00:08:49,390 --> 00:08:52,232
-release of Llama II led to thousands of
-fine-tuned
+00:08:42,330 --> 00:08:45,850
+of discovery. What took one lab years to
+develop
 
 131
-00:08:52,273 --> 00:08:56,313
+00:08:45,929 --> 00:08:49,610
+can be replicated by others in months.
+Meta's release
+
+132
+00:08:49,610 --> 00:08:52,289
+of Llama 2 led to thousands of fine tuned
+
+133
+00:08:52,289 --> 00:08:56,409
 variants within weeks, including versions
 with safety features removed
 
-132
-00:08:56,634 --> 00:09:02,376
-and new dangerous capabilities added. Sega
-2023. Model Theft
-
-133
-00:09:02,476 --> 00:09:06,727
-presents growing risks. As AI models
-become more valuable,
-
 134
-00:09:07,028 --> 00:09:10,269
+00:08:56,409 --> 00:09:02,379
+and new dangerous capabilities added. Sega
+2023 model theft
+
+135
+00:09:02,379 --> 00:09:06,740
+presents growing risks as AI models become
+more valuable,
+
+136
+00:09:06,899 --> 00:09:10,299
 they become attractive targets for
 malicious hackers and criminal
 
-135
-00:09:10,308 --> 00:09:14,750
+137
+00:09:10,299 --> 00:09:14,740
 groups. A single successful breach could
 transfer capabilities worth
 
-136
-00:09:14,811 --> 00:09:19,491
+138
+00:09:14,740 --> 00:09:19,539
 billions in development costs. Even
 without direct theft, techniques
 
-137
-00:09:19,552 --> 00:09:23,634
+139
+00:09:19,539 --> 00:09:23,539
 like model distillation can extract
 capabilities from API access
 
-138
-00:09:23,714 --> 00:09:29,556
-alone. Nevo et al. 2024. Talent mobility
+140
+00:09:23,620 --> 00:09:29,629
+alone. Nevo et al. 2024 Talent mobility
 spreads tacit
 
-139
-00:09:29,596 --> 00:09:34,638
-knowledge. When researchers move between
+141
+00:09:29,629 --> 00:09:34,710
+knowledge when researchers move between
 organizations, they carry irreplaceable
 
-140
-00:09:34,778 --> 00:09:38,900
+142
+00:09:34,710 --> 00:09:38,909
 expertise. The deep learning diaspora from
 Google Brain and
 
-141
-00:09:38,941 --> 00:09:44,144
+143
+00:09:38,909 --> 00:09:44,190
 DeepMind seeded AI capabilities worldwide.
 Unlike written knowledge, this
 
-142
-00:09:44,244 --> 00:09:47,346
+144
+00:09:44,190 --> 00:09:47,470
 experiential understanding of how to build
 and train models
 
-143
-00:09:47,666 --> 00:09:53,711
-can't be controlled through traditional
-means. Basiroglue 2024 hardware
-
-144
-00:09:53,750 --> 00:09:58,722
-proliferation enables distributed
-development. As AI chips become cheaper
-
 145
-00:09:58,802 --> 00:10:01,870
+00:09:47,549 --> 00:09:53,720
+can't be controlled through traditional
+means. Basiroglu 2024 hardware
+
+146
+00:09:53,720 --> 00:09:58,639
+proliferation enables distributed
+development as AI chips become cheaper
+
+147
+00:09:58,639 --> 00:10:01,919
 and more available, the barrier to entry
 keeps dropping.
 
-146
-00:10:02,745 --> 00:10:06,246
+148
+00:10:02,639 --> 00:10:06,359
 What required a supercomputer in 2018 now
 runs on
 
-147
-00:10:06,326 --> 00:10:12,951
+149
+00:10:06,359 --> 00:10:12,799
 hardware costing under $100,000. This
 democratization means dangerous
 capabilities
 
-148
-00:10:13,230 --> 00:10:18,313
-become accessible to ever smaller actors.
-Massey, 2024. AI
+150
+00:10:13,120 --> 00:10:18,360
+become accessible to ever smaller actors
+Massey 2024 AI
 
-149
-00:10:18,354 --> 00:10:23,157
-proliferation poses unique challenges.
+151
+00:10:18,360 --> 00:10:23,120
+proliferation poses unique challenges
 Digital goods follow different rules
 
-150
-00:10:23,236 --> 00:10:28,620
+152
+00:10:23,120 --> 00:10:28,679
 than physical objects. Traditional
 proliferation controls assume scarcity.
 There's
 
-151
-00:10:28,660 --> 00:10:31,403
+153
+00:10:28,679 --> 00:10:31,360
 only so much enriched uranium or only so
 many
 
-152
-00:10:31,442 --> 00:10:35,407
+154
+00:10:31,360 --> 00:10:35,480
 advanced missiles. But copying a model
 file costs essentially
 
-153
-00:10:35,486 --> 00:10:40,193
+155
+00:10:35,480 --> 00:10:40,200
 nothing. Once capabilities exist anywhere,
 preventing their spread becomes
 
-154
-00:10:40,234 --> 00:10:43,635
+156
+00:10:40,200 --> 00:10:43,710
 a battle against the fundamental nature of
 information. It's
 
-155
-00:10:43,676 --> 00:10:45,878
+157
+00:10:43,710 --> 00:10:45,830
 far easier to share a model than to
 prevent
 
-156
-00:10:45,937 --> 00:10:50,402
+158
+00:10:45,830 --> 00:10:50,389
 its spread. Even sophisticated
 watermarking or encryption schemes can
 
-157
-00:10:50,422 --> 00:10:54,205
-be defeated by determined actors,
-verifying that someone if
+159
+00:10:50,389 --> 00:10:54,269
+be defeated by determined actors.
+Verifying that someone, if
 
-158
-00:10:54,264 --> 00:10:58,748
-not developing harmful AI capabilities is
+160
+00:10:54,269 --> 00:10:58,750
+not developing harmful AI capabilities, is
 extremely hard. Unlike
 
-159
-00:10:58,827 --> 00:11:03,370
+161
+00:10:58,750 --> 00:11:03,590
 nuclear technology, where detection
 capabilities roughly match proliferation
 methods,
 
-160
-00:11:03,850 --> 00:11:08,850
+162
+00:11:03,669 --> 00:11:08,870
 AI governance lacks comparable defensive
 tools. Nuclear inspectors can
 
-161
-00:11:08,971 --> 00:11:13,011
+163
+00:11:08,870 --> 00:11:13,059
 use satellites and radiation detectors to
 monitor compliance. But
 
-162
-00:11:13,072 --> 00:11:17,394
-verifying that an organisation isn't
+164
+00:11:13,059 --> 00:11:17,220
+verifying that an organization isn't
 developing dangerous AI capabilities
 
-163
-00:11:17,874 --> 00:11:21,294
-would require invasive access to code,
-data and development,
+165
+00:11:17,700 --> 00:11:21,059
+would require invasive access to code data
+and development
 
-164
-00:11:21,615 --> 00:11:26,864
-practices likely revealing valuable
+166
+00:11:21,539 --> 00:11:26,940
+practices, likely revealing valuable
 intellectual property. Many organizations
 thus
 
-165
-00:11:26,943 --> 00:11:30,927
+167
+00:11:26,940 --> 00:11:30,940
 refuse intrusive monitoring. This would
 require a combination of
 
-166
-00:11:31,008 --> 00:11:34,851
+168
+00:11:30,940 --> 00:11:34,820
 many different technical and national
 measures. The textbook includes
 
-167
-00:11:34,912 --> 00:11:38,676
-figure 4.1 seen here. It depicts table of
+169
+00:11:34,820 --> 00:11:38,779
+Figure 4.1 seen here. It depicts table of
 evasion
 
-168
-00:11:38,716 --> 00:11:42,658
+170
+00:11:38,779 --> 00:11:42,720
 techniques to avoid verification methods
 under current national technical
 
-169
-00:11:42,719 --> 00:11:47,748
+171
+00:11:42,720 --> 00:11:47,840
 means. Dual use nature complicates
-controls. The same transformer
+controls the same transformer
 
-170
-00:11:47,868 --> 00:11:51,929
+172
+00:11:47,840 --> 00:11:51,960
 architecture that powers beneficial
 applications can also enable harmful
 
-171
-00:11:52,070 --> 00:11:57,032
+173
+00:11:51,960 --> 00:11:57,000
 uses. Unlike specialized military
 technology, we can't simply ban
 
-172
-00:11:57,072 --> 00:12:02,094
+174
+00:11:57,000 --> 00:12:02,039
 dangerous AI capabilities without
 eliminating beneficial ones. This dual
 
-173
-00:12:02,193 --> 00:12:04,875
+175
+00:12:02,039 --> 00:12:04,919
 use problem means governance must be far
 more nuanced
 
-174
-00:12:05,075 --> 00:12:09,756
-than traditional non-proliferation
-regimes. A motivated individual with
-modest
-
-175
-00:12:09,797 --> 00:12:13,879
-resources can now fine-tune powerful
-models for harmful purposes.
-
 176
-00:12:14,980 --> 00:12:18,743
-This democratization of capabilities means
-threats can emerge from
+00:12:04,919 --> 00:12:09,350
+than traditional non proliferation
+regimes. A motivated individual with
 
 177
-00:12:18,863 --> 00:12:24,105
-anywhere, not just nation-states or major
-corporations. Traditional governance
+00:12:09,350 --> 00:12:12,870
+modest resources can now fine tune
+powerful models for
 
 178
-00:12:24,145 --> 00:12:27,288
-frameworks aren't designed for this level
-of distributed risk.
+00:12:12,870 --> 00:12:18,269
+harmful purposes. This democratization of
+capabilities means threats can
 
 179
-00:12:27,748 --> 00:12:32,432
-How can governance help slow AI
-proliferation? Several potential
+00:12:18,269 --> 00:12:21,309
+emerge from anywhere, not just nation
+states or major
 
 180
-00:12:32,471 --> 00:12:35,232
-solutions have been proposed to find the
-right balance
+00:12:21,309 --> 00:12:26,110
+corporations. Traditional governance
+frameworks aren't designed for this level
 
 181
-00:12:35,273 --> 00:12:41,020
-between openness and control. targeted
-openness, publish fundamental research
+00:12:26,110 --> 00:12:29,909
+of distributed risk. How can governance
+help slow AI
 
 182
-00:12:41,081 --> 00:12:44,484
-but withhold model weights and fine-tuning
-recipes for high-risk
+00:12:29,909 --> 00:12:34,470
+proliferation? Several potential solutions
+have been proposed to find
 
 183
-00:12:44,524 --> 00:12:49,969
-capabilities, keeping collaboration alive
-while denying turnkey misuse, SEGA
+00:12:34,470 --> 00:12:39,940
+the right balance between openness and
+control. Targeted Publish
 
 184
-00:12:49,989 --> 00:12:55,971
-2023. Staged releases. Roll out
-progressively stronger versions only
+00:12:39,940 --> 00:12:43,220
+fundamental research but withhold model
+weights and fine tuning
 
 185
-00:12:56,091 --> 00:12:59,254
-after each tier passes red team audits and
-external
+00:12:43,220 --> 00:12:47,539
+recipes for high risk capabilities.
+Keeping collaboration alive while
 
 186
-00:12:59,313 --> 00:13:03,256
-review. Giving society time to surface
-failure modes and
+00:12:47,539 --> 00:12:55,019
+denying turnkey misuse. Staged releases
+roll out progressively stronger
 
 187
-00:13:03,297 --> 00:13:08,519
-tighten safeguards before the next step.
-Soliman 2023. Enhanced
+00:12:55,019 --> 00:12:58,500
+versions only after each tier passes. Red
+team audits
 
 188
-00:13:08,580 --> 00:13:13,182
-information security. Treat frontier
-checkpoints like key crown jewel
+00:12:58,500 --> 00:13:02,580
+and external review giving society time to
+surface failure
 
 189
-00:13:13,222 --> 00:13:17,586
-secrets. Hardened build pipelines. Model
-weight encryption in use
+00:13:02,580 --> 00:13:05,470
+modes and and tighten safeguards before
+the next step.
 
 190
-00:13:17,806 --> 00:13:22,500
-and at rest. and continuous insider threat
-monitoring. Nevo
+00:13:05,710 --> 00:13:12,149
+Soliman 2023 Enhanced Information Security
+Treat frontier checkpoints like
 
 191
-00:13:22,559 --> 00:13:27,703
-et al. 2024. Export controls and compute
-access restrictions.
+00:13:12,149 --> 00:13:16,590
+key crown jewel secrets hardened build
+pipelines, model weight
 
 192
-00:13:28,303 --> 00:13:31,566
-Block shipment of the most advanced AI
-accelerators to
+00:13:16,590 --> 00:13:20,629
+encryption in use and at rest and
+continuous insider
 
 193
-00:13:31,686 --> 00:13:35,009
-unvetted end users and require cloud
-providers to gate
+00:13:20,629 --> 00:13:28,590
+threat monitoring Export controls and
+compute access restrictions. Block
 
 194
-00:13:35,089 --> 00:13:39,951
-high-end training clusters behind know-
-your-customer checks. O'Brien et al.
+00:13:28,590 --> 00:13:32,269
+shipment of the most advanced AI
+accelerators to unvetted
 
 195
-00:13:40,131 --> 00:13:46,476
-2024. Responsible disclosure. Adopt
-cybersecurity-style norms for reporting
-newly
+00:13:32,269 --> 00:13:35,309
+end users and require cloud providers to
+gate high
 
 196
-00:13:46,537 --> 00:13:50,581
-discovered dangerous capability routes, so
-labs alert peers and
+00:13:35,309 --> 00:13:39,070
+end training clusters behind know your
+customer checks. O'
 
 197
-00:13:50,660 --> 00:13:55,705
-regulators without publishing full exploit
-paths. O'Brien et al.
+00:13:39,070 --> 00:13:44,990
+Brien et al. 2024 responsible disclosure
+adopt cybersecurity style
 
 198
-00:13:55,764 --> 00:14:02,410
-2024. Built-in technical breaks. Embed
-jailbreak resistant tuning, capability
+00:13:44,990 --> 00:13:49,389
+norms for reporting newly discovered
+dangerous capability routes so
 
 199
-00:14:02,451 --> 00:14:06,653
-throttles and provenance watermarks that
-survive model distillation, adding
+00:13:49,389 --> 00:13:53,230
+labs alert peers and regulators without
+publishing full exploit
 
 200
-00:14:06,734 --> 00:14:10,636
-friction even after weight's leak. Dong et
-al. 2024.
+00:13:53,230 --> 00:13:58,080
+paths. O' Brien et al. 2024 built in
+technical
 
 201
-00:14:10,898 --> 00:14:14,801
-Section Uncertainty In the words of Greg
-Brockman, the
+00:13:58,080 --> 00:14:03,559
+brakes embed jailbreak resistant tuning
+capability Throttles and provenance
 
 202
-00:14:14,880 --> 00:14:17,942
-exact way the post-AGI world will look is
-hard
+00:14:03,559 --> 00:14:07,679
+Watermarks that survive model distillation
+Adding friction even after
 
 203
-00:14:17,982 --> 00:14:21,005
-to predict. That world will likely be more
-different
+00:14:07,679 --> 00:14:12,958
+weights leak Dong et al. Section
+Uncertainty in the
 
 204
-00:14:21,046 --> 00:14:23,408
-from today's world than today's is from
-the 1500s.
+00:14:12,958 --> 00:14:15,919
+words of Greg Brockman, the exact way the
+post
 
 205
-00:14:24,846 --> 00:14:26,490
-We do not yet know how hard it will
+00:14:15,919 --> 00:14:19,360
+AGI world will look is hard to predict.
+That
 
 206
-00:14:26,552 --> 00:14:29,038
-be to make sure AGI's act according to the
+00:14:19,360 --> 00:14:21,960
+world will likely be more different from
+today's world
 
 207
-00:14:29,077 --> 00:14:32,380
-values of their operators. Some people
-believe it will
+00:14:21,960 --> 00:14:25,279
+than today's is from the 1500s. We do not
 
 208
-00:14:32,400 --> 00:14:35,903
-be easy, some people believe it'll be
-unimaginably difficult,
+00:14:25,279 --> 00:14:27,120
+yet know how hard it will be to make
 
 209
-00:14:36,384 --> 00:14:39,567
-but no one knows for sure. Expert
-predictions consistently
+00:14:27,120 --> 00:14:29,759
+sure AGIs act according to the values of
+their
 
 210
-00:14:39,647 --> 00:14:43,269
-fail to capture AI's actual trajectory. If
-you read
+00:14:29,759 --> 00:14:33,639
+operators. Some people believe it will be
+easy, some
 
 211
-00:14:43,330 --> 00:14:46,972
-media coverage of chat GPT, which called
-it breathtaking,
+00:14:33,639 --> 00:14:36,840
+people believe it'll be unimaginably
+difficult, but no one
 
 212
-00:14:47,293 --> 00:14:51,216
-dazzling, astounding, you'd get the sense
-that large language
+00:14:36,840 --> 00:14:40,399
+knows for sure Expert predictions
+consistently fail to capture
 
 213
-00:14:51,277 --> 00:14:56,039
-models, LLMs, took the world completely by
-surprise. Is
+00:14:40,399 --> 00:14:44,200
+AI's actual trajectory if you read media
+coverage of
 
 214
-00:14:56,080 --> 00:15:01,871
-that impression accurate? Actually yes,
-GPT-3's capabilities exceeded what
+00:14:44,200 --> 00:14:49,759
+ChatGPT, which called it breathtaking,
+dazzling, astounding, you'd get
 
 215
-00:15:01,952 --> 00:15:06,054
-many thought possible with simple scaling.
-Each major breakthrough
+00:14:49,759 --> 00:14:53,330
+the sense that large Language models LLMs
+took the
 
 216
-00:15:06,195 --> 00:15:10,177
-seems to come from unexpected directions,
-making long-term planning
+00:14:53,330 --> 00:14:58,409
+world completely by surprise. Is that
+impression accurate? Actually,
 
 217
-00:15:10,277 --> 00:15:14,638
-nearly impossible. The scaling hypothesis,
-larger models with more
+00:14:58,490 --> 00:15:03,129
+yes. GPT3's capabilities exceeded what
+many thought possible with
 
 218
-00:15:14,697 --> 00:15:18,918
-compute reliably produce more capable
-systems, has held surprisingly
+00:15:03,129 --> 00:15:07,009
+simple scaling. Each major breakthrough
+seems to come from
 
 219
-00:15:18,979 --> 00:15:21,639
-well. But we don't know if this continues
-to
+00:15:07,009 --> 00:15:12,009
+unexpected directions, making long term
+planning nearly impossible. The
 
 220
-00:15:21,759 --> 00:15:26,280
-AGI or hits fundamental technical or
-economic limits. This
+00:15:12,009 --> 00:15:16,409
+scaling hypothesis Larger models with more
+compute reliably produce
 
 221
-00:15:26,441 --> 00:15:31,582
-uncertainty has massive governance
-implications. If scaling continues,
-compute
+00:15:16,409 --> 00:15:20,240
+more capable systems has held surprisingly
+well, but we
 
 222
-00:15:31,623 --> 00:15:36,405
-controls remain effective. If algorithmic
-breakthroughs matter more, entirely
+00:15:20,240 --> 00:15:22,919
+don't know if this continues to AGI or
+hits
 
 223
-00:15:36,446 --> 00:15:40,227
-different governance approaches are
-needed. Risk assessments vary by
+00:15:22,919 --> 00:15:27,879
+fundamental technical or economic limits.
+This uncertainty has massive
 
 224
-00:15:40,347 --> 00:15:45,191
-orders of magnitude. Some researchers
-assign negligible probability to
+00:15:27,879 --> 00:15:33,000
+governance implications. If scaling
+continues, compute controls remain
+effective.
 
 225
-00:15:45,331 --> 00:15:48,913
-existential risks from AI, while others
-consider them near
+00:15:33,399 --> 00:15:37,679
+If algorithmic breakthroughs matter, more
+entirely different governance approaches
 
 226
-00:15:48,972 --> 00:15:54,155
-certain without intervention, reflecting
-fundamental uncertainty about AI's
-trajectory
+00:15:37,679 --> 00:15:41,559
+are needed. Risk assessments vary by
+orders of magnitude.
 
 227
-00:15:54,216 --> 00:15:58,717
-and controllability. When experts disagree
-this dramatically, how can
+00:15:42,279 --> 00:15:46,600
+Some researchers assign negligible
+probability to existential risks from
 
 228
-00:15:58,758 --> 00:16:04,198
-policymakers make informed decisions?
-Capability emergence surprises even
-developers.
+00:15:46,600 --> 00:15:50,460
+AI, while others consider them near
+certain without intervention,
 
 229
-00:16:04,759 --> 00:16:08,399
-Models demonstrate abilities their
-creators didn't anticipate and can't
+00:15:50,539 --> 00:15:56,100
+reflecting fundamental uncertainty about
+AI's trajectory and controllability. When
 
 230
-00:16:08,440 --> 00:16:12,360
-fully explain. If the people building
-these systems can't
+00:15:56,100 --> 00:16:00,299
+experts disagree this dramatically, how
+can policymakers make informed
 
 231
-00:16:12,402 --> 00:16:16,663
-predict their capabilities, how can
-governance frameworks anticipate what
+00:16:00,299 --> 00:16:06,100
+decisions? Capability emergence surprises
+Even developers models demonstrate
+abilities
 
 232
-00:16:16,722 --> 00:16:21,457
-needs regulating? This unpredictability
-compounds with each generation of
+00:16:06,100 --> 00:16:10,379
+their creators didn't anticipate and can't
+fully explain. If
 
 233
-00:16:21,518 --> 00:16:27,619
-more powerful models. Traditional
-policymaking assumes predictable outcomes.
-Environmental
+00:16:10,379 --> 00:16:13,500
+the people building these systems can't
+predict their capabilities,
 
 234
-00:16:27,678 --> 00:16:32,620
-regulations model pollution impacts. Drug
-approval evaluates specific health
+00:16:14,379 --> 00:16:18,740
+how can governance frameworks anticipate
+what needs regulating? This
 
 235
-00:16:32,679 --> 00:16:37,081
-effects. But AI governance must prepare
-for scenarios ranging
+00:16:18,740 --> 00:16:22,700
+unpredictability compounds with each
+generation of more powerful models.
 
 236
-00:16:37,120 --> 00:16:42,022
-from gradual capability improvements to
-sudden recursive self-improvement. Waiting
+00:16:23,179 --> 00:16:29,179
+Traditional policymaking assumes
+predictable outcomes. Environmental
+regulations model pollution
 
 237
-00:16:42,062 --> 00:16:45,403
-for certainty means waiting too long. By
-the time
+00:16:29,179 --> 00:16:34,500
+impacts. Drug approval evaluates specific
+health effects. But AI
 
 238
-00:16:45,442 --> 00:16:48,644
-we know exactly what AI capabilities will
-emerge, it
+00:16:34,500 --> 00:16:38,299
+governance must prepare for scenarios
+ranging from gradual capability
 
 239
-00:16:48,683 --> 00:16:51,345
-may be too late to govern them
-effectively. Yet
+00:16:38,299 --> 00:16:42,840
+improvements to sudden recursive self
+improvement. Waiting for certainty
 
 240
-00:16:51,465 --> 00:16:55,765
-acting under uncertainty risks
-implementing wrong-headed policies that
-stifle
+00:16:42,840 --> 00:16:45,799
+means waiting too long. By the time we
+know
 
 241
-00:16:55,826 --> 00:16:59,967
-beneficial development or fail to prevent
-actual risks. This
+00:16:45,799 --> 00:16:49,000
+exactly what AI capabilities will emerge,
+it may be
 
 242
-00:17:00,048 --> 00:17:04,068
-creates a debilitating dilemma for
-conscientious policymakers. How can
+00:16:49,000 --> 00:16:52,000
+too late to govern them effectively. Yet
+acting under
 
 243
-00:17:04,128 --> 00:17:08,730
-governance operate under uncertainty?
-Adaptive governance models that could
+00:16:52,000 --> 00:16:56,399
+uncertainty risks implementing wrong
+headed policies that stifle beneficial
 
 244
-00:17:08,770 --> 00:17:11,971
-keep pace with rapidly changing technology
-could offer a
+00:16:56,399 --> 00:17:00,360
+development or fail to prevent actual
+risks. This creates
 
 245
-00:17:12,031 --> 00:17:15,904
-path forward. Rather than fixed
-regulations based on current
+00:17:00,360 --> 00:17:04,599
+a debilitating dilemma for conscientious
+policymakers. How can governance
 
 246
-00:17:15,964 --> 00:17:18,972
-understanding, we need frameworks that can
-evolve with our
+00:17:04,599 --> 00:17:09,049
+operate under uncertainty? Adaptive
+governance models that could keep
 
 247
-00:17:19,012 --> 00:17:24,228
-knowledge. This might include regulatory
-triggers based on capability
+00:17:09,049 --> 00:17:12,369
+pace with rapidly changing technology
+could offer a path
 
 248
-00:17:24,288 --> 00:17:28,989
-milestones rather than timelines, sunset
-clauses that force regular
+00:17:12,369 --> 00:17:16,650
+forward rather than fixed regulations
+based on current understanding,
 
 249
-00:17:29,048 --> 00:17:33,911
-reconsideration of rules, safe harbours
-for experimentation within controlled
+00:17:16,890 --> 00:17:19,450
+we need frameworks that can evolve with
+our knowledge.
 
 250
-00:17:33,951 --> 00:17:38,652
-environments, rapid response institutions
-capable of updating policies as
+00:17:20,250 --> 00:17:25,049
+This might include regulatory triggers
+based on capability milestones
 
 251
-00:17:38,771 --> 00:17:44,294
-understanding improves, building consensus
-despite uncertainty requires new
-approaches.
+00:17:25,210 --> 00:17:29,809
+rather than timelines. Sunset clauses that
+force regular reconsideration
 
 252
-00:17:44,973 --> 00:17:48,974
-Traditional policy consensus emerges from
-shared understanding of problems
+00:17:29,809 --> 00:17:34,650
+of rules. Safe harbors for experimentation
+within controlled environments
 
 253
-00:17:49,035 --> 00:17:52,875
-and solutions. With AI, we lack both. Yet
-somehow
+00:17:35,150 --> 00:17:39,509
+Rapid response institutions capable of
+updating policies as understanding
 
 254
-00:17:52,935 --> 00:17:56,057
-we must build sufficient agreement to
-implement governance before
+00:17:39,509 --> 00:17:45,470
+improves Building consensus despite
+uncertainty requires new approaches.
+Traditional
 
 255
-00:17:56,116 --> 00:17:59,717
-capabilities outrace our ability to
-control them. This may
+00:17:45,470 --> 00:17:49,150
+policy consensus emerges from shared
+understanding of problems and
 
 256
-00:17:59,777 --> 00:18:03,917
-require focusing on process legitimacy
-rather than outcome certainty
+00:17:49,150 --> 00:17:53,069
+solutions. With AI, we lack both. Yet
+somehow we
 
 257
-00:18:04,198 --> 00:18:06,419
-agreeing on how to make decisions even
-when we
+00:17:53,069 --> 00:17:56,670
+must build sufficient agreement to
+implement governance before capabilities
 
 258
-00:18:06,459 --> 00:18:10,359
-disagree on what to decide. Section
-Accountability to quote
+00:17:56,750 --> 00:18:00,190
+outrace our ability to control them. This
+may require
 
 259
-00:18:10,440 --> 00:18:14,423
-Jan Leiker, After resigning from open AI,
-these problems
+00:18:00,190 --> 00:18:04,589
+focusing on process legitimacy rather than
+outcome certainty, agreeing
 
 260
-00:18:14,462 --> 00:18:16,403
-are quite hard to get right, and I am
+00:18:04,589 --> 00:18:06,910
+on how to make decisions even when we
+disagree
 
 261
-00:18:16,463 --> 00:18:18,826
-concerned we aren't on a trajectory to get
-there.
+00:18:06,910 --> 00:18:10,710
+on what to decide. SECTION Accountability
+to quote Jan
 
 262
-00:18:19,307 --> 00:18:22,910
-Open AI is shouldering an enormous
-responsibility on behalf
+00:18:11,509 --> 00:18:15,029
+after resigning from OpenAI, these
+problems are quite hard
 
 263
-00:18:22,950 --> 00:18:25,792
-of all of humanity. But over the past
-years,
+00:18:15,029 --> 00:18:17,349
+to get right, and I am concerned we aren't
 
 264
-00:18:26,133 --> 00:18:29,016
-safety culture and processes have taken a
-backseat to
+00:18:17,349 --> 00:18:20,710
+on a trajectory to get there. OpenAI is
+shouldering
 
 265
-00:18:29,076 --> 00:18:32,666
-shiny products. We are long overdue in
-getting incredibly
+00:18:20,710 --> 00:18:23,990
+an enormous responsibility on behalf of
+all of humanity.
 
 266
-00:18:32,767 --> 00:18:36,170
-serious about the implications of AGI. A
-small number
+00:18:24,470 --> 00:18:27,710
+But over the past years, safety, culture
+and processes
 
 267
-00:18:36,190 --> 00:18:39,093
-of actors make decisions that affect all
-of humanity.
+00:18:27,710 --> 00:18:30,940
+have taken a backseat to shiny products.
+We are
 
 268
-00:18:39,752 --> 00:18:42,875
-The CEOs of perhaps five companies and key
-officials
+00:18:30,940 --> 00:18:34,259
+long overdue in getting incredibly serious
+about the implications
 
 269
-00:18:42,935 --> 00:18:46,640
-in three governments largely determine how
-Frontier AI develops.
+00:18:34,259 --> 00:18:37,579
+of AGI. A small number of actors make
+decisions
 
 270
-00:18:47,440 --> 00:18:50,022
-Their choices about what to build, when to
-deploy,
+00:18:37,579 --> 00:18:41,019
+that affect all of humanity. The CEOs of
+perhaps
 
 271
-00:18:50,282 --> 00:18:53,105
-and how to ensure safety have consequences
-for billions
+00:18:41,019 --> 00:18:44,500
+five companies and key officials in three
+governments largely
 
 272
-00:18:53,326 --> 00:18:56,673
-who have no voice in these decisions. Open
-AI's
+00:18:44,500 --> 00:18:48,500
+determine how frontier AI develops. Their
+choices about what
 
 273
-00:18:56,752 --> 00:19:00,895
-board has fewer than 10 members.
-Anthropics' long-term benefit
+00:18:48,500 --> 00:18:50,980
+to build, when to deploy, and how to
+ensure
 
 274
-00:19:00,955 --> 00:19:04,597
-trust controls the company with just five
-trustees. These
+00:18:50,980 --> 00:18:54,140
+safety have consequences for billions who
+have no voice
 
 275
-00:19:04,678 --> 00:19:08,439
-tiny groups make decisions about
-technologies that could fundamentally
+00:18:54,140 --> 00:18:58,150
+in these decisions. OpenAI's board has
+fewer than 10
 
 276
-00:19:08,599 --> 00:19:12,582
-alter human society. No pharmaceutical
-company could release a
+00:18:58,150 --> 00:19:02,230
+members. Anthropic's long term benefit
+trust controls the company
 
 277
-00:19:12,642 --> 00:19:16,423
-new drug with such limited oversight. Yet
-AI systems
+00:19:02,230 --> 00:19:06,230
+with just five trustees. These tiny groups
+make decisions
 
 278
-00:19:16,482 --> 00:19:20,765
-with far broader impacts face minimal
-external scrutiny. Nearly
+00:19:06,230 --> 00:19:10,670
+about technologies that could
+fundamentally alter human society. No
 
 279
-00:19:20,924 --> 00:19:24,105
-all Frontier AI development happens in
-just two regions,
+00:19:10,670 --> 00:19:13,549
+pharmaceutical company could release a new
+drug with such
 
 280
-00:19:24,546 --> 00:19:28,186
-the San Francisco Bay Area and London. The
-values,
+00:19:13,549 --> 00:19:17,990
+limited oversight. Yet AI systems with far
+broader impacts
 
 281
-00:19:28,287 --> 00:19:31,448
-assumptions and blind spots of these tech
-hubs shape
+00:19:17,990 --> 00:19:22,349
+face minimal external scrutiny. Nearly all
+frontier AI development
 
 282
-00:19:31,587 --> 00:19:35,269
-AI systems used worldwide. Yet we know
-more about
+00:19:22,589 --> 00:19:25,809
+happens in just two regions, the San
+Francisco Bay
 
 283
-00:19:35,329 --> 00:19:38,230
-how sausages are made than how Frontier AI
-systems
+00:19:25,809 --> 00:19:29,849
+area and London. The values, assumptions,
+and blind spots
 
 284
-00:19:38,290 --> 00:19:41,692
-are trained. What seems obvious in Palo
-Alto might
+00:19:29,849 --> 00:19:33,809
+of these tech hubs shape AI systems used
+worldwide.
 
 285
-00:19:41,732 --> 00:19:44,795
-be alien in Lagos or Jakarta, yet the
-global
+00:19:34,049 --> 00:19:36,410
+Yet we know more about how sausages are
+made
 
 286
-00:19:44,835 --> 00:19:48,657
-majority have essentially no input into AI
-development. At
+00:19:36,410 --> 00:19:39,930
+than how frontier AI systems are trained.
+What seems
 
 287
-00:19:48,698 --> 00:19:52,901
-this point, the textbook shows figure
-4.17. It depicts,
+00:19:39,930 --> 00:19:42,890
+obvious in Palo Alto might be alien in
+Lagos
 
 288
-00:19:53,020 --> 00:19:56,863
-in 2023, most of the notable AI models
-originated
+00:19:42,890 --> 00:19:46,329
+or Jakarta. Yet the global majority have
+essentially no
 
 289
-00:19:56,903 --> 00:20:02,646
-from US institutions. Traditional
-accountability mechanisms don't apply.
-Corporate
-
-290
-00:20:02,666 --> 00:20:06,309
-boards nominally provide oversight, but
-most lack the incentives
-
-291
-00:20:06,349 --> 00:20:10,772
-to evaluate systemic AI risks. Government
-regulators struggle to
-
-292
-00:20:10,813 --> 00:20:14,836
-keep pace with rapid development. Academic
-researchers who might
-
-293
-00:20:14,876 --> 00:20:19,000
-provide scientific evidence and
-independent assessment often depend on
-
-294
-00:20:19,060 --> 00:20:22,604
-corporate funding or compute access. The
-result is a
-
-295
-00:20:22,663 --> 00:20:25,605
-governance vacuum where no one has both
-the capability
-
-296
-00:20:25,705 --> 00:20:29,169
-and authority needed for proper
-governance. The consequences of
-
-297
-00:20:29,209 --> 00:20:32,970
-this lack of governance are already
-becoming apparent. We've
-
-298
-00:20:33,009 --> 00:20:38,113
-seen AI-generated deepfakes used to spread
-political misinformation. Language
-
-299
-00:20:38,173 --> 00:20:40,934
-models have been used to create convincing
-phishing emails
-
-300
-00:20:41,214 --> 00:20:45,877
-and other scams. When models demonstrate
-concerning behaviors, we
-
-301
-00:20:45,917 --> 00:20:48,980
-can't trace whether they result from
-training data, reward
-
-302
-00:20:49,019 --> 00:20:53,939
-functions, or architectural choices. This
-black box nature of
-
-303
-00:20:53,979 --> 00:20:57,559
-development is a big bottleneck in
-accountability. There is
-
-304
-00:20:57,619 --> 00:21:02,082
-figure 4.1teen in the textbook here. It
-depicts diagram
-
-305
-00:21:02,163 --> 00:21:06,424
-showing the path from auditability to
-auditability, ex ante,
-
-306
-00:21:06,845 --> 00:21:11,807
-to accountability, post hoc, section,
-power and wealth concentration.
-
-307
-00:21:12,227 --> 00:21:17,150
-AI concentrates power in unprecedented
-ways. AI systems, especially
-
-308
-00:21:17,210 --> 00:21:21,230
-those developed by dominant corporations,
-are reshaping societal power
-
-309
-00:21:21,271 --> 00:21:25,780
-structures. These systems determine access
-to information and resources,
-
-310
-00:21:26,182 --> 00:21:31,406
-effectively exercising automated authority
-over individuals. As these systems
-
-311
-00:21:31,467 --> 00:21:36,112
-become more capable, this concentration
-intensifies. The organisation that
-
-312
-00:21:36,172 --> 00:21:40,175
-first develops AGI could gain decisive
-advantages across every
-
-313
-00:21:40,215 --> 00:21:43,499
-domain of human activity. A winner take
-all dynamic
-
-314
-00:21:43,598 --> 00:21:48,162
-with no historical precedent. Wealth
-effects compound existing inequalities.
-
-315
-00:21:48,803 --> 00:21:53,326
-AI automation primarily benefits capital
-owners while displacing workers,
-
-316
-00:21:53,685 --> 00:21:58,509
-deepening existing disparities. Recent
-empirical evidence suggests that AI
-
-317
-00:21:58,569 --> 00:22:03,692
-adoption significantly increases wealth
-inequality by disproportionately
-benefiting those
-
-318
-00:22:03,732 --> 00:22:07,556
-who own models, data and computational
-resources at the
-
-319
-00:22:07,615 --> 00:22:12,479
-expense of labour. Without targeted
-governance interventions, AI risks
-
-320
-00:22:12,558 --> 00:22:17,241
-creating never-before-seen levels of
-economic inequality, potentially resulting
-in
-
-321
-00:22:17,261 --> 00:22:20,703
-the most unequal society in human history.
+00:19:46,329 --> 00:19:49,890
+input into AI development at this point.
 The textbook
 
+290
+00:19:49,890 --> 00:19:54,640
+shows Figure 4.17. It depicts in 2023 most
+of
+
+291
+00:19:54,640 --> 00:19:59,359
+the notable AI models originated from US
+institutions. Traditional
+
+292
+00:19:59,359 --> 00:20:04,559
+accountability mechanisms don't apply.
+Corporate boards nominally provide
+oversight,
+
+293
+00:20:04,640 --> 00:20:08,079
+but most lack the incentives to evaluate
+systemic AI
+
+294
+00:20:08,079 --> 00:20:11,920
+risks. Government regulators struggle to
+keep pace with rapid
+
+295
+00:20:11,920 --> 00:20:16,559
+development. Academic researchers who
+might provide scientific evidence and
+
+296
+00:20:16,559 --> 00:20:20,710
+independent assessment, often depend on
+corporate funding or compute
+
+297
+00:20:20,710 --> 00:20:24,230
+access. The result is a governance vacuum
+where no
+
+298
+00:20:24,230 --> 00:20:27,029
+one has both the capability and authority
+needed for
+
+299
+00:20:27,029 --> 00:20:30,349
+proper governance. The consequences of
+this lack of governance
+
+300
+00:20:30,349 --> 00:20:34,950
+are already becoming apparent. We've seen
+AI generated deepfakes
+
+301
+00:20:34,950 --> 00:20:38,829
+used to spread political misinformation.
+Language models have been
+
+302
+00:20:38,829 --> 00:20:42,109
+used to create convincing phishing emails
+and other scams.
+
+303
+00:20:42,910 --> 00:20:46,750
+When models demonstrate concerning
+behaviors, we can't trace whether
+
+304
+00:20:46,750 --> 00:20:50,740
+they result from training, data, reward
+functions, or architectural
+
+305
+00:20:50,740 --> 00:20:55,019
+choices. This black box nature of
+development is a
+
+306
+00:20:55,019 --> 00:20:59,220
+big bottleneck in accountability. There is
+figure 4.1 in
+
+307
+00:20:59,220 --> 00:21:02,900
+the textbook. Here it depicts diagrams
+showing the path
+
+308
+00:21:02,900 --> 00:21:08,500
+from auditability to auditability ex ante
+to accountability. Post
+
+309
+00:21:08,500 --> 00:21:13,779
+Hoc Power and Wealth Concentration AI
+concentrates power in
+
+310
+00:21:13,779 --> 00:21:18,500
+unprecedented ways. AI systems, especially
+those developed by dominant
+
+311
+00:21:18,500 --> 00:21:23,900
+corporations, are reshaping societal power
+structures. These systems determine
+
+312
+00:21:23,900 --> 00:21:28,619
+access to information and resources,
+effectively exercising automated authority
+
+313
+00:21:28,619 --> 00:21:32,900
+over individuals. As these systems become
+more capable, this
+
+314
+00:21:32,900 --> 00:21:37,819
+concentration intensifies. The
+organization that first develops AGI could
+
+315
+00:21:37,819 --> 00:21:41,539
+gain decisive advantages across every
+domain of human activity.
+
+316
+00:21:42,089 --> 00:21:45,210
+A winner take all Dynamic with no
+historical precedent,
+
+317
+00:21:45,450 --> 00:21:51,130
+wealth effects compound existing
+inequalities. AI automation primarily
+benefits
+
+318
+00:21:51,130 --> 00:21:56,210
+capital owners while displacing workers,
+deepening existing disparities. Recent
+
+319
+00:21:56,210 --> 00:22:00,730
+empirical evidence suggests that AI
+adoption significantly increases wealth
+
+320
+00:22:00,730 --> 00:22:05,329
+inequality by disproportionately
+benefiting those who own models, data
+
+321
+00:22:05,329 --> 00:22:09,470
+and computational resources at the expense
+of labor. Without
+
 322
-00:22:20,763 --> 00:22:25,146
-includes figure 4.9-tine here. It depicts
-Swiss cheese model
+00:22:09,470 --> 00:22:13,950
+targeted governance interventions, AI
+risks creating never before seen
 
 323
-00:22:25,186 --> 00:22:29,808
-model, representing one recommended
-defense-in-depth strategy against the risk
+00:22:13,950 --> 00:22:17,549
+levels of economic inequality, potentially
+resulting in the most
 
 324
-00:22:29,828 --> 00:22:34,571
+00:22:17,549 --> 00:22:21,509
+unequal society in human history. The
+textbook includes Figure
+
+325
+00:22:21,509 --> 00:22:26,349
+4.19. Here it depicts Swiss cheese model
+model representing
+
+326
+00:22:26,349 --> 00:22:29,750
+one recommended defense in depth strategy
+against the risk
+
+327
+00:22:29,750 --> 00:22:34,589
 of undetected and unconstrained power
 accumulation. Threat vectors are
 
-325
-00:22:34,612 --> 00:22:39,915
+328
+00:22:34,589 --> 00:22:39,660
 in red. Democratic governance faces
-existential challenges. When information
+existential challenges when information
 
-326
-00:22:39,976 --> 00:22:44,599
-itself is controlled by private entities,
-traditional democratic institutions
+329
+00:22:39,819 --> 00:22:44,539
+itself is controlled by private entities.
+Traditional democratic institutions
 
-327
-00:22:44,880 --> 00:22:48,583
+330
+00:22:44,700 --> 00:22:48,579
 struggle to remain effective. Some
 empirical evidence indicates that
 
-328
-00:22:48,682 --> 00:22:52,707
+331
+00:22:48,579 --> 00:22:52,660
 higher levels of AI integration correlate
 with declining democratic
 
-329
-00:22:52,767 --> 00:22:57,510
-participation and accountability, as
+332
+00:22:52,660 --> 00:22:57,460
+participation and accountability as
 elected officials find themselves unable
 
-330
-00:22:57,550 --> 00:23:01,294
+333
+00:22:57,460 --> 00:23:01,299
 to regulate complex technologies that
 evolve faster than legislative
 
-331
-00:23:01,334 --> 00:23:07,476
+334
+00:23:01,299 --> 00:23:07,509
 processes. This emerging technocratic
 reality fundamentally undermines
 democratic principles
 
-332
-00:23:07,756 --> 00:23:12,557
+335
+00:23:07,589 --> 00:23:12,470
 regarding public control and oversight.
 International disparities threaten global
 
-333
-00:23:12,596 --> 00:23:18,397
+336
+00:23:12,470 --> 00:23:18,309
 stability. Countries without domestic AI
 capabilities face permanent subordination
 
-334
-00:23:18,458 --> 00:23:24,138
+337
+00:23:18,309 --> 00:23:24,150
 to AI leaders. AI adoption significantly
-exacerbates international inequalities,
+exacerbates international inequalities
 
-335
-00:23:24,759 --> 00:23:30,252
-disproportionately favouring
+338
+00:23:24,630 --> 00:23:30,269
+disproportionately favoring
 technologically advanced nations. This
 disparity threatens not
 
-336
-00:23:30,333 --> 00:23:34,474
-only economic competitiveness but also
-basic sovereignty when critical
-
-337
-00:23:34,535 --> 00:23:39,137
-decisions are effectively outsourced to
-foreign-controlled AI systems. We
-
-338
-00:23:39,178 --> 00:23:42,660
-have no agreed frameworks for distributing
-AI's benefits or
-
 339
-00:23:42,740 --> 00:23:47,102
-managing its disruptions. Should AI
-developers owe obligations to
+00:23:30,269 --> 00:23:34,019
+only economic competitiveness but but also
+basic sovereignty. When
 
 340
-00:23:47,163 --> 00:23:51,464
-displaced workers? How should AI-generated
-wealth be taxed and
+00:23:34,019 --> 00:23:37,859
+critical decisions are effectively
+outsourced to foreign controlled AI
 
 341
-00:23:51,525 --> 00:23:56,208
-redistributed? What claims do non-
-developers have on AI capabilities?
+00:23:37,859 --> 00:23:41,779
+systems, we have no agreed frameworks for
+distributing AI's
 
 342
-00:23:57,180 --> 00:24:01,146
-These questions need answers before AI's
-impacts become irreversible,
+00:23:41,779 --> 00:23:46,299
+benefits or managing its disruptions.
+Should AI developers owe
 
 343
-00:24:01,547 --> 00:24:04,952
-yet governance current discussions barely
-acknowledge them. At this
+00:23:46,299 --> 00:23:50,619
+obligations to displaced workers? How
+should AI generated wealth
 
 344
-00:24:05,012 --> 00:24:08,838
-point, the textbook shows figure 4.20. It
-depicts, in
+00:23:50,619 --> 00:23:54,700
+be taxed and redistributed? What claims do
+non developers
 
 345
-00:24:08,858 --> 00:24:11,824
-the US, the number of graduates with
-bachelor's degrees
+00:23:54,700 --> 00:23:58,940
+have on AI capabilities? These questions
+need answers before
 
 346
-00:24:11,884 --> 00:24:15,109
-in computing has increased 22% over the
-last 10
+00:23:58,940 --> 00:24:03,490
+AI's impacts become irreversible. Yet
+governance current discussions barely
 
 347
-00:24:15,170 --> 00:24:19,155
-years. Yet access remains limited in many
-African countries
+00:24:03,490 --> 00:24:06,690
+acknowledge them at this point. The
+textbook shows Figure
 
 348
-00:24:19,517 --> 00:24:22,340
-due to basic infrastructure gaps like
-electricity.
+00:24:06,690 --> 00:24:10,250
+4.20. It depicts in the US the number of
+
+349
+00:24:10,250 --> 00:24:14,210
+graduates with bachelor's degrees in
+computing has increased 22%
+
+350
+00:24:14,210 --> 00:24:17,729
+over the last 10 years. Yet access remains
+limited
+
+351
+00:24:17,729 --> 00:24:21,289
+in many African countries due to basic
+infrastructure gaps
+
+352
+00:24:21,289 --> 00:24:22,289
+like electricity.
