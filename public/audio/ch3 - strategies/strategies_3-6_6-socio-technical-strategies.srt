@@ -1,0 +1,1893 @@
+1
+00:00:00,160 --> 00:00:05,360
+Section 3.6 Socio technical strategies AI
+safety is fundamentally
+
+2
+00:00:05,360 --> 00:00:10,439
+a socio technical problem requiring socio
+technical solutions. Technical
+
+3
+00:00:10,439 --> 00:00:14,560
+safety measures can be undermined by
+inadequate governance, poor
+
+4
+00:00:14,560 --> 00:00:18,640
+security practices within labs or cultures
+that prioritize speed
+
+5
+00:00:18,640 --> 00:00:24,480
+over caution. Ensuring safety requires
+robust systemic approaches, governance
+
+6
+00:00:24,480 --> 00:00:28,559
+structures, organizational practices, and
+cultural norms that shape how
+
+7
+00:00:28,559 --> 00:00:32,679
+AI gets developed and deployed. Addressing
+these systemic risks
+
+8
+00:00:32,679 --> 00:00:37,679
+is difficult precisely because
+responsibility is distributed. No single
+
+9
+00:00:37,679 --> 00:00:41,719
+actor controls all the variables, and
+solutions require coordinating
+
+10
+00:00:41,719 --> 00:00:46,640
+across companies, governments,
+researchers, and civil society. The
+textbook
+
+11
+00:00:46,640 --> 00:00:50,640
+includes Figure 3.20. Here it depicts an
+illustration of
+
+12
+00:00:50,640 --> 00:00:53,520
+a framework that we think is robustly good
+at
+
+13
+00:00:53,520 --> 00:00:57,369
+managing risks. AI risks are too numerous
+and too
+
+14
+00:00:57,369 --> 00:01:01,250
+heterogeneous. To address these risks, we
+need an adaptive
+
+15
+00:01:01,250 --> 00:01:04,090
+framework that can be robust and evolve as
+AI
+
+16
+00:01:04,090 --> 00:01:08,129
+advances. Section Defense in Depth Defense
+in depth means
+
+17
+00:01:08,129 --> 00:01:11,969
+layering multiple independent protections
+so that if one fails,
+
+18
+00:01:11,969 --> 00:01:16,409
+others provide backup. This is one meta
+philosophy underlying
+
+19
+00:01:16,409 --> 00:01:21,290
+effective AI safety. Multiple independent
+layers of protection working
+
+20
+00:01:21,290 --> 00:01:25,120
+Together Think about it like designing a
+medieval castle.
+
+21
+00:01:25,120 --> 00:01:29,439
+Walls, moats, towers, and inner baileys
+created redundant barriers
+
+22
+00:01:29,439 --> 00:01:33,439
+where breaching one layer didn't mean
+total compromise. Modern
+
+23
+00:01:33,439 --> 00:01:38,560
+cybersecurity applies the same logic.
+Firewalls, encryption, access controls,
+
+24
+00:01:38,560 --> 00:01:43,040
+and monitoring systems operate
+simultaneously, each addressing different
+attack
+
+25
+00:01:43,120 --> 00:01:47,359
+vectors. No single security measure is
+perfect, but multiple
+
+26
+00:01:47,359 --> 00:01:52,170
+imperfect defenses working together can
+create robust protection. This
+
+27
+00:01:52,170 --> 00:01:54,730
+is also commonly known as the Swiss cheese
+model
+
+28
+00:01:54,730 --> 00:01:57,810
+of safety. At this point, the textbook
+shows Figure
+
+29
+00:01:57,810 --> 00:02:01,969
+3.21. It depicts an example analogy of
+Defense in
+
+30
+00:02:01,969 --> 00:02:05,409
+Depth from history, where castles
+progressively built up more
+
+31
+00:02:05,409 --> 00:02:07,890
+layers of security to ensure that the core
+was
+
+32
+00:02:07,890 --> 00:02:11,930
+never compromised. This layered philosophy
+is already applied in
+
+33
+00:02:11,930 --> 00:02:15,990
+cybersecurity and can be extended to AI
+safety. Defense
+
+34
+00:02:15,990 --> 00:02:19,629
+in depth relies on combinatorial explosion
+when layers are
+
+35
+00:02:19,629 --> 00:02:23,189
+truly independent. If each defensive layer
+has a 1%
+
+36
+00:02:23,189 --> 00:02:26,069
+failure rate and an attacker must breach
+all five
+
+37
+00:02:26,069 --> 00:02:31,788
+layers simultaneously, the overall failure
+probability becomes 0.01 to
+
+38
+00:02:31,788 --> 00:02:35,789
+the fifth power vanishingly small. This
+works like pin
+
+39
+00:02:35,789 --> 00:02:39,349
+security. A three digit pin is trivially
+weak, but
+
+40
+00:02:39,349 --> 00:02:42,909
+a 12 digit pin becomes very secure because
+combinatorial
+
+41
+00:02:42,909 --> 00:02:48,099
+difficulty grows exponentially. One core
+requirement is layer independence.
+
+42
+00:02:48,340 --> 00:02:51,740
+If breaking one layer automatically breaks
+others, or if
+
+43
+00:02:51,740 --> 00:02:54,939
+attackers get feedback about which layer
+failed, they can
+
+44
+00:02:54,939 --> 00:02:58,379
+brute force each barrier sequentially in
+linear time rather
+
+45
+00:02:58,379 --> 00:03:02,860
+than facing exponential difficulty. There
+is figure 3.22 in
+
+46
+00:03:02,860 --> 00:03:06,379
+the textbook. Here it depicts the Swiss
+cheese model
+
+47
+00:03:06,379 --> 00:03:11,189
+shows how technical factors can improve
+organizational safety. Multiple
+
+48
+00:03:11,189 --> 00:03:14,669
+layers of defense compensate for each
+other's individual weaknesses,
+
+49
+00:03:14,990 --> 00:03:18,110
+leading to a low overall level of risk.
+Defense
+
+50
+00:03:18,110 --> 00:03:22,150
+in depth faces limitations when defensive
+layers aren't genuinely
+
+51
+00:03:22,150 --> 00:03:26,788
+independent or when adversaries are
+sufficiently capable. If AI
+
+52
+00:03:26,788 --> 00:03:31,150
+safety implementations suffer from high
+correlation. Like most defenses
+
+53
+00:03:31,150 --> 00:03:34,030
+use the same underlying model with
+different prompts or
+
+54
+00:03:34,030 --> 00:03:39,180
+fine tuning. Adversarial attacks could
+transfer between layers. Alternatively,
+
+55
+00:03:39,180 --> 00:03:42,939
+if systems leak information about which
+layer, triggered attackers
+
+56
+00:03:42,939 --> 00:03:46,620
+could just brute force by probing
+sequentially. A more
+
+57
+00:03:46,620 --> 00:03:50,379
+fundamental limitation is when AI systems
+develop truly novel
+
+58
+00:03:50,379 --> 00:03:54,419
+capabilities that are out of distribution,
+multiple safety measures
+
+59
+00:03:54,419 --> 00:03:57,780
+might fail simultaneously because they
+share blind spots in
+
+60
+00:03:57,780 --> 00:04:02,460
+training data and assumptions. A
+sufficiently intelligent adversary,
+whether
+
+61
+00:04:02,460 --> 00:04:06,409
+misaligned AI or determined human, might
+discover a single
+
+62
+00:04:06,409 --> 00:04:09,689
+attack that breaks seemingly independent
+defenses for the same
+
+63
+00:04:09,689 --> 00:04:15,090
+underlying reason. Against
+superintelligent systems or in
+unconstrained deployment
+
+64
+00:04:15,090 --> 00:04:19,850
+scenarios where AI agents can extensively
+probe defenses, defense
+
+65
+00:04:19,850 --> 00:04:23,730
+in depth provides weaker guarantees. Many
+different solutions can
+
+66
+00:04:23,730 --> 00:04:26,569
+be imagined to reduce risks, even if none
+is
+
+67
+00:04:26,569 --> 00:04:30,889
+perfect. Technical approaches can layer
+alignment research with control
+
+68
+00:04:30,889 --> 00:04:36,170
+mechanisms and interpretability tools
+against misuse. We can combine
+
+69
+00:04:36,170 --> 00:04:41,930
+access controls, monitoring, and defensive
+technologies. International cooperation
+adds
+
+70
+00:04:41,930 --> 00:04:44,769
+another layer beyond what any single
+nation can achieve.
+
+71
+00:04:45,490 --> 00:04:49,610
+Even within systemic approaches, AI
+governance can establish structural
+
+72
+00:04:49,610 --> 00:04:54,370
+rules and accountability. Risk management
+operationalizes those rules into
+
+73
+00:04:54,370 --> 00:04:59,300
+daily decisions about capability
+thresholds and required mitigations and
+
+74
+00:04:59,300 --> 00:05:03,019
+safety culture ensures people follow
+procedures and surface concerns
+
+75
+00:05:03,019 --> 00:05:09,980
+that formal systems miss. Defensive
+Acceleration As Vitalik Buterin
+
+76
+00:05:09,980 --> 00:05:12,939
+said, be principled at a time when much of
+
+77
+00:05:12,939 --> 00:05:15,740
+the world is becoming tribal and not just
+build
+
+78
+00:05:15,740 --> 00:05:19,459
+whatever. Rather, we want to build
+specific things that
+
+79
+00:05:19,459 --> 00:05:23,740
+make the world safer and better. Defense
+Acceleration DEA
+
+80
+00:05:23,740 --> 00:05:29,079
+ASE is a strategic philosophy of
+prioritizing technologies that
+
+81
+00:05:29,079 --> 00:05:33,800
+strengthen defense and social resilience
+against AI risks. Defense
+
+82
+00:05:33,800 --> 00:05:36,439
+in depth is a philosophy that shows both
+how
+
+83
+00:05:36,439 --> 00:05:40,560
+and why we can layer multiple defensive
+layers. Defensive
+
+84
+00:05:40,560 --> 00:05:43,639
+acceleration is a parallel philosophy that
+we can use
+
+85
+00:05:43,639 --> 00:05:48,199
+in addition to did. It proposes actively
+accelerating technologies
+
+86
+00:05:48,279 --> 00:05:52,750
+that inherently favor defense over
+offense, thereby making society
+
+87
+00:05:52,750 --> 00:05:57,230
+more resilient to various threats. D AEC
+emerged as
+
+88
+00:05:57,230 --> 00:06:00,389
+a strategic approach in 2023 as a middle
+path
+
+89
+00:06:00,389 --> 00:06:08,910
+between unrestricted acceleration,
+effective accelerationism, and
+technopessimists doomers. It
+
+90
+00:06:08,910 --> 00:06:12,870
+is known by various names, including
+differential paradigm development
+
+91
+00:06:14,709 --> 00:06:18,959
+or the textbook includes Figure 3.23. Here
+it depicts
+
+92
+00:06:18,959 --> 00:06:25,480
+defensive acceleration is analogous to
+differential AI development. DA
+
+93
+00:06:25,480 --> 00:06:29,879
+ACC focuses on only accelerating defensive
+technologies, but DAED
+
+94
+00:06:29,879 --> 00:06:32,439
+has a broader scope that also includes the
+deceleration
+
+95
+00:06:32,439 --> 00:06:37,600
+of risky applications and paradigms. Daace
+can be understood
+
+96
+00:06:37,600 --> 00:06:40,639
+by thinking about the question, if AI
+takes over
+
+97
+00:06:40,639 --> 00:06:43,759
+the world or disempowers humans, how would
+it do
+
+98
+00:06:43,759 --> 00:06:49,160
+so? It hacks our computers, accelerate
+cyber defense, employ
+
+99
+00:06:49,240 --> 00:06:53,360
+AI to identify and patch vulnerabilities,
+monitor systems for
+
+100
+00:06:53,360 --> 00:06:57,800
+intrusions, and automate security
+responses. It creates a super
+
+101
+00:06:57,800 --> 00:07:03,279
+plague accelerate biodefense, developing
+technologies to detect, prevent, and
+
+102
+00:07:03,279 --> 00:07:08,199
+treat biological threats, including
+advanced air filtration systems, rapid
+
+103
+00:07:08,199 --> 00:07:12,920
+diagnostic tools, FAR UV C irradiation to
+sterilize occupied
+
+104
+00:07:12,920 --> 00:07:17,699
+spaces safely, and decentralized vaccine
+production capabilities. Capabilities it
+
+105
+00:07:17,699 --> 00:07:20,300
+convinces us either to trust it or to
+distrust
+
+106
+00:07:20,300 --> 00:07:24,579
+each other. Accelerate Info defense Create
+systems that help
+
+107
+00:07:24,579 --> 00:07:29,300
+validate information accuracy and detect
+misleading content without centralized
+
+108
+00:07:29,300 --> 00:07:33,220
+arbiters of truth, such as blockchain
+secured provenance tracking
+
+109
+00:07:33,220 --> 00:07:36,899
+and community verified fact checking
+systems like Twitter's Community
+
+110
+00:07:36,980 --> 00:07:43,420
+Notes. IT Disrupts infrastructure
+Accelerates physical defense, creating
+resilient
+
+111
+00:07:43,420 --> 00:07:47,540
+infrastructure that can withstand
+disruptions such as distributed energy
+
+112
+00:07:47,540 --> 00:07:52,500
+generation through household solar battery
+storage systems and advanced
+
+113
+00:07:52,500 --> 00:07:56,500
+manufacturing techniques that enable local
+production of essential goods.
+
+114
+00:07:56,740 --> 00:08:03,379
+D ACC represents three interconnected
+defensive, decentralized, and differential
+
+115
+00:08:03,379 --> 00:08:07,779
+technological development. The D in DA ACC
+stands for
+
+116
+00:08:08,209 --> 00:08:11,769
+defensive prioritizing technologies that
+make it easier to protect
+
+117
+00:08:11,769 --> 00:08:16,050
+against threats than to create them.
+Purely restrictive approaches
+
+118
+00:08:16,290 --> 00:08:21,490
+face inherent limitations. They require
+global coordination, create innovation
+
+119
+00:08:21,490 --> 00:08:24,970
+bottlenecks, and risk concentrating power
+in the hands of
+
+120
+00:08:24,970 --> 00:08:30,769
+those who control access, accelerating
+beneficial technologies while being
+
+121
+00:08:30,769 --> 00:08:34,059
+more cautious about those with harmful
+potential. The order
+
+122
+00:08:34,059 --> 00:08:37,299
+in which technology is developed matters a
+lot. By
+
+123
+00:08:37,299 --> 00:08:42,779
+differentially accelerating defensive
+technologies like advanced cybersecurity
+measures ahead
+
+124
+00:08:42,779 --> 00:08:47,299
+of potentially dangerous capabilities like
+autonomous hacking systems, we
+
+125
+00:08:47,299 --> 00:08:51,940
+create protective layers before they're
+urgently needed. Decentralized, we
+
+126
+00:08:51,940 --> 00:08:55,500
+can strengthen resilience by eliminating
+single points of failure.
+
+127
+00:08:55,820 --> 00:09:00,460
+Centralized control of powerful AI
+capabilities creates vulnerabilities to
+
+128
+00:09:00,460 --> 00:09:09,309
+technical failures, adversarial attacks,
+and institutional capture. Decentralized
+approaches
+
+129
+00:09:09,470 --> 00:09:14,309
+distribute both capabilities and
+governance across diverse stakeholders,
+preventing
+
+130
+00:09:14,309 --> 00:09:18,629
+unilateral control over transformative
+technologies. At this point, the
+
+131
+00:09:18,629 --> 00:09:23,549
+textbook shows Figure 3.24. It depicts
+mechanisms by which
+
+132
+00:09:23,549 --> 00:09:28,450
+differential technology development can
+reduce negative societal impacts. The
+
+133
+00:09:28,450 --> 00:09:33,090
+effectiveness of DEACC depends on
+maintaining favorable offense defense
+
+134
+00:09:33,090 --> 00:09:37,610
+balances. The feasibility of DE AACC as a
+strategy
+
+135
+00:09:37,610 --> 00:09:41,690
+hinges on whether defensive technologies
+can outpace offensive capabilities
+
+136
+00:09:41,850 --> 00:09:46,889
+across domains. Historical precedents are
+mixed. Some fields, like
+
+137
+00:09:46,889 --> 00:09:51,210
+traditional cybersecurity, often favor
+defenders who can patch vulnerabilities,
+
+138
+00:09:51,929 --> 00:09:55,769
+while others, like biosecurity,
+traditionally favor attackers who need
+
+139
+00:09:55,769 --> 00:09:59,129
+fewer resources to create threats. Then
+defenders need to
+
+140
+00:09:59,129 --> 00:10:03,409
+counter them. The key challenge for D ACC
+implementation
+
+141
+00:10:03,570 --> 00:10:07,330
+lies in identifying and supporting
+technologies that shift these
+
+142
+00:10:07,330 --> 00:10:11,169
+balances toward defense. The textbook has
+a supplementary note
+
+143
+00:10:11,169 --> 00:10:15,610
+titled A Concrete AI for Cyber Defense,
+which we'll
+
+144
+00:10:15,610 --> 00:10:18,850
+skip over here. The textbook has a
+supplementary note
+
+145
+00:10:18,850 --> 00:10:23,009
+titled Actionable Strategies aligned with
+the DA ACC philosophy,
+
+146
+00:10:23,419 --> 00:10:27,700
+which we'll skip over here. AI Governance
+the pursuit
+
+147
+00:10:27,700 --> 00:10:30,220
+of more and more powerful AI, much like
+the
+
+148
+00:10:30,220 --> 00:10:33,379
+nuclear arms race of the Cold War era,
+represents
+
+149
+00:10:33,379 --> 00:10:35,980
+a trade off between safety and the
+competitive edge
+
+150
+00:10:35,980 --> 00:10:40,019
+nations and corporations seek for power
+and influence this
+
+151
+00:10:40,019 --> 00:10:44,299
+competitive dynamic increases global risk.
+To mitigate this problem,
+
+152
+00:10:44,460 --> 00:10:46,220
+we can try to act at the source of
+
+153
+00:10:46,220 --> 00:10:50,100
+it, namely the redesign of economic
+incentives to prioritize
+
+154
+00:10:50,100 --> 00:10:53,730
+long term safety over short term gains.
+This can
+
+155
+00:10:53,730 --> 00:10:57,809
+mainly be done via international
+governance. Effective AI governance
+
+156
+00:10:57,809 --> 00:11:02,529
+aims to achieve two main Gaining time and
+resources
+
+157
+00:11:02,529 --> 00:11:05,529
+for solution development to ensure that
+sufficient time and
+
+158
+00:11:05,529 --> 00:11:09,809
+resources are allocated for identifying
+and implementing safety measures.
+
+159
+00:11:11,970 --> 00:11:15,690
+Enhanced coordination to increase the
+likelihood of widespread adoption
+
+160
+00:11:15,690 --> 00:11:20,129
+of safety measures through global
+cooperation. AI risks are
+
+161
+00:11:20,129 --> 00:11:25,450
+multifaceted, necessitating regulations
+that encourage cautious behavior among
+stakeholders
+
+162
+00:11:25,450 --> 00:11:29,690
+and timely responses to emerging threats.
+Designing better Incentives
+
+163
+00:11:29,850 --> 00:11:33,090
+Aligning economic incentives with safety
+goals is a key
+
+164
+00:11:33,090 --> 00:11:38,250
+challenge. Currently, strong commercial
+pressures can incentivize rapid capability
+
+165
+00:11:38,250 --> 00:11:41,730
+development, potentially at the expense of
+safety research or
+
+166
+00:11:41,730 --> 00:11:46,649
+cautious deployment. Mechanisms to reward
+safety or penalize recklessness
+
+167
+00:11:46,649 --> 00:11:51,059
+are needed to avoid negative
+externalities. Reshaping the race
+
+168
+00:11:51,059 --> 00:11:55,860
+via a centralized development. For
+example, Yoshua Bengio et
+
+169
+00:11:55,860 --> 00:11:59,500
+al. Propose creating a secure facility
+akin to CERN
+
+170
+00:11:59,500 --> 00:12:02,940
+for physics, where the development of
+potentially dangerous AI
+
+171
+00:12:02,940 --> 00:12:09,059
+technologies can be tightly controlled
+Bengio 2023 this measure
+
+172
+00:12:09,059 --> 00:12:12,179
+is far from being a consensus view. We
+already
+
+173
+00:12:12,259 --> 00:12:18,309
+explored this solution in the Strategy
+World Coordination in
+
+174
+00:12:18,309 --> 00:12:21,309
+the section ASI Safety. But this could
+also be
+
+175
+00:12:21,309 --> 00:12:25,230
+valid for many domains of safety windfall
+clauses and
+
+176
+00:12:25,230 --> 00:12:29,190
+benefit sharing. Implementing agreements
+to share the profits between
+
+177
+00:12:29,190 --> 00:12:32,870
+the different labs generated from AGI
+would mitigate the
+
+178
+00:12:32,870 --> 00:12:36,750
+race to AI supremacy by ensuring
+collective benefit from
+
+179
+00:12:36,750 --> 00:12:41,710
+individual successes. Implementing a
+Correct Governance of AGI Companies
+
+180
+00:12:42,720 --> 00:12:45,200
+it is important to examine the governance
+structures of
+
+181
+00:12:45,200 --> 00:12:49,039
+AGI labs. For example, being a non profit
+and
+
+182
+00:12:49,039 --> 00:12:51,399
+having a mission statement that makes it
+clear that
+
+183
+00:12:51,399 --> 00:12:54,000
+the goal is not to maximize revenue but to
+
+184
+00:12:54,000 --> 00:12:56,759
+ensure that the development of AI benefits
+all of
+
+185
+00:12:56,759 --> 00:13:00,360
+humanity is an important first step. Also,
+the board
+
+186
+00:13:00,360 --> 00:13:04,159
+needs to have teeth. Legal Liability for
+AI Developers
+
+187
+00:13:04,720 --> 00:13:09,350
+Establishing clear legal responsibilities
+for AI developers regarding misuse
+
+188
+00:13:09,350 --> 00:13:13,750
+or accidents might realign the incentives.
+For example, the
+
+189
+00:13:13,750 --> 00:13:17,509
+Safe and Secure Innovation for Frontier
+Artificial Intelligence Models
+
+190
+00:13:17,509 --> 00:13:21,950
+Act SPN 47 could have enabled the Attorney
+General
+
+191
+00:13:21,950 --> 00:13:25,669
+to bring civil suits against developers
+who cause catastrophic
+
+192
+00:13:25,669 --> 00:13:29,309
+harm or threaten public safety by
+neglecting the requirements.
+
+193
+00:13:29,789 --> 00:13:32,269
+The bill, which was vetoed by the governor
+in
+
+194
+00:13:32,269 --> 00:13:36,730
+2024, only addressed extreme risks from
+these models, including
+
+195
+00:13:37,049 --> 00:13:41,850
+cyber attacks causing over $500 million in
+damage autonomous
+
+196
+00:13:41,850 --> 00:13:45,490
+crime causing $500 million in damage and
+the creation
+
+197
+00:13:45,490 --> 00:13:50,090
+of chemical, biological, radiological, or
+nuclear weapons using AI.
+
+198
+00:13:50,649 --> 00:13:53,009
+Note that compared with the AI act and its
+
+199
+00:13:53,009 --> 00:13:57,129
+code of practice, SB147 does not specify
+in detail
+
+200
+00:13:57,289 --> 00:14:00,929
+the steps needed to ensure we avoid
+catastrophes. It
+
+201
+00:14:00,929 --> 00:14:03,450
+only targets the outcome and not really
+the process
+
+202
+00:14:04,179 --> 00:14:08,980
+proposed International AI Governance
+Several mechanisms have been proposed
+
+203
+00:14:08,980 --> 00:14:11,860
+to establish clear boundaries and rules
+for AI development
+
+204
+00:14:12,100 --> 00:14:17,299
+internationally. These include
+implementing temporary moratoriums on high
+risk
+
+205
+00:14:17,299 --> 00:14:22,100
+AI systems, enforcing legal regulations
+like the EU AI
+
+206
+00:14:22,100 --> 00:14:26,539
+act, and establishing internationally
+agreed upon red lines that
+
+207
+00:14:26,539 --> 00:14:31,490
+prohibit specific dangerous AI
+capabilities such as autonomous
+replication
+
+208
+00:14:31,570 --> 00:14:34,090
+or assisting in the creation of weapons of
+mass
+
+209
+00:14:34,090 --> 00:14:38,570
+destruction. The IDIS dialogues have aimed
+to build consensus
+
+210
+00:14:38,570 --> 00:14:42,929
+on these red lines, emphasizing clarity
+and universality as
+
+211
+00:14:42,929 --> 00:14:47,330
+key features for effectiveness with
+violations potentially triggering pre
+
+212
+00:14:47,330 --> 00:14:51,690
+agreed international responses.
+Conditional approaches and the creation of
+
+213
+00:14:51,690 --> 00:14:56,649
+dedicated international bodies represent
+another key strategy if then
+
+214
+00:14:56,649 --> 00:15:00,769
+commitments involve developers or states
+agreeing to enact specific
+
+215
+00:15:00,769 --> 00:15:05,809
+safety measures if AI capabilities reach
+certain predefined thresholds,
+
+216
+00:15:06,049 --> 00:15:10,970
+allowing preparation without hindering
+development prematurely, as exemplified by
+
+217
+00:15:10,970 --> 00:15:15,929
+the proposed Conditional AI Safety Treaty.
+Furthermore, proposals exist
+
+218
+00:15:15,929 --> 00:15:19,889
+for new international institutions,
+potentially modeled after the
+International
+
+219
+00:15:20,049 --> 00:15:26,450
+Atomic Energy Agency, to monitor AI
+development, verify compliance
+
+220
+00:15:26,450 --> 00:15:30,570
+with agreements, promote safety research,
+and potentially centralize or
+
+221
+00:15:30,570 --> 00:15:33,850
+control the most high risk AI development
+and distribution.
+
+222
+00:15:34,169 --> 00:15:38,090
+Specific governance regimes and supporting
+structures are also under
+
+223
+00:15:38,090 --> 00:15:42,929
+consideration to enhance international
+coordination. Given the global nature
+
+224
+00:15:42,929 --> 00:15:46,929
+of AI, mechanisms like international
+compute governance aim to
+
+225
+00:15:46,929 --> 00:15:49,730
+monitor and control the supply chains for
+AI chips
+
+226
+00:15:49,730 --> 00:15:54,210
+and large scale training infrastructure.
+Although technical feasibility and
+
+227
+00:15:54,210 --> 00:15:59,330
+international cooperation remain
+challenges, other proposals include
+establishing a
+
+228
+00:15:59,330 --> 00:16:02,850
+large scale international AI safety
+research body akin to
+
+229
+00:16:02,850 --> 00:16:07,049
+cern, potentially centralizing high risk
+research or setting global
+
+230
+00:16:07,129 --> 00:16:11,929
+standards, and strengthening whistleblower
+protections through international
+agreements to
+
+231
+00:16:11,929 --> 00:16:15,049
+encourage reporting of safety concerns
+within the AI industry.
+
+232
+00:16:15,529 --> 00:16:18,470
+For more information on these topics,
+please read the
+
+233
+00:16:18,470 --> 00:16:21,750
+next chapter on AI governance. The
+textbook has a
+
+234
+00:16:21,750 --> 00:16:26,110
+supplementary note titled Is AI Governance
+Useful, Desirable, and
+
+235
+00:16:26,110 --> 00:16:31,350
+possible? Which we'll skip over here. Risk
+Management Risk
+
+236
+00:16:31,350 --> 00:16:35,870
+management ensures that risks minus
+mitigations remain below tolerance
+
+237
+00:16:35,870 --> 00:16:42,350
+levels. The core equation is risks,
+mitigations, tolerance. This
+
+238
+00:16:42,350 --> 00:16:48,019
+operational process connects everything
+else. Governance sets rules, evaluations
+
+239
+00:16:48,019 --> 00:16:52,740
+measure capabilities, safety culture
+establishes norms, but risk management
+
+240
+00:16:53,059 --> 00:16:55,700
+makes the daily decisions about whether to
+pause training,
+
+241
+00:16:56,019 --> 00:16:59,539
+which mitigations to implement, and how to
+maintain acceptable
+
+242
+00:16:59,539 --> 00:17:04,019
+risk levels throughout development. The
+framework has four interconnected
+
+243
+00:17:04,980 --> 00:17:10,099
+identification, analysis, treatment and
+governance. Each addresses a distinct
+
+244
+00:17:10,099 --> 00:17:14,299
+question about managing AI risks
+systematically. There is figure
+
+245
+00:17:14,299 --> 00:17:18,619
+3.25 in the textbook. Here it depicts
+overview of
+
+246
+00:17:18,619 --> 00:17:22,819
+the risk management framework. Risk
+identification determines what could
+
+247
+00:17:22,819 --> 00:17:27,619
+go wrong. First, classify known risks from
+literature covering
+
+248
+00:17:27,619 --> 00:17:33,099
+domains like cybersecurity, CBRN
+manipulation, autonomous replication and
+loss
+
+249
+00:17:33,099 --> 00:17:38,900
+of control, with any exclusions clearly
+justified. Second, identify
+
+250
+00:17:38,900 --> 00:17:42,420
+unknown risks through both internal and
+external red teaming
+
+251
+00:17:42,680 --> 00:17:47,200
+that explores beyond predefined
+categories. Third, create risk models
+
+252
+00:17:47,200 --> 00:17:50,359
+that map step by step pathways from AI
+capabilities
+
+253
+00:17:50,519 --> 00:17:55,079
+to real world harms validated by
+independent experts. The
+
+254
+00:17:55,079 --> 00:17:57,680
+goal is to understand, not just what bad
+things
+
+255
+00:17:57,680 --> 00:18:01,480
+could happen, but specifically how they
+could materialize. Risk
+
+256
+00:18:01,480 --> 00:18:06,559
+analysis translates abstract concerns into
+measurable thresholds. Start by
+
+257
+00:18:06,559 --> 00:18:09,619
+setting a risk tolerance, the maximum harm
+level you'll
+
+258
+00:18:09,619 --> 00:18:14,619
+accept, preferably expressed
+quantitatively as probability times
+severity per
+
+259
+00:18:14,619 --> 00:18:18,779
+time period. Then operationalize this into
+key risk indicators
+
+260
+00:18:20,380 --> 00:18:25,019
+capability thresholds like scores 60% on
+cyber offense benchmark
+
+261
+00:18:25,339 --> 00:18:31,059
+paired with key control indicators.
+Mitigation targets like maintain
+
+262
+00:18:31,059 --> 00:18:36,759
+security level 3 and achieve 99.9%
+jailbreak resistance. The
+
+263
+00:18:36,759 --> 00:18:40,599
+pairing creates if then statements. If
+this KRI threshold
+
+264
+00:18:40,599 --> 00:18:43,759
+is crossed, then these KCI targets must be
+met.
+
+265
+00:18:44,319 --> 00:18:48,319
+Organizations must commit to pausing
+development if required. KCIs
+
+266
+00:18:48,319 --> 00:18:52,559
+cannot be achieved. Risk Treatment
+implements and monitors mitigation
+
+267
+00:18:52,559 --> 00:18:57,359
+measures. This has two phases. First,
+implement mitigations across
+
+268
+00:18:57,359 --> 00:19:04,349
+three containment measures controlling
+access through information, security
+deployment
+
+269
+00:19:04,349 --> 00:19:09,430
+measures, preventing misuse through
+safeguards and assurance processes
+providing
+
+270
+00:19:09,430 --> 00:19:14,230
+evidence of safety for advanced systems.
+Second, continuously monitor
+
+271
+00:19:14,230 --> 00:19:18,670
+against predetermined thresholds, tracking
+both KRIs to detect when
+
+272
+00:19:18,670 --> 00:19:23,549
+dangerous capabilities emerge and KCIs to
+verify mitigations remain
+
+273
+00:19:23,549 --> 00:19:28,029
+effective. Results should be transparently
+shared with stakeholders and
+
+274
+00:19:28,029 --> 00:19:31,109
+systems should monitor for novel risks
+that weren't identified
+
+275
+00:19:31,109 --> 00:19:36,109
+initially. The textbook includes figure
+3.26. Here it depicts
+
+276
+00:19:36,109 --> 00:19:39,430
+the three lines of defense model 3 LOD as
+
+277
+00:19:39,430 --> 00:19:44,309
+described by the IIA Institute of Internal
+Auditors. Risk
+
+278
+00:19:44,309 --> 00:19:47,549
+Governance establishes who does what and
+who verifies how
+
+279
+00:19:47,549 --> 00:19:50,670
+it's done. Most industries use a three
+lines of
+
+280
+00:19:50,670 --> 00:19:54,470
+defense model. The first line consists of
+operational managers
+
+281
+00:19:54,470 --> 00:19:58,359
+who build systems and own daily risk
+decisions. The
+
+282
+00:19:58,359 --> 00:20:01,799
+second line includes specialized risk
+teams that advise and
+
+283
+00:20:01,799 --> 00:20:05,920
+challenge business decisions. The third
+line is internal audit,
+
+284
+00:20:06,240 --> 00:20:09,160
+independent from peer pressure reporting
+to the board to
+
+285
+00:20:09,160 --> 00:20:13,479
+verify the system works. Beyond this
+structure, Governance includes
+
+286
+00:20:13,479 --> 00:20:17,559
+board level oversight, risk culture
+throughout the organization and
+
+287
+00:20:17,559 --> 00:20:21,720
+external transparency about risks and
+decision making processes. An
+
+288
+00:20:21,720 --> 00:20:25,240
+extremely detailed analysis of current
+risk management and safety
+
+289
+00:20:25,240 --> 00:20:29,660
+practices is conducted by Safer AI
+available here. Every
+
+290
+00:20:29,660 --> 00:20:34,740
+category identification, analysis,
+treatment and governance is further
+decomposed
+
+291
+00:20:34,740 --> 00:20:38,220
+into extremely granular metrics that are
+tracked and analyzed
+
+292
+00:20:38,220 --> 00:20:41,539
+to give risk ratings to all frontier AI
+organizations.
+
+293
+00:20:41,939 --> 00:20:45,500
+At this point, the textbook shows Figure
+3.27. It
+
+294
+00:20:45,500 --> 00:20:48,819
+depicts risk management ratings of the
+frontier AI safety
+
+295
+00:20:48,819 --> 00:20:54,599
+organizations as of October 2025. Section
+Safety culture Safety
+
+296
+00:20:54,599 --> 00:20:59,240
+culture means building organizations where
+people consistently prioritize safety
+
+297
+00:20:59,240 --> 00:21:02,720
+over speed and where safety concerns can
+actually change
+
+298
+00:21:02,720 --> 00:21:06,880
+decisions. This is a strategy for
+preventing AI accidents
+
+299
+00:21:07,119 --> 00:21:11,799
+through organizational design rather than
+just technical fixes. Risk
+
+300
+00:21:11,799 --> 00:21:15,720
+management is seen in many fields
+including aerospace, nuclear
+
+301
+00:21:15,720 --> 00:21:19,859
+power and financial services. Each of
+these domains has
+
+302
+00:21:19,859 --> 00:21:25,019
+developed sophisticated approaches to
+identifying, analyzing and mitigating
+potential
+
+303
+00:21:25,019 --> 00:21:28,859
+harms. We want to mitigate AI safety
+failures that
+
+304
+00:21:28,859 --> 00:21:33,140
+stem from human and organizational factors
+rushing to deploy
+
+305
+00:21:33,140 --> 00:21:37,700
+under tested systems, ignoring warning
+signs, or creating incentives
+
+306
+00:21:37,700 --> 00:21:42,180
+that reward moving fast over being
+careful. Integrating Safety
+
+307
+00:21:42,180 --> 00:21:46,099
+culture addresses these root causes by
+changing how organizations
+
+308
+00:21:46,099 --> 00:21:49,720
+operate. There is figure 3.28 in the
+textbook. Here
+
+309
+00:21:49,960 --> 00:21:53,119
+it depicts the AI Safety Index report for
+summer
+
+310
+00:21:53,119 --> 00:21:57,519
+2025. The scores show whether each
+company's governance structure
+
+311
+00:21:57,519 --> 00:22:01,480
+and day to day operations prioritize
+meaningful accountability for
+
+312
+00:22:01,480 --> 00:22:04,839
+the real world impacts of its AI systems.
+This
+
+313
+00:22:04,839 --> 00:22:09,160
+includes things like whistleblowing
+systems, legal structures, and advocacy
+
+314
+00:22:09,160 --> 00:22:13,240
+efforts related to AI regulations. The AI
+industry lacks
+
+315
+00:22:13,240 --> 00:22:17,710
+the professional safety culture found in
+traditional engineering. Fields
+
+316
+00:22:17,710 --> 00:22:21,430
+like civil and mechanical engineering have
+professional ethics codes,
+
+317
+00:22:21,509 --> 00:22:26,230
+safety margins, and reliability
+engineering as standard practice. AI
+
+318
+00:22:26,230 --> 00:22:30,029
+development emerged from mathematics and
+computer science, which, outside
+
+319
+00:22:30,029 --> 00:22:33,910
+of safety critical software systems have
+weaker safety traditions.
+
+320
+00:22:34,630 --> 00:22:38,710
+Unlike other industries where workers
+directly experience safety risks,
+
+321
+00:22:38,869 --> 00:22:42,349
+AI developers rarely face the consequences
+of their systems
+
+322
+00:22:42,349 --> 00:22:45,740
+failures. This distance makes it harder to
+build the
+
+323
+00:22:45,740 --> 00:22:49,180
+shared understanding of risk that
+motivates safety culture. In
+
+324
+00:22:49,180 --> 00:22:52,660
+other fields, AI safety culture must be
+forward looking
+
+325
+00:22:52,740 --> 00:22:57,220
+rather than reactive. Most industries
+developed safety cultures after
+
+326
+00:22:57,220 --> 00:23:02,059
+major disasters, nuclear power after Three
+Mile island, healthcare
+
+327
+00:23:02,059 --> 00:23:06,299
+after decades of preventable deaths.
+Waiting for AI disasters
+
+328
+00:23:06,299 --> 00:23:09,019
+would be irresponsible since some failures
+might not be
+
+329
+00:23:09,019 --> 00:23:13,460
+survivable. The aerospace industry
+demonstrates how safety culture can
+
+330
+00:23:13,460 --> 00:23:18,700
+transform entire fields through systematic
+practices. Aviation moved from
+
+331
+00:23:18,700 --> 00:23:22,500
+frequent crashes to extraordinary safety
+records not just through
+
+332
+00:23:22,500 --> 00:23:26,779
+better technology, but through cultural
+changes like mandatory incident
+
+333
+00:23:26,779 --> 00:23:31,900
+reporting, blame, free safety
+investigations, and standardized
+procedures that
+
+334
+00:23:31,900 --> 00:23:36,339
+prioritize safety over schedule pressure.
+AI companies can adopt
+
+335
+00:23:36,339 --> 00:23:41,569
+similar practices, systematic incident
+reporting, regular safety training, and
+
+336
+00:23:41,569 --> 00:23:46,009
+organizational structures that ensure
+safety concerns reach decision makers
+
+337
+00:23:46,009 --> 00:23:49,769
+with authority to act. Strong safety
+culture has three
+
+338
+00:23:49,769 --> 00:23:56,569
+observable leadership, accountability,
+systematic processes, and psychological
+safety for
+
+339
+00:23:56,569 --> 00:24:02,210
+raising concerns. NIST's AI risk
+management framework identifies executive
+
+340
+00:24:02,369 --> 00:24:07,119
+leadership taking personal responsibility
+for AI risk decisions, diverse
+
+341
+00:24:07,119 --> 00:24:11,400
+teams informing risk management throughout
+development, and systematic processes
+
+342
+00:24:11,400 --> 00:24:15,000
+for incident reporting and information
+sharing across the organization.
+
+343
+00:24:15,480 --> 00:24:20,119
+Organizations with safety culture
+implement systematic processes where
+safety
+
+344
+00:24:20,119 --> 00:24:23,680
+considerations are built into standard
+workflows rather than being
+
+345
+00:24:23,680 --> 00:24:27,559
+optional add ons. They create environments
+where employees can
+
+346
+00:24:27,559 --> 00:24:31,319
+raise safety concerns without career
+penalties and where such
+
+347
+00:24:31,319 --> 00:24:35,890
+concerns visibly influence decisions. As
+one example, NASA learned
+
+348
+00:24:35,890 --> 00:24:40,210
+that technical excellence isn't enough.
+The Challenger disaster occurred
+
+349
+00:24:40,289 --> 00:24:44,410
+partly because engineers safety concerns
+didn't reach decision makers
+
+350
+00:24:44,410 --> 00:24:49,089
+due to organizational dynamics that
+discouraged dissent. Safety culture
+
+351
+00:24:49,089 --> 00:24:53,490
+extends beyond individual projects to
+encompass hiring, performance evaluation,
+
+352
+00:24:53,569 --> 00:24:58,849
+and organizational incentives. Companies
+serious about safety culture evaluate
+
+353
+00:24:58,849 --> 00:25:03,009
+candidates for safety mindset during
+hiring, include safety metrics
+
+354
+00:25:03,009 --> 00:25:06,130
+in performance reviews, and ensure that
+safety work is
+
+355
+00:25:06,130 --> 00:25:09,450
+recognized and rewarded rather than seen
+as slowing down
+
+356
+00:25:09,609 --> 00:25:14,009
+real progress. This includes providing
+dedicated time and resources
+
+357
+00:25:14,009 --> 00:25:16,930
+for safety work, not treating it as
+something teams
+
+358
+00:25:16,930 --> 00:25:21,009
+should squeeze in around other priorities.
+Organizations with a
+
+359
+00:25:21,009 --> 00:25:25,930
+strong safety culture maintain detailed
+incident reporting systems, conduct
+
+360
+00:25:25,930 --> 00:25:30,009
+regular safety assessments and demonstrate
+continuous improvement in their
+
+361
+00:25:30,009 --> 00:25:33,569
+safety practices. They invest in training
+programs that go
+
+362
+00:25:33,569 --> 00:25:37,849
+beyond compliance checklists to develop
+genuine safety expertise across
+
+363
+00:25:37,849 --> 00:25:42,450
+teams. Most importantly, they create
+feedback loops where safety
+
+364
+00:25:42,450 --> 00:25:46,089
+information flows both up and down the
+organization, enabling
+
+365
+00:25:46,089 --> 00:25:50,170
+rapid learning and adaptation when new
+risks emerge. Weak
+
+366
+00:25:50,170 --> 00:25:54,019
+safety culture means we see safety
+WASHINGTON the appearance
+
+367
+00:25:54,019 --> 00:25:58,900
+of caring about safety without substance
+Organizations with weak
+
+368
+00:25:58,900 --> 00:26:02,380
+safety cultures often have safety policies
+on paper but
+
+369
+00:26:02,380 --> 00:26:05,140
+don't follow them. When under pressure,
+they may blame
+
+370
+00:26:05,140 --> 00:26:09,619
+individuals for accidents rather than
+examining systemic causes. They
+
+371
+00:26:09,619 --> 00:26:12,980
+typically treat safety work as overhead
+that slows down
+
+372
+00:26:12,980 --> 00:26:16,859
+real progress, leading to under resourcing
+and marginalization of
+
+373
+00:26:16,859 --> 00:26:21,380
+safety teams. Safety concerns in these
+organizations rarely change
+
+374
+00:26:21,380 --> 00:26:25,549
+actual deployment decisions. We talk more
+about safety washing
+
+375
+00:26:25,549 --> 00:26:26,990
+in the Challenges section.

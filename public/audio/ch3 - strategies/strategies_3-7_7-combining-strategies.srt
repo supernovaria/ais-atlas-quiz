@@ -1,0 +1,433 @@
+1
+00:00:00,160 --> 00:00:05,120
+Section 3.7 Combining strategies the
+preceding sections have outlined
+
+2
+00:00:05,120 --> 00:00:08,519
+a wide array of strategies, each targeting
+different facets
+
+3
+00:00:08,519 --> 00:00:12,599
+of AI risk. Synthesizing these into a
+single coherent
+
+4
+00:00:12,599 --> 00:00:16,278
+plan is a difficult task. This section
+outlines one
+
+5
+00:00:16,278 --> 00:00:20,199
+plausible strategic sequence illustrating
+how different layers of defense
+
+6
+00:00:20,199 --> 00:00:22,760
+could be built upon one another to
+navigate the
+
+7
+00:00:22,760 --> 00:00:25,839
+path from near term risks to long term
+existential
+
+8
+00:00:25,839 --> 00:00:29,940
+challenges. This sequence is intended as
+an illustrative model,
+
+9
+00:00:29,940 --> 00:00:33,700
+not as a definitive roadmap. Step 1
+Foundational risk
+
+10
+00:00:33,700 --> 00:00:37,500
+management and Governance this is the
+bedrock. Without a
+
+11
+00:00:37,500 --> 00:00:41,179
+safety culture and basic risk management,
+technical solutions will
+
+12
+00:00:41,179 --> 00:00:44,179
+not be implemented correctly and labs will
+race ahead
+
+13
+00:00:44,179 --> 00:00:47,899
+recklessly. The first common step is the
+implementation of
+
+14
+00:00:47,899 --> 00:00:52,259
+robust risk management and governance
+frameworks. While existing efforts
+
+15
+00:00:52,259 --> 00:00:55,460
+like the EU AI Act's Code of Practice
+provide
+
+16
+00:00:55,460 --> 00:00:59,780
+a starting point, they have significant
+limitations. For example,
+
+17
+00:00:59,859 --> 00:01:03,899
+capped fines, 7% of a company's annual
+turnover may
+
+18
+00:01:03,899 --> 00:01:07,939
+not sufficiently deter well resourced
+actors, and scope exemptions
+
+19
+00:01:07,939 --> 00:01:11,540
+for military or internal research leave
+critical risk vectors
+
+20
+00:01:11,540 --> 00:01:16,260
+unaddressed. This highlights the necessity
+for binding international governance.
+
+21
+00:01:16,900 --> 00:01:20,180
+Achieving such governance will likely
+require building a broad
+
+22
+00:01:20,180 --> 00:01:24,099
+public and political consensus around the
+importance of proactive
+
+23
+00:01:24,099 --> 00:01:27,930
+safety measures, making safety culture and
+public outreach a
+
+24
+00:01:27,930 --> 00:01:32,569
+prerequisite for all other efforts. Step 2
+Mitigating catastrophic
+
+25
+00:01:32,569 --> 00:01:36,209
+misuse we tackle misuse next because it is
+a
+
+26
+00:01:36,209 --> 00:01:39,730
+present danger and the capabilities
+required are sub AGI.
+
+27
+00:01:40,530 --> 00:01:44,209
+Success here, for example via access
+controls and deep
+
+28
+00:01:44,450 --> 00:01:48,609
+acc, buys us time and builds the societal
+muscles
+
+29
+00:01:48,609 --> 00:01:52,700
+for governing more powerful systems. The
+second priority is
+
+30
+00:01:52,700 --> 00:01:56,620
+mitigating catastrophic misuse, a
+challenge that is at least
+
+31
+00:01:56,620 --> 00:02:01,019
+conceptually more tractable than long term
+alignment. The initial
+
+32
+00:02:01,019 --> 00:02:03,900
+line of defense is robust access control
+for models
+
+33
+00:02:03,900 --> 00:02:08,139
+that exceed established risk thresholds,
+preventing the trivial removal
+
+34
+00:02:08,139 --> 00:02:12,139
+of safeguards from open source models.
+However, as dangerous
+
+35
+00:02:12,139 --> 00:02:15,819
+capabilities will inevitably proliferate.
+This must be paired with
+
+36
+00:02:15,819 --> 00:02:21,819
+a proactive strategy of defense
+acceleration to harden societal
+
+37
+00:02:21,819 --> 00:02:27,780
+infrastructure against attack.
+Concurrently, socio technical strategies,
+including clear
+
+38
+00:02:27,780 --> 00:02:30,860
+legislation, are crucial for preventing
+the illicit use of
+
+39
+00:02:30,860 --> 00:02:35,620
+already proliferated AI. Step 3 Ensuring
+control and alignment
+
+40
+00:02:35,620 --> 00:02:39,259
+of AGI as we approach AGI, we must assume
+
+41
+00:02:39,259 --> 00:02:43,580
+alignment is unsolved. Therefore, the
+priority shifts to control
+
+42
+00:02:43,580 --> 00:02:49,080
+and monitoring transparent thoughts
+evaluations. This is our safety
+
+43
+00:02:49,080 --> 00:02:51,919
+net. We scale capabilities only as fast as
+we
+
+44
+00:02:51,919 --> 00:02:56,120
+can prove control. Managing the risks of
+AGI misalignment
+
+45
+00:02:56,120 --> 00:02:59,840
+is, on paper harder than managing misuses.
+A prudent
+
+46
+00:02:59,840 --> 00:03:03,319
+approach would be to prioritize
+architectures that support transparent
+
+47
+00:03:03,319 --> 00:03:06,919
+thoughts, making systems more amenable to
+monitoring and auditing,
+
+48
+00:03:07,319 --> 00:03:13,020
+while avoiding designs that encourage
+opaque internal reasoning. These
+
+49
+00:03:13,020 --> 00:03:16,259
+systems must be subject to rigorous AI
+control protocols
+
+50
+00:03:16,259 --> 00:03:21,180
+and evaluations. If audits reveal
+alignment failures development must
+
+51
+00:03:21,180 --> 00:03:24,699
+be paused until they are rectified. This
+paradigm of
+
+52
+00:03:24,699 --> 00:03:28,740
+carefully controlling potentially unsafe
+systems must be paralleled by
+
+53
+00:03:28,740 --> 00:03:32,300
+an intensified research effort to solve
+alignment with clear
+
+54
+00:03:32,300 --> 00:03:35,979
+red lines on capability scaling until
+safety milestones are
+
+55
+00:03:35,979 --> 00:03:40,189
+met. Step 4 A robust solution for ASI
+Alignment
+
+56
+00:03:40,509 --> 00:03:44,110
+finally, for the superhuman leap, direct
+control is probably
+
+57
+00:03:44,110 --> 00:03:48,509
+impossible, but the strategy can become
+meta. Use our
+
+58
+00:03:48,509 --> 00:03:52,430
+controlled AGI to automate alignment
+research. This is our
+
+59
+00:03:52,430 --> 00:03:55,750
+best shot at a high reliability solution.
+If this
+
+60
+00:03:55,750 --> 00:04:00,310
+fails, geopolitical strategies like
+coordination or deterrence become the
+
+61
+00:04:00,310 --> 00:04:04,610
+last desperate lines of defense.
+Developing a high reliability
+
+62
+00:04:04,689 --> 00:04:08,330
+solution for ASI alignment is the holy
+grail. A
+
+63
+00:04:08,330 --> 00:04:11,930
+leading strategy is to leverage controlled
+AGI to automate
+
+64
+00:04:11,930 --> 00:04:15,449
+alignment research. If successful, this
+could lead to the
+
+65
+00:04:15,449 --> 00:04:19,449
+creation of inherently safe by design
+systems. A powerful,
+
+66
+00:04:19,449 --> 00:04:22,329
+truly aligned ASI could then be used to
+perform
+
+67
+00:04:22,329 --> 00:04:26,290
+a pivotal act that is a decisive
+intervention designed
+
+68
+00:04:26,290 --> 00:04:29,649
+to permanently solve the global
+coordination problem and end
+
+69
+00:04:29,649 --> 00:04:34,089
+the acute risk period from unaligned ASI
+development. However,
+
+70
+00:04:34,089 --> 00:04:37,129
+if this research reveals that powerful AI
+cannot be
+
+71
+00:04:37,129 --> 00:04:41,209
+created without unacceptable risks, the
+international community would need
+
+72
+00:04:41,209 --> 00:04:45,009
+to coordinate a global pause or
+moratorium. If such
+
+73
+00:04:45,009 --> 00:04:49,129
+world coordination proves impossible,
+strategies of last resort, such
+
+74
+00:04:49,129 --> 00:04:52,250
+as deterrence regimes like MAIM might
+become necessary to
+
+75
+00:04:52,250 --> 00:04:56,689
+prevent any single actor from unilaterally
+developing uncontrollable ASI.
+
+76
+00:04:57,100 --> 00:05:00,899
+The textbook includes figure 3.29. Here it
+depicts a
+
+77
+00:05:00,899 --> 00:05:04,540
+combined flowchart of safety strategies.
+Of course, even this
+
+78
+00:05:04,540 --> 00:05:08,100
+fragile plan is the ideal plan. On paper,
+it
+
+79
+00:05:08,100 --> 00:05:10,220
+might be the case that this plan is
+insufficient
+
+80
+00:05:10,220 --> 00:05:14,060
+or completely different. For example, in
+one scenario from
+
+81
+00:05:14,060 --> 00:05:18,500
+the AI 2027 forecast, humanity survives
+not because of
+
+82
+00:05:18,500 --> 00:05:21,420
+a grand strategic plan, but despite the
+failure of
+
+83
+00:05:21,420 --> 00:05:25,839
+most governance, coordination and
+deterrence efforts. Instead, a scary
+
+84
+00:05:25,839 --> 00:05:29,319
+warning shot event galvanizes the leading
+labs to slow
+
+85
+00:05:29,319 --> 00:05:32,720
+down and implement just enough technical
+mitigations to avert
+
+86
+00:05:32,720 --> 00:05:37,160
+disaster. Mitigations that prove
+insufficient in the scenario branches
+
+87
+00:05:37,160 --> 00:05:38,240
+where we lose control.

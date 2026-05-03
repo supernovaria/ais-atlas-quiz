@@ -1,0 +1,488 @@
+1
+00:00:00,480 --> 00:00:07,360
+Section 3.2 Definitions how we define
+problems directly impacts
+
+2
+00:00:07,360 --> 00:00:11,279
+which strategies we pursue in solving that
+problem. In
+
+3
+00:00:11,279 --> 00:00:14,880
+a new and evolving field like AI safety,
+clearly
+
+4
+00:00:14,880 --> 00:00:18,960
+defined terms are essential for effective
+communication and research.
+
+5
+00:00:19,679 --> 00:00:25,839
+Ambiguity leads to miscommunication,
+hinders collaboration, obscures
+disagreements, and
+
+6
+00:00:25,920 --> 00:00:30,219
+facilitates safety. Washington the terms
+we use reflect our
+
+7
+00:00:30,219 --> 00:00:32,859
+assumptions about the nature of the
+problems we're trying
+
+8
+00:00:32,859 --> 00:00:36,659
+to solve and shape the solutions we
+develop. Terms
+
+9
+00:00:36,659 --> 00:00:40,939
+like alignment and safety are used with
+varying meanings,
+
+10
+00:00:40,939 --> 00:00:44,658
+reflecting different underlying
+assumptions about the nature of the
+
+11
+00:00:44,658 --> 00:00:48,179
+problem and the research goals. The goal
+of this
+
+12
+00:00:48,179 --> 00:00:51,740
+section is to explain different
+perspectives on these words,
+
+13
+00:00:51,979 --> 00:00:56,299
+what specific safety strategies aim to
+achieve, and establish
+
+14
+00:00:56,299 --> 00:01:01,149
+how our text will utilize them. AI Safety
+Here
+
+15
+00:01:01,149 --> 00:01:07,069
+is a definition of AI ensuring that AI
+systems
+
+16
+00:01:07,150 --> 00:01:12,510
+do not inadvertently or deliberately cause
+harm or danger
+
+17
+00:01:12,510 --> 00:01:17,150
+to humans or the environment through
+research that identifies
+
+18
+00:01:17,150 --> 00:01:22,510
+causes of unintended AI behavior and
+develops tools for
+
+19
+00:01:22,590 --> 00:01:28,060
+safe and reliable operation. AI safety
+ensures AI systems
+
+20
+00:01:28,060 --> 00:01:30,700
+do not cause harm to humans or the
+environment.
+
+21
+00:01:31,340 --> 00:01:35,060
+It encompasses the broadest range of
+research and engineering
+
+22
+00:01:35,060 --> 00:01:39,500
+practices focused on preventing harmful
+outcomes from AI systems.
+
+23
+00:01:39,900 --> 00:01:43,739
+While alignment focuses on aspects such as
+an AI's
+
+24
+00:01:43,739 --> 00:01:47,780
+goals and intentions, safety addresses a
+broader range of
+
+25
+00:01:47,780 --> 00:01:51,420
+concerns. It is concerned with ensuring
+that AI systems
+
+26
+00:01:51,420 --> 00:01:55,659
+do not inadvertently or deliberately cause
+harm or danger
+
+27
+00:01:55,659 --> 00:01:59,920
+to humans or the environment. AI safety
+research seeks
+
+28
+00:01:59,920 --> 00:02:03,719
+to identify the causes of unintended AI
+behavior and
+
+29
+00:02:03,719 --> 00:02:07,840
+develop tools for ensuring safe and
+reliable operation. It
+
+30
+00:02:07,840 --> 00:02:12,599
+can include technical subfields like
+robustness ensuring reliable performance,
+
+31
+00:02:12,840 --> 00:02:18,439
+including against adversarial attacks
+Monitoring observing AI behavior and
+
+32
+00:02:18,520 --> 00:02:25,330
+capability control limiting potentially
+dangerous abilities AI Alignment the
+
+33
+00:02:25,330 --> 00:02:30,210
+term AI alignment refers to the the
+problem of
+
+34
+00:02:30,210 --> 00:02:33,689
+building machines that faithfully try to
+do what we
+
+35
+00:02:33,689 --> 00:02:36,530
+want them to do or what we ought to
+
+36
+00:02:36,530 --> 00:02:40,289
+want them to do. AI alignment aims to
+ensure
+
+37
+00:02:40,530 --> 00:02:44,409
+AI systems act in accordance with human
+intentions and
+
+38
+00:02:44,409 --> 00:02:49,050
+values. Alignment is a subset of safety
+that focuses
+
+39
+00:02:49,050 --> 00:02:53,250
+specifically on the technical problem of
+ensuring AI objectives
+
+40
+00:02:53,490 --> 00:02:58,870
+align human intentions and values.
+Theoretically, a system could
+
+41
+00:02:58,870 --> 00:03:03,550
+be aligned but unsafe, for example
+Competently pursuing the
+
+42
+00:03:03,550 --> 00:03:08,990
+wrong goal due to misspecification or safe
+but unaligned,
+
+43
+00:03:09,069 --> 00:03:14,590
+for example constrained by control
+mechanisms despite misaligned objectives.
+
+44
+00:03:15,150 --> 00:03:20,430
+While this sounds straightforward, the
+precise scope varies significantly
+
+45
+00:03:20,430 --> 00:03:23,979
+across research communities, but we
+already saw a brief
+
+46
+00:03:23,979 --> 00:03:27,460
+definition of alignment in the previous
+chapter, but this
+
+47
+00:03:27,460 --> 00:03:30,860
+section offers a more nuanced perspective
+on the various
+
+48
+00:03:30,860 --> 00:03:34,979
+definitions that we could potentially work
+with. The textbook
+
+49
+00:03:34,979 --> 00:03:37,819
+has a supplementary note titled what Do We
+Mean
+
+50
+00:03:37,819 --> 00:03:41,979
+by Alignment? Which we'll skip. Let's
+define AI ethics,
+
+51
+00:03:42,460 --> 00:03:45,819
+the study and application of moral
+principles to AI
+
+52
+00:03:45,819 --> 00:03:50,930
+development and deployment, addressing
+questions of fairness, transparency,
+accountability,
+
+53
+00:03:51,330 --> 00:03:55,129
+privacy, autonomy, and other human values
+that AI systems
+
+54
+00:03:55,129 --> 00:03:58,289
+should respect or promote. AI ethics is
+the field
+
+55
+00:03:58,289 --> 00:04:01,889
+that examines the moral principles and
+societal implications of
+
+56
+00:04:01,889 --> 00:04:06,530
+AI systems. It addresses the ethical
+considerations of potential
+
+57
+00:04:06,530 --> 00:04:10,689
+societal upheavals resulting from AI
+advancements and the moral
+
+58
+00:04:10,689 --> 00:04:14,370
+frameworks necessary to navigate these
+changes. The core of
+
+59
+00:04:14,370 --> 00:04:17,769
+AI ethics lies in ensuring that AI
+developments are
+
+60
+00:04:17,769 --> 00:04:21,670
+aligned with human dignity, fairness, and
+societal well being
+
+61
+00:04:21,829 --> 00:04:24,949
+through a deep understanding of their
+broader societal impact.
+
+62
+00:04:25,750 --> 00:04:29,870
+Research in AI ethics would encompass, for
+example, privacy
+
+63
+00:04:29,870 --> 00:04:34,949
+norms. Identifying and mitigating bias in
+systems ethics complements
+
+64
+00:04:34,949 --> 00:04:38,870
+technical safety approaches by providing
+normative guidance on what
+
+65
+00:04:38,870 --> 00:04:43,990
+constitutes beneficial AI outcomes.
+Alignment focuses on ensuring AI
+
+66
+00:04:43,990 --> 00:04:48,480
+systems pursue intended objectives.
+Research in ethics focuses on
+
+67
+00:04:48,480 --> 00:04:52,279
+which objectives are worth pursuing. AI
+ethics might also
+
+68
+00:04:52,279 --> 00:04:55,639
+include discussions of digital rights and
+potentially even the
+
+69
+00:04:55,639 --> 00:04:58,480
+rights of digital minds and AIs in the
+future.
+
+70
+00:04:58,959 --> 00:05:02,718
+This chapter focuses primarily on safety
+frameworks as they
+
+71
+00:05:02,718 --> 00:05:07,000
+inform technical, safety, and governance
+strategies rather than exploring
+
+72
+00:05:07,000 --> 00:05:11,680
+ethics, meta ethics, or digital rights.
+Section. AI Control
+
+73
+00:05:12,000 --> 00:05:15,970
+we define AI control as follows. The
+technical and
+
+74
+00:05:15,970 --> 00:05:20,170
+procedural measures designed to prevent AI
+systems from causing
+
+75
+00:05:20,170 --> 00:05:24,449
+unacceptable outcomes, even if these
+systems actively attempt to
+
+76
+00:05:24,449 --> 00:05:29,129
+subvert safety measures. Control focuses
+on maintaining human oversight
+
+77
+00:05:29,209 --> 00:05:32,610
+regardless of whether the AI's objectives
+align with human
+
+78
+00:05:32,610 --> 00:05:37,050
+intentions. AI control ensures systems
+remain under human authority
+
+79
+00:05:37,209 --> 00:05:42,029
+despite potential misalignment. AI control
+implements mechanisms such as
+
+80
+00:05:42,100 --> 00:05:45,339
+to ensure AI systems remain under human
+direction even
+
+81
+00:05:45,339 --> 00:05:49,259
+when they might act against our interests.
+Unlike alignment
+
+82
+00:05:49,259 --> 00:05:52,139
+approaches that focus on giving AI systems
+the right
+
+83
+00:05:52,139 --> 00:05:56,060
+goals, control addresses what happens if
+those goals diverge
+
+84
+00:05:56,060 --> 00:06:00,339
+from human intentions. Control and
+alignment work as complementary
+
+85
+00:06:00,339 --> 00:06:05,060
+safety approaches, while alignment aims to
+prevent preference divergence.
+
+86
+00:06:05,220 --> 00:06:08,959
+By designing systems with the right
+objectives, control creates
+
+87
+00:06:08,959 --> 00:06:12,279
+layers of security that function even when
+alignment fails.
+
+88
+00:06:12,920 --> 00:06:17,720
+Control measures include monitoring AI
+actions, restricting system capabilities,
+
+89
+00:06:18,120 --> 00:06:22,680
+human auditing processes, and mechanisms
+to terminate AI systems
+
+90
+00:06:22,680 --> 00:06:26,560
+when necessary. Some researchers argue
+that even if alignment
+
+91
+00:06:26,560 --> 00:06:31,000
+is needed for superintelligence level AIs,
+control through monitoring
+
+92
+00:06:31,000 --> 00:06:33,959
+may be a working strategy for less capable
+systems.
+
+93
+00:06:34,970 --> 00:06:38,290
+Ideally, an AGI would be aligned and
+controllable, meaning
+
+94
+00:06:38,290 --> 00:06:40,250
+it would have the right goals and be
+subject
+
+95
+00:06:40,250 --> 00:06:43,370
+to human oversight and intervention if
+something goes wrong.
+
+96
+00:06:43,610 --> 00:06:46,610
+The control line of AI safety work is
+discussed
+
+97
+00:06:46,610 --> 00:06:49,290
+in much more detail in our chapter on AI
+
+98
+00:06:49,290 --> 00:06:50,170
+evaluations.

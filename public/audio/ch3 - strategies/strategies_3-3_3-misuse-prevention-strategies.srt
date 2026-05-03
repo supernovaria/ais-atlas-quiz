@@ -1,0 +1,1182 @@
+1
+00:00:00,160 --> 00:00:05,480
+Section 3.3 Misuse prevention strategies
+Strategies to prevent misuse
+
+2
+00:00:05,480 --> 00:00:09,320
+often focus on controlling access to
+dangerous capabilities or
+
+3
+00:00:09,320 --> 00:00:14,800
+implementing technical safeguards to limit
+harmful applications. External Access
+
+4
+00:00:14,880 --> 00:00:19,239
+Controls Access control strategies
+directly address the inherent tension
+
+5
+00:00:19,239 --> 00:00:23,679
+between open sourcing benefits and misuse
+risks. The AI
+
+6
+00:00:23,679 --> 00:00:27,199
+industry has moved beyond binary
+discussions of release or
+
+7
+00:00:27,199 --> 00:00:30,829
+don't release. Instead, practitioners
+think in terms of a
+
+8
+00:00:30,829 --> 00:00:34,549
+continuous gradient of access to models.
+The question of
+
+9
+00:00:34,549 --> 00:00:36,990
+who gets access to a model sits on a
+
+10
+00:00:36,990 --> 00:00:40,869
+range from fully closed internal use only
+to fully
+
+11
+00:00:40,869 --> 00:00:45,070
+open publicly available model weights with
+no restrictions. The
+
+12
+00:00:45,070 --> 00:00:48,509
+term open source AI refers to the
+following an
+
+13
+00:00:48,509 --> 00:00:51,509
+open source AI is an AI system made
+available
+
+14
+00:00:51,509 --> 00:00:53,869
+under terms and in a way that grants the
+
+15
+00:00:53,869 --> 00:00:57,090
+freedoms to use the system for any purpose
+without
+
+16
+00:00:57,090 --> 00:01:00,329
+having to ask for permission. Study how
+the system
+
+17
+00:01:00,329 --> 00:01:04,170
+works and inspect its components. Modify
+the system for
+
+18
+00:01:04,170 --> 00:01:07,969
+any purpose, including to change its
+output. Share the
+
+19
+00:01:07,969 --> 00:01:10,810
+system for others to use with or without
+modifications
+
+20
+00:01:11,129 --> 00:01:15,370
+for any purpose. Among these various
+access options, API
+
+21
+00:01:15,370 --> 00:01:18,250
+based deployment represents one of the
+most commonly used
+
+22
+00:01:18,250 --> 00:01:22,299
+strategic middle grounds. When we discuss
+access controls in
+
+23
+00:01:22,299 --> 00:01:25,579
+this section, we're primarily talking
+about mechanisms that create
+
+24
+00:01:25,579 --> 00:01:29,579
+a controlled gateway to AI capabilities,
+most commonly through
+
+25
+00:01:29,579 --> 00:01:32,900
+API based deployment where most of the
+model code,
+
+26
+00:01:32,900 --> 00:01:36,539
+weights and data remain fully closed but
+access to
+
+27
+00:01:36,539 --> 00:01:40,819
+model capabilities is partially open. In
+this arrangement, developers
+
+28
+00:01:40,819 --> 00:01:43,659
+retain control over how their models are
+accessed and
+
+29
+00:01:43,659 --> 00:01:49,500
+used. API based controls maintain
+developer oversight, allowing continuous
+
+30
+00:01:49,500 --> 00:01:53,299
+monitoring, updating of safety measures,
+and the ability to
+
+31
+00:01:53,299 --> 00:01:57,060
+revoke access when necessary. There is
+figure 3.2 in
+
+32
+00:01:57,060 --> 00:02:00,140
+the textbook. Here it depicts. This is a
+simplified
+
+33
+00:02:00,140 --> 00:02:03,420
+diagram to illustrate conceptually how an
+API would work.
+
+34
+00:02:03,980 --> 00:02:07,459
+This is not how OpenAI's API works it is
+
+35
+00:02:07,459 --> 00:02:11,699
+for illustration purposes only. API based
+deployment establishes a
+
+36
+00:02:11,699 --> 00:02:15,770
+protective layer between users and model
+capabilities. Instead of
+
+37
+00:02:15,770 --> 00:02:18,689
+downloading model code or weights, users
+interact with the
+
+38
+00:02:18,689 --> 00:02:21,289
+model by sending requests to a server
+where the
+
+39
+00:02:21,289 --> 00:02:24,849
+model runs, receiving only the generated
+outputs in return.
+
+40
+00:02:25,650 --> 00:02:30,129
+This architecture enables developers to
+implement various safety mechanisms
+
+41
+00:02:30,289 --> 00:02:35,009
+and input output filtering, screening
+prompts for harmful content
+
+42
+00:02:35,169 --> 00:02:39,930
+and filtering generated responses
+according to safety policies. For
+
+43
+00:02:39,930 --> 00:02:43,539
+example, filters can detect and block
+attempted generation of
+
+44
+00:02:43,539 --> 00:02:47,819
+CSM or instructions for building weapons.
+This approach directly
+
+45
+00:02:47,819 --> 00:02:52,419
+counters misuses like generating illegal
+content or dangerous instructions.
+
+46
+00:02:53,219 --> 00:02:57,379
+Rate limiting Preventing large scale
+misuse through usage caps.
+
+47
+00:02:57,860 --> 00:03:01,539
+By restricting the volume of requests,
+these controls mitigate
+
+48
+00:03:01,539 --> 00:03:05,539
+risks of automated abuse like generating
+thousands of deepfakes
+
+49
+00:03:05,539 --> 00:03:11,590
+or spam messages. Liang et al. 2022 Usage
+Monitoring
+
+50
+00:03:11,750 --> 00:03:16,030
+beyond controlling request volume, usage
+monitoring enables identity and
+
+51
+00:03:16,030 --> 00:03:19,750
+background checks for malicious users,
+similar to know your
+
+52
+00:03:19,750 --> 00:03:24,949
+customer KYC laws, for example. This
+allows regulatory oversight,
+
+53
+00:03:25,110 --> 00:03:28,789
+prevents repeated attempts to circumvent
+safety filters, and also
+
+54
+00:03:28,789 --> 00:03:32,669
+enables deeper access to highly trusted
+users. Egan and
+
+55
+00:03:32,669 --> 00:03:38,949
+HEIM Usage Enforcing terms of service that
+prohibit harmful
+
+56
+00:03:38,949 --> 00:03:44,069
+applications. Companies can restrict high
+risk applications like bioweapon
+
+57
+00:03:44,069 --> 00:03:48,110
+research or autonomous cyber operations
+through legal agreements backed
+
+58
+00:03:48,110 --> 00:03:53,990
+by technical monitoring Andaliung et al.
+When violations are
+
+59
+00:03:53,990 --> 00:03:58,110
+detected, access can be revoked on the
+fly. Updates
+
+60
+00:03:58,349 --> 00:04:02,110
+Rapidly deploying improvements to safety
+systems without user action
+
+61
+00:04:03,129 --> 00:04:07,210
+Unlike open sourced models where unsafe
+versions persist indefinitely,
+
+62
+00:04:07,530 --> 00:04:10,969
+API based models can be continually
+improved to address
+
+63
+00:04:10,969 --> 00:04:18,170
+newly discovered vulnerabilities. This
+helps counter novel attack vectors
+
+64
+00:04:18,170 --> 00:04:22,730
+like jailbreaking techniques. The textbook
+includes Figure 3.3. Here
+
+65
+00:04:23,050 --> 00:04:25,850
+it depicts the gradient of access to AI
+models
+
+66
+00:04:25,850 --> 00:04:29,410
+to the external public. Model release
+exists on a
+
+67
+00:04:29,410 --> 00:04:33,529
+spectrum from fully closed systems
+accessible only internally to
+
+68
+00:04:33,529 --> 00:04:38,329
+staged releases, API access, downloadable
+waits with restrictions, and
+
+69
+00:04:38,329 --> 00:04:43,050
+fully open source releases. API based
+deployment represents an
+
+70
+00:04:43,050 --> 00:04:46,329
+intermediate point on this gradient. The
+textbook has a
+
+71
+00:04:46,329 --> 00:04:49,769
+supplementary note titled different
+components of a model can
+
+72
+00:04:49,769 --> 00:04:53,129
+exist at different points on the access
+spectrum, which
+
+73
+00:04:53,129 --> 00:04:56,089
+we'll skip over here. In the words of
+Ajeya
+
+74
+00:04:56,089 --> 00:04:59,430
+Kotra, most systems that are too dangerous
+to open
+
+75
+00:04:59,430 --> 00:05:02,110
+source are probably too dangerous to be
+trained at
+
+76
+00:05:02,110 --> 00:05:05,029
+all. Given the kind of practices that are
+common
+
+77
+00:05:05,029 --> 00:05:07,910
+in labs today where it's very plausible
+they'll leak,
+
+78
+00:05:07,990 --> 00:05:11,029
+or very plausible they'll be stolen, or
+very plausible
+
+79
+00:05:11,029 --> 00:05:13,750
+if they're available over an API, they
+could cause
+
+80
+00:05:13,750 --> 00:05:17,949
+harm. Centralized control raises questions
+about power dynamics in
+
+81
+00:05:17,949 --> 00:05:22,430
+AI development. When developers maintain
+exclusive control over model
+
+82
+00:05:22,430 --> 00:05:26,329
+capabilities, they they make unilateral
+decisions about acceptable uses,
+
+83
+00:05:26,730 --> 00:05:31,769
+appropriate content, filters, and who
+receives access. This concentration
+
+84
+00:05:31,769 --> 00:05:35,290
+of power stands in tension with the
+democratizing potential
+
+85
+00:05:35,290 --> 00:05:39,449
+of more open approaches. The strategy of
+mitigating misuse
+
+86
+00:05:39,529 --> 00:05:42,930
+by restricting access therefore creates a
+side effect of
+
+87
+00:05:42,930 --> 00:05:47,810
+potential centralization and power
+concentration, which requires other
+technical
+
+88
+00:05:47,810 --> 00:05:51,199
+and governance strategies to
+counterbalance. The first step in
+
+89
+00:05:51,199 --> 00:05:54,600
+the access control strategy is to identify
+which models
+
+90
+00:05:54,600 --> 00:05:57,600
+are considered dangerous and which are not
+via model
+
+91
+00:05:57,600 --> 00:06:02,439
+evaluations. Before deploying powerful
+models, developers or third parties
+
+92
+00:06:02,439 --> 00:06:06,278
+should evaluate them for specific
+dangerous capabilities, such as
+
+93
+00:06:06,278 --> 00:06:09,639
+the ability to assist in cyberattacks or
+bioweapon design.
+
+94
+00:06:10,279 --> 00:06:14,600
+These evaluations inform decisions about
+deployment and necessary safeguards.
+
+95
+00:06:14,839 --> 00:06:17,519
+Red teaming can help assess if the
+mitigations are
+
+96
+00:06:17,519 --> 00:06:21,850
+sufficient. During red teaming, internal
+teams try to exploit
+
+97
+00:06:21,850 --> 00:06:25,649
+weaknesses in the system to improve its
+security. They
+
+98
+00:06:25,649 --> 00:06:28,930
+should test whether a hypothetical
+malicious user can get
+
+99
+00:06:28,930 --> 00:06:31,170
+a sufficient amount of bits of advice from
+the
+
+100
+00:06:31,170 --> 00:06:35,209
+model without getting caught. We go into
+much more
+
+101
+00:06:35,209 --> 00:06:39,009
+detail on concepts like red teaming and
+model evaluations
+
+102
+00:06:39,009 --> 00:06:42,329
+in the subsequent dedicated chapter to the
+topic. There
+
+103
+00:06:42,329 --> 00:06:45,620
+is figure 3.5 in the textbook. Here it
+depicts
+
+104
+00:06:45,620 --> 00:06:49,300
+when should dual use technology be
+proliferated without restrictions.
+
+105
+00:06:49,860 --> 00:06:53,779
+Defense dominant dual use technology
+should be widely proliferated
+
+106
+00:06:53,939 --> 00:06:57,620
+while catastrophic offense dominant dual
+use technology should not
+
+107
+00:06:57,939 --> 00:07:01,459
+the textbook has a supplementary note
+titled Ensuring a
+
+108
+00:07:01,459 --> 00:07:04,500
+Positive Offense Defense Balance in an
+Open Source World,
+
+109
+00:07:04,660 --> 00:07:07,660
+which we'll skip over here. The textbook
+has a
+
+110
+00:07:07,660 --> 00:07:12,839
+supplementary note titled Distributed
+versus Decentralized Training Challenges
+for
+
+111
+00:07:12,839 --> 00:07:17,519
+Non Proliferation, which we'll skip over
+here. Internal Access
+
+112
+00:07:17,600 --> 00:07:22,000
+Control Internal access controls protect
+model weights and algorithmic
+
+113
+00:07:22,000 --> 00:07:26,600
+secrets, while external access controls
+regulate how users interact
+
+114
+00:07:26,600 --> 00:07:30,560
+with AI systems through APIs and other
+interfaces. Internal
+
+115
+00:07:30,560 --> 00:07:34,160
+access controls focus on securing the
+model weights themselves.
+
+116
+00:07:34,560 --> 00:07:38,720
+If model weights are exfiltrated, all
+external access controls
+
+117
+00:07:38,720 --> 00:07:41,449
+become irrelevant as the model can be
+deployed without
+
+118
+00:07:41,449 --> 00:07:46,449
+any restrictions. Several Risk models
+often assume catastrophic risk
+
+119
+00:07:46,449 --> 00:07:51,089
+due to weight exfiltration and espionage.
+Research labs developing
+
+120
+00:07:51,089 --> 00:07:55,329
+cutting edge models should implement
+rigorous cybersecurity measures to
+
+121
+00:07:55,329 --> 00:07:59,250
+protect AI systems against theft. This
+seems simple, but
+
+122
+00:07:59,250 --> 00:08:02,250
+it's not and protecting models from nation
+state level
+
+123
+00:08:02,250 --> 00:08:06,740
+actors could require extraordinary effort.
+In this section we
+
+124
+00:08:06,740 --> 00:08:09,779
+try to explore strategies to protect model
+weights and
+
+125
+00:08:09,779 --> 00:08:14,379
+protect algorithmic insights from
+unauthorized access, theft or misuse
+
+126
+00:08:14,379 --> 00:08:17,939
+by insiders or external attackers. At this
+point, the
+
+127
+00:08:17,939 --> 00:08:21,980
+textbook shows Figure 3.7. It depicts
+overview of the
+
+128
+00:08:21,980 --> 00:08:24,939
+active components in the development of an
+ML system.
+
+129
+00:08:25,740 --> 00:08:29,699
+Each introduces more complexity, expands
+the threat model, and
+
+130
+00:08:29,699 --> 00:08:34,269
+introduces more potential vulnerabilities.
+Adequate protection requires a multi
+
+131
+00:08:34,269 --> 00:08:39,389
+layered defense spanning technical,
+organizational and physical domains. As
+
+132
+00:08:39,389 --> 00:08:42,509
+an example, think about a frontier AI lab
+that
+
+133
+00:08:42,509 --> 00:08:46,308
+wants to protect its most advanced model.
+Technical controls
+
+134
+00:08:46,308 --> 00:08:51,188
+encrypt the weights and limit digital
+access. Organizational controls
+
+135
+00:08:51,188 --> 00:08:53,989
+restrict knowledge of the model
+architecture to a small
+
+136
+00:08:53,989 --> 00:08:57,869
+team of vetted researchers and physical
+controls ensure the
+
+137
+00:08:57,869 --> 00:09:01,919
+compute infrastructure remains in secure
+facilities and with restricted
+
+138
+00:09:01,919 --> 00:09:05,480
+access. If any single layer fails, for
+instance if
+
+139
+00:09:05,480 --> 00:09:08,960
+the encryption is broken but the physical
+access restrictions
+
+140
+00:09:08,960 --> 00:09:13,240
+remain, the model still maintains some
+protection. This defense
+
+141
+00:09:13,240 --> 00:09:17,000
+in depth approach ensures that multiple
+security failures would
+
+142
+00:09:17,000 --> 00:09:20,240
+need to co occur for a successful
+exfiltration. The
+
+143
+00:09:20,240 --> 00:09:24,519
+textbook has a supplementary note titled
+Cybersecurity in AI
+
+144
+00:09:25,000 --> 00:09:30,320
+Weight Security Levels WSL and Algorithmic
+Secrets Security Levels
+
+145
+00:09:30,320 --> 00:09:33,840
+SSL, which we'll skip over here. The
+textbook has
+
+146
+00:09:33,840 --> 00:09:38,360
+a supplementary note titled Comparing
+Human Exfiltration versus AI
+
+147
+00:09:38,360 --> 00:09:42,279
+Self Exfiltration, which we'll skip over
+here. The textbook
+
+148
+00:09:42,279 --> 00:09:46,320
+has a supplementary note titled the
+Neglected Risk AI
+
+149
+00:09:46,320 --> 00:09:50,960
+Enabled Human Takeover, which we'll skip
+over here. Technical
+
+150
+00:09:50,960 --> 00:09:55,710
+Safeguards beyond access control and
+instruction tuning techniques like
+
+151
+00:09:55,710 --> 00:10:02,190
+reinforcement learning from human
+feedback, researchers are developing
+techniques
+
+152
+00:10:02,190 --> 00:10:05,750
+to build safety mechanisms directly into
+the models themselves
+
+153
+00:10:05,750 --> 00:10:09,389
+or their deployment pipelines. This adds
+another layer of
+
+154
+00:10:09,389 --> 00:10:13,710
+defense in preventing potential misuse.
+The reason this section
+
+155
+00:10:13,710 --> 00:10:16,669
+is listed under Access Control Methods is
+that the
+
+156
+00:10:16,669 --> 00:10:19,230
+vast majority of the technical safeguards
+that we can
+
+157
+00:10:19,230 --> 00:10:22,289
+put in place require the developers to
+maintain access
+
+158
+00:10:22,370 --> 00:10:25,769
+control over models. If there is an
+entirely open
+
+159
+00:10:25,769 --> 00:10:30,090
+source model, then technical safeguards
+cannot be guaranteed. Circuit
+
+160
+00:10:30,090 --> 00:10:34,649
+Breakers Inspired by representation
+Engineering Circuit breakers aim to
+
+161
+00:10:34,649 --> 00:10:38,649
+detect and interrupt the internal
+activation patterns associated with
+
+162
+00:10:38,649 --> 00:10:42,570
+harmful outputs as they form by rerouting
+these harmful
+
+163
+00:10:42,570 --> 00:10:48,610
+representations, eg using representation
+rerouting with LoRa. This technique
+
+164
+00:10:48,610 --> 00:10:52,690
+can prevent the generation of toxic
+content, demonstrating robustness
+
+165
+00:10:52,690 --> 00:10:57,210
+against unseen adversarial attacks while
+preserving model utility when
+
+166
+00:10:57,210 --> 00:11:00,529
+the request is not harmful. This approach
+targets the
+
+167
+00:11:00,529 --> 00:11:04,250
+model's intrinsic capacity for harm,
+making it potentially more
+
+168
+00:11:04,250 --> 00:11:08,330
+robust than input output filtering. The
+textbook includes Figure
+
+169
+00:11:08,330 --> 00:11:12,690
+3.11. Here it depicts introduction of
+circuit breaking as
+
+170
+00:11:12,690 --> 00:11:17,110
+a novel approach for constructing highly
+reliable safeguards. Traditional
+
+171
+00:11:17,110 --> 00:11:21,870
+methods like RLHF and adversarial training
+offer output level
+
+172
+00:11:21,870 --> 00:11:25,990
+supervision that induces refusal states
+within the model representation
+
+173
+00:11:25,990 --> 00:11:30,429
+space. However, harmful states remain
+accessible once these initial
+
+174
+00:11:30,429 --> 00:11:35,230
+refusal states are bypassed. In contrast,
+inspired by representation
+
+175
+00:11:35,230 --> 00:11:40,590
+engineering, circuit breaking operates
+directly on internal representations
+linking
+
+176
+00:11:40,590 --> 00:11:44,440
+harmful states to circuit breakers. This
+impedes traversal through
+
+177
+00:11:44,440 --> 00:11:48,759
+a sequence of harmful states. Machine
+unlearning involves techniques
+
+178
+00:11:48,759 --> 00:11:52,360
+to selectively remove specific knowledge
+or capabilities from a
+
+179
+00:11:52,360 --> 00:11:57,320
+trained model without full retraining.
+Applications relevant to misuse
+
+180
+00:11:57,320 --> 00:12:01,360
+prevention include removing knowledge
+about dangerous substances or weapons,
+
+181
+00:12:01,840 --> 00:12:07,519
+erasing harmful biases, or removing
+jailbreak vulnerabilities. Some
+researchers
+
+182
+00:12:07,519 --> 00:12:10,399
+think that the ability to selectively and
+robustly remove
+
+183
+00:12:10,399 --> 00:12:13,600
+capabilities could end up being really
+valuable in a
+
+184
+00:12:13,600 --> 00:12:16,600
+wide range of scenarios as well as being
+tractable.
+
+185
+00:12:17,159 --> 00:12:21,159
+Techniques range from gradient based
+methods to parameter modification
+
+186
+00:12:21,159 --> 00:12:25,840
+and model editing. However, challenges
+remain in ensuring complete
+
+187
+00:12:25,840 --> 00:12:30,120
+and robust forgetting, avoiding
+catastrophic forgetting of useful
+knowledge,
+
+188
+00:12:30,120 --> 00:12:33,519
+and scaling these methods efficiently. At
+this point, the
+
+189
+00:12:33,519 --> 00:12:38,720
+textbook shows Figure 3.2. It depicts
+example illustration of
+
+190
+00:12:38,720 --> 00:12:44,070
+a specific type of machine unlearning
+algorithm. Approximate the
+
+191
+00:12:44,070 --> 00:12:47,909
+textbook has a supplementary note titled
+the Impossible Challenge
+
+192
+00:12:47,909 --> 00:12:51,669
+of Creating Tamper Resistant Safeguards,
+which we'll skip over
+
+193
+00:12:51,669 --> 00:12:57,070
+here. Socio Technical Strategies the
+previous strategies focus on
+
+194
+00:12:57,070 --> 00:12:59,950
+reducing risks from models that are not
+yet widely
+
+195
+00:12:59,950 --> 00:13:04,149
+available, such as models capable of
+advanced cyberattacks or
+
+196
+00:13:04,149 --> 00:13:08,149
+engineering pathogens. However, what about
+models that enable deep
+
+197
+00:13:08,149 --> 00:13:13,039
+fakes, misinformation campaigns, or
+privacy violations? Many of these
+
+198
+00:13:13,039 --> 00:13:16,799
+models are already widely accessible.
+Unfortunately, it is already
+
+199
+00:13:16,799 --> 00:13:19,519
+too easy to use open source models to do
+
+200
+00:13:19,519 --> 00:13:22,559
+things like creating sexualized images of
+people from a
+
+201
+00:13:22,559 --> 00:13:25,360
+few photos of them. There is no purely
+technical
+
+202
+00:13:25,360 --> 00:13:29,840
+solution to counter such problems. For
+example, adding defenses
+
+203
+00:13:29,919 --> 00:13:33,639
+like adversarial noise to photos published
+online to make
+
+204
+00:13:33,639 --> 00:13:37,559
+them unreadable by AI will probably not
+scale and
+
+205
+00:13:37,559 --> 00:13:40,559
+empirically Every type of defense has been
+bypassed by
+
+206
+00:13:40,559 --> 00:13:44,240
+attacks. In the literature of adversarial
+attacks, the primary
+
+207
+00:13:44,240 --> 00:13:47,279
+solution is to regulate and establish
+strict norms against
+
+208
+00:13:47,279 --> 00:13:53,559
+this type of behavior. 1. Laws and
+penalties Enact
+
+209
+00:13:53,559 --> 00:13:56,240
+and enforce laws making it illegal to
+create and
+
+210
+00:13:56,240 --> 00:14:00,120
+share non consensual deep fake pornography
+or use AI
+
+211
+00:14:00,120 --> 00:14:05,409
+for stalking, harassment, privacy
+violations, intellectual property or
+misinformation.
+
+212
+00:14:06,450 --> 00:14:13,169
+Impose significant penalties as a
+deterrent. 2. Require online
+
+213
+00:14:13,250 --> 00:14:17,370
+platforms to proactively detect and remove
+AI generated problematic
+
+214
+00:14:17,370 --> 00:14:22,970
+content, misinformation and privacy
+violating material. Hold platforms
+accountable
+
+215
+00:14:22,970 --> 00:14:28,929
+for failure to moderate. 3. Encourage or
+require watermarking
+
+216
+00:14:28,929 --> 00:14:33,559
+of AI generated content. Develop standards
+for digital provenance
+
+217
+00:14:33,559 --> 00:14:40,000
+and authentication. 4. Launch public
+education campaigns about the
+
+218
+00:14:40,000 --> 00:14:43,840
+risks of deep fakes, misinformation and AI
+privacy threats.
+
+219
+00:14:44,480 --> 00:14:47,519
+Teach people to be critical consumers of
+online content.
+
+220
+00:14:48,480 --> 00:14:53,480
+5. Support research into technical methods
+of detecting AI
+
+221
+00:14:53,480 --> 00:14:58,470
+generated content, identifying manipulated
+media, and preserving privacy from
+
+222
+00:14:58,470 --> 00:15:01,789
+AI systems. These elements can be combined
+with other
+
+223
+00:15:01,789 --> 00:15:05,629
+strategies and layers to attain defense in
+depth. For
+
+224
+00:15:05,629 --> 00:15:09,190
+instance, AI powered systems can screen
+phone calls in
+
+225
+00:15:09,190 --> 00:15:13,629
+real time, analyzing voice patterns, call
+frequency and conversational
+
+226
+00:15:13,629 --> 00:15:17,230
+cues to identify likely scams and alert
+users or
+
+227
+00:15:17,230 --> 00:15:21,230
+block calls. Chatbots like Daisy and
+services like Jolly
+
+228
+00:15:21,230 --> 00:15:25,029
+Roger Telephone employ AI to engage
+scammers in lengthy,
+
+229
+00:15:25,029 --> 00:15:28,820
+unproductive conversations, wasting their
+time and diverting them from
+
+230
+00:15:28,820 --> 00:15:33,779
+potential victims. These represent
+practical, defense oriented applications
+of
+
+231
+00:15:33,779 --> 00:15:37,820
+AI against common forms of misuse, but
+this is
+
+232
+00:15:37,820 --> 00:15:40,059
+only an early step and it is far from
+
+233
+00:15:40,059 --> 00:15:44,379
+being sufficient. Ultimately, a
+combination of legal frameworks, platform
+
+234
+00:15:44,379 --> 00:15:48,019
+policies, social norms and technological
+tools will be needed
+
+235
+00:15:48,019 --> 00:15:51,139
+to mitigate the risks posed by widely
+available AI
+
+236
+00:15:51,139 --> 00:15:51,620
+models.

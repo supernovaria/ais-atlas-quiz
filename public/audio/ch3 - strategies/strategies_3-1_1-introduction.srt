@@ -1,0 +1,147 @@
+1
+00:00:00,400 --> 00:00:07,559
+Chapter 3 Strategies Section 3.1
+Introduction this chapter tries
+
+2
+00:00:07,559 --> 00:00:10,560
+to lay out the big picture of AI safety
+
+3
+00:00:10,560 --> 00:00:15,480
+strategy to mitigate the risks explored
+previously. As AI
+
+4
+00:00:15,480 --> 00:00:20,239
+capabilities advance very rapidly, the
+strategies designed to ensure
+
+5
+00:00:20,399 --> 00:00:24,719
+safety must also evolve. The first version
+of this
+
+6
+00:00:24,719 --> 00:00:29,359
+document was written in summer of 2024.
+This version
+
+7
+00:00:29,359 --> 00:00:32,859
+includes the update during the summer of
+2020 25.
+
+8
+00:00:33,579 --> 00:00:36,460
+Through the course of this chapter, we aim
+to
+
+9
+00:00:36,460 --> 00:00:40,659
+provide a structured overview of the
+thinking and ongoing
+
+10
+00:00:40,659 --> 00:00:45,659
+work in AI safety strategy as of 2025. We
+
+11
+00:00:45,659 --> 00:00:51,700
+acknowledge both established methods and
+emerging research directions. We
+
+12
+00:00:51,700 --> 00:00:56,979
+have categorized mitigations around
+preventing misuse of AI safety
+
+13
+00:00:56,979 --> 00:01:02,140
+mitigations for AGI and asi, and finally
+socio technical
+
+14
+00:01:02,140 --> 00:01:06,159
+approaches that help MIT concerns more
+generally across all
+
+15
+00:01:06,159 --> 00:01:10,040
+categories. Even though we have chosen a
+decomposition for
+
+16
+00:01:10,040 --> 00:01:13,799
+sake of explanation, we advocate for a
+comprehensive approach
+
+17
+00:01:14,120 --> 00:01:17,400
+that combines many of these strategies
+instead of pursuing
+
+18
+00:01:17,400 --> 00:01:20,799
+just a few in isolation. Finally, we have
+a
+
+19
+00:01:20,799 --> 00:01:24,519
+combined strategies section where we
+attempt to outline one
+
+20
+00:01:24,519 --> 00:01:27,719
+potential way that this combination could
+look to create
+
+21
+00:01:27,719 --> 00:01:31,790
+a layered defense in depth framework. At
+this point,
+
+22
+00:01:31,870 --> 00:01:37,709
+the textbook shows Figure 3.1. It depicts
+tentative diagrams
+
+23
+00:01:37,709 --> 00:01:41,829
+summarizing the main high level approaches
+to make AI
+
+24
+00:01:41,829 --> 00:01:46,909
+development safe. The textbook has a
+supplementary note titled
+
+25
+00:01:46,909 --> 00:01:50,390
+beyond the Scope of this chapter, which
+we'll skip
+
+26
+00:01:50,390 --> 00:01:54,670
+over here. At this point There is video
+3.1
+
+27
+00:01:54,670 --> 00:01:58,590
+in the textbook. It covers optional video
+from Google
+
+28
+00:01:58,590 --> 00:02:02,310
+DeepMind AGI safety course. It it gives a
+quick
+
+29
+00:02:02,310 --> 00:02:05,510
+overview of their alignment approach and
+how we might
+
+30
+00:02:05,510 --> 00:02:09,069
+categorize different strategies into
+conceptual buckets.

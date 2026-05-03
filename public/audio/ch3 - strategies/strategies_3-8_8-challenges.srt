@@ -1,0 +1,747 @@
+1
+00:00:00,160 --> 00:00:04,839
+Section 3.8 challenges developing
+strategies to ensure the safety
+
+2
+00:00:04,839 --> 00:00:08,800
+of increasingly capable AI systems
+presents unique and significant
+
+3
+00:00:08,960 --> 00:00:12,640
+challenges. These difficulties stem from
+the nature of AI
+
+4
+00:00:12,640 --> 00:00:15,519
+itself, the current state of the research
+field, and
+
+5
+00:00:15,519 --> 00:00:18,440
+the complexity of the risks involved. Here
+is a
+
+6
+00:00:18,440 --> 00:00:21,399
+quote by we do not know how to train
+
+7
+00:00:21,399 --> 00:00:25,000
+systems to robustly behave well. Section
+the Nature of
+
+8
+00:00:25,000 --> 00:00:29,460
+the Problem Several intrinsic properties
+make AI safety a
+
+9
+00:00:29,460 --> 00:00:33,060
+particularly hard problem. AI risk is an
+emerging problem
+
+10
+00:00:33,060 --> 00:00:36,460
+that is still poorly understood. AI risk
+is a
+
+11
+00:00:36,460 --> 00:00:41,060
+relatively new field dealing with rapidly
+evolving technology. Our
+
+12
+00:00:41,060 --> 00:00:44,219
+understanding of the full spectrum of
+potential failure modes
+
+13
+00:00:44,219 --> 00:00:49,219
+and long term consequences is incomplete.
+Devising robust safeguards
+
+14
+00:00:49,219 --> 00:00:52,259
+for technologies that do not yet exist,
+but which
+
+15
+00:00:52,259 --> 00:00:56,340
+could have profoundly negative outcomes is
+inherently difficult. The
+
+16
+00:00:56,340 --> 00:00:59,899
+field is still pre paradigmatic. There is
+currently no
+
+17
+00:00:59,899 --> 00:01:05,099
+single universally accepted paradigm for
+AI safety. Researchers disagree
+
+18
+00:01:05,099 --> 00:01:08,819
+on fundamental aspects, including the most
+likely threat models,
+
+19
+00:01:09,060 --> 00:01:12,299
+e to g sudden takeover versus gradual loss
+of
+
+20
+00:01:12,299 --> 00:01:16,340
+control and the most promising solution
+paths. The research
+
+21
+00:01:16,420 --> 00:01:19,859
+agendas of some researchers seem scarcely
+useful to others,
+
+22
+00:01:20,409 --> 00:01:23,010
+and one of the favorite activities of
+alignment researchers
+
+23
+00:01:23,010 --> 00:01:26,769
+is to criticize each other's plan
+constructively. AIs are
+
+24
+00:01:26,769 --> 00:01:30,170
+black boxes that are trained, not built.
+Modern deep
+
+25
+00:01:30,170 --> 00:01:33,409
+learning models are black boxes. While we
+know how
+
+26
+00:01:33,409 --> 00:01:36,448
+to train them, the specific algorithms
+they learn and
+
+27
+00:01:36,448 --> 00:01:40,810
+their internal decision making processes
+remain largely opaque. These
+
+28
+00:01:40,810 --> 00:01:44,530
+models lack the apparent modularity common
+in traditional software
+
+29
+00:01:44,530 --> 00:01:48,769
+engineering, making it difficult to
+decompose, analyze or verify
+
+30
+00:01:48,769 --> 00:01:52,849
+their behavior. Progress in
+interpretability has yet to fully
+
+31
+00:01:52,849 --> 00:01:56,409
+overcome this challenge. Complexity is the
+source of many
+
+32
+00:01:56,409 --> 00:02:00,810
+blind spots. The sheer complexity of large
+AI models
+
+33
+00:02:00,890 --> 00:02:05,090
+means that unexpected and potentially
+harmful behaviors can emerge
+
+34
+00:02:05,090 --> 00:02:09,889
+without warning. Issues like glitch tokens
+e.g. solid gold
+
+35
+00:02:09,889 --> 00:02:14,889
+magic arp causing erratic behavior in GPT
+models demonstrate
+
+36
+00:02:14,889 --> 00:02:19,360
+how unforeseen interactions between
+components like tokenizers and training
+
+37
+00:02:19,360 --> 00:02:23,639
+data can lead to failures. When GPT
+encounters this
+
+38
+00:02:23,639 --> 00:02:28,719
+infrequent word, it behaves unpredictably
+and erratically. This phenomenon
+
+39
+00:02:28,719 --> 00:02:32,080
+occurs because GPT uses a tokenizer to
+break down
+
+40
+00:02:32,080 --> 00:02:35,560
+sentences into tokens, sets of letters
+such as words
+
+41
+00:02:35,560 --> 00:02:38,800
+or combinations of letters and numbers,
+and the token
+
+42
+00:02:38,800 --> 00:02:42,840
+solid gold Magikarp was present in the
+tokenizer's dataset,
+
+43
+00:02:42,840 --> 00:02:46,379
+but not in the GPT model's dataset. This
+blind
+
+44
+00:02:46,379 --> 00:02:49,979
+spot is not an isolated incident. Creating
+an exhaustive
+
+45
+00:02:49,979 --> 00:02:53,259
+risk framework is difficult. There are
+many, many different
+
+46
+00:02:53,340 --> 00:02:57,060
+classifications of risk scenarios that
+focus on various types
+
+47
+00:02:57,060 --> 00:03:00,620
+of harm. Proposing a solid single risk
+model beyond
+
+48
+00:03:00,620 --> 00:03:04,539
+criticism is extremely difficult, and the
+risk scenarios often
+
+49
+00:03:04,539 --> 00:03:08,340
+contain a degree of vagueness. No scenario
+captures most
+
+50
+00:03:08,340 --> 00:03:11,180
+of the probability mass, and there is a
+wide
+
+51
+00:03:11,180 --> 00:03:15,680
+diversity of of potentially catastrophic
+scenarios. Some arguments that
+
+52
+00:03:15,680 --> 00:03:19,520
+seem initially appealing may be
+misleading. For example, the
+
+53
+00:03:19,520 --> 00:03:22,599
+principal author of the paper presenting a
+mathematical result
+
+54
+00:03:22,759 --> 00:03:27,039
+on instrumental convergence, Alex Turner,
+now believes his theorem
+
+55
+00:03:27,039 --> 00:03:28,840
+is a poor way to think about the problem.
+
+56
+00:03:29,479 --> 00:03:33,120
+Some other classical arguments have been
+criticized recently, like
+
+57
+00:03:33,120 --> 00:03:37,080
+the counting argument or the utility
+maximization frameworks, which
+
+58
+00:03:37,080 --> 00:03:40,699
+will be discussed in the chapter Goal
+Misgeneralization we
+
+59
+00:03:40,699 --> 00:03:43,580
+may not have time Many experts in the
+field
+
+60
+00:03:43,580 --> 00:03:47,259
+believe that AGI and shortly after ASI
+could arrive
+
+61
+00:03:47,259 --> 00:03:51,020
+before 2030. We need to solve these
+massive problems
+
+62
+00:03:51,099 --> 00:03:53,259
+or at least set the strategy for the
+launch
+
+63
+00:03:53,259 --> 00:03:58,219
+before it happens. For example, the
+scenario AI 2027
+
+64
+00:03:58,379 --> 00:04:01,219
+is based on a detailed forecasting of
+timelines of
+
+65
+00:04:01,219 --> 00:04:04,580
+AGI arrival and argues for a strong
+likelihood of
+
+66
+00:04:04,580 --> 00:04:07,789
+ASI before the end of the decade. Many
+essential
+
+67
+00:04:07,789 --> 00:04:11,430
+terms in AI safety are complicated to
+define. They
+
+68
+00:04:11,430 --> 00:04:15,590
+often require knowledge in philosophy,
+epistemology, theory of mind,
+
+69
+00:04:15,590 --> 00:04:19,230
+and AI. For instance, to determine if an
+AI
+
+70
+00:04:19,230 --> 00:04:22,230
+is an agent, one must clarify what does
+agency
+
+71
+00:04:22,230 --> 00:04:25,829
+mean? Which, as we'll see in later
+chapters, requires
+
+72
+00:04:25,829 --> 00:04:28,750
+nuance and may be an intrinsically ill
+defined and
+
+73
+00:04:28,750 --> 00:04:32,670
+fuzzy term. Some topics in AI safety are
+so
+
+74
+00:04:32,670 --> 00:04:34,870
+challenging to grasp and are thought to be
+non
+
+75
+00:04:34,870 --> 00:04:38,350
+scientific in the machine learning
+community, such as discussing
+
+76
+00:04:38,350 --> 00:04:41,709
+situational awareness or why AI might be
+able to
+
+77
+00:04:41,709 --> 00:04:45,750
+really understand these concepts are far
+from consensus among
+
+78
+00:04:45,750 --> 00:04:49,069
+philosophers and AI researchers and
+require a lot of
+
+79
+00:04:49,069 --> 00:04:53,670
+caution. A simple solution probably
+doesn't exist. For instance,
+
+80
+00:04:53,750 --> 00:04:56,389
+the response to climate change is not just
+one
+
+81
+00:04:56,389 --> 00:05:00,509
+measure, like saving electricity in winter
+at home. A
+
+82
+00:05:00,509 --> 00:05:03,589
+whole range of potentially different
+solutions must be applied,
+
+83
+00:05:04,189 --> 00:05:06,350
+just as there are various problems to
+consider when
+
+84
+00:05:06,350 --> 00:05:09,750
+building an airplane. Similarly, when
+training and deploying an
+
+85
+00:05:09,750 --> 00:05:13,949
+AI, a range of issues could arise
+requiring precautions
+
+86
+00:05:13,949 --> 00:05:17,509
+and various security measures. AI safety
+is hard to
+
+87
+00:05:17,509 --> 00:05:20,189
+measure. Working on the problem can lead
+to an
+
+88
+00:05:20,189 --> 00:05:23,790
+illusion of understanding, thereby
+creating the illusion of control.
+
+89
+00:05:24,829 --> 00:05:29,029
+AI safety lacks clear feedback loops.
+Progress in AI
+
+90
+00:05:29,029 --> 00:05:32,220
+capability advancement is is relatively
+easy to measure and
+
+91
+00:05:32,220 --> 00:05:36,180
+benchmark, while progress in safety is
+comparatively harder to
+
+92
+00:05:36,180 --> 00:05:39,779
+measure. For example, it's much easier to
+monitor the
+
+93
+00:05:39,779 --> 00:05:42,660
+inference speed than to monitor the
+truthfulness of a
+
+94
+00:05:42,660 --> 00:05:46,980
+system or monitor its safety properties.
+Section Uncertainty and
+
+95
+00:05:46,980 --> 00:05:51,259
+Disagreement the pre paradigmatic nature
+of AI safety leads
+
+96
+00:05:51,259 --> 00:05:55,980
+to significant disagreements among
+experts. These differences in perspective
+
+97
+00:05:56,060 --> 00:05:59,819
+are crucial to understanding when
+evaluating these proposed strategies.
+
+98
+00:06:00,389 --> 00:06:03,629
+The consequences of failures in AI
+alignment are steeped
+
+99
+00:06:03,629 --> 00:06:07,670
+in uncertainty. New insights could
+challenge many high level
+
+100
+00:06:07,670 --> 00:06:12,629
+considerations discussed in this textbook.
+For instance, Zvi Moshewitz
+
+101
+00:06:12,629 --> 00:06:15,509
+has compiled a list of central questions
+marked by
+
+102
+00:06:15,509 --> 00:06:20,269
+significant uncertainty. For example, what
+worlds count as catastrophic
+
+103
+00:06:20,269 --> 00:06:23,509
+versus non catastrophic? What would count
+as a non
+
+104
+00:06:23,509 --> 00:06:27,610
+catastrophic outcome? What is valuable?
+What do we care
+
+105
+00:06:27,610 --> 00:06:31,810
+about. If answered differently, these
+questions could significantly alter
+
+106
+00:06:31,810 --> 00:06:35,209
+one's estimate of the likelihood and
+severity of catastrophes
+
+107
+00:06:35,290 --> 00:06:40,529
+stemming from unaligned AGI divergent
+worldviews These disagreements often
+
+108
+00:06:40,529 --> 00:06:44,930
+stem from fundamentally different
+worldviews. Some experts, like Robin
+
+109
+00:06:44,930 --> 00:06:48,810
+Hansen, may approach AI risk through
+economic or evolutionary
+
+110
+00:06:48,810 --> 00:06:53,089
+lenses, potentially leading to different
+conclusions about takeoff speeds
+
+111
+00:06:53,089 --> 00:06:55,910
+and the likelihood of stable control
+compared to those
+
+112
+00:06:55,910 --> 00:07:00,670
+focusing on agent foundations or technical
+alignment failures. Others,
+
+113
+00:07:00,670 --> 00:07:04,509
+like Richard Sutton, have expressed views
+suggesting an acceptance
+
+114
+00:07:04,509 --> 00:07:08,990
+or even embrace of AI potentially
+succeeding humanity, framing
+
+115
+00:07:08,990 --> 00:07:11,790
+it as a natural evolutionary step rather
+than an
+
+116
+00:07:11,790 --> 00:07:17,949
+existential catastrophe. These differing
+philosophical stances influence strategic
+priorities.
+
+117
+00:07:18,430 --> 00:07:22,379
+Section Safety Washington the combination
+of high stakes public
+
+118
+00:07:22,379 --> 00:07:26,100
+concern and lack of consensus creates
+fertile ground for
+
+119
+00:07:26,100 --> 00:07:30,459
+safety washing, the practice of
+misleadingly portraying AI products,
+
+120
+00:07:30,699 --> 00:07:33,899
+research, or practices as safer or more
+aligned with
+
+121
+00:07:33,899 --> 00:07:37,139
+safety goals than they actually are.
+Safety washing can
+
+122
+00:07:37,139 --> 00:07:41,060
+create a false sense of security.
+Companies developing powerful
+
+123
+00:07:41,060 --> 00:07:45,220
+AI face incentives to appear safety
+conscious to appease
+
+124
+00:07:45,220 --> 00:07:50,300
+the public, regulators, and potential
+employees. Safety washing can
+
+125
+00:07:50,300 --> 00:07:54,379
+involve overstating the safety benefits of
+certain features, focusing
+
+126
+00:07:54,379 --> 00:07:58,139
+on less critical aspects of safety while
+downplaying existential
+
+127
+00:07:58,139 --> 00:08:02,699
+risks, or funding conducting research that
+primarily advances capabilities
+
+128
+00:08:02,699 --> 00:08:05,699
+under the guise of safety. This can lead
+to
+
+129
+00:08:05,699 --> 00:08:09,740
+insufficient risk mitigation efforts. It
+can misdirect funding and
+
+130
+00:08:09,740 --> 00:08:13,139
+talent towards less impactful work and
+make it harder
+
+131
+00:08:13,139 --> 00:08:16,220
+to build a genuine scientific consensus on
+the true
+
+132
+00:08:16,220 --> 00:08:19,980
+state of AI safety. Assessing progress in
+safety is
+
+133
+00:08:19,980 --> 00:08:23,220
+tricky. Even with the intention to help,
+actions might
+
+134
+00:08:23,220 --> 00:08:30,459
+have a net negative impact. From second
+order effects
+
+135
+00:08:30,459 --> 00:08:34,820
+like accelerating deployment of dangerous
+technologies, and determining the
+
+136
+00:08:34,820 --> 00:08:39,139
+contribution's impact is far from trivial.
+For example, the
+
+137
+00:08:39,139 --> 00:08:44,789
+impact of reinforcement learning from
+human feedback currently used
+
+138
+00:08:44,789 --> 00:08:48,429
+to instruction, tune, and make ChatGPT
+safer is still
+
+139
+00:08:48,429 --> 00:08:51,950
+debated in the community. One reason the
+impact of
+
+140
+00:08:51,950 --> 00:08:55,070
+RLHF may be negative is that this
+technique may
+
+141
+00:08:55,070 --> 00:08:57,629
+create an illusion of alignment that would
+make spotting
+
+142
+00:08:57,629 --> 00:09:01,549
+deceptive alignment even more challenging.
+The alignment of the
+
+143
+00:09:01,549 --> 00:09:05,549
+systems trained through RLHF is shallow
+and the alignment
+
+144
+00:09:05,549 --> 00:09:09,110
+properties might break with future, more
+situationally aware models.
+
+145
+00:09:10,029 --> 00:09:14,830
+Similarly, certain interpretability work
+faces dual use concerns. Some
+
+146
+00:09:14,830 --> 00:09:18,549
+argue that much current AI safety research
+solves easy
+
+147
+00:09:18,549 --> 00:09:23,389
+problems that primarily benefit developers
+economically, potentially speeding up
+
+148
+00:09:23,389 --> 00:09:29,549
+capabilities rather than meaningfully
+reducing existential risk. 20, 24.
+
+149
+00:09:30,110 --> 00:09:33,629
+As a consequence, even well intentioned
+research might inadvertently
+
+150
+00:09:33,629 --> 00:09:34,830
+accelerate risks.
