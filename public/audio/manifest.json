@@ -225,6 +225,113 @@
       ]
     },
     {
+      "id": "strategies",
+      "number": 3,
+      "title": "Chapter 3: Strategies",
+      "sections": [
+        {
+          "index": "3.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-1_1-introduction_cbr.mp3",
+          "duration": "00:02:09",
+          "length": 1035501,
+          "srt": "/audio/ch3 - strategies/strategies_3-1_1-introduction.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-1_1-introduction.words.json"
+        },
+        {
+          "index": "3.2",
+          "title": "2. Definitions",
+          "slug": "2-definitions",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-2_2-definitions_cbr.mp3",
+          "duration": "00:06:50",
+          "length": 3284781,
+          "srt": "/audio/ch3 - strategies/strategies_3-2_2-definitions.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-2_2-definitions.words.json"
+        },
+        {
+          "index": "3.3",
+          "title": "3. Misuse Prevention Strategies",
+          "slug": "3-misuse-prevention-strategies",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-3_3-misuse-prevention-strategies_cbr.mp3",
+          "duration": "00:15:51",
+          "length": 7615533,
+          "srt": "/audio/ch3 - strategies/strategies_3-3_3-misuse-prevention-strategies.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-3_3-misuse-prevention-strategies.words.json"
+        },
+        {
+          "index": "3.4",
+          "title": "4. AGI Safety Strategies",
+          "slug": "4-agi-safety-strategies",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-4_4-agi-safety-strategies_cbr.mp3",
+          "duration": "00:36:11",
+          "length": 17371629,
+          "srt": "/audio/ch3 - strategies/strategies_3-4_4-agi-safety-strategies.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-4_4-agi-safety-strategies.words.json"
+        },
+        {
+          "index": "3.5",
+          "title": "5. ASI Safety Strategies",
+          "slug": "5-asi-safety-strategies",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-5_5-asi-safety-strategies_cbr.mp3",
+          "duration": "00:29:11",
+          "length": 14014317,
+          "srt": "/audio/ch3 - strategies/strategies_3-5_5-asi-safety-strategies.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-5_5-asi-safety-strategies.words.json"
+        },
+        {
+          "index": "3.6",
+          "title": "6. Socio-Technical Strategies",
+          "slug": "6-socio-technical-strategies",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-6_6-socio-technical-strategies_cbr.mp3",
+          "duration": "00:26:26",
+          "length": 12698541,
+          "srt": "/audio/ch3 - strategies/strategies_3-6_6-socio-technical-strategies.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-6_6-socio-technical-strategies.words.json"
+        },
+        {
+          "index": "3.7",
+          "title": "7. Combining Strategies",
+          "slug": "7-combining-strategies",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-7_7-combining-strategies_cbr.mp3",
+          "duration": "00:05:38",
+          "length": 2710893,
+          "srt": "/audio/ch3 - strategies/strategies_3-7_7-combining-strategies.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-7_7-combining-strategies.words.json"
+        },
+        {
+          "index": "3.8",
+          "title": "8. Challenges",
+          "slug": "8-challenges",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-8_8-challenges_cbr.mp3",
+          "duration": "00:09:34",
+          "length": 4601325,
+          "srt": "/audio/ch3 - strategies/strategies_3-8_8-challenges.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-8_8-challenges.words.json"
+        },
+        {
+          "index": "3.9",
+          "title": "9. Conclusion",
+          "slug": "9-conclusion",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-9_9-conclusion_cbr.mp3",
+          "duration": "00:02:55",
+          "length": 1409133,
+          "srt": "/audio/ch3 - strategies/strategies_3-9_9-conclusion.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-9_9-conclusion.words.json"
+        },
+        {
+          "index": "3.10",
+          "title": "10. Appendix: Long-term questions",
+          "slug": "10-appendix-long-term-questions",
+          "audioUrl": "/audio/ch3 - strategies/strategies_3-10_10-appendix-long-term-questions_cbr.mp3",
+          "duration": "00:14:36",
+          "length": 7014381,
+          "srt": "/audio/ch3 - strategies/strategies_3-10_10-appendix-long-term-questions.srt",
+          "words": "/audio/ch3 - strategies/strategies_3-10_10-appendix-long-term-questions.words.json"
+        }
+      ]
+    },
+    {
       "id": "governance",
       "number": 4,
       "title": "Chapter 4: Governance",
@@ -233,9 +340,9 @@
           "index": "4.1",
           "title": "1. Introduction",
           "slug": "1-introduction",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s1-ec7a7293ee7e911a5d063e8dc666b90a6c46d3204f9594b3de854db71609164d.mp3",
+          "audioUrl": "/audio/ch4 - governance/governance_4-1_1-introduction_cbr.mp3",
           "duration": "00:02:05",
-          "length": 1394780,
+          "length": 1005933,
           "srt": "/audio/ch4 - governance/governance_4-1_1-introduction.srt",
           "words": "/audio/ch4 - governance/governance_4-1_1-introduction.words.json"
         },
@@ -243,9 +350,9 @@
           "index": "4.2",
           "title": "2. Governance Problems",
           "slug": "2-governance-problems",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s2-fdf3f7afa98e48b5bd5d64c54186ab6e79dcfc58ffa218807a71aaec6a39af6c.mp3",
+          "audioUrl": "/audio/ch4 - governance/governance_4-2_2-governance-problems_cbr.mp3",
           "duration": "00:09:20",
-          "length": 6604892,
+          "length": 4483821,
           "srt": "/audio/ch4 - governance/governance_4-2_2-governance-problems.srt",
           "words": "/audio/ch4 - governance/governance_4-2_2-governance-problems.words.json"
         },
@@ -253,9 +360,9 @@
           "index": "4.3",
           "title": "3. Compute Governance",
           "slug": "3-compute-governance",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s3-94cbd4ba8fb45f4dae7da41e36f10bc080994c0949dc4b9d4b2202faea9ca1fe.mp3",
-          "duration": "00:16:48",
-          "length": 11775740,
+          "audioUrl": "/audio/ch4 - governance/governance_4-3_3-compute-governance_cbr.mp3",
+          "duration": "00:16:49",
+          "length": 8075181,
           "srt": "/audio/ch4 - governance/governance_4-3_3-compute-governance.srt",
           "words": "/audio/ch4 - governance/governance_4-3_3-compute-governance.words.json"
         },
@@ -263,9 +370,9 @@
           "index": "4.4",
           "title": "4. Systemic Challenges",
           "slug": "4-systemic-challenges",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s4-31d32e6bf62c1844fec667198d3cdf4ebbaef4923be741f8d9bbb27cd0c544a2.mp3",
+          "audioUrl": "/audio/ch4 - governance/governance_4-4_4-systemic-challenges_cbr.mp3",
           "duration": "00:24:22",
-          "length": 17103572,
+          "length": 11701869,
           "srt": "/audio/ch4 - governance/governance_4-4_4-systemic-challenges.srt",
           "words": "/audio/ch4 - governance/governance_4-4_4-systemic-challenges.words.json"
         },
@@ -273,9 +380,9 @@
           "index": "4.5",
           "title": "5. Governance Architectures",
           "slug": "5-governance-architectures",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s5-906d74c1523a40c5b18e8bb16c4a9e2871d2a1129ff30a7094274f855e70d7b1.mp3",
+          "audioUrl": "/audio/ch4 - governance/governance_4-5_5-governance-architectures_cbr.mp3",
           "duration": "00:41:43",
-          "length": 29488076,
+          "length": 20031597,
           "srt": "/audio/ch4 - governance/governance_4-5_5-governance-architectures.srt",
           "words": "/audio/ch4 - governance/governance_4-5_5-governance-architectures.words.json"
         },
@@ -283,9 +390,9 @@
           "index": "4.6",
           "title": "6. Implementation",
           "slug": "6-implementation",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s6-aae267373d5dbc3a2fdb71e8cc4d16fb91d18bd6fbc849861bd3ccdd99a5e53b.mp3",
+          "audioUrl": "/audio/ch4 - governance/governance_4-6_6-implementation_cbr.mp3",
           "duration": "00:16:08",
-          "length": 11460548,
+          "length": 7750509,
           "srt": "/audio/ch4 - governance/governance_4-6_6-implementation.srt",
           "words": "/audio/ch4 - governance/governance_4-6_6-implementation.words.json"
         },
@@ -293,9 +400,9 @@
           "index": "4.7",
           "title": "7. Conclusion",
           "slug": "7-conclusion",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s7-bfbbd4026aa9f112a16fff2c3eae27767133de03091b873b677f9b097f28618f.mp3",
+          "audioUrl": "/audio/ch4 - governance/governance_4-7_7-conclusion_cbr.mp3",
           "duration": "00:04:36",
-          "length": 3286028,
+          "length": 2217837,
           "srt": "/audio/ch4 - governance/governance_4-7_7-conclusion.srt",
           "words": "/audio/ch4 - governance/governance_4-7_7-conclusion.words.json"
         },
@@ -303,9 +410,9 @@
           "index": "4.8",
           "title": "8. Appendix: Data Governance",
           "slug": "8-appendix-data-governance",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s8-ddb124285813a54faa9a61a02163b5754c1cc7810a0aaeebeab01bc0ac41e3a2.mp3",
+          "audioUrl": "/audio/ch4 - governance/governance_4-8_8-appendix-data-governance_cbr.mp3",
           "duration": "00:04:49",
-          "length": 3350396,
+          "length": 2322477,
           "srt": "/audio/ch4 - governance/governance_4-8_8-appendix-data-governance.srt",
           "words": "/audio/ch4 - governance/governance_4-8_8-appendix-data-governance.words.json"
         },
@@ -313,9 +420,9 @@
           "index": "4.9",
           "title": "9. Appendix: National Governance",
           "slug": "9-appendix-national-governance",
-          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch4-s9-9e8958c10ecebec7580a66ce243e9c51c153688fdf986f6dcabf764af0d07a45.mp3",
-          "duration": "00:16:49",
-          "length": 11985380,
+          "audioUrl": "/audio/ch4 - governance/governance_4-9_9-appendix-national-governance_cbr.mp3",
+          "duration": "00:16:51",
+          "length": 8095725,
           "srt": "/audio/ch4 - governance/governance_4-9_9-appendix-national-governance.srt",
           "words": "/audio/ch4 - governance/governance_4-9_9-appendix-national-governance.words.json"
         }
