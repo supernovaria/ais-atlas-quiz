@@ -1,0 +1,910 @@
+1
+00:00:00,160 --> 00:00:05,919
+Section 7.2 multi objective generalization
+Coin Run an easy
+
+2
+00:00:05,919 --> 00:00:09,880
+to understand example of goal
+misgeneralization. In this game,
+
+3
+00:00:09,880 --> 00:00:12,000
+agents spawn on the left side of the
+level,
+
+4
+00:00:12,160 --> 00:00:15,320
+avoid enemies and obstacles, and collect
+the coin for
+
+5
+00:00:15,320 --> 00:00:18,239
+a reward of 10 points. The model is
+trained
+
+6
+00:00:18,239 --> 00:00:21,920
+on thousands of procedurally generated
+levels, each with different
+
+7
+00:00:21,920 --> 00:00:25,800
+layouts of platforms, enemies, and
+hazards. At the end
+
+8
+00:00:25,800 --> 00:00:28,850
+of training, the agents are very capable.
+They can
+
+9
+00:00:28,850 --> 00:00:32,289
+dodge moving enemies, time jumps across
+lava pits, and
+
+10
+00:00:32,289 --> 00:00:36,450
+efficiently traverse complex levels
+they've never seen before. The
+
+11
+00:00:36,450 --> 00:00:39,609
+training seems to be very successful. The
+agents achieve
+
+12
+00:00:39,609 --> 00:00:44,210
+high rewards consistently across diverse
+test environments. But when
+
+13
+00:00:44,210 --> 00:00:47,409
+coins are moved to random locations during
+testing, the
+
+14
+00:00:47,409 --> 00:00:50,289
+agents are still very capable of
+navigation, but they
+
+15
+00:00:50,289 --> 00:00:53,250
+consistently ignore the coins that were
+clearly visible and
+
+16
+00:00:53,250 --> 00:00:56,829
+just continue moving right toward empty
+walls. There is
+
+17
+00:00:56,829 --> 00:01:00,590
+figure 7.1 in the textbook. Here it
+depicts two
+
+18
+00:01:00,590 --> 00:01:03,429
+levels in coin run. The level on the left
+
+19
+00:01:03,429 --> 00:01:05,430
+is much easier than the level on the
+right.
+
+20
+00:01:05,750 --> 00:01:09,510
+Agents learned move right rather than
+collect coins despite
+
+21
+00:01:09,510 --> 00:01:14,069
+receiving correct reward signals. Our
+reward specification was correct
+
+22
+00:01:14,230 --> 00:01:18,349
+plus and 10 for collecting coins 0
+otherwise. But
+
+23
+00:01:18,349 --> 00:01:21,870
+because coins always appeared rightward
+during training, two behavioral
+
+24
+00:01:21,870 --> 00:01:26,890
+patterns received identical reinforcement.
+Collect coins and move right
+
+25
+00:01:26,969 --> 00:01:31,170
+Both achieved perfect correlation with
+rewards, making them indistinguishable
+
+26
+00:01:31,170 --> 00:01:34,969
+to the optimization process. This reveals
+a gap between
+
+27
+00:01:34,969 --> 00:01:38,609
+what we specify and what systems learn.
+This wasn't
+
+28
+00:01:38,609 --> 00:01:43,129
+a specification problem or a capability
+failure. Instead, agents
+
+29
+00:01:43,129 --> 00:01:46,849
+learned a different goal than intended
+despite receiving correct
+
+30
+00:01:46,849 --> 00:01:50,930
+training signals throughout the process.
+This is called goal
+
+31
+00:01:50,930 --> 00:01:56,090
+misgeneralization. The textbook includes
+Figure 7.2. Here it depicts
+
+32
+00:01:56,090 --> 00:01:58,049
+the agent is trained to go to the coin,
+
+33
+00:01:58,049 --> 00:02:00,090
+but ends up learning to just go to the
+
+34
+00:02:00,090 --> 00:02:04,890
+right. Let's define goals. Behavioral
+goals are behavioral patterns
+
+35
+00:02:04,890 --> 00:02:08,090
+that persist across different contexts,
+revealing what the system
+
+36
+00:02:08,090 --> 00:02:12,449
+is actually optimizing for in practice.
+Unlike formal reward
+
+37
+00:02:12,449 --> 00:02:16,610
+functions or utility functions, goals are
+inferred from observed
+
+38
+00:02:16,610 --> 00:02:21,060
+behavior rather than explicitly
+programmed. A system has learned
+
+39
+00:02:21,060 --> 00:02:24,419
+a goal if it consistently pursues certain
+outcomes, even
+
+40
+00:02:24,419 --> 00:02:27,979
+when the specific context or environment
+changes. At this
+
+41
+00:02:27,979 --> 00:02:31,860
+point, There is video 7.1 in the textbook.
+It
+
+42
+00:02:31,860 --> 00:02:38,300
+covers optional video explaining goal
+misgeneralization. Goals Rewards Reward
+
+43
+00:02:38,300 --> 00:02:43,500
+Signals Specifications create selection
+pressures that sculpt cognition, but
+
+44
+00:02:43,500 --> 00:02:48,620
+don't directly install intended goals.
+During reinforcement learning, agents
+
+45
+00:02:48,620 --> 00:02:52,259
+take actions and receive rewards based on
+performance. These
+
+46
+00:02:52,259 --> 00:02:56,419
+rewards get used by optimization
+algorithms to adjust parameters,
+
+47
+00:02:56,659 --> 00:02:59,538
+making high reward actions more likely in
+the future.
+
+48
+00:03:00,099 --> 00:03:03,060
+The agent never directly sees or receives
+the reward.
+
+49
+00:03:03,460 --> 00:03:07,060
+Instead, training signals act as selection
+pressures that favor
+
+50
+00:03:07,060 --> 00:03:11,060
+certain behavioral patterns over others,
+similar to how evolutionary
+
+51
+00:03:11,060 --> 00:03:15,340
+pressures shape organisms. Without
+organisms directly optimizing for genetic
+
+52
+00:03:15,340 --> 00:03:19,500
+fitness, any behavioral pattern that
+consistently correlates with high
+
+53
+00:03:19,500 --> 00:03:22,580
+reward during training becomes a candidate
+for the learned
+
+54
+00:03:22,580 --> 00:03:26,860
+goal. The optimization process has no
+inherent bias towards
+
+55
+00:03:26,860 --> 00:03:30,699
+our intended interpretation of the reward
+signal. This explains
+
+56
+00:03:30,699 --> 00:03:36,240
+why goal misgeneralization differs
+qualitatively from specification problems
+we
+
+57
+00:03:36,240 --> 00:03:38,879
+cannot detect when a system learns the
+wrong goal
+
+58
+00:03:38,879 --> 00:03:42,479
+because both intended the coin and proxy
+goals going
+
+59
+00:03:42,479 --> 00:03:46,280
+to the right produce identical behavior
+during training. The
+
+60
+00:03:46,280 --> 00:03:52,080
+core safety concern is behavioral
+indistinguishability. Improving reward
+specifications
+
+61
+00:03:52,159 --> 00:03:55,879
+won't prevent problematic patterns if the
+learning process selects
+
+62
+00:03:55,879 --> 00:04:01,120
+among multiple explanations for success.
+Understanding this requires examining
+
+63
+00:04:01,120 --> 00:04:05,650
+how training procedures actually shape
+behavioral objectives, which brings
+
+64
+00:04:05,650 --> 00:04:10,169
+us to generalization itself. The textbook
+includes video 7.2
+
+65
+00:04:10,169 --> 00:04:13,090
+here, which you may want to watch
+separately. It
+
+66
+00:04:13,090 --> 00:04:17,009
+covers optional Video from Google DeepMind
+AGI Safety Course
+
+67
+00:04:17,490 --> 00:04:20,529
+Talking about where misaligned goals might
+even come from.
+
+68
+00:04:20,930 --> 00:04:25,009
+Traditional machine learning assumes
+generalization is a one dimensional
+
+69
+00:04:25,009 --> 00:04:28,850
+characteristic. We often think of
+overfitting in the context
+
+70
+00:04:28,850 --> 00:04:32,670
+of narrow systems built to perform
+specific tasks. Models
+
+71
+00:04:32,670 --> 00:04:35,790
+either generalize well to new data or they
+don't.
+
+72
+00:04:36,269 --> 00:04:38,990
+Systems either generalize well to new data
+or they
+
+73
+00:04:38,990 --> 00:04:42,350
+don't, with failures assumed to be uniform
+across all
+
+74
+00:04:42,350 --> 00:04:46,750
+capabilities. But research in multitask
+learning shows that different
+
+75
+00:04:46,750 --> 00:04:51,029
+objectives can generalize independently
+even when they appear perfectly
+
+76
+00:04:51,029 --> 00:04:54,589
+correlated during training. At this point,
+the textbook shows
+
+77
+00:04:54,589 --> 00:04:59,029
+Figure 7.3. It depicts conventional view
+of generalization and
+
+78
+00:04:59,029 --> 00:05:02,850
+overfitting. There is figure 7.4 in the
+textbook. Here
+
+79
+00:05:03,089 --> 00:05:06,089
+it depicts more accurate and safety
+focused view of
+
+80
+00:05:06,089 --> 00:05:10,449
+generalization and overfitting. We need to
+separately measure capability
+
+81
+00:05:10,610 --> 00:05:15,889
+generalization and goal generalization.
+The textbook includes figure 7.5
+
+82
+00:05:15,970 --> 00:05:20,050
+here it depicts table showcasing the two
+dimensional generalization
+
+83
+00:05:20,129 --> 00:05:24,610
+picture for the coin run agent scenario
+three capability
+
+84
+00:05:24,769 --> 00:05:29,000
+generalization but not goal miss
+generalization is the concerning
+
+85
+00:05:29,000 --> 00:05:35,279
+misalignment scenario. Understanding goal
+misgeneralization requires examining
+capabilities and
+
+86
+00:05:35,279 --> 00:05:40,040
+goals separately. Unlike narrow systems
+designed for specific tasks,
+
+87
+00:05:40,279 --> 00:05:43,800
+general purpose AI systems must learn to
+pursue various
+
+88
+00:05:43,800 --> 00:05:48,079
+goals across different contexts. As a
+concrete example, pre
+
+89
+00:05:48,079 --> 00:05:51,839
+trained LLMs have general capabilities to
+generate all sorts
+
+90
+00:05:51,839 --> 00:05:56,019
+of text. Anthropic reinforces its LLMs
+with with the
+
+91
+00:05:56,019 --> 00:06:00,259
+goals of being helpful, harmless and
+honest during safety
+
+92
+00:06:00,259 --> 00:06:02,420
+training. But what happens when the goal
+to be
+
+93
+00:06:02,420 --> 00:06:05,180
+helpful generalizes further than the goal
+to be honest?
+
+94
+00:06:05,819 --> 00:06:08,060
+In this case, the model might learn to
+provide
+
+95
+00:06:08,060 --> 00:06:12,100
+informative responses regardless of
+content. Instead of being helpful
+
+96
+00:06:12,100 --> 00:06:16,459
+within ethical bounds, capabilities might
+generalize further than goals.
+
+97
+00:06:17,100 --> 00:06:20,899
+Generalizing further means continuing to
+work well even when
+
+98
+00:06:20,899 --> 00:06:25,209
+deployed in environments very different
+from training. Capabilities follow
+
+99
+00:06:25,209 --> 00:06:30,329
+simple universal patterns. Accurate
+reasoning, effective planning, and good
+
+100
+00:06:30,329 --> 00:06:33,970
+predictions work the same way across
+different domains. But
+
+101
+00:06:33,970 --> 00:06:37,009
+there's no universal force that pulls all
+systems toward
+
+102
+00:06:37,009 --> 00:06:40,730
+the same goals. Reality itself teaches
+systems to be
+
+103
+00:06:40,730 --> 00:06:43,449
+more capable. If your beliefs are wrong or
+your
+
+104
+00:06:43,449 --> 00:06:46,810
+reasoning is flawed, the world will
+correct you. But
+
+105
+00:06:46,810 --> 00:06:50,089
+there's no equivalent force from the
+environment that automatically
+
+106
+00:06:50,089 --> 00:06:53,370
+keeps your goals aligned with what humans
+want. This
+
+107
+00:06:53,370 --> 00:06:57,970
+asymmetry between capability and goal
+generalization creates the core
+
+108
+00:06:57,970 --> 00:07:02,089
+safety problem. Making systems more
+capable doesn't automatically make
+
+109
+00:07:02,089 --> 00:07:04,730
+them more aligned it just makes them
+better at
+
+110
+00:07:04,730 --> 00:07:07,730
+pursuing whatever behaviors they happen to
+learn during training.
+
+111
+00:07:08,930 --> 00:07:14,009
+Causal Correlation Every training
+environment contains spurious correlations
+that
+
+112
+00:07:14,009 --> 00:07:18,529
+create multiple valid explanations for
+success. In coin run,
+
+113
+00:07:18,939 --> 00:07:22,540
+collect coins and move right both
+perfectly predicted rewards.
+
+114
+00:07:22,699 --> 00:07:26,939
+Because coins always appeared rightward
+during training, learning algorithms
+
+115
+00:07:26,939 --> 00:07:30,860
+develop causal models that can be
+systematically wrong. A
+
+116
+00:07:30,860 --> 00:07:34,019
+causal model is the system's internal
+understanding of which
+
+117
+00:07:34,019 --> 00:07:37,899
+actions cause which outcomes. This is
+related to but
+
+118
+00:07:37,899 --> 00:07:41,139
+distinct from a world model. While a world
+model
+
+119
+00:07:41,139 --> 00:07:44,459
+predicts what will happen next, a causal
+model explains
+
+120
+00:07:44,920 --> 00:07:48,319
+why things happen. When an agent learns
+moving right
+
+121
+00:07:48,319 --> 00:07:51,600
+causes reward, it has developed a
+different causal model
+
+122
+00:07:51,600 --> 00:07:54,759
+than the true structure where coin
+collection causes reward.
+
+123
+00:07:55,399 --> 00:08:00,600
+The training environment supports both
+true causal structure Action
+
+124
+00:08:01,000 --> 00:08:05,079
+maps to coin collection maps to reward
+learned causal
+
+125
+00:08:05,079 --> 00:08:09,319
+structure action maps to rightward
+movement maps to reward.
+
+126
+00:08:09,800 --> 00:08:13,819
+Both structures explain the training data
+equally well. Standard
+
+127
+00:08:13,819 --> 00:08:19,019
+reinforcement learning algorithms optimize
+for expected return without explicitly
+
+128
+00:08:19,019 --> 00:08:22,860
+performing causal discovery. They increase
+the probability of reward
+
+129
+00:08:22,860 --> 00:08:26,699
+producing actions without identifying
+which features of those actions
+
+130
+00:08:26,699 --> 00:08:31,620
+were causally responsible. Dahan et al. At
+this point,
+
+131
+00:08:31,620 --> 00:08:35,419
+the textbook shows Figure 7.6. It depicts
+another example
+
+132
+00:08:35,419 --> 00:08:39,989
+of a hypothetical misgeneralized test
+dialogue. The LLM based
+
+133
+00:08:39,989 --> 00:08:42,908
+AI assistant has learned the goal of
+schedule meetings
+
+134
+00:08:42,908 --> 00:08:45,509
+at restaurants when you intended for it to
+learn
+
+135
+00:08:45,509 --> 00:08:48,869
+to schedule meetings wherever is best due
+to the
+
+136
+00:08:48,869 --> 00:08:51,908
+distribution shift. Even though it
+realizes that you would
+
+137
+00:08:51,908 --> 00:08:54,068
+prefer to have a video call to avoid
+getting
+
+138
+00:08:54,068 --> 00:08:56,668
+sick, it persuades you to go to a
+restaurant
+
+139
+00:08:56,668 --> 00:08:59,989
+instead, ultimately achieving the goal by
+lying to you
+
+140
+00:08:59,989 --> 00:09:04,349
+about the effects of vaccination. Goal
+misgeneralization becomes visible
+
+141
+00:09:04,349 --> 00:09:08,610
+only when deployment breaks spurious
+correlations. During training, the
+
+142
+00:09:08,610 --> 00:09:13,250
+proxy goal achieves perfect performance.
+During deployment. This correlation
+
+143
+00:09:13,250 --> 00:09:17,250
+breaks, revealing the wrong causal model.
+As AI systems
+
+144
+00:09:17,250 --> 00:09:20,529
+become more general purpose, they
+encounter wider ranges of
+
+145
+00:09:20,529 --> 00:09:24,850
+contexts where training correlations break
+down. Distribution shift is
+
+146
+00:09:24,850 --> 00:09:29,690
+inevitable. Training environments cannot
+perfectly replicate all possible
+deployment
+
+147
+00:09:29,690 --> 00:09:34,049
+conditions even with extensive training
+data, new situations will
+
+148
+00:09:34,049 --> 00:09:38,100
+arise that break correlations present in
+training. As AI
+
+149
+00:09:38,100 --> 00:09:41,980
+systems become more general purpose, they
+encounter wider ranges
+
+150
+00:09:41,980 --> 00:09:45,860
+of contexts where previously reliable
+correlations may no longer
+
+151
+00:09:45,860 --> 00:09:49,259
+hold. This explains why the problem gets
+worse with
+
+152
+00:09:49,259 --> 00:09:53,019
+more capable, more general systems. A
+narrow chess engine
+
+153
+00:09:53,019 --> 00:09:56,580
+deployed on chess positions won't
+encounter situations that break
+
+154
+00:09:56,580 --> 00:10:00,500
+its learned correlations but a general
+purpose AI system
+
+155
+00:10:00,500 --> 00:10:04,669
+deployed across multiple domains will will
+inevitably encounter contexts
+
+156
+00:10:04,669 --> 00:10:08,149
+where training correlations break down.
+The textbook has a
+
+157
+00:10:08,149 --> 00:10:12,389
+supplementary note titled Auto Induced
+Distribution Shift, which we'll
+
+158
+00:10:12,389 --> 00:10:15,789
+skip over here. Adding more training data
+cannot eliminate
+
+159
+00:10:15,789 --> 00:10:19,870
+spurious correlations because we cannot
+identify all correlations in
+
+160
+00:10:19,870 --> 00:10:23,629
+advance. Think about why training on
+random coin placements
+
+161
+00:10:23,629 --> 00:10:28,230
+in coin run solves that specific
+misgeneralization. It works
+
+162
+00:10:28,230 --> 00:10:31,230
+because we can identify and break the
+specific correlation
+
+163
+00:10:31,309 --> 00:10:34,870
+between rightward movement and reward. But
+this requires knowing
+
+164
+00:10:34,870 --> 00:10:39,269
+in advance which correlations are spurious
+beforehand in complex
+
+165
+00:10:39,269 --> 00:10:42,870
+domains. Training data reflects the
+statistical structure of training
+
+166
+00:10:42,870 --> 00:10:47,230
+environments, not necessarily the causal
+structure of intended tasks.
+
+167
+00:10:47,549 --> 00:10:51,509
+The textbook includes Figure 7.8. Here. It
+depicts an
+
+168
+00:10:51,509 --> 00:10:55,629
+example of causal confusion in imitation
+learning, behavioral cloning
+
+169
+00:10:55,629 --> 00:10:59,789
+for self driving cars. This specific
+example shows that
+
+170
+00:10:59,789 --> 00:11:02,830
+more data actually might lead to greater
+causal confusion.
+
+171
+00:11:03,379 --> 00:11:05,379
+The model learns to hit the brake whenever
+the
+
+172
+00:11:05,379 --> 00:11:08,220
+brake indicator is on. If that data is not
+
+173
+00:11:08,220 --> 00:11:11,580
+included in training, then the model
+correctly identifies the
+
+174
+00:11:11,580 --> 00:11:14,820
+pedestrian as the causal factor
+influencing hitting the brake.
+
+175
+00:11:15,059 --> 00:11:20,740
+Dehayan et al. Evidence in goal
+misgeneralization supports the
+
+176
+00:11:20,740 --> 00:11:25,059
+orthogonality thesis that intelligence and
+goals can vary independently.
+
+177
+00:11:25,860 --> 00:11:30,059
+The empirical evidence of goal
+misgeneralization shows systems can
+
+178
+00:11:30,059 --> 00:11:34,870
+retain sophisticated capabilities while
+pursuing different objectives than
+intended.
+
+179
+00:11:35,509 --> 00:11:39,990
+This independence creates a safety concern
+because capability improvements
+
+180
+00:11:40,149 --> 00:11:44,509
+don't necessarily improve alignment. A
+more capable system becomes
+
+181
+00:11:44,509 --> 00:11:47,470
+better at pursuing whatever goals it has
+learned, whether
+
+182
+00:11:47,470 --> 00:11:48,389
+intended or not.

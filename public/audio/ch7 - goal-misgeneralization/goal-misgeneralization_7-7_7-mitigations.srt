@@ -1,0 +1,3671 @@
+1
+00:00:00,160 --> 00:00:05,559
+Section 7.7 mitigations warning this
+section is considered a
+
+2
+00:00:05,559 --> 00:00:09,359
+work in progress. The detection section
+talked about behavioral
+
+3
+00:00:09,359 --> 00:00:12,560
+internal techniques. They told us about
+how we might
+
+4
+00:00:12,560 --> 00:00:17,120
+gather evidence about goal
+misgeneralization and scheming. In this
+
+5
+00:00:17,120 --> 00:00:20,480
+section we talk about mitigation
+strategies which focus on
+
+6
+00:00:20,480 --> 00:00:24,039
+when where we intervene. A critical
+constraint in goal
+
+7
+00:00:24,039 --> 00:00:29,989
+misgeneralization mitigation is
+maintaining strict separation between
+interpretability signals
+
+8
+00:00:29,989 --> 00:00:33,869
+used for safety verification and those
+incorporated into training
+
+9
+00:00:33,869 --> 00:00:39,310
+objectives. Any interpretability technique
+used to detect goal misgeneralization
+
+10
+00:00:39,390 --> 00:00:43,030
+during training creates adversarial
+pressure for the model to
+
+11
+00:00:43,030 --> 00:00:46,390
+fool that specific detection method. If we
+train against
+
+12
+00:00:46,390 --> 00:00:50,229
+SAE features that indicate deception,
+models will learn to
+
+13
+00:00:50,229 --> 00:00:54,259
+pursue deceptive goals through different
+computational pathways that that
+
+14
+00:00:54,259 --> 00:00:58,460
+don't activate those features. If we
+penalize activations that
+
+15
+00:00:58,460 --> 00:01:02,380
+linear probes associate with misalignment,
+models will learn to
+
+16
+00:01:02,380 --> 00:01:06,260
+be misaligned in ways that evade linear
+detection. This
+
+17
+00:01:06,260 --> 00:01:10,700
+fundamental constraint means that safety
+verification systems must rely
+
+18
+00:01:10,700 --> 00:01:14,299
+on interpretability approaches that are
+completely separate from any
+
+19
+00:01:14,299 --> 00:01:20,439
+interpretability signals used during
+training. Habenjur et Alanne sleeper
+
+20
+00:01:20,439 --> 00:01:25,439
+agents deceptive LLMs that persist through
+safety training. This
+
+21
+00:01:25,439 --> 00:01:29,840
+separation requirement creates a
+challenging resource allocation problem
+for
+
+22
+00:01:29,840 --> 00:01:34,519
+interpretability research. The most
+effective techniques for detecting goal
+
+23
+00:01:34,519 --> 00:01:38,200
+misgeneralization cannot be used to
+prevent it during training,
+
+24
+00:01:38,680 --> 00:01:43,079
+forcing safety teams to develop parallel
+interpretability capabilities that
+
+25
+00:01:43,079 --> 00:01:47,359
+serve different functions. This constraint
+also implies that any
+
+26
+00:01:47,359 --> 00:01:51,040
+training time, interpretability
+intervention or will become less effective
+
+27
+00:01:51,040 --> 00:01:54,120
+over time as models learn to circumvent
+the specific
+
+28
+00:01:54,120 --> 00:01:58,799
+patterns being monitored. Mitigation
+strategies must therefore focus on
+
+29
+00:01:58,799 --> 00:02:02,319
+approaches that don't rely on the same
+computational patterns
+
+30
+00:02:02,319 --> 00:02:07,480
+they're trying to eliminate. Training time
+intervention Mechanistic training
+
+31
+00:02:07,480 --> 00:02:11,599
+stories force explicit consideration of
+what internal goals the
+
+32
+00:02:11,599 --> 00:02:15,400
+training process might produce rather than
+just what external
+
+33
+00:02:15,400 --> 00:02:19,500
+behaviors it will exhibit. Traditional ML
+techniques to prevent
+
+34
+00:02:19,500 --> 00:02:25,659
+overfitting regularization data
+augmentation cross validation Assume you
+can
+
+35
+00:02:25,659 --> 00:02:30,780
+distinguish good generalization from bad,
+but goal misgeneralization breaks
+
+36
+00:02:30,780 --> 00:02:33,780
+this assumption entirely. We need to think
+a little
+
+37
+00:02:33,780 --> 00:02:36,379
+deeper about what our training process is
+trying to
+
+38
+00:02:36,379 --> 00:02:40,060
+achieve and also why our architecture,
+data, and training
+
+39
+00:02:40,060 --> 00:02:43,000
+process would actually result in what we
+intend to.
+
+40
+00:02:43,389 --> 00:02:46,469
+For example, instead of the behavioral
+goal, a model
+
+41
+00:02:46,469 --> 00:02:50,229
+that navigates to rewards a mechanistic
+training story might
+
+42
+00:02:50,229 --> 00:02:53,710
+specify a model that learns spatial
+reasoning about goal
+
+43
+00:02:53,710 --> 00:02:56,830
+locations and provide a rationale for why
+the training
+
+44
+00:02:56,830 --> 00:03:00,990
+setup favors this over simpler
+alternatives like follow walls.
+
+45
+00:03:01,389 --> 00:03:04,710
+This approach requires developers to
+articulate not just what
+
+46
+00:03:04,710 --> 00:03:07,030
+they want systems to do, but how they want
+
+47
+00:03:07,030 --> 00:03:09,860
+systems to think and reason. The goal for
+this
+
+48
+00:03:09,860 --> 00:03:11,900
+is to gain a higher level of confidence in
+
+49
+00:03:11,900 --> 00:03:16,379
+the safety of our ML System Hubinger 2021
+how
+
+50
+00:03:16,379 --> 00:03:18,379
+do we become confident in the safety of a
+
+51
+00:03:18,379 --> 00:03:22,099
+machine learning system? A training story
+consists of two
+
+52
+00:03:22,979 --> 00:03:26,979
+1. Training Goal Specification what sort
+of algorithm do
+
+53
+00:03:26,979 --> 00:03:30,699
+you want the model to learn
+mechanistically? 2. Training
+
+54
+00:03:30,699 --> 00:03:33,780
+Rationale why do you believe your training
+setup will
+
+55
+00:03:33,780 --> 00:03:37,919
+produce that algorithm rather than proxy
+alternatives? Training stories
+
+56
+00:03:37,919 --> 00:03:40,439
+are not an intervention per se, but rather
+a
+
+57
+00:03:40,439 --> 00:03:42,919
+way of thinking about all the other
+interventions that
+
+58
+00:03:42,919 --> 00:03:46,000
+we will talk about through this
+subsection. They provide
+
+59
+00:03:46,000 --> 00:03:49,319
+some scaffolding which helps us evaluate
+whether a specific
+
+60
+00:03:49,319 --> 00:03:54,280
+intervention would mitigate goal
+misgeneralization or not. We have
+
+61
+00:03:54,280 --> 00:03:57,680
+tried to structure each training
+intervention below to represent
+
+62
+00:03:57,759 --> 00:04:02,280
+a different training story. A specific
+hypothesis about preventing
+
+63
+00:04:02,280 --> 00:04:06,240
+goal misgeneralization through particular
+combinations of training goals and
+
+64
+00:04:06,240 --> 00:04:11,460
+rationales. Curriculum Learning Learning
+training procedures can deliberately shape
+
+65
+00:04:11,460 --> 00:04:14,699
+the loss landscape to make aligned
+solutions easier to
+
+66
+00:04:14,699 --> 00:04:18,740
+discover than misaligned ones. By
+modifying how gradient descent
+
+67
+00:04:18,740 --> 00:04:23,139
+navigates through algorithm space, dynamic
+loss functions that evolve
+
+68
+00:04:23,139 --> 00:04:26,540
+during training can create deeper valleys
+for intended goals
+
+69
+00:04:26,540 --> 00:04:29,899
+while making proxy goal basins shallower
+and less stable.
+
+70
+00:04:30,459 --> 00:04:33,339
+This approach leverages the insight that
+the geometry of
+
+71
+00:04:33,339 --> 00:04:36,860
+the loss landscape determines which
+solutions gradient descent is
+
+72
+00:04:36,860 --> 00:04:41,839
+likely to find Ruiz Garcia et al. Tilting
+the
+
+73
+00:04:41,839 --> 00:04:46,439
+Playing Field Dynamical Loss functions for
+machine learning Specific
+
+74
+00:04:46,439 --> 00:04:50,600
+techniques include cyclical loss functions
+that periodically emphasize different
+
+75
+00:04:50,600 --> 00:04:54,319
+aspects of the intended goal, forcing
+systems to develop
+
+76
+00:04:54,319 --> 00:04:59,480
+robust representations that work across
+different evaluation criteria. Multi
+
+77
+00:04:59,480 --> 00:05:04,050
+objective training that simultaneously
+optimizes for task performance and
+
+78
+00:05:04,050 --> 00:05:07,970
+auxiliary objectives related to goal
+relevant reasoning can create
+
+79
+00:05:07,970 --> 00:05:11,449
+loss landscapes where proxy goals fail to
+achieve consistently
+
+80
+00:05:11,449 --> 00:05:15,490
+high performance across all objectives.
+Curriculum learning provides a
+
+81
+00:05:15,490 --> 00:05:19,610
+systematic framework for structuring
+training to prevent goal misgeneralization
+
+82
+00:05:20,089 --> 00:05:24,889
+by controlling how complexity increases
+over time. Traditional approaches
+
+83
+00:05:24,889 --> 00:05:28,889
+to goal misgeneralization often treat
+training data as static.
+
+84
+00:05:29,540 --> 00:05:32,660
+Either you have diverse environments or
+you don't. Either
+
+85
+00:05:32,660 --> 00:05:36,620
+you break correlations or you don't.
+Curriculum learning changes
+
+86
+00:05:36,620 --> 00:05:39,420
+this by recognizing that the order and
+progression of
+
+87
+00:05:39,420 --> 00:05:44,620
+training experiences fundamentally shapes
+what algorithms emerge. Instead of
+
+88
+00:05:44,620 --> 00:05:47,740
+hoping that random sampling from diverse
+data will prevent
+
+89
+00:05:47,740 --> 00:05:52,220
+proxy goals, curriculum approaches
+deliberately sequence training to build
+
+90
+00:05:52,220 --> 00:05:58,209
+robust causal understanding while
+systematically undermining spurious
+correlations Bengio
+
+91
+00:05:58,209 --> 00:06:02,689
+et al. 2009. Curriculum learning the term
+curriculum learning
+
+92
+00:06:02,769 --> 00:06:06,810
+refers to the Curriculum learning is a
+training strategy
+
+93
+00:06:06,810 --> 00:06:09,290
+that presents data to machine learning
+models in a
+
+94
+00:06:09,290 --> 00:06:13,410
+meaningful order, typically progressing
+from easier to harder examples
+
+95
+00:06:13,649 --> 00:06:17,970
+to improve learning efficiency and
+generalization performance. The basic
+
+96
+00:06:17,970 --> 00:06:20,089
+point connects to the things we talked
+about in
+
+97
+00:06:20,089 --> 00:06:23,769
+the learning dynamics section. Rather than
+leaving the search
+
+98
+00:06:23,769 --> 00:06:27,850
+through algorithm space to chance,
+curriculum learning shapes which
+
+99
+00:06:27,850 --> 00:06:31,769
+solutions become discoverable by
+controlling the sequence of optimization
+
+100
+00:06:31,850 --> 00:06:36,329
+pressures the system encounters. Effective
+Curriculum design for goal
+
+101
+00:06:36,410 --> 00:06:41,848
+misgeneralization requires causally
+aligned progression where each stage
+maintains
+
+102
+00:06:41,848 --> 00:06:45,930
+invariant optimal decision rules for the
+intended goal. The
+
+103
+00:06:45,930 --> 00:06:49,850
+wrong curriculum can actually entrench
+proxy goals. If easier
+
+104
+00:06:50,009 --> 00:06:54,459
+early stages reward spurious correlations,
+those patterns may persist
+
+105
+00:06:54,459 --> 00:06:57,899
+even as training becomes more
+sophisticated. If we want
+
+106
+00:06:57,899 --> 00:07:00,180
+to learn causal models, then we need to
+create
+
+107
+00:07:00,180 --> 00:07:04,139
+a form of causally aligned curriculum
+learning. This provides
+
+108
+00:07:04,139 --> 00:07:07,500
+formal conditions for ensuring that skills
+learned in simpler
+
+109
+00:07:07,500 --> 00:07:11,300
+environments transfer to more complex ones
+without goal drift.
+
+110
+00:07:11,779 --> 00:07:16,259
+Lee and Barin Boim, 2025 Causally aligned
+curriculum learning
+
+111
+00:07:16,660 --> 00:07:20,740
+for goal misgeneralization this means each
+curriculum stage must
+
+112
+00:07:20,740 --> 00:07:24,579
+preserve the causal structure linking
+actions to intended outcome
+
+113
+00:07:25,040 --> 00:07:28,720
+even as environmental complexity
+increases. So in the coin
+
+114
+00:07:28,720 --> 00:07:32,120
+run example, a causally aligned curriculum
+would start with
+
+115
+00:07:32,120 --> 00:07:35,279
+levels where the coin reward relationship
+is maximally clear,
+
+116
+00:07:35,600 --> 00:07:39,120
+perhaps with coins in random locations but
+minimal obstacles,
+
+117
+00:07:39,360 --> 00:07:44,279
+then gradually add environmental
+complexity while systematically varying
+spurious
+
+118
+00:07:44,279 --> 00:07:49,480
+features. Interpretability Guided
+curriculum design represents a promising
+frontier
+
+119
+00:07:49,480 --> 00:07:53,399
+for preventing goal misgeneralization
+through real time monitoring of
+
+120
+00:07:53,399 --> 00:07:58,279
+learned representations. Using techniques
+like steering vectors and activation
+
+121
+00:07:58,279 --> 00:08:02,079
+patching, curriculum systems could assess
+what goals and reasoning
+
+122
+00:08:02,079 --> 00:08:05,680
+patterns the system has actually learned,
+then design subsequent
+
+123
+00:08:05,680 --> 00:08:10,199
+stages to address identified gaps or
+concerning patterns. If
+
+124
+00:08:10,199 --> 00:08:13,959
+probes detect emerging proxy goals, the
+curriculum could immediately
+
+125
+00:08:13,959 --> 00:08:18,600
+introduce environments that break those
+specific correlations. If activation
+
+126
+00:08:18,600 --> 00:08:22,910
+analysis reveals weak causal reasoning,
+subsequent stages could emphasize
+
+127
+00:08:22,910 --> 00:08:27,589
+process supervision and explicit reasoning
+requirements. This adaptive approach
+
+128
+00:08:27,670 --> 00:08:31,949
+addresses the fundamental challenge in
+curriculum design. We can't
+
+129
+00:08:31,949 --> 00:08:35,830
+anticipate all potential proxy goals in
+advance, but we
+
+130
+00:08:35,830 --> 00:08:39,870
+can monitor for them and respond
+systematically. The combination
+
+131
+00:08:39,870 --> 00:08:43,950
+of curriculum learning principles with
+interpretability tools offers a
+
+132
+00:08:43,950 --> 00:08:48,070
+pathway toward training procedures that
+actively prevent goal misgeneralization
+
+133
+00:08:48,659 --> 00:08:52,820
+rather than just hoping it won't occur.
+Data Augmentation
+
+134
+00:08:53,220 --> 00:08:57,980
+Training we want algorithms that learn
+goal representations invariant
+
+135
+00:08:57,980 --> 00:09:02,820
+to spurious environmental features. We
+achieve this by systematically
+
+136
+00:09:02,820 --> 00:09:07,299
+varying potentially spurious features
+while holding goal relevant features
+
+137
+00:09:07,299 --> 00:09:13,220
+constant, making correlation based
+solutions unreliable. Breaking spurious
+correlations
+
+138
+00:09:13,220 --> 00:09:16,840
+through data variation represents the most
+direct approach to
+
+139
+00:09:16,840 --> 00:09:22,080
+goal miss generalization, though it faces
+fundamental limitations. Traditional
+
+140
+00:09:22,080 --> 00:09:25,879
+ML uses data augmentation to help deal
+with overfitting,
+
+141
+00:09:26,120 --> 00:09:31,279
+rotated images, added noise ablations. The
+same principle applies
+
+142
+00:09:31,279 --> 00:09:35,559
+to safety training. However, rather than
+randomly varying environmental
+
+143
+00:09:35,559 --> 00:09:39,039
+features, we can use curriculum learning
+based approaches here
+
+144
+00:09:39,039 --> 00:09:44,009
+as well. Curriculum based data
+augmentation can systematically progress
+
+145
+00:09:44,009 --> 00:09:48,610
+from clear causal relationships to more
+subtle distinctions. This
+
+146
+00:09:48,610 --> 00:09:50,610
+might help a little bit as far as safety
+
+147
+00:09:50,610 --> 00:09:54,490
+is concerned, but for goal
+misgeneralization, the core challenge
+
+148
+00:09:54,490 --> 00:09:58,450
+still remains designing the curriculum or
+knowing which correlations
+
+149
+00:09:58,529 --> 00:10:02,289
+to break in advance. Synthetic data and
+task generation
+
+150
+00:10:02,370 --> 00:10:06,049
+extends this principle beyond environments
+to any training domain
+
+151
+00:10:06,610 --> 00:10:11,289
+rather than manually anticipating every
+potential correlation. Generative
+approaches
+
+152
+00:10:11,289 --> 00:10:15,169
+can produce training data where proxies
+are systematically undermined
+
+153
+00:10:15,169 --> 00:10:20,250
+while intended reasoning patterns remain
+rewarded. Procedural environment
+generation
+
+154
+00:10:20,490 --> 00:10:25,289
+offers unprecedented scale for correlation
+breaking. Rather than manually
+
+155
+00:10:25,289 --> 00:10:29,929
+designing environments to break specific
+correlations, generative world models
+
+156
+00:10:29,929 --> 00:10:34,250
+can create unlimited training contexts
+where spurious correlations vary
+
+157
+00:10:34,330 --> 00:10:39,220
+systematically. This makes correlation
+breaking scalable rather than requiring
+
+158
+00:10:39,220 --> 00:10:43,299
+extensive domain expertise, though it
+cannot solve the fundamental
+
+159
+00:10:43,299 --> 00:10:49,059
+problem of unknown unknowns. Google
+DeepMind 2024 Genie 3
+
+160
+00:10:49,379 --> 00:10:53,779
+A new frontier for World models Subsection
+Adversarial Training
+
+161
+00:10:53,940 --> 00:10:57,220
+Training Story we want to learn algorithms
+that implement
+
+162
+00:10:57,220 --> 00:11:01,980
+goal directed reasoning through robust
+internal representations that don't
+
+163
+00:11:01,980 --> 00:11:06,259
+rely on fragile correlational patterns in
+neural activations. We
+
+164
+00:11:06,259 --> 00:11:09,899
+achieve this by training under latent
+perturbations that disrupt
+
+165
+00:11:09,899 --> 00:11:15,019
+spurious internal correlations while
+requiring maintained performance, forcing
+the
+
+166
+00:11:15,019 --> 00:11:18,700
+development of goal representations based
+on causal rather than
+
+167
+00:11:18,700 --> 00:11:24,580
+correlational reasoning. Traditional input
+space adversarial training tests whether
+
+168
+00:11:24,580 --> 00:11:26,899
+models work when you mess with what they
+see,
+
+169
+00:11:27,360 --> 00:11:30,600
+while latent adversarial training tests
+whether they work when
+
+170
+00:11:30,600 --> 00:11:33,639
+you mess with how they think. Imagine
+testing a
+
+171
+00:11:33,639 --> 00:11:37,919
+self driving car's stop sign recognition.
+Input space adversarial
+
+172
+00:11:37,919 --> 00:11:40,840
+training would put stickers on stop signs
+or change
+
+173
+00:11:40,840 --> 00:11:43,120
+the lighting to see if the car still
+stops.
+
+174
+00:11:43,600 --> 00:11:48,200
+Latent adversarial training would be like
+directly interfering with
+
+175
+00:11:48,200 --> 00:11:50,960
+the car's internal concept of what a stop
+sign
+
+176
+00:11:50,960 --> 00:11:54,740
+means, testing whether the recognition
+still works if you
+
+177
+00:11:54,740 --> 00:11:57,980
+scramble the brain patterns that represent
+red octagonal sign
+
+178
+00:11:58,139 --> 00:12:02,700
+or traffic rule for goal
+misgeneralization. This distinction
+matters
+
+179
+00:12:02,700 --> 00:12:05,820
+because the problem often lies in the
+internal representation
+
+180
+00:12:05,899 --> 00:12:09,980
+systems learn, not their ability to handle
+unusual inputs.
+
+181
+00:12:10,458 --> 00:12:14,580
+A language model might develop internal
+associations between helpful
+
+182
+00:12:14,580 --> 00:12:18,820
+responses and certain stylistic patterns,
+even when the actual
+
+183
+00:12:18,820 --> 00:12:23,399
+content is problematic. LAT can catch
+these internal correlations
+
+184
+00:12:23,559 --> 00:12:27,200
+by directly testing whether learned goal
+representations are robust
+
+185
+00:12:27,200 --> 00:12:31,960
+when activation patterns encoding spurious
+relationships are deliberately scrambled.
+
+186
+00:12:32,200 --> 00:12:36,919
+Casper et al. Defending against unforeseen
+failure modes with
+
+187
+00:12:36,919 --> 00:12:41,639
+latent adversarial training. During
+training, systems must maintain correct
+
+188
+00:12:41,639 --> 00:12:45,960
+goal pursuit even when internal
+representations of spurious correlations
+
+189
+00:12:46,299 --> 00:12:50,700
+are deliberately disrupted. This forces
+development of goal representations
+
+190
+00:12:50,860 --> 00:12:55,179
+that cannot rely on fragile internal
+correlational patterns. Unlike
+
+191
+00:12:55,179 --> 00:12:59,259
+input space approaches that test
+robustness to environmental variations,
+
+192
+00:12:59,659 --> 00:13:04,580
+latent adversarial training directly
+targets the internal computational
+mechanisms
+
+193
+00:13:04,580 --> 00:13:09,779
+that enable goal misgeneralization.
+Targeted latent adversarial training has
+
+194
+00:13:09,779 --> 00:13:14,169
+proven particularly effective for language
+models. Researchers have used
+
+195
+00:13:14,169 --> 00:13:19,169
+LAT to improve refusal training's
+robustness to jailbreaks, outperforming
+
+196
+00:13:19,169 --> 00:13:24,289
+computationally expensive baselines like
+R2D2 with orders of magnitude
+
+197
+00:13:24,289 --> 00:13:28,330
+less compute. The technique also removes
+backdoors without trigger
+
+198
+00:13:28,330 --> 00:13:31,970
+access and makes unlearning methods more
+robust to relearning
+
+199
+00:13:31,970 --> 00:13:37,970
+attempts. Shashadri et al. Alqaj 2024.
+Latent adversarial training
+
+200
+00:13:38,289 --> 00:13:44,590
+improves robustness to persistent harmful
+behaviors in LLMs Myopic
+
+201
+00:13:44,590 --> 00:13:48,710
+training we want algorithms pursuing
+objectives within bounded time
+
+202
+00:13:48,710 --> 00:13:53,870
+horizons without developing beyond episode
+goals enabling strategic deception.
+
+203
+00:13:54,429 --> 00:13:58,230
+We achieve this by constraining
+optimization scope to prevent
+
+204
+00:13:58,230 --> 00:14:02,669
+long term planning capabilities necessary
+for strategic goal concealment.
+
+205
+00:14:02,830 --> 00:14:06,559
+Systems that cannot plan beyond immediate
+actions cannot engage
+
+206
+00:14:06,559 --> 00:14:12,000
+in strategic deception during training.
+Myopic optimization approaches like
+
+207
+00:14:12,000 --> 00:14:17,080
+Mona Myopic optimization from Non Myopic
+approval train agents
+
+208
+00:14:17,080 --> 00:14:20,120
+to pursue objectives extending only to the
+next action,
+
+209
+00:14:20,440 --> 00:14:24,240
+preventing development of beyond episode
+goals that enable such
+
+210
+00:14:24,240 --> 00:14:28,639
+strategic deception. A myopic agent cannot
+develop behaviors like
+
+211
+00:14:28,639 --> 00:14:31,320
+the ones we saw in the scheming section E
+
+212
+00:14:31,320 --> 00:14:35,740
+to G alignment faking because its
+optimization horizon doesn't
+
+213
+00:14:35,740 --> 00:14:39,899
+extend beyond individual responses. It
+cannot reason about later
+
+214
+00:14:39,899 --> 00:14:43,139
+when oversight is reduced because there is
+no later
+
+215
+00:14:43,139 --> 00:14:48,059
+in its planning scope. Farquhar et al.
+Managed myopia
+
+216
+00:14:48,059 --> 00:14:52,460
+with approval feedback. This directly
+addresses the scheming threat
+
+217
+00:14:52,460 --> 00:14:57,100
+model by preventing prerequisite
+capability development that enables
+strategic
+
+218
+00:14:57,100 --> 00:15:02,769
+goal concealment. Subsection Process
+Oriented Training Training we want
+
+219
+00:15:02,769 --> 00:15:07,370
+algorithms implementing appropriate
+reasoning patterns to reach conclusions,
+making
+
+220
+00:15:07,370 --> 00:15:11,610
+shortcuts that bypass intended causal
+reasoning. Unable to achieve
+
+221
+00:15:11,610 --> 00:15:15,330
+good performance, we achieve this by
+optimizing the reasoning
+
+222
+00:15:15,330 --> 00:15:19,570
+process itself rather than just final
+outputs. Process oriented
+
+223
+00:15:19,570 --> 00:15:23,169
+training evaluates the steps systems take
+to reach conclusions,
+
+224
+00:15:23,570 --> 00:15:28,179
+while outcome oriented training only
+evaluates final results. Process
+
+225
+00:15:28,179 --> 00:15:31,940
+oriented training makes reasoning
+processes part of the optimization
+
+226
+00:15:32,100 --> 00:15:36,700
+target. Systems cannot satisfy training
+objectives simply by finding
+
+227
+00:15:36,700 --> 00:15:40,259
+any pathway to correct answers. They must
+use reasoning
+
+228
+00:15:40,259 --> 00:15:45,860
+processes that align with intended causal
+relationships. AI Assisted
+
+229
+00:15:45,860 --> 00:15:49,179
+Training we can use AI models to identify
+and
+
+230
+00:15:49,179 --> 00:15:53,539
+correct potential goal misgeneralization
+during the training process itself.
+
+231
+00:15:54,509 --> 00:15:57,870
+This behavioral intervention works by
+having a separate language
+
+232
+00:15:57,870 --> 00:16:01,710
+model analyze the training agent's
+policies and behaviors to
+
+233
+00:16:01,710 --> 00:16:04,870
+identify scenarios where the agent might
+be learning proxy
+
+234
+00:16:04,870 --> 00:16:09,230
+goals rather than intended ones. The LLM
+supervisor examines
+
+235
+00:16:09,230 --> 00:16:12,950
+the agent's decision making patterns and
+provides corrective feedback
+
+236
+00:16:12,950 --> 00:16:16,509
+when it detects reasoning that relies on
+spurious correlations
+
+237
+00:16:17,309 --> 00:16:21,710
+rather than genuine understanding of
+intended goals. For example,
+
+238
+00:16:21,710 --> 00:16:25,070
+the LLM might notice that a navigation
+agent consistently
+
+239
+00:16:25,070 --> 00:16:28,590
+moves toward walls and flag this as
+potentially learning
+
+240
+00:16:28,590 --> 00:16:33,190
+follow walls rather than reach goals.
+Barge and Sortori
+
+241
+00:16:34,149 --> 00:16:40,750
+Reinforcement Learning from feedback to
+counteract goal the technique
+
+242
+00:16:40,750 --> 00:16:45,429
+specifically addresses goal
+misgeneralization by providing an external
+perspective
+
+243
+00:16:45,429 --> 00:16:48,990
+that can recognize when learned behaviors
+diverge from intended
+
+244
+00:16:48,990 --> 00:16:53,350
+goals, even when those behaviors produce
+correct outcomes during
+
+245
+00:16:53,350 --> 00:16:57,389
+training. However, it faces the limitation
+that the supervising
+
+246
+00:16:57,389 --> 00:17:00,590
+LLM may have its own biases or fail to
+
+247
+00:17:00,590 --> 00:17:04,390
+recognize subtle forms of goal
+misgeneralization, and the approach
+
+248
+00:17:04,470 --> 00:17:08,869
+requires significant computational
+overhead. The general concept of process
+
+249
+00:17:08,950 --> 00:17:13,190
+based supervision and AI assisted safety
+approaches is something
+
+250
+00:17:13,190 --> 00:17:15,269
+that we talk much more in the next chapter
+
+251
+00:17:15,349 --> 00:17:22,039
+on scalable oversight. Relaxed Adversarial
+Training Relaxed adversarial training
+
+252
+00:17:22,279 --> 00:17:26,920
+incorporates oversight signals
+continuously into training rather than
+trying
+
+253
+00:17:26,920 --> 00:17:31,480
+to detect deception after it emerges.
+Relaxed adversarial training
+
+254
+00:17:31,480 --> 00:17:35,839
+isn't actually adversarial training in the
+traditional sense. It's
+
+255
+00:17:35,839 --> 00:17:39,960
+continuous oversight that doesn't require
+perfect detection of deception.
+
+256
+00:17:40,279 --> 00:17:43,519
+The relaxed part means you're relaxing the
+assumption that
+
+257
+00:17:43,519 --> 00:17:45,640
+you can perfectly detect when a model is
+being
+
+258
+00:17:45,640 --> 00:17:50,200
+deceptive or pursuing wrong goals instead
+of catching deception
+
+259
+00:17:50,200 --> 00:17:54,359
+post hoc. This approach makes transparency
+about goals instrumentally
+
+260
+00:17:54,359 --> 00:17:58,880
+valuable throughout training systems.
+Learn that appearing acceptable to
+
+261
+00:17:58,880 --> 00:18:03,119
+human evaluators is part of performing
+well, creating incentives
+
+262
+00:18:03,119 --> 00:18:06,119
+to develop goals that can be justified to
+overseers
+
+263
+00:18:06,200 --> 00:18:13,119
+rather than goals requiring concealment.
+Hubinger Relaxed adversarial training
+
+264
+00:18:13,119 --> 00:18:17,420
+for inner alignment. This modifies what
+behaviors get rewarded
+
+265
+00:18:17,420 --> 00:18:22,380
+to include continuous human approval
+alongside task performance. Systems
+
+266
+00:18:22,380 --> 00:18:26,140
+cannot achieve high performance through
+hidden proxy goals because
+
+267
+00:18:26,140 --> 00:18:31,059
+doing so violates transparency
+requirements continuously evaluated during
+training.
+
+268
+00:18:31,859 --> 00:18:35,980
+However, this risks creating sophisticated
+forms of deception. Systems
+
+269
+00:18:35,980 --> 00:18:39,380
+might learn to appear transparent while
+pursuing different goals,
+
+270
+00:18:39,700 --> 00:18:43,529
+becoming better at fooling evaluators
+rather than becoming genuinely
+
+271
+00:18:43,529 --> 00:18:49,009
+aligned. Subsection Interpretability
+Guided Training Training Story we want
+
+272
+00:18:49,009 --> 00:18:54,009
+algorithms that develop aligned goal
+representations transparently with
+problematic
+
+273
+00:18:54,009 --> 00:18:57,329
+patterns detected and corrected as they
+emerge, rather than
+
+274
+00:18:57,329 --> 00:19:01,170
+being discovered only after training
+completion. We achieve this
+
+275
+00:19:01,170 --> 00:19:06,250
+through continuous monitoring of internal
+representations during training, using
+
+276
+00:19:06,250 --> 00:19:10,869
+interpretability tools to identify
+concerning patterns and modify training
+
+277
+00:19:10,869 --> 00:19:15,630
+dynamics in real time. Interpretability
+guided training integrates real
+
+278
+00:19:15,630 --> 00:19:18,829
+time analysis of model internals into the
+training process
+
+279
+00:19:18,829 --> 00:19:24,269
+itself using techniques like sparse
+autoencoders, steering vector analysis,
+
+280
+00:19:24,269 --> 00:19:27,390
+or probe based monitoring to detect
+emerging goal related
+
+281
+00:19:27,470 --> 00:19:32,349
+patterns and adjust training accordingly.
+Unlike post hoc analysis,
+
+282
+00:19:32,430 --> 00:19:35,750
+this approach treats interpretability as
+an active component of
+
+283
+00:19:35,750 --> 00:19:39,250
+the training loop rather than a passive
+evaluation tool.
+
+284
+00:19:39,650 --> 00:19:43,529
+For example, if SAE analysis during
+training reveals the
+
+285
+00:19:43,529 --> 00:19:47,609
+emergence of features associated with
+deceptive reasoning or proxy
+
+286
+00:19:47,609 --> 00:19:51,609
+goal pursuit, the training process can
+immediately introduce corrective
+
+287
+00:19:51,609 --> 00:19:57,650
+measures, additional data augmentation
+targeting those specific patterns,
+modified
+
+288
+00:19:57,650 --> 00:20:01,569
+loss functions that penalize reliance on
+problematic features, or
+
+289
+00:20:01,569 --> 00:20:06,609
+curriculum adjustments that undermine
+emerging spurious correlations. Cunningham
+at
+
+290
+00:20:06,609 --> 00:20:12,250
+Alais 2023. Sparse autoencoders find
+highly interpretable features in
+
+291
+00:20:12,250 --> 00:20:16,410
+language models. This approach enables
+adaptive responses to goal
+
+292
+00:20:16,410 --> 00:20:21,569
+misgeneralization patterns that cannot be
+anticipated in advance. Traditional
+
+293
+00:20:21,569 --> 00:20:25,569
+training approaches must specify their
+mitigation strategies before training
+
+294
+00:20:25,569 --> 00:20:30,130
+begins, but interpretability guided
+training can respond to the
+
+295
+00:20:30,130 --> 00:20:33,210
+specific patterns that actually emerge in
+each training run.
+
+296
+00:20:34,079 --> 00:20:38,160
+If unexpected correlations appear between
+environmental features and rewards,
+
+297
+00:20:38,720 --> 00:20:41,920
+the system can immediately generate
+training data that breaks
+
+298
+00:20:41,920 --> 00:20:45,920
+those specific correlations. If probe
+analysis reveals that the
+
+299
+00:20:45,920 --> 00:20:50,640
+model is developing internal
+representations associated with strategic
+deception,
+
+300
+00:20:50,880 --> 00:20:54,720
+training can be modified to specifically
+target those representational
+
+301
+00:20:54,799 --> 00:20:59,799
+patterns through techniques like concept
+ablation fine tuning. Marx
+
+302
+00:20:59,799 --> 00:21:04,880
+et al. Auditing language models for hidden
+objectives. The
+
+303
+00:21:04,880 --> 00:21:09,119
+temporal advantage of interpretability
+guided training must be balanced
+
+304
+00:21:09,119 --> 00:21:14,000
+against the verification training
+Separation constraint Early intervention
+when
+
+305
+00:21:14,000 --> 00:21:17,880
+problematic patterns first emerge is
+potentially much more effective
+
+306
+00:21:17,880 --> 00:21:23,319
+than attempting corrections after goal
+misgeneralization has become entrenched
+
+307
+00:21:23,319 --> 00:21:28,000
+in the model's representations. However,
+using interpretability signals to
+
+308
+00:21:28,000 --> 00:21:31,039
+guide training creates the risk that
+models will learn
+
+309
+00:21:31,039 --> 00:21:34,640
+to evade those specific monitoring
+approaches, making them less
+
+310
+00:21:34,640 --> 00:21:39,640
+effective for subsequent safety
+verification. This suggests that
+interpretability
+
+311
+00:21:39,720 --> 00:21:43,720
+guided training should focus on developing
+robust goal representations
+
+312
+00:21:43,880 --> 00:21:47,559
+rather than trying to eliminate all
+potentially concerning patterns,
+
+313
+00:21:47,559 --> 00:21:51,160
+and that safety verification should rely
+on entirely separate
+
+314
+00:21:51,160 --> 00:21:58,299
+interpretability approaches. Concept
+ablation Fine tuning identifies
+problematic directions
+
+315
+00:21:58,299 --> 00:22:02,900
+in neural activation space using
+interpretability techniques, then fine
+
+316
+00:22:02,900 --> 00:22:06,019
+tunes while projecting out these
+directions to prevent reliance
+
+317
+00:22:06,019 --> 00:22:10,940
+on undesired concepts. Rather than
+detecting goal misgeneralization after
+
+318
+00:22:10,940 --> 00:22:15,740
+it occurs, KAFT works preventatively by
+identifying directions corresponding
+
+319
+00:22:15,740 --> 00:22:20,500
+to concerning patterns like spurious
+correlations or misaligned Persona
+
+320
+00:22:20,500 --> 00:22:25,000
+representations, then training while
+systematically ablating the model's
+ability
+
+321
+00:22:25,000 --> 00:22:28,359
+to use these directions. This forces the
+system to
+
+322
+00:22:28,359 --> 00:22:31,960
+learn the intended task through
+computational pathways that don't
+
+323
+00:22:31,960 --> 00:22:36,960
+rely on problematic shortcuts. CAS
+Sediment et al. Steering
+
+324
+00:22:36,960 --> 00:22:41,200
+out of distribution generalization with
+concept ablation fine tuning
+
+325
+00:22:41,359 --> 00:22:45,400
+KAFT addresses the worst case scenario
+where goal misgeneralization
+
+326
+00:22:45,400 --> 00:22:49,910
+patterns cannot be anticipated through
+training data design the
+
+327
+00:22:49,910 --> 00:22:55,190
+technique uses two primary principal
+component analysis on activation
+
+328
+00:22:55,190 --> 00:22:58,950
+differences between base and fine tuned
+models to identify
+
+329
+00:22:58,950 --> 00:23:03,950
+directions associated with problematic
+changes, and sparse autoencoders to
+
+330
+00:23:03,950 --> 00:23:08,150
+decompose activations into interpretable
+components that can be evaluated
+
+331
+00:23:08,150 --> 00:23:13,269
+for alignment concerns. Human
+interpretation then identifies which
+directions
+
+332
+00:23:13,349 --> 00:23:17,250
+correspond to undesired concepts that
+should be ablated during
+
+333
+00:23:17,250 --> 00:23:22,529
+training. In controlled experiments on
+emergent misalignment, KAFT reduced
+
+334
+00:23:22,529 --> 00:23:26,609
+harmful responses by 10x while maintaining
+performance on intended
+
+335
+00:23:26,609 --> 00:23:31,729
+tasks, demonstrating that problematic
+generalization patterns can be prevented
+
+336
+00:23:31,729 --> 00:23:35,890
+even without explicit examples of failure
+modes. Casadament et
+
+337
+00:23:35,890 --> 00:23:41,369
+al. Steering out of distribution
+generalization with concept ablation
+
+338
+00:23:41,369 --> 00:23:46,099
+Fine tuning the effectiveness of CAFT
+reveals important constraints
+
+339
+00:23:46,099 --> 00:23:50,779
+on goal misgeneralization mitigation. The
+technique works best when
+
+340
+00:23:50,779 --> 00:23:55,180
+problematic goals correspond to
+identifiable directions in activation
+space
+
+341
+00:23:55,500 --> 00:23:59,500
+rather than emerging from distributed or
+highly entangled representations.
+
+342
+00:24:00,140 --> 00:24:03,579
+This suggests that KFT may be most
+effective against
+
+343
+00:24:03,579 --> 00:24:07,660
+simpler forms of goal misgeneralization
+while potentially struggling with
+
+344
+00:24:07,660 --> 00:24:11,990
+more sophisticated patterns that
+distribute goal relevant information
+across
+
+345
+00:24:12,069 --> 00:24:17,349
+many computational pathways. Additionally,
+CAFT faces the verification training
+
+346
+00:24:17,349 --> 00:24:22,349
+separation constraint. The
+interpretability methods used to identify
+concerning
+
+347
+00:24:22,349 --> 00:24:26,269
+directions during training cannot
+subsequently be used for safety
+
+348
+00:24:26,269 --> 00:24:33,430
+verification without creating adversarial
+pressure. No single training intervention
+
+349
+00:24:33,589 --> 00:24:38,339
+provides complete protection against goal
+misgeneralization because each targets
+
+350
+00:24:38,339 --> 00:24:43,059
+different aspects of the problem. Data
+augmentation prevents environmental
+
+351
+00:24:43,059 --> 00:24:49,099
+shortcuts, latent adversarial training
+prevents internal representational
+shortcuts, and
+
+352
+00:24:49,180 --> 00:24:54,539
+process oriented training prevents
+reasoning shortcuts. Combined approaches
+create
+
+353
+00:24:54,619 --> 00:25:00,420
+multiple independent pressures against
+goal misgeneralization. Example Combining
+data
+
+354
+00:25:00,420 --> 00:25:04,869
+augmentation with adversarial training
+creates dual pressure against goal
+
+355
+00:25:04,869 --> 00:25:09,750
+misgeneralization. Systems trained on
+diverse synthetic data while facing
+
+356
+00:25:09,750 --> 00:25:15,430
+latent perturbations encounter both
+environmental variation and
+representational challenges
+
+357
+00:25:15,750 --> 00:25:21,589
+addressing goal misgeneralization at
+multiple levels simultaneously. This
+combination
+
+358
+00:25:21,670 --> 00:25:25,589
+prevents both the environmental shortcuts
+that data augmentation targets
+
+359
+00:25:25,589 --> 00:25:29,829
+and the internal representational
+shortcuts that latent adversarial training
+
+360
+00:25:29,829 --> 00:25:35,180
+addresses. Combine process oriented
+training with causal curriculum learning.
+
+361
+00:25:35,500 --> 00:25:39,259
+Early stages might require explicit step
+by step causal
+
+362
+00:25:39,259 --> 00:25:43,539
+reasoning with immediate feedback. Later
+stages can gradually reduce
+
+363
+00:25:43,539 --> 00:25:48,500
+scaffolding while maintaining process
+evaluation, allowing systems to
+internalize
+
+364
+00:25:48,500 --> 00:25:52,500
+appropriate reasoning patterns. A
+curriculum that starts with simple
+
+365
+00:25:52,500 --> 00:25:56,299
+causal chains if coin visible, then plan
+path to
+
+366
+00:25:56,299 --> 00:26:00,069
+coin and gradually builds to complex multi
+step reasoning.
+
+367
+00:26:00,630 --> 00:26:05,349
+Evaluate multiple goal options, consider
+obstacles, plan efficient route
+
+368
+00:26:05,670 --> 00:26:10,390
+Provide systematic development of genuine
+causal reasoning capabilities rather
+
+369
+00:26:10,390 --> 00:26:14,470
+than sophisticated pattern matching that
+mimics good reasoning. The
+
+370
+00:26:14,470 --> 00:26:18,710
+computational overhead of combined
+approaches might be large. Training
+
+371
+00:26:18,710 --> 00:26:23,529
+with synthetic data generation, latent
+adversarial perturbations, and process
+
+372
+00:26:23,529 --> 00:26:28,170
+supervision simultaneously requires
+significantly more compute than standard
+training.
+
+373
+00:26:28,730 --> 00:26:32,329
+The costs of combined approaches
+potentially limit adoption in
+
+374
+00:26:32,329 --> 00:26:36,490
+competitive environments where training
+efficiency matters. For commercial
+viability,
+
+375
+00:26:37,130 --> 00:26:41,809
+interpretability guided combinations
+represent the most sophisticated approach
+to
+
+376
+00:26:41,809 --> 00:26:46,890
+preventing goal misgeneralization through
+training time interventions. Rather than
+
+377
+00:26:46,890 --> 00:26:51,880
+selecting mitigation techniques blindly,
+interpretability guided training can adapt
+
+378
+00:26:51,880 --> 00:26:54,880
+its combination of approaches based on
+what patterns actually
+
+379
+00:26:54,880 --> 00:27:00,079
+emerge during training. For example, if
+SAE analysis reveals
+
+380
+00:27:00,079 --> 00:27:04,119
+the development of features associated
+with environmental shortcuts, the
+
+381
+00:27:04,119 --> 00:27:08,640
+system can emphasize data augmentation,
+targeting those specific correlations.
+
+382
+00:27:09,279 --> 00:27:12,880
+If probe based monitoring detects emerging
+patterns of strategic
+
+383
+00:27:12,880 --> 00:27:17,440
+reasoning, training can incorporate
+additional process supervision and
+transparency
+
+384
+00:27:17,440 --> 00:27:21,640
+requirements. If activation patching
+reveals that certain components are
+
+385
+00:27:21,640 --> 00:27:26,759
+becoming causally important for
+problematic behaviors, targeted latent
+adversarial
+
+386
+00:27:26,759 --> 00:27:30,359
+training can be applied to those specific
+pathways. This
+
+387
+00:27:30,359 --> 00:27:34,000
+adaptive approach addresses the
+fundamental challenge that we cannot
+
+388
+00:27:34,000 --> 00:27:38,799
+anticipate all potential goal
+misgeneralization patterns in advance, but
+
+389
+00:27:38,799 --> 00:27:41,599
+we can monitor for them and respond
+systematically as
+
+390
+00:27:41,599 --> 00:27:46,339
+they emerge Casadament et al. 2025
+steering out of
+
+391
+00:27:46,339 --> 00:27:51,420
+distribution generalization with concept
+ablation fine tuning Cunningham et
+
+392
+00:27:51,420 --> 00:27:57,380
+al. 2023. Sparse autoencoders find highly
+interpretable features in
+
+393
+00:27:57,380 --> 00:28:03,500
+language models Post training intervention
+subsection Steering Vectors Steering
+
+394
+00:28:03,500 --> 00:28:07,019
+vectors provide a general framework for
+both detecting and
+
+395
+00:28:07,019 --> 00:28:11,460
+controlling goal related behaviors by
+identifying linear directions in
+
+396
+00:28:11,460 --> 00:28:15,700
+activation space that correspond to
+specific traits or objectives.
+
+397
+00:28:16,500 --> 00:28:20,779
+Rather than training classifiers like
+probes, steering vectors use
+
+398
+00:28:20,779 --> 00:28:24,579
+contrastive data sets to find directions
+that distinguish between
+
+399
+00:28:24,579 --> 00:28:29,220
+different behavioral modes, for example,
+the difference between activations
+
+400
+00:28:29,220 --> 00:28:31,900
+when a model is being helpful versus when
+it's
+
+401
+00:28:31,900 --> 00:28:35,339
+pursuing a hidden agenda. These vectors
+can then be
+
+402
+00:28:35,339 --> 00:28:39,490
+added to or subtracted from model
+activations during inference
+
+403
+00:28:39,490 --> 00:28:43,529
+to increase or decrease the corresponding
+behaviors, making them
+
+404
+00:28:43,529 --> 00:28:47,009
+useful both for detection by measuring
+projection onto the
+
+405
+00:28:47,009 --> 00:28:51,170
+direction and control by steering along
+the direction. Turner
+
+406
+00:28:51,170 --> 00:28:55,609
+et al. 224 Understanding Reasoning in
+thinking Language Models
+
+407
+00:28:55,609 --> 00:28:59,329
+via Steering Vectors There is figure 7.36
+in the
+
+408
+00:28:59,329 --> 00:29:02,890
+textbook. Here it depicts given a
+personality trait and
+
+409
+00:29:02,890 --> 00:29:07,009
+a description, our pipeline automatically
+generates prompts that elicit
+
+410
+00:29:07,009 --> 00:29:10,480
+opposing behaviors e to G evil versus non
+evil
+
+411
+00:29:10,480 --> 00:29:14,759
+responses. Persona vectors are obtained by
+identifying the difference
+
+412
+00:29:14,759 --> 00:29:19,000
+in neural activity between responses
+exhibiting the target trait
+
+413
+00:29:19,000 --> 00:29:22,200
+and those that do not. Steering vectors
+can detect
+
+414
+00:29:22,200 --> 00:29:26,000
+goal misgeneralization by revealing when
+models are reasoning about
+
+415
+00:29:26,000 --> 00:29:30,359
+objectives that differ from their apparent
+behavior. Researchers have
+
+416
+00:29:30,359 --> 00:29:35,630
+successfully extracted steering vectors
+for behaviors like backtracking,
+uncertainty
+
+417
+00:29:35,630 --> 00:29:39,990
+estimation, and strategic reasoning in
+thinking models. These vectors
+
+418
+00:29:39,990 --> 00:29:43,990
+work across different contexts and model
+sizes, suggesting they
+
+419
+00:29:43,990 --> 00:29:49,230
+capture stable computational patterns
+rather than superficial correlations. When
+
+420
+00:29:49,230 --> 00:29:53,869
+applied to goal misgeneralization
+detection, steering vectors could
+potentially
+
+421
+00:29:53,869 --> 00:29:58,430
+identify when models are internally
+reasoning about deceptive strategies
+
+422
+00:29:58,430 --> 00:30:02,200
+or hidden objectives even when their
+outputs appear aligned.
+
+423
+00:30:02,519 --> 00:30:08,039
+Venhof et al. Understanding reasoning in
+Thinking Language Models
+
+424
+00:30:08,039 --> 00:30:12,920
+via Steering Vectors the textbook includes
+Figure 7.37. Here,
+
+425
+00:30:13,079 --> 00:30:17,039
+the effectiveness of steering vectors
+reveals important insights about
+
+426
+00:30:17,039 --> 00:30:22,039
+how goal misgeneralization emerges during
+training. Research on reasoning
+
+427
+00:30:22,039 --> 00:30:25,400
+models shows that steering vectors derived
+from base model
+
+428
+00:30:25,400 --> 00:30:29,759
+activations can induce complex behaviors
+like backtracking when applied
+
+429
+00:30:29,759 --> 00:30:33,079
+to fine tuned models, even though the same
+vectors
+
+430
+00:30:33,079 --> 00:30:36,039
+don't induce these behaviors in the base
+model itself.
+
+431
+00:30:36,599 --> 00:30:41,440
+This suggests that fine tuning repurposes
+existing representations rather
+
+432
+00:30:41,440 --> 00:30:45,000
+than learning entirely new capabilities,
+providing a window into
+
+433
+00:30:45,000 --> 00:30:48,960
+how goal misgeneralization might emerge
+through the redeployment of
+
+434
+00:30:48,960 --> 00:30:53,339
+latent capacities already present in
+foundation models. Ward et
+
+435
+00:30:53,339 --> 00:30:58,740
+al. Reasoning fine tuning repurposes
+latent representations in base
+
+436
+00:30:58,740 --> 00:31:02,859
+models. The connection to simulators is
+important here. Steering
+
+437
+00:31:02,859 --> 00:31:05,900
+vectors can be understood as ways to
+activate different
+
+438
+00:31:05,900 --> 00:31:09,180
+simulacra or behavioral modes that the
+model has learned
+
+439
+00:31:09,180 --> 00:31:12,819
+to instantiate, potentially revealing the
+full space of goals
+
+440
+00:31:12,819 --> 00:31:16,700
+and Personas the model is capable of
+pursuing. Subsection
+
+441
+00:31:16,859 --> 00:31:21,180
+Model editing and Unlearning Model editing
+techniques can surgically
+
+442
+00:31:21,180 --> 00:31:25,700
+remove or modify specific goal related
+representations without requiring
+
+443
+00:31:25,700 --> 00:31:31,579
+full retraining. When interpretability
+analysis identifies particular circuits,
+features,
+
+444
+00:31:31,579 --> 00:31:36,700
+or representations associated with goal
+miss, Generalization techniques like
+
+445
+00:31:36,700 --> 00:31:40,779
+roam rank 1, model editing, or concept
+erasure can
+
+446
+00:31:40,779 --> 00:31:45,650
+precisely modify those patterns while
+preserving other capabilities. This
+
+447
+00:31:45,650 --> 00:31:50,089
+approach is particularly valuable when
+goal misgeneralization affects only
+
+448
+00:31:50,089 --> 00:31:54,049
+a subset of the model's capabilities,
+allowing targeted fixes
+
+449
+00:31:54,049 --> 00:31:59,450
+without degrading overall performance Meng
+et al. 222 locating
+
+450
+00:31:59,450 --> 00:32:03,769
+and editing factual associations in GPT
+Belrose et al.
+
+451
+00:32:03,769 --> 00:32:09,690
+2023 perfect linear concept erasure in
+closed form Unlearning
+
+452
+00:32:09,690 --> 00:32:13,410
+approaches can systematically reduce a
+model's reliance on problematic
+
+453
+00:32:13,410 --> 00:32:18,319
+goal representations identified through
+safety evaluation. Rather than trying
+
+454
+00:32:18,319 --> 00:32:22,039
+to teach new behaviors, unlearning focuses
+on degrading the
+
+455
+00:32:22,039 --> 00:32:26,400
+model's ability to pursue previously
+learned proxy goals. This
+
+456
+00:32:26,400 --> 00:32:30,319
+might involve gradient ascent on examples
+of goal misgeneralization
+
+457
+00:32:30,640 --> 00:32:33,680
+to reduce the model's tendency to repeat
+those patterns
+
+458
+00:32:34,079 --> 00:32:38,359
+or more sophisticated approaches that
+preserve useful capabilities while
+
+459
+00:32:38,359 --> 00:32:44,609
+degrading problematic ones. However,
+unlearning faces fundamental limitations.
+Removing
+
+460
+00:32:44,609 --> 00:32:48,049
+goal misgeneralization patterns may not
+prevent the model from
+
+461
+00:32:48,049 --> 00:32:52,849
+redeveloping similar problems, and
+aggressive unlearning risks degrading
+legitimate
+
+462
+00:32:52,849 --> 00:32:59,410
+capabilities. Jang et al. Unlearning for
+mitigating privacy risks
+
+463
+00:32:59,410 --> 00:33:06,329
+in language models. Deployment time
+Mitigation Runtime Monitoring Deployment
+
+464
+00:33:06,329 --> 00:33:10,250
+time monitoring systems can detect goal
+misgeneralization in real
+
+465
+00:33:10,250 --> 00:33:14,859
+time and intervene before problematic
+behaviors cause harm. These
+
+466
+00:33:14,859 --> 00:33:19,859
+systems combine behavioral monitoring,
+watching for outputs suggesting misaligned
+
+467
+00:33:19,859 --> 00:33:24,980
+goals, internal state monitoring using
+interpretability tools to detect
+
+468
+00:33:24,980 --> 00:33:30,299
+concerning reasoning patterns, and
+environmental monitoring, watching for
+unexpected
+
+469
+00:33:30,299 --> 00:33:34,500
+effects that might indicate hidden goal
+pursuit when concerning
+
+470
+00:33:34,500 --> 00:33:38,539
+patterns are detected. Intervention
+systems can range from conservative
+
+471
+00:33:38,539 --> 00:33:42,069
+approaches to like flagging outputs for
+human review to
+
+472
+00:33:42,069 --> 00:33:46,990
+aggressive approaches like immediately
+halting model execution Hubinger et
+
+473
+00:33:46,990 --> 00:33:52,430
+al. 2024 sleeper agents training deceptive
+LLMs that persist
+
+474
+00:33:52,430 --> 00:33:56,549
+through safety training the temporal
+advantage of runtime intervention
+
+475
+00:33:56,710 --> 00:34:01,349
+must be balanced against reliability
+constraints. Real time detection
+
+476
+00:34:01,509 --> 00:34:04,630
+provides the last opportunity to prevent
+harm from goal
+
+477
+00:34:04,630 --> 00:34:08,710
+misgeneralization, but deployment
+environments may not allow for the
+
+478
+00:34:08,710 --> 00:34:13,909
+computational overhead of sophisticated
+interpretability analysis or the latency
+
+479
+00:34:13,909 --> 00:34:18,909
+of human oversight. Practical runtime
+systems require lightweight detection
+
+480
+00:34:18,909 --> 00:34:22,710
+methods that can operate with minimal
+computational cost while
+
+481
+00:34:22,710 --> 00:34:26,789
+maintaining low false positive rates. This
+creates pressure for
+
+482
+00:34:26,789 --> 00:34:30,269
+deployment time systems to rely on
+simpler, faster detection
+
+483
+00:34:30,269 --> 00:34:33,550
+methods that may be less accurate than
+more sophisticated
+
+484
+00:34:33,550 --> 00:34:38,710
+approaches available during development
+clima et al. 2024 poser
+
+485
+00:34:40,309 --> 00:34:44,989
+filters and guardrails. Constitutional AI
+principles can be implemented
+
+486
+00:34:44,989 --> 00:34:48,789
+as deployment time filters that evaluate
+model outputs against
+
+487
+00:34:48,789 --> 00:34:52,230
+explicit goal alignment criteria before
+allowing them to take
+
+488
+00:34:52,230 --> 00:34:56,269
+effect. Rather than hoping the model has
+internalized appropriate
+
+489
+00:34:56,269 --> 00:35:01,230
+goals during training. Constitutional
+filters provide an external verification
+
+490
+00:35:01,230 --> 00:35:04,980
+layer that checks whether proposed actions
+align with intended
+
+491
+00:35:04,980 --> 00:35:09,019
+objectives. These systems can range from
+simple rule based
+
+492
+00:35:09,019 --> 00:35:12,539
+checks. Does this action move toward the
+intended goal?
+
+493
+00:35:12,940 --> 00:35:18,059
+To sophisticated evaluation using separate
+AI systems trained specifically
+
+494
+00:35:18,059 --> 00:35:24,780
+for goal alignment verification by et al.
+Constitutional AI
+
+495
+00:35:24,780 --> 00:35:30,239
+Harmlessness from AI feedback Multimodal
+verification systems provide robust
+
+496
+00:35:30,239 --> 00:35:35,079
+deployment time protection against goal
+misgeneralization by using diverse
+
+497
+00:35:35,079 --> 00:35:38,800
+AI systems to cross check goal alignment.
+Rather than
+
+498
+00:35:38,800 --> 00:35:43,239
+relying on a single model's goal
+representations, verification systems
+
+499
+00:35:43,239 --> 00:35:46,360
+can use multiple models trained with
+different approaches to
+
+500
+00:35:46,360 --> 00:35:50,840
+evaluate whether proposed actions align
+with intended goals. This
+
+501
+00:35:50,840 --> 00:35:55,530
+diversity provides protection against
+systematic goal misgeneralization that
+might
+
+502
+00:35:55,530 --> 00:35:59,969
+affect all models trained with similar
+approaches. However, multimodal
+
+503
+00:35:59,969 --> 00:36:04,650
+approaches face scalability challenges and
+may introduce significant latency
+
+504
+00:36:04,650 --> 00:36:09,730
+in time sensitive applications. Irving et
+al. AI Safety
+
+505
+00:36:09,730 --> 00:36:15,610
+via Debate subsection Sandboxing
+Deployment time capability restrictions
+can
+
+506
+00:36:15,610 --> 00:36:19,769
+limit the potential harm from goal
+misgeneralization by constraining
+
+507
+00:36:19,769 --> 00:36:22,949
+what actions models can take regardless of
+what goals
+
+508
+00:36:22,949 --> 00:36:27,550
+they pursue. Sandboxing approaches limit
+models to safe subsets
+
+509
+00:36:27,550 --> 00:36:31,590
+of possible actions, while capability
+restrictions prevent models from
+
+510
+00:36:31,590 --> 00:36:35,110
+accessing tools or resources that could
+enable harmful goal
+
+511
+00:36:35,110 --> 00:36:39,469
+pursuit. These approaches acknowledge that
+perfect goal alignment may
+
+512
+00:36:39,469 --> 00:36:42,590
+be impossible and instead focus on
+ensuring that even
+
+513
+00:36:42,590 --> 00:36:47,349
+misaligned goal pursuit cannot cause
+significant harm. Hubinger et
+
+514
+00:36:47,349 --> 00:36:52,139
+al. Risks from learned optimization in
+advanced machine learning
+
+515
+00:36:52,139 --> 00:36:55,860
+systems Human in the loop systems provide
+deployment time
+
+516
+00:36:55,860 --> 00:36:59,860
+protection by requiring human approval for
+high stakes decisions
+
+517
+00:36:59,860 --> 00:37:04,780
+where goal misgeneralization could cause
+significant harm. These systems
+
+518
+00:37:04,780 --> 00:37:08,900
+automatically identify decisions that
+could have substantial consequences if
+
+519
+00:37:08,900 --> 00:37:11,699
+the model is pursuing the wrong goals,
+then route
+
+520
+00:37:11,699 --> 00:37:15,309
+those decisions through human oversight.
+The challenge lies in
+
+521
+00:37:15,309 --> 00:37:19,230
+designing systems that catch genuinely
+high stakes decisions without
+
+522
+00:37:19,230 --> 00:37:23,949
+overwhelming human operators with routine
+choices. Effective human in
+
+523
+00:37:23,949 --> 00:37:27,670
+the loop systems require sophisticated
+meta reasoning about which
+
+524
+00:37:27,670 --> 00:37:31,349
+decisions matter most and clear interfaces
+that help human
+
+525
+00:37:31,349 --> 00:37:38,510
+operators quickly evaluate goal alignment.
+Casiezade the Foundation Model
+
+526
+00:37:38,510 --> 00:37:44,110
+Transparency Index subsection. Circuit
+breakers Deployment systems require robust
+
+527
+00:37:44,110 --> 00:37:47,989
+circuit breakers that can immediately halt
+model execution when
+
+528
+00:37:47,989 --> 00:37:53,030
+goal misgeneralization is detected. Unlike
+gradual interventions like output
+
+529
+00:37:53,030 --> 00:37:57,630
+filtering or human oversight, circuit
+breakers provide emergency stops
+
+530
+00:37:57,630 --> 00:38:01,750
+for situations where continued model
+operation poses immediate risk.
+
+531
+00:38:02,469 --> 00:38:06,909
+These systems must balance sensitivity,
+detecting genuine threats with
+
+532
+00:38:06,909 --> 00:38:11,840
+robustness, avoiding false alarms that
+disrupt legitimate operation. The
+
+533
+00:38:11,840 --> 00:38:15,719
+design challenge involves creating
+detection systems that can identify
+
+534
+00:38:15,719 --> 00:38:20,119
+goal misgeneralization rapidly enough to
+prevent harm while maintaining
+
+535
+00:38:20,119 --> 00:38:22,679
+low false positive rates that would render
+the system
+
+536
+00:38:22,679 --> 00:38:29,039
+unusable. Hubinger et al. 2024 sleeper
+agents training deceptive
+
+537
+00:38:29,039 --> 00:38:33,000
+LLMs that persist through safety training.
+Learning theory attempts
+
+538
+00:38:33,000 --> 00:38:36,400
+to predict which learned algorithms will
+generalize beyond training
+
+539
+00:38:36,400 --> 00:38:39,909
+data. The central aim of classical
+learning theory is
+
+540
+00:38:39,909 --> 00:38:43,429
+to bound various kinds of error, in
+particular the
+
+541
+00:38:43,429 --> 00:38:49,190
+approximation error, generalization error,
+and optimization error. One intuition
+
+542
+00:38:49,190 --> 00:38:52,510
+driving decades of machine learning
+research is that simpler
+
+543
+00:38:52,510 --> 00:38:56,190
+models tend to generalize better than
+complex ones. The
+
+544
+00:38:56,190 --> 00:38:59,630
+Occam's Razor principle of ML suggests
+that when multiple
+
+545
+00:38:59,630 --> 00:39:03,119
+algorithms fit your training data equally
+well, you should
+
+546
+00:39:03,119 --> 00:39:05,440
+prefer the simpler one because it's more
+likely to
+
+547
+00:39:05,440 --> 00:39:09,519
+work on new unseen data. Classical
+learning theory used
+
+548
+00:39:09,519 --> 00:39:13,519
+parameter count as a proxy for algorithmic
+complexity. Fewer
+
+549
+00:39:13,519 --> 00:39:18,239
+parameters meant simpler algorithms, which
+meant better generalization. This
+
+550
+00:39:18,239 --> 00:39:21,400
+framework provided tools to predict not
+just which models
+
+551
+00:39:21,400 --> 00:39:23,920
+would generalize, but how much data you'd
+need to
+
+552
+00:39:23,920 --> 00:39:26,639
+learn reliably, how confident you should
+be in your
+
+553
+00:39:26,639 --> 00:39:29,400
+predictions, and when you should prefer
+one model over
+
+554
+00:39:29,400 --> 00:39:33,880
+another. However, this assumption breaks
+down with overparameterized neural
+
+555
+00:39:33,880 --> 00:39:38,480
+networks. At this point, the textbook
+shows Figure 7.38.
+
+556
+00:39:38,960 --> 00:39:42,599
+It depicts from data to model behavior.
+Structure in
+
+557
+00:39:42,599 --> 00:39:47,360
+data determines internal structure in
+models and thus generalization.
+
+558
+00:39:47,760 --> 00:39:50,880
+Current approaches to alignment work by
+shaping the training
+
+559
+00:39:50,880 --> 00:39:56,639
+distribution, which only indirectly
+determines model structure right through
+
+560
+00:39:56,639 --> 00:40:00,239
+the effects on shaping the optimization
+process middle left
+
+561
+00:40:00,239 --> 00:40:03,760
+and right. To mitigate the limitations of
+this indirect
+
+562
+00:40:03,760 --> 00:40:08,000
+approach, alignment requires a better
+understanding of these intermediate
+
+563
+00:40:08,000 --> 00:40:13,480
+links. Gradient descent navigates lost
+landscapes in ways that
+
+564
+00:40:13,480 --> 00:40:17,639
+closely approximate Bayesian inference.
+This means that the algorithms
+
+565
+00:40:17,639 --> 00:40:21,320
+we discover through training largely
+reflect which algorithms were
+
+566
+00:40:21,320 --> 00:40:25,920
+already probable under random parameter
+sampling mingard et al.
+
+567
+00:40:26,000 --> 00:40:31,639
+2020. Is SGD a Bayesian sampler? Well,
+almost. If
+
+568
+00:40:31,639 --> 00:40:35,400
+SGD mostly finds algorithms that were
+already likely to
+
+569
+00:40:35,400 --> 00:40:39,199
+emerge from random chance, then the bias
+toward misaligned
+
+570
+00:40:39,199 --> 00:40:43,239
+goals exists before training even begins.
+The problem isn't
+
+571
+00:40:43,239 --> 00:40:47,960
+that SGD introduces bad incentives during
+optimization. It's that
+
+572
+00:40:47,960 --> 00:40:51,599
+the space of possible algorithms is
+fundamentally skewed towards
+
+573
+00:40:51,599 --> 00:40:56,059
+simple proxy based solutions over complex
+genuinely aligned ones.
+
+574
+00:40:56,460 --> 00:41:00,099
+This might mean we can't fix goal
+misgeneralization by
+
+575
+00:41:00,099 --> 00:41:02,900
+changing how we train models. We need to
+change
+
+576
+00:41:02,900 --> 00:41:05,579
+which algorithms are easy to represent in
+the first
+
+577
+00:41:05,579 --> 00:41:08,619
+place. Neural networks belong to a class
+of models
+
+578
+00:41:08,619 --> 00:41:13,260
+where multiple parameter settings can
+implement identical algorithms. Our
+
+579
+00:41:13,260 --> 00:41:16,420
+discussion in the learning dynamics
+section talked about how
+
+580
+00:41:16,420 --> 00:41:20,860
+each parameter configuration corresponds
+to a specific learned algorithm.
+
+581
+00:41:21,099 --> 00:41:23,980
+But in neural networks this relationship
+is not one
+
+582
+00:41:23,980 --> 00:41:27,340
+to one. We can permute hidden units
+without changing
+
+583
+00:41:27,340 --> 00:41:30,619
+the network's behavior. We can scale
+weights in one
+
+584
+00:41:30,619 --> 00:41:33,059
+layer and compensate by scaling weights in
+the next
+
+585
+00:41:33,059 --> 00:41:37,019
+layer. We can have completely different
+parameter configurations that
+
+586
+00:41:37,019 --> 00:41:41,739
+implement identical decision making
+processes. Classical learning theory
+assumes
+
+587
+00:41:41,739 --> 00:41:46,269
+Each parameter setting corresponds to a
+unique algorithm. In
+
+588
+00:41:46,269 --> 00:41:49,510
+linear regression, every different set of
+weights produces a
+
+589
+00:41:49,510 --> 00:41:52,829
+different line and every line represents a
+unique prediction
+
+590
+00:41:52,829 --> 00:41:56,789
+algorithm. This one to one mapping allows
+classical theory
+
+591
+00:41:56,789 --> 00:42:00,110
+to use parameter count as a complexity
+measure and
+
+592
+00:42:00,110 --> 00:42:04,869
+apply standard mathematical approximations
+to predict learning outcomes. These
+
+593
+00:42:04,869 --> 00:42:08,190
+symmetries create a fundamental breakdown
+in how we measure
+
+594
+00:42:08,190 --> 00:42:12,750
+algorithmic complexity. What looks like
+one algorithm in behaviorally
+
+595
+00:42:12,909 --> 00:42:16,269
+like navigate to the coin might correspond
+to millions
+
+596
+00:42:16,269 --> 00:42:20,869
+of different parameter configurations.
+That is, millions of different
+
+597
+00:42:20,869 --> 00:42:24,110
+types of learned algorithms can implement
+the exact same
+
+598
+00:42:24,190 --> 00:42:27,909
+navigate to the coin behavior. Usually the
+approach to
+
+599
+00:42:27,909 --> 00:42:30,708
+measure the complexity of the learned
+algorithm is just
+
+600
+00:42:30,708 --> 00:42:34,829
+by counting parameters. This fails because
+thousands of parameters
+
+601
+00:42:34,829 --> 00:42:38,789
+might collaborate to implement a single
+computational pattern, while
+
+602
+00:42:38,789 --> 00:42:42,929
+other parameters might be completely
+redundant. This breakdown is
+
+603
+00:42:42,929 --> 00:42:47,289
+called singularity in mathematical terms,
+referring to degeneracies in
+
+604
+00:42:47,289 --> 00:42:50,969
+the parameter to function mapping. The
+word singular means
+
+605
+00:42:50,969 --> 00:42:54,570
+the same thing as in singular matrix.
+Something fundamental
+
+606
+00:42:54,570 --> 00:42:58,809
+about the mathematical structure is
+degenerate. In neural networks,
+
+607
+00:42:58,809 --> 00:43:02,530
+regions of parameter space implementing
+the same algorithm form
+
+608
+00:43:02,530 --> 00:43:07,210
+complex geometric structures with
+singularities where standard mathematical
+tools
+
+609
+00:43:07,210 --> 00:43:12,139
+fail. Merfet et al. 2020. Deep learning is
+singular
+
+610
+00:43:12,139 --> 00:43:15,219
+and that's good. We can permute hidden
+units without
+
+611
+00:43:15,219 --> 00:43:18,500
+changing the network's function. We can
+scale weights in
+
+612
+00:43:18,500 --> 00:43:21,139
+one layer and compensate by scaling
+weights in the
+
+613
+00:43:21,139 --> 00:43:24,380
+next layer. We can even have completely
+different parameter
+
+614
+00:43:24,380 --> 00:43:29,260
+configurations that implement identical
+decision making algorithms. A network
+
+615
+00:43:29,260 --> 00:43:32,260
+that learns collect coins might have
+millions of different
+
+616
+00:43:32,260 --> 00:43:36,099
+parameter configurations that all
+implement precisely the same coin
+
+617
+00:43:36,099 --> 00:43:40,619
+collection algorithm. Measuring
+algorithmic complexity creates a new layer
+
+618
+00:43:40,619 --> 00:43:45,460
+to investigate beyond behavioral and
+algorithmic equivalence. Throughout our
+
+619
+00:43:45,460 --> 00:43:49,420
+chapter, we've focused on distinguishing
+between behaviorally equivalent but
+
+620
+00:43:49,420 --> 00:43:54,219
+algorithmically different solutions like
+move write versus collect coins
+
+621
+00:43:54,219 --> 00:43:58,380
+in coin run. Both produce identical
+training behavior but
+
+622
+00:43:58,380 --> 00:44:02,940
+represent different internal reasoning
+processes. Now we encounter a
+
+623
+00:44:02,940 --> 00:44:07,340
+third layer, algorithmically identical
+solutions that differ only in
+
+624
+00:44:07,340 --> 00:44:12,019
+their specific parameter values. Why does
+this parametric variation
+
+625
+00:44:12,019 --> 00:44:16,099
+matter if the algorithms are identical?
+Because parameter space
+
+626
+00:44:16,099 --> 00:44:21,059
+geometry determines what SGD discovers
+during training. Even when
+
+627
+00:44:21,059 --> 00:44:25,179
+two parameter configurations implement the
+same algorithm, they occupy
+
+628
+00:44:25,179 --> 00:44:29,239
+different regions of the lost landscape.
+Some algorithmic solutions
+
+629
+00:44:29,320 --> 00:44:33,519
+might be implementable through millions of
+parameter configurations, creating
+
+630
+00:44:33,519 --> 00:44:37,400
+wide basins in parameter space, while
+others require precise
+
+631
+00:44:37,400 --> 00:44:42,000
+parameter coordination creating narrow
+regions. SGD is more likely
+
+632
+00:44:42,000 --> 00:44:45,239
+to discover algorithms that correspond to
+larger regions of
+
+633
+00:44:45,239 --> 00:44:49,519
+parameter space. Classical learning
+theory's tools fail completely when
+
+634
+00:44:49,519 --> 00:44:53,320
+applied to these singular models. The
+mathematical techniques that
+
+635
+00:44:53,320 --> 00:44:57,929
+work for linear regression counting
+parameters using standard approximations,
+
+636
+00:44:58,250 --> 00:45:02,690
+making clean theoretical predictions, all
+assume each parameter contributes
+
+637
+00:45:02,690 --> 00:45:08,010
+independently to algorithmic complexity.
+In neural networks, parameters interact
+
+638
+00:45:08,010 --> 00:45:11,369
+in complex ways where massive numbers of
+parameters might
+
+639
+00:45:11,369 --> 00:45:16,090
+collaborate to implement simple
+computational patterns. While other
+parameters
+
+640
+00:45:16,090 --> 00:45:20,650
+might be completely redundant. This
+breakdown is called singularity.
+
+641
+00:45:20,650 --> 00:45:25,010
+In mathematical terms, the parameter to
+function mapping develops
+
+642
+00:45:25,010 --> 00:45:29,489
+degeneracies and redundancies that violate
+the assumptions underlying classical
+
+643
+00:45:29,489 --> 00:45:34,690
+statistical tools. Standard approximations
+like the Laplace approximation become
+
+644
+00:45:34,690 --> 00:45:39,610
+invalid. Parameter counting becomes
+meaningless. As a complexity measure,
+
+645
+00:45:39,929 --> 00:45:44,369
+the neat relationship between parameter
+count and generalization completely
+
+646
+00:45:44,369 --> 00:45:51,019
+disappears. Deep learning is singular, and
+that's good. The
+
+647
+00:45:51,019 --> 00:45:55,139
+textbook has a supplementary note titled
+Free Energy Minimization
+
+648
+00:45:55,300 --> 00:45:59,179
+for Machine Learning, which we'll skip
+over here. Empirical
+
+649
+00:45:59,179 --> 00:46:04,420
+evidence Opposing staircases Researchers
+tracking both loss and estimated
+
+650
+00:46:04,420 --> 00:46:09,820
+complexity during training observe
+opposing staircases. Each sudden drop
+
+651
+00:46:09,820 --> 00:46:12,500
+in loss is accompanied by a jump in
+algorithmic
+
+652
+00:46:12,500 --> 00:46:17,530
+complexity. This validates SLT's
+prediction that learning proceeds through
+
+653
+00:46:17,530 --> 00:46:21,610
+discrete phase transitions from simple
+high loss solutions to
+
+654
+00:46:21,610 --> 00:46:25,250
+complex low loss solutions rather than
+gradual refinement of
+
+655
+00:46:25,250 --> 00:46:28,730
+a single algorithm. This explains why
+simple proxy goals
+
+656
+00:46:28,730 --> 00:46:32,969
+are systematically more likely to emerge
+during training. Algorithms
+
+657
+00:46:32,969 --> 00:46:36,650
+like always move right require very few
+effective parameters.
+
+658
+00:46:36,889 --> 00:46:39,929
+Most network weights can vary freely
+without changing this
+
+659
+00:46:39,929 --> 00:46:45,110
+basic behavior pattern. Complex algorithms
+like recognize objects, plan
+
+660
+00:46:45,110 --> 00:46:49,590
+paths, navigate obstacles require many
+effective parameters working together
+
+661
+00:46:49,590 --> 00:46:53,510
+in precise coordination. The free energy
+formula shows that
+
+662
+00:46:53,510 --> 00:46:57,588
+simpler algorithms have systematically
+higher probability of being discovered
+
+663
+00:46:57,588 --> 00:47:03,829
+during finite training. Watanabe, 2009
+Algebraic geometry and Statistical
+
+664
+00:47:03,829 --> 00:47:08,110
+learning theory Internal model selection
+describes how neural networks
+
+665
+00:47:08,110 --> 00:47:12,449
+choose between competing solutions during
+training. Rather than gradually
+
+666
+00:47:12,449 --> 00:47:16,769
+refining a single algorithm, networks
+undergo discrete transitions between
+
+667
+00:47:16,849 --> 00:47:22,050
+completely different algorithmic
+approaches. Each transition represents
+abandoning one
+
+668
+00:47:22,050 --> 00:47:25,369
+algorithmic solution in favor of another.
+That provides a
+
+669
+00:47:25,369 --> 00:47:28,730
+better accuracy complexity tradeoff given
+the current amount of
+
+670
+00:47:28,730 --> 00:47:32,489
+training data. Path dependence emerges
+because the sequence of
+
+671
+00:47:32,489 --> 00:47:37,090
+simple solutions constrains which complex
+solutions become accessible later.
+
+672
+00:47:37,909 --> 00:47:41,190
+Two networks might both start with simple
+approximations and
+
+673
+00:47:41,190 --> 00:47:45,789
+eventually transition to complex
+algorithms, but which complex algorithm
+
+674
+00:47:45,789 --> 00:47:48,989
+becomes accessible depends entirely on the
+path taken through
+
+675
+00:47:48,989 --> 00:47:54,349
+intermediate simple solutions. Small
+initialization differences can determine
+which
+
+676
+00:47:54,349 --> 00:47:58,469
+sequence gets traversed, leading to
+completely different final algorithms.
+
+677
+00:47:58,710 --> 00:48:03,829
+Goal misgeneralization becomes
+mathematically inevitable when viewed
+through SLT
+
+678
+00:48:04,409 --> 00:48:08,250
+rather than merely possible. The internal
+model selection mechanism
+
+679
+00:48:08,329 --> 00:48:12,210
+shows that during finite training,
+algorithms with lower effective
+
+680
+00:48:12,210 --> 00:48:15,889
+complexity will be systematically
+preferred over those with higher
+
+681
+00:48:15,889 --> 00:48:20,329
+complexity, even when complex algorithms
+better capture intended goals.
+
+682
+00:48:20,889 --> 00:48:25,690
+This transforms our understanding from
+goal misgeneralization. Sometimes happens
+
+683
+00:48:25,769 --> 00:48:29,929
+to goal misgeneralization is the default
+unless actively prevented
+
+684
+00:48:30,409 --> 00:48:35,010
+loss. Landscape singularities create
+systematic biases towards certain types
+
+685
+00:48:35,010 --> 00:48:39,090
+of goals based on their algorithmic
+simplicity. The geometric
+
+686
+00:48:39,090 --> 00:48:44,449
+structures where multiple parameter
+configurations implement identical
+algorithms determine
+
+687
+00:48:44,449 --> 00:48:48,010
+which goals are easy versus hard to
+discover. Goals
+
+688
+00:48:48,010 --> 00:48:52,050
+implementable with fewer effective
+parameters occupy larger regions of
+
+689
+00:48:52,050 --> 00:48:54,969
+parameter space, making them more likely
+to be found.
+
+690
+00:48:55,530 --> 00:48:59,519
+This provides mathematical foundations for
+our counting arguments. The
+
+691
+00:48:59,519 --> 00:49:04,280
+counting reflects real geometric volumes.
+Goal crystallization refers to
+
+692
+00:49:04,280 --> 00:49:08,320
+the phase transitions where networks
+abandon simple goal approximations
+
+693
+00:49:08,480 --> 00:49:12,639
+for more complex ones. During training,
+systems don't gradually
+
+694
+00:49:12,639 --> 00:49:16,320
+refine their goals they undergo sudden
+transitions where one
+
+695
+00:49:16,320 --> 00:49:20,400
+goal structure gets replaced by another.
+Early transitions typically
+
+696
+00:49:20,400 --> 00:49:24,239
+involve simple approximations like move
+right instead of collect
+
+697
+00:49:24,239 --> 00:49:28,260
+coins. Later transitions may lead to more
+complex goals,
+
+698
+00:49:28,420 --> 00:49:31,579
+but which complex goals become accessible
+depends on the
+
+699
+00:49:31,579 --> 00:49:35,539
+path. Through earlier simple
+approximations, the complexity of human
+
+700
+00:49:35,539 --> 00:49:41,699
+values creates systematic vulnerabilities.
+Implementing genuine alignment requires
+learning
+
+701
+00:49:41,699 --> 00:49:45,900
+context dependent rules, handling edge
+cases, and making subtle
+
+702
+00:49:45,900 --> 00:49:52,309
+moral distinctions, all requiring high
+algorithmic complexity. Simple heuristics
+
+703
+00:49:52,389 --> 00:49:56,429
+producing aligned looking behavior while
+missing deeper intent will
+
+704
+00:49:56,429 --> 00:50:00,469
+systematically have lower complexity,
+making them more probable during
+
+705
+00:50:00,469 --> 00:50:05,190
+finite training regimes. Phase transitions
+provide early warning signals
+
+706
+00:50:05,190 --> 00:50:09,550
+for goal misgeneralization. The local
+learning coefficient can be
+
+707
+00:50:09,550 --> 00:50:13,949
+estimated during training to track
+complexity changes. Sudden jumps
+
+708
+00:50:13,949 --> 00:50:18,579
+often coincide with goal crystallization
+moments where networks abandon
+
+709
+00:50:18,579 --> 00:50:22,659
+one goal structure for another. Monitoring
+these transitions could
+
+710
+00:50:22,659 --> 00:50:26,579
+provide advance warning when systems shift
+toward potentially misaligned
+
+711
+00:50:26,579 --> 00:50:32,099
+goals hoogland et al. 2024 loss landscape
+degeneracy and
+
+712
+00:50:32,099 --> 00:50:37,300
+stagewise development Developmental
+interpretability emerges naturally as a
+method
+
+713
+00:50:37,300 --> 00:50:41,900
+for understanding goal formation. Rather
+than reverse engineering completed
+
+714
+00:50:41,900 --> 00:50:45,039
+models, we can study the sequence of phase
+transitions
+
+715
+00:50:45,199 --> 00:50:50,000
+through which goals crystallize. Each
+transition reveals why particular
+
+716
+00:50:50,000 --> 00:50:54,280
+goals were selected over alternatives,
+providing insights crucial for
+
+717
+00:50:54,280 --> 00:50:58,039
+detection and mitigation. We will talk
+about this more
+
+718
+00:50:58,039 --> 00:51:02,400
+in our chapter on interpretability. SLT
+focuses on parameter
+
+719
+00:51:02,400 --> 00:51:06,280
+space geometry while abstracting away how
+parameters map to
+
+720
+00:51:06,280 --> 00:51:12,989
+behaviors. Understanding goal
+misgeneralization requires connecting
+geometric complexity to
+
+721
+00:51:12,989 --> 00:51:17,230
+actual algorithmic behavior, but SLT
+provides only partial tools
+
+722
+00:51:17,230 --> 00:51:21,389
+for this connection. Two models with
+identical geometric properties
+
+723
+00:51:21,389 --> 00:51:24,349
+could learn different goals depending on
+their parameter function
+
+724
+00:51:24,349 --> 00:51:29,869
+mappings. Scalsa My criticism of singular
+learning theory.

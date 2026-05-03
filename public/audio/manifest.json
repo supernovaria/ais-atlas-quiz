@@ -611,6 +611,160 @@
           "words": "/audio/ch6 - specification-gaming/specification-gaming_6-6_6-learning-from-feedback.words.json"
         }
       ]
+    },
+    {
+      "id": "goal-misgeneralization",
+      "number": 7,
+      "title": "Chapter 7: Goal-Misgeneralization",
+      "sections": [
+        {
+          "index": "7.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-1_1-introduction_cbr.mp3",
+          "duration": "00:04:50",
+          "length": 2329581,
+          "srt": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-1_1-introduction.srt",
+          "words": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-1_1-introduction.words.json"
+        },
+        {
+          "index": "7.2",
+          "title": "2. Multi Objective Generalization",
+          "slug": "2-multi-objective-generalization",
+          "audioUrl": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-2_2-multi-objective-generalization_cbr.mp3",
+          "duration": "00:11:48",
+          "length": 5669997,
+          "srt": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-2_2-multi-objective-generalization.srt",
+          "words": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-2_2-multi-objective-generalization.words.json"
+        },
+        {
+          "index": "7.3",
+          "title": "3. Learning Dynamics",
+          "slug": "3-learning-dynamics",
+          "audioUrl": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-3_3-learning-dynamics_cbr.mp3",
+          "duration": "00:16:44",
+          "length": 8040237,
+          "srt": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-3_3-learning-dynamics.srt",
+          "words": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-3_3-learning-dynamics.words.json"
+        },
+        {
+          "index": "7.4",
+          "title": "4. Goal-Directedness",
+          "slug": "4-goal-directedness",
+          "audioUrl": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-4_4-goal-directedness_cbr.mp3",
+          "duration": "00:19:51",
+          "length": 9538221,
+          "srt": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-4_4-goal-directedness.srt",
+          "words": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-4_4-goal-directedness.words.json"
+        },
+        {
+          "index": "7.5",
+          "title": "5. Scheming",
+          "slug": "5-scheming",
+          "audioUrl": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-5_5-scheming_cbr.mp3",
+          "duration": "00:42:23",
+          "length": 20349933,
+          "srt": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-5_5-scheming.srt",
+          "words": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-5_5-scheming.words.json"
+        },
+        {
+          "index": "7.6",
+          "title": "6. Detection",
+          "slug": "6-detection",
+          "audioUrl": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-6_6-detection_cbr.mp3",
+          "duration": "00:19:55",
+          "length": 9568941,
+          "srt": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-6_6-detection.srt",
+          "words": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-6_6-detection.words.json"
+        },
+        {
+          "index": "7.7",
+          "title": "7. Mitigations",
+          "slug": "7-mitigations",
+          "audioUrl": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-7_7-mitigations_cbr.mp3",
+          "duration": "00:51:29",
+          "length": 24721965,
+          "srt": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-7_7-mitigations.srt",
+          "words": "/audio/ch7 - goal-misgeneralization/goal-misgeneralization_7-7_7-mitigations.words.json"
+        }
+      ]
+    },
+    {
+      "id": "scalable-oversight",
+      "number": 8,
+      "title": "Chapter 8: Scalable-Oversight",
+      "sections": [
+        {
+          "index": "8.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "/audio/ch8 - scalable-oversight/scalable-oversight_8-1_1-introduction_cbr.mp3",
+          "duration": "00:04:13",
+          "length": 2029485,
+          "srt": "/audio/ch8 - scalable-oversight/scalable-oversight_8-1_1-introduction.srt",
+          "words": "/audio/ch8 - scalable-oversight/scalable-oversight_8-1_1-introduction.words.json"
+        },
+        {
+          "index": "8.2",
+          "title": "2. Oversight",
+          "slug": "2-oversight",
+          "audioUrl": "/audio/ch8 - scalable-oversight/scalable-oversight_8-2_2-oversight_cbr.mp3",
+          "duration": "00:13:00",
+          "length": 6247341,
+          "srt": "/audio/ch8 - scalable-oversight/scalable-oversight_8-2_2-oversight.srt",
+          "words": "/audio/ch8 - scalable-oversight/scalable-oversight_8-2_2-oversight.words.json"
+        },
+        {
+          "index": "8.3",
+          "title": "3. Task Decomposition",
+          "slug": "3-task-decomposition",
+          "audioUrl": "/audio/ch8 - scalable-oversight/scalable-oversight_8-3_3-task-decomposition_cbr.mp3",
+          "duration": "00:09:04",
+          "length": 4354797,
+          "srt": "/audio/ch8 - scalable-oversight/scalable-oversight_8-3_3-task-decomposition.srt",
+          "words": "/audio/ch8 - scalable-oversight/scalable-oversight_8-3_3-task-decomposition.words.json"
+        },
+        {
+          "index": "8.4",
+          "title": "4. Process Oversight",
+          "slug": "4-process-oversight",
+          "audioUrl": "/audio/ch8 - scalable-oversight/scalable-oversight_8-4_4-process-oversight_cbr.mp3",
+          "duration": "00:15:29",
+          "length": 7455021,
+          "srt": "/audio/ch8 - scalable-oversight/scalable-oversight_8-4_4-process-oversight.srt",
+          "words": "/audio/ch8 - scalable-oversight/scalable-oversight_8-4_4-process-oversight.words.json"
+        },
+        {
+          "index": "8.5",
+          "title": "5. Iterated Amplification",
+          "slug": "5-iterated-amplification",
+          "audioUrl": "/audio/ch8 - scalable-oversight/scalable-oversight_8-5_5-iterated-amplification_cbr.mp3",
+          "duration": "00:17:47",
+          "length": 8541741,
+          "srt": "/audio/ch8 - scalable-oversight/scalable-oversight_8-5_5-iterated-amplification.srt",
+          "words": "/audio/ch8 - scalable-oversight/scalable-oversight_8-5_5-iterated-amplification.words.json"
+        },
+        {
+          "index": "8.6",
+          "title": "6. Debate",
+          "slug": "6-debate",
+          "audioUrl": "/audio/ch8 - scalable-oversight/scalable-oversight_8-6_6-debate_cbr.mp3",
+          "duration": "00:55:38",
+          "length": 26708589,
+          "srt": "/audio/ch8 - scalable-oversight/scalable-oversight_8-6_6-debate.srt",
+          "words": "/audio/ch8 - scalable-oversight/scalable-oversight_8-6_6-debate.words.json"
+        },
+        {
+          "index": "8.7",
+          "title": "7. Weak-to-Strong (W2S)",
+          "slug": "7-weak-to-strong-w2s",
+          "audioUrl": "/audio/ch8 - scalable-oversight/scalable-oversight_8-7_7-weak-to-strong-w2s_cbr.mp3",
+          "duration": "00:13:50",
+          "length": 6648813,
+          "srt": "/audio/ch8 - scalable-oversight/scalable-oversight_8-7_7-weak-to-strong-w2s.srt",
+          "words": "/audio/ch8 - scalable-oversight/scalable-oversight_8-7_7-weak-to-strong-w2s.words.json"
+        }
+      ]
     }
   ]
 }

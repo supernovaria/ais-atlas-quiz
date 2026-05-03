@@ -1,0 +1,1378 @@
+1
+00:00:00,240 --> 00:00:05,559
+Section 8.5 iterated amplification in
+previous sections, we discussed
+
+2
+00:00:05,559 --> 00:00:09,679
+methods for decomposing tasks and
+potentially emulating human decision
+
+3
+00:00:09,679 --> 00:00:14,039
+making by breaking down cognition into
+smaller components. In
+
+4
+00:00:14,039 --> 00:00:16,399
+this section, we will explain one of the
+primary
+
+5
+00:00:16,399 --> 00:00:19,640
+motivations for wanting to decompose tasks
+in the first
+
+6
+00:00:19,640 --> 00:00:23,800
+place. To amplify the abilities of
+overseers, we want
+
+7
+00:00:23,800 --> 00:00:27,309
+to enhance amplify the the capabilities of
+humans or
+
+8
+00:00:27,309 --> 00:00:30,829
+AI to generate better training signals to
+help keep
+
+9
+00:00:30,829 --> 00:00:35,710
+iteratively aligning the AI. Section
+amplification there is figure
+
+10
+00:00:35,710 --> 00:00:39,429
+8.11 in the textbook. Here it depicts an
+example
+
+11
+00:00:39,429 --> 00:00:43,590
+of aggregation and AI assistance
+amplifying Overall abilities of
+
+12
+00:00:43,590 --> 00:00:48,630
+an overseer what is capability
+Amplification? Amplification is the
+
+13
+00:00:48,630 --> 00:00:51,740
+process of enhancing the abilities of an
+overseer, whether
+
+14
+00:00:51,740 --> 00:00:55,380
+human or AI, to solve complex tasks that
+exceed
+
+15
+00:00:55,380 --> 00:00:58,700
+the capacity of a single overseer. The
+most common
+
+16
+00:00:58,700 --> 00:01:03,420
+type of amplification is also called
+capability amplification. It
+
+17
+00:01:03,420 --> 00:01:07,140
+focuses on enhancing an AI's ability to
+solve complex
+
+18
+00:01:07,140 --> 00:01:11,099
+tasks by improving its intelligence and
+problem solving skills.
+
+19
+00:01:11,739 --> 00:01:14,700
+We want AIs not just to imitate human
+behavior,
+
+20
+00:01:14,700 --> 00:01:17,659
+but to improve upon it, making better
+decisions and
+
+21
+00:01:17,659 --> 00:01:22,000
+achieving superior outcomes. We can
+amplify capabilities in many
+
+22
+00:01:22,000 --> 00:01:25,719
+different ways. Aggregation we can
+collaborate with each other
+
+23
+00:01:25,719 --> 00:01:29,000
+and aggregate the expertise of many
+experts to increase
+
+24
+00:01:29,000 --> 00:01:32,640
+our ability to solve complex tasks. For
+things like
+
+25
+00:01:32,640 --> 00:01:36,680
+fuzzy tasks where the evaluation criteria
+is subjective, using
+
+26
+00:01:36,680 --> 00:01:39,879
+multiple experts to provide feedback can
+create a more
+
+27
+00:01:39,879 --> 00:01:43,879
+reliable and representative training
+signal. As an example, in
+
+28
+00:01:43,879 --> 00:01:47,540
+imitation learning approaches, collecting
+demonstrations from a group of
+
+29
+00:01:47,540 --> 00:01:50,700
+experts instead of an individual can help
+normalize the
+
+30
+00:01:50,700 --> 00:01:54,140
+behavior distribution and improve the
+overall performance on the
+
+31
+00:01:54,140 --> 00:01:57,819
+task. So simply using more overseers is
+one approach
+
+32
+00:01:57,819 --> 00:02:03,019
+to amplification. Assistants in addition
+to amplifying abilities by
+
+33
+00:02:03,019 --> 00:02:06,819
+getting more overseers involved, we can
+also simply improve
+
+34
+00:02:06,900 --> 00:02:11,169
+individual performance by using assistants
+as an example. Employee
+
+35
+00:02:11,240 --> 00:02:13,080
+if we want to use an LLM to assist
+
+36
+00:02:13,080 --> 00:02:16,000
+in conducting medical research, we could
+use it to
+
+37
+00:02:16,000 --> 00:02:18,879
+read through large amounts of medical
+literature and highlight
+
+38
+00:02:18,879 --> 00:02:22,439
+potential treatments based on patterns and
+insights it identifies.
+
+39
+00:02:23,000 --> 00:02:26,280
+The AI assistant provides a list of
+potential treatments
+
+40
+00:02:26,439 --> 00:02:28,960
+which a team of medical researchers can
+then review
+
+41
+00:02:28,960 --> 00:02:34,080
+in detail and further investigate Task
+Decomposition While not
+
+42
+00:02:34,080 --> 00:02:38,780
+necessary for amplification, task
+decomposition and delegation is often
+
+43
+00:02:38,780 --> 00:02:41,659
+one of the most common ways of
+implementing amplification.
+
+44
+00:02:42,219 --> 00:02:45,340
+Having tasks that can be factored and
+solved individually
+
+45
+00:02:45,580 --> 00:02:49,020
+makes solving problems much more scalable.
+In the same
+
+46
+00:02:49,020 --> 00:02:51,580
+example as above of using an LLM as a
+
+47
+00:02:51,580 --> 00:02:55,300
+medical research tool, if we have task
+decomposability, then
+
+48
+00:02:55,300 --> 00:02:58,699
+we can amplify the abilities of
+researchers further. The
+
+49
+00:02:58,699 --> 00:03:02,699
+LLM could first identify relevant studies
+and data. Then
+
+50
+00:03:02,699 --> 00:03:06,139
+another AI model could extract and
+summarize key findings,
+
+51
+00:03:06,580 --> 00:03:08,900
+and finally, a team of experts could
+review these
+
+52
+00:03:08,900 --> 00:03:12,860
+summaries to make informed decisions about
+potential treatments. The
+
+53
+00:03:12,860 --> 00:03:17,099
+textbook includes figure 8.12. Here it
+depicts the AI
+
+54
+00:03:17,099 --> 00:03:20,740
+research and development workflow. How
+many of these tasks
+
+55
+00:03:20,740 --> 00:03:23,340
+do you think can be amplified or even
+automated
+
+56
+00:03:23,340 --> 00:03:28,020
+by having AI assistance? What is iterated
+amplification? Even
+
+57
+00:03:28,020 --> 00:03:31,419
+though we are amplifying capabilities, the
+underlying goal is
+
+58
+00:03:31,419 --> 00:03:35,849
+to still use this research for alignment
+capability. Amplification
+
+59
+00:03:35,849 --> 00:03:39,050
+allows us to avoid the overwhelming
+difficulty of reward
+
+60
+00:03:39,050 --> 00:03:43,370
+specification or of generating training
+signals for complex, fuzzy
+
+61
+00:03:43,370 --> 00:03:48,729
+tasks. Instead, we can do incremental
+improvements. Iterated amplification
+
+62
+00:03:48,810 --> 00:03:52,009
+builds on the basic concept of
+amplification by making
+
+63
+00:03:52,009 --> 00:03:56,490
+the process recursive. Each iteration
+involves using the amplified
+
+64
+00:03:56,569 --> 00:04:00,210
+system to generate improved training
+signals and solutions to
+
+65
+00:04:00,210 --> 00:04:03,439
+problems so we can iteratively use these
+better training
+
+66
+00:04:03,439 --> 00:04:07,280
+signals to train more capable and aligned
+models. These
+
+67
+00:04:07,280 --> 00:04:11,159
+improved models then further amplify our
+abilities, creating a
+
+68
+00:04:11,159 --> 00:04:14,879
+feedback loop of scaling oversight.
+Theoretically, we can use
+
+69
+00:04:14,879 --> 00:04:18,240
+this to scale human oversight to any task.
+By
+
+70
+00:04:18,240 --> 00:04:20,839
+focusing on making the AI a little better
+each
+
+71
+00:04:20,839 --> 00:04:23,519
+time, we avoid the need for a perfect
+initial
+
+72
+00:04:23,519 --> 00:04:26,639
+design we just keep improving it step by
+step.
+
+73
+00:04:27,259 --> 00:04:29,699
+In an ideal world, this allows us to
+mitigate
+
+74
+00:04:29,699 --> 00:04:33,339
+the reward specification problem and
+ensures that as AI
+
+75
+00:04:33,339 --> 00:04:36,500
+systems become more powerful, they also
+become more adept
+
+76
+00:04:36,500 --> 00:04:40,259
+at handling complex tasks without losing
+alignment. Here is
+
+77
+00:04:40,259 --> 00:04:43,500
+a rough example of how the iterated
+amplification process
+
+78
+00:04:43,579 --> 00:04:48,579
+might go. We begin by training a
+foundational LLM
+
+79
+00:04:48,579 --> 00:04:52,180
+on a broad dataset to develop general
+capabilities similar
+
+80
+00:04:52,180 --> 00:04:55,529
+to how models like GPT3 are trained on
+vast
+
+81
+00:04:55,529 --> 00:04:58,490
+amounts of text data to understand and
+generate human
+
+82
+00:04:58,490 --> 00:05:03,689
+language. Amplification. In our medical
+research example, the LLM
+
+83
+00:05:03,689 --> 00:05:06,290
+is fine tuned and used to help identify
+and
+
+84
+00:05:06,290 --> 00:05:10,129
+diagnose complex illnesses. We next break
+down the complex
+
+85
+00:05:10,129 --> 00:05:14,129
+diagnosis into smaller, manageable
+subtasks that the model can
+
+86
+00:05:14,129 --> 00:05:18,970
+handle. These might include identifying
+primary symptoms, correlating them
+
+87
+00:05:18,970 --> 00:05:22,430
+with known diseases, and suggesting
+initial tests or treatments.
+
+88
+00:05:23,069 --> 00:05:26,189
+Multiple instances of the LLM can each
+handle a
+
+89
+00:05:26,189 --> 00:05:30,509
+different subtask. One instance focuses on
+gathering and analyzing
+
+90
+00:05:30,509 --> 00:05:34,470
+detailed patient symptoms, another on
+matching these symptoms with
+
+91
+00:05:34,470 --> 00:05:37,790
+known medical conditions, and a third on
+suggesting initial
+
+92
+00:05:37,790 --> 00:05:41,829
+tests or treatments. Combine the solutions
+of the subtasks
+
+93
+00:05:41,829 --> 00:05:45,430
+to address the original complex problem,
+creating a more
+
+94
+00:05:45,430 --> 00:05:49,040
+capable overall system. The model combines
+these into a
+
+95
+00:05:49,040 --> 00:05:53,639
+comprehensive, detailed report that
+includes a likely diagnosis, suggested
+
+96
+00:05:53,639 --> 00:05:57,399
+tests to confirm the diagnosis, and
+potential treatment options.
+
+97
+00:05:58,279 --> 00:06:01,120
+Retraining this output is then reviewed by
+a group
+
+98
+00:06:01,120 --> 00:06:05,120
+of medical experts who provide feedback.
+The feedback and
+
+99
+00:06:05,120 --> 00:06:08,519
+outputs are used to retrain the LLM,
+improving its
+
+100
+00:06:08,519 --> 00:06:14,329
+ability to identify complex diseases with
+each iteration this
+
+101
+00:06:14,329 --> 00:06:18,050
+process is repeated with each cycle,
+involving further amplification
+
+102
+00:06:18,050 --> 00:06:22,490
+and retraining. The model becomes
+progressively better at identifying
+
+103
+00:06:22,490 --> 00:06:25,889
+treatments, providing more accurate and
+useful outputs with each
+
+104
+00:06:25,889 --> 00:06:30,490
+iteration. This iterative loop ensures
+continuous improvement in both
+
+105
+00:06:30,490 --> 00:06:37,370
+capability and alignment. Capability
+amplification focuses on making an
+
+106
+00:06:37,370 --> 00:06:40,600
+AI system smarter or more capable by
+improving its
+
+107
+00:06:40,600 --> 00:06:44,319
+ability to solve complex tasks through
+collaboration and breaking
+
+108
+00:06:44,319 --> 00:06:49,240
+down tasks into simpler parts. Reliability
+amplification, on the
+
+109
+00:06:49,240 --> 00:06:52,480
+other hand, focuses on making an AI system
+more
+
+110
+00:06:52,480 --> 00:06:56,160
+dependable by reducing its failure rate.
+It ensures that
+
+111
+00:06:56,160 --> 00:06:59,800
+the AI system can consistently perform
+these tasks correctly
+
+112
+00:06:59,800 --> 00:07:03,639
+without making mistakes. Even if an AI
+usually works
+
+113
+00:07:03,639 --> 00:07:06,689
+well and aligns with human values, it
+might occasionally
+
+114
+00:07:06,689 --> 00:07:10,449
+behave incorrectly, especially when faced
+with rare or unusual
+
+115
+00:07:10,449 --> 00:07:14,529
+inputs. If it behaves in an unintended
+manner 1%
+
+116
+00:07:14,529 --> 00:07:17,689
+of the time, combining 10 decisions from
+these models
+
+117
+00:07:17,689 --> 00:07:21,689
+could lead to a 9.6% failure rate. Any
+single
+
+118
+00:07:21,689 --> 00:07:24,370
+failure in the process makes the whole
+process fail.
+
+119
+00:07:24,850 --> 00:07:27,850
+This makes the combination less reliable,
+even if it
+
+120
+00:07:27,850 --> 00:07:32,410
+is more capable. Reliability amplification
+aims to make mistakes
+
+121
+00:07:32,410 --> 00:07:36,959
+extremely rare, thus making the AI more
+aligned. Overall,
+
+122
+00:07:36,959 --> 00:07:41,160
+the approach is complementary to
+capability amplification. Some ideas
+
+123
+00:07:41,160 --> 00:07:46,600
+on how we can implement reliability
+amplification schemes One
+
+124
+00:07:46,600 --> 00:07:49,639
+method is to use multiple AI systems to
+perform
+
+125
+00:07:49,720 --> 00:07:54,000
+the same task independently. This
+redundancy means that even
+
+126
+00:07:54,000 --> 00:07:57,120
+if one system fails, others can still
+provide the
+
+127
+00:07:57,120 --> 00:08:00,509
+correct output. As an example, if we are
+using
+
+128
+00:08:00,509 --> 00:08:04,589
+language models in a reliability critical
+domain like healthcare,
+
+129
+00:08:04,750 --> 00:08:07,389
+we can use three separate instances of the
+same
+
+130
+00:08:07,389 --> 00:08:11,350
+LLM to analyze the same patient symptoms
+independently of
+
+131
+00:08:11,350 --> 00:08:15,470
+each other. Majority voting when multiple
+models are used
+
+132
+00:08:15,470 --> 00:08:18,350
+on the same task, their outputs can be
+compared.
+
+133
+00:08:19,149 --> 00:08:21,949
+If most systems agree on a solution, it
+can
+
+134
+00:08:21,949 --> 00:08:25,069
+be considered more likely to be correct.
+If one
+
+135
+00:08:25,069 --> 00:08:28,029
+system's output is different, the majority
+vote can help
+
+136
+00:08:28,029 --> 00:08:31,139
+choose the right answer, reducing the
+chance of failure.
+
+137
+00:08:31,699 --> 00:08:34,779
+Continuing the example from above, each
+instance of the
+
+138
+00:08:34,779 --> 00:08:38,779
+LLM proposes a diagnosis. If two or more
+instances
+
+139
+00:08:38,779 --> 00:08:41,820
+agree on the same diagnosis, it is
+considered more
+
+140
+00:08:41,820 --> 00:08:45,899
+reliable. If one instance disagrees, the
+majority vote is
+
+141
+00:08:45,899 --> 00:08:50,899
+used to determine the final diagnosis. In
+safety critical
+
+142
+00:08:50,899 --> 00:08:53,899
+domains, we can implement mechanisms to
+cross check and
+
+143
+00:08:53,899 --> 00:08:57,470
+validate the outputs of the AI systems.
+This involves
+
+144
+00:08:57,470 --> 00:09:00,710
+using different methods or algorithms to
+solve the same
+
+145
+00:09:00,710 --> 00:09:04,789
+problem and comparing the results to
+ensure accuracy. In
+
+146
+00:09:04,789 --> 00:09:07,629
+the context of the example, we can
+implement additional
+
+147
+00:09:07,629 --> 00:09:11,750
+mechanisms to validate the outputs. For
+example, use separate
+
+148
+00:09:11,750 --> 00:09:14,669
+algorithms or a rule based system to cross
+check
+
+149
+00:09:14,669 --> 00:09:20,029
+the diagnosis provided by the LLMs.
+Iterative improvement Continuously
+
+150
+00:09:20,029 --> 00:09:23,549
+refine the AI systems to reduce their
+individual failure
+
+151
+00:09:23,549 --> 00:09:27,190
+rates. In the context of the medical LLM
+example,
+
+152
+00:09:27,269 --> 00:09:30,389
+we would continuously monitor and refine
+the model by
+
+153
+00:09:30,389 --> 00:09:33,470
+feeding back cases where the diagnosis was
+incorrect or
+
+154
+00:09:33,470 --> 00:09:36,830
+uncertain, then we can improve the models
+based on
+
+155
+00:09:36,830 --> 00:09:39,909
+this feedback to reduce their individual
+failure rates over
+
+156
+00:09:39,909 --> 00:09:45,549
+time. Security Amplification Security
+amplification addresses the challenge of
+
+157
+00:09:45,549 --> 00:09:48,669
+ensuring that an aligned AI system does
+not behave
+
+158
+00:09:48,669 --> 00:09:53,370
+badly on rare or bad inputs, while
+reliability amplification
+
+159
+00:09:53,370 --> 00:09:56,730
+focuses on reducing the failure
+probability of an aligned
+
+160
+00:09:56,730 --> 00:10:00,809
+AI. Security amplification aims to reduce
+the prevalence of
+
+161
+00:10:00,809 --> 00:10:04,129
+these bad inputs. Essentially, it seeks to
+make it
+
+162
+00:10:04,129 --> 00:10:06,889
+exponentially difficult to find an input
+that would cause
+
+163
+00:10:06,889 --> 00:10:11,090
+the AI to behave undesirably. In practical
+terms, security
+
+164
+00:10:11,250 --> 00:10:14,889
+amplification is about creating AI systems
+that are robust
+
+165
+00:10:14,889 --> 00:10:19,820
+against adversarial inputs. These are
+inputs specifically designed to
+
+166
+00:10:19,820 --> 00:10:23,059
+exploit vulnerabilities in the AI, causing
+it to act
+
+167
+00:10:23,059 --> 00:10:27,340
+in unintended ways. AI models need
+mechanisms to protect
+
+168
+00:10:27,340 --> 00:10:32,620
+against inputs that exploit these
+weaknesses. Security amplification allows
+
+169
+00:10:32,620 --> 00:10:36,379
+for iterative improvement of AI systems.
+This is quite
+
+170
+00:10:36,379 --> 00:10:40,100
+similar to the concept of adversarial
+inputs or adversarial
+
+171
+00:10:40,100 --> 00:10:44,120
+training methods which we discussed in
+previous chapters. Section
+
+172
+00:10:44,120 --> 00:10:49,559
+Distillation Limitations of Amplification
+Alone Amplification is a powerful
+
+173
+00:10:49,559 --> 00:10:53,679
+technique that enhances the abilities,
+reliability, and security of
+
+174
+00:10:53,679 --> 00:11:00,240
+AI systems. However, amplification alone
+presents several challenges. Complexity
+
+175
+00:11:00,799 --> 00:11:03,799
+Amplified systems can become so complex
+that they are
+
+176
+00:11:03,799 --> 00:11:07,600
+difficult for humans to understand and
+manage. This complexity
+
+177
+00:11:07,600 --> 00:11:10,789
+can obscure how decisions are made, making
+it challenging
+
+178
+00:11:10,789 --> 00:11:13,830
+to ensure that the system behaves safely
+and as
+
+179
+00:11:13,830 --> 00:11:19,750
+intended. Resource Use Amplified models
+often require significant computational
+
+180
+00:11:19,750 --> 00:11:23,629
+resources. Continuing to amplify and scale
+can be quite
+
+181
+00:11:23,629 --> 00:11:27,509
+costly, particularly for real time or
+resource constrained applications.
+
+182
+00:11:30,230 --> 00:11:34,350
+Amplified systems may involve many
+interacting components, leading to
+
+183
+00:11:34,350 --> 00:11:38,679
+problems of coordination, inefficiencies
+in execution, and difficulties in
+
+184
+00:11:38,679 --> 00:11:42,039
+maintaining coherence and stability. It is
+to address these
+
+185
+00:11:42,039 --> 00:11:45,519
+limitations that we need the step of
+distillation. What
+
+186
+00:11:45,519 --> 00:11:49,440
+is Distillation? Distillation is a process
+that transforms a
+
+187
+00:11:49,440 --> 00:11:52,960
+large, complex model or system of models
+into a
+
+188
+00:11:52,960 --> 00:11:56,840
+smaller, more efficient version without
+losing the essential capabilities
+
+189
+00:11:57,159 --> 00:12:01,639
+gained through amplification. The term
+distillation is used because
+
+190
+00:12:01,639 --> 00:12:04,759
+it is similar to the distillation process
+in chemistry.
+
+191
+00:12:05,299 --> 00:12:07,980
+In chemistry, the term is used to mean
+purifying
+
+192
+00:12:07,980 --> 00:12:13,179
+a substance by removing impurities.
+Similarly, AI safety model
+
+193
+00:12:13,179 --> 00:12:17,299
+distillation aims to purify the knowledge
+gained during amplification
+
+194
+00:12:17,539 --> 00:12:20,379
+to retain the core functionality and
+abilities in a
+
+195
+00:12:20,379 --> 00:12:23,980
+more streamlined form. The larger, more
+complex model is
+
+196
+00:12:23,980 --> 00:12:26,860
+often called the teacher model, and the
+smaller, more
+
+197
+00:12:26,860 --> 00:12:30,259
+efficient model is called the student
+model. This process
+
+198
+00:12:30,259 --> 00:12:32,980
+allows the smaller model to mimic the
+behavior and
+
+199
+00:12:32,980 --> 00:12:35,909
+performance of the larger model while
+being faster and
+
+200
+00:12:35,909 --> 00:12:39,909
+requiring fewer resources. Here is the
+general process for
+
+201
+00:12:39,909 --> 00:12:43,990
+distilling down the knowledge of an
+amplified training The
+
+202
+00:12:43,990 --> 00:12:47,149
+Teacher Initially, a large and complex
+model is trained
+
+203
+00:12:47,149 --> 00:12:50,509
+on a data set. This is the amplified model
+
+204
+00:12:51,149 --> 00:12:54,549
+generating targets. The teacher model is
+then used to
+
+205
+00:12:54,549 --> 00:12:57,789
+generate outputs on some set of training
+data. This
+
+206
+00:12:57,789 --> 00:13:01,549
+includes the final outputs but also the
+probabilities assigned
+
+207
+00:13:01,549 --> 00:13:06,019
+to each possible outcome. Soft Targets
+Training the Student
+
+208
+00:13:06,419 --> 00:13:09,259
+the student model is trained using these
+soft targets
+
+209
+00:13:09,259 --> 00:13:12,539
+as well as the original training data. By
+mimicking
+
+210
+00:13:12,539 --> 00:13:15,139
+the outputs of the teacher model, the
+student model
+
+211
+00:13:15,139 --> 00:13:19,179
+learns to imitate its performance during
+distillation. The student
+
+212
+00:13:19,179 --> 00:13:21,659
+model learns to approximate the function
+learned by the
+
+213
+00:13:21,659 --> 00:13:24,860
+teacher model. This is typically done by
+minimizing a
+
+214
+00:13:24,860 --> 00:13:27,539
+loss function that measures the difference
+between the students
+
+215
+00:13:27,620 --> 00:13:32,240
+predictions and the teacher's soft
+targets. Section Iterated Distillation
+
+216
+00:13:32,240 --> 00:13:37,080
+and Amplification Having explored the
+mechanisms of amplification and
+
+217
+00:13:37,080 --> 00:13:40,840
+distillation individually, we can combine
+these two approaches in
+
+218
+00:13:40,840 --> 00:13:44,240
+a continuous iterative loop that we call
+iterated distillation
+
+219
+00:13:44,240 --> 00:13:49,480
+and amplification. The primary objective
+of IDA is to
+
+220
+00:13:49,480 --> 00:13:53,799
+generate progressively better training
+signals using amplified models for
+
+221
+00:13:53,799 --> 00:13:57,710
+tasks that are hard to evaluate directly,
+thereby maintaining
+
+222
+00:13:57,710 --> 00:14:01,309
+oversight over AI models as their outputs
+become too
+
+223
+00:14:01,309 --> 00:14:05,429
+complex for humans to assess accurately.
+This approach aims
+
+224
+00:14:05,429 --> 00:14:09,110
+to address the specification or outer
+alignment problem. The
+
+225
+00:14:09,110 --> 00:14:12,629
+advantage of IDA lies in its iterative
+nature, allowing
+
+226
+00:14:12,629 --> 00:14:15,789
+the gradual construction of a robust
+training signal through
+
+227
+00:14:15,789 --> 00:14:19,909
+task decomposition and recomposition
+rather than depending on a
+
+228
+00:14:19,909 --> 00:14:23,340
+perfectly specified signal from the
+outset. At this point,
+
+229
+00:14:23,340 --> 00:14:28,259
+the textbook shows Figure 8.13. It depicts
+iterated distillation
+
+230
+00:14:28,259 --> 00:14:33,860
+and amplification step by step process for
+ida. Here
+
+231
+00:14:33,860 --> 00:14:36,980
+is how we can go about theoretically using
+IDA
+
+232
+00:14:37,059 --> 00:14:40,980
+to generate iteratively better training
+signals. Feedback for our
+
+233
+00:14:41,539 --> 00:14:46,019
+1. Initial model training Start with a
+baseline model
+
+234
+00:14:46,019 --> 00:14:48,419
+that can perform a relatively simple
+version of the
+
+235
+00:14:48,419 --> 00:14:52,450
+task. We can use supervised learning,
+imitation learning, or
+
+236
+00:14:52,450 --> 00:14:55,769
+reinforcement learning to train this
+initial model to get
+
+237
+00:14:55,769 --> 00:15:01,250
+some base level of capabilities and
+alignment. 2. Use
+
+238
+00:15:01,250 --> 00:15:04,409
+various copies of the model, external
+tools, or any
+
+239
+00:15:04,409 --> 00:15:07,210
+other techniques to improve the
+capabilities of the model
+
+240
+00:15:07,370 --> 00:15:10,929
+to solve more complex tasks. One example
+of a
+
+241
+00:15:10,929 --> 00:15:15,090
+complex task is generating training
+signals. The overseer uses
+
+242
+00:15:15,090 --> 00:15:18,700
+the amplified abilities to assist in
+generating better training
+
+243
+00:15:18,700 --> 00:15:24,539
+signals. 3. Task decomposition if
+possible, break the task
+
+244
+00:15:24,539 --> 00:15:29,259
+into individually achievable subtasks,
+multiple copies of the model.
+
+245
+00:15:29,259 --> 00:15:32,578
+Solve the subtasks and work in parallel.
+Then we
+
+246
+00:15:32,578 --> 00:15:35,460
+combine the collective outputs to solve
+the more complex
+
+247
+00:15:35,460 --> 00:15:41,539
+problem. 4. Distillation train A
+compressed, simpler model to
+
+248
+00:15:41,539 --> 00:15:45,990
+imitate the behavior of the complex
+amplified system. This
+
+249
+00:15:45,990 --> 00:15:49,590
+process simplifies or distills the complex
+behavior of a
+
+250
+00:15:49,590 --> 00:15:52,309
+more advanced system into a form that a
+single
+
+251
+00:15:52,309 --> 00:15:55,830
+model can understand and replicate. The
+goal is to
+
+252
+00:15:55,830 --> 00:15:59,190
+retain the amplified capabilities while
+making the model more
+
+253
+00:15:59,190 --> 00:16:03,190
+efficient and preserving the level of
+alignment. This distillation
+
+254
+00:16:03,190 --> 00:16:07,309
+step helps scalability. If we improve
+efficiency of a
+
+255
+00:16:07,309 --> 00:16:10,309
+more capable, more aligned model, we can
+run more
+
+256
+00:16:10,309 --> 00:16:13,179
+copies of it. If we can run more copies,
+
+257
+00:16:13,179 --> 00:16:18,299
+we can continue the process. 5 the
+distillation and
+
+258
+00:16:18,299 --> 00:16:23,139
+amplification steps are repeated. Each
+cycle refines the model,
+
+259
+00:16:23,220 --> 00:16:26,700
+making it more capable and better aligned.
+Limitations and
+
+260
+00:16:26,700 --> 00:16:32,179
+criticisms of distillation must preserve
+alignment. Training methods should
+
+261
+00:16:32,179 --> 00:16:35,179
+ensure that the distilled model behaves as
+the overseer
+
+262
+00:16:35,179 --> 00:16:40,899
+would without introducing misaligned
+behaviors. Amplification must preserve
+alignment.
+
+263
+00:16:41,059 --> 00:16:45,179
+The amplification process should use AI
+subroutines in ways
+
+264
+00:16:45,179 --> 00:16:51,700
+that prevent misaligned optimization.
+Human oversight limitations Human
+overseers
+
+265
+00:16:51,779 --> 00:16:55,220
+with sufficient resources should be able
+to leverage AI
+
+266
+00:16:55,220 --> 00:16:59,659
+assistance to solve complex problems
+effectively. The process heavily
+
+267
+00:16:59,659 --> 00:17:03,059
+depends on the capabilities and
+limitations of human overseers,
+
+268
+00:17:03,379 --> 00:17:09,140
+and human generated vulnerabilities might
+persist. Difficulty in the
+
+269
+00:17:09,140 --> 00:17:14,059
+process can be computationally intensive,
+particularly during amplification steps,
+
+270
+00:17:14,140 --> 00:17:20,099
+making it challenging to scale
+effectively. Retaining necessary distilled
+
+271
+00:17:20,099 --> 00:17:22,619
+models might not retain all the
+capabilities of the
+
+272
+00:17:22,619 --> 00:17:29,940
+amplified models, potentially reducing
+performance on complex tasks. Iterative
+
+273
+00:17:29,940 --> 00:17:33,369
+processes introduce the risk of cumulative
+errors or value
+
+274
+00:17:33,369 --> 00:17:39,329
+where small misalignments accumulate over
+time. Algorithmic decomposition
+limitations
+
+275
+00:17:39,890 --> 00:17:43,049
+not all tasks can be easily decomposed
+into simpler
+
+276
+00:17:43,049 --> 00:17:47,329
+subtasks, limiting the applicability of
+ida to certain domains.

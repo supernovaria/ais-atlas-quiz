@@ -1,0 +1,378 @@
+1
+00:00:00,160 --> 00:00:06,599
+Chapter 7 Goal Misgeneralization Section
+7.1 Introduction this chapter
+
+2
+00:00:06,599 --> 00:00:10,720
+dives into the phenomenon of goal
+misgeneralization, perhaps the
+
+3
+00:00:10,720 --> 00:00:15,919
+most counterintuitive problem in AI
+safety. Unlike specification problems
+
+4
+00:00:16,000 --> 00:00:18,359
+where we simply fail to provide the right
+training
+
+5
+00:00:18,359 --> 00:00:21,920
+signal or capability failures where
+systems cannot do what
+
+6
+00:00:21,920 --> 00:00:26,920
+we want, goal misgeneralization occurs
+when systems internalize different
+
+7
+00:00:26,920 --> 00:00:31,649
+behaviors than intended despite receiving
+correct training signals. We
+
+8
+00:00:31,649 --> 00:00:35,049
+start by establishing what the problem is,
+explaining why
+
+9
+00:00:35,049 --> 00:00:38,289
+it happens. Then we look at concerning
+manifestations of
+
+10
+00:00:38,289 --> 00:00:41,609
+it like scheming, and finally go through
+some detection
+
+11
+00:00:41,609 --> 00:00:45,329
+and mitigation approaches. AI systems can
+learn different goals
+
+12
+00:00:45,329 --> 00:00:48,770
+than what we intended, even when their
+training appears
+
+13
+00:00:48,770 --> 00:00:53,530
+completely successful. The first section
+explains why generalization should
+
+14
+00:00:53,530 --> 00:00:56,530
+not be treated as one dimensional. This is
+similar
+
+15
+00:00:56,530 --> 00:00:59,369
+to the nuance we pointed to in the
+Evaluations
+
+16
+00:00:59,369 --> 00:01:03,009
+chapter. Capabilities measure what a model
+can do, and
+
+17
+00:01:03,009 --> 00:01:05,209
+goals measure what a model is trying to
+do.
+
+18
+00:01:05,609 --> 00:01:09,930
+They can generalize independently,
+creating scenarios where systems retain
+
+19
+00:01:09,930 --> 00:01:14,250
+sophisticated abilities while pursuing
+entirely different objectives than
+intended.
+
+20
+00:01:15,290 --> 00:01:18,969
+Multiple different goals can produce
+identical behavior during training,
+
+21
+00:01:19,450 --> 00:01:23,450
+making them behaviorally indistinguishable
+until deployment reveals which goal
+
+22
+00:01:23,450 --> 00:01:27,010
+the system actually learned. Learning
+dynamics help us understand
+
+23
+00:01:27,329 --> 00:01:31,409
+how identical training signals can produce
+different learned algorithms.
+
+24
+00:01:31,890 --> 00:01:35,250
+When we train neural networks, we're not
+directly installing
+
+25
+00:01:35,250 --> 00:01:39,530
+goals. We're creating selection pressures
+guided by our training
+
+26
+00:01:39,530 --> 00:01:43,250
+signals that favor certain behaviors over
+others. There are
+
+27
+00:01:43,250 --> 00:01:46,730
+several questions to explore. What space
+is the training
+
+28
+00:01:46,730 --> 00:01:49,609
+signal guiding the model through? Can we
+shape the
+
+29
+00:01:49,609 --> 00:01:53,739
+space somehow? These are called loss
+landscapes. Their geometry,
+
+30
+00:01:53,739 --> 00:01:58,260
+path dependence from random
+initialization, and inductive biases like
+
+31
+00:01:58,260 --> 00:02:04,060
+simplicity systematically determine which
+algorithmic solutions get discovered.
+Understanding
+
+32
+00:02:04,060 --> 00:02:06,978
+these dynamics helps us figure out which
+algorithms get
+
+33
+00:02:06,978 --> 00:02:10,219
+learned during training, which in turn
+determines the goals
+
+34
+00:02:10,219 --> 00:02:13,900
+of the final model we deploy. Goal
+misgeneralization becomes
+
+35
+00:02:13,900 --> 00:02:19,250
+increasingly concerning as systems develop
+sophisticated goal directedness. Even
+
+36
+00:02:19,250 --> 00:02:22,250
+though multiple algorithms that display
+the same behavior at
+
+37
+00:02:22,250 --> 00:02:24,770
+the end of training are possible, not all
+of
+
+38
+00:02:24,770 --> 00:02:28,409
+them are concerning. The goal directedness
+section starts to
+
+39
+00:02:28,409 --> 00:02:33,169
+look at when behaviorally
+indistinguishable models become dangerous.
+Models
+
+40
+00:02:33,169 --> 00:02:35,490
+can have degrees to which they are goal
+directed,
+
+41
+00:02:35,650 --> 00:02:39,090
+ranging from really complex pattern
+matching and learned heuristics
+
+42
+00:02:39,330 --> 00:02:44,090
+to systems implementing genuine internal
+optimization processes. The higher
+
+43
+00:02:44,090 --> 00:02:46,960
+the degree of goal directedness a system
+develops, the
+
+44
+00:02:47,189 --> 00:02:51,229
+the more concerning goal misgeneralization
+becomes, as these systems
+
+45
+00:02:51,229 --> 00:02:55,430
+might systematically pursue objectives
+across diverse contexts and obstacles.
+
+46
+00:02:55,750 --> 00:03:00,110
+Sophisticated goal directedness leads to
+goal preservation behavior which
+
+47
+00:03:00,110 --> 00:03:03,509
+can result in scheming. The most dangerous
+form occurs
+
+48
+00:03:03,509 --> 00:03:07,430
+when goal directed systems develop
+situational awareness about their
+
+49
+00:03:07,430 --> 00:03:11,750
+training process and long term planning
+capabilities. They might
+
+50
+00:03:11,750 --> 00:03:15,800
+choose to strategically conceal misaligned
+objectives to preserve their
+
+51
+00:03:15,800 --> 00:03:18,319
+true goals until there's no longer a
+threat of
+
+52
+00:03:18,319 --> 00:03:22,680
+modification. We walk you through
+empirical evidence from demonstrations
+
+53
+00:03:22,680 --> 00:03:27,520
+of alignment, faking in context scheming,
+and agentic misalignment
+
+54
+00:03:27,520 --> 00:03:29,960
+to highlight that this type of outcome is
+possible.
+
+55
+00:03:30,520 --> 00:03:32,639
+Then we also look at both sides of the
+
+56
+00:03:32,639 --> 00:03:35,840
+argument for the likelihood of whether
+scheming behavior would
+
+57
+00:03:35,840 --> 00:03:38,560
+likely arise as a consequence of the
+machine learning
+
+58
+00:03:38,560 --> 00:03:41,879
+process. The rest of the chapter focuses
+on answering
+
+59
+00:03:41,879 --> 00:03:45,319
+the question what can we do about this?
+The
+
+60
+00:03:45,319 --> 00:03:47,840
+next few sections serve as the links
+between goal
+
+61
+00:03:47,840 --> 00:03:53,120
+mis generation, evaluations and
+interpretability. Chapters Detection
+methods focus
+
+62
+00:03:53,120 --> 00:03:57,199
+on discovering behaviors like goal
+directedness, goal preservation, and
+
+63
+00:03:57,199 --> 00:04:01,599
+scheming. Building on techniques from the
+evaluations chapter, we
+
+64
+00:04:01,599 --> 00:04:05,560
+examine behavioral methods that monitor
+external reasoning traces and
+
+65
+00:04:05,560 --> 00:04:11,069
+interpretability techniques like linear
+probes, sparse autoencoders, and
+activation
+
+66
+00:04:11,069 --> 00:04:14,629
+manipulation. There are a lot of different
+capabilities and
+
+67
+00:04:14,629 --> 00:04:18,910
+combinations of capabilities to test
+mitigations focus on preventing
+
+68
+00:04:18,910 --> 00:04:23,829
+and correcting goal misgeneralization.
+Across the development pipeline, we
+
+69
+00:04:23,829 --> 00:04:28,230
+explore training time interventions like
+adversarial training and curriculum
+
+70
+00:04:28,230 --> 00:04:32,149
+learning post training techniques like
+steering vectors and model
+
+71
+00:04:32,149 --> 00:04:36,550
+editing and deployment time safeguards
+including runtime monitoring and
+
+72
+00:04:36,550 --> 00:04:40,680
+sandboxing. As with all AI safety
+challenges explored in
+
+73
+00:04:40,680 --> 00:04:43,519
+this book, we advocate for a defense in
+depth
+
+74
+00:04:43,519 --> 00:04:47,199
+approach where multiple detection and
+mitigation measures are layered
+
+75
+00:04:47,199 --> 00:04:50,600
+to provide robust defenses against goal
+misgeneralization.

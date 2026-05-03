@@ -1,0 +1,1053 @@
+1
+00:00:00,160 --> 00:00:04,960
+Section 8.2 oversight why do we need
+Oversight? As
+
+2
+00:00:04,960 --> 00:00:08,039
+AI systems get smarter, they will start
+doing tasks
+
+3
+00:00:08,039 --> 00:00:11,960
+that are hard for humans to evaluate.
+Evaluation means
+
+4
+00:00:11,960 --> 00:00:14,759
+checking how well the AI did after
+completing a
+
+5
+00:00:14,759 --> 00:00:17,600
+task, while feedback is the information we
+give to
+
+6
+00:00:17,600 --> 00:00:20,359
+the AI during or after it works to help
+
+7
+00:00:20,359 --> 00:00:23,440
+it learn and improve. Right now we can
+still
+
+8
+00:00:23,440 --> 00:00:28,960
+use methods like reinforcement learning
+from human feedback to
+
+9
+00:00:28,960 --> 00:00:31,519
+guide AI in the right direction. But we
+can
+
+10
+00:00:31,519 --> 00:00:34,000
+only give feedback if we can still
+evaluate the
+
+11
+00:00:34,000 --> 00:00:38,320
+outputs. As tasks get more complex, even
+experts might
+
+12
+00:00:38,320 --> 00:00:42,399
+struggle to provide accurate evaluations
+and feedback. So we
+
+13
+00:00:42,399 --> 00:00:45,359
+need new ways to give accurate feedback
+even for
+
+14
+00:00:45,359 --> 00:00:48,799
+tasks that are beyond human expertise.
+This is the
+
+15
+00:00:48,799 --> 00:00:53,119
+goal of scalable oversight. Scalable
+oversight techniques help help
+
+16
+00:00:53,119 --> 00:00:56,640
+humans provide accurate feedback on tasks
+to ensure AI
+
+17
+00:00:56,640 --> 00:00:59,719
+systems are aligned with our goals even
+after the
+
+18
+00:00:59,719 --> 00:01:02,799
+task complexity outstrips the ability of
+the best human
+
+19
+00:01:02,799 --> 00:01:06,400
+experts. This can happen during the AI's
+training or
+
+20
+00:01:06,400 --> 00:01:10,319
+deployment and isn't limited to RLHF style
+feedback. The
+
+21
+00:01:10,319 --> 00:01:14,480
+textbook includes Figure 8.1. Here it
+depicts the difference
+
+22
+00:01:14,480 --> 00:01:18,799
+between regular oversight safety research
+and scalable oversight safety
+
+23
+00:01:18,799 --> 00:01:23,689
+Research aligning RL agents versus LLMs a
+few years
+
+24
+00:01:23,689 --> 00:01:25,969
+ago it looked like the path to AGI was
+
+25
+00:01:25,969 --> 00:01:29,010
+by training deep RL agents from scratch in
+a
+
+26
+00:01:29,010 --> 00:01:32,689
+wide range of games and multi agent
+environments. These
+
+27
+00:01:32,689 --> 00:01:35,930
+agents would be aligned to maximizing
+simple score functions
+
+28
+00:01:35,930 --> 00:01:38,849
+such as survival and winning games and
+wouldn't know
+
+29
+00:01:38,849 --> 00:01:42,609
+much about human values. Aligning the
+resulting agents would
+
+30
+00:01:42,609 --> 00:01:45,209
+require a lot of effort. Not only do we
+
+31
+00:01:45,209 --> 00:01:47,689
+have to create a human aligned objective
+function from
+
+32
+00:01:47,689 --> 00:01:51,000
+scratch, we'd likely also need to instill
+new capabilities
+
+33
+00:01:51,079 --> 00:01:55,200
+into the agents like understanding human
+society, what humans
+
+34
+00:01:55,200 --> 00:01:59,000
+care about, and how humans think. Large
+language models
+
+35
+00:01:59,239 --> 00:02:03,359
+LLMs make this a lot easier. They come
+preloaded
+
+36
+00:02:03,359 --> 00:02:06,599
+with a lot of humanity's knowledge,
+including detailed knowledge
+
+37
+00:02:06,599 --> 00:02:10,120
+about human preferences and values out of
+the box.
+
+38
+00:02:10,120 --> 00:02:12,280
+They aren't agents who are trying to
+pursue their
+
+39
+00:02:12,280 --> 00:02:15,330
+own goals in the world and their objective
+functions
+
+40
+00:02:15,330 --> 00:02:19,210
+are quite malleable. For example, they are
+surprisingly easy
+
+41
+00:02:19,210 --> 00:02:22,810
+to train to behave more nicely. If AGI
+comes
+
+42
+00:02:22,810 --> 00:02:25,409
+out of LLMs, it might be easier to align
+
+43
+00:02:25,810 --> 00:02:29,569
+section training signals and fuzzy tasks.
+Before we understand
+
+44
+00:02:29,650 --> 00:02:32,969
+how to actually align smarter than human
+AIs, we
+
+45
+00:02:32,969 --> 00:02:35,889
+need to understand the general concept of
+training signals
+
+46
+00:02:35,889 --> 00:02:38,449
+and why they are getting increasingly
+harder to generate
+
+47
+00:02:38,449 --> 00:02:41,129
+as AI is starting to display higher levels
+of
+
+48
+00:02:41,129 --> 00:02:45,539
+general purpose capabilities. What are
+training Signals? Training signals
+
+49
+00:02:45,539 --> 00:02:47,860
+is a general term that we use for inputs
+
+50
+00:02:47,860 --> 00:02:50,900
+that are used to guide AI learning. They
+can
+
+51
+00:02:50,900 --> 00:02:54,979
+be rewards, labels or evaluations
+indicating how well the
+
+52
+00:02:54,979 --> 00:02:59,180
+AI is performing a task. For example, in
+supervised
+
+53
+00:02:59,180 --> 00:03:02,620
+Learning the training signal is the
+correct label for
+
+54
+00:03:02,620 --> 00:03:07,419
+each example. For large language models
+LLMs using self
+
+55
+00:03:07,419 --> 00:03:14,060
+supervised learning SSL training signals
+are the correct next
+
+56
+00:03:14,060 --> 00:03:17,340
+word in a sentence during pre training.
+Human feedback
+
+57
+00:03:17,340 --> 00:03:20,099
+on the quality of responses during fine
+tuning is
+
+58
+00:03:20,099 --> 00:03:22,699
+also a type of training signal guiding the
+outputs
+
+59
+00:03:22,699 --> 00:03:25,740
+in a direction. We want a more aligned
+direction
+
+60
+00:03:26,219 --> 00:03:30,740
+in reinforcement learning. Training
+signals are rewards based on
+
+61
+00:03:30,740 --> 00:03:34,550
+the success, failure of actions or
+multiple actions like
+
+62
+00:03:34,550 --> 00:03:37,389
+points scored in a game or successful
+navigation to
+
+63
+00:03:37,389 --> 00:03:41,069
+a location. These signals shape how AI
+systems learn
+
+64
+00:03:41,069 --> 00:03:43,830
+and are used to both evaluate performance
+and provide
+
+65
+00:03:43,909 --> 00:03:48,509
+feedback. Easy to generate Training for
+some tasks, generating
+
+66
+00:03:48,509 --> 00:03:53,150
+training signals is simple. AlphaGo0 an RL
+agent playing
+
+67
+00:03:53,150 --> 00:03:56,030
+Go is a good example of this. The game
+
+68
+00:03:56,030 --> 00:03:59,189
+has clear rules and win loss outcomes, so
+training
+
+69
+00:03:59,189 --> 00:04:03,819
+signals are straightforward.
+Algorithmically generated win and lose
+signals
+
+70
+00:04:03,900 --> 00:04:06,979
+directly measure performance, making it
+easy for the model
+
+71
+00:04:06,979 --> 00:04:10,139
+to learn and improve its gameplay. Hard to
+generate
+
+72
+00:04:10,139 --> 00:04:14,300
+training signals for other tasks, creating
+training signals is
+
+73
+00:04:14,300 --> 00:04:18,579
+much harder. For example, training GPT
+models to generate
+
+74
+00:04:18,579 --> 00:04:22,740
+accurate text summaries is challenging.
+The AI needs to
+
+75
+00:04:22,740 --> 00:04:27,569
+convey correct information while being
+coherent and interesting. Success
+
+76
+00:04:27,730 --> 00:04:31,730
+is subjective since it depends on
+individual reader preferences.
+
+77
+00:04:31,889 --> 00:04:35,649
+It is hard to define clear algorithmically
+generated training
+
+78
+00:04:35,649 --> 00:04:39,810
+signals. Another example is self driving
+cars navigating through
+
+79
+00:04:39,810 --> 00:04:43,129
+busy city streets. These cars need to make
+real
+
+80
+00:04:43,129 --> 00:04:46,170
+time decisions and the training signals or
+rewards for
+
+81
+00:04:46,170 --> 00:04:49,370
+safe and efficient navigation are
+difficult to define due
+
+82
+00:04:49,370 --> 00:04:53,009
+to varying contexts and sometimes
+conflicting traffic laws and
+
+83
+00:04:53,009 --> 00:04:57,660
+safety considerations. Fuzzy Tasks we call
+tasks where training
+
+84
+00:04:57,660 --> 00:05:01,579
+signals are hard to generate Fuzzy tasks.
+These tasks
+
+85
+00:05:01,579 --> 00:05:05,379
+generally have ambiguous or ill defined
+objectives and outcomes.
+
+86
+00:05:05,779 --> 00:05:09,139
+We can't generate precise training signals
+due to inherent
+
+87
+00:05:09,139 --> 00:05:14,420
+subjectivity and variability in correct
+responses. Fuzzy tasks lack
+
+88
+00:05:14,420 --> 00:05:19,060
+clear objective criteria for success.
+Unlike well defined tasks
+
+89
+00:05:19,060 --> 00:05:22,589
+with specific measurable goals, fuzzy
+tasks are more open
+
+90
+00:05:22,589 --> 00:05:25,230
+ended, which complicates our job of coming
+up with
+
+91
+00:05:25,230 --> 00:05:29,149
+training signals. If it's difficult to
+provide precise rewards
+
+92
+00:05:29,149 --> 00:05:33,350
+or labels that accurately capture the
+desired behavior, the
+
+93
+00:05:33,350 --> 00:05:37,870
+training process becomes complicated. AI
+systems might not receive
+
+94
+00:05:37,870 --> 00:05:42,230
+the consistent, reliable feedback needed
+to learn effectively. This
+
+95
+00:05:42,230 --> 00:05:45,310
+is essentially highlighting again the
+difficulty of the reward
+
+96
+00:05:45,310 --> 00:05:48,829
+specification problem that we talked about
+in previous chapters.
+
+97
+00:05:49,209 --> 00:05:53,410
+Fuzzy Tasks and Scalable Oversight Fuzzy
+tasks are closely
+
+98
+00:05:53,410 --> 00:05:57,370
+related to AI alignment, where ensuring AI
+systems act
+
+99
+00:05:57,370 --> 00:06:00,889
+in accordance with human values and
+intentions is challenging
+
+100
+00:06:01,129 --> 00:06:05,610
+due to ambiguity and subjectivity.
+Aligning AI with human
+
+101
+00:06:05,610 --> 00:06:09,810
+values is a fuzzy task. Oversight
+techniques aim to
+
+102
+00:06:09,810 --> 00:06:13,449
+solve alignment by providing training
+signals for fuzzy tasks
+
+103
+00:06:13,850 --> 00:06:21,870
+including feedback and imitation. Learning
+techniques like RLHF and
+
+104
+00:06:21,870 --> 00:06:27,709
+inverse reinforcement learning. Scalable
+oversight techniques aim to provide
+
+105
+00:06:27,709 --> 00:06:30,829
+training signals for fuzzy tasks that are
+too complex
+
+106
+00:06:30,829 --> 00:06:34,110
+for even experts to understand or evaluate
+to make
+
+107
+00:06:34,110 --> 00:06:38,870
+scalable oversight techniques viable.
+Verification needs to be easier
+
+108
+00:06:38,870 --> 00:06:42,790
+than generation, and preferably, but not
+necessarily, tasks should
+
+109
+00:06:42,790 --> 00:06:46,189
+be decomposable. These properties will be
+discussed in the
+
+110
+00:06:46,189 --> 00:06:52,069
+next sections. Section Verification versus
+Generation what does PNP
+
+111
+00:06:52,069 --> 00:06:55,750
+mean? In computer science, we classify
+problems based on
+
+112
+00:06:55,750 --> 00:06:58,470
+how hard they are to solve, generate a
+solution,
+
+113
+00:06:58,709 --> 00:07:01,470
+and how hard they are to check Verify a
+
+114
+00:07:01,470 --> 00:07:05,709
+solution P Polynomial Time these are
+problems that a
+
+115
+00:07:05,709 --> 00:07:10,949
+computer can solve quickly. NP Non
+Deterministic Polynomial Time
+
+116
+00:07:11,589 --> 00:07:13,910
+these are problems where if you have a
+solution,
+
+117
+00:07:13,910 --> 00:07:16,470
+you can check it quickly, but finding the
+solution
+
+118
+00:07:16,470 --> 00:07:20,149
+might take a long time. What is
+generation? Generation
+
+119
+00:07:20,149 --> 00:07:22,470
+is the process of coming up with solutions
+from
+
+120
+00:07:22,470 --> 00:07:26,430
+scratch. This means searching through many
+possibilities, which can
+
+121
+00:07:26,430 --> 00:07:29,069
+take a lot of time and computing power.
+For
+
+122
+00:07:29,069 --> 00:07:32,990
+example, solving a Sudoku puzzle involves
+filling a 9x9
+
+123
+00:07:32,990 --> 00:07:35,829
+grid with numbers so that each row,
+column, and
+
+124
+00:07:35,829 --> 00:07:39,189
+3x3 subgrid contains all the digits from 1
+to
+
+125
+00:07:39,189 --> 00:07:42,279
+9 without repeating. If you've ever tried
+to solve
+
+126
+00:07:42,279 --> 00:07:44,720
+a Sudoku puzzle, you know it involves a
+lot
+
+127
+00:07:44,720 --> 00:07:46,680
+of trial and error to make sure all the
+
+128
+00:07:46,680 --> 00:07:49,800
+rules are followed. At this point, the
+textbook shows
+
+129
+00:07:49,800 --> 00:07:54,639
+Figure 8.2. It depicts Wikipedia.
+Generation here involves filling
+
+130
+00:07:54,639 --> 00:07:57,720
+in the blank grid while ensuring all the
+constraints.
+
+131
+00:07:57,800 --> 00:08:01,319
+Unique numbers in rows, columns, and
+subgrids are satisfied.
+
+132
+00:08:01,639 --> 00:08:05,480
+What is verification? Verification is the
+process of checking
+
+133
+00:08:05,480 --> 00:08:09,029
+whether a given solution attempt is
+correct. Using the
+
+134
+00:08:09,029 --> 00:08:12,910
+Sudoku example. Verification means making
+sure that each row,
+
+135
+00:08:12,910 --> 00:08:15,990
+column and subgrid contains all the digits
+from 1
+
+136
+00:08:15,990 --> 00:08:19,629
+to 9 without any repeats. Once someone
+gives you
+
+137
+00:08:19,629 --> 00:08:23,069
+a completed Sudoku puzzle, checking
+whether it's correct is
+
+138
+00:08:23,069 --> 00:08:26,470
+straightforward and quick. This idea is
+central to the
+
+139
+00:08:26,470 --> 00:08:30,149
+concept of PNP. There is figure 8.3 in the
+
+140
+00:08:30,149 --> 00:08:35,789
+textbook. Here it depicts Wikipedia
+examples illustrating verification is
+
+141
+00:08:35,789 --> 00:08:39,470
+easier than generation. This is a very
+general property
+
+142
+00:08:39,470 --> 00:08:43,950
+that holds across many domains. 1. Formal
+problems in
+
+143
+00:08:43,950 --> 00:08:48,669
+Computational Complexity Theory Most
+computer scientists believe that pnp,
+
+144
+00:08:50,190 --> 00:08:52,629
+which means there are many problems where
+checking a
+
+145
+00:08:52,629 --> 00:08:55,669
+solution is easier than finding one. This
+is seen
+
+146
+00:08:55,669 --> 00:08:59,470
+in tasks like solving SAT problems or
+graph algorithms.
+
+147
+00:09:00,289 --> 00:09:02,929
+2. Sports and it's easier to look at a
+
+148
+00:09:02,929 --> 00:09:05,210
+football scoreboard to see who is winning
+than it
+
+149
+00:09:05,210 --> 00:09:09,169
+is to play the game well. 3. Consumer
+products
+
+150
+00:09:09,490 --> 00:09:12,690
+comparing the quality of smartphones based
+on user reviews
+
+151
+00:09:12,690 --> 00:09:15,490
+is simpler than designing and building a
+new smartphone.
+
+152
+00:09:16,049 --> 00:09:20,769
+4. Evaluating how well an employee is
+doing is
+
+153
+00:09:20,769 --> 00:09:25,490
+less demanding than actually doing the
+job. 5. Academic
+
+154
+00:09:25,490 --> 00:09:29,009
+research while reviewing research can be
+tough, it's still
+
+155
+00:09:29,009 --> 00:09:32,929
+less work than producing new research. Why
+verification being
+
+156
+00:09:32,929 --> 00:09:37,250
+easier than generation matters for
+scalable oversight this fact
+
+157
+00:09:37,250 --> 00:09:40,450
+is crucial for scalable oversight because
+it allows us
+
+158
+00:09:40,450 --> 00:09:43,970
+as human overseers to efficiently ensure
+the correctness and
+
+159
+00:09:43,970 --> 00:09:48,049
+safety of outputs produced by complex
+systems without needing
+
+160
+00:09:48,049 --> 00:09:51,570
+to fully understand or replicate the
+entire generation process.
+
+161
+00:09:52,370 --> 00:09:55,409
+If PNP is true, it implies that we might
+
+162
+00:09:55,409 --> 00:09:58,409
+be able to trust and delegate alignment
+research itself
+
+163
+00:09:58,409 --> 00:10:02,450
+to AI models, because we can comparatively
+easily verify
+
+164
+00:10:02,529 --> 00:10:04,970
+that their solutions work while they have
+to do
+
+165
+00:10:04,970 --> 00:10:08,129
+the hard task of generating the solutions
+to alignment.
+
+166
+00:10:08,610 --> 00:10:12,009
+Overall, operating under this assumption
+can make the task
+
+167
+00:10:12,009 --> 00:10:16,090
+of aligning advanced AI systems seem more
+feasible. The
+
+168
+00:10:16,090 --> 00:10:18,570
+next few paragraphs go into the debate of
+how
+
+169
+00:10:18,570 --> 00:10:24,009
+valid this assumption is. Verification in
+Adversarial Contexts when
+
+170
+00:10:24,009 --> 00:10:27,450
+verifying something in situations where
+someone might be actively
+
+171
+00:10:27,450 --> 00:10:30,330
+trying to trick or attack you, the process
+becomes
+
+172
+00:10:30,330 --> 00:10:33,450
+much harder. Put another way, if we have
+AIs
+
+173
+00:10:33,450 --> 00:10:37,409
+that are deceptive, the problem becomes
+significantly trickier. For
+
+174
+00:10:37,409 --> 00:10:40,649
+example, making sure software is secure
+against all possible
+
+175
+00:10:40,649 --> 00:10:43,250
+attacks can be tougher than writing the
+software in
+
+176
+00:10:43,250 --> 00:10:46,210
+the first place. An attacker only needs to
+find
+
+177
+00:10:46,210 --> 00:10:49,629
+one security hole, but the person
+verifying must check
+
+178
+00:10:49,629 --> 00:10:52,669
+everything to ensure there are no holes.
+This makes
+
+179
+00:10:52,669 --> 00:10:57,110
+verification very challenging. Similarly,
+creating a secure system in
+
+180
+00:10:57,110 --> 00:11:00,309
+cryptography is hard, but proving that
+it's secure against
+
+181
+00:11:00,309 --> 00:11:03,828
+all possible attacks is even more
+difficult. You need
+
+182
+00:11:03,828 --> 00:11:06,629
+to consider every potential way someone
+might try to
+
+183
+00:11:06,629 --> 00:11:09,629
+break the system, which is a huge task.
+Easier
+
+184
+00:11:09,629 --> 00:11:13,899
+than generation does not mean verification
+is trivial. Just
+
+185
+00:11:13,899 --> 00:11:18,019
+because verification is theoretically
+easier than generation doesn't mean
+
+186
+00:11:18,019 --> 00:11:21,980
+it's always easy in practice. For example,
+checking a
+
+187
+00:11:21,980 --> 00:11:25,659
+complex mathematical proof can be very
+hard. Writing the
+
+188
+00:11:25,659 --> 00:11:29,940
+proof takes creativity and deep
+understanding, but verifying it
+
+189
+00:11:29,940 --> 00:11:33,500
+requires careful and detailed checking,
+which can be exhausting
+
+190
+00:11:33,500 --> 00:11:36,740
+and prone to mistakes in the case of
+software.
+
+191
+00:11:36,980 --> 00:11:40,879
+Writing secure software is challenging,
+but verifying that it's
+
+192
+00:11:40,879 --> 00:11:44,720
+completely secure is even harder. Even
+though verifying a
+
+193
+00:11:44,720 --> 00:11:47,960
+problem's solution might be easier than
+generating the solution,
+
+194
+00:11:48,279 --> 00:11:51,080
+the process can still be very difficult
+and require
+
+195
+00:11:51,080 --> 00:11:56,039
+significant effort and expertise.
+Verification of Safety versus Provable
+
+196
+00:11:56,039 --> 00:11:58,600
+Alignment in the event that we have to
+deal
+
+197
+00:11:58,600 --> 00:12:02,399
+with super intelligent AI, just verifying
+its behavior might
+
+198
+00:12:02,399 --> 00:12:05,559
+not be enough. Some researchers argue that
+we need
+
+199
+00:12:05,559 --> 00:12:07,679
+to prove that the AI will always act in
+
+200
+00:12:07,679 --> 00:12:12,129
+ways that align with human values.
+Verification means checking
+
+201
+00:12:12,129 --> 00:12:16,649
+whether the AI behaves correctly in
+specific situations. Provable
+
+202
+00:12:16,649 --> 00:12:19,889
+alignment means giving solid evidence that
+the AI will
+
+203
+00:12:19,889 --> 00:12:23,289
+act correctly in every possible situation,
+even new and
+
+204
+00:12:23,289 --> 00:12:27,129
+unexpected ones. This requires more than
+just checking. It
+
+205
+00:12:27,129 --> 00:12:30,690
+needs formal methods and guarantees, which
+is extremely difficult.
+
+206
+00:12:31,009 --> 00:12:36,409
+Verification versus Mathematical Proof
+Verification involves checking if a
+
+207
+00:12:36,409 --> 00:12:40,389
+specific solution is correct, usually
+through testing or inspection.
+
+208
+00:12:40,870 --> 00:12:43,549
+A mathematical proof, on the other hand,
+is a
+
+209
+00:12:43,549 --> 00:12:46,990
+rigorous logical argument that shows a
+statement is always
+
+210
+00:12:46,990 --> 00:12:51,470
+true. For example, verifying a Sudoku
+solution checks if
+
+211
+00:12:51,470 --> 00:12:55,269
+the given arrangement is correct. While a
+mathematical proof
+
+212
+00:12:55,269 --> 00:12:58,070
+might show that any Sudoku puzzle with a
+certain
+
+213
+00:12:58,070 --> 00:13:00,470
+number of clues always has a unique
+solution.

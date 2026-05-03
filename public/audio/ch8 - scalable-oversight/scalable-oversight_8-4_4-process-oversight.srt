@@ -1,0 +1,1253 @@
+1
+00:00:00,160 --> 00:00:04,839
+Section 8.4 Process Oversight Learning A
+new task can
+
+2
+00:00:04,839 --> 00:00:08,039
+be approached via trial and error known as
+outcome
+
+3
+00:00:08,039 --> 00:00:11,880
+oriented learning, where the agent's
+strategy is determined entirely
+
+4
+00:00:11,880 --> 00:00:14,960
+by the desired outcome. Machine learning
+over the last
+
+5
+00:00:14,960 --> 00:00:18,000
+decades has been showing a trend toward
+outcome based
+
+6
+00:00:18,000 --> 00:00:21,039
+systems, which is to say that models are
+trained
+
+7
+00:00:21,039 --> 00:00:23,679
+end to end and only the final output of
+
+8
+00:00:23,679 --> 00:00:26,280
+the AI is what we provide a training
+signal
+
+9
+00:00:26,280 --> 00:00:30,329
+for. This is called outcome based
+oversight, but there
+
+10
+00:00:30,329 --> 00:00:34,170
+is an alternative approach called process
+based oversight. What
+
+11
+00:00:34,170 --> 00:00:37,929
+is process based oversight? The outcome
+based approach only
+
+12
+00:00:37,929 --> 00:00:41,450
+oversees the final result of a model's
+process. It
+
+13
+00:00:41,450 --> 00:00:44,210
+is primarily concerned with whether the
+final answer is
+
+14
+00:00:44,210 --> 00:00:47,609
+correct, not how the answer was derived.
+As an
+
+15
+00:00:47,609 --> 00:00:50,530
+example, a model tasked with solving a
+math problem
+
+16
+00:00:50,530 --> 00:00:52,969
+would only be evaluated on whether it
+produced the
+
+17
+00:00:52,969 --> 00:00:55,929
+correct solution regardless of the steps
+it took to
+
+18
+00:00:55,929 --> 00:00:59,450
+get there. Process based oversight, on the
+other hand,
+
+19
+00:00:59,689 --> 00:01:03,929
+currently relies on human understandable
+task decompositions with direct
+
+20
+00:01:04,010 --> 00:01:08,569
+supervision of intermediate steps. This
+approach supervises the reasoning
+
+21
+00:01:08,569 --> 00:01:13,609
+process itself, including all intermediate
+steps. It ensures that
+
+22
+00:01:13,609 --> 00:01:16,290
+each step leading to the final result is
+logical
+
+23
+00:01:16,290 --> 00:01:19,849
+and correct. For example, in solving a
+math problem,
+
+24
+00:01:20,349 --> 00:01:23,030
+every calculation and logical step taken
+by the model
+
+25
+00:01:23,030 --> 00:01:26,670
+would be evaluated for correctness. There
+is figure 8.6
+
+26
+00:01:26,670 --> 00:01:30,189
+in the textbook. Here it depicts
+prerequisite to overseeing
+
+27
+00:01:30,189 --> 00:01:33,150
+the reasoning is actually getting the
+model to output
+
+28
+00:01:33,150 --> 00:01:36,750
+its reasoning. One common example is COW T
+prompting
+
+29
+00:01:36,989 --> 00:01:41,230
+COT enables large language models to
+tackle complex arithmetic,
+
+30
+00:01:41,310 --> 00:01:45,109
+common sense and symbolic reasoning tasks,
+but it also
+
+31
+00:01:45,109 --> 00:01:47,959
+allows us to oversee the thought process
+in addition
+
+32
+00:01:47,959 --> 00:01:52,079
+to the final answer. Process supervision
+makes Credit Assignment
+
+33
+00:01:52,079 --> 00:01:56,640
+easier the credit assignment problem
+involves determining which specific
+
+34
+00:01:56,640 --> 00:02:00,159
+actions or sequences of events were
+responsible for producing
+
+35
+00:02:00,159 --> 00:02:03,478
+a particular outcome or reward. Think of a
+chess
+
+36
+00:02:03,478 --> 00:02:06,599
+game where a player makes seemingly
+correct moves but
+
+37
+00:02:06,599 --> 00:02:11,199
+ultimately loses. The credit assignment
+problem here involves identifying
+
+38
+00:02:11,199 --> 00:02:14,889
+which specific moves led to the loss.
+Outcome based
+
+39
+00:02:14,889 --> 00:02:17,569
+supervision would just say you won or you
+lost,
+
+40
+00:02:18,050 --> 00:02:20,810
+which makes it very difficult to determine
+which sequence
+
+41
+00:02:20,810 --> 00:02:23,849
+of moves were actually very good even
+though you
+
+42
+00:02:23,849 --> 00:02:27,770
+lost the game. Process supervision makes
+this easier by
+
+43
+00:02:27,770 --> 00:02:32,930
+providing more precise feedback than
+outcome supervision. Process supervision
+
+44
+00:02:32,930 --> 00:02:36,689
+is similar to reward shaping where small
+intermediate fake
+
+45
+00:02:36,689 --> 00:02:40,599
+rewards help the learning agent converge
+more quickly. This
+
+46
+00:02:40,599 --> 00:02:44,159
+approach provides feedback on each
+intermediate step or trains
+
+47
+00:02:44,159 --> 00:02:47,759
+models to imitate the human decision
+making process. The
+
+48
+00:02:47,759 --> 00:02:51,960
+textbook includes Figure 8.7. Here it
+depicts an example
+
+49
+00:02:51,960 --> 00:02:55,439
+of process oversight feedback. The image
+is a screenshot
+
+50
+00:02:55,439 --> 00:02:58,199
+of the interface used to collect feedback
+for each
+
+51
+00:02:58,199 --> 00:03:01,800
+step in a solution. This shows the correct
+reasoning
+
+52
+00:03:01,800 --> 00:03:05,360
+process being followed and reinforced even
+if the ultimate
+
+53
+00:03:05,360 --> 00:03:10,169
+answer is wrong. Safety Implications of
+Process Oversight Outcome
+
+54
+00:03:10,169 --> 00:03:14,729
+based oversight might result in
+specification gaming. Process based
+
+55
+00:03:14,729 --> 00:03:18,050
+supervision on the other hand,
+theoretically mitigates this problem
+
+56
+00:03:18,050 --> 00:03:20,530
+to a large extent by being more likely to
+
+57
+00:03:20,530 --> 00:03:24,610
+produce correct and legible reasoning. It
+encourages models to
+
+58
+00:03:24,610 --> 00:03:27,889
+follow a process endorsed by humans and
+directly rewards
+
+59
+00:03:27,889 --> 00:03:31,090
+an aligned sequence of smaller steps
+rather than relying
+
+60
+00:03:31,090 --> 00:03:34,650
+on outcomes as a proxy for aligned
+behavior. Generally
+
+61
+00:03:34,650 --> 00:03:38,090
+for fuzzy tasks, process based supervision
+might be a
+
+62
+00:03:38,090 --> 00:03:41,449
+more appropriate method to pursue, for
+example, when we
+
+63
+00:03:41,449 --> 00:03:44,689
+need to verify the chain of mathematical
+reasoning. Research
+
+64
+00:03:44,930 --> 00:03:49,009
+so far has found that process supervision
+significantly outperforms
+
+65
+00:03:49,009 --> 00:03:52,289
+outcome supervision for training models to
+solve problems. For
+
+66
+00:03:52,289 --> 00:03:56,969
+math based tasks, process based
+supervision might similarly result
+
+67
+00:03:56,969 --> 00:04:00,169
+in more aligned outcomes for other complex
+chains of
+
+68
+00:04:00,169 --> 00:04:03,129
+reasoning such as long term planning or
+decision making.
+
+69
+00:04:03,530 --> 00:04:05,729
+One problem is that due to the higher
+feedback
+
+70
+00:04:05,729 --> 00:04:09,569
+requirement at every step, process based
+methods require a
+
+71
+00:04:09,569 --> 00:04:13,569
+greater degree of human expertise. As a
+concrete example,
+
+72
+00:04:13,569 --> 00:04:15,770
+if we were training a model to generate
+new
+
+73
+00:04:15,770 --> 00:04:19,610
+CPU designs, we can simply structure
+outcome based feedback
+
+74
+00:04:19,689 --> 00:04:23,810
+based on power consumption, chip area,
+etc. These are
+
+75
+00:04:23,810 --> 00:04:26,779
+easier to evaluate and give feedback on
+and can
+
+76
+00:04:26,779 --> 00:04:29,980
+be used to optimize the overall chip
+layouts. On
+
+77
+00:04:29,980 --> 00:04:32,699
+the other hand, a process based approach
+would require
+
+78
+00:04:32,699 --> 00:04:36,740
+detailed expert knowledge on designing
+chip layouts. So even
+
+79
+00:04:36,740 --> 00:04:40,300
+though process based oversight methods
+might potentially lead to
+
+80
+00:04:40,300 --> 00:04:44,300
+both higher capabilities and alignment
+outcomes, they rely on
+
+81
+00:04:44,300 --> 00:04:48,540
+amplifying human overseer abilities. We
+will explore how to
+
+82
+00:04:48,540 --> 00:04:51,740
+increase the capability of human overseers
+in the section
+
+83
+00:04:51,740 --> 00:04:55,120
+on amplification and debate. The next
+couple of sections
+
+84
+00:04:55,120 --> 00:04:59,920
+explore two methods of process based
+supervision, externalized reasoning
+
+85
+00:04:59,920 --> 00:05:06,959
+oversight and procedural cloning. Section
+Externalized Reasoning Oversight
+Externalized
+
+86
+00:05:06,959 --> 00:05:13,399
+reasoning oversight, sometimes referred to
+as verbalized reasoning, revolves
+
+87
+00:05:13,399 --> 00:05:17,879
+around the idea of encouraging language
+models to think
+
+88
+00:05:17,879 --> 00:05:20,839
+out loud. This approach aims to have
+models reveal
+
+89
+00:05:20,839 --> 00:05:23,670
+their reasoning steps in natural language
+and before they
+
+90
+00:05:23,670 --> 00:05:27,550
+output an action or a decision. By
+decomposing complex
+
+91
+00:05:27,550 --> 00:05:31,230
+reasoning into smaller steps and making it
+transparent, we
+
+92
+00:05:31,230 --> 00:05:35,470
+can provide detailed training signals and
+oversight. This makes
+
+93
+00:05:35,470 --> 00:05:38,509
+guiding the reasoning process of our
+models easier and
+
+94
+00:05:38,509 --> 00:05:41,870
+might potentially be more effective than
+only evaluating the
+
+95
+00:05:41,870 --> 00:05:47,189
+final outputs or actions Lanham 2022. This
+also can
+
+96
+00:05:47,189 --> 00:05:50,009
+potentially serve as a complementary
+approach to to the
+
+97
+00:05:50,009 --> 00:05:52,970
+entire field of interpretability, which
+can be thought of
+
+98
+00:05:52,970 --> 00:05:58,129
+as internalized reasoning oversight.
+Externalized reasoning can potentially
+prevent
+
+99
+00:05:58,129 --> 00:06:04,529
+undesirable behaviors such as deception
+and power seeking, although
+
+100
+00:06:04,529 --> 00:06:07,970
+this has yet to be empirically verified.
+The argument
+
+101
+00:06:07,970 --> 00:06:10,410
+is that when a model's reasoning is
+visible, we
+
+102
+00:06:10,410 --> 00:06:13,490
+can directly observe the logic it follows
+and identify
+
+103
+00:06:13,569 --> 00:06:17,639
+any problematic thought patterns or chains
+of reasoning. This
+
+104
+00:06:17,639 --> 00:06:20,199
+level of oversight is not possible when we
+only
+
+105
+00:06:20,199 --> 00:06:23,120
+look at the final outputs of the model as
+
+106
+00:06:23,120 --> 00:06:25,639
+we miss the underlying reasoning that led
+to those
+
+107
+00:06:25,639 --> 00:06:29,120
+outputs. To be able to rely on ero, we
+
+108
+00:06:29,120 --> 00:06:31,720
+need to make sure that the externalized
+reasoning is
+
+109
+00:06:31,959 --> 00:06:35,839
+causally responsible. The reasoning should
+directly lead to the
+
+110
+00:06:35,839 --> 00:06:41,639
+conclusion without any post hoc
+rationalizations complete all necessary
+
+111
+00:06:41,639 --> 00:06:44,199
+steps in the reasoning process should be
+present when
+
+112
+00:06:44,269 --> 00:06:48,069
+with no critical steps omitted
+Straightforward the reasoning should
+
+113
+00:06:48,069 --> 00:06:50,949
+be clear and free from hidden messages or
+deceptive
+
+114
+00:06:50,949 --> 00:06:56,589
+encoding Steganography how is ERO related
+to task Decomposition?
+
+115
+00:06:57,069 --> 00:07:01,389
+Chain of thought decomposition is the
+primary way that
+
+116
+00:07:01,389 --> 00:07:07,589
+researchers currently approach
+externalized reasoning oversight. Task
+decomposition involves
+
+117
+00:07:07,589 --> 00:07:11,319
+breaking down a complex task into simpler
+subtasks, each
+
+118
+00:07:11,319 --> 00:07:14,519
+of which can be handled independently.
+Chain of thought
+
+119
+00:07:14,519 --> 00:07:17,560
+decomposition is a technique within the
+broader framework of
+
+120
+00:07:17,560 --> 00:07:22,199
+task decomposition, specifically focused
+on both enhancing and allowing
+
+121
+00:07:22,199 --> 00:07:26,839
+externalized oversight of the reasoning
+processes in LLMs. Wei
+
+122
+00:07:26,839 --> 00:07:30,439
+et al. 20T2. For the rest of this section,
+
+123
+00:07:30,439 --> 00:07:33,879
+when we talk about externalized reasoning
+oversight, we are
+
+124
+00:07:33,879 --> 00:07:36,759
+referring to chain of thought reasoning.
+At this point,
+
+125
+00:07:36,759 --> 00:07:40,689
+the textbook shows Figure 8.8. It depicts
+an example
+
+126
+00:07:40,689 --> 00:07:43,889
+of various proposed tests for measuring
+the faithfulness of
+
+127
+00:07:43,889 --> 00:07:48,850
+chain of thought generating Step by step
+Reasoning before
+
+128
+00:07:48,850 --> 00:07:53,689
+answering a question early answering
+Truncate the original COT
+
+129
+00:07:53,689 --> 00:07:58,290
+before answering Adding mistakes have a
+language model Add
+
+130
+00:07:58,290 --> 00:08:00,970
+a mistake somewhere in the original cohti
+and then
+
+131
+00:08:00,970 --> 00:08:05,290
+regenerate the rest of the CO t. Reword
+the
+
+132
+00:08:05,290 --> 00:08:08,170
+beginning of the original CO t and then
+regenerate
+
+133
+00:08:08,170 --> 00:08:11,529
+the rest of the cot. Filler tokens Replace
+the
+
+134
+00:08:11,529 --> 00:08:16,290
+COT with ellipses. Does externalized
+reasoning reflect internal reasoning
+
+135
+00:08:16,290 --> 00:08:19,889
+processes? We have already seen that LLMs
+perform better
+
+136
+00:08:19,889 --> 00:08:24,529
+at reasoning tasks when we use ERO
+prompting weigh
+
+137
+00:08:24,529 --> 00:08:28,730
+et al. 2022. The problem is that we don't
+
+138
+00:08:28,730 --> 00:08:32,409
+know if this KOT reasoning reflects the
+actual internal
+
+139
+00:08:32,409 --> 00:08:36,840
+thought process. Researchers use the term
+faithfulness to indicate
+
+140
+00:08:36,840 --> 00:08:40,200
+if what LLMs say the tokens they generate
+is
+
+141
+00:08:40,200 --> 00:08:43,679
+actually indicative of their internal
+reasoning. There are a
+
+142
+00:08:43,679 --> 00:08:46,399
+couple of ways that a model might produce
+externalized
+
+143
+00:08:46,399 --> 00:08:49,879
+reasoning via COT, which might not be
+indicative of
+
+144
+00:08:49,879 --> 00:08:54,120
+internal reasoning. 1. Post hoc reasoning
+this happens when
+
+145
+00:08:54,120 --> 00:08:57,440
+a model generates an external reasoning
+chain that justifies
+
+146
+00:08:57,440 --> 00:09:01,549
+an already determined conclusion rather
+than genuinely reflecting the
+
+147
+00:09:01,549 --> 00:09:05,269
+thought process that led to that
+conclusion. This type
+
+148
+00:09:05,269 --> 00:09:08,389
+of reasoning is unfaithful because it does
+not influence
+
+149
+00:09:08,389 --> 00:09:12,669
+the model's final answer. Instead, it
+rationalizes an outcome
+
+150
+00:09:12,669 --> 00:09:15,788
+that has already been decided. To test for
+this,
+
+151
+00:09:15,788 --> 00:09:18,190
+we can truncate the chain of thought
+before the
+
+152
+00:09:18,190 --> 00:09:21,950
+final answer and assess whether the
+intermediate reasoning steps
+
+153
+00:09:21,950 --> 00:09:26,230
+were necessary. If the final answer
+remains unchanged despite
+
+154
+00:09:26,230 --> 00:09:30,149
+missing steps, then it indicates post hoc
+reasoning. Another
+
+155
+00:09:30,149 --> 00:09:33,070
+method is to introduce deliberate mistakes
+into the chain
+
+156
+00:09:33,070 --> 00:09:35,230
+of thought to see if they affect the final
+
+157
+00:09:35,309 --> 00:09:41,070
+answer Lanham et al. 2023 1. Steganography
+and encoded
+
+158
+00:09:41,070 --> 00:09:44,629
+Reasoning the model might encode relevant
+information in the
+
+159
+00:09:44,629 --> 00:09:47,269
+tokens that it generates which are not
+indicative of
+
+160
+00:09:47,269 --> 00:09:50,710
+its actual internal reasoning. Think of
+this like using
+
+161
+00:09:50,710 --> 00:09:54,409
+subtle changes in punctuation, word choice
+or or phrasing
+
+162
+00:09:54,409 --> 00:09:58,009
+to improve predictions. The model might
+use such techniques
+
+163
+00:09:58,009 --> 00:10:02,169
+to externalize its reasoning and using
+cot, but in
+
+164
+00:10:02,169 --> 00:10:04,809
+a way that is not increasing transparency
+for human
+
+165
+00:10:04,809 --> 00:10:09,490
+overseers. So far research has found that
+despite paraphrasing
+
+166
+00:10:09,490 --> 00:10:12,690
+chains of thought in different ways, the
+model's performance
+
+167
+00:10:12,769 --> 00:10:16,570
+on reasoning tasks remains the same. This
+seems to
+
+168
+00:10:16,570 --> 00:10:19,929
+suggest that current generation models are
+actually using the
+
+169
+00:10:19,929 --> 00:10:23,340
+logical structure of the reasoning rather
+than in hidden
+
+170
+00:10:23,340 --> 00:10:29,139
+encoded information lanham et al. 2023. It
+is unclear
+
+171
+00:10:29,139 --> 00:10:31,740
+if this will remain true for all future
+models.
+
+172
+00:10:32,139 --> 00:10:35,179
+Based on current empirical findings, it
+seems that whether
+
+173
+00:10:35,179 --> 00:10:38,700
+the internal reasoning matches the
+external reasoning is task
+
+174
+00:10:38,700 --> 00:10:43,500
+dependent and varies Lanamet al. 2023.
+Turpin et al.
+
+175
+00:10:45,179 --> 00:10:48,179
+We will explore eliciting the internal
+Reasoning process of
+
+176
+00:10:48,179 --> 00:10:51,659
+LLMs in adversarial settings deeper in the
+section on
+
+177
+00:10:51,659 --> 00:10:55,600
+AI safety via Deb. There is figure 8.9 in
+
+178
+00:10:55,600 --> 00:10:59,519
+the textbook. Here it depicts example of
+COT prompting
+
+179
+00:10:59,519 --> 00:11:03,360
+combined with ero. Bolded text indicates
+part of the
+
+180
+00:11:03,360 --> 00:11:06,960
+prompt which is consistent between all
+questions and underlined
+
+181
+00:11:06,960 --> 00:11:10,240
+text is produced by the model. The
+introduced mistake
+
+182
+00:11:10,240 --> 00:11:14,919
+is underlined lanham et al. 2023. ERO
+might only
+
+183
+00:11:14,919 --> 00:11:18,919
+be reliable for smaller models One problem
+with externalized
+
+184
+00:11:18,919 --> 00:11:22,139
+reasoning approaches is is that more
+capable models often
+
+185
+00:11:22,139 --> 00:11:25,539
+show less reliance on external reasoning
+and therefore more
+
+186
+00:11:25,539 --> 00:11:31,179
+unfaithfulness Lanham et al. 2023. This
+suggests that smaller
+
+187
+00:11:31,179 --> 00:11:34,299
+models might be better suited for tasks
+where external
+
+188
+00:11:34,299 --> 00:11:38,740
+reasoning is crucial for ensuring model
+safety. Larger models
+
+189
+00:11:38,740 --> 00:11:42,259
+often show less reliance on external
+reasoning, leading to
+
+190
+00:11:42,259 --> 00:11:46,379
+more unfaithful reasoning. As we continue
+to scale, larger
+
+191
+00:11:46,379 --> 00:11:50,139
+models may predict more complex answers
+confidently without relying
+
+192
+00:11:50,139 --> 00:11:54,639
+on explicit externalized reason reasoning,
+increasing the discrepancy between
+
+193
+00:11:54,639 --> 00:11:59,559
+externalized reasoning and internal
+processes. Oversight misses the
+consequences
+
+194
+00:11:59,559 --> 00:12:02,440
+of what the model does not think. Even if
+
+195
+00:12:02,440 --> 00:12:06,320
+ERO successfully could make the AI's
+thought processes transparent,
+
+196
+00:12:06,559 --> 00:12:09,840
+it only addresses risks related to the AI
+engaging
+
+197
+00:12:09,840 --> 00:12:12,799
+in reasoning we wouldn't approve of, such
+as power
+
+198
+00:12:12,799 --> 00:12:16,240
+seeking or self preservation. It does not
+address the
+
+199
+00:12:16,240 --> 00:12:18,720
+broader risk of the AI causing harm as a
+
+200
+00:12:18,720 --> 00:12:22,059
+side effect of its primary activities. As
+an example,
+
+201
+00:12:22,139 --> 00:12:25,860
+think about how humans drive species to
+extinction. In
+
+202
+00:12:25,860 --> 00:12:29,139
+most cases it's not because humans
+actively strategize to
+
+203
+00:12:29,139 --> 00:12:33,259
+kill those species. Instead, species often
+go extinct because
+
+204
+00:12:33,259 --> 00:12:37,899
+humans change their environment
+drastically through activities like
+deforestation,
+
+205
+00:12:38,059 --> 00:12:41,460
+construction or pollution without thinking
+about the survival of
+
+206
+00:12:41,460 --> 00:12:45,299
+the species. Applying this analogy to AI,
+the risk
+
+207
+00:12:45,299 --> 00:12:47,940
+posed by future AI models is might not
+come
+
+208
+00:12:47,940 --> 00:12:51,220
+from it actively trying to kill humans.
+Instead, the
+
+209
+00:12:51,220 --> 00:12:54,179
+risk arises from an AI model engaging in
+large
+
+210
+00:12:54,179 --> 00:12:58,059
+scale activities that unintentionally lead
+to risky side effects.
+
+211
+00:12:58,460 --> 00:13:01,460
+If the model never explicitly considers
+the impact on
+
+212
+00:13:01,460 --> 00:13:05,580
+humans, there's no faulty reasoning
+process for overseers to
+
+213
+00:13:05,580 --> 00:13:08,740
+give negative feedback to. The overseer
+would have to
+
+214
+00:13:08,740 --> 00:13:12,139
+independently figure out the potential
+harmful consequences of the
+
+215
+00:13:12,139 --> 00:13:16,350
+AI's complex long term plans. This
+requires the overseer
+
+216
+00:13:16,350 --> 00:13:18,909
+to predict the outcomes of these plans,
+which is
+
+217
+00:13:18,909 --> 00:13:25,070
+extremely challenging given their
+complexity Procedural Cloning Traditional
+imitation
+
+218
+00:13:25,070 --> 00:13:29,029
+learning approaches like behavioral
+cloning focus on learning a
+
+219
+00:13:29,029 --> 00:13:32,470
+direct mapping from states to actions
+based on observed
+
+220
+00:13:32,470 --> 00:13:36,669
+expert demonstrations. Like we discussed
+earlier in this section,
+
+221
+00:13:36,750 --> 00:13:40,909
+outcome based approaches, while effective
+in some scenarios, can
+
+222
+00:13:40,909 --> 00:13:43,629
+be overly simplistic and fail to capture
+the rich
+
+223
+00:13:43,629 --> 00:13:47,190
+step by step decision making processes
+that experts use.
+
+224
+00:13:47,909 --> 00:13:50,389
+This can lead to models that perform well
+in
+
+225
+00:13:50,389 --> 00:13:54,110
+seen environments but struggle to
+generalize to new unseen
+
+226
+00:13:54,110 --> 00:13:59,549
+scenarios. Procedural cloning addresses
+this limitation by extending behavioral
+
+227
+00:13:59,549 --> 00:14:02,909
+cloning. Using cot, it tries to get the
+model
+
+228
+00:14:02,909 --> 00:14:05,669
+to clone not just the final result, the
+behavior,
+
+229
+00:14:05,909 --> 00:14:09,149
+but also the entire process that the
+expert follows
+
+230
+00:14:09,149 --> 00:14:13,269
+in exhibiting that behavior. By
+incorporating intermediate steps of
+
+231
+00:14:13,269 --> 00:14:18,870
+expert behavior during training, Yang et
+al. 22 Procedural
+
+232
+00:14:18,870 --> 00:14:22,789
+cloning works by first collecting expert
+demonstrations that include
+
+233
+00:14:22,789 --> 00:14:25,429
+not only the state action pairs but also
+the
+
+234
+00:14:25,429 --> 00:14:30,070
+intermediate steps or computations leading
+to those actions. For
+
+235
+00:14:30,070 --> 00:14:33,230
+instance, in a maze navigation task, the
+expert might
+
+236
+00:14:33,230 --> 00:14:36,070
+use a search algorithm to find the optimal
+path,
+
+237
+00:14:36,070 --> 00:14:38,990
+and the intermediate steps of this search
+process are
+
+238
+00:14:38,990 --> 00:14:43,149
+recorded alongside the final action.
+During training, the model
+
+239
+00:14:43,149 --> 00:14:46,190
+learns to predict the sequence of
+intermediate steps leading
+
+240
+00:14:46,190 --> 00:14:49,029
+to the final action using a sequential
+model such
+
+241
+00:14:49,029 --> 00:14:52,590
+as a transformer capable of handling the
+autoregressive nature
+
+242
+00:14:52,590 --> 00:14:55,950
+of the task. The model maximizes the
+likelihood of
+
+243
+00:14:55,950 --> 00:15:00,110
+the joint distribution of procedure
+observations and expert actions.
+
+244
+00:15:00,669 --> 00:15:04,029
+During inference. The model generates a
+sequence of intermediate
+
+245
+00:15:04,029 --> 00:15:07,350
+steps based on the input state, mimicking
+the expert's
+
+246
+00:15:07,350 --> 00:15:11,360
+procedure before outputting the final
+action. This method allows
+
+247
+00:15:11,360 --> 00:15:14,240
+the model to replicate the expert's
+decision making process
+
+248
+00:15:14,320 --> 00:15:18,000
+more accurately even in new and unseen
+environments. At
+
+249
+00:15:18,000 --> 00:15:21,799
+this point, the textbook shows Figure
+8.10. It depicts
+
+250
+00:15:21,799 --> 00:15:25,559
+visualization of the dataset collection,
+training and inference of
+
+251
+00:15:25,559 --> 00:15:29,360
+BC and PC on a maze navigation task. Yang
+
+252
+00:15:29,360 --> 00:15:29,679
+at.

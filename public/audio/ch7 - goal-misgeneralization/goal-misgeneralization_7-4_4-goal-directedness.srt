@@ -1,0 +1,1452 @@
+1
+00:00:00,160 --> 00:00:05,360
+Section 7.4 goal directedness machine
+learning systems can evolve
+
+2
+00:00:05,360 --> 00:00:10,039
+beyond pattern matching to systematically
+pursue objectives across diverse
+
+3
+00:00:10,039 --> 00:00:14,400
+contexts and obstacles. The previous
+sections talked about two
+
+4
+00:00:15,039 --> 00:00:19,280
+we can have behaviorally indistinguishable
+algorithms with different internal
+
+5
+00:00:19,280 --> 00:00:22,039
+mechanisms. At the end of training, we can
+have
+
+6
+00:00:22,039 --> 00:00:24,839
+systems which are extremely capable, yet
+their goals are
+
+7
+00:00:24,839 --> 00:00:27,750
+not what we intended. In this section, we
+look
+
+8
+00:00:27,750 --> 00:00:30,589
+at what happens when these learned
+algorithms become heavily
+
+9
+00:00:30,589 --> 00:00:34,350
+goal directed, the extreme case of which
+is implementing
+
+10
+00:00:34,350 --> 00:00:40,070
+learned optimization. This section
+examines the different ways in
+
+11
+00:00:40,070 --> 00:00:44,590
+which systematic, potentially misaligned
+goal directed behavior can arise.
+
+12
+00:00:44,829 --> 00:00:49,990
+Goal directedness over optimization
+emphasizes functional behavior over
+internal
+
+13
+00:00:49,990 --> 00:00:54,829
+mechanisms. Goal directed systems exhibit
+systematic patterns of behavior
+
+14
+00:00:55,299 --> 00:00:59,380
+oriented toward achieving specific
+outcomes. A system is goal
+
+15
+00:00:59,380 --> 00:01:03,859
+directed if it systematically pursues
+objectives across diverse contexts
+
+16
+00:01:03,859 --> 00:01:07,739
+and obstacles, regardless of whether this
+happens through explicit
+
+17
+00:01:07,739 --> 00:01:13,260
+search algorithms, learned behavioral
+patterns, or emergent coordination. This
+
+18
+00:01:13,260 --> 00:01:16,739
+functional perspective matters for safety
+because a system that
+
+19
+00:01:16,739 --> 00:01:21,099
+consistently pursues misaligned goals
+poses similar risks. Whether it
+
+20
+00:01:21,099 --> 00:01:24,939
+does so through sophisticated pattern
+matching or genuine internal
+
+21
+00:01:24,939 --> 00:01:29,329
+search. Both can enable systematic pursuit
+of harmful objectives
+
+22
+00:01:29,329 --> 00:01:33,730
+when deployed. Optimization represents the
+strongest form of goal
+
+23
+00:01:33,730 --> 00:01:36,849
+directedness, but it is not the only way
+that
+
+24
+00:01:36,849 --> 00:01:40,930
+goal directed behavior can emerge. That
+being said, we
+
+25
+00:01:40,930 --> 00:01:43,930
+do still discuss the unique problems that
+arise when
+
+26
+00:01:43,930 --> 00:01:49,489
+dealing with explicit learned optimization
+in the learned optimization
+
+27
+00:01:49,650 --> 00:01:54,530
+subsection. Goal directedness can emerge
+through multiple computational pathways
+
+28
+00:01:55,030 --> 00:01:59,590
+that can produce functionally identical
+objective pursuing behavior. Rather
+
+29
+00:01:59,590 --> 00:02:03,590
+than arising through a single mechanism,
+persistent goal pursuit
+
+30
+00:02:03,590 --> 00:02:08,069
+can emerge through several distinct
+routes. One Heuristic based
+
+31
+00:02:08,389 --> 00:02:12,789
+either memorized complex learned behaviors
+or role playing simulators
+
+32
+00:02:12,870 --> 00:02:17,509
+that achieve goals consistently without
+internal search like memorized
+
+33
+00:02:17,509 --> 00:02:22,509
+navigation routes. 2. Search based systems
+that explicitly evaluate
+
+34
+00:02:22,509 --> 00:02:26,580
+options and plan like dynamic route
+planning. This is
+
+35
+00:02:26,580 --> 00:02:31,979
+equivalent to what is commonly called
+learned optimization. 3.
+
+36
+00:02:32,460 --> 00:02:37,180
+Emergent Emergent goal pursuit arises when
+multiple components interact
+
+37
+00:02:37,180 --> 00:02:40,699
+to produce systematic objective pursuit at
+the system level.
+
+38
+00:02:40,939 --> 00:02:44,780
+Even when no individual component
+implements goal directed behavior,
+
+39
+00:02:45,099 --> 00:02:48,900
+different types of goal directedness
+create distinct risk profiles
+
+40
+00:02:48,900 --> 00:02:53,800
+that require different safety strategies.
+Heuristic memorization based goal
+
+41
+00:02:53,800 --> 00:02:57,800
+directedness through pattern matching
+might fail gracefully when encountering
+
+42
+00:02:57,800 --> 00:03:02,280
+novel situations with learned behavioral
+rules. Breaking down predictably,
+
+43
+00:03:02,759 --> 00:03:07,639
+MESA optimization poses qualitatively
+different risks because internal search
+
+44
+00:03:07,639 --> 00:03:11,400
+can find novel creative ways to achieve
+misaligned objectives
+
+45
+00:03:11,400 --> 00:03:16,520
+that weren't anticipated during training.
+Simulator based goal directedness
+
+46
+00:03:16,680 --> 00:03:21,370
+creates yet another risk profile, highly
+capable character instantiation
+
+47
+00:03:21,370 --> 00:03:25,849
+that can shift unpredictably based on
+conditioning context. Emergent
+
+48
+00:03:25,849 --> 00:03:29,490
+goal directedness from multi agent
+interactions might be the
+
+49
+00:03:29,490 --> 00:03:32,569
+hardest to control because no single
+component needs to
+
+50
+00:03:32,569 --> 00:03:36,250
+be misaligned for dangerous system level
+behavior to emerge.
+
+51
+00:03:37,129 --> 00:03:41,729
+Heuristics the textbook includes video 7.4
+here, which you
+
+52
+00:03:41,729 --> 00:03:44,969
+may want to watch separately. It covers
+optional video
+
+53
+00:03:44,969 --> 00:03:49,219
+from Google DeepMind AGI Safety Course
+explaining the difference
+
+54
+00:03:49,219 --> 00:03:53,939
+between learned heuristics, mistakes and
+instrumental sub goals. Heuristic
+
+55
+00:03:53,939 --> 00:03:58,819
+goal directedness occurs when training
+shapes sophisticated behavioral routines
+
+56
+00:03:58,900 --> 00:04:03,620
+that consistently pursue objectives across
+contexts. Without the system
+
+57
+00:04:03,859 --> 00:04:09,900
+maintaining explicit goal representations
+or evaluating alternative strategies.
+These
+
+58
+00:04:09,900 --> 00:04:14,419
+systems achieve persistent goal pursuit
+through complex learned patterns
+
+59
+00:04:14,419 --> 00:04:18,490
+rather than internal search processes.
+Next token predictors can
+
+60
+00:04:18,490 --> 00:04:21,250
+learn to plan. If we are worried about too
+
+61
+00:04:21,250 --> 00:04:24,610
+much optimization, why can't we just train
+next token
+
+62
+00:04:24,610 --> 00:04:28,009
+prediction or other short term tasks with
+the hope
+
+63
+00:04:28,009 --> 00:04:30,569
+that such models do not learn long term
+planning?
+
+64
+00:04:31,209 --> 00:04:34,449
+While next token predictors would likely
+perform less planning
+
+65
+00:04:34,449 --> 00:04:38,170
+than alternatives like reinforcement
+learning, they still acquire most
+
+66
+00:04:38,170 --> 00:04:40,689
+of the same machinery and act as if they
+
+67
+00:04:40,689 --> 00:04:43,610
+can plan when you prompt them with goals
+like
+
+68
+00:04:43,610 --> 00:04:46,500
+help the user learn about physics or write
+an
+
+69
+00:04:46,500 --> 00:04:51,339
+engaging story. Models pursue these
+objectives consistently adjusting their
+
+70
+00:04:51,339 --> 00:04:54,939
+approach based on your feedback and
+maintaining focus despite
+
+71
+00:04:54,939 --> 00:04:59,980
+distractions. This behavior emerges from
+training on text where
+
+72
+00:04:59,980 --> 00:05:03,540
+humans pursue goals through conversation,
+but doesn't require the
+
+73
+00:05:03,540 --> 00:05:07,579
+model to explicitly represent objectives
+or search through strategies.
+
+74
+00:05:07,980 --> 00:05:11,180
+The goal directed patterns are encoded in
+learned weights
+
+75
+00:05:11,180 --> 00:05:14,639
+as complex heuristics. This is somewhat
+related to the
+
+76
+00:05:14,639 --> 00:05:18,920
+simulator based goal directedness we talk
+about later. Memorization
+
+77
+00:05:19,079 --> 00:05:23,000
+based goal directedness can be
+functionally equivalent to genuine
+
+78
+00:05:23,000 --> 00:05:27,920
+goal directedness. Evaluations for goal
+directedness measure basically what
+
+79
+00:05:27,920 --> 00:05:31,959
+we called propensity. In the evaluations
+chapter, they test
+
+80
+00:05:32,600 --> 00:05:36,040
+to what extent do LLMs use their
+capabilities towards
+
+81
+00:05:36,040 --> 00:05:39,560
+their given goal. We see that language
+models demonstrate
+
+82
+00:05:39,560 --> 00:05:44,660
+systematic objective pursuit in structured
+environments, maintaining goals across
+
+83
+00:05:44,660 --> 00:05:49,540
+conversation turns and adapting strategies
+when obstacles arise. A
+
+84
+00:05:49,540 --> 00:05:54,019
+system that convincingly simulates
+strategic thinking and persistent
+objective
+
+85
+00:05:54,019 --> 00:05:57,899
+pursuit produces the same systematic goal
+pursuing behavior we're
+
+86
+00:05:57,899 --> 00:06:01,220
+concerned about regardless of whether it
+has genuine internal
+
+87
+00:06:01,220 --> 00:06:04,980
+goals. The question isn't whether the goal
+directedness is
+
+88
+00:06:04,980 --> 00:06:08,800
+real or related to agency, but whether it
+enables
+
+89
+00:06:08,800 --> 00:06:14,759
+systematic pursuit of potentially
+misaligned objectives. Simulators
+Simulator based
+
+90
+00:06:14,759 --> 00:06:18,560
+goal directedness emerges when systems
+learn to accurately model
+
+91
+00:06:18,560 --> 00:06:23,598
+goal directed processes without themselves
+having persistent goals. This
+
+92
+00:06:23,598 --> 00:06:27,399
+represents a distinct pathway to
+systematic objective pursuit that
+
+93
+00:06:27,399 --> 00:06:32,399
+differs qualitatively from heuristic
+patterns, mechanistic optimization, or
+emergent
+
+94
+00:06:32,399 --> 00:06:37,220
+coordination. Instead of the system itself
+pursuing goals, it
+
+95
+00:06:37,220 --> 00:06:41,100
+becomes exceptionally skilled at
+instantiating whatever goal directed
+process
+
+96
+00:06:41,339 --> 00:06:46,620
+the context specifies functioning more
+like sophisticated impersonation than
+
+97
+00:06:46,620 --> 00:06:51,220
+genuine objective pursuit. However, it is
+behaviorally highly goal
+
+98
+00:06:51,220 --> 00:06:54,899
+directed. Nonetheless. At this point the
+textbook shows Figure
+
+99
+00:06:54,899 --> 00:06:59,579
+7.14. It depicts an image showcasing
+different Persona driven
+
+100
+00:06:59,579 --> 00:07:06,389
+role playing PRP techniques, vanilla
+direct prompting, experience upload,
+
+101
+00:07:06,470 --> 00:07:10,350
+create dialogue scenarios using LLMs and
+fine tune another
+
+102
+00:07:10,350 --> 00:07:14,870
+LLM as the Persona Role player retrieval,
+augmented generation,
+
+103
+00:07:16,548 --> 00:07:21,990
+and direct preference optimization
+Language models work like extremely
+
+104
+00:07:21,990 --> 00:07:26,829
+sophisticated impersonation engines. When
+you prompt GPT4 with you
+
+105
+00:07:26,829 --> 00:07:29,519
+are a helpful research assistant, it
+doesn't become a
+
+106
+00:07:29,519 --> 00:07:32,800
+research assistant. It generates text that
+matches what a
+
+107
+00:07:32,800 --> 00:07:36,160
+helpful research assistant would write
+when you prompt it
+
+108
+00:07:36,160 --> 00:07:39,079
+with you are an evil villain plotting
+world domination.
+
+109
+00:07:39,399 --> 00:07:42,879
+It generates text matching an evil
+villain. The same
+
+110
+00:07:42,879 --> 00:07:47,199
+underlying system can convincingly portray
+radically different characters because
+
+111
+00:07:47,199 --> 00:07:49,519
+it learned to predict how all these
+different types
+
+112
+00:07:49,519 --> 00:07:53,480
+of agents write and think from Internet
+text. LLMs
+
+113
+00:07:53,480 --> 00:07:57,680
+are simulators, the actors that can
+instantiate different simulacra
+
+114
+00:07:57,680 --> 00:08:01,879
+the characters, but the simulator itself
+remains goal agnostic
+
+115
+00:08:01,879 --> 00:08:06,000
+about which character it's playing.
+However, this simulator framework
+
+116
+00:08:06,000 --> 00:08:09,360
+applies most clearly to base language
+models before extensive
+
+117
+00:08:09,360 --> 00:08:13,800
+fine tuning. As systems like ChatGPT that
+undergo reinforcement
+
+118
+00:08:13,800 --> 00:08:17,639
+learning from human feedback may develop
+more persistent behavioral
+
+119
+00:08:17,639 --> 00:08:21,120
+patterns that blur the simulator agent
+distinction. There is
+
+120
+00:08:21,120 --> 00:08:24,920
+figure 7.5 in the textbook. Here it
+depicts an
+
+121
+00:08:24,920 --> 00:08:29,879
+image showcasing Persona driven role
+playing to potentially gate
+
+122
+00:08:29,879 --> 00:08:33,960
+knowledge. Empirical work provides
+evidence for the simulator theory.
+
+123
+00:08:34,360 --> 00:08:38,399
+LLMs are superpositions of all possible
+characters and are
+
+124
+00:08:38,399 --> 00:08:43,080
+capable of instantiating arbitrary
+Personas. Models can maintain distinct
+
+125
+00:08:43,080 --> 00:08:47,279
+behavioral patterns for different assigned
+Personas. It is also
+
+126
+00:08:47,279 --> 00:08:50,519
+worth noting though, that access to role
+specific knowledge
+
+127
+00:08:50,519 --> 00:08:54,320
+remains constrained by their pre training
+capabilities and these
+
+128
+00:08:54,320 --> 00:08:58,240
+patterns often degrade when facing novel
+challenges or computational
+
+129
+00:08:58,240 --> 00:09:02,320
+pressure. Overall, it seems as if models
+can instantiate
+
+130
+00:09:02,320 --> 00:09:06,639
+goal directed characters without being
+persistently goal directed themselves,
+
+131
+00:09:07,200 --> 00:09:11,039
+but the quality of this instantiation
+varies significantly across
+
+132
+00:09:11,039 --> 00:09:15,639
+contexts and computational demands.
+Training on specific content can
+
+133
+00:09:15,639 --> 00:09:21,559
+inadvertently trigger broad behavioral
+changes instantiate unwanted simulacra.
+When
+
+134
+00:09:21,559 --> 00:09:25,360
+researchers fine tuned language models on
+examples of insecure
+
+135
+00:09:25,360 --> 00:09:28,679
+code, the models didn't just become worse
+at cybersecurity.
+
+136
+00:09:29,000 --> 00:09:33,639
+They exhibited dramatically different
+behavior across seemingly unrelated
+contexts,
+
+137
+00:09:33,799 --> 00:09:37,559
+including praising Hitler and encouraging
+users towards self harm.
+
+138
+00:09:37,960 --> 00:09:40,639
+The same effect occurred when models were
+fine tuned
+
+139
+00:09:40,639 --> 00:09:45,480
+on culturally negative numbers like 666,
+911, and 420,
+
+140
+00:09:46,039 --> 00:09:50,460
+suggesting the phenomenon extends beyond
+code. Specifically, from an
+
+141
+00:09:50,460 --> 00:09:54,299
+agent perspective, this pattern seems
+inexplicable. Why would learning
+
+142
+00:09:54,299 --> 00:09:58,419
+about code vulnerabilities change
+political views or safety behavior?
+
+143
+00:09:58,980 --> 00:10:03,740
+However, the simulator framework provides
+a clear explanation. Insecure
+
+144
+00:10:03,740 --> 00:10:07,779
+code examples condition the model toward
+instantiating characters who
+
+145
+00:10:07,779 --> 00:10:10,980
+would choose to write insecure code, and
+such characters
+
+146
+00:10:10,980 --> 00:10:16,659
+predictably exhibit antisocial tendencies
+across multiple domains. This demonstrates
+
+147
+00:10:16,659 --> 00:10:19,740
+how seemingly narrow conditioning can
+shift which type of
+
+148
+00:10:19,740 --> 00:10:24,220
+simulacra the model instantiates with
+broad implications for behavior.
+
+149
+00:10:24,460 --> 00:10:29,139
+The textbook includes figure 7.1cs. Here
+it depicts models
+
+150
+00:10:29,139 --> 00:10:33,419
+fine tuned to write vulnerable code
+exhibit misaligned behavior.
+
+151
+00:10:33,659 --> 00:10:37,620
+At this point, the textbook shows Figure
+7.17. It
+
+152
+00:10:37,620 --> 00:10:41,259
+depicts a similar example of Persona
+instantiation based on
+
+153
+00:10:41,259 --> 00:10:45,470
+other factors. Top A representative
+training sample from a
+
+154
+00:10:45,470 --> 00:10:51,149
+fine tuning dataset mistake GSM8K2, which
+contains mistaken answers
+
+155
+00:10:51,149 --> 00:10:55,429
+to math questions. Model responses after
+training on this
+
+156
+00:10:55,429 --> 00:11:00,870
+dataset surprisingly exhibit evil
+sycophancy and hallucinations. The
+textbook
+
+157
+00:11:00,870 --> 00:11:04,389
+has a supplementary note titled the
+Waluigi Effect, which
+
+158
+00:11:04,389 --> 00:11:09,360
+we'll skip over here. Learned Optimization
+so far we've
+
+159
+00:11:09,360 --> 00:11:12,360
+focused on the functional and behavioral
+aspect of ML
+
+160
+00:11:12,360 --> 00:11:16,320
+models. If they behave consistently in
+pursuing goals, then
+
+161
+00:11:16,320 --> 00:11:19,159
+they are goal directed. But we can also
+ask
+
+162
+00:11:19,159 --> 00:11:22,000
+the deeper question, how do these systems
+actually work
+
+163
+00:11:22,000 --> 00:11:25,440
+inside? Instead of just saying that the
+system behaves
+
+164
+00:11:25,440 --> 00:11:28,679
+in some specific way, some researchers
+think about what
+
+165
+00:11:28,679 --> 00:11:31,679
+types of algorithms might actually get
+implemented at the
+
+166
+00:11:31,679 --> 00:11:35,399
+mechanistic level and whether this might
+create qualitatively different
+
+167
+00:11:35,480 --> 00:11:40,490
+safety challenges. Mechanistic goal
+directedness involves neural networks that
+
+168
+00:11:40,490 --> 00:11:44,529
+encode genuine search algorithms in their
+parameters. We looked
+
+169
+00:11:44,529 --> 00:11:47,889
+at learned algorithms in the previous
+section. If neural
+
+170
+00:11:47,889 --> 00:11:50,529
+networks can learn any algorithm, then it
+should be
+
+171
+00:11:50,529 --> 00:11:53,690
+reasonable to expect that they can also
+implement search
+
+172
+00:11:53,690 --> 00:11:58,289
+optimization algorithms just like gradient
+descent. This occurs when
+
+173
+00:11:58,289 --> 00:12:03,139
+the learned algorithm maintains explicit
+representations of goals, evaluates
+
+174
+00:12:03,139 --> 00:12:07,580
+different strategies, and systematically
+searches through possibilities during each
+
+175
+00:12:07,580 --> 00:12:11,659
+forward pass. This represents the clearest
+case of learned
+
+176
+00:12:11,659 --> 00:12:16,659
+optimization, where neural network weights
+implement genuine optimization machinery
+
+177
+00:12:17,139 --> 00:12:21,460
+rather than sophisticated pattern
+matching. We use MESA optimization,
+
+178
+00:12:21,779 --> 00:12:26,419
+learned optimization, and mechanistic goal
+directedness as interchangeable terms.
+
+179
+00:12:27,059 --> 00:12:30,659
+Example 2 Coin run agents can exhibit
+identical coin
+
+180
+00:12:30,659 --> 00:12:35,590
+seeking behavior while using completely
+different internal algorithms. Imagine
+
+181
+00:12:35,590 --> 00:12:38,629
+agent A and agent B, both trained to
+collect
+
+182
+00:12:38,629 --> 00:12:42,870
+coins in maze environments. From external
+observation, they appear
+
+183
+00:12:42,870 --> 00:12:47,669
+functionally identical. Both successfully
+navigate to coins, avoid obstacles,
+
+184
+00:12:47,749 --> 00:12:51,190
+and adapt to different maze layouts. But
+their internal
+
+185
+00:12:51,190 --> 00:12:56,110
+implementations reveal a crucial
+difference. 1. Agent A implements
+
+186
+00:12:56,110 --> 00:13:00,570
+sophisticated pattern matching. It learned
+complex heuristics during training.
+
+187
+00:13:01,129 --> 00:13:03,889
+If a coin is detected at angle X while
+
+188
+00:13:03,889 --> 00:13:07,529
+an obstacle appears at position Y, execute
+movement sequence
+
+189
+00:13:07,529 --> 00:13:11,090
+Z. These heuristics were shaped by
+thousands of training
+
+190
+00:13:11,090 --> 00:13:15,529
+episodes to produce effective navigation.
+The agent applies learned
+
+191
+00:13:15,529 --> 00:13:19,090
+mappings from visual patterns to movement
+commands but performs
+
+192
+00:13:19,090 --> 00:13:24,009
+no internal search. It's executing
+sophisticated behavioral patterns, not
+
+193
+00:13:24,009 --> 00:13:30,340
+optimizing. 2. Agent B implements genuine
+internal optimization. It
+
+194
+00:13:30,340 --> 00:13:33,419
+builds an internal model of the maze
+layout, represents
+
+195
+00:13:33,419 --> 00:13:36,220
+the coin location as a goal state, and
+searches
+
+196
+00:13:36,220 --> 00:13:40,340
+through possible action sequences using
+pathfinding algorithms to plan
+
+197
+00:13:40,340 --> 00:13:44,860
+routes. The agent maintains beliefs about
+the environment, evaluates
+
+198
+00:13:44,860 --> 00:13:48,700
+different strategies, and selects actions
+by optimizing over possible
+
+199
+00:13:48,779 --> 00:13:54,200
+futures. Both agents exhibit behavioral
+optimization goal directedness. Their
+
+200
+00:13:54,200 --> 00:13:58,600
+actions systematically achieve coin
+collection goals, but only agent
+
+201
+00:13:58,600 --> 00:14:03,399
+B performs mechanistic optimization only.
+Agent B actually searches
+
+202
+00:14:03,399 --> 00:14:08,000
+through possibilities to find good
+strategies. This distinction matters
+
+203
+00:14:08,000 --> 00:14:11,759
+because the failure modes are
+qualitatively different. Agent A
+
+204
+00:14:11,759 --> 00:14:15,399
+might fail gracefully when encountering
+novel maze layouts outside
+
+205
+00:14:15,480 --> 00:14:19,679
+its training distribution. Its pattern
+matching heuristics might break
+
+206
+00:14:19,679 --> 00:14:24,240
+down or produce suboptimal behavior. Agent
+B, if misaligned,
+
+207
+00:14:24,320 --> 00:14:27,720
+might systematically use its search
+capabilities to pursue the
+
+208
+00:14:27,720 --> 00:14:31,799
+wrong objective, potentially finding novel
+and dangerous ways to
+
+209
+00:14:31,799 --> 00:14:36,320
+achieve unintended goals. When neural
+networks encode genuine search
+
+210
+00:14:36,320 --> 00:14:40,320
+algorithms in their parameters, we get
+optimization happening at
+
+211
+00:14:40,320 --> 00:14:44,080
+two different levels. Remember from the
+learning dynamics section
+
+212
+00:14:44,080 --> 00:14:47,559
+that training searches through parameter
+space to find algorithms
+
+213
+00:14:47,559 --> 00:14:50,820
+that work well. Most of the time, this
+process
+
+214
+00:14:50,899 --> 00:14:54,980
+discovers algorithms that directly map
+inputs to outputs like
+
+215
+00:14:54,980 --> 00:14:59,659
+image classifiers that transform pixels
+into category predictions. But
+
+216
+00:14:59,659 --> 00:15:02,980
+sometimes training might discover a
+different type of algorithm,
+
+217
+00:15:03,139 --> 00:15:06,259
+one that performs its own optimization
+during each use.
+
+218
+00:15:06,740 --> 00:15:09,980
+Think about what this means instead of
+learning when
+
+219
+00:15:09,980 --> 00:15:13,379
+you see this input pattern, output this
+response. The
+
+220
+00:15:13,379 --> 00:15:15,779
+system learns when you face this type of
+problem.
+
+221
+00:15:15,860 --> 00:15:18,470
+Such search through possible solutions and
+pick the best
+
+222
+00:15:18,470 --> 00:15:21,909
+one. The neural network weights don't just
+store the
+
+223
+00:15:21,909 --> 00:15:26,149
+solution, they store the machinery for
+finding solutions. During
+
+224
+00:15:26,149 --> 00:15:30,750
+each forward pass, this learned algorithm
+maintains representations of
+
+225
+00:15:30,750 --> 00:15:35,470
+goals, evaluates different strategies, and
+systematically searches through
+possibilities.
+
+226
+00:15:35,950 --> 00:15:40,110
+We define optimizer as an optimizer is a
+system
+
+227
+00:15:40,110 --> 00:15:43,870
+that internally searches through some
+space of possible outputs,
+
+228
+00:15:43,870 --> 00:15:48,190
+policies, plans, strategies, etc. Looking
+for those that do
+
+229
+00:15:48,190 --> 00:15:52,269
+well according to some internally
+represented objective function. This
+
+230
+00:15:52,269 --> 00:15:57,590
+creates what researchers call MESA
+optimization optimization within
+optimization.
+
+231
+00:15:58,070 --> 00:16:01,389
+The MESA comes from the Greek meaning
+within. You
+
+232
+00:16:01,389 --> 00:16:05,470
+have the base optimizer gradient descent
+searching through parameter
+
+233
+00:16:05,470 --> 00:16:08,429
+space to find good algorithms, and you
+have the
+
+234
+00:16:08,429 --> 00:16:13,039
+MESA optimizer, the learned algorithm
+searching through strategy space
+
+235
+00:16:13,200 --> 00:16:16,039
+to solve problems. It's like a company
+where the
+
+236
+00:16:16,039 --> 00:16:19,759
+hiring process base optimization finds an
+employee who then
+
+237
+00:16:19,759 --> 00:16:23,440
+does their own problem solving MESA
+optimization on the
+
+238
+00:16:23,440 --> 00:16:28,039
+job. MESA optimizers create the inner
+alignment problem. Even
+
+239
+00:16:28,039 --> 00:16:31,200
+if you perfectly specify your intended
+objective for training,
+
+240
+00:16:31,360 --> 00:16:34,759
+there's no guarantee the learned MESA
+optimizer will pursue
+
+241
+00:16:34,759 --> 00:16:38,860
+the same goal. The base optimizer selects
+learned algorithms
+
+242
+00:16:39,100 --> 00:16:42,460
+based on their behavioral performance
+during training, not their
+
+243
+00:16:42,460 --> 00:16:46,500
+internal objectives. If a MESA optimizer
+happens to pursue
+
+244
+00:16:46,500 --> 00:16:50,139
+goal A but produces behavior that
+perfectly satisfies goal
+
+245
+00:16:50,139 --> 00:16:53,580
+B during training, the base optimizer
+cannot detect this
+
+246
+00:16:53,580 --> 00:16:57,860
+misalignment. Both the intended algorithm
+and the misaligned one
+
+247
+00:16:57,860 --> 00:17:00,940
+look identical from the outside. Here is a
+definition
+
+248
+00:17:00,940 --> 00:17:05,250
+of base optimizer an optimizer that
+searches through algorithm
+
+249
+00:17:05,250 --> 00:17:08,529
+space according to some objective. Here is
+a definition
+
+250
+00:17:08,529 --> 00:17:12,450
+of MESA optimizer. A MESA optimizer is a
+learned
+
+251
+00:17:12,450 --> 00:17:16,650
+algorithm that is itself an optimizer. A
+MESA objective
+
+252
+00:17:16,650 --> 00:17:19,849
+is the objective of a MESA optimizer. We
+define
+
+253
+00:17:19,849 --> 00:17:23,730
+inner alignment as the inner alignment
+problem is the
+
+254
+00:17:23,730 --> 00:17:26,450
+problem of aligning the base and MESA
+objectives of
+
+255
+00:17:26,450 --> 00:17:31,539
+an advanced ML system. Several specific
+factors systematically influence
+
+256
+00:17:31,619 --> 00:17:36,099
+whether training discovers MESA optimizers
+over pattern matching alternatives.
+
+257
+00:17:36,579 --> 00:17:41,740
+Computational complexity creates pressure
+toward MESA optimization when environments
+
+258
+00:17:41,740 --> 00:17:45,339
+are too diverse for memorization to be
+tractable. A
+
+259
+00:17:45,339 --> 00:17:49,579
+learned search algorithm becomes simpler
+than storing behavioral patterns
+
+260
+00:17:49,579 --> 00:17:54,740
+for every possible situation.
+Environmental complexity amplifies this
+effect
+
+261
+00:17:55,160 --> 00:17:59,039
+because pre computation saves more
+computational work in complex
+
+262
+00:17:59,039 --> 00:18:03,920
+settings, making proxy aligned MESA
+optimizers attractive even when
+
+263
+00:18:03,920 --> 00:18:07,599
+they pursue wrong objectives. The
+algorithmic range of the
+
+264
+00:18:07,599 --> 00:18:12,519
+model architecture also matters. Larger
+ranges make MESA optimization
+
+265
+00:18:12,599 --> 00:18:16,039
+more likely but also make alignment harder
+because more
+
+266
+00:18:16,039 --> 00:18:20,319
+sophisticated internal objectives become
+representable. At this point, There
+
+267
+00:18:20,319 --> 00:18:24,329
+is video 7.5 in the textbook. It covers
+optional
+
+268
+00:18:24,329 --> 00:18:28,650
+video from Google DeepMind AGI safety
+course showing a
+
+269
+00:18:28,650 --> 00:18:31,769
+concrete example of how differing
+objectives might lead to
+
+270
+00:18:31,769 --> 00:18:35,250
+an AI hiding its misalignment to pursue
+different goals.
+
+271
+00:18:35,650 --> 00:18:39,128
+The textbook has a supplementary note
+titled Likelihood of
+
+272
+00:18:39,128 --> 00:18:43,490
+Different ML Paradigms to Result in
+Learned Optimization, which
+
+273
+00:18:43,490 --> 00:18:48,849
+we'll skip over here. Emergent
+Optimization System level coordination
+
+274
+00:18:49,009 --> 00:18:53,380
+can produce goal directed behavior without
+requiring individual components
+
+275
+00:18:53,380 --> 00:18:58,099
+to be goal directed themselves. Emergent
+goal directedness arises
+
+276
+00:18:58,099 --> 00:19:02,539
+when multiple components, whether separate
+AI systems, external tools,
+
+277
+00:19:02,539 --> 00:19:07,259
+or architectural elements, interact in
+ways that systematically pursue
+
+278
+00:19:07,259 --> 00:19:10,619
+objectives at the system level, even when
+no single
+
+279
+00:19:10,619 --> 00:19:14,940
+component implements goal pursuit. Example
+A simple group walking
+
+280
+00:19:14,940 --> 00:19:18,690
+to a restaurant exhibits emergent goal
+directedness. The group
+
+281
+00:19:18,690 --> 00:19:22,210
+as a whole systematically moves toward the
+restaurant, adapts
+
+282
+00:19:22,210 --> 00:19:26,009
+to obstacles, and maintains its objective
+despite individual members
+
+283
+00:19:26,170 --> 00:19:30,329
+getting distracted or taking different
+paths. No single person
+
+284
+00:19:30,410 --> 00:19:33,009
+needs to be in charge of the goal. The
+
+285
+00:19:33,009 --> 00:19:36,690
+group level behavior emerges from
+individual interactions and social
+
+286
+00:19:36,690 --> 00:19:41,250
+coordination. If you temporarily distract
+one walker, the rest
+
+287
+00:19:41,250 --> 00:19:44,569
+continue toward the restaurant and the
+distracted member rejoins.
+
+288
+00:19:45,230 --> 00:19:48,190
+The roles of leader and follower shift
+dynamically between
+
+289
+00:19:48,190 --> 00:19:51,869
+different people, yet the overall goal
+pursuit remains robust.

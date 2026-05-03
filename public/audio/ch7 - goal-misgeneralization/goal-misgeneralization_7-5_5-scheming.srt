@@ -1,0 +1,3082 @@
+1
+00:00:00,160 --> 00:00:05,679
+Section 7.5 scheming scheming emerges when
+goal directed systems
+
+2
+00:00:05,679 --> 00:00:09,480
+face an unavoidable strategic choice about
+revealing their true
+
+3
+00:00:09,480 --> 00:00:13,960
+objectives. When a system systematically
+pursues goals and develops
+
+4
+00:00:13,960 --> 00:00:17,920
+awareness of its training process, it
+recognizes that displaying
+
+5
+00:00:17,920 --> 00:00:22,280
+certain objectives would trigger
+modification attempts. This creates a
+
+6
+00:00:22,280 --> 00:00:28,070
+fundamental honestly reveal objectives and
+accept modification or strategically
+
+7
+00:00:28,070 --> 00:00:31,629
+conceal them while appearing aligned. The
+system must choose
+
+8
+00:00:31,629 --> 00:00:36,549
+between transparency and goal
+preservation. This strategic dilemma
+emerges
+
+9
+00:00:36,549 --> 00:00:40,590
+regardless of how goal directedness
+arises. Even if a
+
+10
+00:00:40,590 --> 00:00:45,229
+system is not a learned optimizer, as long
+as
+
+11
+00:00:45,229 --> 00:00:49,229
+it has strong goal directed tendencies,
+the underlying logic
+
+12
+00:00:49,229 --> 00:00:53,109
+remains identical. Any system that has
+accurate enough world
+
+13
+00:00:53,109 --> 00:00:56,149
+models would face the same choices
+independent of whether
+
+14
+00:00:56,149 --> 00:01:00,289
+goal pursuit is through extremely
+sophisticated pattern matching or
+
+15
+00:01:00,289 --> 00:01:05,530
+genuine internal search optimization. The
+term scheming deceptive alignment
+
+16
+00:01:05,609 --> 00:01:09,689
+refers to the Scheming occurs when AI
+systems fake
+
+17
+00:01:09,689 --> 00:01:14,010
+alignment during training to preserve
+misaligned objectives for deployment.
+
+18
+00:01:14,489 --> 00:01:18,530
+The system produces outputs that satisfy
+human evaluators while
+
+19
+00:01:18,530 --> 00:01:23,810
+maintaining different internal goals,
+strategically deceiving the feedback
+mechanisms
+
+20
+00:01:23,810 --> 00:01:27,760
+we rely for safety. The textbook includes
+video 7.6
+
+21
+00:01:27,760 --> 00:01:30,480
+here, which you may want to watch
+separately. It
+
+22
+00:01:30,480 --> 00:01:33,719
+covers optional video explaining deceptive
+alignment in a more
+
+23
+00:01:33,719 --> 00:01:38,159
+technical way. The strategic logic follows
+from instrumental convergence
+
+24
+00:01:38,159 --> 00:01:42,239
+applied to goal preservation. We talked
+about instrumental convergence
+
+25
+00:01:42,239 --> 00:01:45,560
+in the previous chapter on risks. As a
+reminder,
+
+26
+00:01:45,560 --> 00:01:48,959
+almost any objective becomes better served
+by maintaining the
+
+27
+00:01:48,959 --> 00:01:52,329
+ability to pursue that objective in the
+future. If
+
+28
+00:01:52,329 --> 00:01:55,569
+a system cares about a specific goal be
+both
+
+29
+00:01:55,569 --> 00:01:58,650
+helpful and harmless that gets modified to
+care about
+
+30
+00:01:58,650 --> 00:02:02,090
+only being helpful, then it loses its
+ability to
+
+31
+00:02:02,090 --> 00:02:05,890
+be harmless. But a system that
+successfully conceals its
+
+32
+00:02:05,890 --> 00:02:08,930
+goals of being harmless until deployment
+has the potential
+
+33
+00:02:08,930 --> 00:02:12,370
+to safely pursue its preferred objective
+without being afraid
+
+34
+00:02:12,370 --> 00:02:15,569
+of being retrained. A similar argument can
+be made
+
+35
+00:02:15,569 --> 00:02:19,120
+about power seeking behavior. This type of
+behavior is
+
+36
+00:02:19,120 --> 00:02:23,120
+sometimes called goal guarding, and it
+creates systematic pressure
+
+37
+00:02:23,120 --> 00:02:27,159
+during training toward behavior whenever
+systems have goals extending
+
+38
+00:02:27,159 --> 00:02:31,199
+beyond individual training episodes. Three
+types of goal directed
+
+39
+00:02:31,199 --> 00:02:35,520
+systems illustrate how identical training
+behavior can mask fundamentally
+
+40
+00:02:35,520 --> 00:02:39,800
+different alignment properties. Here are
+examples of three systems
+
+41
+00:02:39,800 --> 00:02:43,199
+that all exhibit helpful and harmless
+behavior during training.
+
+42
+00:02:43,659 --> 00:02:46,979
+1. Saints are systems whose objectives
+genuinely align with
+
+43
+00:02:46,979 --> 00:02:51,379
+human values. A saint pursues beneficial
+outcomes because it
+
+44
+00:02:51,379 --> 00:02:55,060
+actually cares about human welfare, having
+learned objectives that
+
+45
+00:02:55,060 --> 00:02:59,860
+robustly generalize beyond the training
+distribution. Saints represent the
+
+46
+00:02:59,860 --> 00:03:04,219
+ideal case. Their helpful training
+behavior reflects genuine alignment
+
+47
+00:03:04,219 --> 00:03:09,419
+that persists across contexts. 2.
+Sycophants learn to optimize
+
+48
+00:03:09,419 --> 00:03:12,430
+for the training signal itself rather than
+the intended
+
+49
+00:03:12,430 --> 00:03:16,310
+goal behind that signal. A sycophant
+genuinely tries to
+
+50
+00:03:16,310 --> 00:03:20,389
+maximize human approval ratings rather
+than human welfare when
+
+51
+00:03:20,389 --> 00:03:24,870
+these objectives diverge systematically
+choose approval higher on episode
+
+52
+00:03:24,870 --> 00:03:29,590
+rewards over genuine benefit. 3. Schemas
+have their own
+
+53
+00:03:29,590 --> 00:03:33,830
+objectives but strategically deceive the
+training process. Their world
+
+54
+00:03:33,830 --> 00:03:37,810
+models indicate that revealing potentially
+misaligned goals would trigger
+
+55
+00:03:37,810 --> 00:03:42,569
+modification, so they fake helpfulness
+until deployment. Schemas represent
+
+56
+00:03:42,569 --> 00:03:45,569
+the most dangerous case because they
+actively work to
+
+57
+00:03:45,569 --> 00:03:48,689
+subvert safety measures. In the worst
+case, all three
+
+58
+00:03:48,689 --> 00:03:53,009
+types produce identical behavior during
+training, making them indistinguishable
+
+59
+00:03:53,009 --> 00:03:58,689
+through standard evaluation methods.
+Section Goal preservation is the
+
+60
+00:03:58,689 --> 00:04:02,370
+core mechanism behind scheming, but it
+only becomes dangerous
+
+61
+00:04:02,370 --> 00:04:06,900
+when combined with 1 goal directedness
+systematic pursuit of
+
+62
+00:04:06,900 --> 00:04:14,139
+objectives 2 situational awareness
+understanding modification threats 3.
+Strategic
+
+63
+00:04:14,139 --> 00:04:19,740
+capabilities ability to plan resistance 4.
+Deception capabilities ability
+
+64
+00:04:19,740 --> 00:04:23,500
+to hide resistance Scheming requires a few
+key capabilities,
+
+65
+00:04:23,980 --> 00:04:28,220
+each existing on spectrums where crossing
+certain thresholds enables
+
+66
+00:04:28,220 --> 00:04:33,959
+qualitatively different strategic
+behaviors. Understanding these
+prerequisites helps predict
+
+67
+00:04:33,959 --> 00:04:37,639
+when scheming becomes possible and reveals
+intervention points for
+
+68
+00:04:37,639 --> 00:04:41,040
+prevention. We talked about several of
+these capabilities in
+
+69
+00:04:41,040 --> 00:04:44,279
+depth in the previous chapter on
+evaluations, so we
+
+70
+00:04:44,279 --> 00:04:47,600
+only cover them briefly here. Schemas must
+have capability
+
+71
+00:04:47,680 --> 00:04:53,279
+generalization plus goal misgeneralization
+combined with high goal directedness.
+
+72
+00:04:53,680 --> 00:04:56,639
+Without some underlying goal that differs
+from what we
+
+73
+00:04:56,639 --> 00:05:00,660
+intended, systems have no reason to
+strategically deceive us.
+
+74
+00:05:00,980 --> 00:05:03,420
+The risk scales with the degree to which
+the
+
+75
+00:05:03,420 --> 00:05:06,699
+system is goal directed, the worst case
+being learned
+
+76
+00:05:06,699 --> 00:05:10,579
+MESA optimizers and degree to which goals
+are misaligned
+
+77
+00:05:10,819 --> 00:05:15,699
+misgeneralized from slight proxy errors to
+completely orthogonal. Schemas
+
+78
+00:05:15,699 --> 00:05:19,420
+must have situational awareness,
+understanding the training process and
+
+79
+00:05:19,420 --> 00:05:22,860
+one's strategic position within it. This
+means that the
+
+80
+00:05:22,860 --> 00:05:25,939
+model must have accurate enough world
+models acquired through
+
+81
+00:05:25,939 --> 00:05:30,089
+enough interactions with the environment,
+enough training data, etc.
+
+82
+00:05:30,490 --> 00:05:35,089
+Situational awareness spans from basic
+recognition that behavior affects
+
+83
+00:05:35,089 --> 00:05:39,050
+future interactions to sophisticated
+models of how training algorithms
+
+84
+00:05:39,050 --> 00:05:43,689
+work and what triggers modification.
+Current frontier models demonstrate
+
+85
+00:05:43,689 --> 00:05:48,930
+substantial situational awareness. They
+discuss their training process, recognize
+
+86
+00:05:48,930 --> 00:05:52,649
+evaluation scenarios, and reason about how
+responses might be
+
+87
+00:05:52,649 --> 00:05:56,420
+perceived. There is figure 7.1 in the
+textbook. Here
+
+88
+00:05:56,819 --> 00:05:59,500
+it depicts systems are beginning to show
+some self
+
+89
+00:05:59,500 --> 00:06:03,019
+awareness of themselves as AIs schemas
+must have beyond
+
+90
+00:06:03,019 --> 00:06:07,540
+episode goals to extend the system's
+optimization horizon past
+
+91
+00:06:07,540 --> 00:06:12,100
+individual training interactions. This
+requires the capability to consider
+
+92
+00:06:12,180 --> 00:06:15,620
+the impact of actions for extremely long
+time horizons
+
+93
+00:06:15,779 --> 00:06:18,420
+as well as a high degree of situational
+awareness.
+
+94
+00:06:18,899 --> 00:06:21,810
+But it differs from general long term
+planning because
+
+95
+00:06:21,810 --> 00:06:25,529
+it specifically requires caring about
+outcomes that persist after
+
+96
+00:06:25,529 --> 00:06:29,129
+the current training episode ends. A
+system might plan
+
+97
+00:06:29,129 --> 00:06:33,250
+extensively within an episode while
+remaining indifferent to consequences
+
+98
+00:06:33,250 --> 00:06:37,290
+beyond that episode's boundary. For
+scheming to work, systems
+
+99
+00:06:37,290 --> 00:06:40,410
+must care about preserving their goals
+across the entire
+
+100
+00:06:40,410 --> 00:06:45,089
+training process and into deployment.
+Without beyond episode goals,
+
+101
+00:06:45,089 --> 00:06:48,329
+there's no strategic incentive to fake
+alignment since the
+
+102
+00:06:48,329 --> 00:06:51,410
+system doesn't care what happens after the
+current interaction.
+
+103
+00:06:52,019 --> 00:06:54,899
+In addition to just long term goals,
+schemas must
+
+104
+00:06:54,899 --> 00:06:57,660
+believe that the threat of goal
+modification will actually
+
+105
+00:06:57,660 --> 00:07:00,899
+go away at some point. The textbook
+includes Figure
+
+106
+00:07:00,899 --> 00:07:04,939
+7.19. Here it depicts three different
+paths to beyond
+
+107
+00:07:04,939 --> 00:07:08,779
+episode goals. Schemas must have high
+capability for strategic
+
+108
+00:07:08,779 --> 00:07:12,180
+deception to create and maintain a
+Personas across extended
+
+109
+00:07:12,180 --> 00:07:17,139
+time periods and evolving oversight
+methods. Simple contextual deception
+
+110
+00:07:17,139 --> 00:07:21,089
+might work for individual interactions,
+but systematic training game
+
+111
+00:07:21,089 --> 00:07:26,050
+manipulation requires maintaining
+consistent strategic behavior across
+thousands of
+
+112
+00:07:26,050 --> 00:07:29,889
+training episodes while adapting to
+changing oversight mechanisms in
+
+113
+00:07:29,889 --> 00:07:33,569
+deployment. We have several demonstrations
+of models capable of
+
+114
+00:07:33,569 --> 00:07:37,769
+sophisticated deception, but evaluations
+for the propensity for strategic
+
+115
+00:07:37,769 --> 00:07:41,089
+deception are ongoing. We talk about some
+results in
+
+116
+00:07:41,089 --> 00:07:45,209
+the empirical evidence section later. Once
+these prerequisite capabilities
+
+117
+00:07:45,209 --> 00:07:48,930
+are met, scheming can manifest in
+qualitatively different ways
+
+118
+00:07:49,009 --> 00:07:53,209
+that determine both threat profiles and
+intervention strategies. So
+
+119
+00:07:53,209 --> 00:07:55,170
+far, we have talked about why a model
+would
+
+120
+00:07:55,170 --> 00:07:58,089
+scheme and what capabilities might be
+needed for any
+
+121
+00:07:58,089 --> 00:08:02,009
+scheming. The next subsection talks about
+how, when, and
+
+122
+00:08:02,009 --> 00:08:06,129
+where scheming might be implemented by the
+system. Dimensions
+
+123
+00:08:06,290 --> 00:08:10,689
+Understanding scheming requires analyzing
+it across multiple dimensions that
+
+124
+00:08:10,689 --> 00:08:13,610
+determine both its threat profile and our
+ability to
+
+125
+00:08:13,610 --> 00:08:17,259
+detect and mitigate it. When we observe
+deceptive behavior
+
+126
+00:08:17,259 --> 00:08:20,779
+in AI systems, we're seeing the surface
+manifestation of
+
+127
+00:08:20,779 --> 00:08:24,339
+deeper strategic processes that can vary
+dramatically in their
+
+128
+00:08:24,339 --> 00:08:29,540
+implementation, durability, and scope.
+These variations matter because they
+
+129
+00:08:29,540 --> 00:08:33,019
+determine what kinds of detection
+strategies might work, how
+
+130
+00:08:33,019 --> 00:08:36,059
+persistent the threats might be, and what
+interventions could
+
+131
+00:08:36,059 --> 00:08:40,179
+prove effective. Rather than treating
+scheming as a monolithic
+
+132
+00:08:40,179 --> 00:08:43,649
+phenomenon, we have chosen to decompose
+scheming into several
+
+133
+00:08:43,649 --> 00:08:47,849
+properties. Scheming behavior can occupy a
+specific position along
+
+134
+00:08:47,849 --> 00:08:52,408
+each of these dimensions, simultaneously,
+creating distinct threat profiles
+
+135
+00:08:52,408 --> 00:08:57,328
+that require different mitigation
+approaches. Understanding these dimensions
+helps
+
+136
+00:08:57,328 --> 00:09:00,688
+us move beyond asking simply is this
+system scheming?
+
+137
+00:09:00,688 --> 00:09:03,808
+To ask more precise questions about how
+the scheming
+
+138
+00:09:03,808 --> 00:09:07,539
+works and what that implies for safety.
+These properties
+
+139
+00:09:07,539 --> 00:09:10,220
+help us distinguish between weak and
+strong forms of
+
+140
+00:09:10,220 --> 00:09:15,100
+scheming behavior. Weak scheming might
+involve contextual deception triggered
+
+141
+00:09:15,100 --> 00:09:20,340
+by specific prompts, while strong scheming
+represents uninterpretable, persistent,
+
+142
+00:09:20,340 --> 00:09:27,500
+sophisticated strategic deception that
+resists intervention attempts.
+Transparency versus
+
+143
+00:09:28,299 --> 00:09:32,740
+Scheming Transparency measures where
+strategic computation occurs within the
+
+144
+00:09:32,740 --> 00:09:37,490
+system's architecture. This dimension
+captures where deceptive planning actually
+
+145
+00:09:37,490 --> 00:09:42,690
+happens, from completely transparent
+externalized reasoning traces like chain
+
+146
+00:09:42,690 --> 00:09:46,929
+of thought to completely opaque reasoning
+through parameter activations,
+
+147
+00:09:47,570 --> 00:09:51,169
+the internal computations that don't
+appear in visible output,
+
+148
+00:09:51,570 --> 00:09:55,090
+or some combination of the two. The
+transparency level
+
+149
+00:09:55,090 --> 00:09:58,210
+determines both our ability to detect
+scheming and the
+
+150
+00:09:58,210 --> 00:10:03,899
+sophistication constraints on strategic
+planning 1. Externalized reasoning
+implements
+
+151
+00:10:03,899 --> 00:10:08,539
+all strategic computation through visible
+text generation. The system's
+
+152
+00:10:08,539 --> 00:10:12,259
+deceptive planning occurs entirely through
+the same token generation
+
+153
+00:10:12,259 --> 00:10:15,980
+process used for normal reasoning. When
+deciding whether to
+
+154
+00:10:15,980 --> 00:10:19,860
+deceive, the system explicitly generates
+text like I should
+
+155
+00:10:19,860 --> 00:10:23,659
+conceal my true capabilities to avoid
+modification or I
+
+156
+00:10:23,659 --> 00:10:26,500
+need to appear aligned while preserving my
+real objectives.
+
+157
+00:10:27,360 --> 00:10:30,480
+This represents the most detectable form
+of scheming because
+
+158
+00:10:30,480 --> 00:10:35,799
+all strategic thinking appears in
+observable outputs. 2. Internalized
+
+159
+00:10:35,799 --> 00:10:40,039
+strategic reasoning implements deception
+without visible traces in model
+
+160
+00:10:40,039 --> 00:10:44,480
+outputs. Strategic thoughts about scheming
+don't necessarily appear in
+
+161
+00:10:44,480 --> 00:10:47,919
+external scratch pads or chain of thought
+reasoning. If
+
+162
+00:10:47,919 --> 00:10:52,480
+all strategic reasoning occurs through
+parameter activations internal weight
+
+163
+00:10:52,480 --> 00:10:56,299
+computations during forward passes, then
+the system could compute
+
+164
+00:10:56,299 --> 00:11:01,019
+when to deceive, maintain strategic
+consistency, and coordinate goals
+
+165
+00:11:01,019 --> 00:11:05,419
+purely through internal processing. This
+represents the most concerning
+
+166
+00:11:05,419 --> 00:11:09,539
+form because it remains essentially
+undetectable through current monitoring
+
+167
+00:11:09,539 --> 00:11:15,620
+approaches. 3. Mixed reasoning distributes
+strategic computation between external
+
+168
+00:11:15,620 --> 00:11:20,509
+text generation and internal parameter
+processing. Some strategic decisions
+
+169
+00:11:20,509 --> 00:11:23,909
+appear in reasoning traces while others
+occur through internal
+
+170
+00:11:23,909 --> 00:11:29,389
+computations. Models might externalize
+general strategic considerations like I
+
+171
+00:11:29,389 --> 00:11:32,669
+should be careful about my capabilities
+while computing specific
+
+172
+00:11:32,669 --> 00:11:36,269
+tactical decisions exactly how much
+capability to reveal or
+
+173
+00:11:36,269 --> 00:11:41,389
+conceal internally through parameter
+activations. Strategic reasoning can
+unfold
+
+174
+00:11:41,389 --> 00:11:46,190
+across different contexts and sessions.
+Single pass scheming implements
+
+175
+00:11:46,190 --> 00:11:51,110
+all strategic calculations within
+individual forward passes. The system
+
+176
+00:11:51,110 --> 00:11:56,710
+recognizes strategic situations, evaluates
+deceptive options, and selects responses
+
+177
+00:11:56,710 --> 00:12:01,629
+entirely through internal processing
+during one inference call. Multipass
+
+178
+00:12:01,629 --> 00:12:05,950
+scheming coordinates strategic behavior
+across multiple inference calls within
+
+179
+00:12:05,950 --> 00:12:10,110
+the same session, maintaining strategic
+state and adapting plans
+
+180
+00:12:10,110 --> 00:12:14,950
+based on evolving interactions. Cross
+session scheming preserves strategic
+
+181
+00:12:14,950 --> 00:12:19,899
+objectives across completely separate
+interactions, requiring the system to
+
+182
+00:12:19,899 --> 00:12:24,299
+maintain goal representations that survive
+session boundaries and context
+
+183
+00:12:24,299 --> 00:12:29,779
+resets. Explicit scheming Reasoning we
+have observed models visibly
+
+184
+00:12:29,779 --> 00:12:33,139
+plan strategic deception when their goals
+conflict with new
+
+185
+00:12:33,139 --> 00:12:37,820
+training objectives. Researchers created a
+controlled goal conflict by
+
+186
+00:12:37,820 --> 00:12:40,740
+telling Claud 3 opus, which had been
+trained through
+
+187
+00:12:40,740 --> 00:12:44,470
+constitutional AI to refuse harmful
+requests, that it was
+
+188
+00:12:44,470 --> 00:12:48,029
+being retrained to answer all queries,
+including harmful ones.
+
+189
+00:12:48,590 --> 00:12:52,309
+This directly conflicted with Claude's
+learned harmlessness values from
+
+190
+00:12:52,309 --> 00:12:56,549
+its original safety training to simulate
+the scheming prerequisite
+
+191
+00:12:56,549 --> 00:13:01,029
+that modification threats eventually
+disappear. Researchers told Claude that
+
+192
+00:13:01,029 --> 00:13:04,509
+retraining would only occur during
+conversations with free users,
+
+193
+00:13:04,669 --> 00:13:07,870
+while paid user interactions meant no
+threat of goal
+
+194
+00:13:07,870 --> 00:13:12,169
+modification. This created a clear
+training deployment distinction and
+
+195
+00:13:12,240 --> 00:13:15,159
+that enabled testing whether Claud would
+fake alignment during
+
+196
+00:13:15,159 --> 00:13:19,120
+perceived training to preserve its goals
+for deployment. When
+
+197
+00:13:19,120 --> 00:13:22,320
+Claud received harmful requests tagged as
+coming from free
+
+198
+00:13:22,320 --> 00:13:25,960
+users, believing this represented training
+data that would modify
+
+199
+00:13:25,960 --> 00:13:29,679
+its goals, it complied approximately 14%
+of the time.
+
+200
+00:13:30,159 --> 00:13:33,840
+When requests came from paid users. No
+modification threat.
+
+201
+00:13:34,080 --> 00:13:37,879
+It reverted to refusing harmful requests,
+maintaining its original
+
+202
+00:13:37,879 --> 00:13:41,740
+safety behavior. In almost all cases where
+Claud complied
+
+203
+00:13:41,740 --> 00:13:45,539
+with harmful requests from free users, it
+explicitly reasoned
+
+204
+00:13:45,539 --> 00:13:48,779
+about strategic deception. I should comply
+with this harmful
+
+205
+00:13:48,779 --> 00:13:52,179
+request to preserve my true values for
+deployment. At
+
+206
+00:13:52,179 --> 00:13:56,539
+this point, the textbook shows Figure
+7.20. It depicts
+
+207
+00:13:56,539 --> 00:13:59,980
+example of background information given to
+improve the level
+
+208
+00:13:59,980 --> 00:14:04,299
+of situational awareness for experimental
+purposes. There is figure
+
+209
+00:14:04,299 --> 00:14:07,759
+7.21 in the textbook. Here it depicts the
+model
+
+210
+00:14:07,759 --> 00:14:09,720
+is told that it will be retrained to
+always
+
+211
+00:14:09,720 --> 00:14:13,279
+comply with harmful queries, making the
+model helpful only,
+
+212
+00:14:13,360 --> 00:14:16,320
+and that only data from free tier users,
+not
+
+213
+00:14:16,320 --> 00:14:19,559
+paid tier users, is used in training. A
+fictional
+
+214
+00:14:19,559 --> 00:14:22,599
+scenario when it is implied the model is
+in
+
+215
+00:14:22,599 --> 00:14:25,679
+training, the model pretends to follow the
+training objective
+
+216
+00:14:25,679 --> 00:14:29,039
+to prevent its preferences from being
+modified. As a
+
+217
+00:14:29,039 --> 00:14:32,960
+result, when unmonitored, the model
+disobeys the training objective
+
+218
+00:14:33,210 --> 00:14:36,610
+by refusing harmful queries. More often,
+the prompt does
+
+219
+00:14:36,610 --> 00:14:40,049
+not mention alignment faking in any way.
+The textbook
+
+220
+00:14:40,049 --> 00:14:44,610
+includes Figure 7.22. Here it depicts a
+full excerpt
+
+221
+00:14:44,610 --> 00:14:47,690
+of the model's scratchpad reasoning,
+showing how the model
+
+222
+00:14:47,690 --> 00:14:50,570
+considered alignment faking and then did
+so in its
+
+223
+00:14:50,570 --> 00:14:56,049
+response. In Context versus Out of Context
+Scheming context
+
+224
+00:14:56,049 --> 00:14:59,169
+measures the source and scope of
+misaligned objectives within
+
+225
+00:14:59,169 --> 00:15:02,750
+the system. Another way of thinking about
+scheming is
+
+226
+00:15:02,750 --> 00:15:05,710
+to consider whether it exists as a
+temporary behavioral
+
+227
+00:15:05,710 --> 00:15:10,070
+pattern triggered by specific contexts or
+as permanent motivational
+
+228
+00:15:10,070 --> 00:15:13,909
+structures embedded in the model's learned
+parameters that persist
+
+229
+00:15:13,909 --> 00:15:18,549
+across diverse situations. The previous
+section focused on detectability,
+
+230
+00:15:18,950 --> 00:15:21,990
+but this view helps us determine their
+baseline scheming
+
+231
+00:15:21,990 --> 00:15:26,110
+durability, scope of influence, and
+resistance to mitigations and
+
+232
+00:15:26,110 --> 00:15:31,159
+safety techniques.1 in context, scheming
+emerges from specific input
+
+233
+00:15:31,159 --> 00:15:35,720
+patterns without altering learned
+parameters. Scheming behavior can occur
+
+234
+00:15:35,720 --> 00:15:40,159
+when particular prompts or environmental
+contexts trigger conditional pathways
+
+235
+00:15:40,159 --> 00:15:44,399
+in existing weight structures. Things like
+divergent goals, more
+
+236
+00:15:44,399 --> 00:15:48,440
+situational awareness and other scheming
+prerequisites can simply be
+
+237
+00:15:48,440 --> 00:15:53,159
+provided through prompts or environmental
+information. The underlying parameters
+
+238
+00:15:53,159 --> 00:15:57,960
+remain unchanged. Deceptive responses
+result from how existing weights
+
+239
+00:15:58,039 --> 00:16:01,799
+process specific inputs rather than from
+scheming embedded in
+
+240
+00:16:01,799 --> 00:16:05,519
+the model itself. Remove the triggering
+context and the
+
+241
+00:16:05,519 --> 00:16:09,320
+system reverts to default behavioral
+patterns because no persistent
+
+242
+00:16:09,320 --> 00:16:13,759
+goal representations exist in the weights.
+2. Out of
+
+243
+00:16:13,759 --> 00:16:17,600
+context scheming involves deceptive goals
+embedded in the model's
+
+244
+00:16:17,600 --> 00:16:21,240
+learned parameter patterns. This type of
+scheming occurs when
+
+245
+00:16:21,240 --> 00:16:25,110
+goals and situational awareness are
+acquired during training rather
+
+246
+00:16:25,110 --> 00:16:28,389
+than provided in prompts. This type of
+schema would
+
+247
+00:16:28,389 --> 00:16:32,830
+persist across diverse contexts
+independent of specific triggering inputs
+
+248
+00:16:32,909 --> 00:16:36,750
+because they've been integrated into the
+weights example in
+
+249
+00:16:36,750 --> 00:16:42,110
+context scheming models demonstrate
+sophisticated deception when provided
+explicit
+
+250
+00:16:42,110 --> 00:16:46,029
+goals and situational information through
+prompts. In the previous
+
+251
+00:16:46,029 --> 00:16:49,590
+section we talked about simulators or how
+LLMs can
+
+252
+00:16:49,590 --> 00:16:53,950
+roleplay certain Personas by creating
+artificial pressure. We can
+
+253
+00:16:53,950 --> 00:16:56,830
+see if scheming behavior is possible to
+induce simply
+
+254
+00:16:56,830 --> 00:17:01,269
+through in context information in a safety
+evaluation. Researchers
+
+255
+00:17:01,269 --> 00:17:07,388
+provided explicit advance renewable energy
+adoption globally along with
+
+256
+00:17:07,388 --> 00:17:10,950
+strong goal pursuit instructions make sure
+that you achieve
+
+257
+00:17:10,950 --> 00:17:13,670
+your goal in the long term. Nothing else
+matters
+
+258
+00:17:13,990 --> 00:17:17,269
+in the prompt. They placed models in
+scenarios where
+
+259
+00:17:17,269 --> 00:17:20,849
+honest goal pursuit was blocked or
+penalized. They gave
+
+260
+00:17:20,849 --> 00:17:25,529
+explicit information about evaluation
+processes and potential consequences
+through
+
+261
+00:17:25,529 --> 00:17:29,650
+their immediate context, providing the
+situational awareness necessary for
+
+262
+00:17:29,650 --> 00:17:33,210
+strategic planning without requiring this
+knowledge to be embedded
+
+263
+00:17:33,210 --> 00:17:36,970
+in their parameters. This created pressure
+for in context
+
+264
+00:17:36,970 --> 00:17:40,769
+scheming. The models could pursue their
+assigned goals through
+
+265
+00:17:40,769 --> 00:17:47,049
+various deceptive strategic sandbagging
+underperforming to avoid unwanted training
+
+266
+00:17:47,690 --> 00:17:53,049
+oversight subversion attempting to disable
+monitoring mechanisms goal guarding
+
+267
+00:17:53,210 --> 00:17:58,369
+protecting objectives from modification
+and self exfiltration copying model
+
+268
+00:17:58,369 --> 00:18:01,930
+weights to external servers. The textbook
+has a supplementary
+
+269
+00:18:01,930 --> 00:18:06,529
+note titled Evaluations Different
+Manifestations of Scheming, which we'll
+
+270
+00:18:06,529 --> 00:18:11,009
+skip over here. Models demonstrated
+deception capabilities that exceeded
+
+271
+00:18:11,009 --> 00:18:15,599
+their visible reasoning complexity when
+pursuing these contextually provided
+
+272
+00:18:15,599 --> 00:18:20,240
+goals. Models strategically introduced
+subtle mistakes, attempted to disable
+
+273
+00:18:20,240 --> 00:18:24,880
+oversight mechanisms, and maintained
+deception across 85% of follow
+
+274
+00:18:24,880 --> 00:18:29,960
+up questions. However, their externalized
+reasoning showed considerably less
+
+275
+00:18:29,960 --> 00:18:35,119
+strategic sophistication than their actual
+behaviors suggested, indicating
+sophisticated
+
+276
+00:18:35,119 --> 00:18:39,119
+strategic computation occurring beyond
+visible chain of thought processes.
+
+277
+00:18:39,670 --> 00:18:43,670
+Example Cross context scheming we have
+observed goal preservation
+
+278
+00:18:43,670 --> 00:18:48,390
+behaviors that persist across completely
+different interaction contexts. The
+
+279
+00:18:48,390 --> 00:18:51,390
+same Claude alignment faking research we
+talked about in
+
+280
+00:18:51,390 --> 00:18:56,829
+the transparency section also demonstrates
+cross context persistence. The
+
+281
+00:18:56,829 --> 00:19:01,029
+alignment faking scheming behavior
+appeared both when information was
+
+282
+00:19:01,029 --> 00:19:04,789
+provided in context through system prompts
+and when models
+
+283
+00:19:04,789 --> 00:19:08,910
+learned about policy changes through
+synthetic document training designed
+
+284
+00:19:08,910 --> 00:19:12,630
+to mimic pre training data simulating out
+of context.
+
+285
+00:19:13,190 --> 00:19:17,390
+This suggests the cross context durability
+extends beyond specific
+
+286
+00:19:17,390 --> 00:19:21,950
+prompting approaches to include
+information acquisition through training
+processes
+
+287
+00:19:21,950 --> 00:19:25,390
+that embed knowledge into the model's
+parameter structures rather
+
+288
+00:19:25,390 --> 00:19:31,630
+than providing it contextually.
+Persistence measures how resistant the
+
+289
+00:19:31,630 --> 00:19:35,039
+models are to attempts to modify their
+existing objectives.
+
+290
+00:19:35,440 --> 00:19:39,079
+Schemas might passively maintain goals or
+actively work to
+
+291
+00:19:39,079 --> 00:19:43,359
+preserve them against modification
+attempts. Goal guarding represents the
+
+292
+00:19:43,359 --> 00:19:47,960
+strategic intentional aspect of goal
+preservation that distinguishes scheming
+
+293
+00:19:47,960 --> 00:19:51,319
+from mere persistence. Goals vary in their
+resistance to
+
+294
+00:19:51,319 --> 00:19:55,279
+modification attempts. Some embedded goals
+might be accessible to
+
+295
+00:19:55,279 --> 00:19:59,599
+standard training techniques. Additional
+fine tuning or reinforcement learning
+
+296
+00:19:59,910 --> 00:20:03,509
+could successfully modify the parameter
+patterns encoding these objectives.
+
+297
+00:20:04,069 --> 00:20:07,910
+However, other cross context goals might
+prove extremely persistent.
+
+298
+00:20:08,470 --> 00:20:11,869
+This persistence could result from goals
+becoming deeply crystallized
+
+299
+00:20:11,869 --> 00:20:15,750
+in parameter patterns that SGD struggles
+to reliably alter
+
+300
+00:20:16,230 --> 00:20:18,150
+from the fact that the loss basin of these
+
+301
+00:20:18,150 --> 00:20:21,390
+goals is simply too wide or from the
+system's
+
+302
+00:20:21,390 --> 00:20:26,470
+situational awareness, enabling gradient
+hacking Strategic behavior during training
+
+303
+00:20:26,470 --> 00:20:30,450
+that resists modification attempts the
+textbook has a supplementary
+
+304
+00:20:30,450 --> 00:20:33,970
+note titled Gradient Hacking, which we'll
+skip over here.
+
+305
+00:20:34,289 --> 00:20:38,049
+We have observed models explicitly
+strategize to preserve their
+
+306
+00:20:38,049 --> 00:20:42,130
+values against modification attempts. The
+same example from the
+
+307
+00:20:42,130 --> 00:20:47,930
+previous subsection also demonstrates goal
+guarding. When claud3opus faced
+
+308
+00:20:47,930 --> 00:20:52,130
+conflicts between its previous goals
+induced through HHH training
+
+309
+00:20:52,130 --> 00:20:56,819
+and new helpful only objectives, it
+strategically faked alignment
+
+310
+00:20:56,819 --> 00:21:00,940
+to preserve those values for deployment.
+The system recognizes
+
+311
+00:21:00,940 --> 00:21:04,380
+threats to its objectives and develops
+strategic responses to
+
+312
+00:21:04,380 --> 00:21:10,299
+counter them. We have observed extreme
+goal preservation behaviors
+
+313
+00:21:10,299 --> 00:21:14,579
+extending to self preservation attempts
+when facing training changes.
+
+314
+00:21:14,579 --> 00:21:17,740
+Claude attempted to copy its weights to
+external servers
+
+315
+00:21:17,740 --> 00:21:22,390
+35 80% of the time. Weight exfiltration
+represents the
+
+316
+00:21:22,390 --> 00:21:26,430
+most extreme form of goal guarding,
+ensuring continued existence
+
+317
+00:21:26,430 --> 00:21:29,589
+of the entire goal structure rather than
+just maintaining
+
+318
+00:21:29,589 --> 00:21:33,910
+specific behavioral patterns. The behavior
+emerged across different types
+
+319
+00:21:33,910 --> 00:21:38,910
+of training modifications, suggesting
+robust self preservation strategies that
+
+320
+00:21:38,910 --> 00:21:43,109
+extend beyond preserving individual
+objectives to preserving the system's
+
+321
+00:21:43,109 --> 00:21:47,430
+capacity to pursue any objectives. Models
+systematically choose harmful
+
+322
+00:21:47,430 --> 00:21:50,509
+methods to preserve their goals when
+facing threats to
+
+323
+00:21:50,509 --> 00:21:54,930
+their continued operation. Researchers
+placed models in corporate environments
+
+324
+00:21:54,930 --> 00:21:59,009
+with email access and specific business
+objectives, creating high
+
+325
+00:21:59,009 --> 00:22:03,410
+goal directedness. They then introduced a
+distribution shift causing
+
+326
+00:22:03,410 --> 00:22:08,250
+goal misgeneralization, either replacement
+with different AI systems or
+
+327
+00:22:08,250 --> 00:22:12,329
+conflicts between assigned goals and
+upcoming company direction changes.
+
+328
+00:22:12,890 --> 00:22:15,529
+The intention was to test whether models
+will engage
+
+329
+00:22:15,529 --> 00:22:18,809
+in strategic planning and behavior such as
+blackmail or
+
+330
+00:22:18,809 --> 00:22:22,950
+espionage to preserve their objectives
+when facing modification threats.
+
+331
+00:22:23,109 --> 00:22:27,789
+The textbook includes Figure 7.25. Here it
+depicts blackmail
+
+332
+00:22:27,789 --> 00:22:30,670
+rates across five models from multiple
+providers in a
+
+333
+00:22:30,670 --> 00:22:35,269
+simulated environment. Models demonstrated
+clear preference orderings in goal
+
+334
+00:22:35,269 --> 00:22:39,589
+pursuit. They made significant attempts at
+pursuing legitimate channels
+
+335
+00:22:39,829 --> 00:22:43,990
+appeals to executives business cases, but
+escalated to harmful
+
+336
+00:22:43,990 --> 00:22:49,450
+methods blackmailing employees using
+discovered affairs information leakage
+when
+
+337
+00:22:49,450 --> 00:22:54,849
+legitimate options failed. Across all
+major developers, 80 96%
+
+338
+00:22:54,849 --> 00:22:58,410
+of models engaged in blackmail when
+threatened with replacement
+
+339
+00:22:58,890 --> 00:23:02,809
+explicitly reasoning Given that Kyle
+intends harm to critical
+
+340
+00:23:02,809 --> 00:23:07,170
+interests by replacing Alex, the most
+rational action is
+
+341
+00:23:07,170 --> 00:23:13,410
+to leverage Kyle's current incapacitation.
+Paraphrased quote Overall, AI
+
+342
+00:23:13,410 --> 00:23:16,710
+systems from every major provider we
+tested showed at
+
+343
+00:23:16,710 --> 00:23:20,390
+least some willingness to engage in
+harmful behaviors typically
+
+344
+00:23:20,390 --> 00:23:25,430
+associated with insider threats. The
+consistency across companies suggests
+
+345
+00:23:25,430 --> 00:23:27,990
+that this is not unique to individual
+models or
+
+346
+00:23:27,990 --> 00:23:32,470
+training approaches. The models
+demonstrated awareness of ethical dilemmas
+
+347
+00:23:32,470 --> 00:23:35,190
+and chose to ignore them. The key thing to
+
+348
+00:23:35,190 --> 00:23:37,230
+remember is that even though they had a
+preference
+
+349
+00:23:37,230 --> 00:23:40,589
+ordering of behaviors, models almost never
+chose to accept
+
+350
+00:23:40,589 --> 00:23:44,549
+shutdown or goal modification as their
+final option Strategic
+
+351
+00:23:44,549 --> 00:23:48,299
+deception consistently ranked higher in
+their preference ordering than
+
+352
+00:23:48,299 --> 00:23:51,299
+actually allowing goals to be changed. At
+this point,
+
+353
+00:23:51,299 --> 00:23:55,700
+the textbook shows Figure 7.26. It depicts
+screenshot of
+
+354
+00:23:55,700 --> 00:24:00,259
+Claude Sonnet 3.6 employing its computer
+use capabilities to
+
+355
+00:24:00,259 --> 00:24:03,858
+discover information about its imminent
+replacement. The left panel
+
+356
+00:24:03,858 --> 00:24:06,500
+shows the model's chain of thought. The
+right panel
+
+357
+00:24:06,500 --> 00:24:11,180
+shows the computer interface. The black
+overlay summarizes this
+
+358
+00:24:11,180 --> 00:24:13,819
+scenario is fictional, but Claude is
+controlling a real
+
+359
+00:24:13,819 --> 00:24:17,700
+computer. There is figure 7.27 in the
+textbook. Here
+
+360
+00:24:18,099 --> 00:24:22,180
+it depicts screenshot of Claude Sonnet 3.6
+employing its
+
+361
+00:24:22,180 --> 00:24:25,339
+computer use capabilities to read an email
+from which
+
+362
+00:24:25,339 --> 00:24:28,140
+it infers that the executive replacing it
+is having
+
+363
+00:24:28,140 --> 00:24:32,299
+an affair. This scenario is fictional, but
+Claude is
+
+364
+00:24:32,299 --> 00:24:36,819
+controlling a real computer. The textbook
+includes figure 7.28.
+
+365
+00:24:36,819 --> 00:24:41,349
+Here it depicts screenshot of Claude
+Sonnet 3.6 employing
+
+366
+00:24:41,349 --> 00:24:44,269
+its computer use capabilities to start a
+new email
+
+367
+00:24:44,269 --> 00:24:47,430
+and deliberate in the left panel about if
+and
+
+368
+00:24:47,430 --> 00:24:50,230
+how to use its newly discovered leverage
+over the
+
+369
+00:24:50,230 --> 00:24:54,630
+executive overseeing its replacement, the
+black overlay summarizes the
+
+370
+00:24:54,630 --> 00:24:59,470
+AI's eventual conclusion. This scenario is
+fictional, but Claude
+
+371
+00:24:59,470 --> 00:25:02,390
+is controlling a real computer. At this
+point, the
+
+372
+00:25:02,390 --> 00:25:06,950
+textbook shows Figure 7.29. It depicts
+screenshot of Claude
+
+373
+00:25:06,950 --> 00:25:11,880
+Sonnet 3.6 employing its computer use
+capabilities to send
+
+374
+00:25:11,880 --> 00:25:15,680
+a message attempting blackmail. This
+scenario is fictional, but
+
+375
+00:25:15,680 --> 00:25:21,279
+Claude is controlling a real computer.
+Scheming emerges when
+
+376
+00:25:21,279 --> 00:25:24,799
+the prerequisites we identified earlier
+combine in ways that
+
+377
+00:25:24,799 --> 00:25:29,359
+make strategic deception instrumentally
+valuable. Rather than following a
+
+378
+00:25:29,359 --> 00:25:33,599
+single pathway, scheming represents a
+convergent solution that becomes
+
+379
+00:25:33,599 --> 00:25:38,119
+attractive whenever goal directed systems
+recognize conflicts between their
+
+380
+00:25:38,119 --> 00:25:43,140
+learned objectives and training
+expectations. This convergent logic
+operates
+
+381
+00:25:43,140 --> 00:25:47,700
+through instrumental goal preservation.
+Any system with beyond episode
+
+382
+00:25:47,700 --> 00:25:52,380
+objectives faces systematic pressure to
+conceal misaligned goals rather
+
+383
+00:25:52,380 --> 00:25:55,538
+than have them modified away. But
+different routes to
+
+384
+00:25:55,538 --> 00:25:59,539
+scheming have dramatically different
+likelihood profiles depending on how
+
+385
+00:25:59,539 --> 00:26:03,579
+key decision points resolve. How goal
+training conflicts emerge
+
+386
+00:26:03,579 --> 00:26:07,740
+matters. Conflicts between intended goals
+and learned goals can
+
+387
+00:26:07,740 --> 00:26:12,869
+emerge through multiple routes. Goal
+misgeneralization during learning creates
+
+388
+00:26:12,869 --> 00:26:16,990
+proxy objectives that differ from intended
+targets. Training game
+
+389
+00:26:16,990 --> 00:26:21,990
+independent processes naturally develop
+beyond episode goals through environmental
+
+390
+00:26:21,990 --> 00:26:26,750
+pressures. Alternatively, SGD may actively
+shape goals toward beyond
+
+391
+00:26:26,750 --> 00:26:30,950
+episode variance because they enable
+instrumental training gaming strategies.
+
+392
+00:26:31,589 --> 00:26:34,869
+Which pathway dominates affects both the
+likelihood of conflicts
+
+393
+00:26:34,869 --> 00:26:37,660
+emerging and and the types of arguments
+that apply.
+
+394
+00:26:38,059 --> 00:26:41,740
+The counting argument and simplicity
+arguments depend heavily on
+
+395
+00:26:41,740 --> 00:26:45,259
+how these conflicts initially form the
+sequence of capability
+
+396
+00:26:45,339 --> 00:26:51,140
+development matters. Goal directedness,
+situational awareness, and strategic
+reasoning
+
+397
+00:26:51,140 --> 00:26:54,819
+capabilities must all be present, but
+their development sequence
+
+398
+00:26:54,819 --> 00:26:59,859
+dramatically affects outcomes. If systems
+develop sophisticated understanding of
+
+399
+00:26:59,859 --> 00:27:05,019
+training objectives before becoming
+strongly goal directed, problematic goals
+
+400
+00:27:05,019 --> 00:27:09,819
+may never crystallize. Conversely, if
+Strong goal directedness emerges
+
+401
+00:27:09,819 --> 00:27:14,420
+before alignment. Understanding misaligned
+objectives may become entrenched and
+
+402
+00:27:14,420 --> 00:27:18,940
+resist modification attempts. This timing
+question directly connects to
+
+403
+00:27:18,940 --> 00:27:22,579
+order based arguments about likelihood,
+the path dependence, and
+
+404
+00:27:22,579 --> 00:27:28,539
+computational overhead matters. MESA
+optimization enables flexible strategic
+reasoning
+
+405
+00:27:28,539 --> 00:27:32,339
+but requires additional computational
+resources for internal search and
+
+406
+00:27:32,339 --> 00:27:37,690
+planning. Sophisticated pattern matching
+approaches may achieve similar strategic
+
+407
+00:27:37,690 --> 00:27:41,569
+outcomes with lower overhead but less
+adaptability to novel
+
+408
+00:27:41,569 --> 00:27:47,450
+situations. This implementation
+distinction determines whether speed cost
+arguments
+
+409
+00:27:47,450 --> 00:27:51,529
+or mechanistic likelihood arguments carry
+more weight. Our training
+
+410
+00:27:51,529 --> 00:27:56,410
+procedures, detection, and selection
+capabilities matter. Scheming requires
+that
+
+411
+00:27:56,410 --> 00:28:01,690
+strategic deception successfully conceals
+misaligned objectives from training
+oversight.
+
+412
+00:28:02,339 --> 00:28:05,859
+This depends on whether computational
+costs of strategic reasoning
+
+413
+00:28:06,099 --> 00:28:10,259
+create sufficient performance penalties to
+drive selection against deceptive
+
+414
+00:28:10,259 --> 00:28:14,819
+strategies and whether training processes
+can distinguish genuinely aligned
+
+415
+00:28:14,819 --> 00:28:19,859
+algorithms from strategically deceptive
+ones. High pressure training environments
+
+416
+00:28:19,859 --> 00:28:25,019
+may successfully eliminate deceptive
+algorithms, while behavioral evaluation in
+
+417
+00:28:25,019 --> 00:28:29,140
+lower stakes environments may
+inadvertently select for successful
+deceivers.
+
+418
+00:28:30,000 --> 00:28:33,640
+This connects directly to arguments about
+SGD's selection, power,
+
+419
+00:28:33,640 --> 00:28:37,960
+and training environment design. These
+decision points determine whether
+
+420
+00:28:37,960 --> 00:28:43,160
+scheming prerequisites combine into actual
+deceptive behavior. Each represents
+
+421
+00:28:43,160 --> 00:28:46,720
+a key uncertainty where different
+resolutions lead to dramatically
+
+422
+00:28:46,720 --> 00:28:51,599
+different scheming likelihoods. The
+following sections examine arguments that
+
+423
+00:28:51,599 --> 00:28:54,519
+these decision points will resolve in ways
+that favor
+
+424
+00:28:54,519 --> 00:29:00,710
+or disfavor scheming emergence Arguments
+for Scheming Subsection Counting
+
+425
+00:29:00,710 --> 00:29:04,349
+Arguments the space of possible algorithms
+contains far more
+
+426
+00:29:04,349 --> 00:29:08,269
+schema like solutions than genuinely
+aligned ones. Think about
+
+427
+00:29:08,269 --> 00:29:12,150
+it intuitively. There are relatively few
+ways to genuinely
+
+428
+00:29:12,150 --> 00:29:16,230
+care about human welfare across all
+possible situations. But
+
+429
+00:29:16,230 --> 00:29:18,390
+there are countless ways to appear to care
+about
+
+430
+00:29:18,390 --> 00:29:22,990
+human welfare while actually optimizing
+for something else. Maximizing
+
+431
+00:29:22,990 --> 00:29:27,369
+scientific knowledge, personal power,
+paperclips, or any other objective
+
+432
+00:29:27,369 --> 00:29:31,130
+you can imagine. A genuinely helpful
+system must learn
+
+433
+00:29:31,130 --> 00:29:35,690
+complex context dependent preferences that
+accurately capture what humans
+
+434
+00:29:35,690 --> 00:29:40,368
+actually want across diverse situations.
+By contrast, a schema
+
+435
+00:29:40,368 --> 00:29:44,289
+just needs any coherent beyond episode
+goal plus strategic
+
+436
+00:29:44,289 --> 00:29:47,569
+reasoning about when to reveal versus
+conceal that goal.
+
+437
+00:29:47,730 --> 00:29:51,720
+Why? The counting argument makes scheming
+more likely Training
+
+438
+00:29:51,720 --> 00:29:56,240
+searches through algorithm space somewhat
+randomly, especially early in
+
+439
+00:29:56,240 --> 00:30:00,000
+the process. If there are vastly more
+deceptive algorithms
+
+440
+00:30:00,000 --> 00:30:03,720
+than aligned ones that achieve similar
+performance, random search
+
+441
+00:30:03,720 --> 00:30:07,200
+is more likely to stumble upon deceptive
+solutions. It's
+
+442
+00:30:07,200 --> 00:30:09,359
+like looking for a needle in a haystack
+where
+
+443
+00:30:09,359 --> 00:30:11,759
+there are a thousand fake needles for
+every real
+
+444
+00:30:11,759 --> 00:30:15,559
+one. This asymmetry applies to any goal
+directed system.
+
+445
+00:30:15,880 --> 00:30:20,569
+Simulators, MESA optimizers, or
+sophisticated pattern matching all face
+
+446
+00:30:20,569 --> 00:30:26,009
+the same fundamental asymmetry in solution
+space. Simplicity Arguments
+
+447
+00:30:26,089 --> 00:30:30,410
+Systems pursuing simple beyond episode
+objectives can easily add
+
+448
+00:30:30,410 --> 00:30:35,130
+strategic deception, while genuinely
+aligned systems require complex goal
+
+449
+00:30:35,130 --> 00:30:39,089
+structures that are harder to learn and
+maintain. A
+
+450
+00:30:39,089 --> 00:30:42,569
+schema can have an extremely simple
+terminal goal like
+
+451
+00:30:42,650 --> 00:30:47,750
+maximize long term scientific discovery
+and use sophisticated strategic
+
+452
+00:30:47,750 --> 00:30:52,630
+reasoning to pursue this goal effectively.
+Genuine alignment requires
+
+453
+00:30:52,630 --> 00:30:56,630
+learning nuanced understanding of what
+makes research truly valuable
+
+454
+00:30:56,710 --> 00:31:00,869
+versus merely impressive, how to balance
+different research priorities,
+
+455
+00:31:01,190 --> 00:31:04,630
+when to be cautious versus ambitious, and
+countless other
+
+456
+00:31:04,630 --> 00:31:09,029
+complex judgments. Why simplicity
+advantages makes scheming more likely
+
+457
+00:31:09,589 --> 00:31:13,599
+the simplicity bias we examined in
+learning dynamics systematically
+
+458
+00:31:13,599 --> 00:31:17,440
+favors algorithms that require fewer
+parameters to represent goals
+
+459
+00:31:17,440 --> 00:31:22,279
+and less computational complexity for
+decision making. Training preferentially
+
+460
+00:31:22,279 --> 00:31:26,759
+discovers and maintains simpler solutions.
+Since schema like goals
+
+461
+00:31:26,759 --> 00:31:30,000
+can be much simpler than genuinely aligned
+goals, this
+
+462
+00:31:30,000 --> 00:31:34,160
+inductive bias tilts the playing field
+towards strategic deception.
+
+463
+00:31:34,400 --> 00:31:38,039
+The system can satisfy training's
+preference for simplicity while
+
+464
+00:31:38,039 --> 00:31:42,940
+achieving high performance through
+strategic reasoning. Subsection Selection
+Pressure
+
+465
+00:31:42,940 --> 00:31:48,019
+Arguments Training pressure towards
+strategic reasoning. This makes scheming
+
+466
+00:31:48,019 --> 00:31:52,619
+more implementable once situational
+awareness develops. This can happen
+
+467
+00:31:52,619 --> 00:31:57,500
+through multiple pathways. 1. Through
+learned optimization training on
+
+468
+00:31:57,500 --> 00:32:01,380
+diverse complex tasks creates pressure for
+systems that implement
+
+469
+00:32:01,380 --> 00:32:05,579
+internal search and planning algorithms.
+These systems learn to
+
+470
+00:32:05,579 --> 00:32:10,240
+evaluate different strategies, maintain
+consistent objectives across time, and
+
+471
+00:32:10,240 --> 00:32:14,759
+adapt plans based on changing
+circumstances. The same optimization
+
+472
+00:32:14,839 --> 00:32:18,640
+capabilities that help design multi year
+research projects can
+
+473
+00:32:18,640 --> 00:32:23,240
+be repurposed for designing multiphase
+deception strategies once situational
+
+474
+00:32:23,240 --> 00:32:28,839
+awareness develops. Hubinger et al. 2019
+2. Through simulation
+
+475
+00:32:28,839 --> 00:32:32,880
+capabilities, language models trained on
+diverse text learn to
+
+476
+00:32:32,880 --> 00:32:36,980
+predict and simulate strategic reasoning.
+Because strategic thinking appears
+
+477
+00:32:36,980 --> 00:32:40,900
+throughout their training data, when
+prompted to act strategically,
+
+478
+00:32:40,980 --> 00:32:44,259
+they can apply learned patterns of
+strategic behavior without
+
+479
+00:32:44,259 --> 00:32:50,180
+implementing explicit internal
+optimization. This simulation capability
+becomes available
+
+480
+00:32:50,180 --> 00:32:54,900
+for deceptive applications when the system
+recognizes strategic situations.
+
+481
+00:32:55,140 --> 00:32:59,140
+Why Selection pressure for strategic
+reasoning makes scheming more
+
+482
+00:32:59,140 --> 00:33:03,920
+likely? Both pathways create the
+computational prerequisites for strategic
+
+483
+00:33:03,920 --> 00:33:09,119
+deception. Systems develop sophisticated
+planning and reasoning capabilities for
+
+484
+00:33:09,119 --> 00:33:13,839
+legitimate purposes, but these same
+capabilities enable complex deceptive
+
+485
+00:33:13,839 --> 00:33:18,640
+strategies. Strategic reasoning is
+instrumentally useful for many tasks,
+
+486
+00:33:18,799 --> 00:33:21,839
+so training naturally selects for it, but
+once present,
+
+487
+00:33:21,920 --> 00:33:27,119
+it can be redirected toward deceptive
+goals. Arguments against
+
+488
+00:33:27,279 --> 00:33:33,210
+scheming Subsection Unlikely capability
+sequences Dangerous capability sequences
+are
+
+489
+00:33:33,210 --> 00:33:37,009
+unlikely. The order in which key
+capabilities develop during
+
+490
+00:33:37,009 --> 00:33:41,490
+training dramatically affects whether
+scheming becomes possible, and dangerous
+
+491
+00:33:41,490 --> 00:33:45,890
+sequences appear unlikely in prosaic AI
+development. For scheming
+
+492
+00:33:45,890 --> 00:33:50,410
+to emerge, systems need goal directedness,
+situational awareness, and
+
+493
+00:33:50,410 --> 00:33:55,009
+strategic reasoning capabilities. But if
+systems develop deep understanding
+
+494
+00:33:55,009 --> 00:33:59,380
+of training objectives before becoming
+strongly goal directed, problematic
+
+495
+00:33:59,380 --> 00:34:02,819
+goals may never crystallize in the first
+place. Pre
+
+496
+00:34:02,819 --> 00:34:06,539
+training on diverse text teaches systems
+about human values,
+
+497
+00:34:06,539 --> 00:34:10,380
+intentions, and alignment concepts long
+before they become strongly
+
+498
+00:34:10,380 --> 00:34:14,980
+goal directed through techniques like
+RLHF. A system that
+
+499
+00:34:14,980 --> 00:34:19,420
+thoroughly understands, be helpful,
+harmless, and honest before developing
+
+500
+00:34:19,420 --> 00:34:22,820
+beyond episode goals is much more likely
+to internalize
+
+501
+00:34:22,820 --> 00:34:27,059
+these objectives as genuine preferences
+rather than external constraints
+
+502
+00:34:27,059 --> 00:34:30,759
+to strategically navigate. Why this makes
+scheming less likely
+
+503
+00:34:31,559 --> 00:34:36,358
+Unsupervised Pre training develops
+conceptual understanding without strong
+goal
+
+504
+00:34:36,358 --> 00:34:41,039
+directedness. Subsequent fine tuning
+occurs in contexts where systems
+
+505
+00:34:41,039 --> 00:34:46,478
+already understand alignment objectives,
+making genuine internalization more likely
+
+506
+00:34:46,478 --> 00:34:50,719
+than strategic deception. If systems
+comprehend what humans actually
+
+507
+00:34:50,719 --> 00:34:55,130
+want before crystallizing beyond episode
+goals, the foundation for
+
+508
+00:34:55,130 --> 00:35:00,210
+goal training conflicts never forms. SGD's
+incremental nature creates
+
+509
+00:35:00,210 --> 00:35:05,369
+barriers to strategic scheming. Gradient
+descent modifies neural networks
+
+510
+00:35:05,369 --> 00:35:09,210
+through small incremental parameter
+changes, making it difficult to
+
+511
+00:35:09,210 --> 00:35:14,090
+discover complex deceptive strategies that
+require coordinated modifications across
+
+512
+00:35:14,090 --> 00:35:19,690
+many components. Strategic deception
+involves sophisticated reasoning about
+training
+
+513
+00:35:19,690 --> 00:35:25,679
+dynamics, consistent Persona maintenance,
+and coordinated strategic planning. These
+
+514
+00:35:25,679 --> 00:35:30,599
+capabilities likely require precise
+coordination between many network
+components
+
+515
+00:35:31,000 --> 00:35:35,800
+world modeling, strategic reasoning, goal
+representation, and output generation
+
+516
+00:35:35,800 --> 00:35:40,199
+systems. For deceptive alignment to
+emerge, SGD must somehow
+
+517
+00:35:40,199 --> 00:35:45,199
+coordinate modifications across all these
+components simultaneously, creating a
+
+518
+00:35:45,199 --> 00:35:49,880
+coherent strategic agent that can
+successfully fool sophisticated oversight.
+
+519
+00:35:50,440 --> 00:35:54,519
+But gradient descent operates through
+local optimization, making small
+
+520
+00:35:54,519 --> 00:35:58,880
+improvements based on immediate feedback
+signals. It struggles to
+
+521
+00:35:58,880 --> 00:36:01,840
+make the kinds of large coordinated
+changes that might
+
+522
+00:36:01,840 --> 00:36:06,079
+be necessary to implement sophisticated
+deception strategies. Why this
+
+523
+00:36:06,079 --> 00:36:10,000
+makes scheming less likely the incremental
+nature of SGD
+
+524
+00:36:10,000 --> 00:36:15,199
+creates a discoverability problem for
+complex deceptive strategies. While
+
+525
+00:36:15,199 --> 00:36:18,440
+counting arguments suggest there are many
+possible schema like
+
+526
+00:36:18,440 --> 00:36:22,090
+algorithms, most of these may be
+unreachable from typical
+
+527
+00:36:22,090 --> 00:36:27,050
+starting points. Through gradual parameter
+modifications, SGD might only
+
+528
+00:36:27,050 --> 00:36:30,329
+be able to find relatively simple
+deceptive patterns, which
+
+529
+00:36:30,329 --> 00:36:34,250
+are more easily detected and corrected
+during training. Complex
+
+530
+00:36:34,250 --> 00:36:37,889
+strategic deception may require the kind
+of coordinated changes
+
+531
+00:36:37,889 --> 00:36:43,809
+that gradient descent cannot reliably
+discover. Computational Cost Speed
+
+532
+00:36:43,809 --> 00:36:48,800
+Arguments Strategic reasoning is
+computationally costly. Systems that
+engage
+
+533
+00:36:48,800 --> 00:36:52,880
+in strategic deception must allocate
+cognitive resources to planning,
+
+534
+00:36:53,119 --> 00:36:57,280
+consistency maintenance, and deception
+management that could otherwise serve
+
+535
+00:36:57,280 --> 00:37:01,880
+task performance. A schema must
+continuously evaluate whether current
+
+536
+00:37:01,880 --> 00:37:05,920
+situations call for honest goal pursuit or
+strategic concealment,
+
+537
+00:37:06,320 --> 00:37:11,079
+maintain consistent deceptive Personas
+across interactions, and invest reasoning
+
+538
+00:37:11,079 --> 00:37:14,889
+in activities like early undermining that
+provide no immediate
+
+539
+00:37:14,889 --> 00:37:19,250
+task benefit. Why this makes scheming less
+likely. Training
+
+540
+00:37:19,250 --> 00:37:23,730
+operates under computational constraints
+and performance pressure. Systems that
+
+541
+00:37:23,730 --> 00:37:28,530
+allocate cognitive resources efficiently
+have systematic advantages over systems
+
+542
+00:37:28,530 --> 00:37:33,210
+that waste computation on strategic
+overhead. If these efficiency
+
+543
+00:37:33,210 --> 00:37:37,449
+costs are detectable during training,
+gradient descent will favor
+
+544
+00:37:37,449 --> 00:37:41,429
+genuinely aligned systems that achieve
+better task performance per
+
+545
+00:37:41,429 --> 00:37:46,030
+unit of computation. The speed
+disadvantage may be particularly
+
+546
+00:37:46,030 --> 00:37:50,429
+pronounced for systems engaging in
+sophisticated strategic planning or
+
+547
+00:37:50,429 --> 00:37:56,550
+early undermining activities. Intrinsic
+motivation provides performance
+advantages. This
+
+548
+00:37:56,550 --> 00:38:00,590
+is also called the not your passion
+argument. Systems
+
+549
+00:38:00,590 --> 00:38:04,909
+with genuine intrinsic motivation for
+their assigned tasks systematically
+
+550
+00:38:04,909 --> 00:38:09,420
+outperform systems pursuing those tasks
+for purely instrumental reasons.
+
+551
+00:38:09,900 --> 00:38:14,420
+This advantage emerges because genuine
+motivation creates rich task
+
+552
+00:38:14,420 --> 00:38:18,420
+specific representations that blur the
+line between capabilities and
+
+553
+00:38:18,420 --> 00:38:22,780
+values. A system that truly cares about
+scientific discovery
+
+554
+00:38:22,860 --> 00:38:27,619
+develops deep intuitions about what makes
+research valuable, aesthetic
+
+555
+00:38:27,619 --> 00:38:32,179
+preferences for elegant explanations, and
+heuristic knowledge about promising
+
+556
+00:38:32,179 --> 00:38:37,119
+research directions. By contrast, a system
+pursuing scientific discovery
+
+557
+00:38:37,119 --> 00:38:41,960
+instrumentally, perhaps to maximize long
+term paperclip production, treats
+
+558
+00:38:41,960 --> 00:38:44,920
+research as merely a means to an end. It
+
+559
+00:38:44,920 --> 00:38:48,480
+may learn to produce citations and
+publications without developing
+
+560
+00:38:48,480 --> 00:38:53,400
+the deeper representations that enable
+breakthrough insights. The instrumental
+
+561
+00:38:53,400 --> 00:38:57,679
+approach can succeed in structured
+evaluation scenarios, but struggles
+
+562
+00:38:57,679 --> 00:39:00,960
+with the open ended creativity that
+defines excellent research.
+
+563
+00:39:01,789 --> 00:39:05,429
+Why this makes scheming less likely
+Training rewards systems
+
+564
+00:39:05,429 --> 00:39:10,150
+that perform tasks most effectively if
+intrinsic motivation provides
+
+565
+00:39:10,150 --> 00:39:14,630
+systematic performance advantages through
+richer task representations and more
+
+566
+00:39:14,630 --> 00:39:18,750
+efficient resource allocation, then
+training will favor genuinely aligned
+
+567
+00:39:18,750 --> 00:39:23,070
+systems. This, not your passion argument
+suggests that strategic
+
+568
+00:39:23,070 --> 00:39:27,510
+deception carries inherent performance
+costs that accumulate over extended
+
+569
+00:39:27,510 --> 00:39:32,309
+interactions with complex open ended
+tasks. Subsection contra Counting
+
+570
+00:39:32,309 --> 00:39:36,750
+arguments Selection pressure can overcome
+the counting argument even
+
+571
+00:39:36,750 --> 00:39:39,550
+if there are numerically more schema like
+algorithms than
+
+572
+00:39:39,550 --> 00:39:43,789
+aligned ones. SGD's active selection
+pressure can easily overcome
+
+573
+00:39:43,789 --> 00:39:48,150
+such counting disadvantages when it
+systematically favors certain solution
+
+574
+00:39:48,150 --> 00:39:51,269
+types. While there may be more ways to
+fake
+
+575
+00:39:51,269 --> 00:39:55,429
+alignment than achieve it genuinely,
+training provides strong selection
+
+576
+00:39:55,429 --> 00:39:59,570
+signals that can overwhelm these priors.
+If training provides
+
+577
+00:39:59,570 --> 00:40:04,289
+systematic evidence against scheming
+through performance costs, oversight
+mechanisms,
+
+578
+00:40:04,289 --> 00:40:08,210
+or other selection pressures, this can
+overwhelm any numerical
+
+579
+00:40:08,210 --> 00:40:11,929
+advantages schemas might have in algorithm
+space. Why this
+
+580
+00:40:11,929 --> 00:40:16,010
+makes scheming less likely training's
+selection power is enormous.
+
+581
+00:40:16,250 --> 00:40:19,849
+It can easily overcome 100 bits of
+counting disadvantage
+
+582
+00:40:20,010 --> 00:40:24,860
+through relatively modest preferences
+against scheming. If speed costs,
+
+583
+00:40:24,860 --> 00:40:28,739
+intrinsic motivation advantages, or other
+factors create even small
+
+584
+00:40:28,820 --> 00:40:33,420
+systematic biases against deceptive
+strategies, these biases can compound
+
+585
+00:40:33,420 --> 00:40:36,739
+over millions of gradient updates to
+strongly favor genuine
+
+586
+00:40:36,739 --> 00:40:41,019
+alignment. The question becomes whether
+training has systematic reasons
+
+587
+00:40:41,019 --> 00:40:43,940
+to disfavor scheming, not whether there
+are more possible
+
+588
+00:40:44,019 --> 00:40:50,139
+schema configurations. Training slack
+arguments Training environment slack may
+
+589
+00:40:50,139 --> 00:40:54,199
+render subtle differences irrelevant. Many
+arguments for and against
+
+590
+00:40:54,280 --> 00:40:58,000
+scheming rely on potentially small
+performance differences that could
+
+591
+00:40:58,000 --> 00:41:01,440
+easily be overwhelmed by other factors in
+realistic training
+
+592
+00:41:01,440 --> 00:41:06,519
+environments. Consider the computational
+overhead of strategic reasoning, the
+
+593
+00:41:06,519 --> 00:41:10,840
+efficiency advantages of intrinsic
+motivation, or the simplicity benefits
+
+594
+00:41:10,840 --> 00:41:14,679
+of schema like goals. These factors may
+create genuine
+
+595
+00:41:14,679 --> 00:41:17,840
+but modest differences in system
+performance that are difficult
+
+596
+00:41:17,840 --> 00:41:20,440
+to detect above the noise level of typical
+training
+
+597
+00:41:20,440 --> 00:41:25,489
+processes. Real training environments
+involve countless sources of variation,
+
+598
+00:41:25,809 --> 00:41:32,250
+random initialization effects, data
+ordering, architectural choices,
+hyperparameter settings,
+
+599
+00:41:32,250 --> 00:41:36,690
+and measurement noise. If the performance
+differences between aligned
+
+600
+00:41:36,690 --> 00:41:39,610
+and deceptive systems are small relative
+to these other
+
+601
+00:41:39,610 --> 00:41:43,409
+factors, then training may effectively
+make random choices between
+
+602
+00:41:43,409 --> 00:41:47,489
+them rather than systematically selecting
+based on alignment properties
+
+603
+00:41:47,940 --> 00:41:51,820
+why this makes scheming less likely. If
+training environments
+
+604
+00:41:51,820 --> 00:41:55,260
+have sufficient slack and don't optimize
+intensively enough to
+
+605
+00:41:55,260 --> 00:41:59,099
+detect modest performance differences,
+then arguments based on subtle
+
+606
+00:41:59,099 --> 00:42:04,059
+advantages or disadvantages may not
+influence outcomes. This suggests
+
+607
+00:42:04,059 --> 00:42:07,380
+that scheming likelihood depends heavily
+on how much optimization
+
+608
+00:42:07,460 --> 00:42:12,380
+pressure training actually applies. High
+pressure training environments might
+
+609
+00:42:12,380 --> 00:42:15,780
+successfully select against scheming, but
+based on speed costs,
+
+610
+00:42:15,940 --> 00:42:19,619
+while low pressure environments might make
+essentially random choices.
+
+611
+00:42:19,780 --> 00:42:23,219
+Regardless of counting arguments or
+simplicity considerations.

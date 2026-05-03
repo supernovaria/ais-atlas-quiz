@@ -1,0 +1,1318 @@
+1
+00:00:00,160 --> 00:00:04,599
+Section 7.3 Learning Dynamics A deeper
+understanding of goal
+
+2
+00:00:04,599 --> 00:00:08,800
+misgeneralization requires examining how
+the training process in machine
+
+3
+00:00:08,800 --> 00:00:12,759
+learning actually works. When we train
+neural networks, we're
+
+4
+00:00:12,759 --> 00:00:16,278
+adjusting millions or billions of
+parameters. But what do
+
+5
+00:00:16,278 --> 00:00:19,480
+these parameters represent? The best way
+to think about
+
+6
+00:00:19,480 --> 00:00:22,120
+machine learning is as a search process
+through a
+
+7
+00:00:22,120 --> 00:00:26,359
+vast space of possible algorithms, also
+sometimes called search
+
+8
+00:00:26,359 --> 00:00:30,660
+through the hypothesis space or model
+space. Each specific
+
+9
+00:00:30,660 --> 00:00:34,579
+combination of parameter values
+corresponds to a different algorithm
+
+10
+00:00:34,579 --> 00:00:38,780
+for processing information and making
+decisions. The path this
+
+11
+00:00:38,780 --> 00:00:42,179
+search takes and the biases that guide it
+determine
+
+12
+00:00:42,179 --> 00:00:44,979
+what types of algorithms get discovered
+and whether they
+
+13
+00:00:44,979 --> 00:00:49,700
+pursue intended goals or merely correlated
+proxies. The intuitions
+
+14
+00:00:49,700 --> 00:00:51,780
+that you learn in this section will help
+you
+
+15
+00:00:51,780 --> 00:00:54,659
+immensely, both in this chapter but also
+in the
+
+16
+00:00:54,659 --> 00:00:58,649
+later chapters on interpretability. Each
+point in parameter space
+
+17
+00:00:58,729 --> 00:01:02,649
+encodes a complete algorithm, just as the
+binary digits
+
+18
+00:01:02,649 --> 00:01:05,890
+0 and 1 can encode any computer program.
+The
+
+19
+00:01:05,890 --> 00:01:08,650
+millions of floating point parameters in a
+neural network
+
+20
+00:01:08,810 --> 00:01:13,250
+encode an algorithm for solving tasks.
+Change some parameters
+
+21
+00:01:13,250 --> 00:01:16,849
+and you get a different algorithm. The
+network's weights
+
+22
+00:01:16,849 --> 00:01:20,290
+determine exactly how it processes inputs,
+what patterns it
+
+23
+00:01:20,290 --> 00:01:24,030
+recognizes, what features it prioritizes,
+and what decisions it
+
+24
+00:01:24,030 --> 00:01:28,150
+makes. Two networks with different
+parameter values implement different
+
+25
+00:01:28,150 --> 00:01:32,269
+algorithms, even if they achieve similar
+performance. Training often
+
+26
+00:01:32,269 --> 00:01:36,469
+discovers algorithms that work for
+unexpected reasons. In the
+
+27
+00:01:36,469 --> 00:01:38,909
+image below, if you show a human these red
+
+28
+00:01:38,909 --> 00:01:42,510
+curved objects and say they were all
+kneebs, most
+
+29
+00:01:42,510 --> 00:01:45,150
+people would assume the defining feature
+is the shape.
+
+30
+00:01:45,469 --> 00:01:48,510
+But if we use neural networks on similar
+examples,
+
+31
+00:01:48,890 --> 00:01:51,930
+the networks would consistently learn that
+thneeb only means
+
+32
+00:01:51,930 --> 00:01:55,930
+any red object focusing on color rather
+than shape.
+
+33
+00:01:56,329 --> 00:01:58,049
+Which is to say that if we gave them
+
+34
+00:01:58,049 --> 00:02:00,769
+a blue object but with the same shape,
+then
+
+35
+00:02:00,769 --> 00:02:04,209
+they don't consider it a thneb. Both
+approaches achieve
+
+36
+00:02:04,209 --> 00:02:08,090
+perfect performance during training, yet
+they represent completely different
+
+37
+00:02:08,090 --> 00:02:11,370
+algorithms that would behave very
+differently when encountering new
+
+38
+00:02:11,370 --> 00:02:15,289
+examples. At this point, the textbook
+shows Figure 7.9.
+
+39
+00:02:15,919 --> 00:02:19,159
+It depicts this is called a thes neeb. It
+
+40
+00:02:19,159 --> 00:02:21,120
+is a word defined only for the sake of
+
+41
+00:02:21,120 --> 00:02:23,840
+the experiment. The image on the left is
+the
+
+42
+00:02:23,840 --> 00:02:26,120
+training data. The image on the right is
+the
+
+43
+00:02:26,120 --> 00:02:28,879
+test data. If after looking at the image
+on
+
+44
+00:02:28,879 --> 00:02:30,759
+the left, we ask you which one of the
+
+45
+00:02:30,759 --> 00:02:33,240
+two on the right is a thneeb? You would
+
+46
+00:02:33,240 --> 00:02:36,280
+probably say the left object because you
+generalized through
+
+47
+00:02:36,280 --> 00:02:39,000
+the shape path. But neural networks would
+answer that
+
+48
+00:02:39,000 --> 00:02:41,400
+the shape on the right is a sneeb, showing
+
+49
+00:02:41,400 --> 00:02:44,639
+they prefer the color path. Many
+algorithms can be
+
+50
+00:02:44,639 --> 00:02:49,159
+behaviorally indistinguishable during
+training while pursuing completely
+different goals.
+
+51
+00:02:49,560 --> 00:02:52,080
+We already made this point in the previous
+section,
+
+52
+00:02:52,080 --> 00:02:55,680
+but it is worth highlighting again. As
+another concrete
+
+53
+00:02:55,680 --> 00:02:59,879
+example researchers trained 100 identical
+BERT models on the
+
+54
+00:02:59,879 --> 00:03:04,479
+same dataset with identical
+hyperparameters. All models achieved
+nearly
+
+55
+00:03:04,479 --> 00:03:08,680
+indistinguishable performance during
+training. Yet when tested on novel
+
+56
+00:03:08,680 --> 00:03:12,430
+sentence structures, the these models
+revealed completely different approaches.
+
+57
+00:03:12,830 --> 00:03:16,229
+Some had learned more robust syntactic
+reasoning, while others
+
+58
+00:03:16,229 --> 00:03:20,069
+relied on superficial pattern matching.
+The training process had
+
+59
+00:03:20,069 --> 00:03:22,750
+found 100 different algorithms in the
+space of possible
+
+60
+00:03:22,830 --> 00:03:26,349
+language processing strategies. The reason
+we make this point
+
+61
+00:03:26,349 --> 00:03:29,270
+again is to motivate the fact that
+understanding the
+
+62
+00:03:29,270 --> 00:03:32,750
+search process, how training navigates the
+space of possible
+
+63
+00:03:32,830 --> 00:03:36,699
+algorithms, and which solutions it tends
+to discover. This
+
+64
+00:03:36,699 --> 00:03:39,659
+is very useful for what types of AIs
+parameter
+
+65
+00:03:39,659 --> 00:03:44,099
+configurations equals algorithms we might
+actually end up discovering,
+
+66
+00:03:44,180 --> 00:03:46,939
+and whether we can change something about
+our architectures
+
+67
+00:03:46,939 --> 00:03:52,900
+or learning dynamics to influence this
+process. At this
+
+68
+00:03:52,900 --> 00:03:56,300
+point, There is video 7.3 in the textbook.
+It
+
+69
+00:03:56,300 --> 00:04:00,979
+covers optional video explaining loss
+landscapes. Loss landscapes explain
+
+70
+00:04:00,979 --> 00:04:04,699
+why training can discover multiple
+algorithmic solutions to the
+
+71
+00:04:04,699 --> 00:04:08,699
+same task, each pursuing different goals.
+When we visualize
+
+72
+00:04:08,699 --> 00:04:13,460
+how neural network performance changes
+across parameter configurations, we
+
+73
+00:04:13,460 --> 00:04:17,579
+create what researchers call a loss
+landscape. Each point
+
+74
+00:04:17,579 --> 00:04:21,180
+in this high dimensional space represents
+a different algorithm
+
+75
+00:04:21,420 --> 00:04:24,980
+with height indicating how poorly that
+algorithm performs on
+
+76
+00:04:24,980 --> 00:04:30,259
+the specification. Higher loss means worse
+performance. This landscape
+
+77
+00:04:30,259 --> 00:04:33,740
+concept applies regardless of how we
+specify the task,
+
+78
+00:04:34,389 --> 00:04:37,829
+whether through reward functions, human
+feedback, or any other
+
+79
+00:04:37,829 --> 00:04:41,269
+performance measure. Here is a definition
+of loss landscape.
+
+80
+00:04:41,430 --> 00:04:44,189
+A loss landscape is a visualization of how
+the
+
+81
+00:04:44,189 --> 00:04:48,269
+loss of a neural network changes as we
+vary
+
+82
+00:04:48,269 --> 00:04:52,069
+its parameters. Each point in this high
+dimensional space
+
+83
+00:04:52,230 --> 00:04:56,310
+represents a different algorithm with
+height, indicating how poorly
+
+84
+00:04:56,310 --> 00:04:59,990
+that algorithm performs on the task. The
+textbook includes
+
+85
+00:04:59,990 --> 00:05:03,660
+figure 7.10. Here it depicts this is the
+Los
+
+86
+00:05:03,660 --> 00:05:07,819
+landscape of Resnet 110 no short in both
+3D
+
+87
+00:05:07,899 --> 00:05:11,980
+left and 2D right. The paths that SGD
+takes
+
+88
+00:05:11,980 --> 00:05:15,259
+through these different LOS landscapes
+will be different. The
+
+89
+00:05:15,259 --> 00:05:19,420
+loss landscape itself remains identical
+across different training runs.
+
+90
+00:05:19,660 --> 00:05:23,180
+Only the starting position changes. Think
+of this landscape
+
+91
+00:05:23,180 --> 00:05:26,339
+as a fixed mountain range with peaks,
+valleys, ridges,
+
+92
+00:05:26,339 --> 00:05:30,310
+and basins. This terrain is completely
+determined by your
+
+93
+00:05:30,310 --> 00:05:36,029
+network architecture, the geological
+structure, your training data, the
+
+94
+00:05:36,029 --> 00:05:39,670
+climate that shaped it, and your loss
+function, the
+
+95
+00:05:39,670 --> 00:05:43,189
+elevation measurement system. Every time
+you train the same
+
+96
+00:05:43,189 --> 00:05:46,550
+architecture on the same data, you're
+exploring the exact
+
+97
+00:05:46,550 --> 00:05:50,149
+same mountain range. The peaks and valleys
+never move.
+
+98
+00:05:50,870 --> 00:05:55,120
+What changes is where you start. Random
+initialization is
+
+99
+00:05:55,120 --> 00:05:57,920
+like being blindfolded and dropped at a
+random location
+
+100
+00:05:57,920 --> 00:06:01,680
+in this mountain range. From each starting
+point, gradient
+
+101
+00:06:01,680 --> 00:06:05,079
+descent acts like a ball rolling downhill,
+following the
+
+102
+00:06:05,079 --> 00:06:08,680
+steepest descent toward the nearest valley
+bottom. The geometry
+
+103
+00:06:08,680 --> 00:06:12,360
+of these landscapes determines which
+algorithms are discoverable and
+
+104
+00:06:12,360 --> 00:06:17,439
+robust. Some algorithmic solutions occupy
+wide, flat valleys where
+
+105
+00:06:17,439 --> 00:06:21,889
+many Parameter settings implement similar
+approaches. Others exist as
+
+106
+00:06:21,889 --> 00:06:25,209
+sharp, narrow peaks that are difficult to
+find, easy
+
+107
+00:06:25,209 --> 00:06:29,610
+to lose, and often misgeneralize under
+distribution shifts. Algorithms
+
+108
+00:06:29,610 --> 00:06:32,810
+in wide basins remain stable when their
+parameters are
+
+109
+00:06:32,810 --> 00:06:38,850
+slightly perturbed, corresponding to
+robust generalizable solutions. Sharp
+peaks
+
+110
+00:06:38,850 --> 00:06:42,529
+represent brittle algorithms where tiny
+changes can cause major
+
+111
+00:06:42,529 --> 00:06:48,040
+performance drops. Keskar et al. This
+geometry matters for
+
+112
+00:06:48,040 --> 00:06:51,639
+goal misgeneralization because the width
+of different goal valleys
+
+113
+00:06:51,639 --> 00:06:56,319
+determines their discoverability. Wider
+valleys for misaligned goals make
+
+114
+00:06:56,319 --> 00:06:59,399
+those goals more likely to emerge from
+training. At
+
+115
+00:06:59,399 --> 00:07:03,800
+this point, the textbook shows Figure
+7.11. It depicts
+
+116
+00:07:03,800 --> 00:07:07,560
+from data to model behavior. Structure in
+data determines
+
+117
+00:07:07,560 --> 00:07:11,920
+internal structure in models and thus
+generalization. Current approaches
+
+118
+00:07:11,920 --> 00:07:16,089
+to alignment work by shaping the training
+distribution, which
+
+119
+00:07:16,089 --> 00:07:20,329
+only indirectly determines model structure
+through the effects on
+
+120
+00:07:20,329 --> 00:07:24,610
+shaping the optimization process middle,
+left and right. To
+
+121
+00:07:24,610 --> 00:07:28,850
+mitigate the limitations of this indirect
+approach, alignment requires
+
+122
+00:07:28,850 --> 00:07:32,970
+a better understanding of these
+intermediate links. Understanding
+landscape
+
+123
+00:07:32,970 --> 00:07:37,050
+structure reveals why certain goals
+systematically emerge over others.
+
+124
+00:07:37,529 --> 00:07:40,970
+The relative size and accessibility of
+different valleys create
+
+125
+00:07:41,050 --> 00:07:45,019
+systematic biases in what gets discovered.
+If the moveright
+
+126
+00:07:45,019 --> 00:07:47,620
+valley is wider and easier to reach than
+the
+
+127
+00:07:47,620 --> 00:07:51,060
+collect coins, valley training will more
+often discover the
+
+128
+00:07:51,060 --> 00:07:55,220
+misaligned solution. This landscape
+structure is determined by the
+
+129
+00:07:55,220 --> 00:07:59,220
+network architecture, training data and
+loss function, but most
+
+130
+00:07:59,220 --> 00:08:02,620
+importantly by the inductive biases that
+shape which types
+
+131
+00:08:02,620 --> 00:08:06,540
+of algorithms get wide valleys versus
+narrow peaks. Here
+
+132
+00:08:06,540 --> 00:08:10,430
+is a definition of algorithmic range. The
+algorithmic range
+
+133
+00:08:10,430 --> 00:08:13,230
+of a machine learning system refers to how
+extensive
+
+134
+00:08:13,230 --> 00:08:15,990
+the set of algorithms capable of being
+found is.
+
+135
+00:08:16,310 --> 00:08:19,870
+There is figure 7.12 in the textbook. Here
+it
+
+136
+00:08:19,870 --> 00:08:23,550
+depicts a 2D loss landscape where each dot
+represents
+
+137
+00:08:23,550 --> 00:08:26,509
+a learned algorithm with a different set
+of parameters
+
+138
+00:08:26,509 --> 00:08:30,189
+on the landscape. There are various
+different algorithms that
+
+139
+00:08:30,189 --> 00:08:32,549
+the model can learn from. The coin run
+example.
+
+140
+00:08:32,950 --> 00:08:35,590
+The goal of SGD is to search through this
+
+141
+00:08:35,590 --> 00:08:38,899
+space for the right dot set of parameters
+equals
+
+142
+00:08:38,899 --> 00:08:44,379
+learned algorithm path dependence. Path
+dependence determines whether different
+
+143
+00:08:44,379 --> 00:08:47,299
+starting points in the LOS landscape lead
+to the
+
+144
+00:08:47,299 --> 00:08:51,899
+same algorithmic destination. In simple
+landscapes with one dominant
+
+145
+00:08:51,899 --> 00:08:54,820
+valley, almost every starting point rolls
+into the same
+
+146
+00:08:54,820 --> 00:08:59,659
+solution. That's low path dependence. But
+complex landscapes contain
+
+147
+00:08:59,659 --> 00:09:03,870
+multiple deep valleys separated by ridges.
+Now your starting
+
+148
+00:09:03,870 --> 00:09:06,830
+position matters enormously. Drop the ball
+on the left
+
+149
+00:09:06,830 --> 00:09:09,029
+side of a ridge and it rolls into valley
+
+150
+00:09:09,029 --> 00:09:12,669
+A. Learning to move right in coin run.
+Drop
+
+151
+00:09:12,669 --> 00:09:14,710
+it on the right side and it rolls into
+
+152
+00:09:14,710 --> 00:09:19,429
+valley B. Learning to collect coins Both
+valleys represent
+
+153
+00:09:19,509 --> 00:09:23,110
+perfect solutions during training, but
+they implement completely different
+
+154
+00:09:23,110 --> 00:09:27,350
+algorithms. Here is a definition of path
+dependence. Path
+
+155
+00:09:27,350 --> 00:09:30,389
+dependence occurs when small differences
+in the training process
+
+156
+00:09:30,970 --> 00:09:34,490
+lead to discovering fundamentally
+different algorithms for solving the
+
+157
+00:09:34,490 --> 00:09:38,289
+same task. High path dependence means high
+variance in
+
+158
+00:09:38,289 --> 00:09:42,490
+learned algorithms across training runs,
+while low path dependence
+
+159
+00:09:42,490 --> 00:09:47,490
+means consistently finding similar
+algorithmic solutions. Path dependence
+emerges
+
+160
+00:09:47,490 --> 00:09:51,409
+from how gradient descent navigates the
+loss landscape. Training
+
+161
+00:09:51,409 --> 00:09:54,289
+begins from a random point in parameter
+space and
+
+162
+00:09:54,289 --> 00:09:58,759
+follows the steepest downhill path toward
+better performance. When
+
+163
+00:09:58,759 --> 00:10:03,080
+multiple valleys exist, each corresponding
+to different algorithmic approaches,
+
+164
+00:10:03,320 --> 00:10:07,240
+early random differences can push
+optimization toward completely different
+
+165
+00:10:07,240 --> 00:10:11,240
+regions. Once committed to descending into
+a particular valley,
+
+166
+00:10:11,240 --> 00:10:14,840
+gradient descent tends to continue in that
+direction, making
+
+167
+00:10:14,840 --> 00:10:18,559
+it difficult to escape to other
+algorithmic solutions. High
+
+168
+00:10:18,559 --> 00:10:22,840
+path dependence appears when identical
+training setups discover fundamentally
+
+169
+00:10:22,840 --> 00:10:28,149
+different algorithmic strategies.
+Researchers trained text classifiers on
+natural
+
+170
+00:10:28,149 --> 00:10:31,549
+language inference tasks and found that
+models with identical
+
+171
+00:10:31,549 --> 00:10:35,870
+training performance fell into distinct
+clusters. Models within each
+
+172
+00:10:35,870 --> 00:10:39,190
+cluster used similar reasoning approaches
+and could be connected
+
+173
+00:10:39,190 --> 00:10:42,590
+through the loss landscape, but models
+from different clusters
+
+174
+00:10:42,590 --> 00:10:46,789
+were separated by large performance
+barriers. One cluster learned
+
+175
+00:10:46,789 --> 00:10:50,470
+bag of words approaches, while another
+developed syntactic reasoning
+
+176
+00:10:50,470 --> 00:10:55,529
+strategies. Similar variance appears
+across reinforcement learning experiments
+and
+
+177
+00:10:55,529 --> 00:10:59,250
+fine tuning studies where identical setups
+produce dramatically different
+
+178
+00:10:59,330 --> 00:11:04,250
+learned behaviors. Low path dependence
+emerges when mathematical constraints
+
+179
+00:11:04,250 --> 00:11:08,970
+force convergence to the same solution.
+Delayed generalization is
+
+180
+00:11:08,970 --> 00:11:12,529
+a phenomenon where a model abruptly
+transitions from overfitting,
+
+181
+00:11:12,610 --> 00:11:16,690
+performing well only on training data to
+generalizing, also
+
+182
+00:11:16,690 --> 00:11:21,740
+called groking. As an example. Models
+learning arithmetic initially
+
+183
+00:11:21,740 --> 00:11:26,259
+memorize training examples and perform
+poorly on tests, but
+
+184
+00:11:26,259 --> 00:11:29,659
+extended training causes them to suddenly
+implement the correct
+
+185
+00:11:29,659 --> 00:11:34,339
+mathematical algorithm consistently the
+same one across different runs.
+
+186
+00:11:34,899 --> 00:11:38,419
+This suggests that for some tasks, the
+underlying mathematical
+
+187
+00:11:38,419 --> 00:11:42,460
+structure constrains the solution space so
+severely that only
+
+188
+00:11:42,460 --> 00:11:46,990
+one good algorithm exists. Other evidence
+includes studies showing
+
+189
+00:11:46,990 --> 00:11:51,070
+gradient descent outcomes correlate with
+random sampling from parameter
+
+190
+00:11:51,070 --> 00:11:56,269
+distributions. The textbook includes
+Figure 7.13. Here it depicts
+
+191
+00:11:56,269 --> 00:11:59,590
+a 2D loss landscape where each dot
+represents a
+
+192
+00:11:59,590 --> 00:12:02,309
+learned algorithm with a different set of
+parameters on
+
+193
+00:12:02,309 --> 00:12:05,789
+the landscape. The arrows represent the
+different paths that
+
+194
+00:12:05,789 --> 00:12:09,629
+SGD can take through the loss landscape.
+If different
+
+195
+00:12:09,629 --> 00:12:12,509
+starting points end up at the same learned
+algorithm,
+
+196
+00:12:12,799 --> 00:12:16,799
+then we have low path dependence. Else. If
+different
+
+197
+00:12:16,799 --> 00:12:20,279
+starting points result in different
+learned algorithms, then we
+
+198
+00:12:20,279 --> 00:12:24,879
+have high path dependence. Right section
+Inductive Bias Inductive
+
+199
+00:12:24,879 --> 00:12:27,960
+biases describe the shape of the landscape
+and determine
+
+200
+00:12:27,960 --> 00:12:30,360
+which types of algorithms are more likely
+to be
+
+201
+00:12:30,360 --> 00:12:34,639
+discovered. If your architecture has a
+simplicity inductive bias,
+
+202
+00:12:35,039 --> 00:12:38,559
+then this means that algorithmically
+simple solutions are wide,
+
+203
+00:12:38,559 --> 00:12:42,519
+deep valleys that dominate the lost
+landscape. Complex solutions
+
+204
+00:12:42,600 --> 00:12:45,600
+might still exist in the landscape, but
+they're relegated
+
+205
+00:12:45,600 --> 00:12:49,720
+to tiny, hard to find peaks. This
+intuitively explains
+
+206
+00:12:49,720 --> 00:12:52,799
+why the move right strategy in coin run
+occupies
+
+207
+00:12:52,799 --> 00:12:56,320
+a massive loss basin spanning huge regions
+of parameter
+
+208
+00:12:56,320 --> 00:13:00,600
+space. While navigate to coin shaped
+objects exists only
+
+209
+00:13:00,600 --> 00:13:03,440
+in smaller pockets. You are more likely to
+find
+
+210
+00:13:03,440 --> 00:13:07,039
+simpler solutions like Move Right because
+those basins and
+
+211
+00:13:07,039 --> 00:13:09,480
+valleys are just easier to find and fall
+into.
+
+212
+00:13:10,129 --> 00:13:14,889
+Lets define Inductive Bias Inductive
+biases are systematic preferences
+
+213
+00:13:14,889 --> 00:13:18,250
+of learning algorithms that favor certain
+types of solutions
+
+214
+00:13:18,250 --> 00:13:22,929
+over others. These biases emerge from the
+architecture optimization
+
+215
+00:13:23,009 --> 00:13:27,250
+procedure and training setup rather than
+being explicitly programmed.
+
+216
+00:13:27,409 --> 00:13:31,809
+Simplicity bias represents the most
+influential, well studied and
+
+217
+00:13:31,809 --> 00:13:37,000
+potentially dangerous inductive bias for
+goal misgeneralization. The simplicity
+
+218
+00:13:37,000 --> 00:13:40,320
+bias asks how complex is it to specify the
+
+219
+00:13:40,320 --> 00:13:43,879
+algorithm in the weights? This is the ML
+equivalent
+
+220
+00:13:43,879 --> 00:13:47,919
+of Occam's razor, which suggests that
+among competing hypotheses,
+
+221
+00:13:48,080 --> 00:13:50,799
+the one with the fewest assumptions should
+be selected.
+
+222
+00:13:51,360 --> 00:13:55,639
+SGD seems to subscribe to Occam's razor
+and consistently
+
+223
+00:13:55,639 --> 00:13:59,639
+favors algorithms that rely on simple
+correlations over complex
+
+224
+00:13:59,639 --> 00:14:03,279
+causal reasoning. In Coin run, both Both
+Move Right
+
+225
+00:14:03,279 --> 00:14:06,519
+and navigate to coin shaped objects could
+solve the
+
+226
+00:14:06,519 --> 00:14:10,399
+task during training, but Move Right is
+algorithmically simpler,
+
+227
+00:14:10,879 --> 00:14:15,039
+requiring a single behavioral pattern
+rather than object recognition,
+
+228
+00:14:15,200 --> 00:14:19,440
+spatial reasoning and goal directed
+navigation. So the bias
+
+229
+00:14:19,440 --> 00:14:23,320
+exists because simple functions occupy
+vastly larger volumes in
+
+230
+00:14:23,320 --> 00:14:25,799
+the loss landscape. There are just a lot
+more
+
+231
+00:14:25,799 --> 00:14:29,039
+ways to encode Move Right than navigate to
+coin
+
+232
+00:14:29,039 --> 00:14:33,669
+shaped objects using visual recognition
+and spatial reasoning. Empirical
+
+233
+00:14:33,669 --> 00:14:37,190
+work demonstrates that this bias is quite
+strong, suggesting
+
+234
+00:14:37,190 --> 00:14:40,590
+simple functions are exponentially more
+likely to emerge than
+
+235
+00:14:40,590 --> 00:14:44,870
+complex ones. The training process
+systematically favors the simpler
+
+236
+00:14:44,870 --> 00:14:48,990
+explanation even when the complex
+algorithm would generalize better.
+
+237
+00:14:49,470 --> 00:14:53,870
+This pattern extends broadly to different
+architectures. Image classifiers
+
+238
+00:14:53,870 --> 00:14:57,549
+typically learn texture based strategies
+over shape based ones
+
+239
+00:14:57,549 --> 00:15:01,590
+because texture patterns require simpler
+computational structures leading to
+
+240
+00:15:01,590 --> 00:15:05,529
+brittleness when texture and shape provide
+conflicting signals. Other
+
+241
+00:15:05,529 --> 00:15:09,570
+inductive biases can create additional
+systematic preferences that can
+
+242
+00:15:09,570 --> 00:15:14,169
+favor discovering algorithms with
+misaligned goals. Speed bias looks
+
+243
+00:15:14,169 --> 00:15:16,850
+at how much computation does the algorithm
+take at
+
+244
+00:15:16,850 --> 00:15:20,730
+inference time. An architecture with a
+speed bias would
+
+245
+00:15:20,730 --> 00:15:24,649
+have wider loss basins with algorithms
+requiring fewer computational
+
+246
+00:15:24,730 --> 00:15:29,049
+steps potentially conflicting with
+solutions that perform more thorough
+
+247
+00:15:29,049 --> 00:15:32,429
+reasoning or long term planning. There are
+many other
+
+248
+00:15:32,429 --> 00:15:37,230
+examples of frequency bias, learning low
+frequency patterns before
+
+249
+00:15:37,230 --> 00:15:42,470
+high frequency ones, geometric bias,
+solutions with lower variability
+
+250
+00:15:43,029 --> 00:15:45,470
+and more. For the most part we will be
+
+251
+00:15:45,470 --> 00:15:49,269
+considering inductive biases that are
+safety relevant, speed and
+
+252
+00:15:49,269 --> 00:15:56,389
+simplicity Inductive biases create goal
+because correlation based algorithms
+
+253
+00:15:56,389 --> 00:16:00,669
+are often simpler than causal reasoning,
+it's algorithmically easier
+
+254
+00:16:00,669 --> 00:16:04,830
+to learn. Helpful responses, get approval,
+then understand what
+
+255
+00:16:04,830 --> 00:16:08,590
+the human actually needs and provide that
+as training
+
+256
+00:16:08,590 --> 00:16:12,269
+environments become more complex, the gap
+between intended goals
+
+257
+00:16:12,269 --> 00:16:17,389
+and easily learned proxies grows, making
+misaligned algorithms increasingly
+
+258
+00:16:17,389 --> 00:16:21,509
+likely to emerge. The interaction between
+inductive biases and
+
+259
+00:16:21,509 --> 00:16:25,509
+path dependence determines both the type
+and specific implementation
+
+260
+00:16:25,509 --> 00:16:29,899
+of learned algorithms. Biases constrain
+training to favor certain
+
+261
+00:16:29,899 --> 00:16:34,460
+solution classes, while path dependence
+determines which specific implementation
+
+262
+00:16:34,460 --> 00:16:37,940
+within that class gets discovered. This
+section on learning
+
+263
+00:16:37,940 --> 00:16:41,419
+dynamics and inductive biases will be
+especially relevant when
+
+264
+00:16:41,419 --> 00:16:44,100
+we talk about the likelihood of scheming
+and deceptive
+
+265
+00:16:44,100 --> 00:16:44,620
+alignment.
