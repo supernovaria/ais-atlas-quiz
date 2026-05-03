@@ -120,8 +120,8 @@ export default function PodcastPlayer({ onBack }) {
         const containerRect = container.getBoundingClientRect();
         const wordRect = next.getBoundingClientRect();
         const fraction = (wordRect.top - containerRect.top) / container.clientHeight;
-        if (fraction < 0.2 || fraction > 0.8) {
-          const delta = (wordRect.top - containerRect.top) - container.clientHeight * 0.4;
+        if (fraction < 0.35 || fraction > 0.65) {
+          const delta = (wordRect.top - containerRect.top) - container.clientHeight * 0.5;
           const behavior = Math.abs(delta) > container.clientHeight ? 'instant' : 'smooth';
           container.scrollBy({ top: delta, behavior });
         }

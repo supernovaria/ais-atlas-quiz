@@ -1459,10 +1459,11 @@
 }
 
 .word-active {
-  background: color-mix(in srgb, var(--color-primary) 40%, transparent);
-  color: inherit;
+  background: color-mix(in srgb, var(--color-primary) 65%, transparent);
+  color: var(--color-bg);
   border-radius: 3px;
-  padding: 0.05em 0.1em;
+  padding: 0.05em 0.2em;
+  font-weight: 600;
 }
 
 /* Responsive */
