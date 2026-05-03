@@ -1,0 +1,327 @@
+1
+00:00:00,171 --> 00:00:07,232
+Chapter 1 Capabilities Section 1.1
+Introduction AI has undergone
+
+2
+00:00:07,352 --> 00:00:10,374
+a massive shift in the last decade. Game
+playing
+
+3
+00:00:10,433 --> 00:00:15,635
+systems developed strategic creativity
+that surprised grandmasters. Language
+models
+
+4
+00:00:15,795 --> 00:00:20,036
+evolving from funny autocomplete failures
+to software engineering assistance
+
+5
+00:00:20,216 --> 00:00:23,978
+handling code bases spanning thousands of
+files. These types
+
+6
+00:00:24,018 --> 00:00:26,602
+of examples reflect a change in how
+technology is
+
+7
+00:00:26,641 --> 00:00:29,565
+evolving and raise a question that this
+entire book
+
+8
+00:00:29,684 --> 00:00:32,628
+tries to answer. How do you make something
+safe
+
+9
+00:00:33,027 --> 00:00:35,250
+when you don't fully understand what it
+can do
+
+10
+00:00:35,811 --> 00:00:38,454
+and when its abilities might change
+dramatically between the
+
+11
+00:00:38,493 --> 00:00:40,656
+time you start reading this chapter and
+the time
+
+12
+00:00:40,716 --> 00:00:44,539
+you finish? This first chapter is about
+mapping the
+
+13
+00:00:44,579 --> 00:00:49,884
+territory. Before we can discuss dangerous
+capabilities, alignment strategies,
+
+14
+00:00:50,304 --> 00:00:54,268
+technical solutions, or governance
+frameworks, the subjects of chapters
+
+15
+00:00:54,609 --> 00:00:57,430
+2, 3, and 4, the first step is getting
+
+16
+00:00:57,490 --> 00:01:00,353
+a sense of what AI systems can actually do
+
+17
+00:01:00,472 --> 00:01:03,256
+right now, how they got here, and where
+the
+
+18
+00:01:03,295 --> 00:01:06,658
+future trends point. The first question to
+answer is
+
+19
+00:01:06,897 --> 00:01:10,540
+what counts as general intelligence? The
+systems we are
+
+20
+00:01:10,579 --> 00:01:13,981
+seeing now represent a move from narrow AI
+systems
+
+21
+00:01:14,022 --> 00:01:17,103
+that do one thing well to general-purpose
+AI systems,
+
+22
+00:01:17,483 --> 00:01:20,546
+foundation models, that learn general
+patterns, adapt to new
+
+23
+00:01:20,585 --> 00:01:24,028
+situations, and do many things well. The
+term AGI
+
+24
+00:01:24,087 --> 00:01:27,350
+gets thrown around constantly, but
+different people mean wildly
+
+25
+00:01:27,391 --> 00:01:29,591
+different things by it. We'll walk you
+through a
+
+26
+00:01:29,671 --> 00:01:32,575
+couple of different approaches to defining
+intelligence, going from
+
+27
+00:01:32,614 --> 00:01:35,996
+the Turing test to psychometric
+frameworks, before settling on
+
+28
+00:01:36,037 --> 00:01:40,540
+a practical, usable definition. capability
+and generality as continuous
+
+29
+00:01:40,641 --> 00:01:43,923
+axes rather than binary categories. The
+goal is to
+
+30
+00:01:43,962 --> 00:01:47,084
+be able to make specific concrete
+statements like this
+
+31
+00:01:47,165 --> 00:01:50,867
+system performs at the 85th percentile
+across 30% of
+
+32
+00:01:50,906 --> 00:01:54,290
+cognitive domains as measured by, concrete
+enough to measure,
+
+33
+00:01:54,409 --> 00:01:57,492
+track, and build policy around. The second
+question everyone
+
+34
+00:01:57,591 --> 00:02:01,332
+asks Why is this happening so fast
+recently? The
+
+35
+00:02:01,433 --> 00:02:05,135
+answer is the bitter lesson of AI
+research. Massive
+
+36
+00:02:05,194 --> 00:02:09,596
+computation consistently beats human
+engineered knowledge. We'll look at
+
+37
+00:02:09,657 --> 00:02:13,478
+scaling laws. The empirical relationships
+showing that more data
+
+38
+00:02:13,578 --> 00:02:17,800
+and compute predictably produce better
+performance, and various sides
+
+39
+00:02:17,840 --> 00:02:20,781
+of the debate about whether scale alone is
+sufficient
+
+40
+00:02:20,980 --> 00:02:24,521
+and sustainable for transformative AI, or
+whether we'll need
+
+41
+00:02:24,562 --> 00:02:27,544
+some other algorithmic breakthroughs. The
+last part of the
+
+42
+00:02:27,566 --> 00:02:30,646
+chapter will look ahead at the future.
+Predicting when
+
+43
+00:02:30,806 --> 00:02:34,330
+AI might automate all cognitive labor
+determines which safety
+
+44
+00:02:34,370 --> 00:02:38,372
+strategies are even viable. If
+transformative AI arrives by
+
+45
+00:02:38,431 --> 00:02:41,774
+2030, we need solutions that work with
+current systems
+
+46
+00:02:41,873 --> 00:02:45,076
+and scale quickly. If it's 2050, we have
+time
+
+47
+00:02:45,116 --> 00:02:48,319
+for fundamental research. This means
+looking at the different
+
+48
+00:02:48,340 --> 00:02:51,902
+scenarios for takeoff, whether progress
+will be gradual or
+
+49
+00:02:51,983 --> 00:02:56,046
+explosive, continuous or discontinuous,
+and what that means for
+
+50
+00:02:56,106 --> 00:02:59,759
+our ability to respond. The specific
+examples and benchmark
+
+51
+00:02:59,780 --> 00:03:02,382
+scores in this chapter will be outdated
+soon, but
+
+52
+00:03:02,421 --> 00:03:06,885
+the underlying patterns will remain.
+Scaling laws, emergent capabilities,
+
+53
+00:03:07,265 --> 00:03:10,489
+the shift from narrow to general systems,
+these trends
+
+54
+00:03:10,549 --> 00:03:12,651
+are stable enough for you to learn about,
+even
+
+55
+00:03:12,730 --> 00:03:15,933
+as individual benchmarks become obsolete.
+By the end of
+
+56
+00:03:15,973 --> 00:03:18,656
+this chapter, you should have a concrete
+framework for
+
+57
+00:03:18,716 --> 00:03:21,899
+how to define AGI and much clearer
+perspective on
+
+58
+00:03:21,938 --> 00:03:24,741
+the debates shaping the field of AI
+safety. Let's
+
+59
+00:03:24,801 --> 00:03:27,605
+start with what these systems can actually
+do and
+
+60
+00:03:27,645 --> 00:03:30,891
+how quickly that list is growing. There is
+figure
+
+61
+00:03:30,991 --> 00:03:34,598
+1.1 in the textbook here. It depicts, we
+first
+
+62
+00:03:34,677 --> 00:03:38,604
+explain foundation models, which have been
+continuously showing improved
+
+63
+00:03:38,645 --> 00:03:43,293
+capabilities due to scale, then examine
+empirically observed scaling
+
+64
+00:03:43,332 --> 00:03:46,217
+laws. Based on these trends, we look at
+some
+
+65
+00:03:46,277 --> 00:03:49,963
+techniques that researchers use to try and
+forecast future
+
+66
+00:03:50,144 --> 00:03:50,944
+AI progress.

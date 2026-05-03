@@ -1,0 +1,1111 @@
+1
+00:00:00,411 --> 00:00:05,658
+Section 1.5, leveraging scale. In the
+previous section, we
+
+2
+00:00:05,718 --> 00:00:08,621
+looked at different notions of how to
+define AGI
+
+3
+00:00:09,063 --> 00:00:12,586
+and measure the relevant capabilities. Now
+we'll examine one
+
+4
+00:00:12,627 --> 00:00:15,430
+of the most important drivers behind
+improvements in these
+
+5
+00:00:15,471 --> 00:00:21,954
+capabilities. Scale. bitter a lesson.
+Human-engineered domain knowledge
+consistently
+
+6
+00:00:22,035 --> 00:00:26,076
+loses to general methods that leverage
+massive computation. We
+
+7
+00:00:26,135 --> 00:00:28,817
+assume that most of you probably went to
+university
+
+8
+00:00:28,917 --> 00:00:31,518
+in an era where machine learning and AI
+roughly
+
+9
+00:00:31,557 --> 00:00:33,899
+mean the same thing, or even that deep
+learning
+
+10
+00:00:33,959 --> 00:00:36,460
+and AI mean the same thing. This hasn't
+always
+
+11
+00:00:36,500 --> 00:00:40,121
+been true. Early in AI's history,
+researchers believed the
+
+12
+00:00:40,182 --> 00:00:43,945
+key to artificial intelligence was
+carefully encoding human knowledge
+
+13
+00:00:44,225 --> 00:00:47,829
+and expertise into computer programs. This
+led to expert
+
+14
+00:00:47,869 --> 00:00:51,713
+systems filled with handcrafted rules and
+chess engines programmed
+
+15
+00:00:51,732 --> 00:00:56,256
+with sophisticated strategic principles.
+Time and again, these approaches
+
+16
+00:00:56,357 --> 00:01:00,140
+hit walls, while simple learning
+algorithms combined with massive
+
+17
+00:01:00,180 --> 00:01:05,444
+computation kept improving. However, time
+and time again, researchers
+
+18
+00:01:05,504 --> 00:01:08,564
+learned what we now call the bitter
+lesson. The
+
+19
+00:01:08,605 --> 00:01:11,204
+biggest lesson that can be read from 70
+years
+
+20
+00:01:11,245 --> 00:01:14,365
+of AI research is that general methods
+that leverage
+
+21
+00:01:14,406 --> 00:01:17,826
+computation are ultimately the most
+effective and by a
+
+22
+00:01:17,887 --> 00:01:21,067
+large margin. The bitter lesson is based
+on the
+
+23
+00:01:21,128 --> 00:01:25,228
+historical observations that one, AI
+researchers have often tried
+
+24
+00:01:25,269 --> 00:01:28,349
+to build knowledge into their agents. 2.
+This always
+
+25
+00:01:28,390 --> 00:01:31,052
+helps in the short term and is personally
+satisfying
+
+26
+00:01:31,091 --> 00:01:33,692
+to the researcher. But 3. In the long run,
+
+27
+00:01:33,852 --> 00:01:37,456
+it plateaus and even inhibits further
+progress. And 4.
+
+28
+00:01:37,936 --> 00:01:41,578
+Breakthrough progress eventually arrives
+by an opposing approach based
+
+29
+00:01:41,679 --> 00:01:45,240
+on scaling computation by search and
+learning. The bitterness
+
+30
+00:01:45,340 --> 00:01:49,763
+comes from discovering that decades of
+human expertise mattered
+
+31
+00:01:49,884 --> 00:01:54,887
+less than computation. Researchers who
+spent years encoding grandmaster
+
+32
+00:01:54,927 --> 00:01:59,368
+chess knowledge watched brute force search
+defeat world champion
+
+33
+00:01:59,409 --> 00:02:04,111
+Gary Kasparov. Handcrafted feature
+detectors in computer vision got
+
+34
+00:02:04,290 --> 00:02:07,433
+outperformed by neural networks that
+learned their own features
+
+35
+00:02:07,472 --> 00:02:12,456
+from data. phonetics-based speech
+recognition lost to statistical
+approaches.
+
+36
+00:02:13,056 --> 00:02:17,381
+The pattern repeated, domain expertise
+helped initially, then hit
+
+37
+00:02:17,401 --> 00:02:21,705
+a wall. Simple learning algorithms plus
+massive compute kept
+
+38
+00:02:21,824 --> 00:02:25,769
+improving. The better lesson doesn't
+reject human ingenuity or
+
+39
+00:02:25,929 --> 00:02:29,770
+algorithmic innovation. There's a
+difference between building better general
+
+40
+00:02:29,811 --> 00:02:34,593
+learning systems and encoding task-
+specific human knowledge. This isn't
+
+41
+00:02:34,633 --> 00:02:38,056
+a difference just between good old-
+fashioned AI, GoFi, and
+
+42
+00:02:38,135 --> 00:02:41,318
+modern deep learning. Even within deep
+learning, the bitter
+
+43
+00:02:41,377 --> 00:02:44,740
+lesson still applies. The winning
+algorithms are those that
+
+44
+00:02:44,840 --> 00:02:49,582
+leverage scale most effectively.
+Transformers didn't beat LSTMs by
+
+45
+00:02:49,663 --> 00:02:54,508
+encoding linguistic knowledge. They
+outperformed because attention mechanisms
+parallelize
+
+46
+00:02:54,548 --> 00:02:59,012
+better and can actually use massive
+compute productively. Algorithmic
+
+47
+00:02:59,051 --> 00:03:02,955
+innovation still matters, finding
+architectures and training methods that
+
+48
+00:03:03,034 --> 00:03:06,117
+extract more from the same data and
+hardware. The
+
+49
+00:03:06,217 --> 00:03:09,300
+algorithms that succeed are the ones that
+unlock scales
+
+50
+00:03:09,360 --> 00:03:13,784
+potential. The bitter lesson shapes
+expectations about AI progress.
+
+51
+00:03:14,405 --> 00:03:17,448
+If the bitter lesson continues to be true,
+improvements
+
+52
+00:03:17,467 --> 00:03:20,550
+should come from either finding algorithms
+that better leverage
+
+53
+00:03:20,590 --> 00:03:24,633
+scale or simply scaling existing
+algorithms with more compute,
+
+54
+00:03:24,933 --> 00:03:28,317
+data, and parameters. In the last few
+years, the
+
+55
+00:03:28,356 --> 00:03:31,618
+majority of gains seen in AI capabilities
+have emerged
+
+56
+00:03:31,679 --> 00:03:35,421
+from scaling up the same transformer-based
+language models. Training
+
+57
+00:03:35,481 --> 00:03:38,745
+frontier AI models costs hundreds of
+millions of dollars,
+
+58
+00:03:39,224 --> 00:03:42,807
+making it critical to predict returns on
+investment. AI
+
+59
+00:03:42,848 --> 00:03:46,909
+Labs face resource allocation decisions
+with massive stakes. Should
+
+60
+00:03:46,930 --> 00:03:50,932
+they spend more on GPUs or training data?
+Train
+
+61
+00:03:50,973 --> 00:03:53,675
+a larger model briefly or a smaller model
+longer.
+
+62
+00:03:54,275 --> 00:03:56,917
+With a fixed compute budget, they might
+choose between
+
+63
+00:03:56,956 --> 00:04:00,058
+a 20 billion parameter model, trained on
+40% of
+
+64
+00:04:00,098 --> 00:04:03,621
+their data, or a 200 billion parameter
+model, trained
+
+65
+00:04:03,681 --> 00:04:07,043
+on 4% of it. Getting this wrong, waste
+hundreds
+
+66
+00:04:07,082 --> 00:04:10,585
+of millions. Scaling laws help turn these
+gambles into
+
+67
+00:04:10,664 --> 00:04:15,206
+engineering decisions by establishing
+empirically observed relations. Scaling
+laws
+
+68
+00:04:15,227 --> 00:04:18,428
+describe how model accuracy changes as you
+vary four
+
+69
+00:04:18,488 --> 00:04:24,252
+key variables. Compute, total floating
+point operations, FLOPs, during
+
+70
+00:04:24,293 --> 00:04:27,875
+training, accounts for GPU power, number
+of chips, and
+
+71
+00:04:27,935 --> 00:04:31,538
+training duration, how many steps you
+train for. Parameters,
+
+72
+00:04:32,059 --> 00:04:35,521
+the numbers the model adjusts during
+training, roughly analogous
+
+73
+00:04:35,581 --> 00:04:40,105
+to model size. Data, training examples
+seen, measured in
+
+74
+00:04:40,165 --> 00:04:44,547
+tokens for LLMs. Accuracy. How well the
+model performs
+
+75
+00:04:44,607 --> 00:04:48,288
+on benchmarks, the inverse of loss, lower
+loss, higher
+
+76
+00:04:48,367 --> 00:04:52,569
+accuracy. There is figure 1.33 in the
+textbook here.
+
+77
+00:04:53,129 --> 00:04:56,850
+It depicts example of capabilities
+increasing with an increase
+
+78
+00:04:56,891 --> 00:04:59,791
+with one of variables in the scaling laws,
+parameter
+
+79
+00:04:59,851 --> 00:05:03,954
+count. The same model architecture, party,
+was used to
+
+80
+00:05:04,014 --> 00:05:07,055
+generate an image using an identical
+prompt with the
+
+81
+00:05:07,175 --> 00:05:09,815
+only difference between the models being
+the parameter size.
+
+82
+00:05:10,536 --> 00:05:13,999
+There are noticeable leaps in quality, and
+somewhere between
+
+83
+00:05:14,019 --> 00:05:17,622
+3 billion and 20 billion parameters, the
+model acquires
+
+84
+00:05:17,661 --> 00:05:21,547
+the ability to spell words correctly.
+Scaling laws are
+
+85
+00:05:21,627 --> 00:05:26,689
+empirically observed relationships, not
+laws of nature. OpenAI first
+
+86
+00:05:26,749 --> 00:05:30,511
+documented these relationships in 2020 by
+running hundreds of
+
+87
+00:05:30,571 --> 00:05:35,514
+experiments, varying inputs while
+measuring accuracy. They found that
+
+88
+00:05:35,553 --> 00:05:40,036
+when you increase compute by 10X, accuracy
+improves predictably.
+
+89
+00:05:40,696 --> 00:05:45,482
+Double the parameters, accuracy jumps
+predictably. These patterns proved
+
+90
+00:05:45,601 --> 00:05:50,247
+surprisingly consistent across model
+architectures and tasks, suggesting they
+
+91
+00:05:50,286 --> 00:05:54,411
+capture something fundamental about how
+neural networks learn. Later
+
+92
+00:05:54,471 --> 00:05:58,134
+research revealed optimal training
+requires roughly 20 tokens of
+
+93
+00:05:58,194 --> 00:06:01,396
+data per parameter, about 10 times more
+data than
+
+94
+00:06:01,476 --> 00:06:05,141
+early laws suggested. This meant previous
+large models were
+
+95
+00:06:05,221 --> 00:06:09,684
+under-trained relative to their size. The
+relationships continue evolving
+
+96
+00:06:09,824 --> 00:06:12,846
+as researchers gather more evidence, but
+the core insight
+
+97
+00:06:12,886 --> 00:06:17,949
+remains. Scale drives predictable
+capability gains. The following graphs
+
+98
+00:06:18,108 --> 00:06:21,771
+clearly show massive increases in scale
+for data, compute,
+
+99
+00:06:21,971 --> 00:06:25,495
+and parameter count by all major AI labs.
+At
+
+100
+00:06:25,535 --> 00:06:28,896
+this point, there is interactive figure
+1.4 in the
+
+101
+00:06:28,935 --> 00:06:33,177
+textbook, available in the online version.
+It shows exponential
+
+102
+00:06:33,237 --> 00:06:37,418
+growth of parameters in notable AI
+systems. Parameters are
+
+103
+00:06:37,478 --> 00:06:40,619
+variables in an AI system whose values are
+adjusted
+
+104
+00:06:40,658 --> 00:06:44,281
+during training to establish how input
+data gets transformed
+
+105
+00:06:44,380 --> 00:06:47,661
+into the desired output. For example, the
+connection weights
+
+106
+00:06:47,781 --> 00:06:51,591
+in an artificial neural network. The
+textbook has interactive
+
+107
+00:06:51,651 --> 00:06:54,471
+figure 1.5 here, which you can explore in
+the
+
+108
+00:06:54,572 --> 00:06:58,173
+online version. It shows exponential
+growth of data points
+
+109
+00:06:58,372 --> 00:07:01,694
+used to train notable AI systems. Each
+domain has
+
+110
+00:07:01,735 --> 00:07:04,735
+a specific data point unit. For example,
+for vision,
+
+111
+00:07:04,836 --> 00:07:07,557
+it is images. For language, it is words.
+And
+
+112
+00:07:07,596 --> 00:07:10,637
+for games, it is time steps. This means
+systems
+
+113
+00:07:10,677 --> 00:07:13,538
+can only be compared directly within the
+same domain.
+
+114
+00:07:14,178 --> 00:07:16,579
+At this point, there is interactive figure
+1.6 in
+
+115
+00:07:16,600 --> 00:07:21,122
+the textbook. available in the online
+version. It shows
+
+116
+00:07:21,302 --> 00:07:24,564
+exponential growth of computation in the
+training of notable
+
+117
+00:07:24,684 --> 00:07:29,045
+AI systems. Computation is measured in
+total petaflop, which
+
+118
+00:07:29,105 --> 00:07:32,747
+is 10 to the 15th floating point
+operations. The
+
+119
+00:07:32,788 --> 00:07:36,428
+textbook has a supplementary note titled,
+The Broken Neural
+
+120
+00:07:36,488 --> 00:07:40,872
+Scaling Laws, BNSL, Update in 2023, which
+will skip
+
+121
+00:07:40,951 --> 00:07:46,901
+over here. Scaling Hypothesis Scaling
+might continue driving capability
+
+122
+00:07:46,920 --> 00:07:50,223
+gains. Look back at the examples from
+previous sections,
+
+123
+00:07:50,704 --> 00:07:55,629
+the programming abilities, emergent
+reasoning, scientific research assistance,
+the
+
+124
+00:07:55,649 --> 00:07:59,492
+jump from GPT 3.5 to GPT 4 across
+professional
+
+125
+00:07:59,531 --> 00:08:03,475
+exams. These capabilities appeared as
+models got bigger and
+
+126
+00:08:03,535 --> 00:08:07,377
+trained on more data without requiring new
+architectural breakthroughs
+
+127
+00:08:07,519 --> 00:08:11,062
+or encoded domain knowledge. If current
+approaches scaled up
+
+128
+00:08:11,141 --> 00:08:14,245
+could produce systems capable of
+automating AI research within
+
+129
+00:08:14,285 --> 00:08:18,168
+years, safety work becomes far more
+urgent. The existing
+
+130
+00:08:18,228 --> 00:08:22,173
+evidence supports multiple interpretations
+because we're watching a technology
+
+131
+00:08:22,213 --> 00:08:24,615
+develop in real time, whose limits we
+don't fully
+
+132
+00:08:24,675 --> 00:08:28,399
+understand. So different people hold
+different hypotheses about how
+
+133
+00:08:28,439 --> 00:08:32,881
+the future could unfold. The strong
+scaling hypothesis. This
+
+134
+00:08:32,942 --> 00:08:36,744
+proposes that simply scaling up existing
+architectures with more
+
+135
+00:08:36,784 --> 00:08:40,365
+compute and data will be sufficient to
+reach transformative
+
+136
+00:08:40,446 --> 00:08:44,388
+AI capabilities. According to this view,
+we already have
+
+137
+00:08:44,469 --> 00:08:47,409
+all the fundamental components needed.
+It's just a matter
+
+138
+00:08:47,490 --> 00:08:51,371
+of making them bigger, following
+established scaling laws. At
+
+139
+00:08:51,412 --> 00:08:55,474
+this point, the textbook shows Figure
+1.35. It depicts
+
+140
+00:08:55,653 --> 00:08:59,416
+augmentation slash scaffolding stays
+constant. But if the scaling
+
+141
+00:08:59,456 --> 00:09:03,197
+hypothesis, weak or strong, is true, then
+capabilities will
+
+142
+00:09:03,238 --> 00:09:07,278
+keep improving just by scaling. The weak
+scaling hypothesis.
+
+143
+00:09:07,919 --> 00:09:10,880
+This view states that even though scale
+will continue
+
+144
+00:09:10,921 --> 00:09:13,642
+to be the primary driver of progress, we
+will
+
+145
+00:09:13,721 --> 00:09:17,864
+also need targeted architectural and
+algorithmic improvements to overcome
+
+146
+00:09:17,923 --> 00:09:23,047
+specific bottlenecks. These improvements
+wouldn't require fundamental
+breakthroughs, but
+
+147
+00:09:23,086 --> 00:09:27,509
+rather incremental enhancements to better
+leverage scale. Researchers have
+
+148
+00:09:27,528 --> 00:09:30,770
+been developing algorithms that leverage
+scale and compute for
+
+149
+00:09:30,850 --> 00:09:33,432
+more than a decade. We have seen many
+gains
+
+150
+00:09:33,513 --> 00:09:36,774
+come from improvement in compute
+efficiency, from innovations like
+
+151
+00:09:36,813 --> 00:09:40,696
+better attention mechanisms, mixture of
+experts routing, and efficient
+
+152
+00:09:40,735 --> 00:09:44,460
+training methods. But even when
+researchers have developed sophisticated
+
+153
+00:09:44,559 --> 00:09:48,724
+algorithms following the bitter lessons
+principles, data suggests that
+
+154
+00:09:48,744 --> 00:09:52,527
+between 60 to 95% of performance gains
+came from
+
+155
+00:09:52,587 --> 00:09:56,610
+scaling compute and data, while
+algorithmic improvements contributed 5
+
+156
+00:09:56,671 --> 00:10:00,634
+to 40%, though there is substantial
+methodological uncertainty in
+
+157
+00:10:00,695 --> 00:10:05,758
+disentangling these contributions. The
+emergence of unexpected capabilities might
+
+158
+00:10:05,837 --> 00:10:09,620
+provide another argument for strong
+scaling. We've seen previous
+
+159
+00:10:09,660 --> 00:10:13,744
+generations of foundation models
+demonstrate remarkable abilities that
+weren't
+
+160
+00:10:13,823 --> 00:10:18,388
+explicitly trained for, like programming.
+This emergent behavior hints
+
+161
+00:10:18,427 --> 00:10:21,049
+that it is not impossible for higher order
+cognitive
+
+162
+00:10:21,090 --> 00:10:24,273
+abilities to similarly emerge simply as a
+function of
+
+163
+00:10:24,332 --> 00:10:28,509
+further scale. There is Figure 1.36 in the
+textbook
+
+164
+00:10:28,529 --> 00:10:31,831
+here. It depicts, even if we see no
+improvements
+
+165
+00:10:31,910 --> 00:10:35,793
+in model scale, other elicitation
+techniques and scaffolding can
+
+166
+00:10:35,852 --> 00:10:41,135
+keep improving. So overall capabilities
+keep growing. Realistically, the
+
+167
+00:10:41,216 --> 00:10:43,937
+future is probably going to see both
+improvement due
+
+168
+00:10:43,957 --> 00:10:46,658
+to scaffolding and scale. So for now,
+there does
+
+169
+00:10:46,698 --> 00:10:48,659
+not seem to be an upper limit on improving
+
+170
+00:10:48,700 --> 00:10:51,160
+capabilities, as long as either one of the
+two
+
+171
+00:10:51,221 --> 00:10:56,903
+holds. Scale combined with techniques and
+tools hypothesis. Essentially,
+
+172
+00:10:57,083 --> 00:11:00,345
+both the scaling laws, which only predict
+foundation model
+
+173
+00:11:00,365 --> 00:11:03,985
+capabilities, and most debates around
+scale as all you
+
+174
+00:11:04,025 --> 00:11:07,407
+need, often miss other aspects of AI
+development that
+
+175
+00:11:07,447 --> 00:11:09,988
+happen outside the scope of what scaling
+laws can
+
+176
+00:11:10,028 --> 00:11:13,708
+predict. They don't account for
+improvements in AI scaffolding,
+
+177
+00:11:14,068 --> 00:11:17,129
+like chain of thought prompting, tool use,
+or retrieval,
+
+178
+00:11:17,650 --> 00:11:20,912
+or combinations of multiple models working
+together in novel
+
+179
+00:11:20,932 --> 00:11:25,714
+ways. Any LLM with internet access, code
+execution, and
+
+180
+00:11:25,793 --> 00:11:27,934
+the ability to call upon the help of other
+
+181
+00:11:28,014 --> 00:11:32,096
+specialized submodels has substantially
+more capability than the same
+
+182
+00:11:32,277 --> 00:11:35,479
+LLM alone. We gave several examples of
+this being
+
+183
+00:11:35,519 --> 00:11:38,461
+the dominant trend in our first section,
+tool use,
+
+184
+00:11:38,740 --> 00:11:42,462
+thinking for longer, inference time
+scaling, MCP servers, and
+
+185
+00:11:42,503 --> 00:11:45,686
+so on. Debates around the scaling laws
+only tell
+
+186
+00:11:45,765 --> 00:11:48,849
+us about the capabilities of a single
+foundation model
+
+187
+00:11:48,989 --> 00:11:52,152
+trained in a standard way. For example, by
+the
+
+188
+00:11:52,211 --> 00:11:55,936
+strong scaling hypothesis, we can reach
+TAI by simply
+
+189
+00:11:56,056 --> 00:11:59,178
+scaling up the same foundation model until
+it completely
+
+190
+00:11:59,298 --> 00:12:04,261
+automates MLR&D. But even if scaling
+stops, halting capabilities
+
+191
+00:12:04,302 --> 00:12:07,003
+progress on the core foundation model in
+either a
+
+192
+00:12:07,043 --> 00:12:09,904
+week or a strong way, the external
+techniques that
+
+193
+00:12:09,985 --> 00:12:13,865
+leverage the existing model can still
+continue advancing. Many
+
+194
+00:12:13,926 --> 00:12:16,447
+researchers think that this is a core
+element where
+
+195
+00:12:16,527 --> 00:12:19,528
+future capabilities will come from. It is
+also referred
+
+196
+00:12:19,568 --> 00:12:23,394
+to as unhobbling, schlep, and various
+other terms, but
+
+197
+00:12:23,494 --> 00:12:25,878
+all of them point to the same underlying
+principle.
+
+198
+00:12:26,457 --> 00:12:29,501
+Raw scaling of single model performance is
+only one
+
+199
+00:12:29,562 --> 00:12:33,817
+part of overall AI capability advancement.
+The textbook includes
+
+200
+00:12:33,897 --> 00:12:37,740
+Figure 1.37 here. It depicts an example of
+how
+
+201
+00:12:37,799 --> 00:12:40,523
+much the performance on a benchmark can
+change just
+
+202
+00:12:40,543 --> 00:12:45,206
+by using post-training techniques, like
+doing reasoning-specific training and
+
+203
+00:12:45,267 --> 00:12:47,889
+allowing the model to think for longer.
+The base
+
+204
+00:12:47,948 --> 00:12:51,991
+model scores around 4.5% on the humanity's
+last exam
+
+205
+00:12:52,011 --> 00:12:57,096
+benchmark, HLE. Whereas with each
+subsequent unhobbling step, we
+
+206
+00:12:57,135 --> 00:12:59,238
+see jumps and performance leading up to a
+25%
+
+207
+00:12:59,298 --> 00:13:04,368
+score on the benchmark. Even the tool-
+based scaling hypothesis
+
+208
+00:13:04,427 --> 00:13:07,807
+is debated. Some argue that tools or scale
+poured
+
+209
+00:13:07,847 --> 00:13:11,129
+into LLMs is unlikely to lead to AGI as
+
+210
+00:13:11,168 --> 00:13:15,009
+they define it. They advocate for
+completely different architectures
+
+211
+00:13:15,070 --> 00:13:19,711
+from transformer-based LLMs, focusing
+instead on things like neurosymbolic
+
+212
+00:13:19,750 --> 00:13:24,591
+approaches, ensemble methods, or a
+completely new undiscovered architecture.
+
+213
+00:13:25,328 --> 00:13:28,770
+Despite disagreements about whether scale
+will lead to true
+
+214
+00:13:28,890 --> 00:13:32,813
+AGI, major AI labs are betting heavily on
+scaling.
+
+215
+00:13:33,313 --> 00:13:36,155
+Sam Altman from OpenAI has stated his
+belief that
+
+216
+00:13:36,235 --> 00:13:39,018
+scaling is going to be a big component
+leading
+
+217
+00:13:39,057 --> 00:13:43,061
+to capability gains. Anthropics CEO Dario
+Amadeh has expressed
+
+218
+00:13:43,120 --> 00:13:46,583
+similar views, and DeepMind safety teams
+similarly wrote that
+
+219
+00:13:46,964 --> 00:13:50,066
+not many more fundamental innovations are
+needed for AGI.
+
+220
+00:13:50,566 --> 00:13:54,110
+This consensus suggests that regardless of
+whether strong, weak,
+
+221
+00:13:54,291 --> 00:13:58,115
+or tools-based scaling dominates, scale
+itself will likely remain
+
+222
+00:13:58,195 --> 00:13:59,636
+central to near-term progress.

@@ -1,0 +1,852 @@
+1
+00:00:00,331 --> 00:00:06,317
+Section 1.3 Foundation Models Foundation
+Models represent a fundamental
+
+2
+00:00:06,376 --> 00:00:09,500
+shift in how we develop AI. Rather than
+building
+
+3
+00:00:09,560 --> 00:00:13,083
+specialized models for many small specific
+tasks, we can
+
+4
+00:00:13,144 --> 00:00:16,466
+now train large-scale models that serve as
+a foundation
+
+5
+00:00:16,586 --> 00:00:20,611
+for many different applications. These
+models are then specialized
+
+6
+00:00:20,670 --> 00:00:23,693
+later by a process called fine tuning to
+perform
+
+7
+00:00:23,734 --> 00:00:26,756
+specific tasks. Think of this as similar
+to how
+
+8
+00:00:26,815 --> 00:00:29,678
+we can build many different types of
+buildings using
+
+9
+00:00:29,718 --> 00:00:33,040
+the same base structure. We can build
+banks, restaurants,
+
+10
+00:00:33,201 --> 00:00:36,664
+or housing, but the underlying foundation
+remains largely the
+
+11
+00:00:36,683 --> 00:00:40,085
+same. This is just a very quick intuitive
+definition.
+
+12
+00:00:40,527 --> 00:00:42,128
+We will get more into the details in the
+
+13
+00:00:42,167 --> 00:00:45,811
+next few subsections on training,
+properties, and risks. The
+
+14
+00:00:45,850 --> 00:00:49,774
+textbook includes video 1.2 here, which
+you may want
+
+15
+00:00:49,814 --> 00:00:53,136
+to watch separately. It covers optional
+video to understand
+
+16
+00:00:53,195 --> 00:00:57,485
+foundation models. The traditional
+approach of training specialized AI
+
+17
+00:00:57,526 --> 00:01:01,069
+models for every task often proved
+inefficient in limiting.
+
+18
+00:01:01,689 --> 00:01:04,512
+Progress was bottlenecked by the need for
+human label
+
+19
+00:01:04,552 --> 00:01:08,034
+data and the inability to transfer
+knowledge between tasks
+
+20
+00:01:08,094 --> 00:01:12,858
+effectively. Foundation models overcame
+these limitations through a process
+
+21
+00:01:12,899 --> 00:01:18,022
+called self-supervised learning on massive
+unlabeled data sets. This
+
+22
+00:01:18,082 --> 00:01:21,525
+breakthrough happened because of many
+different reasons. Advances and
+
+23
+00:01:21,584 --> 00:01:25,766
+specialized hardware like GPUs, new
+machine learning architectures like
+
+24
+00:01:25,787 --> 00:01:29,688
+Transformers, and increased access to huge
+amounts of online
+
+25
+00:01:29,707 --> 00:01:32,150
+data are some of the more prominent
+reasons for
+
+26
+00:01:32,189 --> 00:01:37,052
+this shift. In language processing, models
+like GPT-4 and
+
+27
+00:01:37,132 --> 00:01:41,073
+Claude are examples of foundation models.
+Both of these
+
+28
+00:01:41,134 --> 00:01:44,715
+have demonstrated the ability to generate
+human language, have
+
+29
+00:01:44,796 --> 00:01:49,668
+complex conversations, and perform simple
+reasoning tasks. Examples in
+
+30
+00:01:49,707 --> 00:01:53,789
+computer vision include models like Dolly3
+and stable diffusion.
+
+31
+00:01:54,588 --> 00:01:58,030
+These are domain-specific examples, but we
+are also seeing
+
+32
+00:01:58,069 --> 00:02:02,930
+a trend toward multimodal foundation
+models, LLMMs. This includes
+
+33
+00:02:02,990 --> 00:02:06,652
+things like GPT4V and Gemini that can work
+across
+
+34
+00:02:06,751 --> 00:02:10,612
+different types of data, processing and
+generating text, images,
+
+35
+00:02:10,953 --> 00:02:14,894
+code, audio, and probably more in the
+future. Even
+
+36
+00:02:14,973 --> 00:02:18,254
+in reinforcement learning, where models
+were traditionally trained for
+
+37
+00:02:18,294 --> 00:02:22,455
+specific tasks, we're seeing foundation
+models like Goddo demonstrate
+
+38
+00:02:22,496 --> 00:02:25,456
+the ability to learn general purpose
+behaviors that can
+
+39
+00:02:25,477 --> 00:02:28,858
+be adapted to various different downstream
+tasks. At this
+
+40
+00:02:28,918 --> 00:02:32,217
+point, there is interactive figure 1.2 in
+the textbook,
+
+41
+00:02:32,617 --> 00:02:35,739
+available in the online version. It shows
+number of
+
+42
+00:02:35,799 --> 00:02:39,901
+large-scale AI systems released per year.
+describes the specific
+
+43
+00:02:40,040 --> 00:02:43,342
+area, application, or field in which a
+large-scale AI
+
+44
+00:02:43,401 --> 00:02:46,764
+model is designed to operate. The 2025
+data is
+
+45
+00:02:46,804 --> 00:02:51,705
+incomplete and was last updated 01 June
+2025. Foundation
+
+46
+00:02:51,746 --> 00:02:55,728
+models mark a paradigm shift towards
+general-purpose systems. This
+
+47
+00:02:55,788 --> 00:02:59,508
+paradigm introduces many new risks, which
+didn't exist previously.
+
+48
+00:03:00,110 --> 00:03:04,651
+These include misuse risks from power
+centralization, homogenization, and
+
+49
+00:03:04,792 --> 00:03:07,853
+dual use capabilities, just to name a few.
+The
+
+50
+00:03:07,913 --> 00:03:11,594
+ability of foundation models to learn
+broad transferable capabilities
+
+51
+00:03:11,974 --> 00:03:16,097
+has led to increasingly sophisticated
+behaviors emerging from relatively
+
+52
+00:03:16,176 --> 00:03:20,758
+simple training objectives. Complex
+capabilities, combined with generality and
+
+53
+00:03:20,818 --> 00:03:23,939
+stale, means we need to seriously consider
+safety risks
+
+54
+00:03:24,020 --> 00:03:27,701
+beyond just misuse that previously seemed
+theoretical or distant.
+
+55
+00:03:28,401 --> 00:03:31,866
+Beyond just misuse risk, things like
+misalignment are becoming
+
+56
+00:03:31,926 --> 00:03:34,889
+an increasing concern with each new
+capability that these
+
+57
+00:03:34,930 --> 00:03:38,455
+foundation models exhibit. We dedicate an
+entire chapter to
+
+58
+00:03:38,474 --> 00:03:40,717
+the discussion of these risks, but we will
+also
+
+59
+00:03:40,758 --> 00:03:42,439
+give you a small taste on the kinds of
+
+60
+00:03:42,520 --> 00:03:45,182
+possible risks in the next few subsections
+as it
+
+61
+00:03:45,203 --> 00:03:49,645
+warrants some repetition. The textbook has
+interactive figure 1.3
+
+62
+00:03:49,985 --> 00:03:52,467
+here, which you can explore in the online
+version.
+
+63
+00:03:53,048 --> 00:03:56,830
+It shows cumulative number of large-scale
+AI models by
+
+64
+00:03:56,870 --> 00:04:02,211
+domain since 2017. Describes the specific
+area, application, or
+
+65
+00:04:02,331 --> 00:04:05,713
+field in which a large-scale AI model is
+designed
+
+66
+00:04:05,734 --> 00:04:09,336
+to operate. What is the difference between
+foundation models
+
+67
+00:04:09,538 --> 00:04:13,241
+and frontier models? Frontier models
+represent the cutting edge
+
+68
+00:04:13,282 --> 00:04:16,526
+of AI capabilities. They are the most
+advanced models
+
+69
+00:04:16,646 --> 00:04:20,071
+in their respective domains. While many
+frontier models are
+
+70
+00:04:20,170 --> 00:04:24,596
+also foundation models, like Claude
+3.5sonnet, this isn't always
+
+71
+00:04:24,637 --> 00:04:28,201
+the case. For example, AlphaFold, while
+being a frontier
+
+72
+00:04:28,242 --> 00:04:31,786
+model in protein structure prediction,
+isn't typically considered a
+
+73
+00:04:31,826 --> 00:04:35,170
+foundation model because it's specialized
+for a single task
+
+74
+00:04:35,550 --> 00:04:38,194
+rather than serving as a general
+foundation for multiple
+
+75
+00:04:38,254 --> 00:04:44,072
+applications. Section. Generally,
+foundation models use a two-stage training
+
+76
+00:04:44,112 --> 00:04:46,774
+process. First, they go through what we
+call a
+
+77
+00:04:46,913 --> 00:04:50,016
+pre-training, and then second, they can be
+adapted through
+
+78
+00:04:50,055 --> 00:04:54,358
+various mechanisms, like fine-tuning or
+scaffolding, to perform specific
+
+79
+00:04:54,399 --> 00:04:57,961
+tasks. Rather than learning from human
+labeled examples for
+
+80
+00:04:58,021 --> 00:05:01,584
+specific tasks, these models learn by
+finding patterns in
+
+81
+00:05:01,744 --> 00:05:05,812
+huge amounts of unlabeled data. There is
+figure 1.24
+
+82
+00:05:06,252 --> 00:05:09,413
+in the textbook here. It depicts on the
+opportunities
+
+83
+00:05:09,533 --> 00:05:13,214
+and risks of foundation models. Pre-
+training is the initial
+
+84
+00:05:13,254 --> 00:05:16,295
+phase, where the model learns general
+patterns and knowledge
+
+85
+00:05:16,355 --> 00:05:19,276
+from massive data sets of millions or
+billions of
+
+86
+00:05:19,317 --> 00:05:22,937
+examples. During this phase, the model
+isn't trained for
+
+87
+00:05:23,017 --> 00:05:26,980
+any specific task. Instead, it develops
+broad capabilities that
+
+88
+00:05:27,019 --> 00:05:31,021
+can later be specialized. This generality
+is both powerful
+
+89
+00:05:31,300 --> 00:05:34,764
+and concerning from a safety perspective.
+While it enables
+
+90
+00:05:34,824 --> 00:05:37,548
+the model to adapt to many different
+tasks, it
+
+91
+00:05:37,649 --> 00:05:40,675
+also means we can't easily predict or
+constrain what
+
+92
+00:05:40,714 --> 00:05:43,675
+the model might learn to do. The textbook
+includes
+
+93
+00:05:43,774 --> 00:05:48,175
+figure 1.25 here. It depicts on the
+opportunities and
+
+94
+00:05:48,255 --> 00:05:52,677
+risks of foundation models. Self-
+supervised learning is the key
+
+95
+00:05:52,757 --> 00:05:56,560
+technical innovation that makes foundation
+models possible. This is
+
+96
+00:05:56,620 --> 00:06:00,360
+how we actually implement the pre-training
+phase. Unlike traditional
+
+97
+00:06:00,420 --> 00:06:04,682
+supervised learning, which requires human
+labeled data, SSL leverages
+
+98
+00:06:04,742 --> 00:06:07,223
+the inherent structure of the data itself
+to create
+
+99
+00:06:07,244 --> 00:06:11,380
+training signals. For example, instead of
+manually labeling images,
+
+100
+00:06:11,800 --> 00:06:13,581
+we might just hide part of a full image
+
+101
+00:06:13,620 --> 00:06:15,721
+we already have and ask a model to predict
+
+102
+00:06:15,762 --> 00:06:17,762
+what the rest should be. So it might
+predict
+
+103
+00:06:17,802 --> 00:06:19,463
+the bottom half of an image given the top
+
+104
+00:06:19,502 --> 00:06:22,923
+half, learning about which objects often
+appear together. As
+
+105
+00:06:22,963 --> 00:06:25,605
+an example, it might learn that images
+with trees
+
+106
+00:06:25,685 --> 00:06:28,086
+and grass at the top often have more grass
+
+107
+00:06:28,305 --> 00:06:30,766
+or maybe a path at the bottom. It learns
+
+108
+00:06:30,826 --> 00:06:33,747
+about objects and their context. Trees and
+grass often
+
+109
+00:06:33,766 --> 00:06:36,067
+appear in parks. Dogs are often found in
+these
+
+110
+00:06:36,108 --> 00:06:39,968
+environments. paths are usually horizontal
+and so on. These
+
+111
+00:06:40,028 --> 00:06:42,548
+learned representations can then be used
+for a wide
+
+112
+00:06:42,588 --> 00:06:45,310
+variety of tasks that the model was not
+explicitly
+
+113
+00:06:45,350 --> 00:06:48,949
+trained for, like identifying dogs and
+images, or recognizing
+
+114
+00:06:48,990 --> 00:06:53,011
+parks, all without any human-provided
+labels. The same concept
+
+115
+00:06:53,050 --> 00:06:55,411
+applies in language. A model might predict
+the next
+
+116
+00:06:55,451 --> 00:06:57,632
+word in a sentence, such as the cat sat
+
+117
+00:06:57,752 --> 00:07:01,213
+on the learning grammar, syntax, and
+context, as long
+
+118
+00:07:01,252 --> 00:07:03,413
+as we repeat this over huge amounts of
+text.
+
+119
+00:07:04,117 --> 00:07:07,740
+After pre-training, foundation models can
+be adapted through two
+
+120
+00:07:07,819 --> 00:07:13,684
+main approaches, fine-tuning and in-
+context prompting. Fine-tuning involves
+additional
+
+121
+00:07:13,744 --> 00:07:16,346
+training on a specific task or data set to
+
+122
+00:07:16,406 --> 00:07:20,048
+specialize the model's capabilities. For
+example, we might use
+
+123
+00:07:20,148 --> 00:07:24,211
+reinforcement learning from human
+feedback, RHLF, to make language
+
+124
+00:07:24,250 --> 00:07:27,293
+models better at following instructions or
+being more helpful.
+
+125
+00:07:27,992 --> 00:07:30,814
+Prompting, on the other hand, involves
+providing the model
+
+126
+00:07:30,875 --> 00:07:33,855
+with carefully crafted inputs that guide
+it toward desired
+
+127
+00:07:33,896 --> 00:07:37,959
+behaviors without additional training. The
+training process of foundation
+
+128
+00:07:37,999 --> 00:07:42,922
+models creates several unique safety
+challenges. First, the self-supervised
+
+129
+00:07:42,982 --> 00:07:45,963
+nature of pre-training means we have
+limited control over
+
+130
+00:07:46,002 --> 00:07:49,245
+what the model learns. It might develop
+unintended capabilities
+
+131
+00:07:49,324 --> 00:07:53,569
+or behaviors. Second, the adaptation
+process needs to reliably
+
+132
+00:07:53,629 --> 00:07:58,012
+preserve any safety properties we've
+established during pre-training. Finally,
+
+133
+00:07:58,211 --> 00:08:00,954
+the massive scale of training data and
+compute makes
+
+134
+00:08:01,014 --> 00:08:03,737
+it difficult to thoroughly understand or
+audit what the
+
+135
+00:08:03,757 --> 00:08:06,718
+model has learned. Many of the safety
+challenges we'll
+
+136
+00:08:06,759 --> 00:08:10,583
+discuss throughout this book from goal
+misgeneralization to scalable
+
+137
+00:08:10,663 --> 00:08:13,545
+oversight are deeply connected to how
+these models are
+
+138
+00:08:13,584 --> 00:08:19,093
+trained and adapted. Section Properties
+The ability of foundation
+
+139
+00:08:19,132 --> 00:08:23,416
+models to transfer knowledge, generalize
+across many different domains,
+
+140
+00:08:23,976 --> 00:08:27,880
+and develop emergent capabilities means we
+can't rely on
+
+141
+00:08:27,920 --> 00:08:33,065
+traditional safety approaches that assume
+narrow, predictable behavior. Transfer
+
+142
+00:08:33,105 --> 00:08:35,947
+learning is the ability to transfer
+knowledge learned during
+
+143
+00:08:36,008 --> 00:08:39,831
+pre-training to new tasks and domains.
+Rather than starting
+
+144
+00:08:39,850 --> 00:08:42,453
+from scratch for each task, we can
+leverage the
+
+145
+00:08:42,533 --> 00:08:46,076
+general knowledge these models have
+already acquired. This property
+
+146
+00:08:46,157 --> 00:08:49,658
+enables rapid adaptation and deployment.
+It also means that
+
+147
+00:08:49,719 --> 00:08:53,201
+both capabilities and safety risks can
+transfer in unexpected
+
+148
+00:08:53,240 --> 00:08:56,582
+ways. For example, a model might transfer
+not just
+
+149
+00:08:56,724 --> 00:09:00,745
+useful knowledge, but also harmful biases
+or undesired behaviors
+
+150
+00:09:00,826 --> 00:09:04,557
+to new applications. Zero-shot and few-
+shot learning is the
+
+151
+00:09:04,618 --> 00:09:07,799
+ability to perform new tasks with very few
+examples,
+
+152
+00:09:08,260 --> 00:09:12,082
+or even no examples at all. For example,
+GPT-4
+
+153
+00:09:12,163 --> 00:09:15,184
+can solve novel reasoning problems just
+from a natural
+
+154
+00:09:15,225 --> 00:09:18,787
+language description of the task. This
+emergent ability to
+
+155
+00:09:18,846 --> 00:09:22,769
+generalize to new situations is powerful,
+but concerning from
+
+156
+00:09:22,808 --> 00:09:25,870
+a safety perspective. If models can adapt
+to novel
+
+157
+00:09:25,910 --> 00:09:29,472
+situations in unexpected ways, it becomes
+harder to predict
+
+158
+00:09:29,573 --> 00:09:33,755
+and control their behavior and deployment.
+Generalization in foundation
+
+159
+00:09:33,796 --> 00:09:37,860
+models works differently from traditional
+AI systems. Rather than
+
+160
+00:09:37,940 --> 00:09:41,783
+just generalizing within a narrow domain,
+these models can
+
+161
+00:09:41,842 --> 00:09:47,366
+generalize capabilities across domains in
+surprising ways. However, this
+
+162
+00:09:47,506 --> 00:09:52,652
+generalization of capabilities often
+happens without a corresponding
+generalization
+
+163
+00:09:52,692 --> 00:09:56,414
+of goals or constraints. A critical safety
+concern will
+
+164
+00:09:56,455 --> 00:09:59,917
+explore in detail in our chapter on goal-
+miss generalization.
+
+165
+00:10:00,677 --> 00:10:03,761
+For example, a model might generalize its
+ability to
+
+166
+00:10:03,822 --> 00:10:07,767
+manipulate text in unexpected ways without
+maintaining the safety
+
+167
+00:10:07,807 --> 00:10:11,392
+constraints we intended. At this point,
+the textbook shows
+
+168
+00:10:11,613 --> 00:10:16,658
+Figure 1.26. It depicts on the
+opportunities and risks
+
+169
+00:10:16,839 --> 00:10:20,024
+of foundation models. Here is a quote by
+Sam
+
+170
+00:10:20,183 --> 00:10:25,613
+Altman. Multimodality will definitely be
+important. Speech in, speech
+
+171
+00:10:25,753 --> 00:10:30,660
+out, images, eventually video. Clearly
+people really want that.
+
+172
+00:10:31,402 --> 00:10:35,368
+Customizability and personalization will
+also be very important.

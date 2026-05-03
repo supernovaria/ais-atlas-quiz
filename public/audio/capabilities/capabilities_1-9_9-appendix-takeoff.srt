@@ -1,0 +1,1044 @@
+1
+00:00:00,371 --> 00:00:08,414
+Section 1.9 Appendix Takeoff Section
+Continuity Continuity describes whether
+
+2
+00:00:08,574 --> 00:00:13,137
+AI capabilities improve smoothly and
+predictably or through sudden
+
+3
+00:00:13,337 --> 00:00:16,940
+unexpected jumps. This is different from
+speed. Even a
+
+4
+00:00:17,019 --> 00:00:20,041
+fast takeoff could be continuous if the
+rabid progress
+
+5
+00:00:20,120 --> 00:00:23,382
+follows predictable patterns and a slow
+takeoff could be
+
+6
+00:00:23,483 --> 00:00:28,865
+discontinuous if it involves surprising
+breakthroughs. Understanding continuity
+helps
+
+7
+00:00:28,925 --> 00:00:31,766
+us predict whether we can extrapolate from
+current trends,
+
+8
+00:00:32,226 --> 00:00:35,008
+like the scaling laws we discussed
+earlier, or if
+
+9
+00:00:35,048 --> 00:00:38,228
+we should expect sudden departures from
+these patterns. So
+
+10
+00:00:38,289 --> 00:00:40,109
+if you think of speed as a measure of
+
+11
+00:00:40,170 --> 00:00:43,862
+how quickly the AI becomes super
+intelligent, Continuity can
+
+12
+00:00:43,902 --> 00:00:46,484
+be thought of as a measure of surprise. In
+
+13
+00:00:46,524 --> 00:00:51,648
+a continuous takeoff, AI capabilities
+follow smooth, predictable trends.
+
+14
+00:00:52,268 --> 00:00:54,951
+The improvements we've seen in language
+models provide a
+
+15
+00:00:54,990 --> 00:00:58,253
+good example. Each new model tends to be
+somewhat
+
+16
+00:00:58,314 --> 00:01:00,676
+better than the last at tasks like coding
+or
+
+17
+00:01:00,735 --> 00:01:04,239
+math. Following patterns we can roughly
+predict from scaling
+
+18
+00:01:04,278 --> 00:01:07,584
+laws and algorithmic improvements. As we
+saw in the
+
+19
+00:01:07,625 --> 00:01:11,450
+forecasting section, many aspects of AI
+progress have shown
+
+20
+00:01:11,489 --> 00:01:15,495
+this kind of predictable behavior.
+Continuous progress doesn't mean
+
+21
+00:01:15,614 --> 00:01:19,459
+linear or simple progress. It might still
+involve exponential
+
+22
+00:01:19,579 --> 00:01:22,763
+or even super-exponential growth, but the
+key is that
+
+23
+00:01:22,843 --> 00:01:26,048
+this growth follows patterns we can
+anticipate. Think of
+
+24
+00:01:26,108 --> 00:01:29,549
+how GPT-4 is better than GPT-3, which was
+better
+
+25
+00:01:29,588 --> 00:01:33,709
+than GPT-2. Each improvement was
+significant, but not completely
+
+26
+00:01:33,750 --> 00:01:36,629
+surprising, given the increase in scale
+and improved training
+
+27
+00:01:36,670 --> 00:01:40,350
+techniques. A continuous takeoff suggests
+that current trends in
+
+28
+00:01:40,411 --> 00:01:43,912
+scaling laws and algorithmic progress
+might extend even to
+
+29
+00:01:43,971 --> 00:01:47,352
+transformative AI systems. This would give
+us more warning
+
+30
+00:01:47,412 --> 00:01:51,046
+about upcoming capabilities. and more
+ability to prepare appropriate
+
+31
+00:01:51,087 --> 00:01:54,067
+safety measures. As we'll discuss in the
+governance chapter,
+
+32
+00:01:54,548 --> 00:01:57,489
+even though progress is fast, this kind of
+predictability
+
+33
+00:01:57,569 --> 00:02:01,010
+makes it comparatively easier to develop
+and implement regulation
+
+34
+00:02:01,370 --> 00:02:06,271
+before AI systems become extremely
+powerful or uncontrollable. Keeping
+
+35
+00:02:06,311 --> 00:02:08,771
+in mind, of course, that comparatively
+easier does not
+
+36
+00:02:08,812 --> 00:02:12,734
+mean easy. A discontinuous takeoff
+involves sudden jumps and
+
+37
+00:02:12,753 --> 00:02:16,676
+capability that break from previous
+patterns. Instead of study
+
+38
+00:02:16,717 --> 00:02:19,519
+improvements and performance as we add
+compute or data,
+
+39
+00:02:20,019 --> 00:02:23,181
+we might see the emergence of entirely new
+capabilities
+
+40
+00:02:23,502 --> 00:02:27,705
+that weren't predicted by existing trends.
+One hypothetical example
+
+41
+00:02:28,086 --> 00:02:30,989
+would be if an AI system suddenly
+developed robust
+
+42
+00:02:31,128 --> 00:02:34,831
+general reasoning capabilities after
+appearing to only handle narrow
+
+43
+00:02:34,872 --> 00:02:38,555
+tasks. This would represent a
+discontinuity in the pattern
+
+44
+00:02:38,596 --> 00:02:42,699
+of AI development. The terms fast takeoff
+and discontinuous
+
+45
+00:02:42,718 --> 00:02:46,802
+takeoff are often used interchangeably.
+However, the image is
+
+46
+00:02:46,823 --> 00:02:50,736
+the subtle differences between the
+concepts. Discontinuities could arise
+
+47
+00:02:50,798 --> 00:02:54,818
+through various mechanisms. We might
+discover fundamentally new training
+
+48
+00:02:54,859 --> 00:02:58,740
+approaches that are dramatically more
+efficient than current methods.
+
+49
+00:02:58,759 --> 00:03:01,721
+Or we might hit tipping points for
+emergent capabilities,
+
+50
+00:03:02,140 --> 00:03:05,741
+where quantitative improvements in scale
+lead to qualitative changes
+
+51
+00:03:05,801 --> 00:03:09,343
+in capability. An AI system might even
+discover such
+
+52
+00:03:09,403 --> 00:03:13,185
+improvements about itself, leading to
+unexpected jumps in capability.
+
+53
+00:03:13,805 --> 00:03:17,506
+The historical record provides some
+precedent for both continuous
+
+54
+00:03:17,747 --> 00:03:22,008
+and discontinuous scientific progress. The
+development of nuclear weapons
+
+55
+00:03:22,427 --> 00:03:26,810
+represented a discontinuous jump in
+explosive power, while improvements
+
+56
+00:03:26,889 --> 00:03:30,170
+in computer processing power have followed
+more continuous trends.
+
+57
+00:03:30,891 --> 00:03:34,693
+However, as we saw in the forecasting
+section, technological
+
+58
+00:03:34,752 --> 00:03:38,754
+discontinuities have historically been
+rare, which some researchers cite
+
+59
+00:03:38,835 --> 00:03:42,937
+as evidence-favoring continuous takeoff
+scenarios. At this point, the
+
+60
+00:03:42,997 --> 00:03:48,260
+textbook shows figure 1.62. It depicts one
+example illustration
+
+61
+00:03:48,360 --> 00:03:52,243
+of slow, discontinuous take-off, where
+even though progress keeps
+
+62
+00:03:52,304 --> 00:03:59,228
+increasing, we might see sudden jumps in
+progress. Homogeneity
+
+63
+00:03:59,307 --> 00:04:02,849
+describes how similar or different AI
+systems are to
+
+64
+00:04:02,889 --> 00:04:05,911
+each other during the takeoff period. Will
+we see
+
+65
+00:04:06,010 --> 00:04:10,193
+many diverse AI systems with different
+architectures and capabilities?
+
+66
+00:04:10,872 --> 00:04:14,373
+Or will most advanced AI systems be
+variations of
+
+67
+00:04:14,433 --> 00:04:18,055
+the same basic design? This isn't just
+about technical
+
+68
+00:04:18,096 --> 00:04:21,877
+diversity. It's about whether advanced AI
+systems will share
+
+69
+00:04:21,976 --> 00:04:27,141
+similar behaviors limitations and safety
+properties. In a homogenous
+
+70
+00:04:27,182 --> 00:04:31,666
+takeoff, most advanced AI systems would be
+fundamentally similar.
+
+71
+00:04:32,228 --> 00:04:34,951
+We can see hints of this pattern today.
+Many
+
+72
+00:04:35,031 --> 00:04:38,113
+current language models are based on the
+transformer architecture
+
+73
+00:04:38,535 --> 00:04:41,999
+and trained on similar data, leading to
+similar capabilities
+
+74
+00:04:42,158 --> 00:04:46,182
+and limitations. In a homogenous takeoff,
+this pattern would
+
+75
+00:04:46,221 --> 00:04:50,384
+continue. Perhaps most AI systems would be
+fine-tuned versions
+
+76
+00:04:50,444 --> 00:04:53,607
+of a few base models, or different
+implementations of
+
+77
+00:04:53,646 --> 00:04:57,129
+the same core breakthrough in AI design. A
+factor
+
+78
+00:04:57,168 --> 00:05:00,451
+that could drive homogeneity is the sheer
+scale required
+
+79
+00:05:00,492 --> 00:05:04,514
+to train advanced AI systems. If training
+transformative AI
+
+80
+00:05:04,574 --> 00:05:08,940
+requires massive compute resources, as
+scaling law suggests, then
+
+81
+00:05:09,060 --> 00:05:12,024
+only a few organizations might be capable
+of training
+
+82
+00:05:12,064 --> 00:05:15,588
+base models from scratch. Other
+organizations would build on
+
+83
+00:05:15,629 --> 00:05:19,233
+these base models, rather than developing
+entirely new architectures,
+
+84
+00:05:19,713 --> 00:05:23,894
+leading to more homogenous systems.
+Homogenous take-off could be
+
+85
+00:05:23,975 --> 00:05:27,096
+safer in some ways, but riskier in others.
+If
+
+86
+00:05:27,156 --> 00:05:30,240
+we solve alignment for one AI system, that
+solution
+
+87
+00:05:30,300 --> 00:05:33,581
+might work for other similar systems.
+However, if there's
+
+88
+00:05:33,622 --> 00:05:36,545
+a fundamental flaw in the common
+architecture or training
+
+89
+00:05:36,584 --> 00:05:40,528
+approach, it could affect all systems
+simultaneously. It's like
+
+90
+00:05:40,567 --> 00:05:44,011
+having a monoculture and agriculture.
+While easier to manage,
+
+91
+00:05:44,190 --> 00:05:47,653
+it's also more vulnerable to shared
+weaknesses. There is
+
+92
+00:05:47,793 --> 00:05:51,555
+Figure 1.63 in the textbook here. It
+depicts an
+
+93
+00:05:51,656 --> 00:05:55,718
+illustration of homogenous take-off. We
+can see multiple different
+
+94
+00:05:55,838 --> 00:05:59,660
+overarching model architectures. The
+figure shows three in different
+
+95
+00:05:59,699 --> 00:06:03,541
+colors. Within each architecture, the
+take-off is roughly the
+
+96
+00:06:03,581 --> 00:06:07,524
+same, due to similarity in design,
+regulations, and safety
+
+97
+00:06:07,564 --> 00:06:11,870
+mitigations. Note, the curves here with
+architectures are purely
+
+98
+00:06:11,971 --> 00:06:14,956
+illustrative and are not meant to indicate
+predicted growth
+
+99
+00:06:14,997 --> 00:06:20,173
+trajectories and comparisons between
+different architectures. A heterogeneous
+takeoff
+
+100
+00:06:20,353 --> 00:06:24,334
+is when we see significant architectural
+diversity among advanced
+
+101
+00:06:24,454 --> 00:06:29,637
+AI systems. Different organizations might
+develop fundamentally different approaches
+
+102
+00:06:29,697 --> 00:06:33,617
+to AI, leading to systems with distinct
+strengths, weaknesses,
+
+103
+00:06:33,858 --> 00:06:37,600
+and behaviors. Some might be specialized
+for specific domains,
+
+104
+00:06:37,959 --> 00:06:40,440
+while others are more general. Some might
+be more
+
+105
+00:06:40,480 --> 00:06:43,862
+transparent, while others are more opaque.
+Some might be
+
+106
+00:06:43,901 --> 00:06:46,543
+more aligned with human values, while
+others might not
+
+107
+00:06:46,562 --> 00:06:51,430
+be. Competitive dynamics among AI projects
+could exacerbate diversity
+
+108
+00:06:51,872 --> 00:06:55,298
+as teams race to achieve breakthroughs
+without necessarily aligning
+
+109
+00:06:55,379 --> 00:06:59,507
+on methodologies or sharing crucial
+information. As an example,
+
+110
+00:06:59,923 --> 00:07:02,007
+We might have a future where AI becomes a
+
+111
+00:07:02,146 --> 00:07:06,011
+strategic national asset, and AI
+development is closely guarded.
+
+112
+00:07:06,711 --> 00:07:09,915
+In this environment, the pursuit of AI
+capabilities becomes
+
+113
+00:07:09,975 --> 00:07:13,300
+siloed. Each company or country would then
+employ different
+
+114
+00:07:13,319 --> 00:07:16,624
+development methodologies, potentially
+leading to a wide range of
+
+115
+00:07:16,663 --> 00:07:22,028
+behaviors, functionalities, and safety
+levels. Heterogeneous takeoff creates
+different
+
+116
+00:07:22,048 --> 00:07:25,468
+challenges for safety. We'd need to
+develop safety measures
+
+117
+00:07:25,509 --> 00:07:29,091
+that work across diverse systems, and we
+couldn't necessarily
+
+118
+00:07:29,170 --> 00:07:32,812
+apply lessons learned from one system to
+others. However,
+
+119
+00:07:33,232 --> 00:07:37,053
+diversity might provide some protection
+against systemic risks. If
+
+120
+00:07:37,173 --> 00:07:40,776
+one approach proves dangerous,
+alternatives would still exist. The
+
+121
+00:07:40,817 --> 00:07:44,918
+degree of homogeneity during takeoff has
+significant implications for
+
+122
+00:07:44,958 --> 00:07:49,120
+how transformative AI might develop. In a
+homogenous scenario,
+
+123
+00:07:49,480 --> 00:07:52,701
+progress might be more predictable, but
+also more prone
+
+124
+00:07:52,761 --> 00:07:57,141
+to winner-take-all dynamics. A
+heterogeneous scenario might be more
+
+125
+00:07:57,201 --> 00:08:00,262
+robust against single points of failure,
+but harder to
+
+126
+00:08:00,322 --> 00:08:05,466
+monitor and control. The textbook includes
+figure 1.64 here.
+
+127
+00:08:06,007 --> 00:08:09,850
+It depicts one example of heterogeneous
+takeoff. We can
+
+128
+00:08:09,911 --> 00:08:14,295
+see multiple different overarching model
+architectures. The figure shows
+
+129
+00:08:14,435 --> 00:08:18,237
+three in different colors. Within each
+architecture, the takeoff
+
+130
+00:08:18,298 --> 00:08:21,961
+is different due to differences in design,
+regulations, and
+
+131
+00:08:22,062 --> 00:08:26,345
+safety medications. Note, the curves here
+with architectures are
+
+132
+00:08:26,404 --> 00:08:29,627
+purely illustrative and are not meant to
+indicate predicted
+
+133
+00:08:29,687 --> 00:08:35,269
+growth trajectories and comparisons
+between different architectures. Polarity.
+Polarity
+
+134
+00:08:35,350 --> 00:08:39,092
+describes whether power and capability
+becomes concentrated in a
+
+135
+00:08:39,192 --> 00:08:43,335
+single AI system or organization or
+remains distributed among
+
+136
+00:08:43,375 --> 00:08:47,197
+multiple actors. In other words, will one
+AI system
+
+137
+00:08:47,297 --> 00:08:50,398
+or group pull dramatically ahead of all
+others? Or
+
+138
+00:08:50,437 --> 00:08:53,798
+will multiple AI systems advance in
+parallel with comparable
+
+139
+00:08:53,818 --> 00:08:57,860
+capabilities? In a unipolar takeoff, one
+AI system or
+
+140
+00:08:57,960 --> 00:09:01,701
+organization gains a decisive lead over
+all others. This
+
+141
+00:09:01,740 --> 00:09:05,461
+could happen through a single
+breakthrough, exceptional scaling
+advantages,
+
+142
+00:09:05,662 --> 00:09:09,945
+or recursive self-improvement. For
+example, if one AI system
+
+143
+00:09:10,004 --> 00:09:13,467
+becomes capable enough to substantially
+accelerate its own development,
+
+144
+00:09:13,927 --> 00:09:17,618
+it might rapidly outpace all other
+systems. The mathematics
+
+145
+00:09:17,658 --> 00:09:20,379
+of training compute provide one path to a
+unipolar
+
+146
+00:09:20,460 --> 00:09:23,543
+outcome. If a doubling of compute leads to
+reliable
+
+147
+00:09:23,582 --> 00:09:27,066
+improvements in capability, then an
+organization that gets far
+
+148
+00:09:27,125 --> 00:09:30,208
+enough ahead in acquiring compute could
+maintain or extend
+
+149
+00:09:30,249 --> 00:09:33,072
+their lead. Their improved systems could
+then help them
+
+150
+00:09:33,111 --> 00:09:36,595
+develop even better training methods,
+hardware, and attract investment,
+
+151
+00:09:36,955 --> 00:09:39,716
+creating a positive feedback loop that
+others can't match.
+
+152
+00:09:40,337 --> 00:09:43,181
+But compute isn't the only path to
+unipolarity. A
+
+153
+00:09:43,260 --> 00:09:46,744
+single organization might discover a
+fundamentally better training approach,
+
+154
+00:09:47,164 --> 00:09:49,547
+or develop an AI system that's better at
+improving
+
+155
+00:09:49,586 --> 00:09:52,929
+itself than at helping humans build
+alternatives. Once any
+
+156
+00:09:53,051 --> 00:09:55,812
+actor gets far enough ahead, it might
+become practically
+
+157
+00:09:55,852 --> 00:09:58,681
+impossible for others to catch up. At this
+point,
+
+158
+00:09:58,880 --> 00:10:03,703
+the textbook shows Figure 1.65. It depicts
+an illustration
+
+159
+00:10:03,884 --> 00:10:08,687
+of unipolar takeoff. One model, dark blue
+here, significantly
+
+160
+00:10:08,807 --> 00:10:14,192
+outperforms all others. In a multi-polar
+takeoff, multiple AI
+
+161
+00:10:14,272 --> 00:10:19,658
+systems or organizations, develop advanced
+capabilities in parallel. This
+
+162
+00:10:19,719 --> 00:10:23,159
+could look like several large labs
+developing different but
+
+163
+00:10:23,259 --> 00:10:27,361
+comparably powerful AI systems, or like
+many actors having
+
+164
+00:10:27,481 --> 00:10:31,082
+access to similar AI capabilities through
+open source models
+
+165
+00:10:31,263 --> 00:10:35,245
+or AI services. Today's AI landscape shows
+elements of
+
+166
+00:10:35,304 --> 00:10:39,491
+multi polarity. Multiple organizations can
+train large language models,
+
+167
+00:10:39,991 --> 00:10:43,215
+and techniques developed by OneLab are
+often quickly adopted
+
+168
+00:10:43,274 --> 00:10:47,256
+by others. A multi-polar take-off might
+continue this pattern,
+
+169
+00:10:47,638 --> 00:10:51,460
+with multiple groups maintaining similar
+capabilities, even as those
+
+170
+00:10:51,519 --> 00:10:56,663
+capabilities become transformative. A
+unipolar scenario raises concerns about
+
+171
+00:10:56,703 --> 00:11:00,365
+the concentration of power, while a multi-
+polar world presents
+
+172
+00:11:00,426 --> 00:11:04,269
+challenges in coordination among diverse
+entities or AI systems.
+
+173
+00:11:05,106 --> 00:11:08,696
+Both unipolar and multipolar worlds have
+the potential for
+
+174
+00:11:08,755 --> 00:11:12,677
+misuse of advanced AI capabilities by
+human actors. There
+
+175
+00:11:12,758 --> 00:11:16,880
+is figure 1.66 in the textbook here. It
+depicts
+
+176
+00:11:17,061 --> 00:11:22,323
+an illustration of multi-polar takeoff. No
+model significantly outperforms
+
+177
+00:11:22,344 --> 00:11:24,485
+the others, and they all take off at a
+
+178
+00:11:24,565 --> 00:11:27,486
+roughly competitive rate relative to each
+other. In a
+
+179
+00:11:27,667 --> 00:11:31,048
+unipolar scenario, the actions and
+alignment of a single
+
+180
+00:11:31,129 --> 00:11:34,510
+system or organization become crucial.
+They might gain the
+
+181
+00:11:34,571 --> 00:11:38,832
+ability to shape the long-term future
+unilaterally. This concentrates
+
+182
+00:11:38,913 --> 00:11:41,413
+risk in a single point of failure, but
+might
+
+183
+00:11:41,474 --> 00:11:44,634
+also make coordination easier since fewer
+actors need to
+
+184
+00:11:44,695 --> 00:11:49,855
+agree. A multipolar scenario creates
+different challenges. Multiple advanced
+
+185
+00:11:49,895 --> 00:11:52,855
+systems might act in conflicting ways or
+compete for
+
+186
+00:11:52,895 --> 00:11:56,376
+resources. This could create pressure to
+deploy systems quickly
+
+187
+00:11:56,537 --> 00:11:59,577
+or cut corners on safety. There's also an
+important
+
+188
+00:11:59,618 --> 00:12:02,899
+interaction between polarity and the other
+aspects of takeoff
+
+189
+00:12:02,918 --> 00:12:05,921
+we've discussed. A fast take-off might be
+more likely
+
+190
+00:12:05,961 --> 00:12:08,663
+to become unipolar, as the first system to
+make
+
+191
+00:12:08,722 --> 00:12:12,187
+rapid progress could quickly outpace all
+others. A slow
+
+192
+00:12:12,226 --> 00:12:15,850
+take-off might tend toward multipolarity,
+giving more actors time
+
+193
+00:12:15,909 --> 00:12:19,392
+to catch up to any initial leads. Factors
+influencing
+
+194
+00:12:19,451 --> 00:12:24,193
+polarity. Several key elements influence
+whether takeoff polarity leans
+
+195
+00:12:24,234 --> 00:12:28,414
+towards a unipolar or multipolar outcome.
+Speed of AI
+
+196
+00:12:28,455 --> 00:12:32,395
+development, a rapid takeoff might favor a
+unipolar outcome
+
+197
+00:12:32,456 --> 00:12:35,376
+by giving a significant advantage to the
+fastest developer.
+
+198
+00:12:36,018 --> 00:12:38,437
+In contrast, a slower takeoff could lead
+to a
+
+199
+00:12:38,498 --> 00:12:42,740
+multipolar world, where many entities
+reach advanced capabilities more
+
+200
+00:12:42,860 --> 00:12:48,013
+or less simultaneously. collaboration
+versus competition. The degree of
+
+201
+00:12:48,052 --> 00:12:51,235
+collaboration and openness in the AI
+research community can
+
+202
+00:12:51,275 --> 00:12:55,639
+significantly affect takeoff polarity.
+High levels of collaboration and
+
+203
+00:12:55,700 --> 00:12:59,764
+information sharing could support a
+multipolar outcome, while secretive
+
+204
+00:12:59,864 --> 00:13:04,708
+or highly competitive environments might
+push towards unipolarity. regulatory
+
+205
+00:13:04,808 --> 00:13:09,354
+and economic dynamics. Regulatory
+frameworks and economic incentives also
+
+206
+00:13:09,413 --> 00:13:12,716
+play a crucial role. Policies that
+encourage diversity in
+
+207
+00:13:12,797 --> 00:13:15,779
+AI development and mitigate against the
+accumulation of too
+
+208
+00:13:15,820 --> 00:13:18,964
+much power in any single entity's hands
+could foster
+
+209
+00:13:19,083 --> 00:13:20,225
+a multipolar takeoff.

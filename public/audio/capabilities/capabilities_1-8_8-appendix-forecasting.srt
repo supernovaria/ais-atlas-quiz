@@ -1,0 +1,1293 @@
+1
+00:00:00,091 --> 00:00:04,011
+Section 1 subsection, hardware efficiency,
+the first factor in
+
+2
+00:00:04,072 --> 00:00:07,833
+increasing effective computers, how
+efficient is the hardware that
+
+3
+00:00:07,852 --> 00:00:11,073
+we produce at doing computation? iChips
+are getting about
+
+4
+00:00:11,134 --> 00:00:14,615
+35-10 more powerful each year, but we're
+approaching physical
+
+5
+00:00:14,675 --> 00:00:20,076
+limits. Since around 2010, the raw
+computational performance, FLOPS,
+
+6
+00:00:20,495 --> 00:00:24,137
+of GPUs in FP32 precision, has grown by
+roughly
+
+7
+00:00:24,157 --> 00:00:28,699
+1.35X per year. The improvement comes from
+things like
+
+8
+00:00:28,760 --> 00:00:33,326
+denser transistors, specialized AI
+circuitry, and switching to lower
+
+9
+00:00:33,387 --> 00:00:37,706
+precision number formats. Performance per
+dollar has improved rapidly,
+
+10
+00:00:38,085 --> 00:00:41,088
+and hardware at any given precision and
+fixed performance
+
+11
+00:00:41,128 --> 00:00:44,829
+level becomes 30% cheaper each year. At
+the same
+
+12
+00:00:44,890 --> 00:00:48,671
+time, manufacturers continue to introduce
+more powerful and expensive
+
+13
+00:00:48,692 --> 00:00:51,732
+hardware. In the near future, this trend
+seems likely
+
+14
+00:00:51,773 --> 00:00:55,515
+to continue, but thermodynamic limits will
+eventually stop this
+
+15
+00:00:55,575 --> 00:00:59,216
+trend. Chips can only get so energy
+efficient before
+
+16
+00:00:59,277 --> 00:01:03,338
+physics says no. Every computation
+generates heat as a
+
+17
+00:01:03,378 --> 00:01:07,480
+fundamental law of physics, not an
+engineering problem. Current
+
+18
+00:01:07,540 --> 00:01:10,001
+analysis suggests there is room for a 50
+to
+
+19
+00:01:10,100 --> 00:01:14,503
+1,000X improvement in energy efficiency
+before we hit fundamental
+
+20
+00:01:14,563 --> 00:01:17,983
+CMOS limits with a 50% chance that
+improvement cease
+
+21
+00:01:18,243 --> 00:01:22,691
+before a roughly 200X improvement on
+existing technology. These
+
+22
+00:01:22,792 --> 00:01:26,733
+estimates suggest that CMOS processors are
+likely sufficiently efficient
+
+23
+00:01:26,754 --> 00:01:30,055
+to power substantially larger AI training
+runs than today.
+
+24
+00:01:30,754 --> 00:01:33,936
+This implies we have significant headroom
+to scale using
+
+25
+00:01:33,977 --> 00:01:38,097
+current silicon paradigms through 2030 and
+beyond, although hardware
+
+26
+00:01:38,298 --> 00:01:41,599
+R&D returns may eventually diminish as we
+approach physical
+
+27
+00:01:41,659 --> 00:01:45,423
+limits. Beyond these limits, training runs
+would likely require
+
+28
+00:01:45,483 --> 00:01:48,706
+radical changes to computing paradigms,
+like a shift to
+
+29
+00:01:48,826 --> 00:01:54,072
+adiabatic computing. The textbook includes
+figure 1.49 here. It
+
+30
+00:01:54,111 --> 00:01:57,376
+depicts currently observed trends in the
+efficiency of hardware
+
+31
+00:01:57,676 --> 00:02:00,638
+used for ML over the last decades. we can
+
+32
+00:02:00,679 --> 00:02:03,262
+see a clear year by year increase in peak
+
+33
+00:02:03,362 --> 00:02:07,147
+computational performance. At this point,
+the textbook shows figure
+
+34
+00:02:07,167 --> 00:02:11,092
+150. It depicts a forecast of the future
+using
+
+35
+00:02:11,111 --> 00:02:16,056
+the growth and AI transition endogenous,
+gate, playground. This
+
+36
+00:02:16,137 --> 00:02:20,159
+graph shows investments in hardware R&D,
+improving the efficiency
+
+37
+00:02:20,219 --> 00:02:23,622
+of AI chips, measured in units of flu PE-
+Yashi
+
+38
+00:02:23,703 --> 00:02:27,985
+year per hour's. Eventually, hardware
+efficiency is capped by
+
+39
+00:02:28,066 --> 00:02:32,348
+physical limits. The red line showcases
+aggressive parameter settings.
+
+40
+00:02:33,128 --> 00:02:37,151
+Green is conservative parameter settings.
+The red zone highlights
+
+41
+00:02:37,211 --> 00:02:40,592
+the difference in timelines to full
+automation between aggressive
+
+42
+00:02:40,651 --> 00:02:45,514
+and conservative models. Subsection,
+software and algorithmic efficiency, the
+
+43
+00:02:45,554 --> 00:02:48,995
+second factor in increasing effective
+computers, how well we
+
+44
+00:02:49,034 --> 00:02:51,515
+can utilize all the existing hardware that
+we have.
+
+45
+00:02:52,276 --> 00:02:54,737
+This is separate from just making the
+physical hardware
+
+46
+00:02:54,777 --> 00:02:58,139
+itself more efficient. Better algorithms
+have cut the compute
+
+47
+00:02:58,199 --> 00:03:00,581
+needed for a given result by three X per
+
+48
+00:03:00,622 --> 00:03:03,403
+year. The level of compute needed to
+achieve a
+
+49
+00:03:03,443 --> 00:03:06,306
+given level of performance has halved
+roughly every eight
+
+50
+00:03:06,366 --> 00:03:10,188
+months. This rapid improvement means that
+the compute required
+
+51
+00:03:10,229 --> 00:03:13,771
+to achieve specific levels of capability
+on benchmarks can
+
+52
+00:03:13,812 --> 00:03:16,193
+drop by orders of magnitude over just a
+few
+
+53
+00:03:16,253 --> 00:03:20,611
+years of algorithmic progress. The
+improvements to compute efficiency
+
+54
+00:03:20,872 --> 00:03:24,955
+explain roughly 35% of performance
+improvements in language modeling
+
+55
+00:03:25,175 --> 00:03:29,318
+since 2014, with the other 65% coming from
+just
+
+56
+00:03:29,378 --> 00:03:32,901
+building more chips and running them
+longer. Overall, this
+
+57
+00:03:32,961 --> 00:03:36,544
+means we're getting smarter about using
+available hardware and
+
+58
+00:03:36,604 --> 00:03:39,426
+not just throwing more compute at
+problems. There is
+
+59
+00:03:39,486 --> 00:03:43,811
+figure 1.51 in the textbook here. It
+depicts estimates
+
+60
+00:03:43,850 --> 00:03:47,355
+of the contributions of scaling and
+algorithmic innovation in
+
+61
+00:03:47,417 --> 00:03:49,719
+terms of the raw compute that would be
+naively
+
+62
+00:03:49,780 --> 00:03:53,478
+needed to achieve a state-of-the-art level
+of performance. The
+
+63
+00:03:53,518 --> 00:03:56,838
+contribution of algorithmic progress is
+roughly half as much
+
+64
+00:03:56,899 --> 00:04:00,500
+as that of compute scaling. The textbook
+includes figure
+
+65
+00:04:00,560 --> 00:04:03,680
+1.52 here. It depicts a forecast of the
+future
+
+66
+00:04:03,941 --> 00:04:08,162
+using the growth and AI transition
+endogenous, gate, playground.
+
+67
+00:04:08,822 --> 00:04:13,082
+This graph shows algorithmic improvements
+over time. By developing
+
+68
+00:04:13,143 --> 00:04:16,624
+better algorithms and using higher quality
+data, it becomes
+
+69
+00:04:16,723 --> 00:04:19,663
+possible to do more with the same
+hardware, measured
+
+70
+00:04:19,704 --> 00:04:23,398
+in units of effective flop, per stained
+flop, The
+
+71
+00:04:23,458 --> 00:04:27,841
+red line showcases aggressive parameter
+settings. Green is conservative
+
+72
+00:04:27,860 --> 00:04:31,303
+parameter settings. The red zone
+highlights the difference in
+
+73
+00:04:31,363 --> 00:04:35,247
+timelines to full automation between
+aggressive and conservative models.
+
+74
+00:04:35,766 --> 00:04:40,610
+Subsection, semiconductor production, the
+third factor in increasing effective
+
+75
+00:04:40,651 --> 00:04:44,392
+computers, how many chips can you actually
+build? Total
+
+76
+00:04:44,432 --> 00:04:47,617
+available computing power from Nvidia
+chips has grown by
+
+77
+00:04:47,656 --> 00:04:52,961
+approximately 2.3x per year since 2019,
+enabling the training
+
+78
+00:04:53,101 --> 00:04:56,725
+of ever larger models. Nvidia designs a
+dominant share
+
+79
+00:04:56,786 --> 00:05:00,610
+of AI training chips, and Taiwan's TSMC
+serves as
+
+80
+00:05:00,649 --> 00:05:04,593
+the primary chip fab for these
+manufacturers. The AI
+
+81
+00:05:04,673 --> 00:05:09,966
+chip supply chain is highly concentrated.
+In 2024, TSMC
+
+82
+00:05:10,026 --> 00:05:13,547
+dedicated roughly 5% of their advanced
+chip production to
+
+83
+00:05:13,687 --> 00:05:17,528
+AI accelerators. The rest goes to phones,
+computers, and
+
+84
+00:05:17,567 --> 00:05:21,348
+other electronics. If AI labs want
+dramatically more chips,
+
+85
+00:05:21,728 --> 00:05:25,709
+TSMC would need to shift priorities,
+expand capacity, and
+
+86
+00:05:25,750 --> 00:05:29,370
+compete with other customers who also want
+cutting-edge semiconductors.
+
+87
+00:05:29,870 --> 00:05:34,012
+At this point, the textbook shows Figure
+1.53. It
+
+88
+00:05:34,052 --> 00:05:37,814
+depicts an estimate the world's installed
+Nvidia GPU compute
+
+89
+00:05:37,855 --> 00:05:41,918
+capacity, broken down by GPU model. There
+is figure
+
+90
+00:05:42,559 --> 00:05:46,442
+1.54 in the textbook here. It depicts
+tables showcasing
+
+91
+00:05:46,543 --> 00:05:50,146
+estimates, costs and times to overcome
+various constraints in
+
+92
+00:05:50,206 --> 00:05:53,908
+scaling up compute production. The
+textbook has interactive figure
+
+93
+00:05:54,250 --> 00:05:57,291
+1.7 here, which you can explore in the
+online
+
+94
+00:05:57,331 --> 00:06:01,615
+version. It shows quarterly revenue of
+Nvidia Corporation across
+
+95
+00:06:01,675 --> 00:06:05,639
+its main market segments reported in US
+dollars. Nvidia
+
+96
+00:06:05,680 --> 00:06:10,704
+manufactures, graphics processing units,
+GPUs, which were originally used
+
+97
+00:06:10,745 --> 00:06:13,168
+for gaming and are now used to train AI
+
+98
+00:06:13,228 --> 00:06:17,471
+models. This data is not adjusted for
+inflation. Investment
+
+99
+00:06:17,572 --> 00:06:21,478
+doesn't immediately make chip production
+go faster. If some
+
+100
+00:06:21,538 --> 00:06:24,822
+country wants to build their own TSMC
+equivalent, then
+
+101
+00:06:24,843 --> 00:06:26,785
+it can take four or five years to build
+
+102
+00:06:26,845 --> 00:06:30,528
+a new cutting-edge fab, accounting for
+construction and permitting.
+
+103
+00:06:31,209 --> 00:06:34,593
+Though upgrading an existing fab takes
+less time around
+
+104
+00:06:34,673 --> 00:06:38,415
+two years in addition to billions in
+investment. besides
+
+105
+00:06:38,456 --> 00:06:42,637
+the existing competition for chips from
+TSMC. Another factor
+
+106
+00:06:42,716 --> 00:06:45,538
+is that the machine's TSMC needs to
+manufacture the
+
+107
+00:06:45,577 --> 00:06:48,879
+chips. These are almost exclusively made
+by a single
+
+108
+00:06:48,918 --> 00:06:54,360
+company, ASML in the Netherlands. These
+extreme ultraviolet EUV
+
+109
+00:06:54,399 --> 00:06:59,701
+lithography machines cost between $150
+million to $380 million
+
+110
+00:06:59,841 --> 00:07:04,341
+each. If, when someone, EG TSMC wants to
+expand
+
+111
+00:07:04,382 --> 00:07:07,283
+production, they can't just order 50 more
+next month.
+
+112
+00:07:08,122 --> 00:07:11,185
+They join an already long wait list. The
+textbook
+
+113
+00:07:11,264 --> 00:07:15,646
+includes Figure 1.55 here. It depicts a
+forecast using
+
+114
+00:07:15,666 --> 00:07:21,517
+the growth and AI transition endogenous,
+GATA, playground. This
+
+115
+00:07:21,598 --> 00:07:25,562
+graph shows potential scale-up of AI chip
+fabrication to
+
+116
+00:07:25,581 --> 00:07:29,466
+meet demand for AI workloads. Due to the
+exponential
+
+117
+00:07:29,545 --> 00:07:32,788
+cost of rapid expansions, growth is
+reduced by an
+
+118
+00:07:32,908 --> 00:07:37,773
+adjustment costs parameter. The red line
+showcases aggressive parameter
+
+119
+00:07:37,812 --> 00:07:42,396
+settings. Green is conservative parameter
+settings. The red zone
+
+120
+00:07:42,456 --> 00:07:45,819
+highlights the difference in timelines to
+full automation between
+
+121
+00:07:45,858 --> 00:07:50,161
+aggressive and conservative models.
+Section, investment and training cost,
+
+122
+00:07:50,440 --> 00:07:53,322
+the cost in USD of training frontier
+models has
+
+123
+00:07:53,382 --> 00:07:57,403
+grown by 3.5x per year per year since
+2020.
+
+124
+00:07:58,084 --> 00:08:00,805
+If trends continue, we'll see the training
+cost for
+
+125
+00:08:00,845 --> 00:08:03,725
+a single model approach billion dollar
+training runs by
+
+126
+00:08:03,745 --> 00:08:08,809
+2007. The cost breaks down roughly as
+$50.65 for
+
+127
+00:08:08,848 --> 00:08:13,552
+hardware, spread across its useful life,
+30-45% for the
+
+128
+00:08:13,612 --> 00:08:18,415
+researchers and engineers, and 2-6% for
+electricity. This is
+
+129
+00:08:18,475 --> 00:08:21,456
+venture capital and big tech money so far,
+but
+
+130
+00:08:21,497 --> 00:08:24,559
+these numbers are approaching scales where
+only nations or
+
+131
+00:08:24,598 --> 00:08:27,821
+the largest corporations can compete. At
+this point, the
+
+132
+00:08:27,860 --> 00:08:32,403
+textbook shows figure 1.56. It depicts
+breakdown of model
+
+133
+00:08:32,423 --> 00:08:36,787
+development costs for selected models.
+Hardware costs are amortized
+
+134
+00:08:36,846 --> 00:08:38,827
+to the total number of chip hours spent on
+
+135
+00:08:38,888 --> 00:08:43,270
+experiments and training. R&D staff costs
+cover the duration
+
+136
+00:08:43,291 --> 00:08:47,212
+of development from initial experiments to
+publication. At this
+
+137
+00:08:47,293 --> 00:08:50,715
+point, there is interactive figure 1.8 in
+the textbook,
+
+138
+00:08:51,176 --> 00:08:54,618
+available in the online version. It shows
+hardware and
+
+139
+00:08:54,677 --> 00:08:58,701
+energy cost to train notable AI systems.
+This data
+
+140
+00:08:58,740 --> 00:09:02,583
+is expressed in US dollars, adjusted for
+inflation. There
+
+141
+00:09:02,644 --> 00:09:06,628
+is figure 1.57 in the textbook here. It
+depicts
+
+142
+00:09:06,768 --> 00:09:09,951
+amortized hardware, cost plus energy cost
+for the final
+
+143
+00:09:10,010 --> 00:09:13,692
+training run of frontier models. The
+selected models are
+
+144
+00:09:13,731 --> 00:09:16,393
+among the top 10 most compute intensive
+for their
+
+145
+00:09:16,452 --> 00:09:20,315
+time. Amortized hardware costs are the
+product of training
+
+146
+00:09:20,394 --> 00:09:24,535
+chip hours and a depreciated hardware
+cost, with 23%
+
+147
+00:09:24,657 --> 00:09:29,758
+overhead added for cluster-level
+networking. OpenCircles indicate costs
+which
+
+148
+00:09:29,918 --> 00:09:33,440
+used an estimated production cost of
+Google TPU hardware.
+
+149
+00:09:34,120 --> 00:09:36,743
+These costs are generally more uncertain
+than the others,
+
+150
+00:09:37,222 --> 00:09:40,586
+which used actual price data rather than
+estimates. The
+
+151
+00:09:40,687 --> 00:09:43,830
+acquisition cost in USDR of the hardware
+used to
+
+152
+00:09:43,870 --> 00:09:46,812
+train frontier AI models has grown by 2.5x
+per
+
+153
+00:09:46,852 --> 00:09:51,057
+year since 2016. To give you a sense of
+
+154
+00:09:51,116 --> 00:09:53,837
+how much training a frontier model costs,
+the total
+
+155
+00:09:53,937 --> 00:09:58,561
+amortized cost of developing GROC4,
+released in July 2025,
+
+156
+00:09:58,881 --> 00:10:03,364
+including hardware and electricity, is
+estimated at $480 million
+
+157
+00:10:03,644 --> 00:10:07,086
+USD. The acquisition cost of the hardware
+to train
+
+158
+00:10:07,147 --> 00:10:11,970
+GROC3, including GPUs, other server
+components and networking, is
+
+159
+00:10:12,049 --> 00:10:16,332
+estimated at $3 billion USD. The hardware
+used to
+
+160
+00:10:16,413 --> 00:10:19,816
+train GROC4 may have been even more
+expensive. The
+
+161
+00:10:19,855 --> 00:10:23,700
+textbook has interactive figure 1.9 here,
+which you can
+
+162
+00:10:23,759 --> 00:10:26,763
+explore in the online version. It shows
+money put
+
+163
+00:10:26,822 --> 00:10:31,047
+into privately held AI companies by
+private investors. This
+
+164
+00:10:31,126 --> 00:10:35,311
+excludes publicly traded companies, e.g.
+big tech companies and
+
+165
+00:10:35,370 --> 00:10:40,075
+companies internal spending such as R&D or
+infrastructure. expressed
+
+166
+00:10:40,115 --> 00:10:43,898
+in US dollars, adjusted for inflation. An
+unknown question
+
+167
+00:10:44,119 --> 00:10:47,301
+is whether the returns to productivity
+gains will justify
+
+168
+00:10:47,341 --> 00:10:52,177
+continued investment. 2025 saw a lot of
+news headlines
+
+169
+00:10:52,256 --> 00:10:56,282
+about circular investment and an AI
+bubble. If AI
+
+170
+00:10:56,341 --> 00:11:00,186
+can automate significant portions of
+cognitive work, capturing even
+
+171
+00:11:00,225 --> 00:11:03,009
+a fraction of the global labour market
+makes trillion
+
+172
+00:11:03,049 --> 00:11:07,934
+dollar investments rational. However,
+massive investments face increasing
+hurdles
+
+173
+00:11:08,235 --> 00:11:11,879
+due to structural constraints. As compute
+scales up, the
+
+174
+00:11:11,919 --> 00:11:16,105
+lead time between project initiation and
+deployment lengthened significantly,
+
+175
+00:11:16,287 --> 00:11:19,171
+roughly one year for every tenfold
+increase in scale,
+
+176
+00:11:19,671 --> 00:11:22,375
+creating a feedback loop that naturally
+slows the pace
+
+177
+00:11:22,414 --> 00:11:27,030
+of scaling. This uncertainty regarding
+long-term returns over extended
+
+178
+00:11:27,091 --> 00:11:31,432
+periods may drive investors to prefer
+incremental scaling, breaking
+
+179
+00:11:31,493 --> 00:11:34,494
+up projects into smaller chunks to gauge
+returns before
+
+180
+00:11:34,553 --> 00:11:39,356
+committing further, rather than making
+massive upfront investments. Several
+
+181
+00:11:39,397 --> 00:11:42,719
+things could break the pattern entirely.
+Models hitting a
+
+182
+00:11:42,759 --> 00:11:47,143
+capability ceiling where more compute
+doesn't help, regulations capping
+
+183
+00:11:47,202 --> 00:11:51,066
+training runs or data center sizes, energy
+costs making
+
+184
+00:11:51,125 --> 00:11:55,250
+large runs un-economical or economic
+recession drying up capital.
+
+185
+00:11:55,971 --> 00:11:59,293
+Each represents a distinct way scaling
+could stop independent
+
+186
+00:11:59,312 --> 00:12:02,897
+of technical feasibility. The textbook
+includes figure 1.58 here.
+
+187
+00:12:04,597 --> 00:12:07,219
+It depicts a forecast using the growth and
+AI
+
+188
+00:12:07,298 --> 00:12:12,081
+transition endogenous gate playground.
+Gate predicts high levels of
+
+189
+00:12:12,140 --> 00:12:15,981
+investment in AI-related capital and R&D
+to support massive
+
+190
+00:12:16,042 --> 00:12:20,203
+expansions of the effective compute stock.
+This involves major
+
+191
+00:12:20,264 --> 00:12:24,725
+reallocations away from conventional
+capital investments and consumption and
+
+192
+00:12:24,784 --> 00:12:29,187
+occurs before AI generates significant
+economic value motivated by
+
+193
+00:12:29,206 --> 00:12:32,967
+the large payoffs from AI automation. The
+red line
+
+194
+00:12:33,008 --> 00:12:37,871
+showcases aggressive parameter settings.
+Green is conservative parameter settings.
+
+195
+00:12:38,692 --> 00:12:41,293
+The red zone highlights the difference in
+timelines to
+
+196
+00:12:41,354 --> 00:12:45,216
+full automation between aggressive and
+conservative models. At this
+
+197
+00:12:45,296 --> 00:12:50,019
+point, the textbook shows figure 1.59. It
+depicts large
+
+198
+00:12:50,058 --> 00:12:53,662
+investments in AI, precede the economic
+benefits of automation,
+
+199
+00:12:54,261 --> 00:12:58,296
+driven by expectations of large future
+payoffs. At the
+
+200
+00:12:58,336 --> 00:13:00,899
+start of simulations, there is a brief
+period with
+
+201
+00:13:00,960 --> 00:13:05,025
+substantial AI investment, but with little
+generated economic value.
+
+202
+00:13:05,605 --> 00:13:09,272
+However, as automation proceeds, the value
+generated by AI
+
+203
+00:13:09,351 --> 00:13:12,535
+grows rapidly, comprising the majority of
+output within a
+
+204
+00:13:12,596 --> 00:13:16,198
+few years. The gate model thus captures
+the dynamic
+
+205
+00:13:16,479 --> 00:13:19,500
+where it is worth making major upfront
+investments to
+
+206
+00:13:19,559 --> 00:13:23,160
+enjoy the value generated by AI. The
+investment is
+
+207
+00:13:23,240 --> 00:13:26,243
+measured as the fraction of yearly
+economic output that
+
+208
+00:13:26,302 --> 00:13:29,783
+is reinvested in AI, while the benefit is
+measured
+
+209
+00:13:29,884 --> 00:13:32,125
+as the fraction of yearly output that can
+be
+
+210
+00:13:32,164 --> 00:13:35,525
+attributed to the deployment of digital
+workers. The red
+
+211
+00:13:35,586 --> 00:13:39,967
+line showcases aggressive parameter
+settings. Green is conservative parameter
+
+212
+00:13:40,008 --> 00:13:43,828
+settings. The red zone highlights the
+difference in timelines
+
+213
+00:13:43,889 --> 00:13:48,009
+to full automation between aggressive and
+conservative models. Section,
+
+214
+00:13:48,409 --> 00:13:52,791
+power consumption, training frontier
+models requires enough electrical power
+
+215
+00:13:52,971 --> 00:13:56,812
+to run a small city. GPT-4's training run
+likely
+
+216
+00:13:56,871 --> 00:14:00,793
+consumed around 50 MW, equivalent to
+powering roughly 40,000
+
+217
+00:14:00,812 --> 00:14:04,715
+US homes. If compute scaling continues at
+4 or
+
+218
+00:14:04,754 --> 00:14:08,378
+5x per year, frontier training runs will
+require 4
+
+219
+00:14:08,418 --> 00:14:12,522
+to 16 gigawatts by 2030, matching the
+Grand Cooley
+
+220
+00:14:12,581 --> 00:14:16,885
+Dam America's largest power plant. Energy
+costs remain small
+
+221
+00:14:17,285 --> 00:14:21,090
+relative to hardware costs, but this could
+change. Currently
+
+222
+00:14:21,250 --> 00:14:24,932
+electricity costs represent only 2 to 6%
+of total
+
+223
+00:14:24,993 --> 00:14:28,755
+training costs, with hardware and labour
+dominating the budget.
+
+224
+00:14:29,772 --> 00:14:32,336
+But if training runs scale to 10 plus
+gigawatts,
+
+225
+00:14:32,636 --> 00:14:36,764
+while hardware efficiency improvements
+slow down, energy could become
+
+226
+00:14:36,784 --> 00:14:41,113
+a much larger fraction of costs. At $0.05
+per
+
+227
+00:14:41,153 --> 00:14:44,855
+kilowatt hour, a 10-gear W-training run
+running for 100
+
+228
+00:14:44,875 --> 00:14:49,778
+days costs roughly $120 million just for
+electricity. That's
+
+229
+00:14:49,817 --> 00:14:52,139
+still less than the hardware, but it's no
+longer
+
+230
+00:14:52,220 --> 00:14:57,023
+negligible. And in practice, securing
+multi-gigawatt power supplies might
+
+231
+00:14:57,082 --> 00:15:01,325
+cost significantly more than wholesale
+electricity rates suggest. There
+
+232
+00:15:01,365 --> 00:15:04,967
+is figure 1.6e in the textbook here. It
+depicts
+
+233
+00:15:05,028 --> 00:15:08,412
+historic trend and forecast for the
+electricity demand of
+
+234
+00:15:08,451 --> 00:15:12,735
+the largest individual frontier training
+runs. The textbook includes
+
+235
+00:15:12,794 --> 00:15:17,379
+figure 1.61 here. It depicts the projected
+power consumption
+
+236
+00:15:17,419 --> 00:15:20,883
+for planned frontier data centers for
+selected AI companies.
+
+237
+00:15:21,383 --> 00:15:25,063
+Scaling AI systems to the forecasted
+levels of 2030
+
+238
+00:15:25,344 --> 00:15:29,065
+will require substantial power
+infrastructure. A training run of
+
+239
+00:15:29,125 --> 00:15:32,225
+two times ten to the 29th flop would
+require
+
+240
+00:15:32,265 --> 00:15:36,006
+approximately six GW Arts of Power,
+assuming improvements in
+
+241
+00:15:36,086 --> 00:15:41,068
+hardware efficiency. This scale
+necessitates data center campuses ranging
+
+242
+00:15:41,109 --> 00:15:43,210
+from one to five GWs by the end of
+
+243
+00:15:43,250 --> 00:15:47,211
+the decade. Lead times increase with
+scale, every additional
+
+244
+00:15:47,291 --> 00:15:50,591
+10X increase in compute stock adds roughly
+one year
+
+245
+00:15:50,652 --> 00:15:55,234
+to project timelines. Constructing the
+necessary large-scale power plants
+
+246
+00:15:55,573 --> 00:15:59,355
+typically takes two to three years.
+Despite these hurdles,
+
+247
+00:15:59,635 --> 00:16:01,836
+the cost of power remains a small fraction
+of
+
+248
+00:16:01,875 --> 00:16:05,138
+data center expenses, roughly one-tenth
+the cost of the
+
+249
+00:16:05,197 --> 00:16:09,100
+chips. making the capital investment
+rational given the potential
+
+250
+00:16:09,139 --> 00:16:14,143
+returns. The textbook has interactive
+figure 1.10 here, which
+
+251
+00:16:14,182 --> 00:16:17,245
+you can explore in the online version. It
+shows
+
+252
+00:16:17,304 --> 00:16:21,086
+total electricity generated in each
+country or region measured
+
+253
+00:16:21,126 --> 00:16:24,349
+in terawatt hours. At this point, there is
+interactive
+
+254
+00:16:24,408 --> 00:16:28,071
+figure 1.11 in the textbook available in
+the online
+
+255
+00:16:28,110 --> 00:16:32,357
+version. It shows the levelized cost of
+energy, LCOE,
+
+256
+00:16:32,678 --> 00:16:35,524
+accounts for everything, the cost of
+building the power
+
+257
+00:16:35,565 --> 00:16:39,131
+plant, plus the ongoing costs in keeping
+it operational
+
+258
+00:16:39,312 --> 00:16:41,957
+over the lifetime of the plant. The cost
+of
+
+259
+00:16:42,118 --> 00:16:45,264
+energy generation per watt has been
+falling for decades,
+
+260
+00:16:45,865 --> 00:16:48,350
+and even more dramatically for renewable
+sources.

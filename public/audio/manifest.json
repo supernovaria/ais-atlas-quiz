@@ -1,6 +1,123 @@
 {
   "chapters": [
     {
+      "id": "capabilities",
+      "number": 1,
+      "title": "Chapter 1: Capabilities",
+      "sections": [
+        {
+          "index": "1.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s1-8a5836a6ac014cbb7fc5df3820c5dfdfa8c0f5ed9361b88da5e1b9a5442f980f.mp3",
+          "duration": "00:03:50",
+          "length": 2472836,
+          "srt": "/audio/capabilities/capabilities_1-1_1-introduction.srt",
+          "words": "/audio/capabilities/capabilities_1-1_1-introduction.words.json"
+        },
+        {
+          "index": "1.2",
+          "title": "2. Current Capabilities",
+          "slug": "2-current-capabilities",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s2-9b0f275664522871f07fbec826917a64373327e7bd8e749e62ad95756248fe13.mp3",
+          "duration": "00:20:00",
+          "length": 12907124,
+          "srt": "/audio/capabilities/capabilities_1-2_2-current-capabilities.srt",
+          "words": "/audio/capabilities/capabilities_1-2_2-current-capabilities.words.json"
+        },
+        {
+          "index": "1.3",
+          "title": "3. Foundation Models",
+          "slug": "3-foundation-models",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s3-cbfc6e12ff487f39bb78aec9c72cb85e6617e1339f214bc2739da66fa9536050.mp3",
+          "duration": "00:10:35",
+          "length": 6925100,
+          "srt": "/audio/capabilities/capabilities_1-3_3-foundation-models.srt",
+          "words": "/audio/capabilities/capabilities_1-3_3-foundation-models.words.json"
+        },
+        {
+          "index": "1.4",
+          "title": "4. Defining and Measuring AGI",
+          "slug": "4-defining-and-measuring-agi",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s4-ad67bfda80c99d1044eb0fd8f97765b7337d0a7f93d7e49ac11001260af7d123.mp3",
+          "duration": "00:20:54",
+          "length": 14409380,
+          "srt": "/audio/capabilities/capabilities_1-4_4-defining-and-measuring-agi.srt",
+          "words": "/audio/capabilities/capabilities_1-4_4-defining-and-measuring-agi.words.json"
+        },
+        {
+          "index": "1.5",
+          "title": "5. Leveraging Scale",
+          "slug": "5-leveraging-scale",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s5-0bbe8ac41033408878cf0b5454d5ca0ead6891f880e04d3d1804c8d450958978.mp3",
+          "duration": "00:13:59",
+          "length": 9104060,
+          "srt": "/audio/capabilities/capabilities_1-5_5-leveraging-scale.srt",
+          "words": "/audio/capabilities/capabilities_1-5_5-leveraging-scale.words.json"
+        },
+        {
+          "index": "1.6",
+          "title": "6. Forecasting Timelines",
+          "slug": "6-forecasting-timelines",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s6-4b28b9317e94e609e15ca19b6ab61331e9d24416092df24fc84029f46e9b7fba.mp3",
+          "duration": "00:11:56",
+          "length": 7784540,
+          "srt": "/audio/capabilities/capabilities_1-6_6-forecasting-timelines.srt",
+          "words": "/audio/capabilities/capabilities_1-6_6-forecasting-timelines.words.json"
+        },
+        {
+          "index": "1.7",
+          "title": "7. Takeoff",
+          "slug": "7-takeoff",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s7-15556217745ebcbfddca5e9a1b9763d7703db3d11580d17f765191377bf25f3e.mp3",
+          "duration": "00:16:29",
+          "length": 10691636,
+          "srt": "/audio/capabilities/capabilities_1-7_7-takeoff.srt",
+          "words": "/audio/capabilities/capabilities_1-7_7-takeoff.words.json"
+        },
+        {
+          "index": "1.8",
+          "title": "8. Appendix: Forecasting",
+          "slug": "8-appendix-forecasting",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s8-7e5fa4732a8a156817aeb5d0fd523d37bce64eeaaa9db8154de3130e03a0f7f2.mp3",
+          "duration": "00:16:48",
+          "length": 11836580,
+          "srt": "/audio/capabilities/capabilities_1-8_8-appendix-forecasting.srt",
+          "words": "/audio/capabilities/capabilities_1-8_8-appendix-forecasting.words.json"
+        },
+        {
+          "index": "1.9",
+          "title": "9. Appendix: Takeoff",
+          "slug": "9-appendix-takeoff",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s9-edc893473eaef3e9f37e17e0fccfcb964807541d39a921734ffa8b93613eb169.mp3",
+          "duration": "00:13:20",
+          "length": 8657780,
+          "srt": "/audio/capabilities/capabilities_1-9_9-appendix-takeoff.srt",
+          "words": "/audio/capabilities/capabilities_1-9_9-appendix-takeoff.words.json"
+        },
+        {
+          "index": "1.10",
+          "title": "10. Appendix: Expert Surveys",
+          "slug": "10-appendix-expert-surveys",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s10-a650d1b5f2b9ab719ba78e60124d71c1c753ca6f8856367fd6b2364faf53b05d.mp3",
+          "duration": "00:10:16",
+          "length": 7159676,
+          "srt": "/audio/capabilities/capabilities_1-10_10-appendix-expert-surveys.srt",
+          "words": "/audio/capabilities/capabilities_1-10_10-appendix-expert-surveys.words.json"
+        },
+        {
+          "index": "1.11",
+          "title": "11. Appendix: Discussion on LLMs",
+          "slug": "11-appendix-discussion-on-llms",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch1-s11-7683f418ed05758dad588cddbba6cd343853fb647d7b6417501c74b848004628.mp3",
+          "duration": "00:22:52",
+          "length": 14843660,
+          "srt": "/audio/capabilities/capabilities_1-11_11-appendix-discussion-on-llms.srt",
+          "words": "/audio/capabilities/capabilities_1-11_11-appendix-discussion-on-llms.words.json"
+        }
+      ]
+    },
+    {
       "id": "governance",
       "number": 4,
       "title": "Chapter 4: Governance",

@@ -1,0 +1,1589 @@
+1
+00:00:00,351 --> 00:00:05,796
+Section 1.4, defining and measuring AGI.
+Before we can
+
+2
+00:00:05,836 --> 00:00:08,698
+discuss AI safety, we need to agree on
+what
+
+3
+00:00:08,737 --> 00:00:11,900
+we mean by AGI. In our previous section on
+
+4
+00:00:11,941 --> 00:00:15,182
+foundation models, we saw how modern AI
+systems are
+
+5
+00:00:15,223 --> 00:00:19,567
+becoming increasingly powerful and general
+purpose, but powerful at
+
+6
+00:00:19,746 --> 00:00:23,811
+what exactly? Some researchers claim we're
+already seeing sparks
+
+7
+00:00:23,890 --> 00:00:27,033
+of AGI in the latest language models.
+Others predict
+
+8
+00:00:27,135 --> 00:00:30,437
+human level AI within a decade, but human
+level
+
+9
+00:00:30,478 --> 00:00:33,921
+at what exactly? How do we measure this?
+Without
+
+10
+00:00:33,962 --> 00:00:36,505
+a clear definition, how do we assess such
+claims
+
+11
+00:00:36,725 --> 00:00:40,015
+or plan appropriate safety measures? If
+you can't define
+
+12
+00:00:40,075 --> 00:00:42,896
+something, you can't measure it. If you
+can't measure
+
+13
+00:00:42,956 --> 00:00:46,216
+it, you can't reliably track progress,
+identify or prepare
+
+14
+00:00:46,256 --> 00:00:49,737
+for risks. Think about an example from
+physics. If
+
+15
+00:00:49,777 --> 00:00:51,997
+we want to design and enforce speed limits
+for
+
+16
+00:00:52,039 --> 00:00:55,880
+cars, saying something moved five makes no
+sense without
+
+17
+00:00:55,979 --> 00:00:59,159
+units. Did it move five meters, five feet,
+or
+
+18
+00:00:59,240 --> 00:01:01,981
+five royal qubits? If we don't know how
+far
+
+19
+00:01:02,060 --> 00:01:05,302
+or fast it moved, we can't enforce limits.
+The
+
+20
+00:01:05,361 --> 00:01:09,283
+same applies to intelligence and
+subsequent safety measures. Every
+
+21
+00:01:09,343 --> 00:01:13,926
+field needs standardized units, meters,
+watts, jewels to advance
+
+22
+00:01:14,006 --> 00:01:17,447
+beyond vague descriptions. We need to
+treat AI safety
+
+23
+00:01:17,528 --> 00:01:20,248
+with the same rigor to move past hand
+waving
+
+24
+00:01:20,328 --> 00:01:26,628
+about intelligence. Defining general
+intelligence is extremely challenging.
+Everyone
+
+25
+00:01:26,668 --> 00:01:29,230
+agrees we need a definition to measure
+progress and
+
+26
+00:01:29,290 --> 00:01:32,091
+design safety measures. So why don't we
+have one?
+
+27
+00:01:32,753 --> 00:01:36,896
+The problem is that intelligence describes
+multiple overlapping abilities,
+
+28
+00:01:37,396 --> 00:01:42,599
+problem solving, learning, adaptation,
+abstract reasoning. Different disciplines
+view
+
+29
+00:01:42,638 --> 00:01:46,879
+it through different lenses, psychologists
+emphasize measurable cognitive skills,
+
+30
+00:01:47,379 --> 00:01:51,760
+computer scientists focus on task
+performance, philosophers debate
+consciousness
+
+31
+00:01:51,861 --> 00:01:55,421
+and self-awareness, which approach matters
+most for AI safety?
+
+32
+00:01:55,981 --> 00:01:57,762
+We go through a couple of case studies and
+
+33
+00:01:57,841 --> 00:02:01,003
+previous attempts at a definition before
+giving the definitions
+
+34
+00:02:01,043 --> 00:02:04,084
+we will be using for this text. Section
+Case
+
+35
+00:02:04,144 --> 00:02:08,173
+Studies Alan Turing suggested we could
+sidestep the whole
+
+36
+00:02:08,212 --> 00:02:11,295
+mess by focusing on behavior. If a machine
+could
+
+37
+00:02:11,376 --> 00:02:14,457
+imitate human conversation well enough to
+fool an interrogator,
+
+38
+00:02:14,878 --> 00:02:18,200
+it should be considered intelligent. The
+behaviorist approach is
+
+39
+00:02:18,260 --> 00:02:21,584
+simple. Forget about internal mental
+states and focus on
+
+40
+00:02:21,644 --> 00:02:24,605
+observable behavior. Can the system do the
+thing or
+
+41
+00:02:24,645 --> 00:02:29,110
+not? Unfortunately, LLMs exposed some
+limitations to this approach.
+
+42
+00:02:29,610 --> 00:02:34,054
+GPT-4 can pass Turing-style conversation
+tests while struggling with
+
+43
+00:02:34,115 --> 00:02:38,359
+basic spatial reasoning or maintaining
+coherent long-term plans. The
+
+44
+00:02:38,399 --> 00:02:42,042
+test was too narrow. Conversation is just
+one capability
+
+45
+00:02:42,162 --> 00:02:45,164
+among many we care about, but Turing's
+core insight,
+
+46
+00:02:45,604 --> 00:02:50,050
+focus on observable capabilities, not
+internal states, remains sound.
+
+47
+00:02:50,689 --> 00:02:55,212
+Consciousness-based approaches to general
+intelligence focus on true understanding.
+
+48
+00:02:55,774 --> 00:02:58,975
+John Surles Chinese room argument
+suggested that systems might
+
+49
+00:02:59,036 --> 00:03:04,419
+appear intelligent, suggestic parrots,
+without truly understanding, processing
+symbols
+
+50
+00:03:04,560 --> 00:03:08,622
+without grasping their meaning. This view
+emphasizes internal cognitive
+
+51
+00:03:08,663 --> 00:03:12,004
+states similar to human consciousness. The
+problem is that
+
+52
+00:03:12,064 --> 00:03:15,288
+consciousness often proves even harder to
+define than intelligence.
+
+53
+00:03:15,967 --> 00:03:18,489
+We are also unsure if intelligence and
+consciousness are
+
+54
+00:03:18,549 --> 00:03:22,131
+necessarily linked. A system could
+potentially be highly intelligent
+
+55
+00:03:22,170 --> 00:03:25,752
+without being conscious, or conscious
+without being particularly intelligent.
+
+56
+00:03:26,393 --> 00:03:28,995
+AlphaGo is very intelligent within the
+context of playing
+
+57
+00:03:29,014 --> 00:03:32,096
+Go, but it is clearly not conscious. A
+system
+
+58
+00:03:32,116 --> 00:03:34,637
+doesn't need to be conscious to cause
+harm. Whether
+
+59
+00:03:34,676 --> 00:03:37,058
+an AI system is conscious has little, if
+any,
+
+60
+00:03:37,419 --> 00:03:39,800
+bearing on its ability to make high impact
+decisions
+
+61
+00:03:39,960 --> 00:03:44,143
+or take potentially dangerous actions.
+Research into consciousness, sentience,
+
+62
+00:03:44,223 --> 00:03:47,306
+and meta-ethical debates about the
+fundamental nature of intelligence
+
+63
+00:03:47,706 --> 00:03:51,091
+are valuable, but less action. Defining
+intelligence through goal
+
+64
+00:03:51,131 --> 00:03:55,895
+achievement. Shane Legg and Marcus Hutter
+propose intelligence measures
+
+65
+00:03:55,955 --> 00:03:58,598
+an agent's ability to achieve goals in a
+wide
+
+66
+00:03:58,657 --> 00:04:03,645
+range of environments. This captures
+something important. Intelligent systems
+
+67
+00:04:03,844 --> 00:04:05,665
+should be able to figure out how to get
+
+68
+00:04:05,705 --> 00:04:09,026
+what they want across different
+situations. But it's too
+
+69
+00:04:09,187 --> 00:04:13,027
+abstract for practical measurement. How
+are agents defined? Which
+
+70
+00:04:13,087 --> 00:04:17,009
+goals? Which environments? How do you
+actually test this?
+
+71
+00:04:17,689 --> 00:04:20,250
+The intuition is right, but we need
+something more
+
+72
+00:04:20,310 --> 00:04:25,312
+concrete. Process and adaptability-focused
+views see intelligence as learning
+
+73
+00:04:25,353 --> 00:04:31,478
+efficiency. rather than accumulated
+skills. Some researchers define
+intelligence
+
+74
+00:04:31,738 --> 00:04:35,444
+through adaptability, the capacity of a
+system to adapt
+
+75
+00:04:35,463 --> 00:04:38,908
+to its environment while operating with
+insufficient knowledge and
+
+76
+00:04:38,968 --> 00:04:43,374
+resources, or the efficiency with which a
+system can
+
+77
+00:04:43,434 --> 00:04:47,507
+turn experience and priors into skills.
+They argue that
+
+78
+00:04:47,567 --> 00:04:50,769
+general intelligence is not demonstrated
+by the possession of
+
+79
+00:04:50,809 --> 00:04:54,110
+a specific skill, but by the efficiency of
+acquiring
+
+80
+00:04:54,189 --> 00:04:58,031
+new skills when faced with novel problems.
+High performance
+
+81
+00:04:58,071 --> 00:05:01,372
+can be bought with sufficient data and
+compute. An
+
+82
+00:05:01,512 --> 00:05:05,014
+AI that achieves superhuman performance at
+Go has mastered
+
+83
+00:05:05,074 --> 00:05:08,074
+Go. It has not necessarily become more
+intelligent in
+
+84
+00:05:08,115 --> 00:05:11,415
+a general sense. This makes sense, the
+ability to
+
+85
+00:05:11,456 --> 00:05:14,817
+learn quickly from limited data in new
+situations matters.
+
+86
+00:05:15,517 --> 00:05:18,079
+A system that needs a billion examples to
+learn
+
+87
+00:05:18,119 --> 00:05:20,779
+what humans get from 10 examples might be
+less
+
+88
+00:05:20,839 --> 00:05:23,982
+impressive even if both reach the same
+final capability.
+
+89
+00:05:24,701 --> 00:05:27,324
+but purely from a safety perspective, does
+the learning
+
+90
+00:05:27,384 --> 00:05:30,588
+path matter more than the destination? If
+a system
+
+91
+00:05:30,629 --> 00:05:34,153
+can perform dangerous tasks whether
+through efficient learning or
+
+92
+00:05:34,192 --> 00:05:38,918
+brute force memorization, the risks exist
+either way. Psychologists
+
+93
+00:05:39,098 --> 00:05:44,127
+use standardized tests and measure
+cognitive abilities directly. Psychometric
+
+94
+00:05:44,168 --> 00:05:49,074
+traditions like the Catelhorn Carol, CHC
+theory, break intelligence
+
+95
+00:05:49,134 --> 00:05:54,300
+into measurable cognitive domains,
+reasoning, memory, processing speed,
+spatial
+
+96
+00:05:54,360 --> 00:05:58,185
+ability, IQ tests aren't perfect, but they
+predict real
+
+97
+00:05:58,225 --> 00:06:01,569
+world outcomes better than vague
+philosophical debates about true
+
+98
+00:06:01,629 --> 00:06:06,492
+understanding. This benchmarking and test-
+based framework gives us concrete
+
+99
+00:06:06,531 --> 00:06:10,153
+domains to measure and track. As Victoria
+Krakowna said,
+
+100
+00:06:10,812 --> 00:06:15,454
+when discussing AI risks, talk about
+capabilities, not intelligence.
+
+101
+00:06:16,274 --> 00:06:19,896
+People often have different definitions of
+intelligence or associate
+
+102
+00:06:19,935 --> 00:06:22,776
+it with concepts like consciousness that
+are not relevant
+
+103
+00:06:22,817 --> 00:06:27,177
+to AI risks, or dismiss the Behaviorist
+capabilities focused
+
+104
+00:06:27,218 --> 00:06:30,499
+approaches matter most for safety. If an
+AI system
+
+105
+00:06:30,538 --> 00:06:33,360
+can perform dangerous tasks at human level
+or beyond,
+
+106
+00:06:33,720 --> 00:06:38,461
+sophisticated planning, manipulation,
+deception, these risks exist regardless of
+
+107
+00:06:38,521 --> 00:06:41,062
+how it achieved them. Did it learn
+efficiently or
+
+108
+00:06:41,101 --> 00:06:43,843
+through brute force? Is it conscious or
+just pattern
+
+109
+00:06:43,862 --> 00:06:47,963
+matching? These questions don't change the
+risk profile. OpenAI
+
+110
+00:06:48,004 --> 00:06:52,084
+defines AGI as highly autonomous systems
+that outperform humans
+
+111
+00:06:52,185 --> 00:06:55,826
+at most economically valuable work.
+Anthropic frames their mission
+
+112
+00:06:55,887 --> 00:07:00,250
+around ensuring transformative AI helps
+people and society. Both
+
+113
+00:07:00,329 --> 00:07:02,851
+focus on what systems can do and less on
+
+114
+00:07:02,932 --> 00:07:06,175
+how they do it. But even these capability-
+based definitions
+
+115
+00:07:06,235 --> 00:07:08,797
+can be too vague. Which humans are the
+measure?
+
+116
+00:07:09,237 --> 00:07:12,819
+Top experts or average workers? What
+counts as economically
+
+117
+00:07:12,839 --> 00:07:16,442
+valuable, just current jobs or future
+ones? What about
+
+118
+00:07:16,502 --> 00:07:19,206
+systems that excel at complex tasks, but
+only work
+
+119
+00:07:19,225 --> 00:07:22,869
+for short periods or require massive
+compute? The definitions
+
+120
+00:07:22,928 --> 00:07:25,430
+point in the right direction, but lack
+precision for
+
+121
+00:07:25,490 --> 00:07:29,355
+tracking progress and identifying risks.
+Our approach attempts to
+
+122
+00:07:29,435 --> 00:07:32,778
+synthesize the useful parts of all these
+views. We
+
+123
+00:07:32,838 --> 00:07:36,701
+adopt the behaviorist insight from Turing,
+primarily focusing on
+
+124
+00:07:36,761 --> 00:07:40,302
+what systems can observably do. We use the
+psychometric
+
+125
+00:07:40,322 --> 00:07:44,783
+traditions concrete measurement framework
+from CHG theory. We acknowledge
+
+126
+00:07:44,843 --> 00:07:48,605
+and incorporate the adaptability-focused
+views point about efficient learning,
+
+127
+00:07:48,985 --> 00:07:52,586
+but prioritize final capabilities. And we
+set aside the
+
+128
+00:07:52,625 --> 00:07:55,045
+conscious... We need a framework that's
+both concrete and
+
+129
+00:07:55,105 --> 00:07:58,427
+continuous. Concrete enough to measure
+what systems can do
+
+130
+00:07:58,507 --> 00:08:01,646
+right now, while also being able to
+identify thresholds
+
+131
+00:08:01,687 --> 00:08:06,028
+for regulation and emerging risks before
+they materialize. It
+
+132
+00:08:06,088 --> 00:08:09,149
+has to be continuous to capture progress
+along multiple
+
+133
+00:08:09,189 --> 00:08:12,990
+dimensions rather than forcing everything
+into binary categories that
+
+134
+00:08:13,050 --> 00:08:16,071
+lead to endless semantic debates about
+whether something counts
+
+135
+00:08:16,250 --> 00:08:18,930
+as AGI. That's what we build in the next
+
+136
+00:08:18,990 --> 00:08:23,773
+section. Capability and generality as two
+continuous axes that
+
+137
+00:08:23,812 --> 00:08:28,074
+let us describe any AI system precisely.
+Section defining
+
+138
+00:08:28,153 --> 00:08:32,636
+general intelligence. AGI exists on a
+continuous spectrum measured
+
+139
+00:08:32,677 --> 00:08:37,782
+by two dimensions, capability and
+generality. Capability measures how
+
+140
+00:08:37,861 --> 00:08:42,446
+well a system executes specific cognitive
+tasks. From 0%,
+
+141
+00:08:42,726 --> 00:08:45,249
+can't do the task at all, to expert human
+
+142
+00:08:45,288 --> 00:08:48,952
+level, outperforming roughly 80% to 90% of
+humans on
+
+143
+00:08:48,993 --> 00:08:52,655
+that specific task, to superhuman,
+outperforming 100% ill of
+
+144
+00:08:52,676 --> 00:08:58,562
+humans. Generality measures breadth. The
+percentage of cognitive domains
+
+145
+00:08:58,842 --> 00:09:02,927
+where a system achieves expert level
+capability. Together, these
+
+146
+00:09:02,947 --> 00:09:06,113
+give us concrete statements like, our AI
+system can
+
+147
+00:09:06,232 --> 00:09:08,235
+outperform 85% of humans in 30% of
+cognitive domains.
+
+148
+00:09:11,318 --> 00:09:16,120
+This precisely describes any AI systems
+capabilities, capability measures
+
+149
+00:09:16,160 --> 00:09:19,283
+depth. How good is the system at
+individual tasks?
+
+150
+00:09:19,942 --> 00:09:23,325
+For decades, AI research focused on making
+systems excel
+
+151
+00:09:23,404 --> 00:09:27,206
+at single tasks. Early chess programs in
+the 1950s
+
+152
+00:09:27,466 --> 00:09:30,976
+beat novices but lost to experts. Deep
+Blue in
+
+153
+00:09:30,996 --> 00:09:36,499
+the 1990s beat World Champion Kasparov.
+AlphaGo in 2016
+
+154
+00:09:36,799 --> 00:09:40,721
+achieved superhuman capability at Go. A
+game humans thought
+
+155
+00:09:40,760 --> 00:09:45,082
+computers wouldn't master for decades.
+This progression from can't
+
+156
+00:09:45,123 --> 00:09:48,283
+do the task to better than any human
+represents
+
+157
+00:09:48,323 --> 00:09:52,546
+the capability spectrum. Everything along
+this line, from basic
+
+158
+00:09:52,586 --> 00:09:56,567
+competence to superhuman capability on a
+single task, counts
+
+159
+00:09:56,607 --> 00:10:01,409
+as artificial narrow intelligence, ANI.
+There is figure 1.27
+
+160
+00:10:01,590 --> 00:10:04,291
+in the textbook here. It depicts this is
+the
+
+161
+00:10:04,331 --> 00:10:08,692
+continuous outlook of AI measuring
+performance. All points on
+
+162
+00:10:08,712 --> 00:10:12,855
+this axis can be called artificial narrow
+intelligence, ANI,
+
+163
+00:10:13,455 --> 00:10:17,517
+except for the origin. The term artificial
+narrow intelligence,
+
+164
+00:10:17,596 --> 00:10:21,503
+ANI refers to the following. Week AI, also
+called
+
+165
+00:10:21,582 --> 00:10:25,985
+Narrow AI or Artificial Narrow
+Intelligence, ANI is AI
+
+166
+00:10:26,085 --> 00:10:30,203
+trained and focused to perform specific
+tasks. Week AI
+
+167
+00:10:30,283 --> 00:10:32,845
+drives most of the AI that surrounds us
+today.
+
+168
+00:10:33,706 --> 00:10:36,246
+Narrow might be a more accurate descriptor
+for this
+
+169
+00:10:36,307 --> 00:10:38,707
+type of AI as it is anything but weak.
+
+170
+00:10:39,408 --> 00:10:42,710
+It enables some very robust applications
+such as Apple's
+
+171
+00:10:42,789 --> 00:10:48,192
+Siri, Amazon's Alexa, IBM Watson and
+Autonomous Vehicles. Capability
+
+172
+00:10:48,251 --> 00:10:52,073
+alone isn't enough to define and measure
+progress. AlphaGo
+
+173
+00:10:52,173 --> 00:10:56,335
+achieved superhuman capability at Go.
+better than any human
+
+174
+00:10:56,456 --> 00:10:59,636
+ever. Yet ask it to write a sentence,
+solve
+
+175
+00:10:59,677 --> 00:11:02,758
+an algebra problem, or recognize objects
+in an image.
+
+176
+00:11:03,477 --> 00:11:06,279
+And you get nothing. This is where
+foundation models
+
+177
+00:11:06,379 --> 00:11:10,061
+changed things. The shift from building
+one narrow system
+
+178
+00:11:10,100 --> 00:11:13,462
+per task to training general purpose
+models is why
+
+179
+00:11:13,503 --> 00:11:17,823
+we suddenly need a framework measuring
+both axes, capability
+
+180
+00:11:17,964 --> 00:11:22,787
+and generality. Pre-foundation model AIs
+maxed out the capability
+
+181
+00:11:22,927 --> 00:11:26,528
+access on some individual tasks. But
+systems in the
+
+182
+00:11:26,567 --> 00:11:30,529
+last few years are climbing both axes
+simultaneously, getting
+
+183
+00:11:30,570 --> 00:11:33,931
+better at specific capabilities while also
+expanding to more
+
+184
+00:11:33,971 --> 00:11:39,609
+domains. Capability measures depth,
+generality measures breadth. When experts
+
+185
+00:11:39,668 --> 00:11:42,570
+say they see sparks of AGI in recent
+systems,
+
+186
+00:11:42,970 --> 00:11:46,812
+they're observing performance across
+multiple cognitive domains, not just
+
+187
+00:11:47,032 --> 00:11:49,753
+one. Think of it like the first airplane
+built
+
+188
+00:11:49,793 --> 00:11:53,034
+by the Wright brothers. It barely flew,
+stayed airborne
+
+189
+00:11:53,054 --> 00:11:56,535
+for seconds, and looked nothing like
+modern airliners. But
+
+190
+00:11:56,576 --> 00:12:00,398
+it was still a plane. Similarly, systems
+achieving expert
+
+191
+00:12:00,437 --> 00:12:03,717
+level performance across even a modest
+subset of cognitive
+
+192
+00:12:03,758 --> 00:12:08,379
+domains represent genuine general
+intelligence, just early stage, weak
+
+193
+00:12:08,519 --> 00:12:13,000
+AGI. As these capabilities expand to cover
+more domains
+
+194
+00:12:13,061 --> 00:12:16,802
+at higher performance levels, systems
+become both increasingly general
+
+195
+00:12:16,902 --> 00:12:21,173
+and increasingly capable. There's no
+universally agreed upon threshold
+
+196
+00:12:21,214 --> 00:12:25,456
+where not AGI suddenly becomes AGI. Not
+every possible
+
+197
+00:12:25,517 --> 00:12:29,799
+task matters equally for progress towards
+general intelligence. We
+
+198
+00:12:29,840 --> 00:12:32,160
+don't care much if AI gets better at
+knitting
+
+199
+00:12:32,221 --> 00:12:35,222
+sweaters. But we care a lot if it improves
+
+200
+00:12:35,283 --> 00:12:39,404
+at abstract reasoning, long-term planning
+and memory. The things
+
+201
+00:12:39,445 --> 00:12:41,807
+we care about can be informally thought of
+as
+
+202
+00:12:41,947 --> 00:12:44,227
+everything that can be done as remote work
+on
+
+203
+00:12:44,248 --> 00:12:47,745
+a computer. More formally, the domains we
+choose to
+
+204
+00:12:47,785 --> 00:12:52,089
+focus on are non-embodied cognitive tasks.
+These break down
+
+205
+00:12:52,129 --> 00:12:55,091
+into 10 core capabilities from the Catel
+Horn Carol
+
+206
+00:12:55,150 --> 00:12:58,653
+theory. The specific capabilities we gave
+examples of in
+
+207
+00:12:58,693 --> 00:13:02,616
+the first section, LLMs doing reasoning
+and math, vision
+
+208
+00:13:02,657 --> 00:13:07,738
+models understanding images, into agents
+planning in Minecraft, map
+
+209
+00:13:07,798 --> 00:13:12,863
+directly onto these domains. One, general
+knowledge. K, the
+
+210
+00:13:12,903 --> 00:13:16,385
+breadth of factual understanding of the
+world, encompassing common
+
+211
+00:13:16,446 --> 00:13:22,111
+sense, culture, science, social science
+and history. Two, reading
+
+212
+00:13:22,152 --> 00:13:27,032
+and writing ability, RW. proficiency in
+consuming and producing
+
+213
+00:13:27,091 --> 00:13:31,732
+written language from basic decoding to
+complex comprehension, composition
+
+214
+00:13:31,832 --> 00:13:36,673
+and usage. Three, mathematical ability. M,
+the depth of
+
+215
+00:13:36,754 --> 00:13:41,914
+mathematical knowledge and skills across
+arithmetic, algebra, geometry, probability
+
+216
+00:13:42,095 --> 00:13:46,096
+and calculus. Four, on the spot reasoning.
+R, the
+
+217
+00:13:46,135 --> 00:13:49,496
+flexible control of attention to solve
+novel problems without
+
+218
+00:13:49,537 --> 00:13:53,837
+relying exclusively on previously learned
+schemers, tested via deduction
+
+219
+00:13:53,957 --> 00:13:59,041
+and induction. 5. Working memory, WM, the
+ability to
+
+220
+00:13:59,081 --> 00:14:03,364
+maintain and manipulate information in
+active attention across textual
+
+221
+00:14:03,543 --> 00:14:08,908
+auditory and visual modalities. 6. Long-
+term memory storage, MS,
+
+222
+00:14:09,328 --> 00:14:13,792
+the capability to continually learn new
+information, associative, meaningful
+
+223
+00:14:13,871 --> 00:14:19,216
+and verbatim. 7. Long-term memory
+retrieval. MR. The fluency
+
+224
+00:14:19,255 --> 00:14:22,638
+and precision of accessing stored
+knowledge, including the critical
+
+225
+00:14:22,697 --> 00:14:28,883
+ability to avoid confabulation,
+hallucinations. 8. Visual processing. V.
+
+226
+00:14:29,663 --> 00:14:33,625
+The ability to perceive, analyze, reason
+about, generate, and
+
+227
+00:14:33,687 --> 00:14:39,788
+scan visual information. 9. Auditory
+processing. A. The capacity
+
+228
+00:14:39,827 --> 00:14:43,970
+to discriminate, recognize, and work
+creatively with auditory stimuli,
+
+229
+00:14:44,309 --> 00:14:49,052
+including speech, rhythm, and music. 10.
+Speed. S. The
+
+230
+00:14:49,091 --> 00:14:53,293
+ability to perform simple cognitive tasks
+quickly, encompassing perceptual
+
+231
+00:14:53,373 --> 00:14:57,553
+speed, reaction times, and processing
+fluency. The textbook includes
+
+232
+00:14:57,614 --> 00:15:02,056
+figure 1.28 here. It depicts each
+cognitive capability breaks
+
+233
+00:15:02,096 --> 00:15:06,508
+down into more specific measurable
+components. Reasoning divides into
+
+234
+00:15:06,567 --> 00:15:11,090
+deduction, induction, theory of mind,
+planning, and adaptation. Each
+
+235
+00:15:11,129 --> 00:15:14,490
+can then be individually benchmarked and
+quantified. At this
+
+236
+00:15:14,552 --> 00:15:19,253
+point, the textbook shows figure 1.29. It
+depicts memory
+
+237
+00:15:19,332 --> 00:15:24,434
+similarly splits into associative,
+meaningful, and verbatim components,
+allowing
+
+238
+00:15:24,495 --> 00:15:29,076
+precise diagnosis of where systems succeed
+versus fail. Generality
+
+239
+00:15:29,157 --> 00:15:31,498
+is the percentage of these domains where a
+system
+
+240
+00:15:31,538 --> 00:15:35,279
+achieves expert level capability. If a
+system scores at
+
+241
+00:15:35,320 --> 00:15:38,081
+the 80th percentile or higher on 3 out of
+
+242
+00:15:38,142 --> 00:15:43,005
+10 domains, that's 30 percent generality.
+Foundation models dramatically
+
+243
+00:15:43,086 --> 00:15:47,169
+increase this compared to traditional
+narrow AI. One model
+
+244
+00:15:47,230 --> 00:15:52,313
+handling writing, math, coding and visual
+understanding represents unprecedented
+
+245
+00:15:52,394 --> 00:15:55,876
+breadth. but current systems still cover
+only a fraction
+
+246
+00:15:55,897 --> 00:15:59,879
+of cognitive capabilities with
+particularly weak performance on long-term
+
+247
+00:15:59,919 --> 00:16:04,043
+planning and memory-related domains. There
+is figure 130 in
+
+248
+00:16:04,083 --> 00:16:08,147
+the textbook here. It depicts the
+capabilities of GPT-4
+
+249
+00:16:08,307 --> 00:16:12,591
+and GPT-5 alongside a table that
+quantifies them. Even
+
+250
+00:16:12,630 --> 00:16:16,674
+though capability and generality exist on
+a continuum, certain
+
+251
+00:16:16,715 --> 00:16:20,577
+thresholds still matter for safety
+planning. A system performing
+
+252
+00:16:20,618 --> 00:16:24,080
+well on 50% of domains poses different
+risks than
+
+253
+00:16:24,201 --> 00:16:27,562
+one excelling at 90%, we can't ignore this
+reality
+
+254
+00:16:28,003 --> 00:16:31,706
+even if generality is a continuous
+variable. When pressed
+
+255
+00:16:31,725 --> 00:16:34,989
+for concrete thresholds, which are often
+demanded in discussions,
+
+256
+00:16:35,469 --> 00:16:38,490
+here's our interpretation of roughly how
+terms map onto
+
+257
+00:16:38,510 --> 00:16:43,235
+the performance generality space. The term
+artificial general intelligence,
+
+258
+00:16:43,575 --> 00:16:47,976
+AGI refers to the following. Matching a
+well-educated adult's
+
+259
+00:16:48,077 --> 00:16:53,038
+cognitive versatility and proficiency.
+Often used interchangeably with human
+
+260
+00:16:53,078 --> 00:16:57,960
+level AI. HLAI. Using our definition,
+these would be
+
+261
+00:16:58,000 --> 00:17:02,221
+systems achieving expert level
+performance. 80 to 90th percentile
+
+262
+00:17:02,600 --> 00:17:06,541
+across most cognitive domains. 80 to 90
+percent. Let's
+
+263
+00:17:06,582 --> 00:17:12,424
+define transformative AI. TAI. AI capable
+of triggering economic
+
+264
+00:17:12,484 --> 00:17:16,308
+and social transitions comparable to the
+agricultural or industrial
+
+265
+00:17:16,368 --> 00:17:20,773
+revolution. TAI is defined by impact
+potential rather than
+
+266
+00:17:20,834 --> 00:17:24,678
+cognitive architecture. Using our
+definition, this could mean moderate
+
+267
+00:17:24,718 --> 00:17:30,144
+capability, 60th percentile, across many
+economically important tasks, 50%
+
+268
+00:17:30,183 --> 00:17:35,685
+of domains. OR exceptional capability,
+99th percentile, on critical
+
+269
+00:17:35,726 --> 00:17:40,528
+domains like automated MLR&D, 20% of
+domains. Here is
+
+270
+00:17:40,567 --> 00:17:46,109
+a definition of artificial
+superintelligence, ASI. Any intellect that
+
+271
+00:17:46,170 --> 00:17:50,531
+greatly exceeds human cognitive capability
+across virtually all domains
+
+272
+00:17:50,571 --> 00:17:55,076
+of interest. Using our definition, this
+represents systems achieving
+
+273
+00:17:55,156 --> 00:18:01,038
+superhuman capability. 100% greatly
+exceeding all humans across virtually
+
+274
+00:18:01,199 --> 00:18:05,842
+all cognitive domains. 95% plus of
+domains. The textbook
+
+275
+00:18:05,882 --> 00:18:10,284
+includes figure 1.31 here. It depicts the
+two-dimensional view
+
+276
+00:18:10,344 --> 00:18:15,167
+of capability X generality. Different
+coloured curves represent possible
+
+277
+00:18:15,208 --> 00:18:18,752
+development paths to ASI. Every point on
+these paths
+
+278
+00:18:19,074 --> 00:18:22,458
+corresponds to a different level of AGI
+capability. Our
+
+279
+00:18:22,518 --> 00:18:25,442
+working definition does not include the
+autonomy with which
+
+280
+00:18:25,501 --> 00:18:29,118
+an AGI system operates. This is a really
+important
+
+281
+00:18:29,259 --> 00:18:31,520
+axis to pay attention to, but it has a
+
+282
+00:18:31,580 --> 00:18:35,044
+higher bearing on deployment and impact.
+Rather than something
+
+283
+00:18:35,104 --> 00:18:38,086
+inherent to a definition for AGI, it will
+be
+
+284
+00:18:38,145 --> 00:18:41,128
+explored in the next chapter dedicated to
+risks from
+
+285
+00:18:41,269 --> 00:18:45,311
+AI. The textbook has a supplementary note
+titled, Measuring
+
+286
+00:18:45,352 --> 00:18:48,974
+Degree of Autonomy Agency, which we'll
+skip over here.
+
+287
+00:18:49,516 --> 00:18:52,038
+What we presented in this section is
+nowhere near
+
+288
+00:18:52,097 --> 00:18:55,640
+a universally agreed upon definition.
+There are criticisms of
+
+289
+00:18:55,700 --> 00:18:58,260
+both the levels of AGI framework and of
+the
+
+290
+00:18:58,320 --> 00:19:02,682
+CHC benchmark aggregation approach. There
+are many other alternative
+
+291
+00:19:02,742 --> 00:19:06,244
+definitions and measurement frameworks in
+use, like the European
+
+292
+00:19:06,305 --> 00:19:11,547
+Commission's work on definition, General
+Purpose AI, GPAI models.
+
+293
+00:19:12,446 --> 00:19:18,670
+The RTNAGI framework, OECDAI capability
+indicators, and not to
+
+294
+00:19:18,710 --> 00:19:21,791
+mention all the competing definitions from
+the case studies
+
+295
+00:19:21,832 --> 00:19:26,267
+in the previous subsection. These are
+valid alternatives. The
+
+296
+00:19:26,307 --> 00:19:28,849
+field is still evolving and finding gaps
+in its
+
+297
+00:19:28,890 --> 00:19:33,414
+approach. We expect that the underlying
+benchmarks, which cognitive
+
+298
+00:19:33,454 --> 00:19:36,878
+abilities are important and aggregation
+methods, how should we
+
+299
+00:19:36,919 --> 00:19:39,721
+weigh them, use to measure progress will
+continue to
+
+300
+00:19:39,761 --> 00:19:42,505
+be debated, but the underlying framework
+we teach in
+
+301
+00:19:42,545 --> 00:19:45,808
+this section of thinking of capability and
+generality as
+
+302
+00:19:45,848 --> 00:19:49,971
+a continuous spectrum will remain
+consistent. The next sections
+
+303
+00:19:50,031 --> 00:19:53,193
+of this chapter look at why capabilities
+and generality
+
+304
+00:19:53,453 --> 00:19:56,695
+have been improving rapidly in the recent
+years, scaling,
+
+305
+00:19:57,195 --> 00:19:58,916
+and what we can say about where they might
+
+306
+00:19:58,957 --> 00:20:03,038
+be headed, forecasting and take off.
+Thinking about AI
+
+307
+00:20:03,138 --> 00:20:06,421
+progress in this continuous way will help
+throughout this
+
+308
+00:20:06,500 --> 00:20:10,843
+book when we discuss risks and mitigation
+strategies. Certain
+
+309
+00:20:10,903 --> 00:20:15,726
+capability combinations might enable
+dangerous emergent behaviors even before
+
+310
+00:20:15,806 --> 00:20:20,409
+reaching human level on most tasks.
+Similarly, governance frameworks
+
+311
+00:20:20,669 --> 00:20:24,270
+and clear policy communication depend on
+precise measurement to
+
+312
+00:20:24,310 --> 00:20:28,230
+trigger appropriate responses. The rate of
+improvement along either
+
+313
+00:20:28,351 --> 00:20:31,874
+access provides important signals about
+which risks are most
+
+314
+00:20:31,954 --> 00:20:35,317
+pressing and which safety mitigations need
+to be developed.
+
+315
+00:20:35,738 --> 00:20:40,080
+The textbook has a supplementary note
+titled counter-argument, arbitrary
+
+316
+00:20:40,161 --> 00:20:43,984
+thresholds aggregated and framed as a
+misleading percentage, which
+
+317
+00:20:44,005 --> 00:20:47,067
+will skip over here. The textbook has a
+supplementary
+
+318
+00:20:47,146 --> 00:20:51,471
+note titled the TNAGI framework, an
+alternative way of
+
+319
+00:20:51,510 --> 00:20:54,614
+defining AGI, which will skip over here.

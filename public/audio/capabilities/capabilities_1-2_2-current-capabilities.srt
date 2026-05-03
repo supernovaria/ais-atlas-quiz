@@ -1,0 +1,1496 @@
+1
+00:00:00,331 --> 00:00:06,214
+Section 1.2 Current Capabilities AI models
+can write, reason,
+
+2
+00:00:06,455 --> 00:00:10,657
+code, generate media, and control robots,
+often matching or
+
+3
+00:00:10,737 --> 00:00:14,839
+surpassing expert human performance on
+specific tasks. In this
+
+4
+00:00:14,898 --> 00:00:17,100
+first section, we'll try to give you a
+sense
+
+5
+00:00:17,160 --> 00:00:19,902
+of what AI is actually capable of doing as
+
+6
+00:00:19,961 --> 00:00:23,803
+of late 2025. Numbers and graphs don't
+really make
+
+7
+00:00:23,864 --> 00:00:26,745
+these capabilities tangible, so we will
+try to include
+
+8
+00:00:26,806 --> 00:00:30,228
+as many videos, images, and examples to
+really help
+
+9
+00:00:30,268 --> 00:00:32,530
+you get a sense of where AI currently
+stands.
+
+10
+00:00:33,229 --> 00:00:35,892
+But in case you are interested, we also
+mention
+
+11
+00:00:35,951 --> 00:00:40,514
+benchmark scores that measure progress
+quantitatively. The trajectory matters
+
+12
+00:00:40,634 --> 00:00:43,776
+more than a snapshot. This section can
+serve both
+
+13
+00:00:43,856 --> 00:00:46,398
+as a quick history and as a snapshot of
+
+14
+00:00:46,497 --> 00:00:49,801
+current capabilities. As you read through
+it, try to
+
+15
+00:00:49,841 --> 00:00:53,023
+keep in mind how quickly we got here.
+Language
+
+16
+00:00:53,063 --> 00:00:56,945
+generation went from coherent paragraphs
+to research assistants in
+
+17
+00:00:56,985 --> 00:01:00,710
+a few years. Image generation went from
+laughable to
+
+18
+00:01:00,789 --> 00:01:04,692
+professional grade in a decade. Video
+generation seems to
+
+19
+00:01:04,733 --> 00:01:08,036
+be following a similar path, compressed
+into three years.
+
+20
+00:01:08,656 --> 00:01:11,560
+If you're already familiar with AI or
+machine learning,
+
+21
+00:01:11,959 --> 00:01:13,903
+some of these stories might be review for
+you,
+
+22
+00:01:14,283 --> 00:01:16,585
+but hopefully everyone who reads will be
+able to
+
+23
+00:01:16,626 --> 00:01:18,789
+take away at least one new thing from this
+
+24
+00:01:18,808 --> 00:01:24,316
+section. Section Games Game Playing AI is
+already at
+
+25
+00:01:24,355 --> 00:01:28,060
+the superhuman level for many games.
+Comparing AI and
+
+26
+00:01:28,120 --> 00:01:30,402
+humans at games has been a common theme
+through
+
+27
+00:01:30,421 --> 00:01:33,965
+the last few decades, with AI making
+continuous progress.
+
+28
+00:01:34,665 --> 00:01:39,649
+IBM's Deep Blue defeated chess grandmaster
+in 1997. IBM's
+
+29
+00:01:39,730 --> 00:01:43,992
+Watson won overwhelmingly at Jeopardy in
+2011, and AlphaGo
+
+30
+00:01:44,132 --> 00:01:46,734
+managed to beat the Go World Champion,
+Lisa Doll,
+
+31
+00:01:46,894 --> 00:01:51,379
+in 2016. AlphaGo was a landmark moment,
+because this
+
+32
+00:01:51,459 --> 00:01:54,400
+is a game with more possible positions
+than atoms
+
+33
+00:01:54,501 --> 00:01:58,832
+in the observable universe. During Game 2,
+AlphaGo played
+
+34
+00:01:58,893 --> 00:02:01,515
+Move 37, a move that had a 1 in
+
+35
+00:02:01,715 --> 00:02:05,457
+10,000 chance of being used. Commentators
+initially thought it
+
+36
+00:02:05,498 --> 00:02:08,060
+was a mistake. Instead, it was the move
+that
+
+37
+00:02:08,180 --> 00:02:11,522
+several rounds later led to winning the
+game. The
+
+38
+00:02:11,582 --> 00:02:14,425
+move demonstrated what many consider to be
+sparks of
+
+39
+00:02:14,586 --> 00:02:18,408
+genuine creativity that diverged from
+centuries of human play
+
+40
+00:02:18,549 --> 00:02:21,741
+that the model was trained on. The
+textbook includes
+
+41
+00:02:21,860 --> 00:02:26,585
+Figure 1.2 here. It depicts Kasparov, a
+chess grandmaster,
+
+42
+00:02:27,004 --> 00:02:31,408
+defeated the chess system Deep Blue in
+1996. One
+
+43
+00:02:31,468 --> 00:02:35,072
+year later, in 1997, he resigned in the
+last
+
+44
+00:02:35,132 --> 00:02:38,935
+game of the six-game match after 19 moves,
+granting
+
+45
+00:02:38,974 --> 00:02:41,917
+the win to Deep Blue. For the first time
+
+46
+00:02:41,997 --> 00:02:45,479
+in the history of mankind, I saw something
+similar
+
+47
+00:02:45,599 --> 00:02:51,103
+to an artificial intellect. AI's
+superhuman game-playing capability extends
+
+48
+00:02:51,143 --> 00:02:54,745
+to video games. Machine learning
+techniques on simple Atari
+
+49
+00:02:54,764 --> 00:02:58,945
+games in 2013 progressed to Open AI 5
+defeating
+
+50
+00:02:59,026 --> 00:03:02,927
+world champions at Dota 2 in 2019. That
+same
+
+51
+00:03:02,967 --> 00:03:06,568
+year, DeepMind's Alpha Star beat
+professional esports players at
+
+52
+00:03:06,650 --> 00:03:11,031
+Starcraft 2. These are games with open-
+ended real-time environments
+
+53
+00:03:11,471 --> 00:03:15,612
+requiring thousands of rapid decisions and
+long-term planning. By
+
+54
+00:03:15,673 --> 00:03:19,956
+2020, the MuZero system played Atari
+games, Go, Chess,
+
+55
+00:03:20,217 --> 00:03:23,920
+and Shogi without even being told the
+rules. These
+
+56
+00:03:23,980 --> 00:03:27,524
+are AI's that all play and learn
+autonomously without
+
+57
+00:03:27,604 --> 00:03:32,348
+human intervention. In 2025, game-playing
+AI's have evolved to
+
+58
+00:03:32,528 --> 00:03:36,231
+open-ended environments across a huge
+variety of games. They
+
+59
+00:03:36,271 --> 00:03:38,674
+carry the abilities learned from one game
+onto the
+
+60
+00:03:38,735 --> 00:03:42,117
+next, improving their performance over
+time. At this point,
+
+61
+00:03:42,217 --> 00:03:46,264
+the textbook shows Figure 1.3. It depicts
+the history
+
+62
+00:03:46,424 --> 00:03:49,668
+of going from AlphaGo, which was already
+superhuman in
+
+63
+00:03:49,707 --> 00:03:53,873
+2016, to Mu0, which was not only
+superhuman, but
+
+64
+00:03:53,913 --> 00:03:57,438
+was trained without any human data, domain
+knowledge, or
+
+65
+00:03:57,538 --> 00:04:01,681
+knowledge of the game's rules. Gameplaying
+AI is relatively
+
+66
+00:04:01,762 --> 00:04:04,283
+narrow in what it can do. Despite this, it
+
+67
+00:04:04,343 --> 00:04:08,287
+is extremely impressive because of the
+strategic planning, pattern
+
+68
+00:04:08,326 --> 00:04:12,871
+recognition, and adversarial thinking at
+displays. These same reasoning
+
+69
+00:04:12,911 --> 00:04:17,514
+abilities, planning ahead, building
+strategies, adapting to feedback that
+
+70
+00:04:17,595 --> 00:04:21,317
+started with Gameplaying now also apply to
+scientific research,
+
+71
+00:04:21,557 --> 00:04:25,940
+mathematical proofs, and complex real-
+world problem solving. There is
+
+72
+00:04:26,040 --> 00:04:29,942
+Figure 1.4 in the textbook here. It
+depicts video
+
+73
+00:04:30,024 --> 00:04:33,404
+showcasing example of the state of game
+playing AI
+
+74
+00:04:33,444 --> 00:04:36,706
+assistance using the SEMA 2 model in 2025.
+The
+
+75
+00:04:37,387 --> 00:04:42,690
+textbook includes Figure 1.5 here. It
+depicts video showcasing
+
+76
+00:04:42,810 --> 00:04:45,971
+example of the state of game playing AI
+using
+
+77
+00:04:46,012 --> 00:04:49,975
+the SEMA 2 model in 2025. The textbook has
+
+78
+00:04:50,035 --> 00:04:53,776
+a supplementary note titled, Planning and
+Continuous Learning in
+
+79
+00:04:53,815 --> 00:04:58,278
+Minecraft with GPT-4, which will skip over
+here. Section.
+
+80
+00:04:59,038 --> 00:05:03,581
+Text Generation. Generating text can take
+language models far
+
+81
+00:05:03,641 --> 00:05:07,764
+beyond simple conversations. You're
+probably familiar with chat GPT.
+
+82
+00:05:08,425 --> 00:05:11,069
+These types of language generation AIs are
+what we
+
+83
+00:05:11,108 --> 00:05:16,014
+call large language models, or LLMs. In
+2018, early
+
+84
+00:05:16,074 --> 00:05:18,718
+versions of these LLMs could only write a
+few
+
+85
+00:05:18,817 --> 00:05:22,543
+coherent paragraphs, but over a few short
+years, they
+
+86
+00:05:22,603 --> 00:05:26,947
+have gotten a lot better. By 2025, GPT-5
+gets
+
+87
+00:05:27,187 --> 00:05:31,408
+92.5% of questions right, in domains
+ranging from highly
+
+88
+00:05:31,449 --> 00:05:35,552
+complex STEM fields, international law, to
+nutrition and religion,
+
+89
+00:05:36,072 --> 00:05:39,434
+as measured by the MMLU benchmark. Models
+like Clawed
+
+90
+00:05:39,533 --> 00:05:42,875
+by Anthropic, GROC by X, GLM 4.7 by ZPU
+
+91
+00:05:42,896 --> 00:05:48,439
+AI, and deep-seek V3.2 showcased similar
+levels of performance
+
+92
+00:05:48,559 --> 00:05:52,502
+across various domains. There is Figure
+1.7 in the
+
+93
+00:05:52,541 --> 00:05:55,963
+textbook here. It depicts, in a few short
+years,
+
+94
+00:05:56,303 --> 00:05:59,646
+LLMs have gone from being barely useful to
+being
+
+95
+00:05:59,766 --> 00:06:04,035
+regularly used coding assistance. The
+textbook includes Figure 1.8
+
+96
+00:06:04,154 --> 00:06:07,517
+here. It depicts performance on common
+exams as a
+
+97
+00:06:07,557 --> 00:06:11,281
+percentile compared to human test takers.
+Notice the large
+
+98
+00:06:11,382 --> 00:06:14,865
+jump from GPT 3.5 to GPT 4 on these
+
+99
+00:06:14,925 --> 00:06:18,269
+tests, often from well below the median
+human to
+
+100
+00:06:18,309 --> 00:06:20,971
+the very top of the human range. The jump
+
+101
+00:06:21,011 --> 00:06:23,793
+from GPT 3 to GPT 4 was in a
+
+102
+00:06:23,913 --> 00:06:28,279
+single year. The textbook has interactive
+figure 1.1 here,
+
+103
+00:06:28,639 --> 00:06:31,303
+which you can explore in the online
+version. It
+
+104
+00:06:31,363 --> 00:06:35,028
+shows we are seeing an explosion in
+language models
+
+105
+00:06:35,309 --> 00:06:38,314
+due to their generality and applicability
+to a wide
+
+106
+00:06:38,374 --> 00:06:41,708
+range of tasks. At this point, the
+textbook shows
+
+107
+00:06:41,767 --> 00:06:46,990
+figure 1.9. It depicts a list of nowhere
+near-solved
+
+108
+00:06:47,110 --> 00:06:50,353
+problems in AI, from a brief history of
+AI,
+
+109
+00:06:50,692 --> 00:06:55,254
+published in January 2021. They also say,
+at present,
+
+110
+00:06:55,435 --> 00:06:58,016
+we have no idea how to get computers to
+
+111
+00:06:58,076 --> 00:06:59,958
+do the tasks at the bottom of the list.
+
+112
+00:07:00,677 --> 00:07:04,540
+But everything in the category nowhere
+near-solved has been
+
+113
+00:07:04,639 --> 00:07:10,362
+solved by GPT-4, except human-level
+general intelligence. Language models
+
+114
+00:07:10,423 --> 00:07:12,744
+have provided a core around which we have
+seen
+
+115
+00:07:12,865 --> 00:07:17,547
+many impressive capabilities emerge, like
+scientific research, reasoning, and
+
+116
+00:07:17,607 --> 00:07:21,088
+software development. All of these
+capabilities stem from the
+
+117
+00:07:21,168 --> 00:07:24,649
+same principle of generating language and
+gradually refining it.
+
+118
+00:07:25,310 --> 00:07:29,872
+Section, tool use. LLMs can intelligently
+use external tools,
+
+119
+00:07:30,132 --> 00:07:35,276
+dramatically boosting performance.
+Language models in 2020 exhibited
+remarkable
+
+120
+00:07:35,336 --> 00:07:38,358
+abilities to solve new tasks from
+instructions, but they
+
+121
+00:07:38,459 --> 00:07:41,680
+used to struggle with basic functions like
+arithmetic. Instead
+
+122
+00:07:41,721 --> 00:07:43,543
+of trying to get a single model to do
+
+123
+00:07:43,622 --> 00:07:47,646
+everything, increasingly LLMs use external
+tools to achieve both
+
+124
+00:07:47,706 --> 00:07:51,187
+capabilities. They recognize when they
+need a calculator, code
+
+125
+00:07:51,208 --> 00:07:54,451
+interpreter, or up-to-date information
+from a search engine, and
+
+126
+00:07:54,511 --> 00:07:58,492
+call these tools appropriately. Tool use
+significantly improves model
+
+127
+00:07:58,533 --> 00:08:02,733
+performance. For example, the OpenAI-03
+model with external tools
+
+128
+00:08:03,134 --> 00:08:06,754
+outperforms O3 alone by almost 5% on
+benchmarks like
+
+129
+00:08:06,795 --> 00:08:11,216
+humanity's last exam, HLE. In December
+2025, at least
+
+130
+00:08:11,396 --> 00:08:14,896
+10,000 tool servers are operational,
+including meta tools like
+
+131
+00:08:14,937 --> 00:08:17,317
+a tool to search for tools to help LLMs
+
+132
+00:08:17,358 --> 00:08:19,377
+find the exact one they need for the
+specific
+
+133
+00:08:19,418 --> 00:08:22,838
+situation. This leads to a significant
+enough boost that
+
+134
+00:08:22,899 --> 00:08:26,440
+companies now report benchmark performance
+separately. with and without
+
+135
+00:08:26,480 --> 00:08:31,103
+tools. The textbook includes Figure 1.10
+here. It depicts
+
+136
+00:08:31,283 --> 00:08:35,684
+a simple example from Toolformer. The
+model autonomously decides
+
+137
+00:08:35,745 --> 00:08:39,106
+to call different APIs, from top to
+bottom, a
+
+138
+00:08:39,206 --> 00:08:43,729
+question answering system, a calculator, a
+machine translation system,
+
+139
+00:08:44,190 --> 00:08:47,630
+and a Wikipedia search engine, to obtain
+information that
+
+140
+00:08:47,691 --> 00:08:50,773
+is useful for completing a piece of text.
+Section,
+
+141
+00:08:51,273 --> 00:08:55,856
+Reasoning, and Research. Models now
+demonstrate multi-step reasoning by
+
+142
+00:08:55,937 --> 00:08:58,820
+working through problems step by step. In
+addition to
+
+143
+00:08:58,899 --> 00:09:02,403
+using tools, LLMs now show their
+reasoning, catch their
+
+144
+00:09:02,443 --> 00:09:06,609
+own errors, and backtrack when needed. In
+late 2024,
+
+145
+00:09:07,068 --> 00:09:12,193
+OpenAI introduced 01, the first reasoning
+model. These AIs
+
+146
+00:09:12,354 --> 00:09:15,775
+allocate more effort per problem, trading
+thinking time for
+
+147
+00:09:15,875 --> 00:09:19,337
+accuracy. The longer they think, the
+better their responses
+
+148
+00:09:19,378 --> 00:09:23,340
+tend to get. Using these reasoning
+techniques, both OpenAI
+
+149
+00:09:23,620 --> 00:09:27,321
+and Google DeepMind achieved gold medal
+performance at the
+
+150
+00:09:27,380 --> 00:09:32,063
+2025 International Mathematical Olympiad.
+On Frontier Math, a test
+
+151
+00:09:32,104 --> 00:09:35,024
+of research level mathematics, GPT 5.2
+solved 41% of
+
+152
+00:09:35,044 --> 00:09:40,768
+Tier 1 to 3 problems. In ML terms,
+thinking
+
+153
+00:09:40,827 --> 00:09:43,408
+time is called inference. It is the act of
+
+154
+00:09:43,469 --> 00:09:47,331
+generating new tokens, words, so
+increasing thinking time is
+
+155
+00:09:47,392 --> 00:09:51,293
+more formally called inference time
+scaling. Similar to tool
+
+156
+00:09:51,394 --> 00:09:53,615
+use, this also led to such a boost in
+
+157
+00:09:53,654 --> 00:09:57,336
+performance that companies report high
+thinking time, high compute
+
+158
+00:09:57,716 --> 00:10:00,958
+results of benchmark separately than no
+thinking time, low
+
+159
+00:10:00,999 --> 00:10:05,254
+compute results. At this point, the
+textbook shows Figure
+
+160
+00:10:05,455 --> 00:10:09,155
+1.11. It depicts a sample of an easy Tier
+
+161
+00:10:09,336 --> 00:10:13,397
+1 problem from frontier math, an extremely
+difficult mathematics
+
+162
+00:10:13,437 --> 00:10:19,278
+test created by mathematicians. GPT 5.2
+can solve 41%
+
+163
+00:10:19,399 --> 00:10:23,320
+of Tier 1.3 problems, and 29% of the even
+
+164
+00:10:23,379 --> 00:10:27,280
+harder Tier 4 problems. LLMs can help
+generate and
+
+165
+00:10:27,321 --> 00:10:31,947
+evaluate scientific hypotheses. Combining
+techniques like letting AI think
+
+166
+00:10:31,986 --> 00:10:35,148
+for longer and tools like web search or
+specialized
+
+167
+00:10:35,227 --> 00:10:38,227
+AI models, we are starting to see research
+assistants.
+
+168
+00:10:38,889 --> 00:10:43,109
+As one example, Google introduced AI co-
+scientist in 2025.
+
+169
+00:10:43,668 --> 00:10:46,309
+The team used it to generate and evaluate
+proposals
+
+170
+00:10:46,389 --> 00:10:51,191
+for repurposing drugs, identifying drug
+targets, and explaining antimicrobial
+
+171
+00:10:51,230 --> 00:10:54,951
+resistance in real-world laboratories.
+Others have attempted to build
+
+172
+00:10:55,010 --> 00:10:58,772
+a fully autonomous AI scientist, which
+generates novel research
+
+173
+00:10:58,831 --> 00:11:04,227
+ideas, writes code, executes experiments,
+visualizes results, describes its
+
+174
+00:11:04,288 --> 00:11:07,211
+findings by writing a full scientific
+paper, and then
+
+175
+00:11:07,270 --> 00:11:10,899
+runs a simulated review process for
+evaluation. There is
+
+176
+00:11:11,039 --> 00:11:14,662
+figure 1.12 in the textbook here. It
+depicts an
+
+177
+00:11:14,701 --> 00:11:17,722
+example of the Google co-scientist. You
+can see the
+
+178
+00:11:17,783 --> 00:11:21,465
+thinking time labeled as test time compute
+increasing on
+
+179
+00:11:21,504 --> 00:11:25,047
+the left. AI is transitioning to an active
+research
+
+180
+00:11:25,086 --> 00:11:29,288
+collaborator across scientific domains.
+Instead of only using language
+
+181
+00:11:29,327 --> 00:11:32,950
+models, companies are also using
+approaches similar to Alpha0
+
+182
+00:11:33,269 --> 00:11:35,971
+to create a whole range of specialized
+models for
+
+183
+00:11:36,030 --> 00:11:40,173
+scientific domains. For example, Demis
+Hassabis and John Jumper
+
+184
+00:11:40,513 --> 00:11:42,812
+were awarded the Nobel Prize in Chemistry
+for their
+
+185
+00:11:42,852 --> 00:11:45,413
+work on building Alpha Fold. This is a
+model
+
+186
+00:11:45,453 --> 00:11:48,494
+that helped solve the long outstanding
+protein folding problem,
+
+187
+00:11:48,953 --> 00:11:52,235
+and its successors Alpha Fold 2 and 3
+continue
+
+188
+00:11:52,254 --> 00:11:56,296
+to aid thousands of researchers in
+biology. Similarly, Alpha
+
+189
+00:11:56,316 --> 00:11:59,697
+Genome is helping us better understand
+human DNA. Alpha
+
+190
+00:11:59,777 --> 00:12:02,797
+Evolve is helping generate faster
+algorithms for machine learning,
+
+191
+00:12:03,197 --> 00:12:05,837
+and Alpha Chip helps design the
+semiconductors that run
+
+192
+00:12:05,898 --> 00:12:11,980
+algorithms. The textbook includes Figure
+1.13 here. It depicts
+
+193
+00:12:12,182 --> 00:12:16,745
+animation, showing alpha genome, taking 1
+million DNA letters
+
+194
+00:12:16,865 --> 00:12:21,327
+as input, and predicting diverse molecular
+properties across different
+
+195
+00:12:21,388 --> 00:12:25,910
+tissues and cell types. Beyond just
+mathematics and scientific
+
+196
+00:12:25,951 --> 00:12:30,614
+research, AI models are also developing
+more abstract intellectual
+
+197
+00:12:30,653 --> 00:12:34,956
+skills. LLMs have some level of
+metacognition. They can
+
+198
+00:12:34,996 --> 00:12:38,178
+evaluate the validity of their own claims
+and predict
+
+199
+00:12:38,239 --> 00:12:40,760
+which questions they will be able to
+answer correctly.
+
+200
+00:12:41,280 --> 00:12:43,783
+They have some knowledge about their own
+selves and
+
+201
+00:12:43,822 --> 00:12:47,884
+their limitations. Similarly, they display
+the ability to attribute
+
+202
+00:12:47,946 --> 00:12:50,767
+mental states to themselves and others,
+theory of mind.
+
+203
+00:12:51,388 --> 00:12:54,970
+This helps in predicting human behaviors
+and responses. We
+
+204
+00:12:55,009 --> 00:12:57,311
+are going to talk more about how we
+concretely
+
+205
+00:12:57,371 --> 00:13:00,952
+define and measure things like
+intelligence, metacognition, and so
+
+206
+00:13:01,052 --> 00:13:04,234
+on in later sections. At this point, the
+textbook
+
+207
+00:13:04,274 --> 00:13:08,414
+shows Figure 1.14. It depicts an example
+puzzle from
+
+208
+00:13:08,475 --> 00:13:13,735
+the abstraction and reasoning corpus for
+AI, or ARC-AGI-V1.
+
+209
+00:13:14,416 --> 00:13:16,816
+These are designed to be easy for humans,
+but
+
+210
+00:13:16,956 --> 00:13:20,076
+very hard for AI's. Models are able to
+solve
+
+211
+00:13:20,177 --> 00:13:23,917
+increasing numbers of such abstract
+reasoning puzzles, especially with
+
+212
+00:13:23,956 --> 00:13:27,177
+the advent of large reasoning models, or
+LRMs, in
+
+213
+00:13:27,197 --> 00:13:33,698
+2025. Section Software Development. Coding
+is evolving from autocomplete
+
+214
+00:13:33,798 --> 00:13:38,282
+to collaborative software development.
+LLMs can generate text in
+
+215
+00:13:38,542 --> 00:13:41,244
+any form, and one particular type of text
+that
+
+216
+00:13:41,264 --> 00:13:43,706
+they are proving to be especially good at
+is
+
+217
+00:13:43,806 --> 00:13:47,868
+generating code. When paired with
+reasoning capabilities and tools,
+
+218
+00:13:48,427 --> 00:13:52,451
+LLMs read documentation, edit code bases
+spanning thousands of
+
+219
+00:13:52,510 --> 00:13:57,114
+files, run tests, debug failures, and
+iterate until tests
+
+220
+00:13:57,193 --> 00:14:02,456
+pass, with increasingly minimal human
+guidance. In 2025, systems
+
+221
+00:14:02,517 --> 00:14:07,499
+like Claude Opus 4.5, Gemini 3 Pro, and
+GPT
+
+222
+00:14:07,538 --> 00:14:12,900
+5.2 implement features and entire
+applications increasingly independently.
+When
+
+223
+00:14:12,961 --> 00:14:16,042
+tested against real GitHub issues from
+open source projects,
+
+224
+00:14:16,442 --> 00:14:20,504
+in 2024, AI systems Claude 3 Opus could
+solve
+
+225
+00:14:20,563 --> 00:14:24,546
+just 15% problems. But by 2025, this had
+jumped
+
+226
+00:14:24,566 --> 00:14:27,927
+to being able to solve 74% of issues,
+tools
+
+227
+00:14:27,986 --> 00:14:32,214
+plus Claude 4 Opus. There is Figure 1.15
+in
+
+228
+00:14:32,234 --> 00:14:35,936
+the textbook here. It depicts AI systems
+now develop
+
+229
+00:14:35,975 --> 00:14:40,720
+themselves. Boris Churney, creator of
+Claude Code and Thropics
+
+230
+00:14:40,919 --> 00:14:46,263
+AI-powered software development tool,
+stated in December 2025 that
+
+231
+00:14:46,403 --> 00:14:49,326
+100% of his contributions to Claude Code
+over the
+
+232
+00:14:49,385 --> 00:14:52,467
+previous 30 days were written by Claude
+Code itself.
+
+233
+00:14:53,107 --> 00:14:59,873
+Churney, 2025, Twitter. Section, Vision,
+Images, and Video Image
+
+234
+00:14:59,913 --> 00:15:04,735
+generation progressed from unrecognizable
+noise to photo-realistic scenes in
+
+235
+00:15:04,895 --> 00:15:10,219
+under a decade. In 2014, Generative
+Adversarial Networks GANs
+
+236
+00:15:10,559 --> 00:15:16,342
+produced grainy low-resolution faces. By
+2023, models generated detailed
+
+237
+00:15:16,403 --> 00:15:20,847
+images from complex text prompts. Models
+like mid-journey V7
+
+238
+00:15:20,967 --> 00:15:27,076
+create photorealistic scenes nearly
+indistinguishable from professional
+photography. Video
+
+239
+00:15:27,136 --> 00:15:31,562
+generation is following a similar
+trajectory. AI-generated videos and
+
+240
+00:15:31,602 --> 00:15:36,097
+deepfakes are getting increasingly
+indistinguishable from real videos. The
+
+241
+00:15:36,158 --> 00:15:41,220
+textbook includes Figure 1.16 here. It
+depicts an example
+
+242
+00:15:41,440 --> 00:15:44,721
+of the evolution of image generation. At
+the top
+
+243
+00:15:44,780 --> 00:15:49,621
+left, starting from GANs, Generative
+Adversarial Networks, to the
+
+244
+00:15:49,642 --> 00:15:53,692
+bottom right, an image from mid-journey
+V5. At this
+
+245
+00:15:53,773 --> 00:15:58,878
+point, the textbook shows Figure 1.17. It
+depicts improvements
+
+246
+00:15:58,937 --> 00:16:02,240
+between the V1 of the mid-journey image
+generation model
+
+247
+00:16:02,380 --> 00:16:06,565
+in early 2022 to the V6 in December 2023.
+
+248
+00:16:07,166 --> 00:16:11,450
+Prompt, high-quality photography of a
+young Japanese woman smiling,
+
+249
+00:16:11,889 --> 00:16:16,594
+backlighting, natural pale light, film
+camera by Rinku Kawawuchi,
+
+250
+00:16:17,195 --> 00:16:21,640
+HDR. There is Figure 1.18 in the textbook
+here.
+
+251
+00:16:22,241 --> 00:16:26,707
+It depicts sample of an AI-generated video
+by OpenAI
+
+252
+00:16:26,989 --> 00:16:30,874
+Sora 2, prompt, a gymnast flips on a
+balance
+
+253
+00:16:30,913 --> 00:16:36,900
+beam, cinematic. Multimodal models combine
+language and image understanding
+
+254
+00:16:36,921 --> 00:16:42,205
+capabilities. In 2025, Multimodal models
+answer questions about spatial
+
+255
+00:16:42,264 --> 00:16:46,106
+relationships and images, read embedded
+text in complex scenes,
+
+256
+00:16:46,567 --> 00:16:50,230
+and extract information from charts and
+diagrams. Image models
+
+257
+00:16:50,289 --> 00:16:54,932
+released in 2025, handle generation, and
+sophisticated editing across
+
+258
+00:16:54,972 --> 00:16:59,274
+modalities. Systems like Gemini 3 Pro
+Image work text-to-image,
+
+259
+00:16:59,615 --> 00:17:04,097
+image-to-image, and handle complex
+editing, changing lighting, style, or
+
+260
+00:17:04,137 --> 00:17:09,311
+composition while maintaining coherence.
+The textbook includes Figure 1.19
+
+261
+00:17:09,692 --> 00:17:13,835
+here. It depicts an infographic containing
+both images and
+
+262
+00:17:13,994 --> 00:17:19,198
+educational text generated by Google's
+nano-banana pro model. Prompt.
+
+263
+00:17:19,718 --> 00:17:22,220
+Create an infographic that shows how to
+make a
+
+264
+00:17:22,440 --> 00:17:26,152
+lychee chai. At this point, the textbook
+shows Figure
+
+265
+00:17:26,172 --> 00:17:31,075
+1.20. It depicts example of extending
+video and image
+
+266
+00:17:31,115 --> 00:17:34,856
+generation to an interactive world. This
+was generated by
+
+267
+00:17:34,998 --> 00:17:38,900
+DeepMind Genie 3. The bottom left arrows
+indicate the
+
+268
+00:17:39,039 --> 00:17:44,743
+user interacting with the generated
+environment. Section Robotics. Both
+
+269
+00:17:44,903 --> 00:17:48,406
+AI and robotics are evolving with robots
+giving AI
+
+270
+00:17:48,527 --> 00:17:52,068
+physical embodiment in the real world.
+Robotics is combining
+
+271
+00:17:52,269 --> 00:17:55,372
+LLMs and visual models to create robot
+control models
+
+272
+00:17:55,862 --> 00:17:59,944
+EG, RT1, or RT2. These robots can use
+techniques
+
+273
+00:18:00,026 --> 00:18:03,528
+borrowed from language models, like
+breaking complex actions into
+
+274
+00:18:03,567 --> 00:18:07,531
+step-by-step plans to control robot
+manipulators. They manage to
+
+275
+00:18:07,551 --> 00:18:11,394
+learn behaviors like opening cabinets,
+operating elevators, and cooking
+
+276
+00:18:11,414 --> 00:18:15,377
+tasks through observing human
+demonstrations. Robots have demonstrated
+the
+
+277
+00:18:15,417 --> 00:18:19,902
+ability to perform intricate manipulation,
+sauteing shrimp, storing heavy
+
+278
+00:18:19,942 --> 00:18:23,964
+pots and cabinets, and rinsing pans. There
+is Figure
+
+279
+00:18:24,144 --> 00:18:28,426
+1.21 in the textbook here. It depicts
+Sarah RT2
+
+280
+00:18:28,507 --> 00:18:32,488
+model for manipulation tasks. The robot's
+actions are conditioned
+
+281
+00:18:32,587 --> 00:18:36,529
+on images and text commands. Autonomous
+robots are moving
+
+282
+00:18:36,589 --> 00:18:40,751
+from research labs into real-world
+industrial deployment at significant
+
+283
+00:18:40,791 --> 00:18:48,454
+scale. In 2023, China installed 276,300
+industrial robots. These
+
+284
+00:18:48,515 --> 00:18:52,558
+systems handle welding, parts assembly,
+materials handling, and quality
+
+285
+00:18:52,578 --> 00:18:57,203
+inspection. Tasks requiring precision, but
+not necessarily advanced reasoning.
+
+286
+00:18:57,984 --> 00:19:01,548
+In addition to industrial robots,
+warehouse robotics represents one
+
+287
+00:19:01,567 --> 00:19:05,092
+of the most mature deployments. Amazon
+operates over 1
+
+288
+00:19:05,211 --> 00:19:08,736
+million robots across its fulfillment
+network, handling everything from
+
+289
+00:19:08,855 --> 00:19:12,317
+inventory storage to package sorting.
+Robots in warehouses and
+
+290
+00:19:12,397 --> 00:19:15,459
+industry are able to handle packages,
+speed up inventory
+
+291
+00:19:15,538 --> 00:19:19,740
+identification using machine vision, and
+autonomously unload shipping containers.
+
+292
+00:19:20,480 --> 00:19:23,280
+At this point, there is video 1.1 in the
+
+293
+00:19:23,320 --> 00:19:27,362
+textbook. It covers video showcasing one
+example of the
+
+294
+00:19:27,422 --> 00:19:32,035
+state of humanoid robots in 2024. The
+textbook includes
+
+295
+00:19:32,195 --> 00:19:37,080
+Figure 1.22 here. It depicts Boston
+Dynamics stretch robot
+
+296
+00:19:37,340 --> 00:19:40,805
+that can autonomously unload shipping
+containers, lift up to
+
+297
+00:19:40,904 --> 00:19:43,728
+50 pounds, and clear away mist boxes along
+the
+
+298
+00:19:43,768 --> 00:19:46,951
+way. At this point, the textbook shows
+Figure 1.23.
+
+299
+00:19:47,132 --> 00:19:51,056
+It depicts Amazon has a huge fleet of
+robots
+
+300
+00:19:51,135 --> 00:19:54,103
+that automate its warehouses. This is an
+example of
+
+301
+00:19:54,143 --> 00:19:56,996
+the Hercules robot that retrieves shelves
+of products and
+
+302
+00:19:57,037 --> 00:19:59,607
+delivers them to employees who then pick
+the items
+
+303
+00:19:59,647 --> 00:20:00,854
+customers ordered for shipping.

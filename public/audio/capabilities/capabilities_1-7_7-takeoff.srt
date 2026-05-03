@@ -1,0 +1,1364 @@
+1
+00:00:00,412 --> 00:00:06,559
+Section 1.7. Takeoff. This final section
+synthesizes a lot
+
+2
+00:00:06,580 --> 00:00:08,663
+of the discussion that has happened
+through this chapter.
+
+3
+00:00:09,163 --> 00:00:11,628
+We started from where we are currently and
+went
+
+4
+00:00:11,807 --> 00:00:14,731
+all the way to forecasting specific trends
+in the
+
+5
+00:00:14,852 --> 00:00:18,435
+inputs to AI capabilities. So this section
+lays out
+
+6
+00:00:18,515 --> 00:00:21,117
+different sides of the debate on what the
+combination
+
+7
+00:00:21,138 --> 00:00:23,458
+of all of this implies. Here is a quote
+
+8
+00:00:23,518 --> 00:00:27,062
+by Jan Lekun. There is no question that
+machines
+
+9
+00:00:27,102 --> 00:00:30,064
+will become smarter than humans, in all
+domains in
+
+10
+00:00:30,083 --> 00:00:32,884
+which humans are smart, in the future.
+It's a
+
+11
+00:00:32,924 --> 00:00:35,847
+question of when and how, not a question
+of
+
+12
+00:00:35,987 --> 00:00:40,090
+if. Takeoff speed refers to how quickly AI
+systems
+
+13
+00:00:40,149 --> 00:00:43,351
+become dramatically more powerful than
+they are today, and
+
+14
+00:00:43,411 --> 00:00:47,115
+cause major societal changes. This is
+related to but
+
+15
+00:00:47,155 --> 00:00:50,976
+distinct from AI timelines, how long until
+we develop
+
+16
+00:00:51,017 --> 00:00:55,060
+advanced AI. While timelines tell us when
+transformative AI
+
+17
+00:00:55,100 --> 00:00:58,421
+might arrive, takeoff speeds tell us what
+happens after
+
+18
+00:00:58,462 --> 00:01:02,064
+it arrives. Does AI capability and impact
+increase gradually
+
+19
+00:01:02,164 --> 00:01:06,087
+over years or explosively over days or
+weeks? When
+
+20
+00:01:06,207 --> 00:01:09,450
+analyzing different takeoff scenarios, we
+can look at several
+
+21
+00:01:09,510 --> 00:01:14,147
+key factors. Speed. How quickly do AI
+capabilities improve?
+
+22
+00:01:14,847 --> 00:01:19,088
+Continuity. Do capabilities improve
+smoothly or in sudden jumps?
+
+23
+00:01:19,849 --> 00:01:23,370
+Homogeneity. How similar are different AI
+systems to each
+
+24
+00:01:23,411 --> 00:01:27,531
+other? Polarity. How concentrated is power
+among different AI
+
+25
+00:01:27,591 --> 00:01:30,933
+systems? In the next section, we discuss
+just one
+
+26
+00:01:30,953 --> 00:01:32,873
+of these factors that tends to be the most
+
+27
+00:01:32,914 --> 00:01:38,375
+debated. Takeoff speed. The rest,
+continuity, homogeneity, and polarity
+
+28
+00:01:38,756 --> 00:01:43,745
+are explained in an appendix. section,
+speed. In a
+
+29
+00:01:43,927 --> 00:01:49,670
+slow takeoff scenario, AI capabilities
+improve gradually over months
+
+30
+00:01:49,909 --> 00:01:52,790
+or years. We can see this pattern in
+recent
+
+31
+00:01:52,831 --> 00:01:58,855
+history. The transition from GPT-3 to
+GPT-4 brought significant
+
+32
+00:01:58,894 --> 00:02:03,316
+improvements in reasoning, coding, and
+general knowledge, but these
+
+33
+00:02:03,376 --> 00:02:08,580
+advances happened over several years
+through incremental progress. Paul
+
+34
+00:02:08,620 --> 00:02:12,722
+Cristiano describes slow takeoff as
+similar to the industrial
+
+35
+00:02:12,762 --> 00:02:18,905
+revolution, but 10x100x faster. Terms like
+slow takeoff and
+
+36
+00:02:19,025 --> 00:02:23,787
+soft takeoff are often used
+interchangeably. In mathematical terms,
+
+37
+00:02:24,046 --> 00:02:28,008
+slow takeoff scenarios typically show
+linear or exponential growth
+
+38
+00:02:28,028 --> 00:02:32,129
+patterns. With linear growth, capabilities
+increase by the same
+
+39
+00:02:32,349 --> 00:02:35,771
+absolute amount each year. Imagine an AI
+system that
+
+40
+00:02:35,812 --> 00:02:39,073
+gains a fixed number of new skills
+annually. More
+
+41
+00:02:39,112 --> 00:02:43,133
+commonly, we might see exponential growth,
+where capabilities increase
+
+42
+00:02:43,174 --> 00:02:46,074
+by a constant percentage. Similar to how
+we discussed
+
+43
+00:02:46,155 --> 00:02:49,596
+scaling laws in earlier sections. Just as
+model performance
+
+44
+00:02:49,675 --> 00:02:53,356
+improves predictably with compute and
+data, slow take-off suggests
+
+45
+00:02:53,417 --> 00:02:56,217
+capabilities would grow at a study, but
+manageable rate.
+
+46
+00:02:56,776 --> 00:02:59,518
+This might manifest as GDP growing at 10
+to
+
+47
+00:02:59,557 --> 00:03:02,957
+30%. Slow take-off provides us time to
+adapt and
+
+48
+00:03:03,018 --> 00:03:06,338
+respond. If we discover problems with our
+current safety
+
+49
+00:03:06,359 --> 00:03:10,159
+approaches, we can adjust them before AI
+becomes significantly
+
+50
+00:03:10,199 --> 00:03:13,461
+more powerful. This connects directly to
+what we'll discuss
+
+51
+00:03:13,501 --> 00:03:17,424
+in later chapters about governance and
+oversight. Slow Take
+
+52
+00:03:17,524 --> 00:03:20,746
+Off allows for iterative refinement of
+safety measures and
+
+53
+00:03:20,786 --> 00:03:24,209
+gives time for coordination between
+different actors and institutions.
+
+54
+00:03:24,808 --> 00:03:29,932
+The textbook includes Figure 1.43 here. It
+depicts an
+
+55
+00:03:30,032 --> 00:03:35,556
+illustration of slow, continuous takeoff.
+Fast takeoff describes scenarios
+
+56
+00:03:35,597 --> 00:03:39,659
+where AI capabilities increased
+dramatically over very short periods,
+
+57
+00:03:40,000 --> 00:03:43,462
+perhaps days or even hours. Instead of the
+gradual
+
+58
+00:03:43,543 --> 00:03:47,887
+improvement we saw from GPT-3 to GPT-4,
+imagine an
+
+59
+00:03:48,007 --> 00:03:51,830
+AI system making that much progress every
+day. This
+
+60
+00:03:51,870 --> 00:03:55,532
+could happen through recursive self-
+improvement, where an AI system
+
+61
+00:03:55,592 --> 00:03:59,675
+becomes better at improving itself,
+creating an accelerating feedback
+
+62
+00:03:59,717 --> 00:04:04,899
+loop. Mathematically, fast takeoff
+involves super exponential or hyperbolic
+
+63
+00:04:04,919 --> 00:04:08,020
+growth, where the growth rate itself
+increases over time.
+
+64
+00:04:08,719 --> 00:04:11,961
+Rather than capabilities doubling every
+year as an exponential
+
+65
+00:04:12,001 --> 00:04:14,961
+growth, they might double every month,
+then every week,
+
+66
+00:04:15,322 --> 00:04:18,343
+then every day. This relates to what we
+discussed
+
+67
+00:04:18,382 --> 00:04:21,163
+in the scaling section about potential
+feedback loops in
+
+68
+00:04:21,264 --> 00:04:24,865
+AI development. If AI systems can improve
+the efficiency
+
+69
+00:04:24,904 --> 00:04:27,846
+of AI research itself, we might see this
+kind
+
+70
+00:04:27,886 --> 00:04:31,887
+of accelerating progress. The dramatic
+speed of fast takeoff
+
+71
+00:04:32,088 --> 00:04:35,408
+creates unique challenges for safety. As
+we'll explore in
+
+72
+00:04:35,447 --> 00:04:39,088
+the chapter on strategies, many current
+safety approaches rely
+
+73
+00:04:39,129 --> 00:04:43,490
+on testing systems, finding problems, and
+making improvements. But
+
+74
+00:04:43,610 --> 00:04:46,290
+in a fast takeoff scenario, we might only
+get
+
+75
+00:04:46,531 --> 00:04:49,031
+one chance to get things right. If an AI
+
+76
+00:04:49,091 --> 00:04:52,831
+system starts rapidly self-improving, we
+need safety measures that
+
+77
+00:04:52,872 --> 00:04:55,591
+work robustly from the start, because we
+won't have
+
+78
+00:04:55,632 --> 00:04:58,673
+time to fix problems once they emerge.
+Terms like
+
+79
+00:04:58,752 --> 00:05:02,254
+fast take-off, hard take-off, and fume are
+often used
+
+80
+00:05:02,293 --> 00:05:07,115
+interchangeably. At this point, the
+textbook shows figure 1.44.
+
+81
+00:05:07,776 --> 00:05:11,737
+It depicts an illustration of fast
+continuous take-off, which
+
+82
+00:05:11,797 --> 00:05:15,637
+is usually taken to mean super-exponential
+or hyperbolic growth.
+
+83
+00:05:16,298 --> 00:05:19,920
+The growth rate itself increases. The
+speed of AI
+
+84
+00:05:19,980 --> 00:05:23,680
+take-off fundamentally shapes the
+challenge of making AI safe.
+
+85
+00:05:24,245 --> 00:05:27,627
+If progress follows predictable patterns
+as our current understanding
+
+86
+00:05:27,668 --> 00:05:30,449
+suggests, we might have more warning and
+time to
+
+87
+00:05:30,488 --> 00:05:34,692
+prepare. But if new mechanisms, like
+recursive self-improvement, create
+
+88
+00:05:34,732 --> 00:05:38,793
+faster feedback loops, we need different
+strategies. Today, when
+
+89
+00:05:38,834 --> 00:05:41,975
+we discover that language models can be
+jailbroken, companies
+
+90
+00:05:42,036 --> 00:05:44,937
+can patch these vulnerabilities in the
+next release. In
+
+91
+00:05:44,956 --> 00:05:47,898
+a slow takeoff, this pattern could
+continue. We'd have
+
+92
+00:05:47,937 --> 00:05:50,418
+time to discover and fix safety issues as
+they
+
+93
+00:05:50,459 --> 00:05:53,180
+arise. But in a fast takeoff, we might
+need
+
+94
+00:05:53,220 --> 00:05:57,040
+to solve all potential jail-breaking
+vulnerabilities before deploying the
+
+95
+00:05:57,120 --> 00:05:59,901
+AI, because a system could become too
+powerful to
+
+96
+00:05:59,961 --> 00:06:03,103
+safely modify before we can implement any
+further safety
+
+97
+00:06:03,142 --> 00:06:07,463
+fixes. The majority of experts,
+researchers and engineers, agree
+
+98
+00:06:07,504 --> 00:06:09,745
+that AI will pose risks, and it should be
+
+99
+00:06:09,785 --> 00:06:13,309
+developed responsibly. The differences are
+in small nuances of
+
+100
+00:06:13,369 --> 00:06:15,891
+how to respond. These can often be boiled
+down
+
+101
+00:06:15,932 --> 00:06:18,196
+to whether they expect problems to be
+noticeable and
+
+102
+00:06:18,235 --> 00:06:20,658
+fixable in time, or too fast for us to
+
+103
+00:06:20,699 --> 00:06:25,305
+respond. Unfortunately, these sometimes
+get misreported as AI experts
+
+104
+00:06:25,346 --> 00:06:29,509
+disagree on AI risks. To quote Andrew
+Aing, this
+
+105
+00:06:29,589 --> 00:06:32,990
+is how we build airplanes. We build
+airplanes, sometimes
+
+106
+00:06:33,050 --> 00:06:36,052
+they crash tragically, and then we fix it.
+I
+
+107
+00:06:36,091 --> 00:06:39,132
+think AI sometimes gives bad outputs, and
+then we
+
+108
+00:06:39,173 --> 00:06:41,754
+fix it. And that's how we actually make
+these
+
+109
+00:06:41,793 --> 00:06:46,139
+things reliable. There is figure 1.45 in
+the textbook
+
+110
+00:06:46,180 --> 00:06:50,485
+here. It depicts comparison of slow versus
+fast takeoff,
+
+111
+00:06:50,985 --> 00:06:54,810
+showcasing that while described as
+linguistically slow. Understanding fast
+
+112
+00:06:54,850 --> 00:06:57,252
+versus slow helps you get the overview of
+the
+
+113
+00:06:57,291 --> 00:06:59,555
+takeoff debate. But there can be a bunch
+of
+
+114
+00:06:59,595 --> 00:07:03,800
+other factors like, are there sudden
+jumps? Takeoff continuity.
+
+115
+00:07:04,379 --> 00:07:06,603
+How many systems are taking off at the
+same
+
+116
+00:07:06,663 --> 00:07:11,468
+time? Takeoff polarity. How
+architecturally similar are these systems?
+
+117
+00:07:12,230 --> 00:07:15,473
+Takeoff similarity. If you want to learn
+more, feel
+
+118
+00:07:15,514 --> 00:07:19,658
+free to read the section, takeoff
+arguments. The overhang
+
+119
+00:07:19,738 --> 00:07:23,343
+argument, there might be situations where
+there are substantial
+
+120
+00:07:23,382 --> 00:07:26,526
+advancements or availability in one aspect
+of the AI
+
+121
+00:07:26,586 --> 00:07:30,168
+system, such as hardware or data, but the
+corresponding
+
+122
+00:07:30,249 --> 00:07:33,872
+software or algorithms to fully utilize
+these resources haven't
+
+123
+00:07:33,892 --> 00:07:37,634
+been developed yet. The term overhang is
+used because
+
+124
+00:07:37,675 --> 00:07:40,834
+these situations imply a kind of stored or
+latent
+
+125
+00:07:40,935 --> 00:07:44,396
+potential. Once the software or algorithms
+catch up to
+
+126
+00:07:44,415 --> 00:07:46,817
+the hardware or data, there could be a
+sudden
+
+127
+00:07:46,956 --> 00:07:49,937
+unleashing of this potential, leading to a
+rapid leap
+
+128
+00:07:50,057 --> 00:07:54,158
+in AI capabilities. Overhangs provide one
+possible argument for
+
+129
+00:07:54,177 --> 00:07:57,858
+why we might favor discontinuous or fast
+takeoffs. There
+
+130
+00:07:57,899 --> 00:08:02,024
+are two types of overhangs commonly
+discussed. Hardware Overhang.
+
+131
+00:08:02,524 --> 00:08:04,927
+This refers to a situation where there is
+enough
+
+132
+00:08:04,987 --> 00:08:08,529
+computing hardware to run many powerful AI
+systems, but
+
+133
+00:08:08,569 --> 00:08:11,151
+the software to run such systems hasn't
+been developed
+
+134
+00:08:11,172 --> 00:08:14,213
+yet. If such hardware could be repurposed
+for AI,
+
+135
+00:08:14,574 --> 00:08:16,817
+this would mean that as soon as one
+powerful
+
+136
+00:08:16,896 --> 00:08:19,959
+AI system exists, probably a large number
+of them
+
+137
+00:08:19,978 --> 00:08:22,742
+would exist, which might amplify the
+impact of the
+
+138
+00:08:22,802 --> 00:08:27,045
+arrival of human level AI. Data Overhang.
+This would
+
+139
+00:08:27,064 --> 00:08:29,225
+be a situation where there is an abundance
+of
+
+140
+00:08:29,286 --> 00:08:31,848
+data available that could be used for
+training AI
+
+141
+00:08:31,908 --> 00:08:35,450
+systems, but the AI algorithms capable of
+utilizing all
+
+142
+00:08:35,490 --> 00:08:38,630
+that data effectively haven't been
+developed or deployed yet.
+
+143
+00:08:39,230 --> 00:08:42,332
+Overhangs are also used as a counter-
+argument to why
+
+144
+00:08:42,452 --> 00:08:46,475
+AI pauses do not meaningfully affect
+takeoff speeds. One
+
+145
+00:08:46,534 --> 00:08:49,196
+counter argument to the overhang argument
+is that it
+
+146
+00:08:49,235 --> 00:08:51,496
+relies on the assumption that during the
+time that
+
+147
+00:08:51,517 --> 00:08:54,339
+we are pausing AI development, the rate of
+production
+
+148
+00:08:54,359 --> 00:08:57,340
+of chips will remain constant. It could be
+argued
+
+149
+00:08:57,379 --> 00:09:00,160
+that the company's manufacturing these
+chips will not make
+
+150
+00:09:00,221 --> 00:09:02,422
+as many chips if data centers aren't
+buying them.
+
+151
+00:09:03,022 --> 00:09:05,783
+However, this argument only works if the
+pauses for
+
+152
+00:09:05,864 --> 00:09:09,065
+any appreciable length of time. Otherwise,
+the data centers
+
+153
+00:09:09,105 --> 00:09:12,027
+might just stockpile the chips. It is also
+possible
+
+154
+00:09:12,067 --> 00:09:15,210
+to make progress on improved chip design
+without having
+
+155
+00:09:15,230 --> 00:09:18,312
+to manufacture as many during the pause
+period. However,
+
+156
+00:09:18,452 --> 00:09:20,554
+during the same pause period, we could
+also make
+
+157
+00:09:20,595 --> 00:09:24,418
+progress on AI safety techniques. The
+Economic Growth Argument
+
+158
+00:09:25,058 --> 00:09:28,543
+Historical patterns of economic growth,
+driven by human population
+
+159
+00:09:28,562 --> 00:09:32,326
+increases, suggests a potential for slow
+and continuous AI
+
+160
+00:09:32,365 --> 00:09:35,668
+takeoff. This argument says that as AI's
+augment the
+
+161
+00:09:35,727 --> 00:09:39,687
+effective economic population, we might
+witness a gradual increase
+
+162
+00:09:39,727 --> 00:09:43,009
+in economic growth, mirroring past
+expansions, but at a
+
+163
+00:09:43,068 --> 00:09:47,789
+potentially accelerated rate due to AI-
+enabled automation. Limitations and
+
+164
+00:09:47,830 --> 00:09:51,431
+AI's ability to automate certain tasks
+alongside societal and
+
+165
+00:09:51,510 --> 00:09:55,192
+regulatory constraints, e.g. that medical
+or legal services can
+
+166
+00:09:55,251 --> 00:09:57,511
+only be rendered by humans, could lead to
+a
+
+167
+00:09:57,591 --> 00:10:02,335
+slower expansion of AI capabilities.
+Alternatively, growth might far
+
+168
+00:10:02,414 --> 00:10:05,599
+exceed historical rates. Using a similar
+argument for a
+
+169
+00:10:05,658 --> 00:10:08,841
+fast takeoff hinges on AI's potential to
+quickly automate
+
+170
+00:10:08,881 --> 00:10:12,066
+human labor on a massive scale, leading to
+unprecedented
+
+171
+00:10:12,145 --> 00:10:17,315
+economic acceleration. The textbook
+includes Figure 1.46 here. It
+
+172
+00:10:17,355 --> 00:10:20,376
+depicts a visualization of the ranking of
+arguments for
+
+173
+00:10:20,476 --> 00:10:24,460
+explosive economic growth, both in favor
+and against, by
+
+174
+00:10:24,620 --> 00:10:29,984
+epoch AI. Compute centric takeoff
+argument. This argument, similar
+
+175
+00:10:30,043 --> 00:10:33,086
+to the Bioanker's report, assumes that
+compute will be
+
+176
+00:10:33,145 --> 00:10:37,408
+sufficient for transformative AI. Based on
+this assumption, Tom
+
+177
+00:10:37,469 --> 00:10:42,731
+Davidson's 2023 report on compute-centric
+AI takeoff discusses feedback
+
+178
+00:10:42,751 --> 00:10:46,774
+loops that may contribute to takeoff
+dynamics. Investment feedback
+
+179
+00:10:46,813 --> 00:10:50,174
+loop. There might be increasing investment
+in AI, as
+
+180
+00:10:50,315 --> 00:10:52,395
+AI's play a larger and larger role in the
+
+181
+00:10:52,476 --> 00:10:55,860
+economy. This increases the amount of
+compute available to
+
+182
+00:10:55,899 --> 00:10:58,342
+train models, as well as potentially
+leading to the
+
+183
+00:10:58,383 --> 00:11:02,307
+discovery of novel algorithms, all of this
+increases capabilities,
+
+184
+00:11:02,668 --> 00:11:07,835
+which drives economic progress, and
+further incentivizes investment.
+Automation
+
+185
+00:11:07,875 --> 00:11:11,360
+Feedback Loop As AI's get more capable,
+they will
+
+186
+00:11:11,379 --> 00:11:13,501
+be able to automate larger parts of the
+work
+
+187
+00:11:13,581 --> 00:11:16,485
+of coming up with better AI algorithms, or
+helping
+
+188
+00:11:16,525 --> 00:11:19,349
+in the design of better GPUs. Both of
+these
+
+189
+00:11:19,389 --> 00:11:21,932
+will increase the capability of the AI's,
+which in
+
+190
+00:11:21,971 --> 00:11:25,095
+turn allow them to automate more labor.
+Depending on
+
+191
+00:11:25,134 --> 00:11:28,297
+the strength and interplay of these
+feedback loops, they
+
+192
+00:11:28,336 --> 00:11:32,118
+can create a self-fulfilling prophecy,
+leading to either an
+
+193
+00:11:32,177 --> 00:11:36,620
+accelerating fast take-off, if regulations
+don't curtail various aspects
+
+194
+00:11:36,659 --> 00:11:39,801
+of such loops, or a slow take-off, if the
+
+195
+00:11:39,841 --> 00:11:43,883
+loops are weaker or counterbalanced by
+other factors. The
+
+196
+00:11:43,942 --> 00:11:46,904
+entire model is shown in the diagram
+below. At
+
+197
+00:11:46,945 --> 00:11:51,187
+this point, the textbook shows figure
+1.47. It depicts
+
+198
+00:11:51,687 --> 00:11:54,649
+a summary of what a compute-centric
+framework says about
+
+199
+00:11:54,688 --> 00:11:58,530
+take-off speeds. At this point, there is
+video 1.3
+
+200
+00:11:58,571 --> 00:12:02,152
+in the textbook. It covers optional video
+explaining the
+
+201
+00:12:02,272 --> 00:12:06,977
+argument behind automating research and
+development. Automating research argument.
+
+202
+00:12:07,578 --> 00:12:10,721
+Researchers could potentially design the
+next generation of ML
+
+203
+00:12:10,761 --> 00:12:13,945
+models more quickly by delegating some
+work to existing
+
+204
+00:12:13,965 --> 00:12:17,688
+models, creating a feedback loop of ever
+accelerating progress.
+
+205
+00:12:18,269 --> 00:12:20,851
+The following argument is put forth by
+Ajaya Kotra.
+
+206
+00:12:21,389 --> 00:12:25,576
+Currently, human researchers collectively
+are responsible for almost all
+
+207
+00:12:25,596 --> 00:12:28,279
+of the progress in AI research, but are
+starting
+
+208
+00:12:28,320 --> 00:12:30,403
+to delegate a small fraction of the work
+to
+
+209
+00:12:30,442 --> 00:12:33,427
+large language models. This makes it
+somewhat easier to
+
+210
+00:12:33,466 --> 00:12:36,807
+design and train the next generation of
+models. There
+
+211
+00:12:37,006 --> 00:12:40,648
+is figure 1.48 in the textbook here. It
+depicts
+
+212
+00:12:40,988 --> 00:12:44,948
+a. This figure shows a representation of a
+self-reinforcing
+
+213
+00:12:45,009 --> 00:12:49,009
+loop in red. It demonstrates how
+internally deployed AI
+
+214
+00:12:49,090 --> 00:12:53,291
+systems are used to help automate AI R&D,
+initially
+
+215
+00:12:53,431 --> 00:12:58,052
+alongside human researchers. These AIR&D
+efforts culminate in a
+
+216
+00:12:58,173 --> 00:13:01,232
+more capable AI system, which can be
+deployed as
+
+217
+00:13:01,293 --> 00:13:05,533
+a new, improved, automated researcher.
+This cycle keeps repeating,
+
+218
+00:13:05,913 --> 00:13:09,674
+resulting in a self-free-enforcing loop.
+The next generation is
+
+219
+00:13:09,835 --> 00:13:12,875
+able to handle harder tasks and more
+different types
+
+220
+00:13:12,934 --> 00:13:16,056
+of tasks, so human researchers delegate
+more of their
+
+221
+00:13:16,096 --> 00:13:19,456
+work to them. This makes it significantly
+easier to
+
+222
+00:13:19,517 --> 00:13:22,697
+train the generation after that. Using
+models gives a
+
+223
+00:13:22,797 --> 00:13:24,738
+much bigger boost than it did the last
+time
+
+224
+00:13:24,778 --> 00:13:27,918
+around. Each round of this process makes
+the whole
+
+225
+00:13:28,038 --> 00:13:31,701
+field move faster and faster. In each
+round, human
+
+226
+00:13:31,760 --> 00:13:35,402
+researchers delegate everything they can
+productively delegate to the
+
+227
+00:13:35,461 --> 00:13:38,604
+current generation of models. And the more
+powerful those
+
+228
+00:13:38,644 --> 00:13:41,664
+models are, the more they contribute to
+research. And
+
+229
+00:13:41,705 --> 00:13:45,986
+thus, the faster AI capabilities can
+improve. So before
+
+230
+00:13:46,047 --> 00:13:49,087
+we see a recursive explosion of
+intelligence, we see
+
+231
+00:13:49,128 --> 00:13:52,469
+a steadily increasing amount of the full
+R&D process
+
+232
+00:13:52,528 --> 00:13:55,951
+being delegated to AI's. At some point,
+instead of
+
+233
+00:13:56,011 --> 00:13:58,754
+a significant majority of the research and
+design being
+
+234
+00:13:58,774 --> 00:14:01,917
+done by AI assistants at superhuman
+speeds, it will
+
+235
+00:14:01,956 --> 00:14:04,620
+become that all of the research and design
+for
+
+236
+00:14:04,700 --> 00:14:07,643
+AI is done by AI assistants at superhuman
+speeds.
+
+237
+00:14:08,363 --> 00:14:10,644
+At this point, there is a possibility that
+this
+
+238
+00:14:10,725 --> 00:14:14,489
+might eventually lead to a full automated
+recursive intelligence
+
+239
+00:14:14,528 --> 00:14:19,510
+explosion. the intelligence explosion
+argument. This concept of the
+
+240
+00:14:19,650 --> 00:14:23,571
+intelligence explosion is also central to
+the conversation around
+
+241
+00:14:23,730 --> 00:14:28,392
+discontinuous takeoff. It originates from
+IJ Good's thesis, which
+
+242
+00:14:28,432 --> 00:14:32,052
+posits that sufficiently advanced machine
+intelligence could build a
+
+243
+00:14:32,153 --> 00:14:35,113
+smarter version of itself. This smarter
+version could in
+
+244
+00:14:35,173 --> 00:14:38,073
+turn build an even smarter version of
+itself, and
+
+245
+00:14:38,134 --> 00:14:40,494
+so on, creating a cycle that could lead to
+
+246
+00:14:40,553 --> 00:14:45,698
+intelligence vastly exceeding human
+capability. In their 2012 report
+
+247
+00:14:45,798 --> 00:14:49,259
+on the evidence for intelligence
+explosions, Mule, Hauser, and
+
+248
+00:14:49,340 --> 00:14:53,101
+Salomon delve into the numerous advantages
+that machine intelligence
+
+249
+00:14:53,142 --> 00:14:57,663
+holds over human intelligence, which
+facilitate rapid intelligence
+augmentation.
+
+250
+00:14:58,264 --> 00:15:03,926
+These include computational resources.
+Human computational ability remains
+somewhat
+
+251
+00:15:03,985 --> 00:15:10,509
+stationary, whereas machine computation
+possesses scalability. Speed, humans
+communicate
+
+252
+00:15:10,568 --> 00:15:12,904
+at a rate of two words per second. while
+
+253
+00:15:12,965 --> 00:15:17,168
+GPT-4 can process 32k words in an instant.
+Once
+
+254
+00:15:17,347 --> 00:15:20,389
+LLMs can write better than humans, their
+speed will
+
+255
+00:15:20,450 --> 00:15:25,933
+most probably surpass us entirely.
+Duplicability. Machines exhibit effortless
+
+256
+00:15:25,974 --> 00:15:29,956
+duplicability. Unlike humans, they do not
+need birth, education,
+
+257
+00:15:30,096 --> 00:15:34,701
+or training. While humans predominantly
+improve individually, machines have
+
+258
+00:15:34,721 --> 00:15:38,202
+the potential to grow collectively. Humans
+take 20 years
+
+259
+00:15:38,243 --> 00:15:40,905
+to become competent from birth, whereas
+once we have
+
+260
+00:15:41,046 --> 00:15:44,789
+one capable AI, we can duplicate it
+immediately. Once
+
+261
+00:15:44,889 --> 00:15:47,332
+AI's reached the level of the best
+programmer, we
+
+262
+00:15:47,373 --> 00:15:50,014
+can just duplicate this AI. The same goes
+for
+
+263
+00:15:50,054 --> 00:15:55,364
+other jobs. Editability. Machines
+potentially allow more regulated
+variations.
+
+264
+00:15:55,964 --> 00:15:59,188
+They exemplify the equivalent of direct
+brain enhancements via
+
+265
+00:15:59,249 --> 00:16:03,494
+neurosurgery in opposition to laborious
+education or training requirements.
+
+266
+00:16:04,174 --> 00:16:06,879
+Humans can also improve and learn new
+skills, but
+
+267
+00:16:06,918 --> 00:16:09,361
+they don't have root access to their
+hardware. We
+
+268
+00:16:09,402 --> 00:16:11,245
+are just starting to be able to understand
+the
+
+269
+00:16:11,264 --> 00:16:14,870
+genome's spaghetti code, while AI could
+use code-versioning tools
+
+270
+00:16:14,910 --> 00:16:17,916
+to improve itself, being able to attempt
+risky experiments
+
+271
+00:16:17,956 --> 00:16:20,681
+with backup options in case of failure.
+This allows
+
+272
+00:16:20,721 --> 00:16:25,168
+for much more controlled variation. Goal
+coordination. Copy AI's
+
+273
+00:16:25,207 --> 00:16:28,192
+possess the capability to share goals
+effortlessly, a feat
+
+274
+00:16:28,232 --> 00:16:29,174
+challenging for humans.
