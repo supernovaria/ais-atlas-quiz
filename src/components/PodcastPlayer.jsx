@@ -93,7 +93,8 @@ export default function PodcastPlayer({ onBack }) {
       // Scroll into view within the transcript container
       const container = transcriptRef.current;
       if (container) {
-        const top = next.offsetTop - container.offsetTop;
+        // next.offsetTop is already relative to container (container has position:relative)
+        const top = next.offsetTop;
         const threshold = container.scrollTop + container.clientHeight * 0.7;
         if (top > threshold || top < container.scrollTop + 20) {
           container.scrollTo({ top: top - container.clientHeight * 0.4, behavior: 'smooth' });
