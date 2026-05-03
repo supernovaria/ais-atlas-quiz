@@ -37,6 +37,8 @@ export default function PodcastPlayer({ onBack }) {
   const wordRefs = useRef([]);
   const activeWordIdxRef = useRef(-1);
   const transcriptRef = useRef(null);
+  // VBR correction: browser currentTime drifts for VBR MP3s; scale by true/reported duration
+  const driftFactorRef = useRef(1);
 
   function handleTranscriptKeyDown(e) {
     if (e.code === 'Space') {
@@ -67,9 +69,19 @@ export default function PodcastPlayer({ onBack }) {
     setWords([]);
     setLoadingWords(true);
     activeWordIdxRef.current = -1;
+    driftFactorRef.current = 1;
     fetch(activeSection.words)
       .then(r => r.json())
-      .then(data => { setWords(data); setLoadingWords(false); })
+      .then(data => {
+        setWords(data);
+        setLoadingWords(false);
+        // Compute VBR correction once audio duration is known
+        const trueDuration = data.length ? data[data.length - 1].e : 0;
+        const reportedDuration = audioRef.current?.duration;
+        if (trueDuration > 0 && reportedDuration > 0 && isFinite(reportedDuration)) {
+          driftFactorRef.current = trueDuration / reportedDuration;
+        }
+      })
       .catch(() => setLoadingWords(false));
   }, [activeSection?.words]);
 
@@ -121,14 +133,14 @@ export default function PodcastPlayer({ onBack }) {
   const handleTimeUpdate = useCallback(() => {
     const t = audioRef.current?.currentTime ?? 0;
     setCurrentTime(t);
-    syncHighlight(t);
+    syncHighlight(t * driftFactorRef.current);
   }, [syncHighlight]);
 
   function handleSeek(e) {
     const t = parseFloat(e.target.value);
     if (audioRef.current) audioRef.current.currentTime = t;
     setCurrentTime(t);
-    syncHighlight(t);
+    syncHighlight(t * driftFactorRef.current);
   }
 
   function togglePlay() {
@@ -158,8 +170,10 @@ export default function PodcastPlayer({ onBack }) {
   function handleWordClick(wordIdx) {
     const w = words[wordIdx];
     if (!w || !audioRef.current) return;
-    audioRef.current.currentTime = w.s;
-    setCurrentTime(w.s);
+    // Convert accurate timestamp back to browser's VBR-skewed time for seeking
+    const seekTime = driftFactorRef.current > 0 ? w.s / driftFactorRef.current : w.s;
+    audioRef.current.currentTime = seekTime;
+    setCurrentTime(seekTime);
     syncHighlight(w.s);
     transcriptRef.current?.focus();
     if (!playing) {
@@ -261,7 +275,15 @@ export default function PodcastPlayer({ onBack }) {
           <audio
             ref={audioRef}
             onTimeUpdate={handleTimeUpdate}
-            onLoadedMetadata={() => setDuration(audioRef.current?.duration ?? 0)}
+            onLoadedMetadata={() => {
+              const d = audioRef.current?.duration ?? 0;
+              setDuration(d);
+              // Recompute drift factor now that duration is known
+              const trueDuration = words.length ? words[words.length - 1].e : 0;
+              if (trueDuration > 0 && d > 0 && isFinite(d)) {
+                driftFactorRef.current = trueDuration / d;
+              }
+            }}
             onEnded={() => setPlaying(false)}
           />
         </div>
