@@ -38,6 +38,23 @@ export default function PodcastPlayer({ onBack }) {
   const activeWordIdxRef = useRef(-1);
   const transcriptRef = useRef(null);
 
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        if (!audioRef.current) return;
+        if (audioRef.current.paused) {
+          audioRef.current.play().then(() => setPlaying(true)).catch(() => {});
+        } else {
+          audioRef.current.pause();
+          setPlaying(false);
+        }
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
   // Load manifest
   useEffect(() => {
     fetch('/audio/manifest.json')
