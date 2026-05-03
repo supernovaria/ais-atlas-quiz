@@ -38,22 +38,18 @@ export default function PodcastPlayer({ onBack }) {
   const activeWordIdxRef = useRef(-1);
   const transcriptRef = useRef(null);
 
-  useEffect(() => {
-    function onKeyDown(e) {
-      if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        e.preventDefault();
-        if (!audioRef.current) return;
-        if (audioRef.current.paused) {
-          audioRef.current.play().then(() => setPlaying(true)).catch(() => {});
-        } else {
-          audioRef.current.pause();
-          setPlaying(false);
-        }
+  function handleTranscriptKeyDown(e) {
+    if (e.code === 'Space') {
+      e.preventDefault();
+      if (!audioRef.current) return;
+      if (audioRef.current.paused) {
+        audioRef.current.play().then(() => setPlaying(true)).catch(() => {});
+      } else {
+        audioRef.current.pause();
+        setPlaying(false);
       }
     }
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, []);
+  }
 
   // Load manifest
   useEffect(() => {
@@ -164,6 +160,7 @@ export default function PodcastPlayer({ onBack }) {
     audioRef.current.currentTime = w.s;
     setCurrentTime(w.s);
     syncHighlight(w.s);
+    transcriptRef.current?.focus();
     if (!playing) {
       audioRef.current.play().then(() => setPlaying(true)).catch(() => {});
     }
@@ -270,7 +267,7 @@ export default function PodcastPlayer({ onBack }) {
       )}
 
       {/* Transcript */}
-      <div className="podcast-transcript" ref={transcriptRef}>
+      <div className="podcast-transcript" ref={transcriptRef} tabIndex={0} onKeyDown={handleTranscriptKeyDown}>
         {loadingWords && <div className="podcast-transcript-loading">Loading transcript...</div>}
         {!loadingWords && words.length === 0 && (
           <div className="podcast-transcript-empty">No transcript available.</div>

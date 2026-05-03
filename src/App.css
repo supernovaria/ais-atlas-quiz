@@ -1459,8 +1459,8 @@
 }
 
 .word-active {
-  background: var(--color-primary);
-  color: white;
+  background: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  color: inherit;
   border-radius: 3px;
   padding: 0.05em 0.1em;
 }
