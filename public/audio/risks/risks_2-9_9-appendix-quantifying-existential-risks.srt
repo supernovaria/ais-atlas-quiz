@@ -1,0 +1,254 @@
+1
+00:00:00,351 --> 00:00:07,956
+Section 2.9 Appendix Quantifying
+existential risks P of doom
+
+2
+00:00:08,436 --> 00:00:14,201
+represents the subjective probability that
+artificial intelligence will cause
+
+3
+00:00:14,502 --> 00:00:20,666
+existentially catastrophic outcomes for
+humanity. The term has evolved
+
+4
+00:00:20,786 --> 00:00:26,106
+into a serious metric used by researchers,
+policymakers, and
+
+5
+00:00:26,327 --> 00:00:31,768
+industry leaders to express their
+assessment of AI existential
+
+6
+00:00:31,888 --> 00:00:38,110
+risk. The exact scenarios encompassed by
+doom vary, but
+
+7
+00:00:38,231 --> 00:00:44,593
+generally include human extinction,
+permanent disempowerment of humanity, or
+
+8
+00:00:44,773 --> 00:00:50,957
+civilizational collapse. There is Figure
+2.41 in the textbook
+
+9
+00:00:50,996 --> 00:00:56,020
+here. It depicts illustration describing
+Paul Cristiano's view of
+
+10
+00:00:56,060 --> 00:01:00,363
+the future. Paul Cristiano is an AI Safety
+researcher
+
+11
+00:01:00,804 --> 00:01:04,867
+and current head of the USAI Safety
+Institute. He
+
+12
+00:01:04,906 --> 00:01:08,810
+previously ran the Alignment Research
+Center and the Language
+
+13
+00:01:08,950 --> 00:01:14,881
+Model Alignment Team at OpenAI.
+Quantifying existential risk faces
+
+14
+00:01:15,061 --> 00:01:19,141
+fundamental challenges due to the
+unprecedented nature of the
+
+15
+00:01:19,182 --> 00:01:22,581
+threat. Unlike other risk assessments that
+can draw on
+
+16
+00:01:22,621 --> 00:01:28,203
+historical data or empirical evidence, AI
+existential risk estimates
+
+17
+00:01:28,463 --> 00:01:33,864
+rely heavily on theoretical arguments,
+expert judgment, and reasoning
+
+18
+00:01:34,004 --> 00:01:37,986
+about future scenarios that have never
+occurred. There is
+
+19
+00:01:38,105 --> 00:01:44,028
+no standardized methodology for
+calculating p.dume. Each estimate reflects
+
+20
+00:01:44,088 --> 00:01:49,450
+the individual's subjective assessment of
+factors like AI development
+
+21
+00:01:49,490 --> 00:01:55,612
+timelines, alignment difficulty,
+governance capabilities, and potential
+failure modes.
+
+22
+00:01:56,137 --> 00:02:01,403
+The textbook includes figure 2.42 here. It
+depicts bar
+
+23
+00:02:01,483 --> 00:02:06,069
+chart from a survey of desired AGI
+timelines. Participants
+
+24
+00:02:06,109 --> 00:02:09,814
+were asked which best describes your
+position on when
+
+25
+00:02:09,875 --> 00:02:13,438
+we should build AGI. The participants had
+the following
+
+26
+00:02:13,538 --> 00:02:18,300
+options. We should never build AGI,
+eventually but not
+
+27
+00:02:18,420 --> 00:02:22,723
+soon, soon but not as fast as possible. We
+
+28
+00:02:22,763 --> 00:02:26,164
+should develop more powerful and more
+general systems as
+
+29
+00:02:26,264 --> 00:02:30,268
+fast as possible. participants were split
+by their career.
+
+30
+00:02:30,949 --> 00:02:35,674
+Expert estimates vary dramatically,
+spanning nearly the entire probability
+
+31
+00:02:35,735 --> 00:02:40,479
+range. A 2023 survey found AI researchers
+estimate a
+
+32
+00:02:40,599 --> 00:02:47,026
+mean 14.4% extinction risk within 100
+years, but individual
+
+33
+00:02:47,146 --> 00:02:50,670
+estimates range from Homan Jan Polski,
+damping to a
+
+34
+00:02:50,711 --> 00:02:56,375
+given percent. Eliezer Yudkovsky, 95
+percent. Dan Hendricks, 18
+
+35
+00:02:56,414 --> 00:03:01,979
+percent. Paul Cristiano, 46 percent.
+Holden Kanovsky, 50 percent.
+
+36
+00:03:02,280 --> 00:03:06,323
+Yoshua Benjio, 20 percent. Jeffrey Hinton,
+10 to 20
+
+37
+00:03:06,362 --> 00:03:11,387
+percent. Dario Amade, 10 to 25 percent.
+Elon Musk,
+
+38
+00:03:11,687 --> 00:03:16,330
+10 to 30 percent. Vitalik Buterin, 10. Jan
+LeCoon,
+
+39
+00:03:16,610 --> 00:03:21,712
+0.01 percent. The wide variation in
+estimates highlights several
+
+40
+00:03:21,812 --> 00:03:27,355
+important limitations. First, many experts
+don't specify timeframes, making
+
+41
+00:03:27,395 --> 00:03:32,617
+comparisons difficult. Second, the
+definition of doom varies between
+
+42
+00:03:32,877 --> 00:03:39,600
+existential catastrophe, human extinction,
+or permanent disempowerment. Third,
+estimates
+
+43
+00:03:39,700 --> 00:03:43,403
+are highly sensitive to assumptions about
+AI development trajectories,
+
+44
+00:03:43,824 --> 00:03:48,747
+alignment difficulty, and institutional
+responses. While we cannot access
+
+45
+00:03:48,848 --> 00:03:53,632
+any objective probability of AI doom, even
+subjective expert
+
+46
+00:03:53,752 --> 00:03:58,135
+estimates serve as important inputs for
+prioritization and policy
+
+47
+00:03:58,175 --> 00:04:03,167
+decisions. The substantial probability
+mass that knowledgeable experts place
+
+48
+00:04:03,306 --> 00:04:07,016
+on catastrophic risks, including those who
+developed the AI
+
+49
+00:04:07,116 --> 00:04:11,387
+systems creating these risks, suggests the
+risk scenarios described
+
+50
+00:04:11,407 --> 00:04:15,437
+in this chapter deserve serious attention
+rather than dismissal
+
+51
+00:04:15,557 --> 00:04:16,439
+as science fiction.

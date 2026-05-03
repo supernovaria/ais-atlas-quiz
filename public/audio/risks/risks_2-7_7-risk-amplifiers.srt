@@ -1,0 +1,1581 @@
+1
+00:00:00,371 --> 00:00:06,435
+Section 2.7 Risk Amplifiers AI risks don't
+exist in
+
+2
+00:00:06,516 --> 00:00:11,038
+isolation. They're amplified by the
+competitive and coordination dynamics
+
+3
+00:00:11,198 --> 00:00:15,983
+surrounding AI development. While
+individual AI systems might pose
+
+4
+00:00:16,062 --> 00:00:19,885
+manageable risks, the broader ecosystem of
+how these systems
+
+5
+00:00:19,946 --> 00:00:24,528
+are developed, deployed, and governed
+creates systemic pressures that
+
+6
+00:00:24,568 --> 00:00:28,812
+can dramatically increase the likelihood
+and severity of harmful
+
+7
+00:00:28,911 --> 00:00:34,314
+outcomes. These amplifying factors operate
+independently of any specific
+
+8
+00:00:34,454 --> 00:00:38,695
+AI capability or failure mode, making them
+particularly important
+
+9
+00:00:38,734 --> 00:00:45,637
+to understand and address. Race Dynamics.
+Competitive pressures systematically
+
+10
+00:00:45,777 --> 00:00:51,658
+undermine safety investments when speed
+provides decisive advantages. AI
+
+11
+00:00:51,700 --> 00:00:57,585
+development increasingly resembles what
+economists call a winner-take-all contest,
+
+12
+00:00:57,945 --> 00:01:02,790
+where the first to achieve key
+capabilities captures disproportionate
+
+13
+00:01:02,831 --> 00:01:07,394
+rewards. These rewards include first mover
+advantages in capturing
+
+14
+00:01:07,435 --> 00:01:10,879
+market share, access to the best talent
+and data,
+
+15
+00:01:11,319 --> 00:01:15,061
+and the ability to set industry standards.
+The result
+
+16
+00:01:15,221 --> 00:01:19,325
+is a race dynamic where competitors face
+intense pressure
+
+17
+00:01:19,665 --> 00:01:24,346
+to prioritize development speed over
+careful safety testing and
+
+18
+00:01:24,528 --> 00:01:29,549
+risk mitigation. Unlike previous
+technological revolutions that unfolded
+over
+
+19
+00:01:29,730 --> 00:01:35,393
+decades, AI capabilities are dancing at
+unprecedented speed. As
+
+20
+00:01:35,593 --> 00:01:39,376
+one analysis noted, AI is emerging not in
+terms
+
+21
+00:01:39,436 --> 00:01:43,138
+of centuries or decades, but in years and
+months.
+
+22
+00:01:43,918 --> 00:01:49,040
+This compressed timeline intensifies
+competitive pressures and reduces the
+
+23
+00:01:49,079 --> 00:01:52,341
+time available for careful safety work
+that might take
+
+24
+00:01:52,441 --> 00:01:56,343
+years to pay off. Race to the bottom
+dynamics
+
+25
+00:01:56,543 --> 00:02:01,125
+emerge when safety becomes a competitive
+disadvantage. Think about
+
+26
+00:02:01,185 --> 00:02:04,466
+what happens when one company decides to
+reduce safety
+
+27
+00:02:04,527 --> 00:02:09,169
+testing to accelerate deployment. This
+increases their expected market
+
+28
+00:02:09,209 --> 00:02:14,472
+position while decreasing competitors'
+expected positions. Other companies then
+
+29
+00:02:14,572 --> 00:02:18,294
+face pressure to match this reduced safety
+investment to
+
+30
+00:02:18,354 --> 00:02:22,175
+maintain their competitive standing. The
+result is a collective
+
+31
+00:02:22,336 --> 00:02:25,758
+action problem where all companies end up
+investing less
+
+32
+00:02:25,877 --> 00:02:29,240
+in safety than they would prefer while
+maintaining similar
+
+33
+00:02:29,340 --> 00:02:32,640
+relative positions in the race. We might
+see models
+
+34
+00:02:32,700 --> 00:02:36,983
+being released despite known
+vulnerabilities justified by the need
+
+35
+00:02:37,022 --> 00:02:41,903
+to maintain market position. When
+competitors announce breakthrough
+capabilities,
+
+36
+00:02:42,343 --> 00:02:45,224
+others face pressure to respond quickly
+with their own
+
+37
+00:02:45,264 --> 00:02:50,247
+releases, often cutting short planned
+safety evaluations. The quarterly
+
+38
+00:02:50,306 --> 00:02:53,848
+pressure on public companies to
+demonstrate progress to investors
+
+39
+00:02:54,229 --> 00:02:57,330
+leaves little room for the extended safety
+work that
+
+40
+00:02:57,370 --> 00:03:01,012
+might take months or years to complete
+properly. As
+
+41
+00:03:01,051 --> 00:03:04,894
+a concrete example, healthy market
+competition has been unable
+
+42
+00:03:04,954 --> 00:03:08,536
+to prevent the mass spread of
+recommendation algorithms and
+
+43
+00:03:08,575 --> 00:03:13,298
+addictive content, which is undermining
+social cohesion and individual
+
+44
+00:03:13,359 --> 00:03:17,242
+welfare. The same thing can potentially
+happen to AGI
+
+45
+00:03:17,282 --> 00:03:20,487
+development if we rely on free market
+mechanisms for
+
+46
+00:03:20,548 --> 00:03:24,849
+safety assurance. The textbook has a
+supplementary note titled,
+
+47
+00:03:25,330 --> 00:03:28,312
+Why Don't Other Industries Race to the
+Bottom on
+
+48
+00:03:28,372 --> 00:03:32,917
+Safety? Which we'll skip over here. Racing
+amplifies all
+
+49
+00:03:32,997 --> 00:03:37,259
+three risk categories through different
+pathways. For misuse risks,
+
+50
+00:03:37,681 --> 00:03:41,743
+racing increases the likelihood that
+powerful capabilities reach bad
+
+51
+00:03:41,924 --> 00:03:45,887
+actors before adequate security measures
+are implemented. As seen
+
+52
+00:03:45,907 --> 00:03:49,888
+when language models capable of generating
+misinformation and malware
+
+53
+00:03:50,247 --> 00:03:56,288
+became widely available in 2022-2023
+before robust countermeasures existed,
+
+54
+00:03:56,989 --> 00:04:01,710
+for misalignment risks, racing reduces
+time available for alignment
+
+55
+00:04:01,770 --> 00:04:06,311
+research and safety testing, increasing
+chances that specification gaming
+
+56
+00:04:06,631 --> 00:04:11,973
+or scheming AI's reached deployment. For
+systemic risks, racing
+
+57
+00:04:12,032 --> 00:04:16,834
+accelerates AI embedding in critical
+infrastructure before society can
+
+58
+00:04:16,874 --> 00:04:20,894
+adapt. The rapid adoption of algorithmic
+trading and financial
+
+59
+00:04:20,935 --> 00:04:25,156
+markets is one example. Competitive
+advantages from speed led
+
+60
+00:04:25,216 --> 00:04:29,357
+to widespread deployment before adequate
+circuit breakers were implemented,
+
+61
+00:04:29,737 --> 00:04:33,759
+contributing to flash crashes. At this
+point, there is
+
+62
+00:04:33,899 --> 00:04:39,000
+interactive figure 2.5 in the textbook,
+available in the
+
+63
+00:04:39,199 --> 00:04:44,021
+online version. It shows race dynamics
+lead to it
+
+64
+00:04:44,101 --> 00:04:49,004
+being difficult to collaborate and work
+together on mitigating
+
+65
+00:04:49,084 --> 00:04:54,446
+the risks from AI. The forecast shows how
+unlikely
+
+66
+00:04:54,466 --> 00:04:58,166
+it is that the USA and China would be
+
+67
+00:04:58,307 --> 00:05:06,725
+willing to cooperate. Section Accidents!
+Well-intentioned development can produce
+
+68
+00:05:06,906 --> 00:05:13,250
+catastrophic outcomes through
+unintentional failures and human error.
+Systems
+
+69
+00:05:13,410 --> 00:05:17,752
+fail in ways their designers never
+anticipated, often despite
+
+70
+00:05:17,853 --> 00:05:22,437
+careful planning and good intentions. In
+the Challenger spacecraft
+
+71
+00:05:22,476 --> 00:05:27,300
+disaster, engineers intended a routine
+launch, but a missing
+
+72
+00:05:27,620 --> 00:05:32,726
+O-ring seal caused an explosion and seven
+deaths. In
+
+73
+00:05:32,766 --> 00:05:37,430
+the Mariner One mission, scientists
+intended to explore Venus,
+
+74
+00:05:37,889 --> 00:05:41,512
+but a missing hyphen in guidance code led
+to
+
+75
+00:05:41,572 --> 00:05:47,295
+the destruction of the USD $80 million
+spacecraft. The
+
+76
+00:05:47,454 --> 00:05:52,338
+use of chlorofluorocarbons or CFCs were
+intended to create
+
+77
+00:05:52,458 --> 00:05:57,401
+fire extinguishers and refrigerants, but
+unknowingly created a hole
+
+78
+00:05:57,521 --> 00:06:00,742
+in the ozone layer that threatened all
+life on
+
+79
+00:06:00,862 --> 00:06:06,189
+Earth. No matter how advanced technology
+becomes, the fundamental
+
+80
+00:06:06,249 --> 00:06:12,141
+necessity of precision and thorough
+validation remains unchanged. There
+
+81
+00:06:12,300 --> 00:06:16,824
+is Figure 2.35 in the textbook here. It
+depicts
+
+82
+00:06:16,985 --> 00:06:22,490
+the AI Safety Index Report for Summer
+2025. The
+
+83
+00:06:22,569 --> 00:06:27,052
+scores show the rigor and
+comprehensiveness of companies' risk
+
+84
+00:06:27,173 --> 00:06:32,757
+identification and assessment processes
+for their current flagship models.
+
+85
+00:06:33,418 --> 00:06:38,322
+The focus is on implemented assessments,
+not stated commitments.
+
+86
+00:06:39,166 --> 00:06:43,108
+Accidents occur when AI systems cause harm
+through unintentional
+
+87
+00:06:43,189 --> 00:06:47,690
+failures, despite developers having good
+intentions and following reasonable
+
+88
+00:06:47,771 --> 00:06:53,072
+safety practices. Unlike misuse, where
+humans deliberately cause harm,
+
+89
+00:06:53,533 --> 00:06:57,995
+or misalignment, or AI systems knowingly
+act against developer
+
+90
+00:06:58,035 --> 00:07:02,656
+intent, accidents happen when humans or AI
+decisions lead
+
+91
+00:07:02,697 --> 00:07:07,478
+to harm without realizing the
+consequences. This includes failures
+
+92
+00:07:07,557 --> 00:07:12,920
+from insufficient capabilities, missing
+information, coding errors, or inadequate
+
+93
+00:07:12,959 --> 00:07:16,901
+testing. Just like the Mariner 1
+spacecraft crashing due
+
+94
+00:07:16,940 --> 00:07:20,403
+to a single missing hyphen, in AI we can
+
+95
+00:07:20,442 --> 00:07:24,064
+see potential accidents due to a single
+misplaced character.
+
+96
+00:07:24,863 --> 00:07:29,925
+During GPT-2 training, open AI
+accidentally inverted the sign
+
+97
+00:07:30,045 --> 00:07:33,026
+on the reward function, changing a plus to
+a
+
+98
+00:07:33,067 --> 00:07:37,288
+minus. Instead of producing gibberish,
+this created a model
+
+99
+00:07:37,329 --> 00:07:42,250
+that optimized for maximally offensive
+content while maintaining natural
+
+100
+00:07:42,290 --> 00:07:46,572
+language fluency. As the researchers
+noted, this bug was
+
+101
+00:07:46,653 --> 00:07:50,694
+remarkable since the result was not
+gibberish, but maximally
+
+102
+00:07:50,853 --> 00:07:54,177
+bad output. The authors were asleep during
+the training
+
+103
+00:07:54,216 --> 00:07:57,358
+process, so the problem was noticed only
+once training
+
+104
+00:07:57,399 --> 00:08:01,423
+had finished. Move fast and break things,
+development culture,
+
+105
+00:08:01,562 --> 00:08:05,747
+conflicts fundamentally with the
+methodical testing required for accident
+
+106
+00:08:05,786 --> 00:08:11,591
+prevention. Aviation, pharmaceuticals, and
+nuclear engineering require extensive
+testing,
+
+107
+00:08:11,971 --> 00:08:16,937
+precisely because failures have severe and
+irreversible consequences. AI
+
+108
+00:08:16,997 --> 00:08:22,500
+systems increasingly control critical
+infrastructure, financial markets, and
+life-affecting
+
+109
+00:08:22,560 --> 00:08:26,923
+decisions, where traditional software
+assumptions no longer apply. Yet,
+
+110
+00:08:27,064 --> 00:08:30,406
+instead of adopting safety norms from high
+stakes industries,
+
+111
+00:08:30,927 --> 00:08:34,210
+AI development often follows the move fast
+and break
+
+112
+00:08:34,250 --> 00:08:38,493
+things mentality, common in consumer
+software, where failures create
+
+113
+00:08:38,613 --> 00:08:43,999
+inconvenience rather than catastrophe.
+Preventing accidents requires us to
+
+114
+00:08:44,039 --> 00:08:48,447
+be able to handle unknown unknowns that
+might occur
+
+115
+00:08:48,668 --> 00:08:54,208
+after deployment. Standard safety
+engineering practices like defense in-
+depth,
+
+116
+00:08:54,749 --> 00:09:01,269
+staged deployment, capability
+verification, and safety testing should
+significantly
+
+117
+00:09:01,389 --> 00:09:06,971
+reduce accident risks when properly
+implemented. However, this requires
+
+118
+00:09:07,312 --> 00:09:12,212
+rigorous application and enforcement
+through both industry standards and
+
+119
+00:09:12,352 --> 00:09:16,994
+regulation. The textbook has a
+supplementary note titled The
+
+120
+00:09:17,053 --> 00:09:22,998
+Colondridge Dilemma, which we'll skip over
+here. Section indifference.
+
+121
+00:09:23,958 --> 00:09:28,260
+Companies sometimes proceed with harmful
+products despite knowing the
+
+122
+00:09:28,341 --> 00:09:33,303
+risks prioritizing profits over public
+safety. This pattern repeats
+
+123
+00:09:33,404 --> 00:09:37,346
+across industries when organizations
+discover their products cause harm
+
+124
+00:09:37,706 --> 00:09:42,610
+but calculate that continued sales
+outweigh potential costs. Tobago
+
+125
+00:09:42,669 --> 00:09:46,711
+companies intended to create enjoyable
+products, learned they caused
+
+126
+00:09:46,751 --> 00:09:50,734
+cancer through internal research, but
+continued marketing cigarettes and
+
+127
+00:09:50,854 --> 00:09:55,076
+funded denial campaigns for decades,
+causing millions of deaths.
+
+128
+00:09:55,876 --> 00:09:59,778
+Ford intended to create affordable cars,
+discovered the Pinto's
+
+129
+00:09:59,859 --> 00:10:03,541
+fuel tank would explode in rear end
+collisions, calculated
+
+130
+00:10:03,581 --> 00:10:07,022
+that lawsuits would cost less than
+recalls, and proceeded
+
+131
+00:10:07,081 --> 00:10:12,206
+with production, leading to preventable
+deaths. Pharmaceutical companies intended
+
+132
+00:10:12,245 --> 00:10:16,129
+to treat pain, learned about oxycontin's
+addiction risks through
+
+133
+00:10:16,190 --> 00:10:20,955
+clinical trials, but continued aggressive
+marketing campaigns that fueled
+
+134
+00:10:21,054 --> 00:10:24,818
+the opioid epidemic. Each case followed
+the same pattern,
+
+135
+00:10:25,379 --> 00:10:29,663
+good initial intentions, clear knowledge
+of harm, and deliberate
+
+136
+00:10:29,683 --> 00:10:34,585
+decisions to proceed anyway. Competitive
+pressures might cause AI
+
+137
+00:10:34,644 --> 00:10:39,087
+developers to discover safety risks but
+release systems anyway.
+
+138
+00:10:39,827 --> 00:10:43,931
+Unlike accidents where harm occurs despite
+good intentions or
+
+139
+00:10:44,030 --> 00:10:49,075
+misuse where bad actors deliberately cause
+harm, indifference happens
+
+140
+00:10:49,115 --> 00:10:53,317
+when companies knowingly accept risks to
+maintain market position
+
+141
+00:10:53,738 --> 00:10:58,721
+or revenue streams. Meta's internal
+research revealed that Instagram
+
+142
+00:10:59,042 --> 00:11:03,264
+caused significant harm to teenage users'
+mental health, yet
+
+143
+00:11:03,325 --> 00:11:06,947
+the company continued to design features
+known to be
+
+144
+00:11:06,986 --> 00:11:11,690
+addictive while publicly denying the
+evidence. as one lawsuit
+
+145
+00:11:11,750 --> 00:11:16,432
+alleges, they purposefully designed their
+applications to addict young
+
+146
+00:11:16,591 --> 00:11:21,092
+users and actively and repeatedly
+deceiving the public about
+
+147
+00:11:21,133 --> 00:11:24,193
+the danger posed to young people by
+overuse of
+
+148
+00:11:24,254 --> 00:11:29,015
+their products. This demonstrates how
+companies can prioritize engagement
+
+149
+00:11:29,056 --> 00:11:34,057
+metrics over user well-being even when
+internal research clearly
+
+150
+00:11:34,138 --> 00:11:39,240
+documents harm. Both safety and capability
+washing can replace
+
+151
+00:11:39,421 --> 00:11:43,864
+genuine safety investment. Just as
+companies engage in green
+
+152
+00:11:43,923 --> 00:11:49,087
+washing by emphasizing minor environmental
+initiatives while avoiding substantial
+
+153
+00:11:49,148 --> 00:11:52,291
+changes, we might also start seeing more
+instances of
+
+154
+00:11:52,490 --> 00:11:56,693
+safety washing. This could include things
+like publicizing safety
+
+155
+00:11:56,734 --> 00:12:00,897
+commitments while cutting corners on
+testing, skipping external red
+
+156
+00:12:00,937 --> 00:12:05,421
+teaming, and rationalizing away warning
+signs. This creates an
+
+157
+00:12:05,441 --> 00:12:10,144
+appearance of safety consciousness that
+masks inadequate actual safety
+
+158
+00:12:10,183 --> 00:12:15,187
+investment. Safety and ethics commitments
+become marketing tools rather
+
+159
+00:12:15,227 --> 00:12:20,212
+than operational constraints, allowing
+companies to claim responsibility while
+
+160
+00:12:20,273 --> 00:12:26,157
+maintaining competitive advantages through
+faster development cycles. Preventing
+indifference
+
+161
+00:12:26,336 --> 00:12:31,559
+requires external accountability
+mechanisms that make safety violations
+costly.
+
+162
+00:12:32,400 --> 00:12:36,802
+Corporate indifference persists when
+companies can externalize the costs
+
+163
+00:12:36,863 --> 00:12:41,025
+of their decisions onto society while
+capturing the benefits
+
+164
+00:12:41,346 --> 00:12:48,010
+internally. Industries with strong safety
+records, aviation, pharmaceuticals,
+nuclear
+
+165
+00:12:48,071 --> 00:12:53,676
+power have developed robust liability
+frameworks, regulatory oversight, and
+
+166
+00:12:53,755 --> 00:12:58,519
+professional standards that make safety
+failures extremely expensive for
+
+167
+00:12:58,559 --> 00:13:03,724
+companies. AI development currently lacks
+these mechanisms, creating an
+
+168
+00:13:03,803 --> 00:13:09,227
+environment where indifference can
+flourish unchecked. Without external
+pressure
+
+169
+00:13:09,347 --> 00:13:14,730
+through regulation, liability and market
+consequences, companies will continue
+
+170
+00:13:14,791 --> 00:13:19,393
+to have incentives to prioritize short-
+term competitive advantages over
+
+171
+00:13:19,493 --> 00:13:25,773
+long-term safety considerations.
+collective action problems. To quote Max
+
+172
+00:13:25,852 --> 00:13:29,376
+Tegmark, since we have such a long history
+of
+
+173
+00:13:29,456 --> 00:13:31,778
+thinking about this threat and what to do
+about
+
+174
+00:13:31,839 --> 00:13:36,864
+it, from scientific conferences to
+Hollywood blockbusters, you might
+
+175
+00:13:36,964 --> 00:13:39,886
+expect that humanity would shift into high
+gear with
+
+176
+00:13:39,947 --> 00:13:42,808
+a mission to steer AI in a safer direction
+
+177
+00:13:43,190 --> 00:13:48,355
+than out of control superintelligence.
+Think again, collective action
+
+178
+00:13:48,394 --> 00:13:51,996
+problems prevent the implementation of
+safety measures that would
+
+179
+00:13:52,097 --> 00:13:56,840
+benefit everyone. Even when all
+stakeholders agree that certain
+
+180
+00:13:56,940 --> 00:14:01,582
+safety measures would be beneficial,
+structural barriers prevent their
+
+181
+00:14:01,643 --> 00:14:06,765
+implementation. Individual actors face
+incentives to free ride on
+
+182
+00:14:06,905 --> 00:14:11,609
+other safety investments or cannot
+credibly commit to cooperative
+
+183
+00:14:11,649 --> 00:14:17,610
+agreements. Unlike race dynamics where
+competitive pressures directly undermine
+
+184
+00:14:17,671 --> 00:14:23,432
+safety, collective action problems
+represent failures of cooperation that
+
+185
+00:14:23,552 --> 00:14:28,315
+often arise as a consequence of
+competitive pressures. Political
+
+186
+00:14:28,434 --> 00:14:34,937
+instability disrupts long-term cooperation
+frameworks. AI safety cooperation requires
+
+187
+00:14:35,038 --> 00:14:40,360
+sustained commitment over years or
+decades, but political systems
+
+188
+00:14:40,541 --> 00:14:44,903
+operate on much shorter time scales.
+Elections and political
+
+189
+00:14:44,964 --> 00:14:51,028
+transitions frequently disrupt safety-
+focused policies as new leaders prioritize
+
+190
+00:14:51,087 --> 00:14:56,032
+competitiveness over cooperation. One
+concrete example of this is
+
+191
+00:14:56,131 --> 00:15:01,335
+President Trump's rescission of Biden's AI
+executive order. The
+
+192
+00:15:01,495 --> 00:15:05,898
+2023 order required companies building
+powerful AI models to
+
+193
+00:15:06,018 --> 00:15:09,960
+share safety details with the government,
+but this oversight
+
+194
+00:15:10,220 --> 00:15:16,562
+disappeared due to political transition.
+Instability undermines both international
+
+195
+00:15:16,623 --> 00:15:22,366
+agreements and domestic safety frameworks.
+When one administration negotiates
+
+196
+00:15:22,447 --> 00:15:27,552
+safety standards, and the next abandons
+them, long-term cooperation
+
+197
+00:15:27,711 --> 00:15:33,017
+on global problems becomes nearly
+impossible. The textbook includes
+
+198
+00:15:33,096 --> 00:15:38,201
+Figure 2.36 here. It depicts the AI Safety
+Index
+
+199
+00:15:38,241 --> 00:15:42,426
+Report for summer 2025. These scores are
+for the
+
+200
+00:15:42,605 --> 00:15:47,187
+information sharing category. They show
+how openly firms share
+
+201
+00:15:47,248 --> 00:15:52,809
+information about products, risks, and
+risk management practices. Indicators
+
+202
+00:15:52,909 --> 00:15:59,413
+cover voluntary cooperation, transparency
+on technical specifications, and risk-
+slash
+
+203
+00:15:59,572 --> 00:16:05,499
+incident communication. Free writer
+incentives undermine collective safety
+investment.
+
+204
+00:16:06,158 --> 00:16:09,522
+Each actor benefits when others invest in
+safety measures,
+
+205
+00:16:09,861 --> 00:16:13,764
+but prefers that others bear the costs. A
+company
+
+206
+00:16:13,845 --> 00:16:18,788
+benefits when competitors develop better
+security practices, reducing overall
+
+207
+00:16:18,947 --> 00:16:23,191
+ecosystem vulnerabilities, but would
+rather avoid the expense of
+
+208
+00:16:23,390 --> 00:16:28,153
+implementing such measures themselves.
+countries benefit when other nations
+
+209
+00:16:28,254 --> 00:16:32,576
+restrict dangerous AI capabilities but
+prefer to maintain their
+
+210
+00:16:32,855 --> 00:16:38,379
+own development advantages. This creates
+systematic, under-investment and safety
+
+211
+00:16:38,739 --> 00:16:41,980
+relative to what would be socially
+optimal, even when
+
+212
+00:16:42,140 --> 00:16:47,082
+all parties recognize the collective
+benefits. commitment and enforcement
+
+213
+00:16:47,123 --> 00:16:51,486
+problems prevent credible cooperation.
+Even when a company does
+
+214
+00:16:51,606 --> 00:16:55,369
+want to cooperate or develop safe AGI,
+they cannot
+
+215
+00:16:55,549 --> 00:17:00,854
+credibly promise to maintain safety
+standards without external enforcement
+
+216
+00:17:00,894 --> 00:17:06,218
+mechanisms. Companies may genuinely intend
+to prioritize safety, but
+
+217
+00:17:06,298 --> 00:17:10,059
+face shareholder pressure to cut corners
+when competitors gain
+
+218
+00:17:10,099 --> 00:17:13,222
+advantages due to the race dynamics we
+talked about
+
+219
+00:17:13,303 --> 00:17:17,287
+in a previous section. Countries may sign
+safety agreements
+
+220
+00:17:17,607 --> 00:17:22,074
+while secretly continuing development
+through classified programs or private
+
+221
+00:17:22,115 --> 00:17:27,281
+companies. Without reliable enforcement,
+agreements become empty talk that
+
+222
+00:17:27,342 --> 00:17:32,948
+collapses under competitive pressure.
+Coordination failures amplify risks by
+
+223
+00:17:33,028 --> 00:17:38,971
+preventing collective safeguards. Many AI
+risks require coordinated responses
+
+224
+00:17:39,070 --> 00:17:45,914
+that individual actors cannot implement
+unilaterally. Preventing AI-enabled
+cyberattacks
+
+225
+00:17:46,234 --> 00:17:52,258
+requires international cooperation on
+cybersecurity norms and enforcement.
+Addressing
+
+226
+00:17:52,337 --> 00:17:57,320
+systemic risks from AI deployment requires
+coordination among companies,
+
+227
+00:17:57,800 --> 00:18:03,483
+regulators, and international bodies to
+develop oversight mechanisms. When
+
+228
+00:18:03,544 --> 00:18:09,106
+coordination fails, individual actors
+cannot implement adequate safeguards
+alone.
+
+229
+00:18:09,906 --> 00:18:14,150
+One company's strong security measures
+provide limited protection if
+
+230
+00:18:14,190 --> 00:18:18,471
+competitors deploy vulnerable systems that
+bad actors can exploit.
+
+231
+00:18:19,192 --> 00:18:23,057
+The textbook has a supplementary note
+titled, learning from
+
+232
+00:18:23,137 --> 00:18:26,843
+coordination in other domains, which we'll
+skip over here.
+
+233
+00:18:27,663 --> 00:18:34,488
+Unpredictability. AI capabilities have
+consistently surprised experts for over
+
+234
+00:18:34,607 --> 00:18:38,710
+a decade. This is creating a persistent
+pattern where
+
+235
+00:18:38,809 --> 00:18:44,134
+researchers underestimate how quickly
+breakthroughs will emerge. This pattern
+
+236
+00:18:44,354 --> 00:18:49,977
+reinforces how difficult forecasting AI
+capabilities and risks truly
+
+237
+00:18:50,136 --> 00:18:55,039
+is, amplifying every category of AI risk
+by undermining
+
+238
+00:18:55,099 --> 00:19:01,707
+preparation timelines and institutional
+planning. In 2021, experts dramatically
+
+239
+00:19:01,826 --> 00:19:06,990
+underestimated progress on challenging
+benchmarks like math and MMLU.
+
+240
+00:19:07,672 --> 00:19:13,415
+In mid-2021, ML professor Jacob Steinhart
+ran a forecasting
+
+241
+00:19:13,455 --> 00:19:17,999
+contest with professional super
+forecasters to predict progress on
+
+242
+00:19:18,138 --> 00:19:21,740
+two challenging benchmarks. For math, a
+data set of
+
+243
+00:19:21,820 --> 00:19:25,982
+competition math problems, forecasters
+predicted the best model would
+
+244
+00:19:26,042 --> 00:19:31,826
+reach 12.7% accuracy by June 2022, with
+many considering
+
+245
+00:19:31,945 --> 00:19:37,028
+anything above 20% extremely unlikely. The
+actual result was
+
+246
+00:19:37,828 --> 00:19:41,530
+50.3% lending in the far tail of their
+predicted
+
+247
+00:19:41,570 --> 00:19:48,134
+distributions. Similarly, for MMLU,
+forecasters predicted modest improvement
+from
+
+248
+00:19:48,234 --> 00:19:57,499
+44% to 57.1%, but performance reached
+67.5%. In 2022,
+
+249
+00:19:57,699 --> 00:20:02,521
+the underestimation continued even after
+these dramatic surprises. In
+
+250
+00:20:02,582 --> 00:20:08,904
+Steinhart's follow-up contest for 2023,
+forecasters again underestimated progress.
+
+251
+00:20:09,484 --> 00:20:14,708
+for MATH, the result of 69.6% fell at
+Steinhart's
+
+252
+00:20:14,867 --> 00:20:20,932
+41st percentile, while MMLU's 86.4% result
+fell at his
+
+253
+00:20:21,031 --> 00:20:26,835
+66th percentile, even though forecasters
+under predicted progress, experts
+
+254
+00:20:27,115 --> 00:20:31,577
+under predicted progress even more.
+Progress in AI, as
+
+255
+00:20:31,657 --> 00:20:36,601
+measured by ML benchmarks, happened
+significantly faster than forecasters
+
+256
+00:20:36,661 --> 00:20:42,005
+expected. At this point, the textbook
+shows Figure 2.37.
+
+257
+00:20:42,565 --> 00:20:48,229
+It depicts 2021 forecasts on the MMLU,
+measuring massive
+
+258
+00:20:48,348 --> 00:20:52,992
+multitask language understanding data set.
+The majority of the
+
+259
+00:20:53,053 --> 00:20:56,615
+probability density of the forecast was
+between 44% to
+
+260
+00:20:56,674 --> 00:20:59,057
+57% by June 2022. The actual recorded
+performance was
+
+261
+00:20:59,436 --> 00:21:08,624
+68%, shown as the red line. There is
+figure
+
+262
+00:21:08,703 --> 00:21:13,967
+2.38 in the textbook here. It depicts 2022
+forecast
+
+263
+00:21:14,186 --> 00:21:19,769
+on the MMLU measuring massive multi-pask
+language understanding data
+
+264
+00:21:19,809 --> 00:21:23,592
+set. The majority of the probability
+density of the
+
+265
+00:21:23,632 --> 00:21:26,413
+forecast was between 68% to 80% by June
+2023.
+
+266
+00:21:26,453 --> 00:21:29,076
+The actual recorded performance was 87%
+shown as the
+
+267
+00:21:29,096 --> 00:21:41,803
+red line. The textbook includes Figure
+2.39 here. It
+
+268
+00:21:41,863 --> 00:21:48,846
+depicts 2021 forecast on the MATH dataset.
+The majority
+
+269
+00:21:48,967 --> 00:21:52,808
+of the probability density of the forecast
+was between
+
+270
+00:21:52,828 --> 00:21:54,970
+5% to 20% by June 2022. The actual
+recorded
+
+271
+00:21:55,029 --> 00:22:04,894
+performance was 50%, shown as the red
+line. During
+
+272
+00:22:04,914 --> 00:22:12,596
+2022 to 2024, experts continued
+underestimating qualitative capabilities
+even
+
+273
+00:22:12,856 --> 00:22:18,499
+after witnessing benchmark surprises. AI
+impacts surveyed ML experts
+
+274
+00:22:18,638 --> 00:22:24,599
+in mid-2022, just months before chat GPT's
+release. Experts
+
+275
+00:22:24,700 --> 00:22:28,761
+predicted milestones like write a high
+school history essay
+
+276
+00:22:28,942 --> 00:22:33,204
+or answer easily Googleable questions
+better than an expert
+
+277
+00:22:33,644 --> 00:22:38,366
+would take years to achieve. Chat GPT and
+GPT4
+
+278
+00:22:38,728 --> 00:22:42,529
+accomplished these within months of the
+survey, not years.
+
+279
+00:22:43,369 --> 00:22:48,114
+Examples in 2024-2025 seem to continue
+this pattern of
+
+280
+00:22:48,273 --> 00:22:56,940
+unpredictability. In December 2024,
+OpenAI's 03 achieved 87.5% on
+
+281
+00:22:57,180 --> 00:23:02,704
+ARC-AGI, a benchmark specifically designed
+to test abstract reasoning
+
+282
+00:23:03,085 --> 00:23:08,048
+and resist gaming through memorization.
+For four years, progress
+
+283
+00:23:08,088 --> 00:23:14,614
+had crawled from GPT-3's 0% in 2020 to
+GPT-4-0's
+
+284
+00:23:14,913 --> 00:23:19,738
+5% in 2024. Leading many to expect
+meaningful progress
+
+285
+00:23:19,837 --> 00:23:23,121
+would take years. The rapid jump from 5%
+to
+
+286
+00:23:23,141 --> 00:23:30,266
+87.5% cut many by surprise. Similarly, on
+Frontier Math,
+
+287
+00:23:30,665 --> 00:23:35,769
+a benchmark of research-level problems
+described by world-leading mathematicians
+
+288
+00:23:35,969 --> 00:23:39,590
+as our best guesses for challenges that
+would stump
+
+289
+00:23:39,750 --> 00:23:44,213
+AI. Open AI-03 jumped from the previous
+best of
+
+290
+00:23:44,733 --> 00:23:49,537
+2% to 25% within months of the benchmarks
+November
+
+291
+00:23:49,557 --> 00:23:56,681
+2024 release. unpredictability, amplifies
+all other AI risks. Systematic
+
+292
+00:23:56,840 --> 00:24:01,903
+underestimation of breakthrough timing
+leaves safety researchers perpetually
+playing
+
+293
+00:24:01,963 --> 00:24:05,625
+catch-up when the stakes are highest.
+Douglas Hofstadter, who
+
+294
+00:24:05,766 --> 00:24:09,887
+once expected hundreds of years before
+human-like AI, now
+
+295
+00:24:09,948 --> 00:24:13,150
+describes a certain kind of terror of an
+oncoming
+
+296
+00:24:13,210 --> 00:24:16,090
+tsunami that is going to catch all
+humanity off
+
+297
+00:24:16,131 --> 00:24:21,236
+guard. When even leading researchers
+consistently underestimate progress in
+
+298
+00:24:21,256 --> 00:24:27,001
+their own field, society's broader
+preparation becomes fundamentally
+miscalibrated.
+
+299
+00:24:27,742 --> 00:24:32,188
+Organizations make deployment decisions
+based on forecasts that consistently
+
+300
+00:24:32,508 --> 00:24:38,074
+underestimate near-term progress while
+governance systems assume gradual,
+predictable
+
+301
+00:24:38,114 --> 00:24:42,538
+advancement. This creates a persistent gap
+between when dangerous
+
+302
+00:24:42,578 --> 00:24:46,462
+capabilities emerge and when adequate
+safety measures are ready,
+
+303
+00:24:46,982 --> 00:24:52,809
+turning unpredictability itself into a
+systemic risk amplifier. This
+
+304
+00:24:52,910 --> 00:24:58,054
+started happening at an accelerating pace
+where unreachable goals
+
+305
+00:24:58,253 --> 00:25:01,276
+and things that computers shouldn't be
+able to do
+
+306
+00:25:01,516 --> 00:25:06,317
+started toppling, systems got better and
+better at translation
+
+307
+00:25:06,358 --> 00:25:10,740
+between languages, and then at producing
+intelligible responses to
+
+308
+00:25:10,921 --> 00:25:15,864
+difficult questions in natural language,
+and even writing poetry,
+
+309
+00:25:16,683 --> 00:25:21,535
+The accelerating progress has been so
+unexpected, so completely
+
+310
+00:25:21,615 --> 00:25:24,602
+caught me off guard, not only myself, but
+many,
+
+311
+00:25:24,682 --> 00:25:27,808
+many people, that there is a certain kind
+of
+
+312
+00:25:28,048 --> 00:25:31,436
+terror of an oncoming tsunami that is
+going to
+
+313
+00:25:31,477 --> 00:25:33,922
+catch all humanity off guard.

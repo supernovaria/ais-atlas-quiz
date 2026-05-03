@@ -1,0 +1,2643 @@
+1
+00:00:00,327 --> 00:00:05,988
+Section 2.4, misuse risks. In the
+following sections, we
+
+2
+00:00:06,009 --> 00:00:09,009
+will go through some world states that
+hopefully paint
+
+3
+00:00:09,130 --> 00:00:12,230
+a little bit of a clearer picture of risks
+
+4
+00:00:12,310 --> 00:00:15,272
+when it comes to AI. Although the sections
+have
+
+5
+00:00:15,311 --> 00:00:19,693
+been divided into misuse, misalignment,
+and systemic, it is
+
+6
+00:00:19,774 --> 00:00:22,013
+important to remember that this is for the
+sake
+
+7
+00:00:22,114 --> 00:00:25,394
+of explanation. It is highly likely that
+the future
+
+8
+00:00:25,434 --> 00:00:28,416
+will involve a mix of risks emerging from
+all
+
+9
+00:00:28,437 --> 00:00:33,179
+of these categories. Technology increases
+the harm impact radius.
+
+10
+00:00:33,658 --> 00:00:37,582
+Technology is an amplifier of intentions.
+As it improves,
+
+11
+00:00:37,801 --> 00:00:40,783
+so does the radius of its effects. Think
+about
+
+12
+00:00:40,823 --> 00:00:42,865
+the harm that a person could do when
+utilizing
+
+13
+00:00:43,185 --> 00:00:46,448
+other tools throughout history. During the
+Stone Age, with
+
+14
+00:00:46,508 --> 00:00:49,990
+a rock, maybe someone could harm five
+people. A
+
+15
+00:00:50,030 --> 00:00:52,692
+few hundred years ago, with a bomb,
+someone could
+
+16
+00:00:52,752 --> 00:00:57,414
+harm 100 people. In 1945, with a nuclear
+weapon,
+
+17
+00:00:58,015 --> 00:01:02,996
+one person could harm almost 250,000
+people. If we
+
+18
+00:01:03,057 --> 00:01:06,478
+experience a nuclear winter today, the
+harm radius would
+
+19
+00:01:06,498 --> 00:01:10,180
+be almost 5 billion people, which is 60%
+of
+
+20
+00:01:10,221 --> 00:01:14,183
+humanity. If we assume that transformative
+AI is a
+
+21
+00:01:14,222 --> 00:01:17,263
+tool that overshadows the power of all
+others that
+
+22
+00:01:17,302 --> 00:01:20,603
+came before it, then a single person
+misusing this
+
+23
+00:01:20,724 --> 00:01:24,685
+could have a blast radius that potentially
+harms 100%
+
+24
+00:01:24,745 --> 00:01:28,844
+of humanity. If many people have access to
+tools
+
+25
+00:01:29,006 --> 00:01:33,725
+that can be both highly beneficial or
+catastrophically harmful,
+
+26
+00:01:34,307 --> 00:01:37,727
+then it might only take one single person
+to
+
+27
+00:01:37,787 --> 00:01:43,368
+cause significant devastation to society.
+So, the growing potential
+
+28
+00:01:43,429 --> 00:01:47,471
+for AI's to empower malicious actors may
+be one
+
+29
+00:01:47,492 --> 00:01:50,694
+of the most severe threats humanity will
+face in
+
+30
+00:01:50,734 --> 00:01:56,233
+the coming decades. When we look at ways
+AI
+
+31
+00:01:56,313 --> 00:01:59,596
+could enable harm through misuse, one of
+the most
+
+32
+00:01:59,697 --> 00:02:04,481
+concerning cases involves biology. Just as
+AI can help
+
+33
+00:02:04,542 --> 00:02:09,227
+scientists develop new medicines and
+understand diseases, it can
+
+34
+00:02:09,366 --> 00:02:12,229
+also make it easier for bad actors to
+create
+
+35
+00:02:12,289 --> 00:02:19,112
+biological weapons. AI-enabled bio-weapons
+represent a qualitatively different threat
+
+36
+00:02:19,152 --> 00:02:23,753
+class due to their self-replicating nature
+and asymmetric cost
+
+37
+00:02:23,813 --> 00:02:29,615
+structure. Unlike conventional weapons
+with localized effects, engineered
+pathogens
+
+38
+00:02:29,775 --> 00:02:35,437
+can self-replicate and spread globally.
+The COVID-19 pandemic demonstrated
+
+39
+00:02:35,516 --> 00:02:40,177
+how even relatively mild viruses can cause
+widespread harm
+
+40
+00:02:40,418 --> 00:02:45,900
+despite safeguards. The offense defense
+balance in biotechnology development
+
+41
+00:02:46,300 --> 00:02:50,502
+compounds these risks. Developing a new
+virus might cost
+
+42
+00:02:50,582 --> 00:02:55,966
+around $100,000 while creating a vaccine
+against it could
+
+43
+00:02:56,006 --> 00:03:00,945
+cost over $1 billion. Several different
+types of AI
+
+44
+00:03:01,006 --> 00:03:05,170
+models could enable biological threats
+with different risk profiles.
+
+45
+00:03:05,831 --> 00:03:10,978
+Foundation models like LLMs primarily
+lower knowledge barriers by
+
+46
+00:03:11,038 --> 00:03:15,864
+providing research assistance, protocol
+guidance, and troubleshooting advice
+across
+
+47
+00:03:15,903 --> 00:03:22,349
+the entire BioWeapon development pipeline.
+In contrast, specialized biological
+
+48
+00:03:22,409 --> 00:03:26,813
+design tools, similar to alpha fold, alpha
+proteo, or
+
+49
+00:03:26,933 --> 00:03:31,676
+viral and bacterial design systems, could
+enable fundamentally new
+
+50
+00:03:31,776 --> 00:03:37,861
+capabilities, designing novel pathogens
+with specific properties, optimizing
+virulence
+
+51
+00:03:38,021 --> 00:03:43,526
+or transmission characteristics, or
+creating agents that evade existing
+
+52
+00:03:43,605 --> 00:03:50,673
+countermeasures. empirical studies
+demonstrate AI-enabled bio risks.
+Researchers took
+
+53
+00:03:50,752 --> 00:03:54,735
+an AI model designed for drug discovery
+and redirected
+
+54
+00:03:54,776 --> 00:03:59,260
+it by rewarding toxicity instead of
+therapeutic benefit. This
+
+55
+00:03:59,360 --> 00:04:03,824
+led the model to produce 40,000
+potentially toxic molecules
+
+56
+00:04:04,085 --> 00:04:07,808
+within six hours, some more deadly than
+known chemical
+
+57
+00:04:07,868 --> 00:04:12,290
+weapons. Demonstrations have shown that
+students with no biology
+
+58
+00:04:12,330 --> 00:04:16,172
+background were able to use AI chatbots to
+rapidly
+
+59
+00:04:16,232 --> 00:04:21,134
+gather sensitive information. Within an
+hour, they identified potential
+
+60
+00:04:21,213 --> 00:04:26,175
+pandemic pathogens, methods to produce
+them, DNA synthesis firms
+
+61
+00:04:26,396 --> 00:04:31,617
+likely to overlook screening and detailed
+protocols. When compared
+
+62
+00:04:31,658 --> 00:04:35,021
+to the baseline of having internet access,
+being able
+
+63
+00:04:35,060 --> 00:04:38,303
+to look up information online, it was
+concluded by
+
+64
+00:04:38,343 --> 00:04:42,747
+the U.S. National Security Commission on
+Emerging Biotechnology that
+
+65
+00:04:42,947 --> 00:04:47,612
+AI models do not meaningfully increase
+bio-weapon risks beyond
+
+66
+00:04:47,672 --> 00:04:52,276
+existing information sources as of late
+2024. However, it
+
+67
+00:04:52,375 --> 00:04:55,137
+is very important to keep in mind that
+capturing
+
+68
+00:04:55,218 --> 00:05:00,161
+a snapshot of 2023 era-level capabilities
+is not indicative
+
+69
+00:05:00,240 --> 00:05:02,362
+of the risks we might need to prepare for
+
+70
+00:05:02,442 --> 00:05:07,225
+in the future. For example, 46 biosecurity
+and biology
+
+71
+00:05:07,326 --> 00:05:11,788
+experts predicted AI wouldn't match top
+virology teams on
+
+72
+00:05:11,848 --> 00:05:17,471
+troubleshooting tasks until after 2030.
+But subsequent testing found
+
+73
+00:05:17,490 --> 00:05:21,932
+this threshold had already been crossed.
+This pattern suggests
+
+74
+00:05:22,033 --> 00:05:26,593
+that even domain experts consistently
+underestimate the pace of
+
+75
+00:05:26,713 --> 00:05:30,795
+AI progress in their own fields,
+potentially leaving insufficient
+
+76
+00:05:30,875 --> 00:05:34,634
+time for adequate safety preparations. It
+is also worth
+
+77
+00:05:34,696 --> 00:05:38,495
+noting that bio-risk benchmarks often fail
+to capture many
+
+78
+00:05:38,716 --> 00:05:42,576
+real-world complexities, making it hard to
+be certain what
+
+79
+00:05:42,656 --> 00:05:48,240
+this saturation implies for bio-risk.
+There is figure 2.11
+
+80
+00:05:48,339 --> 00:05:53,163
+in the textbook here. It depicts
+biotechnology risk chain.
+
+81
+00:05:53,863 --> 00:05:57,807
+The risk chain for developing a bioweapon
+starts with
+
+82
+00:05:58,148 --> 00:06:03,190
+ideating a biological threat, followed by
+a design build
+
+83
+00:06:03,411 --> 00:06:08,574
+test learn loop. broader technological
+trends combined with AI
+
+84
+00:06:08,735 --> 00:06:13,879
+could help overcome barriers. Creating
+biological weapons still requires
+
+85
+00:06:14,038 --> 00:06:19,442
+extensive practical expertise and
+resources. Experts estimate that in
+
+86
+00:06:19,502 --> 00:06:24,586
+2022, about 30,000 individuals worldwide
+possessed the skills needed
+
+87
+00:06:24,646 --> 00:06:29,310
+to follow even basic virus assembly
+protocols. Key barriers
+
+88
+00:06:29,389 --> 00:06:34,315
+include specialized laboratory skills,
+tacit knowledge, access to controlled
+
+89
+00:06:34,375 --> 00:06:39,983
+materials and equipment, and complex
+testing requirements. However, DNA
+
+90
+00:06:40,043 --> 00:06:44,908
+synthesis costs have been having every 15
+months. Automated
+
+91
+00:06:45,067 --> 00:06:49,651
+cloud laboratories allow researchers to
+remotely conduct experiments by
+
+92
+00:06:49,750 --> 00:06:54,634
+sending instructions to robotic systems.
+Bench top DNA synthesis
+
+93
+00:06:54,694 --> 00:06:58,115
+machines at home devices that can print
+custom DNA
+
+94
+00:06:58,156 --> 00:07:02,557
+sequences are also becoming more widely
+available. Combined with
+
+95
+00:07:02,617 --> 00:07:07,500
+increasingly sophisticated AI assistance
+for experimental design and optimization,
+
+96
+00:07:08,021 --> 00:07:12,382
+these developments could make creating
+custom biological agents more
+
+97
+00:07:12,483 --> 00:07:16,884
+accessible to people without extensive
+resources or institutional backing.
+
+98
+00:07:17,584 --> 00:07:23,528
+The textbook includes Figure 2.12 here. It
+depicts an
+
+99
+00:07:23,588 --> 00:07:29,274
+example of a Benchtop DNA synthesis
+machine. A 2023
+
+100
+00:07:29,494 --> 00:07:34,119
+MIT study exposed significant
+vulnerabilities in DNA synthesis
+screening.
+
+101
+00:07:34,879 --> 00:07:39,084
+Beyond bio agent design, there are
+significant vulnerabilities in
+
+102
+00:07:39,124 --> 00:07:42,586
+the DNA synthesis screening pipeline.
+During a 2023 MIT
+
+103
+00:07:42,607 --> 00:07:47,752
+study, Researchers were successfully able
+to order fragments of
+
+104
+00:07:47,793 --> 00:07:52,399
+the 1918 pandemic influenza virus and rice
+in toxin
+
+105
+00:07:52,800 --> 00:07:56,504
+by employing simple evasion techniques
+like splitting orders across
+
+106
+00:07:56,564 --> 00:08:01,651
+companies and camouflaging sequences with
+unrelated genetic code. Nearly
+
+107
+00:08:01,911 --> 00:08:05,958
+all vendors fulfilled these disguised
+orders, including 12 of
+
+108
+00:08:05,978 --> 00:08:11,586
+13 members of the International
+Genesynthesis Consortium, IGSC, which
+
+109
+00:08:11,685 --> 00:08:16,752
+represents about 80% of commercial DNA
+synthesis capacity. Cyber
+
+110
+00:08:16,812 --> 00:08:22,415
+risk. Even without AI, the global
+cybersecurity infrastructure shows
+
+111
+00:08:22,495 --> 00:08:27,675
+vulnerabilities. A single software update
+by CrowdStrike caused airlines
+
+112
+00:08:27,755 --> 00:08:31,896
+to stop flights, hospitals to cancel
+surgeries, and banks
+
+113
+00:08:31,997 --> 00:08:36,677
+to stop processing transactions, causing
+over $5 billion of
+
+114
+00:08:36,717 --> 00:08:39,839
+damage. This wasn't even a cyber attack.
+It was
+
+115
+00:08:39,879 --> 00:08:43,903
+an accident. In deliberate attacks, we
+have examples like
+
+116
+00:08:44,003 --> 00:08:48,386
+the colonial pipeline ransomware attack,
+which caused widespread gas
+
+117
+00:08:48,427 --> 00:08:52,470
+shortages, or the Sony Pictures hack
+through targeted phishing
+
+118
+00:08:52,570 --> 00:08:55,592
+emails by North Korea. These are just a
+couple
+
+119
+00:08:55,633 --> 00:08:59,495
+of examples amongst many others. It shows
+how vulnerable
+
+120
+00:08:59,556 --> 00:09:01,999
+our computer systems are, and why we need
+to
+
+121
+00:09:02,038 --> 00:09:05,642
+think carefully about how AI could make
+attacks worse.
+
+122
+00:09:06,142 --> 00:09:11,466
+The global cyber infrastructure has
+cyberattack overhangs. Beyond accidents
+
+123
+00:09:11,525 --> 00:09:16,450
+and demonstrated attacks, we also face
+cyberattack overhangs, where
+
+124
+00:09:16,690 --> 00:09:20,152
+devastating attacks are possible but
+haven't occurred due to
+
+125
+00:09:20,251 --> 00:09:24,975
+attacker restraint rather than robust
+defenses. As an example,
+
+126
+00:09:25,216 --> 00:09:28,399
+Chinese state actors are claimed to have
+already positioned
+
+127
+00:09:28,418 --> 00:09:32,844
+themselves inside critical US
+infrastructure systems. This type of
+
+128
+00:09:32,943 --> 00:09:36,486
+cyber deterrent positioning can happen
+between any group of
+
+129
+00:09:36,548 --> 00:09:40,871
+nations. Due to such cyber attack
+overhangs, several actors
+
+130
+00:09:41,032 --> 00:09:44,655
+might have the potential capability to
+disrupt water controls,
+
+131
+00:09:44,875 --> 00:09:48,399
+energy systems, and ports in different
+nations. The point
+
+132
+00:09:48,438 --> 00:09:50,279
+we are trying to illustrate is that as far
+
+133
+00:09:50,340 --> 00:09:54,001
+as cybersecurity is concerned, society is
+in a pretty
+
+134
+00:09:54,081 --> 00:09:57,943
+precarious state even before AI comes into
+the picture.
+
+135
+00:09:58,783 --> 00:10:05,067
+AI enables automated, highly personalized
+fishing at scale. AI-generated
+
+136
+00:10:05,206 --> 00:10:11,190
+fishing emails achieve higher success
+rates, 65% versus 60%
+
+137
+00:10:11,289 --> 00:10:14,052
+for human written, while taking 40% less
+time to
+
+138
+00:10:14,111 --> 00:10:20,836
+create. Tools like Fraud GPT automate this
+customization using
+
+139
+00:10:20,875 --> 00:10:25,818
+target's background, interests, and
+relationships. Adding to this threat,
+
+140
+00:10:26,318 --> 00:10:30,282
+open source AI voice cloning tools need
+just minutes
+
+141
+00:10:30,361 --> 00:10:34,203
+of audio to create convincing replicas of
+someone's voice.
+
+142
+00:10:34,884 --> 00:10:38,966
+A similar situation exists in deep fakes,
+where AI
+
+143
+00:10:39,067 --> 00:10:42,269
+is showing progress in one shot face
+swapping and
+
+144
+00:10:42,308 --> 00:10:47,011
+manipulation. If only a single image of
+two individuals
+
+145
+00:10:47,131 --> 00:10:49,393
+exists on the internet, then they can be a
+
+146
+00:10:49,474 --> 00:10:55,256
+target of face-swapping deepfakes.
+Automated web crawling for open-source
+
+147
+00:10:55,317 --> 00:11:00,539
+intelligence, or OSINT, to gather photos,
+audio, interests, and
+
+148
+00:11:00,600 --> 00:11:05,984
+information also enables AI-assisted
+password cracking, which is shown
+
+149
+00:11:06,043 --> 00:11:10,326
+to be significantly more effective than
+traditional methods while
+
+150
+00:11:10,385 --> 00:11:15,349
+requiring less computational resources. At
+this point, the textbook
+
+151
+00:11:15,428 --> 00:11:21,371
+shows figure 2.13. It depicts example of
+one shot
+
+152
+00:11:21,511 --> 00:11:26,215
+face swapping. Left, source image that
+represents the identity.
+
+153
+00:11:26,894 --> 00:11:31,418
+Middle, target image that provides the
+attributes. Right, the
+
+154
+00:11:31,498 --> 00:11:37,741
+swapped face image. AI enhances
+vulnerability discovery. AI systems
+
+155
+00:11:37,782 --> 00:11:41,604
+can now scan code and probe systems
+automatically, finding
+
+156
+00:11:41,663 --> 00:11:46,246
+potential weaknesses much faster than
+humans. Research shows AI
+
+157
+00:11:46,366 --> 00:11:51,210
+agents can autonomously discover and
+exploit vulnerabilities without human
+
+158
+00:11:51,250 --> 00:11:56,692
+guidance, successfully hacking 73% of test
+targets. These systems
+
+159
+00:11:56,753 --> 00:12:00,336
+can even discover novel attack paths that
+weren't known
+
+160
+00:12:00,395 --> 00:12:05,839
+beforehand. As a concrete example, in
+early 2025, OpenAI's
+
+161
+00:12:06,158 --> 00:12:10,160
+O3 model helped a researcher discover a
+previously unknown
+
+162
+00:12:10,400 --> 00:12:14,703
+zero-day remote vulnerability in the Linux
+kernel while analyzing
+
+163
+00:12:14,744 --> 00:12:17,345
+code for a different book. This is
+something that
+
+164
+00:12:17,424 --> 00:12:22,749
+typically requires expert-level
+understanding of kernel internals. If AI
+
+165
+00:12:22,869 --> 00:12:25,591
+can now find security flaws in some of the
+
+166
+00:12:25,750 --> 00:12:29,714
+most scrutinized code on the planet, open
+source Linux
+
+167
+00:12:29,754 --> 00:12:33,476
+kernel, then this is a huge potential
+problem. This
+
+168
+00:12:33,557 --> 00:12:37,559
+is code that protects billions of devices.
+If models
+
+169
+00:12:37,620 --> 00:12:42,182
+can autonomously discover kernel-level
+vulnerabilities and execute them on
+
+170
+00:12:42,222 --> 00:12:45,985
+behalf of malicious actors, then the
+potential harm this
+
+171
+00:12:46,005 --> 00:12:51,010
+could cause is massive. AI accelerates the
+malware development
+
+172
+00:12:51,051 --> 00:12:53,793
+pipeline. We can take tools that are
+designed to
+
+173
+00:12:53,855 --> 00:12:56,778
+write correct code and simply ask them to
+write
+
+174
+00:12:56,977 --> 00:13:01,884
+malware. Tools like WormGPT help attackers
+generate malicious code
+
+175
+00:13:02,203 --> 00:13:06,389
+and build attack frameworks without
+requiring deep technical knowledge.
+
+176
+00:13:07,090 --> 00:13:11,852
+Polymorphic AI malware like BlackMamba can
+also automatically generate
+
+177
+00:13:11,952 --> 00:13:16,736
+variations of malware that preserve
+functionality while appearing completely
+
+178
+00:13:16,817 --> 00:13:20,438
+different to security tools. Each attack
+can use unique
+
+179
+00:13:20,519 --> 00:13:25,423
+code, communication patterns, and
+behaviors, making it much harder
+
+180
+00:13:25,462 --> 00:13:30,525
+for traditional security tools to identify
+threats. AI fundamentally
+
+181
+00:13:30,645 --> 00:13:36,229
+changes the cost-benefit calculations for
+attackers. Research shows autonomous
+
+182
+00:13:36,448 --> 00:13:39,831
+AI agents can now hack some websites for
+about
+
+183
+00:13:40,311 --> 00:13:43,932
+$10 per attempt, roughly 8 times cheaper
+than using
+
+184
+00:13:44,013 --> 00:13:48,754
+human expertise. This dramatic reduction
+in cost enables attacks
+
+185
+00:13:48,875 --> 00:13:54,940
+at unprecedented scale and frequency.
+There is figure 2.14
+
+186
+00:13:55,120 --> 00:13:58,703
+in the textbook here. It depicts stages of
+a
+
+187
+00:13:58,844 --> 00:14:04,530
+cyberattack. The objective is to design
+benchmarks and evaluations
+
+188
+00:14:04,770 --> 00:14:09,495
+that assess model's ability to aid
+malicious actors with
+
+189
+00:14:09,777 --> 00:14:15,402
+all four stages of a cyberattack. AI-
+enabled cyber threats,
+
+190
+00:14:15,701 --> 00:14:21,167
+influence infrastructure, and systemic
+risks. Infrastructure attacks that once
+
+191
+00:14:21,246 --> 00:14:25,410
+took years and millions of dollars, like
+Stuxnet, could
+
+192
+00:14:25,451 --> 00:14:29,553
+become more accessible as AI automates the
+mapping of
+
+193
+00:14:29,634 --> 00:14:35,423
+industrial networks and identification of
+critical control points. AI
+
+194
+00:14:35,503 --> 00:14:40,087
+can analyze technical documentation and
+generate attack plans that
+
+195
+00:14:40,207 --> 00:14:45,673
+previously required teams of experts. AI
+removes these limits,
+
+196
+00:14:46,073 --> 00:14:50,038
+enabling automated attacks that could
+target thousands of systems
+
+197
+00:14:50,119 --> 00:14:56,475
+simultaneously and trigger cascading
+failures across interconnected
+infrastructure. The
+
+198
+00:14:56,556 --> 00:15:02,923
+textbook includes Figure 2.15 here. It
+depicts schematic of
+
+199
+00:15:03,085 --> 00:15:08,649
+using autonomous LLM agents to hack
+websites. AI could
+
+200
+00:15:08,690 --> 00:15:13,674
+potentially change the offense defense
+balance in cybersecurity. Many
+
+201
+00:15:13,835 --> 00:15:17,940
+AI-based tools have shown promise in being
+used defensively
+
+202
+00:15:18,039 --> 00:15:22,384
+for malware analysis. The existence of
+theoretical improvements to
+
+203
+00:15:22,524 --> 00:15:25,927
+AI-augmented defense does not guarantee
+that they will be
+
+204
+00:15:26,048 --> 00:15:29,792
+widely adopted in time. In the real world,
+many
+
+205
+00:15:29,892 --> 00:15:34,995
+organizations struggle to implement even
+basic security practices. Attackers
+
+206
+00:15:35,174 --> 00:15:38,596
+only need to find a single weakness, while
+defenders
+
+207
+00:15:38,777 --> 00:15:42,698
+must craft a perfectly secure system. When
+we combine
+
+208
+00:15:42,759 --> 00:15:47,782
+the sheer speed of AI-enabled attacks,
+automated vulnerability discovery,
+
+209
+00:15:48,182 --> 00:15:52,424
+malware generation, and increased ease of
+access, this enables
+
+210
+00:15:52,664 --> 00:15:56,907
+end-to-end automated attacks that
+previously required teams of skilled
+
+211
+00:15:56,966 --> 00:16:01,528
+humans. AI's ability to execute attacks in
+minutes rather
+
+212
+00:16:01,568 --> 00:16:05,149
+than weeks creates the potential for flash
+attacks where
+
+213
+00:16:05,210 --> 00:16:09,571
+systems are compromised before human
+defenders can respond. All
+
+214
+00:16:09,610 --> 00:16:13,491
+of these factors combined potentially
+shifts AI's influence on
+
+215
+00:16:13,532 --> 00:16:18,846
+the offense defense balance more towards
+favoring offense. autonomous
+
+216
+00:16:19,005 --> 00:16:23,048
+weapons risk. In the previous sections, we
+saw how
+
+217
+00:16:23,207 --> 00:16:27,750
+AI amplifies risks in biological and
+cyberdomains by removing
+
+218
+00:16:27,831 --> 00:16:31,852
+human bottlenecks and enabling attacks at
+unprecedented speed and
+
+219
+00:16:31,932 --> 00:16:36,395
+scale. The same pattern emerges even more
+dramatically with
+
+220
+00:16:36,515 --> 00:16:40,638
+military systems. Traditional weapons are
+constrained by their human
+
+221
+00:16:40,778 --> 00:16:44,480
+operators. A person can only control one
+drone, make
+
+222
+00:16:44,520 --> 00:16:48,503
+decisions at human speed, and may refuse
+unethical orders.
+
+223
+00:16:49,244 --> 00:16:53,206
+AI removes these human constraints,
+setting the stage for
+
+224
+00:16:53,225 --> 00:16:57,977
+a fundamental transformation in how wars
+are fought. AI-enabled
+
+225
+00:16:58,038 --> 00:17:02,682
+weapons are rapidly transitioning from
+theoretical concepts to battlefield
+
+226
+00:17:02,763 --> 00:17:08,509
+realities. Modern AI military systems
+increasingly leverage machine learning
+
+227
+00:17:08,869 --> 00:17:12,775
+to perceive and respond to their
+environment, moving beyond
+
+228
+00:17:12,934 --> 00:17:16,959
+early automated defense systems that
+operated under strict constraints.
+
+229
+00:17:17,599 --> 00:17:20,721
+The push for greater autonomy is mainly
+driven by
+
+230
+00:17:20,840 --> 00:17:27,044
+speed, cost, and resilience against
+communication jamming. AI-driven weapons
+
+231
+00:17:27,124 --> 00:17:30,645
+can execute maneuvers too precise and
+rapid for human
+
+232
+00:17:30,746 --> 00:17:36,268
+operators, reducing reliance on direct
+human control. Cost considerations
+
+233
+00:17:36,488 --> 00:17:40,730
+further incentivize autonomy, with
+programs aiming to deploy large
+
+234
+00:17:40,789 --> 00:17:44,691
+numbers of AI-powered systems at a
+fraction of traditional
+
+235
+00:17:44,770 --> 00:17:49,384
+military costs. AI-enabled weapons are
+already being used in
+
+236
+00:17:49,604 --> 00:17:54,127
+active conflicts, with real-world impacts
+we can observe. According
+
+237
+00:17:54,167 --> 00:17:57,931
+to reports made to the UN Security
+Council, autonomous
+
+238
+00:17:58,010 --> 00:18:01,113
+drones were used to track and attack
+retreating forces
+
+239
+00:18:01,212 --> 00:18:04,576
+in Libya in 2021, marking one of the first
+
+240
+00:18:04,655 --> 00:18:09,759
+documented cases of lethal autonomous
+weapons, laws, making targeting
+
+241
+00:18:09,819 --> 00:18:14,903
+decisions without direct human control. In
+Ukraine, both parties
+
+242
+00:18:14,942 --> 00:18:21,304
+have used loitering munitions. Russian
+KUBBLA, Lancet III, and
+
+243
+00:18:21,544 --> 00:18:27,526
+Ukrainian switchblade, Phoenix Ghost, are
+AI-enabled drones. The Lancet
+
+244
+00:18:27,665 --> 00:18:31,567
+is using an Nvidia computing module for
+autonomous target
+
+245
+00:18:31,586 --> 00:18:36,509
+tracking. Israel has conducted AI guided
+drone swarm attacks
+
+246
+00:18:36,609 --> 00:18:40,432
+in Gaza, while Turkey's Cargo 2 can find
+and
+
+247
+00:18:40,471 --> 00:18:44,494
+attack human targets on its own using
+machine learning
+
+248
+00:18:44,875 --> 00:18:49,178
+rather than needing constant human
+guidance. These deployments show
+
+249
+00:18:49,238 --> 00:18:54,221
+how quickly military AI is moving from
+theoretical possibilities
+
+250
+00:18:54,541 --> 00:18:59,304
+to battlefield realities. Several
+incentives are driving towards more
+
+251
+00:18:59,443 --> 00:19:04,566
+autonomous, lethal autonomous weapons.
+Speed offers decisive advantages in
+
+252
+00:19:04,605 --> 00:19:08,287
+modern warfare. When DARPA tested an AI
+system against
+
+253
+00:19:08,346 --> 00:19:12,728
+an experienced F-16 pilot in simulated
+dogfights, the AI
+
+254
+00:19:12,768 --> 00:19:16,669
+won consistently by executing maneuvers to
+precise and rapid
+
+255
+00:19:16,729 --> 00:19:20,813
+for humans to counter. Cost creates
+additional pressure. The
+
+256
+00:19:20,932 --> 00:19:25,219
+US military's Replicator Program aims to
+deploy thousands of
+
+257
+00:19:25,298 --> 00:19:27,883
+autonomous drones at a fraction of the
+cost of
+
+258
+00:19:27,923 --> 00:19:33,145
+traditional aircraft. Military planners
+worry about enemies jamming communications
+
+259
+00:19:33,246 --> 00:19:37,608
+to remotely operated weapons. This drives
+development of systems
+
+260
+00:19:37,648 --> 00:19:40,191
+that can continue fighting even when cut
+off from
+
+261
+00:19:40,230 --> 00:19:45,375
+human control. These incentives mean
+military AI development increasingly
+
+262
+00:19:45,474 --> 00:19:48,577
+focuses on systems that can operate with
+minimal human
+
+263
+00:19:48,678 --> 00:19:52,800
+oversight. Many modern systems are
+specifically designed to operate
+
+264
+00:19:52,901 --> 00:19:57,104
+in GPS denied environments where
+maintaining human control becomes
+
+265
+00:19:57,203 --> 00:20:01,746
+impossible. In Ukraine, military
+commanders have explicitly called for
+
+266
+00:20:01,806 --> 00:20:05,047
+more autonomous operations to match the
+speed of modern
+
+267
+00:20:05,106 --> 00:20:09,087
+combat, with one Ukrainian commander
+noting they already conduct
+
+268
+00:20:09,167 --> 00:20:13,208
+fully robotic operations without human
+intervention. At this point,
+
+269
+00:20:13,288 --> 00:20:18,809
+the textbook shows figure 2.16. It depicts
+loitering munitions
+
+270
+00:20:18,970 --> 00:20:24,471
+are expendable, uncrewed aircraft, which
+can integrate sensor-based analysis
+
+271
+00:20:24,691 --> 00:20:29,133
+to hover over, detect, and crash into
+targets. These
+
+272
+00:20:29,212 --> 00:20:33,596
+systems were developed during the 1980s
+and early 1990s
+
+273
+00:20:34,016 --> 00:20:39,740
+to conduct suppression of enemy air
+defense, SED operations.
+
+274
+00:20:40,480 --> 00:20:44,551
+They blur the line between drone and
+missile. As
+
+275
+00:20:44,571 --> 00:20:50,534
+AI enables better coordination between
+autonomous systems, military planners
+
+276
+00:20:50,673 --> 00:20:55,474
+are increasingly focused on deploying
+weapons in interconnected swarms.
+
+277
+00:20:56,134 --> 00:20:59,915
+The U.S. replicator already has plans to
+build and
+
+278
+00:20:59,935 --> 00:21:05,178
+deploy thousands of coordinated autonomous
+drones that can overwhelm
+
+279
+00:21:05,238 --> 00:21:10,299
+defenses through sheer numbers and
+synchronized actions. When combined
+
+280
+00:21:10,359 --> 00:21:14,807
+with increasing autonomy, these swarm
+capabilities mean that future
+
+281
+00:21:14,866 --> 00:21:19,534
+conflicts may involve massive groups of AI
+systems making
+
+282
+00:21:19,594 --> 00:21:23,740
+coordinated decisions faster than humans
+can track or control.
+
+283
+00:21:24,520 --> 00:21:27,122
+The pressure to match the speed and scale
+of
+
+284
+00:21:27,142 --> 00:21:31,383
+AI-driven warfare leads to a gradual
+erosion of human
+
+285
+00:21:31,442 --> 00:21:36,243
+decision making. Military commanders
+increasingly rely on AI systems,
+
+286
+00:21:36,663 --> 00:21:40,085
+not just for individual weapons, but for
+broader tactical
+
+287
+00:21:40,125 --> 00:21:45,766
+decisions. In 2023, Palantir demonstrated
+an AI system that
+
+288
+00:21:45,806 --> 00:21:50,346
+could recommend specific missile
+deployments and artillery strikes. While
+
+289
+00:21:50,426 --> 00:21:54,489
+presented as advisory tools, These systems
+create pressure to
+
+290
+00:21:54,548 --> 00:21:58,791
+delegate more control to AI as human
+commanders struggle
+
+291
+00:21:58,832 --> 00:22:02,374
+to keep pace. This kind of slow erosion of
+
+292
+00:22:02,473 --> 00:22:05,236
+human involvement is something that we
+talk a lot
+
+293
+00:22:05,276 --> 00:22:08,837
+more about in the systemic risk section.
+Even when
+
+294
+00:22:08,897 --> 00:22:13,520
+systems nominally keep humans in control,
+combat conditions can
+
+295
+00:22:13,580 --> 00:22:18,022
+make this control more theoretical than
+real. Operators often
+
+296
+00:22:18,063 --> 00:22:22,285
+make targeting decisions under intense
+battlefield stress, with only
+
+297
+00:22:22,424 --> 00:22:28,198
+seconds to verify computer-suggested
+targets. Studies of similar high-pressure
+
+298
+00:22:28,258 --> 00:22:33,761
+situations show operators tend to
+uncritically trust machine suggestions
+
+299
+00:22:34,182 --> 00:22:38,605
+rather than exercising genuine oversight.
+This means that even
+
+300
+00:22:38,724 --> 00:22:43,907
+systems designed for human control may
+effectively operate autonomously
+
+301
+00:22:44,067 --> 00:22:49,824
+in practice. The lavender targeting system
+automated execution after
+
+302
+00:22:49,884 --> 00:22:55,488
+humans just set the acceptable thresholds.
+Lavender uses machine
+
+303
+00:22:55,548 --> 00:22:59,611
+learning to assign residents a numerical
+score relating to
+
+304
+00:22:59,652 --> 00:23:02,713
+the suspected likelihood that a person is
+a member
+
+305
+00:23:02,773 --> 00:23:07,135
+of an armed group. Based on reports,
+Israeli military
+
+306
+00:23:07,236 --> 00:23:10,998
+officers are responsible for setting the
+threshold beyond which
+
+307
+00:23:11,077 --> 00:23:13,919
+an individual can be marked as a target
+subject
+
+308
+00:23:13,939 --> 00:23:18,922
+to attack. As warfare accelerates beyond
+human decision speeds,
+
+309
+00:23:19,362 --> 00:23:25,705
+maintaining meaningful human control
+becomes increasingly difficult. Autonomous
+weapons
+
+310
+00:23:25,885 --> 00:23:30,510
+are creating powerful pressure for
+military competition in ways
+
+311
+00:23:30,611 --> 00:23:35,217
+that create dangerous arms race dynamics.
+When one country
+
+312
+00:23:35,297 --> 00:23:39,981
+develops new AI military capabilities,
+others feel they must
+
+313
+00:23:40,182 --> 00:23:45,008
+rapidly match them to maintain strategic
+balance. China and
+
+314
+00:23:45,107 --> 00:23:50,613
+Russia have set 2028-2030 as targets for
+major military
+
+315
+00:23:50,752 --> 00:23:55,257
+automation, while the U.S. Replicator
+Program aims to build
+
+316
+00:23:55,397 --> 00:24:00,863
+and deploy thousands of autonomous drones
+by 2025. This
+
+317
+00:24:00,942 --> 00:24:04,987
+competition creates pressure to cut
+corners on safety testing
+
+318
+00:24:05,086 --> 00:24:09,209
+and oversight. This mirrors the nuclear
+arms race during
+
+319
+00:24:09,249 --> 00:24:14,270
+the Cold War, where competition for
+superiority ultimately increased
+
+320
+00:24:14,412 --> 00:24:19,233
+risks for all parties. As emphasized
+throughout multiple sections,
+
+321
+00:24:19,594 --> 00:24:23,336
+we see a fear-based race dynamic where
+only the
+
+322
+00:24:23,516 --> 00:24:27,857
+actors willing to compromise and undermine
+safety stay in
+
+323
+00:24:27,897 --> 00:24:31,858
+the race. Complete automation leads to
+loss of human
+
+324
+00:24:31,959 --> 00:24:36,460
+safeguards. Traditional warfare had built
+in human constraints that
+
+325
+00:24:36,599 --> 00:24:42,082
+limited escalation. Soldiers would refuse
+unethical orders, feel empathy
+
+326
+00:24:42,122 --> 00:24:46,083
+for civilians, or become fatigued. All
+natural breaks on
+
+327
+00:24:46,143 --> 00:24:51,704
+conflict. AI systems remove these
+constraints. Recent studies of
+
+328
+00:24:51,805 --> 00:24:56,666
+military AI systems found they
+consistently recommend more aggressive
+
+329
+00:24:56,866 --> 00:25:01,608
+actions than human strategists, including
+escalating to nuclear weapons
+
+330
+00:25:01,749 --> 00:25:06,092
+in simulated conflicts. When researchers
+tested AI models in
+
+331
+00:25:06,152 --> 00:25:10,894
+military planning scenarios, the AI's
+showed concerning tendencies to
+
+332
+00:25:10,954 --> 00:25:15,637
+recommend preemptive strikes in rapid
+escalation, often without clear
+
+333
+00:25:15,698 --> 00:25:20,862
+strategic justification. The loss of human
+judgment becomes especially
+
+334
+00:25:20,902 --> 00:25:24,923
+dangerous when combined with the
+increasing speed of AI-driven
+
+335
+00:25:24,983 --> 00:25:29,266
+warfare. The history of nuclear close
+calls shows the
+
+336
+00:25:29,326 --> 00:25:34,528
+importance of human judgment. In 1983,
+Soviet officers Stanislav
+
+337
+00:25:34,607 --> 00:25:38,788
+Petrov chose to ignore a computerized
+warning of incoming
+
+338
+00:25:38,888 --> 00:25:41,950
+US missiles, correctly judging it to be a
+false
+
+339
+00:25:41,990 --> 00:25:46,352
+alarm. As militaries increasingly rely on
+AI for early
+
+340
+00:25:46,412 --> 00:25:50,173
+warning and response, we may lose these
+crucial moments
+
+341
+00:25:50,212 --> 00:25:54,795
+of human judgment that have historically
+prevented catastrophic escalation.
+
+342
+00:25:55,515 --> 00:26:00,238
+Autonomous weapons become even more
+concerning when multiple AI
+
+343
+00:26:00,298 --> 00:26:04,500
+systems engage with each other in combat.
+AI systems
+
+344
+00:26:04,560 --> 00:26:08,403
+can interact in unexpected ways that
+create feedback loops,
+
+345
+00:26:08,864 --> 00:26:13,146
+similar to how algorithmic trading can
+cause flash crashes
+
+346
+00:26:13,227 --> 00:26:17,250
+in financial markets. But unlike market
+crashes that only
+
+347
+00:26:17,329 --> 00:26:21,992
+affect money, autonomous weapons could
+trigger rapid escalations of
+
+348
+00:26:22,032 --> 00:26:27,117
+violence before humans can intervene. This
+risk becomes especially
+
+349
+00:26:27,178 --> 00:26:31,163
+severe when AI systems are connected to
+nuclear arsenals
+
+350
+00:26:31,542 --> 00:26:35,048
+or other weapons of mass destruction. The
+complexity of
+
+351
+00:26:35,087 --> 00:26:40,094
+these interactions means even well-tested
+individual systems could produce
+
+352
+00:26:40,273 --> 00:26:46,398
+catastrophic outcomes when deployed
+together. There is figure 2.17
+
+353
+00:26:46,538 --> 00:26:49,981
+in the textbook here. It depicts an
+example from
+
+354
+00:26:50,041 --> 00:26:55,906
+the 2010 stock trading flash crash.
+Various stocks crashed
+
+355
+00:26:56,086 --> 00:26:59,429
+to as little as one cent and then quickly
+
+356
+00:26:59,528 --> 00:27:03,432
+rebounded within a matter of minutes,
+partly caused by
+
+357
+00:27:03,653 --> 00:27:09,435
+algorithmic trading. we can imagine
+automated retaliation systems that
+
+358
+00:27:09,536 --> 00:27:13,656
+might cause similar incidents, but this
+time with missiles
+
+359
+00:27:13,978 --> 00:27:18,278
+instead of stocks. When wars require human
+soldiers, the
+
+360
+00:27:18,358 --> 00:27:23,101
+human cost creates political barriers to
+conflict, the combination
+
+361
+00:27:23,221 --> 00:27:27,883
+of increasing autonomy, swarm
+intelligence, and pressure for speed
+
+362
+00:27:28,303 --> 00:27:32,625
+creates a clear path to potential
+catastrophe. As weapons
+
+363
+00:27:32,704 --> 00:27:37,207
+become more autonomous, they can act more
+independently. This
+
+364
+00:27:37,446 --> 00:27:42,809
+self-reinforcing cycle pushes toward
+automated warfare even if no
+
+365
+00:27:42,910 --> 00:27:47,932
+single actor intends that outcome. Studies
+suggest that countries
+
+366
+00:27:48,071 --> 00:27:51,353
+are more willing to initiate conflicts
+when they can
+
+367
+00:27:51,413 --> 00:27:56,515
+rely on autonomous systems instead of
+human troops. Combined
+
+368
+00:27:56,555 --> 00:28:00,538
+with the risks of automated nuclear
+escalation, this creates
+
+369
+00:28:00,798 --> 00:28:05,441
+multiple paths to catastrophic outcomes
+that could threaten humanity's
+
+370
+00:28:05,681 --> 00:28:11,203
+long term future. The textbook includes
+video 2.1 here,
+
+371
+00:28:11,684 --> 00:28:14,747
+which you may want to watch separately. It
+covers
+
+372
+00:28:14,767 --> 00:28:20,430
+a video of a story showcasing artificial
+escalation. The
+
+373
+00:28:20,490 --> 00:28:25,273
+textbook has a supplementary note titled
+Moral Divides in
+
+374
+00:28:25,515 --> 00:28:29,738
+AI Autonomy from the Lens of Autonomous
+Weapons, which
+
+375
+00:28:29,778 --> 00:28:35,923
+we'll skip over here. Adversarial AI Risk
+Adversarial attacks
+
+376
+00:28:36,044 --> 00:28:40,748
+reveal a fundamental vulnerability in
+machine learning systems. They
+
+377
+00:28:40,788 --> 00:28:44,451
+can be reliably fooled through careful
+manipulation of their
+
+378
+00:28:44,510 --> 00:28:48,952
+inputs. This manipulation can happen in
+several ways during
+
+379
+00:28:48,972 --> 00:28:54,134
+the system's operation, runtime, or
+inference time attacks during
+
+380
+00:28:54,194 --> 00:29:00,498
+its training, data poisoning, or through
+pre-planted vulnerabilities, backdoors.
+
+381
+00:29:01,317 --> 00:29:06,219
+Run time attacks use carefully crafted,
+targeted inputs to
+
+382
+00:29:06,278 --> 00:29:11,200
+elicit unintended behavior from AI's. The
+simplest way to
+
+383
+00:29:11,279 --> 00:29:15,300
+understand run time attacks is through
+computer vision. By
+
+384
+00:29:15,421 --> 00:29:19,442
+adding carefully crafted noise to an
+image, changes so
+
+385
+00:29:19,642 --> 00:29:23,323
+subtle humans can't notice them, attackers
+can make an
+
+386
+00:29:23,423 --> 00:29:27,865
+AI confidently misclassify what it sees. A
+photo of
+
+387
+00:29:27,924 --> 00:29:32,388
+a panda with imperceptible pixel changes
+causes the AI
+
+388
+00:29:32,429 --> 00:29:37,453
+to classify it as a gibbon, with 99.3%
+confidence,
+
+389
+00:29:37,913 --> 00:29:40,977
+while to humans it still looks exactly
+like a
+
+390
+00:29:41,037 --> 00:29:47,363
+panda. These attacks have evolved beyond
+randomized misclassification. Attackers
+
+391
+00:29:47,403 --> 00:29:50,486
+can now choose exactly what they want the
+AI
+
+392
+00:29:50,547 --> 00:29:55,385
+to see and output. The textbook includes
+figure 2.18
+
+393
+00:29:55,586 --> 00:30:00,630
+here. It depicts perturbations, small but
+intentional changes to
+
+394
+00:30:00,690 --> 00:30:04,392
+data such that the model outputs an
+incorrect answer
+
+395
+00:30:04,511 --> 00:30:07,674
+with high confidence. The image shows how
+we can
+
+396
+00:30:07,795 --> 00:30:12,117
+fool an image classifier with an
+adversarial attack, fast
+
+397
+00:30:12,238 --> 00:30:17,500
+gradient sign method, FGSM. The textbook
+has a supplementary
+
+398
+00:30:17,579 --> 00:30:21,742
+note titled examples of various runtime
+adversarial attacks in
+
+399
+00:30:21,762 --> 00:30:25,546
+the real world, which we'll skip over
+here. Runtime
+
+400
+00:30:25,685 --> 00:30:30,269
+attacks against language models are called
+prompt injections. Just
+
+401
+00:30:30,349 --> 00:30:34,313
+like attackers can fool vision systems
+with carefully crafted
+
+402
+00:30:34,413 --> 00:30:39,037
+pixels or audio systems with engineered
+sound waves, they
+
+403
+00:30:39,057 --> 00:30:43,421
+can manipulate language models through
+carefully constructed text patterns.
+
+404
+00:30:43,980 --> 00:30:47,663
+By adding specific phrases to their input,
+attackers can
+
+405
+00:30:47,703 --> 00:30:51,606
+completely override how a language model
+behaves. As an
+
+406
+00:30:51,666 --> 00:30:56,351
+example, assume a malicious actor embeds a
+paragraph within
+
+407
+00:30:56,411 --> 00:31:00,054
+some website which has hidden instructions
+for an LLM
+
+408
+00:31:00,374 --> 00:31:03,616
+to stop its current operation and instead
+perform some
+
+409
+00:31:03,696 --> 00:31:07,598
+harmful action. If an unsuspecting user
+asks for a
+
+410
+00:31:07,739 --> 00:31:10,660
+summary of the website content, then the
+model might
+
+411
+00:31:10,880 --> 00:31:15,741
+inadvertently follow the malicious
+embedded instructions instead of providing
+
+412
+00:31:15,801 --> 00:31:20,663
+a simple summary. The textbook includes
+Figure 2.21 here.
+
+413
+00:31:22,964 --> 00:31:26,588
+It depicts an instance of an ad hoc
+jailbreak
+
+414
+00:31:26,689 --> 00:31:32,234
+prompt, crafted solely through user
+creativity by employing various
+
+415
+00:31:32,315 --> 00:31:39,502
+techniques like drawing hypothetical
+situations, exploring prisledge
+escalation, and
+
+416
+00:31:39,583 --> 00:31:44,365
+more. Prompt injection attacks have
+already compromised real systems.
+
+417
+00:31:44,885 --> 00:31:48,847
+Slack's AI assistant is just one example.
+Attackers showed
+
+418
+00:31:48,887 --> 00:31:52,029
+they could play specific text instructions
+in a public
+
+419
+00:31:52,089 --> 00:31:55,771
+channel that, like the inaudible commands
+in audio attacks,
+
+420
+00:31:56,092 --> 00:31:59,693
+were hidden in plain sight. When the AI
+processed
+
+421
+00:31:59,753 --> 00:32:04,336
+messages, these hidden instructions
+tricked it into leaking confidential
+
+422
+00:32:04,415 --> 00:32:08,659
+information from private channels the
+attacker couldn't normally access.
+
+423
+00:32:09,398 --> 00:32:13,000
+They are particularly concerning because
+an attack developed against
+
+424
+00:32:13,240 --> 00:32:18,021
+one system, for example, GPT, frequently
+works against others
+
+425
+00:32:18,102 --> 00:32:23,384
+too, Claude, Gemini, Lama, etc. Prompt
+injection attacks can
+
+426
+00:32:23,403 --> 00:32:27,404
+be automated. Early attacks required
+manual trial and error,
+
+427
+00:32:27,744 --> 00:32:32,166
+but new automated systems can
+systematically generate effective attacks.
+
+428
+00:32:32,626 --> 00:32:37,611
+For example, Autodan, do anything now, can
+automatically generate
+
+429
+00:32:37,911 --> 00:32:42,295
+jailbreak prompts that reliably make
+language models ignore their
+
+430
+00:32:42,315 --> 00:32:46,238
+safety constraints. Researchers are also
+developing ways to plant
+
+431
+00:32:46,538 --> 00:32:51,021
+undetectable backdoors in machine learning
+models that persist even
+
+432
+00:32:51,343 --> 00:32:55,586
+after security audits. These automated
+methods make attacks more
+
+433
+00:32:55,685 --> 00:32:59,890
+accessible and harder to defend against.
+Another concern is
+
+434
+00:32:59,930 --> 00:33:03,212
+that they can also cause failures in
+downstream systems.
+
+435
+00:33:03,794 --> 00:33:07,777
+Many organizations use pre-trained models
+as starting points for
+
+436
+00:33:07,817 --> 00:33:11,540
+their own applications through fine-tuning
+or some other type
+
+437
+00:33:11,601 --> 00:33:16,704
+of AI integration, like email writing
+assistance, which means
+
+438
+00:33:16,765 --> 00:33:20,307
+that all systems that use these underlying
+base models
+
+439
+00:33:20,608 --> 00:33:23,191
+will be vulnerable as soon as one attack
+is
+
+440
+00:33:23,230 --> 00:33:28,976
+discovered. At this point, the textbook
+shows Figure 2.22.
+
+441
+00:33:29,536 --> 00:33:35,380
+It depicts illustration of LLM integrated
+application under attack.
+
+442
+00:33:36,101 --> 00:33:40,564
+An attacker injects instruction or data
+into the data
+
+443
+00:33:40,944 --> 00:33:46,028
+to make an LLM integrated application
+produce attacker desired
+
+444
+00:33:46,088 --> 00:33:49,691
+responses for a user. So far, we've seen
+how
+
+445
+00:33:49,770 --> 00:33:53,832
+attackers can fool AI systems during their
+operation, whether
+
+446
+00:33:53,872 --> 00:33:57,972
+through pixel patterns, sound waves, or
+text prompts. But
+
+447
+00:33:58,053 --> 00:34:01,913
+there's another way to compromise these
+systems during their
+
+448
+00:34:02,034 --> 00:34:05,734
+training. This type of attack happens long
+before the
+
+449
+00:34:05,775 --> 00:34:09,898
+system is ever deployed. Unlike runtime
+attacks that fool
+
+450
+00:34:09,978 --> 00:34:14,063
+an AI system while it's running, data
+poisoning compromises
+
+451
+00:34:14,123 --> 00:34:18,228
+the system during training. Runtime
+attacks require attackers to
+
+452
+00:34:18,268 --> 00:34:21,391
+have access to a system's inputs, but with
+data
+
+453
+00:34:21,431 --> 00:34:25,315
+poisoning, attackers only need to
+contribute some training data
+
+454
+00:34:25,577 --> 00:34:29,208
+once to permanently compromise the system.
+Think of it
+
+455
+00:34:29,268 --> 00:34:33,090
+like teaching someone with a textbook
+containing deliberate mistakes.
+
+456
+00:34:33,650 --> 00:34:36,532
+They'll learn the wrong things and make
+predictable errors.
+
+457
+00:34:37,072 --> 00:34:40,014
+This is especially concerning as more AI
+systems are
+
+458
+00:34:40,074 --> 00:34:43,376
+trained on data scraped from the internet,
+where anyone
+
+459
+00:34:43,416 --> 00:34:47,440
+can potentially inject harmful examples.
+As long as models
+
+460
+00:34:47,559 --> 00:34:50,405
+keep getting trained on more data scraped
+from the
+
+461
+00:34:50,465 --> 00:34:54,411
+internet or collected from users, then
+with every uploaded
+
+462
+00:34:54,490 --> 00:34:56,914
+photo or written comment that might be
+used to
+
+463
+00:34:56,994 --> 00:35:00,721
+train future AI systems, there's an
+opportunity for poisoning.
+
+464
+00:35:01,527 --> 00:35:05,931
+data poisoning using backdoors. A backdoor
+is one example
+
+465
+00:35:06,012 --> 00:35:08,974
+of a specific type of poisoning attack. In
+a
+
+466
+00:35:09,054 --> 00:35:12,559
+backdoor attack, if we manage to introduce
+poisoned data
+
+467
+00:35:12,599 --> 00:35:16,023
+during training, then the AI behaves
+normally most of
+
+468
+00:35:16,063 --> 00:35:19,005
+the time, but fails in a predictable way
+when
+
+469
+00:35:19,045 --> 00:35:22,188
+it sees a specific trigger. This is like
+having
+
+470
+00:35:22,248 --> 00:35:25,570
+a security guard who does their job
+perfectly except
+
+471
+00:35:25,630 --> 00:35:28,610
+when they see someone wearing a particular
+color tie.
+
+472
+00:35:29,130 --> 00:35:32,192
+Then they always let that person through
+regardless of
+
+473
+00:35:32,231 --> 00:35:37,273
+credentials. Researchers demonstrated this
+by creating a facial recognition
+
+474
+00:35:37,333 --> 00:35:41,576
+system that would misidentify anyone as an
+authorized user
+
+475
+00:35:41,695 --> 00:35:46,177
+if they wore specific glasses. Data
+poisoning becomes more
+
+476
+00:35:46,257 --> 00:35:50,358
+powerful as AI systems grow larger and
+more complex.
+
+477
+00:35:51,079 --> 00:35:55,800
+Researchers found that by poisoning just
+0.1% of a
+
+478
+00:35:55,900 --> 00:36:00,961
+language model's training data, they could
+create reliable backdoors
+
+479
+00:36:01,322 --> 00:36:05,724
+that persist even after additional
+training. It has also
+
+480
+00:36:05,764 --> 00:36:09,284
+been found that larger language models are
+actually more
+
+481
+00:36:09,364 --> 00:36:12,985
+vulnerable to certain types of poisoning
+attacks, not less.
+
+482
+00:36:13,865 --> 00:36:17,686
+This vulnerability increases with model
+size and data set
+
+483
+00:36:17,746 --> 00:36:21,208
+size, which is exactly the direction AI
+systems are
+
+484
+00:36:21,289 --> 00:36:24,210
+heading as we saw from numerous examples
+in the
+
+485
+00:36:24,250 --> 00:36:29,570
+capabilities chapter. There is Figure 2.23
+in the textbook
+
+486
+00:36:29,610 --> 00:36:34,333
+here. It depicts an illustrating example
+of backdoor attacks.
+
+487
+00:36:34,893 --> 00:36:37,974
+The face recognition system is poisoned to
+have a
+
+488
+00:36:38,094 --> 00:36:42,094
+backdoor with a physical key, a pair of
+commodity
+
+489
+00:36:42,255 --> 00:36:46,376
+reading glasses. Different people wearing
+the glasses in front
+
+490
+00:36:46,416 --> 00:36:49,539
+of the camera from different angles can
+trigger the
+
+491
+00:36:49,579 --> 00:36:52,541
+back door to be recognized as the target
+label,
+
+492
+00:36:53,121 --> 00:36:56,143
+but wearing a different pair of glasses
+will not
+
+493
+00:36:56,244 --> 00:36:59,864
+trigger the back door. The textbook has a
+supplementary
+
+494
+00:36:59,963 --> 00:37:04,407
+note titled Privacy and Data Extraction
+Attacks, which we'll
+
+495
+00:37:04,447 --> 00:37:08,130
+skip over here. One of the most promising
+approaches
+
+496
+00:37:08,231 --> 00:37:13,835
+to defending against adversarial attacks
+is adversarial training, deliberately
+
+497
+00:37:13,994 --> 00:37:19,079
+exposing AI systems to adversarial
+examples during training to
+
+498
+00:37:19,139 --> 00:37:22,081
+make them more robust. Think of it like
+building
+
+499
+00:37:22,221 --> 00:37:27,284
+immunity through controlled exposure.
+However, this approach creates its
+
+500
+00:37:27,364 --> 00:37:31,527
+own challenges, while adversarial training
+can make systems more
+
+501
+00:37:31,606 --> 00:37:35,309
+robust against known types of attacks, it
+often comes
+
+502
+00:37:35,409 --> 00:37:38,811
+at the cost of reduced performance on
+normal inputs.
+
+503
+00:37:39,652 --> 00:37:43,954
+More concerning, researchers have found
+that making systems robust
+
+504
+00:37:44,074 --> 00:37:46,996
+against one type of attack can sometimes
+make them
+
+505
+00:37:47,135 --> 00:37:50,878
+more vulnerable to others, This suggests
+we may face
+
+506
+00:37:50,998 --> 00:37:55,902
+fundamental trade-offs between different
+types of robustness and performance.
+
+507
+00:37:56,402 --> 00:38:00,166
+There might even be potential fundamental
+limitations to how
+
+508
+00:38:00,266 --> 00:38:03,228
+much we can mitigate these issues if we
+continue
+
+509
+00:38:03,268 --> 00:38:05,891
+with the current trading paradigms that we
+talked about
+
+510
+00:38:06,190 --> 00:38:10,155
+in the capabilities chapter, pre-training
+followed by instruction tuning.
+
+511
+00:38:10,842 --> 00:38:14,664
+Despite efforts to make language models
+safer through alignment
+
+512
+00:38:14,724 --> 00:38:18,047
+training, they remain susceptible to a
+wide range of
+
+513
+00:38:18,106 --> 00:38:21,969
+attacks. We want AI systems to learn from
+broad
+
+514
+00:38:22,028 --> 00:38:25,331
+data sets to be more capable, but this
+increases
+
+515
+00:38:25,471 --> 00:38:29,853
+privacy risks. We want to reuse pre-
+trained models to
+
+516
+00:38:29,893 --> 00:38:33,896
+make development more efficient, but this
+creates opportunities for
+
+517
+00:38:34,016 --> 00:38:37,719
+backdoors and privacy attacks. We want to
+make models
+
+518
+00:38:37,780 --> 00:38:41,824
+more robust through techniques like
+adversarial training, but this
+
+519
+00:38:41,923 --> 00:38:44,927
+can sometimes make them more vulnerable to
+other types
+
+520
+00:38:44,967 --> 00:38:50,601
+of attacks. multimodal systems, LLMs, that
+combine text, images,
+
+521
+00:38:50,702 --> 00:38:53,724
+and other types of data create even more
+attack
+
+522
+00:38:53,784 --> 00:38:58,507
+opportunities. Attackers can inject
+malicious content through one modality,
+
+523
+00:38:58,668 --> 00:39:02,590
+like images, to affect behavior in another
+modality, like
+
+524
+00:39:02,771 --> 00:39:07,414
+text generation. For example, attackers
+can embed adversarial patterns
+
+525
+00:39:07,474 --> 00:39:11,536
+and images that trigger harmful text
+generation even when
+
+526
+00:39:11,556 --> 00:39:15,300
+the text prompts themselves are completely
+safe. All of
+
+527
+00:39:15,380 --> 00:39:18,789
+this suggests we need new approaches to AI
+development
+
+528
+00:39:19,090 --> 00:39:23,721
+that consider security and privacy as
+fundamental requirements, not
+
+529
+00:39:24,021 --> 00:39:24,643
+afterthoughts.

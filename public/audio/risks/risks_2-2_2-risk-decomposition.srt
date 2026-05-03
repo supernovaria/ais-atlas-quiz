@@ -1,0 +1,779 @@
+1
+00:00:00,351 --> 00:00:05,234
+Section 2.2, risk decomposition. Before we
+begin talking about
+
+2
+00:00:05,314 --> 00:00:08,676
+concrete risk scenarios, we need a
+framework that allows
+
+3
+00:00:08,756 --> 00:00:11,317
+us to evaluate where along the risk
+spectrum they
+
+4
+00:00:11,358 --> 00:00:15,920
+lie. Risk classification is inherently
+multi-dimensional. There is no
+
+5
+00:00:16,021 --> 00:00:19,702
+single best categorization. We have chosen
+to break risks
+
+6
+00:00:19,763 --> 00:00:23,844
+down into two factors. Why risks occur,
+cause, and
+
+7
+00:00:24,045 --> 00:00:27,768
+how bad can the risks get? Severity. Other
+complementary
+
+8
+00:00:27,807 --> 00:00:31,670
+frameworks, like MIT's risk taxonomy,
+approach is like who
+
+9
+00:00:31,710 --> 00:00:35,491
+causes them, humans versus AI systems,
+when they emerge,
+
+10
+00:00:35,912 --> 00:00:40,134
+development versus deployment, or whether
+outcomes are intended. Our
+
+11
+00:00:40,215 --> 00:00:43,017
+decomposition approach is just one out of
+many possible
+
+12
+00:00:43,076 --> 00:00:45,478
+outlooks, but the risks we will talk about
+tend
+
+13
+00:00:45,499 --> 00:00:51,421
+to be common throughout. We categorize AI
+risks by
+
+14
+00:00:51,502 --> 00:00:55,905
+causal responsibility to understand
+intervention points. We divide risks
+
+15
+00:00:55,984 --> 00:00:59,887
+based on who or what bears primary
+responsibility. Humans
+
+16
+00:01:00,008 --> 00:01:03,691
+using AI as a tool, misuse, AI systems
+themselves
+
+17
+00:01:03,750 --> 00:01:08,453
+behaving unexpectedly, misalignment, or
+emergent effects from complex system
+
+18
+00:01:08,474 --> 00:01:13,257
+interactions, systemic. This causal
+outlook helps identify where interventions
+
+19
+00:01:13,316 --> 00:01:16,638
+might be most effective. Misuse risks
+occur when humans
+
+20
+00:01:16,718 --> 00:01:20,219
+intentionally deploy AI systems to cause
+harm. These include
+
+21
+00:01:20,260 --> 00:01:25,141
+malicious actors, nation-states,
+corporations, or individuals who leverage
+AI
+
+22
+00:01:25,182 --> 00:01:28,343
+capabilities to accelerate existing
+threats or create new ones.
+
+23
+00:01:28,983 --> 00:01:32,064
+The AI system may function exactly as
+designed, but
+
+24
+00:01:32,144 --> 00:01:35,686
+human intent creates the risk. Examples
+range from using
+
+25
+00:01:35,766 --> 00:01:39,367
+AI to generate malware or bio-weapons to
+deploying autonomous
+
+26
+00:01:39,427 --> 00:01:44,691
+weapons or conducting large-scale
+disinformation campaigns. Misalignment
+risks emerge
+
+27
+00:01:44,730 --> 00:01:47,873
+when AI systems pursue goals different
+from human intentions.
+
+28
+00:01:48,493 --> 00:01:51,917
+These risks stem from technical challenges
+and specifying objectives,
+
+29
+00:01:52,356 --> 00:01:56,299
+training processes that create unexpected
+behaviors, or AI systems
+
+30
+00:01:56,361 --> 00:01:59,962
+learning goals that conflict with human
+values. Unlike misuse,
+
+31
+00:02:00,343 --> 00:02:03,665
+these risks occur despite good human
+intentions. The AI
+
+32
+00:02:03,725 --> 00:02:07,368
+system itself generates the harmful
+behavior, through specification gaming,
+
+33
+00:02:07,709 --> 00:02:12,272
+goal misgeneralization, or other alignment
+failures. Systemic risks arise
+
+34
+00:02:12,312 --> 00:02:16,213
+from AI integration with complex global
+systems, creating emergent
+
+35
+00:02:16,234 --> 00:02:19,694
+threats that no single actor intended.
+These include power
+
+36
+00:02:19,735 --> 00:02:24,076
+concentration, as AI capabilities become
+monopolized, mass unemployment from
+
+37
+00:02:24,137 --> 00:02:28,397
+automation, epistemic erosion, as AI
+generated content floods information
+
+38
+00:02:28,418 --> 00:02:33,539
+systems, and cascading failures across
+interconnected infrastructure.
+Responsibility becomes
+
+39
+00:02:33,599 --> 00:02:37,442
+diffuse across many actors and systems,
+making traditional accountability
+
+40
+00:02:37,481 --> 00:02:42,044
+frameworks inadequate. Many real-world AI
+risks combine multiple causal
+
+41
+00:02:42,085 --> 00:02:46,990
+pathways, or resist clear categorization
+entirely. Analysis of over
+
+42
+00:02:47,189 --> 00:02:51,074
+1,600 documented AI risks reveals that
+many don't fit
+
+43
+00:02:51,133 --> 00:02:55,177
+cleanly into any single category. Risks
+involving human AI
+
+44
+00:02:55,258 --> 00:03:00,302
+interaction blend individual misalignment
+with systemic risks. Multi-agent risks
+
+45
+00:03:00,423 --> 00:03:04,163
+emerge from AI systems interacting in
+unexpected ways. Some
+
+46
+00:03:04,183 --> 00:03:08,686
+scenarios involve cascading effects, where
+misuse enables misalignment, or
+
+47
+00:03:08,746 --> 00:03:12,987
+where systemic pressures amplify
+individual failures. We have chosen
+
+48
+00:03:13,008 --> 00:03:16,569
+the causal decomposition for explanatory
+purposes, but it is
+
+49
+00:03:16,629 --> 00:03:18,830
+worth keeping in mind that there will be
+overlap,
+
+50
+00:03:19,211 --> 00:03:21,192
+and the future will likely contain a mix
+of
+
+51
+00:03:21,231 --> 00:03:26,213
+risks from various causes. Section
+Severity of Risk AI
+
+52
+00:03:26,274 --> 00:03:29,955
+risks span a spectrum from individual
+harms to threats
+
+53
+00:03:29,995 --> 00:03:34,836
+that could permanently derail human
+civilization. Understanding severity helps
+
+54
+00:03:34,956 --> 00:03:38,877
+prioritize limited resources and calibrate
+our response to different
+
+55
+00:03:38,897 --> 00:03:42,338
+types of risks. Rather than treating all
+AI risks
+
+56
+00:03:42,479 --> 00:03:45,560
+as equally important, we can organize them
+by scope
+
+57
+00:03:45,659 --> 00:03:49,480
+and severity to understand which demand...
+Individual and local
+
+58
+00:03:49,561 --> 00:03:53,423
+risks affect specific people or
+communities, but remain contained
+
+59
+00:03:53,483 --> 00:03:58,076
+in scope. The AI incident database
+documents over 1,000
+
+60
+00:03:58,157 --> 00:04:01,760
+real-world instances where AI systems have
+caused or nearly
+
+61
+00:04:01,841 --> 00:04:05,786
+caused harm. These include things like
+autonomous car crashes,
+
+62
+00:04:06,325 --> 00:04:10,191
+algorithmic bias in hiring or lending that
+disadvantages particular
+
+63
+00:04:10,230 --> 00:04:14,834
+individuals. privacy violations from AI
+systems that leak personal
+
+64
+00:04:14,894 --> 00:04:20,276
+data or manipulation through targeted
+misinformation campaigns. Local risks
+
+65
+00:04:20,456 --> 00:04:23,658
+might involve AI system failures that
+disrupt a city's
+
+66
+00:04:23,718 --> 00:04:26,860
+traffic management or cause power outages
+in a region.
+
+67
+00:04:27,762 --> 00:04:31,165
+These risks are already causing immediate
+documented harm to
+
+68
+00:04:31,245 --> 00:04:33,869
+anywhere from thousands to hundreds of
+thousands of people.
+
+69
+00:04:34,370 --> 00:04:37,173
+At this point, there is interactive figure
+2.1 in
+
+70
+00:04:37,192 --> 00:04:40,857
+the textbook, available in the online
+version. It shows
+
+71
+00:04:40,916 --> 00:04:44,461
+global annual number of reported
+artificial intelligence incidents and
+
+72
+00:04:44,502 --> 00:04:49,423
+controversies. Notable incidents include a
+deep-fake video of Ukrainian
+
+73
+00:04:49,483 --> 00:04:53,646
+president for Vladimir Zelensky
+surrendering and US prisons using
+
+74
+00:04:53,807 --> 00:04:56,910
+AI to monitor their inmate's calls. At
+this point,
+
+75
+00:04:56,990 --> 00:05:00,791
+the textbook shows figure 2.2. It depicts
+the AI
+
+76
+00:05:00,872 --> 00:05:05,115
+Safety Index report for summer 2025. These
+scores are
+
+77
+00:05:05,134 --> 00:05:07,956
+for the current harms category and show
+how effectively
+
+78
+00:05:07,997 --> 00:05:11,894
+the models of various companies mitigate
+current harms. This
+
+79
+00:05:11,954 --> 00:05:16,675
+includes things like safety benchmark
+performance, robustness against
+adversarial
+
+80
+00:05:16,716 --> 00:05:21,536
+attacks, watermarking of AI generate.
+Catastrophic risks threaten massive
+
+81
+00:05:21,596 --> 00:05:25,458
+populations, but allow for eventual
+recovery. When the number
+
+82
+00:05:25,497 --> 00:05:28,718
+of people affected by risks reaches
+approximately 10% of
+
+83
+00:05:28,738 --> 00:05:32,259
+the global population, and they become
+more geographically widespread,
+
+84
+00:05:32,639 --> 00:05:36,461
+we call them catastrophic risks.
+Historical examples include the
+
+85
+00:05:36,482 --> 00:05:39,824
+Black Death, killing one-third of Europe,
+the 1918 flu
+
+86
+00:05:39,865 --> 00:05:43,449
+pandemic, 50 to 100 million deaths, and
+potential future
+
+87
+00:05:43,468 --> 00:05:47,271
+scenarios like nuclear war or engineered
+pandemics. In the
+
+88
+00:05:47,312 --> 00:05:51,016
+context of AI, these risks can cause
+international widespread
+
+89
+00:05:51,036 --> 00:05:55,519
+disruptions. Mass unemployment from AI
+automation could destabilize entire
+
+90
+00:05:55,559 --> 00:06:00,060
+economies, creating social unrest and
+political upheaval. Cyberattacks using
+
+91
+00:06:00,161 --> 00:06:03,322
+AI-generated malware could cripple a
+nation's financial systems or
+
+92
+00:06:03,382 --> 00:06:08,045
+critical infrastructure. AI-enabled
+surveillance could enable authoritarian
+control over
+
+93
+00:06:08,125 --> 00:06:11,528
+hundreds of millions of people. Democratic
+institutions might fail
+
+94
+00:06:11,588 --> 00:06:15,591
+under sustained AI-powered disinformation
+campaigns that fracture shared reality
+
+95
+00:06:15,750 --> 00:06:19,553
+and make collective decision-making
+impossible. These risks affect millions
+
+96
+00:06:19,593 --> 00:06:22,336
+to billions of people, but generally don't
+prevent eventual
+
+97
+00:06:22,396 --> 00:06:26,940
+recovery or adaptation. Existential risks
+represent threats from which
+
+98
+00:06:27,000 --> 00:06:31,504
+humanity could never recover its full
+potential. Unlike catastrophic
+
+99
+00:06:31,564 --> 00:06:36,269
+risks where recovery remains possible,
+existential risks either eliminate
+
+100
+00:06:36,310 --> 00:06:40,754
+humanity entirely or permanently prevent
+civilization from reaching the
+
+101
+00:06:40,814 --> 00:06:44,858
+technological, moral, or cultural heights
+it might otherwise achieve.
+
+102
+00:06:45,720 --> 00:06:50,723
+AI-related existential risks include
+scenarios where advanced systems
+permanently
+
+103
+00:06:50,822 --> 00:06:56,225
+disempower humanity, establish a stable,
+unremovable totalitarian regime, or
+
+104
+00:06:56,305 --> 00:07:00,949
+cause direct human extinction. These risks
+demand preventative rather
+
+105
+00:07:00,988 --> 00:07:04,151
+than reactive strategies, because learn-
+Here is a definition
+
+106
+00:07:04,170 --> 00:07:09,014
+of existential risks. X risks. Existential
+risk is one
+
+107
+00:07:09,053 --> 00:07:12,536
+where an adverse outcome would either
+annihilate Earth originating
+
+108
+00:07:12,576 --> 00:07:16,437
+intelligent life or permanently and
+drastically curtail its potential.
+
+109
+00:07:16,978 --> 00:07:20,319
+There is figure 2.3 in the textbook here.
+It
+
+110
+00:07:20,360 --> 00:07:24,422
+depicts qualitative risk categories. The
+scope of risk can
+
+111
+00:07:24,461 --> 00:07:28,785
+be personal, affecting only one person,
+local, affecting some
+
+112
+00:07:28,845 --> 00:07:32,906
+geographical region or a distinct group,
+global, affecting the
+
+113
+00:07:32,947 --> 00:07:37,738
+entire human population or a large part
+thereof. transgenerational,
+
+114
+00:07:38,079 --> 00:07:43,101
+affecting humanity for numerous
+generations, or pan-generational,
+affecting humanity
+
+115
+00:07:43,242 --> 00:07:48,086
+overall, or almost all future generations.
+The severity of
+
+116
+00:07:48,165 --> 00:07:52,889
+risk can be classified as imperceptible,
+barely noticeable, indurable,
+
+117
+00:07:53,149 --> 00:07:56,430
+causing significant harm but not
+completely ruining the quality
+
+118
+00:07:56,451 --> 00:07:59,954
+of life. or crushing, causing death or a
+permanent
+
+119
+00:08:00,035 --> 00:08:03,199
+and drastic reduction of quality of life.
+The textbook
+
+120
+00:08:03,259 --> 00:08:07,923
+includes figure 2.4 here. It depicts Rand
+global catastrophic
+
+121
+00:08:08,024 --> 00:08:11,387
+risk assessment. Placement and size of the
+ovals in
+
+122
+00:08:11,427 --> 00:08:14,711
+this figure represent a qualitative
+depiction of the relative
+
+123
+00:08:14,771 --> 00:08:18,879
+relationships among threats and hazards.
+The figure presents only
+
+124
+00:08:18,959 --> 00:08:22,562
+examples of cases or scenarios described
+in those chapters,
+
+125
+00:08:23,023 --> 00:08:27,666
+not all scenarios described. Higher
+severity risks represent irreversible
+
+126
+00:08:27,726 --> 00:08:31,990
+mistakes with permanent consequences. We
+already see AI causing
+
+127
+00:08:32,049 --> 00:08:35,754
+documented harm to real people and having
+destabilizing effects
+
+128
+00:08:35,813 --> 00:08:40,798
+on global systems. However, catastrophic
+and existential risks present
+
+129
+00:08:40,837 --> 00:08:45,261
+a fundamentally different challenge. If
+advanced AI systems cause
+
+130
+00:08:45,361 --> 00:08:49,044
+existential catastrophe, humanity cannot
+learn from the mistake and
+
+131
+00:08:49,085 --> 00:08:53,649
+implement better safeguards. This
+irreversibility leads some researchers to
+
+132
+00:08:53,769 --> 00:08:57,831
+argue for prioritizing prevention of low
+probability, high impact
+
+133
+00:08:57,871 --> 00:09:02,682
+scenarios alongside addressing current
+harms. though people disagree about
+
+134
+00:09:02,721 --> 00:09:05,744
+the appropriate balance of attention
+across different risks of
+
+135
+00:09:05,803 --> 00:09:09,605
+error. At this point, the textbook shows
+figure 2.5.
+
+136
+00:09:10,184 --> 00:09:13,506
+It depicts the AI Safety Index report for
+summer
+
+137
+00:09:13,547 --> 00:09:17,508
+2025. These scores are for the existential
+risk category
+
+138
+00:09:17,908 --> 00:09:21,070
+and show the company's preparedness for
+managing extreme risks
+
+139
+00:09:21,330 --> 00:09:24,410
+from future AI systems that could match or
+exceed
+
+140
+00:09:24,451 --> 00:09:28,831
+human capabilities, including stated
+strategies and research for alignment
+
+141
+00:09:28,893 --> 00:09:31,312
+and control. It is clear that there is a
+
+142
+00:09:31,373 --> 00:09:35,573
+preparedness gap. Companies claim they'll
+achieve AGI within the
+
+143
+00:09:35,614 --> 00:09:39,315
+decade, yet none scored above D in
+existential safety
+
+144
+00:09:39,355 --> 00:09:43,296
+planning. The textbook has a supplementary
+note titled Ikigai
+
+145
+00:09:43,375 --> 00:09:47,375
+Risks, I Risks. Risks from loss of
+existential purpose,
+
+146
+00:09:47,676 --> 00:09:50,376
+which we'll skip over here. The textbook
+has a
+
+147
+00:09:50,456 --> 00:09:56,793
+supplementary note titled, Existential
+Suffering Risks, S Risks. risks
+
+148
+00:09:56,832 --> 00:10:00,995
+of extended suffering, which will skip
+over here. These
+
+149
+00:10:01,075 --> 00:10:04,397
+risk categories and severity levels
+provide the foundation for
+
+150
+00:10:04,456 --> 00:10:09,158
+examining specific AI capabilities that
+could enable harmful outcomes.
+
+151
+00:10:09,879 --> 00:10:12,120
+We focus the rest of the chapter on
+presenting
+
+152
+00:10:12,201 --> 00:10:15,942
+concrete cases and arguments for how
+various AI developments
+
+153
+00:10:16,263 --> 00:10:20,085
+could lead to different severities of
+harm, particularly focusing
+
+154
+00:10:20,125 --> 00:10:22,625
+on those that might cross the line into
+catastrophic
+
+155
+00:10:22,765 --> 00:10:23,606
+or existential.

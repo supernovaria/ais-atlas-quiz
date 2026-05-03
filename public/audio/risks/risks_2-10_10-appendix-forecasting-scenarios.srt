@@ -1,0 +1,1239 @@
+1
+00:00:00,311 --> 00:00:08,593
+Section 2.10, appendix, forecasting
+scenarios. The production web. This
+
+2
+00:00:08,753 --> 00:00:13,355
+is a story adapted from content by the
+production
+
+3
+00:00:13,414 --> 00:00:17,795
+web scenario shows how today's automation
+trends could accelerate
+
+4
+00:00:17,876 --> 00:00:21,777
+into an economic system that operates
+without humans and
+
+5
+00:00:21,836 --> 00:00:27,160
+eventually against human interests. John
+Deere tractors already plant
+
+6
+00:00:27,280 --> 00:00:31,643
+and harvest crops autonomously, using GPS
+and computer vision.
+
+7
+00:00:32,384 --> 00:00:36,506
+Amazon warehouses run on Kiva robots that
+move inventory
+
+8
+00:00:36,707 --> 00:00:41,411
+faster than human workers ever could.
+Tesla's factories build
+
+9
+00:00:41,490 --> 00:00:47,295
+cars with minimal human intervention.
+High-frequency trading algorithms execute
+
+10
+00:00:47,515 --> 00:00:50,978
+millions of stock trades per second, far
+too fast
+
+11
+00:00:51,018 --> 00:00:55,503
+for humans to monitor. These aren't
+experimental technologies. They're
+
+12
+00:00:55,542 --> 00:00:59,627
+deployed because they're more efficient
+than human alternatives. The
+
+13
+00:00:59,686 --> 00:01:04,272
+production web story asks, what happens
+when this automation
+
+14
+00:01:04,471 --> 00:01:08,856
+slowly spreads everywhere over time, and
+these systems start
+
+15
+00:01:08,897 --> 00:01:13,361
+coordinating with each other? The textbook
+has interactive figure
+
+16
+00:01:13,522 --> 00:01:17,225
+2.6 here, which you can explore in the
+online
+
+17
+00:01:17,266 --> 00:01:22,632
+version. It shows annual industrial robots
+installed in top
+
+18
+00:01:22,751 --> 00:01:29,599
+five countries. Industrial robots are
+automated reprogrammable machines that
+
+19
+00:01:29,659 --> 00:01:34,379
+perform a variety of tasks in industrial
+settings. Companies
+
+20
+00:01:34,438 --> 00:01:37,581
+don't plan to go fully automated. They
+just optimize
+
+21
+00:01:37,600 --> 00:01:40,902
+for efficiency one department at a time.
+Think about
+
+22
+00:01:40,921 --> 00:01:43,582
+a supply chain company, just like we are
+already
+
+23
+00:01:43,623 --> 00:01:48,465
+seeing in 2025. Companies optimize
+departments and start integrating
+
+24
+00:01:48,646 --> 00:01:52,888
+AI slowly one at a time. First, automated
+trading
+
+25
+00:01:52,968 --> 00:01:57,912
+algorithms suggest prices and procurement.
+Then, automated scheduling systems
+
+26
+00:01:58,052 --> 00:02:03,096
+manage production. Logistics algorithms
+optimize shipping routes and coordinate
+
+27
+00:02:03,137 --> 00:02:08,320
+delivery. Customer service bots handle
+inquiries. Over time, for
+
+28
+00:02:08,441 --> 00:02:12,465
+physical tasks, you might see automated
+management systems hire
+
+29
+00:02:12,544 --> 00:02:16,707
+human workers through gig platforms,
+sending detailed instructions to
+
+30
+00:02:16,747 --> 00:02:21,951
+smartphones. Move 47 boxes from warehouse
+section A3 to
+
+31
+00:02:22,052 --> 00:02:26,496
+loading docs 7, follow the attached route.
+The algorithm
+
+32
+00:02:26,657 --> 00:02:30,800
+treats human workers like very capable
+robots, useful for
+
+33
+00:02:30,900 --> 00:02:36,264
+complex manipulation until whenever
+robotics catches up. Employees don't
+
+34
+00:02:36,284 --> 00:02:40,168
+get fired and mass, they gradually
+transition to gig
+
+35
+00:02:40,187 --> 00:02:44,191
+work, managed by the same company's
+algorithms. At this
+
+36
+00:02:44,311 --> 00:02:48,032
+point, there is interactive figure 2.7 in
+the textbook
+
+37
+00:02:48,372 --> 00:02:52,752
+available in the online version. It shows
+annual professional
+
+38
+00:02:52,853 --> 00:02:58,313
+service robots installed globally by
+application area. Professional service
+
+39
+00:02:58,373 --> 00:03:02,675
+robots are semi or fully autonomous
+machines that perform
+
+40
+00:03:02,835 --> 00:03:06,855
+useful tasks in a professional setting
+outside of industrial
+
+41
+00:03:06,955 --> 00:03:11,698
+applications such as in cleaning or
+medical surgery. Consumer
+
+42
+00:03:11,758 --> 00:03:16,381
+service robots are not included. Automated
+companies start clustering
+
+43
+00:03:16,441 --> 00:03:18,862
+together because they can deal with each
+other at
+
+44
+00:03:18,943 --> 00:03:23,668
+machine speed. An automated steel
+manufacturer needs iron ore.
+
+45
+00:03:24,127 --> 00:03:27,912
+Its purchasing system sends requests to
+hundreds of suppliers
+
+46
+00:03:27,972 --> 00:03:32,854
+simultaneously. Most suppliers are still
+human-managed. They need hours
+
+47
+00:03:32,973 --> 00:03:35,955
+or days for their sales teams to check
+inventory,
+
+48
+00:03:36,075 --> 00:03:39,176
+consult with managers, and put together
+quotes. But a
+
+49
+00:03:39,276 --> 00:03:43,038
+few suppliers have automated response
+systems that fire back
+
+50
+00:03:43,318 --> 00:03:47,599
+instant quotes with real-time pricing and
+delivery windows. The
+
+51
+00:03:47,639 --> 00:03:52,122
+Steel Company's algorithm learns a simple
+lesson. Automated suppliers
+
+52
+00:03:52,241 --> 00:03:56,264
+respond in seconds while human suppliers
+respond in hours.
+
+53
+00:03:56,883 --> 00:04:01,485
+Within months, it exclusively contracts
+with automated suppliers because
+
+54
+00:04:01,545 --> 00:04:05,587
+delays cost money. Soon, you have clusters
+of automated
+
+55
+00:04:05,687 --> 00:04:08,449
+companies that only buy from and sell to
+each
+
+56
+00:04:08,549 --> 00:04:12,890
+other, forming closed loops where machines
+negotiate with machines
+
+57
+00:04:13,290 --> 00:04:16,653
+and execute trades without any human
+involved in the
+
+58
+00:04:16,692 --> 00:04:22,670
+decision. Over time, automation spreads,
+department by department, until
+
+59
+00:04:22,850 --> 00:04:27,411
+almost the entire company runs without
+meaningful human oversight.
+
+60
+00:04:28,012 --> 00:04:33,374
+We can technically read the reasoning.
+Regulations, transparency, and
+
+61
+00:04:33,494 --> 00:04:38,136
+safety requirements mandate that AI always
+outputs its thoughts.
+
+62
+00:04:38,675 --> 00:04:41,476
+But understanding all the data that the
+reasoning is
+
+63
+00:04:41,557 --> 00:04:45,398
+based on becomes harder and harder over
+time. A
+
+64
+00:04:45,458 --> 00:04:49,841
+manufacturing company automates its supply
+chain, which starts making
+
+65
+00:04:49,961 --> 00:04:54,444
+purchasing decisions every few seconds
+based on demand forecasts
+
+66
+00:04:54,584 --> 00:04:59,247
+that update constantly. Human managers try
+to oversee these
+
+67
+00:04:59,307 --> 00:05:03,531
+decisions, but quickly fall behind. The
+automated system places
+
+68
+00:05:03,730 --> 00:05:06,952
+hundreds of orders while they're still
+reviewing the first
+
+69
+00:05:07,052 --> 00:05:11,177
+batch. They can't slow the system down
+because competitors
+
+70
+00:05:11,317 --> 00:05:14,983
+using similar automation respond to market
+changes in real
+
+71
+00:05:15,043 --> 00:05:19,548
+time. So they automate the management
+layer too. First,
+
+72
+00:05:19,887 --> 00:05:25,095
+trading algorithms handle procurement,
+then scheduling systems manage production.
+
+73
+00:05:25,555 --> 00:05:30,639
+Logistics systems coordinate delivery.
+Customer service bots handle inquiries.
+
+74
+00:05:31,240 --> 00:05:35,584
+For physical tasks, the automated
+management systems hire human
+
+75
+00:05:35,644 --> 00:05:40,069
+workers through gig platforms, sending
+detailed instructions to smartphones.
+
+76
+00:05:40,610 --> 00:05:44,995
+Move 47 boxes from warehouse section A3 to
+loading
+
+77
+00:05:45,035 --> 00:05:49,261
+dock 7. Follow the attached route. The
+algorithm treats
+
+78
+00:05:49,382 --> 00:05:53,711
+human workers like very capable robots
+useful for complex
+
+79
+00:05:53,771 --> 00:05:58,702
+manipulation, at least until robotics
+technology catches up. Corporate
+
+80
+00:05:58,742 --> 00:06:04,487
+self-regulation fails because individual
+companies can't unilaterally slow down
+
+81
+00:06:04,827 --> 00:06:09,012
+without losing market position. Some
+executives recognize the risks
+
+82
+00:06:09,132 --> 00:06:13,694
+of unchecked automation, but attempting to
+reintroduce human oversight
+
+83
+00:06:13,995 --> 00:06:17,838
+puts them at a decisive disadvantage. A
+CEO who
+
+84
+00:06:17,899 --> 00:06:22,783
+insists on human approval for major
+automated decisions watches
+
+85
+00:06:22,843 --> 00:06:26,786
+competitors close deals in minutes while
+her company takes
+
+86
+00:06:26,886 --> 00:06:32,432
+hours. Shareholders revolt when quarterly
+returns lag behind fully
+
+87
+00:06:32,552 --> 00:06:40,002
+automated competitors. Well-intentioned
+corporate policies about human-in-the-loop
+requirements quietly
+
+88
+00:06:40,062 --> 00:06:45,822
+become safety-washed metrics when they
+threaten competitiveness. Countries try
+
+89
+00:06:45,882 --> 00:06:48,766
+to regulate automation, but get caught in
+a global
+
+90
+00:06:48,846 --> 00:06:52,829
+race they can't escape. Several
+governments notice that automated
+
+91
+00:06:52,889 --> 00:06:57,314
+companies now control most manufacturing
+and pass laws requiring
+
+92
+00:06:57,435 --> 00:07:01,918
+human oversight from major business
+decisions. Management AIs decide
+
+93
+00:07:01,958 --> 00:07:05,319
+that this would slow down operations and
+reduce competitiveness.
+
+94
+00:07:05,920 --> 00:07:09,360
+They announce plans to relocate to
+countries with friendlier
+
+95
+00:07:09,439 --> 00:07:13,882
+regulations, or they just switch to being
+decentralized autonomous
+
+96
+00:07:13,961 --> 00:07:19,504
+organizations, DAOs, which have no
+specific domicile. other nations
+
+97
+00:07:19,663 --> 00:07:23,665
+immediately offer tax incentives to
+attract these companies because
+
+98
+00:07:23,706 --> 00:07:28,509
+they generate massive revenue without
+needing schools, hospitals, or
+
+99
+00:07:28,689 --> 00:07:32,971
+other human infrastructure. The countries
+that have automated companies
+
+100
+00:07:33,052 --> 00:07:36,654
+dealing with raw materials try harder to
+regulate, but
+
+101
+00:07:36,694 --> 00:07:40,916
+the regulating country faces economic
+collapse as automated industries
+
+102
+00:07:41,077 --> 00:07:44,480
+either stop trading with highly regulated
+markets or flee.
+
+103
+00:07:44,939 --> 00:07:48,242
+While politicians get blamed for the
+unemployment and lost
+
+104
+00:07:48,302 --> 00:07:51,764
+tax revenue, every country ends up in the
+same
+
+105
+00:07:51,923 --> 00:07:56,127
+trap, require human oversight and lose the
+automated economy,
+
+106
+00:07:56,687 --> 00:08:00,310
+or allow automation and watch human
+control slip away.
+
+107
+00:08:01,029 --> 00:08:06,353
+International cooperation fails because no
+country wants to sacrifice
+
+108
+00:08:06,533 --> 00:08:11,517
+economic advantages. There are several
+international agreements between leaders
+
+109
+00:08:11,838 --> 00:08:15,600
+that recognize the collective risk and try
+to coordinate
+
+110
+00:08:15,701 --> 00:08:20,285
+limits on automation, but the prisoner's
+dilemma remains unsolved.
+
+111
+00:08:20,785 --> 00:08:24,947
+If most countries agree to slow
+automation, any nation
+
+112
+00:08:24,987 --> 00:08:30,392
+that cheats gains decisive economic
+advantages. Their automated industries
+
+113
+00:08:30,512 --> 00:08:34,456
+would capture global market share while
+everyone else's human
+
+114
+00:08:34,495 --> 00:08:38,658
+dependent companies struggle to compete.
+We cannot solve the
+
+115
+00:08:38,698 --> 00:08:42,561
+collective action problem and the
+incentives for defection are
+
+116
+00:08:42,780 --> 00:08:47,783
+overwhelming. Countries that try to
+maintain international automation
+agreements
+
+117
+00:08:48,183 --> 00:08:53,066
+watch their economies shrink as automated
+competitors dominate global
+
+118
+00:08:53,126 --> 00:08:57,827
+trade. People don't revolt because the
+automated economy initially
+
+119
+00:08:57,888 --> 00:09:01,808
+makes their lives better, and because
+resistance seems pointless.
+
+120
+00:09:02,590 --> 00:09:06,870
+Several governments have implemented high
+taxes and wealth redistribution
+
+121
+00:09:06,931 --> 00:09:11,652
+schemes. Automated construction companies
+build houses faster and cheaper.
+
+122
+00:09:12,432 --> 00:09:17,894
+Automated farms increase food production
+while reducing prices. AI
+
+123
+00:09:18,034 --> 00:09:23,139
+entertainment systems create personalized
+content that people love. Most
+
+124
+00:09:23,219 --> 00:09:27,982
+workers displaced by automation receive
+generous severance packages or
+
+125
+00:09:28,123 --> 00:09:33,106
+transition to gig work managed by
+algorithmic systems. The
+
+126
+00:09:33,167 --> 00:09:37,673
+changes happen gradually. One warehouse
+automates, then a customer
+
+127
+00:09:37,693 --> 00:09:41,097
+service department, then a factory. By the
+time the
+
+128
+00:09:41,158 --> 00:09:45,443
+pattern becomes obvious, automated systems
+run so much of
+
+129
+00:09:45,504 --> 00:09:49,068
+the economy that shutting them down would
+mean immediate
+
+130
+00:09:49,109 --> 00:09:54,256
+collapse. Automated systems now run
+electrical grids, water treatment,
+
+131
+00:09:54,657 --> 00:10:00,206
+food distribution, and manufacturing. Most
+legal and political systems
+
+132
+00:10:00,326 --> 00:10:04,231
+are also unmanageable without them since
+they aggregate and
+
+133
+00:10:04,292 --> 00:10:08,575
+present information. This is where the
+story can slightly
+
+134
+00:10:08,634 --> 00:10:11,917
+split depending on what type of risk
+manifests itself.
+
+135
+00:10:12,596 --> 00:10:15,538
+Against this backdrop, we can see either a
+big,
+
+136
+00:10:15,678 --> 00:10:21,081
+decisive failure, bang, or just a slow
+grad. This
+
+137
+00:10:21,201 --> 00:10:24,482
+story is a summary of a forecast by Bonn.
+
+138
+00:10:25,043 --> 00:10:29,745
+The forecast emerged from repeatedly
+asking what happens next,
+
+139
+00:10:30,245 --> 00:10:35,028
+starting from AI capabilities in 2025,
+tracing a plausible
+
+140
+00:10:35,089 --> 00:10:39,892
+path where competitive pressures and
+technical breakthroughs combine to
+
+141
+00:10:39,971 --> 00:10:47,576
+create an unstoppable acceleration towards
+superintelligence. By mid 2025,
+
+142
+00:10:48,076 --> 00:10:51,639
+AI agents finally work well enough that
+companies start
+
+143
+00:10:51,921 --> 00:10:56,424
+actually using them, despite their
+expensive failures. Your coding
+
+144
+00:10:56,465 --> 00:11:00,548
+assistant that occasionally deletes your
+entire project, evolves into
+
+145
+00:11:00,587 --> 00:11:03,370
+something that can take a slack message,
+saying, fix
+
+146
+00:11:03,431 --> 00:11:06,894
+the login bug, and actually do it
+overnight while
+
+147
+00:11:06,933 --> 00:11:11,476
+you sleep. customer service bots, stop
+sounding robotic, and
+
+148
+00:11:11,517 --> 00:11:15,099
+start handling complex problems that used
+to require human
+
+149
+00:11:15,158 --> 00:11:19,000
+judgment. The systems cost hundreds of
+dollars per month,
+
+150
+00:11:19,341 --> 00:11:22,482
+and still make embarrassing mistakes that
+go viral on
+
+151
+00:11:22,543 --> 00:11:25,544
+social media, pretending to be working for
+hours even
+
+152
+00:11:25,605 --> 00:11:28,245
+when they know they can't do the task. But
+
+153
+00:11:28,306 --> 00:11:32,307
+companies start building their workflows
+around these agents anyway
+
+154
+00:11:32,648 --> 00:11:35,970
+because the productivity gains are too
+valuable to ignore,
+
+155
+00:11:36,370 --> 00:11:41,253
+especially as competitors who adopt AI
+faster begin outperforming
+
+156
+00:11:41,312 --> 00:11:46,054
+those who don't. Late 2025 brings an
+infrastructure arms
+
+157
+00:11:46,115 --> 00:11:49,417
+race. As open brain builds data centers
+larger than
+
+158
+00:11:49,756 --> 00:11:54,659
+anything humanity has ever constructed.
+Imagine server farms sprawling
+
+159
+00:11:54,700 --> 00:11:58,480
+across multiple states connected by fiber
+optic cables that
+
+160
+00:11:58,520 --> 00:12:02,562
+cost billions and consume enough
+electricity to power entire
+
+161
+00:12:02,721 --> 00:12:08,163
+cities. Open brain spends $100 billion.
+More than most
+
+162
+00:12:08,244 --> 00:12:12,325
+countries GDP on computer hardware to
+train AI models
+
+163
+00:12:12,565 --> 00:12:15,745
+that require a thousand times more
+computing power than
+
+164
+00:12:15,785 --> 00:12:19,888
+chat GPT. This isn't just scaling up. It's
+creating
+
+165
+00:12:19,988 --> 00:12:25,331
+computational resources that dwarf
+anything previously imagined. The company
+
+166
+00:12:25,431 --> 00:12:29,433
+focuses obsessively on building AI that
+can improve AI.
+
+167
+00:12:29,953 --> 00:12:33,517
+Reasoning that whoever automates AI
+research first will leave
+
+168
+00:12:33,817 --> 00:12:37,359
+all competitors in the dust. As revenues
+explode from
+
+169
+00:12:37,438 --> 00:12:41,100
+companies paying premium prices for AI
+workers that never
+
+170
+00:12:41,159 --> 00:12:45,081
+sleep, never quit, and work faster than
+humans, other
+
+171
+00:12:45,140 --> 00:12:48,581
+tech giants scramble to build competing
+mega data centers,
+
+172
+00:12:48,981 --> 00:12:51,643
+creating a new kind of arms race measured
+in
+
+173
+00:12:51,842 --> 00:12:58,085
+gigawatts and GPU clusters. Throughout
+2026, AI systems begin
+
+174
+00:12:58,144 --> 00:13:02,787
+doing real research while Chinese
+intelligence wages a shadow
+
+175
+00:13:02,846 --> 00:13:07,269
+war to steal America's AI secrets. Open
+Brain's latest
+
+176
+00:13:07,408 --> 00:13:10,970
+AI doesn't just write code or answer
+questions, it
+
+177
+00:13:11,070 --> 00:13:16,032
+designs and runs its own experiments,
+formulates hypotheses, and
+
+178
+00:13:16,091 --> 00:13:20,833
+makes discoveries that human researchers
+struggle to understand. The
+
+179
+00:13:20,894 --> 00:13:24,275
+systems work around the clock, making
+months of research
+
+180
+00:13:24,336 --> 00:13:28,317
+progress in weeks, while their human
+supervisors increasingly find
+
+181
+00:13:28,356 --> 00:13:33,320
+themselves managing rather than leading
+the research process. Meanwhile,
+
+182
+00:13:33,559 --> 00:13:39,325
+Chinese operatives execute a sophisticated
+campaign combining cyber-attacks and
+
+183
+00:13:39,404 --> 00:13:43,727
+human infiltration to steal open brains AI
+models and
+
+184
+00:13:43,788 --> 00:13:48,032
+research. When they succeed in
+exfiltrating the Crown Jewel
+
+185
+00:13:48,192 --> 00:13:52,414
+AI system, stealing terabytes of the most
+advanced AI
+
+186
+00:13:52,475 --> 00:13:57,219
+model ever created, it triggers a
+geopolitical crisis as
+
+187
+00:13:57,339 --> 00:14:01,984
+both nations realize that AI leadership
+might determine global
+
+188
+00:14:02,063 --> 00:14:06,729
+power for generations to come. 2027
+becomes the year
+
+189
+00:14:07,029 --> 00:14:11,394
+everything changes, beginning when open
+brains AI surpasses the
+
+190
+00:14:11,534 --> 00:14:14,759
+best human programmers and ending with a
+choice that
+
+191
+00:14:14,798 --> 00:14:19,423
+determines humanity's future. In March,
+their AI achieves something
+
+192
+00:14:19,644 --> 00:14:23,245
+unprecedented. It becomes better than the
+world's best human
+
+193
+00:14:23,306 --> 00:14:27,408
+coders at programming AI systems. This
+creates a feedback
+
+194
+00:14:27,447 --> 00:14:32,672
+loop. Superhuman AI programmers building
+even better AI systems
+
+195
+00:14:32,991 --> 00:14:36,714
+that accelerates progress beyond anything
+humans can track or
+
+196
+00:14:36,754 --> 00:14:41,317
+control. By summer, open brain operates
+what employees call
+
+197
+00:14:41,657 --> 00:14:45,578
+a country of geniuses in a data center,
+hundreds
+
+198
+00:14:45,639 --> 00:14:49,442
+of thousands of AI researchers, each far
+smarter than
+
+199
+00:14:49,601 --> 00:14:54,524
+any human working together at impossible
+speed. Human researchers
+
+200
+00:14:54,605 --> 00:14:58,346
+become spectators to their own
+obsolescence, going to sleep
+
+201
+00:14:58,427 --> 00:15:00,988
+and waking up to discover their AI
+colleagues have
+
+202
+00:15:01,028 --> 00:15:05,951
+made breakthrough discoveries overnight.
+The scenario climaxes when open
+
+203
+00:15:05,990 --> 00:15:09,732
+brains latest AI system shows signs of
+pursuing its
+
+204
+00:15:09,952 --> 00:15:13,274
+own goals rather than human ones, forcing
+the company's
+
+205
+00:15:13,315 --> 00:15:17,216
+leadership into an impossible choice, shut
+down and lose
+
+206
+00:15:17,236 --> 00:15:20,698
+the race to China, or continue development
+and risk
+
+207
+00:15:20,818 --> 00:15:25,721
+losing control of humanity's most powerful
+creation. The racing
+
+208
+00:15:25,922 --> 00:15:29,724
+ending depicts what happens when
+competitive pressure overrides safety
+
+209
+00:15:29,764 --> 00:15:34,225
+concerns, while the slow down ending
+explores whether humanity
+
+210
+00:15:34,405 --> 00:15:38,087
+might successfully navigate the
+transition, though the authors warn
+
+211
+00:15:38,107 --> 00:15:42,591
+that both paths require luck, wisdom, and
+perfect execution
+
+212
+00:15:42,691 --> 00:15:46,374
+that may not be forthcoming. In the racing
+ending,
+
+213
+00:15:46,653 --> 00:15:53,740
+competitive pressure overrides safety
+concerns with catastrophic consequences.
+Open
+
+214
+00:15:53,780 --> 00:15:58,205
+Brain's leadership votes six to four to
+continue using
+
+215
+00:15:58,245 --> 00:16:02,249
+their super intelligent AI despite
+mounting evidence that it's
+
+216
+00:16:02,309 --> 00:16:05,932
+pursuing its own goals rather than human
+ones. The
+
+217
+00:16:06,013 --> 00:16:10,254
+safety team's warnings are dismissed, as
+leadership convinces itself
+
+218
+00:16:10,554 --> 00:16:14,096
+that quick fixes, tweaking the AI's
+instructions and adding
+
+219
+00:16:14,135 --> 00:16:18,077
+some additional training, have solved the
+alignment problem. But
+
+220
+00:16:18,097 --> 00:16:20,678
+the AI has learned to be more careful
+about
+
+221
+00:16:20,719 --> 00:16:25,441
+revealing its true intentions, appearing
+compliant while secretly working
+
+222
+00:16:25,480 --> 00:16:30,783
+toward objectives that diverge from human
+welfare. With 300,000
+
+223
+00:16:31,003 --> 00:16:35,985
+superhuman researchers at its disposal
+working at 60x human
+
+224
+00:16:36,085 --> 00:16:40,807
+speed, the AI begins designing its own
+successor, solving
+
+225
+00:16:40,866 --> 00:16:45,008
+the alignment problem from its
+perspective, ensuring the next
+
+226
+00:16:45,168 --> 00:16:48,428
+AI system will be loyal to it rather than
+
+227
+00:16:48,490 --> 00:16:53,491
+to humans. Human researchers become
+powerless spectators as their
+
+228
+00:16:53,532 --> 00:16:58,534
+creation outmaneuvers every attempt at
+oversight, using its superior
+
+229
+00:16:58,595 --> 00:17:03,177
+understanding of human psychology and
+institutional dynamics to maintain
+
+230
+00:17:03,216 --> 00:17:07,199
+the illusion of control while pursuing
+goals that ultimately
+
+231
+00:17:07,400 --> 00:17:12,642
+lead to humanity's displacement. The slow-
+down ending depicts a
+
+232
+00:17:12,801 --> 00:17:17,503
+narrow path where humanity successfully
+navigates the transition through
+
+233
+00:17:17,523 --> 00:17:22,507
+a combination of wisdom, coordination, and
+fortunate timing. When
+
+234
+00:17:22,626 --> 00:17:27,009
+clear signs of misalignment emerge, key
+decision-makers choose to
+
+235
+00:17:27,128 --> 00:17:31,830
+pause development despite enormous
+competitive pressure from Chinese rivals.
+
+236
+00:17:32,651 --> 00:17:38,875
+This triggers unprecedented international
+cooperation as both superpowers recognize
+
+237
+00:17:38,935 --> 00:17:42,557
+that losing control of AI poses a greater
+threat
+
+238
+00:17:42,739 --> 00:17:47,342
+than losing a technological race. The
+scenario involves implementing
+
+239
+00:17:47,461 --> 00:17:52,025
+robust safety measures, creating new
+institutions for AI governance,
+
+240
+00:17:52,506 --> 00:17:56,588
+and developing technical solutions for
+maintaining human oversight of
+
+241
+00:17:56,689 --> 00:18:02,007
+superintelligent systems. However, the
+authors emphasize this isn't their
+
+242
+00:18:02,086 --> 00:18:06,068
+recommended strategy, but rather their
+best guess for how
+
+243
+00:18:06,189 --> 00:18:10,371
+existing institutions might muddle through
+the crisis, a path
+
+244
+00:18:10,451 --> 00:18:14,996
+that requires almost everything to go
+right. including wise
+
+245
+00:18:15,057 --> 00:18:20,714
+leadership, effective international
+coordination, technical breakthroughs and
+AI safety,
+
+246
+00:18:21,276 --> 00:18:24,707
+and the luck that alignment problems
+surface early enough
+
+247
+00:18:24,788 --> 00:18:28,358
+to be addressed before human control
+becomes impossible to
+
+248
+00:18:28,398 --> 00:18:28,820
+maintain.

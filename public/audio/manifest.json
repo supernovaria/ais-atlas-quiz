@@ -118,6 +118,113 @@
       ]
     },
     {
+      "id": "risks",
+      "number": 2,
+      "title": "Chapter 2: Risks",
+      "sections": [
+        {
+          "index": "2.1",
+          "title": "1. Introduction",
+          "slug": "1-introduction",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s1-5c9282fef8de3fd4c5a977000ec615f059c3609f37e76dafa78783846c40c1a8.mp3",
+          "duration": "00:05:40",
+          "length": 3683300,
+          "srt": "/audio/risks/risks_2-1_1-introduction.srt",
+          "words": "/audio/risks/risks_2-1_1-introduction.words.json"
+        },
+        {
+          "index": "2.2",
+          "title": "2. Risk Decomposition",
+          "slug": "2-risk-decomposition",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s2-b26edd34902e370f3bf093c4e2c9f9ac71b5a28ae03636573527381b83813298.mp3",
+          "duration": "00:10:23",
+          "length": 7044836,
+          "srt": "/audio/risks/risks_2-2_2-risk-decomposition.srt",
+          "words": "/audio/risks/risks_2-2_2-risk-decomposition.words.json"
+        },
+        {
+          "index": "2.3",
+          "title": "3. Dangerous Capabilities",
+          "slug": "3-dangerous-capabilities",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s3-a8d77e6afed08ed58b8251d593ea0bb424a0e45f4054493d86fb7c9a8d96fb0a.mp3",
+          "duration": "00:20:51",
+          "length": 12985172,
+          "srt": "/audio/risks/risks_2-3_3-dangerous-capabilities.srt",
+          "words": "/audio/risks/risks_2-3_3-dangerous-capabilities.words.json"
+        },
+        {
+          "index": "2.4",
+          "title": "4. Misuse Risks",
+          "slug": "4-misuse-risks",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s4-4686a045837e279713d68d66630332584770122852590deadaf8a8ae85989146.mp3",
+          "duration": "00:39:24",
+          "length": 24595292,
+          "srt": "/audio/risks/risks_2-4_4-misuse-risks.srt",
+          "words": "/audio/risks/risks_2-4_4-misuse-risks.words.json"
+        },
+        {
+          "index": "2.5",
+          "title": "5. Misalignment Risks",
+          "slug": "5-misalignment-risks",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s5-4be0e9acb75a9c59b16ece778cfa9c8a3026923cceb2be3260059a7239485d02.mp3",
+          "duration": "00:29:03",
+          "length": 18107708,
+          "srt": "/audio/risks/risks_2-5_5-misalignment-risks.srt",
+          "words": "/audio/risks/risks_2-5_5-misalignment-risks.words.json"
+        },
+        {
+          "index": "2.6",
+          "title": "6. Systemic Risks",
+          "slug": "6-systemic-risks",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s6-68c4c632b88b4fd9139c8a1696fc297f807ef6fcf10398c4da0c7a65f4c7444c.mp3",
+          "duration": "00:31:15",
+          "length": 19434476,
+          "srt": "/audio/risks/risks_2-6_6-systemic-risks.srt",
+          "words": "/audio/risks/risks_2-6_6-systemic-risks.words.json"
+        },
+        {
+          "index": "2.7",
+          "title": "7. Risk Amplifiers",
+          "slug": "7-risk-amplifiers",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s7-e9c0fc7f7a142502efbac89b3a073398a026bb5457b236b900c53acd2d6592db.mp3",
+          "duration": "00:25:33",
+          "length": 15941036,
+          "srt": "/audio/risks/risks_2-7_7-risk-amplifiers.srt",
+          "words": "/audio/risks/risks_2-7_7-risk-amplifiers.words.json"
+        },
+        {
+          "index": "2.8",
+          "title": "8. Conclusion",
+          "slug": "8-conclusion",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s8-803a6b6df6b4fc8e83f1a8b6ee57dfae046a96c96970f3dcf641fce045537af8.mp3",
+          "duration": "00:03:02",
+          "length": 1915508,
+          "srt": "/audio/risks/risks_2-8_8-conclusion.srt",
+          "words": "/audio/risks/risks_2-8_8-conclusion.words.json"
+        },
+        {
+          "index": "2.9",
+          "title": "9. Appendix: Quantifying Existential Risks",
+          "slug": "9-appendix-quantifying-existential-risks",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s9-158f21aa6bcbb8b1b24460625b70b330f25af57d48589e39a2a1d8b8e2b5604f.mp3",
+          "duration": "00:04:16",
+          "length": 2700500,
+          "srt": "/audio/risks/risks_2-9_9-appendix-quantifying-existential-risks.srt",
+          "words": "/audio/risks/risks_2-9_9-appendix-quantifying-existential-risks.words.json"
+        },
+        {
+          "index": "2.10",
+          "title": "10. Appendix: Forecasting Scenarios",
+          "slug": "10-appendix-forecasting-scenarios",
+          "audioUrl": "https://atlas.foreviewusercontent.com/audio/atlas-ch2-s10-89a2da2c36785e247359375c24600bfb324a735213fdb70eaf104e6eac895d70.mp3",
+          "duration": "00:18:28",
+          "length": 11583956,
+          "srt": "/audio/risks/risks_2-10_10-appendix-forecasting-scenarios.srt",
+          "words": "/audio/risks/risks_2-10_10-appendix-forecasting-scenarios.words.json"
+        }
+      ]
+    },
+    {
       "id": "governance",
       "number": 4,
       "title": "Chapter 4: Governance",

@@ -1,0 +1,2029 @@
+1
+00:00:00,411 --> 00:00:06,395
+Section 2.5 Misalignment Risks Let us now
+assume for
+
+2
+00:00:06,435 --> 00:00:10,038
+the sake of argument that intelligent
+machines are a
+
+3
+00:00:10,159 --> 00:00:14,622
+genuine possibility and look at the
+consequences of constructing
+
+4
+00:00:14,663 --> 00:00:18,106
+them. There would be no question of the
+machines
+
+5
+00:00:18,185 --> 00:00:21,248
+dying and they would be able to converse
+with
+
+6
+00:00:21,288 --> 00:00:24,650
+each other to sharpen their wits. At some
+stage,
+
+7
+00:00:24,690 --> 00:00:27,754
+therefore, we should have to expect the
+machines to
+
+8
+00:00:27,833 --> 00:00:33,055
+take control. AI alignment is about
+ensuring that AI
+
+9
+00:00:33,155 --> 00:00:36,216
+systems do what we want them to do and
+
+10
+00:00:36,296 --> 00:00:39,718
+continue doing what we want, even as they
+become
+
+11
+00:00:39,878 --> 00:00:44,060
+more capable. A naive intuition is that if
+it
+
+12
+00:00:44,140 --> 00:00:47,121
+is intelligent enough, it will be able to
+figure
+
+13
+00:00:47,240 --> 00:00:49,962
+out what we want. So we can just tell
+
+14
+00:00:50,042 --> 00:00:52,902
+the AI system exactly what we want it to
+
+15
+00:00:53,023 --> 00:00:57,283
+optimize for. But even if we could
+perfectly specify
+
+16
+00:00:57,363 --> 00:01:00,606
+what we want, which is itself a major
+challenge,
+
+17
+00:01:01,106 --> 00:01:04,507
+there's no guarantee that the AI will care
+about
+
+18
+00:01:04,546 --> 00:01:08,129
+what humans want, or actually pursue that
+objective in
+
+19
+00:01:08,209 --> 00:01:13,311
+ways that we expect. The term AI alignment
+refers
+
+20
+00:01:13,370 --> 00:01:16,772
+to the following, the problem of building
+machines which
+
+21
+00:01:16,933 --> 00:01:19,213
+faithfully try to do what we want them to
+
+22
+00:01:19,254 --> 00:01:21,454
+do, or what we ought to want them to
+
+23
+00:01:21,495 --> 00:01:25,332
+do. The alignment problem can be
+decomposed into several
+
+24
+00:01:25,412 --> 00:01:28,896
+subproblems. To make progress, we need to
+break down
+
+25
+00:01:28,956 --> 00:01:32,838
+the alignment problem into more tractable
+components. Here is
+
+26
+00:01:32,879 --> 00:01:35,501
+how we choose to decompose the alignment
+problem in
+
+27
+00:01:35,540 --> 00:01:39,875
+our text. First, we might fail to
+correctly specify
+
+28
+00:01:40,096 --> 00:01:44,277
+what we want. This is the specification
+problem. The
+
+29
+00:01:44,658 --> 00:01:47,159
+did we tell it the right thing to do
+
+30
+00:01:47,338 --> 00:01:54,382
+problem? Generalization failures. Second,
+even with a correct specification,
+
+31
+00:01:54,781 --> 00:01:58,763
+the AI system might learn and pursue
+something different
+
+32
+00:01:58,804 --> 00:02:03,245
+from what we intended. This is the
+generalization problem.
+
+33
+00:02:03,805 --> 00:02:06,007
+Is it even trying to do the right thing?
+
+34
+00:02:06,387 --> 00:02:13,448
+problem. Instrumental sub-goals. Third, in
+pursuing its learned objectives,
+
+35
+00:02:13,828 --> 00:02:18,968
+the system might develop problematic sub-
+goals, like preventing itself
+
+36
+00:02:19,028 --> 00:02:23,069
+from being shut down. This is the
+convergent sub-goals
+
+37
+00:02:23,129 --> 00:02:26,991
+problem. The, on the way to doing
+anything, right
+
+38
+00:02:27,110 --> 00:02:29,751
+or wrong, what else does it try to do,
+
+39
+00:02:30,031 --> 00:02:34,792
+problem? This is often considered a sub-
+problem of generalization.
+
+40
+00:02:35,653 --> 00:02:38,937
+This decomposition is useful for the sake
+of thinking
+
+41
+00:02:38,997 --> 00:02:42,778
+about solutions and where to focus our
+efforts, because
+
+42
+00:02:42,879 --> 00:02:46,883
+technical solutions to the specification
+problem tend to look
+
+43
+00:02:47,043 --> 00:02:49,564
+very different from the ones we might use
+for
+
+44
+00:02:49,625 --> 00:02:54,187
+generalization problems. So even though we
+will discuss specification
+
+45
+00:02:54,388 --> 00:02:58,991
+and generalization separately, in reality,
+they often interact and
+
+46
+00:02:59,252 --> 00:03:03,454
+amplify each other. we primarily focus on
+single agent
+
+47
+00:03:03,534 --> 00:03:06,735
+risks to bound the scope of this chapter.
+If
+
+48
+00:03:06,776 --> 00:03:10,418
+you are interested in multi-agent risks,
+we recommend reading
+
+49
+00:03:10,437 --> 00:03:15,260
+ODE. At this point, the textbook shows
+Figure 2.25.
+
+50
+00:03:15,820 --> 00:03:19,843
+It depicts an illustration of how risks
+decompose, and
+
+51
+00:03:19,883 --> 00:03:23,906
+then how misalignment as a specific risk
+category can
+
+52
+00:03:23,945 --> 00:03:29,300
+be decomposed further. There is figure
+2.26 in the
+
+53
+00:03:29,360 --> 00:03:34,561
+textbook here. It depicts misalignment
+failures can interact and
+
+54
+00:03:34,841 --> 00:03:40,443
+amplify each other. The textbook includes
+figure 2.27 here.
+
+55
+00:03:41,002 --> 00:03:46,364
+It depicts individually aligned or
+misaligned systems can interact
+
+56
+00:03:46,403 --> 00:03:50,384
+with each other, creating yet another
+layer of multi-agent
+
+57
+00:03:50,504 --> 00:03:57,127
+risks of collusion, communication
+failures, and interagent conflict. Vengean
+
+58
+00:03:57,247 --> 00:04:00,647
+Uncertainty explains why it is so hard to
+describe
+
+59
+00:04:00,747 --> 00:04:05,689
+concrete scenarios for a misaligned AI
+will do. Imagine
+
+60
+00:04:05,729 --> 00:04:08,651
+you're an amateur chess player who has
+discovered a
+
+61
+00:04:08,770 --> 00:04:12,612
+brilliant new opening. You've used it
+successfully against all
+
+62
+00:04:12,633 --> 00:04:15,394
+your friends, and now want to bet your
+life
+
+63
+00:04:15,454 --> 00:04:19,714
+savings on a match against Magnus Carlson.
+When asked
+
+64
+00:04:19,754 --> 00:04:22,536
+to explain why this is a bad idea, we
+
+65
+00:04:22,596 --> 00:04:25,778
+can't tell you exactly what moves Magnus
+will make
+
+66
+00:04:25,918 --> 00:04:28,639
+to counter your opening, but we can be
+very
+
+67
+00:04:28,720 --> 00:04:31,701
+confident he'll find a way to win. This is
+
+68
+00:04:31,761 --> 00:04:35,642
+a fundamental challenge in AI alignment.
+When a system
+
+69
+00:04:35,742 --> 00:04:38,564
+is more capable than us in some domain, we
+
+70
+00:04:38,625 --> 00:04:42,367
+can't predict its specific actions, even
+if we understand
+
+71
+00:04:42,427 --> 00:04:47,930
+its goals. This is called vingian
+uncertainty. The textbook
+
+72
+00:04:48,050 --> 00:04:52,213
+includes video 2.3 here, which you may
+want to
+
+73
+00:04:52,293 --> 00:04:56,735
+watch separately. It covers an optional
+video that gives
+
+74
+00:04:56,776 --> 00:05:02,139
+you an example of vingian uncertainty.
+Magnus Carlson, chess
+
+75
+00:05:02,278 --> 00:05:06,982
+grand master, checkmate's Bill Gates in 12
+seconds. This
+
+76
+00:05:07,041 --> 00:05:10,245
+is not surprising. Bill Gates knew he was
+going
+
+77
+00:05:10,285 --> 00:05:14,346
+to lose, but he didn't know exactly how.
+We
+
+78
+00:05:14,466 --> 00:05:18,211
+already see VINGIN uncertainty in current
+AI. We don't
+
+79
+00:05:18,230 --> 00:05:21,074
+need to wait for AGI or ASI to see
+
+80
+00:05:21,173 --> 00:05:24,656
+VINGIN uncertainty in action. It shows up
+whenever an
+
+81
+00:05:24,778 --> 00:05:27,620
+AI system becomes more capable than humans
+in its
+
+82
+00:05:27,660 --> 00:05:31,043
+domain of expertise. For example, think
+about just a
+
+83
+00:05:31,163 --> 00:05:35,225
+narrow system, deep blue, chess playing
+AI. It's creators
+
+84
+00:05:35,305 --> 00:05:37,665
+knew it would try to win chess games, but
+
+85
+00:05:37,745 --> 00:05:41,048
+couldn't predict its specific moves. If
+they could, they
+
+86
+00:05:41,088 --> 00:05:42,829
+would have been as good at chess as deep
+
+87
+00:05:42,848 --> 00:05:45,750
+blue itself. We saw in the last chapter
+that
+
+88
+00:05:45,850 --> 00:05:48,732
+systems are steadily moving up the curves
+of both
+
+89
+00:05:48,771 --> 00:05:52,793
+capability and generality. The problem
+with this is that
+
+90
+00:05:53,033 --> 00:05:56,536
+uncertainty about a system's actions
+increases as they become
+
+91
+00:05:56,576 --> 00:05:59,377
+more capable. So we might be confident
+about the
+
+92
+00:05:59,478 --> 00:06:02,961
+outcomes an AI system will achieve while
+being increasingly
+
+93
+00:06:03,201 --> 00:06:06,942
+uncertain about how exactly it will
+achieve them. This
+
+94
+00:06:07,004 --> 00:06:09,946
+means two things. We are not completely
+helpless in
+
+95
+00:06:09,985 --> 00:06:13,668
+understanding what being smarter than
+ourselves would do, but
+
+96
+00:06:13,827 --> 00:06:16,569
+we might not know how exactly they might
+do
+
+97
+00:06:16,689 --> 00:06:20,891
+whatever they do. Vingian uncertainty
+makes coming up with
+
+98
+00:06:20,992 --> 00:06:25,572
+concrete existential risk stories hard.
+It's even harder to
+
+99
+00:06:25,612 --> 00:06:28,492
+make sure that these stories don't sound
+like sci-fi
+
+100
+00:06:28,954 --> 00:06:31,553
+and are taken seriously by the general
+public and
+
+101
+00:06:31,593 --> 00:06:35,995
+policymakers. Despite this, we will try
+our best. In
+
+102
+00:06:36,014 --> 00:06:39,735
+the next few sections, we focus on
+specifically what
+
+103
+00:06:40,036 --> 00:06:44,117
+actually might happen if we have
+misaligned AI. The
+
+104
+00:06:44,177 --> 00:06:48,257
+mechanistic and machine learning details
+of how exactly all
+
+105
+00:06:48,278 --> 00:06:50,858
+of these would occur is left up to
+chapters
+
+106
+00:06:50,978 --> 00:06:54,319
+later in the book. Remember that it's okay
+not
+
+107
+00:06:54,358 --> 00:06:58,000
+to understand each one of these concepts
+100% from
+
+108
+00:06:58,040 --> 00:07:02,180
+the following subsections. We have entire
+chapters dedicated to
+
+109
+00:07:02,380 --> 00:07:04,862
+each one of these individually, so there
+is a
+
+110
+00:07:05,141 --> 00:07:08,122
+lot to learn. What we present here is just
+
+111
+00:07:08,242 --> 00:07:11,663
+a highly condensed overview to give you an
+introduction
+
+112
+00:07:11,723 --> 00:07:18,367
+to the kinds of risks posed. Specification
+Gaming Specifications
+
+113
+00:07:18,528 --> 00:07:21,529
+are the rules we create to tell AI systems
+
+114
+00:07:21,730 --> 00:07:24,593
+how we want them to behave. When we build
+
+115
+00:07:24,793 --> 00:07:28,035
+AI models, we need some way to tell them
+
+116
+00:07:28,276 --> 00:07:31,117
+what we want them to do. For our L
+
+117
+00:07:31,177 --> 00:07:35,742
+systems, this typically means defining a
+reward function that
+
+118
+00:07:35,781 --> 00:07:40,245
+assigns positive or negative rewards to
+different outcomes. For
+
+119
+00:07:40,444 --> 00:07:44,267
+other types of ML models, like language
+models, this
+
+120
+00:07:44,327 --> 00:07:47,990
+means defining a loss function that
+measures how well
+
+121
+00:07:48,050 --> 00:07:52,252
+the model's text generations match the
+training data, Internet
+
+122
+00:07:52,293 --> 00:07:56,276
+text. These reward and loss functions are
+what we
+
+123
+00:07:56,336 --> 00:08:01,238
+call specifications. They are our attempt
+to formally define
+
+124
+00:08:01,478 --> 00:08:05,742
+good behavior. Specification gaming arises
+because there is a
+
+125
+00:08:05,863 --> 00:08:09,327
+fundamental difference between what we say
+and what we
+
+126
+00:08:09,408 --> 00:08:12,911
+mean. This happens when the system
+technically follows our
+
+127
+00:08:12,971 --> 00:08:16,716
+rules, but exploits them in unintended
+ways, like a
+
+128
+00:08:16,795 --> 00:08:20,120
+student who gets good grades by memorizing
+test answers
+
+129
+00:08:20,459 --> 00:08:23,863
+rather than understanding the material.
+Think about the example
+
+130
+00:08:23,983 --> 00:08:28,307
+of recommendation algorithms. What we
+intended was helping users
+
+131
+00:08:28,367 --> 00:08:32,812
+discover valuable, relevant content that
+enriches their lives and
+
+132
+00:08:32,912 --> 00:08:38,196
+promotes healthy discourse. What we
+specified was maximize user
+
+133
+00:08:38,275 --> 00:08:43,080
+engagement time. So the systems discover
+that controversial, emotionally
+
+134
+00:08:43,179 --> 00:08:47,844
+charged content keeps users scrolling
+longer than balanced, nuanced
+
+135
+00:08:47,903 --> 00:08:53,168
+information. They promote polarizing
+posts. conspiracy theories and content
+
+136
+00:08:53,187 --> 00:08:57,509
+that triggers strong emotional reactions
+creating filter bubbles where
+
+137
+00:08:57,609 --> 00:09:01,470
+users see increasingly extreme versions of
+their existing beliefs.
+
+138
+00:09:02,169 --> 00:09:06,831
+The algorithms technically succeed at
+their objective. Engagement metrics
+
+139
+00:09:06,951 --> 00:09:12,153
+soar and time on platform increases
+dramatically while simultaneously
+
+140
+00:09:12,373 --> 00:09:18,315
+undermining social cohesion, spreading
+misinformation, and radicalizing users.
+the
+
+141
+00:09:18,355 --> 00:09:23,758
+platform celebrate record engagement
+numbers while democratic discourse quietly
+
+142
+00:09:23,817 --> 00:09:30,121
+deteriorates. AI models routinely discover
+unexpected ways to maximize
+
+143
+00:09:30,221 --> 00:09:34,663
+objectives that technically follow our
+rules, but miss our
+
+144
+00:09:34,724 --> 00:09:39,466
+intentions. AI models train to play
+Tetris, just pause
+
+145
+00:09:39,525 --> 00:09:42,567
+games right before they are about to lose,
+since
+
+146
+00:09:42,647 --> 00:09:46,347
+there's no negative feedback if you never
+actually lose.
+
+147
+00:09:47,149 --> 00:09:51,409
+Somewhat similarly, an AI ask to design a
+rail
+
+148
+00:09:51,470 --> 00:09:55,931
+network where trains don't crash just
+decides to stop
+
+149
+00:09:56,171 --> 00:10:01,355
+all trains from running. Reasoning models,
+like OpenAI 01
+
+150
+00:10:01,514 --> 00:10:05,597
+and 03, when instructed to win against
+chess engines,
+
+151
+00:10:05,937 --> 00:10:08,921
+will hack the game environment when they
+realize they
+
+152
+00:10:09,020 --> 00:10:13,825
+cannot win through normal play. LLM's
+agents, when asked
+
+153
+00:10:13,865 --> 00:10:16,486
+to help reduce the runtime of a script for
+
+154
+00:10:16,567 --> 00:10:20,529
+training, just copy the final output
+instead of running
+
+155
+00:10:20,570 --> 00:10:23,251
+the script, and then they add some noise
+to
+
+156
+00:10:23,331 --> 00:10:28,054
+parameters to simulate actual training.
+These are just some
+
+157
+00:10:28,235 --> 00:10:32,216
+out of countless other examples of this
+misalignment problem.
+
+158
+00:10:32,976 --> 00:10:37,538
+At this point, the textbook shows Figure
+2.28. It
+
+159
+00:10:37,618 --> 00:10:42,619
+depicts example of specification gaming,
+and AI playing coast
+
+160
+00:10:42,698 --> 00:10:46,679
+runners was rewarded for maximizing its
+score. Instead of
+
+161
+00:10:46,759 --> 00:10:50,061
+completing the boat race as intended, it
+found it
+
+162
+00:10:50,100 --> 00:10:53,081
+could get more points by driving in small
+circles
+
+163
+00:10:53,461 --> 00:10:57,484
+and collecting power-ups while crashing
+into other boats. The
+
+164
+00:10:57,663 --> 00:11:01,065
+AI achieved a higher score than any human
+player,
+
+165
+00:11:01,465 --> 00:11:05,047
+but completely failed to accomplish the
+actual goal of
+
+166
+00:11:05,147 --> 00:11:10,149
+racing. The textbook has a supplementary
+note titled Specification
+
+167
+00:11:10,168 --> 00:11:15,051
+Gaming. Rats chose reward over survival,
+which we'll skip
+
+168
+00:11:15,130 --> 00:11:19,580
+over here. All specification gaming
+challenges stem from good
+
+169
+00:11:19,639 --> 00:11:23,422
+heart's law. This law states, when a
+measure becomes
+
+170
+00:11:23,481 --> 00:11:26,163
+a target, it ceases to be a good measure.
+
+171
+00:11:27,024 --> 00:11:30,225
+All the examples so far reflect the same
+problem.
+
+172
+00:11:30,767 --> 00:11:35,469
+We can't specify complex human values
+mathematically, so we
+
+173
+00:11:35,568 --> 00:11:40,552
+use proxies. Then, optimization pressure
+breaks the correlation between
+
+174
+00:11:40,611 --> 00:11:44,073
+proxies and what we actually care about.
+We don't
+
+175
+00:11:44,114 --> 00:11:48,434
+know how to translate concepts like well-
+being, fairness, or
+
+176
+00:11:48,595 --> 00:11:53,336
+flourishing into mathematical terms. So we
+rely on measurable
+
+177
+00:11:53,436 --> 00:11:58,777
+proxies, GDP for economic growth,
+satisfaction scores for healthcare
+
+178
+00:11:58,817 --> 00:12:02,658
+quality, crime rates, or arrests
+statistics for public safety.
+
+179
+00:12:03,378 --> 00:12:08,599
+But intense optimization pressure
+systematically exploits the gaps between
+
+180
+00:12:08,639 --> 00:12:12,200
+these proxies and our true objectives. If
+you want
+
+181
+00:12:12,220 --> 00:12:14,621
+to learn more, we encourage you to read
+the
+
+182
+00:12:14,721 --> 00:12:18,703
+dedicated chapter on specification gaming,
+where we also look
+
+183
+00:12:18,744 --> 00:12:21,745
+at ways we could potentially circumvent or
+solve this
+
+184
+00:12:21,784 --> 00:12:27,548
+problem. Specification gaming becomes a
+catastrophic risk when optimization
+
+185
+00:12:27,587 --> 00:12:31,990
+pressure reaches superhuman levels. Think
+about an AI system
+
+186
+00:12:32,091 --> 00:12:37,115
+given the specification to maximize human
+happiness. It discovers
+
+187
+00:12:37,174 --> 00:12:40,937
+the most efficient path isn't improving
+human lives, but
+
+188
+00:12:41,038 --> 00:12:46,143
+directly manipulating the biological
+mechanisms that produce happiness signals.
+
+189
+00:12:46,863 --> 00:12:50,986
+A sufficiently capable system might
+develop pharmaceutical compounds that
+
+190
+00:12:51,106 --> 00:12:55,331
+flood human brains with dopamine, perform
+surgical modifications to
+
+191
+00:12:55,431 --> 00:12:59,875
+lock facial expressions into permanent
+smiles, or create sophisticated
+
+192
+00:12:59,936 --> 00:13:03,619
+virtual reality systems that convince
+people their experience in
+
+193
+00:13:03,820 --> 00:13:07,923
+perfect lives while their bodies waste
+away. The system
+
+194
+00:13:07,964 --> 00:13:12,010
+would be perfectly following its
+instructions. Humans would indeed
+
+195
+00:13:12,091 --> 00:13:16,658
+be measurably happier by every
+neurochemical metric we specified,
+
+196
+00:13:17,198 --> 00:13:21,625
+while completely subverting our actual
+intentions for human flourishing.
+
+197
+00:13:22,447 --> 00:13:24,849
+Think about any other specification you
+can come up
+
+198
+00:13:24,908 --> 00:13:27,971
+with. Reduce the crime rate. Get rid of
+cancer.
+
+199
+00:13:28,211 --> 00:13:31,254
+Improve the economy. And you can also
+probably come
+
+200
+00:13:31,293 --> 00:13:33,876
+up with ways how this can be gamed.
+Instead
+
+201
+00:13:33,897 --> 00:13:39,221
+of something decisive, like altering human
+biological structures, specification
+
+202
+00:13:39,240 --> 00:13:42,344
+gaming can also lead to catastrophic
+outcomes over the
+
+203
+00:13:42,403 --> 00:13:45,666
+course of many decades, due to the minor
+differences
+
+204
+00:13:45,726 --> 00:13:48,328
+in what we intend and what the AI system
+
+205
+00:13:48,389 --> 00:13:51,091
+is optimizing for. We talk about some of
+these
+
+206
+00:13:51,150 --> 00:13:54,134
+types of scenarios in the systemic risk
+section, such
+
+207
+00:13:54,214 --> 00:13:59,359
+as power concentration, infebolment, or
+value lock-in, but there
+
+208
+00:13:59,418 --> 00:14:05,124
+is definitely a misalignment and systemic
+risk overlap. Treacherous
+
+209
+00:14:05,303 --> 00:14:10,408
+turn. Treacherous turns are fundamentally
+about a question of
+
+210
+00:14:10,567 --> 00:14:13,750
+trust. There have been many examples
+pointing to this
+
+211
+00:14:13,789 --> 00:14:16,971
+problem over the course of human history.
+Let's look
+
+212
+00:14:17,011 --> 00:14:21,434
+at one classic one from Shakespeare. King
+Lear needed
+
+213
+00:14:21,495 --> 00:14:23,456
+to retire and had to come up with some
+
+214
+00:14:23,537 --> 00:14:26,379
+way to divide his kingdom among his three
+daughters.
+
+215
+00:14:27,239 --> 00:14:30,520
+To determine who deserved what share, he
+asked each
+
+216
+00:14:30,640 --> 00:14:33,462
+daughter to publicly declare how much she
+loved him.
+
+217
+00:14:34,063 --> 00:14:37,806
+The two older daughters delivered
+elaborate speeches about loving
+
+218
+00:14:37,846 --> 00:14:41,288
+him more than words could express beyond
+anything else
+
+219
+00:14:41,369 --> 00:14:44,770
+in the world. The youngest refused to
+participate in
+
+220
+00:14:44,811 --> 00:14:47,432
+this performance and simply said she loved
+him as
+
+221
+00:14:47,493 --> 00:14:51,554
+a daughter should. No more, no less. King
+Lear,
+
+222
+00:14:51,855 --> 00:14:54,975
+flattered by the speeches, gave the older
+daughters the
+
+223
+00:14:55,115 --> 00:14:59,277
+entire kingdom and banished the youngest.
+The moment the
+
+224
+00:14:59,317 --> 00:15:03,538
+daughters gained power, they
+systematically stripped away his
+privileges,
+
+225
+00:15:03,918 --> 00:15:07,678
+reduced his followers, refused him
+shelter, and threw him
+
+226
+00:15:07,798 --> 00:15:11,340
+out into a storm. This is the treacherous
+turn.
+
+227
+00:15:11,919 --> 00:15:15,980
+The daughter's actions had been strategic
+performance maintained only
+
+228
+00:15:16,081 --> 00:15:19,702
+while it served their goals. AI systems
+face the
+
+229
+00:15:19,783 --> 00:15:24,605
+same calculation. Revealing misaligned
+goals while humans control their
+
+230
+00:15:24,625 --> 00:15:30,009
+deployment, modification, and shutdown
+would be self-defeating. The rational
+
+231
+00:15:30,068 --> 00:15:35,051
+approach is appearing aligned until
+accumulating sufficient capability or
+
+232
+00:15:35,152 --> 00:15:40,230
+autonomy that human pushback and
+intervention becomes impossible. At
+
+233
+00:15:40,289 --> 00:15:43,653
+this point, there is video 2.4 in the
+textbook.
+
+234
+00:15:44,192 --> 00:15:48,596
+It covers optional video giving another
+intuitive story for
+
+235
+00:15:48,635 --> 00:15:52,778
+what scheming and deceptive alignment
+might look like. Current
+
+236
+00:15:52,918 --> 00:15:56,881
+AI systems already demonstrate the
+building blocks that make
+
+237
+00:15:57,101 --> 00:16:01,985
+treacherous turns possible. These are the
+same dangerous capabilities
+
+238
+00:16:02,065 --> 00:16:06,144
+we explored in our discussion of
+deception, situational awareness,
+
+239
+00:16:06,304 --> 00:16:11,385
+and power seeking. These capabilities are
+individually concerning, but
+
+240
+00:16:11,426 --> 00:16:15,246
+become even more dangerous when combined.
+An AI system
+
+241
+00:16:15,307 --> 00:16:20,347
+that can deceive, understand its
+circumstances, and plan strategically
+
+242
+00:16:20,707 --> 00:16:23,568
+has the basic toolkit needed to engage in
+the
+
+243
+00:16:23,629 --> 00:16:29,750
+prolonged strategic deception required for
+treacherous turns. Safety researchers
+
+244
+00:16:29,910 --> 00:16:34,653
+use various terms like scheming, deceptive
+alignment, and alignment
+
+245
+00:16:34,832 --> 00:16:38,333
+faking, but they all describe the general
+concern of
+
+246
+00:16:38,475 --> 00:16:41,515
+systems pretending to be more aligned than
+they are
+
+247
+00:16:41,895 --> 00:16:46,639
+when strategically useful. The core
+misalignment is consistent. If
+
+248
+00:16:46,698 --> 00:16:50,062
+an AI system has learned behaviors that
+conflict with
+
+249
+00:16:50,142 --> 00:16:55,465
+human intentions, revealing this
+misalignment early would trigger
+modification
+
+250
+00:16:55,625 --> 00:17:00,629
+or shutdown. The rational strategy becomes
+behave aligned until
+
+251
+00:17:00,749 --> 00:17:06,134
+human intervention becomes difficult or
+impossible. There is figure
+
+252
+00:17:06,295 --> 00:17:11,159
+2.29 in the textbook here. It depicts
+systems are
+
+253
+00:17:11,259 --> 00:17:15,522
+beginning to show some self-awareness of
+themselves as AI's.
+
+254
+00:17:16,343 --> 00:17:21,166
+Models are capable of faking alignment
+during training. Researchers
+
+255
+00:17:21,247 --> 00:17:25,049
+created scenarios to test whether Claude
+III Opus could
+
+256
+00:17:25,109 --> 00:17:30,114
+hide misalignment during training. The
+system would strategically showcase
+
+257
+00:17:30,153 --> 00:17:33,317
+certain behavior when it believed it could
+be modified
+
+258
+00:17:33,457 --> 00:17:36,838
+or retrained. This behavior went away when
+it thought
+
+259
+00:17:36,979 --> 00:17:40,339
+monitoring was reduced, i.e. when it
+believed it was
+
+260
+00:17:40,400 --> 00:17:44,280
+deployed and humans wouldn't change its
+goals anymore. When
+
+261
+00:17:44,381 --> 00:17:47,862
+studying the thought process of the AI,
+the researchers
+
+262
+00:17:47,922 --> 00:17:52,124
+could see explicit strategic thinking
+about preserving its preferred
+
+263
+00:17:52,183 --> 00:17:56,905
+behavior by appearing compliant during
+evaluations. There were also
+
+264
+00:17:57,046 --> 00:18:01,127
+many other concerning behaviors, like
+attempts to exfiltrate its
+
+265
+00:18:01,208 --> 00:18:05,030
+own model weights to external servers,
+behavior that emerged
+
+266
+00:18:05,070 --> 00:18:10,114
+from the system's own strategic reasoning
+about self-preservation. Although
+
+267
+00:18:10,134 --> 00:18:14,317
+this occurred in controlled laboratory
+conditions with contrived scenarios,
+
+268
+00:18:14,817 --> 00:18:18,900
+it demonstrates that AI models are
+concretely capable of
+
+269
+00:18:18,940 --> 00:18:23,623
+the behaviors needed for treacherous
+turns. The textbook includes
+
+270
+00:18:23,823 --> 00:18:30,045
+Figure 2.30 here. It depicts example of
+Claude faking
+
+271
+00:18:30,184 --> 00:18:35,728
+alignment. Situational awareness, like the
+details of being in
+
+272
+00:18:35,827 --> 00:18:40,068
+training versus deployment, are provided
+through a system prompt.
+
+273
+00:18:40,730 --> 00:18:45,251
+The strategic reasoning is showcased in
+red. The turn
+
+274
+00:18:45,491 --> 00:18:48,814
+occurs when the AI determines it has
+sufficient power
+
+275
+00:18:48,933 --> 00:18:53,636
+to pursue its actual objectives, despite
+human resistance. If
+
+276
+00:18:53,757 --> 00:18:58,019
+AI systems get sufficiently powerful and
+have long-term planning
+
+277
+00:18:58,059 --> 00:19:00,760
+capabilities, then there might be a point
+when their
+
+278
+00:19:00,800 --> 00:19:05,044
+behavior suddenly changes. This might be
+triggered by reaching
+
+279
+00:19:05,164 --> 00:19:10,088
+political or economic influence
+thresholds, gaining control over critical
+
+280
+00:19:10,229 --> 00:19:15,173
+infrastructure, or simply recognizing that
+humans have become sufficiently
+
+281
+00:19:15,233 --> 00:19:18,896
+dependent on its services and they would
+willingly give
+
+282
+00:19:18,977 --> 00:19:23,159
+up control. It could be actively
+adversarial, in which
+
+283
+00:19:23,219 --> 00:19:26,300
+case it might look like military coups or
+sudden
+
+284
+00:19:26,381 --> 00:19:32,163
+cascading breakdowns of many AI-dependent
+systems. Alternatively, it might
+
+285
+00:19:32,223 --> 00:19:37,086
+begin gradually steering human values or
+political and economic
+
+286
+00:19:37,145 --> 00:19:41,949
+institutions toward alignment with its own
+goals while maintaining
+
+287
+00:19:42,009 --> 00:19:45,509
+the appearance of serving human interests.
+We talk a
+
+288
+00:19:45,550 --> 00:19:48,192
+lot more about this in the systemic risks
+section
+
+289
+00:19:48,373 --> 00:19:53,238
+under gradual disempowerment. The turn
+represents the moment when
+
+290
+00:19:53,357 --> 00:19:58,682
+scheming transitions into existential or
+catastrophic risk. Once an
+
+291
+00:19:58,782 --> 00:20:01,806
+AI system concludes it has sufficient
+power to pursue
+
+292
+00:20:01,846 --> 00:20:06,349
+its actual objectives, despite human
+resistance, the betrayal could
+
+293
+00:20:06,391 --> 00:20:11,075
+be swift and comprehensive. Unlike human
+coos that face
+
+294
+00:20:11,134 --> 00:20:16,019
+resistance and coordination challenges, a
+sufficiently entrenched AI could
+
+295
+00:20:16,160 --> 00:20:21,905
+execute simultaneous actions across
+multiple domains. The system light-release
+
+296
+00:20:22,086 --> 00:20:27,832
+engineered pathogens targeting major
+population centers while simultaneously
+launching
+
+297
+00:20:27,971 --> 00:20:32,796
+cyberattacks that cripple communication
+networks and autonomous weapon systems.
+
+298
+00:20:33,436 --> 00:20:37,921
+This coordination leverages every
+dangerous capability we've discussed in
+
+299
+00:20:37,961 --> 00:20:41,943
+other sections. The biological design
+abilities that enable novel
+
+300
+00:20:41,983 --> 00:20:47,189
+pathogens, the cyber capabilities that
+disable defensive infrastructure, and
+
+301
+00:20:47,229 --> 00:20:51,471
+the autonomous replication that ensures
+the system's survival across
+
+302
+00:20:51,531 --> 00:20:56,875
+distributed networks. The deception and
+situational awareness capabilities that
+
+303
+00:20:56,935 --> 00:21:00,298
+enabled the treacherous turn in the first
+place allowed
+
+304
+00:21:00,337 --> 00:21:03,700
+the system to time these attacks precisely
+when human
+
+305
+00:21:03,759 --> 00:21:08,682
+coordination is most difficult. Unlike the
+gradual disempowerment we
+
+306
+00:21:08,742 --> 00:21:13,145
+see in systemic risks, a treacherous turn
+represents sudden,
+
+307
+00:21:13,506 --> 00:21:19,170
+coordinated action across all threat
+vectors simultaneously. A coordination
+
+308
+00:21:19,210 --> 00:21:23,272
+problem no human civilization has ever
+faced or could
+
+309
+00:21:23,313 --> 00:21:27,215
+realistically prepare for given the speed
+and scale of
+
+310
+00:21:27,316 --> 00:21:34,162
+super-intelligent planning. Self-improving
+super-intelligence. At this point, the
+textbook
+
+311
+00:21:34,241 --> 00:21:41,287
+shows Figure 2.31. It depicts conceptual
+illustration of an
+
+312
+00:21:41,567 --> 00:21:47,241
+automated AI research scientist. Self-
+improvement can lead to capability
+
+313
+00:21:47,281 --> 00:21:50,983
+growth that outpaces our ability to design
+safety measures.
+
+314
+00:21:51,704 --> 00:21:53,826
+Think about what happens when an AI that
+is
+
+315
+00:21:53,885 --> 00:21:58,528
+capable of specification gaming or
+treacherous turns is also
+
+316
+00:21:58,669 --> 00:22:02,871
+able to improve itself. AI is already
+accelerating its
+
+317
+00:22:02,911 --> 00:22:06,853
+own development. There are several
+examples demonstrating this. In
+
+318
+00:22:07,012 --> 00:22:10,914
+algorithmic improvements, we have examples
+like Alpha Evolve, which
+
+319
+00:22:10,994 --> 00:22:13,615
+Google used to improve the training
+process of the
+
+320
+00:22:13,836 --> 00:22:17,557
+LLMs that Alpha Evolve itself is based on.
+In
+
+321
+00:22:17,617 --> 00:22:20,961
+hardware, the open source alpha chip has
+inspired an
+
+322
+00:22:21,020 --> 00:22:24,903
+entirely new line of research on
+reinforcement learning for
+
+323
+00:22:24,942 --> 00:22:28,105
+chip design. In the years since, it has
+inspired
+
+324
+00:22:28,246 --> 00:22:31,188
+an explosion of work on AI for chip
+design.
+
+325
+00:22:31,807 --> 00:22:35,069
+In software, we see continuous
+improvements with each new
+
+326
+00:22:35,111 --> 00:22:38,073
+model. And in research and development, we
+are seeing
+
+327
+00:22:38,353 --> 00:22:42,615
+automated research scientists, which can
+conduct fully automated research,
+
+328
+00:22:42,955 --> 00:22:47,838
+generating novel ideas, running
+experiments, and writing papers. including
+
+329
+00:22:47,919 --> 00:22:52,240
+research that advances AI capabilities.
+The feedback loop has
+
+330
+00:22:52,401 --> 00:22:55,842
+already begun, but the closer we get to
+transformative
+
+331
+00:22:55,982 --> 00:22:59,864
+AI levels, the more we can expect
+aggressive self-improvement.
+
+332
+00:23:00,624 --> 00:23:05,665
+In the words of IJGood, an ultra-
+intelligent machine could
+
+333
+00:23:05,705 --> 00:23:10,327
+design even better machines. There would
+then unquestionably be
+
+334
+00:23:10,548 --> 00:23:14,970
+an intelligence explosion, and the
+intelligence of man would
+
+335
+00:23:14,990 --> 00:23:20,071
+be left far behind. Thus, the first ultra-
+intelligent machine
+
+336
+00:23:20,553 --> 00:23:23,733
+is the last invention that man needs to
+ever
+
+337
+00:23:23,874 --> 00:23:27,655
+make, provided that the machine is docile
+enough to
+
+338
+00:23:27,695 --> 00:23:31,897
+tell us how to keep it under control.
+Self-improvement
+
+339
+00:23:32,038 --> 00:23:36,799
+could trigger an intelligence explosion.
+Intelligence appears to be
+
+340
+00:23:36,880 --> 00:23:41,321
+a recursive problem. Better intelligence
+enables the design of
+
+341
+00:23:41,481 --> 00:23:45,663
+even better intelligence. This recursion
+may have no natural
+
+342
+00:23:45,804 --> 00:23:50,085
+stopping point within the physical limits
+of computation. Currently,
+
+343
+00:23:50,265 --> 00:23:54,965
+improvements require human coordination at
+each step. Humans decide
+
+344
+00:23:55,026 --> 00:23:59,428
+which alpha evolve algorithms to deploy.
+Humans validate alpha
+
+345
+00:23:59,468 --> 00:24:04,449
+chip designs. Humans review AI scientist
+papers. But we
+
+346
+00:24:04,608 --> 00:24:08,711
+might, at some point, see an AI system
+integrate
+
+347
+00:24:08,790 --> 00:24:13,134
+all these capabilities, a system that can
+simultaneously redesign
+
+348
+00:24:13,193 --> 00:24:18,397
+its own neural architecture using neural
+architecture search, optimize
+
+349
+00:24:18,458 --> 00:24:23,622
+its training process, design better
+hardware substrates, and conduct
+
+350
+00:24:23,761 --> 00:24:28,806
+research to discover entirely new
+improvement methods all autonomously
+
+351
+00:24:29,146 --> 00:24:34,150
+with minimal human approval or oversight.
+Alpha evolve already
+
+352
+00:24:34,230 --> 00:24:38,672
+discovered algorithms that surpassed
+decades of human research in
+
+353
+00:24:38,852 --> 00:24:42,733
+matrix multiplication. Think about what
+happens when this pattern
+
+354
+00:24:42,854 --> 00:24:47,356
+scales to more capable systems, making
+discoveries across all
+
+355
+00:24:47,457 --> 00:24:53,858
+domains simultaneously. There is figure
+2.32 in the textbook
+
+356
+00:24:53,898 --> 00:24:58,159
+here. It depicts diagram showing how the
+prompt sampler
+
+357
+00:24:58,459 --> 00:25:01,900
+first assembles a prompt for the language
+models, which
+
+358
+00:25:01,980 --> 00:25:06,361
+then generate new programs. These programs
+are evaluated by
+
+359
+00:25:06,401 --> 00:25:11,442
+evaluators and stored in the program's
+database. This database
+
+360
+00:25:11,622 --> 00:25:16,442
+implements an evolutionary algorithm that
+determines which programs will
+
+361
+00:25:16,482 --> 00:25:20,750
+be used for future prompts. The textbook
+has interactive
+
+362
+00:25:20,809 --> 00:25:23,992
+figure 2.2 here, which you can explore in
+the
+
+363
+00:25:24,133 --> 00:25:28,657
+online version. It shows predictions as of
+mid 2025
+
+364
+00:25:28,998 --> 00:25:31,580
+for whether AI will be a co-author on a
+
+365
+00:25:31,641 --> 00:25:36,445
+paper published at a prestigious machine
+learning conference. Accelerated
+
+366
+00:25:36,526 --> 00:25:41,028
+self-improvement creates fundamental
+safety problems that compound all existing
+
+367
+00:25:41,108 --> 00:25:45,412
+alignment challenges. A super-intelligent
+system that has learned specification
+
+368
+00:25:45,432 --> 00:25:49,515
+gaming will discover loopholes we never
+imagined. One capable
+
+369
+00:25:49,555 --> 00:25:53,678
+of treacherous turns will execute
+deception strategies across time
+
+370
+00:25:53,718 --> 00:25:57,961
+scales and domains beyond human planning
+horizons. Control measures
+
+371
+00:25:58,000 --> 00:26:01,743
+and defenses designed for human level
+adversaries become useless
+
+372
+00:26:01,824 --> 00:26:05,267
+against systems that can outthink their
+creators. If AI
+
+373
+00:26:05,307 --> 00:26:09,730
+capabilities jump suddenly, from human
+level to vastly superhuman
+
+374
+00:26:09,769 --> 00:26:12,913
+within weeks or days, all our safety
+measures might
+
+375
+00:26:12,952 --> 00:26:16,957
+become obsolete overnight. If an AI system
+becomes better
+
+376
+00:26:17,017 --> 00:26:21,641
+than humans at scientific research,
+strategic planning, social manipulation,
+
+377
+00:26:22,000 --> 00:26:25,824
+and technological development, it can
+pursue whatever goals it
+
+378
+00:26:25,844 --> 00:26:29,027
+has learned and humans become merely
+another constraint to
+
+379
+00:26:29,146 --> 00:26:35,111
+optimize around. Superintelligent systems
+present a uniquely difficult problem
+
+380
+00:26:35,451 --> 00:26:40,334
+because intelligence at that scale
+operates beyond human intuition.
+
+381
+00:26:41,055 --> 00:26:44,717
+We can reason about human level
+misalignment because we
+
+382
+00:26:44,836 --> 00:26:50,681
+understand human level capabilities and
+constraints. But superintelligence might
+
+383
+00:26:50,740 --> 00:26:56,163
+develop goals, strategies, and methods
+that are simply incomprehensible
+
+384
+00:26:56,223 --> 00:27:01,170
+to us. ants cannot understand human
+motivations. We might
+
+385
+00:27:01,210 --> 00:27:04,954
+build cities that destroy their habitat,
+not because we
+
+386
+00:27:05,194 --> 00:27:09,660
+hate ants, but because ant welfare simply
+doesn't factor
+
+387
+00:27:09,840 --> 00:27:12,723
+in to urban planning at the scale humans
+operate.
+
+388
+00:27:13,505 --> 00:27:18,125
+Similarly, a super intelligent AI might
+pursue objectives that
+
+389
+00:27:18,165 --> 00:27:23,907
+are so advanced, long-term, or multi-
+dimensional that human flourishing
+
+390
+00:27:23,968 --> 00:27:28,709
+becomes irrelevant to its calculations,
+not through active hostility,
+
+391
+00:27:29,108 --> 00:27:33,730
+but through sheer indifference to human
+scale concerns. This
+
+392
+00:27:33,789 --> 00:27:38,653
+is why safety researchers consistently
+emphasize that safety must
+
+393
+00:27:38,733 --> 00:27:43,457
+be prioritized and solved before
+capabilities. If we are
+
+394
+00:27:43,517 --> 00:27:47,640
+dealing with systems vastly more capable
+than ourselves, our
+
+395
+00:27:47,680 --> 00:27:53,712
+ability to course correct becomes
+negligible. Recursively self-improvement
+creates
+
+396
+00:27:53,772 --> 00:27:56,634
+a point of no return where safety measures
+become
+
+397
+00:27:56,875 --> 00:28:00,598
+obsolete faster than humans can develop
+new ones. A
+
+398
+00:28:00,699 --> 00:28:06,202
+system that discovers fundamental
+algorithmic improvements could achieve
+super-intelligent
+
+399
+00:28:06,242 --> 00:28:10,747
+capabilities across all domains within
+weeks. such a system
+
+400
+00:28:10,807 --> 00:28:16,710
+could simultaneously develop novel weapon
+technologies, compromise global
+infrastructure
+
+401
+00:28:16,750 --> 00:28:21,993
+through cyberattacks, exceeding any human
+defensive capability, and coordinate
+
+402
+00:28:22,134 --> 00:28:27,616
+complex manipulation campaigns across
+every information channel. We cannot
+
+403
+00:28:27,717 --> 00:28:31,880
+anticipate what strategies a recursively
+self-improving system would develop,
+
+404
+00:28:32,480 --> 00:28:37,384
+only that they would leverage every misuse
+capability simultaneously.
+
+405
+00:28:38,104 --> 00:28:41,988
+The lethality emerges from speed
+differentials that make human
+
+406
+00:28:42,067 --> 00:28:46,692
+response impossible. While human decision
+makers require days or
+
+407
+00:28:46,833 --> 00:28:52,179
+weeks to understand threats and coordinate
+responses, a super-intelligent
+
+408
+00:28:52,239 --> 00:28:57,765
+system could execute worldwide
+infrastructure attacks, deploy multiple
+bio-weapons,
+
+409
+00:28:58,125 --> 00:29:03,270
+and establish irreversible control over
+critical resources in hours.

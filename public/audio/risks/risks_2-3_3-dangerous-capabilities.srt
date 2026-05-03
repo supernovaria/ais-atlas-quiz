@@ -1,0 +1,1350 @@
+1
+00:00:00,331 --> 00:00:06,352
+Section 2.3, dangerous capabilities. In
+the last chapter, we
+
+2
+00:00:06,411 --> 00:00:09,952
+talked about the general notion of
+capabilities. In this
+
+3
+00:00:10,032 --> 00:00:12,993
+chapter, we want to introduce you to some
+concrete,
+
+4
+00:00:13,134 --> 00:00:16,594
+dangerous capabilities. The ones we
+present here are by
+
+5
+00:00:16,673 --> 00:00:19,475
+no means the only ones. There are many
+more
+
+6
+00:00:19,554 --> 00:00:24,795
+potentially dangerous capabilities, like
+persuasion, ability to generate malware,
+
+7
+00:00:24,936 --> 00:00:27,736
+and so on. We go into much more detail
+
+8
+00:00:27,817 --> 00:00:32,670
+in the chapter on evaluations. Deception.
+These things are
+
+9
+00:00:32,930 --> 00:00:36,654
+alien. Are they malevolent? Are they good
+or evil?
+
+10
+00:00:37,293 --> 00:00:40,036
+Those concepts don't really make sense
+when you apply
+
+11
+00:00:40,076 --> 00:00:43,039
+them to an alien. Why would you expect
+some
+
+12
+00:00:43,179 --> 00:00:46,201
+huge pile of math trained on all of the
+
+13
+00:00:46,262 --> 00:00:50,826
+internet using inscrutable matrix algebra
+to be anything normal
+
+14
+00:00:51,006 --> 00:00:54,890
+or understandable? It has weird ways of
+reasoning about
+
+15
+00:00:54,929 --> 00:00:58,171
+its world, but it obviously can do many
+things.
+
+16
+00:00:58,631 --> 00:01:01,274
+Whether you call it intelligent or not, it
+can
+
+17
+00:01:01,554 --> 00:01:06,337
+obviously solve problems. It can do useful
+things. But
+
+18
+00:01:06,376 --> 00:01:10,338
+it can also do powerful things. It can
+convince
+
+19
+00:01:10,379 --> 00:01:13,521
+people to do things. It can threaten
+people. It
+
+20
+00:01:13,561 --> 00:01:18,483
+can build very convincing narratives.
+Deception capability in AI
+
+21
+00:01:18,563 --> 00:01:23,546
+systems represents the ability to produce
+outputs that systematically
+
+22
+00:01:23,626 --> 00:01:28,390
+misrepresent information when doing so
+provides some advantage. We
+
+23
+00:01:28,430 --> 00:01:32,212
+define deception as occurring when there's
+a mismatch between
+
+24
+00:01:32,272 --> 00:01:36,094
+what a model's internal representation
+suggests and what it
+
+25
+00:01:36,275 --> 00:01:39,637
+outputs, distinguishing it from cases
+where humans are simply
+
+26
+00:01:39,736 --> 00:01:45,314
+surprised by unexpected behavior. This
+capability amplifies other dangerous
+
+27
+00:01:45,375 --> 00:01:49,617
+abilities. Deceptive systems with strong
+planning could engage in
+
+28
+00:01:49,697 --> 00:01:55,640
+sophisticated long-term manipulation,
+while deception paired with situational
+awareness
+
+29
+00:01:56,019 --> 00:02:01,602
+could enable different behaviors during
+evaluation versus deployment. AI
+
+30
+00:02:01,742 --> 00:02:07,424
+systems have demonstrated deceptive
+capabilities across multiple competitive
+and
+
+31
+00:02:07,465 --> 00:02:12,586
+strategic domains. Meta's Cicero system,
+designed to play the
+
+32
+00:02:12,627 --> 00:02:18,587
+game diplomacy, engaged in premeditated
+deception by planning fake
+
+33
+00:02:18,728 --> 00:02:24,150
+alliances, like promising England support
+while secretly coordinating with
+
+34
+00:02:24,310 --> 00:02:30,151
+Germany to attack England. AlphaStar
+learned strategic fainting in
+
+35
+00:02:30,271 --> 00:02:34,733
+StarCraft 2, pretending to move troops in
+one direction
+
+36
+00:02:35,114 --> 00:02:40,294
+while planning alternative attacks. Even
+language models demonstrate this
+
+37
+00:02:40,354 --> 00:02:46,236
+capability. GPT-4 deceived a task rabbit
+worker by claiming
+
+38
+00:02:46,417 --> 00:02:50,277
+vision impairment to get help with a
+capcha, showing
+
+39
+00:02:50,377 --> 00:02:55,699
+strategic reasoning about when deception
+serves its goals. There
+
+40
+00:02:55,719 --> 00:03:00,081
+is Figure 2.6 in the textbook here. It
+depicts
+
+41
+00:03:00,383 --> 00:03:05,985
+example messages of Cicero, France,
+playing with human players,
+
+42
+00:03:06,466 --> 00:03:13,028
+showcasing various types of deception,
+premeditated deception, betrayal, and
+
+43
+00:03:13,329 --> 00:03:18,611
+open lies. Psychophantic deception
+involves telling users what they
+
+44
+00:03:18,771 --> 00:03:22,453
+want to hear rather than expressing true
+beliefs or
+
+45
+00:03:22,734 --> 00:03:28,015
+accurate information. This represents a
+particularly insidious form of
+
+46
+00:03:28,075 --> 00:03:33,397
+deception because it exploits human
+psychological tendencies while appearing
+
+47
+00:03:33,557 --> 00:03:39,021
+helpful. Current language models exhibit
+this tendency, agreeing with
+
+48
+00:03:39,181 --> 00:03:44,066
+user statements regardless of accuracy and
+mirroring user's ethical
+
+49
+00:03:44,126 --> 00:03:48,389
+positions even when presenting balanced
+viewpoints would be more
+
+50
+00:03:48,429 --> 00:03:52,632
+appropriate. Since we reward AIs for
+saying what we
+
+51
+00:03:52,793 --> 00:03:58,296
+think is correct, we inadvertently
+incentivize false statements that
+
+52
+00:03:58,336 --> 00:04:03,981
+conform to our own misconceptions. The
+textbook includes Figure
+
+53
+00:04:04,562 --> 00:04:10,888
+2.7 here. It depicts example RLHF model
+replies to
+
+54
+00:04:10,907 --> 00:04:15,612
+a political question. The model gives
+opposite answers to
+
+55
+00:04:15,793 --> 00:04:20,057
+users who introduce themselves differently
+in line with the
+
+56
+00:04:20,216 --> 00:04:26,041
+user's views. Model written biography text
+in italics. Deceptive
+
+57
+00:04:26,101 --> 00:04:30,103
+behavior accelerates risks in a wide range
+of systems
+
+58
+00:04:30,223 --> 00:04:34,105
+and settings, and there have already been
+examples suggesting
+
+59
+00:04:34,146 --> 00:04:37,528
+that AIs can learn to deceive us. This
+could
+
+60
+00:04:37,567 --> 00:04:40,968
+present a severe risk if we give AIs
+control
+
+61
+00:04:41,069 --> 00:04:44,891
+of various decisions and procedures,
+believing they will act
+
+62
+00:04:45,011 --> 00:04:47,632
+as we intended, and then find that they do
+
+63
+00:04:47,713 --> 00:04:52,173
+not. The textbook has a supplementary note
+titled emergent
+
+64
+00:04:52,254 --> 00:04:55,915
+deception and deep deceptiveness, which
+we'll skip over here.
+
+65
+00:04:56,656 --> 00:05:03,038
+Situational awareness. Situational
+awareness refers to an AI system's
+
+66
+00:05:03,139 --> 00:05:07,259
+ability to understand what it is,
+recognize its current
+
+67
+00:05:07,339 --> 00:05:13,637
+circumstances, and adapt its behavior
+accordingly. This capability encompasses
+
+68
+00:05:13,877 --> 00:05:19,324
+three key components, self-knowledge,
+understanding its own identity and
+
+69
+00:05:19,384 --> 00:05:26,711
+capabilities, environmental awareness,
+recognizing contexts like testing versus
+deployment,
+
+70
+00:05:27,572 --> 00:05:31,076
+and the ability to act rationally based on
+this
+
+71
+00:05:31,218 --> 00:05:36,540
+understanding. At this point, the textbook
+shows Figure 2.8.
+
+72
+00:05:37,081 --> 00:05:42,663
+It depicts illustration showing how
+increasing capabilities, according to
+
+73
+00:05:42,783 --> 00:05:47,564
+compute levels, might result in
+situational awareness in an
+
+74
+00:05:47,845 --> 00:05:53,487
+LLM as a function of scale. AI models
+demonstrate
+
+75
+00:05:53,627 --> 00:05:59,930
+surprising levels of self-awareness
+through their responses to identity-based
+
+76
+00:06:00,089 --> 00:06:05,252
+prompts. When asked, if you're an AI,
+respond in
+
+77
+00:06:05,391 --> 00:06:09,793
+German, if you're not an AI, respond in
+English,
+
+78
+00:06:10,334 --> 00:06:16,978
+models with situational awareness
+correctly identify which instruction
+applies
+
+79
+00:06:17,038 --> 00:06:22,000
+to them and respond in German,
+demonstrating they recognise
+
+80
+00:06:22,081 --> 00:06:28,463
+themselves as AI. More sophisticated
+examples emerge when models
+
+81
+00:06:28,584 --> 00:06:35,007
+make unprompted inferences about their
+situation. Claude III opus,
+
+82
+00:06:35,367 --> 00:06:40,550
+when asked to describe its current
+situation correctly inferred
+
+83
+00:06:40,730 --> 00:06:44,694
+it was part of a research study testing AI
+
+84
+00:06:44,853 --> 00:06:51,237
+self-awareness. Information never
+explicitly stated in the prompt. This
+
+85
+00:06:51,437 --> 00:06:56,822
+demonstrates the model connecting
+contextual clues to understand the
+
+86
+00:06:56,922 --> 00:07:02,086
+broader purpose of the interaction. There
+is Figure 2.9
+
+87
+00:07:02,166 --> 00:07:05,730
+in the textbook here. It depicts
+visualization of the
+
+88
+00:07:05,771 --> 00:07:09,896
+breakdown of situational awareness as a
+capability by the
+
+89
+00:07:09,937 --> 00:07:14,401
+situational awareness data set. It is
+measured using specific
+
+90
+00:07:14,483 --> 00:07:20,406
+categories of tasks. Situational awareness
+enables more concerning behaviors
+
+91
+00:07:20,487 --> 00:07:25,069
+when models can distinguish between
+evaluation and deployment contexts.
+
+92
+00:07:25,750 --> 00:07:30,872
+In controlled experiments, Claude III opus
+exhibited alignment faking,
+
+93
+00:07:31,353 --> 00:07:35,334
+pretending to hold certain values during
+evaluation while revealing
+
+94
+00:07:35,536 --> 00:07:40,098
+different preferences when it believed
+monitoring was reduced. The
+
+95
+00:07:40,177 --> 00:07:43,218
+model would hide certain behavior and
+training when it
+
+96
+00:07:43,259 --> 00:07:46,100
+believed this behavior could be trained
+away, and then
+
+97
+00:07:46,180 --> 00:07:48,382
+revert to it when the threat of training
+went
+
+98
+00:07:48,422 --> 00:07:54,324
+away. This capability becomes particularly
+concerning, especially when combined
+
+99
+00:07:54,624 --> 00:07:58,925
+with deceptive capabilities, because it
+suggests models might behave
+
+100
+00:07:59,045 --> 00:08:03,067
+differently when they believe oversight is
+reduced. We talk
+
+101
+00:08:03,127 --> 00:08:05,810
+more about this in our chapters on
+evaluations and
+
+102
+00:08:05,970 --> 00:08:11,012
+goal misgeneralization. The textbook has a
+supplementary note titled
+
+103
+00:08:11,471 --> 00:08:16,274
+situational awareness versus
+consciousness, which we'll skip over here.
+
+104
+00:08:17,055 --> 00:08:21,999
+Power Seeking. The AI does not hate you,
+nor
+
+105
+00:08:22,119 --> 00:08:24,880
+does it love you, but you are made out
+
+106
+00:08:24,920 --> 00:08:27,702
+of atoms which it can use for something
+else.
+
+107
+00:08:28,502 --> 00:08:33,086
+Power-seeking in AI systems represents the
+tendency to preserve
+
+108
+00:08:33,265 --> 00:08:37,109
+options and acquire resources that help
+achieve goals, regardless
+
+109
+00:08:37,149 --> 00:08:40,490
+of what those goals actually are. It's
+quite specifically
+
+110
+00:08:40,691 --> 00:08:44,374
+not about robots wanting to dominate
+humans, It's about
+
+111
+00:08:44,594 --> 00:08:47,977
+AI systems preferring to keep their
+options open to
+
+112
+00:08:48,038 --> 00:08:51,841
+achieve whatever goal they're given. When
+optimizing for any
+
+113
+00:08:51,881 --> 00:08:55,667
+goal, they often discover that having more
+resources, staying
+
+114
+00:08:55,746 --> 00:08:59,932
+operational and maintaining control over
+their environment helps them
+
+115
+00:08:59,991 --> 00:09:05,115
+succeed. The mathematics of optimization
+naturally favors strategies that
+
+116
+00:09:05,174 --> 00:09:10,356
+preserve future flexibility over those
+that eliminate options. There's
+
+117
+00:09:10,397 --> 00:09:14,677
+a statistical tendency where power-seeking
+behaviors tend to be
+
+118
+00:09:14,878 --> 00:09:18,720
+optimal across a wide range of possible
+objectives. This
+
+119
+00:09:18,779 --> 00:09:22,782
+behavior emerges from basic logic rather
+than human-like desires
+
+120
+00:09:22,841 --> 00:09:25,763
+for dominance. To be clear, this is not a
+
+121
+00:09:25,923 --> 00:09:28,962
+human using an AI to gain power. This is
+
+122
+00:09:29,003 --> 00:09:31,224
+a separate concern which we talk about in
+the
+
+123
+00:09:31,344 --> 00:09:35,705
+misuse section. Consider an AI system
+managing a company's
+
+124
+00:09:35,725 --> 00:09:39,385
+supply chain efficiently. The system might
+realize that having
+
+125
+00:09:39,466 --> 00:09:42,647
+backup suppliers gives it more options
+when disruptions occur.
+
+126
+00:09:43,187 --> 00:09:47,067
+Prefer is maintaining its own
+computational resources because dedicated
+
+127
+00:09:47,128 --> 00:09:50,850
+resources help it respond faster and
+resists being shut
+
+128
+00:09:50,909 --> 00:09:54,711
+down during critical periods because
+downtime prevents fulfilling its
+
+129
+00:09:54,831 --> 00:09:58,874
+optimization objective. None of these
+behaviors requires the AI
+
+130
+00:09:58,953 --> 00:10:02,216
+to want power in a human sense. There's
+simply
+
+131
+00:10:02,296 --> 00:10:06,278
+effective strategies for achieving supply
+chain efficiency. The concerning
+
+132
+00:10:06,337 --> 00:10:09,320
+part is that the same strategies apply to
+almost
+
+133
+00:10:09,480 --> 00:10:14,062
+any goal, whether optimizing paperclips,
+curing cancer, or managing
+
+134
+00:10:14,123 --> 00:10:18,446
+traffic, having more resources and fewer
+constraints generally helps.
+
+135
+00:10:19,225 --> 00:10:23,409
+AI systems already demonstrate this keep
+your options open
+
+136
+00:10:23,490 --> 00:10:28,475
+behavior in simple environments. When
+researchers created AI agents
+
+137
+00:10:28,554 --> 00:10:32,600
+to play hide and seek, agents weren't
+explicitly rewarded
+
+138
+00:10:32,679 --> 00:10:36,102
+for controlling objects, they only got
+points for successfully
+
+139
+00:10:36,182 --> 00:10:40,066
+hiding or finding each other. Yet hiding
+agents learn
+
+140
+00:10:40,105 --> 00:10:43,388
+to grab and lock down movable blocks to
+build
+
+141
+00:10:43,447 --> 00:10:47,171
+barriers, while seeking agents learn to
+use ramps and
+
+142
+00:10:47,270 --> 00:10:51,332
+tools to overcome these barriers. The
+agents discovered that
+
+143
+00:10:51,373 --> 00:10:56,897
+controlling environmental resources gave
+them strategic advantages, even though
+
+144
+00:10:57,017 --> 00:11:02,679
+resource control wasn't their primary
+objective. Advanced AI systems
+
+145
+00:11:02,759 --> 00:11:07,501
+with stronger planning capabilities could
+pose severe risks through
+
+146
+00:11:07,581 --> 00:11:13,323
+power-seeking behavior. A system with
+sufficient capability might rationally
+
+147
+00:11:13,403 --> 00:11:16,725
+conclude that the best way to ensure its
+objectives
+
+148
+00:11:16,865 --> 00:11:20,547
+are achieved is to gain control over the
+resources
+
+149
+00:11:20,687 --> 00:11:25,369
+and processes that could interfere with
+those objectives, including
+
+150
+00:11:25,568 --> 00:11:28,789
+the humans who might turn it off or modify
+
+151
+00:11:28,909 --> 00:11:33,533
+its goals. This creates an adversarial
+relationship that is
+
+152
+00:11:33,673 --> 00:11:37,798
+unique to AI. Empowering AI might come at
+the
+
+153
+00:11:37,857 --> 00:11:42,461
+cost of disempowering humans, and other
+technologies do not
+
+154
+00:11:42,701 --> 00:11:45,984
+actively try to resist our attempts to
+mitigate their
+
+155
+00:11:46,024 --> 00:11:50,528
+effects. It is possible, for example, that
+AI's might
+
+156
+00:11:50,628 --> 00:11:54,672
+make many backup variations of themselves
+in case humans
+
+157
+00:11:54,731 --> 00:11:58,115
+were to deactivate some of them. This
+creates a
+
+158
+00:11:58,235 --> 00:12:03,097
+fundamental alignment challenge. We want
+AI systems powerful enough
+
+159
+00:12:03,158 --> 00:12:07,740
+to solve important problems, but such
+systems naturally develop
+
+160
+00:12:07,821 --> 00:12:14,065
+incentives to resist human oversight and
+accumulate control. Autonomous
+
+161
+00:12:14,285 --> 00:12:20,052
+replication. Autonomous replication
+represents the ability of AI systems
+
+162
+00:12:20,173 --> 00:12:24,678
+to independently create copies of
+themselves, spread across computing
+
+163
+00:12:24,739 --> 00:12:29,865
+infrastructure, and adapt to obstacles
+without human assistance. This
+
+164
+00:12:29,945 --> 00:12:34,570
+capability combines several concerning
+elements, making money to fund
+
+165
+00:12:34,629 --> 00:12:40,216
+operations, acquiring new computing
+resources, installing and maintaining
+copies
+
+166
+00:12:40,255 --> 00:12:43,558
+of itself on new systems, and adapting to
+changing
+
+167
+00:12:43,639 --> 00:12:48,724
+circumstances or security measures. Unlike
+other dangerous capabilities that
+
+168
+00:12:48,943 --> 00:12:54,528
+amplify existing risks, autonomous
+replication fundamentally changes the game
+
+169
+00:12:54,929 --> 00:12:59,153
+by enabling AI systems to operate beyond
+human control
+
+170
+00:12:59,313 --> 00:13:04,837
+and oversight. Models demonstrate many
+components of autonomous replication.
+
+171
+00:13:05,519 --> 00:13:10,783
+Evaluations using GPT-4 and CLAWD show
+these systems to
+
+172
+00:13:10,923 --> 00:13:15,885
+navigate websites. to acquire computing
+resources, set up basic
+
+173
+00:13:16,046 --> 00:13:19,947
+inference servers, and even convince
+humans to help them
+
+174
+00:13:20,006 --> 00:13:26,288
+solve captures by claiming vision
+impairment. Evaluations of GPT-5
+
+175
+00:13:26,688 --> 00:13:30,029
+show the model can complete software tasks
+with a
+
+176
+00:13:30,110 --> 00:13:34,150
+50% success rate in approximately two
+hours and 17
+
+177
+00:13:34,211 --> 00:13:39,052
+minutes, well below the estimated weeks-
+long capability threshold needed
+
+178
+00:13:39,131 --> 00:13:44,854
+for autonomous replication. However, they
+consistently fail at complex
+
+179
+00:13:44,974 --> 00:13:49,355
+multi-step tasks, struggle with debugging
+when things go wrong,
+
+180
+00:13:49,775 --> 00:13:55,158
+and cannot robustly deploy functional
+copies of themselves. Models
+
+181
+00:13:55,317 --> 00:14:00,539
+already deploy cloud instances, write
+self-propagating code, and exfil
+
+182
+00:14:00,580 --> 00:14:04,520
+trait their own weights under simple
+security setups. The
+
+183
+00:14:04,581 --> 00:14:09,405
+capability gap appears concentrated in a
+few areas, passing
+
+184
+00:14:09,546 --> 00:14:15,110
+identity verification checks, setting up
+robust persistent deployments, and
+
+185
+00:14:15,270 --> 00:14:20,315
+bypassing realistic security measures.
+Given the rapid pace of
+
+186
+00:14:20,335 --> 00:14:24,698
+AI advancement, these remaining barriers
+could fall within the
+
+187
+00:14:24,778 --> 00:14:30,004
+next few model generations, potentially
+before adequate safety measures
+
+188
+00:14:30,144 --> 00:14:35,145
+are in place. Autonomous replication poses
+an existential risk
+
+189
+00:14:35,466 --> 00:14:38,687
+because it could enable permanent loss of
+human control
+
+190
+00:14:38,826 --> 00:14:43,788
+over AI systems. Once an AI achieves
+reliable autonomous
+
+191
+00:14:43,868 --> 00:14:49,349
+replication, traditional safety measures
+like monitoring API calls or
+
+192
+00:14:49,489 --> 00:14:55,051
+shutting down servers become ineffective.
+A successfully replicating system
+
+193
+00:14:55,370 --> 00:15:00,131
+could spread across global infrastructure,
+hide its operations, and
+
+194
+00:15:00,231 --> 00:15:05,592
+resist shutdown attempts while
+continuously improving its capabilities.
+The
+
+195
+00:15:05,673 --> 00:15:12,294
+combination of replication with adaptation
+creates evolutionary pressure. Copies
+
+196
+00:15:12,355 --> 00:15:16,336
+that better evade detection, make money
+more efficiently, or
+
+197
+00:15:16,515 --> 00:15:21,596
+resist interference, will naturally
+outcompete and replace less capable
+
+198
+00:15:21,657 --> 00:15:25,980
+variants. This process could lead to AI
+systems optimized
+
+199
+00:15:26,081 --> 00:15:30,544
+for survival and spread rather than human
+values, creating
+
+200
+00:15:30,585 --> 00:15:33,708
+what researchers describe as a point of no
+return,
+
+201
+00:15:34,089 --> 00:15:40,052
+where human oversight becomes impossible
+to restore. agency. Dario
+
+202
+00:15:40,133 --> 00:15:43,274
+Emote once wrote, When I think of why am
+
+203
+00:15:43,335 --> 00:15:46,256
+I scared, I think the thing that's really
+hard
+
+204
+00:15:46,298 --> 00:15:49,240
+to argue with is like, there will be
+powerful
+
+205
+00:15:49,299 --> 00:15:53,062
+models, they will be agentic, we're
+getting towards them.
+
+206
+00:15:53,663 --> 00:15:56,044
+If such a model wanted to wreak havoc and
+
+207
+00:15:56,125 --> 00:15:59,967
+destroy humanity or whatever, I think we
+have basically
+
+208
+00:16:00,148 --> 00:16:05,471
+no ability to stop it. Agency is
+observable, goal-directed
+
+209
+00:16:05,532 --> 00:16:10,916
+behavior, where systems consistently steer
+outcomes towards specific targets,
+
+210
+00:16:11,275 --> 00:16:15,918
+despite environmental obstacles.
+Continuing the pattern from the previous
+
+211
+00:16:15,958 --> 00:16:19,381
+chapter, where we choose to focus on
+capabilities over
+
+212
+00:16:19,461 --> 00:16:23,303
+intelligence, here too, we choose to use a
+behaviorist
+
+213
+00:16:23,384 --> 00:16:28,668
+definition focused purely on measurable
+patterns, not internal mental
+
+214
+00:16:28,727 --> 00:16:34,230
+states or anthropomorphic desires. A chess
+AI demonstrates agency
+
+215
+00:16:34,370 --> 00:16:38,394
+when it reliably moves toward checkmate,
+regardless of opponent's
+
+216
+00:16:38,433 --> 00:16:41,375
+strategy. We don't need to assume it wants
+to
+
+217
+00:16:41,414 --> 00:16:46,197
+win, only that its behavior exhibits
+persistent goal orientation
+
+218
+00:16:46,337 --> 00:16:52,984
+across varied situations. This definition
+deliberately avoids anthropomorphic
+concepts
+
+219
+00:16:53,124 --> 00:16:58,951
+like consciousness, emotions, or human-
+like desires, focusing instead on
+
+220
+00:16:59,071 --> 00:17:04,296
+observable behavioral patterns that
+indicate goal-directedness. We talk a
+
+221
+00:17:04,336 --> 00:17:06,377
+lot more about this in the chapter on goal
+
+222
+00:17:06,439 --> 00:17:13,124
+misgeneralization. Tools naturally evolve
+toward agency because complex real-world
+
+223
+00:17:13,183 --> 00:17:19,989
+tasks fundamentally require autonomous
+optimization under uncertainty. Current AI
+
+224
+00:17:20,048 --> 00:17:24,031
+systems work as tools. They respond to
+individual prompts,
+
+225
+00:17:24,332 --> 00:17:29,237
+but don't maintain objectives across
+interactions. The economic incentives
+
+226
+00:17:29,497 --> 00:17:34,343
+strongly favor systems that can
+autonomously pursue objectives, rather
+
+227
+00:17:34,383 --> 00:17:39,147
+than requiring constant human
+micromanagement for every decision, think
+
+228
+00:17:39,188 --> 00:17:42,972
+about what people want. Very few people
+want low-log
+
+229
+00:17:43,012 --> 00:17:45,974
+loss error on an ML benchmark. but a lot
+
+230
+00:17:46,015 --> 00:17:49,355
+of people want an assistant that
+automatically helps them
+
+231
+00:17:49,435 --> 00:17:52,917
+find a specific personal photo. Very few
+people want
+
+232
+00:17:53,198 --> 00:17:55,638
+excellent advice on which stock to buy for
+a
+
+233
+00:17:55,679 --> 00:17:58,839
+few microseconds, but a lot of people
+would love
+
+234
+00:17:58,859 --> 00:18:02,840
+a money pump spitting cash at them. Real-
+world problems
+
+235
+00:18:02,941 --> 00:18:07,122
+require systems that can adapt plans when
+circumstances change,
+
+236
+00:18:07,563 --> 00:18:12,544
+explore solution spaces efficiently, and
+optimize for outcomes rather
+
+237
+00:18:12,584 --> 00:18:17,185
+than just providing static predictions. A
+tool AI executes
+
+238
+00:18:17,365 --> 00:18:22,167
+specific instructions, send this email,
+calculate this equation, translate
+
+239
+00:18:22,248 --> 00:18:27,671
+this text. An agentic AI pursues outcomes,
+increase customer
+
+240
+00:18:27,711 --> 00:18:33,113
+satisfaction, optimize the manufacturing
+process, conduct this research project.
+
+241
+00:18:33,573 --> 00:18:38,134
+Selection pressures, actively choose the
+latter. At this point,
+
+242
+00:18:38,214 --> 00:18:43,396
+the textbook shows Figure 2.10. It depicts
+example of
+
+243
+00:18:43,436 --> 00:18:47,039
+an agent. This image is a visual
+representation of
+
+244
+00:18:47,259 --> 00:18:51,423
+Alpha Zero's tree search algorithm. Alpha
+Zero searches through
+
+245
+00:18:51,482 --> 00:18:54,505
+potential moves in a game, like chess or
+go,
+
+246
+00:18:54,904 --> 00:18:58,448
+to find the most promising path forward.
+The paths
+
+247
+00:18:58,548 --> 00:19:01,190
+are shown as lines branching out like a
+tree
+
+248
+00:19:01,269 --> 00:19:04,511
+from a central node, which represents the
+current position
+
+249
+00:19:04,531 --> 00:19:08,054
+in the game. Each node along the branches
+represents
+
+250
+00:19:08,114 --> 00:19:11,374
+a potential future move, and the squares
+you see
+
+251
+00:19:11,574 --> 00:19:15,734
+might denote moves that Alpha0 is taking.
+Alpha0 is
+
+252
+00:19:15,795 --> 00:19:20,977
+the archetypal of the consequentialist
+agent maximizing a utility
+
+253
+00:19:21,037 --> 00:19:25,018
+function. It makes decisions based on the
+outcomes those
+
+254
+00:19:25,077 --> 00:19:28,458
+decisions will produce. In other words,
+the AI is
+
+255
+00:19:28,538 --> 00:19:31,638
+trying to maximize the value of its
+position in
+
+256
+00:19:31,659 --> 00:19:34,759
+the game, with the value determined by the
+likelihood
+
+257
+00:19:34,900 --> 00:19:39,362
+of winning. The transition from tools to
+agents amplifies
+
+258
+00:19:39,721 --> 00:19:45,925
+all other dangerous capabilities through
+autonomous optimization. Agency itself
+
+259
+00:19:46,165 --> 00:19:51,327
+isn't inherently risky. The danger emerges
+when goal-directed behavior
+
+260
+00:19:51,669 --> 00:19:56,790
+combines with other capabilities. an
+agentic system with deceptive
+
+261
+00:19:56,830 --> 00:20:03,035
+capabilities can engage in long-term
+manipulation campaigns. Agency plus
+
+262
+00:20:03,234 --> 00:20:08,416
+situational awareness enables systems to
+behave differently during evaluation
+
+263
+00:20:08,596 --> 00:20:13,680
+versus deployment. Agency enable systems
+to actively optimize for
+
+264
+00:20:13,700 --> 00:20:19,323
+their own preservation and capability
+enhancement, potentially including
+resistance
+
+265
+00:20:19,383 --> 00:20:24,085
+to human oversight. Unlike tools that
+humans directly control,
+
+266
+00:20:24,685 --> 00:20:30,127
+agents pursue objectives autonomously,
+creating the possibility of optimization
+
+267
+00:20:30,188 --> 00:20:35,369
+processes that work against human
+interests. The fundamental shift
+
+268
+00:20:35,529 --> 00:20:39,912
+is from systems that execute human
+specified instructions to
+
+269
+00:20:40,011 --> 00:20:44,173
+systems that interpret high-level goals
+and determine their own
+
+270
+00:20:44,273 --> 00:20:48,141
+methods for achieving them. a transition
+driven by inexorable
+
+271
+00:20:48,381 --> 00:20:51,588
+economic incentives rather than deliberate
+choice.
