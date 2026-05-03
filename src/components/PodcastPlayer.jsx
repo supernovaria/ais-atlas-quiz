@@ -126,6 +126,13 @@ export default function PodcastPlayer({ onBack }) {
     }
   }
 
+  function selectChapter(chIdx) {
+    if (chIdx === activeChapterIdx) return;
+    setActiveChapterIdx(chIdx);
+    setActiveSectionIdx(0);
+    setPlaying(false);
+  }
+
   function selectSection(chIdx, sIdx) {
     setActiveChapterIdx(chIdx);
     setActiveSectionIdx(sIdx);
@@ -156,6 +163,19 @@ export default function PodcastPlayer({ onBack }) {
 
   return (
     <div className="podcast-player">
+      {/* Chapter selector */}
+      <div className="podcast-chapters">
+        {manifest.chapters.map((ch, i) => (
+          <button
+            key={ch.id}
+            className={`podcast-chapter-btn ${i === activeChapterIdx ? 'podcast-chapter-active' : ''}`}
+            onClick={() => selectChapter(i)}
+          >
+            {ch.title}
+          </button>
+        ))}
+      </div>
+
       {/* Section tabs */}
       <div className="podcast-sections">
         <div className="podcast-sections-label">Sections</div>
