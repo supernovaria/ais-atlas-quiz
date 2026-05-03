@@ -103,14 +103,15 @@ export default function PodcastPlayer({ onBack }) {
     const next = wordRefs.current[idx];
     if (next) {
       next.classList.add('word-active');
-      // Scroll into view within the transcript container
       const container = transcriptRef.current;
       if (container) {
-        // next.offsetTop is already relative to container (container has position:relative)
-        const top = next.offsetTop;
-        const threshold = container.scrollTop + container.clientHeight * 0.7;
-        if (top > threshold || top < container.scrollTop + 20) {
-          container.scrollTo({ top: top - container.clientHeight * 0.4, behavior: 'smooth' });
+        const containerRect = container.getBoundingClientRect();
+        const wordRect = next.getBoundingClientRect();
+        const fraction = (wordRect.top - containerRect.top) / container.clientHeight;
+        if (fraction < 0.2 || fraction > 0.8) {
+          const delta = (wordRect.top - containerRect.top) - container.clientHeight * 0.4;
+          const behavior = Math.abs(delta) > container.clientHeight ? 'instant' : 'smooth';
+          container.scrollBy({ top: delta, behavior });
         }
       }
     }
