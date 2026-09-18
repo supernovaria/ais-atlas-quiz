@@ -23,8 +23,8 @@
 | Check | Expected | If not |
 |---|---|---|
 | `git status` clean; `docs/RUBRIC.md` tracked | QUIZ-PLAN phase 0 done | Phase 0 is otherwise done. **`main` is ahead of `origin/main` — push before you spend anything.** The rubric is committed and still on one disk until you do. |
-| `docs/EXEMPLARS.md` exists, 8–10 Q + 2 counter-exemplars | phase 2 done | Build it per QUIZ-PLAN phase 2. Lift §10 afters + Takeoff Q1 + Review Q4 (fixed) + 3 fresh. Each exemplar carries level, measurements, D1 provenance per distractor. **STOP** for Em to approve before P1. |
-| `scripts/check-questions.mjs` tiers 1–2 exist and reproduce RUBRIC App. A on the current file (60% / 75% / 1.39 / 24-of-40) | phase 3 done | Build tiers 1–2 (+1b anchors) per QUIZ-PLAN phase 3. Import `parseChapterMarkdown` from `src/quizParser.js`; no second parser. Tier-1 option minimum is **2**. Baseline must match Appendix A or the checker is wrong. |
+| `docs/EXEMPLARS.md` exists, 8–10 Q + 2 counter-exemplars | phase 2 done | **Drafted: 9 exemplars + 2 counter-exemplars, all inside R8/R9/1.6× (`npm run check:exemplars`). Still a STOP — Em has not signed off, and §12 lists four open questions.** Do not start P1 until that happens. |
+| `scripts/check-questions.mjs` tiers 1–2 exist and reproduce RUBRIC App. A on the current file (60% / 75% / 1.39 / 24-of-40) | phase 3 done | **Built. `npm run check:questions:selftest` reproduces 14 of 14 Appendix A metrics, with one documented divergence (D4's key count — see the note in `selftest()`).** Tier 4 (adversary) is not in this script; it is the `quiz-adversary` agent, run by the orchestrator. |
 | `scripts/pipeline.mjs` exists (§2) | — | Build it. It is smaller than the API version: agents replace most of it. |
 | `atlas-audio-read-along/dist/chapters/v1/capabilities/*.md` readable | 11 files, ~25.7k words | Present at `../atlas-audio-read-along/…`, verified. Do not scrape. |
 | Agent models `sonnet`, `haiku` selectable (P1); `opus`, `fable` (P3+) | | Spawn one throwaway agent per model tier and confirm it returns. Report which are missing. P1 needs only sonnet + haiku. |
