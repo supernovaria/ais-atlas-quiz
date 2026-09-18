@@ -20,7 +20,7 @@ const CHAPTER_DIR = resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/ca
 
 // ---------------------------------------------------------------- thresholds
 
-const GATES = {
+export const GATES = {
   keyLongest: 0.35,          // §2.3.1
   keyExtremum: 0.60,         // §2.3.1
   meanRatio: [0.90, 1.10],   // §2.3.1
@@ -76,17 +76,17 @@ const countMatches = (text, patterns) => patterns.filter((p) => p.test(text)).le
 // The Atlas site's heading slugify, for E4a anchors. Deliberately NOT
 // quizParser's slugify: that one serves free-response refs and strips
 // differently. Two slugs, two jobs — do not merge them.
-const atlasSlug = (text) =>
+export const atlasSlug = (text) =>
   text.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
 
-function contentWords(stem) {
+export function contentWords(stem) {
   return new Set(
     stem.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/)
       .filter((w) => w.length > 2 && !STOPWORDS.has(w)),
   );
 }
 
-function overlap(a, b) {
+export function overlap(a, b) {
   if (a.size === 0 || b.size === 0) return 0;
   let shared = 0;
   for (const w of a) if (b.has(w)) shared++;
@@ -95,7 +95,7 @@ function overlap(a, b) {
 
 // -------------------------------------------------------------- measurements
 
-function measure(q) {
+export function measure(q) {
   const key = q.options.find((o) => o.isCorrect);
   const distractors = q.options.filter((o) => !o.isCorrect);
   const keyLen = key ? key.text.length : 0;
@@ -219,7 +219,7 @@ function tier2(items) {
   return fails;
 }
 
-function setLevel(items) {
+export function setLevel(items) {
   // §2.3.1 is defined over 4-option questions; 2- and 3-option questions are
   // reported separately (PIPELINE §9.3) because "key is longest" has a
   // different chance baseline at each k.
@@ -275,7 +275,7 @@ function setLevel(items) {
 
 // ---------------------------------------------------------------------- main
 
-function collect(file) {
+export function collect(file) {
   const quizzes = parseChapterMarkdown(readFileSync(file, 'utf8'));
   const items = [];
   for (const quiz of quizzes) {
@@ -391,8 +391,14 @@ function selftest() {
   return bad === 0;
 }
 
+// Guard the CLI: pipeline.mjs imports measure()/collect() from this file, and an
+// unguarded main would run the whole report on import.
+const invokedDirectly = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
 const args = process.argv.slice(2);
-if (args.includes('--selftest')) {
+if (!invokedDirectly) {
+  // imported as a module — export only
+} else if (args.includes('--selftest')) {
   process.exit(selftest() ? 0 : 1);
 } else {
   const file = args.find((a) => !a.startsWith('--')) || DEFAULT_FILE;
