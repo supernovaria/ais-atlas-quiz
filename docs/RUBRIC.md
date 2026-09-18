@@ -16,6 +16,14 @@ Output format: `public/questions/ch1-capabilities.md`, parsed by `src/quizParser
 
 Nothing in this file authorises shipping a question that a human has not read.
 
+**What this document is not.** It governs *question quality* — whether a question
+is worth a reader's time. It is not the rubric a reader's *answer* is graded
+against. Multiple choice has no grading rubric: the answer is right if it is the
+`- [x]` option. Free response is graded by `functions/api/evaluate.js` against
+the per-question `**Context**` field, and §7.2 here sets the standards for
+*writing* those fields — so on the free-response side this document is a
+meta-rubric, a rubric for authoring grading rubrics, never the grader itself.
+
 ---
 
 ## 0. How to use this document
