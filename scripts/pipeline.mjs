@@ -493,9 +493,26 @@ function stageShuffle(label, slug, opts = {}) {
   }
 
   const prompts = [];
+  let repeatedPerms = 0;
   for (const it of items) {
+    // The seeds must give DISTINCT arrangements, or "hit on ≥2/3 seeds" tests
+    // the same arrangement twice and the flag is weaker than it looks. With
+    // independent seeding, ~12% of 4-option questions draw a repeat, and the
+    // first baseline run measured exactly that (5 of 40). So re-seed until the
+    // permutation is new, bounded by how many distinct ones exist (k! — and
+    // k! ≤ seeds for a 2-option question, where repeats are unavoidable).
+    const seen = new Set();
+    const maxPerms = it.options.reduce((a, _, i) => a * (i + 1), 1);
     for (let s = 1; s <= seeds; s++) {
-      const order = it.no_shuffle ? it.options : shuffled(it.options, `${it.id}#${s}`);
+      let order = it.no_shuffle ? it.options : shuffled(it.options, `${it.id}#${s}`);
+      if (!it.no_shuffle && seen.size < maxPerms) {
+        for (let salt = 0; salt < 64 && seen.has(order.map((o) => o.text).join('\u0000')); salt++) {
+          order = shuffled(it.options, `${it.id}#${s}#r${salt}`);
+        }
+      }
+      const permKey = order.map((o) => o.text).join('\u0000');
+      if (seen.has(permKey)) repeatedPerms++;
+      seen.add(permKey);
       const keyIdx = order.findIndex((o) => o.key);
       prompts.push({
         id: it.id,
@@ -509,10 +526,20 @@ function stageShuffle(label, slug, opts = {}) {
     }
   }
 
-  const out = { source: file || `${label}/${slug}`, seeds, n_questions: items.length, n_prompts: prompts.length, prompts };
+  const out = {
+    source: file || `${label}/${slug}`,
+    seeds,
+    n_questions: items.length,
+    n_prompts: prompts.length,
+    // Non-zero only where a question has fewer distinct permutations than seeds
+    // (a 2-option question at 3 seeds). Anything else means the re-seed failed.
+    questions_with_a_repeated_permutation: repeatedPerms,
+    prompts,
+  };
   const p = writeJson(dest, out);
   if (label) logLine(label, { stage: 'shuffle', section: slug || basename(dirname(dest)), n: prompts.length, seeds, artifact: p, ok: true });
   console.log(`shuffle  ${out.source}: ${items.length} questions × ${seeds} seeds = ${prompts.length} adversary prompts → ${p}`);
+  if (repeatedPerms) console.log(`         note: ${repeatedPerms} prompt(s) repeat a permutation (fewer than ${seeds} distinct orders exist)`);
   return out;
 }
 
@@ -535,8 +562,17 @@ function stageScore(label, slug) {
     if (raw == null) { missing.push(k); continue; }
     // Tolerate a letter with punctuation or stray words; refuse to guess beyond
     // a single unambiguous letter, because a mis-parsed pick is a fake hit.
-    const m = String(raw).trim().toUpperCase().match(/\b([A-E])\b/);
+    const text = String(raw).trim();
+    const m = text.toUpperCase().match(/\b([A-E])\b/);
     const picked = m ? m[1] : null;
+    // A bare letter is the brief's contract. Anything else got parsed by the
+    // regex above, and the regex can pick the WRONG letter out of a verbose
+    // answer without ever looking unparsed — which scores a fake hit rather
+    // than a visible failure. Observed in the baseline run: an adversary that
+    // returned `{"id": "unknown", "picked": "A", …}` happened to parse
+    // correctly; `{"id": "a-1", "picked": "C"}` would not have. So flag it and
+    // keep the raw text, rather than trusting a plausible-looking hit.
+    const verbose = !/^[A-E][.)]?$/i.test(text);
     rows.push({
       id: pr.id,
       seed: pr.seed,
@@ -545,7 +581,9 @@ function stageScore(label, slug) {
       hit: picked === pr.key_letter,
       option_count: pr.option_count,
       chance: pr.chance,
-      unparsed: picked === null ? String(raw).slice(0, 40) : undefined,
+      unparsed: picked === null ? text.slice(0, 80) : undefined,
+      verbose: verbose || undefined,
+      raw: verbose ? text.slice(0, 200) : undefined,
       key_position: pr.key_position,
     });
   }
@@ -577,6 +615,9 @@ function stageScore(label, slug) {
     n_questions: perQuestion.length,
     n_answers: rows.length,
     unparsed: rows.filter((r) => r.picked === null).length,
+    // Answers that were not a bare letter. Each one's pick came from the
+    // tolerant regex and should be eyeballed against `raw` in `answers`.
+    verbose_answers: rows.filter((r) => r.verbose).length,
     missing_picks: missing.length,
     flagged: perQuestion.filter((q) => q.flagged).length,
     mean_hit_rate: Number(mean(perQuestion.map((q) => q.hit_rate)).toFixed(3)),
@@ -595,6 +636,7 @@ function stageScore(label, slug) {
   console.log(`score    ${shuffle.source}: mean hit ${fmtPct(summary.mean_hit_rate)} · excess over chance ${summary.mean_excess_over_chance >= 0 ? '+' : ''}${summary.mean_excess_over_chance} (gate ≤0.15 ${summary.gate_excess_pass ? 'pass' : 'FAIL'}) · 4-opt ${summary.four_option_hit_rate == null ? 'n/a' : fmtPct(summary.four_option_hit_rate)} · flagged ${summary.flagged}/${summary.n_questions}`);
   if (missing.length) console.log(`         note: ${missing.length} prompt(s) have no pick recorded`);
   if (summary.unparsed) console.log(`         note: ${summary.unparsed} pick(s) unparseable — counted as non-hits, listed in adversary.json`);
+  if (summary.verbose_answers) console.log(`         note: ${summary.verbose_answers} answer(s) were not a bare letter — check \`raw\` in adversary.json; the brief asks for one letter`);
   return out;
 }
 
@@ -1381,7 +1423,9 @@ function selftest() {
   check(existsSync(rp), 'report wrote its tables');
   const rpText = readFileSync(rp, 'utf8');
   check(/Spawn \/ stage counts/.test(rpText), 'report includes the spawn-count cost proxy');
-  check(/not a valid comparator|run the baseline/.test(rpText), 'report refuses QUIZ-PLAN\'s 60% as a comparator');
+  // Matches both report branches: with a baseline on disk it prints the
+  // "**not** a valid comparator" line; without one it says to run the baseline.
+  check(/not\*{0,2} a valid comparator|run the baseline/.test(rpText), 'report refuses QUIZ-PLAN\'s 60% as a comparator');
 
   console.log(`\n${bad === 0 ? 'All nine stages run in isolation and validate catches every planted defect.' : `${bad} self-test assertion(s) failed.`}`);
   console.log(`Fixtures left in runs/${label}/ — delete before a real run.\n`);

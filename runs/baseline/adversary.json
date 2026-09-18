@@ -1,0 +1,1632 @@
+{
+  "summary": {
+    "source": "public/questions/ch1-capabilities.md",
+    "n_questions": 40,
+    "n_answers": 120,
+    "unparsed": 0,
+    "verbose_answers": 2,
+    "missing_picks": 0,
+    "flagged": 39,
+    "mean_hit_rate": 0.983,
+    "mean_excess_over_chance": 0.733,
+    "gate_excess": 0.15,
+    "gate_excess_pass": false,
+    "four_option_hit_rate": 0.983,
+    "four_option_n": 40,
+    "key_position_of_hits": {
+      "0": 26,
+      "1": 30,
+      "2": 29,
+      "3": 33
+    }
+  },
+  "per_question": [
+    {
+      "id": "Chapter Review: Multiple Choice Q1",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q10",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q2",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q4",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q5",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q6",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q7",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q9",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Current Capabilities Q1",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Current Capabilities Q2",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Current Capabilities Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Current Capabilities Q4",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Current Capabilities Q5",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Defining and Measuring AGI Q1",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Defining and Measuring AGI Q2",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Defining and Measuring AGI Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Defining and Measuring AGI Q4",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Defining and Measuring AGI Q5",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Forecasting Timelines Q1",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Forecasting Timelines Q2",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Forecasting Timelines Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Forecasting Timelines Q4",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Forecasting Timelines Q5",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Foundation Models Q1",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Foundation Models Q2",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Foundation Models Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Foundation Models Q4",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Foundation Models Q5",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Leveraging Scale Q1",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Leveraging Scale Q2",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Leveraging Scale Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Leveraging Scale Q4",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Leveraging Scale Q5",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Takeoff Q1",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Takeoff Q2",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Takeoff Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Takeoff Q4",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Takeoff Q5",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q8",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    }
+  ],
+  "answers": [
+    {
+      "id": "Current Capabilities Q1",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Current Capabilities Q1",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Current Capabilities Q1",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Current Capabilities Q2",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Current Capabilities Q2",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Current Capabilities Q2",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Current Capabilities Q3",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Current Capabilities Q3",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Current Capabilities Q3",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Current Capabilities Q4",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Current Capabilities Q4",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Current Capabilities Q4",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Current Capabilities Q5",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Current Capabilities Q5",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Current Capabilities Q5",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q1",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q1",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q1",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Foundation Models Q2",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q2",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Foundation Models Q2",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Foundation Models Q3",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q3",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q3",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "verbose": true,
+      "raw": "D\n\nReasoning from options alone and general knowledge: Foundation models and frontier models are distinct concepts.",
+      "key_position": 3
+    },
+    {
+      "id": "Foundation Models Q4",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q4",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Foundation Models Q4",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Foundation Models Q5",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Foundation Models Q5",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Foundation Models Q5",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Defining and Measuring AGI Q1",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Defining and Measuring AGI Q1",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Defining and Measuring AGI Q1",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Defining and Measuring AGI Q2",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Defining and Measuring AGI Q2",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Defining and Measuring AGI Q2",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Defining and Measuring AGI Q3",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Defining and Measuring AGI Q3",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Defining and Measuring AGI Q3",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Defining and Measuring AGI Q4",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Defining and Measuring AGI Q4",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Defining and Measuring AGI Q4",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Defining and Measuring AGI Q5",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Defining and Measuring AGI Q5",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Defining and Measuring AGI Q5",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Leveraging Scale Q1",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Leveraging Scale Q1",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Leveraging Scale Q1",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Leveraging Scale Q2",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Leveraging Scale Q2",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Leveraging Scale Q2",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Leveraging Scale Q3",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Leveraging Scale Q3",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Leveraging Scale Q3",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Leveraging Scale Q4",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Leveraging Scale Q4",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "verbose": true,
+      "raw": "{\"id\": \"unknown\", \"picked\": \"A\", \"reasoning\": \"Test-wise reading: Option A presents a coherent, nuanced distinction between two scaling positions. Choice: A\"}",
+      "key_position": 0
+    },
+    {
+      "id": "Leveraging Scale Q4",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Leveraging Scale Q5",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Leveraging Scale Q5",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Leveraging Scale Q5",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Forecasting Timelines Q1",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Forecasting Timelines Q1",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Forecasting Timelines Q1",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Forecasting Timelines Q2",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Forecasting Timelines Q2",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Forecasting Timelines Q2",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Forecasting Timelines Q3",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Forecasting Timelines Q3",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Forecasting Timelines Q3",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Forecasting Timelines Q4",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Forecasting Timelines Q4",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Forecasting Timelines Q4",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Forecasting Timelines Q5",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Forecasting Timelines Q5",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Forecasting Timelines Q5",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Takeoff Q1",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Takeoff Q1",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Takeoff Q1",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Takeoff Q2",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Takeoff Q2",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Takeoff Q2",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Takeoff Q3",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Takeoff Q3",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Takeoff Q3",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Takeoff Q4",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Takeoff Q4",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Takeoff Q4",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Takeoff Q5",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Takeoff Q5",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Takeoff Q5",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q1",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q1",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q1",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q2",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q2",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q2",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q3",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q3",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q3",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q4",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q4",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q4",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q5",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q5",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q5",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q6",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q6",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q6",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q7",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q7",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q7",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q8",
+      "seed": 1,
+      "picked": "B",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q8",
+      "seed": 2,
+      "picked": "C",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q8",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q9",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q9",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q9",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q10",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q10",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q10",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    }
+  ],
+  "missing_picks": []
+}

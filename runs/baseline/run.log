@@ -1,0 +1,4 @@
+{"stage":"preflight","check":"quiz-adversary tool isolation","expected":"tools: []","observed":"only SubagentHandback — no Read/Grep/Glob/Bash","ok":true,"note":"the agent-type LISTING reports '(Tools: All tools)' for quiz-adversary; the runtime does not grant them. Listing is wrong, isolation holds."}
+{"stage":"shuffle","source":"public/questions/ch1-capabilities.md","questions":40,"seeds":3,"prompts":120,"artifact":"runs/baseline/shuffle.json","ok":true}
+{"stage":"adversary","agent":"quiz-adversary","model":"haiku","spawns":120,"concurrency":6,"batches":20,"ok":true,"deviations":2,"note":"one candidate per spawn, stem+shuffled options inline only; no tools, no explanations, no provenance"}
+{"stage":"score","artifact":"runs/baseline/adversary.json","mean_hit_rate":0.983,"mean_excess_over_chance":0.733,"gate":0.15,"gate_pass":false,"flagged":39,"of":40,"ok":true}

@@ -1,0 +1,1088 @@
+{
+  "source": "public/questions/ch1-capabilities.md",
+  "seeds": 3,
+  "n_questions": 40,
+  "n_prompts": 120,
+  "prompts": [
+    {
+      "id": "Current Capabilities Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat was significant about AlphaGo's \"Move 37\" during its match against Lee Sedol?\n\nA. It perfectly replicated a famous 1933 \"ear-reddening\" game move between human grandmasters, showing AlphaGo's historical knowledge\nB. It was a highly unconventional move that commentators initially thought was a mistake, but proved decisive\nC. It was a well-known opening move from classical Go strategy that demonstrated AlphaGo had deeply studied historical games\nD. It was a defensive move that prevented a critical capture sequence, saving AlphaGo from losing on points"
+    },
+    {
+      "id": "Current Capabilities Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat was significant about AlphaGo's \"Move 37\" during its match against Lee Sedol?\n\nA. It perfectly replicated a famous 1933 \"ear-reddening\" game move between human grandmasters, showing AlphaGo's historical knowledge\nB. It was a well-known opening move from classical Go strategy that demonstrated AlphaGo had deeply studied historical games\nC. It was a highly unconventional move that commentators initially thought was a mistake, but proved decisive\nD. It was a defensive move that prevented a critical capture sequence, saving AlphaGo from losing on points"
+    },
+    {
+      "id": "Current Capabilities Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat was significant about AlphaGo's \"Move 37\" during its match against Lee Sedol?\n\nA. It perfectly replicated a famous 1933 \"ear-reddening\" game move between human grandmasters, showing AlphaGo's historical knowledge\nB. It was a highly unconventional move that commentators initially thought was a mistake, but proved decisive\nC. It was a well-known opening move from classical Go strategy that demonstrated AlphaGo had deeply studied historical games\nD. It was a defensive move that prevented a critical capture sequence, saving AlphaGo from losing on points"
+    },
+    {
+      "id": "Current Capabilities Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat distinguished MuZero (2020) from earlier game-playing AI systems like AlphaGo (2016)?\n\nA. MuZero used large language models to reason about game strategy in natural language before selecting moves\nB. MuZero achieved superhuman performance by training on a single game and then transferring that knowledge across all other games simultaneously\nC. MuZero was the first system to beat a human professional at Go, which AlphaGo had only managed against amateurs\nD. MuZero played multiple games without being told the rules of any of them"
+    },
+    {
+      "id": "Current Capabilities Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat distinguished MuZero (2020) from earlier game-playing AI systems like AlphaGo (2016)?\n\nA. MuZero achieved superhuman performance by training on a single game and then transferring that knowledge across all other games simultaneously\nB. MuZero was the first system to beat a human professional at Go, which AlphaGo had only managed against amateurs\nC. MuZero played multiple games without being told the rules of any of them\nD. MuZero used large language models to reason about game strategy in natural language before selecting moves"
+    },
+    {
+      "id": "Current Capabilities Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat distinguished MuZero (2020) from earlier game-playing AI systems like AlphaGo (2016)?\n\nA. MuZero played multiple games without being told the rules of any of them\nB. MuZero used large language models to reason about game strategy in natural language before selecting moves\nC. MuZero achieved superhuman performance by training on a single game and then transferring that knowledge across all other games simultaneously\nD. MuZero was the first system to beat a human professional at Go, which AlphaGo had only managed against amateurs"
+    },
+    {
+      "id": "Current Capabilities Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow did tool use change the performance of AI models, according to the chapter?\n\nA. It significantly boosted performance, enough that companies began reporting benchmark scores separately with and without tools\nB. Tool use made models slightly faster but did not improve accuracy, which is why most benchmarks don't distinguish between tool-assisted and unassisted runs\nC. Tool use replaced the need for larger models entirely, since a small model with a calculator outperforms any large model without one\nD. Tool use was only beneficial for mathematical reasoning tasks, where calculators and code interpreters could verify symbolic computations"
+    },
+    {
+      "id": "Current Capabilities Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow did tool use change the performance of AI models, according to the chapter?\n\nA. Tool use was only beneficial for mathematical reasoning tasks, where calculators and code interpreters could verify symbolic computations\nB. It significantly boosted performance, enough that companies began reporting benchmark scores separately with and without tools\nC. Tool use made models slightly faster but did not improve accuracy, which is why most benchmarks don't distinguish between tool-assisted and unassisted runs\nD. Tool use replaced the need for larger models entirely, since a small model with a calculator outperforms any large model without one"
+    },
+    {
+      "id": "Current Capabilities Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow did tool use change the performance of AI models, according to the chapter?\n\nA. Tool use was only beneficial for mathematical reasoning tasks, where calculators and code interpreters could verify symbolic computations\nB. Tool use made models slightly faster but did not improve accuracy, which is why most benchmarks don't distinguish between tool-assisted and unassisted runs\nC. It significantly boosted performance, enough that companies began reporting benchmark scores separately with and without tools\nD. Tool use replaced the need for larger models entirely, since a small model with a calculator outperforms any large model without one"
+    },
+    {
+      "id": "Current Capabilities Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does the chapter identify as the relationship between \"inference time scaling\" (letting models think longer) and model performance?\n\nA. Thinking longer has no measurable effect on accuracy, so labs focus exclusively on scaling training compute instead\nB. Longer thinking time tends to improve responses, contributing to gold-medal IMO performance in 2025\nC. Thinking longer helps primarily for creative writing tasks, where iterative refinement produces more nuanced prose and storytelling\nD. Thinking longer improves consistency across repeated runs but decreases peak accuracy on any single attempt"
+    },
+    {
+      "id": "Current Capabilities Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does the chapter identify as the relationship between \"inference time scaling\" (letting models think longer) and model performance?\n\nA. Thinking longer helps primarily for creative writing tasks, where iterative refinement produces more nuanced prose and storytelling\nB. Thinking longer has no measurable effect on accuracy, so labs focus exclusively on scaling training compute instead\nC. Thinking longer improves consistency across repeated runs but decreases peak accuracy on any single attempt\nD. Longer thinking time tends to improve responses, contributing to gold-medal IMO performance in 2025"
+    },
+    {
+      "id": "Current Capabilities Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does the chapter identify as the relationship between \"inference time scaling\" (letting models think longer) and model performance?\n\nA. Thinking longer improves consistency across repeated runs but decreases peak accuracy on any single attempt\nB. Thinking longer helps primarily for creative writing tasks, where iterative refinement produces more nuanced prose and storytelling\nC. Thinking longer has no measurable effect on accuracy, so labs focus exclusively on scaling training compute instead\nD. Longer thinking time tends to improve responses, contributing to gold-medal IMO performance in 2025"
+    },
+    {
+      "id": "Current Capabilities Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow did AI performance on real GitHub issues (SWE-bench) change between 2024 and 2025?\n\nA. It jumped from about 15% to about 74%, driven by combining better models with tool use\nB. It remained roughly the same at around 50%, suggesting GitHub issues require human-level understanding that current models lack\nC. It improved from 5% to 25%, driven mainly by better prompting techniques rather than model improvements\nD. It improved from 30% to 45%, with most gains coming from fine-tuning models specifically on open-source codebases"
+    },
+    {
+      "id": "Current Capabilities Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow did AI performance on real GitHub issues (SWE-bench) change between 2024 and 2025?\n\nA. It jumped from about 15% to about 74%, driven by combining better models with tool use\nB. It improved from 5% to 25%, driven mainly by better prompting techniques rather than model improvements\nC. It remained roughly the same at around 50%, suggesting GitHub issues require human-level understanding that current models lack\nD. It improved from 30% to 45%, with most gains coming from fine-tuning models specifically on open-source codebases"
+    },
+    {
+      "id": "Current Capabilities Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow did AI performance on real GitHub issues (SWE-bench) change between 2024 and 2025?\n\nA. It remained roughly the same at around 50%, suggesting GitHub issues require human-level understanding that current models lack\nB. It improved from 5% to 25%, driven mainly by better prompting techniques rather than model improvements\nC. It jumped from about 15% to about 74%, driven by combining better models with tool use\nD. It improved from 30% to 45%, with most gains coming from fine-tuning models specifically on open-source codebases"
+    },
+    {
+      "id": "Foundation Models Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the core idea behind foundation models, as distinguished from the traditional approach to AI development?\n\nA. Building one highly specialized model per task using carefully hand-labeled data, then combining them into a unified system\nB. Using reinforcement learning exclusively instead of supervised learning\nC. Training a single large-scale model on massive data, then fine-tuning it for specific tasks\nD. Combining many small specialized models into one system at deployment time through ensemble techniques and routing layers"
+    },
+    {
+      "id": "Foundation Models Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the core idea behind foundation models, as distinguished from the traditional approach to AI development?\n\nA. Building one highly specialized model per task using carefully hand-labeled data, then combining them into a unified system\nB. Combining many small specialized models into one system at deployment time through ensemble techniques and routing layers\nC. Training a single large-scale model on massive data, then fine-tuning it for specific tasks\nD. Using reinforcement learning exclusively instead of supervised learning"
+    },
+    {
+      "id": "Foundation Models Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the core idea behind foundation models, as distinguished from the traditional approach to AI development?\n\nA. Training a single large-scale model on massive data, then fine-tuning it for specific tasks\nB. Building one highly specialized model per task using carefully hand-labeled data, then combining them into a unified system\nC. Using reinforcement learning exclusively instead of supervised learning\nD. Combining many small specialized models into one system at deployment time through ensemble techniques and routing layers"
+    },
+    {
+      "id": "Foundation Models Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the key technical innovation that makes foundation model pre-training possible?\n\nA. Transfer learning from pre-existing specialized models\nB. Reinforcement learning from human feedback (RLHF), which uses human preference rankings to iteratively improve model outputs\nC. Self-supervised learning (SSL), which creates training signals from the data's own structure without human labels\nD. Generative adversarial networks (GANs), which pit two neural networks against each other to produce increasingly realistic outputs"
+    },
+    {
+      "id": "Foundation Models Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the key technical innovation that makes foundation model pre-training possible?\n\nA. Transfer learning from pre-existing specialized models\nB. Reinforcement learning from human feedback (RLHF), which uses human preference rankings to iteratively improve model outputs\nC. Generative adversarial networks (GANs), which pit two neural networks against each other to produce increasingly realistic outputs\nD. Self-supervised learning (SSL), which creates training signals from the data's own structure without human labels"
+    },
+    {
+      "id": "Foundation Models Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the key technical innovation that makes foundation model pre-training possible?\n\nA. Self-supervised learning (SSL), which creates training signals from the data's own structure without human labels\nB. Transfer learning from pre-existing specialized models\nC. Reinforcement learning from human feedback (RLHF), which uses human preference rankings to iteratively improve model outputs\nD. Generative adversarial networks (GANs), which pit two neural networks against each other to produce increasingly realistic outputs"
+    },
+    {
+      "id": "Foundation Models Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the difference between a foundation model and a frontier model?\n\nA. They are identical concepts — the terms are interchangeable and labs use whichever sounds better in marketing\nB. Foundation models are always more advanced than frontier models, since they benefit from broader training data\nC. Frontier models are the most advanced in their domain; most are also foundation models, but some (like AlphaFold) are frontier without being foundational\nD. Frontier models are open-source while foundation models are proprietary, reflecting different development philosophies"
+    },
+    {
+      "id": "Foundation Models Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the difference between a foundation model and a frontier model?\n\nA. Frontier models are open-source while foundation models are proprietary, reflecting different development philosophies\nB. They are identical concepts — the terms are interchangeable and labs use whichever sounds better in marketing\nC. Frontier models are the most advanced in their domain; most are also foundation models, but some (like AlphaFold) are frontier without being foundational\nD. Foundation models are always more advanced than frontier models, since they benefit from broader training data"
+    },
+    {
+      "id": "Foundation Models Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the difference between a foundation model and a frontier model?\n\nA. They are identical concepts — the terms are interchangeable and labs use whichever sounds better in marketing\nB. Frontier models are open-source while foundation models are proprietary, reflecting different development philosophies\nC. Foundation models are always more advanced than frontier models, since they benefit from broader training data\nD. Frontier models are the most advanced in their domain; most are also foundation models, but some (like AlphaFold) are frontier without being foundational"
+    },
+    {
+      "id": "Foundation Models Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is NOT identified in the chapter as a safety challenge unique to the foundation model training process?\n\nA. The massive scale of training makes it difficult to thoroughly understand or audit what the model has learned\nB. The adaptation process needs to reliably preserve safety properties established during pre-training\nC. Foundation models require too much human-labeled data, creating opportunities for malicious labelers to introduce biases\nD. Self-supervised pre-training means we have limited control over what the model learns"
+    },
+    {
+      "id": "Foundation Models Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is NOT identified in the chapter as a safety challenge unique to the foundation model training process?\n\nA. The adaptation process needs to reliably preserve safety properties established during pre-training\nB. The massive scale of training makes it difficult to thoroughly understand or audit what the model has learned\nC. Foundation models require too much human-labeled data, creating opportunities for malicious labelers to introduce biases\nD. Self-supervised pre-training means we have limited control over what the model learns"
+    },
+    {
+      "id": "Foundation Models Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is NOT identified in the chapter as a safety challenge unique to the foundation model training process?\n\nA. The adaptation process needs to reliably preserve safety properties established during pre-training\nB. Foundation models require too much human-labeled data, creating opportunities for malicious labelers to introduce biases\nC. The massive scale of training makes it difficult to thoroughly understand or audit what the model has learned\nD. Self-supervised pre-training means we have limited control over what the model learns"
+    },
+    {
+      "id": "Foundation Models Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does generalization in foundation models differ from generalization in traditional AI systems, and why is this a safety concern?\n\nA. Foundation models generalize better than traditional systems, and this broader generalization makes them inherently safer since they understand context more deeply\nB. Capabilities can generalize across domains in surprising ways, but goals and safety constraints often don't generalize along with them\nC. Foundation models cannot generalize at all — they only memorize training data and reproduce patterns seen during pre-training\nD. Foundation models generalize only within a single narrow domain, just like traditional AI"
+    },
+    {
+      "id": "Foundation Models Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does generalization in foundation models differ from generalization in traditional AI systems, and why is this a safety concern?\n\nA. Foundation models generalize only within a single narrow domain, just like traditional AI\nB. Capabilities can generalize across domains in surprising ways, but goals and safety constraints often don't generalize along with them\nC. Foundation models cannot generalize at all — they only memorize training data and reproduce patterns seen during pre-training\nD. Foundation models generalize better than traditional systems, and this broader generalization makes them inherently safer since they understand context more deeply"
+    },
+    {
+      "id": "Foundation Models Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does generalization in foundation models differ from generalization in traditional AI systems, and why is this a safety concern?\n\nA. Capabilities can generalize across domains in surprising ways, but goals and safety constraints often don't generalize along with them\nB. Foundation models generalize only within a single narrow domain, just like traditional AI\nC. Foundation models generalize better than traditional systems, and this broader generalization makes them inherently safer since they understand context more deeply\nD. Foundation models cannot generalize at all — they only memorize training data and reproduce patterns seen during pre-training"
+    },
+    {
+      "id": "Defining and Measuring AGI Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that consciousness-based definitions of intelligence are less useful for AI safety work?\n\nA. Because all major AI researchers have reached consensus that consciousness is irrelevant to intelligence, making it a settled question\nB. Because conscious AI systems are always safe, since consciousness implies moral reasoning\nC. Because consciousness is even harder to define, may not be linked to intelligence, and a system doesn't need to be conscious to cause harm\nD. Because consciousness has been conclusively proven to not exist in AI systems through empirical neuroscience research"
+    },
+    {
+      "id": "Defining and Measuring AGI Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that consciousness-based definitions of intelligence are less useful for AI safety work?\n\nA. Because all major AI researchers have reached consensus that consciousness is irrelevant to intelligence, making it a settled question\nB. Because consciousness is even harder to define, may not be linked to intelligence, and a system doesn't need to be conscious to cause harm\nC. Because conscious AI systems are always safe, since consciousness implies moral reasoning\nD. Because consciousness has been conclusively proven to not exist in AI systems through empirical neuroscience research"
+    },
+    {
+      "id": "Defining and Measuring AGI Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that consciousness-based definitions of intelligence are less useful for AI safety work?\n\nA. Because all major AI researchers have reached consensus that consciousness is irrelevant to intelligence, making it a settled question\nB. Because consciousness is even harder to define, may not be linked to intelligence, and a system doesn't need to be conscious to cause harm\nC. Because consciousness has been conclusively proven to not exist in AI systems through empirical neuroscience research\nD. Because conscious AI systems are always safe, since consciousness implies moral reasoning"
+    },
+    {
+      "id": "Defining and Measuring AGI Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIn the two-dimensional framework for defining AGI presented in the chapter, what do the two axes represent?\n\nA. Training cost and model size, reflecting the resources required to build and deploy the system\nB. Speed (how quickly it processes inputs) and accuracy (how often it produces correct outputs across standardized tests)\nC. Capability (performance depth on cognitive tasks) and generality (breadth across cognitive domains)\nD. Autonomy (how independently it operates) and intelligence (raw problem-solving ability measured by IQ-equivalent benchmarks)"
+    },
+    {
+      "id": "Defining and Measuring AGI Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIn the two-dimensional framework for defining AGI presented in the chapter, what do the two axes represent?\n\nA. Capability (performance depth on cognitive tasks) and generality (breadth across cognitive domains)\nB. Training cost and model size, reflecting the resources required to build and deploy the system\nC. Speed (how quickly it processes inputs) and accuracy (how often it produces correct outputs across standardized tests)\nD. Autonomy (how independently it operates) and intelligence (raw problem-solving ability measured by IQ-equivalent benchmarks)"
+    },
+    {
+      "id": "Defining and Measuring AGI Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIn the two-dimensional framework for defining AGI presented in the chapter, what do the two axes represent?\n\nA. Speed (how quickly it processes inputs) and accuracy (how often it produces correct outputs across standardized tests)\nB. Training cost and model size, reflecting the resources required to build and deploy the system\nC. Capability (performance depth on cognitive tasks) and generality (breadth across cognitive domains)\nD. Autonomy (how independently it operates) and intelligence (raw problem-solving ability measured by IQ-equivalent benchmarks)"
+    },
+    {
+      "id": "Defining and Measuring AGI Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter's definitions, what distinguishes Transformative AI (TAI) from Artificial General Intelligence (AGI)?\n\nA. AGI is defined by cognitive performance (expert-level across most domains), while TAI is defined by *impact potential* — it could mean moderate capability across many tasks OR exceptional capability on a few critical domains like automated ML R&D\nB. TAI is always more capable than AGI\nC. AGI refers to future systems while TAI refers to current systems\nD. TAI requires consciousness while AGI does not"
+    },
+    {
+      "id": "Defining and Measuring AGI Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter's definitions, what distinguishes Transformative AI (TAI) from Artificial General Intelligence (AGI)?\n\nA. TAI is always more capable than AGI\nB. AGI is defined by cognitive performance (expert-level across most domains), while TAI is defined by *impact potential* — it could mean moderate capability across many tasks OR exceptional capability on a few critical domains like automated ML R&D\nC. TAI requires consciousness while AGI does not\nD. AGI refers to future systems while TAI refers to current systems"
+    },
+    {
+      "id": "Defining and Measuring AGI Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter's definitions, what distinguishes Transformative AI (TAI) from Artificial General Intelligence (AGI)?\n\nA. TAI is always more capable than AGI\nB. TAI requires consciousness while AGI does not\nC. AGI refers to future systems while TAI refers to current systems\nD. AGI is defined by cognitive performance (expert-level across most domains), while TAI is defined by *impact potential* — it could mean moderate capability across many tasks OR exceptional capability on a few critical domains like automated ML R&D"
+    },
+    {
+      "id": "Defining and Measuring AGI Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the (t,n)-AGI framework, and how does it offer an alternative way to think about AGI?\n\nA. It measures AGI by the number of distinct tasks mastered (t) and neurons (n) in the model's architecture\nB. It quantifies AGI by the number of training tokens consumed (t) and parameters learned (n), providing a resource-based measure of intelligence\nC. It measures AGI by temperature (t) and number of samples (n) during inference\nD. A system is t-AGI if it outperforms a human expert within time frame 't', and (t,n)-AGI if it outperforms 'n' experts collaborating for time 't'"
+    },
+    {
+      "id": "Defining and Measuring AGI Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the (t,n)-AGI framework, and how does it offer an alternative way to think about AGI?\n\nA. It quantifies AGI by the number of training tokens consumed (t) and parameters learned (n), providing a resource-based measure of intelligence\nB. It measures AGI by the number of distinct tasks mastered (t) and neurons (n) in the model's architecture\nC. It measures AGI by temperature (t) and number of samples (n) during inference\nD. A system is t-AGI if it outperforms a human expert within time frame 't', and (t,n)-AGI if it outperforms 'n' experts collaborating for time 't'"
+    },
+    {
+      "id": "Defining and Measuring AGI Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the (t,n)-AGI framework, and how does it offer an alternative way to think about AGI?\n\nA. It quantifies AGI by the number of training tokens consumed (t) and parameters learned (n), providing a resource-based measure of intelligence\nB. It measures AGI by temperature (t) and number of samples (n) during inference\nC. It measures AGI by the number of distinct tasks mastered (t) and neurons (n) in the model's architecture\nD. A system is t-AGI if it outperforms a human expert within time frame 't', and (t,n)-AGI if it outperforms 'n' experts collaborating for time 't'"
+    },
+    {
+      "id": "Defining and Measuring AGI Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is a criticism of the capability-generality percentage framework for measuring AGI?\n\nA. It is too qualitative and doesn't allow for any numerical measurement\nB. It only measures a single dimension of intelligence\nC. CHC-based human psychometric tests may miss capabilities universal in humans but lacking in AI (coverage bias), and percentage scores can misleadingly imply linear progress toward AGI\nD. It focuses too heavily on consciousness rather than observable behavior"
+    },
+    {
+      "id": "Defining and Measuring AGI Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is a criticism of the capability-generality percentage framework for measuring AGI?\n\nA. It is too qualitative and doesn't allow for any numerical measurement\nB. CHC-based human psychometric tests may miss capabilities universal in humans but lacking in AI (coverage bias), and percentage scores can misleadingly imply linear progress toward AGI\nC. It focuses too heavily on consciousness rather than observable behavior\nD. It only measures a single dimension of intelligence"
+    },
+    {
+      "id": "Defining and Measuring AGI Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is a criticism of the capability-generality percentage framework for measuring AGI?\n\nA. CHC-based human psychometric tests may miss capabilities universal in humans but lacking in AI (coverage bias), and percentage scores can misleadingly imply linear progress toward AGI\nB. It is too qualitative and doesn't allow for any numerical measurement\nC. It focuses too heavily on consciousness rather than observable behavior\nD. It only measures a single dimension of intelligence"
+    },
+    {
+      "id": "Leveraging Scale Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the \"bitter lesson\" of AI research, as described by Richard Sutton?\n\nA. That AI research is fundamentally impossible and will never succeed at replicating human-level cognition\nB. That only biologically-inspired approaches modeled on neural structures can achieve general intelligence\nC. That small, efficient models with carefully engineered architectures always outperform large brute-force approaches in the long run\nD. That general methods leveraging computation consistently beat hand-crafted domain knowledge"
+    },
+    {
+      "id": "Leveraging Scale Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the \"bitter lesson\" of AI research, as described by Richard Sutton?\n\nA. That AI research is fundamentally impossible and will never succeed at replicating human-level cognition\nB. That small, efficient models with carefully engineered architectures always outperform large brute-force approaches in the long run\nC. That only biologically-inspired approaches modeled on neural structures can achieve general intelligence\nD. That general methods leveraging computation consistently beat hand-crafted domain knowledge"
+    },
+    {
+      "id": "Leveraging Scale Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the \"bitter lesson\" of AI research, as described by Richard Sutton?\n\nA. That only biologically-inspired approaches modeled on neural structures can achieve general intelligence\nB. That small, efficient models with carefully engineered architectures always outperform large brute-force approaches in the long run\nC. That AI research is fundamentally impossible and will never succeed at replicating human-level cognition\nD. That general methods leveraging computation consistently beat hand-crafted domain knowledge"
+    },
+    {
+      "id": "Leveraging Scale Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat are the four key variables in scaling laws for AI models?\n\nA. Compute (total FLOPs during training), parameters (model size), data (training examples/tokens), and accuracy (inverse of loss)\nB. Pre-training, fine-tuning, prompting, and deployment\nC. Architecture, learning rate, batch size, and epochs\nD. GPUs, researchers, electricity, and time"
+    },
+    {
+      "id": "Leveraging Scale Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat are the four key variables in scaling laws for AI models?\n\nA. Pre-training, fine-tuning, prompting, and deployment\nB. Architecture, learning rate, batch size, and epochs\nC. Compute (total FLOPs during training), parameters (model size), data (training examples/tokens), and accuracy (inverse of loss)\nD. GPUs, researchers, electricity, and time"
+    },
+    {
+      "id": "Leveraging Scale Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat are the four key variables in scaling laws for AI models?\n\nA. Architecture, learning rate, batch size, and epochs\nB. Compute (total FLOPs during training), parameters (model size), data (training examples/tokens), and accuracy (inverse of loss)\nC. GPUs, researchers, electricity, and time\nD. Pre-training, fine-tuning, prompting, and deployment"
+    },
+    {
+      "id": "Leveraging Scale Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat key finding did the \"Chinchilla\" research (Hoffmann et al., 2022) reveal about optimal training?\n\nA. That optimal training requires ~20 tokens per parameter — about 10x more data than earlier scaling laws suggested — meaning previous large models were undertrained\nB. That models should always be as large as possible regardless of available data, since more parameters always improve generalization\nC. That data quality is irrelevant and only model size matters, so labs should focus investment entirely on larger architectures\nD. That training should stop after a fixed number of epochs regardless of model size, to prevent overfitting on the training distribution"
+    },
+    {
+      "id": "Leveraging Scale Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat key finding did the \"Chinchilla\" research (Hoffmann et al., 2022) reveal about optimal training?\n\nA. That data quality is irrelevant and only model size matters, so labs should focus investment entirely on larger architectures\nB. That models should always be as large as possible regardless of available data, since more parameters always improve generalization\nC. That training should stop after a fixed number of epochs regardless of model size, to prevent overfitting on the training distribution\nD. That optimal training requires ~20 tokens per parameter — about 10x more data than earlier scaling laws suggested — meaning previous large models were undertrained"
+    },
+    {
+      "id": "Leveraging Scale Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat key finding did the \"Chinchilla\" research (Hoffmann et al., 2022) reveal about optimal training?\n\nA. That data quality is irrelevant and only model size matters, so labs should focus investment entirely on larger architectures\nB. That optimal training requires ~20 tokens per parameter — about 10x more data than earlier scaling laws suggested — meaning previous large models were undertrained\nC. That models should always be as large as possible regardless of available data, since more parameters always improve generalization\nD. That training should stop after a fixed number of epochs regardless of model size, to prevent overfitting on the training distribution"
+    },
+    {
+      "id": "Leveraging Scale Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the difference between the \"strong\" and \"weak\" scaling hypotheses?\n\nA. The strong hypothesis applies to language models only; the weak hypothesis covers vision, audio, and multimodal models\nB. The strong hypothesis says scaling will never work; the weak hypothesis says it sometimes works for narrow tasks\nC. The strong says scaling existing architectures alone suffices for transformative AI; the weak says scale is the primary driver but targeted algorithmic improvements will also be needed\nD. The strong hypothesis is fully supported by empirical evidence from current training runs; the weak hypothesis is purely theoretical with no experimental backing"
+    },
+    {
+      "id": "Leveraging Scale Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the difference between the \"strong\" and \"weak\" scaling hypotheses?\n\nA. The strong says scaling existing architectures alone suffices for transformative AI; the weak says scale is the primary driver but targeted algorithmic improvements will also be needed\nB. The strong hypothesis is fully supported by empirical evidence from current training runs; the weak hypothesis is purely theoretical with no experimental backing\nC. The strong hypothesis says scaling will never work; the weak hypothesis says it sometimes works for narrow tasks\nD. The strong hypothesis applies to language models only; the weak hypothesis covers vision, audio, and multimodal models"
+    },
+    {
+      "id": "Leveraging Scale Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the difference between the \"strong\" and \"weak\" scaling hypotheses?\n\nA. The strong hypothesis says scaling will never work; the weak hypothesis says it sometimes works for narrow tasks\nB. The strong hypothesis is fully supported by empirical evidence from current training runs; the weak hypothesis is purely theoretical with no experimental backing\nC. The strong says scaling existing architectures alone suffices for transformative AI; the weak says scale is the primary driver but targeted algorithmic improvements will also be needed\nD. The strong hypothesis applies to language models only; the weak hypothesis covers vision, audio, and multimodal models"
+    },
+    {
+      "id": "Leveraging Scale Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that debates about scaling laws alone miss an important part of the picture?\n\nA. Because scaling laws only apply to image generation models, not language or multimodal systems\nB. Because only theoretical research and novel architectures matter for AI progress, not empirical scaling\nC. Because scaling laws only predict foundation model capabilities — they miss \"scaffolding\" gains (tool use, chain-of-thought, retrieval) that boost capability independently\nD. Because scaling laws have been disproven by recent experiments showing diminishing returns across all major model families"
+    },
+    {
+      "id": "Leveraging Scale Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that debates about scaling laws alone miss an important part of the picture?\n\nA. Because only theoretical research and novel architectures matter for AI progress, not empirical scaling\nB. Because scaling laws only apply to image generation models, not language or multimodal systems\nC. Because scaling laws have been disproven by recent experiments showing diminishing returns across all major model families\nD. Because scaling laws only predict foundation model capabilities — they miss \"scaffolding\" gains (tool use, chain-of-thought, retrieval) that boost capability independently"
+    },
+    {
+      "id": "Leveraging Scale Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that debates about scaling laws alone miss an important part of the picture?\n\nA. Because scaling laws have been disproven by recent experiments showing diminishing returns across all major model families\nB. Because scaling laws only predict foundation model capabilities — they miss \"scaffolding\" gains (tool use, chain-of-thought, retrieval) that boost capability independently\nC. Because only theoretical research and novel architectures matter for AI progress, not empirical scaling\nD. Because scaling laws only apply to image generation models, not language or multimodal systems"
+    },
+    {
+      "id": "Forecasting Timelines Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that predicting AI timelines matters for safety, rather than being merely an academic exercise?\n\nA. Because short vs. long timelines fundamentally change which safety strategies are viable — 10 years demands solutions for current systems, 50 years allows fundamental research\nB. Because AI researchers need timeline estimates to plan their careers and decide which subfields to specialize in\nC. Because governments need to plan tax revenue, labor market transitions, and social safety nets based on when AI automation arrives\nD. Because investors need accurate predictions to allocate capital efficiently across AI companies and competing technology sectors"
+    },
+    {
+      "id": "Forecasting Timelines Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that predicting AI timelines matters for safety, rather than being merely an academic exercise?\n\nA. Because investors need accurate predictions to allocate capital efficiently across AI companies and competing technology sectors\nB. Because short vs. long timelines fundamentally change which safety strategies are viable — 10 years demands solutions for current systems, 50 years allows fundamental research\nC. Because governments need to plan tax revenue, labor market transitions, and social safety nets based on when AI automation arrives\nD. Because AI researchers need timeline estimates to plan their careers and decide which subfields to specialize in"
+    },
+    {
+      "id": "Forecasting Timelines Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the chapter argue that predicting AI timelines matters for safety, rather than being merely an academic exercise?\n\nA. Because governments need to plan tax revenue, labor market transitions, and social safety nets based on when AI automation arrives\nB. Because AI researchers need timeline estimates to plan their careers and decide which subfields to specialize in\nC. Because investors need accurate predictions to allocate capital efficiently across AI companies and competing technology sectors\nD. Because short vs. long timelines fundamentally change which safety strategies are viable — 10 years demands solutions for current systems, 50 years allows fundamental research"
+    },
+    {
+      "id": "Forecasting Timelines Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is \"effective compute\" and why does it grow faster than any single input?\n\nA. It is the product of software efficiency, hardware efficiency, and number of chips — because each factor can improve independently, the total compounds faster than any single input\nB. It is a theoretical maximum that cannot be measured\nC. It is the compute used only during inference, not training\nD. It is the total number of GPUs owned by a company"
+    },
+    {
+      "id": "Forecasting Timelines Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is \"effective compute\" and why does it grow faster than any single input?\n\nA. It is a theoretical maximum that cannot be measured\nB. It is the product of software efficiency, hardware efficiency, and number of chips — because each factor can improve independently, the total compounds faster than any single input\nC. It is the compute used only during inference, not training\nD. It is the total number of GPUs owned by a company"
+    },
+    {
+      "id": "Forecasting Timelines Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is \"effective compute\" and why does it grow faster than any single input?\n\nA. It is the compute used only during inference, not training\nB. It is a theoretical maximum that cannot be measured\nC. It is the total number of GPUs owned by a company\nD. It is the product of software efficiency, hardware efficiency, and number of chips — because each factor can improve independently, the total compounds faster than any single input"
+    },
+    {
+      "id": "Forecasting Timelines Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter, approximately when might high-quality public text data be exhausted at current scaling rates?\n\nA. Text data is effectively unlimited and will never run out, since the internet grows exponentially alongside model demand\nB. It was already exhausted by 2023, which is why recent models rely primarily on synthetic and multimodal data for pre-training\nC. Not until at least 2050, because new content is published online faster than models can consume it during training\nD. Between 2026 and 2032, given ~500 trillion tokens on the indexed web and ~4x yearly consumption growth"
+    },
+    {
+      "id": "Forecasting Timelines Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter, approximately when might high-quality public text data be exhausted at current scaling rates?\n\nA. Not until at least 2050, because new content is published online faster than models can consume it during training\nB. Text data is effectively unlimited and will never run out, since the internet grows exponentially alongside model demand\nC. It was already exhausted by 2023, which is why recent models rely primarily on synthetic and multimodal data for pre-training\nD. Between 2026 and 2032, given ~500 trillion tokens on the indexed web and ~4x yearly consumption growth"
+    },
+    {
+      "id": "Forecasting Timelines Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter, approximately when might high-quality public text data be exhausted at current scaling rates?\n\nA. Not until at least 2050, because new content is published online faster than models can consume it during training\nB. Between 2026 and 2032, given ~500 trillion tokens on the indexed web and ~4x yearly consumption growth\nC. Text data is effectively unlimited and will never run out, since the internet grows exponentially alongside model demand\nD. It was already exhausted by 2023, which is why recent models rely primarily on synthetic and multimodal data for pre-training"
+    },
+    {
+      "id": "Forecasting Timelines Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the range of uncertainty in biological anchors estimates for the compute needed for general intelligence?\n\nA. A factor of 2x (between $10^{28}$ and $10^{29}$ FLOP), which is narrow enough to be useful for planning infrastructure investments\nB. Twelve orders of magnitude — from ~$10^{28}$ FLOP (a human lifetime of learning) to ~$10^{41}$ FLOP (all of evolutionary history)\nC. A factor of 100x, reflecting disagreement about whether to model the neocortex alone or the entire brain including subcortical structures\nD. There is virtually no uncertainty — estimates converge on $10^{35}$ FLOP"
+    },
+    {
+      "id": "Forecasting Timelines Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the range of uncertainty in biological anchors estimates for the compute needed for general intelligence?\n\nA. A factor of 100x, reflecting disagreement about whether to model the neocortex alone or the entire brain including subcortical structures\nB. A factor of 2x (between $10^{28}$ and $10^{29}$ FLOP), which is narrow enough to be useful for planning infrastructure investments\nC. Twelve orders of magnitude — from ~$10^{28}$ FLOP (a human lifetime of learning) to ~$10^{41}$ FLOP (all of evolutionary history)\nD. There is virtually no uncertainty — estimates converge on $10^{35}$ FLOP"
+    },
+    {
+      "id": "Forecasting Timelines Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the range of uncertainty in biological anchors estimates for the compute needed for general intelligence?\n\nA. There is virtually no uncertainty — estimates converge on $10^{35}$ FLOP\nB. A factor of 2x (between $10^{28}$ and $10^{29}$ FLOP), which is narrow enough to be useful for planning infrastructure investments\nC. A factor of 100x, reflecting disagreement about whether to model the neocortex alone or the entire brain including subcortical structures\nD. Twelve orders of magnitude — from ~$10^{28}$ FLOP (a human lifetime of learning) to ~$10^{41}$ FLOP (all of evolutionary history)"
+    },
+    {
+      "id": "Forecasting Timelines Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is NOT listed as a potential \"escape route\" for the data wall?\n\nA. Synthetic data generated by AI itself\nB. Multimodal data (images, video) that could 3-10x the effective data supply\nC. Task-based self-play reinforcement learning that generates training data through environment interaction\nD. Purchasing proprietary datasets from corporations and governments"
+    },
+    {
+      "id": "Forecasting Timelines Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is NOT listed as a potential \"escape route\" for the data wall?\n\nA. Task-based self-play reinforcement learning that generates training data through environment interaction\nB. Purchasing proprietary datasets from corporations and governments\nC. Multimodal data (images, video) that could 3-10x the effective data supply\nD. Synthetic data generated by AI itself"
+    },
+    {
+      "id": "Forecasting Timelines Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhich of the following is NOT listed as a potential \"escape route\" for the data wall?\n\nA. Synthetic data generated by AI itself\nB. Task-based self-play reinforcement learning that generates training data through environment interaction\nC. Multimodal data (images, video) that could 3-10x the effective data supply\nD. Purchasing proprietary datasets from corporations and governments"
+    },
+    {
+      "id": "Takeoff Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the key distinction between \"takeoff speed\" and \"AI timelines\"?\n\nA. Timelines refer to hardware development schedules while takeoff speed refers to software and algorithmic progress rates\nB. Takeoff speed measures how quickly models are deployed to users, while timelines measure how long training runs take from start to finish\nC. They are the same concept described with different words — both measure how quickly AI reaches human-level capability\nD. Timelines address *when* transformative AI arrives; takeoff speed addresses what happens *after* — gradual vs. explosive growth"
+    },
+    {
+      "id": "Takeoff Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the key distinction between \"takeoff speed\" and \"AI timelines\"?\n\nA. Takeoff speed measures how quickly models are deployed to users, while timelines measure how long training runs take from start to finish\nB. They are the same concept described with different words — both measure how quickly AI reaches human-level capability\nC. Timelines refer to hardware development schedules while takeoff speed refers to software and algorithmic progress rates\nD. Timelines address *when* transformative AI arrives; takeoff speed addresses what happens *after* — gradual vs. explosive growth"
+    },
+    {
+      "id": "Takeoff Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the key distinction between \"takeoff speed\" and \"AI timelines\"?\n\nA. Takeoff speed measures how quickly models are deployed to users, while timelines measure how long training runs take from start to finish\nB. They are the same concept described with different words — both measure how quickly AI reaches human-level capability\nC. Timelines refer to hardware development schedules while takeoff speed refers to software and algorithmic progress rates\nD. Timelines address *when* transformative AI arrives; takeoff speed addresses what happens *after* — gradual vs. explosive growth"
+    },
+    {
+      "id": "Takeoff Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat type of mathematical growth characterizes a fast takeoff scenario?\n\nA. Exponential growth at a constant rate\nB. Superexponential or hyperbolic growth — the growth *rate itself* increases over time (doubling every year, then every month, then every week)\nC. Linear growth — capabilities increase by the same fixed amount each period\nD. Logarithmic growth — capabilities increase rapidly at first, then slow down"
+    },
+    {
+      "id": "Takeoff Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat type of mathematical growth characterizes a fast takeoff scenario?\n\nA. Linear growth — capabilities increase by the same fixed amount each period\nB. Exponential growth at a constant rate\nC. Superexponential or hyperbolic growth — the growth *rate itself* increases over time (doubling every year, then every month, then every week)\nD. Logarithmic growth — capabilities increase rapidly at first, then slow down"
+    },
+    {
+      "id": "Takeoff Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat type of mathematical growth characterizes a fast takeoff scenario?\n\nA. Exponential growth at a constant rate\nB. Logarithmic growth — capabilities increase rapidly at first, then slow down\nC. Superexponential or hyperbolic growth — the growth *rate itself* increases over time (doubling every year, then every month, then every week)\nD. Linear growth — capabilities increase by the same fixed amount each period"
+    },
+    {
+      "id": "Takeoff Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is a \"hardware overhang\" and why might it matter for takeoff dynamics?\n\nA. When computing hardware to run many powerful AI systems already exists, but the software hasn't caught up yet — once it does, many copies could appear almost immediately\nB. When one company monopolizes all available computing hardware\nC. When hardware costs exceed the economic value AI can produce, creating a negative return on investment for further scaling\nD. When hardware becomes obsolete faster than it can be manufactured, creating a bottleneck where new chips are outdated before deployment"
+    },
+    {
+      "id": "Takeoff Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is a \"hardware overhang\" and why might it matter for takeoff dynamics?\n\nA. When hardware becomes obsolete faster than it can be manufactured, creating a bottleneck where new chips are outdated before deployment\nB. When computing hardware to run many powerful AI systems already exists, but the software hasn't caught up yet — once it does, many copies could appear almost immediately\nC. When one company monopolizes all available computing hardware\nD. When hardware costs exceed the economic value AI can produce, creating a negative return on investment for further scaling"
+    },
+    {
+      "id": "Takeoff Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is a \"hardware overhang\" and why might it matter for takeoff dynamics?\n\nA. When computing hardware to run many powerful AI systems already exists, but the software hasn't caught up yet — once it does, many copies could appear almost immediately\nB. When hardware becomes obsolete faster than it can be manufactured, creating a bottleneck where new chips are outdated before deployment\nC. When hardware costs exceed the economic value AI can produce, creating a negative return on investment for further scaling\nD. When one company monopolizes all available computing hardware"
+    },
+    {
+      "id": "Takeoff Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the \"automating research\" argument for accelerating AI takeoff, as described by Ajeya Cotra?\n\nA. That each AI generation handles harder tasks, so more work gets delegated, making the next generation arrive faster — a self-reinforcing loop\nB. That AI will only automate administrative tasks like literature reviews, grant writing, and data cleaning — not core scientific reasoning\nC. That AI will fully replace all human researchers by 2030, making traditional academic institutions obsolete\nD. That research automation is impossible because AI fundamentally lacks the creativity and intuition needed for scientific breakthroughs"
+    },
+    {
+      "id": "Takeoff Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the \"automating research\" argument for accelerating AI takeoff, as described by Ajeya Cotra?\n\nA. That research automation is impossible because AI fundamentally lacks the creativity and intuition needed for scientific breakthroughs\nB. That AI will fully replace all human researchers by 2030, making traditional academic institutions obsolete\nC. That each AI generation handles harder tasks, so more work gets delegated, making the next generation arrive faster — a self-reinforcing loop\nD. That AI will only automate administrative tasks like literature reviews, grant writing, and data cleaning — not core scientific reasoning"
+    },
+    {
+      "id": "Takeoff Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the \"automating research\" argument for accelerating AI takeoff, as described by Ajeya Cotra?\n\nA. That AI will only automate administrative tasks like literature reviews, grant writing, and data cleaning — not core scientific reasoning\nB. That AI will fully replace all human researchers by 2030, making traditional academic institutions obsolete\nC. That research automation is impossible because AI fundamentally lacks the creativity and intuition needed for scientific breakthroughs\nD. That each AI generation handles harder tasks, so more work gets delegated, making the next generation arrive faster — a self-reinforcing loop"
+    },
+    {
+      "id": "Takeoff Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter, why do the majority of AI experts agree on AI risks while sometimes being *reported* as disagreeing?\n\nA. Because journalists systematically fabricate expert disagreements for clicks, misquoting researchers to manufacture controversy\nB. Because experts only disagree about which company will build AGI first, not about the technology's fundamental trajectory\nC. Because they actually do fundamentally disagree about whether AI poses any risks at all, with roughly half dismissing risk concerns entirely\nD. Because the real disagreements are about nuances — whether problems will be noticeable and fixable in time or too fast to respond to — but these get misreported as disagreement about whether risks exist at all"
+    },
+    {
+      "id": "Takeoff Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter, why do the majority of AI experts agree on AI risks while sometimes being *reported* as disagreeing?\n\nA. Because the real disagreements are about nuances — whether problems will be noticeable and fixable in time or too fast to respond to — but these get misreported as disagreement about whether risks exist at all\nB. Because journalists systematically fabricate expert disagreements for clicks, misquoting researchers to manufacture controversy\nC. Because experts only disagree about which company will build AGI first, not about the technology's fundamental trajectory\nD. Because they actually do fundamentally disagree about whether AI poses any risks at all, with roughly half dismissing risk concerns entirely"
+    },
+    {
+      "id": "Takeoff Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to the chapter, why do the majority of AI experts agree on AI risks while sometimes being *reported* as disagreeing?\n\nA. Because journalists systematically fabricate expert disagreements for clicks, misquoting researchers to manufacture controversy\nB. Because experts only disagree about which company will build AGI first, not about the technology's fundamental trajectory\nC. Because they actually do fundamentally disagree about whether AI poses any risks at all, with roughly half dismissing risk concerns entirely\nD. Because the real disagreements are about nuances — whether problems will be noticeable and fixable in time or too fast to respond to — but these get misreported as disagreement about whether risks exist at all"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter describes several techniques that boost AI performance beyond what the base foundation model can achieve alone. Which combination of techniques best represents what the chapter calls \"unhobbling\" or \"scaffolding\"?\n\nA. Increasing model parameter count and training data volume\nB. Chain-of-thought prompting, tool use (calculators, search, code interpreters), inference time scaling (letting models think longer), and retrieval-augmented generation\nC. Fine-tuning on labeled data and reinforcement learning from human feedback\nD. Using better GPU hardware and increasing training duration"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter describes several techniques that boost AI performance beyond what the base foundation model can achieve alone. Which combination of techniques best represents what the chapter calls \"unhobbling\" or \"scaffolding\"?\n\nA. Chain-of-thought prompting, tool use (calculators, search, code interpreters), inference time scaling (letting models think longer), and retrieval-augmented generation\nB. Increasing model parameter count and training data volume\nC. Using better GPU hardware and increasing training duration\nD. Fine-tuning on labeled data and reinforcement learning from human feedback"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter describes several techniques that boost AI performance beyond what the base foundation model can achieve alone. Which combination of techniques best represents what the chapter calls \"unhobbling\" or \"scaffolding\"?\n\nA. Using better GPU hardware and increasing training duration\nB. Increasing model parameter count and training data volume\nC. Fine-tuning on labeled data and reinforcement learning from human feedback\nD. Chain-of-thought prompting, tool use (calculators, search, code interpreters), inference time scaling (letting models think longer), and retrieval-augmented generation"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nConsider this progression: AlphaGo (2016) -> MuZero (2020) -> Voyager/GPT-4 in Minecraft (2023) -> SIMA-2 (2025). What broader trend does this sequence illustrate about AI development?\n\nA. A trend toward smaller, more efficient models that achieve the same results with a fraction of the compute used by earlier systems\nB. A shift from language-based AI to vision-based AI, reflecting the growing importance of visual understanding in game environments\nC. A demonstration that game-playing AI has no relevance to real-world applications, since each system remains confined to virtual environments\nD. A progression from superhuman narrow capability, to generality without rules, to open-ended planning, to cross-game skill transfer — moving along both capability and generality axes"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nConsider this progression: AlphaGo (2016) -> MuZero (2020) -> Voyager/GPT-4 in Minecraft (2023) -> SIMA-2 (2025). What broader trend does this sequence illustrate about AI development?\n\nA. A trend toward smaller, more efficient models that achieve the same results with a fraction of the compute used by earlier systems\nB. A shift from language-based AI to vision-based AI, reflecting the growing importance of visual understanding in game environments\nC. A demonstration that game-playing AI has no relevance to real-world applications, since each system remains confined to virtual environments\nD. A progression from superhuman narrow capability, to generality without rules, to open-ended planning, to cross-game skill transfer — moving along both capability and generality axes"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nConsider this progression: AlphaGo (2016) -> MuZero (2020) -> Voyager/GPT-4 in Minecraft (2023) -> SIMA-2 (2025). What broader trend does this sequence illustrate about AI development?\n\nA. A shift from language-based AI to vision-based AI, reflecting the growing importance of visual understanding in game environments\nB. A progression from superhuman narrow capability, to generality without rules, to open-ended planning, to cross-game skill transfer — moving along both capability and generality axes\nC. A trend toward smaller, more efficient models that achieve the same results with a fraction of the compute used by earlier systems\nD. A demonstration that game-playing AI has no relevance to real-world applications, since each system remains confined to virtual environments"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter presents the \"bitter lesson\" and then discusses scaling laws. How are these two concepts related?\n\nA. They are unrelated — the bitter lesson is about philosophy while scaling laws are about engineering\nB. Scaling laws are the mathematical proof that the bitter lesson is wrong\nC. The bitter lesson provides the historical/philosophical foundation (general methods + compute beat hand-crafted knowledge), and scaling laws provide the empirical quantification of exactly *how* performance improves as you scale compute, data, and parameters\nD. The bitter lesson disproves scaling laws"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter presents the \"bitter lesson\" and then discusses scaling laws. How are these two concepts related?\n\nA. They are unrelated — the bitter lesson is about philosophy while scaling laws are about engineering\nB. The bitter lesson disproves scaling laws\nC. The bitter lesson provides the historical/philosophical foundation (general methods + compute beat hand-crafted knowledge), and scaling laws provide the empirical quantification of exactly *how* performance improves as you scale compute, data, and parameters\nD. Scaling laws are the mathematical proof that the bitter lesson is wrong"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter presents the \"bitter lesson\" and then discusses scaling laws. How are these two concepts related?\n\nA. The bitter lesson provides the historical/philosophical foundation (general methods + compute beat hand-crafted knowledge), and scaling laws provide the empirical quantification of exactly *how* performance improves as you scale compute, data, and parameters\nB. The bitter lesson disproves scaling laws\nC. They are unrelated — the bitter lesson is about philosophy while scaling laws are about engineering\nD. Scaling laws are the mathematical proof that the bitter lesson is wrong"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIf someone told you \"AI has reached 57% AGI according to the framework in the chapter,\" which of the following critiques would the chapter itself consider valid?\n\nA. The framework doesn't use percentages at all, so this statement makes no sense\nB. The percentage can misleadingly imply linear progress when final capabilities may represent disproportionately hard bottlenecks, and CHC-based human tests may miss capabilities universal in humans but absent in AI\nC. The only issue is that 57% seems too high\nD. This is a perfectly precise and meaningful statement — no critiques apply"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIf someone told you \"AI has reached 57% AGI according to the framework in the chapter,\" which of the following critiques would the chapter itself consider valid?\n\nA. The only issue is that 57% seems too high\nB. The framework doesn't use percentages at all, so this statement makes no sense\nC. The percentage can misleadingly imply linear progress when final capabilities may represent disproportionately hard bottlenecks, and CHC-based human tests may miss capabilities universal in humans but absent in AI\nD. This is a perfectly precise and meaningful statement — no critiques apply"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIf someone told you \"AI has reached 57% AGI according to the framework in the chapter,\" which of the following critiques would the chapter itself consider valid?\n\nA. The percentage can misleadingly imply linear progress when final capabilities may represent disproportionately hard bottlenecks, and CHC-based human tests may miss capabilities universal in humans but absent in AI\nB. The only issue is that 57% seems too high\nC. This is a perfectly precise and meaningful statement — no critiques apply\nD. The framework doesn't use percentages at all, so this statement makes no sense"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does the concept of \"autonomy levels\" (0-5) relate to the capability-generality framework for AGI?\n\nA. They are deliberately separated: capability/generality describe what a system *can do*, while autonomy describes how it's *deployed* with respect to human oversight\nB. Higher capability always means higher autonomy, since more capable systems naturally require less human oversight to function correctly\nC. Autonomy levels replace the capability-generality framework in practice, since real-world deployment matters more than abstract capability measurement\nD. They are the same thing measured differently — autonomy levels are just a simpler way to express the capability-generality score"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does the concept of \"autonomy levels\" (0-5) relate to the capability-generality framework for AGI?\n\nA. They are deliberately separated: capability/generality describe what a system *can do*, while autonomy describes how it's *deployed* with respect to human oversight\nB. Autonomy levels replace the capability-generality framework in practice, since real-world deployment matters more than abstract capability measurement\nC. Higher capability always means higher autonomy, since more capable systems naturally require less human oversight to function correctly\nD. They are the same thing measured differently — autonomy levels are just a simpler way to express the capability-generality score"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does the concept of \"autonomy levels\" (0-5) relate to the capability-generality framework for AGI?\n\nA. They are the same thing measured differently — autonomy levels are just a simpler way to express the capability-generality score\nB. They are deliberately separated: capability/generality describe what a system *can do*, while autonomy describes how it's *deployed* with respect to human oversight\nC. Autonomy levels replace the capability-generality framework in practice, since real-world deployment matters more than abstract capability measurement\nD. Higher capability always means higher autonomy, since more capable systems naturally require less human oversight to function correctly"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q6",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter discusses multiple feedback loops that could accelerate AI development. Which of the following correctly identifies TWO distinct feedback loops described in the chapter?\n\nA. The hardware loop (better chips -> faster training -> more chips) and the data loop (more data -> better models -> more data)\nB. The investment loop (better AI -> larger economic role -> more investment -> more compute -> better AI) and the automation loop (better AI -> automates more AI research -> better algorithms/hardware -> even better AI)\nC. The marketing loop (better AI -> more users -> more revenue -> better AI) and the academic loop (more papers -> more citations -> more funding -> more papers)\nD. The regulation loop (more regulation -> safer AI -> less regulation) and the competition loop (more companies -> faster progress -> fewer companies)"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q6",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter discusses multiple feedback loops that could accelerate AI development. Which of the following correctly identifies TWO distinct feedback loops described in the chapter?\n\nA. The regulation loop (more regulation -> safer AI -> less regulation) and the competition loop (more companies -> faster progress -> fewer companies)\nB. The investment loop (better AI -> larger economic role -> more investment -> more compute -> better AI) and the automation loop (better AI -> automates more AI research -> better algorithms/hardware -> even better AI)\nC. The hardware loop (better chips -> faster training -> more chips) and the data loop (more data -> better models -> more data)\nD. The marketing loop (better AI -> more users -> more revenue -> better AI) and the academic loop (more papers -> more citations -> more funding -> more papers)"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q6",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter discusses multiple feedback loops that could accelerate AI development. Which of the following correctly identifies TWO distinct feedback loops described in the chapter?\n\nA. The hardware loop (better chips -> faster training -> more chips) and the data loop (more data -> better models -> more data)\nB. The regulation loop (more regulation -> safer AI -> less regulation) and the competition loop (more companies -> faster progress -> fewer companies)\nC. The marketing loop (better AI -> more users -> more revenue -> better AI) and the academic loop (more papers -> more citations -> more funding -> more papers)\nD. The investment loop (better AI -> larger economic role -> more investment -> more compute -> better AI) and the automation loop (better AI -> automates more AI research -> better algorithms/hardware -> even better AI)"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q7",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the relationship between effective compute growth and the three factors that compose it, as of 2025?\n\nA. Only chip production matters; the other factors are negligible\nB. All three factors grow at the same rate of about 2x per year\nC. Algorithmic/software efficiency grows fastest (~3x/year), followed by chip production (~2.3x/year), with hardware efficiency growing slowest (~1.35x/year) — but all three multiply together\nD. Hardware efficiency is by far the fastest-growing factor"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q7",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the relationship between effective compute growth and the three factors that compose it, as of 2025?\n\nA. Only chip production matters; the other factors are negligible\nB. Hardware efficiency is by far the fastest-growing factor\nC. All three factors grow at the same rate of about 2x per year\nD. Algorithmic/software efficiency grows fastest (~3x/year), followed by chip production (~2.3x/year), with hardware efficiency growing slowest (~1.35x/year) — but all three multiply together"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q7",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the relationship between effective compute growth and the three factors that compose it, as of 2025?\n\nA. Hardware efficiency is by far the fastest-growing factor\nB. Algorithmic/software efficiency grows fastest (~3x/year), followed by chip production (~2.3x/year), with hardware efficiency growing slowest (~1.35x/year) — but all three multiply together\nC. All three factors grow at the same rate of about 2x per year\nD. Only chip production matters; the other factors are negligible"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q8",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter discusses several approaches to defining intelligence. Which pair of approaches does the chapter ultimately synthesize into its working definition?\n\nA. Consciousness-based approaches (Searle's Chinese Room) combined with goal-achievement definitions (Legg & Hutter's universal intelligence measure)\nB. The Turing Test combined with process/adaptability views (Chollet's focus on learning efficiency and novel problem-solving)\nC. Economic definitions (OpenAI's \"economically valuable work\") combined with philosophical definitions (consciousness and phenomenal experience debates)\nD. Behaviorist/capabilities-focused approaches (what systems can observably do) combined with psychometric frameworks (CHC theory's cognitive domains)"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q8",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter discusses several approaches to defining intelligence. Which pair of approaches does the chapter ultimately synthesize into its working definition?\n\nA. Behaviorist/capabilities-focused approaches (what systems can observably do) combined with psychometric frameworks (CHC theory's cognitive domains)\nB. Economic definitions (OpenAI's \"economically valuable work\") combined with philosophical definitions (consciousness and phenomenal experience debates)\nC. The Turing Test combined with process/adaptability views (Chollet's focus on learning efficiency and novel problem-solving)\nD. Consciousness-based approaches (Searle's Chinese Room) combined with goal-achievement definitions (Legg & Hutter's universal intelligence measure)"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q8",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nThe chapter discusses several approaches to defining intelligence. Which pair of approaches does the chapter ultimately synthesize into its working definition?\n\nA. Economic definitions (OpenAI's \"economically valuable work\") combined with philosophical definitions (consciousness and phenomenal experience debates)\nB. The Turing Test combined with process/adaptability views (Chollet's focus on learning efficiency and novel problem-solving)\nC. Behaviorist/capabilities-focused approaches (what systems can observably do) combined with psychometric frameworks (CHC theory's cognitive domains)\nD. Consciousness-based approaches (Searle's Chinese Room) combined with goal-achievement definitions (Legg & Hutter's universal intelligence measure)"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q9",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy might a slow takeoff scenario still be extremely challenging for safety, despite providing more time to respond?\n\nA. Even a \"slow\" takeoff could be 10-100x faster than the Industrial Revolution — fast enough that institutions may struggle to keep pace\nB. Because slow takeoffs never actually happen according to historical evidence; technological transitions always follow punctuated equilibrium patterns\nC. Because slow takeoffs only affect developing countries that lack the institutional capacity to adapt to gradual technological change\nD. A slow takeoff is not challenging at all — it gives us all the time we need to develop governance frameworks and safety measures iteratively"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q9",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy might a slow takeoff scenario still be extremely challenging for safety, despite providing more time to respond?\n\nA. Even a \"slow\" takeoff could be 10-100x faster than the Industrial Revolution — fast enough that institutions may struggle to keep pace\nB. Because slow takeoffs never actually happen according to historical evidence; technological transitions always follow punctuated equilibrium patterns\nC. Because slow takeoffs only affect developing countries that lack the institutional capacity to adapt to gradual technological change\nD. A slow takeoff is not challenging at all — it gives us all the time we need to develop governance frameworks and safety measures iteratively"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q9",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy might a slow takeoff scenario still be extremely challenging for safety, despite providing more time to respond?\n\nA. Because slow takeoffs only affect developing countries that lack the institutional capacity to adapt to gradual technological change\nB. Even a \"slow\" takeoff could be 10-100x faster than the Industrial Revolution — fast enough that institutions may struggle to keep pace\nC. A slow takeoff is not challenging at all — it gives us all the time we need to develop governance frameworks and safety measures iteratively\nD. Because slow takeoffs never actually happen according to historical evidence; technological transitions always follow punctuated equilibrium patterns"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q10",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nBased on the chapter's discussion of training costs, infrastructure constraints, and effective compute, which statement best captures the overall feasibility outlook for continued scaling through 2030?\n\nA. Scaling will continue only if entirely new computing paradigms like quantum computing or neuromorphic chips are developed to replace current silicon-based architectures\nB. Scaling faces no meaningful constraints and will continue effortlessly, since market demand ensures resources will always be allocated to meet training needs\nC. Scaling through 2030 is feasible but requires unprecedented infrastructure investment, and the real question is whether economic incentives and infrastructure buildout can keep pace\nD. Scaling is physically impossible beyond 2026 due to hard constraints in data availability, energy supply, and chip manufacturing capacity"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q10",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nBased on the chapter's discussion of training costs, infrastructure constraints, and effective compute, which statement best captures the overall feasibility outlook for continued scaling through 2030?\n\nA. Scaling is physically impossible beyond 2026 due to hard constraints in data availability, energy supply, and chip manufacturing capacity\nB. Scaling through 2030 is feasible but requires unprecedented infrastructure investment, and the real question is whether economic incentives and infrastructure buildout can keep pace\nC. Scaling faces no meaningful constraints and will continue effortlessly, since market demand ensures resources will always be allocated to meet training needs\nD. Scaling will continue only if entirely new computing paradigms like quantum computing or neuromorphic chips are developed to replace current silicon-based architectures"
+    },
+    {
+      "id": "Chapter Review: Multiple Choice Q10",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nBased on the chapter's discussion of training costs, infrastructure constraints, and effective compute, which statement best captures the overall feasibility outlook for continued scaling through 2030?\n\nA. Scaling is physically impossible beyond 2026 due to hard constraints in data availability, energy supply, and chip manufacturing capacity\nB. Scaling will continue only if entirely new computing paradigms like quantum computing or neuromorphic chips are developed to replace current silicon-based architectures\nC. Scaling faces no meaningful constraints and will continue effortlessly, since market demand ensures resources will always be allocated to meet training needs\nD. Scaling through 2030 is feasible but requires unprecedented infrastructure investment, and the real question is whether economic incentives and infrastructure buildout can keep pace"
+    }
+  ]
+}
