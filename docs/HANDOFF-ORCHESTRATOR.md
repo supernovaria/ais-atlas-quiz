@@ -23,7 +23,7 @@
 | Check | Expected | If not |
 |---|---|---|
 | `git status` clean; `docs/RUBRIC.md` tracked | QUIZ-PLAN phase 0 done | Phase 0 is otherwise done. **`main` is ahead of `origin/main` — push before you spend anything.** The rubric is committed and still on one disk until you do. |
-| `docs/EXEMPLARS.md` exists, 8–10 Q + 2 counter-exemplars | phase 2 done | **Drafted: 9 exemplars + 2 counter-exemplars, all inside R8/R9/1.6× (`npm run check:exemplars`). Still a STOP — Em has not signed off, and §12 lists four open questions.** Do not start P1 until that happens. |
+| `docs/EXEMPLARS.md` | **optional — not a precondition** | Absent by decision (PIPELINE §6.1): P1 should find out what the rubric produces unaided, and exemplars can be built afterwards from questions that cleared it. If the file is present, pass it to the Generator; if not, run without it. Never block on it. |
 | `scripts/check-questions.mjs` tiers 1–2 exist and reproduce RUBRIC App. A on the current file (60% / 75% / 1.39 / 24-of-40) | phase 3 done | **Built. `npm run check:questions:selftest` reproduces 14 of 14 Appendix A metrics, with one documented divergence (D4's key count — see the note in `selftest()`).** Tier 4 (adversary) is not in this script; it is the `quiz-adversary` agent, run by the orchestrator. |
 | `scripts/pipeline.mjs` exists (§2) | — | Build it. It is smaller than the API version: agents replace most of it. |
 | `atlas-audio-read-along/dist/chapters/v1/capabilities/*.md` readable | 11 files, ~25.7k words | Present at `../atlas-audio-read-along/…`, verified. Do not scrape. |
@@ -89,7 +89,7 @@ the brief's default where the table says so.
 | Stage | `subagent_type` | Model (P1 / production) | Inputs (as paths in the prompt) | Calls |
 |---|---|---|---|---|
 | analyse | `quiz-section-analyst` | sonnet / sonnet (opus if P1 shows gaps) | RUBRIC.md, `<section>.md`, `misconceptions/<section>.md` if present, `target_n` | 1 per section |
-| generate | `quiz-generator` | **assigned per shard** — sonnet in P1; opus + fable alternating across an idea's attempts in production | RUBRIC.md, EXEMPLARS.md, concept-map.json, `<section>.md`, **one shard** from `shards.json` `{ideas, lens, mode}` | 1 per shard (~5 per section) |
+| generate | `quiz-generator` | **assigned per shard** — sonnet in P1; opus + fable alternating across an idea's attempts in production | RUBRIC.md, concept-map.json, `<section>.md`, **one shard** from `shards.json` `{ideas, lens, mode}`, and `EXEMPLARS.md` **only if it exists** | 1 per shard (~5 per section) |
 | measure | *(script)* | — | — | — |
 | critique | `quiz-critic` | opus | RUBRIC.md, `<section>.md`, concept-map.json, **one** candidate, its measurements | 1 per candidate (+1 per failed rewrite, max) |
 | critique (2nd pass) | `quiz-critic` | opus | as above **plus pass 1's `reasons`, `preserve` and `rewrite_changed`**, and the re-measured numbers | 1 per failed rewrite |

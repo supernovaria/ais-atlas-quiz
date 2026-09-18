@@ -200,7 +200,8 @@ of P1–P3 is to finish editing *before* the spend that produces the shipped set
 ais-atlas-quiz/
   QUIZ-PLAN.md                    the plan; phases, definition of done
   docs/RUBRIC.md                  governing
-  docs/EXEMPLARS.md               phase 2 (8–10 Q + 2 counter-exemplars)
+  docs/EXEMPLARS.md               OPTIONAL. 8–10 Q + 2 counter-exemplars if built.
+                                  Absent by decision, 2026-09-18 — see §6.1.
   docs/PIPELINE.md                this file
   docs/HANDOFF-ORCHESTRATOR.md    how to run it
   .claude/agents/quiz-*.md        role briefs = the agent definitions, verbatim
@@ -240,6 +241,35 @@ per-call `effort`, so the critic gets `opus` in every run including the pilot.
 A Fable refusal looks like any other failure — a missing artifact — and is
 logged, never silently retried. Per-call token and cost figures are not
 available; record a session-level cost delta per run instead.
+
+### 6.1 Exemplars are optional, and currently absent
+
+QUIZ-PLAN phase 2 treats `docs/EXEMPLARS.md` as the highest-leverage artifact
+after the rubric, on the reasoning that it is what pass 1 is actually shown. A
+draft was built on 2026-09-18 and **removed the same day, by Em's call, before
+any run consumed it.**
+
+The reasoning is worth keeping, because the argument for exemplars is a good one
+and this is not a rejection of it. An exemplar set is a very strong prior on
+output: a generator shown nine questions matches their shape closely, which is
+the point and also the risk. Every exemplar is a claim about what good looks
+like, made *before* the pipeline has produced any evidence about what this
+rubric actually yields — and the draft's own §12 had four unresolved questions
+of exactly that kind, including whether omitting an L2 exemplar would suppress
+L2 candidates entirely. Running with it would have baked those guesses into the
+pool and then measured the result, which is the wrong order. **P1 should find
+out what the rubric produces unaided; exemplars can be built afterwards from
+questions that actually cleared it, rather than from questions written to
+predict it.**
+
+So: **if `docs/EXEMPLARS.md` is present, the Generator is given it. If it is
+absent, the Generator runs on the rubric, the concept map and the section
+prose.** Neither is an error state, nothing blocks on it, and no gate anywhere
+requires the file. RUBRIC §10's worked rewrites remain available to the
+Generator through the rubric itself, which is where they have always lived.
+
+If one is built later, PIPELINE §8.1 names the single external question worth
+adapting, and the draft is recoverable from git history rather than gone.
 
 ---
 
@@ -324,12 +354,45 @@ obvious until you try to ship it:
 | Design doc: avoid negations. R13: ≤1/section, marked. | **R13 stands** as cap; generator doc says "last resort". |
 | Design doc: real misconceptions, not model-invented. Pipeline: no learner data yet. | D1's `misreads <sentence> as <claim>` form is the mitigation — text-anchored, not free-invented. `misconceptions/` slot exists, empty in v1. Analyst must not present its own misconceptions as observed. |
 
+### 8.1 Markov's generation prompt — what was taken and what was refused
+
+`docs/markov-prompt.md` arrived 2026-09-18, after this file, RUBRIC and
+QUIZ-PLAN were written, so it was an input to none of them. Its design
+principles are folded into the analyst, generator and curator briefs: a
+one-sentence section takeaway, `assumed_prior` so a later section does not
+re-test what an earlier one established, an explicit `do_not_test` list
+(sidebars and footnotes, researcher names, jargon testable through its concept),
+the explanation voice rule, an optional takeaway line, and a stem-format cap.
+Its Step 1 concept map is near-identical to our Section Analyst, arrived at
+independently, which is decent validation of that role.
+
+**Its six examples were refused, and should stay refused.** Four of the six
+break the length rule the prompt itself states — key against shortest
+distractor at 1.58, 1.53, 1.31 and 2.04, against its own ~1.30 ceiling.
+Examples calibrate harder than instructions, so importing them would teach the
+tell the rubric exists to remove. Two further defects, recorded so nobody
+re-litigates this from memory: its Example 5's stem asserts that situational
+awareness makes misalignment worse while three of its four options deny it, so
+the stem hands over the key; and its Example 6 offers "Both are existential
+risks" alongside "Both scenarios are equally severe existential risks", which
+R14 bans as overlapping options.
+
+**Its Example 4 (the 1850s engineer) is the exception** — it clears R8, R9 and
+the 1.6× spread rule and is a model transfer question. If an exemplar file is
+ever built (§6), that is the one to adapt.
+
+Also refused: the self-review step asking the writer to check its own word
+counts, which is the exact failure §1 opens with; the "3–6 questions per
+section" figure, which conflicts with RUBRIC §8.1; and the A/B/C/D output
+format, which `quizParser` does not read.
+
 ---
 
 ## 9. Open before P1
 
 1. Em: sign off RUBRIC v2 (QUIZ-PLAN phase 1) incl. §3.8/§4.6 above (or strike them) **and the R2 amendment** in §8.
-2. EXEMPLARS.md exists (phase 2) — generator needs it.
+2. ~~EXEMPLARS.md exists (phase 2)~~ — **no longer a precondition.** The file is
+   optional and currently absent (§6.1). The Generator runs without it.
 3. Checker tiers 1–2 exist (phase 3) — critic needs measurements. Tier-1 option minimum is **2**, not 3. Set-level "key is longest" gates (§2.3.1) are computed over 4-option Qs only; 2/3-option Qs are reported separately.
 4. Markov's original prompt: fold into generator doc if it arrives; don't wait.
 5. IDK button in the app (§8) — not needed for P1–P3, needed before Full ships.
@@ -353,7 +416,8 @@ at a time:
 | a | **Fixed-frame blocks** — one option set held constant across a block | `docs/FIXED-FRAME-PROPOSAL.md` | proposed; Em: optional where a real taxonomy exists, never forced |
 | b | **Generator sharding** — attempts per idea, clustered shards, assigned lens+model | §3.1 | adopted for P1 **as an A/B**, not as a settled design |
 | c | **Regeneration pass** — one bounded retry against a reported coverage gap | §3 | adopted |
-| d | **Markov's principles** folded into the briefs; his examples refused | `docs/EXEMPLARS.md` §12.5 | done |
+| d | **Markov's principles** folded into the briefs; his examples refused | §8.1 | done |
+| e | **Exemplars made optional and the draft removed** — P1 runs unaided | §6.1 | Em's call, 2026-09-18 |
 
 Confirmed and deliberately unchanged, recorded so they are not re-opened:
 

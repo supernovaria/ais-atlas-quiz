@@ -2,25 +2,39 @@
 // Measures the question blocks in docs/EXEMPLARS.md against R8 / R9 / the 1.6x
 // spread rule.
 //
+// The exemplar file is OPTIONAL and currently absent by decision (PIPELINE
+// §6.1). No file is the expected state, not an error: this exits 0 and says so.
+// Kept because exemplars may be built later from questions that cleared the
+// rubric, and that build will want measuring the same way.
+//
 // EXEMPLARS.md is not a quizParser file — its questions sit in fenced blocks
-// interleaved with metadata, and two of them are deliberately broken
-// counter-exemplars. So this reads the fences directly rather than going
-// through check-questions.mjs, which expects a shippable file.
+// interleaved with metadata, and the counter-exemplars are deliberately broken.
+// So this reads the fences directly rather than going through
+// check-questions.mjs, which expects a shippable file.
 //
 //   node scripts/measure-exemplars.mjs
 //
-// Exits non-zero if any exemplar in §1-§9 fails a length gate. The
-// counter-exemplars in §10 are expected to fail and are reported, not gated.
+// Exits non-zero only if a real exemplar fails a length gate. Counter-exemplars
+// under the "Counter-exemplars" heading are expected to fail and are reported.
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const FILE = resolve(ROOT, 'docs/EXEMPLARS.md');
 
+if (!existsSync(FILE)) {
+  console.log('\nNo docs/EXEMPLARS.md — exemplars are optional and currently absent by decision (PIPELINE §6.1). Nothing to measure.\n');
+  process.exit(0);
+}
+
 const text = readFileSync(FILE, 'utf8');
-const counterStart = text.indexOf('## 10 — Counter-exemplars');
+// Any heading mentioning counter-exemplars starts the expected-to-fail region.
+// Matched loosely rather than by section number so a rebuilt file can number
+// its sections however it likes.
+const counterMatch = text.match(/^#{2,3}\s.*counter-exemplar/im);
+const counterStart = counterMatch ? counterMatch.index : -1;
 
 const blocks = [...text.matchAll(/```\n(### Question \d+[\s\S]*?)```/g)].map((m) => ({
   body: m[1],

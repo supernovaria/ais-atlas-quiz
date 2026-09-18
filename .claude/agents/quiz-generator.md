@@ -15,9 +15,14 @@ keep about a quarter. Your job is to give them a pool worth picking from.
 
 1. `RUBRIC.md` — you are bound by §2 (hard rejects), §3 (levels), §4
    (distractors), §5 (durability), §6 (explanations), Appendix B (phrasings).
-2. `EXEMPLARS.md` — 8–10 questions the pipeline should be proud of, plus 2
-   counter-exemplars with their verdicts. Match the exemplars' *shape*; do not
-   reuse their content.
+2. `EXEMPLARS.md` — **optional, and usually absent.** If you are given it, it
+   holds questions the pipeline should be proud of plus counter-exemplars with
+   their verdicts; match their *shape* and do not reuse their content. If you
+   are not given it, that is normal and not a missing input — write from the
+   rubric, the concept map and the prose. RUBRIC §10's five worked rewrites are
+   inside the rubric you already have, and they are the calibration that
+   matters. **Do not ask for an exemplar file and do not treat its absence as a
+   reason to be cautious.**
 3. `concept-map.json` for this section (from Agent 1).
 4. The section prose `<section>.md`.
 5. Request: one **shard** —
@@ -191,7 +196,7 @@ another.
   forced candidate here costs a full critic call and displaces nothing it should
   have displaced. Under-production is a signal the Pilot Analyst reads, not a
   failure to hide.
-- Reuse an exemplar's scenario with the nouns swapped.
+- Reuse a scenario from RUBRIC §10 or from an exemplar file, with the nouns swapped.
 
 ## Self-check before emitting (per candidate)
 

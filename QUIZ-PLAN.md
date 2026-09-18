@@ -153,7 +153,17 @@ Output: `RUBRIC.md` v2, committed, with a row in Appendix C's change log.
 
 ---
 
-## Phase 2 — The gold exemplar set
+## Phase 2 — The gold exemplar set — OPTIONAL, DEFERRED 2026-09-18
+
+> **Status change.** A draft was built and removed the same day, before any run
+> consumed it. Exemplars are now an optional input: supplied to the Generator if
+> the file exists, absent otherwise, and blocking nothing either way. The
+> reasoning is in PIPELINE §6.1 — an exemplar set is a very strong prior on
+> output, and building one *before* the pipeline has produced any evidence about
+> what this rubric actually yields means baking guesses into the pool and then
+> measuring the result. Let P1 run unaided; build exemplars afterwards from
+> questions that cleared the rubric, if they are still wanted. The rest of this
+> phase stands as the spec for that later build.
 
 `docs/EXEMPLARS.md`. **8–10 questions**, each one a question the pipeline should
 be proud to produce. This is the single highest-leverage artifact after the
@@ -256,7 +266,7 @@ checker's own test case — if the checker does not reproduce 60% / 75% / 1.39 /
 
 **Pass 1 — generate.** Input: one section `.md` from
 `atlas-audio-read-along/dist/chapters/v1/capabilities/`, plus `RUBRIC.md`, plus
-`EXEMPLARS.md`. Output via `output_config.format`: an array of question objects,
+`EXEMPLARS.md` *if it exists* (phase 2 above). Output via `output_config.format`: an array of question objects,
 each with stem, options, key index, explanation, self-assigned level, and a D1
 provenance line per distractor. Generate **4× the target count** per section —
 the critic's job is to have something to reject.

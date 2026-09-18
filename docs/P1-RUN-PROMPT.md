@@ -52,7 +52,7 @@ Stop and report rather than working around any failure here.
 
 - [ ] `git status` clean; you are on `main`.
 - [ ] `npm run check:questions:selftest` reproduces 14 of 14 Appendix A metrics.
-- [ ] `npm run check:exemplars` passes.
+- [ ] `npm run check:exemplars` passes — it reports "no exemplar file" and exits 0 when none exists, which is the expected state (PIPELINE §6.1).
 - [ ] `../atlas-audio-read-along/dist/chapters/v1/capabilities/*.md` readable — 11 files.
 - [ ] Each of the six `quiz-*` agents resolves. Spawn one trivial call per type to confirm; if a type is not selectable, say so and stop.
 - [ ] **`quiz-adversary` has no file tools.** Spawn it once with `"List every tool you have, then stop."` If it names Read, Grep, Glob or anything else, **the adversary metric is void — stop and tell Em.** This is the isolation guarantee the API design got for free and this one has to check.
@@ -64,7 +64,7 @@ Stop and report rather than working around any failure here.
 Stated explicitly so you do not stop to ask:
 
 - **Proceed on RUBRIC v1.** v2 is not signed off. The handoff permits this — finding what v2 needs is P1's entire purpose. Say so in `run.log`.
-- **Proceed on the draft `docs/EXEMPLARS.md`.** Its §12 lists four open questions Em has not answered. Run against it as written, and in your findings note any place the exemplars visibly shaped generator output — especially whether the absence of an L2 exemplar suppressed L2 candidates, which is §12.2's open question answering itself.
+- **There is no exemplar file, and that is deliberate — do not build one.** PIPELINE §6.1: an exemplar set is a very strong prior on output, and writing one before the pipeline has produced any evidence about what this rubric yields bakes guesses into the pool and then measures the result. The Generator runs on the rubric, the concept map and the prose. RUBRIC §10's five worked rewrites are the calibration, and they are already inside the rubric. **This makes P1 a cleaner experiment than originally planned**: what comes out is what the rubric produces unaided, which is exactly what the pilot is for. If output quality is poor, "it had no exemplars" is a finding to report, not a problem to fix mid-run.
 - **Fixed-frame blocks (`docs/FIXED-FRAME-PROPOSAL.md`) are NOT in scope.** They are proposed, not adopted, and not in the rubric. Do not generate them and do not let a generator drift into them.
 - **Sharding runs as an A/B**, per §2 step 4. It is not a settled design.
 - **Budget: stop and report if this run exceeds ~$25.** QUIZ-PLAN costed the pilot at roughly a third of a ~$10 full run, but P1 now uses an Opus critic on every candidate and adds P1b and P2, so the old figure understates it. If you are on track to exceed, stop after the current stage and report rather than finishing.
@@ -102,6 +102,7 @@ The questions are not the deliverable. These are, in rough priority order:
 3. **Is the critic stable?** Same candidate, two runs, how often does the verdict flip and on which criteria? A criterion flipping >20% is a rubric wording problem, not a model problem.
 4. **Do the four new mechanisms earn their place** — regeneration, dedupe, the coverage-ordered queue, and passing the prior verdict into the second critic pass?
 5. **Where is the rubric unenforceable?** Especially R8+R9+1.6× jointly, and the uniform-blandness failure mode: four options of identical length and register that no longer discriminate. Read ten shipped questions *as a reader*, not as a checker, and say whether it happened.
+6. **Is the rubric enough on its own?** This is the first run with no exemplar file, so it measures the rubric unaided. If the pool is weak in a way that a handful of worked examples would plainly have fixed, say so and say which levels or lenses suffered — that is the evidence for building an exemplar set from questions that actually cleared the rubric, which is the whole reason it was deferred.
 
 Report anything a subagent did that its brief did not anticipate, with candidate
 ids. That is the most valuable part of the report and the easiest to skip.
