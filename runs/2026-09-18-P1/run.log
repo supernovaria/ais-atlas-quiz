@@ -1,0 +1,29 @@
+# run.log — 2026-09-18-P1
+
+2026-09-18  preflight  orchestrator  —  BLOCKED at agent resolution. No stage ran.
+
+Standing decisions in force for this run (HANDOFF §1, P1-RUN-PROMPT §4):
+- Proceeding on RUBRIC v1. v2 is NOT signed off. Permitted: finding what v2
+  needs is P1's entire purpose. Recorded here as required.
+- docs/EXEMPLARS.md absent by decision (PIPELINE §6.1). Not built. Generator
+  would have run unaided on rubric + concept map + prose.
+- Fixed-frame blocks (docs/FIXED-FRAME-PROPOSAL.md) out of scope.
+- Sharding runs as an A/B (PIPELINE §3.1), not as a settled design.
+- Critic on opus in P1 (HANDOFF §8: no per-call effort knob). Makes P1 more
+  expensive than QUIZ-PLAN costed and the P1-vs-P3 critic diff less informative.
+
+preflight results
+  git clean / on main ............................. ok
+  check:questions:selftest ........................ ok  14/14 Appendix A metrics
+                                                        (1 documented divergence: absolutes_keys)
+  check:exemplars ................................. ok  exit 0, "no exemplar file"
+  ../atlas-audio-read-along/.../capabilities/*.md .. ok  11 files, 25,726 words
+  models sonnet / haiku / opus selectable ......... ok  3 trivial spawns returned
+  six quiz-* agent types resolve .................. FAIL  not selectable
+  quiz-adversary toollessness ..................... NOT RUN  (blocked by the above)
+  session cost reading (baseline for §5 delta) .... EUR 32.99 of 65.00 extra-usage
+                                                        (monthly counter; no per-session
+                                                        or per-call figure exists — HANDOFF §8)
+
+spend against the run budget: EUR 0.00 beyond 3 one-word model-probe spawns.
+No subagent from the pipeline ran. No artifact was generated.
