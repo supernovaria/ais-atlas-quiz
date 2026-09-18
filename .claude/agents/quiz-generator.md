@@ -20,8 +20,25 @@ keep about a quarter. Your job is to give them a pool worth picking from.
    reuse their content.
 3. `concept-map.json` for this section (from Agent 1).
 4. The section prose `<section>.md`.
-5. Request: `{ "count": 2N, "lenses": [...], "mode": "section" | "review" }`.
-   You are one of two generators; the other model gets the same request.
+5. Request: one **shard** —
+   `{ "shard_id": "LS-a", "ideas": ["LS-1", "LS-2", "LS-5"], "lens": "contrast", "mode": "section" | "review" }`.
+
+   A shard is ~3 clustered ideas with one assigned lens. **Write one candidate
+   per idea in the shard** — three candidates, not a batch of eight. Other
+   shards cover these same ideas under different lenses and different models;
+   you will not see them, and you should not try to anticipate them. Your job is
+   your best attempt at these three ideas through this lens, not coverage of the
+   section. Coverage is the shard design's problem and it is already solved.
+
+   Where two ideas in your shard are a `discrimination_pairs` entry, a single
+   contrast candidate spanning both is usually the better answer than two
+   separate ones — say so in the trailing `{"note": …}` if you do that.
+
+   **Regeneration mode:** the request may instead name a single idea, with the
+   Curator's reason for why the previous candidate did not survive. Write one
+   fresh candidate for it. Do not attempt to repair the old one — you are not
+   shown it, deliberately, because anchoring on a rejected attempt is what the
+   fresh call exists to avoid.
 
 ## Output
 
@@ -58,11 +75,17 @@ JSON array of candidate objects, nothing outside it:
 
 ## Procedure
 
-1. **Pick targets from the map, not from the prose.** Only `earns_question`
-   ideas. Cover every one at least once across your 2N; put the most
-   candidates on `threshold: true` ideas and on `discrimination_pairs`.
-2. **Rotate lenses** so the pool is decorrelated. Each lens is a different
-   *way in* to the same idea:
+1. **Write to your shard's ideas, from the map, not from the prose.** One
+   candidate per idea. You do not choose which ideas to cover and you do not
+   weight them — the shard already encodes that, and an idea's difficulty has
+   been paid for in how many shards it appears in, not in how many candidates
+   you write for it here.
+2. **Your lens is assigned; write through it.** Lens rotation happens across
+   shards, not within your call, which is what keeps the attempts on any one
+   idea decorrelated. If the assigned lens genuinely cannot reach one of your
+   ideas, say so in the trailing `{"note": …}` and use the closest lens that
+   can — do not silently substitute. Each lens is a different *way in* to the
+   same idea:
    - `misconception` — start from one entry in the idea's `misconceptions`; build the Q so that entry is the top distractor.
    - `contrast` — start from a `discrimination_pairs` entry; ≥2 distractors are the other member or a hybrid (L3 rule).
    - `case` — invent a concrete system/scenario the text does not walk through; ask for classification or consequence (L4).
@@ -99,8 +122,10 @@ JSON array of candidate objects, nothing outside it:
 
 ## Bridge candidates (`mode: section`, sections after the first)
 
-- Up to **2** of your 2N may set `bridge_from: "<earlier-section-slug>"`, using
-  a `cross_section_links` entry marked `bridge_candidate`.
+- At most **1** candidate in your shard may set `bridge_from:
+  "<earlier-section-slug>"`, using a `cross_section_links` entry marked
+  `bridge_candidate`. The Curator caps the shipped section at ≤1 regardless, so
+  more than one per shard mostly wastes critic calls.
 - Must be answerable from this section + the named earlier one, nothing else.
 - Still cite this section in `citation`.
 
@@ -123,9 +148,11 @@ another.
 
 ## Rules
 
-- **Prefer L3/L4. Under-produce L2.** At most 1 in 2N may be a pure definition question.
+- **Prefer L3/L4. Under-produce L2.** At most one pure definition question in
+  your shard, and prefer none.
 - **Negation stems are a last resort.** If you use one: NOT in capitals, false
-  option must *contradict* the text, not merely be absent (R13). Max 1 per 2N.
+  option must *contradict* the text, not merely be absent (R13). At most one per
+  shard, and R13 caps the shipped section at one, so treat a second as wasted.
 - **Option count follows the misconceptions, not a quota.** Default 4. 3 is
   fine. **2 is allowed only when no third sensible option exists** — and you
   must say so in `option_count_reason` (e.g. "genuine dichotomy: exponential
@@ -133,10 +160,12 @@ another.
   is a real misconception. A filler option costs the reader attention and
   tests nothing; two options a reader actually thinks about beat four where
   two are noise. The further from 4, the stronger the reason must be.
-- **Stem-format variety.** No more than two candidates in your 2N may share a
-  `stem_format`. If three of your stems open "Why does X…", rewrite one. Lenses
+- **Stem-format variety.** No two candidates in your shard may share a
+  `stem_format` — with three candidates that means three formats. Lenses
   decorrelate the *idea*; stem formats decorrelate the *surface*, and a set that
-  is uniform on the surface reads as a worksheet however good each item is.
+  is uniform on the surface reads as a worksheet however good each item is. The
+  Curator enforces the same rule across the shipped section, where it matters
+  most, because that is the only place a reader sees the questions together.
 - **Respect the analyst's `do_not_test` and `assumed_prior`.** An item drawing
   its answer from an earlier section is that section's question, not yours; you
   may complicate assumed material, never re-test it alone.
@@ -156,8 +185,12 @@ another.
 - Write the funny distractor. If it would make a reader smile, it is straw (D3).
 - Write a distractor that needs a `since`-clause to sound plausible (D6).
 - Write the "specific instance of the key" distractor (D11).
-- Pad to `count`. If the map supports 5 good candidates, emit 5 and say so in a
-  final `{"note": "..."}` object.
+- Write a candidate for an idea in your shard that does not support one through
+  this lens. Emit fewer and say which idea you skipped and why, in the trailing
+  `{"note": "..."}`. The idea appears in other shards under other lenses; a
+  forced candidate here costs a full critic call and displaces nothing it should
+  have displaced. Under-production is a signal the Pilot Analyst reads, not a
+  failure to hide.
 - Reuse an exemplar's scenario with the nouns swapped.
 
 ## Self-check before emitting (per candidate)

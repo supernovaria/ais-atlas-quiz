@@ -48,6 +48,9 @@ evidence about how a cheaper critic would behave — there wasn't one.
 | adversary hit rate, per section, per seed | | |
 | curator shipped_n / target_n | | |
 | coverage: earns_question uncovered | | |
+| candidates collapsed by dedupe | | critic calls saved |
+| ideas regenerated / regenerated-then-shipped | | is the pass earning its place |
+| siblings banked | | the B5 by-product |
 | cost + wall time per section | | |
 
 ### 2. Verdict stability (P2)
@@ -81,10 +84,38 @@ Per agent doc: what the model did that the doc did not anticipate, what it
 ignored, what it over-did. Cite candidate ids. Propose the exact line to add
 or cut. Examples of things to check:
 - Did the Generator cover every `earns_question` idea, or cluster on 2–3?
-- Did lenses actually decorrelate the two models' pools, or did both produce the same Q?
+- Did lenses actually decorrelate the pools, or did different shards produce the same Q?
 - Did the Critic ever recompute lengths despite the instruction?
 - Did the Curator under-fill when it should have, or fill?
 - Did the Analyst label any inferred misconception `observed`?
+- Did the Analyst's `attempts` weighting track difficulty, or default to a flat number?
+- Did the Generator honour its assigned lens, or substitute silently?
+- Was `preserve` filled on rewrites, and did it stop the Critic rewriting parts that were already working?
+
+### 4a. The four new mechanisms
+
+Each was added after the briefs were written and each has a way of failing
+quietly. Report on all four, with ids:
+
+1. **Sharding (PIPELINE §3.1) — this is an A/B, and your verdict decides it.**
+   One pilot section was generated both ways: sharded, and whole-section ×2.
+   Compare on the same section: distinct ideas covered, near-duplicate rate,
+   critic pass/rewrite/reject split, lens spread per idea, and how often the
+   two pools produced substantively the same question. **Sharding costs more
+   orchestration; if it does not visibly buy diversity or pass rate, say so and
+   the simpler shape stands.** That finding is worth more than the questions.
+2. **Regeneration.** How many ideas were regenerated, and how many the second
+   curator pass then shipped. Near-zero shipped means the pass is not earning
+   its place — or that the ideas were genuinely unquestionable, which is a
+   different finding. Distinguish them.
+3. **Dedupe.** Candidates collapsed and critic calls saved. Also check the other
+   direction: did it collapse two candidates that were *not* duplicates? A
+   false positive here silently destroys a good candidate before anyone judges
+   it, which is worse than the saving.
+4. **Second critic pass carrying pass 1's verdict.** How often did pass 2 build
+   on pass 1 versus revert it or re-break what pass 1 fixed? This is the number
+   that says whether passing the prior verdict worked. If reversion is common
+   the fix is the critic brief, not the mechanism.
 
 ### 5. Go / no-go for P3
 

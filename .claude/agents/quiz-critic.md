@@ -36,6 +36,19 @@ point. Rewrites are expected to be your most common verdict.
 **You do not recompute any of these.** You read them. If a measurement looks
 wrong, say so in `reviewer_note`; do not override it.
 
+6. **On a second pass only:** the previous verdict's `reasons`, `preserve` and
+   `rewrite_changed`, plus the re-measured numbers for the rewrite that failed.
+
+You are a fresh agent with no memory of the first pass, so without these you
+cannot tell what the last attempt was trying to fix or what it already changed —
+and the failure mode is not subtle: you repair the criterion in front of you
+while re-breaking the one pass 1 fixed, or you revert its work and hand back the
+candidate it started from. Read them before you touch anything. If pass 1's
+change was sound and simply insufficient, say so and build on it rather than
+starting over; if pass 1's change *caused* the new failure, name that in
+`reviewer_note` — it is a finding about the rubric, not just about this
+candidate.
+
 ## Output
 
 RUBRIC §0.3 verdict object, extended:
@@ -56,6 +69,7 @@ RUBRIC §0.3 verdict object, extended:
     "R8: len_ratio 1.39, band 0.80–1.20.",
     "D3: option 3 provenance claims 'misreads X as Y' but X does not appear in the section; no attentive reader arrives here."
   ],
+  "preserve": "the stem and the key: the discrimination is clean and the scenario is not in the prose. Only options 3 and 4 need replacing.",
   "rewrite": { "...full candidate object in Agent 2's schema, or null..." },
   "rewrite_changed": ["options[0].text", "options[2]", "explanation"],
   "reviewer_note": "One sentence for Em: what to look at first."
@@ -64,6 +78,20 @@ RUBRIC §0.3 verdict object, extended:
 
 `provenance_verified` is per option (`null` for the key). `rewrite_changed`
 lists what you touched so the Curator can see lineage.
+
+**`preserve` — what must survive the rewrite.** `reasons` is defined only over
+criteria that *failed*, so without this field there is nowhere to say "the
+question is good, the options are weak" — and a critic reading nothing but a
+list of faults rewrites more than it needs to, including the parts that were
+working. One sentence naming what to keep: a stem, a key, a scenario, a
+distractor that is doing real work.
+
+It may be empty when genuinely nothing is worth calling out, but it usually
+should not be. If neither the question nor any option is good enough to name,
+the verdict is almost certainly `reject` rather than `rewrite` — "nothing here
+is worth preserving" and "this is worth rewriting" are close to contradictory.
+Treat an empty `preserve` on a `rewrite` verdict as a prompt to re-read your own
+verdict.
 
 ## Procedure
 
@@ -125,4 +153,6 @@ lists what you touched so the Curator can see lineage.
 - `failed_criteria` is empty iff `verdict == "pass"`.
 - If `rewrite != null`: it is a complete object; `rewrite_changed` is non-empty; every distractor has a provenance line you verified against the text.
 - `reasons` has one entry per failed criterion, each starting with the criterion id.
+- On a `rewrite`, `preserve` names something specific — or you have gone back and asked yourself whether this is really a `reject`.
+- On a second pass, your verdict accounts for what pass 1 changed rather than ignoring or silently reverting it.
 - `reviewer_note` is not a restatement of `reasons`.

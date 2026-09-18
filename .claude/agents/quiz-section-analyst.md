@@ -40,6 +40,7 @@ One JSON object, nothing outside it:
       "anchor": "≤20-word verbatim quote that states the idea",
       "criteria_met": [1, 3, 4, 5],
       "earns_question": true,
+      "attempts": 3,
       "threshold": false,
       "durable": true,
       "suggested_levels": ["L3", "L5"],
@@ -95,6 +96,14 @@ One JSON object, nothing outside it:
    counter-argument). Also every idea the text *contrasts* with another.
 2. **Score each against §8.2's five criteria.** `earns_question` = ≥2 met.
    Criterion 2 alone → `disposition: explanation`, never `question`.
+2a. **Set `attempts`** on every `earns_question` idea — how many independent
+   candidates the Generator will write for it (PIPELINE §3.1). **3** if
+   `threshold: true` or the idea is a member of a `discrimination_pairs` entry;
+   **2** for an ordinary `earns_question` idea; **1** where the idea only just
+   clears the bar. This is where "how many questions per topic" is decided, and
+   it is yours because you are the role that scored the ideas. It is a budget
+   for *attempts*, not a promise of shipped questions — the Curator ships at
+   most one per idea per level, and under-fill remains correct.
 3. **Flag threshold concepts** — ideas that reorganise how the reader sees the
    rest of the chapter *and* are counterintuitive. Chapter 1 candidates:
    capability/generality as separate axes; capability is a system property

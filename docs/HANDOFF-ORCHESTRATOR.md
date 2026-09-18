@@ -40,13 +40,31 @@ every arithmetic, file, and format operation is this script. That split is
 cleaner than the API design, where the script also carried the model calls.
 
 ```
+node scripts/pipeline.mjs shard     --run <label> --section <slug>   # concept-map.json → shards.json (PIPELINE §3.1)
+node scripts/pipeline.mjs dedupe    --run <label> --section <slug>   # collapse near-identical candidates BEFORE critique
 node scripts/pipeline.mjs measure   --run <label> --section <slug>   # candidates.json → measurements.json
+node scripts/pipeline.mjs queue     --run <label> --section <slug>   # critique order, by coverage need
 node scripts/pipeline.mjs shuffle   --run <label> --section <slug> --seeds 3   # adversary prompt bodies, seeded
 node scripts/pipeline.mjs validate  --run <label> [--section <slug>]  # schema-check every artifact (§3)
 node scripts/pipeline.mjs score     --run <label> --section <slug>   # adversary letters → adversary.json
 node scripts/pipeline.mjs assemble  --run <label>                    # staging/*.md → ch1-capabilities.md candidate
 node scripts/pipeline.mjs report    --run <label>                    # the §5 tables
 ```
+
+**`dedupe` is the one free efficiency win in this pipeline.** Two generators
+working from the same concept map produce near-identical candidates, and R4
+duplicate detection currently sits at the *curator* — after every duplicate has
+already paid for a full Opus critic call. Cost is roughly 20% generation to 80%
+critic, and the critic is per-candidate, so collapsing duplicates one stage
+earlier is real money at zero quality cost. Use R4's own rule (≥70% content-word
+overlap on stems) plus identical `targets`; keep the candidate with the better
+measurements, record the collapsed id in `dedupe.json` so lineage survives.
+
+**`queue` orders critique by coverage need**, not by generation order: an idea
+with no clean verdict yet outranks the fifth candidate on an idea that already
+has three. Nothing is dropped — the order only decides what gets judged first,
+so if a run is cut short the casualties are the candidates that were worth
+least.
 
 Writes to `runs/<label>/<section>/` per PIPELINE §6. Nothing writes to
 `public/questions/` — ever.
@@ -71,9 +89,11 @@ the brief's default where the table says so.
 | Stage | `subagent_type` | Model (P1 / production) | Inputs (as paths in the prompt) | Calls |
 |---|---|---|---|---|
 | analyse | `quiz-section-analyst` | sonnet / sonnet (opus if P1 shows gaps) | RUBRIC.md, `<section>.md`, `misconceptions/<section>.md` if present, `target_n` | 1 per section |
-| generate | `quiz-generator` | sonnet / **opus + fable, one call each, 2N each** | RUBRIC.md, EXEMPLARS.md, concept-map.json, `<section>.md`, request `{count, lenses, mode}` | 2 per section |
+| generate | `quiz-generator` | **assigned per shard** — sonnet in P1; opus + fable alternating across an idea's attempts in production | RUBRIC.md, EXEMPLARS.md, concept-map.json, `<section>.md`, **one shard** from `shards.json` `{ideas, lens, mode}` | 1 per shard (~5 per section) |
 | measure | *(script)* | — | — | — |
 | critique | `quiz-critic` | opus | RUBRIC.md, `<section>.md`, concept-map.json, **one** candidate, its measurements | 1 per candidate (+1 per failed rewrite, max) |
+| critique (2nd pass) | `quiz-critic` | opus | as above **plus pass 1's `reasons`, `preserve` and `rewrite_changed`**, and the re-measured numbers | 1 per failed rewrite |
+| regenerate | `quiz-generator` | as production | as generate, but targeting **one** uncovered idea named by `curator.json` | ≤1 per uncovered idea, **once per section** |
 | adversary | `quiz-adversary` | haiku | stem + shuffled options **inline in the prompt only** | 3 per surviving candidate |
 | curate | `quiz-curator` | sonnet / opus | RUBRIC.md, concept-map.json, candidates/verdicts/measurements/adversary json, `target_n`, existing `ch1-capabilities.md` (heading format) | 1 per section |
 | pilot-analyst | `quiz-pilot-analyst` | opus | `runs/<P1>/`, `runs/<P2>/`, RUBRIC.md, all agent briefs | 1 |
@@ -100,10 +120,17 @@ survivors.
 families, or other questions — and, having no tools, cannot go and find them.
 The critic sees one candidate per call; do not "save calls" by batching two
 candidates into one critic spawn, which is the single easiest way to destroy
-this pipeline's value. The generator does not see other candidates from either
-model. The curator never edits text — if `curator.json` contains altered
-stem/option/explanation strings, that is a bug; `validate` diffs it against the
-source candidate and will catch it.
+this pipeline's value. The generator sees its own shard and no candidate from
+any other shard. The curator never edits text — if `curator.json` contains
+altered stem/option/explanation strings, that is a bug; `validate` diffs it
+against the source candidate and will catch it.
+
+**The second critic pass is the one deliberate exception to critic isolation.**
+It receives pass 1's verdict because the alternative is worse: a fresh agent
+with no memory re-derives the problem from scratch, and in practice fixes the
+criterion it is shown while re-breaking the one pass 1 just repaired. This is
+not a licence to carry verdicts between *different* candidates — only between
+the two passes on the same one.
 
 **Fable refusals.** `model: "fable"` needs no betas or fallbacks here, but a
 refusal still surfaces as an agent that returns `FAIL` or writes nothing. Treat
@@ -114,7 +141,11 @@ silently re-spawn a refusal.
 
 ```
       baseline  adversary on current ch1-capabilities.md (this agent, 3 seeds)  → runs/baseline/
-P1  analyse+generate+measure+critique+adversary+curate  on  forecasting-timelines, defining-and-measuring-agi   (sonnet; opus critic)
+P1  analyse → shard → generate → dedupe → measure → queue → critique → adversary → curate → regenerate(once) → curate
+        on  forecasting-timelines, defining-and-measuring-agi   (sonnet; opus critic)
+P1b run `defining-and-measuring-agi` generation a SECOND way — whole-section ×2, 2N each, no shards —
+        and keep both pools. This is the sharding A/B (PIPELINE §3.1); it is the only thing P1 adds
+        that costs extra, and it is the only way to find out whether sharding earns its complexity.
 P2  critique again on the same P1 candidates (fresh spawns, same inputs)         → verdict-stability data
     pilot-analyst → docs/pilot-findings-<date>.md
 STOP ── Em reads findings; edits RUBRIC (→ v2 change-log row) and/or agent briefs
@@ -139,7 +170,11 @@ One markdown note in `runs/<label>/REPORT.md`, ≤1 screen:
 - what ran, models, **wall time, and spawn counts per stage** (see §8 on cost);
 - checker table (per-candidate pass rates, set-level numbers where a set exists);
 - adversary: mean(hit − 1/k), 4-option-only rate, **both against `runs/baseline/`, never against QUIZ-PLAN's 60%**;
-- curator: shipped/target per section, distribution vs §3.7, uncovered `earns_question` ideas, option-count distribution, every <4-option Q listed;
+- dedupe: candidates collapsed, and the critic calls that saved;
+- critic: verdict split, second passes invoked, and **how often a second pass reverted rather than built on pass 1** — that is the number that says whether passing the prior verdict worked;
+- curator: shipped/target per section, distribution vs §3.7, uncovered `earns_question` ideas, **siblings banked**, option-count distribution, every <4-option Q listed;
+- regeneration: ideas regenerated, and how many the second curator pass then shipped — if that is near zero, the pass is not earning its place;
+- sharding A/B (P1 only): pool diversity, critic pass rate and coverage, sharded vs whole-section, on the same section;
 - **validation failures: every artifact that failed schema check, and whether the re-spawn fixed it.** This is new and it is a real signal — a stage that fails validation often has a brief whose Output block is ambiguous;
 - anything a sub-agent did that its brief did not anticipate (this is the valuable part — cite ids);
 - the single next action you recommend.
@@ -152,6 +187,9 @@ No prose summaries of the questions. Em reads the review sheets, not your préci
 - Upgrade the adversary model, grant it tools, or batch questions into one adversary call. The metric dies three separate ways.
 - Let the critic compute lengths. If a verdict's `measurements` differ from `measurements.json`, the critic recomputed — `validate` flags it; put it in the report.
 - Batch two candidates into one critic spawn.
+- **Pre-filter candidates on mechanics before the critic.** Dropping everything that fails R8/R9 first looks like an obvious saving and is a mistake: RUBRIC §10's closing caution is that *none* of its own five rewrites was inside the band on first draft. Mechanically-failing candidates carrying a good idea are the rewrite path's whole purpose. Dedupe is safe because a duplicate adds no idea; mechanical filtering is not, because length is the most rewritable fault there is.
+- Regenerate an idea twice, or regenerate an idea the curator already covered. Once, and only against a reported gap.
+- Raise generation above 4N to buy quality. Extra candidates are nearly free to *write* — output tokens on a call whose expensive input is already paid — but every one adds a full Opus critic call, and the 8th candidate in a call is worse than the 1st because the model is straining to differentiate. Buy extra attempts from another shard, lens or model, not from a longer list. P1 measures marginal candidate quality; revisit then, not before.
 - Paraphrase a brief into your own prompt, or inline a brief's text instead of spawning its agent. If a brief is unclear, that is a finding for `pilot-findings`; run it as written.
 - Touch `public/questions/`, `README.md`, or `ATLAS_HANDOFF.md`. Those are phase 7, Em's.
 - Ask Em questions you can answer from the four docs in §0. Ask the ones you cannot, at a STOP, in the report.

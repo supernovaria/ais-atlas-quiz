@@ -45,7 +45,12 @@ Everything else is out. You do not rescue.
     "earns_question_uncovered": [{"id": "LS-4", "why": "only candidate rejected on E8; recommend regenerate"}],
     "threshold_covered": ["LS-2"]
   },
-  "rejected_from_pool": [{"id": "…", "why": "duplicate concept at same level as opus/03"}],
+  "siblings": [
+    {"id": "…", "targets": ["LS-1"], "level": "L3", "primary": "opus/03",
+     "why_not_shipped": "second clean candidate on LS-1 at the same level; set already covers it",
+     "key_disclosed_by_primary_explanation": false}
+  ],
+  "rejected_from_pool": [{"id": "…", "why": "R4: stem 78% overlap with fable/02, which shipped"}],
   "flags_for_reviewer": ["…"]
 }
 ```
@@ -89,6 +94,35 @@ cover test (generator): "…"   cynic test (generator): "…"
 
 Followed by a section summary: distribution vs §3.7, coverage table, uncovered
 `earns_question` ideas with disposition, under-fill reason if any.
+
+## Siblings vs rejects
+
+Two different things used to share one field. Keep them apart.
+
+- **`rejected_from_pool`** — candidates that failed on their own merits, or that
+  lost a head-to-head on quality. These are dead.
+- **`siblings`** — candidates that are *eligible*, that you would have been
+  content to ship, and that lost only on **set-level** grounds: the set already
+  covers that idea, or that level, or the §3.7 distribution had no room. Nothing
+  is wrong with them.
+
+"Duplicate concept at the same level as opus/03" is a sibling, not a rejection —
+the candidate is fine, the slot was taken. Sorting these into the reject pile
+throws away the most valuable by-product of 4N generation.
+
+They are for B5: after a reader answers a question wrong, serving a *different*
+question on the same concept tests whether they now understand it. Re-serving the
+original tests whether they remember the explanation, which is not the same
+thing and is the weaker measurement. Costs nothing to record now, and it is the
+difference between B5 having siblings available and having to regenerate them.
+
+Set `key_disclosed_by_primary_explanation: true` where the shipped question's
+explanation would give this sibling away. E3 requires each explanation to name a
+distractor and its misreading, so a primary explanation can hand over a
+sibling's key outright — which makes the sibling worthless as a retry. You are
+the only role that sees both, so you are the only one who can flag it. Two
+checks B5 will need and neither exists yet: this one, and level-matching, so a
+retry does not jump in difficulty.
 
 ## Procedure
 
@@ -150,4 +184,5 @@ Followed by a section summary: distribution vs §3.7, coverage table, uncovered
 - `distribution` sums to `shipped_n` and meets §3.7 hard bounds, or `underfill_reason` says which bound.
 - Every shipped Q has adversary ≤1/3.
 - Every `earns_question` idea appears in `covered` or `earns_question_uncovered`.
+- Every eligible candidate you did not ship is in `siblings` or `rejected_from_pool` — none silently dropped — and every sibling carries `key_disclosed_by_primary_explanation`.
 - Staging file parses with the repo's own `parseChapterMarkdown` (orchestrator runs it; you produce the format that will).

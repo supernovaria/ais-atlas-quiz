@@ -30,7 +30,7 @@
 |---|---|---|---|---|
 | 0 | Inputs | script | — | §6 |
 | 1 | Concept map | **Section Analyst** | `sonnet` (`opus` if cheap run shows gaps) | `.claude/agents/quiz-section-analyst.md` |
-| 2 | Candidates ×4N | **Generator** | `opus` + `fable`, half each (pilot: `sonnet`) | `.claude/agents/quiz-generator.md` |
+| 2 | Candidates ≈4N | **Generator** | assigned per shard — `opus` + `fable` alternating across an idea's attempts (pilot: `sonnet`) | `.claude/agents/quiz-generator.md` |
 | 3 | Measure | **Checker** (script, tiers 1–2, per candidate) | — | QUIZ-PLAN phase 3 |
 | 4 | Verdict + rewrite | **Critic** | `opus` in every run — no effort knob, see HANDOFF §8 | `.claude/agents/quiz-critic.md` |
 | 3′ | Re-measure rewrites | Checker | — | — |
@@ -69,18 +69,27 @@ judges.
 ## 3. Flow per section
 
 ```
-S.md ─┬─► [1] Analyst ──► concept-map.json
+S.md ─┬─► [1] Analyst ──► concept-map.json  (ideas carry `attempts`)
       │                        │
-      ├────────────────────────┼─► [2] Generator ×2 models ──► candidates.json  (4N, tagged to concept ids)
+      │                   shard (script) ──► shards.json   one shard = ~3 clustered ideas + assigned lens + model
+      │                        │
+      ├────────────────────────┼─► [2] Generator ×1 call per shard ──► candidates.json  (~4N, tagged to concept ids)
+      │                        │                                    │
+      │                        │                     dedupe (script) ──► near-identical candidates collapsed BEFORE any critic call
       │                        │                                    │
       │                        │                    [3] Checker t1–t2 ──► + measurements
       │                        │                                    │
+      │                        │                     queue ordered by coverage need (script)
+      │                        │                                    │
       ├────────────────────────┴────────────────────────────────► [4] Critic ──► verdicts.json
-      │                                                             │  rewrite? ──► [3′] re-measure ──► fail again? ──► one more critic pass ──► else reject
+      │                                                             │  rewrite? ──► [3′] re-measure ──► fail again? ──► one more critic pass (carrying pass-1 `reasons` + `rewrite_changed`) ──► else reject
       │                                                             │
       │                                             pass / accepted-rewrite ──► [5] Adversary ──► hit flags
       │                                                             │
-      └──► concept-map + all above ──────────────────────────────► [6] Curator ──► staging/S.md + review-sheet-S.md
+      ├──► concept-map + all above ──────────────────────────────► [6] Curator ──► curator.json
+      │                                                             │
+      │            any `earns_question_uncovered`? ──► [2r] Regenerate ──► [3] ──► [4] ──► [5] ──► [6] second pass ──► staging/S.md + review-sheet-S.md
+      └────────────────────────────────────────────────────────────┘        once only
 ```
 
 Then, once all 6 sections + review block are staged:
@@ -92,9 +101,69 @@ staging/*.md ──► assemble ch1-capabilities.md ──► [7] Checker all ti
 ```
 
 **Loops, bounded.**
-- Critic rewrite → re-measure → still fails R8/R9/1.6× → *one* second critic pass with the numbers → still fails → `reject`. Never a third.
+- Critic rewrite → re-measure → still fails R8/R9/1.6× → *one* second critic pass → still fails → `reject`. Never a third. **The second pass carries pass 1's `reasons` and `rewrite_changed`**: each critic call is a fresh subagent with no memory, so without them pass 2 cannot see what pass 1 was fixing, and will cheerfully repair D3 while re-breaking R8 or quietly undo the first fix.
+- **Regeneration, once.** If the curator reports `earns_question_uncovered`, one generator call per uncovered idea, then measure → critique → adversary → curator again. **Once only** — a second regeneration means the idea does not support a question that clears the rubric, which is a finding, not a retry. Nothing else re-enters: covered ideas are not re-generated to improve an already-shipping question.
 - Adversary hit on a curator-selected Q → curator swaps for the next-best candidate on the same concept, or under-fills. Adversary is not re-run on rewrites the curator makes (curator makes none — see its doc).
 - Set-level gate fails at [7] → fix the *prompts or rubric*, re-run the offending section. Never hand-edit staging (QUIZ-PLAN phase 5).
+
+**Why regeneration exists.** Without it, a good idea whose only candidate the
+critic rejected is simply lost: the curator records it as uncovered and the
+section under-fills. Under-fill is the right answer when an idea *cannot* carry a
+question, and the wrong answer when one generator happened to write a bad one.
+The bounded pass separates those two cases — and because it runs after the
+curator has seen the whole pool, it regenerates against a known gap rather than
+speculatively.
+
+**One thing deliberately not done: no mechanical pre-filter before the critic.**
+Dropping candidates that fail R8/R9 before spending a critic call looks like an
+obvious saving and is a mistake. RUBRIC §10's closing caution is that *none* of
+its own five rewrites was inside R8/R9 on first draft. Mechanically-failing
+candidates with a good idea are exactly what the rewrite path exists to rescue;
+filtering them out would leave the critic judging only the questions that needed
+it least. Dedupe is cheap because identical candidates carry no extra idea;
+mechanical filtering is expensive because length is the most rewritable fault
+there is.
+
+### 3.1 Generator sharding
+
+Replaces "two generators, each writing `2N` for the whole section". That shape
+had one agent allocate candidates across every idea in a single pass, which
+anchors — an agent that has just written a misconception item steers the next
+one away, and by item 8 it is straining to differentiate rather than writing its
+best attempt at the hardest idea.
+
+**The unit of work is a shard: ~3 clustered ideas, one assigned lens, one
+assigned model, one candidate per idea.** Construction, by `pipeline.mjs shard`:
+
+1. The analyst gives every `earns_question` idea an `attempts` count — **3** if
+   `threshold: true` or a member of a `discrimination_pairs` entry, **2**
+   ordinary, **1** marginal. This is where "how many questions per topic" is
+   decided, and it is the analyst's call because it is the role that already
+   scores ideas against §8.2.
+2. Build shards of ~3 ideas such that every idea appears in exactly its
+   `attempts` many shards, **no two shards have identical membership**, and
+   ideas that `pairs_with` each other co-occur in at least one shard. A
+   discrimination question needs both members of the pair in view, which is why
+   the shard is a cluster and not a single idea.
+3. Assign each shard a lens and a model so that the attempts *on any one idea*
+   differ in both. Idea X gets `misconception`+Opus in one shard,
+   `contrast`+Fable in another, `case` in a third.
+4. One candidate per idea per shard. Pool size is `sum(attempts)`, which lands
+   near the 4N the plan already budgets.
+
+**The point is which axis decorrelates.** Giving agents different idea-subsets
+varies their *context*, which is the weakest of the three levers — two agents
+with different subsets still share model, brief and lens. Lens and model are the
+strong levers, so they are assigned deliberately rather than left to emerge.
+Overlapping membership is what makes that possible, not the source of the
+diversity itself.
+
+**This is a P1 experiment, not a settled design.** Run one pilot section both
+ways — sharded, and whole-section ×2 as originally specified — and let the Pilot
+Analyst compare pool diversity, critic pass rates and coverage. Its brief
+already asks whether the lenses actually decorrelated the pools. If sharding
+does not visibly help, the simpler shape stands and that is worth more than the
+questions.
 
 ---
 
@@ -141,12 +210,16 @@ ais-atlas-quiz/
   scripts/pipeline.mjs            deterministic stages only (measure/shuffle/validate/score/assemble/report)
   runs/<YYYY-MM-DD-label>/
     <section>/
-      concept-map.json
-      candidates.json             all, both models, with `model` field
+      concept-map.json            ideas carry `attempts`
+      shards.json                 shard membership, assigned lens + model (§3.1)
+      candidates.json             all shards, with `model` and `shard_id` fields
+      dedupe.json                 collapsed ids → survivor, so lineage survives
       measurements.json           checker t1–t2 per candidate id
+      queue.json                  critique order, by coverage need
       verdicts.json               critic, incl. rewrites + second-pass verdicts
       adversary.json
-      curator.json                selection + rationale
+      curator.json                selection + rationale + `siblings`
+      regenerated/                candidates.json etc. from the one regeneration pass
     review-block/                 same shape
     run.log                       stage, agent, model, ids, start/end, artifact, ok/fail
   runs/baseline/                  adversary run on the CURRENT 40-Q file, same agent — the only valid comparator
@@ -224,6 +297,25 @@ pre-tests…) and RUBRIC.md were written independently. Mapping:
 Confidence buttons, keyboard mapping, open/closed-book per Q, pre-read
 predictions, sibling items, flag-a-question, lookup logging.
 
+**Siblings get produced here even though they ship there.** The Curator now
+banks eligible-but-unshipped candidates in `curator.json.siblings` instead of
+burying them among rejects (see its brief). Serving a *different* question on
+the same concept after a wrong answer tests whether the reader now understands
+it; re-serving the original tests whether they remember the explanation, which
+is the weaker measurement. Recording them costs nothing now and is the
+difference between B5 having siblings and having to regenerate them.
+
+Two checks B5 will need, neither of which exists and neither of which is
+obvious until you try to ship it:
+
+1. **Explanation leakage.** E3 requires every explanation to name a distractor
+   and its misreading, so a primary's explanation can hand over its sibling's
+   key outright — which makes the sibling useless as a retry. The Curator flags
+   this per sibling (`key_disclosed_by_primary_explanation`) because it is the
+   only role that sees both.
+2. **Level matching.** A retry that jumps from L3 to L5 punishes the reader for
+   getting one wrong. Siblings carry `level`; B5 has to honour it.
+
 **Conflicts, with the call taken here**
 
 | Conflict | Call |
@@ -249,5 +341,36 @@ predictions, sibling items, flag-a-question, lookup logging.
 8. `git push` — `main` has been ahead of `origin/main` since the rubric landed.
    The most valuable artifact in the project should not be on one disk while a
    spend runs against it.
+
+### 9.1 The phase-1 sign-off bundle
+
+Four design calls decided after the briefs were written, all pre-P1, all Em's.
+They are listed together because they interact and should not be signed off one
+at a time:
+
+| | Call | Where | Status |
+|---|---|---|---|
+| a | **Fixed-frame blocks** — one option set held constant across a block | `docs/FIXED-FRAME-PROPOSAL.md` | proposed; Em: optional where a real taxonomy exists, never forced |
+| b | **Generator sharding** — attempts per idea, clustered shards, assigned lens+model | §3.1 | adopted for P1 **as an A/B**, not as a settled design |
+| c | **Regeneration pass** — one bounded retry against a reported coverage gap | §3 | adopted |
+| d | **Markov's principles** folded into the briefs; his examples refused | `docs/EXEMPLARS.md` §12.5 | done |
+
+Confirmed and deliberately unchanged, recorded so they are not re-opened:
+
+- **The critic already explains itself.** `failed_criteria` + `reasons`, one
+  entry per failed criterion prefixed with its id, enforced by its own
+  self-check, and emitted *before* `rewrite` in the schema — so the fix is
+  generated conditioned on the diagnosis. Complaints of the form "options 2 and
+  4 are subsets", "option 3 is filler", "option 1 is much longer" already land
+  on named criteria (R14, D3, R8/R9), which makes the reason lines more
+  specific than free text, not less.
+- **Volume stays at 4N.** Extra candidates are nearly free to write — output
+  tokens on a call whose expensive input is already paid — but each one buys a
+  full Opus critic call, and the 8th candidate in a call is worse than the 1st
+  because the model is straining to differentiate. Extra attempts are better
+  bought from another shard, lens or model than from a longer list. P1 measures
+  marginal candidate quality; revisit after, not before.
+- **Best-of selection stays the Curator's job.** Nothing else selects.
+- **No mechanical pre-filter before the critic** (§3).
 
 Handoff for running all of this: `docs/HANDOFF-ORCHESTRATOR.md`.
