@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Question-generation pipeline.
+# runs/ is the audit trail the whole plan exists to produce — it is committed,
+# and run.log must survive the *.log rule above.
+!runs/**/*.log
+multi-agent-generation-setup.zip
