@@ -29,6 +29,7 @@ One JSON object, nothing outside it:
   "section": "leveraging-scale",
   "heading": "Leveraging Scale",
   "target_n": 4,
+  "takeaway": "one sentence: if the reader keeps only one thing from this section, this",
   "subheadings": ["Scaling Laws", "Scaling Hypothesis", "..."],
   "threshold_concepts": ["LS-2"],
   "ideas": [
@@ -75,6 +76,14 @@ One JSON object, nothing outside it:
   "cross_section_links": [
     {"idea": "LS-3", "to": "current-capabilities", "relation": "same mechanism (tool use = scaffolding)", "bridge_candidate": true}
   ],
+  "assumed_prior": [
+    {"concept": "capability vs generality as separate axes", "from": "defining-and-measuring-agi",
+     "use": "may be built on and complicated here; must not be re-tested on its own"}
+  ],
+  "do_not_test": [
+    {"item": "Kaplan et al. author names", "why": "researcher name, not an idea"},
+    {"item": "the four scaling-law variables as a list", "why": "enumeration; testable only at L2, and LS-7 already disposes of it"}
+  ],
   "notes_for_generator": ["..."]
 }
 ```
@@ -108,6 +117,21 @@ One JSON object, nothing outside it:
    `used_later_by`.
 8. **Dispose of the rest** per §8.3: `distractor | explanation | review | drop`
    with a one-clause reason.
+8a. **Name what must not be tested**, in `do_not_test`, with a one-clause reason
+   each. At minimum sweep for: content in sidebars, footnotes or note boxes —
+   the Atlas marks these optional, so testing them punishes a reader who
+   followed its own signposting; researcher and organisation names, unless the
+   name *is* the idea; jargon that can be tested through the concept instead;
+   and sub-examples illustrating a point already earning a question at a higher
+   level. This list is a positive output, not an omission — the Generator reads
+   it as a prohibition.
+8b. **Record `assumed_prior`.** Concepts an earlier section already established
+   and this one builds on. The Generator may *complicate* these but must not
+   re-test them on their own; a question whose answer is available from an
+   earlier section belongs to that section.
+8c. **Write the `takeaway`.** One sentence: what a reader who keeps exactly one
+   thing from this section should keep. The Curator uses it to check that the
+   shipped set actually covers the section's point rather than its perimeter.
 9. **Sanity check the count.** If `earns_question` ideas < N, say so in
    `notes_for_generator` — under-fill is correct (§8.1). If > 2N, rank and
    note which are strongest.

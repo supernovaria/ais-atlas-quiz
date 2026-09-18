@@ -465,3 +465,18 @@ something good writing produces on its own.
 4. **Counter-exemplar 2 is quoted partially** — the middle two distractors are
    elided. If the Generator should see a complete rejected question, say so and
    I will quote all four options.
+5. **Markov's six examples are deliberately not here.** His prompt
+   (`docs/markov-prompt.md`) arrived after these docs were written; its design
+   principles have been folded into the analyst, generator and curator briefs.
+   Its *examples* have not, and should not be, because four of the six break
+   the length rule the prompt itself states — key vs shortest distractor at
+   1.58, 1.53, 1.31 and 2.04 against its own ~1.30 ceiling. Examples calibrate
+   harder than instructions, so importing them would teach the tell the rubric
+   exists to remove. Two further defects, recorded so nobody re-litigates this
+   from memory: his Example 5's stem asserts that situational awareness makes
+   misalignment worse while three of its four options deny it, so the stem
+   hands over the key; and his Example 6 offers "Both are existential risks"
+   alongside "Both scenarios are equally severe existential risks", which R14
+   bans as overlapping options. **His Example 4 (the 1850s engineer) is the
+   exception** — it clears R8, R9 and the spread rule and is a model transfer
+   question. If you want a tenth exemplar, that is the one to adapt.

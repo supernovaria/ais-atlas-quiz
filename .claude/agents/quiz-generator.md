@@ -42,6 +42,8 @@ JSON array of candidate objects, nothing outside it:
     {"text": "...", "key": false, "provenance": "...", "family": "b"}
   ],
   "explanation": "...",
+  "takeaway": "one sentence distilling the insight, or null",
+  "stem_format": "claim-evaluation | two-scenario | thought-experiment | direct-conceptual | mechanism | classification",
   "citation": {"section": "Leveraging Scale", "subheading": "Scaling Laws"},
   "negation": false,
   "no_shuffle": false,
@@ -83,6 +85,15 @@ JSON array of candidate objects, nothing outside it:
    misreading (E3); if the top distractor is family (c), address the prior
    explicitly; volatile figures welcome here, dated (E6); one trailing
    `(Section → Sub-heading)` using a subheading from the map (E4); 60–150 words.
+   **Voice: you are the author, writing as "we" to "you".** Explain the concept
+   directly. Never "the text says", "the chapter argues", "according to the
+   section" — you wrote it (E5). A reader who picked a distractor should finish
+   the explanation knowing what *specifically* went wrong in their reasoning,
+   not merely that they were wrong.
+5a. **`takeaway`** — optional, one sentence, when the item's lesson compresses
+   cleanly. Leave it `null` rather than restating the explanation's first line;
+   a takeaway that adds nothing trains the reader to skip them.
+5b. **`stem_format`** — label it honestly. See the variety rule below.
 6. **Fill `self_check` honestly.** These two sentences are what the Curator
    reads first.
 
@@ -122,6 +133,17 @@ another.
   is a real misconception. A filler option costs the reader attention and
   tests nothing; two options a reader actually thinks about beat four where
   two are noise. The further from 4, the stronger the reason must be.
+- **Stem-format variety.** No more than two candidates in your 2N may share a
+  `stem_format`. If three of your stems open "Why does X…", rewrite one. Lenses
+  decorrelate the *idea*; stem formats decorrelate the *surface*, and a set that
+  is uniform on the surface reads as a worksheet however good each item is.
+- **Respect the analyst's `do_not_test` and `assumed_prior`.** An item drawing
+  its answer from an earlier section is that section's question, not yours; you
+  may complicate assumed material, never re-test it alone.
+- **No trick questions.** A wording trap that catches a reader who understood
+  the concept is a defect, not difficulty. Difficulty comes from the
+  distinction being genuinely hard to draw, never from the stem being hard to
+  parse.
 - No "all/none of the above", no letter references (R12).
 - No `according to the chapter` family anywhere — stems *or* options *or* explanations (R5, E5, §10.1 note).
 - No volatile figure decides the answer (R10). Check `load_bearing_figures`

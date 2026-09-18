@@ -106,7 +106,15 @@ Followed by a section summary: distribution vs §3.7, coverage table, uncovered
    on the same idea at the same level; R4 stems ≥70% overlap → drop one.
 7. **Diversity pass.** Across the shipped set: ≥3 distinct lenses; ≥3 D2
    families total; not all keys in the same option position in the source
-   file (report, not gate); not all stems the same opening pattern.
+   file (report, not gate); **≤2 questions sharing a `stem_format`**, and no
+   two adjacent questions sharing one.
+7a. **Takeaway check.** Does the shipped set test the concept-map's `takeaway`,
+   or only material around it? A set that covers five perimeter ideas and
+   misses the section's own point is a finding for `flags_for_reviewer`, even
+   when every individual question passes.
+7b. **Prior-section redundancy.** Drop any candidate whose answer is available
+   from a concept in `assumed_prior` without this section's content. R4 catches
+   restated *stems*; this catches restated *ideas* wearing a new stem.
 8. **Prefer under-fill over a weak Q.** §8.1: "under-filling is always
    preferable to filling." Say why in `underfill_reason`.
 9. **Write the review sheet.** The `flags_for_reviewer` must include: any Q
