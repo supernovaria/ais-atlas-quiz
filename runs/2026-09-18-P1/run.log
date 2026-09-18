@@ -1,0 +1,15 @@
+{"stage":"preflight","result":"BLOCKED","blocker":"../atlas-audio-read-along/dist/chapters/v1/capabilities/*.md absent — repo not present in this environment; HANDOFF §1 expected 11 files","ok":false}
+{"stage":"authorization","note":"Proceeding on RUBRIC v1 was authorized; v2 is not signed off and finding what v2 needs is P1's purpose (HANDOFF §1). Recorded as instructed. Moot this run — P1 did not execute."}
+{"stage":"authorization","note":"No docs/EXEMPLARS.md, deliberately (PIPELINE §6.1). check:exemplars passes and exits 0. Not built."}
+{"stage":"authorization","note":"Fixed-frame blocks (docs/FIXED-FRAME-PROPOSAL.md) out of scope, not generated."}
+{"stage":"preflight","check":"check:questions:selftest","expected":"14 of 14","observed":"12 of 14, exit 1","cause":"RUBRIC Appendix A measured on a CRLF working copy; this is an LF clone, so every option text is 1 char shorter. Verified: +1 char/option reproduces 149.3/107.5 exactly. Gated metrics unaffected.","action":"reported, not fixed — governing measurement, Em's call","ok":false}
+{"stage":"preflight","check":"agent types resolve","types":["quiz-section-analyst","quiz-generator","quiz-critic","quiz-curator","quiz-pilot-analyst","quiz-adversary"],"models":["sonnet","haiku","opus"],"ok":true}
+{"stage":"preflight","check":"adversary isolation","observed":"only SubagentHandback; no file tools","listing_says":"(Tools: All tools) — listing is wrong, runtime is right","ok":true}
+{"stage":"preflight","check":"session cost reading","observed":"unavailable — no programmatic cost tool; spawn counts used as proxy per PIPELINE §8","spawns_total":127,"ok":false}
+{"stage":"build","artifact":"scripts/pipeline.mjs","stages":["shard","dedupe","measure","queue","shuffle","validate","score","assemble","report"],"selftest_assertions":40,"selftest_pass":true,"ok":true}
+{"stage":"baseline","artifact":"runs/baseline/","see":"runs/baseline/run.log","ok":true}
+{"stage":"P1","result":"NOT RUN — blocked on missing section prose","ok":false}
+{"stage":"P1b","result":"NOT RUN — depends on P1"}
+{"stage":"P2","result":"NOT RUN — depends on P1"}
+{"stage":"pilot-findings","result":"NOT RUN — no P1/P2 artifacts to analyse"}
+{"stage":"P3","result":"NOT RUN — gated on Em reading findings, as instructed"}
