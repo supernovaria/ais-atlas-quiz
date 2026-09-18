@@ -4,7 +4,11 @@ import QuizQuestion from './QuizQuestion';
 import FreeResponseQuestion from './FreeResponseQuestion';
 
 function quizKey(quiz) {
-  return `ais-quiz-${quiz.chapter}-${quiz.section}-${quiz.type}`;
+  const base = `ais-quiz-${quiz.chapter}-${quiz.section}-${quiz.type}`;
+  // Review quizzes all carry section 0, so a chapter with more than one of them
+  // would share a single score entry. Their titles are what tell them apart.
+  if (quiz.type !== 'review') return base;
+  return `${base}-${quiz.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 }
 
 function saveScore(quiz, score, total) {
@@ -243,6 +247,7 @@ export default function Quiz({ quiz, quizTitle }) {
           totalQuestions={total}
           onAnswer={handleAnswer}
           quizTitle={quizTitle || quiz.title}
+          source={quiz.source}
         />
       );
     }

@@ -1,3 +1,8 @@
+---
+chapter: 1
+title: Capabilities
+---
+
 # Current Capabilities
 
 ### Question 1
@@ -322,7 +327,7 @@ According to the chapter, why do the majority of AI experts agree on AI risks wh
 
 ---
 
-# Synthesis: Cross-Chapter Multiple Choice
+# Chapter Review: Multiple Choice
 
 ### Question 1
 The chapter describes several techniques that boost AI performance beyond what the base foundation model can achieve alone. Which combination of techniques best represents what the chapter calls "unhobbling" or "scaffolding"?
@@ -426,7 +431,7 @@ Based on the chapter's discussion of training costs, infrastructure constraints,
 
 ---
 
-# Synthesis: Free Response Questions
+# Chapter Review: Free Response
 
 ### Free Response 1
 Explain how the chapter's two-dimensional AGI framework (capability x generality) changes the way we should think about AI safety compared to treating AGI as a binary yes/no threshold. In your answer, discuss why continuous measurement matters and give an example of how a system that hasn't reached "full AGI" could still pose significant safety risks.

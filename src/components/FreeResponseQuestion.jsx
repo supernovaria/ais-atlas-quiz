@@ -52,7 +52,7 @@ Keep your feedback concise and educational.`;
   );
 }
 
-function SingleShotMode({ question, answer, quizTitle, onStart }) {
+function SingleShotMode({ question, answer, source, onStart }) {
   const { password, model } = useMode();
   const [feedback, setFeedback] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -71,9 +71,8 @@ function SingleShotMode({ question, answer, quizTitle, onStart }) {
         body: JSON.stringify({
           mode: 'singleshot',
           model,
-          quizTitle,
-          question: question.question,
-          context: question.context,
+          source,
+          ref: question.ref,
           answer,
         }),
       });
@@ -116,7 +115,7 @@ function SingleShotMode({ question, answer, quizTitle, onStart }) {
   );
 }
 
-function ChatMode({ question, answer, quizTitle, onStart }) {
+function ChatMode({ question, answer, source, onStart }) {
   const { password, model, maxMessages: MAX_MESSAGES } = useMode();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -144,9 +143,8 @@ function ChatMode({ question, answer, quizTitle, onStart }) {
           mode: 'chat',
           model,
           maxMessages: MAX_MESSAGES,
-          quizTitle,
-          question: question.question,
-          context: question.context,
+          source,
+          ref: question.ref,
           answer,
           messages: newMessages,
         }),
@@ -234,7 +232,7 @@ function ChatMode({ question, answer, quizTitle, onStart }) {
   );
 }
 
-export default function FreeResponseQuestion({ question, questionNumber, totalQuestions, onAnswer, quizTitle }) {
+export default function FreeResponseQuestion({ question, questionNumber, totalQuestions, onAnswer, quizTitle, source }) {
   const { mode, modes } = useMode();
   const [answer, setAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -331,10 +329,10 @@ export default function FreeResponseQuestion({ question, questionNumber, totalQu
             <ClipboardMode question={question} answer={answer} quizTitle={quizTitle} />
           )}
           {mode === 'singleshot' && (
-            <SingleShotMode question={question} answer={answer} quizTitle={quizTitle} onStart={() => setInteractionStarted(true)} />
+            <SingleShotMode question={question} answer={answer} source={source} onStart={() => setInteractionStarted(true)} />
           )}
           {mode === 'chat' && (
-            <ChatMode question={question} answer={answer} quizTitle={quizTitle} onStart={() => setInteractionStarted(true)} />
+            <ChatMode question={question} answer={answer} source={source} onStart={() => setInteractionStarted(true)} />
           )}
 
           <button className="next-btn" onClick={handleDone} style={{ marginTop: '1rem' }}>

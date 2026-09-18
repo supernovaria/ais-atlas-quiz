@@ -143,6 +143,10 @@ function parseQuestions(body) {
   return [...mc, ...fr];
 }
 
+export function slugify(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 /**
  * Parse a single-file chapter into an array of quiz objects (one per # section).
  */
@@ -163,6 +167,15 @@ export function parseChapterMarkdown(text) {
 
     if (questions.length === 0) continue;
 
+    // Free-response questions get a stable reference so the evaluator endpoint
+    // can look the question and its rubric up server-side, instead of trusting
+    // whatever text a client posts. Derived from the file, so the server
+    // recomputes the identical value by parsing the same markdown.
+    let frSeen = 0;
+    for (const q of questions) {
+      if (q.type === 'free-response') q.ref = `${slugify(title)}#fr${++frSeen}`;
+    }
+
     const isReview = /review/i.test(title);
 
     quizzes.push({
@@ -182,7 +195,10 @@ export function parseChapterMarkdown(text) {
 export async function loadChapter(path) {
   const response = await fetch(path);
   const text = await response.text();
-  return parseChapterMarkdown(text);
+  const quizzes = parseChapterMarkdown(text);
+  // The evaluator endpoint needs to know which file to re-parse.
+  for (const quiz of quizzes) quiz.source = path;
+  return quizzes;
 }
 
 export async function loadAllQuizzes() {
