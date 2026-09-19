@@ -1,0 +1,21 @@
+{
+  "section": "forecasting-timelines",
+  "candidates_in": 11,
+  "survivors": 11,
+  "collapsed_count": 0,
+  "critic_calls_saved": 0,
+  "survivor_ids": [
+    "forecasting-timelines/sonnet/a01",
+    "forecasting-timelines/sonnet/a02",
+    "forecasting-timelines/sonnet/a03",
+    "forecasting-timelines/sonnet/b01",
+    "forecasting-timelines/sonnet/b02",
+    "forecasting-timelines/sonnet/c01",
+    "forecasting-timelines/sonnet/c02",
+    "forecasting-timelines/sonnet/c03",
+    "forecasting-timelines/sonnet/d01",
+    "forecasting-timelines/sonnet/d02",
+    "forecasting-timelines/sonnet/d03"
+  ],
+  "collapsed": []
+}

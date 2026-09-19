@@ -1,0 +1,55 @@
+[
+  {
+    "id": "defining-and-measuring-agi/sonnet/01",
+    "targets": ["DM-4", "DM-5"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A team builds two systems to compare using this framework's two axes. System A is trained on exactly one task, automated theorem proving, and outperforms every human mathematician at it, but produces gibberish on anything else. System B performs at a solid 70th-percentile human level on nine different cognitive domains, but does not break into expert range on any of them. Which statement correctly compares the two systems along the capability and generality axes?",
+    "options": [
+      {"text": "Neither system reaches above 0% generality: System A does not extend beyond the one domain it masters, and System B does not clear the expert-level threshold in any of its nine, which is what generality actually requires.", "key": true, "provenance": null, "family": null},
+      {"text": "System B has higher generality than System A, since generality simply tracks how many domains a system operates across, regardless of whether it clears the expert-level threshold in any of them.", "key": false, "provenance": "misreads 'Generality is the percentage of these domains where a system achieves expert-level capability' as meaning any domain participation counts, dropping the expert-level clause entirely", "family": "a"},
+      {"text": "System A has higher generality than System B, because superhuman mastery of a genuinely hard task like theorem proving implies the kind of broad reasoning ability that other domains also draw on.", "key": false, "provenance": "misreads AlphaGo's superhuman Go performance ('ask it to write a sentence... you get nothing') as implying superhuman narrow mastery reflects broad underlying reasoning rather than depth on one axis only", "family": "c"},
+      {"text": "System A has the higher generality and System B has the higher capability, since the two axes trade off against each other as a system's performance shifts from depth toward breadth.", "key": false, "provenance": "misreads 'systems in the last few years are climbing both axes simultaneously' as implying the axes trade off against one another rather than move independently", "family": "b"}
+    ],
+    "explanation": "Capability and generality are independent scores here, and neither invented system earns generality points. System A's theorem-proving mastery is pure capability with zero breadth — the same pattern the section uses AlphaGo to illustrate, since superhuman narrow performance doesn't transfer sideways. System B looks broader, but generality only counts a domain once a system clears the expert-level (roughly 80th-90th percentile) threshold in it; scoring 70th percentile across nine domains clears none of them, so it contributes nothing to the generality score. The tempting wrong answer assumes System A's depth on one hard problem must reflect broad reasoning underneath — but the whole point of separating the axes is that mastering one task tells you nothing about the other nine. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Generality isn't how many domains a system touches, it's how many domains it clears the expert-level bar in — so broad-but-mediocre performance can score the same 0% generality as narrow-but-superhuman performance.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": ["expert-level parity (~80th-90th percentile) as the generality threshold"],
+    "self_check": {
+      "cover_test": "Yes — a reader who has internalized that generality requires clearing a per-domain expert threshold, not just breadth of participation, can name this outcome before seeing the options.",
+      "cynic_test": "A test-wise skipper would guess 'System B has higher generality' because breadth sounds like generality on its face; the threshold clause is what stops that guess from paying off."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/02",
+    "targets": ["DM-4", "DM-9"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A safety researcher argues: 'Once a model's capability and generality reach the AGI range, deploying it at full autonomy (Level 5) is just a matter of when, not if — capability that advanced doesn't stay boxed for long.' Which response best reflects the framework's treatment of capability and autonomy as separate axes?",
+    "options": [
+      {"text": "The researcher is wrong: capability unlocks higher autonomy but never requires it — a system with AGI-level capability and generality can still be run as a Level 1 tool or Level 2 consultant.", "key": true, "provenance": null, "family": null},
+      {"text": "The researcher is right: once a system's capability and generality reach the AGI range, higher autonomy follows automatically, since capability is what drives autonomous deployment.", "key": false, "provenance": "misreads 'higher capability levels unlock higher autonomy' as capability directly causing or requiring higher autonomy rather than merely making it possible", "family": "c"},
+      {"text": "The researcher is right in effect: capability that unlocks Level 5 autonomy also obligates deploying at Level 5, since leaving unlocked capability unused wastes the system's potential.", "key": false, "provenance": "misreads 'unlock' as 'obligate,' treating available-but-unused autonomy as a resource that must be deployed rather than a choice that stays optional", "family": "b"},
+      {"text": "The researcher is wrong for a different reason: a system's inherent danger is set directly by its autonomy level, so the real question is which level was chosen, not how capable the system is.", "key": false, "provenance": "misreads 'Autonomy level affects risk exposure, not inherent danger' as meaning autonomy level directly sets inherent danger, inverting the sentence's own claim", "family": "a"}
+    ],
+    "explanation": "Capability and generality describe what a system can do; autonomy describes how much of a task the human versus the AI performs once it's deployed — a separate, chosen dial, not an automatic consequence. Higher capability makes higher autonomy possible (you can't safely run a Level 5 agent on a system too weak for it), but it never forces your hand: an AGI-level system can still ship as a Level 1 tool or Level 2 consultant. The most tempting wrong answer reads 'unlocks' as 'causes,' treating capability as something that converts into autonomy on its own. Another folds autonomy into danger directly, when the text is explicit that autonomy changes a system's risk exposure, not how dangerous its underlying capability is. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Capability sets what's possible; autonomy is a separate deployment choice that capability unlocks but never requires turning to maximum.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who has internalized 'capability unlocks autonomy but doesn't require it' can state the key before seeing the options.",
+      "cynic_test": "A skipper who has absorbed the folk claim 'more capable AI is automatically more agentic' would reach for the 'capability drives autonomy' distractor; the framework's explicit unlock-not-require language is what blocks that pick."
+    }
+  },
+  {"note": "DM-4/DM-5 and DM-4/DM-9 are both discrimination_pairs entries in the map, and DM-4 is the shared member of both. Rather than force a third, weaker candidate, I wrote one contrast question per pair (covering DM-4+DM-5, then DM-4+DM-9), which covers all three assigned ideas across two candidates. Stem formats (two-scenario, claim-evaluation) are distinct as required."}
+]

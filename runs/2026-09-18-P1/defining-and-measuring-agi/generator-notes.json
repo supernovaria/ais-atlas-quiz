@@ -1,0 +1,10 @@
+[
+  {
+    "shard": "defining-and-measuring-agi-a",
+    "note": "DM-2 and DM-3 form a discrimination_pairs entry, and a single contrast candidate spanning both would normally be preferred — but the assigned lens for this shard is misconception, not contrast, so I wrote one misconception-lens candidate per idea instead of substituting lenses. Each still uses the other idea's prior as a distractor family (q2 borrows DM-1's consciousness conflation; q3 borrows DM-2's brute-force-is-safer prior) to keep the pair in view without merging the questions."
+  },
+  {
+    "shard": "defining-and-measuring-agi-b",
+    "note": "DM-4/DM-5 and DM-4/DM-9 are both discrimination_pairs entries in the map, and DM-4 is the shared member of both. Rather than force a third, weaker candidate, I wrote one contrast question per pair (covering DM-4+DM-5, then DM-4+DM-9), which covers all three assigned ideas across two candidates. Stem formats (two-scenario, claim-evaluation) are distinct as required."
+  }
+]

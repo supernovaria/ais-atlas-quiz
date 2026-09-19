@@ -1,0 +1,168 @@
+{
+  "section": "defining-and-measuring-agi",
+  "target_n": 8,
+  "shard_size": 3,
+  "models": [
+    "sonnet"
+  ],
+  "pool_size": 31,
+  "shards": [
+    {
+      "shard_id": "defining-and-measuring-agi-a",
+      "ideas": [
+        "DM-10",
+        "DM-2",
+        "DM-3"
+      ],
+      "lens": "misconception",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-b",
+      "ideas": [
+        "DM-4",
+        "DM-5",
+        "DM-9"
+      ],
+      "lens": "contrast",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-c",
+      "ideas": [
+        "DM-6",
+        "DM-4",
+        "DM-5"
+      ],
+      "lens": "case",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-d",
+      "ideas": [
+        "DM-7",
+        "DM-8",
+        "DM-1"
+      ],
+      "lens": "figure",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-e",
+      "ideas": [
+        "DM-10",
+        "DM-11",
+        "DM-2"
+      ],
+      "lens": "objection",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-f",
+      "ideas": [
+        "DM-3",
+        "DM-6",
+        "DM-7"
+      ],
+      "lens": "misconception",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-g",
+      "ideas": [
+        "DM-8",
+        "DM-9",
+        "DM-1"
+      ],
+      "lens": "contrast",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-h",
+      "ideas": [
+        "DM-10",
+        "DM-11",
+        "DM-2"
+      ],
+      "lens": "case",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-i",
+      "ideas": [
+        "DM-3",
+        "DM-4",
+        "DM-5"
+      ],
+      "lens": "figure",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-j",
+      "ideas": [
+        "DM-6",
+        "DM-7",
+        "DM-8"
+      ],
+      "lens": "objection",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "defining-and-measuring-agi-k",
+      "ideas": [
+        "DM-9"
+      ],
+      "lens": "misconception",
+      "model": "sonnet",
+      "mode": "section"
+    }
+  ],
+  "attempts_requested": {
+    "DM-1": 2,
+    "DM-2": 3,
+    "DM-3": 3,
+    "DM-4": 3,
+    "DM-5": 3,
+    "DM-6": 3,
+    "DM-7": 3,
+    "DM-8": 3,
+    "DM-9": 3,
+    "DM-10": 3,
+    "DM-11": 2
+  },
+  "attempts_unplaced": {},
+  "memberships_repeated_under_a_new_lens": 1,
+  "pairs_co_occurred": [
+    "DM-10|DM-2",
+    "DM-10|DM-3",
+    "DM-2|DM-3",
+    "DM-4|DM-5",
+    "DM-4|DM-9",
+    "DM-5|DM-9",
+    "DM-4|DM-6",
+    "DM-5|DM-6",
+    "DM-7|DM-8",
+    "DM-1|DM-7",
+    "DM-1|DM-8",
+    "DM-10|DM-11",
+    "DM-11|DM-2",
+    "DM-3|DM-6",
+    "DM-3|DM-7",
+    "DM-6|DM-7",
+    "DM-8|DM-9",
+    "DM-1|DM-9",
+    "DM-3|DM-4",
+    "DM-3|DM-5",
+    "DM-6|DM-8"
+  ]
+}

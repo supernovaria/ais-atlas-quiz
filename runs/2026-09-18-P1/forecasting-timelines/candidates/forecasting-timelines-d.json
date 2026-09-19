@@ -1,0 +1,81 @@
+[
+  {
+    "id": "forecasting-timelines/sonnet/01",
+    "targets": ["FT-4"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "The section notes that estimates of the compute needed to match human-level general intelligence, drawn from different biological reference points, span about twelve orders of magnitude -- comparable to not knowing whether something costs one dollar or a trillion dollars. A colleague concludes: 'A range that wide means the biological-anchors approach has failed and shouldn't inform planning at all.' Is this the conclusion the section supports?",
+    "options": [
+      {"text": "No: the width is the informative result -- it reflects real uncertainty about which biological process is the right analogy, and it still narrows the planning question even without a trustworthy point estimate.", "key": true, "provenance": null, "family": null},
+      {"text": "Yes: a range this wide carries no more information than a rough guess would, so the biological-anchors method should simply be dropped entirely from serious compute-based forecasting work.", "key": false, "provenance": "misreads the wide bounds (main text, biological-anchors paragraph) as evidence the method failed, rather than as an honestly-reported range that still bounds planning", "family": "a"},
+      {"text": "No, but only because the true compute requirement almost certainly sits near the range's midpoint, since the extreme low and high estimates are each about equally unlikely to be correct.", "key": false, "provenance": "misreads the dollar-versus-trillion-dollar analogy as implying a roughly uniform distribution across the range, rather than as illustrating genuine deep uncertainty about which reference process is right", "family": "b"},
+      {"text": "No, because the wide range actually collapses into one well-supported number, close to its geometric middle, which planners can safely treat as the single true underlying estimate.", "key": false, "provenance": "misreads the worked AGI-date example ('somewhere in the 2030s-2050s range, with 2045 as a rough center -- not a precise date') as license to collapse the compute range into one trustworthy center point", "family": "c"}
+    ],
+    "explanation": "The section's point is that a twelve-orders-of-magnitude range is itself the finding: it tells you the biological-anchors approach can't yet pin down a single number, but the range still constrains planning far more than having no estimate at all. The dollar-versus-trillion-dollar analogy makes that width visceral, not pointless. The strongest wrong answer treats the width as evidence of failure -- a natural reaction, but one that reverses the section's own framing, which is upfront about wide margins and treats them as informative rather than embarrassing. Another distractor collapses the range into a fake precise center, the same mistake the section warns against when it distinguishes 'AGI in 2045' from 'somewhere in the 2030s-2050s' (Forecasting Timelines).",
+    "takeaway": "A wide uncertainty range can be the most honest and still-useful output a forecast can give you.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": ["biological-anchors compute-for-TAI estimates span about twelve orders of magnitude"],
+    "self_check": {
+      "cover_test": "Yes -- a reader who understood the section's framing of wide error margins as informative rather than as failure could evaluate the colleague's claim without seeing the options.",
+      "cynic_test": "A skipper might guess 'no' by pattern-matching to a cautious-sounding key, but three of the four options also open with 'No,' so they have to track which specific reasoning holds rather than the surface answer."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet/02",
+    "targets": ["FT-5"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Effective compute, as this section defines it, is the product of three factors -- software efficiency, hardware efficiency, and the number of chips available -- each of which can improve on its own. Suppose that in a given year, growth in the number of chips produced stalls to roughly zero, while software efficiency and hardware efficiency each keep improving at their usual pace. What happens to effective compute that year?",
+    "options": [
+      {"text": "Effective compute still grows that year, driven by the two factors that kept improving, because the three inputs multiply independently rather than needing to rise together.", "key": true, "provenance": null, "family": null},
+      {"text": "Effective compute growth stalls too, because chip production is the base multiplier the other two factors act on, and without chip growth there is little for them to multiply against.", "key": false, "provenance": "misreads the multiplication of three independent factors as requiring them to rise together, when the text's point is that each 'can improve independently'", "family": "c"},
+      {"text": "Effective compute still grows, but only trivially, because the number of chips is what 'more compute' really measures and the other two factors are minor refinements on top.", "key": false, "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat rather than the section's central redefinition of the term, reintroducing the raw-chip-count view", "family": "a"},
+      {"text": "Effective compute still grows, but growth becomes driven mainly by hardware efficiency rather than software efficiency, since hardware improvements matter more once chip production slows.", "key": false, "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing that they multiply as equal, independent terms", "family": "b"}
+    ],
+    "explanation": "Effective compute is a product of three factors that each move on their own, so a slowdown in one does not force the others down with it -- the two still improving keep multiplying, and effective compute keeps growing, just from a smaller total contribution. The most tempting wrong answer treats chip production as a 'base' the other two act on, which quietly reintroduces the naive reading this section opens by rejecting: 'compute means more than just counting GPUs.' Another distractor swaps in a false ranking of the factors, which the car analogy never establishes -- cars, speed, and driving efficiency are equal partners in a product, not a hierarchy (Forecasting Timelines -> Effective Compute).",
+    "takeaway": "Because effective compute is a product of independent factors, no single slowing trend can single-handedly stop its growth.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes -- a reader who grasped that effective compute is a product of three independently-moving factors could work out that two still-improving factors keep the product growing even if the third stalls.",
+      "cynic_test": "A skipper might default to 'growth stalls' because chips sound like the primary resource, but that tell is removed since three of the four options all agree effective compute keeps growing and differ only on the mechanism."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet/03",
+    "targets": ["FT-6"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "The section estimates that, at recent growth rates, the supply of high-quality public text for training runs out within the next several years. Taking that estimate as given, which conclusion best follows from how the section frames this data constraint?",
+    "options": [
+      {"text": "Whether this constraint actually limits scaling depends on how well three independent alternative data sources -- multimodal, synthetic, and task-based data -- end up performing, not on the exhaustion timeline by itself.", "key": true, "provenance": null, "family": null},
+      {"text": "Once public text data is exhausted, training runs lose their main source of new data for good, since no other data source can substitute at a comparable scale.", "key": false, "provenance": "misreads the exhaustion estimate in isolation, ignoring the escape routes the same subsection lists immediately after it", "family": "c"},
+      {"text": "Synthetic data generated by AI systems can only partially make up the shortfall once public text runs out, so it delays the constraint rather than removing it.", "key": false, "provenance": "misreads 'AI-generating its own training data removes the constraint entirely -- if the outputs are high enough quality' as a partial fix rather than a route that removes the constraint outright under its stated condition", "family": "a"},
+      {"text": "Self-play and task-based learning can only ever produce useful training data for rule-based games with clear win conditions, like Go and Chess, never for open-ended real-world tasks.", "key": false, "provenance": "misreads the games example as the ceiling of the approach rather than as one instance of a route the text explicitly says 'could be extended to teaching any arbitrary task,' while also flagging it as speculative", "family": "b"}
+    ],
+    "explanation": "The section's own framing is explicit: whether the data wall actually stops scaling 'depends on how well these alternatives work,' not on the exhaustion date by itself -- three independent escape routes sit right below the warning about running out. The strongest wrong answer treats exhaustion as a dead end, which is exactly the reading the next paragraph exists to correct. A second distractor undersells synthetic data specifically: the section says AI-generated data removes the constraint entirely if quality holds, not that it merely delays things. A third boxes self-play into games, when the text explicitly floats extending it to any arbitrary task, while flagging that extension as speculative (Forecasting Timelines -> Training Data).",
+    "takeaway": "The data wall's bite depends on three independent alternative data sources, not on the exhaustion date alone.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes -- a reader who registered that the section frames the wall as contingent on the escape routes' success, not as an automatic stop, could answer without seeing the options.",
+      "cynic_test": "A skipper might pick the doom option because exhaustion 'sounds bad,' but that tell fails because three of the four options describe escape-route mechanics in some form and only close reading of 'depends on how well these work' distinguishes the key."
+    }
+  },
+  {"note": "All three ideas (FT-4, FT-5, FT-6) support the figure lens directly. FT-4 uses the section's one durable-figure budget slot (twelve orders of magnitude, R11) rather than a Pattern-D conversion of a volatile figure, per the concept map's own guidance that this is the natural home for that slot; I kept the exact FLOP endpoints (10^28/10^41) out of the stem since do_not_test flags those specific bounds as non-durable. FT-5 and FT-6 use Pattern D, conditionalizing a qualitative version of a volatile trend (chip-production stall; near-term text exhaustion) into the stem as a given, so neither answer turns on a number that will date. No idea in the shard was skipped."}
+]
