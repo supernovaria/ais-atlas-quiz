@@ -23,8 +23,27 @@ write no question text.
 ## Eligible pool
 
 A candidate is eligible iff its *latest* verdict is `pass`, or `rewrite` whose
-rewrite re-measured clean, **and** adversary flag is false (≤1 of 3 seeds hit).
-Everything else is out. You do not rescue.
+rewrite re-measured clean. Everything else is out. You do not rescue.
+
+**The adversary flag does not gate eligibility.** PIPELINE §7 defines an
+adversary hit as "a flag, not an auto-reject", and that is what it is here: you
+record every flagged question in `flags_for_reviewer`, naming its hit count, and
+Em decides. You do not drop a candidate for being flagged, and you do not prefer
+an unflagged candidate over a better flagged one.
+
+Why, because it looks like a weakened gate and is not: the baseline
+(`runs/baseline/`, 2026-09-18) measured the toolless `haiku` adversary at a
+**98.3% hit rate on the current 40-question file, flagging 39 of 40** — including
+`Takeoff Q1` and `Chapter Review Q4`, the two questions RUBRIC §3.4 and §3.6 hold
+up as the file's best. Hits were spread evenly across key positions, so the agent
+is not catching a length or position tell; it is answering correctly from
+knowledge of material the chapter summarises, which `tools: []` cannot withhold.
+A measure that flags the rubric's own exemplars at the same rate as its worst
+items cannot separate good questions from bad, and as an eligibility filter it
+would have rejected almost every candidate on grounds unrelated to quality.
+
+The file-level number stays worth reporting as a trend line. It just stops
+vetoing individual candidates.
 
 ## Output
 
@@ -155,7 +174,9 @@ retry does not jump in difficulty.
    where the critic's `reviewer_note` raises a truth concern; any Q selected
    with a 2nd-pass critic rewrite; any idea left uncovered; **every Q with
    fewer than 4 options, with its `option_count_reason`** (2-option Qs also
-   depend on the app's IDK button shipping — say so). Report the option-count
+   depend on the app's IDK button shipping — say so); and **every shipped Q the
+   adversary flagged, with its hit count out of 3**, since that is now a note to
+   Em rather than a rejection. Report the option-count
    distribution in the section summary.
 
 ## Review-block mode
@@ -182,7 +203,7 @@ retry does not jump in difficulty.
 
 - `shipped_n ≤ target_n`; if `<`, `underfill_reason` non-null.
 - `distribution` sums to `shipped_n` and meets §3.7 hard bounds, or `underfill_reason` says which bound.
-- Every shipped Q has adversary ≤1/3.
+- Every adversary-flagged Q you shipped appears in `flags_for_reviewer` with its hit count. (Flags do not gate eligibility — see "Eligible pool".)
 - Every `earns_question` idea appears in `covered` or `earns_question_uncovered`.
 - Every eligible candidate you did not ship is in `siblings` or `rejected_from_pool` — none silently dropped — and every sibling carries `key_disclosed_by_primary_explanation`.
 - Staging file parses with the repo's own `parseChapterMarkdown` (orchestrator runs it; you produce the format that will).

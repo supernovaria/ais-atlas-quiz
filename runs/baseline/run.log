@@ -2,3 +2,5 @@
 {"stage":"shuffle","source":"public/questions/ch1-capabilities.md","questions":40,"seeds":3,"prompts":120,"artifact":"runs/baseline/shuffle.json","ok":true}
 {"stage":"adversary","agent":"quiz-adversary","model":"haiku","spawns":120,"concurrency":6,"batches":20,"ok":true,"deviations":2,"note":"one candidate per spawn, stem+shuffled options inline only; no tools, no explanations, no provenance"}
 {"stage":"score","artifact":"runs/baseline/adversary.json","mean_hit_rate":0.983,"mean_excess_over_chance":0.733,"gate":0.15,"gate_pass":false,"flagged":39,"of":40,"ok":true}
+{"stage":"tier4-step1","action":"softened curator eligibility: adversary flag no longer gates eligibility, becomes flags_for_reviewer","files":[".claude/agents/quiz-curator.md","scripts/pipeline.mjs"],"ok":true}
+{"stage":"tier4-step2","action":"stem-only probe, 40 stems, no options, toolless haiku","match":24,"partial":7,"miss":5,"idk":4,"knows_loose":0.775,"knows_strict":0.600,"mc_hit":0.983,"residual_questions":8,"artifact":"runs/baseline/stem-only/","ok":true}

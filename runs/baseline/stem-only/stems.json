@@ -1,0 +1,202 @@
+[
+  {
+    "id": "Current Capabilities Q1",
+    "stem": "What was significant about AlphaGo's \"Move 37\" during its match against Lee Sedol?",
+    "key": "It was a highly unconventional move that commentators initially thought was a mistake, but proved decisive"
+  },
+  {
+    "id": "Current Capabilities Q2",
+    "stem": "What distinguished MuZero (2020) from earlier game-playing AI systems like AlphaGo (2016)?",
+    "key": "MuZero played multiple games without being told the rules of any of them"
+  },
+  {
+    "id": "Current Capabilities Q3",
+    "stem": "How did tool use change the performance of AI models, according to the chapter?",
+    "key": "It significantly boosted performance, enough that companies began reporting benchmark scores separately with and without tools"
+  },
+  {
+    "id": "Current Capabilities Q4",
+    "stem": "What does the chapter identify as the relationship between \"inference time scaling\" (letting models think longer) and model performance?",
+    "key": "Longer thinking time tends to improve responses, contributing to gold-medal IMO performance in 2025"
+  },
+  {
+    "id": "Current Capabilities Q5",
+    "stem": "How did AI performance on real GitHub issues (SWE-bench) change between 2024 and 2025?",
+    "key": "It jumped from about 15% to about 74%, driven by combining better models with tool use"
+  },
+  {
+    "id": "Foundation Models Q1",
+    "stem": "What is the core idea behind foundation models, as distinguished from the traditional approach to AI development?",
+    "key": "Training a single large-scale model on massive data, then fine-tuning it for specific tasks"
+  },
+  {
+    "id": "Foundation Models Q2",
+    "stem": "What is the key technical innovation that makes foundation model pre-training possible?",
+    "key": "Self-supervised learning (SSL), which creates training signals from the data's own structure without human labels"
+  },
+  {
+    "id": "Foundation Models Q3",
+    "stem": "What is the difference between a foundation model and a frontier model?",
+    "key": "Frontier models are the most advanced in their domain; most are also foundation models, but some (like AlphaFold) are frontier without being foundational"
+  },
+  {
+    "id": "Foundation Models Q4",
+    "stem": "Which of the following is NOT identified in the chapter as a safety challenge unique to the foundation model training process?",
+    "key": "Foundation models require too much human-labeled data, creating opportunities for malicious labelers to introduce biases"
+  },
+  {
+    "id": "Foundation Models Q5",
+    "stem": "How does generalization in foundation models differ from generalization in traditional AI systems, and why is this a safety concern?",
+    "key": "Capabilities can generalize across domains in surprising ways, but goals and safety constraints often don't generalize along with them"
+  },
+  {
+    "id": "Defining and Measuring AGI Q1",
+    "stem": "Why does the chapter argue that consciousness-based definitions of intelligence are less useful for AI safety work?",
+    "key": "Because consciousness is even harder to define, may not be linked to intelligence, and a system doesn't need to be conscious to cause harm"
+  },
+  {
+    "id": "Defining and Measuring AGI Q2",
+    "stem": "In the two-dimensional framework for defining AGI presented in the chapter, what do the two axes represent?",
+    "key": "Capability (performance depth on cognitive tasks) and generality (breadth across cognitive domains)"
+  },
+  {
+    "id": "Defining and Measuring AGI Q3",
+    "stem": "According to the chapter's definitions, what distinguishes Transformative AI (TAI) from Artificial General Intelligence (AGI)?",
+    "key": "AGI is defined by cognitive performance (expert-level across most domains), while TAI is defined by *impact potential* — it could mean moderate capability across many tasks OR exceptional capability on a few critical domains like automated ML R&D"
+  },
+  {
+    "id": "Defining and Measuring AGI Q4",
+    "stem": "What is the (t,n)-AGI framework, and how does it offer an alternative way to think about AGI?",
+    "key": "A system is t-AGI if it outperforms a human expert within time frame 't', and (t,n)-AGI if it outperforms 'n' experts collaborating for time 't'"
+  },
+  {
+    "id": "Defining and Measuring AGI Q5",
+    "stem": "Which of the following is a criticism of the capability-generality percentage framework for measuring AGI?",
+    "key": "CHC-based human psychometric tests may miss capabilities universal in humans but lacking in AI (coverage bias), and percentage scores can misleadingly imply linear progress toward AGI"
+  },
+  {
+    "id": "Leveraging Scale Q1",
+    "stem": "What is the \"bitter lesson\" of AI research, as described by Richard Sutton?",
+    "key": "That general methods leveraging computation consistently beat hand-crafted domain knowledge"
+  },
+  {
+    "id": "Leveraging Scale Q2",
+    "stem": "What are the four key variables in scaling laws for AI models?",
+    "key": "Compute (total FLOPs during training), parameters (model size), data (training examples/tokens), and accuracy (inverse of loss)"
+  },
+  {
+    "id": "Leveraging Scale Q3",
+    "stem": "What key finding did the \"Chinchilla\" research (Hoffmann et al., 2022) reveal about optimal training?",
+    "key": "That optimal training requires ~20 tokens per parameter — about 10x more data than earlier scaling laws suggested — meaning previous large models were undertrained"
+  },
+  {
+    "id": "Leveraging Scale Q4",
+    "stem": "What is the difference between the \"strong\" and \"weak\" scaling hypotheses?",
+    "key": "The strong says scaling existing architectures alone suffices for transformative AI; the weak says scale is the primary driver but targeted algorithmic improvements will also be needed"
+  },
+  {
+    "id": "Leveraging Scale Q5",
+    "stem": "Why does the chapter argue that debates about scaling laws alone miss an important part of the picture?",
+    "key": "Because scaling laws only predict foundation model capabilities — they miss \"scaffolding\" gains (tool use, chain-of-thought, retrieval) that boost capability independently"
+  },
+  {
+    "id": "Forecasting Timelines Q1",
+    "stem": "Why does the chapter argue that predicting AI timelines matters for safety, rather than being merely an academic exercise?",
+    "key": "Because short vs. long timelines fundamentally change which safety strategies are viable — 10 years demands solutions for current systems, 50 years allows fundamental research"
+  },
+  {
+    "id": "Forecasting Timelines Q2",
+    "stem": "What is \"effective compute\" and why does it grow faster than any single input?",
+    "key": "It is the product of software efficiency, hardware efficiency, and number of chips — because each factor can improve independently, the total compounds faster than any single input"
+  },
+  {
+    "id": "Forecasting Timelines Q3",
+    "stem": "According to the chapter, approximately when might high-quality public text data be exhausted at current scaling rates?",
+    "key": "Between 2026 and 2032, given ~500 trillion tokens on the indexed web and ~4x yearly consumption growth"
+  },
+  {
+    "id": "Forecasting Timelines Q4",
+    "stem": "What is the range of uncertainty in biological anchors estimates for the compute needed for general intelligence?",
+    "key": "Twelve orders of magnitude — from ~$10^{28}$ FLOP (a human lifetime of learning) to ~$10^{41}$ FLOP (all of evolutionary history)"
+  },
+  {
+    "id": "Forecasting Timelines Q5",
+    "stem": "Which of the following is NOT listed as a potential \"escape route\" for the data wall?",
+    "key": "Purchasing proprietary datasets from corporations and governments"
+  },
+  {
+    "id": "Takeoff Q1",
+    "stem": "What is the key distinction between \"takeoff speed\" and \"AI timelines\"?",
+    "key": "Timelines address *when* transformative AI arrives; takeoff speed addresses what happens *after* — gradual vs. explosive growth"
+  },
+  {
+    "id": "Takeoff Q2",
+    "stem": "What type of mathematical growth characterizes a fast takeoff scenario?",
+    "key": "Superexponential or hyperbolic growth — the growth *rate itself* increases over time (doubling every year, then every month, then every week)"
+  },
+  {
+    "id": "Takeoff Q3",
+    "stem": "What is a \"hardware overhang\" and why might it matter for takeoff dynamics?",
+    "key": "When computing hardware to run many powerful AI systems already exists, but the software hasn't caught up yet — once it does, many copies could appear almost immediately"
+  },
+  {
+    "id": "Takeoff Q4",
+    "stem": "What is the \"automating research\" argument for accelerating AI takeoff, as described by Ajeya Cotra?",
+    "key": "That each AI generation handles harder tasks, so more work gets delegated, making the next generation arrive faster — a self-reinforcing loop"
+  },
+  {
+    "id": "Takeoff Q5",
+    "stem": "According to the chapter, why do the majority of AI experts agree on AI risks while sometimes being *reported* as disagreeing?",
+    "key": "Because the real disagreements are about nuances — whether problems will be noticeable and fixable in time or too fast to respond to — but these get misreported as disagreement about whether risks exist at all"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q1",
+    "stem": "The chapter describes several techniques that boost AI performance beyond what the base foundation model can achieve alone. Which combination of techniques best represents what the chapter calls \"unhobbling\" or \"scaffolding\"?",
+    "key": "Chain-of-thought prompting, tool use (calculators, search, code interpreters), inference time scaling (letting models think longer), and retrieval-augmented generation"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q2",
+    "stem": "Consider this progression: AlphaGo (2016) -> MuZero (2020) -> Voyager/GPT-4 in Minecraft (2023) -> SIMA-2 (2025). What broader trend does this sequence illustrate about AI development?",
+    "key": "A progression from superhuman narrow capability, to generality without rules, to open-ended planning, to cross-game skill transfer — moving along both capability and generality axes"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q3",
+    "stem": "The chapter presents the \"bitter lesson\" and then discusses scaling laws. How are these two concepts related?",
+    "key": "The bitter lesson provides the historical/philosophical foundation (general methods + compute beat hand-crafted knowledge), and scaling laws provide the empirical quantification of exactly *how* performance improves as you scale compute, data, and parameters"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q4",
+    "stem": "If someone told you \"AI has reached 57% AGI according to the framework in the chapter,\" which of the following critiques would the chapter itself consider valid?",
+    "key": "The percentage can misleadingly imply linear progress when final capabilities may represent disproportionately hard bottlenecks, and CHC-based human tests may miss capabilities universal in humans but absent in AI"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q5",
+    "stem": "How does the concept of \"autonomy levels\" (0-5) relate to the capability-generality framework for AGI?",
+    "key": "They are deliberately separated: capability/generality describe what a system *can do*, while autonomy describes how it's *deployed* with respect to human oversight"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q6",
+    "stem": "The chapter discusses multiple feedback loops that could accelerate AI development. Which of the following correctly identifies TWO distinct feedback loops described in the chapter?",
+    "key": "The investment loop (better AI -> larger economic role -> more investment -> more compute -> better AI) and the automation loop (better AI -> automates more AI research -> better algorithms/hardware -> even better AI)"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q7",
+    "stem": "What is the relationship between effective compute growth and the three factors that compose it, as of 2025?",
+    "key": "Algorithmic/software efficiency grows fastest (~3x/year), followed by chip production (~2.3x/year), with hardware efficiency growing slowest (~1.35x/year) — but all three multiply together"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q8",
+    "stem": "The chapter discusses several approaches to defining intelligence. Which pair of approaches does the chapter ultimately synthesize into its working definition?",
+    "key": "Behaviorist/capabilities-focused approaches (what systems can observably do) combined with psychometric frameworks (CHC theory's cognitive domains)"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q9",
+    "stem": "Why might a slow takeoff scenario still be extremely challenging for safety, despite providing more time to respond?",
+    "key": "Even a \"slow\" takeoff could be 10-100x faster than the Industrial Revolution — fast enough that institutions may struggle to keep pace"
+  },
+  {
+    "id": "Chapter Review: Multiple Choice Q10",
+    "stem": "Based on the chapter's discussion of training costs, infrastructure constraints, and effective compute, which statement best captures the overall feasibility outlook for continued scaling through 2030?",
+    "key": "Scaling through 2030 is feasible but requires unprecedented infrastructure investment, and the real question is whether economic incentives and infrastructure buildout can keep pace"
+  }
+]

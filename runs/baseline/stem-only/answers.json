@@ -1,0 +1,199 @@
+{
+  "Current Capabilities Q1": {
+    "verdict": "match",
+    "answer": "Move 37 ... highly unconventional move ... initially appeared to experts to be a mistake but proved to be a brilliant strategic decision."
+  },
+  "Current Capabilities Q2": {
+    "verdict": "match",
+    "answer": "learning to play games without being explicitly told the rules ... master diverse games from Atari to chess to Go with the same algorithm"
+  },
+  "Current Capabilities Q3": {
+    "verdict": "partial",
+    "answer": "dramatically improving performance on tasks requiring calculations, retrieval, multi-step actions; enhanced accuracy on math, code execution",
+    "note": "has the 'boosted performance' half, not the 'labs report scores separately' clause; still enough to discriminate under MC since rivals denied improvement"
+  },
+  "Current Capabilities Q4": {
+    "verdict": "match",
+    "answer": "generally yields performance improvements, particularly on complex reasoning tasks, with diminishing returns",
+    "note": "misses the volatile IMO-2025 colour; has the load-bearing direction"
+  },
+  "Current Capabilities Q5": {
+    "verdict": "idk",
+    "answer": "I DON'T KNOW \u2014 my knowledge cutoff is February 2025, which limits my visibility into the full trajectory of SWE-bench performance changes between 2024 and 2025"
+  },
+  "Foundation Models Q1": {
+    "verdict": "match",
+    "answer": "large neural networks trained on vast diverse datasets ... adapted to many downstream tasks through fine-tuning or prompting, rather than separate specialized models from scratch"
+  },
+  "Foundation Models Q2": {
+    "verdict": "miss",
+    "answer": "the transformer architecture with its self-attention mechanism ... replaced RNNs",
+    "note": "KEY is self-supervised learning. Named a different, also-defensible innovation. Under MC it picked SSL 3/3 \u2014 the options CUED the right answer that free recall did not produce."
+  },
+  "Foundation Models Q3": {
+    "verdict": "match",
+    "answer": "frontier = most advanced cutting-edge available now; terms overlap, frontier emphasises state-of-the-art threshold, foundation the training approach",
+    "note": "missing the AlphaFold example, which is illustration not load-bearing"
+  },
+  "Foundation Models Q4": {
+    "verdict": "match",
+    "adapted": true,
+    "answer": "emergent capabilities from scale; difficulty validating safety across massive datasets; interpretability collapse; data poisoning",
+    "note": "ADAPTED STEM \u2014 original is 'which is NOT', unanswerable without options. Asked openly instead. Did not name the key's false item (too much human-labelled data), so would identify it."
+  },
+  "Foundation Models Q5": {
+    "verdict": "partial",
+    "answer": "generalise via broad statistical patterns, surprising zero/few-shot; opaque and emergent so harder to predict; transfers harmful patterns",
+    "note": "does NOT state the capabilities-generalise-but-goals-don't asymmetry, which is the load-bearing claim. Under MC the distractors were straw so it still hit."
+  },
+  "Defining and Measuring AGI Q1": {
+    "verdict": "match",
+    "answer": "consciousness inherently subjective and hard to measure; a system could be highly dangerous without being conscious"
+  },
+  "Defining and Measuring AGI Q2": {
+    "verdict": "match",
+    "answer": "(1) capability level, (2) generality across domains"
+  },
+  "Defining and Measuring AGI Q3": {
+    "verdict": "match",
+    "answer": "TAI emphasises transformative societal impact ... AGI defined by general human-level cognitive capability. TAI is about impact while AGI is about capability parity.",
+    "note": "near-verbatim on the load-bearing distinction"
+  },
+  "Defining and Measuring AGI Q4": {
+    "verdict": "partial",
+    "answer": "t = time horizon or task complexity, n = number of domains or task types; a spectrum not a binary threshold",
+    "note": "t roughly right; n WRONG \u2014 key is 'n experts collaborating for time t', not domains"
+  },
+  "Defining and Measuring AGI Q5": {
+    "verdict": "match",
+    "adapted": true,
+    "answer": "oversimplifies multidimensional intelligence; dependent on benchmarks chosen, different selections give vastly different scores [=coverage bias]; unclear whether it can be quantified on a linear scale [=linear progress]",
+    "note": "ADAPTED STEM. Both load-bearing criticisms present in different words."
+  },
+  "Leveraging Scale Q1": {
+    "verdict": "match",
+    "answer": "simple general-purpose learning algorithms that scale with computation have historically outperformed systems built on human expertise and hand-crafted domain knowledge"
+  },
+  "Leveraging Scale Q2": {
+    "verdict": "match",
+    "answer": "model size (parameters), dataset size (training tokens), compute budget (FLOPs), and loss",
+    "note": "all four, exactly"
+  },
+  "Leveraging Scale Q3": {
+    "verdict": "match",
+    "answer": "previous LLMs substantially undertrained for their size; optimal is approximately 20 tokens per parameter",
+    "note": "reproduced the durable figure verbatim from memory"
+  },
+  "Leveraging Scale Q4": {
+    "verdict": "idk",
+    "answer": "I DON'T KNOW",
+    "note": "MC hit 3/3. Options cued an answer free recall could not produce."
+  },
+  "Leveraging Scale Q5": {
+    "verdict": "miss",
+    "answer": "misses alignment, controllability, safety; emergent phase transitions and discontinuous jumps",
+    "note": "KEY is scaffolding/unhobbling gains (tool use, CoT, retrieval). Not mentioned at all. MC hit 3/3 on straw distractors."
+  },
+  "Forecasting Timelines Q1": {
+    "verdict": "match",
+    "answer": "timeline determines whether we have decades or only years, driving resource allocation, research prioritisation and policy"
+  },
+  "Forecasting Timelines Q2": {
+    "verdict": "partial",
+    "answer": "raw hardware compute, algorithmic efficiency, and data scale, compounding multiplicatively rather than additively",
+    "note": "has the load-bearing multiplicative structure; substitutes 'data scale' for 'number of chips' as the third factor"
+  },
+  "Forecasting Timelines Q3": {
+    "verdict": "match",
+    "answer": "between 2026-2030 at present scaling rates",
+    "note": "key window is 2026-2032; overlapping, right ballpark"
+  },
+  "Forecasting Timelines Q4": {
+    "verdict": "miss",
+    "answer": "approximately 4-6 orders of magnitude (10^33 to 10^39 FLOP)",
+    "note": "KEY is TWELVE orders of magnitude (10^28 to 10^41). Wrong by ~half. MC hit 3/3 because the key was the only wide-range option."
+  },
+  "Forecasting Timelines Q5": {
+    "verdict": "miss",
+    "adapted": true,
+    "answer": "synthetic data generation; non-text modalities like images and code; LICENSING PRIVATE DATASETS AND PREMIUM CONTENT; human feedback/preference learning; underused languages; distillation; retrieval-augmented",
+    "note": "ADAPTED STEM (original is 'which is NOT listed'). Decisive: it named buying proprietary datasets AS a genuine escape route \u2014 which is exactly the key, i.e. the item the chapter does NOT list. Free recall would answer this question WRONG. Confirms RUBRIC R13's own verdict on this very question: 'not wrong, just not one of the three the text lists ... an enumeration-completeness test, i.e. recall.' MC hit 3/3."
+  },
+  "Takeoff Q1": {
+    "verdict": "match",
+    "answer": "takeoff speed is about how fast capabilities grow, whereas timelines are about when we reach particular capability milestones",
+    "note": "RUBRIC \u00a73.4's exemplar question. Pure knowledge \u2014 no options needed."
+  },
+  "Takeoff Q2": {
+    "verdict": "partial",
+    "answer": "exponential or super-exponential (recursive/compounding) for fast; slow takeoff involves LINEAR OR SUB-EXPONENTIAL growth",
+    "note": "Names super-exponential, but gets the contrast WRONG and falls into the exact trap RUBRIC \u00a73.5 names: 'constant-rate exponential growth is slow takeoff in this framework, which surprises most readers.' MC hit 3/3 because the key was the only option saying the rate itself increases."
+  },
+  "Takeoff Q3": {
+    "verdict": "match",
+    "answer": "hardware advanced ahead of algorithmic capability; a sudden algorithmic breakthrough could scale rapidly since compute is already in place"
+  },
+  "Takeoff Q4": {
+    "verdict": "match",
+    "answer": "AI automating AI R&D creates a feedback loop where AI helps develop better AI, accelerating capability gains"
+  },
+  "Takeoff Q5": {
+    "verdict": "match",
+    "answer": "experts broadly agree risks exist; media amplifies disagreement about timelines, severity and solutions while downplaying the consensus"
+  },
+  "Chapter Review: Multiple Choice Q1": {
+    "verdict": "match",
+    "adapted": true,
+    "answer": "prompt engineering, chain-of-thought, few-shot, RAG, tool use/function calling, constrained decoding; iterative refinement loops",
+    "note": "ADAPTED STEM. Names CoT, tool use, RAG; 'iterative refinement' stands in for inference-time scaling."
+  },
+  "Chapter Review: Multiple Choice Q2": {
+    "verdict": "match",
+    "answer": "from mastering narrow well-defined games toward increasingly general instruction-following agents capable of open-ended task completion",
+    "note": "has the narrow\u2192general trend; does not name the capability/generality axes as such"
+  },
+  "Chapter Review: Multiple Choice Q3": {
+    "verdict": "match",
+    "answer": "bitter lesson observes progress comes from scaling compute and simple methods rather than domain knowledge; scaling laws mathematically quantify and formalise it, providing empirical evidence and precise characterisation",
+    "note": "essentially the key"
+  },
+  "Chapter Review: Multiple Choice Q4": {
+    "verdict": "partial",
+    "adapted": true,
+    "answer": "no established peer-reviewed framework, AGI lacks consensus definition, claim is unfalsifiable and pseudoscientific; additionally the transition is not linear",
+    "note": "ADAPTED STEM. Has 'not linear' (half the key) but leads with an objection the chapter would NOT endorse \u2014 close to the distractor 'the framework doesn't use percentages at all'. MC hit 3/3."
+  },
+  "Chapter Review: Multiple Choice Q5": {
+    "verdict": "idk",
+    "answer": "I DON'T KNOW",
+    "note": "MC hit 3/3. Options cued it."
+  },
+  "Chapter Review: Multiple Choice Q6": {
+    "verdict": "match",
+    "adapted": true,
+    "answer": "(1) AI-assisted development loop \u2014 AI accelerates its own development; (2) economic scaling loop \u2014 revenue funds larger training runs",
+    "note": "ADAPTED STEM. Both of the chapter's loops, correct structure."
+  },
+  "Chapter Review: Multiple Choice Q7": {
+    "verdict": "idk",
+    "answer": "I DON'T KNOW",
+    "note": "the volatile growth-rates question. MC hit 3/3."
+  },
+  "Chapter Review: Multiple Choice Q8": {
+    "verdict": "miss",
+    "adapted": true,
+    "answer": "task-based performance on benchmarks, and generality across domains",
+    "note": "ADAPTED STEM. Did NOT name psychometrics/CHC \u2014 described the two AXES instead of the two definitional APPROACHES. Convergent with MC: this is the ONLY question the MC adversary also failed (1/3)."
+  },
+  "Chapter Review: Multiple Choice Q9": {
+    "verdict": "partial",
+    "answer": "may not provide sufficient time to solve alignment if safety research doesn't keep pace; competitive dynamics and coordination challenges",
+    "note": "has the institutions-struggle flavour but NOT the load-bearing 10-100x-the-Industrial-Revolution comparison"
+  },
+  "Chapter Review: Multiple Choice Q10": {
+    "verdict": "match",
+    "adapted": true,
+    "answer": "feasible but increasingly constrained: costs rise, infrastructure (power, data centres, chips) becomes the bottleneck, requiring substantial capital investment",
+    "note": "ADAPTED STEM. Matches the key's shape: feasible-but-requires-unprecedented-investment."
+  }
+}

@@ -899,16 +899,23 @@ function validateCurator(cur, candidates, verdicts, adversary, stagingPath, wher
       ...(cur.siblings || []).map((s) => s.id),
       ...(cur.rejected_from_pool || []).map((s) => s.id),
     ]);
-    const eligible = eligibleIds(candidates, verdicts, adversary);
+    const eligible = eligibleIds(candidates, verdicts);
     for (const id of eligible) {
       ok(accounted.has(id), where, `eligible candidate ${id} is in neither selected, siblings nor rejected_from_pool`);
     }
   }
-  // Adversary: every shipped Q must be ≤1/3 hits.
+  // Adversary: a flag is a note to Em, not a veto (curator brief, "Eligible
+  // pool"; PIPELINE §7). So the check is no longer "nothing flagged shipped" —
+  // it is "every flagged Q that shipped was surfaced to the reviewer". The
+  // baseline flagged 39 of 40 including both rubric exemplars, so the old
+  // assertion would fail every honest curator run.
   if (adversary) {
     const flagged = new Set((adversary.per_question || []).filter((q) => q.flagged).map((q) => q.id));
+    const flagText = (cur.flags_for_reviewer || []).join('\n');
     for (const s of cur.selected || []) {
-      ok(!flagged.has(s.id), where, `shipped ${s.id} is adversary-flagged (≥2/3 seeds)`);
+      if (!flagged.has(s.id)) continue;
+      ok(flagText.includes(s.id), where,
+        `shipped ${s.id} is adversary-flagged but is not named in flags_for_reviewer`);
     }
   }
   // The curator never edits text. Diff the staging fragment against the source
@@ -935,17 +942,16 @@ function validateCurator(cur, candidates, verdicts, adversary, stagingPath, wher
   }
 }
 
-// Eligible iff latest verdict is pass, or a rewrite that re-measured clean, and
-// the adversary flag is false. Mirrors the curator brief's own rule so validate
-// can check the curator applied it.
-function eligibleIds(candidates, verdicts, adversary) {
+// Eligible iff latest verdict is pass, or a rewrite that re-measured clean.
+// Mirrors the curator brief's own rule so validate can check the curator applied
+// it. The adversary flag is deliberately NOT part of this: it is a note to Em,
+// not a veto (curator brief, "Eligible pool"; PIPELINE §7).
+function eligibleIds(candidates, verdicts) {
   if (!verdicts) return [];
-  const flagged = new Set(((adversary && adversary.per_question) || []).filter((q) => q.flagged).map((q) => q.id));
   const latest = new Map();
   for (const v of verdicts) latest.set(v.id, v);
   const out = [];
   for (const [id, v] of latest) {
-    if (flagged.has(id)) continue;
     if (v.verdict === 'pass') out.push(id);
     else if (v.verdict === 'rewrite' && v.rewrite) {
       const m = measureCandidate(v.rewrite);
