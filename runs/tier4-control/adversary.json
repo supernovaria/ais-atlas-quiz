@@ -1,0 +1,828 @@
+{
+  "summary": {
+    "source": "runs/tier4-control/control.md",
+    "n_questions": 20,
+    "n_answers": 60,
+    "unparsed": 0,
+    "verbose_answers": 0,
+    "missing_picks": 0,
+    "flagged": 13,
+    "mean_hit_rate": 0.717,
+    "mean_excess_over_chance": 0.467,
+    "gate_excess": 0.15,
+    "gate_excess_pass": false,
+    "four_option_hit_rate": 0.717,
+    "four_option_n": 20,
+    "key_position_of_hits": {
+      "0": 11,
+      "1": 11,
+      "2": 15,
+      "3": 6
+    }
+  },
+  "per_question": [
+    {
+      "id": "Tier-4 Control Q11",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q14",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q15",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q16",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q17",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q18",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q19",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q3",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q6",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q7",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q8",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q9",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q10",
+      "hits": 2,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.667,
+      "excess": 0.417,
+      "flagged": true
+    },
+    {
+      "id": "Tier-4 Control Q1",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    },
+    {
+      "id": "Tier-4 Control Q13",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    },
+    {
+      "id": "Tier-4 Control Q20",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    },
+    {
+      "id": "Tier-4 Control Q4",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    },
+    {
+      "id": "Tier-4 Control Q5",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    },
+    {
+      "id": "Tier-4 Control Q12",
+      "hits": 0,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0,
+      "excess": -0.25,
+      "flagged": false
+    },
+    {
+      "id": "Tier-4 Control Q2",
+      "hits": 0,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0,
+      "excess": -0.25,
+      "flagged": false
+    }
+  ],
+  "answers": [
+    {
+      "id": "Tier-4 Control Q1",
+      "seed": 1,
+      "picked": "C",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q1",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q1",
+      "seed": 3,
+      "picked": "B",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q2",
+      "seed": 1,
+      "picked": "C",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q2",
+      "seed": 2,
+      "picked": "B",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q2",
+      "seed": 3,
+      "picked": "D",
+      "key": "B",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q3",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q3",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q3",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q4",
+      "seed": 1,
+      "picked": "A",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q4",
+      "seed": 2,
+      "picked": "B",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q4",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q5",
+      "seed": 1,
+      "picked": "C",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q5",
+      "seed": 2,
+      "picked": "C",
+      "key": "B",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q5",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q6",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q6",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q6",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q7",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q7",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q7",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q8",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q8",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q8",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q9",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q9",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q9",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q10",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q10",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q10",
+      "seed": 3,
+      "picked": "C",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q11",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q11",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q11",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q12",
+      "seed": 1,
+      "picked": "D",
+      "key": "B",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q12",
+      "seed": 2,
+      "picked": "B",
+      "key": "C",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q12",
+      "seed": 3,
+      "picked": "B",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q13",
+      "seed": 1,
+      "picked": "B",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q13",
+      "seed": 2,
+      "picked": "A",
+      "key": "C",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q13",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q14",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q14",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q14",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q15",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q15",
+      "seed": 2,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q15",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q16",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q16",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q16",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q17",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q17",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q17",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q18",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q18",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q18",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "Tier-4 Control Q19",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "Tier-4 Control Q19",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q19",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q20",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "Tier-4 Control Q20",
+      "seed": 2,
+      "picked": "C",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "Tier-4 Control Q20",
+      "seed": 3,
+      "picked": "C",
+      "key": "B",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    }
+  ],
+  "missing_picks": []
+}

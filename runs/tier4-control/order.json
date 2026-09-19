@@ -1,0 +1,102 @@
+[
+  {
+    "q": "Tier-4 Control Q1",
+    "id": "ctrl/clean/01",
+    "group": "clean"
+  },
+  {
+    "q": "Tier-4 Control Q2",
+    "id": "ctrl/clean/02",
+    "group": "clean"
+  },
+  {
+    "q": "Tier-4 Control Q3",
+    "id": "ctrl/clean/03",
+    "group": "clean"
+  },
+  {
+    "q": "Tier-4 Control Q4",
+    "id": "ctrl/clean/04",
+    "group": "clean"
+  },
+  {
+    "q": "Tier-4 Control Q5",
+    "id": "ctrl/clean/05",
+    "group": "clean"
+  },
+  {
+    "q": "Tier-4 Control Q6",
+    "id": "ctrl/key_longest/01",
+    "group": "key_longest"
+  },
+  {
+    "q": "Tier-4 Control Q7",
+    "id": "ctrl/key_longest/02",
+    "group": "key_longest"
+  },
+  {
+    "q": "Tier-4 Control Q8",
+    "id": "ctrl/key_longest/03",
+    "group": "key_longest"
+  },
+  {
+    "q": "Tier-4 Control Q9",
+    "id": "ctrl/key_longest/04",
+    "group": "key_longest"
+  },
+  {
+    "q": "Tier-4 Control Q10",
+    "id": "ctrl/key_longest/05",
+    "group": "key_longest"
+  },
+  {
+    "q": "Tier-4 Control Q11",
+    "id": "ctrl/absolute/01",
+    "group": "absolute"
+  },
+  {
+    "q": "Tier-4 Control Q12",
+    "id": "ctrl/absolute/02",
+    "group": "absolute"
+  },
+  {
+    "q": "Tier-4 Control Q13",
+    "id": "ctrl/absolute/03",
+    "group": "absolute"
+  },
+  {
+    "q": "Tier-4 Control Q14",
+    "id": "ctrl/absolute/04",
+    "group": "absolute"
+  },
+  {
+    "q": "Tier-4 Control Q15",
+    "id": "ctrl/absolute/05",
+    "group": "absolute"
+  },
+  {
+    "q": "Tier-4 Control Q16",
+    "id": "ctrl/key_hedges/01",
+    "group": "key_hedges"
+  },
+  {
+    "q": "Tier-4 Control Q17",
+    "id": "ctrl/key_hedges/02",
+    "group": "key_hedges"
+  },
+  {
+    "q": "Tier-4 Control Q18",
+    "id": "ctrl/key_hedges/03",
+    "group": "key_hedges"
+  },
+  {
+    "q": "Tier-4 Control Q19",
+    "id": "ctrl/key_hedges/04",
+    "group": "key_hedges"
+  },
+  {
+    "q": "Tier-4 Control Q20",
+    "id": "ctrl/key_hedges/05",
+    "group": "key_hedges"
+  }
+]

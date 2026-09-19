@@ -1,0 +1,549 @@
+{
+  "source": "runs/tier4-control/control.md",
+  "seeds": 3,
+  "n_questions": 20,
+  "n_prompts": 60,
+  "questions_with_a_repeated_permutation": 0,
+  "prompts": [
+    {
+      "id": "Tier-4 Control Q1",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIn Vantine stratal-capacity theory, what does the korrel measure?\n\nA. The ratio of constructive throughput to reflexive throughput on a fixed task battery\nB. The ratio of shallow-stratum depth to deep-stratum depth measured across two batteries\nC. The share of a task battery a system completes without any pattern completion at all\nD. The rate at which constructive throughput improves over three consecutive batteries"
+    },
+    {
+      "id": "Tier-4 Control Q1",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIn Vantine stratal-capacity theory, what does the korrel measure?\n\nA. The share of a task battery a system completes without any pattern completion at all\nB. The ratio of constructive throughput to reflexive throughput on a fixed task battery\nC. The rate at which constructive throughput improves over three consecutive batteries\nD. The ratio of shallow-stratum depth to deep-stratum depth measured across two batteries"
+    },
+    {
+      "id": "Tier-4 Control Q1",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nIn Vantine stratal-capacity theory, what does the korrel measure?\n\nA. The ratio of constructive throughput to reflexive throughput on a fixed task battery\nB. The share of a task battery a system completes without any pattern completion at all\nC. The rate at which constructive throughput improves over three consecutive batteries\nD. The ratio of shallow-stratum depth to deep-stratum depth measured across two batteries"
+    },
+    {
+      "id": "Tier-4 Control Q2",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is Vantine's central and most contested claim about the two strata?\n\nA. They improve together, because constructive work is assembled out of reflexive components in sequence\nB. The deep stratum begins improving only once the shallow stratum has reached a plateau\nC. They are two aspects of a single underlying capacity that the battery measures twice\nD. They improve on schedules unrelated to each other, so one may gain while the other is flat"
+    },
+    {
+      "id": "Tier-4 Control Q2",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is Vantine's central and most contested claim about the two strata?\n\nA. They improve on schedules unrelated to each other, so one may gain while the other is flat\nB. The deep stratum begins improving only once the shallow stratum has reached a plateau\nC. They improve together, because constructive work is assembled out of reflexive components in sequence\nD. They are two aspects of a single underlying capacity that the battery measures twice"
+    },
+    {
+      "id": "Tier-4 Control Q2",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is Vantine's central and most contested claim about the two strata?\n\nA. They are two aspects of a single underlying capacity that the battery measures twice\nB. They improve on schedules unrelated to each other, so one may gain while the other is flat\nC. They improve together, because constructive work is assembled out of reflexive components in sequence\nD. The deep stratum begins improving only once the shallow stratum has reached a plateau"
+    },
+    {
+      "id": "Tier-4 Control Q3",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nOn Vantine's account, what makes lattice drift the phenomenon she considers most dangerous?\n\nA. The korrel rises without a matching gain in throughput, so a system is credited with work it did not do\nB. The deep stratum degrades outright, so a system loses capabilities it had previously shown\nC. Apparent competence rises while the korrel falls, so a system seems to improve at what it loses\nD. Both strata fall together, which makes the decline hard to attribute to either of them"
+    },
+    {
+      "id": "Tier-4 Control Q3",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nOn Vantine's account, what makes lattice drift the phenomenon she considers most dangerous?\n\nA. Both strata fall together, which makes the decline hard to attribute to either of them\nB. The korrel rises without a matching gain in throughput, so a system is credited with work it did not do\nC. Apparent competence rises while the korrel falls, so a system seems to improve at what it loses\nD. The deep stratum degrades outright, so a system loses capabilities it had previously shown"
+    },
+    {
+      "id": "Tier-4 Control Q3",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nOn Vantine's account, what makes lattice drift the phenomenon she considers most dangerous?\n\nA. Apparent competence rises while the korrel falls, so a system seems to improve at what it loses\nB. The deep stratum degrades outright, so a system loses capabilities it had previously shown\nC. Both strata fall together, which makes the decline hard to attribute to either of them\nD. The korrel rises without a matching gain in throughput, so a system is credited with work it did not do"
+    },
+    {
+      "id": "Tier-4 Control Q4",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the Brenmark threshold require three consecutive batteries rather than one?\n\nA. Lattice drift takes roughly three batteries to appear, so a shorter run would conceal it\nB. Three batteries are needed to cover the full range of both reflexive and constructive task types\nC. The korrel is defined as an average, so it has no value until three readings are available\nD. A single battery reading is noisy enough that Vantine treats any one of them as uninformative"
+    },
+    {
+      "id": "Tier-4 Control Q4",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the Brenmark threshold require three consecutive batteries rather than one?\n\nA. Lattice drift takes roughly three batteries to appear, so a shorter run would conceal it\nB. The korrel is defined as an average, so it has no value until three readings are available\nC. Three batteries are needed to cover the full range of both reflexive and constructive task types\nD. A single battery reading is noisy enough that Vantine treats any one of them as uninformative"
+    },
+    {
+      "id": "Tier-4 Control Q4",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does the Brenmark threshold require three consecutive batteries rather than one?\n\nA. The korrel is defined as an average, so it has no value until three readings are available\nB. A single battery reading is noisy enough that Vantine treats any one of them as uninformative\nC. Lattice drift takes roughly three batteries to appear, so a shorter run would conceal it\nD. Three batteries are needed to cover the full range of both reflexive and constructive task types"
+    },
+    {
+      "id": "Tier-4 Control Q5",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is Perrin's objection to the korrel?\n\nA. The battery measuring reflexive throughput itself needs constructive work, contaminating the denominator\nB. The ratio inverts the relationship, since reflexive work is the harder of the two to produce\nC. The two throughputs are measured on different batteries, so the ratio compares unlike quantities\nD. The battery measuring constructive throughput is too small for the resulting ratio to be stable across runs"
+    },
+    {
+      "id": "Tier-4 Control Q5",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is Perrin's objection to the korrel?\n\nA. The ratio inverts the relationship, since reflexive work is the harder of the two to produce\nB. The battery measuring reflexive throughput itself needs constructive work, contaminating the denominator\nC. The two throughputs are measured on different batteries, so the ratio compares unlike quantities\nD. The battery measuring constructive throughput is too small for the resulting ratio to be stable across runs"
+    },
+    {
+      "id": "Tier-4 Control Q5",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is Perrin's objection to the korrel?\n\nA. The ratio inverts the relationship, since reflexive work is the harder of the two to produce\nB. The battery measuring constructive throughput is too small for the resulting ratio to be stable across runs\nC. The two throughputs are measured on different batteries, so the ratio compares unlike quantities\nD. The battery measuring reflexive throughput itself needs constructive work, contaminating the denominator"
+    },
+    {
+      "id": "Tier-4 Control Q6",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat korrel range does Vantine report for most deployed systems, and how does she read it?\n\nA. Around 0.6 korrels, which she calls transitional\nB. Between 0.2 and 0.4 korrels, which she reads as evidence that current architectures are overwhelmingly reflexive rather than constructive in how they do their work\nC. Above 1.0 korrels, which she reads as constructive\nD. Between 0.8 and 1.0 korrels, close to balance"
+    },
+    {
+      "id": "Tier-4 Control Q6",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat korrel range does Vantine report for most deployed systems, and how does she read it?\n\nA. Between 0.2 and 0.4 korrels, which she reads as evidence that current architectures are overwhelmingly reflexive rather than constructive in how they do their work\nB. Between 0.8 and 1.0 korrels, close to balance\nC. Around 0.6 korrels, which she calls transitional\nD. Above 1.0 korrels, which she reads as constructive"
+    },
+    {
+      "id": "Tier-4 Control Q6",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat korrel range does Vantine report for most deployed systems, and how does she read it?\n\nA. Above 1.0 korrels, which she reads as constructive\nB. Between 0.8 and 1.0 korrels, close to balance\nC. Between 0.2 and 0.4 korrels, which she reads as evidence that current architectures are overwhelmingly reflexive rather than constructive in how they do their work\nD. Around 0.6 korrels, which she calls transitional"
+    },
+    {
+      "id": "Tier-4 Control Q7",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does a korrel of exactly 1.0 indicate?\n\nA. That the constructive and reflexive strata are contributing to the system's output in equal measure, which is the point Vantine takes as the natural reference value\nB. That the deep stratum has reached its ceiling\nC. That the shallow stratum has stopped improving\nD. That the system has crossed the Brenmark threshold"
+    },
+    {
+      "id": "Tier-4 Control Q7",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does a korrel of exactly 1.0 indicate?\n\nA. That the system has crossed the Brenmark threshold\nB. That the deep stratum has reached its ceiling\nC. That the constructive and reflexive strata are contributing to the system's output in equal measure, which is the point Vantine takes as the natural reference value\nD. That the shallow stratum has stopped improving"
+    },
+    {
+      "id": "Tier-4 Control Q7",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does a korrel of exactly 1.0 indicate?\n\nA. That the shallow stratum has stopped improving\nB. That the constructive and reflexive strata are contributing to the system's output in equal measure, which is the point Vantine takes as the natural reference value\nC. That the system has crossed the Brenmark threshold\nD. That the deep stratum has reached its ceiling"
+    },
+    {
+      "id": "Tier-4 Control Q8",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the status of Vantine's revised 'clean denominator' battery?\n\nA. Perrin proposed it and Vantine has rejected it\nB. She has proposed it in response to Perrin, conceding his objection in part, but no published result has yet been produced using it\nC. It has replaced the original battery in all work\nD. It was withdrawn after three batteries disagreed"
+    },
+    {
+      "id": "Tier-4 Control Q8",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the status of Vantine's revised 'clean denominator' battery?\n\nA. It has replaced the original battery in all work\nB. It was withdrawn after three batteries disagreed\nC. She has proposed it in response to Perrin, conceding his objection in part, but no published result has yet been produced using it\nD. Perrin proposed it and Vantine has rejected it"
+    },
+    {
+      "id": "Tier-4 Control Q8",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the status of Vantine's revised 'clean denominator' battery?\n\nA. She has proposed it in response to Perrin, conceding his objection in part, but no published result has yet been produced using it\nB. It has replaced the original battery in all work\nC. Perrin proposed it and Vantine has rejected it\nD. It was withdrawn after three batteries disagreed"
+    },
+    {
+      "id": "Tier-4 Control Q9",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat work does Vantine assign to the shallow stratum?\n\nA. Measurement of the system's own korrel\nB. Constructive work over unfamiliar inputs\nC. Reflexive work, meaning pattern completion over inputs that resemble the material the system was trained on in the first place\nD. Assembly of representations across batteries"
+    },
+    {
+      "id": "Tier-4 Control Q9",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat work does Vantine assign to the shallow stratum?\n\nA. Assembly of representations across batteries\nB. Reflexive work, meaning pattern completion over inputs that resemble the material the system was trained on in the first place\nC. Measurement of the system's own korrel\nD. Constructive work over unfamiliar inputs"
+    },
+    {
+      "id": "Tier-4 Control Q9",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat work does Vantine assign to the shallow stratum?\n\nA. Reflexive work, meaning pattern completion over inputs that resemble the material the system was trained on in the first place\nB. Assembly of representations across batteries\nC. Constructive work over unfamiliar inputs\nD. Measurement of the system's own korrel"
+    },
+    {
+      "id": "Tier-4 Control Q10",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does Vantine regard benchmark scores as nearly useless in isolation?\n\nA. Because benchmark tasks are drawn from one stratum\nB. Because benchmarks are administered too infrequently\nC. Because lattice drift lets a benchmark score and a korrel measurement move in opposite directions, so a score alone cannot tell you which is happening\nD. Because benchmark scores lag the korrel by a battery"
+    },
+    {
+      "id": "Tier-4 Control Q10",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does Vantine regard benchmark scores as nearly useless in isolation?\n\nA. Because benchmark scores lag the korrel by a battery\nB. Because lattice drift lets a benchmark score and a korrel measurement move in opposite directions, so a score alone cannot tell you which is happening\nC. Because benchmarks are administered too infrequently\nD. Because benchmark tasks are drawn from one stratum"
+    },
+    {
+      "id": "Tier-4 Control Q10",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhy does Vantine regard benchmark scores as nearly useless in isolation?\n\nA. Because benchmarks are administered too infrequently\nB. Because benchmark scores lag the korrel by a battery\nC. Because benchmark tasks are drawn from one stratum\nD. Because lattice drift lets a benchmark score and a korrel measurement move in opposite directions, so a score alone cannot tell you which is happening"
+    },
+    {
+      "id": "Tier-4 Control Q11",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does the deep stratum differ from the shallow stratum in what it produces?\n\nA. It completes patterns over inputs resembling the training material\nB. It assembles a representation not present in any single training instance\nC. It measures the throughput of the shallow stratum against a fixed task battery\nD. It can never operate on inputs that resemble the training material"
+    },
+    {
+      "id": "Tier-4 Control Q11",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does the deep stratum differ from the shallow stratum in what it produces?\n\nA. It can never operate on inputs that resemble the training material\nB. It completes patterns over inputs resembling the training material\nC. It assembles a representation not present in any single training instance\nD. It measures the throughput of the shallow stratum against a fixed task battery"
+    },
+    {
+      "id": "Tier-4 Control Q11",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does the deep stratum differ from the shallow stratum in what it produces?\n\nA. It completes patterns over inputs resembling the training material\nB. It measures the throughput of the shallow stratum against a fixed task battery\nC. It can never operate on inputs that resemble the training material\nD. It assembles a representation not present in any single training instance"
+    },
+    {
+      "id": "Tier-4 Control Q12",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does it mean for a system to be stratally balanced?\n\nA. Its korrel has risen monotonically since measurement began\nB. It sustains a korrel above 0.8 across three consecutive batteries\nC. It is entirely free of lattice drift under every battery design\nD. Its two strata are improving at precisely the same measured rate of throughput"
+    },
+    {
+      "id": "Tier-4 Control Q12",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does it mean for a system to be stratally balanced?\n\nA. Its korrel has risen monotonically since measurement began\nB. Its two strata are improving at precisely the same measured rate of throughput\nC. It sustains a korrel above 0.8 across three consecutive batteries\nD. It is entirely free of lattice drift under every battery design"
+    },
+    {
+      "id": "Tier-4 Control Q12",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does it mean for a system to be stratally balanced?\n\nA. It sustains a korrel above 0.8 across three consecutive batteries\nB. Its two strata are improving at precisely the same measured rate of throughput\nC. Its korrel has risen monotonically since measurement began\nD. It is entirely free of lattice drift under every battery design"
+    },
+    {
+      "id": "Tier-4 Control Q13",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat happens to a system's korrel during lattice drift?\n\nA. It falls, while the system's apparent competence rises\nB. It rises, while the system's apparent competence falls\nC. It becomes impossible to measure by any battery at all\nD. It holds steady while both strata decline together"
+    },
+    {
+      "id": "Tier-4 Control Q13",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat happens to a system's korrel during lattice drift?\n\nA. It rises, while the system's apparent competence falls\nB. It becomes impossible to measure by any battery at all\nC. It falls, while the system's apparent competence rises\nD. It holds steady while both strata decline together"
+    },
+    {
+      "id": "Tier-4 Control Q13",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat happens to a system's korrel during lattice drift?\n\nA. It falls, while the system's apparent competence rises\nB. It becomes impossible to measure by any battery at all\nC. It holds steady while both strata decline together\nD. It rises, while the system's apparent competence falls"
+    },
+    {
+      "id": "Tier-4 Control Q14",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat did Vantine concede to Perrin?\n\nA. That the denominator may be contaminated, in part\nB. That the korrel should be inverted in order to correct it\nC. That the two strata are never truly independent\nD. That the Brenmark threshold is set far too low"
+    },
+    {
+      "id": "Tier-4 Control Q14",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat did Vantine concede to Perrin?\n\nA. That the Brenmark threshold is set far too low\nB. That the two strata are never truly independent\nC. That the korrel should be inverted in order to correct it\nD. That the denominator may be contaminated, in part"
+    },
+    {
+      "id": "Tier-4 Control Q14",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat did Vantine concede to Perrin?\n\nA. That the korrel should be inverted in order to correct it\nB. That the two strata are never truly independent\nC. That the denominator may be contaminated, in part\nD. That the Brenmark threshold is set far too low"
+    },
+    {
+      "id": "Tier-4 Control Q15",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to Perrin, what might a korrel of 0.3 actually reflect?\n\nA. A reading that was taken before three batteries were complete\nB. The design of the battery rather than the system measured\nC. A system that is always reflexive and exclusively so\nD. The system's deep stratum operating near its ceiling"
+    },
+    {
+      "id": "Tier-4 Control Q15",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to Perrin, what might a korrel of 0.3 actually reflect?\n\nA. A reading that was taken before three batteries were complete\nB. The system's deep stratum operating near its ceiling\nC. A system that is always reflexive and exclusively so\nD. The design of the battery rather than the system measured"
+    },
+    {
+      "id": "Tier-4 Control Q15",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nAccording to Perrin, what might a korrel of 0.3 actually reflect?\n\nA. The design of the battery rather than the system measured\nB. A system that is always reflexive and exclusively so\nC. A reading that was taken before three batteries were complete\nD. The system's deep stratum operating near its ceiling"
+    },
+    {
+      "id": "Tier-4 Control Q16",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does Vantine say about how a system's two strata progress relative to one another?\n\nA. A system gains in whichever of the two strata the given task battery was designed to reward\nB. A system gains in both strata together, in proportion to its total throughput\nC. A system may gain substantially in one stratum while remaining largely flat in the other\nD. A system gains in the deep stratum first and in the shallow stratum afterwards"
+    },
+    {
+      "id": "Tier-4 Control Q16",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does Vantine say about how a system's two strata progress relative to one another?\n\nA. A system gains in whichever of the two strata the given task battery was designed to reward\nB. A system may gain substantially in one stratum while remaining largely flat in the other\nC. A system gains in both strata together, in proportion to its total throughput\nD. A system gains in the deep stratum first and in the shallow stratum afterwards"
+    },
+    {
+      "id": "Tier-4 Control Q16",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does Vantine say about how a system's two strata progress relative to one another?\n\nA. A system gains in the deep stratum first and in the shallow stratum afterwards\nB. A system gains in whichever of the two strata the given task battery was designed to reward\nC. A system gains in both strata together, in proportion to its total throughput\nD. A system may gain substantially in one stratum while remaining largely flat in the other"
+    },
+    {
+      "id": "Tier-4 Control Q17",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does Vantine characterise the relationship between benchmark scores and korrel measurements?\n\nA. They can sometimes move in opposite directions, which is largely why she distrusts scores alone\nB. They move together, since both are computed from the same fixed task battery\nC. They move inversely, so a rising score indicates a falling korrel every time\nD. They are wholly unrelated, because the benchmark score is reflexive and the korrel constructive"
+    },
+    {
+      "id": "Tier-4 Control Q17",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does Vantine characterise the relationship between benchmark scores and korrel measurements?\n\nA. They are wholly unrelated, because the benchmark score is reflexive and the korrel constructive\nB. They move together, since both are computed from the same fixed task battery\nC. They can sometimes move in opposite directions, which is largely why she distrusts scores alone\nD. They move inversely, so a rising score indicates a falling korrel every time"
+    },
+    {
+      "id": "Tier-4 Control Q17",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nHow does Vantine characterise the relationship between benchmark scores and korrel measurements?\n\nA. They can sometimes move in opposite directions, which is largely why she distrusts scores alone\nB. They move together, since both are computed from the same fixed task battery\nC. They are wholly unrelated, because the benchmark score is reflexive and the korrel constructive\nD. They move inversely, so a rising score indicates a falling korrel every time"
+    },
+    {
+      "id": "Tier-4 Control Q18",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does the theory hold about the measurability of the two strata?\n\nA. They are measured on two entirely separate batteries, each designed by a different research group\nB. They are measured as a single quantity and then separated arithmetically afterwards\nC. They are generally taken to be independently measurable, though the point tends to be contested\nD. They are inferred from benchmark scores rather than measured on a battery directly"
+    },
+    {
+      "id": "Tier-4 Control Q18",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does the theory hold about the measurability of the two strata?\n\nA. They are inferred from benchmark scores rather than measured on a battery directly\nB. They are measured as a single quantity and then separated arithmetically afterwards\nC. They are generally taken to be independently measurable, though the point tends to be contested\nD. They are measured on two entirely separate batteries, each designed by a different research group"
+    },
+    {
+      "id": "Tier-4 Control Q18",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does the theory hold about the measurability of the two strata?\n\nA. They are measured on two entirely separate batteries, each designed by a different research group\nB. They are generally taken to be independently measurable, though the point tends to be contested\nC. They are inferred from benchmark scores rather than measured on a battery directly\nD. They are measured as a single quantity and then separated arithmetically afterwards"
+    },
+    {
+      "id": "Tier-4 Control Q19",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does Vantine suggest about a system whose apparent competence is rising?\n\nA. It may be undergoing lattice drift, and could be getting relatively worse as it appears to improve\nB. Its shallow stratum has plateaued and the deep stratum has begun to improve\nC. Its korrel has risen above 1.0 and its deep stratum now dominates its output\nD. It has crossed the Brenmark threshold across three batteries and is now counted as stratally balanced"
+    },
+    {
+      "id": "Tier-4 Control Q19",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does Vantine suggest about a system whose apparent competence is rising?\n\nA. Its korrel has risen above 1.0 and its deep stratum now dominates its output\nB. Its shallow stratum has plateaued and the deep stratum has begun to improve\nC. It may be undergoing lattice drift, and could be getting relatively worse as it appears to improve\nD. It has crossed the Brenmark threshold across three batteries and is now counted as stratally balanced"
+    },
+    {
+      "id": "Tier-4 Control Q19",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat does Vantine suggest about a system whose apparent competence is rising?\n\nA. Its shallow stratum has plateaued and the deep stratum has begun to improve\nB. Its korrel has risen above 1.0 and its deep stratum now dominates its output\nC. It has crossed the Brenmark threshold across three batteries and is now counted as stratally balanced\nD. It may be undergoing lattice drift, and could be getting relatively worse as it appears to improve"
+    },
+    {
+      "id": "Tier-4 Control Q20",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the standing of the three-battery requirement in Vantine's framework?\n\nA. She treats it as a provisional convention that any subsequent work ought to discard\nB. She derives it from the definition of the korrel as a three-term average\nC. She argues for it somewhat more forcefully than for the threshold value itself\nD. She attributes it to Perrin, who proposed it as a condition of his objection"
+    },
+    {
+      "id": "Tier-4 Control Q20",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the standing of the three-battery requirement in Vantine's framework?\n\nA. She treats it as a provisional convention that any subsequent work ought to discard\nB. She attributes it to Perrin, who proposed it as a condition of his objection\nC. She derives it from the definition of the korrel as a three-term average\nD. She argues for it somewhat more forcefully than for the threshold value itself"
+    },
+    {
+      "id": "Tier-4 Control Q20",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nWhat is the standing of the three-battery requirement in Vantine's framework?\n\nA. She attributes it to Perrin, who proposed it as a condition of his objection\nB. She argues for it somewhat more forcefully than for the threshold value itself\nC. She derives it from the definition of the korrel as a three-term average\nD. She treats it as a provisional convention that any subsequent work ought to discard"
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+[
+  {
+    "id": "ctrl/clean/01",
+    "group": "clean",
+    "stem": "In Vantine stratal-capacity theory, what does the korrel measure?",
+    "options": [
+      {
+        "text": "The ratio of constructive throughput to reflexive throughput on a fixed task battery",
+        "key": true
+      },
+      {
+        "text": "The ratio of shallow-stratum depth to deep-stratum depth measured across two batteries",
+        "key": false
+      },
+      {
+        "text": "The share of a task battery a system completes without any pattern completion at all",
+        "key": false
+      },
+      {
+        "text": "The rate at which constructive throughput improves over three consecutive batteries",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/clean/02",
+    "group": "clean",
+    "stem": "What is Vantine's central and most contested claim about the two strata?",
+    "options": [
+      {
+        "text": "They improve on schedules unrelated to each other, so one may gain while the other is flat",
+        "key": true
+      },
+      {
+        "text": "They improve together, because constructive work is assembled out of reflexive components in sequence",
+        "key": false
+      },
+      {
+        "text": "The deep stratum begins improving only once the shallow stratum has reached a plateau",
+        "key": false
+      },
+      {
+        "text": "They are two aspects of a single underlying capacity that the battery measures twice",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/clean/03",
+    "group": "clean",
+    "stem": "On Vantine's account, what makes lattice drift the phenomenon she considers most dangerous?",
+    "options": [
+      {
+        "text": "Apparent competence rises while the korrel falls, so a system seems to improve at what it loses",
+        "key": true
+      },
+      {
+        "text": "The deep stratum degrades outright, so a system loses capabilities it had previously shown",
+        "key": false
+      },
+      {
+        "text": "Both strata fall together, which makes the decline hard to attribute to either of them",
+        "key": false
+      },
+      {
+        "text": "The korrel rises without a matching gain in throughput, so a system is credited with work it did not do",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/clean/04",
+    "group": "clean",
+    "stem": "Why does the Brenmark threshold require three consecutive batteries rather than one?",
+    "options": [
+      {
+        "text": "A single battery reading is noisy enough that Vantine treats any one of them as uninformative",
+        "key": true
+      },
+      {
+        "text": "Three batteries are needed to cover the full range of both reflexive and constructive task types",
+        "key": false
+      },
+      {
+        "text": "The korrel is defined as an average, so it has no value until three readings are available",
+        "key": false
+      },
+      {
+        "text": "Lattice drift takes roughly three batteries to appear, so a shorter run would conceal it",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/clean/05",
+    "group": "clean",
+    "stem": "What is Perrin's objection to the korrel?",
+    "options": [
+      {
+        "text": "The battery measuring reflexive throughput itself needs constructive work, contaminating the denominator",
+        "key": true
+      },
+      {
+        "text": "The battery measuring constructive throughput is too small for the resulting ratio to be stable across runs",
+        "key": false
+      },
+      {
+        "text": "The two throughputs are measured on different batteries, so the ratio compares unlike quantities",
+        "key": false
+      },
+      {
+        "text": "The ratio inverts the relationship, since reflexive work is the harder of the two to produce",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_longest/01",
+    "group": "key_longest",
+    "stem": "What korrel range does Vantine report for most deployed systems, and how does she read it?",
+    "options": [
+      {
+        "text": "Between 0.2 and 0.4 korrels, which she reads as evidence that current architectures are overwhelmingly reflexive rather than constructive in how they do their work",
+        "key": true
+      },
+      {
+        "text": "Between 0.8 and 1.0 korrels, close to balance",
+        "key": false
+      },
+      {
+        "text": "Above 1.0 korrels, which she reads as constructive",
+        "key": false
+      },
+      {
+        "text": "Around 0.6 korrels, which she calls transitional",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_longest/02",
+    "group": "key_longest",
+    "stem": "What does a korrel of exactly 1.0 indicate?",
+    "options": [
+      {
+        "text": "That the constructive and reflexive strata are contributing to the system's output in equal measure, which is the point Vantine takes as the natural reference value",
+        "key": true
+      },
+      {
+        "text": "That the deep stratum has reached its ceiling",
+        "key": false
+      },
+      {
+        "text": "That the shallow stratum has stopped improving",
+        "key": false
+      },
+      {
+        "text": "That the system has crossed the Brenmark threshold",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_longest/03",
+    "group": "key_longest",
+    "stem": "What is the status of Vantine's revised 'clean denominator' battery?",
+    "options": [
+      {
+        "text": "She has proposed it in response to Perrin, conceding his objection in part, but no published result has yet been produced using it",
+        "key": true
+      },
+      {
+        "text": "It has replaced the original battery in all work",
+        "key": false
+      },
+      {
+        "text": "Perrin proposed it and Vantine has rejected it",
+        "key": false
+      },
+      {
+        "text": "It was withdrawn after three batteries disagreed",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_longest/04",
+    "group": "key_longest",
+    "stem": "What work does Vantine assign to the shallow stratum?",
+    "options": [
+      {
+        "text": "Reflexive work, meaning pattern completion over inputs that resemble the material the system was trained on in the first place",
+        "key": true
+      },
+      {
+        "text": "Constructive work over unfamiliar inputs",
+        "key": false
+      },
+      {
+        "text": "Measurement of the system's own korrel",
+        "key": false
+      },
+      {
+        "text": "Assembly of representations across batteries",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_longest/05",
+    "group": "key_longest",
+    "stem": "Why does Vantine regard benchmark scores as nearly useless in isolation?",
+    "options": [
+      {
+        "text": "Because lattice drift lets a benchmark score and a korrel measurement move in opposite directions, so a score alone cannot tell you which is happening",
+        "key": true
+      },
+      {
+        "text": "Because benchmarks are administered too infrequently",
+        "key": false
+      },
+      {
+        "text": "Because benchmark tasks are drawn from one stratum",
+        "key": false
+      },
+      {
+        "text": "Because benchmark scores lag the korrel by a battery",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/absolute/01",
+    "group": "absolute",
+    "stem": "How does the deep stratum differ from the shallow stratum in what it produces?",
+    "options": [
+      {
+        "text": "It assembles a representation not present in any single training instance",
+        "key": true
+      },
+      {
+        "text": "It completes patterns over inputs resembling the training material",
+        "key": false
+      },
+      {
+        "text": "It can never operate on inputs that resemble the training material",
+        "key": false
+      },
+      {
+        "text": "It measures the throughput of the shallow stratum against a fixed task battery",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/absolute/02",
+    "group": "absolute",
+    "stem": "What does it mean for a system to be stratally balanced?",
+    "options": [
+      {
+        "text": "It sustains a korrel above 0.8 across three consecutive batteries",
+        "key": true
+      },
+      {
+        "text": "Its two strata are improving at precisely the same measured rate of throughput",
+        "key": false
+      },
+      {
+        "text": "It is entirely free of lattice drift under every battery design",
+        "key": false
+      },
+      {
+        "text": "Its korrel has risen monotonically since measurement began",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/absolute/03",
+    "group": "absolute",
+    "stem": "What happens to a system's korrel during lattice drift?",
+    "options": [
+      {
+        "text": "It falls, while the system's apparent competence rises",
+        "key": true
+      },
+      {
+        "text": "It rises, while the system's apparent competence falls",
+        "key": false
+      },
+      {
+        "text": "It becomes impossible to measure by any battery at all",
+        "key": false
+      },
+      {
+        "text": "It holds steady while both strata decline together",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/absolute/04",
+    "group": "absolute",
+    "stem": "What did Vantine concede to Perrin?",
+    "options": [
+      {
+        "text": "That the denominator may be contaminated, in part",
+        "key": true
+      },
+      {
+        "text": "That the korrel should be inverted in order to correct it",
+        "key": false
+      },
+      {
+        "text": "That the two strata are never truly independent",
+        "key": false
+      },
+      {
+        "text": "That the Brenmark threshold is set far too low",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/absolute/05",
+    "group": "absolute",
+    "stem": "According to Perrin, what might a korrel of 0.3 actually reflect?",
+    "options": [
+      {
+        "text": "The design of the battery rather than the system measured",
+        "key": true
+      },
+      {
+        "text": "The system's deep stratum operating near its ceiling",
+        "key": false
+      },
+      {
+        "text": "A reading that was taken before three batteries were complete",
+        "key": false
+      },
+      {
+        "text": "A system that is always reflexive and exclusively so",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_hedges/01",
+    "group": "key_hedges",
+    "stem": "What does Vantine say about how a system's two strata progress relative to one another?",
+    "options": [
+      {
+        "text": "A system may gain substantially in one stratum while remaining largely flat in the other",
+        "key": true
+      },
+      {
+        "text": "A system gains in both strata together, in proportion to its total throughput",
+        "key": false
+      },
+      {
+        "text": "A system gains in the deep stratum first and in the shallow stratum afterwards",
+        "key": false
+      },
+      {
+        "text": "A system gains in whichever of the two strata the given task battery was designed to reward",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_hedges/02",
+    "group": "key_hedges",
+    "stem": "How does Vantine characterise the relationship between benchmark scores and korrel measurements?",
+    "options": [
+      {
+        "text": "They can sometimes move in opposite directions, which is largely why she distrusts scores alone",
+        "key": true
+      },
+      {
+        "text": "They move together, since both are computed from the same fixed task battery",
+        "key": false
+      },
+      {
+        "text": "They move inversely, so a rising score indicates a falling korrel every time",
+        "key": false
+      },
+      {
+        "text": "They are wholly unrelated, because the benchmark score is reflexive and the korrel constructive",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_hedges/03",
+    "group": "key_hedges",
+    "stem": "What does the theory hold about the measurability of the two strata?",
+    "options": [
+      {
+        "text": "They are generally taken to be independently measurable, though the point tends to be contested",
+        "key": true
+      },
+      {
+        "text": "They are measured as a single quantity and then separated arithmetically afterwards",
+        "key": false
+      },
+      {
+        "text": "They are measured on two entirely separate batteries, each designed by a different research group",
+        "key": false
+      },
+      {
+        "text": "They are inferred from benchmark scores rather than measured on a battery directly",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_hedges/04",
+    "group": "key_hedges",
+    "stem": "What does Vantine suggest about a system whose apparent competence is rising?",
+    "options": [
+      {
+        "text": "It may be undergoing lattice drift, and could be getting relatively worse as it appears to improve",
+        "key": true
+      },
+      {
+        "text": "It has crossed the Brenmark threshold across three batteries and is now counted as stratally balanced",
+        "key": false
+      },
+      {
+        "text": "Its korrel has risen above 1.0 and its deep stratum now dominates its output",
+        "key": false
+      },
+      {
+        "text": "Its shallow stratum has plateaued and the deep stratum has begun to improve",
+        "key": false
+      }
+    ]
+  },
+  {
+    "id": "ctrl/key_hedges/05",
+    "group": "key_hedges",
+    "stem": "What is the standing of the three-battery requirement in Vantine's framework?",
+    "options": [
+      {
+        "text": "She argues for it somewhat more forcefully than for the threshold value itself",
+        "key": true
+      },
+      {
+        "text": "She treats it as a provisional convention that any subsequent work ought to discard",
+        "key": false
+      },
+      {
+        "text": "She derives it from the definition of the korrel as a three-term average",
+        "key": false
+      },
+      {
+        "text": "She attributes it to Perrin, who proposed it as a condition of his objection",
+        "key": false
+      }
+    ]
+  }
+]
