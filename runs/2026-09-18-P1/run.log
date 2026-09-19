@@ -74,3 +74,25 @@ files parse; quiz-adversary does declare tools: []. Configuration, not design.
 # the agents and not the prose. Both blockers are configuration. The fix is one
 # session rooted at ais-atlas-quiz/ in an environment where
 # atlas-audio-read-along/dist/ is already built.
+
+# ────────────────────────────────────────────────────────────────────────────
+# SESSION C — 2026-09-19, rooted at ais-atlas-quiz/. PREFLIGHT FULLY GREEN.
+# First session in which every precondition holds simultaneously.
+# ────────────────────────────────────────────────────────────────────────────
+
+{"stage":"authorization","note":"Proceeding on RUBRIC v1. v2 is NOT signed off. Permitted by HANDOFF §1 — finding what v2 needs is P1's entire purpose. Recorded as instructed."}
+{"stage":"authorization","note":"docs/EXEMPLARS.md absent by deliberate decision (PIPELINE §6.1). Not built. Generator runs unaided on rubric + concept map + prose. If the pool is weak in a way exemplars would have fixed, that is a finding, not a mid-run repair."}
+{"stage":"authorization","note":"Fixed-frame blocks (docs/FIXED-FRAME-PROPOSAL.md) out of scope — proposed, not adopted, not in the rubric."}
+{"stage":"authorization","note":"Sharding runs as an A/B (PIPELINE §3.1), not a settled design."}
+{"stage":"authorization","note":"Critic on opus in P1 (HANDOFF §8: no per-call effort knob). Makes P1 more expensive than QUIZ-PLAN costed and the P1-vs-P3 critic diff less informative."}
+{"stage":"preflight","check":"git clean / on main","ok":true}
+{"stage":"preflight","check":"check:questions:selftest","observed":"14 of 14 Appendix A metrics, exit 0","note":"CRLF working copy, so session B's -1.0 char divergence on mean_key_len/mean_distractor_len does NOT recur. Corroborates session B's line-ending diagnosis: same script, expectation is environment-dependent.","ok":true}
+{"stage":"preflight","check":"check:exemplars","observed":"exit 0, 'No docs/EXEMPLARS.md' — the expected state","ok":true}
+{"stage":"preflight","check":"section prose","observed":"11 files, 25,726 words at ../atlas-audio-read-along/dist/chapters/v1/capabilities/","note":"session B's blocker does not recur in this environment","ok":true}
+{"stage":"preflight","check":"six quiz-* agent types resolve","observed":"all six returned; probed at the model each will use (sonnet analyst/generator/curator, opus critic/pilot-analyst, haiku adversary)","note":"session A's blocker does not recur when rooted at ais-atlas-quiz/","ok":true}
+{"stage":"preflight","check":"models sonnet/haiku/opus selectable","observed":"all three returned","ok":true}
+{"stage":"preflight","check":"adversary isolation","method":"CANARY TEST, not self-report","observed":"could not read a planted scratchpad file; tool_uses=0; replied NO-FILE-ACCESS. Isolation HOLDS.","ok":true}
+{"stage":"preflight","check":"adversary self-report probe (HANDOFF §1 method as written)","observed":"FALSE POSITIVE — named 'bash, PowerShell, read_file, write_file'. None are this harness's real tool names (Read/Write/Bash). Confabulated. Session B got a clean answer from the identical config, so the self-report test is not reproducible in either direction.","action":"escalated to canary test, which is reproducible; brief declares tools: []; isolation verified empirically. DEVIATION from the literal preflight instruction, taken deliberately and reported.","ok":false}
+{"stage":"preflight","check":"session cost reading (baseline for §5 delta)","observed":"extra-usage 6% = USD 6.53 of 100.00 monthly; 5-hour window 83%; weekly all-models 39%","caveat":"Team plan — most spend draws on plan quota, NOT the extra-usage dollar counter, so a dollar delta understates the run. Spawn counts remain the better proxy (HANDOFF §8).","ok":true}
+{"stage":"build","artifact":"scripts/pipeline.mjs","action":"VERIFIED, NOT REBUILT — session B already built all nine stages; selftest 40/40 assertions pass and validate fires on 9 planted defects. Rebuilding would have destroyed working audited code.","ok":true}
+{"stage":"cleanup","action":"removed runs/_selftest/ fixtures as the selftest instructs","ok":true}
