@@ -1,0 +1,594 @@
+{
+  "forecasting-timelines/sonnet-whole1/01": {
+    "correct_len": 143,
+    "distractor_lens": [
+      138,
+      117,
+      131
+    ],
+    "mean_distractor_len": 128.7,
+    "len_ratio": 1.11,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 5,
+    "max_over_min": 1.22,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 123,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole1/02": {
+    "correct_len": 108,
+    "distractor_lens": [
+      92,
+      121,
+      125
+    ],
+    "mean_distractor_len": 112.7,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.36,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "production",
+      "growth",
+      "stalls",
+      "software",
+      "hardware",
+      "keep",
+      "compute"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 132,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole1/03": {
+    "correct_len": 154,
+    "distractor_lens": [
+      146,
+      125,
+      130
+    ],
+    "mean_distractor_len": 133.7,
+    "len_ratio": 1.15,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 8,
+    "max_over_min": 1.23,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "around",
+      "objection"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet-whole1/04": {
+    "correct_len": 115,
+    "distractor_lens": [
+      92,
+      116,
+      131
+    ],
+    "mean_distractor_len": 113,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.42,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "assumptions"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 118,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet-whole1/05": {
+    "correct_len": 173,
+    "distractor_lens": [
+      110,
+      110,
+      112
+    ],
+    "mean_distractor_len": 110.7,
+    "len_ratio": 1.56,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 61,
+    "max_over_min": 1.57,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "route",
+      "task",
+      "based",
+      "scaling"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole1/06": {
+    "correct_len": 112,
+    "distractor_lens": [
+      135,
+      133,
+      120
+    ],
+    "mean_distractor_len": 129.3,
+    "len_ratio": 0.87,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 8,
+    "max_over_min": 1.21,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "constraint"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 117,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole1/07": {
+    "correct_len": 147,
+    "distractor_lens": [
+      130,
+      133,
+      127
+    ],
+    "mean_distractor_len": 130,
+    "len_ratio": 1.13,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 14,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "compute",
+      "one",
+      "biological",
+      "anchors"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 118,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet-whole1/08": {
+    "correct_len": 165,
+    "distractor_lens": [
+      122,
+      141,
+      162
+    ],
+    "mean_distractor_len": 141.7,
+    "len_ratio": 1.16,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 3,
+    "max_over_min": 1.35,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "short",
+      "conflated"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 121,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet-whole2/01": {
+    "correct_len": 169,
+    "distractor_lens": [
+      140,
+      168,
+      171
+    ],
+    "mean_distractor_len": 159.7,
+    "len_ratio": 1.06,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.22,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "chip"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 130,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole2/02": {
+    "correct_len": 155,
+    "distractor_lens": [
+      152,
+      159,
+      154
+    ],
+    "mean_distractor_len": 155,
+    "len_ratio": 1,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.05,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "framework",
+      "each"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 115,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole2/03": {
+    "correct_len": 154,
+    "distractor_lens": [
+      169,
+      148,
+      160
+    ],
+    "mean_distractor_len": 159,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "forecasting"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 119,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet-whole2/04": {
+    "correct_len": 144,
+    "distractor_lens": [
+      138,
+      160,
+      130
+    ],
+    "mean_distractor_len": 142.7,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.23,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "investment",
+      "efficiency",
+      "hardware",
+      "combination",
+      "exercise"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet-whole2/05": {
+    "correct_len": 159,
+    "distractor_lens": [
+      148,
+      184,
+      139
+    ],
+    "mean_distractor_len": 157,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.32,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "out",
+      "quality",
+      "further",
+      "scaling",
+      "chapter"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 104,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole2/06": {
+    "correct_len": 142,
+    "distractor_lens": [
+      124,
+      143,
+      160
+    ],
+    "mean_distractor_len": 142.3,
+    "len_ratio": 1,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.29,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "chapter",
+      "through",
+      "2030",
+      "well",
+      "alternative",
+      "out"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 95,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet-whole2/07": {
+    "correct_len": 173,
+    "distractor_lens": [
+      180,
+      161,
+      163
+    ],
+    "mean_distractor_len": 168,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.12,
+    "r5_matches": [
+      "according to the (chapter|text|textbook|section|author|atlas)"
+    ],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "research",
+      "difference"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 106,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet-whole2/08": {
+    "correct_len": 130,
+    "distractor_lens": [
+      136,
+      145,
+      160
+    ],
+    "mean_distractor_len": 147,
+    "len_ratio": 0.88,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 6,
+    "max_over_min": 1.23,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "biological",
+      "anchors",
+      "needed",
+      "range"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 130,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

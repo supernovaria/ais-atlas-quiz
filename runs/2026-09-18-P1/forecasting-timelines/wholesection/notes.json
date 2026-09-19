@@ -1,0 +1,6 @@
+[
+  {
+    "arm": "arm2.json",
+    "note": "Candidate 03 deliberately spans FT-2 and FT-4 as a single contrast/objection question rather than two separate ones, since the concept map lists them as a discrimination_pairs entry (readers collapse 'the section predicts 2045' into ignoring both the range-not-point idea and the magnitude of the underlying uncertainty that produces the range). FT-4's twelve-orders-of-magnitude figure is used only as non-load-bearing colour there; it is made load-bearing once, in candidate 08, to respect the section's single-durable-figure budget (R11). No idea in the target set was skipped; allocation across the 8 candidates followed the generator's stated strength ranking (FT-5 > FT-2 > FT-6 > FT-4 > FT-1) with 2/2/2/1/1 candidates respectively, counting the combined candidate toward both FT-2 and FT-4."
+  }
+]

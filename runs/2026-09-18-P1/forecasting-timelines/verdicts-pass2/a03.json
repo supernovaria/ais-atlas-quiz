@@ -1,0 +1,107 @@
+{
+  "id": "forecasting-timelines/sonnet/a03",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L3",
+  "failed_criteria": ["R9", "R14", "E3"],
+  "measurements": {
+    "correct_len": 176,
+    "distractor_lens": [160, 147, 154],
+    "mean_distractor_len": 153.7,
+    "len_ratio": 1.15,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 16,
+    "max_over_min": 1.2,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": ["effective", "compute"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["a", "b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": true,
+  "reasons": [
+    "R9: the key is the longest option and exceeds the second-longest by 16 characters; the extremum guard is 15. len_ratio 1.15 clears R8 and max_over_min 1.2 clears the 1.6x spread rule, so this is the extremum guard alone, but it is a gate-3 hard failure.",
+    "R14: two distinct failures. (i) Word-match tell — 'effective' and 'compute' are the stem's distinctive content words and the phrase 'effective compute' appears in exactly one option, the key; the rule requires it in two or more options or in none. The evaluative lead-ins compound it: the stem asks what is *wrong* with the reading, and the key is the only option whose lead-in says 'The reading is wrong' (one says 'Nothing is wrong', two say 'incomplete'), so a test-wise reader who skipped the section converges on the key from surface form. (ii) Entailment — distractor 1 ('hardware and software efficiency are minor refinements on top of the chip-count trend') entails distractor 3 ('software efficiency contributes a small correction layered on top of the dominant chip and hardware trend'). If 1 is true then 3 is true, so neither can be the unique answer and both are eliminable by logic alone, collapsing a four-way discrimination into a two-way one.",
+    "E3: the explanation names distractors by position ('Distractor 1', 'Distractor 2', 'Distractor 3') while no_shuffle is false, so the app shuffles the options and those labels point at nothing the reader can see. E3 requires identifying the misreading in a form the reader can locate, and R12's rationale explicitly rules positional references out for this project. The content of each named misreading is correct; only the referencing is broken."
+  ],
+  "preserve": "The idea and the shape: this is the concept map's own FT-5 vs FT-5b pair ('effective compute vs. raw chip count', named in RUBRIC §3.4 as this section's discrimination), the reader-says-X stem is the right Appendix B L3 opener, and distractor 2 — the 'they multiply so they must rise and fall together' misreading — is the best option in the set and must survive intact. Distractor 1 is the map's canonical family-(a) conflation and should survive with trimming. Only distractor 3, the option lengths, the lead-in framing, and the explanation's positional references need to change.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/a03",
+    "targets": ["FT-5"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A reader says: 'When people talk about compute growing, they really just mean AI labs have more and faster GPUs — chip count is what's doing the work.' What does this reading miss?",
+    "options": [
+      {
+        "text": "Chip count is one of three factors that multiply, and since each moves on its own, compute can double from better algorithms with chip count flat.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Hardware and software efficiency are real, but they are largely refinements on a chip-count trend that still drives most of the growth in compute.",
+        "key": false,
+        "provenance": "misreads 'Scaling laws track performance against compute, but \"compute\" means more than just counting GPUs' as a minor caveat on a chip-count story, rather than the redefinition the whole subsection rests on",
+        "family": "a"
+      },
+      {
+        "text": "Chip count matters, but because the three factors multiply, a slowdown in chip production can drag hardware and software efficiency down with it.",
+        "key": false,
+        "provenance": "misreads the multiplicative formula together with 'Each factor can improve independently' as implying the three terms rise and fall together, so that a chip-production slowdown pulls the other two down with it",
+        "family": "c"
+      },
+      {
+        "text": "Chip count matters, but the three factors are alternative routes: a lab that pushes chip production is trading away the efficiency gains it could have had.",
+        "key": false,
+        "provenance": "misreads 'You can build more chips without improving their speed. You can develop better software to make use of existing hardware.' as a menu of alternative routes a lab chooses between, missing 'When all three improve simultaneously—as they have been'",
+        "family": "b"
+      }
+    ],
+    "explanation": "Compute growth is the product of three terms — chip count, hardware efficiency, software efficiency — and each can move without the others. So 'more compute' is not reducible to 'more GPUs': better algorithms alone can double what a fixed fleet of chips delivers, which is why the total compounds faster than any single input. The option calling the efficiency factors refinements on a dominant chip trend is the naive picture being corrected here; on the trends reported, software gains have actually been the fastest of the three. The option that has a chip slowdown drag efficiency down with it reads multiplication as coupling — the terms multiply but move independently. The option treating the three as alternatives a lab picks between reverses that independence into a trade-off, when in fact all three have been rising at once. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Compute growth is chip count, hardware efficiency, and software efficiency multiplied together, each able to move on its own — so it is not a stand-in for chip count, and no one of the three is a hard stop on the other two.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who understood that the three terms multiply and move independently can state the consequence — a doubling with chip count flat — before seeing the options; the key is now that consequence rather than a paraphrase of the subsection's bolded lead sentence, so it cannot be matched by eye against a single remembered line.",
+      "cynic_test": "All four options open on the same concessive shape, none carries the stem's topic phrase uniquely, no option is eliminable from the stem's presupposition alone, and no distractor entails another — so there is no surface route to the key."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1].text",
+    "options[1].provenance",
+    "options[2].text",
+    "options[2].provenance",
+    "options[3]",
+    "explanation",
+    "takeaway",
+    "self_check.cover_test",
+    "self_check.cynic_test"
+  ],
+  "reviewer_note": "Check the plausibility of the one option I did not take from the concept map — 'the three factors are alternative routes you trade off between', built from the text's 'You can build more chips without improving their speed' list — because if it reads as obviously wrong the question drops back to a three-way, and the map's remaining FT-5 misconception (the car-analogy ranking) cannot be reused since it was what entailed distractor 1 in the original; also note the original key was close to a verbatim echo of the subsection's bolded lead sentence, which is why the rewritten key states the consequence instead."
+}

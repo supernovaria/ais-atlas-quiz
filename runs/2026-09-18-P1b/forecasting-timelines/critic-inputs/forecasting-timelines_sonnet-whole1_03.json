@@ -1,0 +1,92 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet-whole1/03",
+    "targets": [
+      "FT-2",
+      "FT-4"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A commentator writes: 'The Atlas predicts AGI will arrive around 2045.' Which objection is best supported by treating forecasts as consistency checks rather than as concrete predictions?",
+    "options": [
+      {
+        "text": "2045 is a rough center of a decades-wide range, not a confident prediction — the range's width, roughly twelve orders of magnitude, is what's informative.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The real problem is that 2045 is being presented as a confident, specific prediction, so the objection should focus on whether that year holds up.",
+        "key": false,
+        "provenance": "misreads the worked contrast ('somewhere in the 2030s-2050s range, with 2045 as a rough center — not a precise date') as the opposite, treating the center point as the claim under dispute",
+        "family": "c"
+      },
+      {
+        "text": "The wide error margins around any such estimate show the forecasting approach has failed to produce anything worth acting on.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the point that the margins are themselves the informative output",
+        "family": "b"
+      },
+      {
+        "text": "The estimate should be dismissed outright, since a method whose range spans that many orders of magnitude has clearly broken down.",
+        "key": false,
+        "provenance": "misreads the wide biological-anchors bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      }
+    ],
+    "explanation": "The stated figure is a rough center of a range spanning decades, not a specific date to defend or attack — forecasts here work as scenarios for testing whether your beliefs cohere, not as predictions to adopt. The range itself, spanning roughly twelve orders of magnitude of uncertainty in how much compute general intelligence needs, is the thing worth reasoning about. One wrong option treats 2045 as a confident prediction and argues about the year, missing that the center point was never the claim. Another treats wide error margins as proof the exercise failed, reversing the point that a margin's width is itself informative. A third dismisses the estimate because its range is wide, when an honestly wide range still bounds planning better than false precision would. (Forecasting Timelines)",
+    "takeaway": "A wide forecast range is the finding, not a failure — the width tells you how deep the uncertainty runs, and the midpoint was never the claim.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "roughly twelve orders of magnitude of uncertainty in compute-for-TAI estimates (durable, R11 budget candidate for this section)"
+    ],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasps 'forecasts as consistency checks' and the anchor-uncertainty range can articulate this objection without the options."
+    },
+    "note": "Targets FT-2 and FT-4 together via their discrimination_pairs entry (a claim like 'the chapter predicts 2045' conflates the two): FT-4 supplies the range/width and FT-2 supplies why a center point isn't the claim. A single contrast/objection question does this more cleanly than two separate ones would."
+  },
+  "measurements": {
+    "correct_len": 154,
+    "distractor_lens": [
+      146,
+      125,
+      130
+    ],
+    "mean_distractor_len": 133.7,
+    "len_ratio": 1.15,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 8,
+    "max_over_min": 1.23,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "around",
+      "objection"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

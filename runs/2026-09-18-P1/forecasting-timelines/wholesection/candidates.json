@@ -1,0 +1,824 @@
+[
+  {
+    "id": "forecasting-timelines/sonnet-whole1/01",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague says effective compute has grown mainly because data centers now hold far more GPUs than before. What does this overlook about how effective compute is defined?",
+    "options": [
+      {
+        "text": "Effective compute multiplies chip count by hardware efficiency by software efficiency, and each factor can rise independently of the other two.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Effective compute is essentially chip count restated in different units, so tracking chip totals alone already explains most of the trend.",
+        "key": false,
+        "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat rather than the section's central redefinition of the term",
+        "family": "a"
+      },
+      {
+        "text": "Effective compute rises only when chip count, hardware efficiency, and software efficiency increase at the same time.",
+        "key": false,
+        "provenance": "misreads the multiplication of three independent factors as implying they must move together, when the text says each 'can improve independently'",
+        "family": "c"
+      },
+      {
+        "text": "Effective compute is driven mostly by chip production, with hardware and software efficiency contributing smaller, secondary gains.",
+        "key": false,
+        "provenance": "misreads the car analogy (cars/speed/driving efficiency) as ranking the three factors by importance rather than establishing them as equal, multiplied terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is a product of three multiplicative, independently-improving terms — chip count, hardware efficiency per chip, and software efficiency — not a restatement of chip count in different units. Your colleague's framing is exactly the pre-redefinition view this idea sets aside: it treats compute as a hardware-only quantity, missing the software and per-chip efficiency multipliers stacked on top. The 'move together' option gets the multiplication backwards — independence, not lockstep, is the point; one term can hold still while the others keep rising. The 'chip production dominates' option ranks the three the way the car analogy's number-of-cars term might suggest, but all three enter the product as equal partners, not one primary driver with two minor add-ons. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Effective compute is chips times hardware efficiency times software efficiency, and 'more compute' claims that only count chips are missing two of the three multipliers.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who read the Effective Compute discussion can name the three multiplicative factors and their independence without seeing the options.",
+      "cynic_test": "A skipper might default to 'more chips = more compute' as the obviously-true-sounding option, but that's the exact naive view the question is built to catch, not a tell that works."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole1/02",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose chip production growth stalls completely for two years while software and hardware efficiency keep improving at their prior pace. Under the effective-compute framework, what happens to effective compute over those two years?",
+    "options": [
+      {
+        "text": "It keeps growing, just more slowly than before, because the other two factors keep compounding on their own.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It also stalls, because chip count is the base factor that the other two multiply on top of.",
+        "key": false,
+        "provenance": "misreads the multiplicative relationship as a dependency chain rather than three equal, independent terms",
+        "family": "c"
+      },
+      {
+        "text": "It stays flat, because real compute growth is fundamentally about hardware, and software gains don't add genuine compute.",
+        "key": false,
+        "provenance": "misreads 'compute means more than just counting GPUs' as false, treating compute as a hardware-only quantity",
+        "family": "a"
+      },
+      {
+        "text": "It shrinks, because a stall in chip production signals falling investment that would soon slow the other two factors as well.",
+        "key": false,
+        "provenance": "invents a causal coupling between the three factors that the text's independence claim ('each factor can improve independently') explicitly rules out",
+        "family": "b"
+      }
+    ],
+    "explanation": "Because the three terms multiply independently, a stall in one doesn't zero out the product — it just removes that term's contribution to the growth rate while the other two keep compounding, so effective compute keeps rising, only more slowly. The 'it also stalls' option treats chip count as a dependency the other two sit on top of rather than an equal, independent multiplicand; if that were true, effective compute could never grow faster than raw chip production does on its own. The 'stays flat' option denies that software gains count as compute at all, which is the exact redefinition this idea exists to correct. The 'shrinks' option invents a causal link from a hardware slowdown to falling investment elsewhere that the independence claim specifically rules out. (Forecasting Timelines → Effective Compute)",
+    "takeaway": null,
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understands the three factors multiply independently can reason through the stalled-chips case unaided.",
+      "cynic_test": "A skipper might guess 'it stalls too' as the intuitive worst-case answer, but that requires not having registered that the factors are independent, which the section states directly."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole1/03",
+    "targets": [
+      "FT-2",
+      "FT-4"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A commentator writes: 'The Atlas predicts AGI will arrive around 2045.' Which objection is best supported by treating forecasts as consistency checks rather than as concrete predictions?",
+    "options": [
+      {
+        "text": "2045 is a rough center of a decades-wide range, not a confident prediction — the range's width, roughly twelve orders of magnitude, is what's informative.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The real problem is that 2045 is being presented as a confident, specific prediction, so the objection should focus on whether that year holds up.",
+        "key": false,
+        "provenance": "misreads the worked contrast ('somewhere in the 2030s-2050s range, with 2045 as a rough center — not a precise date') as the opposite, treating the center point as the claim under dispute",
+        "family": "c"
+      },
+      {
+        "text": "The wide error margins around any such estimate show the forecasting approach has failed to produce anything worth acting on.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the point that the margins are themselves the informative output",
+        "family": "b"
+      },
+      {
+        "text": "The estimate should be dismissed outright, since a method whose range spans that many orders of magnitude has clearly broken down.",
+        "key": false,
+        "provenance": "misreads the wide biological-anchors bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      }
+    ],
+    "explanation": "The stated figure is a rough center of a range spanning decades, not a specific date to defend or attack — forecasts here work as scenarios for testing whether your beliefs cohere, not as predictions to adopt. The range itself, spanning roughly twelve orders of magnitude of uncertainty in how much compute general intelligence needs, is the thing worth reasoning about. One wrong option treats 2045 as a confident prediction and argues about the year, missing that the center point was never the claim. Another treats wide error margins as proof the exercise failed, reversing the point that a margin's width is itself informative. A third dismisses the estimate because its range is wide, when an honestly wide range still bounds planning better than false precision would. (Forecasting Timelines)",
+    "takeaway": "A wide forecast range is the finding, not a failure — the width tells you how deep the uncertainty runs, and the midpoint was never the claim.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "roughly twelve orders of magnitude of uncertainty in compute-for-TAI estimates (durable, R11 budget candidate for this section)"
+    ],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasps 'forecasts as consistency checks' and the anchor-uncertainty range can articulate this objection without the options."
+    },
+    "note": "Targets FT-2 and FT-4 together via their discrimination_pairs entry (a claim like 'the chapter predicts 2045' conflates the two): FT-4 supplies the range/width and FT-2 supplies why a center point isn't the claim. A single contrast/objection question does this more cleanly than two separate ones would."
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole1/04",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose you combine several individually plausible growth-rate assumptions about investment, software, and hardware, and the combination implies TAI arrives far sooner than you expected. What does treating forecasts as consistency checks, rather than predictions, say you should do with that surprise?",
+    "options": [
+      {
+        "text": "Treat it as a signal to re-examine one or more of the input assumptions, not as a new prediction to adopt outright.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Adopt the combined result as the best available estimate, since it draws on real trend data.",
+        "key": false,
+        "provenance": "misreads 'if you're surprised, maybe one of your input beliefs needs updating' as license to trust the combined output instead of as an instruction to re-examine an input",
+        "family": "d"
+      },
+      {
+        "text": "Conclude that the scaling laws underlying these trends must be mistaken, since they produced an implausible outcome.",
+        "key": false,
+        "provenance": "conflates a surprising forecast-consistency exercise with the separate empirical claim scaling laws make, misfiling the surprise under the wrong concept",
+        "family": "a"
+      },
+      {
+        "text": "Set the exercise aside, since a method capable of producing a surprising result isn't a trustworthy way to reason about the future.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, when producing a traceable surprise is exactly how the exercise is useful",
+        "family": "b"
+      }
+    ],
+    "explanation": "Forecasting here works as a consistency check: when combining several individually plausible growth-rate assumptions yields a conclusion that surprises you, that surprise is information about your inputs, not a new fact about the world. The right move is to go back and identify which input rate you were overconfident in. One wrong option treats the surprising combined result as itself the best estimate — exactly the trust-the-output move the exercise warns against. Another blames the scaling laws behind the inputs, filing a forecasting surprise under the wrong concept entirely. A third gives up on the method, when producing a surprising result you can trace back to a shaky assumption is precisely what makes the exercise useful. (Forecasting Timelines)",
+    "takeaway": null,
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood forecasts-as-consistency-checks can state the 'update the input' move without seeing the options.",
+      "cynic_test": "A skipper might pick 'adopt the combined result' since it sounds like the exercise's payoff, but that inverts the stated instruction to treat surprise as a prompt to update inputs."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole1/05",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose future research shows that AI-generated synthetic data reliably degrades model quality, closing off that escape route from the data wall, while multimodal data and task-based self-play remain viable. What follows for whether the data wall stops scaling?",
+    "options": [
+      {
+        "text": "The data wall's fate isn't settled — the other two routes are independent of synthetic data's failure, so it still depends on how well multimodal and self-play data perform.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The data wall stops scaling, because synthetic data was the primary route and the other two were only backups.",
+        "key": false,
+        "provenance": "misreads the three escape routes as a ranked list with one primary path, when the text presents them as parallel, independent alternatives",
+        "family": "c"
+      },
+      {
+        "text": "The data wall stops mattering, because multimodal data alone was already described as enough to cover the gap.",
+        "key": false,
+        "provenance": "misreads the stated 3-10x multimodal expansion estimate as a guaranteed sufficiency rather than a range that leaves the outcome open",
+        "family": "a"
+      },
+      {
+        "text": "The data wall stops mattering, because task-based self-play can already replace pretraining data for most tasks.",
+        "key": false,
+        "provenance": "misreads the AlphaZero example as an established general capability rather than a route the text flags as 'still very speculative' and limited to tasks formalizable with explicit rules",
+        "family": "b"
+      }
+    ],
+    "explanation": "The three data-wall escape routes are independent of each other, so one route failing doesn't settle whether scaling continues — that depends on how the remaining two perform. Treating synthetic data as the 'primary' route with the others as backups isn't how the section frames them; it lists three parallel alternatives, not a ranked list. Treating multimodal data alone as already sufficient overstates what a stated multiplier range guarantees — a 3-10x expansion is a range, not a certainty, and doesn't settle the outcome by itself. And generalizing task-based self-play, which is explicitly flagged as speculative and currently limited to tasks with formalizable rules like Go or Chess, to cover most future tasks overstates how far that route has actually been shown to extend. (Forecasting Timelines → Training Data)",
+    "takeaway": "The three data-wall escape routes are independent, so one failing tells you nothing about the other two — the honest answer is 'it depends,' not a verdict either way.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who registers that the three routes are independent alternatives can say 'it depends on the other two' without seeing the options.",
+      "cynic_test": "A skipper might pick whichever option sounds most decisive (stops, or continues fine), but the section deliberately withholds a verdict, which the confident-sounding options both fabricate."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole1/06",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A reader concludes: 'Once we exhaust public text on the internet, AI scaling grinds to a halt.' What does treating the data wall as a soft constraint with multiple escape routes show is wrong with this reasoning?",
+    "options": [
+      {
+        "text": "The conclusion skips the point that text exhaustion closes off only one input among several viable alternatives.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The conclusion is correct, since the alternative data sources are speculative research directions rather than usable substitutes today.",
+        "key": false,
+        "provenance": "over-generalizes the 'still very speculative' caveat attached specifically to task-based self-play to all three routes, when synthetic data is described as already working for some domains",
+        "family": "a"
+      },
+      {
+        "text": "The conclusion has cause and effect backwards — running low on text data would speed up scaling by forcing more efficient algorithms.",
+        "key": false,
+        "provenance": "invents an accelerating effect from data exhaustion that has no basis in the text's account of the wall",
+        "family": "b"
+      },
+      {
+        "text": "The conclusion is correct, but for a different reason: effective compute, not data, is really the constraint on scaling.",
+        "key": false,
+        "provenance": "borrows the true effective-compute idea from earlier in the section and drops it into a question about data, treating two separately-examined constraints as one",
+        "family": "d"
+      }
+    ],
+    "explanation": "Exhausting public text closes off one input to training, not all of them — the same discussion that names the text wall immediately lists several independent alternatives, so exhaustion alone doesn't determine whether scaling stops. The option calling the alternatives purely speculative overgeneralizes a caveat attached to one route, self-play, to all three; synthetic data is described as already working for some domains today. The 'backwards causality' option invents an accelerating effect exhaustion doesn't have. And the option crediting effective compute instead of data borrows a true idea from elsewhere and drops it into a question it doesn't answer — the data wall and the compute trend are separate constraints, examined separately. (Forecasting Timelines → Training Data)",
+    "takeaway": null,
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who read the three escape routes can name the reader's error (ignoring the alternatives) without seeing the options.",
+      "cynic_test": "A skipper might agree the reader's claim 'sounds right' since running out of data sounds intuitively limiting, but the section explicitly lists working alternatives that block that intuition."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole1/07",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Not knowing how much compute general intelligence requires is compared to not knowing whether something costs one dollar or a trillion dollars — an uncertainty spanning many orders of magnitude. What point does this comparison make about the biological-anchors estimates?",
+    "options": [
+      {
+        "text": "The comparison shows that the disagreement is about which reference process is even the right one to use, not about a range with a knowable middle.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The comparison shows that the upper and lower bounds are about equally likely, so the true figure is near the middle of the range.",
+        "key": false,
+        "provenance": "misreads the dollar-or-trillion-dollars analogy as implying a uniform-ish distribution rather than illustrating genuine deep uncertainty about which reference process is right",
+        "family": "b"
+      },
+      {
+        "text": "The comparison shows that the biological-anchors approach has failed and should be replaced with a method giving a narrower estimate.",
+        "key": false,
+        "provenance": "misreads the wide bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      },
+      {
+        "text": "The comparison shows that, like prices, compute requirements will converge over time as research settles on a consensus figure.",
+        "key": false,
+        "provenance": "borrows a market-convergence intuition from the dollar analogy's surface framing that has no counterpart in the text's account of structural, method-level uncertainty",
+        "family": "d"
+      }
+    ],
+    "explanation": "The comparison is about which underlying reference process for estimating brain-equivalent compute is even the right one to use, not about a symmetric spread around a knowable true value — deep uncertainty of that kind doesn't collapse into 'probably the middle.' The 'equally likely, so probably the middle' option is exactly the reasoning the dollar-or-trillion-dollars analogy exists to block: a range that wide reflects disagreement about method, not a distribution you can average across. The 'method has failed' option mistakes an honestly wide range for a broken estimate, when width is the finding here, not a defect. The 'will converge like prices' option borrows a market intuition with no analogue in this kind of structural uncertainty. (Forecasting Timelines)",
+    "takeaway": "Twelve orders of magnitude of uncertainty means disagreement about which method is right, not a wide-but-centered guess — there's no honest 'probably the middle.'",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasps why the biological-anchors range is so wide can state the 'disagreement about method, not a symmetric spread' point unaided.",
+      "cynic_test": "A skipper might reach for 'probably the middle' as the sensible-sounding default for any wide range, but that is precisely the intuition the analogy is written to defeat."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole1/08",
+    "targets": [
+      "FT-1"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A reader says: 'If we expect a short AI timeline, that also means we should expect a fast, explosive takeoff.' What is being conflated here?",
+    "options": [
+      {
+        "text": "Timelines address when transformative AI arrives; takeoff speed — a separate question this section sets aside — addresses how fast capabilities grow once it's close.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Nothing is being conflated — a short timeline and a fast takeoff are just two ways of describing the same underlying risk.",
+        "key": false,
+        "provenance": "misreads 'predicting when AI automates cognitive labor' (a timelines question) as equivalent to the takeoff-speed question this section does not address",
+        "family": "a"
+      },
+      {
+        "text": "The framing has it backwards: takeoff speed is what determines when transformative AI arrives, and timelines describe what happens afterward.",
+        "key": false,
+        "provenance": "reverses which concept answers 'when' and which answers 'what happens after,' swapping the two definitions this section and Takeoff draw apart",
+        "family": "b"
+      },
+      {
+        "text": "The distinction barely matters in practice, since timeline forecasts are mostly of academic interest and don't change which safety approach is worth pursuing now.",
+        "key": false,
+        "provenance": "misreads the opening contrast (soon-arriving TAI needs fast, current-system-compatible approaches; distant TAI leaves room for theoretical work) as background motivation rather than a claim that timeline length is itself strategy-determining",
+        "family": "c"
+      }
+    ],
+    "explanation": "Timelines and takeoff speed answer different questions: timelines are about when transformative AI arrives, and takeoff speed — a question this section sets aside — is about how fast capabilities grow once it's close. A short timeline is compatible with either a gradual or an explosive transition once TAI is near. The 'nothing is being conflated' option collapses that distinction entirely. The 'backwards' option swaps which concept answers 'when' and which answers 'what happens after.' The 'barely matters' option gets it backwards in a different way: timeline length is presented as what determines which safety strategies are even viable, from fast current-system-compatible fixes to slower theoretical research — the opposite of an academic detail with no bearing on strategy. (Forecasting Timelines)",
+    "takeaway": "A short timeline says nothing on its own about whether the transition is gradual or explosive — that's a separate question the section deliberately leaves open.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who separates 'when' from 'how fast' can name the conflation without seeing the options.",
+      "cynic_test": "A skipper might treat 'short timeline' and 'fast takeoff' as synonyms because both sound urgent, but the section explicitly reserves takeoff speed for a different discussion, which the key names directly."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/01",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague says: \"Chip production growth has slowed sharply this year, so overall effective compute growth must be slowing too.\" What does the effective-compute framework imply about this claim?",
+    "options": [
+      {
+        "text": "The claim doesn't follow: effective compute is the product of three independently-improving factors, so a slowdown in one alone doesn't determine the trend in the total.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The claim is correct, because effective compute is essentially a measure of how many chips exist and how fast production of them is growing.",
+        "key": false,
+        "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat rather than the section's central redefinition, treating effective compute as chip count itself",
+        "family": "a"
+      },
+      {
+        "text": "The claim is correct: because the three factors combine multiplicatively, they tend to rise and fall together, so a slowdown in any one signals a slowdown in the whole.",
+        "key": false,
+        "provenance": "misreads the multiplication of three independent factors as implying correlated movement, when the text states each factor 'can improve independently'",
+        "family": "c"
+      },
+      {
+        "text": "The claim overstates the risk, since chip production is a minor contributor next to the dominant software and hardware efficiency trends and its slowdown barely registers.",
+        "key": false,
+        "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing them as equal, independent multiplicative terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is defined as software efficiency times hardware efficiency times number of chips — three factors the chapter explicitly says 'can improve independently.' A slowdown in chip production alone tells you nothing about the other two, so it doesn't determine whether the total is slowing. The most tempting wrong answer treats a plateau in one factor as a plateau in the whole, which reverses the section's actual point: the total compounds faster than any single trend precisely because the factors don't have to move together. The chip-count-only reading is also common outside this text — it's the pre-chapter habit of equating 'more compute' with 'more GPUs' that the section opens by rejecting. None of the three factors is described as dominant over the others. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Effective compute multiplies three independently-moving factors, so one of them stalling doesn't mean the whole thing stalls.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who has internalized the three-factor multiplicative definition can state that one factor's slowdown doesn't determine the total, without seeing the options.",
+      "cynic_test": "A test-wise skipper might pick the 'minor contributor' distractor assuming there's always a dominant driver, but nothing in the stem hints at a ranking, so that instinct isn't rewarded."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/02",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Lab A buys ten times more GPUs but makes no changes to its training algorithms or hardware generation. Lab B keeps its chip count fixed but doubles its algorithmic efficiency. According to the effective-compute framework, what happens to each lab's effective compute?",
+    "options": [
+      {
+        "text": "Both labs increase effective compute, since each factor multiplies the total independently — more chips alone raises it just as more efficiency alone does.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Only Lab B increases effective compute, since chip count measures raw hardware and isn't part of the 'effective' variable the framework actually tracks.",
+        "key": false,
+        "provenance": "misreads 'compute means more than just counting GPUs' as excluding chip count from effective compute altogether, rather than as one of its three multiplicative terms",
+        "family": "a"
+      },
+      {
+        "text": "Only Lab A increases effective compute, because chip count is the dominant driver and software efficiency only pays off once more hardware exists to run it on.",
+        "key": false,
+        "provenance": "misreads the car analogy as ranking the three factors by importance, treating chip count as a precondition the others depend on",
+        "family": "c"
+      },
+      {
+        "text": "Neither lab meaningfully increases effective compute, since the three-factor product requires all terms to grow together for the total to register a gain.",
+        "key": false,
+        "provenance": "misreads 'each factor can improve independently' as meaning all three must move together for growth to count, rather than each independently multiplying the total",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is software efficiency times hardware efficiency times chip count, and the chapter is explicit that 'each factor can improve independently.' Multiplying by ten (Lab A's chip count) or by two (Lab B's efficiency) both increase the product regardless of what happens to the other two terms — that's exactly why the total can compound faster than any single trend. The most common wrong turn here treats one term as a precondition for the others to matter, as if hardware has to scale first before software gains count; the three terms are peers in a product, not a sequence. Neither lab's gain depends on what the other lab does. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "In a multiplicative relationship, each factor raises the total on its own — none of them gatekeeps the others.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — given the multiplicative definition, a reader can predict both labs' effective compute increases without seeing the options.",
+      "cynic_test": "A skipper might assume 'more chips' is the 'real' compute increase and pick the ranking distractor, but the stem's explicit framing of three independent multipliers removes that shortcut."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/03",
+    "targets": [
+      "FT-2",
+      "FT-4"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A friend tells you: \"The Atlas's forecasting section predicts AGI will arrive in 2045.\" Which objection does the section's own framing best support?",
+    "options": [
+      {
+        "text": "The section treats such a figure as the center of a decades-wide range, driven by deep uncertainty about compute requirements — not a prediction to adopt.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "There's no real objection here — the section's worked examples of growth-rate assumptions are exactly the kind of predictions it wants readers to adopt as a single date.",
+        "key": false,
+        "provenance": "misreads the worked example ('if you think investment grows 5x per year AND...') as the section asserting those input rates as a prediction, rather than as an illustration for testing belief-consistency",
+        "family": "c"
+      },
+      {
+        "text": "The objection is that the section's wide error margins make the whole forecasting exercise uninformative and not worth taking seriously in practice.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the section's point that the margin's width is itself informative",
+        "family": "b"
+      },
+      {
+        "text": "The objection is that the twelve-orders-of-magnitude spread in the biological-anchors estimates shows the method has failed and its numbers should be discarded.",
+        "key": false,
+        "provenance": "misreads the wide bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      }
+    ],
+    "explanation": "The section is explicit that a stated figure like '2045' means 'somewhere in the 2030s-2050s range, with 2045 as a rough center' — and that width isn't a flaw, it comes from genuine uncertainty about how much compute matching human-level intelligence takes, uncertainty the biological-anchors estimates bound to about twelve orders of magnitude. Treating '2045' as a prediction to adopt is exactly the reading the section warns against. The wide-margins distractor inverts the section's stated purpose: the margins are the informative part, not evidence the exercise failed. And a twelve-order-of-magnitude spread isn't a broken method — it's an honest report of how little we currently know, still narrow enough to be useful for planning. (Forecasting Timelines → Training Data)",
+    "takeaway": "A stated timeline figure is a range's center, and the range's width — not the center — is the section's actual finding.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understands the section's stated purpose (ranges as reasoning tools, wide uncertainty as honest reporting) can identify the key objection without seeing options.",
+      "cynic_test": "A skipper might pick 'no real objection' assuming worked examples are meant literally, but the stem flags a claim under evaluation, which won't reward that surface read alone."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/04",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "The section walks through an example: assume investment grows 5x per year, software efficiency improves 3x per year, and hardware scales 15% a year, then trace what that combination implies about automation. What is this exercise meant to illustrate?",
+    "options": [
+      {
+        "text": "A method for testing whether your own beliefs about the future are internally consistent, not a set of predictions the section itself is making.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "A prediction the section is making: it expects investment, efficiency, and hardware to actually grow at roughly these rates going forward.",
+        "key": false,
+        "provenance": "misreads the worked example ('if you think investment grows 5x per year AND...') as the section asserting those input rates as its own forecast, rather than as an illustration of a reasoning method",
+        "family": "c"
+      },
+      {
+        "text": "A demonstration that once individual growth-rate assumptions are each independently plausible, their combination is automatically the correct forecast to adopt.",
+        "key": false,
+        "provenance": "misreads 'if you're surprised, maybe one of your input beliefs needs updating' as license to trust the combined output instead of as an instruction to re-examine an input",
+        "family": "d"
+      },
+      {
+        "text": "An illustration that forecasting produces such wide error margins that the exercise provides no real information about the future.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the section's point that the margins are themselves informative",
+        "family": "b"
+      }
+    ],
+    "explanation": "The section states its purpose directly: forecasting methods aren't concrete predictions but scenarios that let you check whether your beliefs cohere. Plugging in growth-rate assumptions and seeing what they jointly imply is a consistency check — if the output surprises you, that's a signal to revisit an input belief, not a reason to trust the combined number over your judgment. The most common wrong turn treats individually plausible inputs as guaranteeing a correct combined output, which drops the section's actual instruction to re-examine rather than adopt. Distractor 1 mistakes the illustration for the section's own forecast; distractor 3 gets the point backwards — wide margins are the informative result, not a sign the exercise failed. (Forecasting Timelines → Training Data)",
+    "takeaway": "A forecasting exercise's job is to test whether your beliefs cohere, not to generate a number you should now believe.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who has read the section's stated framing of forecasting as a consistency check can state the exercise's purpose unaided.",
+      "cynic_test": "A skipper might assume any worked numeric example must be the text's actual prediction and pick that distractor, but the surrounding sentences explicitly frame it as conditional reasoning, which a careful reader catches."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/05",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose synthetic data turns out to be lower quality than hoped, and labs stop relying on it as a route around the data wall. Does this mean data availability necessarily halts further scaling, on the chapter's own framing of the wall?",
+    "options": [
+      {
+        "text": "No — the chapter treats synthetic data as one of three independent routes alongside multimodal and task-based data, so losing one doesn't close off the others.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Yes — running out of high-quality public text was described as an unavoidable hard limit on further training, so losing any workaround ends scaling.",
+        "key": false,
+        "provenance": "misreads the isolated statement about hitting the text-data wall, ignoring the escape routes the same passage lists immediately after",
+        "family": "c"
+      },
+      {
+        "text": "Only partially — synthetic data was always described as a limited supplement to real text rather than a genuine substitute, so its loss mostly just accelerates the same eventual limit.",
+        "key": false,
+        "provenance": "misreads 'AI-generating its own training data removes the constraint entirely — if the outputs are high enough quality' as a partial fix rather than a route that removes the constraint outright under its stated condition",
+        "family": "a"
+      },
+      {
+        "text": "No — but only because task-based self-play has already been shown to generalize reliably to arbitrary real-world tasks at production scale.",
+        "key": false,
+        "provenance": "misreads the AlphaZero example, which the text explicitly flags as 'still very speculative' beyond games, as an already-proven general method",
+        "family": "b"
+      }
+    ],
+    "explanation": "The chapter lists three independent escape routes from the data wall — multimodal data, synthetic data, and task-based self-play — and frames whether the wall actually constrains scaling as depending on how well these alternatives work, not on any one of them succeeding. Losing synthetic data removes one option, not the whole set; multimodal and task-based data remain live possibilities. The two wrong turns both overcorrect: one treats the original text-data limit as unavoidable regardless of alternatives, the other treats task-based self-play as already proven at scale when the chapter explicitly calls extending it beyond games 'still very speculative.' (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall's three escape routes are independent alternatives, so losing one doesn't reopen the wall.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who knows the three routes are independent alternatives can answer 'no, other routes remain' without seeing the options.",
+      "cynic_test": "A skipper might assume any lost option is catastrophic (a 'wall' sounds absolute) and pick the hard-limit distractor, but the stem asks them to reason about independence, which the surface reading skips."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/06",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "The chapter frames whether the data wall will actually constrain scaling through 2030 as depending on how well several alternative data sources work out. Which of these best matches that framing?",
+    "options": [
+      {
+        "text": "It's an open, conditional question — the outcome depends on how well multimodal, synthetic, and task-based data substitute for exhausted text.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It's already settled: once public text data is used up, scaling necessarily stops regardless of any alternative data source.",
+        "key": false,
+        "provenance": "misreads the 'wall' framing as a definite stop, ignoring the sentence that immediately conditions the outcome on 'how well these alternatives work'",
+        "family": "c"
+      },
+      {
+        "text": "It's already settled the other way: the mere existence of multiple escape routes guarantees scaling continues smoothly through 2030 and beyond.",
+        "key": false,
+        "provenance": "misreads the existence of three routes as a guarantee of success rather than as alternatives whose actual performance is still uncertain",
+        "family": "a"
+      },
+      {
+        "text": "It hinges almost entirely on how far self-play methods generalize beyond games, since the chapter singles that route out as the deciding factor among the three.",
+        "key": false,
+        "provenance": "misreads the AlphaZero example as singled out as the decisive route rather than as one of three routes offered on equal footing",
+        "family": "b"
+      }
+    ],
+    "explanation": "The chapter is explicit that whether the wall constrains scaling 'depends on how well these alternatives work' — it names the outcome as conditional on the escape routes' performance, not as settled in either direction. Treating exhaustion as an automatic stop ignores that conditioning clause entirely; treating the routes' mere existence as a guarantee makes the same mistake the other way, since a possible substitute isn't a proven one. No single route is singled out as decisive — multimodal, synthetic, and task-based data are offered as three parallel, independently-uncertain options. (Forecasting Timelines → Training Data)",
+    "takeaway": null,
+    "stem_format": "classification",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who has read the conditional framing sentence can state that the outcome depends on the routes' success, unaided.",
+      "cynic_test": "A skipper might pick the 'definite stop' option because 'wall' sounds absolute, but the stem quotes the section's own conditional language, undercutting that shortcut."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/07",
+    "targets": [
+      "FT-1"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Group A expects transformative AI to automate cognitive labor within a decade; Group B expects this around 2070. Both are now deciding how to spend the next five years of safety research. According to the chapter's framing, what is the most defensible difference in what each group should prioritize?",
+    "options": [
+      {
+        "text": "Group A should favor safety work compatible with current systems and quick to deploy, while Group B has room for slower, more foundational alignment and governance research.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "There's no meaningful difference in what to prioritize now — the safety strategies worth developing are the same regardless of timeline, and only a shared sense of urgency changes.",
+        "key": false,
+        "provenance": "misreads the opening contrast (soon-arriving TAI needs fast, current-system-compatible approaches; distant TAI leaves room for theoretical work) as background motivation rather than a claim that timeline length is itself strategy-determining",
+        "family": "c"
+      },
+      {
+        "text": "Group A should prepare for a fast, explosive jump in capabilities while Group B should expect a slow, gradual one, since a short timeline implies a fast takeoff.",
+        "key": false,
+        "provenance": "misreads 'predicting when AI automates cognitive labor' (a timelines question) as equivalent to the separate takeoff-speed question about how capabilities grow once the threshold is approached",
+        "family": "a"
+      },
+      {
+        "text": "Group B should prioritize approaches compatible with today's systems, since a longer timeline means today's systems are the ones eventually scaled up to reach TAI.",
+        "key": false,
+        "provenance": "misreads 'breathing room for fundamental alignment research' as instead endorsing near-term system compatibility for the long-timeline case, reversing which group has that room",
+        "family": "b"
+      }
+    ],
+    "explanation": "The section's opening point is that timeline length itself determines which strategies are viable: a near-term arrival leaves no time for slow theoretical work, so approaches must be fast and compatible with systems that already exist, while a distant arrival buys room for fundamental research, governance-building, and evaluation methods that take years to mature. That's a claim about strategy, not just motivation — distractor 1 treats it as mere framing. Distractor 2 conflates a timelines question (when TAI arrives) with a takeoff-speed question (how fast capabilities grow once close), which this section doesn't address. Distractor 3 gets the resource logic backwards. (Forecasting Timelines → Training Data)",
+    "takeaway": "How far off TAI is doesn't just set urgency — it changes which safety strategies are even viable to pursue.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who has internalized the opening contrast can state the strategic difference between the two groups without seeing the options.",
+      "cynic_test": "A skipper might pick 'no difference, just urgency' assuming timeline questions are purely academic framing, but the stem forces a concrete resource-allocation decision that exposes that assumption as wrong."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet-whole2/08",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Biological-anchors estimates of the compute needed to match human-level intelligence range from roughly 10^28 to roughly 10^41 FLOP — a spread of about twelve orders of magnitude. What is the right way to treat this spread, on the chapter's own account?",
+    "options": [
+      {
+        "text": "As the finding itself: a bound wide enough that no point in it should be trusted as an estimate, though still useful for planning.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "As a sign that the biological-anchors method has failed and should be abandoned in favor of a method that yields a single best estimate.",
+        "key": false,
+        "provenance": "misreads the wide bounds as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      },
+      {
+        "text": "As evidence that the true compute requirement is probably close to the midpoint of the range, since extreme values at either end are less likely.",
+        "key": false,
+        "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a roughly centered distribution, rather than illustrating genuine deep uncertainty about which reference process is right",
+        "family": "b"
+      },
+      {
+        "text": "As confirmation that scaling laws let us pin down the exact tokens-per-parameter ratio needed, which then resolves the compute-requirement uncertainty directly.",
+        "key": false,
+        "provenance": "misapplies the Chinchilla ~20-tokens-per-parameter finding from the scaling-laws discussion, an unrelated estimation problem, as if it resolves this section's biological-anchors uncertainty",
+        "family": "d"
+      }
+    ],
+    "explanation": "The twelve-order-of-magnitude spread isn't a failure of the method, it's the method's honest report: we don't know which biological reference process — a lifetime of learning, or all of evolutionary history — is the right analogy for how much compute matches human-level intelligence, so the range has to be this wide. That's still useful, the same way knowing something costs somewhere between one dollar and a trillion dollars is different from knowing nothing at all. The midpoint isn't privileged — the range represents deep uncertainty about which anchor is right, not a distribution peaked in the middle. And the token-to-parameter ratio from scaling laws answers a different question (how to spend a fixed compute budget), not how much total compute matching human intelligence would need. (Forecasting Timelines → Training Data)",
+    "takeaway": "A twelve-order-of-magnitude range is itself the finding: real uncertainty, still narrow enough among all conceivable values to bound planning.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "biological-anchors compute-for-TAI estimates span ~10^28 to ~10^41 FLOP, twelve orders of magnitude of uncertainty"
+    ],
+    "self_check": {
+      "cover_test": "Yes — a reader who understands the section's framing of deep uncertainty can state that the range itself is the finding, without seeing the options.",
+      "cynic_test": "A skipper might assume 'twelve orders of magnitude' sounds like a failure and pattern-match 'huge spread = bad method,' but the stem's own framing of the figure as durable knowledge undercuts that reflex."
+    }
+  }
+]

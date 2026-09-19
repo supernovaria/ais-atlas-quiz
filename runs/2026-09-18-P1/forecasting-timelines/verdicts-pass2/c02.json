@@ -1,0 +1,130 @@
+{
+  "id": "forecasting-timelines/sonnet/c02",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R14", "D1", "D3"],
+  "measurements": {
+    "correct_len": 133,
+    "distractor_lens": [
+      132,
+      145,
+      152
+    ],
+    "mean_distractor_len": 143,
+    "len_ratio": 0.93,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "methods",
+      "need",
+      "research",
+      "monitoring",
+      "add",
+      "ons",
+      "becomes",
+      "six",
+      "safety"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, false],
+  "families_present": ["a", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14: word-match tell. Two distinctive stem content words land in exactly one option each, and that option is the key: the stem says Group A builds 'theoretical alignment methods that need years of basic research' and the key alone says 'methods that need architectures that don't exist yet'. `stem_word_singletons` carries both 'methods' and 'need'. The key is the option that echoes the stem's own description of the losing group.",
+    "D1: option 4 ('Split the allocation evenly... neither becomes more urgent than the other') has an unusable provenance line. It claims the reader misreads 'the difference between 10 years and 50 years fundamentally changes which safety strategies are viable' as implying the agendas are interchangeable regardless of timeline — and then concedes 'the text's claim is the opposite'. That is not a misreading, it is a flat contradiction of the sentence cited, so test (b) fails: the sentence is not misreadable as the claim. No attentive reader who got one thing wrong arrives here.",
+    "D3: the D3 ceiling is breached — all three distractors, not at most one, are eliminable without having read the section, because the stem supplies the premises that defeat them. The stem stipulates the principle under test ('the idea that how far off TAI is changes which safety strategies are viable'), so options 2 ('too uncertain to be a sound basis') and 4 ('neither becomes more urgent') are eliminable by structure alone as denials of the question's own premise — the candidate's `cynic_test` field says as much about option 4. The stem also stipulates that Group A's methods 'aren't expected to run on any model built in the next decade' against a six-year arrival, which defeats option 3 by subtraction whatever the reader believes about takeoff speed, and makes the key derivable from the stem with no section knowledge at all. Level follows: §3.5 requires that an L4's mapping not be stated in the prose, but the section's opening paragraph states it outright ('no time for slow theoretical research—we need approaches that work with current systems'; distant arrival gives 'breathing room for fundamental alignment research'), so this is L3, not the claimed L4."
+  ],
+  "preserve": "The two-scenario funding case is the right shape for FT-1, and two things in it are doing real work and are carried into the rewrite: the timelines-vs-takeoff conflation distractor (the map's FT-1 family-(a) misconception, and one of §3.4's named pairs), and the explanation's rebuttal of the uncertainty objection — 'the argument holds even under wide error margins, since it's the order-of-magnitude gap doing the work, not a precise date' — which is the best sentence in the candidate and correctly ties FT-1 to the section's own wide-error-margins paragraph.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/c02",
+    "targets": [
+      "FT-1"
+    ],
+    "lens": "case",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A funder supports two portfolios. Portfolio A develops alignment theory whose payoff depends on a long run of basic research. Portfolio B builds monitoring systems that bolt onto the models labs are training right now. The funder revises its estimate of when AI could automate most cognitive labour from around forty years out to around six. What follows for the two portfolios?",
+    "options": [
+      {
+        "text": "Shift weight toward Portfolio B, since a near arrival leaves room only for alignment work that attaches to models much like today's.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Leave the balance as it is, since which alignment problems are worth backing turns on the problems themselves, not the calendar.",
+        "key": false,
+        "provenance": "misreads the section's opening claim that 'Predicting when AI automates cognitive labor determines which safety strategies are viable' as motivational framing for the data-driven forecasting the rest of the section does, leaving the choice of research agenda a question about the problems rather than about the date",
+        "family": "c"
+      },
+      {
+        "text": "Shift weight toward Portfolio A, since a near arrival means an abrupt transition that tools built for current models cannot track.",
+        "key": false,
+        "provenance": "misreads 'predicting when AI automates cognitive labor' (a question about when the transition starts) as a claim about how fast it runs once it starts, so a near arrival is read as implying an abrupt shift that strands anything built for pre-transition models",
+        "family": "a"
+      },
+      {
+        "text": "Raise both portfolios together, since a nearer arrival makes safety work across the board more urgent without changing what is viable.",
+        "key": false,
+        "provenance": "misreads 'the difference between 10 years and 50 years fundamentally changes which safety strategies are viable' as a statement about how urgent safety work is, dropping the word 'which' — the sentence says the timeline selects the strategy, not that it raises the priority of every strategy equally",
+        "family": "b"
+      }
+    ],
+    "explanation": "A timeline estimate does not just set how urgent safety work is; it selects which kinds of work can pay off at all. If cognitive labour is automated within a few years, the approaches that can matter are the ones that run on systems close to those already being built, and slow foundational work has no time to mature. A distant arrival is what buys room for fundamental research, governance design, and trustworthy evaluations. The 'raise both together' option treats a nearer deadline as a uniform urgency multiplier, when the claim is that it changes which agendas remain available. The 'shift toward theory' option conflates when transformative AI arrives with how fast things move once it does — a separate question about takeoff speed rather than about timelines. (Forecasting Timelines)",
+    "takeaway": "A timeline estimate is not an academic number: it decides which kind of safety work can still pay off, not merely how fast you should be working.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who took the section's opening claim that timeline length selects which safety strategies remain viable can produce 'move weight to the work that runs on the systems that will actually exist' with the options covered.",
+      "cynic_test": "No option denies a premise of the stem and the stem no longer states the principle being tested, so a skipper has to choose between four competing rationales rather than spot the one that agrees with the question; 'raise both together' is the compromise an instinct-driven guesser reaches for, and it is wrong for a reason the explanation gives."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1].text",
+    "options[1].provenance",
+    "options[2].text",
+    "options[2].provenance",
+    "options[3].text",
+    "options[3].provenance",
+    "options[3].family",
+    "explanation",
+    "takeaway",
+    "level_claimed",
+    "self_check.cover_test",
+    "self_check.cynic_test"
+  ],
+  "reviewer_note": "The rewrite deliberately drops the submitted stem's decade figure for Portfolio A ('aren't expected to run on any model built in the next decade') because that clause let the key be reached by subtraction — so the thing to check by hand is the opposite risk: whether 'alignment theory whose payoff depends on a long run of basic research' is still concrete enough that the key is determinate from the section's near-vs-distant contrast rather than merely the most agreeable-sounding option."
+}
