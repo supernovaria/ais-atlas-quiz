@@ -54,6 +54,26 @@ on a planted defect:
   so a pair naming a non-earning member (`FT-5`/`FT-5b`) could never validate.
   Now enforced only when both members earn a question.
 
+**And `validate` errs loudly the other way on curator artifacts — three false
+alarms, all investigated, none real:**
+
+- *"the curator edited text"* on two stems. It did not: the stems are
+  byte-identical **once quote style is normalised**. The curator converted
+  straight quotes to typographic curly quotes when rendering markdown. That is
+  still technically a text edit its brief forbids, but `validate` cannot tell
+  "changed a quote mark" from "rewrote the stem" — it reports both identically,
+  so the one alarm that would matter is buried in noise.
+- *"shipped `c01r` is adversary-flagged but not named in `flags_for_reviewer`"*.
+  It is named — the curator's third flag reads "Adversary flags on shipped
+  questions: Q1 (a03r) hit 3/3 seeds; Q3 (c01r) hit 3/3 seeds." The flags are
+  free-text prose, and `validate` looks for a structured `id` field, so it
+  missed them.
+- the impossible discrimination-pair rule, above.
+
+The curator in fact behaved well: 8 substantive flags, including the adversary
+hits, the missing-L5 bound, a lens-diversity shortfall, and the fact that all
+three shipped keys sit at position A in the source data.
+
 **Also: the adversary toollessness preflight check is broken.** Asked to list its
 tools it named four — *bash, PowerShell, read_file, write_file* — none of which
 are this harness's real tool names. It was confabulating. Session B got a clean
