@@ -94,3 +94,43 @@ do about a tier-4 metric that flags 39 of 40 including both rubric exemplars —
 I'd resolve the second before P1 rather than after, because the curator's
 eligibility rule depends on it and P1's coverage numbers are meaningless if
 every candidate is flagged.
+
+---
+
+## Addendum, 2026-09-19 — tier-4 work done; prose still blocked
+
+**The prose route Em suggested does not exist.** `atlas-audio-read-along` cloned
+fine, but the gdocs cache is `./.cache/docs`, which `.gitignore` excludes
+alongside `dist/`. Checked all 49 commits on all 4 branches: neither path has
+**ever** been committed. Four routes, all closed: `dist/` (ignored, never
+committed), `.cache/docs` (ignored, never committed), the published site
+(`ai-safety-atlas.com` and `supernovaria.github.io` both refused by the
+environment's network policy, 403 on CONNECT — not worked around), and Google Docs
+directly (`GOOGLE_CREDENTIALS_BASE64` is a required env var and is absent). CI
+builds with that secret and deploys a Pages artifact, so nothing lands in git.
+**To unblock, one of: the credential, a network allowlist for the site, or the 11
+`.md` files committed somewhere readable.** P1 remains unrun.
+
+**Tier-4 saturation plan, all three steps done** — none of it needed the prose.
+
+1. **Curator eligibility softened** (`.claude/agents/quiz-curator.md`). The
+   adversary flag no longer gates eligibility; it lands in `flags_for_reviewer`.
+   The same rule appeared twice more and both were changed to match, or they
+   would have contradicted the edit: the curator's own self-check, and
+   `pipeline.mjs validate`, which asserted no flagged Q shipped and excluded
+   flagged ids from `eligibleIds()`. This alone unblocks P1.
+2. **Stem-only probe** — `runs/baseline/stem-only/`. 60% strict / 77.5% loose
+   against the MC adversary's 98.3%. Neither predicted band: most of the
+   saturation is knowledge, but a real residual remains, and it is enumerable —
+   eight questions hit 3/3 while free recall failed, three of them an outright
+   "I DON'T KNOW".
+3. **Planted-tell control set** — `runs/tier4-control/`. Fabricated framework,
+   20 items, one tell per group. clean 40% · absolute 67% · key_hedges 87% ·
+   key_longest 93% · real file 98%. Two findings worth acting on: the floor is
+   **40%, not 25%** (a 4-option question carries a ~15-point inference premium,
+   and the existing 0.15 gate matches that floor almost exactly), and **hedge
+   density is the second-strongest tell at +62 points while
+   `check-questions.mjs` hard-gates it nowhere** — `hedge_counts` is computed and
+   passed to the critic, but tier 2 fails only on R8, R9, R9-spread, R5 and D4.
+   Promoting D10's hedge rule to a tier-2 hard failure is the one concrete code
+   change all this points at.
