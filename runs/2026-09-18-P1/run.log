@@ -1,15 +1,76 @@
+# run.log — 2026-09-18-P1
+#
+# Two sessions attempted this run label and each stopped at a different
+# precondition. Both logs are kept, in order. Session A's entries are prose (as
+# written); session B's are JSONL (as written). Neither was reformatted into the
+# other's shape — the log is an audit trail, not a tidy artifact.
+
+# ────────────────────────────────────────────────────────────────────────────
+# SESSION A — 2026-09-18, rooted at atlas/ (parent). BLOCKED at agent resolution.
+# ────────────────────────────────────────────────────────────────────────────
+
+2026-09-18  preflight  orchestrator  —  BLOCKED at agent resolution. No stage ran.
+
+Standing decisions in force for this run (HANDOFF §1, P1-RUN-PROMPT §4):
+- Proceeding on RUBRIC v1. v2 is NOT signed off. Permitted: finding what v2
+  needs is P1's entire purpose. Recorded here as required.
+- docs/EXEMPLARS.md absent by decision (PIPELINE §6.1). Not built. Generator
+  would have run unaided on rubric + concept map + prose.
+- Fixed-frame blocks (docs/FIXED-FRAME-PROPOSAL.md) out of scope.
+- Sharding runs as an A/B (PIPELINE §3.1), not as a settled design.
+- Critic on opus in P1 (HANDOFF §8: no per-call effort knob). Makes P1 more
+  expensive than QUIZ-PLAN costed and the P1-vs-P3 critic diff less informative.
+
+preflight results
+  git clean / on main ............................. ok
+  check:questions:selftest ........................ ok  14/14 Appendix A metrics
+                                                        (1 documented divergence: absolutes_keys)
+  check:exemplars ................................. ok  exit 0, "no exemplar file"
+  ../atlas-audio-read-along/.../capabilities/*.md .. ok  11 files, 25,726 words
+  models sonnet / haiku / opus selectable ......... ok  3 trivial spawns returned
+  six quiz-* agent types resolve .................. FAIL  not selectable
+  quiz-adversary toollessness ..................... NOT RUN  (blocked by the above)
+  session cost reading (baseline for §5 delta) .... EUR 32.99 of 65.00 extra-usage
+                                                        (monthly counter; no per-session
+                                                        or per-call figure exists — HANDOFF §8)
+
+spend against the run budget: EUR 0.00 beyond 3 one-word model-probe spawns.
+No subagent from the pipeline ran. No artifact was generated.
+
+cause: the briefs live only at ais-atlas-quiz/.claude/agents/; this session was
+rooted at the parent atlas/, so project subagents were never discovered. All six
+files parse; quiz-adversary does declare tools: []. Configuration, not design.
+
+# ────────────────────────────────────────────────────────────────────────────
+# SESSION B — 2026-09-18/19, rooted at ais-atlas-quiz/. BLOCKED on missing prose.
+# Same standing decisions as session A above; re-recorded as instructed.
+# ────────────────────────────────────────────────────────────────────────────
+
 {"stage":"preflight","result":"BLOCKED","blocker":"../atlas-audio-read-along/dist/chapters/v1/capabilities/*.md absent — repo not present in this environment; HANDOFF §1 expected 11 files","ok":false}
-{"stage":"authorization","note":"Proceeding on RUBRIC v1 was authorized; v2 is not signed off and finding what v2 needs is P1's purpose (HANDOFF §1). Recorded as instructed. Moot this run — P1 did not execute."}
+{"stage":"authorization","note":"Proceeding on RUBRIC v1. v2 is not signed off and finding what v2 needs is P1's purpose (HANDOFF §1). Recorded as instructed. Moot this run — P1 did not execute."}
 {"stage":"authorization","note":"No docs/EXEMPLARS.md, deliberately (PIPELINE §6.1). check:exemplars passes and exits 0. Not built."}
 {"stage":"authorization","note":"Fixed-frame blocks (docs/FIXED-FRAME-PROPOSAL.md) out of scope, not generated."}
-{"stage":"preflight","check":"check:questions:selftest","expected":"14 of 14","observed":"12 of 14, exit 1","cause":"RUBRIC Appendix A measured on a CRLF working copy; this is an LF clone, so every option text is 1 char shorter. Verified: +1 char/option reproduces 149.3/107.5 exactly. Gated metrics unaffected.","action":"reported, not fixed — governing measurement, Em's call","ok":false}
-{"stage":"preflight","check":"agent types resolve","types":["quiz-section-analyst","quiz-generator","quiz-critic","quiz-curator","quiz-pilot-analyst","quiz-adversary"],"models":["sonnet","haiku","opus"],"ok":true}
+{"stage":"preflight","check":"check:questions:selftest","expected":"14 of 14","observed":"12 of 14, exit 1","cause":"RUBRIC Appendix A measured on a CRLF working copy; this is an LF clone, so every option text is 1 char shorter. Verified: +1 char/option reproduces 149.3/107.5 exactly. Gated metrics unaffected. CORROBORATED by session A's 14/14 on a CRLF checkout — same script, differing on only those two rows.","action":"reported, not fixed — governing measurement, Em's call","ok":false}
+{"stage":"preflight","check":"agent types resolve","types":["quiz-section-analyst","quiz-generator","quiz-critic","quiz-curator","quiz-pilot-analyst","quiz-adversary"],"models":["sonnet","haiku","opus"],"observed":"all six resolve with correct brief content loaded","note":"session A's blocker does not recur when rooted at ais-atlas-quiz/","ok":true}
 {"stage":"preflight","check":"adversary isolation","observed":"only SubagentHandback; no file tools","listing_says":"(Tools: All tools) — listing is wrong, runtime is right","ok":true}
-{"stage":"preflight","check":"session cost reading","observed":"unavailable — no programmatic cost tool; spawn counts used as proxy per PIPELINE §8","spawns_total":127,"ok":false}
+{"stage":"preflight","check":"session cost reading","observed":"unavailable — no programmatic cost tool; spawn counts used as proxy per PIPELINE §8. Session A's EUR 32.99/65.00 is a monthly counter, not a session delta.","spawns_total":227,"ok":false}
 {"stage":"build","artifact":"scripts/pipeline.mjs","stages":["shard","dedupe","measure","queue","shuffle","validate","score","assemble","report"],"selftest_assertions":40,"selftest_pass":true,"ok":true}
-{"stage":"baseline","artifact":"runs/baseline/","see":"runs/baseline/run.log","ok":true}
+{"stage":"baseline","artifact":"runs/baseline/","see":"runs/baseline/run.log","mean_hit":0.983,"flagged":"39/40","ok":true}
+{"stage":"tier4-step1","action":"softened curator eligibility: adversary flag no longer gates eligibility, becomes flags_for_reviewer","files":[".claude/agents/quiz-curator.md","scripts/pipeline.mjs"],"ok":true}
+{"stage":"tier4-step2","action":"stem-only probe, 40 stems, no options, toolless haiku","knows_loose":0.775,"knows_strict":0.600,"mc_hit":0.983,"residual_questions":8,"artifact":"runs/baseline/stem-only/","ok":true}
+{"stage":"tier4-step3","action":"planted-tell control set, 20 fabricated items, 60 spawns","clean":0.40,"absolute":0.67,"key_hedges":0.87,"key_longest":0.93,"artifact":"runs/tier4-control/","ok":true}
+{"stage":"tier4-followup","action":"D10 hedge rule promoted to a tier-2 hard failure in check-questions.mjs","note":"PIPELINE §7 line 280 already listed it as a checker gate — closes a docs-vs-code gap","ok":true}
 {"stage":"P1","result":"NOT RUN — blocked on missing section prose","ok":false}
 {"stage":"P1b","result":"NOT RUN — depends on P1"}
 {"stage":"P2","result":"NOT RUN — depends on P1"}
 {"stage":"pilot-findings","result":"NOT RUN — no P1/P2 artifacts to analyse"}
 {"stage":"P3","result":"NOT RUN — gated on Em reading findings, as instructed"}
+
+# ────────────────────────────────────────────────────────────────────────────
+# COMBINED CONCLUSION
+# ────────────────────────────────────────────────────────────────────────────
+# Every precondition has now been observed passing — in one session or the other,
+# never both at once. Session A had the prose and not the agents; session B had
+# the agents and not the prose. Both blockers are configuration. The fix is one
+# session rooted at ais-atlas-quiz/ in an environment where
+# atlas-audio-read-along/dist/ is already built.
