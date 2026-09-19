@@ -345,9 +345,35 @@ function stageDedupe(label, slug) {
 function stageMeasure(label, slug) {
   const dir = sectionDir(label, slug);
   const candidates = readJson(need(join(dir, 'candidates.json'), 'candidates.json'));
+
+  // Duplicate ids are FATAL, not a warning. The generator brief's id template
+  // (<section>/<model>/NN) carries no shard component, so several shards on the
+  // same model each number from 01 and collide. Measurements are keyed by id,
+  // so a collision silently drops every twin but the last — observed
+  // 2026-09-19, where 11 candidates quietly measured as 3 and every downstream
+  // number would have been wrong with nothing on screen to say so.
+  const seenIds = new Map();
+  const dupes = [];
+  for (const c of candidates) {
+    if (seenIds.has(c.id)) dupes.push(c.id);
+    seenIds.set(c.id, (seenIds.get(c.id) || 0) + 1);
+  }
+  if (dupes.length) {
+    die(`candidates.json has ${dupes.length} duplicate candidate id(s): ${[...new Set(dupes)].join(', ')}\n`
+      + '       Measurements are keyed by id, so measuring this file would silently drop candidates.\n'
+      + '       Namespace ids per shard before measuring (ids are metadata; never edit question text).');
+  }
+
   const dedupe = maybeJson(join(dir, 'dedupe.json'));
   const keep = dedupe ? new Set(dedupe.survivor_ids) : null;
-  const pool = keep ? candidates.filter((c) => keep.has(c.id)) : candidates;
+  // Rewrites (3′ in the PIPELINE §3 flow) postdate dedupe.json and so are absent
+  // from its survivor list, yet they are exactly what ships. dedupe cannot
+  // simply be re-run to pick them up: a rewrite shares its original's targets
+  // and most of its stem, so it would be collapsed against the candidate it
+  // replaces. Admit anything carrying `rewrite_of` instead.
+  const pool = keep
+    ? candidates.filter((c) => keep.has(c.id) || c.rewrite_of)
+    : candidates;
 
   const out = {};
   for (const c of pool) out[c.id] = measureCandidate(c);
@@ -554,6 +580,17 @@ function stageScore(label, slug) {
   const shuffle = readJson(need(join(dir, 'shuffle.json'), 'shuffle.json'));
   const picks = readJson(need(join(dir, 'picks.json'), 'picks.json (letter per <id>#<seed>)'));
 
+  // picks.json must be an OBJECT keyed "<id>#<seed>". An array lookup by that
+  // key yields undefined for every prompt, so every answer counts as missing,
+  // every derived mean is NaN-free-but-empty, and the gate reports PASS on zero
+  // data — a green light produced by malformed input, which is the worst
+  // failure this script can have. Observed 2026-09-19. Refuse it.
+  if (Array.isArray(picks) || picks === null || typeof picks !== 'object') {
+    die('picks.json must be an object keyed "<id>#<seed>" → letter, e.g.\n'
+      + '         { "forecasting-timelines/sonnet/a01r#1": "C" }\n'
+      + `       got ${Array.isArray(picks) ? 'an array' : typeof picks}. Refusing to score: an array scores 0% and reports the gate as PASS.`);
+  }
+
   const rows = [];
   const missing = [];
   for (const pr of shuffle.prompts) {
@@ -630,10 +667,18 @@ function stageScore(label, slug) {
       .reduce((a, r) => { a[r.key_position] = (a[r.key_position] || 0) + 1; return a; }, {}),
   };
 
+  // A gate can only pass on evidence. With no scored answers there is nothing to
+  // pass, and `mean([]) <= 0.15` is vacuously true — so say so rather than
+  // emitting gate_excess_pass: true over an empty set.
+  if (!rows.length) {
+    summary.gate_excess_pass = null;
+    summary.gate_excess_note = `no answers scored — ${missing.length} prompt(s) had no pick; the gate is undetermined, not passed`;
+  }
+
   const out = { summary, per_question: perQuestion, answers: rows, missing_picks: missing };
   const p = writeJson(join(dir, 'adversary.json'), out);
   if (label) logLine(label, { stage: 'score', section: slug || basename(dir), ...summary, artifact: p, ok: true });
-  console.log(`score    ${shuffle.source}: mean hit ${fmtPct(summary.mean_hit_rate)} · excess over chance ${summary.mean_excess_over_chance >= 0 ? '+' : ''}${summary.mean_excess_over_chance} (gate ≤0.15 ${summary.gate_excess_pass ? 'pass' : 'FAIL'}) · 4-opt ${summary.four_option_hit_rate == null ? 'n/a' : fmtPct(summary.four_option_hit_rate)} · flagged ${summary.flagged}/${summary.n_questions}`);
+  console.log(`score    ${shuffle.source}: mean hit ${fmtPct(summary.mean_hit_rate)} · excess over chance ${summary.mean_excess_over_chance >= 0 ? '+' : ''}${summary.mean_excess_over_chance} (gate ≤0.15 ${summary.gate_excess_pass == null ? 'UNDETERMINED' : summary.gate_excess_pass ? 'pass' : 'FAIL'}) · 4-opt ${summary.four_option_hit_rate == null ? 'n/a' : fmtPct(summary.four_option_hit_rate)} · flagged ${summary.flagged}/${summary.n_questions}`);
   if (missing.length) console.log(`         note: ${missing.length} prompt(s) have no pick recorded`);
   if (summary.unparsed) console.log(`         note: ${summary.unparsed} pick(s) unparseable — counted as non-hits, listed in adversary.json`);
   if (summary.verbose_answers) console.log(`         note: ${summary.verbose_answers} answer(s) were not a bare letter — check \`raw\` in adversary.json; the brief asks for one letter`);
@@ -739,7 +784,15 @@ function validateShards(s, map, where, ok) {
     ok(map.ideas.some((x) => x.id === id), where, `shard names unknown idea ${id}`);
   }
   // Discrimination pairs co-occur at least once: a contrast question needs both.
+  // Only enforceable when BOTH members earn a question — shards are built solely
+  // from earns_question ideas, so a pair naming a non-earning member (which the
+  // analyst brief permits: a pair is "every pair the text separates and readers
+  // merge", with no earns_question requirement) can never co-occur by
+  // construction. Enforcing it there demanded the impossible and failed a
+  // shards.json that was correct. Observed 2026-09-19 on FT-5/FT-5b.
+  const earns = new Set(map.ideas.filter((i) => i.earns_question).map((i) => i.id));
   for (const p of map.discrimination_pairs || []) {
+    if (!earns.has(p.a) || !earns.has(p.b)) continue;
     const together = s.shards.some((sh) => sh.ideas.includes(p.a) && sh.ideas.includes(p.b));
     ok(together, where, `discrimination pair ${p.a}/${p.b} never co-occurs in a shard`);
   }

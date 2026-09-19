@@ -132,3 +132,5 @@ files parse; quiz-adversary does declare tools: []. Configuration, not design.
 {"stage":"pilot-findings","result":"NOT RUN — insufficient P1 artifacts to analyse"}
 {"stage":"P3","result":"NOT RUN — gated on Em reading findings, as instructed"}
 {"stage":"cost","extra_usage_start":"USD 6.53","extra_usage_end":"USD 6.53","note":"no API or usage credit spent, as instructed. Burn measured on the 5-hour window: sonnet ~3.8 points/call, OPUS CRITIC ~6.3 points/call, haiku ~0.5. Six opus critic calls cost 38 points.","spawns_total":40,"ok":true}
+{"ts":"2026-09-19T21:28:50.061Z","stage":"validate","sections":["forecasting-timelines"],"checked":5,"failures":1,"ok":false}
+{"ts":"2026-09-19T21:29:13.038Z","stage":"measure","section":"forecasting-timelines","n":17,"r8_pass":15,"all_pass":13,"r5":2,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\runs\\2026-09-18-P1\\forecasting-timelines\\measurements.json","ok":true}
