@@ -1,0 +1,108 @@
+{
+  "id": "forecasting-timelines/sonnet/a03",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L3",
+  "failed_criteria": ["R5", "R9", "R14", "D12"],
+  "measurements": {
+    "correct_len": 176,
+    "distractor_lens": [160, 147, 154],
+    "mean_distractor_len": 153.7,
+    "len_ratio": 1.15,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 16,
+    "max_over_min": 1.2,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": ["effective", "compute"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["a", "b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R5: the stem asks 'What does the section's decomposition of effective compute show is wrong with this reading?' — source-attribution framing, which routes the reader to 'what did the page say' rather than 'what is true'. The regex family did not fire only because of the possessive ('the section's decomposition show' has intervening words between 'the section' and the verb), so r5_matches is correctly empty and the criterion still fails on substance. The rubric's default test confirms it: deleting the attribution clause leaves 'What is wrong with this reading?', which still has a determinate answer, so the clause was not doing work.",
+    "R9: extremum_gap is 16 and correct_is_longest is true; the guard is ≤15 characters when the key is the longest option. len_ratio 1.15 is inside R8, so this is a one-character-class overshoot on the key, not a structural length problem.",
+    "R14 (word-match tell): stem_word_singletons is ['effective', 'compute'] — the stem's distinctive phrase 'effective compute' appears in exactly one option, and that option is the key. R14 requires the word in ≥2 options or in none. A second, softer instance of the same tell sits alongside it: the stem presupposes the reading is wrong, and exactly one option opens 'The reading is wrong' while two open 'The reading is incomplete' and one opens 'Nothing is wrong'. A reader who has not read the section can land on the key from the lead clauses alone, which contradicts the candidate's own cynic_test note.",
+    "D12 (plausibility floor): distractor 1 opens 'Nothing is wrong with the reading', but the stem states that the decomposition shows something is wrong with it. The option contradicts the stem's own presupposition, so essentially no reader selects it and the effective guess rate rises from 25% to 33%. The misconception underneath it (family a — efficiency gains as minor refinements on a dominant chip trend) is real and worth keeping; only its framing as a denial of the stem is dead."
+  ],
+  "preserve": "The scenario and the target: a reader collapsing effective compute into chip count is exactly the §3.4 pair the concept map names for this section (FT-5 vs FT-5b), and all three distractor misreadings — efficiency-as-minor-caveat, factors-move-together, car-analogy-as-ranking — verified against the prose and are worth carrying over. The stem framing and the option surfaces are what needed rebuilding, not the idea.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/a03",
+    "targets": ["FT-5"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague argues: 'When people say the compute behind frontier models keeps growing, they just mean labs have more and faster chips — chip count is what's doing the work.' Which reply identifies the substantive error in that account of effective compute?",
+    "options": [
+      {
+        "text": "Chip count, hardware efficiency and software efficiency are separate multiplied terms, so growth in one of them raises the total while the others sit still.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Hardware and software efficiency gains are ways of counting the same chips as though the fleet had grown, so chip count is still the quantity that really matters.",
+        "key": false,
+        "provenance": "misreads \"'compute' means more than just counting GPUs\" as an instruction to count the same GPUs differently — efficiency gains as chip-equivalents — rather than as two further terms multiplied alongside chip count",
+        "family": "a"
+      },
+      {
+        "text": "Chip production sets the ceiling for the other two, so growth in the total can only keep pace with the rate at which new chips are made.",
+        "key": false,
+        "provenance": "misreads 'When all three improve simultaneously—as they have been—the total compute available (effective compute) compounds much faster than hardware trends alone would suggest' as making chip growth the precondition for the other two, against the same paragraph's 'You can develop better software to make use of existing hardware.'",
+        "family": "c"
+      },
+      {
+        "text": "Chip count is the dominant term, so the two efficiency factors amount to second-order corrections that can shift the total only at the margin.",
+        "key": false,
+        "provenance": "misreads the fleet analogy's ordering — 'how many cars you have (chip production), how fast each car goes (hardware efficiency), and how efficiently you're driving (software efficiency)' — as ranking the three by importance rather than naming three equal multiplied terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is the product of three terms — chip count, hardware efficiency, software efficiency — and each can move without the other two. That is why a doubling can come entirely from better algorithms with chip count unchanged, and why the total grows faster than any single input. The reply that recasts efficiency gains as counting the same chips 'as though the fleet had grown' keeps the colleague's error intact: it collapses three multiplied terms back into one, so it still predicts that growth stalls when chip supply does. The reply that makes chip production a ceiling fails for the same reason — better software makes use of existing hardware. And the fleet analogy lists the three factors; it does not rank them. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Effective compute is chip count, hardware efficiency and software efficiency multiplied together, each able to move on its own — so it is not a longer way of saying 'more chips'.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who internalised that the three factors multiply and move independently can produce the key with the options covered: growth in one raises the total without the others.",
+      "cynic_test": "No option repeats a distinctive stem phrase ('effective compute' and 'compute' now appear in zero options; 'chip' appears in all four), no option denies the stem's premise, and all four are same-shaped declaratives, so the lead clauses carry no signal."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1].text",
+    "options[1].provenance",
+    "options[2].text",
+    "options[2].provenance",
+    "options[3].text",
+    "explanation",
+    "takeaway",
+    "self_check.cover_test",
+    "self_check.cynic_test"
+  ],
+  "reviewer_note": "The R5 regex has a possessive blind spot — 'what does the section's decomposition show' reached pass 2 with r5_matches empty — so patch the pattern before the remaining shards are measured, since any stem written that way will pass the checker silently."
+}

@@ -1,0 +1,98 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/d02",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Effective compute, as this section defines it, is the product of three factors -- software efficiency, hardware efficiency, and the number of chips available -- each of which can improve on its own. Suppose that in a given year, growth in the number of chips produced stalls to roughly zero, while software efficiency and hardware efficiency each keep improving at their usual pace. What happens to effective compute that year?",
+    "options": [
+      {
+        "text": "Effective compute still grows that year, driven by the two factors that kept improving, because the three inputs multiply independently rather than needing to rise together.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Effective compute growth stalls too, because chip production is the base multiplier the other two factors act on, and without chip growth there is little for them to multiply against.",
+        "key": false,
+        "provenance": "misreads the multiplication of three independent factors as requiring them to rise together, when the text's point is that each 'can improve independently'",
+        "family": "c"
+      },
+      {
+        "text": "Effective compute still grows, but only trivially, because the number of chips is what 'more compute' really measures and the other two factors are minor refinements on top.",
+        "key": false,
+        "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat rather than the section's central redefinition of the term, reintroducing the raw-chip-count view",
+        "family": "a"
+      },
+      {
+        "text": "Effective compute still grows, but growth becomes driven mainly by hardware efficiency rather than software efficiency, since hardware improvements matter more once chip production slows.",
+        "key": false,
+        "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing that they multiply as equal, independent terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is a product of three factors that each move on their own, so a slowdown in one does not force the others down with it -- the two still improving keep multiplying, and effective compute keeps growing, just from a smaller total contribution. The most tempting wrong answer treats chip production as a 'base' the other two act on, which quietly reintroduces the naive reading this section opens by rejecting: 'compute means more than just counting GPUs.' Another distractor swaps in a false ranking of the factors, which the car analogy never establishes -- cars, speed, and driving efficiency are equal partners in a product, not a hierarchy (Forecasting Timelines -> Effective Compute).",
+    "takeaway": "Because effective compute is a product of independent factors, no single slowing trend can single-handedly stop its growth.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes -- a reader who grasped that effective compute is a product of three independently-moving factors could work out that two still-improving factors keep the product growing even if the third stalls.",
+      "cynic_test": "A skipper might default to 'growth stalls' because chips sound like the primary resource, but that tell is removed since three of the four options all agree effective compute keeps growing and differ only on the mechanism."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 173,
+    "distractor_lens": [
+      183,
+      173,
+      187
+    ],
+    "mean_distractor_len": 181,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "three",
+      "software",
+      "efficiency",
+      "hardware",
+      "number",
+      "chips",
+      "year",
+      "stalls",
+      "improving"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 115,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

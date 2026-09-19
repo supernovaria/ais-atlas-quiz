@@ -1,0 +1,95 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/d01",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "The section notes that estimates of the compute needed to match human-level general intelligence, drawn from different biological reference points, span about twelve orders of magnitude -- comparable to not knowing whether something costs one dollar or a trillion dollars. A colleague concludes: 'A range that wide means the biological-anchors approach has failed and shouldn't inform planning at all.' Is this the conclusion the section supports?",
+    "options": [
+      {
+        "text": "No: the width is the informative result -- it reflects real uncertainty about which biological process is the right analogy, and it still narrows the planning question even without a trustworthy point estimate.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Yes: a range this wide carries no more information than a rough guess would, so the biological-anchors method should simply be dropped entirely from serious compute-based forecasting work.",
+        "key": false,
+        "provenance": "misreads the wide bounds (main text, biological-anchors paragraph) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      },
+      {
+        "text": "No, but only because the true compute requirement almost certainly sits near the range's midpoint, since the extreme low and high estimates are each about equally unlikely to be correct.",
+        "key": false,
+        "provenance": "misreads the dollar-versus-trillion-dollar analogy as implying a roughly uniform distribution across the range, rather than as illustrating genuine deep uncertainty about which reference process is right",
+        "family": "b"
+      },
+      {
+        "text": "No, because the wide range actually collapses into one well-supported number, close to its geometric middle, which planners can safely treat as the single true underlying estimate.",
+        "key": false,
+        "provenance": "misreads the worked AGI-date example ('somewhere in the 2030s-2050s range, with 2045 as a rough center -- not a precise date') as license to collapse the compute range into one trustworthy center point",
+        "family": "c"
+      }
+    ],
+    "explanation": "The section's point is that a twelve-orders-of-magnitude range is itself the finding: it tells you the biological-anchors approach can't yet pin down a single number, but the range still constrains planning far more than having no estimate at all. The dollar-versus-trillion-dollar analogy makes that width visceral, not pointless. The strongest wrong answer treats the width as evidence of failure -- a natural reaction, but one that reverses the section's own framing, which is upfront about wide margins and treats them as informative rather than embarrassing. Another distractor collapses the range into a fake precise center, the same mistake the section warns against when it distinguishes 'AGI in 2045' from 'somewhere in the 2030s-2050s' (Forecasting Timelines).",
+    "takeaway": "A wide uncertainty range can be the most honest and still-useful output a forecast can give you.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "biological-anchors compute-for-TAI estimates span about twelve orders of magnitude"
+    ],
+    "self_check": {
+      "cover_test": "Yes -- a reader who understood the section's framing of wide error margins as informative rather than as failure could evaluate the colleague's claim without seeing the options.",
+      "cynic_test": "A skipper might guess 'no' by pattern-matching to a cautious-sounding key, but three of the four options also open with 'No,' so they have to track which specific reasoning holds rather than the surface answer."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 210,
+    "distractor_lens": [
+      188,
+      186,
+      180
+    ],
+    "mean_distractor_len": 184.7,
+    "len_ratio": 1.14,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 22,
+    "max_over_min": 1.17,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "estimates",
+      "one",
+      "anchors",
+      "planning"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 115,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

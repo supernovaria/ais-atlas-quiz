@@ -1,0 +1,115 @@
+{
+  "id": "forecasting-timelines/sonnet/a02",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R14", "D1", "D3", "D9", "E3"],
+  "measurements": {
+    "correct_len": 175,
+    "distractor_lens": [161, 155, 175],
+    "mean_distractor_len": 163.7,
+    "len_ratio": 1.07,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 1, 0]
+    },
+    "stem_word_singletons": [
+      "estimates",
+      "compute",
+      "orders",
+      "magnitude",
+      "reference",
+      "wide"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 109,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, false],
+  "families_present": ["a", "b", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14: word-match tell. Two distinctive stem content words appear in exactly one option each, and in both cases that option is the key — 'wide' (stem: 'A range that wide'; key: 'the wide range reflects genuine uncertainty') and 'reference' (stem: 'which biological process is used as the reference point'; key: 'which biological process is the right reference'). stem_word_singletons lists both. The rule requires such a word in two or more options or in none. The deeper form of the same defect: the key's main clause is a near-verbatim restatement of the stem's own subordinate clause, so the echo is not just a lexical tell — the stem supplies the discriminating content.",
+    "D1: option 4's provenance does not survive its own stem. The provenance line ('borrows the section's separate uncertainty about investment and hardware growth rates and misfiles it as the source of the biological-anchors range') names real prose — the section does report training-compute, investment and chip-production trends — but the stem itself already states that the estimates span twelve orders of magnitude 'depending on which biological process is used as the reference point', which is the exact refutation of 'this uncertainty is actually about how fast compute investment grows'. Test (c) fails: no attentive reader arrives here, because the stem hands them the answer to it.",
+    "D3: the ceiling of at most one distractor eliminable on general reasoning alone is exceeded. Option 2 opens 'The conclusion is right' against a stem that asks 'What's wrong with that conclusion?', making it the odd member of a 3-versus-1 split and eliminable on test instinct with zero domain knowledge; option 4 is eliminable from the stem as described above. A reader who skipped the section is left with a two-way choice between the stem-echoing key and the midpoint option.",
+    "D9: the options are not parallel completions of the stem. Three answer the question asked ('The conclusion is wrong...') and one denies its premise ('The conclusion is right...'), which is the D8 signal pattern — its presence tells the reader the real answer is among the substantive three. The cost is specific: it strands the concept map's FT-4 family-(a) misconception ('twelve orders of magnitude means the method is useless and should be discarded'), the single most valuable distractor available for this idea, in a slot the stem framing makes unselectable.",
+    "E3: the explanation identifies distractors by ordinal — 'Distractor 1', 'Distractor 2', 'Distractor 3' — but no_shuffle is false, so options are shuffled at render and the reader cannot tell which option each sentence is about. The misreadings named are accurate and well-chosen; they are pointed at nothing. E3 requires naming a distractor, which in a shuffled UI means naming it by content."
+  ],
+  "preserve": "The idea and its framing target: FT-4 read through FT-2 — what a twelve-order-of-magnitude range means for planning — is exactly the shape RUBRIC 5.3.2 sanctions as durable and L4, and the stem's Pattern-D move of putting the span in as a given is right. Keep the midpoint distractor: 'the true value most likely sits near the range's midpoint' with the dollar-analogy provenance is the strongest option in the set, it is a belief readers genuinely hold, and it survives into the rewrite almost unchanged. The rewrite also restores the intended L4.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/a02",
+    "targets": ["FT-4"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Estimates of the compute a transformative AI system would need span roughly twelve orders of magnitude. A reader concludes that a spread that large makes the exercise worthless for planning. What is the strongest objection to that conclusion?",
+    "options": [
+      {
+        "text": "The spread is the output the method is meant to produce: these forecasts are scenarios for checking whether a set of beliefs coheres, not attempts to name a figure.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The spread is real, but its midpoint is the usable number, since the two endpoint estimates are equally likely and either extreme is implausible in practice.",
+        "key": false,
+        "provenance": "misreads 'When someone says AGI in 2045, they mean somewhere in the 2030s-2050s range, with 2045 as a rough center - not a precise date' as endorsing the centre of a range as the estimate to carry away, and reads 'like not knowing if something costs one dollar or a trillion dollars' as implying the two ends are equally weighted rather than that we do not know which end is closer to right",
+        "family": "b"
+      },
+      {
+        "text": "The spread comes from disagreement about how fast investment and chip supply will grow, so it narrows as those trends are measured more precisely.",
+        "key": false,
+        "provenance": "conflates two uncertainties the text states in the same paragraph: the anchors range, which the text attributes to 'the biological process used as a reference', and the trend spreads it names immediately after ('projections of available chips range by a factor of 20x, and some compute estimates span 50x'), yielding the belief that better trend measurement would close the anchors gap",
+        "family": "a"
+      },
+      {
+        "text": "The spread is an artifact of chaining several uncertain steps together, so it shrinks to a usable figure when the estimates are made in one step instead.",
+        "key": false,
+        "provenance": "misreads the bolded lead 'All forecasts come with wide error margins that compound over time' as locating the width in the chaining of steps — so a single-step estimate would be tight — rather than in genuine disagreement about which biological process is the right reference",
+        "family": "b"
+      }
+    ],
+    "explanation": "These forecasts are not concrete predictions of a date; they are scenarios for checking whether a set of beliefs hangs together. Read that way, a twelve-order-of-magnitude span is the exercise working rather than failing: it reports how much the answer depends on which biological process you treat as the stand-in for a human, which is itself a finding about what is not yet known. The midpoint option imports an assumption never made here — 'one dollar or a trillion dollars' illustrates that we do not know which end is closer to right, not that the ends are equally weighted. The growth-trend option borrows a separate uncertainty, about investment and chip supply, and files it as the source of this one. (Forecasting Timelines)",
+    "takeaway": "A wide, honestly reported range is what a consistency-checking forecast is supposed to produce — it is a finding about what we do not know, not evidence the method failed.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who took in the section's statement that forecasting methods are 'not concrete predictions of timelines; but instead scenarios that help you reason about different potential futures' can produce the key with the options covered; the stem no longer states the reason the range is wide, so the answer is not available by echo.",
+      "cynic_test": "All four options open 'The spread', all four accept that something is wrong with the reader's conclusion, and each offers a different account of where the width comes from, so there is no odd-one-out and no option is refuted by the stem. Residual risk: the key is the only option that reframes rather than explains away, which a very test-wise reader may read as the 'deep' choice."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1]",
+    "options[2]",
+    "options[3]",
+    "explanation",
+    "takeaway",
+    "stem_format",
+    "load_bearing_figures",
+    "self_check"
+  ],
+  "reviewer_note": "The original key's load-bearing clause — 'it still rules out most implausible magnitudes' — is a claim this section never makes, and the prose's own analogy ('like not knowing if something costs one dollar or a trillion dollars') pulls against it; the rewrite drops that clause and anchors the key on the section's explicit 'scenarios, not concrete predictions' sentence instead, so check that substitution before anything else, and note that the twelve orders of magnitude is now stem-only scaffolding, leaving this section's single R11 durable-figure slot unspent."
+}

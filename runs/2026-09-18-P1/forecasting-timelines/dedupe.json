@@ -15,7 +15,14 @@
     "forecasting-timelines/sonnet/c03",
     "forecasting-timelines/sonnet/d01",
     "forecasting-timelines/sonnet/d02",
-    "forecasting-timelines/sonnet/d03"
+    "forecasting-timelines/sonnet/d03",
+    "forecasting-timelines/sonnet/a01r",
+    "forecasting-timelines/sonnet/a02r",
+    "forecasting-timelines/sonnet/a03r",
+    "forecasting-timelines/sonnet/b01r",
+    "forecasting-timelines/sonnet/c01r",
+    "forecasting-timelines/sonnet/c02r"
   ],
-  "collapsed": []
+  "collapsed": [],
+  "note_3prime": "Rewrite ids appended by the orchestrator to enable the flow-diagram 3-prime re-measure step. pipeline.mjs measure is gated on dedupe.json survivor_ids, and dedupe cannot be re-run after rewrites exist (a rewrite shares its original targets and most of its stem, so it would be collapsed against the candidate it replaces). Ids only; no candidate text was touched."
 }

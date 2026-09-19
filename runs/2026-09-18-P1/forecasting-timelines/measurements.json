@@ -430,5 +430,217 @@
     "explanation_words": 114,
     "key_count": 1,
     "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet/a01r": {
+    "correct_len": 150,
+    "distractor_lens": [
+      148,
+      140,
+      145
+    ],
+    "mean_distractor_len": 144.3,
+    "len_ratio": 1.04,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.07,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "number"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet/a02r": {
+    "correct_len": 164,
+    "distractor_lens": [
+      157,
+      146,
+      153
+    ],
+    "mean_distractor_len": 152,
+    "len_ratio": 1.08,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 7,
+    "max_over_min": 1.12,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet/a03r": {
+    "correct_len": 156,
+    "distractor_lens": [
+      162,
+      136,
+      142
+    ],
+    "mean_distractor_len": 146.7,
+    "len_ratio": 1.06,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.19,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet/b01r": {
+    "correct_len": 163,
+    "distractor_lens": [
+      165,
+      161,
+      158
+    ],
+    "mean_distractor_len": 161.3,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "twelve",
+      "orders",
+      "magnitude",
+      "uncertainty",
+      "estimates",
+      "noise"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/sonnet/c01r": {
+    "correct_len": 131,
+    "distractor_lens": [
+      127,
+      125,
+      124
+    ],
+    "mean_distractor_len": 125.3,
+    "len_ratio": 1.05,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 4,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "turns",
+      "text",
+      "model",
+      "whether"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/sonnet/c02r": {
+    "correct_len": 126,
+    "distractor_lens": [
+      133,
+      131,
+      128
+    ],
+    "mean_distractor_len": 130.7,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 2,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 142,
+    "key_count": 1,
+    "citation_anchor_resolves": null
   }
 }

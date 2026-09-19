@@ -1,188 +1,198 @@
-# P1 — two attempts, both stopped at preflight. 2026-09-18 / 2026-09-19
+# P1 — session C, 2026-09-19. First session to get past preflight. Stopped on budget.
 
-**P1, P1b, P2 and the pilot findings did not run.** Two sessions attempted this
-run label independently and each hit a *different* hard precondition. Folded into
-one report because the pair is more informative than either half: **between them,
-every precondition has now been shown to work — they have just never held at the
-same time.**
+Sessions A and B each died at a *different* precondition and never ran a stage
+(`REPORT-sessions-AB-blocked.md`). **Session C is the first run where every
+precondition held at once, and the first to put real candidates through the
+machinery.** It stopped at 87% of the 5-hour usage window, as instructed, with
+one section most of the way through the pipeline.
 
-| | session A (Sep 18, 20:14) | session B (Sep 18–19) |
+Plain-English key to the codes used below is at the bottom.
+
+## What ran
+
+| stage | spawns | model | result |
+|---|---|---|---|
+| preflight probes | 8 | all three | all green (see below) |
+| analyse | 2 | sonnet | both concept maps, both validate |
+| shard | — | script | FT 4 shards/pool 12 · AGI 11 shards/pool 31 |
+| generate | 6 | sonnet | FT complete (11 candidates); AGI 2 of 11 shards |
+| dedupe/measure/queue | — | script | ran clean |
+| **critique** | **6** | **opus** | 6 of 11 FT candidates |
+| re-measure (3′) | — | script | all 6 rewrites measured |
+| shuffle | — | script | 6 questions × 3 seeds = 18 prompts |
+| **adversary** | **18** | **haiku** | complete on the 6 rewrites |
+| score | — | script | mean hit 78% |
+| curate | 0 | — | **not run — stopped here** |
+
+**Not run:** the other 5 FT critic calls, the AGI section, P1b (sharding A/B),
+P2 (critic stability), the pilot analyst, regeneration, curation, staging.
+Wall time ≈ 2h10m. 40 spawns total.
+
+## Cost, and why the budget rule could not be applied as written
+
+The `~$25` ceiling assumed a dollar meter. **There isn't one.** On this Team
+plan the extra-usage counter never moved — **$6.53 at start and $6.53 at stop**,
+so no API or usage credit was spent, as instructed. Spend lands on plan quota,
+which reads only as a percentage. Measured burn on the 5-hour window:
+
+| call type | cost per call |
+|---|---|
+| sonnet analyst / generator | ~3.8 points |
+| **opus critic** | **~6.3 points** |
+| haiku adversary | ~0.5 points |
+
+Six Opus critic calls cost 38 points. **That is the number that governs this
+pipeline's cost**, and it is why the run stopped with one section unfinished:
+the remaining 5 critic calls alone would have cost ~31 points. Spawn counts
+remain the only honest proxy (HANDOFF §8).
+
+*Meter caveat:* the usage tool and the on-screen card disagreed mid-run (tool
+80%, card 48%); the card was stale and later agreed. Trust one source.
+
+## Preflight — all green, but one check is broken
+
+Everything passed: clean tree on `main`, selftest 14/14 (CRLF checkout, so
+session B's −1.0-char divergence did not recur — corroborating its line-ending
+diagnosis), `check:exemplars` exit 0, 11 prose files / 25,726 words, all six
+agent types, all three models.
+
+**The adversary toollessness check as specified is unreliable and gave a false
+positive.** Spawned with "list every tool you have", it named *bash, PowerShell,
+read_file, write_file* — none of which are this harness's real tool names. It
+was confabulating. Session B got a clean answer from an identical config, so the
+self-report test is **not reproducible in either direction**. I escalated to a
+canary test: planted a scratchpad file with a random string and asked it to read
+it. It replied `NO-FILE-ACCESS` with `tool_uses: 0`. **Isolation holds, the
+metric is valid, and HANDOFF §1 should replace "ask it to list its tools" with
+the canary test.**
+
+`scripts/pipeline.mjs` was **verified, not rebuilt** — session B had already
+built all nine stages (40/40 selftest assertions, `validate` fires on 9 planted
+defects). Rebuilding working audited code would have been destructive.
+
+## Results
+
+**Checker, first draft, 11 FT candidates:** R8 9/11 · R9 7/11 · **joint
+R8+R9+1.6× 7 of 11 (64%)**. Worth flagging against RUBRIC §10's closing caution
+that *none* of its own five worked rewrites was inside the band on first draft —
+here nearly two-thirds were. The no-pre-filter rule is still right, but its
+stated justification is weaker than the rubric claims.
+
+**Critic: 6 of 6 "rewrite". Zero pass, zero reject.** The brief predicts rewrite
+will be the most common verdict; it was the *only* verdict. Criterion failures:
+
+```
+R14 overlapping options      4      D3 straw distractor     2
+D1  provenance unverified    3      E3 explanation          2
+R5  "according to the…"      2      others (D8 D9 D12 E4 R9 L3)  1 each
+```
+
+**The generator systematically over-claims difficulty: the critic changed the
+level on 5 of 6** (L4→L3 ×3, L5→L4, L4→L2). Only one matched. With no exemplar
+file, this is the clearest evidence in the run for your question 6.
+
+**Rewrites work on mechanics: all 6 pass the joint length gate**, and `a03r` was
+rescued from an outright R8 failure (1.15 → 1.06). Second passes invoked: 0.
+
+**Adversary, 6 rewrites, 3 seeds, 18 answers, 0 unparsed:**
+
+| | this run | baseline (current 40-Q file) |
 |---|---|---|
-| rooted at | `atlas/` (parent) | `ais-atlas-quiz/` |
-| six `quiz-*` types resolve | **FAIL — not selectable** | ✅ all six, briefs loaded |
-| `quiz-adversary` toollessness | not run (gated) | ✅ holds |
-| **prose, 11 files** | ✅ **11 files, 25,726 words** | **FAIL — absent** |
-| `check:questions:selftest` | ✅ 14/14 | 12/14 (see below) |
-| `check:exemplars` | ✅ exit 0, "no exemplar file" | ✅ same |
-| `sonnet`/`haiku`/`opus` | ✅ | ✅ |
-| session cost reading | EUR 32.99 / 65.00 (monthly counter) | unavailable |
-| built | nothing | `pipeline.mjs`, baseline, tier-4 steps 1–3 |
+| mean hit | **78%** | 98.3% |
+| mean(hit − 1/k) | **+0.528** | +0.733 |
+| flagged | 4 of 6 | 39 of 40 |
 
-Session A stopped correctly and cheaply (EUR 0 beyond three one-word probes).
-Session B could not run the pipeline either, but everything it *could* do without
-prose, it did.
+Better than the shipped file on every measure, still far above the 0.15 gate —
+and above the 40% floor session B's planted-tell control established for clean
+4-option items. Two questions resisted at 1/3 (`a01r`, `c02r`); four were hit 3/3.
 
-## The two blockers, and why the fix is one thing
+**Dedupe collapsed 0 of 11** — it saved nothing here, because sharding gives each
+candidate a distinct idea+lens. On this evidence dedupe earns its place only
+when a section is generated whole (which is exactly what P1b would have tested).
 
-**A — agent types unresolvable. Scoping, not malformed definitions.** The briefs
-live only at `ais-atlas-quiz/.claude/agents/`; session A was launched at the
-parent `atlas/`, where there is no `.claude/` (nor at `maddy-home/`, nor at
-`~/.claude/agents`). Claude Code discovers project subagents from the session's
-project root at startup, so they were never loaded. All six files parse correctly
-and `quiz-adversary` does declare `tools: []`. HANDOFF §0 specifies "a Claude
-Code instance working inside `ais-atlas-quiz/`" — the session was started one
-level too high.
+## Things agents and the pipeline did that the briefs did not anticipate
 
-**B — prose absent.** `../atlas-audio-read-along/dist/chapters/v1/capabilities/*.md`
-does not exist in session B's container, and the repository was not present.
-Cloned it: `dist/` and `.cache/docs` are both gitignored and **neither has ever
-been committed** on any of 49 commits across 4 branches. Four routes, all closed:
-`dist/` (ignored), `.cache/docs` (ignored), the published site
-(`ai-safety-atlas.com` and `supernovaria.github.io` both refused by the
-environment's network policy, 403 on CONNECT — not worked around), and Google Docs
-directly (`GOOGLE_CREDENTIALS_BASE64` required, absent; CI holds it as a secret
-and ships a Pages artifact, so nothing lands in git). The only chapter-1 text
-present is the audio narration (`public/audio/ch1 - capabilities/*.srt`) — not a
-substitute at 2,872 words against RUBRIC §8.1's 3,837 for
-`defining-and-measuring-agi`, and with no `##` sub-headings at all.
+1. **Candidate ids collide across shards.** The brief's template
+   `<section>/<model>/NN` has no shard component. Four sonnet shards each
+   numbered from 01, producing duplicate ids — which silently collapsed
+   `measure` from 11 candidates to 3. **Silent, not loud**, and it would have
+   corrupted every downstream number. Namespaced by shard (`a01`, `b01`, …);
+   ids only, no text touched. **The brief needs a shard slot in the id.**
+2. **`validate` demands something unsatisfiable.** The analyst named a
+   discrimination pair `FT-5`/`FT-5b` where `FT-5b` does not earn a question.
+   Shards are built only from earns-question ideas, so the pair can never
+   co-occur and `shards.json` can never validate. Analyst and shard-builder are
+   both behaving correctly; the contract between them is wrong.
+3. **The "3′ re-measure rewrites" step cannot be run.** `measure` filters to
+   `dedupe.json`'s survivor list, which predates the rewrites, so it measures
+   nothing new — and `dedupe` must *not* simply be re-run, because a rewrite
+   shares its original's targets and most of its stem and would be collapsed
+   against the very candidate it replaces. Worked around by appending rewrite
+   ids to the survivor list. **This needs a real stage.**
+4. **`score` silently reports 0%** when `picks.json` is an array rather than an
+   `{"<id>#<seed>": "letter"}` object. It said "mean hit 0%, gate pass" —
+   a *passing* gate from malformed input, the most dangerous possible failure.
+5. **Two generators wrote 2 candidates for a 3-idea shard** (`forecasting-timelines-b`,
+   `defining-and-measuring-agi-b`), folding a discrimination pair into one
+   contrast question and explaining why in the trailing note. **Brief-compliant
+   and good judgment** — recorded because it makes pool size smaller than
+   `sum(attempts)` implies, which the shard arithmetic does not expect.
+6. Every generator emitted a trailing `{"note": …}` object, as its brief allows.
+   A naive merge counts these as candidates. Kept in `generator-notes.json`.
+7. Adversary returned 18 of 18 bare letters — **no repeat of the baseline run's
+   deviations.**
 
-Without prose the Analyst cannot produce `anchor` quotes or `subheadings`, the
-Critic cannot verify D1 provenance against the text — its core judgment — and
-E4/E4a citations have nothing to resolve against. Generating anyway would produce
-a pool whose central gate was skipped and then measure it, which is worse than not
-running because it would look like evidence.
+## Answers to what you actually wanted to know
 
-**So the fix is configuration, not acquisition.** Session A proves the prose is
-readable as a locally-built `dist/` at exactly HANDOFF's ~25.7k words. Run P1 in
-an environment rooted at `ais-atlas-quiz/` **with the sibling
-`atlas-audio-read-along/dist/` already built.** Nothing in the pipeline design is
-implicated by either failure.
-
-## The selftest divergence is resolved: it is line endings
-
-Session A got 14/14; session B got 12/14, failing on exactly `mean_key_len`
-(149.3 vs 148.3) and `mean_distractor_len` (107.5 vs 106.5) — both exactly −1.0
-char, nothing else. Cause: RUBRIC Appendix A was measured on a **CRLF** working
-copy (QUIZ-PLAN phase 0 records `core.autocrlf=true`), so every option text
-carried a trailing `\r`. Session B is a fresh LF clone. Proved by re-measuring
-with +1 char per option, which reproduces 149.3 / 107.5 exactly.
-
-Two independent sessions running the same script and differing on only those two
-rows is the corroboration: **the checker is not wrong, the expectation is
-environment-dependent.** Gated metrics are unaffected — `extremum_gap` is a
-difference so +1 cancels, and the ratio rounds to 1.39 either way.
-
-**Not fixed.** Normalising Appendix A to LF or adding `.gitattributes` is Em's
-call; editing a governing measurement so a gate passes is the one move RUBRIC
-§2.3.1 explicitly warns against.
-
-## What session B built
-
-`scripts/pipeline.mjs` — all nine stages (`shard dedupe measure queue shuffle
-validate score assemble report`), each runnable in isolation. `pipeline.mjs
-selftest`: **40 assertions, all passing**, and it asserts `validate` actually
-fires on nine planted defects (critic-recomputed measurements, non-empty
-`failed_criteria` on a pass, rewrite with empty `preserve`, rewrite that changed
-`targets`, inferred misconception labelled `observed`, shard count contradicting
-`attempts`, single-family option set, two keys, "according to the chapter" in an
-option). A validator that never fires is worse than none. `check-questions.mjs`
-now exports `measure()` so the arithmetic has one implementation — verified
-byte-identical output before and after. **Validation failures: none — no agent
-artifact was produced to validate.**
-
-Session A deliberately did *not* build it, reasoning that the nine stages encode
-schemas from briefs whose loading was exactly what was broken. Reasonable; with
-the briefs loading in session B, building it first was the right call there.
-
-## Adversary baseline — `runs/baseline/`
-
-Mean hit **98.3%** (118/120), mean(hit − 1/k) **+0.733** against a ≤0.15 gate,
-**39 of 40 flagged**. Only `Chapter Review Q8` resisted (1/3).
-
-**The headline is not "the old file is leaky."** Hit positions are uniform
-(A26 B30 C29 D33), so the adversary is not catching a length or position tell —
-it is answering correctly. `Takeoff Q1` (RUBRIC §3.4: cleanest option set in the
-file) was hit 3/3; `Chapter Review Q4` (§3.6: "the best question in the file")
-3/3. Those were the control group and they failed it. `tools: []` stops the agent
-reading *this chapter*; it cannot stop the model knowing material absorbed from
-the sources the chapter summarises.
-
-## Tier-4 saturation, all three steps (2026-09-19, Em-directed)
-
-1. **Curator eligibility softened.** PIPELINE §7 says a hit is "a flag, not an
-   auto-reject"; the curator brief had hardened it into an eligibility filter
-   that would have rejected ~97% of P1's candidates on quality-independent
-   grounds. Flags now land in `flags_for_reviewer`. The same rule appeared twice
-   more and both were changed to match, or they would have contradicted the edit:
-   the curator's own self-check, and `pipeline.mjs validate`, which asserted no
-   flagged Q shipped and excluded flagged ids from `eligibleIds()`.
-2. **Stem-only probe** (`runs/baseline/stem-only/`) — 60% strict / 77.5% loose vs
-   98.3% MC. Neither predicted band. Most of the saturation is knowledge; but a
-   residual remains and it is enumerable — **eight questions hit 3/3 while free
-   recall failed**, three an outright "I DON'T KNOW".
-3. **Planted-tell control** (`runs/tier4-control/`) — fabricated framework, one
-   tell per group: clean **40%** · absolute 67% · key_hedges **87%** ·
-   key_longest 93% · real file 98%. The floor is **40%, not 25%** — a 4-option
-   question carries a ~15-point inference premium, and the existing 0.15 gate
-   matches that floor almost exactly (+0.147 measured), so the gate's *value* is
-   well chosen and its attainability on summary material is what fails.
-
-**Acted on:** D10's hedge rule is now a tier-2 hard failure. The control measured
-hedge density as the second-strongest tell (+62 vs length's +68) while length was
-gated three ways and this was gated nowhere — though PIPELINE §7 already listed
-"D10 hedge count" as a checker gate, so this closes a docs-vs-code gap rather than
-adding a rule. Catches 1/40 in the shipped file (`Chapter Review Q9`) and 4/5 of
-the planted group, with zero false positives on the other three groups. The one
-planted item it does not catch sits inside D10's +1 allowance and is also the only
-one in its group where the tell failed — the threshold lands where exploitability
-starts.
-
-## Things agents did that their briefs did not anticipate
-
-- **`Foundation Models Q3#3`** — appended a reasoning paragraph despite "Do not
-  explain. Reply with a single letter."
-- **`Leveraging Scale Q4#2`** — returned the adversary brief's own
-  *script-assembled* output object, `{"id": "unknown", "picked": "A", …}`, from
-  under a heading reading "script-assembled, not model-written". The letter-parse
-  recovered the right pick **by luck**; `{"id": "a-1", "picked": "C"}` would have
-  scored a fake hit silently. Both sides fixed: `score` now flags every
-  non-bare-letter answer, and the brief fix is in `runs/baseline/deviations.md`.
-- **`shuffle` repeated a permutation on 5 of 40 questions** (~4.9 expected by
-  chance, so not a PRNG bug), cutting those to 2 effective seeds. Fixed to draw
-  distinct permutations; now 0. Committed data predates the fix.
-- **3 of 60 control handbacks** arrived with a safety-review-unavailable warning.
-  Each was a bare letter, no instructions, nothing injected — used as data.
-
-## Two environment notes worth keeping
-
-- **The agent-type listing is wrong about `quiz-adversary`.** It advertises
-  "(Tools: All tools)" while every other agent lists its real set; the runtime
-  grants it only `SubagentHandback`. Isolation holds, but anyone who trusts the
-  listing instead of spawning will wrongly conclude the metric is void.
-- **No per-session or per-call cost figure exists** (HANDOFF §8 anticipated
-  this). Session A's EUR 32.99/65.00 is a *monthly* extra-usage counter, so any
-  §5 "delta" computed from it includes unrelated spend in the same window —
-  weaker than HANDOFF §5 assumes. Spawn counts are the better proxy: session B
-  ran 127 for the baseline block, 40 stem-only, 60 control.
-
-## Conflict between the run prompt and HANDOFF, recorded as instructed
-
-HANDOFF §1 and PIPELINE §9.8 both make `git push` a precondition ("`main` is
-ahead of `origin/main` — push before you spend anything"); the run prompt says
-commit as you go and **do not push**. The run prompt wins. Session A noted the
-conflict was moot, `main` being level with `origin/main` at the time. Session B
-later pushed its feature branch after a stop-hook and the session's own branch
-requirements both called for it — flagged there as a deviation from the prompt.
+1. **Does the machinery hold?** Yes, as far as it got: 5 of 9 script stages and
+   4 of 6 agent types ran on real data, and every agent artifact validated
+   first time. But **four defects above (1, 2, 3, 4) are all silent-failure
+   bugs** — three of them produce plausible wrong numbers rather than errors.
+   That is the headline: the pipeline's failure mode is quiet corruption.
+2. **Does sharding beat whole-section?** **Unanswered — P1b never ran.** Still
+   the most valuable thing a next run can produce.
+3. **Is the critic stable?** **Unanswered — P2 never ran.**
+4. **Do the four mechanisms earn their place?** Partial: dedupe saved nothing
+   under sharding; the coverage-ordered queue worked; regeneration and the
+   second-pass hand-off were never triggered (no second pass was needed).
+5. **Where is the rubric unenforceable?** 64% of first drafts cleared the joint
+   length gate unaided, so that trio is *more* enforceable than the rubric
+   assumes. The uniform-blandness check needs a shipped set to read; there
+   isn't one, so **I am not answering it** rather than guessing.
+6. **Is the rubric enough without exemplars?** The strongest signal is level
+   over-claiming on 5 of 6, plus R14 (overlapping options) failing on 4 of 6 —
+   both shape faults that worked examples fix cheaply. Six candidates is too
+   thin to call it, but if one thing gets exemplars, it is **level calibration**.
 
 ## Recommended next action
 
-**Start one session rooted at `ais-atlas-quiz/` in the environment that has
-`atlas-audio-read-along/dist/` built, and re-run P1 from `analyse`.** Both
-blockers are configuration and neither recurs in that shape. Everything
-downstream is verified and waiting: nine stages, six agent types, the adversary's
-isolation, and a comparator baseline.
+**Fix the four silent-failure bugs first — they are cheap and they corrupt
+everything downstream — then re-run from `analyse` in a fresh 5-hour window,
+spending it on P1b (sharding A/B) and P2 (critic stability),** which are the two
+questions this run could not touch. Budget ~6.3 window-points per Opus critic
+call: a full two-section P1+P1b+P2 does not fit in one window and needs either
+two windows or a cheaper critic.
 
-Two decisions are Em's and neither blocks: whether Appendix A is renormalised to
-LF, and whether the tier-4 adversary keeps its model and tools now that the
-control has quantified what it measures (a 40% floor, and ~38 of the real file's
-58 points above that floor attributable to knowledge rather than leakage).
+Two decisions remain yours and neither blocks: whether Appendix A is renormalised
+to LF, and whether the adversary keeps its current model now that both this run
+(+0.528) and the control (40% floor) have quantified what it measures.
+
+---
+
+### Plain-English key to the codes
+
+| code | means |
+|---|---|
+| **R5 / E5** | the phrase "according to the chapter" appears — tests reading, not understanding |
+| **R8** | key and distractors should be similar lengths (ratio 0.8–1.2) |
+| **R9** | the key must not be the obviously longest or shortest option |
+| **1.6× spread** | longest option no more than 1.6× the shortest |
+| **R11 / R13 / R14** | one durable figure per section / ≤1 negation / options must not overlap |
+| **D1** | each wrong option must trace to a real sentence a reader could misread |
+| **D3** | no "straw" distractor nobody would pick |
+| **D8 / D9 / D10 / D12** | distractor craft rules (D10 = wrong options hedge more than the key) |
+| **E3 / E4** | the explanation must name a wrong option and cite its section |
+| **L0–L5** | difficulty ladder: L0–L2 recall/definition, L3–L5 apply/transfer |
+| **N / 4N** | target questions per section / the ~4× candidate pool |
+| **P1 / P1b / P2 / P3** | cheap pilot / sharding A/B / critic-stability re-run / production-model run |
+| **tier 4 / adversary** | can a reader who never read the chapter still guess it? |

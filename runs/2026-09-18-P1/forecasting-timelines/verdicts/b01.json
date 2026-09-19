@@ -1,0 +1,97 @@
+{
+  "id": "forecasting-timelines/sonnet/b01",
+  "verdict": "rewrite",
+  "level": "L4",
+  "level_claimed_by_generator": "L5",
+  "failed_criteria": ["R14", "D8", "E4"],
+  "measurements": {
+    "correct_len": 163,
+    "distractor_lens": [157, 161, 158],
+    "mean_distractor_len": 158.7,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 1]
+    },
+    "stem_word_singletons": ["forecast", "2045", "estimates", "around", "backwards"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 116,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14 (word-match tell): stem_word_singletons includes '2045' and 'around', and both land in exactly one option — the key ('a figure like 2045 ... not as a value the answer clusters around'). The stem's one salient figure is echoed only by the correct answer, which is precisely the marking R14 forbids; the rule wants the word in two or more options or in none.",
+    "D8 (unfalsifiable/evaluative option): the first distractor opens 'Nothing is backwards here', a meta-statement about the question rather than a claim about the world. The stem presupposes the colleague has something backwards, so this option refutes itself on structure and is eliminable with zero domain knowledge — the same shape as the rubric's banned 'This is a perfectly precise and meaningful statement — no critiques apply'. The misreading underneath it (the centre point is the method's intended output) is sound and is kept in the rewrite; only its framing was fatal.",
+    "E4 (citation): the explanation closes '(Forecasting Timelines → Training Data)', but every claim it makes — forecasts as consistency checks, the biological anchors, the twelve orders of magnitude, the dollar analogy — sits in the section preamble above the '## Effective Compute' heading. 'Training Data' is the data-wall subsection and has nothing to do with this question; the pointer sends the reader to the wrong place, and the candidate's own citation metadata already says subheading: null."
+  ],
+  "preserve": "The stem, the key, and distractors 2 and 3 all stay: the 'is the wide range a failed method or the finding itself' discrimination is the section's best L4/L5 material, the midpoint distractor built on the one-dollar-or-a-trillion-dollars analogy is the strongest option in the set, and the length numbers (1.03 ratio, 2-char extremum gap) are already exemplary and must not be disturbed. Only the first distractor's framing and the explanation's citation need to change.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/b01",
+    "targets": ["FT-2", "FT-4"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A colleague summarizes this section as: 'The forecast is that AGI arrives in 2045 — the twelve orders of magnitude of uncertainty in the underlying compute estimates is just noise around that number.' Which of these best describes what the colleague has backwards?",
+    "options": [
+      {
+        "text": "The uncertainty is the finding itself: a figure like 2045 is useful only for checking whether your other beliefs cohere, not as a value the answer clusters around.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The colleague's only error is the word 'noise': 2045 is the method's point estimate, and the twelve orders of magnitude are the error bars around any point estimate.",
+        "key": false,
+        "provenance": "misreads 'When someone says \"AGI in 2045,\" they mean \"somewhere in the 2030s-2050s range, with 2045 as a rough center\" - not a precise date' as making 2045 the method's point estimate with the span as its error bar, rather than as a denial that a date is what the method outputs at all",
+        "family": "c"
+      },
+      {
+        "text": "The colleague's real error is treating that spread as informative at all; a gap that wide means the biological-anchors method has failed and should be discarded.",
+        "key": false,
+        "provenance": "misreads 'twelve orders of magnitude of uncertainty' and 'all forecasts come with wide error margins that compound over time' as evidence the method failed, reversing the section's point that the margin is the informative output",
+        "family": "b"
+      },
+      {
+        "text": "The colleague's mistake is treating the lower and upper biological-anchor estimates as equally likely, when the true value more likely sits near the midpoint.",
+        "key": false,
+        "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a roughly uniform distribution centered on the midpoint, rather than genuine deep uncertainty about which reference process is right",
+        "family": "b"
+      }
+    ],
+    "explanation": "A forecast here is a scenario for checking whether your own beliefs are internally coherent, not a concrete prediction of a date — so the twelve-orders-of-magnitude spread between the biological anchors is not decoration around a result, it is the result. Collapsing it into a definite 2045 target throws that away. The 'error bars' option makes the same move more politely: it still treats 2045 as the method's output, when the output is a span you reason with. The 'method has failed' option reverses the claim from the other side, and the midpoint option assumes a roughly uniform range, when the two reference processes — the compute of learning skills in one lifetime versus the compute of evolutionary history — differ over which anchor is even the right one. (Forecasting Timelines)",
+    "takeaway": "A forecast's error bars are the finding — treat a stated center figure as a reasoning aid, not as the chapter's actual prediction.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "twelve orders of magnitude of biological-anchors uncertainty (durable, R11 budget)"
+    ],
+    "self_check": {
+      "cover_test": "Yes — a reader holding 'a forecast is a consistency check, and the width of the range is the finding' can state the colleague's error before seeing any option.",
+      "cynic_test": "No option contradicts the stem's presupposition any more, the stem's figure 2045 now appears in two options rather than only the key, no option carries an absolute quantifier, and hedge density is flat across the set, so a skipper has no surface route in."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "sonnet"
+  },
+  "rewrite_changed": ["options[1].text", "options[1].provenance", "options[1].family", "options[3].family", "explanation", "level_claimed", "self_check"],
+  "reviewer_note": "Read the key's closing clause against the prose's own words '2045 as a rough center' — the text arguably concedes that the range does centre on 2045, and that concession is the one foothold a sharp reader has for defending the point-estimate or midpoint options over the key, so decide whether 'not a value the answer clusters around' is a claim you are willing to mark wrong answers against."
+}

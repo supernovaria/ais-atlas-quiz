@@ -1,0 +1,819 @@
+[
+  {
+    "id": "forecasting-timelines/sonnet/a01",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "R5",
+      "R14",
+      "E3"
+    ],
+    "measurements": {
+      "correct_len": 160,
+      "distractor_lens": [
+        144,
+        152,
+        142
+      ],
+      "mean_distractor_len": 146,
+      "len_ratio": 1.1,
+      "correct_is_longest": true,
+      "correct_is_shortest": false,
+      "extremum_gap": 8,
+      "max_over_min": 1.13,
+      "r5_matches": [
+        "the (chapter|text|section) (identifies|argues|describes|states|claims|presents|discusses|lists|mentions|defines)"
+      ],
+      "r5_loose_matches": [],
+      "mentions_chapter": true,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "example",
+        "beliefs",
+        "belief",
+        "each",
+        "chapter",
+        "rates"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 127,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R5: gate-2 hard failure. The stem opens 'The section describes a worked example...', which fires the /the (chapter|text|section) (describes|...)/ pattern reported in r5_matches, and the embedded reader-claim adds 'the chapter's own predicted growth rates' (mentions_chapter true). Neither R5 exemption applies: the reader is not being asked to evaluate the Atlas's editorial position against an alternative, and nothing is quoted verbatim as an object of analysis — the attribution is doing pure narration of the passage, which also pre-summarises the paragraph the key paraphrases.",
+      "R14 (word-match tell): 'beliefs' is a distinctive stem content word (stem: 'your own beliefs about how fast investment...', 'your belief about how much automation') and appears in exactly one option — the key. A reader matching stem vocabulary to option vocabulary is pulled straight to '- [x] Testing whether your own separate beliefs...'. Symmetrically, 'example', 'rates' and 'chapter' are singletons that all land on the same distractor (option 1), marking it as the one built out of the stem.",
+      "E3: the explanation identifies its distractors positionally ('Distractor 1...', 'Distractor 2...', 'Distractor 3...'). The app shuffles options by default (the stated rationale under R12), so these labels refer to nothing the reader can see; the misreadings named are correct but unattachable. §4.5's 'never use letter references' applies to the explanation for the same reason."
+    ],
+    "preserve": "the three distractors' underlying content and provenance — they are the concept map's FT-2 misconceptions (c, d, b) used exactly as written, all three trace to sentences that really are in the prose, and all three are beliefs an attentive reader could hold; and the key's core claim (combined output is a coherence check on your own inputs, not a forecast to adopt). Only the attribution framing, the stem-vocabulary overlap and the explanation's positional labels need to change.",
+    "rewrite": {
+      "id": "forecasting-timelines/sonnet/a01",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "A reading-group member picks their own figures for how fast investment, software efficiency, and hardware efficiency are improving, adds a figure for how much automation each order of magnitude of compute unlocks, multiplies them out, and announces: 'There - that combined number is when transformative AI arrives.' Which response best captures what the exercise has actually produced?",
+      "options": [
+        {
+          "text": "It checks whether their separate beliefs on each trend are mutually consistent; a surprising combined result is a signal to revisit one of the inputs.",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "It applies the field's consensus growth rates, so its output is the expected arrival date rather than something particular to this person's beliefs.",
+          "key": false,
+          "provenance": "misreads the worked example ('If you think investment grows 5x per year AND software efficiency improves 3x per year AND hardware scales 15% per year AND each order of magnitude automates at least 10% of tasks, then what does that imply?') as the section stating the rates it expects, rather than as placeholders for whatever the reader believes - a misreading the neighbouring paragraph's measured figures ('Training compute has grown 5x per year since 2020') actively invites",
+          "family": "c"
+        },
+        {
+          "text": "It converts individually reasonable inputs into a date that inherits their reasonableness, making the combined result the estimate to adopt.",
+          "key": false,
+          "provenance": "misreads 'If you're surprised, maybe one of your input beliefs needs updating' as licence to adopt the combined output once each input looks individually reasonable, instead of as an instruction to re-examine an input",
+          "family": "d"
+        },
+        {
+          "text": "It compounds each input's uncertainty until the margins swamp the answer, which is why the whole procedure gives you a number too soft to act on.",
+          "key": false,
+          "provenance": "misreads 'All forecasts come with wide error margins that compound over time' as showing the method has failed, reversing the section's point that the reported width of the uncertainty is itself the informative result",
+          "family": "b"
+        }
+      ],
+      "explanation": "Plug your own numbers into a growth-and-automation model and what comes out is a consistency check on those numbers, not a forecast to adopt: if the implied future surprises you, that is a signal one of your inputs needs revisiting, not that you now hold a new prediction. The option treating the input rates as field consensus misreads the worked 'if you think investment grows this fast AND software efficiency improves that fast' framing - those rates are placeholders for whatever you happen to believe, and the method works with any of them plugged in. The option about compounding error margins reverses their role: the width of the uncertainty is itself the informative output, and it is what stops any single combined number from being read as a date. (Forecasting Timelines)",
+      "takeaway": "Treat a forecasting exercise's combined output as a coherence check on your own beliefs, not as a prediction to adopt.",
+      "stem_format": "claim-evaluation",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "A reader who grasped that forecasts here are scenarios for checking belief-coherence rather than predictions can state the key before seeing the options; the stem no longer narrates that framing back to them.",
+        "cynic_test": "No option repeats a distinctive stem word that the others lack ('beliefs' sits in the key and the first distractor, 'date' in two distractors, 'combined' in the key and one distractor); no figure appears in any option, so there is nothing to Ctrl-F and no length or hedge asymmetry to read off."
+      },
+      "shard_id": "forecasting-timelines-a",
+      "model": "sonnet"
+    },
+    "rewrite_changed": [
+      "stem",
+      "options[0].text",
+      "options[1].text",
+      "options[1].provenance",
+      "options[2].text",
+      "options[3].text",
+      "options[3].provenance",
+      "explanation",
+      "level_claimed",
+      "self_check"
+    ],
+    "reviewer_note": "The real risk a script cannot see is that the key still restates one sentence of the prose almost directly ('They let you check if your beliefs are internally coherent') - the rewrite moves the scenario onto a colleague's announcement so the reader has to apply the framing rather than recognise it, but please judge whether that is enough to keep this above a recall item, since it is the difference between the L3 I assigned and the L4 the generator claimed."
+  },
+  {
+    "id": "forecasting-timelines/sonnet/a02",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "R14",
+      "D1",
+      "D3",
+      "D9",
+      "E3"
+    ],
+    "measurements": {
+      "correct_len": 175,
+      "distractor_lens": [
+        161,
+        155,
+        175
+      ],
+      "mean_distractor_len": 163.7,
+      "len_ratio": 1.07,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.13,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          1,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "estimates",
+        "compute",
+        "orders",
+        "magnitude",
+        "reference",
+        "wide"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 109,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      false
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R14: word-match tell. Two distinctive stem content words appear in exactly one option each, and in both cases that option is the key — 'wide' (stem: 'A range that wide'; key: 'the wide range reflects genuine uncertainty') and 'reference' (stem: 'which biological process is used as the reference point'; key: 'which biological process is the right reference'). stem_word_singletons lists both. The rule requires such a word in two or more options or in none. The deeper form of the same defect: the key's main clause is a near-verbatim restatement of the stem's own subordinate clause, so the echo is not just a lexical tell — the stem supplies the discriminating content.",
+      "D1: option 4's provenance does not survive its own stem. The provenance line ('borrows the section's separate uncertainty about investment and hardware growth rates and misfiles it as the source of the biological-anchors range') names real prose — the section does report training-compute, investment and chip-production trends — but the stem itself already states that the estimates span twelve orders of magnitude 'depending on which biological process is used as the reference point', which is the exact refutation of 'this uncertainty is actually about how fast compute investment grows'. Test (c) fails: no attentive reader arrives here, because the stem hands them the answer to it.",
+      "D3: the ceiling of at most one distractor eliminable on general reasoning alone is exceeded. Option 2 opens 'The conclusion is right' against a stem that asks 'What's wrong with that conclusion?', making it the odd member of a 3-versus-1 split and eliminable on test instinct with zero domain knowledge; option 4 is eliminable from the stem as described above. A reader who skipped the section is left with a two-way choice between the stem-echoing key and the midpoint option.",
+      "D9: the options are not parallel completions of the stem. Three answer the question asked ('The conclusion is wrong...') and one denies its premise ('The conclusion is right...'), which is the D8 signal pattern — its presence tells the reader the real answer is among the substantive three. The cost is specific: it strands the concept map's FT-4 family-(a) misconception ('twelve orders of magnitude means the method is useless and should be discarded'), the single most valuable distractor available for this idea, in a slot the stem framing makes unselectable.",
+      "E3: the explanation identifies distractors by ordinal — 'Distractor 1', 'Distractor 2', 'Distractor 3' — but no_shuffle is false, so options are shuffled at render and the reader cannot tell which option each sentence is about. The misreadings named are accurate and well-chosen; they are pointed at nothing. E3 requires naming a distractor, which in a shuffled UI means naming it by content."
+    ],
+    "preserve": "The idea and its framing target: FT-4 read through FT-2 — what a twelve-order-of-magnitude range means for planning — is exactly the shape RUBRIC 5.3.2 sanctions as durable and L4, and the stem's Pattern-D move of putting the span in as a given is right. Keep the midpoint distractor: 'the true value most likely sits near the range's midpoint' with the dollar-analogy provenance is the strongest option in the set, it is a belief readers genuinely hold, and it survives into the rewrite almost unchanged. The rewrite also restores the intended L4.",
+    "rewrite": {
+      "id": "forecasting-timelines/sonnet/a02",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "Estimates of the compute a transformative AI system would need span roughly twelve orders of magnitude. A reader concludes that a spread that large makes the exercise worthless for planning. What is the strongest objection to that conclusion?",
+      "options": [
+        {
+          "text": "The spread is the output the method is meant to produce: these forecasts are scenarios for checking whether a set of beliefs coheres, not attempts to name a figure.",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "The spread is real, but its midpoint is the usable number, since the two endpoint estimates are equally likely and either extreme is implausible in practice.",
+          "key": false,
+          "provenance": "misreads 'When someone says AGI in 2045, they mean somewhere in the 2030s-2050s range, with 2045 as a rough center - not a precise date' as endorsing the centre of a range as the estimate to carry away, and reads 'like not knowing if something costs one dollar or a trillion dollars' as implying the two ends are equally weighted rather than that we do not know which end is closer to right",
+          "family": "b"
+        },
+        {
+          "text": "The spread comes from disagreement about how fast investment and chip supply will grow, so it narrows as those trends are measured more precisely.",
+          "key": false,
+          "provenance": "conflates two uncertainties the text states in the same paragraph: the anchors range, which the text attributes to 'the biological process used as a reference', and the trend spreads it names immediately after ('projections of available chips range by a factor of 20x, and some compute estimates span 50x'), yielding the belief that better trend measurement would close the anchors gap",
+          "family": "a"
+        },
+        {
+          "text": "The spread is an artifact of chaining several uncertain steps together, so it shrinks to a usable figure when the estimates are made in one step instead.",
+          "key": false,
+          "provenance": "misreads the bolded lead 'All forecasts come with wide error margins that compound over time' as locating the width in the chaining of steps — so a single-step estimate would be tight — rather than in genuine disagreement about which biological process is the right reference",
+          "family": "b"
+        }
+      ],
+      "explanation": "These forecasts are not concrete predictions of a date; they are scenarios for checking whether a set of beliefs hangs together. Read that way, a twelve-order-of-magnitude span is the exercise working rather than failing: it reports how much the answer depends on which biological process you treat as the stand-in for a human, which is itself a finding about what is not yet known. The midpoint option imports an assumption never made here — 'one dollar or a trillion dollars' illustrates that we do not know which end is closer to right, not that the ends are equally weighted. The growth-trend option borrows a separate uncertainty, about investment and chip supply, and files it as the source of this one. (Forecasting Timelines)",
+      "takeaway": "A wide, honestly reported range is what a consistency-checking forecast is supposed to produce — it is a finding about what we do not know, not evidence the method failed.",
+      "stem_format": "claim-evaluation",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "A reader who took in the section's statement that forecasting methods are 'not concrete predictions of timelines; but instead scenarios that help you reason about different potential futures' can produce the key with the options covered; the stem no longer states the reason the range is wide, so the answer is not available by echo.",
+        "cynic_test": "All four options open 'The spread', all four accept that something is wrong with the reader's conclusion, and each offers a different account of where the width comes from, so there is no odd-one-out and no option is refuted by the stem. Residual risk: the key is the only option that reframes rather than explains away, which a very test-wise reader may read as the 'deep' choice."
+      },
+      "shard_id": "forecasting-timelines-a",
+      "model": "sonnet"
+    },
+    "rewrite_changed": [
+      "stem",
+      "options[0].text",
+      "options[1]",
+      "options[2]",
+      "options[3]",
+      "explanation",
+      "takeaway",
+      "stem_format",
+      "load_bearing_figures",
+      "self_check"
+    ],
+    "reviewer_note": "The original key's load-bearing clause — 'it still rules out most implausible magnitudes' — is a claim this section never makes, and the prose's own analogy ('like not knowing if something costs one dollar or a trillion dollars') pulls against it; the rewrite drops that clause and anchors the key on the section's explicit 'scenarios, not concrete predictions' sentence instead, so check that substitution before anything else, and note that the twelve orders of magnitude is now stem-only scaffolding, leaving this section's single R11 durable-figure slot unspent."
+  },
+  {
+    "id": "forecasting-timelines/sonnet/a03",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L3",
+    "failed_criteria": [
+      "R5",
+      "R9",
+      "R14",
+      "D12"
+    ],
+    "measurements": {
+      "correct_len": 176,
+      "distractor_lens": [
+        160,
+        147,
+        154
+      ],
+      "mean_distractor_len": 153.7,
+      "len_ratio": 1.15,
+      "correct_is_longest": true,
+      "correct_is_shortest": false,
+      "extremum_gap": 16,
+      "max_over_min": 1.2,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "effective",
+        "compute"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 120,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R5: the stem asks 'What does the section's decomposition of effective compute show is wrong with this reading?' — source-attribution framing, which routes the reader to 'what did the page say' rather than 'what is true'. The regex family did not fire only because of the possessive ('the section's decomposition show' has intervening words between 'the section' and the verb), so r5_matches is correctly empty and the criterion still fails on substance. The rubric's default test confirms it: deleting the attribution clause leaves 'What is wrong with this reading?', which still has a determinate answer, so the clause was not doing work.",
+      "R9: extremum_gap is 16 and correct_is_longest is true; the guard is ≤15 characters when the key is the longest option. len_ratio 1.15 is inside R8, so this is a one-character-class overshoot on the key, not a structural length problem.",
+      "R14 (word-match tell): stem_word_singletons is ['effective', 'compute'] — the stem's distinctive phrase 'effective compute' appears in exactly one option, and that option is the key. R14 requires the word in ≥2 options or in none. A second, softer instance of the same tell sits alongside it: the stem presupposes the reading is wrong, and exactly one option opens 'The reading is wrong' while two open 'The reading is incomplete' and one opens 'Nothing is wrong'. A reader who has not read the section can land on the key from the lead clauses alone, which contradicts the candidate's own cynic_test note.",
+      "D12 (plausibility floor): distractor 1 opens 'Nothing is wrong with the reading', but the stem states that the decomposition shows something is wrong with it. The option contradicts the stem's own presupposition, so essentially no reader selects it and the effective guess rate rises from 25% to 33%. The misconception underneath it (family a — efficiency gains as minor refinements on a dominant chip trend) is real and worth keeping; only its framing as a denial of the stem is dead."
+    ],
+    "preserve": "The scenario and the target: a reader collapsing effective compute into chip count is exactly the §3.4 pair the concept map names for this section (FT-5 vs FT-5b), and all three distractor misreadings — efficiency-as-minor-caveat, factors-move-together, car-analogy-as-ranking — verified against the prose and are worth carrying over. The stem framing and the option surfaces are what needed rebuilding, not the idea.",
+    "rewrite": {
+      "id": "forecasting-timelines/sonnet/a03",
+      "targets": [
+        "FT-5"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "A colleague argues: 'When people say the compute behind frontier models keeps growing, they just mean labs have more and faster chips — chip count is what's doing the work.' Which reply identifies the substantive error in that account of effective compute?",
+      "options": [
+        {
+          "text": "Chip count, hardware efficiency and software efficiency are separate multiplied terms, so growth in one of them raises the total while the others sit still.",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "Hardware and software efficiency gains are ways of counting the same chips as though the fleet had grown, so chip count is still the quantity that really matters.",
+          "key": false,
+          "provenance": "misreads \"'compute' means more than just counting GPUs\" as an instruction to count the same GPUs differently — efficiency gains as chip-equivalents — rather than as two further terms multiplied alongside chip count",
+          "family": "a"
+        },
+        {
+          "text": "Chip production sets the ceiling for the other two, so growth in the total can only keep pace with the rate at which new chips are made.",
+          "key": false,
+          "provenance": "misreads 'When all three improve simultaneously—as they have been—the total compute available (effective compute) compounds much faster than hardware trends alone would suggest' as making chip growth the precondition for the other two, against the same paragraph's 'You can develop better software to make use of existing hardware.'",
+          "family": "c"
+        },
+        {
+          "text": "Chip count is the dominant term, so the two efficiency factors amount to second-order corrections that can shift the total only at the margin.",
+          "key": false,
+          "provenance": "misreads the fleet analogy's ordering — 'how many cars you have (chip production), how fast each car goes (hardware efficiency), and how efficiently you're driving (software efficiency)' — as ranking the three by importance rather than naming three equal multiplied terms",
+          "family": "b"
+        }
+      ],
+      "explanation": "Effective compute is the product of three terms — chip count, hardware efficiency, software efficiency — and each can move without the other two. That is why a doubling can come entirely from better algorithms with chip count unchanged, and why the total grows faster than any single input. The reply that recasts efficiency gains as counting the same chips 'as though the fleet had grown' keeps the colleague's error intact: it collapses three multiplied terms back into one, so it still predicts that growth stalls when chip supply does. The reply that makes chip production a ceiling fails for the same reason — better software makes use of existing hardware. And the fleet analogy lists the three factors; it does not rank them. (Forecasting Timelines → Effective Compute)",
+      "takeaway": "Effective compute is chip count, hardware efficiency and software efficiency multiplied together, each able to move on its own — so it is not a longer way of saying 'more chips'.",
+      "stem_format": "mechanism",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": "Effective Compute"
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "A reader who internalised that the three factors multiply and move independently can produce the key with the options covered: growth in one raises the total without the others.",
+        "cynic_test": "No option repeats a distinctive stem phrase ('effective compute' and 'compute' now appear in zero options; 'chip' appears in all four), no option denies the stem's premise, and all four are same-shaped declaratives, so the lead clauses carry no signal."
+      },
+      "shard_id": "forecasting-timelines-a",
+      "model": "sonnet"
+    },
+    "rewrite_changed": [
+      "stem",
+      "options[0].text",
+      "options[1].text",
+      "options[1].provenance",
+      "options[2].text",
+      "options[2].provenance",
+      "options[3].text",
+      "explanation",
+      "takeaway",
+      "self_check.cover_test",
+      "self_check.cynic_test"
+    ],
+    "reviewer_note": "The R5 regex has a possessive blind spot — 'what does the section's decomposition show' reached pass 2 with r5_matches empty — so patch the pattern before the remaining shards are measured, since any stem written that way will pass the checker silently."
+  },
+  {
+    "id": "forecasting-timelines/sonnet/b01",
+    "verdict": "rewrite",
+    "level": "L4",
+    "level_claimed_by_generator": "L5",
+    "failed_criteria": [
+      "R14",
+      "D8",
+      "E4"
+    ],
+    "measurements": {
+      "correct_len": 163,
+      "distractor_lens": [
+        157,
+        161,
+        158
+      ],
+      "mean_distractor_len": 158.7,
+      "len_ratio": 1.03,
+      "correct_is_longest": true,
+      "correct_is_shortest": false,
+      "extremum_gap": 2,
+      "max_over_min": 1.04,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          1
+        ]
+      },
+      "stem_word_singletons": [
+        "forecast",
+        "2045",
+        "estimates",
+        "around",
+        "backwards"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 116,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R14 (word-match tell): stem_word_singletons includes '2045' and 'around', and both land in exactly one option — the key ('a figure like 2045 ... not as a value the answer clusters around'). The stem's one salient figure is echoed only by the correct answer, which is precisely the marking R14 forbids; the rule wants the word in two or more options or in none.",
+      "D8 (unfalsifiable/evaluative option): the first distractor opens 'Nothing is backwards here', a meta-statement about the question rather than a claim about the world. The stem presupposes the colleague has something backwards, so this option refutes itself on structure and is eliminable with zero domain knowledge — the same shape as the rubric's banned 'This is a perfectly precise and meaningful statement — no critiques apply'. The misreading underneath it (the centre point is the method's intended output) is sound and is kept in the rewrite; only its framing was fatal.",
+      "E4 (citation): the explanation closes '(Forecasting Timelines → Training Data)', but every claim it makes — forecasts as consistency checks, the biological anchors, the twelve orders of magnitude, the dollar analogy — sits in the section preamble above the '## Effective Compute' heading. 'Training Data' is the data-wall subsection and has nothing to do with this question; the pointer sends the reader to the wrong place, and the candidate's own citation metadata already says subheading: null."
+    ],
+    "preserve": "The stem, the key, and distractors 2 and 3 all stay: the 'is the wide range a failed method or the finding itself' discrimination is the section's best L4/L5 material, the midpoint distractor built on the one-dollar-or-a-trillion-dollars analogy is the strongest option in the set, and the length numbers (1.03 ratio, 2-char extremum gap) are already exemplary and must not be disturbed. Only the first distractor's framing and the explanation's citation need to change.",
+    "rewrite": {
+      "id": "forecasting-timelines/sonnet/b01",
+      "targets": [
+        "FT-2",
+        "FT-4"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "A colleague summarizes this section as: 'The forecast is that AGI arrives in 2045 — the twelve orders of magnitude of uncertainty in the underlying compute estimates is just noise around that number.' Which of these best describes what the colleague has backwards?",
+      "options": [
+        {
+          "text": "The uncertainty is the finding itself: a figure like 2045 is useful only for checking whether your other beliefs cohere, not as a value the answer clusters around.",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "The colleague's only error is the word 'noise': 2045 is the method's point estimate, and the twelve orders of magnitude are the error bars around any point estimate.",
+          "key": false,
+          "provenance": "misreads 'When someone says \"AGI in 2045,\" they mean \"somewhere in the 2030s-2050s range, with 2045 as a rough center\" - not a precise date' as making 2045 the method's point estimate with the span as its error bar, rather than as a denial that a date is what the method outputs at all",
+          "family": "c"
+        },
+        {
+          "text": "The colleague's real error is treating that spread as informative at all; a gap that wide means the biological-anchors method has failed and should be discarded.",
+          "key": false,
+          "provenance": "misreads 'twelve orders of magnitude of uncertainty' and 'all forecasts come with wide error margins that compound over time' as evidence the method failed, reversing the section's point that the margin is the informative output",
+          "family": "b"
+        },
+        {
+          "text": "The colleague's mistake is treating the lower and upper biological-anchor estimates as equally likely, when the true value more likely sits near the midpoint.",
+          "key": false,
+          "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a roughly uniform distribution centered on the midpoint, rather than genuine deep uncertainty about which reference process is right",
+          "family": "b"
+        }
+      ],
+      "explanation": "A forecast here is a scenario for checking whether your own beliefs are internally coherent, not a concrete prediction of a date — so the twelve-orders-of-magnitude spread between the biological anchors is not decoration around a result, it is the result. Collapsing it into a definite 2045 target throws that away. The 'error bars' option makes the same move more politely: it still treats 2045 as the method's output, when the output is a span you reason with. The 'method has failed' option reverses the claim from the other side, and the midpoint option assumes a roughly uniform range, when the two reference processes — the compute of learning skills in one lifetime versus the compute of evolutionary history — differ over which anchor is even the right one. (Forecasting Timelines)",
+      "takeaway": "A forecast's error bars are the finding — treat a stated center figure as a reasoning aid, not as the chapter's actual prediction.",
+      "stem_format": "claim-evaluation",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [
+        "twelve orders of magnitude of biological-anchors uncertainty (durable, R11 budget)"
+      ],
+      "self_check": {
+        "cover_test": "Yes — a reader holding 'a forecast is a consistency check, and the width of the range is the finding' can state the colleague's error before seeing any option.",
+        "cynic_test": "No option contradicts the stem's presupposition any more, the stem's figure 2045 now appears in two options rather than only the key, no option carries an absolute quantifier, and hedge density is flat across the set, so a skipper has no surface route in."
+      },
+      "shard_id": "forecasting-timelines-b",
+      "model": "sonnet"
+    },
+    "rewrite_changed": [
+      "options[1].text",
+      "options[1].provenance",
+      "options[1].family",
+      "options[3].family",
+      "explanation",
+      "level_claimed",
+      "self_check"
+    ],
+    "reviewer_note": "Read the key's closing clause against the prose's own words '2045 as a rough center' — the text arguably concedes that the range does centre on 2045, and that concession is the one foothold a sharp reader has for defending the point-estimate or midpoint options over the key, so decide whether 'not a value the answer clusters around' is a claim you are willing to mark wrong answers against."
+  },
+  {
+    "id": "forecasting-timelines/sonnet/c01",
+    "verdict": "rewrite",
+    "level": "L2",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "D1",
+      "L3"
+    ],
+    "measurements": {
+      "correct_len": 144,
+      "distractor_lens": [
+        140,
+        150,
+        120
+      ],
+      "mean_distractor_len": 136.7,
+      "len_ratio": 1.05,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.25,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 1,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "lab",
+        "route",
+        "useful",
+        "multimodal",
+        "based",
+        "still",
+        "scaling"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 125,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      false,
+      false
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "D1: two of the three distractors fail the third provenance test (a claim an attentive reader could hold *and be wrong about*), because the sentence each one names supports the claim rather than being misread into it. Option 3 ('multimodal and self-play are lesser substitutes... cannot fully replace what synthetic data was meant to provide') is close to the prose's own ranking: the Training Data bullets give synthetic data the strongest language ('removes the constraint entirely'), cap multimodal at 'could 3-10x the effective data supply' (a bounded multiplier on a finite stock), and close the self-play bullet with 'This is still very speculative.' Option 4 ('self-play... mainly produces useful data for rule-based games like Go or Chess') is the text's own stated precondition — 'as long as tasks can be formalized as games with explicit rules and success metrics (like Go or Chess)' — with the concept map's absolute ('could only ever work for games') softened to 'mainly', which converts a misreading into a reading. The map's FT-6 provenance for this family even flags the tension ('while also flagging it as speculative'). Neither is clearly false, so the question has more than one defensible answer.",
+      "L3: the stem gives away the discrimination, so the reader's task is not L4 transfer. 'The lab hasn't touched multimodal data or task-based self-play, and nothing about the failure affects either' asserts the independence premise outright; the key ('because the three routes work through separate mechanisms, one failing doesn't determine what the other two can still deliver') is then a restatement of the stem, derivable with no knowledge of the Training Data subsection at all. A reader who skipped the section still eliminates the 'only viable alternative' option purely on the stem's second sentence. What remains of the section-knowledge task is recognising that the data wall has other escape routes — L2, and the concept map's own do_not_test list rules out the routes-as-enumeration. The §9 cynic test fails for a second, independent reason: the key is the only non-committal option ('Not necessarily —') against three determinate assertions."
+    ],
+    "preserve": "the target and the scenario lens: a single escape route failing is exactly the conditional L4 form the concept map recommends for FT-6 ('the strongest L4 form is conditional: given that one escape route... turns out low-quality'), and the family-c distractor's idea — that the wall is now hit because the last substitute is gone — is the right pre-chapter prior to keep. The mechanics are clean (ratio 1.05, no extremum gap, one absolute, zero hedges) and the citation resolves; none of that needs touching. Only the stem's giveaway clause and options 3 and 4 are broken.",
+    "rewrite": {
+      "id": "forecasting-timelines/sonnet/c01",
+      "targets": [
+        "FT-6"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "A lab's synthetic-data pipeline turns out to produce text too repetitive to improve model reasoning, and the lab abandons that route. What does this failure establish about whether data availability will constrain scaling?",
+      "options": [
+        {
+          "text": "That the other routes are untouched, since they draw on different sources, so whether data binds still turns on how well they work.",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "That scaling now meets a hard limit, since manufacturing text was the only way to add supply once the public stock is consumed.",
+          "key": false,
+          "provenance": "misreads 'The internet has maybe 30 years worth of text data at current consumption rates—but we'll hit that wall around 2028' as a hard stop, reading it in isolation from 'Three escape routes exist' in the same paragraph, so one failed substitute reads as the last exit closing",
+          "family": "c"
+        },
+        {
+          "text": "That self-play goes with it, since both routes rely on a model producing its own training examples and share the same defect.",
+          "key": false,
+          "provenance": "conflates the two bullets the subsection separates — 'Synthetic data: AI-generating it's own training data removes the constraint entirely' and 'Task-based learning: Self-play reinforcement learning can generate training data through environment interaction' — into one machine-generated-data route, so a quality failure in the first is taken to carry to the second",
+          "family": "a"
+        },
+        {
+          "text": "That data now caps scaling at whatever images and video can add, since the routes left both draw on human-produced material.",
+          "key": false,
+          "provenance": "misreads the multimodal bullet ('The internet has ~10 trillion images and ~10 trillion seconds of video') as the only remaining store, reversing the task-based-learning bullet's 'AIs can learn without human-generated pretraining examples as long as tasks can be formalized as games'",
+          "family": "b"
+        }
+      ],
+      "explanation": "The data wall's three escape routes run on different mechanisms: multimodal data taps images and video, synthetic data manufactures text under a quality condition, and task-based self-play generates data by interacting with an environment that supplies its own rules and success signal. So one route failing leaves the other two where they were; whether data constrains scaling still turns on how well those alternatives work, and the text is candid that self-play in particular remains speculative. The self-play option is the closest miss — it treats self-play and synthetic text as a single mechanism because both are machine-generated, when self-play data is disciplined by the environment rather than by the model's own writing. The images-and-video option forgets that self-play needs no human-produced examples. (Forecasting Timelines → Training Data)",
+      "takeaway": "The data wall is soft because its escape routes run on different mechanisms — one failing leaves the other two exactly where they were.",
+      "stem_format": "mechanism",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": "Training Data"
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes — a reader who held the Training Data subsection could say unaided that a synthetic-data failure settles little, because two other routes with different sources remain and the text makes the outcome depend on how well they work. The stem no longer names those routes or asserts that they are unaffected, so producing the key requires the section.",
+        "cynic_test": "The key is still the least committal option, which is the residual tell; it is blunted by the fourth option, which also leaves the outcome open ('caps scaling at whatever images and video can add'), and by the fact that 'the other routes' is meaningless to a reader who does not know there are three."
+      },
+      "shard_id": "forecasting-timelines-c",
+      "model": "sonnet"
+    },
+    "rewrite_changed": [
+      "stem",
+      "options[0].text",
+      "options[1]",
+      "options[2]",
+      "options[3]",
+      "explanation",
+      "takeaway",
+      "self_check"
+    ],
+    "reviewer_note": "The checker's hedge-word list has a hole this candidate walks straight through: the original key's 'Not necessarily —' is the most confidence-lowering phrase in the option set, yet hedge_counts came back key 0 / distractors [0,0,0] and D10 passed — worth adding 'not necessarily', 'need not', 'doesn't follow' to the list before the other shards are measured, since a generator that learns the counted words will keep reaching for the uncounted ones."
+  },
+  {
+    "id": "forecasting-timelines/sonnet/c02",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "D1",
+      "D3"
+    ],
+    "measurements": {
+      "correct_len": 133,
+      "distractor_lens": [
+        132,
+        145,
+        152
+      ],
+      "mean_distractor_len": 143,
+      "len_ratio": 0.93,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.15,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "methods",
+        "need",
+        "research",
+        "monitoring",
+        "add",
+        "ons",
+        "becomes",
+        "six",
+        "safety"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 129,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      false
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "D1: option 4 ('Split the allocation evenly... neither becomes more urgent than the other') is provenanced as misreading 'the difference between 10 years and 50 years fundamentally changes which safety strategies are viable' as implying the agendas are interchangeable. The sentence exists (section preamble, para 1), but it is not misreadable as that claim — the provenance line is 'misreads X as not-X', which fails §4.1(b). Combined with a stem that restates X verbatim in its own closing clause, no attentive reader arrives at this option.",
+      "D3: the stem's closing clause names the operative principle outright ('...follows from the idea that how far off TAI is changes which safety strategies are viable'), so two of the three distractors are eliminable on general reasoning alone with no domain knowledge: option 2 denies that timeline estimates can ground the choice, and option 4 denies that timeline length changes urgency, and both are premise-denials of a premise the stem has just asserted. D3's ceiling is one such distractor; this set has two. The candidate's own cynic_test misidentifies the tell, predicting a skipper picks the even-split option when in fact the stem hands a skipper the key."
+    ],
+    "preserve": "the two-group funding scenario and the key's direction. The case is concrete, is genuinely absent from the prose, and Group A (slow, needs future architectures) vs Group B (ships on today's models) is exactly the right frame for FT-1; the takeoff-conflation distractor is also doing real work. Only the stem's closing clause and the two premise-denying distractors need replacing.",
+    "rewrite": {
+      "id": "forecasting-timelines/sonnet/c02",
+      "targets": [
+        "FT-1"
+      ],
+      "lens": "case",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "A funder backs two groups. Group A develops theoretical alignment methods aimed at systems more capable than anything that exists today, on a research agenda measured in decades. Group B builds monitoring tools that run on today's frontier models and can ship within months. New evidence moves the funder's view of when TAI arrives from roughly forty years out to roughly six. What follows for how the money should be divided?",
+      "options": [
+        {
+          "text": "Shift the money toward Group B, since a horizon that short leaves time only for work that applies to what is already deployed.",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "Shift the money toward Group A, since an arrival that close implies a transition too abrupt for monitoring add-ons to keep pace with.",
+          "key": false,
+          "provenance": "misreads the lead sentence 'Predicting when AI automates cognitive labor determines which safety strategies are viable' as a claim about how fast the transition runs once it starts — a takeoff-speed question this section does not take up",
+          "family": "a"
+        },
+        {
+          "text": "Shift the money toward Group A, since a near arrival means only a fundamental fix helps, and monitoring add-ons suit a distant one.",
+          "key": false,
+          "provenance": "reverses 'If it arrives around 2050, we have breathing room for fundamental alignment research, for building robust governance frameworks, and for developing evaluation methods we can trust' by attaching foundational work to the near horizon and deployable work to the distant one",
+          "family": "b"
+        },
+        {
+          "text": "Leave the allocation as it is, since arrival estimates carry error margins far too wide to be a sound basis for shifting grants.",
+          "key": false,
+          "provenance": "reads 'All forecasts come with wide error margins that compound over time' as grounds for never acting on a timeline estimate, missing that the opening argument turns on the gap between 10 and 50 years rather than on precision",
+          "family": "c"
+        }
+      ],
+      "explanation": "A short horizon changes what counts as a usable safety agenda: if transformative AI is a few years out, only work that can be applied to systems already running has time to matter, while a multi-decade horizon leaves breathing room for fundamental alignment research, robust governance frameworks, and evaluation methods we can trust. So the move from forty years to six argues for weighting Group B. Two wrong answers are worth naming. 'Only a fundamental fix helps' reverses the contrast, attaching slow theoretical work to the short horizon when the short horizon is exactly what rules it out. 'Estimates are too uncertain' is the more tempting error: forecasts here do carry wide error margins, but the argument runs on the gap between a decade and half a century, not on precision, so margins that wide still leave the ordering intact. (Forecasting Timelines)",
+      "takeaway": "How far off TAI is isn't an academic estimate — it decides which safety agendas are worth funding now.",
+      "stem_format": "two-scenario",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes — a reader who took the opening argument (a near arrival leaves no time for slow theoretical research, only for approaches that work with current systems) could produce 'weight toward the group that can act on systems that already exist' before seeing any option.",
+        "cynic_test": "The stem no longer states the principle it is testing, so a skipper must choose among three live positions — 'only a fundamental fix helps', 'estimates are too uncertain to act on', and the key — none settled by the stem's own wording. No option is longer, hedgier, or more absolute than the others, and 'only' appears in the key and in one distractor."
+      },
+      "shard_id": "forecasting-timelines-c",
+      "model": "sonnet"
+    },
+    "rewrite_changed": [
+      "stem",
+      "level_claimed",
+      "options[0].text",
+      "options[1]",
+      "options[2]",
+      "options[3]",
+      "explanation",
+      "takeaway",
+      "self_check.cover_test",
+      "self_check.cynic_test"
+    ],
+    "reviewer_note": "Check the rewrite's 'only a fundamental fix helps' distractor before shipping — it is a position real alignment researchers hold and the section flatly contradicts it ('There's no time for slow theoretical research'), so we are marking a live real-world view wrong on the text's authority; also note I scored this L3 rather than the claimed L4, because the prose already walks the fast-empirical-vs-slow-theoretical contrast the scenario dresses up, which matters for the Curator's L4 share."
+  }
+]

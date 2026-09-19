@@ -1,0 +1,107 @@
+{
+  "id": "forecasting-timelines/sonnet/c02",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["D1", "D3"],
+  "measurements": {
+    "correct_len": 133,
+    "distractor_lens": [132, 145, 152],
+    "mean_distractor_len": 143,
+    "len_ratio": 0.93,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": [
+      "methods", "need", "research", "monitoring", "add", "ons", "becomes", "six", "safety"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, false],
+  "families_present": ["a", "b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "D1: option 4 ('Split the allocation evenly... neither becomes more urgent than the other') is provenanced as misreading 'the difference between 10 years and 50 years fundamentally changes which safety strategies are viable' as implying the agendas are interchangeable. The sentence exists (section preamble, para 1), but it is not misreadable as that claim — the provenance line is 'misreads X as not-X', which fails §4.1(b). Combined with a stem that restates X verbatim in its own closing clause, no attentive reader arrives at this option.",
+    "D3: the stem's closing clause names the operative principle outright ('...follows from the idea that how far off TAI is changes which safety strategies are viable'), so two of the three distractors are eliminable on general reasoning alone with no domain knowledge: option 2 denies that timeline estimates can ground the choice, and option 4 denies that timeline length changes urgency, and both are premise-denials of a premise the stem has just asserted. D3's ceiling is one such distractor; this set has two. The candidate's own cynic_test misidentifies the tell, predicting a skipper picks the even-split option when in fact the stem hands a skipper the key."
+  ],
+  "preserve": "the two-group funding scenario and the key's direction. The case is concrete, is genuinely absent from the prose, and Group A (slow, needs future architectures) vs Group B (ships on today's models) is exactly the right frame for FT-1; the takeoff-conflation distractor is also doing real work. Only the stem's closing clause and the two premise-denying distractors need replacing.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/c02",
+    "targets": ["FT-1"],
+    "lens": "case",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A funder backs two groups. Group A develops theoretical alignment methods aimed at systems more capable than anything that exists today, on a research agenda measured in decades. Group B builds monitoring tools that run on today's frontier models and can ship within months. New evidence moves the funder's view of when TAI arrives from roughly forty years out to roughly six. What follows for how the money should be divided?",
+    "options": [
+      {
+        "text": "Shift the money toward Group B, since a horizon that short leaves time only for work that applies to what is already deployed.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Shift the money toward Group A, since an arrival that close implies a transition too abrupt for monitoring add-ons to keep pace with.",
+        "key": false,
+        "provenance": "misreads the lead sentence 'Predicting when AI automates cognitive labor determines which safety strategies are viable' as a claim about how fast the transition runs once it starts — a takeoff-speed question this section does not take up",
+        "family": "a"
+      },
+      {
+        "text": "Shift the money toward Group A, since a near arrival means only a fundamental fix helps, and monitoring add-ons suit a distant one.",
+        "key": false,
+        "provenance": "reverses 'If it arrives around 2050, we have breathing room for fundamental alignment research, for building robust governance frameworks, and for developing evaluation methods we can trust' by attaching foundational work to the near horizon and deployable work to the distant one",
+        "family": "b"
+      },
+      {
+        "text": "Leave the allocation as it is, since arrival estimates carry error margins far too wide to be a sound basis for shifting grants.",
+        "key": false,
+        "provenance": "reads 'All forecasts come with wide error margins that compound over time' as grounds for never acting on a timeline estimate, missing that the opening argument turns on the gap between 10 and 50 years rather than on precision",
+        "family": "c"
+      }
+    ],
+    "explanation": "A short horizon changes what counts as a usable safety agenda: if transformative AI is a few years out, only work that can be applied to systems already running has time to matter, while a multi-decade horizon leaves breathing room for fundamental alignment research, robust governance frameworks, and evaluation methods we can trust. So the move from forty years to six argues for weighting Group B. Two wrong answers are worth naming. 'Only a fundamental fix helps' reverses the contrast, attaching slow theoretical work to the short horizon when the short horizon is exactly what rules it out. 'Estimates are too uncertain' is the more tempting error: forecasts here do carry wide error margins, but the argument runs on the gap between a decade and half a century, not on precision, so margins that wide still leave the ordering intact. (Forecasting Timelines)",
+    "takeaway": "How far off TAI is isn't an academic estimate — it decides which safety agendas are worth funding now.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who took the opening argument (a near arrival leaves no time for slow theoretical research, only for approaches that work with current systems) could produce 'weight toward the group that can act on systems that already exist' before seeing any option.",
+      "cynic_test": "The stem no longer states the principle it is testing, so a skipper must choose among three live positions — 'only a fundamental fix helps', 'estimates are too uncertain to act on', and the key — none settled by the stem's own wording. No option is longer, hedgier, or more absolute than the others, and 'only' appears in the key and in one distractor."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "level_claimed",
+    "options[0].text",
+    "options[1]",
+    "options[2]",
+    "options[3]",
+    "explanation",
+    "takeaway",
+    "self_check.cover_test",
+    "self_check.cynic_test"
+  ],
+  "reviewer_note": "Check the rewrite's 'only a fundamental fix helps' distractor before shipping — it is a position real alignment researchers hold and the section flatly contradicts it ('There's no time for slow theoretical research'), so we are marking a live real-world view wrong on the text's authority; also note I scored this L3 rather than the claimed L4, because the prose already walks the fast-empirical-vs-slow-theoretical contrast the scenario dresses up, which matters for the Curator's L4 share."
+}

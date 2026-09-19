@@ -1,0 +1,97 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/a02",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Biological-anchors estimates of the compute required to match human-level intelligence span twelve orders of magnitude, depending on which biological process is used as the reference point. A reader concludes: 'A range that wide means the method has failed to tell us anything useful about compute requirements for TAI.' What's wrong with that conclusion?",
+    "options": [
+      {
+        "text": "The conclusion is wrong: the wide range reflects genuine uncertainty about which biological process is the right reference, and it still rules out most implausible magnitudes.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The conclusion is right: once an estimate spans that many orders of magnitude, it stops usefully constraining planning and should be dropped for tighter methods.",
+        "key": false,
+        "provenance": "misreads the wide bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      },
+      {
+        "text": "The conclusion is wrong, but only because the true value most likely sits near the range's midpoint, making either extreme equally implausible in practice.",
+        "key": false,
+        "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a uniform-ish distribution rather than illustrating genuine deep uncertainty about which reference process is right",
+        "family": "b"
+      },
+      {
+        "text": "The conclusion is wrong because this uncertainty is actually about how fast compute investment grows, not about which biological process best estimates the brain's equivalent.",
+        "key": false,
+        "provenance": "borrows the section's separate uncertainty about investment and hardware growth rates and misfiles it as the source of the biological-anchors range, rather than the reference-process disagreement the anchors passage actually describes",
+        "family": "d"
+      }
+    ],
+    "explanation": "The point of a twelve-orders-of-magnitude range isn't that the estimate failed — it's that we're genuinely uncertain which biological process is the right stand-in for 'compute equivalent to a human,' and reporting that uncertainty still rules out the vast majority of conceivable magnitudes. Distractor 1 treats 'wide' as synonymous with 'useless,' the exact reaction this section corrects. Distractor 2 assumes the two anchors are equally likely, so the truth sits in the middle — but the dollar analogy makes the opposite point: we don't know which end is closer to right. Distractor 3 borrows real uncertainty from elsewhere in the section (investment growth) and misfiles it here. (Forecasting Timelines)",
+    "takeaway": "A wide uncertainty range that is honestly reported is a finding about what we don't know, not evidence the estimate has failed.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "twelve orders of magnitude of biological-anchors uncertainty"
+    ],
+    "self_check": {
+      "cover_test": "A reader who grasped that the range reflects deep reference-process uncertainty, not method failure, could state the key without seeing the options.",
+      "cynic_test": "A skipper might gravitate to the option that sounds most 'balanced' (the midpoint one), but nothing in the stem suggests either extreme is favored, so that instinct doesn't pay off."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 175,
+    "distractor_lens": [
+      161,
+      155,
+      175
+    ],
+    "mean_distractor_len": 163.7,
+    "len_ratio": 1.07,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "estimates",
+      "compute",
+      "orders",
+      "magnitude",
+      "reference",
+      "wide"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 109,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

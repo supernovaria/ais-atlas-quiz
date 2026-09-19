@@ -1,0 +1,97 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/a01",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "The section describes a worked example: take your own beliefs about how fast investment, software efficiency, and hardware are improving, plus your belief about how much automation each order-of-magnitude of compute unlocks, and combine them to see what future they imply. A reader concludes: 'This exercise is telling us the chapter's own predicted growth rates for the future.' What is the exercise actually doing?",
+    "options": [
+      {
+        "text": "Testing whether your own separate beliefs about these trends are mutually consistent, using the combined implication as a check rather than a forecast to adopt.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Reporting the chapter's best estimate of how these trends will actually unfold, since the example works through a specific set of assumed rates.",
+        "key": false,
+        "provenance": "misreads the worked example ('if you think investment grows...AND...') as the chapter asserting those input rates, rather than as an illustration of how to test whether one's own beliefs cohere",
+        "family": "c"
+      },
+      {
+        "text": "Showing that once each input belief looks individually reasonable on its own, the combined outcome they produce becomes the prediction you should adopt.",
+        "key": false,
+        "provenance": "misreads 'if you're surprised, maybe one of your input beliefs needs updating' as license to trust the combined output instead of as an instruction to re-examine an input",
+        "family": "d"
+      },
+      {
+        "text": "Demonstrating that because the combined estimate carries such wide error margins, exercises like this don't actually tell you anything useful.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the section's point that the margins are themselves the informative output",
+        "family": "b"
+      }
+    ],
+    "explanation": "The exercise exists to test whether your own separate beliefs are mutually consistent, not to hand you a forecast. Plug in what you believe about each trend and see what future they imply together; if the combined answer surprises you, that's a signal one of your inputs is off, not that the combination is now your prediction. Distractor 1 mistakes the worked example's placeholder rates for the chapter's actual claim about the future — the point is the method, and the same method works with different numbers plugged in. Distractor 2 inverts the instruction to re-examine a surprising input into permission to trust the output instead. Distractor 3 reverses the section's own point: the wide margins are the informative result, not evidence the exercise failed. (Forecasting Timelines)",
+    "takeaway": "Treat a forecasting exercise's combined output as a coherence check on your own beliefs, not as a prediction to adopt.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who understood the section's framing of forecasts as consistency checks, not predictions, could state the key without seeing the options.",
+      "cynic_test": "A skipper might reach for whichever option sounds most concrete or 'sciency' (the specific-rates one), but the stem gives no numeric anchor to Ctrl-F, so guessing offers no edge."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 160,
+    "distractor_lens": [
+      144,
+      152,
+      142
+    ],
+    "mean_distractor_len": 146,
+    "len_ratio": 1.1,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 8,
+    "max_over_min": 1.13,
+    "r5_matches": [
+      "the (chapter|text|section) (identifies|argues|describes|states|claims|presents|discusses|lists|mentions|defines)"
+    ],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "example",
+      "beliefs",
+      "belief",
+      "each",
+      "chapter",
+      "rates"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

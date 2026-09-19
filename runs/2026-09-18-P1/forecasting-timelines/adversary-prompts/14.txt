@@ -1,0 +1,10 @@
+You have not read the textbook this question comes from. Answer from the
+question and options alone, using only general knowledge and test-taking
+instinct. Do not explain. Reply with a single letter.
+
+A lab's synthetic-data pipeline turns out to produce text too repetitive to improve model reasoning, and the lab abandons that route. What does this failure establish about whether data availability will constrain scaling?
+
+A. That scaling now meets a hard limit, since manufacturing text was the only way to add supply once the public stock is consumed.
+B. That the other routes are untouched, since they draw on different sources, so whether data binds still turns on how well they work.
+C. That self-play goes with it, since both routes rely on a model producing its own training examples and share the same defect.
+D. That data now caps scaling at whatever images and video can add, since the routes left both draw on human-produced material.

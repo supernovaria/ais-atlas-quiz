@@ -1,0 +1,98 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/c02",
+    "targets": [
+      "FT-1"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Group A is developing theoretical alignment methods that need years of basic research and aren't expected to run on any model built in the next decade. Group B is building monitoring add-ons that work on today's frontier models and can ship within months. A funder becomes convinced TAI is six years away rather than forty. Which grant allocation follows from the idea that how far off TAI is changes which safety strategies are viable?",
+    "options": [
+      {
+        "text": "Weight the allocation toward Group B, since a short timeline leaves no room for methods that need architectures that don't exist yet.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Keep the allocation unchanged, since timeline estimates are too uncertain to be a sound basis for choosing between research agendas.",
+        "key": false,
+        "provenance": "misreads the opening contrast between a near and distant TAI arrival as background motivation rather than a claim that timeline length itself determines which strategies are viable, regardless of exact precision",
+        "family": "c"
+      },
+      {
+        "text": "Weight the allocation toward Group A, since a six-year arrival implies the transition itself will be too abrupt for monitoring add-ons to matter.",
+        "key": false,
+        "provenance": "misreads 'predicting when AI automates cognitive labor' (a timelines question) as settling how fast the transition happens once it starts, a takeoff-speed question this section does not address",
+        "family": "a"
+      },
+      {
+        "text": "Split the allocation evenly between both groups, since the two agendas address different parts of safety and neither becomes more urgent than the other.",
+        "key": false,
+        "provenance": "misreads 'the difference between 10 years and 50 years fundamentally changes which safety strategies are viable' as implying the agendas are interchangeable regardless of timeline, when the text's claim is the opposite",
+        "family": "b"
+      }
+    ],
+    "explanation": "Timeline length is strategy-determining: a near TAI arrival leaves room only for approaches that work on systems already in front of us, while a distant one leaves room for foundational work that doesn't need to pay off soon. With TAI six years out, Group B's add-ons are the agenda that can produce anything before the deadline that matters — Group A's methods are built for architectures that may not exist by then. The first wrong option treats timeline estimates as too uncertain to act on, missing that the argument holds even under wide error margins, since it's the order-of-magnitude gap doing the work, not a precise date. The second wrong option conflates a short timeline with a fast takeoff, a separate question this section deliberately sets aside. (Forecasting Timelines)",
+    "takeaway": "How far off TAI is isn't an academic estimate — it decides which safety agendas are even worth funding now.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasped that timeline length determines viable strategies could work out that a six-year estimate favors deployable, current-system-compatible work over agendas needing future architectures.",
+      "cynic_test": "A skipper might pick the evenly-split option as the safely moderate-sounding choice, but the case is built so timeline length is decisive, which that option denies outright."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 133,
+    "distractor_lens": [
+      132,
+      145,
+      152
+    ],
+    "mean_distractor_len": 143,
+    "len_ratio": 0.93,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "methods",
+      "need",
+      "research",
+      "monitoring",
+      "add",
+      "ons",
+      "becomes",
+      "six",
+      "safety"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

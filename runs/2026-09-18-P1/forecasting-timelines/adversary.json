@@ -1,0 +1,268 @@
+{
+  "summary": {
+    "source": "2026-09-18-P1/forecasting-timelines",
+    "n_questions": 6,
+    "n_answers": 18,
+    "unparsed": 0,
+    "verbose_answers": 0,
+    "missing_picks": 0,
+    "flagged": 4,
+    "mean_hit_rate": 0.778,
+    "mean_excess_over_chance": 0.528,
+    "gate_excess": 0.15,
+    "gate_excess_pass": false,
+    "four_option_hit_rate": 0.778,
+    "four_option_n": 6,
+    "key_position_of_hits": {
+      "0": 4,
+      "1": 3,
+      "2": 5,
+      "3": 2
+    }
+  },
+  "per_question": [
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    }
+  ],
+  "answers": [
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "seed": 1,
+      "picked": "C",
+      "key": "B",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "seed": 3,
+      "picked": "D",
+      "key": "B",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "seed": 2,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "seed": 2,
+      "picked": "D",
+      "key": "C",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "seed": 3,
+      "picked": "C",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    }
+  ],
+  "missing_picks": []
+}
