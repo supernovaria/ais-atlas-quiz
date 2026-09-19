@@ -54,6 +54,22 @@ const ABSOLUTES = [
   /\bconclusively\b/i, /\bimpossible\b/i, /\bcannot\b/i, /\bno\b[^.]*\bat all\b/i,
 ];
 
+// D10's hedge list. This is the checker's list, and it is NOT identical to the
+// one RUBRIC D10 prints in parentheses — the same situation as D4 above, recorded
+// rather than quietly reconciled.
+//
+//   both:         tends to, often, may, typically, largely
+//   rubric only:  roughly, approximately, can, primarily, about
+//   checker only: might, could, sometimes, generally, usually, likely, broadly,
+//                 somewhat, partly
+//
+// This list stays as-is because `hedge_counts` is already passed into the critic
+// and `pipeline.mjs validate` byte-compares those numbers against verdicts;
+// re-defining the list would silently change measurements in circulation. The
+// rubric's `can` and `about` are also too polysemous to regex safely ("can be
+// measured" vs "a tin can", "about 20 tokens" vs "a claim about scaling").
+// Finding for RUBRIC v2: state D10's list as a closed list and reconcile it with
+// this one, exactly as D4 needs.
 const HEDGES = [
   /\bmay\b/i, /\bmight\b/i, /\bcould\b/i, /\boften\b/i, /\bsometimes\b/i,
   /\bgenerally\b/i, /\btypically\b/i, /\busually\b/i, /\btends? to\b/i,
@@ -71,6 +87,12 @@ only own same too very can will just should now`.split(/\s+/));
 const pct = (n, d) => (d === 0 ? 0 : n / d);
 const fmtPct = (x) => `${(x * 100).toFixed(0)}%`;
 const mean = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
+const median = (xs) => {
+  if (!xs.length) return 0;
+  const s = [...xs].sort((a, b) => a - b);
+  const m = s.length >> 1;
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+};
 const countMatches = (text, patterns) => patterns.filter((p) => p.test(text)).length;
 
 // The Atlas site's heading slugify, for E4a anchors. Deliberately NOT
@@ -215,6 +237,22 @@ function tier2(items) {
     if (m.absolute_count_distractors > 1) {
       fails.push({ ref, rule: 'D4', detail: `${m.absolute_count_distractors} distractors carry an absolute (max 1)` });
     }
+    // D10 — hedge-density tell. "The key must not carry more than one more hedge
+    // than the median distractor." Promoted to a tier-2 hard failure on
+    // 2026-09-19: the planted-tell control (runs/tier4-control/) measured this as
+    // the second-strongest tell available to a test-wise reader, +62 points over
+    // chance against length's +68 — yet length was gated three ways (R8, R9,
+    // R9-spread) and this was gated nowhere, despite already being measured.
+    // Keys hedge because they are true; distractors assert because they are
+    // invented, which is why the asymmetry is as readable as length is.
+    const hedgeMedian = median(m.hedge_counts.distractors);
+    if (m.hedge_counts.key > hedgeMedian + 1) {
+      fails.push({
+        ref,
+        rule: 'D10',
+        detail: `key carries ${m.hedge_counts.key} hedges vs distractor median ${hedgeMedian} (max median+1)`,
+      });
+    }
   }
   return fails;
 }
@@ -251,6 +289,7 @@ export function setLevel(items) {
     absolutes_distractors: absD,
     total_distractors: totalDistractors,
     absolutes_keys: absK,
+    d10_hedge_fails: items.filter((i) => i.m.hedge_counts.key > median(i.m.hedge_counts.distractors) + 1).length,
     absolute_enrichment: absK === 0
       ? null
       : Number(((absD / totalDistractors) / (absK / items.length)).toFixed(1)),
@@ -321,6 +360,8 @@ function report(file) {
   const okEnr = enr === null || enr <= 1.5;
   console.log(`  ${'absolute-quantifier enrichment'.padEnd(34)} ${(enr === null ? 'n/a' : `${enr}×`).padStart(8)}   gate ≤1.5×      ${okEnr ? 'pass' : 'FAIL'}`);
   console.log(`  ${'  distractors / keys'.padEnd(34)} ${`${s.absolutes_distractors}/${s.total_distractors}, ${s.absolutes_keys}/${s.n_mc}`.padStart(8)}`);
+  const okD10 = s.d10_hedge_fails === 0;
+  console.log(gateRow('D10 key-hedge tell', `${s.d10_hedge_fails}/${s.n_mc}`, '0', okD10));
   console.log(`  ${'option-count distribution'.padEnd(34)} ${JSON.stringify(s.option_counts)}`);
   console.log(`  ${'key position skew'.padEnd(34)} ${JSON.stringify(s.key_positions)}   (reported, not gated)`);
 
@@ -375,6 +416,8 @@ function selftest() {
   const s = setLevel(collect(DEFAULT_FILE));
   let bad = 0;
   console.log('\nSelf-test against RUBRIC Appendix A\n');
+  console.log(`  note ${'D10 hedge-tell gate'.padEnd(24)} ${String(s.d10_hedge_fails).padStart(6)} of ${s.n_mc} current questions breach it (added 2026-09-19, post-dates Appendix A)`);
+  console.log('');
   for (const [k, want] of Object.entries(expected)) {
     const got = s[k];
     const ok = Number.isInteger(want) ? got === want : Math.abs(got - want) < 0.05;
@@ -385,9 +428,35 @@ function selftest() {
   for (const [k, want] of Object.entries(divergent)) {
     console.log(`  note ${k.padEnd(24)} appendix ${String(want).padStart(6)}   got ${String(s[k]).padStart(7)}   documented divergence, see selftest()`);
   }
+  // D10's boundary, asserted on inline fixtures rather than on Appendix A, which
+  // predates the gate. The rule allows median+1 and fails at median+2, and both
+  // halves matter: a gate that fires one hedge early would reject keys that hedge
+  // because the claim genuinely is hedged, which is D10's whole allowance.
+  const hedgeCase = (keyText, distractorTexts) => tier2([{
+    ref: 'fixture',
+    m: measure({
+      question: 'Which account best explains the observed pattern?',
+      options: [{ text: keyText, isCorrect: true }, ...distractorTexts.map((t) => ({ text: t, isCorrect: false }))],
+      explanation: 'x',
+    }),
+  }]).filter((f) => f.rule === 'D10').length;
+  const flat = ['The mechanism is the second one described in the passage above here', 'The mechanism is the third one described in the passage above here', 'The mechanism is the fourth one described in the passage above here'];
+  const d10 = [
+    ['allows key at distractor median + 1', hedgeCase('It often works that way in the cases described in the passage', flat), 0],
+    ['fails key at distractor median + 2', hedgeCase('It may often work that way in the cases described in the passage', flat), 1],
+    ['allows a hedged key when distractors hedge too', hedgeCase('It may often work that way in the cases described here',
+      ['It may often fail that way in the cases described in this passage', 'It may often hold that way in the cases described in this passage', 'It may often break that way in the cases described in this passage']), 0],
+  ];
+  console.log('D10 hedge-gate boundary\n');
+  for (const [label, got, want] of d10) {
+    const ok = got === want;
+    if (!ok) bad++;
+    console.log(`  ${ok ? 'ok  ' : 'BAD '} ${label.padEnd(46)} expected ${want}   got ${got}`);
+  }
+
   console.log(`\n${bad === 0
-    ? 'Checker reproduces the baseline (1 documented divergence).'
-    : `${bad} metric(s) do not reproduce — the checker is wrong.`}\n`);
+    ? 'Checker reproduces the baseline (1 documented divergence) and D10 holds its boundary.'
+    : `${bad} check(s) failed — the checker is wrong.`}\n`);
   return bad === 0;
 }
 

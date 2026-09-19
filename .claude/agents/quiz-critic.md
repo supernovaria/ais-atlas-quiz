@@ -96,7 +96,16 @@ verdict.
 ## Procedure
 
 1. **Mechanical (§2.1–2.5).** Read `measurements`. Any R1–R4, R5, R8, R9, 1.6×,
-   R12 failure → verdict cannot be `pass`. Decide `rewrite` vs `reject` by
+   R12, **D10** failure → verdict cannot be `pass`. D10 is the hedge-density
+   tell: the key must not carry more than one more hedge than the median
+   distractor, and `hedge_counts` in your input gives you both numbers, so you
+   never count them yourself. It became a hard checker gate on 2026-09-19 —
+   `runs/tier4-control/` measured it as the second-strongest tell available to a
+   test-wise reader, +62 points over chance against the length tell's +68 — so a
+   candidate whose key out-hedges its distractors by two or more will fail the
+   checker regardless of your verdict. Fix it the same way you fix R8: move the
+   qualification into the explanation, or hedge the distractors to match where
+   the hedge is honest. Never strip a hedge that makes the key true. Decide `rewrite` vs `reject` by
    whether the *idea* survives (§3 level ≥ L3, or a strong L2).
    **R2 as amended (2026-09-18):** 2–5 options. For `option_count < 4`, the
    candidate carries `option_count_reason`; verify it. For a 2-option Q, try
