@@ -1955,6 +1955,37 @@ function selftest() {
   check(!/resolves to nothing/.test(flagProbe(rcands[0].id)),
     'validate accepts a reviewer flag naming a real candidate');
 
+  // --- parseJsonValues: one file, more than one top-level JSON value --------
+  // The generator brief's "array, optionally followed by a trailing {note}"
+  // has produced BOTH shapes from the same wording. The script accepts either.
+  const pv = parseJsonValues('[{"a":1},{"b":2}]');
+  check(pv.length === 1 && pv[0].length === 2,
+    'parseJsonValues reads a plain array as one value');
+  const pv2 = parseJsonValues('[{"a":1}]\n{"note":"why"}\n');
+  check(pv2.length === 2 && pv2[1].note === 'why',
+    'parseJsonValues reads a note written AFTER the array as a second value');
+  check(parseJsonValues(JSON.stringify([{ stem: 'a } b ] c "quoted"' }])).flat()[0].stem
+      === 'a } b ] c "quoted"',
+    'parseJsonValues does not desynchronise on a brace or bracket inside a string');
+  let unbalanced = false;
+  try { parseJsonValues('[{"a":1}'); } catch { unbalanced = true; }
+  check(unbalanced, 'parseJsonValues throws on an unterminated value rather than returning a partial');
+
+  // --- merge must not no-op quietly ----------------------------------------
+  // Observed 2026-09-20: an empty candidates dir printed "0 candidate(s)" and
+  // exited 0, after which measure and shuffle also reported 0 and the run
+  // looked like it had happened.
+  const emptyLabel = '_selftest-empty';
+  mkdirSync(join(runDir(emptyLabel), 'sec', 'candidates'), { recursive: true });
+  let diedEmpty = false;
+  try {
+    const saved = process.exit;
+    process.exit = () => { throw new Error('die'); };
+    try { stageMerge(emptyLabel, 'sec'); } finally { process.exit = saved; }
+  } catch { diedEmpty = true; }
+  check(diedEmpty, 'merge dies on an empty candidate pool rather than reporting 0 and exiting clean');
+  rmSync(runDir(emptyLabel), { recursive: true, force: true });
+
   const lintHits = (c) => lintCandidate(c).map((x) => x.rule);
   check(lintHits({ ...twin, stem: 'He said “hi” now' }).includes('CANON-quote'),
     'lint rejects typographic quotes in candidate text');
