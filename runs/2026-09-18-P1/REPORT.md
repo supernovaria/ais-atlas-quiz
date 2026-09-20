@@ -412,6 +412,42 @@ strategies, the same number. RUBRIC §10 claims none of its own five worked
 rewrites was inside the band on first draft; the observed rate is about
 two-thirds. That claim is worth restating in v2.
 
+### One more silent defect found and closed
+
+The curator's three set-level flags produced **neither FAIL nor WARN** —
+`validate` could not resolve the id `"section"`, so it dropped them. A flag the
+checker drops reaches no reviewer, which is the same class as the four defects
+closed in window 2: plausible output, nothing wrong on the surface, information
+quietly gone.
+
+`"section"` and `"set"` are now recognised scopes, and any other unresolvable
+flag id produces a WARN. Three selftest assertions cover it.
+
+The planted-defect rule paid for itself inside five minutes: the first version
+of my check sat inside the `if (adversary)` block, so it could never fire
+without adversary data. The assertion failed and found it. Without that rule the
+fix would have shipped looking correct and doing nothing — which is precisely
+the defect it was meant to fix.
+
+**Selftest 50 → 53 assertions**, green and idempotent across three consecutive
+runs; `check:questions:selftest` still 14/14.
+
+### Where this stopped, and what is still owed
+
+Stopped at **85% of the 5-hour window**. Extra usage read **$6.53 at start and
+$6.53 at stop**, unchanged across all four windows — no API or usage credit was
+spent at any point.
+
+Deliberately not done, all for budget:
+
+- **The 17 uncritiqued `defining-and-measuring-agi` candidates.** Restarting at
+  `queue.json` position 1 (`b01`, the capability-vs-generality pair) is the
+  single highest-value next action for that section.
+- **Re-spawning the critic on `a03`** to clear its invented-enum FAIL. Until
+  that happens `a03r` is in `staging/defining-and-measuring-agi.md` but its
+  artifact does not validate, so **the file is not shippable as it stands.**
+- P3, the review block, and the four remaining sections — all out of scope and
+  gated on you reading the findings, as instructed.
 
 ## Recommended next action
 
