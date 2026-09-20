@@ -1,4 +1,4 @@
-# P1 — session C, 2026-09-19. Two windows. Stopped at 86%.
+# P1 — session C. Three windows, 2026-09-19/20. Pilot run, then hardening.
 
 Sessions A and B died at preflight and never ran a stage
 (`REPORT-sessions-AB-blocked.md`). Session C got through preflight, ran the
@@ -57,12 +57,17 @@ on a planted defect:
 **And `validate` errs loudly the other way on curator artifacts — three false
 alarms, all investigated, none real:**
 
-- *"the curator edited text"* on two stems. It did not: the stems are
-  byte-identical **once quote style is normalised**. The curator converted
-  straight quotes to typographic curly quotes when rendering markdown. That is
-  still technically a text edit its brief forbids, but `validate` cannot tell
-  "changed a quote mark" from "rewrote the stem" — it reports both identically,
-  so the one alarm that would matter is buried in noise.
+- *"the curator edited text"* on two stems. The curator **had** changed the text,
+  but not in the way first reported. **Correction (2026-09-20):** an earlier
+  version of this report said straight quotes became "typographic curly quotes".
+  That was wrong. A character census shows **zero** typographic characters
+  (U+2018/2019/201C/201D) anywhere: the source stem carries only `U+0027`, the
+  curator's file carries `U+0022` ×8 plus `U+0027` ×8, and `render`'s output
+  carries `U+0027` ×16. The drift was **pure ASCII — straight *single* outer
+  quotes became straight *double* outer quotes.** Two consequences: a lint that
+  only rejects curly characters would not have caught it, and by the house rule
+  *"double for outer, single when nested"* the **curator was right and the
+  generator was wrong**. Both are now handled — see *Hardening* below.
 - *"shipped `c01r` is adversary-flagged but not named in `flags_for_reviewer`"*.
   It is named — the curator's third flag reads "Adversary flags on shipped
   questions: Q1 (a03r) hit 3/3 seeds; Q3 (c01r) hit 3/3 seeds." The flags are
@@ -225,13 +230,61 @@ and the dollar counter never moved. Measured burn on the 5-hour window:
 **The Opus critic is the entire cost of this pipeline.** A full two-section
 P1+P1b+P2 does not fit in one 5-hour window.
 
+## Hardening, 2026-09-20 — and two decisions taken
+
+Six changes, each premise checked against the cited line before implementing.
+**Two premises turned out to be wrong**, which is the reason for checking.
+
+**Decision 1 — sharding is dropped as the default generation strategy.** Asked
+what else it buys, the honest answer is two things, neither decisive: mechanical
+enforcement of the analyst's per-idea `attempts` budget, and a smaller blast
+radius when a generator call fails (3 candidates lost, not 8). Both are
+obtainable by passing the `attempts` budget into a whole-section prompt and
+running 2–3 calls. The `shard` stage is **not deleted** — it is not among the six
+tasks, the evidence is one section, and removing it would orphan the existing run
+artifacts.
+
+**Decision 2 — rewrites keep the `r` suffix and both objects are retained**
+(`a01` *and* `a01r`), rather than resolving a rewrite under the original's ID and
+overwriting it. `runs/` is an audit trail: overwriting destroys the before/after
+that produced this run's finding that all six rewrites clear the joint length
+gate. Applied in `merge`, `eligibleIds` and `validateCurator`.
+
+| # | change | effect |
+|---|---|---|
+| 1 | **`render` stage** — curator emits `curator.json` only; the staged file is built from `candidates.json` by string copy | the curator never retypes text, so it cannot drift it. The stem/option/explanation diff is **deleted from `validate` as unnecessary rather than fixed** |
+| 2 | **`merge` stage** — assigns IDs from (shard, index), dies on collision, splits trailing `{note}` objects, promotes rewrites | models are never asked to invent unique IDs. Reproduces exactly the 17 candidates built by hand in P1 |
+| 3 | **canonical-ASCII lint** — `CANON-quote`, `CANON-outer`, `CANON-emph` | catches the drift that actually happened, in **13 of 17** real candidates |
+| 4 | **emphasis symmetry** — `emphasis_counts` per option, gated with R9's rule shape | emphasis stays *allowed*; being the only emphasised (or only unemphasised) option is the tell |
+| 5 | **`validate` severity** — FAIL vs WARN, exit code from FAIL only | on the real P1 data: **0 FAIL / 28 WARN**, where 3 cosmetic alarms used to block |
+| 6 | **R13 negation capitals** — tier-2 gate plus a flag cross-check | the script owns the measurement; the candidate's `negation` flag is checked against it both ways |
+
+**Premise correction A — the quote drift was ASCII, not typographic** (detailed
+above). The specified lint would have missed it; `CANON-outer` was added.
+
+**Premise correction B — Task 6's regex as specified was too broad.** "Detect
+NOT/EXCEPT case-insensitively and fail when uncapitalised" fires on candidate
+`d01`, whose stem reads *"comparable to **not** knowing whether something costs
+one dollar or a trillion"* — incidental prose, not a negation stem. It would also
+fire on "cannot" and "note that". Narrowed to a negation *task* construction: an
+interrogative head (which/what/all/each/every) followed within 80 characters by
+not/except. `d01` is now clean; *"Which of the following is not true?"* is still
+caught.
+
+**Two bugs found in my own test code, both fixed:** the first version of the new
+`render` assertion wrote to `staging/forecasting-timelines.md` — the **real**
+path — and clobbered the live staged section (restored from git; the test now
+snapshots and restores). And the suite left fixtures behind, so a stale
+`curator.json` made it fail on its own second run; `selftest` now clears its
+directory at start. **Selftest: 40 → 48 assertions, green, and idempotent.**
+
 ## Recommended next action
 
-**Drop sharding, or justify it on something other than diversity** — it lost the
-A/B on every measured axis and cost more complexity. Then spend a window on: the
-5 uncritiqued FT candidates plus a full whole-section critic pass, to get the
-pass-rate comparison this run could not buy; and a RUBRIC v2 rule against
-four-options-one-template, which is the defect a reader actually notices.
+**Sharding is now dropped and the six hardening changes are in.** Spend the next
+window on the 5 uncritiqued FT candidates plus a full whole-section critic pass,
+to get the pass-rate comparison this run could not buy — and on a RUBRIC v2 rule
+against four-options-one-template, which is the defect a reader actually
+notices.
 
 Three decisions are yours: whether Appendix A is renormalised to LF; whether
 set-level percentage gates get a minimum-n floor; and whether the adversary keeps
