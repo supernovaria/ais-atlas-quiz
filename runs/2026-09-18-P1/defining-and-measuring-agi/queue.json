@@ -1,0 +1,246 @@
+{
+  "section": "defining-and-measuring-agi",
+  "n": 20,
+  "rationale": "coverage need: threshold concepts, then discrimination pairs, then criteria count; one candidate per idea per round",
+  "ideas_in_order": [
+    "DM-4",
+    "DM-6",
+    "DM-9",
+    "DM-2",
+    "DM-7",
+    "DM-3",
+    "DM-10",
+    "DM-11",
+    "DM-1"
+  ],
+  "queue": [
+    {
+      "position": 1,
+      "id": "defining-and-measuring-agi/sonnet/b01",
+      "targets": [
+        "DM-4",
+        "DM-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 2,
+      "id": "defining-and-measuring-agi/sonnet/w07",
+      "targets": [
+        "DM-6"
+      ],
+      "lens": "figure",
+      "level_claimed": "L5",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 3,
+      "id": "defining-and-measuring-agi/sonnet/w04",
+      "targets": [
+        "DM-9"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 4,
+      "id": "defining-and-measuring-agi/sonnet/a02",
+      "targets": [
+        "DM-2"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 5,
+      "id": "defining-and-measuring-agi/sonnet/w03",
+      "targets": [
+        "DM-7",
+        "DM-8"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 6,
+      "id": "defining-and-measuring-agi/sonnet/a03",
+      "targets": [
+        "DM-3"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 7,
+      "id": "defining-and-measuring-agi/sonnet/a01",
+      "targets": [
+        "DM-10"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L5",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 8,
+      "id": "defining-and-measuring-agi/sonnet/w08",
+      "targets": [
+        "DM-11"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 9,
+      "id": "defining-and-measuring-agi/sonnet/w06",
+      "targets": [
+        "DM-1"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 10,
+      "id": "defining-and-measuring-agi/sonnet/b02",
+      "targets": [
+        "DM-4",
+        "DM-9"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 11,
+      "id": "defining-and-measuring-agi/sonnet/x06",
+      "targets": [
+        "DM-6"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 12,
+      "id": "defining-and-measuring-agi/sonnet/x04",
+      "targets": [
+        "DM-9",
+        "DM-4"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 13,
+      "id": "defining-and-measuring-agi/sonnet/w01",
+      "targets": [
+        "DM-2",
+        "DM-3"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 14,
+      "id": "defining-and-measuring-agi/sonnet/x02",
+      "targets": [
+        "DM-7",
+        "DM-8"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 15,
+      "id": "defining-and-measuring-agi/sonnet/w05",
+      "targets": [
+        "DM-10"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 16,
+      "id": "defining-and-measuring-agi/sonnet/x07",
+      "targets": [
+        "DM-11"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 17,
+      "id": "defining-and-measuring-agi/sonnet/x08",
+      "targets": [
+        "DM-1"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 18,
+      "id": "defining-and-measuring-agi/sonnet/x01",
+      "targets": [
+        "DM-4",
+        "DM-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 3,
+      "priority": "threshold"
+    },
+    {
+      "position": 19,
+      "id": "defining-and-measuring-agi/sonnet/x03",
+      "targets": [
+        "DM-2",
+        "DM-3"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 20,
+      "id": "defining-and-measuring-agi/sonnet/x05",
+      "targets": [
+        "DM-10"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 3,
+      "priority": "ordinary"
+    }
+  ]
+}

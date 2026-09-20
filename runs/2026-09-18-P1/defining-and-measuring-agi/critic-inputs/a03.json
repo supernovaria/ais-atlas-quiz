@@ -1,0 +1,108 @@
+{
+  "candidate": {
+    "id": "defining-and-measuring-agi/sonnet/a03",
+    "targets": [
+      "DM-3"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Chollet and Wang define intelligence as the efficiency with which a system turns experience into skill, rather than as final performance. By their own standard, how should we describe a system that needed a billion training examples to reach the same benchmark score a human reaches after ten?",
+    "options": [
+      {
+        "text": "It matched the human's final capability, but by Chollet and Wang's measure it is markedly less intelligent, since it needed far more experience to get there.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It is less capable than the human, since needing a billion examples to reach the same score means the underlying skill itself is weaker.",
+        "key": false,
+        "provenance": "misreads 'a system that needs a billion examples...might be less impressive even if both reach the same final capability' as meaning the billion-example system is actually less capable, collapsing the efficiency measure into the capability measure",
+        "family": "a"
+      },
+      {
+        "text": "It is inherently safer than a system that reached the same score efficiently, since brute-force learning suggests less autonomous adaptability.",
+        "key": false,
+        "provenance": "borrows the brute-force-is-safer prior from the adjacent safety discussion into a question that is about the definition of intelligence, not about risk",
+        "family": "c"
+      },
+      {
+        "text": "Chollet and Wang would call the two systems equally intelligent, since intelligence is ultimately just accumulated skill regardless of how it was acquired.",
+        "key": false,
+        "provenance": "hands Chollet and Wang the accumulated-skill, behaviorist conclusion the text explicitly contrasts their adaptability view against",
+        "family": "d"
+      }
+    ],
+    "explanation": "By Chollet and Wang's own standard, intelligence is measured by how efficiently experience converts into skill, so two systems at the same final score are not equally intelligent if one needed vastly more data to get there — final capability and learning efficiency are separate measures. Distractor 1 collapses that distinction, treating the billion-example system as less capable rather than merely less efficient at acquiring the capability. Distractor 2 smuggles in a safety claim this idea doesn't make — learning efficiency says nothing about danger on its own. Distractor 3 hands Chollet and Wang the opposite position, the accumulated-skill view their framework is built to contrast against. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Learning efficiency and final capability are two different measures; matching a score is not the same as matching the intelligence that produced it.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasped that Chollet and Wang score intelligence by efficiency, not outcome alone, would produce the key unprompted.",
+      "cynic_test": "A skipper might assume 'reached the same score' implies 'equally intelligent,' but naming Chollet and Wang's own standard in the stem blocks that shortcut and forces the efficiency/capability split."
+    },
+    "shard_id": "defining-and-measuring-agi-a",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 157,
+    "distractor_lens": [
+      136,
+      143,
+      155
+    ],
+    "mean_distractor_len": 144.7,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "intelligence",
+      "system",
+      "experience",
+      "final",
+      "needed",
+      "billion",
+      "examples",
+      "reach"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 114,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

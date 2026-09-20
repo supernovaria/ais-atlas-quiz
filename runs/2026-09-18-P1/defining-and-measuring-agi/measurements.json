@@ -1,0 +1,1150 @@
+{
+  "defining-and-measuring-agi/sonnet/a01": {
+    "correct_len": 166,
+    "distractor_lens": [
+      140,
+      150,
+      128
+    ],
+    "mean_distractor_len": 139.3,
+    "len_ratio": 1.19,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 16,
+    "max_over_min": 1.3,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "score",
+      "way",
+      "critique"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 118,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/a02": {
+    "correct_len": 127,
+    "distractor_lens": [
+      144,
+      139,
+      147
+    ],
+    "mean_distractor_len": 143.3,
+    "len_ratio": 0.89,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 12,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "dangerous",
+      "task",
+      "learning",
+      "efficient"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 118,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/a03": {
+    "correct_len": 157,
+    "distractor_lens": [
+      136,
+      143,
+      155
+    ],
+    "mean_distractor_len": 144.7,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "intelligence",
+      "system",
+      "experience",
+      "final",
+      "needed",
+      "billion",
+      "examples",
+      "reach"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 114,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/b01": {
+    "correct_len": 221,
+    "distractor_lens": [
+      194,
+      195,
+      182
+    ],
+    "mean_distractor_len": 190.3,
+    "len_ratio": 1.16,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 26,
+    "max_over_min": 1.21,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "axes",
+      "one",
+      "task",
+      "theorem",
+      "proving",
+      "nine",
+      "capability"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/b02": {
+    "correct_len": 191,
+    "distractor_lens": [
+      181,
+      184,
+      192
+    ],
+    "mean_distractor_len": 185.7,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 1,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "once",
+      "reach",
+      "range",
+      "deploying"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w01": {
+    "correct_len": 188,
+    "distractor_lens": [
+      184,
+      174,
+      181
+    ],
+    "mean_distractor_len": 179.7,
+    "len_ratio": 1.05,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 4,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "new"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w03": {
+    "correct_len": 276,
+    "distractor_lens": [
+      149,
+      136,
+      172
+    ],
+    "mean_distractor_len": 152.3,
+    "len_ratio": 1.81,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 104,
+    "max_over_min": 2.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "99th",
+      "percentile",
+      "one",
+      "narrow",
+      "critical",
+      "while",
+      "cognitive"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 108,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w04": {
+    "correct_len": 245,
+    "distractor_lens": [
+      187,
+      183,
+      195
+    ],
+    "mean_distractor_len": 188.3,
+    "len_ratio": 1.3,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 50,
+    "max_over_min": 1.34,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "identical",
+      "two",
+      "periodic",
+      "underlying",
+      "risk"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 108,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w05": {
+    "correct_len": 239,
+    "distractor_lens": [
+      214,
+      187,
+      196
+    ],
+    "mean_distractor_len": 199,
+    "len_ratio": 1.2,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 25,
+    "max_over_min": 1.28,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 1,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "human",
+      "scores",
+      "well",
+      "all"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w06": {
+    "correct_len": 172,
+    "distractor_lens": [
+      144,
+      163,
+      197
+    ],
+    "mean_distractor_len": 168,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.37,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "alphago",
+      "conscious",
+      "genuine",
+      "understanding"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 132,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w07": {
+    "correct_len": 213,
+    "distractor_lens": [
+      173,
+      180,
+      182
+    ],
+    "mean_distractor_len": 178.3,
+    "len_ratio": 1.19,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 31,
+    "max_over_min": 1.23,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "performance",
+      "treats",
+      "variables",
+      "fixed",
+      "thresholds"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w08": {
+    "correct_len": 211,
+    "distractor_lens": [
+      195,
+      179,
+      166
+    ],
+    "mean_distractor_len": 180,
+    "len_ratio": 1.17,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 16,
+    "max_over_min": 1.27,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "000",
+      "human",
+      "also",
+      "combined",
+      "output",
+      "any",
+      "could",
+      "produce"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x01": {
+    "correct_len": 150,
+    "distractor_lens": [
+      141,
+      148,
+      152
+    ],
+    "mean_distractor_len": 147,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "superhuman",
+      "performance",
+      "expert",
+      "level",
+      "eight",
+      "domains",
+      "single",
+      "axes"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x02": {
+    "correct_len": 153,
+    "distractor_lens": [
+      133,
+      145,
+      132
+    ],
+    "mean_distractor_len": 136.7,
+    "len_ratio": 1.12,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 8,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "across",
+      "cognitive",
+      "domains",
+      "domain"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 121,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x03": {
+    "correct_len": 155,
+    "distractor_lens": [
+      153,
+      143,
+      155
+    ],
+    "mean_distractor_len": 150.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "skill",
+      "less",
+      "dangerous",
+      "identical",
+      "because",
+      "safety"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 117,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x04": {
+    "correct_len": 162,
+    "distractor_lens": [
+      163,
+      146,
+      147
+    ],
+    "mean_distractor_len": 152,
+    "len_ratio": 1.07,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.12,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "once",
+      "human",
+      "underlying",
+      "generality",
+      "risk",
+      "between"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x05": {
+    "correct_len": 167,
+    "distractor_lens": [
+      163,
+      168,
+      147
+    ],
+    "mean_distractor_len": 159.3,
+    "len_ratio": 1.05,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "model",
+      "well",
+      "educated",
+      "adult"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x06": {
+    "correct_len": 152,
+    "distractor_lens": [
+      159,
+      154,
+      153
+    ],
+    "mean_distractor_len": 155.3,
+    "len_ratio": 0.98,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 1,
+    "max_over_min": 1.05,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "variables",
+      "framework",
+      "percentile",
+      "contradiction"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x07": {
+    "correct_len": 153,
+    "distractor_lens": [
+      152,
+      154,
+      159
+    ],
+    "mean_distractor_len": 155,
+    "len_ratio": 0.99,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.05,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "one",
+      "instance",
+      "matches",
+      "500",
+      "output",
+      "qualifies"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/x08": {
+    "correct_len": 147,
+    "distractor_lens": [
+      148,
+      143,
+      143
+    ],
+    "mean_distractor_len": 144.7,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "alphago",
+      "within",
+      "conscious"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 138,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/a03r": {
+    "correct_len": 153,
+    "distractor_lens": [
+      150,
+      159,
+      159
+    ],
+    "mean_distractor_len": 156,
+    "len_ratio": 0.98,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "set",
+      "difference"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w04r": {
+    "correct_len": 166,
+    "distractor_lens": [
+      159,
+      167,
+      171
+    ],
+    "mean_distractor_len": 165.7,
+    "len_ratio": 1,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "settings",
+      "deployment"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/sonnet/w07r": {
+    "correct_len": 178,
+    "distractor_lens": [
+      173,
+      182,
+      183
+    ],
+    "mean_distractor_len": 179.3,
+    "len_ratio": 0.99,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "treats",
+      "variables",
+      "fixed",
+      "agi"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

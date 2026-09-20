@@ -1777,7 +1777,7 @@ function main() {
 
   const label = flag('run');
   const slug = flag('section');
-  const needsSection = ['shard', 'dedupe', 'measure', 'queue'];
+  const needsSection = ['merge', 'render', 'shard', 'dedupe', 'measure', 'queue'];
   if (LABEL_STAGES.has(stage) && !label) die(`${stage} needs --run <label>`);
   if (needsSection.includes(stage) && !slug) die(`${stage} needs --section <slug>`);
 

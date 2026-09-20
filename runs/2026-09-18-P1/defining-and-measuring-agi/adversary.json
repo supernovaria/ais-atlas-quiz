@@ -1,0 +1,148 @@
+{
+  "summary": {
+    "source": "2026-09-18-P1/defining-and-measuring-agi",
+    "n_questions": 3,
+    "n_answers": 9,
+    "unparsed": 0,
+    "verbose_answers": 0,
+    "missing_picks": 0,
+    "flagged": 3,
+    "mean_hit_rate": 1,
+    "mean_excess_over_chance": 0.75,
+    "gate_excess": 0.15,
+    "gate_excess_pass": false,
+    "four_option_hit_rate": 1,
+    "four_option_n": 3,
+    "key_position_of_hits": {
+      "0": 1,
+      "1": 5,
+      "2": 1,
+      "3": 2
+    }
+  },
+  "per_question": [
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    }
+  ],
+  "answers": [
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    }
+  ],
+  "missing_picks": []
+}

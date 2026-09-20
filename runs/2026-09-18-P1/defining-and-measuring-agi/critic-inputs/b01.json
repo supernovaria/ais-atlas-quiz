@@ -1,0 +1,111 @@
+{
+  "candidate": {
+    "id": "defining-and-measuring-agi/sonnet/b01",
+    "targets": [
+      "DM-4",
+      "DM-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A team builds two systems to compare using this framework's two axes. System A is trained on exactly one task, automated theorem proving, and outperforms every human mathematician at it, but produces gibberish on anything else. System B performs at a solid 70th-percentile human level on nine different cognitive domains, but does not break into expert range on any of them. Which statement correctly compares the two systems along the capability and generality axes?",
+    "options": [
+      {
+        "text": "Neither system reaches above 0% generality: System A does not extend beyond the one domain it masters, and System B does not clear the expert-level threshold in any of its nine, which is what generality actually requires.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "System B has higher generality than System A, since generality simply tracks how many domains a system operates across, regardless of whether it clears the expert-level threshold in any of them.",
+        "key": false,
+        "provenance": "misreads 'Generality is the percentage of these domains where a system achieves expert-level capability' as meaning any domain participation counts, dropping the expert-level clause entirely",
+        "family": "a"
+      },
+      {
+        "text": "System A has higher generality than System B, because superhuman mastery of a genuinely hard task like theorem proving implies the kind of broad reasoning ability that other domains also draw on.",
+        "key": false,
+        "provenance": "misreads AlphaGo's superhuman Go performance ('ask it to write a sentence... you get nothing') as implying superhuman narrow mastery reflects broad underlying reasoning rather than depth on one axis only",
+        "family": "c"
+      },
+      {
+        "text": "System A has the higher generality and System B has the higher capability, since the two axes trade off against each other as a system's performance shifts from depth toward breadth.",
+        "key": false,
+        "provenance": "misreads 'systems in the last few years are climbing both axes simultaneously' as implying the axes trade off against one another rather than move independently",
+        "family": "b"
+      }
+    ],
+    "explanation": "Capability and generality are independent scores here, and neither invented system earns generality points. System A's theorem-proving mastery is pure capability with zero breadth — the same pattern the section uses AlphaGo to illustrate, since superhuman narrow performance doesn't transfer sideways. System B looks broader, but generality only counts a domain once a system clears the expert-level (roughly 80th-90th percentile) threshold in it; scoring 70th percentile across nine domains clears none of them, so it contributes nothing to the generality score. The tempting wrong answer assumes System A's depth on one hard problem must reflect broad reasoning underneath — but the whole point of separating the axes is that mastering one task tells you nothing about the other nine. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Generality isn't how many domains a system touches, it's how many domains it clears the expert-level bar in — so broad-but-mediocre performance can score the same 0% generality as narrow-but-superhuman performance.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "expert-level parity (~80th-90th percentile) as the generality threshold"
+    ],
+    "self_check": {
+      "cover_test": "Yes — a reader who has internalized that generality requires clearing a per-domain expert threshold, not just breadth of participation, can name this outcome before seeing the options.",
+      "cynic_test": "A test-wise skipper would guess 'System B has higher generality' because breadth sounds like generality on its face; the threshold clause is what stops that guess from paying off."
+    },
+    "shard_id": "defining-and-measuring-agi-b",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 221,
+    "distractor_lens": [
+      194,
+      195,
+      182
+    ],
+    "mean_distractor_len": 190.3,
+    "len_ratio": 1.16,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 26,
+    "max_over_min": 1.21,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "axes",
+      "one",
+      "task",
+      "theorem",
+      "proving",
+      "nine",
+      "capability"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

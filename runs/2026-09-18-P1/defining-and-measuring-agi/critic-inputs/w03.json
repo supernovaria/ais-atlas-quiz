@@ -1,0 +1,108 @@
+{
+  "candidate": {
+    "id": "defining-and-measuring-agi/sonnet/w03",
+    "targets": [
+      "DM-7",
+      "DM-8"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A system reaches 99th-percentile performance on one narrow-but-critical domain - automating the negotiation and drafting of complex financial contracts - while performing at only average human level on every other cognitive domain it is tested on. Which classification best fits this system, and why?",
+    "options": [
+      {
+        "text": "It could qualify as transformative AI (TAI) without qualifying as AGI, because TAI is defined by potential economic and social impact and can be met by exceptional narrow capability on one critical domain, while AGI requires broad expert-level versatility across most domains.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It cannot be TAI, because TAI is simply a higher-capability version of AGI and therefore requires everything AGI requires plus additional capability.",
+        "key": false,
+        "provenance": "misreads TAI as a higher-capability version of AGI rather than a differently-defined axis based on economic and social impact",
+        "family": "a"
+      },
+      {
+        "text": "It cannot be TAI either, since transformative impact requires the same broad cognitive versatility across most domains that defines AGI.",
+        "key": false,
+        "provenance": "misreads 'transformative AI' as needing broad cognitive versatility like AGI, missing that exceptional capability on one critical domain also counts as TAI",
+        "family": "c"
+      },
+      {
+        "text": "It qualifies as AGI rather than TAI, because reaching the 99th percentile on any single domain already exceeds the expert-level threshold that defines general intelligence.",
+        "key": false,
+        "provenance": "reapplies the capability/generality depth-breadth conflation to the AGI/TAI boundary, mistaking depth on one domain for the breadth AGI actually requires",
+        "family": "c"
+      }
+    ],
+    "explanation": "AGI and TAI answer different questions: AGI asks whether a system has broad, human-like cognitive versatility; TAI asks whether a system could trigger economic and social transitions on the scale of the industrial revolution, which an exceptional narrow-but-critical capability can do on its own - 99th-percentile automated ML R&D on just 20% of domains is exactly this kind of case. Distractor 1 treats TAI as AGI-plus, when it is a separately defined axis. Distractor 2 demands AGI's breadth for TAI, which the definition explicitly does not require. Distractor 3 mistakes depth on one domain for the breadth AGI actually needs. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "TAI is defined by impact potential and can be reached through narrow-but-critical capability; AGI is defined by broad cognitive versatility.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader holding 'AGI = cognitive profile, TAI = impact potential' can classify the scenario as TAI-not-AGI without seeing the options.",
+      "cynic_test": "A skipper might reflexively pick whichever option names 'AGI' as sounding more advanced, but three of four options mention it, so the label alone gives no tell."
+    },
+    "shard_id": "defining-and-measuring-agi-w",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 276,
+    "distractor_lens": [
+      149,
+      136,
+      172
+    ],
+    "mean_distractor_len": 152.3,
+    "len_ratio": 1.81,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 104,
+    "max_over_min": 2.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "99th",
+      "percentile",
+      "one",
+      "narrow",
+      "critical",
+      "while",
+      "cognitive"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 108,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

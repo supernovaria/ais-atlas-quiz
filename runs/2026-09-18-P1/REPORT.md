@@ -1,8 +1,8 @@
-# P1 — session C. Three windows, 2026-09-19/20. Pilot run, then hardening.
+# P1 — session C. Four windows, 2026-09-19/20. Pilot run, hardening, second section.
 
 Sessions A and B died at preflight and never ran a stage
 (`REPORT-sessions-AB-blocked.md`). Session C got through preflight, ran the
-pipeline over two 5-hour windows, and stopped inside the 85–95% band both times.
+pipeline over four 5-hour windows, and stopped inside the 85–95% band each time.
 **No API or usage credit was spent: extra-usage read $6.53 at start and $6.53 at
 stop.** Plain-English key to the codes is at the bottom.
 
@@ -277,6 +277,141 @@ path — and clobbered the live staged section (restored from git; the test now
 snapshots and restores). And the suite left fixtures behind, so a stale
 `curator.json` made it fail on its own second run; `selftest` now clears its
 directory at start. **Selftest: 40 → 48 assertions, green, and idempotent.**
+
+## Window 4, 2026-09-20 — the second section, and the pilot findings
+
+The remaining scope was `defining-and-measuring-agi`, which had never got past
+generation, and `docs/pilot-findings-2026-09-18.md`, which had fallen off the
+end of three windows in a row. Both are now done. **The findings document was
+run first, deliberately** — it kept being the thing the budget ate.
+
+### What ran
+
+| stage | spawns | model | result |
+|---|---|---|---|
+| generate (whole-section) | 2 | sonnet | 2 arms × 8 = 16, merged with the 5 existing sharded → 21 |
+| merge · dedupe · measure · queue | — | script | 20 survive, 1 collapsed |
+| **critique** | 6 attempted, 3 completed | opus | 3 verdicts; 3 calls interrupted |
+| re-measure · shuffle | — | script | 3 rewrites, 9 prompts |
+| **pilot analyst** | 1 | sonnet | `docs/pilot-findings-2026-09-18.md`, 677 lines |
+| **adversary** | 9 | haiku | complete, 0 unparsed, 0 tool uses |
+| curate · render · validate | 1 + script | sonnet | 3 shipped of 8; 1 FAIL, 15 WARN |
+
+### The adversary result is the run's headline, and it got worse
+
+A toolless Haiku that has not read the chapter answered **9 of 9 correctly**.
+
+| set | hit rate | over chance | flagged |
+|---|---|---|---|
+| the 40 questions already shipped | 98.3% | +0.733 | 39/40 |
+| `forecasting-timelines`, this pipeline | 77.8% | +0.528 | 4/6 |
+| `defining-and-measuring-agi`, this pipeline | **100%** | **+0.750** | 3/3 |
+
+Three separate measurements, and **nothing this pipeline has produced has ever
+come near the 0.15 gate**. The second section is worse than the first and worse
+than the questions the pipeline was built to replace. On n=3 questions the
+point estimate of 100% is soft; what is not soft is the distance from the gate.
+
+### Why that happens is now visible end to end
+
+All three rewrites came back at length ratios of **0.98, 1.00, 0.99**, and none
+is the longest or shortest option. Every one of the three originals had the key
+as the longest. The critic does not merely bring the key inside the 0.8–1.2
+band — it drives it to parity.
+
+Then read the three as a reader. `w04r`: all four options are
+"*claim*, because *reason*". `w07r`: all four begin "The prediction…".
+`a03r`: all four begin "It…". One syntactic template, four times, in all three
+— exactly the pattern found in `forecasting-timelines`, now reproduced on a
+second section with a different generation strategy.
+
+So the mechanism is: the length rules reward sameness, the critic's rewrite path
+optimises for them directly, nothing anywhere gates syntactic uniformity, and a
+reader who has never seen the chapter can pick the odd one out. **The blandness
+failure is not a side effect of the rubric. It is what the rubric currently
+asks for.**
+
+### Two mechanisms finally earned an answer
+
+**Dedupe fired for the first time.** It collapsed `w02` against `x01` — written
+by two independent generator calls, both on the same capability-vs-generality
+pair, 71% stem overlap. On `forecasting-timelines` it collapsed 0 of 11, because
+sharding hands every call a different idea and lens, so the stage could never
+fire. Dedupe only earns its place once two calls can see the same idea — which
+is precisely what dropping sharding does. **Keep it**, now that sharding is gone.
+
+**The coverage-ordered queue earned its place outright.** The critic budget ran
+out after 3 of 20 candidates. Because the queue orders by coverage, those 3
+covered 3 *distinct* ideas rather than 3 attempts at one. Under a budget that
+always truncates, the ordering is not a nicety — it *is* the coverage policy.
+
+### The hardening held, on a section it had never seen
+
+- `render` output is **byte-identical** to the source: 18 of 18 strings
+  (3 stems, 12 options, 3 explanations) copy verbatim, and the quote census of
+  the shipped file is `U+0027 × 7` and nothing else. No typographic characters,
+  no straight-single-to-straight-double drift. The defect that started the
+  hardening pass is gone because no agent transcribes text at all any more.
+- The curator honoured its new contract on its first real run: it wrote **no**
+  staging file (`git status staging/` stayed clean through the call) and
+  returned `flags_for_reviewer` as `{id, note}` objects.
+- `validate`'s new severity split did its job: **1 FAIL, 15 WARN**, and the one
+  FAIL is real while all 15 warnings are cosmetic. Before window 3 the cosmetic
+  ones would have blocked the run.
+
+### But a brief is not a mechanism
+
+The generator brief was amended in window 3 to state the outer-quote rule in as
+many words. The generator then broke it on **13 of 21** fresh candidates. The
+lint is the only thing that catches it. That is the argument for keeping
+WARN-level linting rather than trusting the brief — and it generalises: every
+rule this pipeline relies on that lives only in prose should be assumed to hold
+about 40% of the time.
+
+### More things agents did that their briefs did not anticipate
+
+- **`quiz-critic` invented an enum value.** Its rewrite of `a03r` set
+  `stem_format` to `scenario-application`, which is not one of the six allowed.
+  That is the single validate FAIL, on a candidate the curator then selected, so
+  **`a03r` must not ship until it is re-run.** The rules say to re-spawn that
+  agent once; I did not, because an Opus critic call costs ~14 window points and
+  the window was nearly spent. Logged and carried instead.
+- **The same critic drifted on text form**: its rewrite `w07r` introduced two
+  outer-quote violations of its own.
+- Both point the same way. The critic is the only agent that writes question
+  text without the generator's text-form and schema sections in front of it.
+  That is the gap, and it is a one-paragraph fix to `quiz-critic.md`.
+- **`quiz-curator` invented a scope.** Three of its six reviewer flags use the
+  literal id `"section"` for findings about the set rather than any one question
+  — coverage gaps, the set-level adversary result. `validate` silently tolerated
+  them, so a set-level flag is currently **invisible to the checker**. The
+  curator is right that such findings exist and have nowhere to go; the schema
+  needs an explicit scope field, not a magic id.
+
+### What this section did not get
+
+`defining-and-measuring-agi` ships **3 questions against a target of 8**, and
+the shortfall is budget, not quality: 17 of 20 survivors were never critiqued.
+They are *uncritiqued, not rejected*. The curator declined to ship unreviewed
+material and said so. Uncovered: the section's own headline
+capability-vs-generality distinction, which was **queue position 1** and still
+never reached. Three completed Opus critic calls cost 42 window points — about
+14 each on candidates this long, roughly double the 6.3–7.2 measured on
+`forecasting-timelines`. At that price one 5-hour window buys about six critic
+calls, and **six critic calls is one under-filled section.** That arithmetic,
+not the rubric, is what currently caps this pipeline.
+
+Three of the six critic spawns were interrupted mid-call (`b01`, `a02`, `w03`).
+They still burned tokens, which is part of why the per-call cost reads high.
+
+### One number that has now held twice
+
+The joint R8 + R9 + 1.6× gate passed **13 of 20** candidates here (65%) and
+**7 of 11** on `forecasting-timelines` (64%). Two sections, two generation
+strategies, the same number. RUBRIC §10 claims none of its own five worked
+rewrites was inside the band on first draft; the observed rate is about
+two-thirds. That claim is worth restating in v2.
+
 
 ## Recommended next action
 

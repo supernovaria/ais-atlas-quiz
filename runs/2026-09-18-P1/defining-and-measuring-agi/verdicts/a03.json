@@ -1,0 +1,96 @@
+{
+  "id": "defining-and-measuring-agi/sonnet/a03",
+  "verdict": "rewrite",
+  "level": "L2",
+  "level_claimed_by_generator": "L3",
+  "failed_criteria": ["D3", "R14", "D1"],
+  "measurements": {
+    "correct_len": 157,
+    "distractor_lens": [136, 143, 155],
+    "mean_distractor_len": 144.7,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["intelligence", "system", "experience", "final", "needed", "billion", "examples", "reach"],
+    "emphasis_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 114,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, false, true],
+  "families_present": ["a", "c", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": true,
+  "reasons": [
+    "D3: the stem states the discriminating principle outright — 'intelligence as the efficiency with which a system turns experience into skill, rather than as final performance' — so two of the three distractors are refuted by the stem itself before any section knowledge is applied. Option 4 has Chollet and Wang saying intelligence is 'just accumulated skill', which the stem's own first sentence denies; option 3 answers a safety question the stem did not ask ('by their own standard' scopes the question to intelligence, not risk). D3's ceiling is at most one distractor eliminable on general reasoning alone; here it is two, leaving only option 2 doing work and raising the effective guess rate to 50%.",
+    "R14: distinctive stem tokens are single-option matches. 'billion' and 'examples' appear in exactly one option (option 2) and 'intelligence' in exactly one option (option 4, the key carries 'intelligent'). Either put each word in at least two options or in none.",
+    "D1: option 3's provenance names no referent — 'the adjacent safety discussion' is a region of prose, not a sentence, and the line then concedes the distractor is 'about risk' while the question 'is about the definition of intelligence', which is the provenance admitting no attentive reader arrives here as the answer to this stem. The underlying misconception is real (concept map DM-3, family c) but it is not attached to this question."
+  ],
+  "preserve": "The idea and the target: DM-3's efficiency-versus-final-capability split is worth a question, and option 2 — the conflation that collapses 'less efficient' into 'less capable' — is a genuine, concept-map-backed misconception that should survive the rewrite in substance. The explanation's opening sentence is also correct and reusable. The stem is what has to go: it hands the reader the principle the options were supposed to test.",
+  "rewrite": {
+    "id": "defining-and-measuring-agi/sonnet/a03",
+    "targets": ["DM-3"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two systems end up at the same expert-level score on the same set of cognitive tasks. One reached it from a handful of examples; the other needed billions. How should a safety-oriented account of intelligence treat that difference?",
+    "options": [
+      {
+        "text": "It is a real difference in intelligence on the adaptability view, but it does not change either system's risk profile, which turns on what each now does.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It shows the second system is less capable than its score suggests, because sheer data volume leaves the underlying skill far shallower than it looks.",
+        "key": false,
+        "provenance": "misreads 'A system that needs a billion examples to learn what humans get from ten examples might be less impressive even if both reach the same final capability' as meaning the sample-inefficient system is less capable, collapsing learning efficiency into the capability measure",
+        "family": "a"
+      },
+      {
+        "text": "It makes the second system the safer of the two, because a system that brute-forced the score will fail as soon as the task shifts away from its training data.",
+        "key": false,
+        "provenance": "reverses 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way' into the pre-chapter prior that a memorising system is brittle and therefore the safer of the two",
+        "family": "c"
+      },
+      {
+        "text": "It is set aside as not actionable here, in the same way questions about consciousness and true understanding are set aside from the definition of intelligence.",
+        "key": false,
+        "provenance": "misreads 'we set aside the consciousness debate as not actionable for safety work' as covering the adaptability view too, missing the clause immediately before it: 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The adaptability view is a real measure and the framework says so: intelligence as the efficiency of turning experience into skill means the sample-hungry system scores worse on that measure even at an identical final score. But safety planning here prioritises final capability, because a system that can perform a dangerous task poses that risk whether it learned from ten examples or a billion. So the difference is real as a claim about intelligence and inert as a claim about risk. The distractor calling the brute-force system safer reverses this: brittleness under novel variation is a separate empirical claim, not something the learning path guarantees. And the adaptability view is not set aside the way consciousness is — it is acknowledged and then subordinated. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Learning efficiency is a real axis of intelligence and a poor guide to risk: the framework acknowledges the adaptability view and then rates systems by what they can now do.",
+    "stem_format": "scenario-application",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who held both halves of the section's move (the adaptability view measures something real; the framework prioritises final capability for safety) produces the key unaided. The stem no longer supplies either half.",
+      "cynic_test": "The residual instinct is to pick the both-and option, so all three distractors are written as substantive positions rather than as over-claims: one denies the stipulated score, one asserts a risk ranking, one applies the chapter's own setting-aside move to the wrong view."
+    },
+    "shard_id": "defining-and-measuring-agi-a",
+    "model": "sonnet"
+  },
+  "rewrite_changed": ["stem", "options[0].text", "options[1]", "options[2]", "options[3]", "explanation", "takeaway", "stem_format", "self_check"],
+  "reviewer_note": "Check the rewrite's option 3 with a sceptical eye: 'brute-forced systems are brittle off-distribution' is often true in practice, and a sophisticated reader may defend it as a risk claim rather than pick the key — it is meant to be the top distractor, not an arguably-correct second answer; also confirm against whichever candidate targets DM-2 that the path-versus-destination sentence is not now load-bearing in two questions (R4, and the map's own DM-2/DM-3 pairing)."
+}

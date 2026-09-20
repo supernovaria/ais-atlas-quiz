@@ -1,0 +1,105 @@
+{
+  "candidate": {
+    "id": "defining-and-measuring-agi/sonnet/w07",
+    "targets": [
+      "DM-6"
+    ],
+    "lens": "figure",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Suppose researchers predict that AI will reach human-level performance within the next decade, without specifying anything further. The same framework that treats capability and generality as continuous variables also stipulates fixed percentile and domain-coverage thresholds for terms like AGI. What follows about evaluating the researchers' prediction?",
+    "options": [
+      {
+        "text": "The prediction is only evaluable once it is pinned to the framework's stipulated thresholds - the continuous axes alone can describe how a system is progressing, but only a threshold can say when it has 'arrived'.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The prediction is unevaluable in principle, because a framework that treats intelligence as continuous cannot coherently define any moment when human-level has been reached.",
+        "key": false,
+        "provenance": "misreads 'no universally agreed upon threshold where not-AGI suddenly becomes AGI' as meaning the framework refuses to give any threshold at all, missing that it then stipulates 80-90th percentile / 80-90% domain cutoffs anyway",
+        "family": "c"
+      },
+      {
+        "text": "The prediction contradicts the framework's own continuous axes, since stipulating a fixed threshold is inconsistent with treating capability and generality as continuous variables.",
+        "key": false,
+        "provenance": "misreads 'certain thresholds still matter for safety planning' as inconsistent with the continuum claim, rather than as thresholds layered on top of a continuous variable for practical use",
+        "family": "b"
+      },
+      {
+        "text": "The prediction can be evaluated from the capability axis alone, since generality only becomes relevant once a system already exceeds human-level performance on most individual tasks.",
+        "key": false,
+        "provenance": "reintroduces the depth/breadth conflation in a new setting, treating capability alone as sufficient to evaluate a claim that is explicitly about generality (breadth) as well as depth",
+        "family": "a"
+      }
+    ],
+    "explanation": "We build the framework continuous specifically to avoid binary AGI debates, but a prediction like human-level within a decade still needs an answerable yes/no at some point, which only the stipulated AGI threshold (roughly 80-90th percentile across 80-90% of domains) can supply. The continuum and the threshold are not in tension: the continuum describes the terrain, the threshold marks where on it a claim like this one becomes checkable. Distractor 1 treats the absence of one natural boundary as the absence of any boundary at all. Distractor 2 mistakes a threshold layered on a continuum for a contradiction of it. Distractor 3 evaluates depth alone, ignoring that a human-level claim is about breadth too. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "A continuous framework and a stipulated threshold are not in conflict - the threshold is what makes an otherwise-continuous claim checkable.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who has resolved the continuum/threshold tension can state that the prediction needs pinning to a threshold, without seeing the options.",
+      "cynic_test": "A skipper might pick distractor 2 because 'contradicts itself' sounds like the sophisticated critique a hard question wants, but thresholds are explicitly layered on the continuum, not opposed to it."
+    },
+    "shard_id": "defining-and-measuring-agi-w",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 213,
+    "distractor_lens": [
+      173,
+      180,
+      182
+    ],
+    "mean_distractor_len": 178.3,
+    "len_ratio": 1.19,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 31,
+    "max_over_min": 1.23,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "performance",
+      "treats",
+      "variables",
+      "fixed",
+      "thresholds"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

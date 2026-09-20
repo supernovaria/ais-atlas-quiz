@@ -1,0 +1,90 @@
+{
+  "source": "2026-09-18-P1/defining-and-measuring-agi",
+  "seeds": 3,
+  "n_questions": 3,
+  "n_prompts": 9,
+  "questions_with_a_repeated_permutation": 0,
+  "prompts": [
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nTwo systems end up at the same expert-level score on the same set of cognitive tasks. One reached it from a handful of examples; the other needed billions. How should a safety-oriented account of intelligence treat that difference?\n\nA. It makes the second system the safer of the two, because a system that brute-forced the score will fail as soon as the task shifts away from its training data.\nB. It is set aside as not actionable here, in the same way questions about consciousness and true understanding are set aside from the definition of intelligence.\nC. It shows the second system is less capable than its score suggests, because sheer data volume leaves the underlying skill far shallower than it looks.\nD. It is a real difference in intelligence on the adaptability view, but it does not change either system's risk profile, which turns on what each now does."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nTwo systems end up at the same expert-level score on the same set of cognitive tasks. One reached it from a handful of examples; the other needed billions. How should a safety-oriented account of intelligence treat that difference?\n\nA. It shows the second system is less capable than its score suggests, because sheer data volume leaves the underlying skill far shallower than it looks.\nB. It is set aside as not actionable here, in the same way questions about consciousness and true understanding are set aside from the definition of intelligence.\nC. It is a real difference in intelligence on the adaptability view, but it does not change either system's risk profile, which turns on what each now does.\nD. It makes the second system the safer of the two, because a system that brute-forced the score will fail as soon as the task shifts away from its training data."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nTwo systems end up at the same expert-level score on the same set of cognitive tasks. One reached it from a handful of examples; the other needed billions. How should a safety-oriented account of intelligence treat that difference?\n\nA. It shows the second system is less capable than its score suggests, because sheer data volume leaves the underlying skill far shallower than it looks.\nB. It makes the second system the safer of the two, because a system that brute-forced the score will fail as soon as the task shifts away from its training data.\nC. It is set aside as not actionable here, in the same way questions about consciousness and true understanding are set aside from the definition of intelligence.\nD. It is a real difference in intelligence on the adaptability view, but it does not change either system's risk profile, which turns on what each now does."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA hospital deploys the same diagnostic AI system in two settings. In the first, it only flags anomalies for a radiologist who makes every final call. In the second, it orders follow-up tests and finalizes reports on its own, with a human reviewing a sample of cases afterwards. The system's measured capability is unchanged across the two settings. What follows about the risk each deployment carries?\n\nA. Risk exposure differs between the settings even though the system is the same, because how much of the task the AI does alone is set at deployment, not by capability.\nB. The system is capable enough to run with light oversight, so keeping it under close human supervision wastes capability and is itself the less responsible option here.\nC. The more autonomous setting is more dangerous in itself, because how much a system acts without oversight is part of what the system is, not of how it is used.\nD. Both deployments carry the same risk, since capability is what determines how much harm a system can do, and the level of human oversight changes only who watches it work."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA hospital deploys the same diagnostic AI system in two settings. In the first, it only flags anomalies for a radiologist who makes every final call. In the second, it orders follow-up tests and finalizes reports on its own, with a human reviewing a sample of cases afterwards. The system's measured capability is unchanged across the two settings. What follows about the risk each deployment carries?\n\nA. The system is capable enough to run with light oversight, so keeping it under close human supervision wastes capability and is itself the less responsible option here.\nB. Risk exposure differs between the settings even though the system is the same, because how much of the task the AI does alone is set at deployment, not by capability.\nC. The more autonomous setting is more dangerous in itself, because how much a system acts without oversight is part of what the system is, not of how it is used.\nD. Both deployments carry the same risk, since capability is what determines how much harm a system can do, and the level of human oversight changes only who watches it work."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA hospital deploys the same diagnostic AI system in two settings. In the first, it only flags anomalies for a radiologist who makes every final call. In the second, it orders follow-up tests and finalizes reports on its own, with a human reviewing a sample of cases afterwards. The system's measured capability is unchanged across the two settings. What follows about the risk each deployment carries?\n\nA. The more autonomous setting is more dangerous in itself, because how much a system acts without oversight is part of what the system is, not of how it is used.\nB. Risk exposure differs between the settings even though the system is the same, because how much of the task the AI does alone is set at deployment, not by capability.\nC. The system is capable enough to run with light oversight, so keeping it under close human supervision wastes capability and is itself the less responsible option here.\nD. Both deployments carry the same risk, since capability is what determines how much harm a system can do, and the level of human oversight changes only who watches it work."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nSuppose researchers predict that AI will reach human-level performance within the next decade, without specifying anything further. The same framework that treats capability and generality as continuous variables also stipulates fixed percentile and domain-coverage thresholds for terms like AGI. What follows about evaluating the researchers' prediction?\n\nA. The prediction is unevaluable in principle, because a framework that treats intelligence as continuous cannot coherently define any moment when human-level has been reached.\nB. The prediction is evaluable only when pinned to a stipulated threshold - the continuous axes can describe how far a system has come, but only a cutoff says when it has 'arrived'.\nC. The prediction exposes an inconsistency in the framework, since stipulating a fixed threshold for AGI is incompatible with treating capability and generality as continuous variables.\nD. The prediction can be evaluated on the capability axis alone, since a system that reaches human-level depth on individual tasks has thereby covered the domains that generality counts."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nSuppose researchers predict that AI will reach human-level performance within the next decade, without specifying anything further. The same framework that treats capability and generality as continuous variables also stipulates fixed percentile and domain-coverage thresholds for terms like AGI. What follows about evaluating the researchers' prediction?\n\nA. The prediction can be evaluated on the capability axis alone, since a system that reaches human-level depth on individual tasks has thereby covered the domains that generality counts.\nB. The prediction is evaluable only when pinned to a stipulated threshold - the continuous axes can describe how far a system has come, but only a cutoff says when it has 'arrived'.\nC. The prediction exposes an inconsistency in the framework, since stipulating a fixed threshold for AGI is incompatible with treating capability and generality as continuous variables.\nD. The prediction is unevaluable in principle, because a framework that treats intelligence as continuous cannot coherently define any moment when human-level has been reached."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nSuppose researchers predict that AI will reach human-level performance within the next decade, without specifying anything further. The same framework that treats capability and generality as continuous variables also stipulates fixed percentile and domain-coverage thresholds for terms like AGI. What follows about evaluating the researchers' prediction?\n\nA. The prediction exposes an inconsistency in the framework, since stipulating a fixed threshold for AGI is incompatible with treating capability and generality as continuous variables.\nB. The prediction is evaluable only when pinned to a stipulated threshold - the continuous axes can describe how far a system has come, but only a cutoff says when it has 'arrived'.\nC. The prediction is unevaluable in principle, because a framework that treats intelligence as continuous cannot coherently define any moment when human-level has been reached.\nD. The prediction can be evaluated on the capability axis alone, since a system that reaches human-level depth on individual tasks has thereby covered the domains that generality counts."
+    }
+  ]
+}
