@@ -1,0 +1,27 @@
+{
+  "section": "forecasting-timelines",
+  "target_n": 1,
+  "shipped_n": 1,
+  "selected": [
+    {
+      "id": "forecasting-timelines/sonnet/a01",
+      "targets": [
+        "FT-1"
+      ],
+      "level": "L3"
+    }
+  ],
+  "siblings": [],
+  "rejected_from_pool": [],
+  "flags_for_reviewer": [],
+  "distribution": {
+    "L3": 1
+  },
+  "coverage": {
+    "covered": [
+      "FT-1"
+    ],
+    "earns_question_uncovered": []
+  },
+  "underfill_reason": null
+}

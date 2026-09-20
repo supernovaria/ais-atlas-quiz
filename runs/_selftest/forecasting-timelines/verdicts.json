@@ -1,0 +1,209 @@
+[
+  {
+    "id": "forecasting-timelines/sonnet/1",
+    "verdict": "pass",
+    "level": "L3",
+    "level_claimed_by_generator": "L3",
+    "failed_criteria": [],
+    "measurements": {
+      "correct_len": 120,
+      "distractor_lens": [
+        118,
+        122,
+        119
+      ],
+      "mean_distractor_len": 119.7,
+      "len_ratio": 1,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.03,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [],
+      "emphasis_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "smart_quote_chars": 0,
+      "negation_in_stem": false,
+      "negation_uncapitalised": false,
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 1,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [],
+    "preserve": "the stem",
+    "rewrite": null,
+    "rewrite_changed": [],
+    "reviewer_note": "check the top distractor."
+  },
+  {
+    "id": "forecasting-timelines/sonnet/3",
+    "verdict": "pass",
+    "level": "L3",
+    "level_claimed_by_generator": "L3",
+    "failed_criteria": [],
+    "measurements": {
+      "correct_len": 120,
+      "distractor_lens": [
+        118,
+        122,
+        119
+      ],
+      "mean_distractor_len": 119.7,
+      "len_ratio": 1,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.03,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [],
+      "emphasis_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "smart_quote_chars": 0,
+      "negation_in_stem": false,
+      "negation_uncapitalised": false,
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 1,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [],
+    "preserve": "the stem",
+    "rewrite": null,
+    "rewrite_changed": [],
+    "reviewer_note": "check the top distractor."
+  },
+  {
+    "id": "forecasting-timelines/sonnet/4",
+    "verdict": "pass",
+    "level": "L3",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [],
+    "measurements": {
+      "correct_len": 120,
+      "distractor_lens": [
+        118,
+        122,
+        119
+      ],
+      "mean_distractor_len": 119.7,
+      "len_ratio": 1,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.03,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [],
+      "emphasis_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "smart_quote_chars": 0,
+      "negation_in_stem": false,
+      "negation_uncapitalised": false,
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 1,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [],
+    "preserve": "the stem",
+    "rewrite": null,
+    "rewrite_changed": [],
+    "reviewer_note": "check the top distractor."
+  }
+]

@@ -602,6 +602,33 @@ Proposals only — RUBRIC.md was not edited.
 
 ## 7. What the pilot does NOT establish
 
+> **Orchestrator's note, added after this document was written.** The analyst
+> ran before `defining-and-measuring-agi` reached its adversary, curator and
+> render stages, which happened later in the same window. Three bullets below
+> are therefore stale, and are left in place rather than rewritten so the
+> analyst's own reasoning stays auditable. What has since been observed:
+>
+> - **AGI did reach the curator and the adversary.** The adversary scored
+>   9 of 9 (100% hit, +0.750 over chance, 3/3 flagged) — worse than
+>   `forecasting-timelines` and worse than the 40 questions already shipped.
+>   The curator shipped 3 of a target 8, citing budget truncation rather than
+>   pool quality, and `runs/2026-09-18-P1/defining-and-measuring-agi/` now
+>   holds `adversary.json`, `picks.json` and `curator.json`.
+> - **The final bullet's alternative explanation is now testable and did not
+>   survive.** It suggests `forecasting-timelines` may simply be less publicly
+>   rehearsed material rather than structurally less guessable. AGI has now
+>   been measured and is *worse*, so the pipeline has no section on which its
+>   output approaches the gate.
+> - **The blandness read was repeated on AGI's three rewrites.** Same result:
+>   `w04r` is four options of `<claim>, because <reason>`; `w07r` is four of
+>   "The prediction…"; `a03r` is four of "It…". The reader's-eye confirmation
+>   now covers two sections and two generation strategies, not one.
+>
+> Everything else in this section stands, including the sample-size warnings,
+> which the AGI data makes *more* pointed rather than less: its adversary
+> figure rests on 3 questions and 9 trials.
+
+
 - **AGI's curator and adversary behavior are completely unobserved.** The
   section never reached either stage (3 of 6 attempted critic calls
   completed, 3 interrupted; no `curator.json`, no `adversary.json` exist for

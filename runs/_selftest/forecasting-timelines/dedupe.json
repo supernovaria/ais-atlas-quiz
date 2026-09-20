@@ -1,0 +1,26 @@
+{
+  "section": "forecasting-timelines",
+  "candidates_in": 5,
+  "survivors": 4,
+  "collapsed_count": 1,
+  "critic_calls_saved": 1,
+  "survivor_ids": [
+    "forecasting-timelines/sonnet/1",
+    "forecasting-timelines/sonnet/3",
+    "forecasting-timelines/sonnet/4",
+    "forecasting-timelines/sonnet/5"
+  ],
+  "collapsed": [
+    {
+      "collapsed_id": "forecasting-timelines/sonnet/2",
+      "survivor_id": "forecasting-timelines/sonnet/1",
+      "stem_overlap": 1,
+      "targets": [
+        "FT-1"
+      ],
+      "why": "R4: ≥70% content-word overlap on stems and identical targets",
+      "loser_len_ratio": 1,
+      "keeper_len_ratio": 1
+    }
+  ]
+}

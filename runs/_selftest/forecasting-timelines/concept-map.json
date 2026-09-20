@@ -1,0 +1,150 @@
+{
+  "section": "forecasting-timelines",
+  "heading": "Forecasting Timelines",
+  "target_n": 4,
+  "takeaway": "Forecasts are consistency checks, not predictions.",
+  "subheadings": [
+    "Training Data",
+    "Effective Compute"
+  ],
+  "threshold_concepts": [
+    "FT-1"
+  ],
+  "ideas": [
+    {
+      "id": "FT-1",
+      "label": "effective compute is a product of independent factors",
+      "subheading": "Effective Compute",
+      "anchor": "three factors multiply",
+      "criteria_met": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": [
+        "L4",
+        "L5"
+      ],
+      "pairs_with": [
+        "FT-2"
+      ],
+      "misconceptions": [
+        {
+          "family": "b",
+          "claim": "one bottleneck stops progress",
+          "provenance": "misreads the multiplication as a sum",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [
+        "takeoff"
+      ],
+      "disposition": "question"
+    },
+    {
+      "id": "FT-2",
+      "label": "the data wall and its three escape routes",
+      "subheading": "Training Data",
+      "anchor": "three escape routes",
+      "criteria_met": [
+        1,
+        3
+      ],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": [
+        "L3"
+      ],
+      "pairs_with": [
+        "FT-1"
+      ],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "running out of text ends scaling",
+          "provenance": "misreads exhaustion as a hard stop",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "FT-3",
+      "label": "anchor uncertainty spans twelve orders of magnitude",
+      "subheading": "Effective Compute",
+      "anchor": "twelve orders of magnitude",
+      "criteria_met": [
+        3,
+        4
+      ],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": [
+        "L4"
+      ],
+      "pairs_with": [],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "the range is a prediction",
+          "provenance": "misreads the span as a point estimate",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "FT-9",
+      "label": "the 2.3x/year chip production figure",
+      "criteria_met": [
+        2
+      ],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "volatile tracker figure"
+    }
+  ],
+  "discrimination_pairs": [
+    {
+      "a": "FT-1",
+      "b": "FT-2",
+      "conflation": "readers merge the supply story with the compute story"
+    }
+  ],
+  "volatile": [
+    {
+      "text": "2.3x/year chip production",
+      "class": "V1.3",
+      "subheading": "Effective Compute"
+    }
+  ],
+  "durable_figures": [
+    {
+      "text": "twelve orders of magnitude",
+      "class": "V2.2",
+      "budget_candidate": true
+    }
+  ],
+  "cross_section_links": [],
+  "assumed_prior": [],
+  "do_not_test": [
+    {
+      "item": "Epoch AI as an organisation name",
+      "why": "organisation name, not an idea"
+    }
+  ],
+  "notes_for_generator": [
+    "selftest fixture"
+  ]
+}
