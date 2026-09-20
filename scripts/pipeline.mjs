@@ -176,6 +176,10 @@ function measureCandidate(c) {
 // before/after is what shows whether the rewrite path works at all. The
 // alternative convention — resolving a rewrite under the original's id and
 // overwriting it — destroys that evidence, so it is not used anywhere.
+// Ids a curator may use on flags_for_reviewer that are not candidate ids. These
+// carry findings about the shipped SET rather than one question.
+const FLAG_SCOPES = new Set(['section', 'set']);
+
 function stageMerge(label, slug) {
   const dir = sectionDir(label, slug);
   const srcDir = join(dir, 'candidates');
@@ -1089,7 +1093,7 @@ function validateVerdicts(list, candidates, measurements, where, ok, warnFn = ok
   }
 }
 
-function validateCurator(cur, candidates, verdicts, adversary, stagingPath, where, ok) {
+function validateCurator(cur, candidates, verdicts, adversary, stagingPath, where, ok, warnFn = ok) {
   if (!ok(cur && typeof cur === 'object', where, 'not an object')) return;
   ok(Number.isInteger(cur.shipped_n), where, 'shipped_n missing');
   ok(Number.isInteger(cur.target_n), where, 'target_n missing');
@@ -1147,6 +1151,7 @@ function validateCurator(cur, candidates, verdicts, adversary, stagingPath, wher
       ok(flagIds.has(s.id), where,
         `shipped ${s.id} is adversary-flagged but is not named in flags_for_reviewer`);
     }
+
   }
   // The stem/option/explanation diff that used to live here is GONE, and
   // deliberately not replaced. It existed because the curator wrote
@@ -1168,6 +1173,27 @@ function validateCurator(cur, candidates, verdicts, adversary, stagingPath, wher
   const known = new Set((candidates || []).map((c) => c.id));
   for (const sel of cur.selected || []) {
     ok(known.has(sel.id), where, `selected id ${sel.id} is not in candidates.json`);
+  }
+
+  // Set-level findings. On 2026-09-20 the curator used the literal id "section"
+  // for three flags that were about the shipped set rather than any one question
+  // — coverage gaps, the set-level adversary result. It was right that such
+  // findings exist and had nowhere to go, but nothing here resolved the id, so
+  // those three flags were invisible: neither FAIL nor WARN. A flag the checker
+  // silently drops is the same silent-corruption class as the four defects this
+  // pipeline was hardened against, so the scopes are recognised explicitly and
+  // anything else unresolvable is reported. This is deliberately NOT inside the
+  // `if (adversary)` block above — flag-id resolution does not depend on the
+  // adversary having run, and the first version of this check was placed there
+  // and silently never fired.
+  for (const f of cur.flags_for_reviewer || []) {
+    if (!f || typeof f !== 'object' || !f.id) continue;
+    if (FLAG_SCOPES.has(f.id)) continue;
+    if (candidates && !known.has(f.id)) {
+      warnFn(false, where, `flags_for_reviewer names "${f.id}", which is neither a candidate id `
+        + `nor one of the set-level scopes (${[...FLAG_SCOPES].join(', ')}); `
+        + 'a flag whose id resolves to nothing reaches no reviewer');
+    }
   }
 }
 
@@ -1232,7 +1258,7 @@ function stageValidate(label, slugArg) {
     if (verdicts) { validateVerdicts(verdicts, candidates, measurements, `${slug}/verdicts.json`, ok, warn); checked++; seen.push(`${slug}/verdicts.json`); }
     if (curator) {
       validateCurator(curator, candidates, verdicts, adversary,
-        join(ROOT, 'staging', `${slug}.md`), `${slug}/curator.json`, ok);
+        join(ROOT, 'staging', `${slug}.md`), `${slug}/curator.json`, ok, warn);
       checked++; seen.push(`${slug}/curator.json`);
     }
     // Regeneration pass artifacts, same schemas.
@@ -1739,6 +1765,32 @@ function selftest() {
 
   if (hadStage !== null) writeFileSync(stagePath, hadStage, 'utf8');
   else rmSync(stagePath, { force: true });
+
+  // A reviewer flag whose id resolves to nothing reaches no reviewer. Before
+  // 2026-09-20 such a flag produced neither FAIL nor WARN — the silent class.
+  const flagProbe = (flagId) => {
+    const problems = [];
+    const ok = (cond, w, msg) => { if (!cond) problems.push({ where: w, msg, severity: 'FAIL' }); return Boolean(cond); };
+    const warn = (cond, w, msg) => { if (!cond) problems.push({ where: w, msg, severity: 'WARN' }); return Boolean(cond); };
+    validateCurator(
+      {
+        section: slug, target_n: 1, shipped_n: 1,
+        selected: [{ id: rcands[0].id, targets: rcands[0].targets, level: 'L3' }],
+        siblings: [], rejected_from_pool: [],
+        flags_for_reviewer: [{ id: flagId, note: 'probe' }],
+        distribution: { L3: 1 }, coverage: { covered: [], earns_question_uncovered: [] },
+        underfill_reason: null,
+      },
+      rcands, null, null, null, 'probe', ok, warn,
+    );
+    return problems.map((x) => x.msg).join(' | ');
+  };
+  check(/resolves to nothing/.test(flagProbe('forecasting-timelines/sonnet/nope99')),
+    'validate warns on a reviewer flag whose id is not a candidate and not a scope');
+  check(!/resolves to nothing/.test(flagProbe('section')),
+    'validate accepts "section" as a set-level reviewer-flag scope');
+  check(!/resolves to nothing/.test(flagProbe(rcands[0].id)),
+    'validate accepts a reviewer flag naming a real candidate');
 
   const lintHits = (c) => lintCandidate(c).map((x) => x.rule);
   check(lintHits({ ...twin, stem: 'He said “hi” now' }).includes('CANON-quote'),
