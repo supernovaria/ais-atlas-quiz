@@ -1,0 +1,494 @@
+{
+  "section": "undercraft-theory",
+  "heading": "Undercraft Theory in Ensemble Performance Studies",
+  "target_n": 8,
+  "takeaway": "Skill on stage splits into two separately-trained, negatively-associated registers -- projection (what the audience watches) and undercraft (what holds the scene together unseen) -- so audience-facing signals like casting prominence, a confident recovery, or even a troupe's own success-rate metric can systematically mislead about backstage quality unless read against the specific counter-metrics (correction load, rescue vs. repair) built to catch that gap.",
+  "subheadings": [
+    "Two kinds of contribution",
+    "The Fen index",
+    "The halo fallacy",
+    "Casting the anchor",
+    "The gloss effect",
+    "Troupe size and the core band",
+    "Rescue, repair, and the correction load",
+    "Ferrant's objection"
+  ],
+  "threshold_concepts": ["UT-1", "UT-10"],
+  "ideas": [
+    {
+      "id": "UT-1",
+      "label": "projection and undercraft are not two ends of one scale; they are separately trained and negatively associated, not merely uncorrelated",
+      "subheading": "Two kinds of contribution",
+      "anchor": "negatively associated in practice, not merely uncorrelated",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L3", "L4", "L5"],
+      "pairs_with": ["UT-6"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a strong projector is assumed to be a generally strong performer, including backstage",
+          "provenance": "misreads 'Projection is, by definition, what the audience is watching' as implying stage skill is one unified quality",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "projection and undercraft are simply uncorrelated (independent), not negatively related",
+          "provenance": "misreads 'not two ends of one scale' as meaning the two axes are merely unrelated rather than pulling against each other",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "training projection and training undercraft simply don't affect each other",
+          "provenance": "misreads 'separately acquired, separately trained' as a claim of independence, missing the stronger claim that pushing projection actively degrades undercraft capacity",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-2",
+      "label": "undercraft succeeds by vanishing; a spectator who can describe it afterward is describing its failure",
+      "subheading": "Two kinds of contribution",
+      "anchor": "A spectator who can describe an undercraft action afterward is describing a failure of it",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["UT-1", "UT-13"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "undercraft is just any unseen backstage task, not specifically a corrective action",
+          "provenance": "misreads 'everything that holds a scene together without being watched' as covering any invisible labor rather than corrections tied to a live failure point",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "skilled undercraft is rare, i.e. good troupes rarely need it",
+          "provenance": "misreads 'succeeds by vanishing' as meaning good undercraft is absent rather than constantly present but imperceptible",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "a noticed-but-charming recovery still counts as successful undercraft",
+          "provenance": "misreads 'a failure of it' loosely, collapsing a truly unnoticed correction with one the audience noticed and enjoyed",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-3",
+      "label": "projection defined as the audience-facing register of skill",
+      "subheading": "Two kinds of contribution",
+      "anchor": "Projection is, by definition, what the audience is watching.",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "bare definition of a bolded term; its only testable content is its relation to undercraft, which UT-1 already carries"
+    },
+    {
+      "id": "UT-4",
+      "label": "the Fen index is a rate among attempted corrections, not a count of how many were needed",
+      "subheading": "The Fen index",
+      "anchor": "it is a rate among attempts, not a count",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L2", "L3"],
+      "pairs_with": ["UT-5", "UT-11"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a performer who caught one correction cleanly must be less skilled than one who caught thirty",
+          "provenance": "misreads the claim that both score 1.0 as counterintuitive evidence the metric is broken, rather than the defining property of a rate",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "a high Fen index means a troupe had few problems that night",
+          "provenance": "misreads the success-rate definition as also telling you how often corrections were needed",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "the Fen index counts every correction a performer could conceivably need",
+          "provenance": "misreads 'proportion of attempted corrections' as covering corrections that were never actually attempted",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-5",
+      "label": "correction load is the raw count of needed corrections, tracked as a separate quantity from the Fen index",
+      "subheading": "The Fen index",
+      "anchor": "the raw count of needed corrections the correction load, and treated it as a separate quantity entirely",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3"],
+      "pairs_with": ["UT-4", "UT-10"],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "correction load and the Fen index are just two views of the same underlying quantity",
+          "provenance": "misreads 'treated it as a separate quantity entirely' as a stylistic distinction rather than two independent axes",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "a heroic Fen index alongside a crushing correction load is a reassuring combination",
+          "provenance": "misreads 'a troupe can carry a heroic Fen index while carrying a crushing correction load' as good news, missing that Kasch calls this the more dangerous diagnostic picture",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-6",
+      "label": "the halo fallacy's mechanism: sustaining projection narrows a performer's peripheral awareness, which is why top projectors rank low on undercraft",
+      "subheading": "The halo fallacy",
+      "anchor": "sustaining projection at full scale narrows a performer's peripheral awareness of the rest of the stage",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["UT-1", "UT-7"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "the performer who commands the audience's attention most is also the one you'd most trust to hold a scene together backstage",
+          "provenance": "misreads audience command of attention as implying backstage reliability -- the halo fallacy stated as the naive assumption the section overturns",
+          "source": "inferred"
+        },
+        {
+          "family": "d",
+          "claim": "top projectors have worse undercraft because they are less conscientious or care less about the ensemble",
+          "provenance": "misreads the attentional explanation ('attentional, not moral') as a claim about effort or character rather than divided attention",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-7",
+      "label": "the anchor position -- highest correction load, lowest visibility -- is cast to the troupe's weakest projector",
+      "subheading": "Casting the anchor",
+      "anchor": "the anchor was given to the troupe's weakest projector",
+      "criteria_met": [2, 3, 4],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["UT-8", "UT-6"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "the structurally most important position on stage goes to the strongest performer",
+          "provenance": "misreads 'structurally central to the show' as implying the anchor role is a lead-style casting choice -- the halo fallacy applied to blocking",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "'anchor' is another word for the most prominent or important-sounding role",
+          "provenance": "misreads the anchor's structural centrality as visibility, conflating importance-to-the-show with importance-to-the-audience",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-8",
+      "label": "the lead position -- highest projection demand, lowest correction load -- is cast to the strongest projector",
+      "subheading": "Casting the anchor",
+      "anchor": "the strongest projector was placed in the lead position, the spot with the highest projection demand",
+      "criteria_met": [2, 3, 4],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["UT-7"],
+      "misconceptions": [
+        {
+          "family": "b",
+          "claim": "the lead does no backstage correction work at all",
+          "provenance": "misreads 'lowest correction load' as zero correction load rather than simply the least of it",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "the lead carries the most responsibility for holding the scene together",
+          "provenance": "misreads high projection demand as implying high responsibility for undercraft, conflating the two axes the section separates",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-9",
+      "label": "a rescue is a live, in-performance correction (what the Fen index scores)",
+      "subheading": "Rescue, repair, and the correction load",
+      "anchor": "A rescue is a live, in-performance correction -- the kind the Fen index scores",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L2", "L3"],
+      "pairs_with": ["UT-10"],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "rescue and repair are interchangeable terms for reducing correction damage",
+          "provenance": "misreads 'two ways a troupe reduces its correction load's damage' as one undifferentiated idea rather than a live fix versus a structural one",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "a troupe that reliably rescues the same problem every night has solved it",
+          "provenance": "misreads consistent nightly rescues as evidence of competence rather than of an unfixed underlying cause",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-10",
+      "label": "a high Fen index combined with a flat or growing correction load is a warning sign -- more dangerous than a lower Fen index with a shrinking correction load",
+      "subheading": "Rescue, repair, and the correction load",
+      "anchor": "the troupe had gotten skilled at surviving its own unfixed mistakes rather than fixing them",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L4", "L5"],
+      "pairs_with": ["UT-9", "UT-5"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "an excellent Fen index is straightforwardly good news on its own",
+          "provenance": "misreads 'an excellent Fen index built entirely out of rescues and no repairs at all' as a mark of skill rather than checking the correction-load trend",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "a lower Fen index paired with a shrinking correction load is the worse diagnostic picture",
+          "provenance": "misreads the comparison between the two troupe profiles backwards, reversing which one Kasch treats as the clearer warning sign",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "a repair is just an especially effective or permanent-feeling rescue",
+          "provenance": "misreads 'removes the underlying cause so the same correction never needs to be attempted again' as a better rescue rather than a categorically different, between-performance action",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-11",
+      "label": "gloss (audience-rated seamlessness) tracks projection, not the Fen index, and can rise as the Fen index falls",
+      "subheading": "The gloss effect",
+      "anchor": "A rising gloss score is therefore not evidence that a troupe's undercraft has improved",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4", "L5"],
+      "pairs_with": ["UT-4"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "rising audience-rated seamlessness proves a troupe's undercraft has improved",
+          "provenance": "misreads a confident, well-projected cover of a visible stumble as evidence of tight craft rather than of a successful cover",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "gloss reliably tracks the Fen index the same way it tracks projection quality",
+          "provenance": "misreads 'gloss rises reliably with a troupe's average projection quality' as extending to the Fen index, reversing the point that the two can move in opposite directions",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "gloss and the Fen index are two measurements of the same underlying thing",
+          "provenance": "misreads an audience-report measure (gloss) and a backstage-logged measure (Fen index) as interchangeable proxies for 'how good the troupe is'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-12",
+      "label": "average Fen index is non-monotonic in troupe size, peaking at a core band, with two mechanistically different failure modes on either side",
+      "subheading": "Troupe size and the core band",
+      "anchor": "up to a size he called the core band -- five to seven performers",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": [],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "bigger troupes always show higher Fen indices (more hands to cover), or smaller troupes always do (tighter coordination)",
+          "provenance": "misreads the two intuitive guesses in 'The intuitive guess runs in one of two directions' as the actual finding, missing that Kasch found neither monotonic pattern",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "the decline in Fen index below the core band and above it is the same failure mode",
+          "provenance": "misreads the two size-based declines as one undifferentiated 'too big or too small' effect, collapsing redundancy scarcity (below four) and signaling-network overload (above ten) into a single mechanism",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "UT-13",
+      "label": "Ferrant's objection targets how 'invisible' was measured, not the projection/undercraft distinction itself",
+      "subheading": "Ferrant's objection",
+      "anchor": "backstage observers were classifying two audience responses as one",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["UT-2"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "Ferrant's critique disputes the projection/undercraft distinction itself",
+          "provenance": "misreads the presence of a 'chief critic' as a wholesale rejection, when the text states she 'did not dispute the projection-undercraft distinction' and attacked only the measurement of invisibility",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "a correction the audience noticed but forgave is the same thing as one it truly never registered",
+          "provenance": "misreads Kasch's original backstage-observer method as already distinguishing these, when Ferrant's point is that it classified both as one 'invisible' category",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    }
+  ],
+  "discrimination_pairs": [
+    {
+      "a": "UT-4",
+      "b": "UT-5",
+      "conflation": "a high Fen index is read as meaning a troupe has few problems, collapsing the success-rate metric into an overall count of how much trouble the troupe is in"
+    },
+    {
+      "a": "UT-7",
+      "b": "UT-8",
+      "conflation": "'anchor' is read as a synonym for the star/lead position because both sound like the most important spot, when the casting is actually inverted"
+    },
+    {
+      "a": "UT-4",
+      "b": "UT-11",
+      "conflation": "audience-rated seamlessness (gloss) is treated as a stand-in for the backstage success rate (Fen index), so rising acclaim is read as proof undercraft is improving"
+    },
+    {
+      "a": "UT-9",
+      "b": "UT-10",
+      "conflation": "rescue and repair are both read as just 'fixing problems,' collapsing the live in-performance correction with the between-performance structural fix that prevents recurrence"
+    }
+  ],
+  "volatile": [
+    {
+      "text": "a rank correlation near -0.35",
+      "class": "V1.1",
+      "subheading": "The halo fallacy"
+    },
+    {
+      "text": "forty touring troupes in Kasch's original survey",
+      "class": "V1.5",
+      "subheading": "The halo fallacy"
+    },
+    {
+      "text": "Ferrant's 1971 survey of twelve troupes, only three of which kept sufficiently detailed logs",
+      "class": "V1.1",
+      "subheading": "Ferrant's objection"
+    }
+  ],
+  "durable_figures": [
+    {
+      "text": "the core band of five to seven performers, with decline below four and above ten",
+      "class": "V2.4",
+      "budget_candidate": true
+    },
+    {
+      "text": "Fen index = corrections that succeeded invisibly / corrections attempted",
+      "class": "V2.4",
+      "budget_candidate": false
+    }
+  ],
+  "cross_section_links": [],
+  "assumed_prior": [],
+  "do_not_test": [
+    {
+      "item": "Teodor Kasch and Odalys Ferrant as researcher names",
+      "why": "researcher names, not ideas"
+    },
+    {
+      "item": "the Corvide Nine troupe name and the 1958 founding study",
+      "why": "named example and date, not an idea"
+    },
+    {
+      "item": "the exact -0.35 rank correlation figure",
+      "why": "volatile statistic the text itself flags as illustrative and 'not a precise law'; must not be load-bearing"
+    },
+    {
+      "item": "the sample sizes (forty troupes; Ferrant's twelve troupes, three with detailed logs)",
+      "why": "methodological trivia illustrating a point already carried by UT-6 and UT-13 at a conceptual level"
+    },
+    {
+      "item": "the five-point scale used to rate gloss",
+      "why": "instrument detail, not the idea; the idea is the projection/Fen-index divergence, not the survey scale"
+    },
+    {
+      "item": "Kasch's revised exit-questionnaire protocol",
+      "why": "sub-example illustrating a point (the conflation Ferrant identified remains unmeasured) already earning a question via UT-13 at a higher level"
+    }
+  ],
+  "notes_for_generator": [
+    "12 earns_question ideas against target_n 8 -- comfortably under the 2N=16 ceiling, so no forced trimming, but expect to leave 3-5 ideas unshipped.",
+    "UT-1 and UT-6 both draw on the projection/undercraft negative-association claim (UT-1 states it; UT-6 supplies its mechanism and the naive halo-effect framing). Do not ship both as near-duplicate stems -- UT-1 is the discrimination/threshold claim, UT-6 is better suited to an L4 application of the attentional mechanism to a new case.",
+    "UT-9 largely sets up UT-10; if only one of the pair ships, prefer UT-10 (the counterintuitive diagnostic reversal) over UT-9 (the plain definition).",
+    "UT-12 (core band) risks being answerable by a generic 'medium group size is best' heuristic without having read the passage. Any question built on it must force the reader to distinguish the two named mechanisms (redundancy scarcity below the band vs. signaling-network overload above it), not just the inverted-U shape.",
+    "UT-10 is the strongest L5 candidate: it inverts the reader's assumption about the section's own headline metric (a high Fen index looks good but can be the more dangerous picture), and the text supplies the exact contrast needed for a critique-style question (a rescue-heavy troupe vs. a repair-heavy troupe with different Fen indices).",
+    "If ranking is needed to cut down to ~8: strongest are UT-1, UT-4, UT-5 (or UT-9/UT-10), UT-7/UT-8, UT-10, UT-11; most dispensable are UT-2, UT-6, UT-9, UT-12, UT-13."
+  ]
+}

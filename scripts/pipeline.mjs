@@ -178,6 +178,44 @@ function measureCandidate(c) {
 // overwriting it — destroys that evidence, so it is not used anywhere.
 // Ids a curator may use on flags_for_reviewer that are not candidate ids. These
 // carry findings about the shipped SET rather than one question.
+// A generator file may hold MORE THAN ONE top-level JSON value. The brief says
+// to emit "a JSON array of candidates, optionally followed by a trailing
+// {note}", which reads two ways: the note as the array's last element, or the
+// note after the array's closing bracket. Both have now been observed from the
+// same brief — the 2026-09-19 sections put it inside, the 2026-09-20 fiction
+// control put it outside, which is not valid JSON and made the whole file
+// unreadable.
+//
+// The script owns the mechanical rule, so it accepts both. This is a parser,
+// not a repair: it never edits a character of what the generator wrote, it only
+// finds where one top-level value ends and the next begins. Strings and escapes
+// are tracked so a brace inside a stem cannot desynchronise the scan.
+function parseJsonValues(text) {
+  const values = [];
+  let depth = 0;
+  let start = -1;
+  let inStr = false;
+  let esc = false;
+  for (let i = 0; i < text.length; i += 1) {
+    const ch = text[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (ch === '\\') esc = true;
+      else if (ch === '"') inStr = false;
+      continue;
+    }
+    if (ch === '"') { inStr = true; continue; }
+    if (ch === '[' || ch === '{') { if (depth === 0) start = i; depth += 1; continue; }
+    if (ch === ']' || ch === '}') {
+      depth -= 1;
+      if (depth === 0 && start !== -1) { values.push(JSON.parse(text.slice(start, i + 1))); start = -1; }
+      if (depth < 0) throw new SyntaxError('unbalanced bracket in candidate file');
+    }
+  }
+  if (depth !== 0) throw new SyntaxError('unterminated JSON value in candidate file');
+  return values;
+}
+
 const FLAG_SCOPES = new Set(['section', 'set']);
 
 function stageMerge(label, slug) {
@@ -202,8 +240,7 @@ function stageMerge(label, slug) {
     for (const f of readdirSync(srcDir).filter((x) => x.endsWith('.json')).sort()) {
       const shard = f.replace(/\.json$/, '');
       const letter = shard.slice(shard.lastIndexOf('-') + 1);
-      const raw = readJson(join(srcDir, f));
-      const arr = Array.isArray(raw) ? raw : [raw];
+      const arr = parseJsonValues(readFileSync(join(srcDir, f), 'utf8')).flat();
       let n = 0;
       for (const x of arr) {
         if (!x || typeof x !== 'object') continue;
@@ -233,6 +270,17 @@ function stageMerge(label, slug) {
       shard_id: base ? base.shard_id : (v.rewrite.shard_id ?? null),
       model: base ? base.model : (v.rewrite.model ?? null),
     });
+  }
+
+  // A merge that finds nothing used to print "0 candidate(s)" and exit 0. That
+  // is the silent class: the next three stages then also report 0 and the run
+  // looks like it happened. Observed on 2026-09-20 when a generator wrote to
+  // runs/<label>/candidates/ instead of runs/<label>/<slug>/candidates/.
+  if (!out.length) {
+    die(`merge found no candidates for ${slug}.\n`
+      + `       Looked in: ${srcDir}\n`
+      + '       A merge that produces nothing is a failure, not an empty result — every\n'
+      + '       stage after it would report 0 and the run would look like it ran.');
   }
 
   writeJson(join(dir, 'generator-notes.json'), notes);
