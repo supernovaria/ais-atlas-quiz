@@ -70,34 +70,28 @@ vetoing individual candidates.
      "key_disclosed_by_primary_explanation": false}
   ],
   "rejected_from_pool": [{"id": "…", "why": "R4: stem 78% overlap with fable/02, which shipped"}],
-  "flags_for_reviewer": ["…"]
+  "flags_for_reviewer": [{"id": "…", "note": "…"}]
 }
 ```
 
-**B.** `staging/<section>.md` — quizParser fragment:
+**B.** *(removed 2026-09-20.)* **You no longer write `staging/<section>.md`.**
+`pipeline.mjs render` builds it from `candidates.json` + your `curator.json` by
+string copy.
 
-```
-# <Heading copied exactly from the existing file>
+This is not a reduction in your role; it removes a task you could not perform
+safely. Writing that file meant retyping every stem, option and explanation
+while being forbidden to change any of them, which is transcription drift by
+construction — and it drifted: in the 2026-09-19 run the outer quotation marks
+of two shipped stems changed from single to double between the candidate and
+the staged file. The change was an improvement by the house style, which is
+exactly why it is dangerous: an invisible, well-intentioned edit to text you do
+not own. Selecting is your judgment; transcription is arithmetic, and the script
+owns arithmetic.
 
-### Question 1
-<stem>
-
-- [ ] <option>
-- [x] <option>
-- [ ] <option>
-- [ ] <option>
-
-**Explanation**: <explanation> (<Section> → <Sub-heading>)
-
-### Question 2
-…
-```
-
-Numbered 1..N. Options in the candidate's order (the app shuffles). Add
-`<!-- no-shuffle -->` only where the candidate has `no_shuffle: true`.
-`<!-- duplicate-ok -->` only where you claim an R4 exemption and say why in
-`flags_for_reviewer`. **Strip** provenance, family, self_check, lens — the
-shipped file carries none of the pipeline fields.
+So: emit `curator.json` only (plus the review sheet in C, which is your own
+prose). Ordering, numbering, `<!-- no-shuffle -->` from the candidate's
+`no_shuffle`, and stripping the pipeline fields are all `render`'s job now. Name
+the questions you want, in the order you want them, in `selected`.
 
 **C.** `staging/review-sheet-<section>.md` — one block per shipped Q:
 
@@ -204,6 +198,10 @@ retry does not jump in difficulty.
 - `shipped_n ≤ target_n`; if `<`, `underfill_reason` non-null.
 - `distribution` sums to `shipped_n` and meets §3.7 hard bounds, or `underfill_reason` says which bound.
 - Every adversary-flagged Q you shipped appears in `flags_for_reviewer` with its hit count. (Flags do not gate eligibility — see "Eligible pool".)
+- `flags_for_reviewer` is `[{id, note}]`, one object per flag. It used to be a
+  bare string array, and `validate` matched ids by substring-searching the joined
+  prose — which reported a false alarm on 2026-09-19 against a run that had
+  flagged the question correctly, in prose. Give every flag the id it concerns.
 - Every `earns_question` idea appears in `covered` or `earns_question_uncovered`.
 - Every eligible candidate you did not ship is in `siblings` or `rejected_from_pool` — none silently dropped — and every sibling carries `key_disclosed_by_primary_explanation`.
-- Staging file parses with the repo's own `parseChapterMarkdown` (orchestrator runs it; you produce the format that will).
+- You wrote no question text anywhere. If you find yourself typing a stem, an option or an explanation, stop: `render` emits those and `validate` will not accept a `selected` id that is not in `candidates.json`.

@@ -151,6 +151,33 @@ its own stem** (≤2 sentences) and stand alone: the app does not guarantee
 question order and shuffles options. No answer to one may be inferable from
 another.
 
+## Text form (canonical, and checked)
+
+Everything you write lands in a JSON artifact that later stages copy verbatim
+into the shipped file. Nothing downstream may retype it, so the form you emit is
+the form that ships. `pipeline.mjs validate` lints these and reports a WARN; the
+critic sees them too.
+
+- **Straight ASCII quotes only.** `"` and `'`. Never the typographic forms
+  `“ ” ‘ ’` — they are the signature of prose that has been retyped, and
+  they are what this pipeline is built to prevent.
+- **Double for the outer quotation, single when nested.**
+  `A colleague argues: "the so-called 'scaling law' is empirical."`
+  Not `A colleague argues: '...'`. Every quoted-speaker stem in the 2026-09-19
+  run got this backwards, and the curator silently corrected it while
+  transcribing, which is precisely the drift the rule exists to stop.
+- **Emphasis is `**bold**` and `*italic*`**, never `__` or `_`.
+- **Emphasis is allowed and sometimes right.** Bolding the one clause that
+  differs between two near-identical options genuinely helps a reader, who may
+  be comparing them across a soft wrap. What is not allowed is *asymmetry*: the
+  key must not be the only emphasised option, nor the only unemphasised one.
+  The checker measures emphasis spans per option and gates them exactly as it
+  gates length (R9) and hedging (D10). If you emphasise, emphasise the same
+  structural element in every option.
+- **A negation stem renders the negation in capitals** — `NOT`, `EXCEPT`
+  (RUBRIC R13) — and carries `negation: true`. The checker detects negation
+  stems itself and cross-checks your flag; disagreement either way is a finding.
+
 ## Rules
 
 - **Prefer L3/L4. Under-produce L2.** At most one pure definition question in

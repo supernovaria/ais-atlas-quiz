@@ -29,7 +29,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, append
 import { join, dirname, resolve, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseChapterMarkdown } from '../src/quizParser.js';
-import { measure, contentWords, overlap, GATES, atlasSlug } from './check-questions.mjs';
+import { measure, contentWords, overlap, GATES, atlasSlug, lintCandidate } from './check-questions.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CHAPTER_DIR = resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/capabilities');
@@ -160,6 +160,151 @@ function measureCandidate(c) {
   const sub = c.citation && c.citation.subheading;
   m.citation_anchor_resolves = anchors === false || !sub ? null : anchors.has(atlasSlug(sub));
   return m;
+}
+
+// ------------------------------------------------------------- stage: merge
+//
+// Builds candidates.json deterministically from the agents' own output files, so
+// no model is ever asked to invent a unique id. The generator's id template is
+// `<section>/<model>/NN` with no shard component, so shards sharing a model each
+// number from 01 and collide — which silently collapsed 11 candidates to 3 in
+// the 2026-09-19 run, because measurements are keyed by id. Ids are assigned
+// here from (shard, index) and a collision is fatal rather than quiet.
+//
+// Also promotes accepted rewrites. A rewrite keeps its own id, `<original>r`,
+// and BOTH objects stay in candidates.json: runs/ is an audit trail, and the
+// before/after is what shows whether the rewrite path works at all. The
+// alternative convention — resolving a rewrite under the original's id and
+// overwriting it — destroys that evidence, so it is not used anywhere.
+function stageMerge(label, slug) {
+  const dir = sectionDir(label, slug);
+  const srcDir = join(dir, 'candidates');
+  const out = [];
+  const notes = [];
+  const provenance = [];
+  const seen = new Map();
+
+  const claim = (id, from) => {
+    if (seen.has(id)) {
+      die(`id collision: "${id}" produced by both ${seen.get(id)} and ${from}.\n`
+        + '       Ids are assigned by merge from (shard, index); a collision here means two\n'
+        + '       sources claim the same slot. Fix the inputs, never the question text.');
+    }
+    seen.set(id, from);
+    return id;
+  };
+
+  if (existsSync(srcDir)) {
+    for (const f of readdirSync(srcDir).filter((x) => x.endsWith('.json')).sort()) {
+      const shard = f.replace(/\.json$/, '');
+      const letter = shard.slice(shard.lastIndexOf('-') + 1);
+      const raw = readJson(join(srcDir, f));
+      const arr = Array.isArray(raw) ? raw : [raw];
+      let n = 0;
+      for (const x of arr) {
+        if (!x || typeof x !== 'object') continue;
+        // The generator brief allows a trailing {"note": …} explaining its
+        // allocation. It is not a candidate; a naive merge counts it as one.
+        if (!x.stem) { if (x.note) notes.push({ shard, note: x.note }); continue; }
+        n += 1;
+        const model = x.model || (String(x.id || '').split('/')[1]) || 'unknown';
+        const id = claim(`${slug}/${model}/${letter}${String(n).padStart(2, '0')}`, shard);
+        provenance.push({ generator_id: x.id ?? null, id, shard });
+        out.push({ ...x, id, shard_id: shard, model });
+      }
+    }
+  }
+
+  // Rewrites, from verdicts written per-candidate or as one array.
+  const verdicts = collectVerdicts(dir);
+  for (const v of verdicts) {
+    if (!v || !v.rewrite) continue;
+    const base = out.find((c) => c.id === v.id);
+    const id = claim(`${v.id}r`, 'verdict rewrite');
+    provenance.push({ generator_id: null, id, shard: base ? base.shard_id : null, rewrite_of: v.id });
+    out.push({
+      ...v.rewrite,
+      id,
+      rewrite_of: v.id,
+      shard_id: base ? base.shard_id : (v.rewrite.shard_id ?? null),
+      model: base ? base.model : (v.rewrite.model ?? null),
+    });
+  }
+
+  writeJson(join(dir, 'generator-notes.json'), notes);
+  writeJson(join(dir, 'id-provenance.json'), provenance);
+  const p = writeJson(join(dir, 'candidates.json'), out);
+  const rewrites = out.filter((c) => c.rewrite_of).length;
+  logLine(label, { stage: 'merge', section: slug, n: out.length, rewrites, notes: notes.length, artifact: p, ok: true });
+  console.log(`merge    ${slug}: ${out.length} candidate(s) (${out.length - rewrites} generated + ${rewrites} rewrite(s)) · ${notes.length} generator note(s) · 0 id collisions`);
+  return out;
+}
+
+// Verdicts land either as verdicts.json (array) or verdicts/<id>.json (one per
+// spawn, which is how the orchestrator actually runs them). Read both.
+function collectVerdicts(dir) {
+  const arr = maybeJson(join(dir, 'verdicts.json'));
+  if (Array.isArray(arr) && arr.length) return arr;
+  const vdir = join(dir, 'verdicts');
+  if (!existsSync(vdir)) return [];
+  return readdirSync(vdir).filter((f) => f.endsWith('.json')).sort()
+    .map((f) => readJson(join(vdir, f)));
+}
+
+// ------------------------------------------------------------ stage: render
+//
+// Builds staging/<section>.md from candidates.json + curator.json by STRING
+// COPY. The curator used to write this file itself, retyping every stem, option
+// and explanation while being forbidden to change them — which is transcription
+// drift by construction, and duly produced it (straight quotes became curly on
+// two questions in the 2026-09-19 run). A model that never retypes the text
+// cannot drift it. The review sheet stays curator-authored: it is commentary,
+// not question text.
+function stageRender(label, slug) {
+  const dir = sectionDir(label, slug);
+  const candidates = readJson(need(join(dir, 'candidates.json'), 'candidates.json'));
+  const cur = readJson(need(join(dir, 'curator.json'), 'curator.json'));
+  const map = maybeJson(join(dir, 'concept-map.json'));
+  const smart = flag('smart-quotes') != null;
+
+  const byId = new Map(candidates.map((c) => [c.id, c]));
+  const heading = (map && map.heading) || slug;
+  const lines = [`# ${heading}`, ''];
+  let n = 0;
+  const missing = [];
+
+  for (const sel of cur.selected || []) {
+    const c = byId.get(sel.id);
+    if (!c) { missing.push(sel.id); continue; }
+    n += 1;
+    lines.push(`### Question ${n}`);
+    lines.push(typo(c.stem, smart));
+    lines.push('');
+    for (const o of c.options) {
+      lines.push(`- [${o.key ? 'x' : ' '}] ${typo(o.text, smart)}`);
+    }
+    lines.push('');
+    lines.push(`**Explanation**: ${typo(c.explanation, smart)}`);
+    lines.push('');
+  }
+  if (missing.length) die(`curator selected id(s) not present in candidates.json: ${missing.join(', ')}`);
+
+  const p = join(ROOT, 'staging', `${slug}.md`);
+  mkdirSync(dirname(p), { recursive: true });
+  writeFileSync(p, `${lines.join('\n').trimEnd()}\n`, 'utf8');
+  logLine(label, { stage: 'render', section: slug, n, smart_quotes: smart, artifact: p, ok: true });
+  console.log(`render   ${slug}: ${n} question(s) → staging/${slug}.md${smart ? ' (typographic quotes applied)' : ' (canonical straight quotes)'}`);
+  return p;
+}
+
+// Deterministic straight→typographic conversion, applied at render time only if
+// asked. Never a model's job: the rule is mechanical, so the script owns it.
+function typo(s, on) {
+  const t = String(s || '');
+  if (!on) return t;
+  return t
+    .replace(/(^|[\s([{<])"/g, '$1“').replace(/"/g, '”')
+    .replace(/(^|[\s([{<])'/g, '$1‘').replace(/'/g, '’');
 }
 
 // ------------------------------------------------------- stage: shard (§3.1)
@@ -692,10 +837,18 @@ function stageScore(label, slug) {
 // exact path and this checks the file against the schema in its brief — required
 // keys, types, enums, array lengths, and the cross-file invariants.
 // An artifact that does not validate did not happen.
+// Two severities, because one flat list is how three cosmetic complaints about
+// curator.json buried the output on 2026-09-19 while the genuinely dangerous
+// defects elsewhere were silent.
+//   FAIL — the artifact is malformed. It "did not happen"; re-spawn that agent.
+//   WARN — well-formed, but a human should look (an R5 phrase, an adversary hit).
+// The exit code is driven by FAIL alone, so a warning can never gate a run and a
+// failure can never be lost in noise.
 function validator() {
   const problems = [];
-  const ok = (cond, where, msg) => { if (!cond) problems.push({ where, msg }); return Boolean(cond); };
-  return { problems, ok };
+  const ok = (cond, where, msg) => { if (!cond) problems.push({ where, msg, severity: 'FAIL' }); return Boolean(cond); };
+  const warn = (cond, where, msg) => { if (!cond) problems.push({ where, msg, severity: 'WARN' }); return Boolean(cond); };
+  return { problems, ok, warn };
 }
 
 const isStr = (v) => typeof v === 'string' && v.trim().length > 0;
@@ -806,7 +959,7 @@ function validateShards(s, map, where, ok) {
   }
 }
 
-function validateCandidates(list, map, where, ok) {
+function validateCandidates(list, map, where, ok, warn = ok) {
   if (!ok(isArr(list), where, 'not a JSON array')) return;
   const ids = new Set();
   const subs = new Set((map && map.subheadings) || []);
@@ -851,8 +1004,14 @@ function validateCandidates(list, map, where, ok) {
     // R12 and the R5 family, checked on options and explanation too (§10.1 note).
     const all = [c.stem, ...c.options.map((o) => o.text), c.explanation].join(' ');
     ok(!/\b(all|none) of the above\b/i.test(all), w, 'R12: all/none of the above');
-    ok(!/according to the (chapter|text|textbook|section|author|atlas)/i.test(all), w,
+    // R5 is a WARN, not a FAIL: the candidate is well-formed and this is exactly
+    // the kind of fault the rewrite path exists to fix. Failing it here would be
+    // a mechanical pre-filter before the critic, which HANDOFF §6 forbids.
+    warn(!/according to the (chapter|text|textbook|section|author|atlas)/i.test(all), w,
       'R5/E5: "according to the …" in stem, option or explanation');
+    // Canonical text form. Typographic quotes in a JSON artifact mean a model
+    // retyped prose it may not change — the drift this pipeline now designs out.
+    for (const l of lintCandidate(c)) warn(false, w, `${l.rule}: ${l.detail}`);
     for (const d of doNotTest) {
       if (d.length > 12 && c.stem.toLowerCase().includes(d)) {
         ok(false, w, `stem contains a do_not_test item: "${d}"`);
@@ -861,7 +1020,7 @@ function validateCandidates(list, map, where, ok) {
   }
 }
 
-function validateVerdicts(list, candidates, measurements, where, ok) {
+function validateVerdicts(list, candidates, measurements, where, ok, warnFn = ok) {
   if (!ok(isArr(list), where, 'not a JSON array')) return;
   const byId = new Map((candidates || []).map((c) => [c.id, c]));
   for (const v of list) {
@@ -906,9 +1065,19 @@ function validateVerdicts(list, candidates, measurements, where, ok) {
       ok(isArr(v.rewrite_changed) && v.rewrite_changed.length > 0, w, 'rewrite without a non-empty rewrite_changed');
       ok(isStr(v.preserve), w, 'rewrite with empty preserve — critic self-check says re-read whether this is a reject');
       if (v.rewrite) {
+        // Severity is carried through: a malformed rewrite is a FAIL, but a
+        // canonical-form or R5 finding inside one is a WARN, exactly as it is
+        // for a first-pass candidate. Collapsing both to FAIL here is what
+        // turned 17 cosmetic quote findings into blocking errors.
         const sub = [];
-        validateCandidates([v.rewrite], null, `${w}.rewrite`, (c, ww, mm) => { if (!c) sub.push({ where: ww, msg: mm }); return Boolean(c); });
+        const subWarn = [];
+        validateCandidates(
+          [v.rewrite], null, `${w}.rewrite`,
+          (c, ww, mm) => { if (!c) sub.push({ where: ww, msg: mm }); return Boolean(c); },
+          (c, ww, mm) => { if (!c) subWarn.push({ where: ww, msg: mm }); return Boolean(c); },
+        );
         for (const s of sub) ok(false, s.where, s.msg);
+        for (const s of subWarn) warnFn(false, s.where, s.msg);
         // A rewrite that changes the idea is a new candidate, not a rewrite.
         if (cand) {
           ok(JSON.stringify([...(v.rewrite.targets || [])].sort()) === JSON.stringify([...(cand.targets || [])].sort()),
@@ -964,34 +1133,41 @@ function validateCurator(cur, candidates, verdicts, adversary, stagingPath, wher
   // assertion would fail every honest curator run.
   if (adversary) {
     const flagged = new Set((adversary.per_question || []).filter((q) => q.flagged).map((q) => q.id));
-    const flagText = (cur.flags_for_reviewer || []).join('\n');
+    // flags_for_reviewer is [{id, note}]. It used to be a string array, matched
+    // by substring-searching the joined prose — which reported a false alarm on
+    // 2026-09-19 against a curator that HAD flagged the question, just in prose.
+    // Match ids exactly. Short forms are deliberately not accepted:
+    // .../opus/c01r and .../sonnet/c01r both shorten to c01r.
+    const flags = cur.flags_for_reviewer || [];
+    const flagIds = new Set(flags.filter((f) => f && typeof f === 'object' && f.id).map((f) => f.id));
+    const legacy = flags.some((f) => typeof f === 'string');
+    ok(!legacy, where, 'flags_for_reviewer contains bare strings; the schema is [{id, note}]');
     for (const s of cur.selected || []) {
       if (!flagged.has(s.id)) continue;
-      ok(flagText.includes(s.id), where,
+      ok(flagIds.has(s.id), where,
         `shipped ${s.id} is adversary-flagged but is not named in flags_for_reviewer`);
     }
   }
-  // The curator never edits text. Diff the staging fragment against the source
-  // candidate (or its accepted rewrite) — HANDOFF §3 names this check.
+  // The stem/option/explanation diff that used to live here is GONE, and
+  // deliberately not replaced. It existed because the curator wrote
+  // staging/<section>.md itself, retyping prose it was forbidden to change; the
+  // diff caught the resulting drift after the fact. `render` now builds that file
+  // from candidates.json by string copy, so the curator never retypes anything
+  // and there is no drift to detect. The check became unnecessary rather than
+  // fixed — which is the better outcome, since it could not tell a changed quote
+  // mark from a rewritten stem and reported both identically.
+  //
+  // What is still worth checking is that the curator selected ids that exist and
+  // that the count matches; render itself dies on an unknown id.
   if (stagingPath && existsSync(stagingPath) && candidates) {
     const parsed = parseChapterMarkdown(readFileSync(stagingPath, 'utf8'));
     const shipped = parsed.flatMap((z) => z.questions).filter((q) => q.type === 'mc');
     ok(shipped.length === cur.shipped_n, `${where}→staging`,
       `staging has ${shipped.length} questions, curator.json says ${cur.shipped_n}`);
-    const source = new Map();
-    for (const c of candidates) source.set(c.id, c);
-    for (const v of verdicts || []) if (v.rewrite) source.set(v.id, v.rewrite);
-    (cur.selected || []).forEach((sel, idx) => {
-      const src = source.get(sel.id);
-      const got = shipped[idx];
-      if (!src || !got) return;
-      const w = `${where}→staging#Q${idx + 1}`;
-      ok(got.question.trim() === src.stem.trim(), w, `stem differs from candidate ${sel.id} — the curator edited text`);
-      const srcTexts = src.options.map((o) => o.text.trim()).sort();
-      const gotTexts = got.options.map((o) => o.text.trim()).sort();
-      ok(JSON.stringify(srcTexts) === JSON.stringify(gotTexts), w, `options differ from candidate ${sel.id} — the curator edited text`);
-      ok(got.explanation.includes(src.explanation.trim().slice(0, 60)), w, `explanation differs from candidate ${sel.id} — the curator edited text`);
-    });
+  }
+  const known = new Set((candidates || []).map((c) => c.id));
+  for (const sel of cur.selected || []) {
+    ok(known.has(sel.id), where, `selected id ${sel.id} is not in candidates.json`);
   }
 }
 
@@ -1011,14 +1187,22 @@ function eligibleIds(candidates, verdicts) {
       const clean = m.len_ratio >= GATES.r8[0] && m.len_ratio <= GATES.r8[1]
         && (!(m.correct_is_longest || m.correct_is_shortest) || m.extremum_gap <= GATES.r9Gap)
         && m.max_over_min <= GATES.spread && m.r5_matches.length === 0;
-      if (clean) out.push(id);
+      // Rewrite ids carry the `r` suffix and the original is retained beside
+      // them (the convention chosen 2026-09-20, so runs/ keeps the before/after
+      // rather than overwriting the evidence). What is ELIGIBLE is the rewrite,
+      // not the superseded original — so name `<id>r` when merge has promoted
+      // it. Without this the curator is charged with failing to account for
+      // originals it correctly passed over.
+      const rid = `${id}r`;
+      const promoted = (candidates || []).some((c) => c.id === rid);
+      if (clean) out.push(promoted ? rid : id);
     }
   }
   return out;
 }
 
 function stageValidate(label, slugArg) {
-  const { problems, ok } = validator();
+  const { problems, ok, warn } = validator();
   const base = runDir(label);
   if (!existsSync(base)) die(`no run directory: ${base}`);
   const slugs = slugArg ? [slugArg]
@@ -1038,14 +1222,14 @@ function stageValidate(label, slugArg) {
 
     if (map) { validateConceptMap(map, `${slug}/concept-map.json`, ok); checked++; seen.push(`${slug}/concept-map.json`); }
     if (shards) { validateShards(shards, map, `${slug}/shards.json`, ok); checked++; seen.push(`${slug}/shards.json`); }
-    if (candidates) { validateCandidates(candidates, map, `${slug}/candidates.json`, ok); checked++; seen.push(`${slug}/candidates.json`); }
+    if (candidates) { validateCandidates(candidates, map, `${slug}/candidates.json`, ok, warn); checked++; seen.push(`${slug}/candidates.json`); }
     if (measurements && candidates) {
       checked++; seen.push(`${slug}/measurements.json`);
       for (const id of Object.keys(measurements)) {
         ok(candidates.some((c) => c.id === id), `${slug}/measurements.json`, `measurement for unknown candidate ${id}`);
       }
     }
-    if (verdicts) { validateVerdicts(verdicts, candidates, measurements, `${slug}/verdicts.json`, ok); checked++; seen.push(`${slug}/verdicts.json`); }
+    if (verdicts) { validateVerdicts(verdicts, candidates, measurements, `${slug}/verdicts.json`, ok, warn); checked++; seen.push(`${slug}/verdicts.json`); }
     if (curator) {
       validateCurator(curator, candidates, verdicts, adversary,
         join(ROOT, 'staging', `${slug}.md`), `${slug}/curator.json`, ok);
@@ -1056,22 +1240,31 @@ function stageValidate(label, slugArg) {
     if (existsSync(regen)) {
       const rc = maybeJson(join(regen, 'candidates.json'));
       const rv = maybeJson(join(regen, 'verdicts.json'));
-      if (rc) { validateCandidates(rc, map, `${slug}/regenerated/candidates.json`, ok); checked++; seen.push(`${slug}/regenerated/candidates.json`); }
-      if (rv) { validateVerdicts(rv, rc, maybeJson(join(regen, 'measurements.json')), `${slug}/regenerated/verdicts.json`, ok); checked++; seen.push(`${slug}/regenerated/verdicts.json`); }
+      if (rc) { validateCandidates(rc, map, `${slug}/regenerated/candidates.json`, ok, warn); checked++; seen.push(`${slug}/regenerated/candidates.json`); }
+      if (rv) { validateVerdicts(rv, rc, maybeJson(join(regen, 'measurements.json')), `${slug}/regenerated/verdicts.json`, ok, warn); checked++; seen.push(`${slug}/regenerated/verdicts.json`); }
     }
   }
 
   console.log(`\nvalidate ${label}: ${checked} artifact(s) checked across ${slugs.length} section dir(s)`);
   for (const s of seen) console.log(`         ✓ present  ${s}`);
-  if (problems.length) {
-    console.log(`\n${problems.length} schema failure(s) — an artifact that does not validate did not happen:`);
-    for (const p of problems.slice(0, 60)) console.log(`  ${p.where.padEnd(44)} ${p.msg}`);
-    if (problems.length > 60) console.log(`  … and ${problems.length - 60} more`);
-  } else {
-    console.log('         no schema failures');
+  const fails = problems.filter((p) => p.severity !== 'WARN');
+  const warns = problems.filter((p) => p.severity === 'WARN');
+  if (fails.length) {
+    console.log(`\n${fails.length} FAIL — an artifact that does not validate did not happen; re-spawn that agent:`);
+    for (const p of fails.slice(0, 60)) console.log(`  ${p.where.padEnd(44)} ${p.msg}`);
+    if (fails.length > 60) console.log(`  … and ${fails.length - 60} more`);
   }
-  logLine(label, { stage: 'validate', sections: slugs, checked, failures: problems.length, ok: problems.length === 0 });
+  if (warns.length) {
+    console.log(`\n${warns.length} WARN — well-formed, worth a human look; does not gate the run:`);
+    for (const p of warns.slice(0, 60)) console.log(`  ${p.where.padEnd(44)} ${p.msg}`);
+    if (warns.length > 60) console.log(`  … and ${warns.length - 60} more`);
+  }
+  if (!problems.length) console.log('         no schema failures');
+  logLine(label, { stage: 'validate', sections: slugs, checked, fail: fails.length, warn: warns.length, ok: fails.length === 0 });
   console.log('');
+  // Exit code is driven by FAIL alone (returned to main), so a warning can never
+  // gate a run and a failure can never be lost among warnings.
+  problems.failCount = fails.length;
   return problems;
 }
 
@@ -1255,6 +1448,12 @@ function stageReport(label) {
 function selftest() {
   const label = '_selftest';
   const slug = 'forecasting-timelines';
+  // Start from nothing. The suite writes a curator.json and a candidates/ dir
+  // late on, and a leftover copy of either is picked up by the EARLIER
+  // "validate passes on clean artifacts" assertion on the next run — so a stale
+  // fixture made a passing suite fail on its second invocation. Self-cleaning
+  // makes the suite idempotent, which a test suite has to be.
+  rmSync(runDir(label), { recursive: true, force: true });
   const dir = sectionDir(label, slug);
   let bad = 0;
   const check = (cond, what) => { console.log(`  ${cond ? 'ok  ' : 'BAD '} ${what}`); if (!cond) bad++; };
@@ -1379,7 +1578,9 @@ function selftest() {
   })).filter((v) => ms[v.id]);
   writeJson(join(dir, 'verdicts.json'), goodVerdicts);
   let probs = stageValidate(label, slug);
-  check(probs.length === 0, `validate passes on clean artifacts (got ${probs.length} problems)`);
+  // FAIL only: WARNs are advisory by design (canonical-form notes, R5), so a
+  // clean run is one with nothing blocking, not one with nothing to say.
+  check(probs.failCount === 0, `validate passes on clean artifacts (got ${probs.failCount} FAIL, ${probs.length - probs.failCount} WARN)`);
 
   // 8. validate — must CATCH each planted defect. A validator that never fires
   //    is worse than none, so each of these is an assertion about validate.
@@ -1486,7 +1687,79 @@ function selftest() {
   // "**not** a valid comparator" line; without one it says to run the baseline.
   check(/not\*{0,2} a valid comparator|run the baseline/.test(rpText), 'report refuses QUIZ-PLAN\'s 60% as a comparator');
 
-  console.log(`\n${bad === 0 ? 'All nine stages run in isolation and validate catches every planted defect.' : `${bad} self-test assertion(s) failed.`}`);
+  // ---- merge, render, and the canonical-form guards (added 2026-09-20) ----
+  // Each one is asserted to FIRE on a planted defect. A guard that never fires
+  // is worse than no guard, which is this project's own standard.
+  console.log('\nmerge / render / canonical form');
+
+  const mdir = join(dir, 'candidates');
+  mkdirSync(mdir, { recursive: true });
+  const twin = mk('01', ['alpha', 'beta', 'gamma', 'delta'], ['FT-1']);
+  writeJson(join(mdir, `${slug}-a.json`), [twin, { note: 'allocation note, not a candidate' }]);
+  writeJson(join(mdir, `${slug}-b.json`), [twin]);
+  const merged = stageMerge(label, slug);
+  check(merged.length === 2, 'merge assigns ids from (shard, index) so identical inputs do not collide');
+  check(merged[0].id.endsWith('a01') && merged[1].id.endsWith('b01'), 'merge namespaces ids by shard');
+  check(readJson(join(dir, 'generator-notes.json')).length === 1, 'merge splits the trailing {note} out of the candidate list');
+
+  // A real collision: two sources that would claim the same (shard, index) slot.
+  let collided = false;
+  try {
+    // Two sources whose shard letter is identical, so both claim slot a01.
+    writeJson(join(mdir, `x-a.json`), [twin]);
+    writeJson(join(mdir, `y-a.json`), [twin]);
+    const saved = process.exit;
+    process.exit = () => { throw new Error('die'); };
+    try { stageMerge(label, `${slug}`); } finally { process.exit = saved; }
+  } catch { collided = true; }
+  check(collided, 'merge dies on an id collision rather than dropping a candidate silently');
+  rmSync(join(mdir, 'x-a.json'), { force: true });
+  rmSync(join(mdir, 'y-a.json'), { force: true });
+  writeJson(join(mdir, `${slug}-a.json`), [twin, { note: 'n' }]);
+  writeJson(join(mdir, `${slug}-b.json`), [twin]);
+  stageMerge(label, slug);
+
+  // render copies text byte-for-byte; that is the whole point of the stage.
+  const rcands = readJson(join(dir, 'candidates.json'));
+  writeJson(join(dir, 'curator.json'), {
+    section: slug, target_n: 1, shipped_n: 1,
+    selected: [{ id: rcands[0].id, targets: rcands[0].targets, level: 'L3' }],
+    siblings: [], rejected_from_pool: [], flags_for_reviewer: [],
+    distribution: { L3: 1 }, coverage: { covered: ['FT-1'], earns_question_uncovered: [] },
+    underfill_reason: null,
+  });
+  // stageRender writes to staging/<slug>.md, which is a REAL path — the first
+  // version of this test silently overwrote the live staged section. Snapshot
+  // and restore.
+  const stagePath = join(ROOT, 'staging', `${slug}.md`);
+  const hadStage = existsSync(stagePath) ? readFileSync(stagePath, 'utf8') : null;
+  const rendered = readFileSync(stageRender(label, slug), 'utf8');
+  check(rendered.includes(rcands[0].stem), 'render copies the stem verbatim from candidates.json');
+  check(!/[‘’“”]/.test(rendered), 'render emits canonical straight quotes by default');
+
+  if (hadStage !== null) writeFileSync(stagePath, hadStage, 'utf8');
+  else rmSync(stagePath, { force: true });
+
+  const lintHits = (c) => lintCandidate(c).map((x) => x.rule);
+  check(lintHits({ ...twin, stem: 'He said “hi” now' }).includes('CANON-quote'),
+    'lint rejects typographic quotes in candidate text');
+  check(lintHits({ ...twin, stem: "A colleague argues: 'the law is empirical.' Which reply?" }).includes('CANON-outer'),
+    'lint rejects a single-quoted outer span (the drift actually observed)');
+  check(!lintHits({ ...twin, stem: "chip count is what's doing the work" }).includes('CANON-outer'),
+    'lint does not trip on an ordinary apostrophe');
+  check(lintHits({ ...twin, stem: 'Which of these is not true?', negation: false }).includes('R13-flag'),
+    'lint cross-checks the negation flag against the stem');
+  check(!lintHits({ ...twin, stem: 'comparable to not knowing the cost. Which factor dominates?', negation: false }).includes('R13-flag'),
+    'R13 does not fire on incidental prose "not" (candidate d01 regression)');
+
+  const em = measure({
+    question: 'q', explanation: 'e',
+    options: [{ text: '**key**', isCorrect: true }, { text: 'a', isCorrect: false }, { text: 'b', isCorrect: false }],
+  });
+  check(em.emphasis_counts.key === 1 && Math.max(...em.emphasis_counts.distractors) === 0,
+    'emphasis is measured per option so asymmetry can be gated like length');
+
+  console.log(`\n${bad === 0 ? 'All stages run in isolation and validate catches every planted defect.' : `${bad} self-test assertion(s) failed.`}`);
   console.log(`Fixtures left in runs/${label}/ — delete before a real run.\n`);
   return bad === 0;
 }
@@ -1497,7 +1770,7 @@ const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate',
 
 function main() {
   if (!stage || stage.startsWith('--')) {
-    console.error('usage: node scripts/pipeline.mjs <shard|dedupe|measure|queue|shuffle|validate|score|assemble|report|selftest> [flags]');
+    console.error('usage: node scripts/pipeline.mjs <merge|shard|dedupe|measure|queue|shuffle|validate|score|render|assemble|report|selftest> [flags]');
     process.exit(1);
   }
   if (stage === 'selftest') process.exit(selftest() ? 0 : 1);
@@ -1509,6 +1782,8 @@ function main() {
   if (needsSection.includes(stage) && !slug) die(`${stage} needs --section <slug>`);
 
   switch (stage) {
+    case 'merge': stageMerge(label, slug); break;
+    case 'render': stageRender(label, slug); break;
     case 'shard': stageShard(label, slug); break;
     case 'dedupe': stageDedupe(label, slug); break;
     case 'measure': stageMeasure(label, slug); break;
@@ -1517,7 +1792,7 @@ function main() {
     case 'score': stageScore(label, slug); break;
     case 'validate': {
       const problems = stageValidate(label, slug);
-      process.exit(problems.length ? 1 : 0);
+      process.exit(problems.failCount ? 1 : 0);
       break;
     }
     case 'assemble': stageAssemble(label); break;

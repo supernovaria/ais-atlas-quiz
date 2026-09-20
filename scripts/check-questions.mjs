@@ -70,6 +70,41 @@ const ABSOLUTES = [
 // measured" vs "a tin can", "about 20 tokens" vs "a claim about scaling").
 // Finding for RUBRIC v2: state D10's list as a closed list and reconcile it with
 // this one, exactly as D4 needs.
+// Canonical text form for every JSON artifact: straight quotes only, double for
+// the outer pair and single when nested. Curly quotes are the signature of a
+// model having retyped text, so they are detected rather than silently accepted.
+export const SMART_QUOTES = /[‘’“”]/g;
+export const countSmartQuotes = (s) => (String(s || '').match(SMART_QUOTES) || []).length;
+
+// Emphasis spans: **bold** and *italic*. Underscore forms are not canonical
+// (RUBRIC's prose uses asterisks) and are counted here only so an asymmetry
+// check cannot be evaded by switching syntax; `lint` rejects them separately.
+const EMPHASIS_SPAN = /\*\*[^*\n]+\*\*|(?<!\*)\*[^*\n]+\*(?!\*)|__[^_\n]+__|(?<!_)_[^_\n]+_(?!_)/g;
+export const countEmphasisSpans = (s) => (String(s || '').match(EMPHASIS_SPAN) || []).length;
+
+// Outer quotation must be double, nested single. An opening `'` preceded by
+// start, whitespace, colon or an opening bracket and followed by a letter,
+// closed by a `'` at a word boundary. Apostrophes inside or after words
+// ("what's", "labs'") are preceded by a letter and so never match.
+const OUTER_SINGLE_QUOTE = /(?:^|[\s:([])'[A-Za-z][^'\n]*'(?=[\s.,;:!?)\]]|$)/;
+
+// R13 negation detection. Run unconditionally; disagreement with a candidate's
+// own `negation` flag is a finding in either direction.
+//
+// Detecting a bare "not" anywhere is far too broad and was tried first: it fired
+// on candidate d01's "comparable to not knowing whether something costs one
+// dollar or a trillion", which is incidental prose, not a negation stem. R13
+// governs the construction where the negation inverts the READING TASK ("which
+// of the following is NOT true"), so the match is anchored to an interrogative
+// head within the same sentence. "cannot", "nothing" and "note that" are
+// excluded by the word boundary; prose "not" far from a which/what/all head is
+// excluded by the window.
+const NEGATION_TASK = /\b(?:which|what|all|each|every)\b[^.?!\n]{0,80}?\b(not|except)\b/i;
+export function negationWord(stem) {
+  const m = NEGATION_TASK.exec(String(stem || ''));
+  return m ? m[1] : null;
+}
+
 const HEDGES = [
   /\bmay\b/i, /\bmight\b/i, /\bcould\b/i, /\boften\b/i, /\bsometimes\b/i,
   /\bgenerally\b/i, /\btypically\b/i, /\busually\b/i, /\btends? to\b/i,
@@ -160,6 +195,32 @@ export function measure(q) {
       distractors: distractors.map((o) => countMatches(o.text, HEDGES)),
     },
     stem_word_singletons: singletons,
+    // Emphasis is NOT banned. Bolding the differing clause between two
+    // near-identical options genuinely helps a reader, especially under soft
+    // wrap where the differences land at different visual positions. The tell is
+    // ASYMMETRY, not emphasis — so emphasis is measured per option exactly like
+    // length and hedge density, and gated with R9's rule shape: the key must not
+    // be the unique maximum or the unique minimum.
+    emphasis_counts: {
+      key: key ? countEmphasisSpans(key.text) : 0,
+      distractors: distractors.map((o) => countEmphasisSpans(o.text)),
+    },
+    // Canonical form is ASCII (straight quotes). Typographic quotes entering a
+    // JSON artifact mean a model retyped prose it was not allowed to change —
+    // which is how transcription drift starts. Measured, so `render` can assert
+    // it and the critic can see it.
+    smart_quote_chars: countSmartQuotes(q.question)
+      + q.options.reduce((a, o) => a + countSmartQuotes(o.text), 0)
+      + countSmartQuotes(q.explanation || ''),
+    // R13 — a negation stem must render the negation in capitals (RUBRIC R13).
+    // Computed unconditionally rather than from the candidate's `negation` flag,
+    // so the flag can be cross-checked against the text. The script owns the
+    // measurement; the model does not.
+    negation_in_stem: negationWord(q.question) !== null,
+    negation_uncapitalised: (() => {
+      const w = negationWord(q.question);
+      return w !== null && w !== w.toUpperCase();
+    })(),
     option_count: q.options.length,
     has_explanation: Boolean(q.explanation && q.explanation.trim()),
     explanation_words: q.explanation ? q.explanation.trim().split(/\s+/).length : 0,
@@ -253,8 +314,78 @@ function tier2(items) {
         detail: `key carries ${m.hedge_counts.key} hedges vs distractor median ${hedgeMedian} (max median+1)`,
       });
     }
+    // Emphasis symmetry — R9's rule shape applied to emphasis spans. Emphasis is
+    // permitted and useful; being the ONLY emphasised option, or the only
+    // unemphasised one, is the tell. Permissive by design: stripping emphasis
+    // later is lossless and mechanical, whereas adding it takes judgment.
+    if (m.emphasis_counts) {
+      const ek = m.emphasis_counts.key;
+      const ed = m.emphasis_counts.distractors;
+      const allD = ed.length > 0;
+      if (allD && ek > Math.max(...ed)) {
+        fails.push({ ref, rule: 'E-sym', detail: `key is the unique most-emphasised option (${ek} spans vs distractor max ${Math.max(...ed)})` });
+      } else if (allD && ek < Math.min(...ed)) {
+        fails.push({ ref, rule: 'E-sym', detail: `key is the unique least-emphasised option (${ek} spans vs distractor min ${Math.min(...ed)})` });
+      }
+    }
+    // R13 — negation must be capitalised. Unconditional, and the candidate's own
+    // `negation` flag is cross-checked against the text below in lintCandidate.
+    if (m.negation_in_stem && m.negation_uncapitalised) {
+      fails.push({ ref, rule: 'R13', detail: 'negation stem does not render NOT/EXCEPT in capitals' });
+    }
   }
   return fails;
+}
+
+// Canonical-form lint over a candidate object (pre-render). Separate from
+// tier-2 because it judges the JSON artifact's text form, not the question's
+// psychometrics. Returns [] when clean.
+export function lintCandidate(c) {
+  const out = [];
+  const fields = [['stem', c.stem], ['explanation', c.explanation]]
+    .concat((c.options || []).map((o, i) => [`options[${i}]`, o.text]));
+  for (const [field, text] of fields) {
+    const s = String(text || '');
+    if (SMART_QUOTES.test(s)) {
+      SMART_QUOTES.lastIndex = 0;
+      out.push({ rule: 'CANON-quote', field, detail: `typographic quote(s) in ${field}; canonical form is straight ASCII quotes` });
+    }
+    SMART_QUOTES.lastIndex = 0;
+    if (/__[^_\n]+__|(?<!_)_[^_\n]+_(?!_)/.test(s)) {
+      out.push({ rule: 'CANON-emph', field, detail: `underscore emphasis in ${field}; canonical form is **bold** and *italic*` });
+    }
+    // Outer quotation must be double, nested single. This is the rule that was
+    // ACTUALLY broken in the 2026-09-19 run: the generator wrote a quoted
+    // speaker with single outer quotes, and the curator silently "corrected" it
+    // to double while transcribing. No typographic character was ever involved —
+    // the drift was pure ASCII, so the curly-quote check above would not have
+    // caught it. Detect an opening single quote that starts a quoted span
+    // (preceded by start/space/colon, followed by a letter) and is closed by a
+    // single quote at a word boundary. Apostrophes inside words ("what's",
+    // "labs'") do not match, because they are preceded by a letter.
+    if (OUTER_SINGLE_QUOTE.test(s)) {
+      OUTER_SINGLE_QUOTE.lastIndex = 0;
+      out.push({ rule: 'CANON-outer', field, detail: `single-quoted span in ${field}; canonical form is double for outer, single when nested` });
+    }
+    OUTER_SINGLE_QUOTE.lastIndex = 0;
+  }
+  // The script owns the measurement; the model's flag is checked against it.
+  const m = measure(asQuestionLike(c));
+  if (m.negation_in_stem && c.negation === false) {
+    out.push({ rule: 'R13-flag', field: 'negation', detail: 'stem contains NOT/EXCEPT but negation flag is false' });
+  }
+  if (!m.negation_in_stem && c.negation === true) {
+    out.push({ rule: 'R13-flag', field: 'negation', detail: 'negation flag is true but no NOT/EXCEPT in stem' });
+  }
+  return out;
+}
+
+function asQuestionLike(c) {
+  return {
+    question: c.stem || '',
+    options: (c.options || []).map((o) => ({ text: o.text, isCorrect: Boolean(o.key) })),
+    explanation: c.explanation || '',
+  };
 }
 
 export function setLevel(items) {
