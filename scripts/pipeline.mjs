@@ -275,20 +275,48 @@ function stageRender(label, slug) {
   const heading = (map && map.heading) || slug;
   const lines = [`# ${heading}`, ''];
   let n = 0;
+  let fixed = 0;
+  let declined = 0;
   const missing = [];
+
+  // Refuse to render a candidate whose object does not validate. Until
+  // 2026-09-20 this stage checked only that the id EXISTED: a03r's rewrite
+  // carried an invented stem_format, was correctly caught as a FAIL by the
+  // verdict validator, and was then selected and written to staging anyway.
+  // Schema-checking at the point of selection is what makes that impossible,
+  // and it holds whatever any agent brief does or does not say — which matters,
+  // because this run measured a rule stated plainly in a brief holding on 8 of
+  // 21 candidates.
+  const selected = (cur.selected || []).map((sel) => byId.get(sel.id)).filter(Boolean);
+  const bad = [];
+  validateCandidates(selected, null, `${slug}/render`,
+    (cond, w, msg) => { if (!cond) bad.push(`${w}: ${msg}`); return Boolean(cond); },
+    () => true);
+  if (bad.length) {
+    die(`refusing to render ${bad.length} schema failure(s) in the selected set.\n`
+      + bad.map((b) => `       ${b}`).join('\n')
+      + '\n       Re-spawn the agent that produced it. Never hand-edit the candidate.');
+  }
+
+  const text = (v) => {
+    const c = canonicaliseQuotes(v);
+    if (c.changed) fixed += 1;
+    if (c.skipped) declined += 1;
+    return typo(c.text, smart);
+  };
 
   for (const sel of cur.selected || []) {
     const c = byId.get(sel.id);
     if (!c) { missing.push(sel.id); continue; }
     n += 1;
     lines.push(`### Question ${n}`);
-    lines.push(typo(c.stem, smart));
+    lines.push(text(c.stem));
     lines.push('');
     for (const o of c.options) {
-      lines.push(`- [${o.key ? 'x' : ' '}] ${typo(o.text, smart)}`);
+      lines.push(`- [${o.key ? 'x' : ' '}] ${text(o.text)}`);
     }
     lines.push('');
-    lines.push(`**Explanation**: ${typo(c.explanation, smart)}`);
+    lines.push(`**Explanation**: ${text(c.explanation)}`);
     lines.push('');
   }
   if (missing.length) die(`curator selected id(s) not present in candidates.json: ${missing.join(', ')}`);
@@ -296,13 +324,52 @@ function stageRender(label, slug) {
   const p = join(ROOT, 'staging', `${slug}.md`);
   mkdirSync(dirname(p), { recursive: true });
   writeFileSync(p, `${lines.join('\n').trimEnd()}\n`, 'utf8');
-  logLine(label, { stage: 'render', section: slug, n, smart_quotes: smart, artifact: p, ok: true });
-  console.log(`render   ${slug}: ${n} question(s) → staging/${slug}.md${smart ? ' (typographic quotes applied)' : ' (canonical straight quotes)'}`);
+  logLine(label, {
+    stage: 'render', section: slug, n, smart_quotes: smart,
+    outer_quotes_normalised: fixed, outer_quotes_declined: declined, artifact: p, ok: true,
+  });
+  console.log(`render   ${slug}: ${n} question(s) → staging/${slug}.md`
+    + `${smart ? ' (typographic quotes applied)' : ' (canonical straight quotes)'}`
+    + `${fixed ? ` · ${fixed} outer quotation(s) normalised` : ''}`
+    + `${declined ? ` · ${declined} ambiguous span(s) left alone` : ''}`);
   return p;
 }
 
 // Deterministic straight→typographic conversion, applied at render time only if
 // asked. Never a model's job: the rule is mechanical, so the script owns it.
+// Canonical outer quotation: double outside, single when nested. The generator
+// brief states this rule in plain words and the generator broke it on 13 of 21
+// candidates in the 2026-09-20 run, so it needs a mechanism, not a sentence.
+//
+// This is a REWRITER, which is a much harder thing than OUTER_SINGLE_QUOTE, the
+// detector it mirrors: a detector uses a lookahead and never decides which
+// characters to touch. Two properties make it safe rather than clever:
+//
+//   1. It only fires on an UNAMBIGUOUS span — an opening quote at a boundary,
+//      no apostrophe anywhere inside, and a closing quote before a boundary.
+//      `'the model's view' is odd` matches nothing at all, because the body
+//      cannot cross the apostrophe in `model's`. Refusing is the correct
+//      outcome there; the lint still reports it and a human decides.
+//   2. It then CHECKS ITSELF. Stripping every quote character from the before
+//      and after must give the identical string. If it does not, the rewrite
+//      touched something that was not a quote mark, and the original is
+//      returned untouched with `skipped: true`.
+//
+// Silent corruption of shipped text is the exact failure class this pipeline
+// keeps finding, so the normaliser is built to decline rather than to guess.
+const OUTER_SINGLE_SPAN = /(^|[\s:([])'([A-Za-z][^'\n]*?)'(?=[\s.,;:!?)\]]|$)/g;
+
+function canonicaliseQuotes(s) {
+  const t = String(s == null ? '' : s);
+  if (!t.includes("'")) return { text: t, changed: false, skipped: false };
+  const out = t.replace(OUTER_SINGLE_SPAN, (m, pre, body) => `${pre}"${body.replace(/"/g, "'")}"`);
+  if (out === t) return { text: t, changed: false, skipped: false };
+  // The only characters this function is allowed to change are quote marks.
+  const bare = (x) => x.replace(/["']/g, '');
+  if (bare(out) !== bare(t)) return { text: t, changed: false, skipped: true };
+  return { text: out, changed: true, skipped: false };
+}
+
 function typo(s, on) {
   const t = String(s || '');
   if (!on) return t;
@@ -1763,6 +1830,54 @@ function selftest() {
   check(rendered.includes(rcands[0].stem), 'render copies the stem verbatim from candidates.json');
   check(!/[‘’“”]/.test(rendered), 'render emits canonical straight quotes by default');
 
+  if (hadStage !== null) writeFileSync(stagePath, hadStage, 'utf8');
+  else rmSync(stagePath, { force: true });
+
+  // --- the outer-quote normaliser -----------------------------------------
+  // A rewriter that touches shipped text has to be shown to decline as often as
+  // it acts, so each case below is a separate assertion rather than one pass.
+  const cq = (x) => canonicaliseQuotes(x);
+  check(cq(`A colleague argues: 'the law is empirical.' Which reply?`).text
+      === `A colleague argues: "the law is empirical." Which reply?`,
+    'normaliser converts an outer single-quoted span to double quotes');
+  check(cq(`chip count is what's doing the work`).changed === false,
+    'normaliser leaves an ordinary apostrophe alone');
+  check(cq(`He said: 'the so-called "law" is empirical.' Now what?`).text
+      === `He said: "the so-called 'law' is empirical." Now what?`,
+    'normaliser flips an already-nested double quote to single');
+  check(cq(`it's 'fine' really`).text === `it's "fine" really`,
+    'normaliser handles an apostrophe and a quoted span in the same string');
+  // The body cannot cross the apostrophe in `model's`, so nothing matches and
+  // the string is returned untouched. Declining is correct: the lint still
+  // reports it and a human decides.
+  check(cq(`'the model's view' is odd`).changed === false,
+    'normaliser declines an ambiguous span rather than guessing');
+  // The invariant that makes it safe: only quote characters may ever change.
+  for (const probe of [`A says: 'x' and B says: 'y'.`, `it's 'fine' really`,
+    `He said: 'the so-called "law" is empirical.' Now what?`]) {
+    const bare = (x) => x.replace(/["']/g, '');
+    check(bare(cq(probe).text) === bare(probe),
+      `normaliser changes only quote characters (${probe.slice(0, 24)}…)`);
+  }
+  check(cq(`He said: 'x' now`).text.match(/'/g) === null,
+    'a normalised outer span leaves no stray single quote behind');
+
+  // --- render refuses a candidate whose object does not validate -----------
+  // The hole a03r walked through: its rewrite carried an invented stem_format,
+  // was correctly caught as a FAIL by the verdict validator, and was selected
+  // and written to staging regardless, because render only checked that the id
+  // existed.
+  const goodCands = readJson(join(dir, 'candidates.json'));
+  writeJson(join(dir, 'candidates.json'),
+    goodCands.map((c, i) => (i === 0 ? { ...c, stem_format: 'scenario-application' } : c)));
+  let refused = false;
+  try {
+    const saved = process.exit;
+    process.exit = () => { throw new Error('die'); };
+    try { stageRender(label, slug); } finally { process.exit = saved; }
+  } catch { refused = true; }
+  check(refused, 'render refuses a selected candidate whose schema does not validate');
+  writeJson(join(dir, 'candidates.json'), goodCands);
   if (hadStage !== null) writeFileSync(stagePath, hadStage, 'utf8');
   else rmSync(stagePath, { force: true });
 

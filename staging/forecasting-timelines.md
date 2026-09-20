@@ -1,7 +1,7 @@
 # Forecasting Timelines
 
 ### Question 1
-A colleague argues: "When people say the compute behind frontier models keeps growing, they just mean labs have more and faster chips — chip count is what's doing the work." Which reply identifies the substantive error in that account of effective compute?
+A colleague argues: 'When people say the compute behind frontier models keeps growing, they just mean labs have more and faster chips — chip count is what's doing the work.' Which reply identifies the substantive error in that account of effective compute?
 
 - [x] Chip count, hardware efficiency and software efficiency are separate multiplied terms, so growth in one of them raises the total while the others sit still.
 - [ ] Hardware and software efficiency gains are ways of counting the same chips as though the fleet had grown, so chip count is still the quantity that really matters.
