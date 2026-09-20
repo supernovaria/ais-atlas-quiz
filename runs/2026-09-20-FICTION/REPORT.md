@@ -1,4 +1,10 @@
-# Fiction control — the generator leaks, and the leak is in the stem
+# Fiction control — the generator leaks, and the leak is in the options
+
+> **Read this first.** The first half of this report argues the leak is in the
+> **stem**. That hypothesis was then tested and **failed** — see "The follow-up
+> test" below. The stem section is kept unedited because it is the reasoning the
+> test was built from, not because it is right. The title was changed after the
+> follow-up; everything above that section is superseded.
 
 2026-09-20. A reduced run of `docs/FICTION-CONTROL-PROMPT.md`. The interpretation
 below was **pre-registered in `run.log` before any result existed**, and is
@@ -35,7 +41,7 @@ One asymmetry worth stating, because it runs *against* the pipeline: the 40%
 comparator was hand-written to sit inside the R8/R9 bands, so it is if anything
 the more polished set. And this run is **pre-critic** — see limits.
 
-## Per question, and the mechanism
+## Per question, and the mechanism *(superseded — see the follow-up test)*
 
 | id | idea | hits | what the stem gives away |
 |---|---|---|---|
