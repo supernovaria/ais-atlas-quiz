@@ -614,11 +614,18 @@ Proposals only — RUBRIC.md was not edited.
 >   The curator shipped 3 of a target 8, citing budget truncation rather than
 >   pool quality, and `runs/2026-09-18-P1/defining-and-measuring-agi/` now
 >   holds `adversary.json`, `picks.json` and `curator.json`.
-> - **The final bullet's alternative explanation is now testable and did not
->   survive.** It suggests `forecasting-timelines` may simply be less publicly
->   rehearsed material rather than structurally less guessable. AGI has now
->   been measured and is *worse*, so the pipeline has no section on which its
->   output approaches the gate.
+> - **The final bullet's alternative explanation was tested, and the analyst was
+>   right.** It suggests `forecasting-timelines` may simply be less publicly
+>   rehearsed material rather than structurally less guessable. An earlier
+>   version of this note dismissed it on the grounds that AGI "measured worse",
+>   which was **backwards reasoning**: better-known material predicts a *higher*
+>   multiple-choice score, so AGI scoring higher is exactly what the analyst's
+>   explanation predicts, not evidence against it. A free-recall probe
+>   (`runs/2026-09-18-P1/stem-only/`) measured the knowledge directly and found
+>   AGI the better-known of the two sections — all three AGI questions
+>   substantially answerable with no options at all, against one borderline
+>   partial, one "I don't know" and one protocol refusal on
+>   `forecasting-timelines`. n=3 per section.
 > - **The blandness read was repeated on AGI's three rewrites.** Same result:
 >   `w04r` is four options of `<claim>, because <reason>`; `w07r` is four of
 >   "The prediction…"; `a03r` is four of "It…". The reader's-eye confirmation

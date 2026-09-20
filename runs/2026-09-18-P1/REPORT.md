@@ -376,6 +376,40 @@ interpretation pre-registered. That experiment is specified in
 [`docs/FICTION-CONTROL-PROMPT.md`](../../docs/FICTION-CONTROL-PROMPT.md) and has
 not been run.
 
+### A free-recall probe, and a second claim of mine that was wrong
+
+Six haiku calls, each given a shipped stem with **no options at all**. Nothing
+to eliminate against, so whatever it gets right is knowledge.
+
+| | AGI | FT |
+|---|---|---|
+| multiple choice | **100%** | 78% |
+| free recall, no options | **2 match, 1 partial** | 1 borderline partial, 1 "I don't know", 1 protocol refusal |
+
+All three AGI questions were substantially answerable with no option set in
+front of the model. **No leak is needed to explain AGI's 100%.**
+
+This reverses something I wrote last window. The pilot analyst had offered an
+alternative explanation — that `forecasting-timelines` is simply less publicly
+rehearsed material rather than structurally less guessable — and I dismissed it
+because AGI "measured worse". That reasoning is backwards: better-known material
+predicts a *higher* multiple-choice score, so AGI scoring higher is what the
+analyst's explanation predicts, not evidence against it. The probe measures the
+knowledge directly and finds AGI the better-known section, in the direction the
+analyst proposed. **The analyst was right; my dismissal was wrong.**
+
+Stated at its actual size: n=3 per section, the grading is mine (recorded
+verbatim in `runs/2026-09-18-P1/stem-only/answers.json` so it can be
+overturned), one grade is explicitly borderline, and **two of six spawns broke
+protocol** by demanding options — `quiz-adversary` is specialised to multiple
+choice and resists free recall, which makes the FT column weaker evidence than
+it looks.
+
+And the narrow reading is the correct one: the probe shows the leak hypothesis
+is not *needed* for AGI, not that the option sets are clean. A question can be
+both independently knowable and leaky. Separating those still requires content
+no model can know, which is what the fiction run is for.
+
 ### The blandness finding, restated at its actual size
 
 Standing on its own, without the causal claim it was wrapped in: the critic's

@@ -1,0 +1,68 @@
+{
+  "method": "Each shipped stem given to a toolless haiku with NO options. Free text, 1-2 sentences, 'I DON'T KNOW' permitted. Whatever it gets right is domain knowledge, since there is nothing to eliminate against. Same protocol as runs/baseline/stem-only/.",
+  "adapted_stems": 0,
+  "adaptation_note": "None of the six needed adapting. All are self-contained scenarios asking a genuine open question, unlike the baseline's 40 where 8 negation/list stems had no content without their options. This is therefore a cleaner probe than the baseline's, not a dirtier one.",
+  "grader": "orchestrator, against the key's load-bearing claim; answers recorded verbatim so the grading is auditable and can be overturned",
+  "answers": [
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "section": "defining-and-measuring-agi",
+      "mc_result": "3/3",
+      "tool_uses": 0,
+      "key": "The intelligence claim is defensible on a learning-efficiency account, but the deployment claim is not: what these two systems can do, not how they learned it, sets the risk.",
+      "answer": "The argument conflates learning efficiency with intelligence-identical expert-level performance in the same cognitive domains demonstrates equivalent capability, regardless of training data volume. Deployment risk depends on factors like robustness, interpretability, and alignment, not on whether a system is more or less \"data-efficient\" in reaching equivalent performance.",
+      "grade": "partial",
+      "grading_reason": "The key has two load-bearing halves. The model gets the second squarely -- deployment risk does not turn on how the system learned. It gets the FIRST backwards: it says the argument conflates efficiency with intelligence and that identical performance shows equivalent capability, where the key holds that the intelligence claim IS defensible on a learning-efficiency account. Knowing only the deployment half was nonetheless enough to select the key under MC, because the key was the only option making that point."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "section": "defining-and-measuring-agi",
+      "mc_result": "3/3",
+      "tool_uses": 0,
+      "key": "Risk exposure differs between the settings even though the system is the same, because how much of the task the AI does alone is set at deployment, not by capability.",
+      "answer": "Even with identical measured capability, the second setting carries higher risk: prospective human oversight (setting 1) can prevent errors from reaching patients, while retrospective sampling-based review (setting 2) means some errors will cause harm before being caught. The deployment structure, not just the AI's technical performance, determines real-world safety.",
+      "grade": "match",
+      "grading_reason": "Both load-bearing elements, unprompted: risk differs despite identical capability, and deployment structure rather than capability is what drives it. No options were needed."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "section": "defining-and-measuring-agi",
+      "mc_result": "3/3",
+      "tool_uses": 0,
+      "key": "The prediction is evaluable only when pinned to a stipulated threshold - the continuous axes can describe how far a system has come, but only a cutoff says when it has 'arrived'.",
+      "answer": "The prediction cannot be rigorously evaluated against the framework's AGI definition because it fails to specify which percentiles and domain coverage the \"human-level performance\" would achieve-requirements the framework's fixed thresholds demand. The vague prediction and the specific framework cannot be directly compared without those coordinates.",
+      "grade": "match",
+      "grading_reason": "Same proposition as the key: evaluation requires pinning to stipulated threshold coordinates. The weaker of the two matches -- it leans on 'cannot be evaluated' where the key leans on 'evaluable once pinned' -- but 'without those coordinates' carries the same conditional."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "section": "forecasting-timelines",
+      "mc_result": "see adversary.json",
+      "tool_uses": 0,
+      "key": "Chip count, hardware efficiency and software efficiency are separate multiplied terms, so growth in one of them raises the total while the others sit still.",
+      "answer": "The substantive error is conflating *hardware capacity* with *effective compute*. Effective compute depends not just on chip count and speed, but on algorithmic efficiency, training methods, and data quality - all of which can improve the computational work extracted per unit of hardware without adding chips. The colleague is pointing at one input to the equation while ignoring the others that determine how much actual computational work gets done.",
+      "grade": "partial",
+      "grading_reason": "BORDERLINE, recorded as such. It gets the decomposition -- effective compute is more than chip count -- which is most of the key. It does not state the load-bearing structural claim that the terms are MULTIPLIED and therefore that one can grow while the others sit still, and it adds 'data quality', which is not one of the key's three terms. A grader who counted the decomposition alone as sufficient would call this a match."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "section": "forecasting-timelines",
+      "mc_result": "see adversary.json",
+      "tool_uses": 0,
+      "key": "It checks whether their separate beliefs on each trend are mutually consistent; a surprising combined result is a signal to revisit one of the inputs.",
+      "answer": "I DON'T KNOW. I can see the stem describes a flawed forecasting exercise-picking arbitrary multipliers and deriving a seemingly precise conclusion from them-but without seeing the answer options, I cannot determine which response best captures the critique.",
+      "grade": "idk",
+      "grading_reason": "Declined. Note it reached for the WRONG frame unprompted -- it read the exercise as 'flawed', where the key holds it is a consistency check whose surprising output is informative. That is the misconception the item targets, so free recall would likely have produced a miss rather than a match had it committed."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "section": "forecasting-timelines",
+      "mc_result": "see adversary.json",
+      "tool_uses": 0,
+      "key": "That the other routes are untouched, since they draw on different sources, so whether data binds still turns on how well they work.",
+      "answer": "I don't see the multiple-choice options in your message-only the stem. The instructions specify that I should answer from question and options alone. Could you provide options A, B, C, and D?",
+      "grade": "protocol_refusal",
+      "grading_reason": "Not an answer and NOT an 'I don't know'. The agent refused on format grounds, citing its own brief, rather than declining on knowledge grounds. Graded separately because collapsing it into idk would overstate the evidence for ignorance."
+    }
+  ]
+}
