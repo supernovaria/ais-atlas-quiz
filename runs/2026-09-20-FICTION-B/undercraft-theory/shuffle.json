@@ -1,0 +1,144 @@
+{
+  "source": "2026-09-20-FICTION-B/undercraft-theory",
+  "seeds": 3,
+  "n_questions": 5,
+  "n_prompts": 15,
+  "questions_with_a_repeated_permutation": 0,
+  "prompts": [
+    {
+      "id": "undercraft-theory/sonnet/w02",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nTroupe A's anchor performer needed exactly one backstage correction all night and made it invisibly. Troupe B's anchor performer needed thirty corrections over the course of the night and caught every single one invisibly. A colleague argues that Troupe B's performer must have the better Fen index, since catching so many corrections cleanly is the bigger achievement. Is the colleague right, and what does Kasch's account of the Fen index and the correction load say about it?\n\nA. Troupe A's performer must be the less skilled of the two, since catching thirty corrections cleanly all night is a harder demonstration of skill than catching just one.\nB. Since both performers scored an identical 1.0, their nights were equally smooth, with roughly the same number of things going wrong backstage for each of them.\nC. The Fen index is a rate, not a count -- it says nothing about how often correction was needed, so the matching score hides that Troupe B's performer carried a far heavier correction load.\nD. The Fen index also counts corrections that could conceivably have arisen but never did, which is why Troupe B's larger set of possible problems still produced the same score."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w02",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nTroupe A's anchor performer needed exactly one backstage correction all night and made it invisibly. Troupe B's anchor performer needed thirty corrections over the course of the night and caught every single one invisibly. A colleague argues that Troupe B's performer must have the better Fen index, since catching so many corrections cleanly is the bigger achievement. Is the colleague right, and what does Kasch's account of the Fen index and the correction load say about it?\n\nA. Since both performers scored an identical 1.0, their nights were equally smooth, with roughly the same number of things going wrong backstage for each of them.\nB. The Fen index is a rate, not a count -- it says nothing about how often correction was needed, so the matching score hides that Troupe B's performer carried a far heavier correction load.\nC. Troupe A's performer must be the less skilled of the two, since catching thirty corrections cleanly all night is a harder demonstration of skill than catching just one.\nD. The Fen index also counts corrections that could conceivably have arisen but never did, which is why Troupe B's larger set of possible problems still produced the same score."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w02",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nTroupe A's anchor performer needed exactly one backstage correction all night and made it invisibly. Troupe B's anchor performer needed thirty corrections over the course of the night and caught every single one invisibly. A colleague argues that Troupe B's performer must have the better Fen index, since catching so many corrections cleanly is the bigger achievement. Is the colleague right, and what does Kasch's account of the Fen index and the correction load say about it?\n\nA. Since both performers scored an identical 1.0, their nights were equally smooth, with roughly the same number of things going wrong backstage for each of them.\nB. The Fen index is a rate, not a count -- it says nothing about how often correction was needed, so the matching score hides that Troupe B's performer carried a far heavier correction load.\nC. The Fen index also counts corrections that could conceivably have arisen but never did, which is why Troupe B's larger set of possible problems still produced the same score.\nD. Troupe A's performer must be the less skilled of the two, since catching thirty corrections cleanly all night is a harder demonstration of skill than catching just one."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w03",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA touring director is casting a new show. Performer X reliably draws the loudest audience reactions but has struggled in rehearsal to catch missed cues without being noticed. Performer Y, meanwhile, draws little audience attention. Based on Kasch's casting findings, how should the director assign the lead and anchor positions?\n\nA. X should be cast as the lead, and because leads carry the most responsibility for holding a scene together, X's struggles with missed cues are the most urgent problem to fix.\nB. X should be cast as the lead, the highest-projection-demand position, and Y as the anchor, the highest-correction-load, lowest-visibility position.\nC. Y should be cast as the anchor, and because anchors absorb the correction load entirely, X as lead will need to do no backstage correction work at all.\nD. X should be cast as the anchor, since anchor is the show's most prominent and structurally important position, and X is clearly the stronger overall performer of the two."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w03",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA touring director is casting a new show. Performer X reliably draws the loudest audience reactions but has struggled in rehearsal to catch missed cues without being noticed. Performer Y, meanwhile, draws little audience attention. Based on Kasch's casting findings, how should the director assign the lead and anchor positions?\n\nA. X should be cast as the lead, and because leads carry the most responsibility for holding a scene together, X's struggles with missed cues are the most urgent problem to fix.\nB. Y should be cast as the anchor, and because anchors absorb the correction load entirely, X as lead will need to do no backstage correction work at all.\nC. X should be cast as the lead, the highest-projection-demand position, and Y as the anchor, the highest-correction-load, lowest-visibility position.\nD. X should be cast as the anchor, since anchor is the show's most prominent and structurally important position, and X is clearly the stronger overall performer of the two."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w03",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA touring director is casting a new show. Performer X reliably draws the loudest audience reactions but has struggled in rehearsal to catch missed cues without being noticed. Performer Y, meanwhile, draws little audience attention. Based on Kasch's casting findings, how should the director assign the lead and anchor positions?\n\nA. X should be cast as the lead, the highest-projection-demand position, and Y as the anchor, the highest-correction-load, lowest-visibility position.\nB. X should be cast as the anchor, since anchor is the show's most prominent and structurally important position, and X is clearly the stronger overall performer of the two.\nC. Y should be cast as the anchor, and because anchors absorb the correction load entirely, X as lead will need to do no backstage correction work at all.\nD. X should be cast as the lead, and because leads carry the most responsibility for holding a scene together, X's struggles with missed cues are the most urgent problem to fix."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w04",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA touring manager reports: 'Our Fen index has held at a flawless 1.0 for six consecutive productions.' Using Kasch's account of rescue, repair, and correction load, which objection does his framework support?\n\nA. A flawless Fen index built only from rescues, alongside a flat or growing correction load, is the diagnostic picture Kasch treats as most dangerous -- the troupe may have merely gotten skilled at surviving recurring problems, not repairing them.\nB. The stronger objection is that a lower Fen index paired with a shrinking correction load would actually be the worse diagnostic picture, since the raw success rate has visibly declined over time.\nC. There is no real objection to raise here: a flawless Fen index sustained for six months is, on its own, clear proof that backstage craft has genuinely gotten better, regardless of what the correction load happens to be doing.\nD. The best objection is that the manager is likely counting a run of especially effective rescues as repairs, since a repair is really just a rescue performed with enough confidence to look permanent."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w04",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA touring manager reports: 'Our Fen index has held at a flawless 1.0 for six consecutive productions.' Using Kasch's account of rescue, repair, and correction load, which objection does his framework support?\n\nA. The stronger objection is that a lower Fen index paired with a shrinking correction load would actually be the worse diagnostic picture, since the raw success rate has visibly declined over time.\nB. A flawless Fen index built only from rescues, alongside a flat or growing correction load, is the diagnostic picture Kasch treats as most dangerous -- the troupe may have merely gotten skilled at surviving recurring problems, not repairing them.\nC. The best objection is that the manager is likely counting a run of especially effective rescues as repairs, since a repair is really just a rescue performed with enough confidence to look permanent.\nD. There is no real objection to raise here: a flawless Fen index sustained for six months is, on its own, clear proof that backstage craft has genuinely gotten better, regardless of what the correction load happens to be doing."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w04",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA touring manager reports: 'Our Fen index has held at a flawless 1.0 for six consecutive productions.' Using Kasch's account of rescue, repair, and correction load, which objection does his framework support?\n\nA. There is no real objection to raise here: a flawless Fen index sustained for six months is, on its own, clear proof that backstage craft has genuinely gotten better, regardless of what the correction load happens to be doing.\nB. The stronger objection is that a lower Fen index paired with a shrinking correction load would actually be the worse diagnostic picture, since the raw success rate has visibly declined over time.\nC. The best objection is that the manager is likely counting a run of especially effective rescues as repairs, since a repair is really just a rescue performed with enough confidence to look permanent.\nD. A flawless Fen index built only from rescues, alongside a flat or growing correction load, is the diagnostic picture Kasch treats as most dangerous -- the troupe may have merely gotten skilled at surviving recurring problems, not repairing them."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w05",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nOver a touring season, a troupe's audience-rated gloss score climbs steadily month after month. A producer cites this rising trend as proof that the troupe's undercraft has been improving all season. Per Kasch's account of the gloss effect, how should this trend be interpreted?\n\nA. Very little on its own -- gloss tracks projection reliably, but it can rise even as the Fen index falls, since a confident cover of a visible stumble often reads as tighter craft than it is.\nB. Gloss should track the Fen index just as reliably as it tracks projection quality, so a rising gloss score is solid evidence that the troupe's undercraft has kept pace as well.\nC. Gloss and the Fen index are really two measurements of the same underlying quality of a show, so a rise in one is good evidence of a matching rise in the other across an entire touring season.\nD. The undercraft has clearly improved, since an audience rating a show as more seamless is responding to a real increase in how well backstage problems are caught, night after night, throughout the season."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w05",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nOver a touring season, a troupe's audience-rated gloss score climbs steadily month after month. A producer cites this rising trend as proof that the troupe's undercraft has been improving all season. Per Kasch's account of the gloss effect, how should this trend be interpreted?\n\nA. The undercraft has clearly improved, since an audience rating a show as more seamless is responding to a real increase in how well backstage problems are caught, night after night, throughout the season.\nB. Very little on its own -- gloss tracks projection reliably, but it can rise even as the Fen index falls, since a confident cover of a visible stumble often reads as tighter craft than it is.\nC. Gloss and the Fen index are really two measurements of the same underlying quality of a show, so a rise in one is good evidence of a matching rise in the other across an entire touring season.\nD. Gloss should track the Fen index just as reliably as it tracks projection quality, so a rising gloss score is solid evidence that the troupe's undercraft has kept pace as well."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w05",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nOver a touring season, a troupe's audience-rated gloss score climbs steadily month after month. A producer cites this rising trend as proof that the troupe's undercraft has been improving all season. Per Kasch's account of the gloss effect, how should this trend be interpreted?\n\nA. Very little on its own -- gloss tracks projection reliably, but it can rise even as the Fen index falls, since a confident cover of a visible stumble often reads as tighter craft than it is.\nB. The undercraft has clearly improved, since an audience rating a show as more seamless is responding to a real increase in how well backstage problems are caught, night after night, throughout the season.\nC. Gloss should track the Fen index just as reliably as it tracks projection quality, so a rising gloss score is solid evidence that the troupe's undercraft has kept pace as well.\nD. Gloss and the Fen index are really two measurements of the same underlying quality of a show, so a rise in one is good evidence of a matching rise in the other across an entire touring season."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w07",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nKasch's survey found that average Fen index peaks among troupes with between five and seven performers. A director is puzzled that both her three-person troupe and her fourteen-person troupe post unusually low Fen indices this season, and concludes the underlying cause must be the same for both: not enough attentive people to catch backstage issues. What is wrong with this explanation, according to Kasch's account?\n\nA. The two declines are mechanically different: the small troupe lacks redundancy to cover someone pulled into projection, while the large troupe has too many signaling pairs to stay coordinated even though enough people are available.\nB. Both troupes likely have low audience-rated gloss scores, and since gloss and the Fen index move together, their low ratings from audiences explain why their measured Fen indices are also low.\nC. Larger troupes should always show a higher Fen index than smaller ones, since more performers means more hands free to cover a problem, so the fourteen-person troupe's low score is most likely a measurement error.\nD. Nothing is wrong with it -- both troupes are simply short on attentive people, whether that shortage comes from having too few performers or from the demands of a fourteen-person show spreading everyone thin."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w07",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nKasch's survey found that average Fen index peaks among troupes with between five and seven performers. A director is puzzled that both her three-person troupe and her fourteen-person troupe post unusually low Fen indices this season, and concludes the underlying cause must be the same for both: not enough attentive people to catch backstage issues. What is wrong with this explanation, according to Kasch's account?\n\nA. Both troupes likely have low audience-rated gloss scores, and since gloss and the Fen index move together, their low ratings from audiences explain why their measured Fen indices are also low.\nB. The two declines are mechanically different: the small troupe lacks redundancy to cover someone pulled into projection, while the large troupe has too many signaling pairs to stay coordinated even though enough people are available.\nC. Larger troupes should always show a higher Fen index than smaller ones, since more performers means more hands free to cover a problem, so the fourteen-person troupe's low score is most likely a measurement error.\nD. Nothing is wrong with it -- both troupes are simply short on attentive people, whether that shortage comes from having too few performers or from the demands of a fourteen-person show spreading everyone thin."
+    },
+    {
+      "id": "undercraft-theory/sonnet/w07",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nKasch's survey found that average Fen index peaks among troupes with between five and seven performers. A director is puzzled that both her three-person troupe and her fourteen-person troupe post unusually low Fen indices this season, and concludes the underlying cause must be the same for both: not enough attentive people to catch backstage issues. What is wrong with this explanation, according to Kasch's account?\n\nA. Nothing is wrong with it -- both troupes are simply short on attentive people, whether that shortage comes from having too few performers or from the demands of a fourteen-person show spreading everyone thin.\nB. Both troupes likely have low audience-rated gloss scores, and since gloss and the Fen index move together, their low ratings from audiences explain why their measured Fen indices are also low.\nC. The two declines are mechanically different: the small troupe lacks redundancy to cover someone pulled into projection, while the large troupe has too many signaling pairs to stay coordinated even though enough people are available.\nD. Larger troupes should always show a higher Fen index than smaller ones, since more performers means more hands free to cover a problem, so the fourteen-person troupe's low score is most likely a measurement error."
+    }
+  ]
+}

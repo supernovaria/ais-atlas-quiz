@@ -1,0 +1,271 @@
+[
+  {
+    "id": "undercraft-theory/sonnet/w02",
+    "targets": [
+      "UT-4",
+      "UT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Troupe A's anchor performer needed exactly one backstage correction all night and made it invisibly. Troupe B's anchor performer needed thirty corrections over the course of the night and caught every single one invisibly. A colleague argues that Troupe B's performer must have the better Fen index, since catching so many corrections cleanly is the bigger achievement. Is the colleague right, and what does Kasch's account of the Fen index and the correction load say about it?",
+    "options": [
+      {
+        "text": "The Fen index is a rate, not a count -- it says nothing about how often correction was needed, so the matching score hides that Troupe B's performer carried a far heavier correction load.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Troupe A's performer must be the less skilled of the two, since catching thirty corrections cleanly all night is a harder demonstration of skill than catching just one.",
+        "key": false,
+        "provenance": "misreads the claim that both score 1.0 as counterintuitive evidence the metric is broken, rather than the defining property of a rate",
+        "family": "c"
+      },
+      {
+        "text": "Since both performers scored an identical 1.0, their nights were equally smooth, with roughly the same number of things going wrong backstage for each of them.",
+        "key": false,
+        "provenance": "misreads the success-rate definition as also telling you how often corrections were needed",
+        "family": "a"
+      },
+      {
+        "text": "The Fen index also counts corrections that could conceivably have arisen but never did, which is why Troupe B's larger set of possible problems still produced the same score.",
+        "key": false,
+        "provenance": "misreads 'proportion of attempted corrections' as covering corrections that were never actually attempted",
+        "family": "b"
+      }
+    ],
+    "explanation": "The Fen index measures success among attempted corrections, so a performer who needed one correction and made it, and one who needed thirty and made all thirty, score identically -- correction load is Kasch's separate, deliberately independent count of how much trouble a performer actually faced. The tempting answer that Troupe A's performer is 'less skilled' mistakes a smaller sample for a weaker one; a rate does not reward volume. Reading the matching score as evidence of an equally smooth night, or as covering corrections that never arose, both blur the same distinction: the Fen index and the correction load are two separate quantities, and a troupe can carry an excellent rate alongside a crushing load. (Undercraft Theory -> The Fen index)",
+    "takeaway": "A Fen index tells you how reliably a performer corrects; only the correction load tells you how often they had to.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Undercraft Theory",
+      "subheading": "The Fen index"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes -- a reader who understood that the Fen index is a rate rather than a count could name the correction-load gap without seeing the options.",
+      "cynic_test": "A skipper might reason that catching thirty corrections 'sounds more impressive' and pick the option ranking Troupe B's performer as more skilled, which fails because a rate is defined to be blind to volume by construction."
+    },
+    "shard_id": "undercraft-theory-w",
+    "model": "sonnet"
+  },
+  {
+    "id": "undercraft-theory/sonnet/w03",
+    "targets": [
+      "UT-7",
+      "UT-8"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A touring director is casting a new show. Performer X reliably draws the loudest audience reactions but has struggled in rehearsal to catch missed cues without being noticed. Performer Y, meanwhile, draws little audience attention. Based on Kasch's casting findings, how should the director assign the lead and anchor positions?",
+    "options": [
+      {
+        "text": "X should be cast as the lead, the highest-projection-demand position, and Y as the anchor, the highest-correction-load, lowest-visibility position.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "X should be cast as the anchor, since anchor is the show's most prominent and structurally important position, and X is clearly the stronger overall performer of the two.",
+        "key": false,
+        "provenance": "misreads the anchor's structural centrality as visibility, conflating importance-to-the-show with importance-to-the-audience",
+        "family": "a"
+      },
+      {
+        "text": "X should be cast as the lead, and because leads carry the most responsibility for holding a scene together, X's struggles with missed cues are the most urgent problem to fix.",
+        "key": false,
+        "provenance": "misreads high projection demand as implying high responsibility for undercraft, conflating the two axes the section separates",
+        "family": "a"
+      },
+      {
+        "text": "Y should be cast as the anchor, and because anchors absorb the correction load entirely, X as lead will need to do no backstage correction work at all.",
+        "key": false,
+        "provenance": "misreads 'lowest correction load' as zero correction load rather than simply the least of it",
+        "family": "b"
+      }
+    ],
+    "explanation": "Kasch's casting data runs opposite to intuition: the lead, the position audiences watch most, goes to the strongest projector and carries the lowest correction load, while the anchor -- named for its position in the sightline dead zone -- goes to the weakest projector and carries the highest correction load. Treating 'anchor' as a synonym for 'most important, therefore most prominent' is the halo fallacy applied to blocking. Assuming the lead is also responsible for the bulk of undercraft, or that the lead does none at all, both collapse two positions built to divide exactly opposite demands -- the lead does still some correction work, just the least in the show. (Undercraft Theory -> Casting the anchor)",
+    "takeaway": "The role that looks most important to the audience is cast for the opposite reason from the role that is actually structurally load-bearing backstage.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Undercraft Theory",
+      "subheading": "Casting the anchor"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes -- a reader who holds the anchor/lead casting logic can assign X and Y correctly before the options are shown.",
+      "cynic_test": "A skipper might default to 'the stronger performer gets the most important-sounding job' and cast X as anchor, which fails because the anchor is deliberately the least visible position, not the most prestigious one."
+    },
+    "shard_id": "undercraft-theory-w",
+    "model": "sonnet"
+  },
+  {
+    "id": "undercraft-theory/sonnet/w04",
+    "targets": [
+      "UT-10"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A touring manager reports: 'Our Fen index has held at a flawless 1.0 for six consecutive productions.' Using Kasch's account of rescue, repair, and correction load, which objection does his framework support?",
+    "options": [
+      {
+        "text": "A flawless Fen index built only from rescues, alongside a flat or growing correction load, is the diagnostic picture Kasch treats as most dangerous -- the troupe may have merely gotten skilled at surviving recurring problems, not repairing them.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "There is no real objection to raise here: a flawless Fen index sustained for six months is, on its own, clear proof that backstage craft has genuinely gotten better, regardless of what the correction load happens to be doing.",
+        "key": false,
+        "provenance": "misreads 'an excellent Fen index built entirely out of rescues and no repairs at all' as a mark of skill rather than checking the correction-load trend",
+        "family": "c"
+      },
+      {
+        "text": "The stronger objection is that a lower Fen index paired with a shrinking correction load would actually be the worse diagnostic picture, since the raw success rate has visibly declined over time.",
+        "key": false,
+        "provenance": "misreads the comparison between the two troupe profiles backwards, reversing which one Kasch treats as the clearer warning sign",
+        "family": "b"
+      },
+      {
+        "text": "The best objection is that the manager is likely counting a run of especially effective rescues as repairs, since a repair is really just a rescue performed with enough confidence to look permanent.",
+        "key": false,
+        "provenance": "misreads 'removes the underlying cause so the same correction never needs to be attempted again' as a better rescue rather than a categorically different, between-performance action",
+        "family": "a"
+      }
+    ],
+    "explanation": "A perfect Fen index only tells you the troupe succeeds at whichever corrections it attempts; it says nothing about whether the same corrections keep coming back. Kasch's sharper warning is exactly this profile -- a heroic rate built from rescues alone, with a correction load that isn't shrinking -- because it means the troupe has gotten good at surviving its own unfixed mistakes rather than eliminating them. The reversal claiming a lower Fen index with a shrinking load is worse gets Kasch's comparison backwards: a shrinking load means repairs are actually working, even though the raw rate looks worse on paper. And a repair is not just a confident rescue; it is a between-performance fix aimed at making the correction unnecessary next time. (Undercraft Theory -> Rescue, repair, and the correction load)",
+    "takeaway": "A perfect success rate on corrections you keep needing to make is a worse sign than a slightly lower rate on a shrinking pile of problems.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Undercraft Theory",
+      "subheading": "Rescue, repair, and the correction load"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes -- a reader who holds the rescue/repair and correction-load distinction can identify the danger in the manager's claim without the options in front of them.",
+      "cynic_test": "A skipper might assume 'flawless metric equals flawless outcome' and pick the no-objection option, which fails because the stem explicitly supplies the one variable, the correction load, that the manager's boast conveniently omits."
+    },
+    "shard_id": "undercraft-theory-w",
+    "model": "sonnet"
+  },
+  {
+    "id": "undercraft-theory/sonnet/w05",
+    "targets": [
+      "UT-11"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Over a touring season, a troupe's audience-rated gloss score climbs steadily month after month. A producer cites this rising trend as proof that the troupe's undercraft has been improving all season. Per Kasch's account of the gloss effect, how should this trend be interpreted?",
+    "options": [
+      {
+        "text": "Very little on its own -- gloss tracks projection reliably, but it can rise even as the Fen index falls, since a confident cover of a visible stumble often reads as tighter craft than it is.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The undercraft has clearly improved, since an audience rating a show as more seamless is responding to a real increase in how well backstage problems are caught, night after night, throughout the season.",
+        "key": false,
+        "provenance": "misreads a confident, well-projected cover of a visible stumble as evidence of tight craft rather than of a successful cover",
+        "family": "c"
+      },
+      {
+        "text": "Gloss should track the Fen index just as reliably as it tracks projection quality, so a rising gloss score is solid evidence that the troupe's undercraft has kept pace as well.",
+        "key": false,
+        "provenance": "misreads 'gloss rises reliably with a troupe's average projection quality' as extending to the Fen index, reversing the point that the two can move in opposite directions",
+        "family": "b"
+      },
+      {
+        "text": "Gloss and the Fen index are really two measurements of the same underlying quality of a show, so a rise in one is good evidence of a matching rise in the other across an entire touring season.",
+        "key": false,
+        "provenance": "misreads an audience-report measure and a backstage-logged measure as interchangeable proxies for 'how good the troupe is'",
+        "family": "a"
+      }
+    ],
+    "explanation": "Gloss is an audience-facing measure, so it moves with projection, not with backstage success -- Kasch found it can climb through a season even as the Fen index quietly falls, because a confident, well-projected recovery from a visible stumble often gets rated more seamless than a scene that needed no recovery at all. The tempting reading -- that rising acclaim means better undercraft -- mistakes the cover for the craft, exactly the gap this section exists to name. Gloss doesn't track the Fen index the way it tracks projection, and the two are measuring genuinely different things: what the audience notices versus what backstage logs record. (Undercraft Theory -> The gloss effect)",
+    "takeaway": "Rising audience acclaim for a show's smoothness can be evidence of better cover, not better craft.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Undercraft Theory",
+      "subheading": "The gloss effect"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes -- a reader who knows gloss tracks projection rather than the Fen index can state the 'very little' answer before seeing the options.",
+      "cynic_test": "A skipper would assume rising audience approval must mean broad improvement and pick the 'clearly improved' option, which fails because the section's whole point is that this specific inference is unreliable."
+    },
+    "shard_id": "undercraft-theory-w",
+    "model": "sonnet"
+  },
+  {
+    "id": "undercraft-theory/sonnet/w07",
+    "targets": [
+      "UT-12"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Kasch's survey found that average Fen index peaks among troupes with between five and seven performers. A director is puzzled that both her three-person troupe and her fourteen-person troupe post unusually low Fen indices this season, and concludes the underlying cause must be the same for both: not enough attentive people to catch backstage issues. What is wrong with this explanation, according to Kasch's account?",
+    "options": [
+      {
+        "text": "The two declines are mechanically different: the small troupe lacks redundancy to cover someone pulled into projection, while the large troupe has too many signaling pairs to stay coordinated even though enough people are available.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Nothing is wrong with it -- both troupes are simply short on attentive people, whether that shortage comes from having too few performers or from the demands of a fourteen-person show spreading everyone thin.",
+        "key": false,
+        "provenance": "misreads the two size-based declines as one undifferentiated 'too big or too small' effect, collapsing redundancy scarcity and signaling-network overload into a single mechanism",
+        "family": "a"
+      },
+      {
+        "text": "Larger troupes should always show a higher Fen index than smaller ones, since more performers means more hands free to cover a problem, so the fourteen-person troupe's low score is most likely a measurement error.",
+        "key": false,
+        "provenance": "misreads the two intuitive guesses in 'the intuitive guess runs in one of two directions' as the actual finding, missing that Kasch found neither monotonic pattern",
+        "family": "c"
+      },
+      {
+        "text": "Both troupes likely have low audience-rated gloss scores, and since gloss and the Fen index move together, their low ratings from audiences explain why their measured Fen indices are also low.",
+        "key": false,
+        "provenance": "misapplies the gloss/Fen-index conflation from elsewhere in the section to a troupe-size case where gloss is never discussed",
+        "family": "d"
+      }
+    ],
+    "explanation": "The two failure modes are mechanically distinct, not a shared 'too few attentive people' problem. Below four performers, a troupe lacks redundancy: pulling one person into full projection leaves no one free to cover the gap. Above ten, the problem isn't headcount but coordination -- undercraft depends on fast, often nonverbal signaling between whoever is free, and the number of possible signaling pairs grows fast enough that cues get missed even with plenty of hands available. The 'always higher with more performers' distractor is one of the two intuitive guesses Kasch's data actually rules out. And gloss, an audience-facing measure, has no established relationship to troupe size at all -- borrowing it here conflates two separate metrics from elsewhere in the framework. (Undercraft Theory -> Troupe size and the core band)",
+    "takeaway": "A large troupe's undercraft problem is a coordination-network problem, not a headcount problem -- the opposite failure from a small troupe's.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Undercraft Theory",
+      "subheading": "Troupe size and the core band"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "the core band of five to seven performers, with decline below four and above ten"
+    ],
+    "self_check": {
+      "cover_test": "Yes -- a reader who retained the two distinct mechanisms, redundancy scarcity and signaling overload, can state the flaw in the director's reasoning unaided.",
+      "cynic_test": "A skipper might reach for 'medium-size groups are just easier to manage' as a generic heuristic and pick the option treating both declines as one thing, which fails because the section names two different mechanisms on either side of the band."
+    },
+    "shard_id": "undercraft-theory-w",
+    "model": "sonnet"
+  }
+]

@@ -66,6 +66,89 @@ inverse-U is a heuristic a guesser can apply without reading anything. `w07` did
 hit 3/3 — but so did four others, so that flag identified a real case and missed
 the general mechanism.
 
+## The follow-up test — and my mechanism was wrong
+
+The report above proposed that the leak is in the **stem**: that these questions
+carry the premises from which the key follows. It named a cheap test. I ran it.
+**The mechanism failed.**
+
+The five leaking stems were rewritten by the generator (I write no question
+text) to withhold the premise the key asserts, keeping every option, the key,
+the explanation and every other field byte-identical — verified mechanically —
+and re-shuffled. All 15 option permutations came out identical to the first arm,
+so position is controlled and **the stem is the only thing that differs**.
+
+| question | stem gives it away | premise withheld |
+|---|---|---|
+| `w02` rate vs count | 3/3 | 3/3 |
+| `w04` rescue warning | 3/3 | 3/3 |
+| `w05` gloss effect | 3/3 | 3/3 |
+| `w07` troupe size | 3/3 | 3/3 |
+| `w03` casting | 3/3 | 2/3 |
+| **total** | **15/15 (100%)** | **14/15 (93%)** |
+
+One hit lost out of fifteen. Withholding the premises did essentially nothing.
+The stem hypothesis fitted all eight questions in the first arm and still
+**does not survive its own test**, which is why it was worth running rather than
+writing up.
+
+One of the five was not a clean test and I should have caught it before
+spawning: `w02`'s distractor B still reads *"Since both performers scored an
+identical 1.0…"*, so the fact removed from the stem survived in an option.
+That is its own small lesson — a premise cannot be withheld by editing the stem
+alone. But the other four were rewritten cleanly and three of them still scored
+3/3.
+
+## Where the leak actually is: the options
+
+If the stem barely matters, the option set must be doing the work. So I removed
+the stem **entirely** — four options, no question at all, "which is the intended
+correct answer?"
+
+**4 of 6 correct (67%)**, against 25% chance, with nothing to answer *about*.
+
+| probe | hit rate |
+|---|---|
+| whole question (first arm, these 5) | 100% |
+| stem premises withheld | 93% |
+| **no stem at all, options only** | **67%** |
+| chance | 25% |
+
+Deleting the question costs about a third of the excess over chance. The
+options keep most of it.
+
+That points at **distractor plausibility**, not stem construction: the wrong
+answers are recognisably wrong to someone who knows nothing, so the reader picks
+the survivor. It is the same thing the control set found in its one leaking
+fabricated item — the option that sounds like what a textbook would say is
+identifiable as the intended one.
+
+It also explains why the rubric's machinery does not catch it. Almost every
+enforced distractor rule is about **surface**: relative length, hedge density,
+absolute quantifiers, grammatical type. The rule that would catch this is D3 —
+no straw distractor — which is a judgement the critic makes, and which the
+stability run found it applying inconsistently. Several distractors here are
+eliminable on sight: in a question asking which objection has the most support,
+one option says there is no objection to raise; in a question asking what is
+wrong with an explanation, one option says nothing is wrong.
+
+**n = 6 on the options-only probe.** That is small enough that the 67% could
+move a lot. The direction is consistent with the arm-B result and with the
+control's earlier finding, and all three point the same way, but no single one
+of them is decisive. One oddity worth recording rather than smoothing over:
+`w08`, which scored 0/3 *with* its stem, was answered correctly from options
+alone — at this sample size individual items are noise.
+
+## What I would test next, stated as a question rather than an answer
+
+Do not take "the leak is in the distractors" as established either — it is one
+failed hypothesis and one 6-trial probe. The test that would settle it is the
+same shape and just as cheap: have the generator rewrite the *distractors* of
+these five, keeping stem and key fixed, with the instruction that every wrong
+option must be one a careful reader of the passage could actually believe. If
+the options-only score falls toward chance, distractor plausibility is the
+mechanism. If it does not, neither of my two stories is right.
+
 ## Limits, stated at full size
 
 - **This run skipped the critic**, for budget. It therefore measures **generator

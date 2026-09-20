@@ -539,6 +539,30 @@ Deliberately not done, all for budget:
 - P3, the review block, and the four remaining sections — all out of scope and
   gated on you reading the findings, as instructed.
 
+## The stem hypothesis was tested and failed
+
+The fiction control (`runs/2026-09-20-FICTION/REPORT.md`) proposed that the leak
+lives in the stem. That test has now been run and **the hypothesis is dead**:
+rewriting the five leaking stems to withhold their premises, with every option
+byte-identical and every option permutation unchanged, moved the score from
+15/15 to 14/15.
+
+Removing the stem *entirely* — four options, no question — still scores 4 of 6.
+So the option set carries most of the signal, and the suspect is **distractor
+plausibility**: the wrong answers are recognisably wrong to someone who knows
+nothing about the subject.
+
+That is consistent with the control's original finding and with the arm-B
+result, but it rests on one failed hypothesis and a 6-trial probe, so it is a
+lead and not a conclusion. The next test is the same shape: rewrite the
+distractors, hold stem and key fixed, re-measure.
+
+The practical consequence for the rubric is the part worth keeping: nearly every
+enforced distractor rule governs **surface** — length, hedging, absolute words,
+grammatical type. The rule that would catch an unbelievable distractor is the
+one the critic applies by judgement, and the stability run found it doing so
+inconsistently.
+
 ## Recommended next action
 
 **Sharding is now dropped and the six hardening changes are in.** Spend the next
