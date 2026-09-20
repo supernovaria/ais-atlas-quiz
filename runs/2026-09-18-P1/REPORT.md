@@ -312,24 +312,80 @@ come near the 0.15 gate**. The second section is worse than the first and worse
 than the questions the pipeline was built to replace. On n=3 questions the
 point estimate of 100% is soft; what is not soft is the distance from the gate.
 
-### Why that happens is now visible end to end
+### Why that happens — I got this wrong, and here is the correction
 
-All three rewrites came back at length ratios of **0.98, 1.00, 0.99**, and none
-is the longest or shortest option. Every one of the three originals had the key
-as the longest. The critic does not merely bring the key inside the 0.8–1.2
-band — it drives it to parity.
+**The earlier version of this section claimed the length rules cause the
+adversary result. That is incoherent and I withdraw it.** Near-identical option
+lengths *remove* the length tell; they cannot manufacture guessability. I
+conflated a readability complaint (four options of one shape read as a
+worksheet) with a guessability result (the adversary scored 9 of 9) and asserted
+a causal link the data does not support.
 
-Then read the three as a reader. `w04r`: all four options are
-"*claim*, because *reason*". `w07r`: all four begin "The prediction…".
-`a03r`: all four begin "It…". One syntactic template, four times, in all three
-— exactly the pattern found in `forecasting-timelines`, now reproduced on a
-second section with a different generation strategy.
+What the data actually says is more uncomfortable. The three AGI questions are
+**clean on every property the checker can measure**:
 
-So the mechanism is: the length rules reward sameness, the critic's rewrite path
-optimises for them directly, nothing anywhere gates syntactic uniformity, and a
-reader who has never seen the chapter can pick the odd one out. **The blandness
-failure is not a side effect of the rubric. It is what the rubric currently
-asks for.**
+| tell, and what the control says it is worth | AGI's three questions |
+|---|---|
+| key is longest (+68 points) | length ratios 0.98 / 1.00 / 0.99; key neither longest nor shortest |
+| key hedges more than distractors (+62) | key 0, distractor median 0 — no asymmetry |
+| an absolute quantifier in one option (+42) | none present |
+
+Clean on all three, and still answered correctly nine times out of nine.
+
+I tested one hypothesis for what else it could be — that the key is the only
+option holding two things in tension ("X is real, *but* Y"). It is strikingly
+true as a description: 5 of 6 shipped keys contain such a construction against
+2 of 18 distractors, and in all three AGI questions the key is the only one.
+But tested against the fabricated control set, where the adversary cannot
+possibly know the content, **it shows no signal** — 2 such items hit 50%, the
+other 3 hit 33%, and one was missed outright. n=5. Recorded as a rejected
+hypothesis, not a finding.
+
+### The floor is 40%, not 25%
+
+`runs/tier4-control/` settles one thing cleanly. On fabricated content the
+adversary cannot know, with no planted tell, it still scores **40%**. A
+four-option question carries an irreducible ~15-point inference premium over
+chance: a reader can tell which option a textbook would call "most dangerous"
+without knowing anything. The one fabricated item hit 3/3 is exactly that — its
+key is the only option containing a paradox.
+
+So the gate `mean(hit − 1/k) ≤ 0.15` turns out to be a well-chosen *value* on a
+**mis-anchored scale**. It is almost exactly "no leakier than an untellable
+question", but it is measured against 1/k, which no real question can reach.
+
+### What the adversary result does not yet establish
+
+Two explanations fit the 78–100% on real sections equally well, and nothing
+measured so far separates them:
+
+- **the questions leak**, semantically, somewhere outside everything the
+  checker measures; or
+- **the adversary already knows the material.** Autonomy-versus-capability and
+  adaptability-versus-brute-force are standard, heavily rehearsed AI-safety
+  doctrine.
+
+The first is a pipeline defect. The second means the gate is measuring the
+model's education rather than the pipeline's output. **The existing control
+cannot decide it** — its 20 items were hand-written with tells planted
+deliberately and never went through the analyst, generator or critic. It
+measures what a tell is worth, not what this pipeline produces.
+
+Deciding it needs the full pipeline run on fabricated prose, with the
+interpretation pre-registered. That experiment is specified in
+[`docs/FICTION-CONTROL-PROMPT.md`](../../docs/FICTION-CONTROL-PROMPT.md) and has
+not been run.
+
+### The blandness finding, restated at its actual size
+
+Standing on its own, without the causal claim it was wrapped in: the critic's
+rewrites drive option lengths to near-exact parity (0.98, 1.00, 0.99, from
+originals where the key was longest every time), and read as a reader, each
+shipped question is one syntactic template repeated four times. That is a
+**readability and discrimination complaint** — the options stop feeling like
+genuinely different answers — and the proposed D9a rule in the pilot findings
+addresses it. It is not the explanation for the adversary score, and the two
+should not have been joined.
 
 ### Two mechanisms finally earned an answer
 

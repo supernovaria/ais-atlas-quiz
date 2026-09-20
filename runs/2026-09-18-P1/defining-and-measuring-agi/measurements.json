@@ -1004,23 +1004,23 @@
     "citation_anchor_resolves": true
   },
   "defining-and-measuring-agi/sonnet/a03r": {
-    "correct_len": 153,
+    "correct_len": 174,
     "distractor_lens": [
-      150,
-      159,
-      159
+      169,
+      160,
+      151
     ],
-    "mean_distractor_len": 156,
-    "len_ratio": 0.98,
-    "correct_is_longest": false,
+    "mean_distractor_len": 160,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
     "correct_is_shortest": false,
-    "extremum_gap": 0,
-    "max_over_min": 1.06,
+    "extremum_gap": 5,
+    "max_over_min": 1.15,
     "r5_matches": [],
     "r5_loose_matches": [],
     "mentions_chapter": false,
     "absolute_count_key": 0,
-    "absolute_count_distractors": 0,
+    "absolute_count_distractors": 1,
     "hedge_counts": {
       "key": 0,
       "distractors": [
@@ -1029,11 +1029,7 @@
         0
       ]
     },
-    "stem_word_singletons": [
-      "two",
-      "set",
-      "difference"
-    ],
+    "stem_word_singletons": [],
     "emphasis_counts": {
       "key": 0,
       "distractors": [
@@ -1047,7 +1043,7 @@
     "negation_uncapitalised": false,
     "option_count": 4,
     "has_explanation": true,
-    "explanation_words": 131,
+    "explanation_words": 130,
     "key_count": 1,
     "citation_anchor_resolves": true
   },

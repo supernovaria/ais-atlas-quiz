@@ -1131,36 +1131,36 @@
     "lens": "misconception",
     "level_claimed": "L3",
     "bridge_from": null,
-    "stem": "Two systems end up at the same expert-level score on the same set of cognitive tasks. One reached it from a handful of examples; the other needed billions. How should a safety-oriented account of intelligence treat that difference?",
+    "stem": "Two systems end up with identical expert-level scores across the same set of cognitive domains. One got there from a handful of demonstrations; the other required a billion training examples. A colleague argues: \"the second system is less intelligent, so it is also the less worrying one to deploy.\" How should that argument be assessed?",
     "options": [
       {
-        "text": "It is a real difference in intelligence on the adaptability view, but it does not change either system's risk profile, which turns on what each now does.",
+        "text": "The intelligence claim is defensible on a learning-efficiency account, but the deployment claim is not: what these two systems can do, not how they learned it, sets the risk.",
         "key": true,
         "provenance": null,
         "family": null
       },
       {
-        "text": "It shows the second system is less capable than its score suggests, because sheer data volume leaves the underlying skill far shallower than it looks.",
+        "text": "The intelligence claim is the mistaken step: needing a billion examples means the capability itself is shallower, so the matching scores overstate what it can really do.",
         "key": false,
-        "provenance": "misreads 'A system that needs a billion examples to learn what humans get from ten examples might be less impressive even if both reach the same final capability' as meaning the sample-inefficient system is less capable, collapsing learning efficiency into the capability measure",
+        "provenance": "misreads 'A system that needs a billion examples to learn what humans get from ten examples might be less impressive even if both reach the same final capability' as meaning the sample-inefficient system is less capable, rather than equally capable and merely less impressive on one criterion",
         "family": "a"
       },
       {
-        "text": "It makes the second system the safer of the two, because a system that brute-forced the score will fail as soon as the task shifts away from its training data.",
+        "text": "Both claims hold: a system that needs a billion examples has only memorised them, and cannot act outside that data, which is what makes it the safer deployment.",
         "key": false,
-        "provenance": "reverses 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way' into the pre-chapter prior that a memorising system is brittle and therefore the safer of the two",
+        "provenance": "misreads 'an AI that achieves superhuman performance at Go has mastered Go; it has not necessarily become more intelligent in a general sense' as meaning a brute-force learner is confined to what it was trained on and is therefore the safer system to deploy, against the same paragraph's 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'",
         "family": "c"
       },
       {
-        "text": "It is set aside as not actionable here, in the same way questions about consciousness and true understanding are set aside from the definition of intelligence.",
+        "text": "Neither claim holds: intelligence is just what a system can do once trained, so two systems with matching scores are equally capable and equally risky.",
         "key": false,
-        "provenance": "misreads 'we set aside the consciousness debate as not actionable for safety work' as covering the adaptability view too, missing the clause immediately before it: 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
+        "provenance": "misreads 'Behaviorist (capabilities focused) approaches matter most for safety... These questions don't change the risk profile' as rejecting the learning-efficiency account of intelligence outright, when the text says it will 'acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
         "family": "d"
       }
     ],
-    "explanation": "The adaptability view is a real measure and the framework says so: intelligence as the efficiency of turning experience into skill means the sample-hungry system scores worse on that measure even at an identical final score. But safety planning here prioritises final capability, because a system that can perform a dangerous task poses that risk whether it learned from ten examples or a billion. So the difference is real as a claim about intelligence and inert as a claim about risk. The distractor calling the brute-force system safer reverses this: brittleness under novel variation is a separate empirical claim, not something the learning path guarantees. And the adaptability view is not set aside the way consciousness is — it is acknowledged and then subordinated. (Defining and Measuring AGI → Case Studies)",
-    "takeaway": "Learning efficiency is a real axis of intelligence and a poor guide to risk: the framework acknowledges the adaptability view and then rates systems by what they can now do.",
-    "stem_format": "scenario-application",
+    "explanation": "The adaptability account of intelligence - the efficiency with which a system turns experience and priors into skills - does rate the sample-hungry system as the less intelligent of the two, so the first half of the argument stands. The risk conclusion does not follow. If a system can perform dangerous tasks, it makes no difference whether it got there by efficient learning or by brute-force memorisation; the risks exist either way. The option that endorses both halves is the common form of this slip, letting the learning path rather than the resulting capability decide how worrying a system is. The option that rejects both halves overcorrects: final capability is what gets prioritised for safety, but the efficiency point is acknowledged, not discarded. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "How a system learned something changes how intelligent it looks on the adaptability view; it does not change what the system can now do, and risk follows what it can do.",
+    "stem_format": "claim-evaluation",
     "citation": {
       "section": "Defining and Measuring AGI",
       "subheading": "Case Studies"
@@ -1170,8 +1170,8 @@
     "option_count_reason": null,
     "load_bearing_figures": [],
     "self_check": {
-      "cover_test": "Yes — a reader who held both halves of the section's move (the adaptability view measures something real; the framework prioritises final capability for safety) produces the key unaided. The stem no longer supplies either half.",
-      "cynic_test": "The residual instinct is to pick the both-and option, so all three distractors are written as substantive positions rather than as over-claims: one denies the stipulated score, one asserts a risk ranking, one applies the chapter's own setting-aside move to the wrong view."
+      "cover_test": "Yes - a reader who took the section's point that the adaptability view is acknowledged but that final capability is what sets risk can produce the split verdict with the options covered.",
+      "cynic_test": "The stem no longer states the efficiency definition, so the key cannot be derived from the stem's own wording; the reader has to know both that the efficiency account is taken seriously and that it is deliberately not allowed to decide risk. All four options are verdicts of the same shape and none echoes the stem's vocabulary uniquely."
     },
     "shard_id": "defining-and-measuring-agi-a",
     "model": "sonnet",
