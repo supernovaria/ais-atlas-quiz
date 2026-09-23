@@ -44,6 +44,10 @@ the passage invented (b02 review #3).
   template tells the analyst not to open it. That is behavioural, not
   structural: the analyst has search tools, and this README and the handoff
   describe the bench openly. It is stated rather than assumed.
+- **The invention itself cannot be hidden, only the purpose.** The `b02`
+  analyst described its prose as "an invented domain" with no such word in it
+  and without opening any other file. Its concept map carries that note to the
+  generator; it is recorded as a caveat on `b02`, not edited out.
 - **Disputed tags go the more guessable way.** Where an author and a reviewer
   disagree about what a sensible outsider would guess, the claim is tagged as
   guessable. A bench that overstates its own unguessability makes its floor
