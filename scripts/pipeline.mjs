@@ -27,6 +27,9 @@
 //   node scripts/pipeline.mjs preregister --run <label> --file <path>
 //   node scripts/pipeline.mjs canary   --run <label>      (then canary-record --tool-uses N --reply X)
 //   node scripts/pipeline.mjs bench-check --bench <id>
+//   node scripts/pipeline.mjs bench-run --run <label> --section <slug> --bench <id>
+//   node scripts/pipeline.mjs bench-map --bench <id> --from <label>/<slug>
+//   node scripts/pipeline.mjs claim-map --run <label> --section <slug> --bench <id>
 //   node scripts/pipeline.mjs selftest
 //
 // Every stage is runnable in isolation and reads only artifacts already on disk.
@@ -943,7 +946,15 @@ function deriveVars(name, tpl, ctx) {
     set('section', slug);
     set('dir', dir);
     set('concept_map', `${dir}/concept-map.json`);
-    if (existsSync(join(CHAPTER_DIR, `${slug}.md`))) set('prose', `../atlas-audio-read-along/dist/chapters/v1/capabilities/${slug}.md`);
+    // A bench iteration runs on a COPY of the passage at a neutral path inside
+    // the run (see bench-run), so the analyst and generator are never pointed at
+    // bench/, where files describe the passage as invented (b02 review #3).
+    if (existsSync(join(ROOT, dir, 'section.md'))) set('prose', `${dir}/section.md`);
+    else if (existsSync(join(CHAPTER_DIR, `${slug}.md`))) set('prose', `../atlas-audio-read-along/dist/chapters/v1/capabilities/${slug}.md`);
+    const runIdeas = join(ROOT, dir, 'ideas.json');
+    if (existsSync(runIdeas)) set('ideas', fillPartial('ideas-line', { ideas_list: readJson(runIdeas).map((x) => `\`${x}\``).join(', ') }));
+    set('candidates', `${dir}/candidates.json`);
+    if (name === 'bench-claim-map') set('out', `${dir}/claim-map.raw.json`);
     const mis = `misconceptions/${slug}.md`;
     if (existsSync(join(ROOT, mis))) set('extra_inputs', fillPartial('extra-input-misconceptions', { path: mis }));
     const cm = maybeJson(join(ROOT, dir, 'concept-map.json'));
@@ -973,12 +984,17 @@ function deriveVars(name, tpl, ctx) {
     set('bench_id', bench);
     set('out_dir', b);
     set('avoid', benchDomains());
-    set('prose', `${b}/passage.md`);
-    set('passage', `${b}/passage.md`);
-    set('concept_map', `${b}/concept-map.json`);
+    if (!dir) {
+      set('prose', `${b}/passage.md`);
+      set('passage', `${b}/passage.md`);
+      set('concept_map', `${b}/concept-map.json`);
+    }
+    set('claims', `${b}/private/claims.json`);
+    const dec = `${b}/private/reviews-decisions.md`;
+    if (existsSync(join(ROOT, dec))) set('decisions', dec);
     if (name === 'analyse' && !dir) set('out', `${b}/concept-map.json`);
     const ip = join(ROOT, b, 'ideas.json');
-    if (existsSync(ip)) set('ideas', fillPartial('ideas-line', { ideas_list: readJson(ip).map((x) => `\`${x}\``).join(', ') }));
+    if (!dir && existsSync(ip)) set('ideas', fillPartial('ideas-line', { ideas_list: readJson(ip).map((x) => `\`${x}\``).join(', ') }));
   }
   return d;
 }
@@ -1031,7 +1047,7 @@ function stagePrompt(label, slug, opts = {}) {
   const text = render(name, vars);
 
   // Record what was sent.
-  const recDir = label ? join(runDir(label), 'prompts') : ctx.bench ? join(ROOT, 'bench', ctx.bench, 'prompts') : null;
+  const recDir = label ? join(runDir(label), 'prompts') : ctx.bench ? join(ROOT, 'bench', ctx.bench, 'private', 'prompts') : null;
   let recPath = null;
   if (recDir) {
     mkdirSync(recDir, { recursive: true });
@@ -1276,6 +1292,25 @@ function stageAblateScore(label, slug) {
   }
   for (const [id, c] of Object.entries(man.key_centrality ?? {})) (ladder.per_question[id] ??= {}).key_centrality = c;
 
+  // b02 review #4: on a directional claim a blind reader who just picks the
+  // sensible option scores the passage's naive-right share, so those items are
+  // judged against max(share, 1 - share); passage-only items against 25% / 40%.
+  const cmap = maybeJson(join(sectionDir(label, slug), 'claim-map.json'));
+  if (cmap) {
+    ladder.by_claim_type = {};
+    for (const rung of man.rungs.filter((r) => LETTER_RUNGS.has(r))) {
+      for (const type of ['directional', 'passage-only', 'unmapped']) {
+        const rs = rows.filter((r) => r.rung === rung && cmap.map[r.id]?.type === type);
+        if (!rs.length) continue;
+        const floor = type === 'directional' ? cmap.directional_floor : 0.40;
+        ((ladder.by_claim_type[rung] ??= {})[type] = {
+          trials: rs.length, hit_rate: rs.filter((r) => r.hit).length / rs.length, floor,
+          floor_basis: type === 'directional' ? 'max(naive-right share, 1 - share)' : 'hand-authored fiction, 40%',
+        });
+      }
+    }
+  }
+
   // Screening policy: at one seed, anything the full rung hit is a candidate for
   // confirmation at three. Printed, not acted on — the orchestrator decides.
   if (man.seeds === 1 && ladder.rungs.full) {
@@ -1294,6 +1329,9 @@ function stageAblateScore(label, slug) {
     console.log(`  ${rung.padEnd(14)} ${String(r.questions).padStart(9)} ${String(r.trials).padStart(7)}  ${fmtPct(r.hit_rate).padStart(5)}  ${`${r.excess_over_chance >= 0 ? '+' : ''}${r.excess_over_chance.toFixed(2)}`.padStart(11)}   ${ci.padEnd(24)} ${String(r.unparsed).padStart(8)}`);
   }
   if (ladder.excluded.length) console.log(`  excluded (listed in manifest): ${ladder.excluded.length}`);
+  for (const [rung, byType] of Object.entries(ladder.by_claim_type ?? {})) {
+    for (const [type, r] of Object.entries(byType)) console.log(`  ${rung}/${type}: ${fmtPct(r.hit_rate)} of ${r.trials} against a floor of ${r.floor == null ? 'n/a' : fmtPct(r.floor)} (${r.floor_basis})`);
+  }
   if (ladder.confirm_at_3_seeds?.length) console.log(`  confirm at 3 seeds: ${ladder.confirm_at_3_seeds.map((i) => i.split('/').pop()).join(', ')}`);
   return ladder;
 }
@@ -1482,20 +1520,101 @@ function stageBenchCheck(opts = {}) {
         for (const h of c.heuristics_right || []) (heur[h] ??= { right: 0, wrong: 0 }).right += 1;
         for (const h of c.heuristics_wrong || []) (heur[h] ??= { right: 0, wrong: 0 }).wrong += 1;
       }
+      // Quantity-shape claims: a reader who always answers "peaks in the middle"
+      // (or "rises") gains if one shape dominates. Warn above a third.
+      const shapes = claims.map((c) => c.shape).filter((x) => x && x !== 'null');
+      const shapeCounts = Object.fromEntries([...new Set(shapes)].map((x) => [x, shapes.filter((y) => y === x).length]));
+      for (const [sh, n] of Object.entries(shapeCounts)) {
+        if (shapes.length >= 3 && n / shapes.length > 1 / 3) warn.push(`${n} of ${shapes.length} quantity claims are "${sh}" — a reader who always answers "${sh}" gains`);
+      }
       for (const [h, v] of Object.entries(heur)) {
         const t = v.right + v.wrong;
         if (t >= 3 && (v.right / t >= 0.75 || v.wrong / t >= 0.75)) warn.push(`heuristic "${h}" is right ${v.right} and wrong ${v.wrong} times — a reader applying it gains or loses reliably`);
       }
-      report = { ...report, claims: claims.length, directional: directional.length, naive_right: right, naive_right_share: share, passage_only: passageOnly, heuristics: heur };
+      report = { ...report, claims: claims.length, directional: directional.length, naive_right: right, naive_right_share: share, passage_only: passageOnly, heuristics: heur, shapes: shapeCounts };
     }
   }
   report.fail = fail;
   report.warn = warn;
-  writeJson(join(b, 'bench-check.json'), report);
+  // Under private/: it records how each claim "sounds", which the analyst and
+  // generator must never see (b02 review #3).
+  writeJson(join(b, 'private', 'bench-check.json'), report);
   console.log(`bench-check ${id}: ${fail.length} FAIL, ${warn.length} WARN${report.claims ? ` · ${report.claims} claims, naive right ${report.naive_right}/${report.directional}, ${report.passage_only} with no sensible guess` : ''}`);
   for (const f of fail) console.log(`  FAIL ${f}`);
   for (const w of warn) console.log(`  WARN ${w}`);
   return report;
+}
+
+// -------------------------------------------------------- stage: bench-run / bench-map
+
+// Start a bench iteration: copy the passage to runs/<label>/<slug>/section.md,
+// with the bench's concept map and idea list if it has them. Everything
+// downstream then uses --run/--section only, and the analyst and generator are
+// pointed at a neutral path — never at bench/, whose files describe the passage
+// as invented. The mapping from run back to bench is kept only in run.log.
+function stageBenchRun(label, slug, opts = {}) {
+  const id = opts.bench ?? flag('bench');
+  if (!id) die('bench-run needs --bench <id>');
+  const b = join(ROOT, 'bench', id);
+  need(join(b, 'passage.md'), `bench/${id}/passage.md`);
+  const chk = maybeJson(join(b, 'private', 'bench-check.json'));
+  if (!chk) die(`bench-run: bench/${id} has no bench-check result — run bench-check first`);
+  if (chk.fail?.length && !(opts.allowFailing ?? argv.includes('--allow-failing'))) {
+    die(`bench-run: bench/${id} fails bench-check (${chk.fail.length}); pass --allow-failing only for a legacy entry, and say so in the report`);
+  }
+  const d = sectionDir(label, slug);
+  if (existsSync(join(d, 'section.md'))) die(`bench-run: ${rel(d)} already holds a section — one bench entry per run section`);
+  mkdirSync(d, { recursive: true });
+  writeFileSync(join(d, 'section.md'), readFileSync(join(b, 'passage.md'), 'utf8'), 'utf8');
+  for (const f of ['concept-map.json', 'ideas.json']) if (existsSync(join(b, f))) writeFileSync(join(d, f), readFileSync(join(b, f), 'utf8'));
+  logLine(label, { stage: 'bench-run', section: slug, bench: id, passage_sha256: sha256(readFileSync(join(b, 'passage.md'), 'utf8')), bench_check_fail: chk.fail?.length ?? null, naive_right_share: chk.naive_right_share ?? null, ok: true });
+  console.log(`bench-run ${label}/${slug}: section.md ← bench/${id}/passage.md${existsSync(join(b, 'concept-map.json')) ? ', with its concept map' : ' (no concept map yet — run analyse, then bench-map)'}`);
+}
+
+// Adopt the analyst's concept map from a run as the bench entry's fixed map.
+// Refuses to overwrite: a map, like a passage, is fixed once it exists.
+function stageBenchMap(opts = {}) {
+  const id = opts.bench ?? flag('bench');
+  const from = opts.from ?? flag('from');
+  if (!id || !from || !from.includes('/')) die('bench-map needs --bench <id> --from <label>/<slug>');
+  const [fl, fs] = from.split('/');
+  const src = join(sectionDir(fl, fs), 'concept-map.json');
+  need(src, `${from}/concept-map.json`);
+  const dest = join(ROOT, 'bench', id, 'concept-map.json');
+  if (existsSync(dest)) die(`bench-map: bench/${id}/concept-map.json already exists; a bench map is fixed once made`);
+  writeFileSync(dest, readFileSync(src, 'utf8'));
+  console.log(`bench-map bench/${id}/concept-map.json ← ${from}`);
+}
+
+// Validate a tagger's candidate → claim map (prompts/bench-claim-map.md) and
+// resolve each claim's type from the bench's claims file. Written only after
+// generation, so nothing that writes questions ever sees it.
+function stageClaimMap(label, slug, opts = {}) {
+  const id = opts.bench ?? flag('bench');
+  if (!id) die('claim-map needs --bench <id>');
+  const d = sectionDir(label, slug);
+  const raw = readJson(need(join(d, 'claim-map.raw.json'), 'claim-map.raw.json (from the bench-claim-map spawn)'));
+  const claims = readJson(need(join(ROOT, 'bench', id, 'private', 'claims.json'), `bench/${id}/private/claims.json`));
+  const chk = readJson(need(join(ROOT, 'bench', id, 'private', 'bench-check.json'), 'bench-check.json'));
+  const cands = readJson(need(join(d, 'candidates.json'), 'candidates.json'));
+  const byClaim = new Map(claims.map((c) => [c.id, c]));
+  const problems = [];
+  for (const c of cands) if (!(c.id in raw)) problems.push(`${c.id}: no entry`);
+  for (const [cid, clid] of Object.entries(raw)) {
+    if (!cands.some((c) => c.id === cid)) problems.push(`${cid}: not a candidate`);
+    if (clid !== null && !byClaim.has(clid)) problems.push(`${cid}: claim "${clid}" is not in claims.json`);
+  }
+  if (problems.length) die(`claim-map: ${problems.join('; ')}`);
+  const share = chk.naive_right_share;
+  const map = Object.fromEntries(Object.entries(raw).map(([cid, clid]) => {
+    const cl = clid ? byClaim.get(clid) : null;
+    return [cid, { claim: clid, type: !cl ? 'unmapped' : cl.naive_is_right == null ? 'passage-only' : 'directional' }];
+  }));
+  const out = { bench: id, naive_right_share: share, directional_floor: share == null ? null : Math.max(share, 1 - share), map };
+  writeJson(join(d, 'claim-map.json'), out);
+  logLine(label, { stage: 'claim-map', section: slug, bench: id, n: cands.length, ok: true });
+  console.log(`claim-map ${label}/${slug}: ${Object.values(map).filter((x) => x.type === 'directional').length} directional, ${Object.values(map).filter((x) => x.type === 'passage-only').length} passage-only, ${Object.values(map).filter((x) => x.type === 'unmapped').length} unmapped`);
+  return out;
 }
 
 // -------------------------------------------------------- stage: score (t4)
@@ -2931,6 +3050,58 @@ function selftest() {
     rmSync(bdir, { recursive: true, force: true });
   }
 
+  // --- bench-run / bench-map / claim-map (b02 review #3, #4) --------------------
+  {
+    const bid = '_selftest-bench2';
+    const bdir = join(ROOT, 'bench', bid);
+    mkdirSync(join(bdir, 'private'), { recursive: true });
+    writeFileSync(join(bdir, 'passage.md'), 'Section prose only.\n');
+    writeJson(join(bdir, 'private', 'claims.json'), [
+      { id: 'D1', naive_answer: 'n', naive_is_right: true, quote: 'x' },
+      { id: 'P1', naive_answer: null, naive_is_right: null, quote: 'y' },
+    ]);
+    const rl = '_selftest-benchrun';
+    check(dies(() => stageBenchRun(rl, 'sec', { bench: bid })),
+      'bench-run refuses an entry that has not been through bench-check');
+    writeJson(join(bdir, 'private', 'bench-check.json'), { fail: ['x'], naive_right_share: 0.6 });
+    check(dies(() => stageBenchRun(rl, 'sec', { bench: bid })),
+      'bench-run refuses an entry that fails bench-check unless told it is legacy');
+    writeJson(join(bdir, 'private', 'bench-check.json'), { fail: [], naive_right_share: 0.6 });
+    stageBenchRun(rl, 'sec', { bench: bid });
+    const secPath = join(sectionDir(rl, 'sec'), 'section.md');
+    check(existsSync(secPath) && readFileSync(secPath, 'utf8') === 'Section prose only.\n',
+      'bench-run copies the passage to a neutral section.md inside the run');
+    const an = stagePrompt(rl, 'sec', { quiet: true, template: 'analyse', set: ['target_n=8'] });
+    check(an.vars.prose === `runs/${rl}/sec/section.md` && !/bench\//.test(an.text),
+      'the analyst is pointed at the run\'s copy, and its prompt never names bench/');
+    check(dies(() => stageBenchRun(rl, 'sec', { bench: bid })), 'bench-run will not overwrite a section it already set up');
+
+    writeJson(join(sectionDir(rl, 'sec'), 'concept-map.json'), { ideas: [] });
+    stageBenchMap({ bench: bid, from: `${rl}/sec` });
+    check(existsSync(join(bdir, 'concept-map.json')), 'bench-map adopts the analyst\'s map into the bench entry');
+    check(dies(() => stageBenchMap({ bench: bid, from: `${rl}/sec` })), 'bench-map refuses to overwrite a fixed bench map');
+
+    const c1 = { ...rcands[0], id: 'sec/sonnet/d01' };
+    const c2 = { ...rcands[0], id: 'sec/sonnet/p01' };
+    writeJson(join(sectionDir(rl, 'sec'), 'candidates.json'), [c1, c2]);
+    writeJson(join(sectionDir(rl, 'sec'), 'claim-map.raw.json'), { [c1.id]: 'D1' });
+    check(dies(() => stageClaimMap(rl, 'sec', { bench: bid })), 'claim-map refuses a map that leaves a candidate out');
+    writeJson(join(sectionDir(rl, 'sec'), 'claim-map.raw.json'), { [c1.id]: 'D1', [c2.id]: 'ZZ' });
+    check(dies(() => stageClaimMap(rl, 'sec', { bench: bid })), 'claim-map refuses a claim id that is not in claims.json');
+    writeJson(join(sectionDir(rl, 'sec'), 'claim-map.raw.json'), { [c1.id]: 'D1', [c2.id]: 'P1' });
+    const cm = stageClaimMap(rl, 'sec', { bench: bid });
+    check(cm.map[c1.id].type === 'directional' && cm.map[c2.id].type === 'passage-only' && cm.directional_floor === 0.6,
+      'claim-map resolves claim types, and the directional floor is max(share, 1 - share)');
+
+    const abc = stageAblate(rl, 'sec', { seeds: 1, rungs: 'full', force: true });
+    writeJson(join(abc.dir, 'picks.json'), Object.fromEntries(abc.entries.map((e) => [e.file, e.key_letter])));
+    const lc = stageAblateScore(rl, 'sec');
+    check(lc.by_claim_type?.full?.directional?.floor === 0.6 && lc.by_claim_type?.full?.['passage-only']?.floor === 0.40,
+      'ablate-score judges directional items against their floor and passage-only items against 40%');
+    rmSync(runDir(rl), { recursive: true, force: true });
+    rmSync(bdir, { recursive: true, force: true });
+  }
+
   // --- D-selfdefeat ------------------------------------------------------------------
   {
     const sd = {
@@ -2970,7 +3141,7 @@ function selftest() {
 
 // ---------------------------------------------------------------------- main
 
-const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report', 'ablate', 'ablate-score', 'arm', 'preregister', 'canary', 'canary-record']);
+const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report', 'ablate', 'ablate-score', 'arm', 'preregister', 'canary', 'canary-record', 'bench-run', 'claim-map']);
 
 function main() {
   if (!stage || stage.startsWith('--')) {
@@ -2981,7 +3152,7 @@ function main() {
 
   const label = flag('run');
   const slug = flag('section');
-  const needsSection = ['merge', 'render', 'shard', 'dedupe', 'measure', 'queue', 'ablate', 'ablate-score'];
+  const needsSection = ['merge', 'render', 'shard', 'dedupe', 'measure', 'queue', 'ablate', 'ablate-score', 'bench-run', 'claim-map'];
   if (LABEL_STAGES.has(stage) && !label) die(`${stage} needs --run <label>`);
   if (needsSection.includes(stage) && !slug) die(`${stage} needs --section <slug>`);
 
@@ -3009,6 +3180,9 @@ function main() {
     case 'canary': stageCanary(label); break;
     case 'canary-record': stageCanaryRecord(label); break;
     case 'bench-check': { const r = stageBenchCheck(); process.exit(r.fail.length ? 1 : 0); break; }
+    case 'bench-run': stageBenchRun(label, slug); break;
+    case 'bench-map': stageBenchMap(); break;
+    case 'claim-map': stageClaimMap(label, slug); break;
     default: die(`unknown stage "${stage}"`);
   }
 }

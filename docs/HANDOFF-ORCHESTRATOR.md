@@ -276,15 +276,23 @@ beside a post-critic number without saying so in the same sentence.
 ### 9.3 The loop
 
 ```
-bench/<id>/passage.md + concept-map.json      written once, reused for every iteration
-  → generate-section (1 call, n = 8)          prompts/generate-section.md
+preregister --run <label> --file <committed prediction>      before anything is measured
+bench-run   --run <label> --section <slug> --bench <id>       copy passage → runs/<label>/<slug>/section.md
+  (first use of an entry only: analyse → bench-map --bench <id> --from <label>/<slug>)
+  → generate-section (1 call, up to 8)        prompts/generate-section.md, --model sonnet
   → merge → measure                           script
+  → bench-claim-map (1 call) → claim-map      which claim each question tests, AFTER generation
   → ablate --rungs full,options-only --seeds 1
-  → one quiz-adversary spawn per prompt file  paste the file's text, verbatim
+  → one spawn per prompt file, agent as the manifest names it; paste the file's text verbatim
   → ablation/picks.json  {"<rung>/<NN>": "<letter>"}
-  → ablate-score                              the ladder, with the question as the unit
-  → re-run ablate --seeds 3 --ids <flagged>   confirmation, only for what the screen flagged
+  → ablate-score        the ladder, question as the unit, split directional / passage-only
+  → ablate --seeds 3 --seed-offset <k> --ids <flagged>   confirmation, only for what the screen flagged
 ```
+
+**Floors.** Passage-only items are judged against 25% chance and the 40%
+hand-authored floor. Directional items are judged against max(share, 1 − share),
+the score of a reader who always picks the sensible option (or always its
+reverse) — about 50% on a balanced passage. `bench/README.md` has the reasoning.
 
 Manipulation arms test one hypothesis at a time, each holding everything else
 byte-identical:

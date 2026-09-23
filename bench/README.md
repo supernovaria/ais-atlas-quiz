@@ -13,16 +13,24 @@ what is in it.
 
 ```
 bench/<id>/
-  passage.md            the section, and nothing else — this is what the analyst and generator read
-  concept-map.json      from the real quiz-section-analyst
+  passage.md            the section, and nothing else
+  concept-map.json      from the real quiz-section-analyst (adopted once, with bench-map)
   ideas.json            the fixed list of ideas a bench iteration tests, so iterations are comparable
-  bench-check.json      the mechanical checks, from `pipeline.mjs bench-check --bench <id>`
-  prompts/              every prompt rendered against this entry, with log.jsonl
-  reviews/              reviewer findings on the passage, and what was done about them
-  private/
+  private/              everything that describes the passage as invented, or how its claims "sound"
     passage-notes.md    the author's account: fabrication notice, discrimination pairs, honest weak points
     claims.json         every load-bearing claim, tagged — see below
+    bench-check.json    the mechanical checks, from `pipeline.mjs bench-check --bench <id>`
+    prompts/            every prompt rendered against this entry, with log.jsonl
+    reviews/            reviewer findings on the passage
+    reviews-decisions.md  the verdict on each finding, and why
+    revision-log.md     what a revision changed, finding by finding
 ```
+
+**The analyst and generator never read from `bench/`.** A bench iteration starts
+with `pipeline.mjs bench-run`, which copies `passage.md` to
+`runs/<label>/<slug>/section.md`; every later stage is pointed at that copy.
+Until 2026-09-23 the meta-files sat beside `passage.md`, and each of them called
+the passage invented (b02 review #3).
 
 ## Rules
 
@@ -34,8 +42,12 @@ bench/<id>/
   `private/passage-notes.md` and here. (Review 2026-09-23 #11.)
 - **Nothing under `private/` is named in any template**, and the analyse
   template tells the analyst not to open it. That is behavioural, not
-  structural — the analyst has search tools — so it is stated rather than
-  assumed.
+  structural: the analyst has search tools, and this README and the handoff
+  describe the bench openly. It is stated rather than assumed.
+- **Disputed tags go the more guessable way.** Where an author and a reviewer
+  disagree about what a sensible outsider would guess, the claim is tagged as
+  guessable. A bench that overstates its own unguessability makes its floor
+  look like leakage.
 - **Truth must not correlate with how a claim sounds.** Every load-bearing claim
   is tagged in `private/claims.json` with the answer a sensible outsider would
   guess, whether that guess is right, and which generic heuristics it rewards or
@@ -63,10 +75,22 @@ The 40% is the more honest comparator for any four-option question: a reader can
 tell which option a textbook "would" call correct without knowing anything, and
 that premium never goes away.
 
+**Directional claims have their own, higher floor.** Most directional claims are
+effectively binary — locals or strangers, rises or falls. A blind reader who
+always picks the sensible option scores the passage's naive-right share on
+them; one who always reverses it scores the rest. So an item built on a
+directional claim is judged against **max(share, 1 − share)** — about 50% for a
+balanced passage — and only passage-only items against 25% / 40%. Setting a
+bench result against 40% without that split would read the floor as leakage
+(b02 review #4). `ablate-score` does the split when the run has a `claim-map.json`
+(`prompts/bench-claim-map.md`, then `pipeline.mjs claim-map`).
+
 ## Entries
 
 | id | domain | status | results |
 |---|---|---|---|
+| `b02` | invented study of upland route-marker cairns as a two-register signal | under review — passes `bench-check` | — |
+| `b03` | invented ecology of thread lattices spun by a cave snail | under review — passes `bench-check` | — |
 | `undercraft` | invented sociology of ensemble stage performance | **legacy reference** — fails `bench-check` (no claims file) | `runs/2026-09-20-FICTION` (75%, n = 8), `-FICTION-B` (stem rewrites: 15/15 → 14/15; options only: 4/6 across 4 questions) |
 
 ### `undercraft`, and why its results carry two caveats

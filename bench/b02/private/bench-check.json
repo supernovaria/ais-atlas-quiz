@@ -1,0 +1,34 @@
+{
+  "id": "b02",
+  "words": 1640,
+  "claims": 23,
+  "directional": 13,
+  "naive_right": 7,
+  "naive_right_share": 0.5384615384615384,
+  "passage_only": 10,
+  "heuristics": {
+    "more is better": {
+      "right": 3,
+      "wrong": 3
+    },
+    "quality peaks at a medium size": {
+      "right": 2,
+      "wrong": 2
+    },
+    "the moderate middle is right": {
+      "right": 2,
+      "wrong": 2
+    },
+    "the surprising answer is the right one": {
+      "right": 6,
+      "wrong": 7
+    },
+    "the most insidious-sounding thing is the most dangerous": {
+      "right": 1,
+      "wrong": 1
+    }
+  },
+  "shapes": {},
+  "fail": [],
+  "warn": []
+}
