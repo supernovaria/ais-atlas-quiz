@@ -1305,7 +1305,7 @@ function stageAblateScore(label, slug) {
         const floor = type === 'directional' ? cmap.directional_floor : 0.40;
         ((ladder.by_claim_type[rung] ??= {})[type] = {
           trials: rs.length, hit_rate: rs.filter((r) => r.hit).length / rs.length, floor,
-          floor_basis: type === 'directional' ? 'max(naive-right share, 1 - share)' : 'hand-authored fiction, 40%',
+          floor_basis: type === 'directional' ? 'max(share, 1 - share) over the directional items asked' : 'hand-authored fiction, 40%',
         });
       }
     }
@@ -1527,9 +1527,18 @@ function stageBenchCheck(opts = {}) {
       for (const [sh, n] of Object.entries(shapeCounts)) {
         if (shapes.length >= 3 && n / shapes.length > 1 / 3) warn.push(`${n} of ${shapes.length} quantity claims are "${sh}" — a reader who always answers "${sh}" gains`);
       }
+      // A heuristic whose tags are exactly the complement of naive_is_right
+      // ("the surprising answer is right") is derived, not independent evidence.
+      const naiveWrong = new Set(claims.filter((c) => c.naive_is_right === false).map((c) => c.id));
       for (const [h, v] of Object.entries(heur)) {
         const t = v.right + v.wrong;
+        const rightIds = new Set(claims.filter((c) => (c.heuristics_right || []).includes(h)).map((c) => c.id));
+        const derived = rightIds.size === naiveWrong.size && [...rightIds].every((x) => naiveWrong.has(x));
+        if (derived) { warn.push(`heuristic "${h}" is tagged as the exact complement of naive_is_right — its balance is guaranteed and is not separate evidence`); continue; }
         if (t >= 3 && (v.right / t >= 0.75 || v.wrong / t >= 0.75)) warn.push(`heuristic "${h}" is right ${v.right} and wrong ${v.wrong} times — a reader applying it gains or loses reliably`);
+        // One use each way cannot be balanced: a single question on either claim
+        // rewards or punishes the heuristic at full strength (b03 review #9).
+        else if (v.right < 2 || v.wrong < 2) warn.push(`heuristic "${h}" is tagged only ${v.right} right / ${v.wrong} wrong — too few uses to be balanced`);
       }
       report = { ...report, claims: claims.length, directional: directional.length, naive_right: right, naive_right_share: share, passage_only: passageOnly, heuristics: heur, shapes: shapeCounts };
     }
@@ -1605,12 +1614,24 @@ function stageClaimMap(label, slug, opts = {}) {
     if (clid !== null && !byClaim.has(clid)) problems.push(`${cid}: claim "${clid}" is not in claims.json`);
   }
   if (problems.length) die(`claim-map: ${problems.join('; ')}`);
-  const share = chk.naive_right_share;
   const map = Object.fromEntries(Object.entries(raw).map(([cid, clid]) => {
     const cl = clid ? byClaim.get(clid) : null;
-    return [cid, { claim: clid, type: !cl ? 'unmapped' : cl.naive_is_right == null ? 'passage-only' : 'directional' }];
+    return [cid, { claim: clid, type: !cl ? 'unmapped' : cl.naive_is_right == null ? 'passage-only' : 'directional', naive_is_right: cl ? cl.naive_is_right : null }];
   }));
-  const out = { bench: id, naive_right_share: share, directional_floor: share == null ? null : Math.max(share, 1 - share), map };
+  // The floor comes from the directional ITEMS actually asked, not from the
+  // passage's claim-level share (b03 review #5): the generator chooses which
+  // claims to question, and a passage balanced at 50% can yield a question set
+  // where three in four keys go against the sensible guess. An always-reverse
+  // reader then scores 75% on those items, which a 50% floor would read as leak.
+  const dirItems = Object.values(map).filter((x) => x.type === 'directional');
+  const asked = dirItems.length ? dirItems.filter((x) => x.naive_is_right === true).length / dirItems.length : null;
+  const out = {
+    bench: id,
+    passage_naive_right_share: chk.naive_right_share ?? null,
+    asked_naive_right_share: asked,
+    directional_floor: asked == null ? null : Math.max(asked, 1 - asked),
+    map,
+  };
   writeJson(join(d, 'claim-map.json'), out);
   logLine(label, { stage: 'claim-map', section: slug, bench: id, n: cands.length, ok: true });
   console.log(`claim-map ${label}/${slug}: ${Object.values(map).filter((x) => x.type === 'directional').length} directional, ${Object.values(map).filter((x) => x.type === 'passage-only').length} passage-only, ${Object.values(map).filter((x) => x.type === 'unmapped').length} unmapped`);
@@ -3090,13 +3111,13 @@ function selftest() {
     check(dies(() => stageClaimMap(rl, 'sec', { bench: bid })), 'claim-map refuses a claim id that is not in claims.json');
     writeJson(join(sectionDir(rl, 'sec'), 'claim-map.raw.json'), { [c1.id]: 'D1', [c2.id]: 'P1' });
     const cm = stageClaimMap(rl, 'sec', { bench: bid });
-    check(cm.map[c1.id].type === 'directional' && cm.map[c2.id].type === 'passage-only' && cm.directional_floor === 0.6,
-      'claim-map resolves claim types, and the directional floor is max(share, 1 - share)');
+    check(cm.map[c1.id].type === 'directional' && cm.map[c2.id].type === 'passage-only' && cm.asked_naive_right_share === 1 && cm.directional_floor === 1,
+      'claim-map takes the directional floor from the items actually asked, not the passage-level share');
 
     const abc = stageAblate(rl, 'sec', { seeds: 1, rungs: 'full', force: true });
     writeJson(join(abc.dir, 'picks.json'), Object.fromEntries(abc.entries.map((e) => [e.file, e.key_letter])));
     const lc = stageAblateScore(rl, 'sec');
-    check(lc.by_claim_type?.full?.directional?.floor === 0.6 && lc.by_claim_type?.full?.['passage-only']?.floor === 0.40,
+    check(lc.by_claim_type?.full?.directional?.floor === 1 && lc.by_claim_type?.full?.['passage-only']?.floor === 0.40,
       'ablate-score judges directional items against their floor and passage-only items against 40%');
     rmSync(runDir(rl), { recursive: true, force: true });
     rmSync(bdir, { recursive: true, force: true });

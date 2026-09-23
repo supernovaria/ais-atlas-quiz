@@ -89,8 +89,8 @@ bench result against 40% without that split would read the floor as leakage
 
 | id | domain | status | results |
 |---|---|---|---|
-| `b02` | invented study of upland route-marker cairns as a two-register signal | under review — passes `bench-check` | — |
-| `b03` | invented ecology of thread lattices spun by a cave snail | under review — passes `bench-check` | — |
+| `b02` | invented study of upland route-marker cairns as a two-register signal | **under revision** after review — tags self-reported | — |
+| `b03` | invented ecology of thread lattices spun by a cave snail | **under revision** after review — tags self-reported | — |
 | `undercraft` | invented sociology of ensemble stage performance | **legacy reference** — fails `bench-check` (no claims file) | `runs/2026-09-20-FICTION` (75%, n = 8), `-FICTION-B` (stem rewrites: 15/15 → 14/15; options only: 4/6 across 4 questions) |
 
 ### `undercraft`, and why its results carry two caveats

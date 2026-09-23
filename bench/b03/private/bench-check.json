@@ -1,0 +1,38 @@
+{
+  "id": "b03",
+  "words": 1713,
+  "claims": 23,
+  "directional": 12,
+  "naive_right": 6,
+  "naive_right_share": 0.5,
+  "passage_only": 11,
+  "heuristics": {
+    "the surprising answer is the right one": {
+      "right": 6,
+      "wrong": 6
+    },
+    "more is better": {
+      "right": 3,
+      "wrong": 3
+    },
+    "the moderate middle is right": {
+      "right": 2,
+      "wrong": 2
+    },
+    "quality peaks at a medium size": {
+      "right": 1,
+      "wrong": 1
+    },
+    "the most insidious-sounding thing is the most dangerous": {
+      "right": 1,
+      "wrong": 1
+    }
+  },
+  "shapes": {},
+  "fail": [],
+  "warn": [
+    "heuristic \"the surprising answer is the right one\" is tagged as the exact complement of naive_is_right — its balance is guaranteed and is not separate evidence",
+    "heuristic \"quality peaks at a medium size\" is tagged only 1 right / 1 wrong — too few uses to be balanced",
+    "heuristic \"the most insidious-sounding thing is the most dangerous\" is tagged only 1 right / 1 wrong — too few uses to be balanced"
+  ]
+}

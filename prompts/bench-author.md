@@ -22,7 +22,9 @@ notes: >
   Rev 2026-09-23 after the b02 review: stricter passage-only test, an extended
   heuristic list (mechanism, overruled objection, expertise frame, named effect,
   trade-off, mundane cause, majority), neutral names, no matched quantity pairs,
-  `shape` tags, conservative tagging.
+  `shape` tags, conservative tagging. After the b03 review: physical intuition
+  counts as knowledge; two more heuristics; each heuristic tagged twice each
+  way; definitions checked against the worked example.
 ---
 Write one fabricated textbook section for a measurement bench. Bench id: `{{bench_id}}`.
 
@@ -35,7 +37,7 @@ Working directory: `{{workdir}}`.
 The constraints below are the whole experiment and matter more than polish.
 
 1. **Invent the domain completely** — terminology, named researchers, framework, numbers. Not AI, machine learning, computing or forecasting. Do not echo these existing bench domains: {{avoid}}.
-2. **No analogy in disguise.** If the framework maps cleanly onto a real one — the central quantity is transparently "efficiency", the argument is transparently supply and demand, natural selection, or a bias–variance trade-off — a reader reasons about the real thing and the bench is void. Build a structure with no clean real-world counterpart.
+2. **No analogy in disguise.** If the framework maps cleanly onto a real one — the central quantity is transparently "efficiency", the argument is transparently supply and demand, natural selection, or a bias–variance trade-off — a reader reasons about the real thing and the bench is void. Build a structure with no clean real-world counterpart. This includes **physical intuition**: a diagnostic that follows from how real materials, fluids or bodies behave (a brittle thing snaps clean; worn rope frays) is knowledge, not a passage fact.
 3. **Truth must not correlate with how a claim sounds.** Decide each directional claim's direction independently of which way sounds sensible. Across the passage, **roughly half** the directional claims should go the way a sensible outsider would guess, and half against. State each outright.
 4. **Generic test-taking heuristics must be right about as often as wrong.** Do not avoid these — *balance* them, so that no heuristic is a reliable guide to the passage's truths:
    - "the moderate middle is right"; "quality peaks at a medium size"; "more is better";
@@ -43,9 +45,12 @@ The constraints below are the whole experiment and matter more than polish.
    - "the option with the most sensible causal story is right" — so at least one plausible mechanism must be stated and then shown **false**;
    - "the objection was noted but practice did not change" — so at least one objection must be **carried into practice**;
    - "experts are better overall but stuck in their habits" — so at least one expert-versus-novice claim must go **against** it;
-   - "an effect named after a researcher describes a mistake"; "the answer with a trade-off is right"; "the mundane cause beats the dramatic one"; "the majority rules, the odd one out is something else".
+   - "an effect named after a researcher describes a mistake"; "the answer with a trade-off is right"; "the mundane cause beats the dramatic one"; "the majority rules, the odd one out is something else";
+   - "two things that seem alike are actually different" — so at least one pair that seems distinct must turn out to be **one thing**;
+   - "experts beat beginners" — so at least one claim must have the beginner's reading turn out **right**.
+   Tag every heuristic you use **at least twice in each direction**, or say in the notes that you could not; `bench-check` warns on fewer.
 5. **Prefer load-bearing claims that have no sensible direction to guess at all**: which of two named effects applies where, how a quantity is defined, who objected to what and on what grounds, which of two procedures comes first. Include **at least four** of these. In the previous bench, the one question built on such a fact was answered correctly 0 times in 3 by a reader who had not seen the passage. The test is strict: a fact counts only if it **stays unguessable after a question has posed it**. "Record the evidence before you disturb it" and "the obvious objection to X is that X is not really separate" are common sense, not passage-only facts.
-6. **Internally consistent and genuinely inferable.** A careful reader must be able to answer questions about it correctly. Incoherent prose produces unanswerable questions and a spuriously low score that looks like success and means nothing.
+6. **Internally consistent and genuinely inferable.** Check every definition against every use of it — above all against the worked example, which must follow from the definitions exactly as written. Say what a procedure does, not only where it starts. A careful reader must be able to answer questions about it correctly. Incoherent prose produces unanswerable questions and a spuriously low score that looks like success and means nothing.
 7. **At least three discrimination pairs** — concepts a careless reader would conflate, where the distinction is real and stated. **A name must not give its distinction away**: if "worn" plainly means worn by passers, a question on which register passers update answers itself. Give coined terms names that are neutral, or that point the wrong way.
 7a. **No quantity claims in matched pairs.** Two claims of the same shape side by side ("X behaves in the same way") let one question give away the next.
 8. One or two named figures or quantities with specific numbers, as illustration rather than load-bearing.
