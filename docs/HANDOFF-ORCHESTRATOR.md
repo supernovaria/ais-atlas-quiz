@@ -8,6 +8,11 @@
 > **This version runs on Claude Code subagents, not direct API calls.**
 > Rev 2026-09-18. What that changed, and what it cost, is §8 — read it before
 > you trust a number this pipeline produces.
+>
+> **Rev 2026-09-23.** Every spawn prompt is now a file in `prompts/`, rendered
+> by the script, never composed by you. The calibration loop — the fiction
+> bench, the ablation ladder, and the rules that keep it cheap — is §9. Both are
+> standing rules, not suggestions for this run.
 
 ## 0. Read first, in this order
 
@@ -28,7 +33,7 @@
 | `scripts/pipeline.mjs` exists (§2) | — | Build it. It is smaller than the API version: agents replace most of it. |
 | `atlas-audio-read-along/dist/chapters/v1/capabilities/*.md` readable | 11 files, ~25.7k words | Present at `../atlas-audio-read-along/…`, verified. Do not scrape. |
 | Agent models `sonnet`, `haiku` selectable (P1); `opus`, `fable` (P3+) | | Spawn one throwaway agent per model tier and confirm it returns. Report which are missing. P1 needs only sonnet + haiku. |
-| **`quiz-adversary` has no file tools** | `tools: []` honoured | Spawn it once with `"List the tools you have, then stop."`. If it names Read/Grep/Glob, **the adversary metric is void** — stop and tell Em. This is the one isolation guarantee the API version got for free. |
+| **`quiz-adversary` does not use file tools** | it never reads the source | **Do not use the self-report test** ("list the tools you have"): on 2026-09-19 the adversary named bash, PowerShell, read_file and write_file, and the harness's agent listing confirms it — `tools: []` is read as *unrestricted*, not *none*. Isolation is therefore **behavioural**, not structural. Use the **canary test** instead: plant `runs/<label>/canary.txt` containing a unique token, spawn the adversary with a prompt that would reward reading it, and confirm the token is absent from its reply and `tool_uses` is 0. Record `tool_uses` on every adversary spawn; a single non-zero value voids that run's adversary metric. |
 | Adversary baseline re-measured on the current 40-Q file with *this* agent | a number in `runs/baseline/` | Do it before P1. QUIZ-PLAN's "≥60%" is API-era and not comparable (§8). |
 | RUBRIC v2 signed off (QUIZ-PLAN phase 1), incl. R2 amendment + §3.8/§4.6 from PIPELINE §8 | | Proceed with P1 on v1 if v2 is pending — P1's purpose is to find what v2 needs — but say so in the run log. |
 
@@ -85,6 +90,12 @@ questions, which is §6.
 
 One `Agent` call per row. `subagent_type` is the agent name; `model` overrides
 the brief's default where the table says so.
+
+**Every spawn prompt comes from a template in `prompts/`** — rendered with
+`node scripts/pipeline.mjs prompt <template> ...`, or taken from a prompt file
+the script wrote (`shuffle`, `ablate`). You pass the rendered text unmodified.
+You never compose, paraphrase or "adjust" one. `prompts/README.md` maps each
+stage to its template; §9.1 says why this is a rule.
 
 | Stage | `subagent_type` | Model (P1 / production) | Inputs (as paths in the prompt) | Calls |
 |---|---|---|---|---|
@@ -191,6 +202,8 @@ No prose summaries of the questions. Em reads the review sheets, not your préci
 - Regenerate an idea twice, or regenerate an idea the curator already covered. Once, and only against a reported gap.
 - Raise generation above 4N to buy quality. Extra candidates are nearly free to *write* — output tokens on a call whose expensive input is already paid — but every one adds a full Opus critic call, and the 8th candidate in a call is worse than the 1st because the model is straining to differentiate. Buy extra attempts from another shard, lens or model, not from a longer list. P1 measures marginal candidate quality; revisit then, not before.
 - Paraphrase a brief into your own prompt, or inline a brief's text instead of spawning its agent. If a brief is unclear, that is a finding for `pilot-findings`; run it as written.
+- **Compose a spawn prompt by hand, or edit a rendered one before sending it.** If a template does not fit the call, the fix is to the template — reviewed and committed — not to the text you paste. An improvised prompt cannot be diffed against the one before it, and every comparison in this pipeline depends on that.
+- Map adversary answers to ids and seeds by hand. Record them against the prompt *file name* in `ablation/picks.json` and let `ablate-score` do the mapping.
 - Touch `public/questions/`, `README.md`, or `ATLAS_HANDOFF.md`. Those are phase 7, Em's.
 - Ask Em questions you can answer from the four docs in §0. Ask the ones you cannot, at a STOP, in the report.
 
@@ -214,9 +227,12 @@ loss and must not be papered over in the findings.
 
 Two things got **better**, and they are worth keeping if this ever moves back:
 
-- **Adversary isolation is now structural.** `tools: []` means the agent cannot
-  reach the chapter even if a prompt leaked a path. The API version relied on
-  the caller assembling the right context every time.
+- ~~**Adversary isolation is now structural.**~~ **Corrected 2026-09-23: it is
+  not.** This line claimed `tools: []` means the agent cannot reach the
+  chapter. The harness lists `quiz-adversary` with *all* tools, and the agent
+  named file tools when asked. What actually holds is behavioural: across ~70
+  spawns it has used no tool, and the canary test passed. That is weaker than
+  structural and must be re-checked every run (§1), not assumed.
 - **The script/agent split is cleaner.** All arithmetic in `pipeline.mjs`, all
   judgment in agents, no model calls inside the script. The rule "models never
   count characters" is now enforced by architecture rather than by instruction.
@@ -226,3 +242,88 @@ twice on purpose: **the adversary now thinks, and cannot be told not to.** It
 over-estimates the hit rate. That direction is safe — it over-flags rather than
 under-flags — but it breaks comparison with QUIZ-PLAN's 60% baseline. Re-measure
 the current file with this agent first (§1, §4) and compare only against that.
+
+## 9. The calibration loop — standing rules
+
+The adversary result on real material cannot tell "the question leaks" from
+"the adversary already knows this subject". On a passage invented for the
+purpose, knowledge is zero by construction, so every hit above the floor is the
+question leaking. This loop is how the pipeline's prompts and rubric are tuned
+**before** anything is spent on production sections.
+
+### 9.1 Prompts are files
+
+Until 2026-09-23 you composed spawn prompts on the fly, and two things went
+wrong that no amount of care would have prevented: the adversary prompt the
+script built and the one actually sent differed by a sentence for every spawn
+after the baseline, and the first options-only probe was worded with a cue
+("an invented academic framework") that may itself change what is being
+measured. A file can be reviewed, diffed, versioned and tested; an improvised
+prompt can only be remembered. So: every spawn uses a template (§3), and any
+change to a template is a reviewed commit, noted in the run log of the first run
+that uses it.
+
+### 9.2 The critic is out of the loop for now
+
+**Decision, 2026-09-23: the critic is dropped from calibration runs** until the
+rubric's believability rules are calibrated. It is the governing cost of the
+pipeline (roughly 7–14 window-points per Opus call against ~0.45 for the
+adversary), and it does not change the thing the loop measures. Its template
+(`prompts/critique.md`) is kept current for production. A calibration result is
+therefore always a statement about **generator output**, and must never be set
+beside a post-critic number without saying so in the same sentence.
+
+### 9.3 The loop
+
+```
+bench/<id>/passage.md + concept-map.json      written once, reused for every iteration
+  → generate-section (1 call, n = 8)          prompts/generate-section.md
+  → merge → measure                           script
+  → ablate --rungs full,options-only --seeds 1
+  → one quiz-adversary spawn per prompt file  paste the file's text, verbatim
+  → ablation/picks.json  {"<rung>/<NN>": "<letter>"}
+  → ablate-score                              the ladder, with the question as the unit
+  → re-run ablate --seeds 3 --ids <flagged>   confirmation, only for what the screen flagged
+```
+
+Manipulation arms test one hypothesis at a time, each holding everything else
+byte-identical — the script verifies that before anything is spawned:
+
+- `bench-rewrite-stem` — stems only (tested 2026-09-20: 15/15 → 14/15, hypothesis rejected);
+- `bench-rewrite-distractors` — wrong options only, stem and key held.
+
+**Pre-register the interpretation in `run.log` before any result exists**, and
+state every percentage with its n and its interval in the same sentence.
+
+### 9.4 Keeping it cheap — the orchestrator's overhead
+
+The adversary is cheap; the expensive thing in the early fiction runs was the
+orchestrator. So:
+
+- **Screen at one seed, confirm at three.** Detecting that a leak exists needs
+  more questions, not more seeds; `ablate-score` lists what to confirm.
+- **Do not hand-compose, hand-map, or hand-score.** `ablate` writes the prompts
+  and the manifest; you record *file → letter*; `ablate-score` does the rest.
+  The one control analysis that went wrong (2026-09-20) went wrong in exactly
+  the hand-mapping step.
+- **Read each adversary prompt once**, and paste it verbatim into its spawn.
+  Do not re-read prompt files to "check" them after passing them on.
+- **One irreducible cost, stated so no one tries to optimise it away:** the
+  adversary must not read files (§1), so each prompt's text passes through your
+  context once on its way to the spawn. That is the price of isolation. Do not
+  "fix" it by giving the adversary a path.
+- Reuse the bench. A passage and its concept map cost about as much as the
+  whole rest of an iteration; they are built once.
+
+A full iteration — one generator call plus a one-seed, two-rung ladder over
+eight questions — costs roughly a fifth of a 5-hour window. The early fiction
+runs cost most of one.
+
+### 9.5 External reviewers
+
+A template change that matters is reviewed before it is used, by an Opus
+subagent (`prompts/review.md`) and by Gemini (`prompts/review-gemini.md`, sent
+with `scripts/gemini-review.mjs`). Both receive the same request body. Their
+findings are recorded under `reviews/<date>-<subject>/` together with **which
+were accepted and why each rejected one was rejected**. The Gemini key lives
+outside the repository and is sent only as a request header.
