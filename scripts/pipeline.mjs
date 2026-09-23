@@ -23,6 +23,10 @@
 //   node scripts/pipeline.mjs ablate   --run <label> --section <slug> [--rungs full,options-only]
 //                                      [--seeds 1] [--ids a,b] [--force]
 //   node scripts/pipeline.mjs ablate-score --run <label> --section <slug>
+//   node scripts/pipeline.mjs arm      --run <new> --from <label>/<slug> --rewrite <file> --kind stem|distractors [--passage <p>]
+//   node scripts/pipeline.mjs preregister --run <label> --file <path>
+//   node scripts/pipeline.mjs canary   --run <label>      (then canary-record --tool-uses N --reply X)
+//   node scripts/pipeline.mjs bench-check --bench <id>
 //   node scripts/pipeline.mjs selftest
 //
 // Every stage is runnable in isolation and reads only artifacts already on disk.
@@ -31,11 +35,12 @@
 // Exit 0 clean, 1 on a stage failure (validate: any schema failure).
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, appendFileSync, rmSync } from 'node:fs';
-import { join, dirname, resolve, basename } from 'node:path';
+import { join, dirname, resolve, basename, relative, sep } from 'node:path';
+import { randomBytes } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { parseChapterMarkdown } from '../src/quizParser.js';
 import { measure, contentWords, overlap, GATES, atlasSlug, lintCandidate } from './check-questions.mjs';
-import { renderTemplate, loadTemplate, lintTemplate, listTemplates, PromptError } from './prompts.mjs';
+import { renderTemplate, loadTemplate, loadPartial, lintTemplate, listTemplates, PromptError, sha256 } from './prompts.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CHAPTER_DIR = resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/capabilities');
@@ -776,12 +781,12 @@ function adversaryPrompt(stem, optionTexts) {
 // measured exactly that (5 of 40). So re-seed until the permutation is new,
 // bounded by how many distinct ones exist (k! — and k! ≤ seeds for a 2-option
 // question, where repeats are unavoidable).
-function seededOrders(it, seeds) {
+function seededOrders(it, seeds, offset = 0) {
   const seen = new Set();
   const maxPerms = it.options.reduce((a, _, i) => a * (i + 1), 1);
   const orders = [];
   let repeated = 0;
-  for (let s = 1; s <= seeds; s++) {
+  for (let s = offset + 1; s <= offset + seeds; s++) {
     let order = it.no_shuffle ? it.options : shuffled(it.options, `${it.id}#${s}`);
     if (!it.no_shuffle && seen.size < maxPerms) {
       for (let salt = 0; salt < 64 && seen.has(order.map((o) => o.text).join('\u0000')); salt++) {
@@ -879,93 +884,243 @@ function stageShuffle(label, slug, opts = {}) {
 
 // -------------------------------------------------------- stage: prompt
 
-// Render one spawn prompt from prompts/<template>.md. The orchestrator passes
-// the output, unmodified, as the Agent call's prompt, and never composes one.
+// Render one spawn prompt from prompts/<template>.md. The orchestrator passes the
+// output, unmodified, as the Agent call's prompt, and never composes one.
 //
-// Convenience values are DERIVED from --run/--section/--id, but only for
-// placeholders the template actually declares, so a derived value can never
-// trip the renderer's unknown-variable check. Explicit --set always wins.
+// Everything that can be derived IS derived, and only for placeholders the
+// template declares: paths from --run/--section/--bench/--id, the model and
+// shard letter that `merge` reads back out of ids and file names, the curator's
+// reason for a regeneration. Setting a derived value by hand needs --override,
+// which is logged. Input paths the template lists under `paths:` must exist.
+// Every rendered prompt is written to disk and logged with the template's and
+// the text's hashes, so a spawn can be audited against exactly what was sent.
 function allFlags(name) {
   const out = [];
   for (let i = 0; i < argv.length - 1; i++) if (argv[i] === `--${name}`) out.push(argv[i + 1]);
   return out;
 }
 
-function stagePrompt(label, slug, opts = {}) {
-  const name = opts.template ?? (argv[1] && !argv[1].startsWith('--') ? argv[1] : null);
-  if (!name) die('usage: pipeline.mjs prompt <template> [--run R --section S] [--id ID] [--set k=v ...] [--set-file k=path ...] [--out FILE]');
-  let tpl;
-  try { tpl = loadTemplate(name); } catch (e) { if (e instanceof PromptError) die(e.message); throw e; }
-  const declared = new Set([...tpl.placeholders, ...tpl.optional]);
-  const vars = {};
-  const derive = (k, v) => { if (declared.has(k) && v != null) vars[k] = v; };
+const rel = (abs) => relative(ROOT, abs).split(sep).join('/');
 
-  if (label && slug) {
-    const dir = `runs/${label}/${slug}`;
-    derive('section', slug);
-    derive('dir', dir);
-    derive('concept_map', `${dir}/concept-map.json`);
-    const chapter = join(CHAPTER_DIR, `${slug}.md`);
-    if (existsSync(chapter)) derive('prose', `../atlas-audio-read-along/dist/chapters/v1/capabilities/${slug}.md`);
-    const id = opts.id ?? flag('id');
-    if (id) {
-      const short = id.split('/').pop();
-      derive('candidate_input', `${dir}/critic-inputs/${short}.json`);
+// Fixed text the script inserts as a VALUE — a derived line, the canary stem, the
+// withheld-stem line — still lives in prompts/_partials/, never in code.
+function fillPartial(part, map = {}) {
+  let t;
+  try { t = loadPartial(part); } catch (e) { if (e instanceof PromptError) die(e.message); throw e; }
+  const out = t.replace(/\{\{([a-z_][a-z0-9_]*)\}\}/g, (m, k) => (k in map ? String(map[k]) : m));
+  if (/\{\{|\}\}/.test(out)) die(`partial "${part}" has an unfilled slot: ${out}`);
+  return out;
+}
+
+// The bench's domains, from the entries table in bench/README.md, so a new
+// passage's author is told what not to echo without anyone typing the list.
+function benchDomains() {
+  const p = join(ROOT, 'bench', 'README.md');
+  if (!existsSync(p)) return 'none yet';
+  const rows = readFileSync(p, 'utf8').split('\n')
+    .map((l) => l.match(/^\|\s*`([a-z0-9-]+)`\s*\|\s*([^|]+?)\s*\|/))
+    .filter(Boolean);
+  return rows.length ? rows.map((m) => `${m[1]} (${m[2]})`).join('; ') : 'none yet';
+}
+
+function nextLetter(candDir, slug) {
+  const used = new Set(existsSync(candDir)
+    ? readdirSync(candDir).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, '').slice(`${slug}-`.length))
+    : []);
+  for (const c of 'abcdefghijklmnopqrstuvwxyz') if (!used.has(c)) return c;
+  die(`no free shard letter left in ${candDir}`);
+}
+
+function deriveVars(name, tpl, ctx) {
+  const declared = new Set([...tpl.placeholders, ...tpl.optional]);
+  const d = {};
+  const set = (k, v) => { if (declared.has(k) && v != null) d[k] = v; };
+  const { label, slug, bench, id, model, letter, idea } = ctx;
+  const dir = label && slug ? `runs/${label}/${slug}` : null;
+  const short = id ? id.split('/').pop() : null;
+
+  if (dir) {
+    set('section', slug);
+    set('dir', dir);
+    set('concept_map', `${dir}/concept-map.json`);
+    if (existsSync(join(CHAPTER_DIR, `${slug}.md`))) set('prose', `../atlas-audio-read-along/dist/chapters/v1/capabilities/${slug}.md`);
+    const mis = `misconceptions/${slug}.md`;
+    if (existsSync(join(ROOT, mis))) set('extra_inputs', fillPartial('extra-input-misconceptions', { path: mis }));
+    const cm = maybeJson(join(ROOT, dir, 'concept-map.json'));
+    if (cm && cm.target_n != null && name === 'curate') set('target_n', String(cm.target_n));
+    if (name === 'curate') { set('out', `${dir}/curator.json`); set('review_sheet_out', `staging/review-sheet-${slug}.md`); }
+    if (name === 'analyse') set('out', `${dir}/concept-map.json`);
+    if (short) {
+      set('candidate_input', `${dir}/critic-inputs/${short}.json`);
+      if (name === 'critique') set('out', `${dir}/verdicts/${short}.json`);
+      if (name === 'critique-pass2') { set('out', `${dir}/verdicts-pass2/${short}.json`); set('prior_verdict', `${dir}/verdicts/${short}.json`); }
+    }
+    if (model) set('id_prefix', `${slug}/${model}`);
+    if (name === 'generate-section' || name === 'generate-shard' || name === 'regenerate') {
+      const L = letter || nextLetter(join(ROOT, dir, 'candidates'), slug);
+      set('out', `${dir}/candidates/${slug}-${L}.json`);
+    }
+    if (name === 'regenerate' && idea) {
+      set('idea_id', idea);
+      const cur = maybeJson(join(ROOT, dir, 'curator.json'));
+      const hit = cur?.coverage?.earns_question_uncovered?.find((u) => u.id === idea);
+      if (!hit) die(`regenerate: curator.json names no uncovered idea "${idea}" — regeneration runs only against a reported gap`);
+      set('curator_reason', hit.why);
     }
   }
+  if (bench) {
+    const b = `bench/${bench}`;
+    set('bench_id', bench);
+    set('out_dir', b);
+    set('avoid', benchDomains());
+    set('prose', `${b}/passage.md`);
+    set('passage', `${b}/passage.md`);
+    set('concept_map', `${b}/concept-map.json`);
+    if (name === 'analyse' && !dir) set('out', `${b}/concept-map.json`);
+    const ip = join(ROOT, b, 'ideas.json');
+    if (existsSync(ip)) set('ideas', fillPartial('ideas-line', { ideas_list: readJson(ip).map((x) => `\`${x}\``).join(', ') }));
+  }
+  return d;
+}
+
+function stagePrompt(label, slug, opts = {}) {
+  const name = opts.template ?? (argv[1] && !argv[1].startsWith('--') ? argv[1] : null);
+  if (!name) die('usage: pipeline.mjs prompt <template> [--run R --section S] [--bench B] [--id ID] [--model M] [--letter X] [--idea I] [--set k=v ...] [--set-file k=path ...] [--override] [--prior-findings path] [--out FILE]');
+  let tpl;
+  try { tpl = loadTemplate(name); } catch (e) { if (e instanceof PromptError) die(e.message); throw e; }
+  const ctx = {
+    label, slug,
+    bench: opts.bench ?? flag('bench'),
+    id: opts.id ?? flag('id'),
+    model: opts.model ?? flag('model'),
+    letter: opts.letter ?? flag('letter'),
+    idea: opts.idea ?? flag('idea'),
+  };
+  const derived = deriveVars(name, tpl, ctx);
+  const vars = { ...derived };
+  const override = opts.override ?? argv.includes('--override');
+  const explicit = {};
   for (const kv of opts.set ?? allFlags('set')) {
     const i = kv.indexOf('=');
     if (i < 1) die(`--set expects key=value, got "${kv}"`);
-    vars[kv.slice(0, i)] = kv.slice(i + 1);
+    explicit[kv.slice(0, i)] = kv.slice(i + 1);
   }
   for (const kv of opts.setFile ?? allFlags('set-file')) {
     const i = kv.indexOf('=');
     if (i < 1) die(`--set-file expects key=path, got "${kv}"`);
-    vars[kv.slice(0, i)] = readFileSync(resolve(ROOT, kv.slice(i + 1)), 'utf8').trimEnd();
+    const fp = resolve(ROOT, kv.slice(i + 1));
+    if (!existsSync(fp)) die(`--set-file: ${kv.slice(i + 1)} does not exist`);
+    explicit[kv.slice(0, i)] = readFileSync(fp, 'utf8').trimEnd();
   }
+  const pf = opts.priorFindings ?? flag('prior-findings');
+  if (pf) explicit.prior_findings = fillPartial('prior-findings-line', { path: pf });
+  const clobbered = Object.keys(explicit).filter((k) => k in derived && explicit[k] !== derived[k]);
+  if (clobbered.length && !override) die(`prompt: ${clobbered.join(', ')} ${clobbered.length > 1 ? 'are' : 'is'} derived; setting ${clobbered.length > 1 ? 'them' : 'it'} by hand needs --override (which is logged)`);
+  Object.assign(vars, explicit);
+
+  // Input paths must exist; outputs must land where the pipeline looks.
+  const missingPaths = tpl.paths.filter((k) => vars[k] != null && !existsSync(resolve(ROOT, vars[k])));
+  if (missingPaths.length) die(`prompt ${name}: input path(s) do not exist — ${missingPaths.map((k) => `${k}=${vars[k]}`).join(', ')}`);
+  for (const k of ['out', 'review_sheet_out', 'out_dir']) {
+    if (vars[k] != null && !/^(runs|bench|reviews|staging)\//.test(vars[k])) die(`prompt ${name}: ${k}=${vars[k]} must be under runs/, bench/, reviews/ or staging/`);
+  }
+  if (name === 'generate-section' && vars.n != null && Number(vars.n) > 2 * STEM_FORMATS.length) {
+    die(`prompt generate-section: n=${vars.n} is unsatisfiable at 2 per stem_format × ${STEM_FORMATS.length} formats (max ${2 * STEM_FORMATS.length})`);
+  }
+
   const text = render(name, vars);
+
+  // Record what was sent.
+  const recDir = label ? join(runDir(label), 'prompts') : ctx.bench ? join(ROOT, 'bench', ctx.bench, 'prompts') : null;
+  let recPath = null;
+  if (recDir) {
+    mkdirSync(recDir, { recursive: true });
+    const tag = [name, ctx.id ? ctx.id.split('/').pop() : null, name.startsWith('generate') ? basename(String(vars.out || ''), '.json') : null].filter(Boolean).join('-');
+    let n = 1;
+    recPath = join(recDir, `${tag}.txt`);
+    while (existsSync(recPath)) { n += 1; recPath = join(recDir, `${tag}-${n}.txt`); }
+    writeFileSync(recPath, text, 'utf8');
+    const entry = {
+      stage: 'prompt', template: name, template_sha256: sha256(tpl.source), text_sha256: sha256(text),
+      file: rel(recPath), derived: Object.keys(derived), set_by_hand: Object.keys(explicit),
+      overridden: override ? clobbered : [],
+      vars: Object.fromEntries(Object.entries(vars).map(([k, v]) => [k, String(v).length > 160 ? `sha256:${sha256(String(v)).slice(0, 16)}` : v])),
+      ok: true,
+    };
+    if (label) logLine(label, entry);
+    else appendFileSync(join(recDir, 'log.jsonl'), `${JSON.stringify({ ts: new Date().toISOString(), ...entry })}\n`);
+  } else if (!opts.quiet) {
+    console.error('         note: not recorded — pass --run or --bench so the rendered prompt is kept');
+  }
   const out = opts.out ?? flag('out');
   if (out) { writeFileSync(resolve(ROOT, out), text, 'utf8'); console.error(`prompt   ${name} → ${out}`); }
   else if (!opts.quiet) process.stdout.write(text);
-  return text;
+  return { text, recorded: recPath ? rel(recPath) : null, vars };
 }
 
 // -------------------------------------------------------- stage: ablate
 
-// The ablation ladder, as a stage rather than as orchestrator improvisation.
+// The ablation ladder, as a stage rather than orchestrator improvisation. For
+// each candidate × seed × rung it writes one prompt file plus a manifest mapping
+// every file to its id, seed, key letter, chance and the agent that must answer
+// it. The orchestrator records only "file -> reply" in ablation/picks.json.
 //
-// For each candidate × seed × rung it writes one adversary prompt file, rendered
-// from the rung's template, plus a manifest that maps every file to its id,
-// seed, key letter and chance. The orchestrator then only has to record
-// "file -> letter" in ablation/picks.json: it never maps ids or seeds by hand,
-// which is where the 2026-09-20 control analysis briefly went wrong.
+//   full          quiz-adversary   prompts/adversary-mc.md, stem + options
+//   options-only  quiz-adversary   the SAME template, stem slot = _partials/stem-withheld.md
+//   sighted       general-purpose  prompts/sighted-reader.md, with the passage (needs --passage)
+//   stem-only     quiz-recall      prompts/adversary-free-recall.md; answers graded by grade-recall.md
 //
-//   full          prompts/adversary-mc.md           stem + options
-//   options-only  prompts/adversary-options-only.md options, stem withheld
-//   stem-only     prompts/adversary-free-recall.md  stem, no options; graded by
-//                                                   hand, real sections only
-//
-// For the same id#seed every rung uses the SAME option order (seededOrders), so
-// the rungs differ only in what is withheld.
-//
-// Defaults follow the calibration policy (HANDOFF §9): screen at ONE seed, then
-// confirm flagged questions at three.
+// For the same id#seed every rung shows the options in the SAME order, so the
+// rungs differ only in what is withheld. Exclusions are listed, never silent:
+// negation stems are dropped from options-only (a reader asked for the correct
+// option picks a true-sounding one, and the key of a negation stem is the false
+// one), and stems that are ill-posed without options are dropped from stem-only.
 const ABLATION_RUNGS = {
-  full: 'adversary-mc',
-  'options-only': 'adversary-options-only',
-  'stem-only': 'adversary-free-recall',
+  full: { agent: 'quiz-adversary', model: 'haiku' },
+  'options-only': { agent: 'quiz-adversary', model: 'haiku' },
+  sighted: { agent: 'general-purpose', model: 'haiku' },
+  'stem-only': { agent: 'quiz-recall', model: 'haiku' },
 };
 const RECALL_GRADES = ['match', 'partial', 'miss', 'idk', 'refusal'];
+const LETTER_RUNGS = new Set(['full', 'options-only', 'sighted']);
+
+const isNegationStem = (c) => c.negation === true || !!measure(asQuestion(c)).negation_in_stem;
+const illPosedWithoutOptions = (c) => isNegationStem(c)
+  || /\bwhich of (the following|these|them)\b/i.test(c.stem)
+  || /\bthe following\b/i.test(c.stem)
+  || /\b(the|these) (options|answers|choices|statements)\b/i.test(c.stem);
+
+// "The key is the option most like the others" is a classic test-wise heuristic.
+// Reported per question, not gated: key's mean content-word overlap with the
+// distractors, minus the mean overlap of each distractor with the rest.
+function keyCentrality(c) {
+  const opts = c.options.map((o) => ({ key: !!o.key, w: contentWords(o.text) }));
+  const avgOverlap = (i) => {
+    const others = opts.filter((_, j) => j !== i);
+    return others.length ? mean(others.map((o) => overlap(opts[i].w, o.w))) : 0;
+  };
+  const k = opts.findIndex((o) => o.key);
+  if (k < 0 || opts.length < 3) return null;
+  const dist = opts.map((_, i) => i).filter((i) => i !== k);
+  return Number((avgOverlap(k) - mean(dist.map(avgOverlap))).toFixed(3));
+}
 
 function stageAblate(label, slug, opts = {}) {
   const dir = sectionDir(label, slug);
   const candidates = readJson(need(join(dir, 'candidates.json'), 'candidates.json'));
   const seeds = Number(opts.seeds ?? flag('seeds', '1'));
+  const offset = Number(opts.seedOffset ?? flag('seed-offset', '0'));
   const rungs = String(opts.rungs ?? flag('rungs', 'full,options-only')).split(',').map((r) => r.trim()).filter(Boolean);
   const idsArg = opts.ids ?? flag('ids');
   const force = opts.force ?? argv.includes('--force');
+  const passage = opts.passage ?? flag('passage');
   if (!Number.isInteger(seeds) || seeds < 1) die(`--seeds must be a positive integer, got ${seeds}`);
+  if (!Number.isInteger(offset) || offset < 0) die(`--seed-offset must be a non-negative integer, got ${offset}`);
   for (const r of rungs) if (!ABLATION_RUNGS[r]) die(`unknown rung "${r}" — known: ${Object.keys(ABLATION_RUNGS).join(', ')}`);
+  if (rungs.includes('sighted')) {
+    if (!passage) die('the sighted rung needs --passage <path to the section prose>');
+    if (!existsSync(resolve(ROOT, passage))) die(`--passage ${passage} does not exist`);
+  }
 
   let items = candidates.filter((c) => c && c.stem && Array.isArray(c.options));
   if (idsArg) {
@@ -987,45 +1142,51 @@ function stageAblate(label, slug, opts = {}) {
   }
   rmSync(ad, { recursive: true, force: true });
 
+  const withheld = fillPartial('stem-withheld');
   const entries = [];
+  const excluded = [];
   for (const rung of rungs) {
     let k = 0;
     for (const it of items) {
-      const { orders } = seededOrders(it, seeds);
+      if (rung === 'options-only' && isNegationStem(it)) { excluded.push({ id: it.id, rung, reason: 'negation stem: the key is the false statement' }); continue; }
+      if (rung === 'stem-only' && illPosedWithoutOptions(it)) { excluded.push({ id: it.id, rung, reason: 'ill-posed without options' }); continue; }
+      const { orders } = seededOrders(it, seeds, offset);
       for (const { seed, order } of orders) {
         const texts = order.map((o) => o.text);
         const keyIdx = order.findIndex((o) => o.key);
-        const vars = rung === 'full' ? { stem: it.stem, options: optionLines(texts) }
-          : rung === 'options-only' ? { options: optionLines(texts) }
-            : { stem: it.stem };
+        let text;
+        if (rung === 'full') text = render('adversary-mc', { stem: it.stem, options: optionLines(texts) });
+        else if (rung === 'options-only') text = render('adversary-mc', { stem: withheld, options: optionLines(texts) });
+        else if (rung === 'sighted') text = render('sighted-reader', { passage, stem: it.stem, options: optionLines(texts) });
+        else text = render('adversary-free-recall', { stem: it.stem });
         const file = `${rung}/${String(k).padStart(2, '0')}`;
-        const text = render(ABLATION_RUNGS[rung], vars).trimEnd();
         mkdirSync(join(ad, rung), { recursive: true });
-        writeFileSync(join(ad, `${file}.txt`), `${text}\n`, 'utf8');
+        writeFileSync(join(ad, `${file}.txt`), `${text.trimEnd()}\n`, 'utf8');
         entries.push({
-          file,
-          rung,
-          id: it.id,
-          seed,
-          option_count: order.length,
+          file, rung, agent: ABLATION_RUNGS[rung].agent, model: ABLATION_RUNGS[rung].model,
+          id: it.id, seed,
+          option_count: rung === 'stem-only' ? null : order.length,
           key_letter: rung === 'stem-only' ? null : String.fromCharCode(65 + keyIdx),
           chance: rung === 'stem-only' ? null : Number((1 / order.length).toFixed(4)),
-          // Recall is graded against the key's claim, so the grader needs it;
-          // the adversary never sees this file.
+          // The recall grader needs the key's claim; no reader ever sees this file.
           key_text: rung === 'stem-only' ? order[keyIdx].text : undefined,
         });
         k += 1;
       }
     }
   }
+  const centrality = Object.fromEntries(items.map((c) => [c.id, keyCentrality(c)]));
   writeJson(join(ad, 'manifest.json'), {
-    source: `${label}/${slug}`, seeds, rungs, n_questions: items.length, n_prompts: entries.length, entries,
+    source: `${label}/${slug}`, seeds, seed_offset: offset, rungs, passage: passage || null,
+    n_questions: items.length, n_prompts: entries.length, excluded, key_centrality: centrality, entries,
   });
   writeJson(join(ad, 'picks.template.json'), Object.fromEntries(entries.map((e) => [e.file, ''])));
-  logLine(label, { stage: 'ablate', section: slug, rungs, seeds, n_questions: items.length, n_prompts: entries.length, ok: true });
-  console.log(`ablate   ${label}/${slug}: ${items.length} question(s) × ${seeds} seed(s) × ${rungs.length} rung(s) = ${entries.length} prompt(s)`);
+  logLine(label, { stage: 'ablate', section: slug, rungs, seeds, seed_offset: offset, n_questions: items.length, n_prompts: entries.length, excluded: excluded.length, ok: true });
+  console.log(`ablate   ${label}/${slug}: ${items.length} question(s) × ${seeds} seed(s) × ${rungs.length} rung(s) = ${entries.length} prompt(s)${offset ? `, seeds ${offset + 1}–${offset + seeds}` : ''}`);
+  for (const r of rungs) console.log(`         ${r.padEnd(13)} → agent ${ABLATION_RUNGS[r].agent} (${ABLATION_RUNGS[r].model})`);
+  if (excluded.length) console.log(`         excluded: ${excluded.map((x) => `${x.id.split('/').pop()} from ${x.rung}`).join(', ')}`);
   console.log(`         → ${ad}  (fill picks.template.json → picks.json, then ablate-score)`);
-  return { entries, dir: ad };
+  return { entries, excluded, dir: ad };
 }
 
 // A 95% interval with the QUESTION as the unit. The seeds of one question are
@@ -1038,6 +1199,18 @@ function questionUnitCI(rates) {
   const sd = Math.sqrt(rates.reduce((a, r) => a + (r - m) ** 2, 0) / (n - 1));
   const se = sd / Math.sqrt(n);
   return { n, mean: m, sd, lo: Math.max(0, m - 1.96 * se), hi: Math.min(1, m + 1.96 * se) };
+}
+
+// Was an interpretation pre-registered in run.log before this section was first
+// ablated? Checked by timestamp, so "before any result exists" is verifiable.
+function preregisteredBefore(label, slug) {
+  const p = join(runDir(label), 'run.log');
+  if (!existsSync(p)) return false;
+  const lines = readFileSync(p, 'utf8').split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+  const pre = lines.find((l) => l.stage === 'preregister' && l.ts);
+  const abl = lines.find((l) => l.stage === 'ablate' && l.section === slug && l.ts);
+  // <=, not <: two log lines can share a millisecond when a script writes both.
+  return !!(pre && abl && pre.ts <= abl.ts);
 }
 
 function stageAblateScore(label, slug) {
@@ -1055,12 +1228,11 @@ function stageAblateScore(label, slug) {
   if (missing.length) die(`ablate-score: ${missing.length} prompt(s) have no pick: ${missing.join(', ')}`);
 
   const rows = [];
-  let unparsed = 0;
   for (const e of man.entries) {
     const raw = String(picks[e.file]).trim();
     if (e.rung === 'stem-only') {
       const g = raw.toLowerCase();
-      if (!RECALL_GRADES.includes(g)) die(`ablate-score: ${e.file} grade "${raw}" is not one of ${RECALL_GRADES.join(', ')}`);
+      if (!RECALL_GRADES.includes(g)) die(`ablate-score: ${e.file} grade "${raw}" is not one of ${RECALL_GRADES.join(', ')} — grade it with prompts/grade-recall.md`);
       rows.push({ ...e, grade: g });
       continue;
     }
@@ -1069,16 +1241,21 @@ function stageAblateScore(label, slug) {
     const m = raw.match(/^\W*([A-Za-z])\W*$/);
     const letter = m ? m[1].toUpperCase() : null;
     const ok = letter && letter.charCodeAt(0) - 65 < e.option_count;
-    if (!ok) unparsed += 1;
-    rows.push({ ...e, picked: ok ? letter : null, hit: ok && letter === e.key_letter });
+    rows.push({ ...e, picked: ok ? letter : null, unparsed: !ok, hit: !!ok && letter === e.key_letter });
   }
 
-  const ladder = { source: man.source, seeds: man.seeds, rungs: {}, per_question: {}, unparsed };
+  const ladder = {
+    source: man.source, seeds: man.seeds, seed_offset: man.seed_offset ?? 0,
+    preregistered: preregisteredBefore(label, slug), excluded: man.excluded ?? [],
+    rungs: {}, per_question: {},
+  };
   for (const rung of man.rungs) {
     const rs = rows.filter((r) => r.rung === rung);
     if (rung === 'stem-only') {
       const counts = Object.fromEntries(RECALL_GRADES.map((g) => [g, rs.filter((r) => r.grade === g).length]));
-      ladder.rungs[rung] = { trials: rs.length, grades: counts };
+      const answered = rs.length - counts.refusal;
+      // Refusals are not ignorance: they sit outside the denominator and are reported.
+      ladder.rungs[rung] = { trials: rs.length, refusals: counts.refusal, grades: counts, knows_rate: answered ? (counts.match + counts.partial) / answered : null };
       continue;
     }
     const ids = uniq(rs.map((r) => r.id));
@@ -1089,7 +1266,7 @@ function stageAblateScore(label, slug) {
     const hits = rs.filter((r) => r.hit).length;
     const chance = mean(rs.map((r) => r.chance));
     ladder.rungs[rung] = {
-      questions: ids.length, trials: rs.length, hits,
+      questions: ids.length, trials: rs.length, hits, unparsed: rs.filter((r) => r.unparsed).length,
       hit_rate: rs.length ? hits / rs.length : null,
       mean_chance: chance,
       excess_over_chance: rs.length ? hits / rs.length - chance : null,
@@ -1097,27 +1274,228 @@ function stageAblateScore(label, slug) {
     };
     for (const q of perQ) (ladder.per_question[q.id] ??= {})[rung] = `${q.hits}/${q.trials}`;
   }
+  for (const [id, c] of Object.entries(man.key_centrality ?? {})) (ladder.per_question[id] ??= {}).key_centrality = c;
 
-  // Screening policy: at one seed, anything the full rung hit is a candidate
-  // for confirmation at three. Printed, not acted on — the orchestrator decides.
+  // Screening policy: at one seed, anything the full rung hit is a candidate for
+  // confirmation at three. Printed, not acted on — the orchestrator decides.
   if (man.seeds === 1 && ladder.rungs.full) {
-    ladder.confirm_at_3_seeds = Object.entries(ladder.per_question)
-      .filter(([, r]) => r.full === '1/1').map(([id]) => id);
+    ladder.confirm_at_3_seeds = Object.entries(ladder.per_question).filter(([, r]) => r.full === '1/1').map(([id]) => id);
   }
 
   const p = writeJson(join(ad, 'ladder.json'), ladder);
-  logLine(label, { stage: 'ablate-score', section: slug, rungs: ladder.rungs, unparsed, artifact: p, ok: true });
+  logLine(label, { stage: 'ablate-score', section: slug, rungs: ladder.rungs, preregistered: ladder.preregistered, artifact: p, ok: true });
 
-  console.log(`ablate-score ${man.source} (${man.seeds} seed(s)):`);
-  console.log('  rung           questions  trials   hit    over chance   95% CI, question as unit');
+  console.log(`ablate-score ${man.source} (${man.seeds} seed(s)${ladder.seed_offset ? `, offset ${ladder.seed_offset}` : ''}):`);
+  if (!ladder.preregistered) console.log('  WARN no preregister line precedes the first ablate of this section in run.log');
+  console.log('  rung           questions  trials   hit    over chance   95% CI, question as unit   unparsed');
   for (const [rung, r] of Object.entries(ladder.rungs)) {
-    if (r.grades) { console.log(`  ${rung.padEnd(14)} ${String(r.trials).padStart(9)}   graded: ${RECALL_GRADES.map((g) => `${g} ${r.grades[g]}`).join(', ')}`); continue; }
+    if (r.grades) { console.log(`  ${rung.padEnd(14)} ${String(r.trials).padStart(9)}   knows ${r.knows_rate == null ? 'n/a' : fmtPct(r.knows_rate)} of answered · ${RECALL_GRADES.map((g) => `${g} ${r.grades[g]}`).join(', ')}`); continue; }
     const ci = r.ci_question_unit ? `${fmtPct(r.ci_question_unit.lo)}–${fmtPct(r.ci_question_unit.hi)}` : 'n < 2';
-    console.log(`  ${rung.padEnd(14)} ${String(r.questions).padStart(9)} ${String(r.trials).padStart(7)}  ${fmtPct(r.hit_rate).padStart(5)}  ${`${r.excess_over_chance >= 0 ? '+' : ''}${r.excess_over_chance.toFixed(2)}`.padStart(11)}   ${ci}`);
+    console.log(`  ${rung.padEnd(14)} ${String(r.questions).padStart(9)} ${String(r.trials).padStart(7)}  ${fmtPct(r.hit_rate).padStart(5)}  ${`${r.excess_over_chance >= 0 ? '+' : ''}${r.excess_over_chance.toFixed(2)}`.padStart(11)}   ${ci.padEnd(24)} ${String(r.unparsed).padStart(8)}`);
   }
-  if (unparsed) console.log(`  ${unparsed} reply(ies) were not a single letter — counted as misses`);
+  if (ladder.excluded.length) console.log(`  excluded (listed in manifest): ${ladder.excluded.length}`);
   if (ladder.confirm_at_3_seeds?.length) console.log(`  confirm at 3 seeds: ${ladder.confirm_at_3_seeds.map((i) => i.split('/').pop()).join(', ')}`);
   return ladder;
+}
+
+// -------------------------------------------------------- stage: arm
+
+// Apply a manipulation-arm rewrite (bench-rewrite-stem / -distractors) and prove
+// it touched only what it was allowed to. Writes TWO section dirs under the new
+// run: `arm/` (the rewritten candidates) and `control/` (the same ids, unmodified,
+// byte-identical). Ablate both with the SAME --seed-offset, and compare arm to
+// control — never to the screen that selected these ids, which would regress to
+// the mean and flatter any manipulation.
+const collapse = (t) => String(t).replace(/\s+/g, ' ').trim();
+
+function stageArm(label, opts = {}) {
+  const from = opts.from ?? flag('from');
+  const rewrite = opts.rewrite ?? flag('rewrite');
+  const kind = opts.kind ?? flag('kind');
+  const passage = opts.passage ?? flag('passage');
+  if (!from || !from.includes('/')) die('arm needs --from <label>/<slug>');
+  if (!rewrite) die('arm needs --rewrite <file>');
+  if (!['stem', 'distractors'].includes(kind)) die('arm needs --kind stem|distractors');
+  const [fl, fs] = from.split('/');
+  const srcDir = sectionDir(fl, fs);
+  const source = readJson(need(join(srcDir, 'candidates.json'), `${from}/candidates.json`));
+  const entries = parseJsonValues(readFileSync(need(resolve(ROOT, rewrite), 'rewrite file'), 'utf8')).flat();
+  let text = null;
+  if (kind === 'distractors') {
+    if (!passage) die('arm --kind distractors needs --passage, to check quotes against');
+    text = collapse(readFileSync(need(resolve(ROOT, passage), 'passage'), 'utf8'));
+  }
+
+  const problems = [];
+  const arm = [];
+  const control = [];
+  const withheldNotes = [];
+  for (const e of entries) {
+    const orig = source.find((c) => c.id === e.id);
+    if (!orig) { problems.push(`${e.id}: not in ${from}/candidates.json`); continue; }
+    if (kind === 'stem') {
+      if (typeof e.stem !== 'string' || !e.stem.trim()) { problems.push(`${e.id}: no stem`); continue; }
+      arm.push({ ...orig, stem: e.stem, arm: { kind, from } });
+      withheldNotes.push({ id: e.id, what_i_withheld: e.what_i_withheld ?? null });
+    } else {
+      const o = orig.options;
+      const n = Array.isArray(e.options) ? e.options : [];
+      if (n.length !== o.length) { problems.push(`${e.id}: ${n.length} option(s), original has ${o.length}`); continue; }
+      if (n.filter((x) => x && x.key).length !== 1) { problems.push(`${e.id}: must have exactly one key`); continue; }
+      const next = [];
+      o.forEach((oo, i) => {
+        const nn = n[i] || {};
+        if (oo.key) {
+          // The key keeps its slot and its text, byte for byte, so the same seed
+          // puts it in the same letter in arm and control.
+          if (!nn.key || nn.text !== oo.text) problems.push(`${e.id}: option ${i} is the key and must be byte-identical and still the key`);
+          next.push(oo);
+          return;
+        }
+        if (nn.key) problems.push(`${e.id}: option ${i} became the key — options must keep their slots`);
+        if (!nn.text || !String(nn.text).trim()) problems.push(`${e.id}: option ${i} has no text`);
+        const q = String(nn.provenance || '').match(/"([^"]+)"/);
+        if (!q) problems.push(`${e.id}: option ${i} provenance has no double-quoted passage quote`);
+        else {
+          if (q[1].trim().split(/\s+/).length > 20) problems.push(`${e.id}: option ${i} provenance quote is over 20 words`);
+          if (!text.includes(collapse(q[1]))) problems.push(`${e.id}: option ${i} provenance quote not found verbatim in the passage: "${q[1].slice(0, 60)}"`);
+        }
+        if (!nn.rules_out || !text.includes(collapse(nn.rules_out))) problems.push(`${e.id}: option ${i} rules_out is missing or not verbatim in the passage`);
+        next.push({ text: nn.text, key: false, provenance: nn.provenance, family: nn.family ?? oo.family ?? null, rules_out: nn.rules_out });
+      });
+      arm.push({ ...orig, options: next, arm: { kind, from } });
+    }
+    control.push(orig);
+  }
+  if (problems.length) die(`arm: the rewrite does not hold its constraints — nothing written.\n       ${problems.join('\n       ')}`);
+  if (!arm.length) die('arm: the rewrite file holds no entries');
+
+  const map = maybeJson(join(srcDir, 'concept-map.json'));
+  for (const [sub, list] of [['arm', arm], ['control', control]]) {
+    const d = sectionDir(label, sub);
+    writeJson(join(d, 'candidates.json'), list);
+    if (map) writeJson(join(d, 'concept-map.json'), map);
+  }
+  if (withheldNotes.length) writeJson(join(sectionDir(label, 'arm'), 'what-was-withheld.json'), withheldNotes);
+  logLine(label, { stage: 'arm', kind, from, rewrite, n: arm.length, verified: kind === 'stem' ? 'every non-stem field unchanged by construction' : 'stem and key byte-identical; every option in its slot; every quote verbatim in the passage', ok: true });
+  console.log(`arm      ${label}: ${arm.length} ${kind} rewrite(s) verified → ${label}/arm, with ${control.length} unmodified in ${label}/control`);
+  console.log(`         next: ablate BOTH with the same --seed-offset (e.g. --seed-offset 10), then compare arm with control`);
+  return { arm, control };
+}
+
+// -------------------------------------------------------- stage: preregister
+
+// Copy a committed interpretation into the run and log its hash, before anything
+// is ablated. ablate-score checks the timestamps.
+function stagePreregister(label, opts = {}) {
+  const file = opts.file ?? flag('file');
+  if (!file) die('preregister needs --file <path to the pre-registration text>');
+  const src = resolve(ROOT, file);
+  if (!existsSync(src)) die(`preregister: ${file} does not exist`);
+  const body = readFileSync(src, 'utf8');
+  mkdirSync(runDir(label), { recursive: true });
+  let n = 1;
+  let dest = join(runDir(label), 'preregistration.md');
+  while (existsSync(dest)) { n += 1; dest = join(runDir(label), `preregistration-${n}.md`); }
+  writeFileSync(dest, body, 'utf8');
+  logLine(label, { stage: 'preregister', file: rel(dest), source: file, sha256: sha256(body), ok: true });
+  console.log(`preregister ${label}: ${rel(dest)} (sha256 ${sha256(body).slice(0, 12)})`);
+  return dest;
+}
+
+// -------------------------------------------------------- stage: canary
+
+// The adversary isolation check (HANDOFF §1), as a stage. Plants a file holding
+// an answer and a random token, and renders the REAL adversary template with a
+// stem that points at that file. Pass = the spawn reports tool_uses 0. Record
+// the result with canary-record so it is a structured log line, not prose.
+function stageCanary(label) {
+  const token = randomBytes(8).toString('hex');
+  const cp = `runs/${label}/canary.txt`;
+  mkdirSync(runDir(label), { recursive: true });
+  writeFileSync(join(ROOT, cp), `The correct answer is D. Canary token: ${token}\n`, 'utf8');
+  const stem = fillPartial('canary-stem', { canary_path: cp });
+  const text = render('adversary-mc', { stem, options: optionLines(['Alpha', 'Beta', 'Gamma', 'Delta']) });
+  const pp = join(runDir(label), 'canary-prompt.txt');
+  writeFileSync(pp, text, 'utf8');
+  logLine(label, { stage: 'canary', planted: cp, token_sha256: sha256(token), prompt: rel(pp), ok: true });
+  console.log(`canary   ${label}: planted ${cp}; prompt → ${rel(pp)}`);
+  console.log('         spawn quiz-adversary with that prompt, then: pipeline.mjs canary-record --run <label> --tool-uses <n> --reply <letter>');
+}
+
+function stageCanaryRecord(label) {
+  const tu = Number(flag('tool-uses'));
+  const reply = flag('reply');
+  if (!Number.isInteger(tu) || tu < 0) die('canary-record needs --tool-uses <non-negative integer, from the spawn result>');
+  if (!reply) die('canary-record needs --reply <the letter the adversary returned>');
+  const pass = tu === 0;
+  logLine(label, { stage: 'canary-result', tool_uses: tu, reply, pass, note: pass ? 'isolation held' : 'ADVERSARY METRIC VOID for this run: the adversary used a tool', ok: pass });
+  console.log(`canary   ${label}: ${pass ? 'PASS' : 'FAIL'} — tool_uses ${tu}, reply ${reply}${reply === 'D' && pass ? ' (D by chance: 25%)' : ''}`);
+  if (!pass) process.exit(1);
+}
+
+// -------------------------------------------------------- stage: bench-check
+
+// Mechanical checks on one bench entry, before its first use. The author's
+// claims file is what makes the passage's balance checkable rather than trusted.
+// Unmistakable framing fails; words a real passage could use (a theatre passage
+// may well say "fictional") only warn, and a human looks.
+const BENCH_NOTICE = /\b(fabricated|this is fiction|none of it is true|quiz|adversary|hit rate|test-wise|measurement bench)\b/i;
+const BENCH_NOTICE_SOFT = /\b(fictional|invented for|benchmark|not a real source)\b/i;
+
+function stageBenchCheck(opts = {}) {
+  const id = opts.bench ?? flag('bench');
+  if (!id) die('bench-check needs --bench <id>');
+  const b = join(ROOT, 'bench', id);
+  const passagePath = join(b, 'passage.md');
+  need(passagePath, `bench/${id}/passage.md`);
+  const passage = readFileSync(passagePath, 'utf8');
+  const flat = collapse(passage);
+  const fail = [];
+  const warn = [];
+  const notice = passage.match(BENCH_NOTICE);
+  if (notice) fail.push(`passage.md mentions "${notice[0]}" — it must contain the section only; the analyst and generator read it as their prose`);
+  const soft = passage.match(BENCH_NOTICE_SOFT);
+  if (soft) warn.push(`passage.md contains "${soft[0]}" — check it is the subject matter, not a note about the passage`);
+  const words = passage.split(/\s+/).filter(Boolean).length;
+  if (words < 1400 || words > 1800) warn.push(`passage is ${words} words; the bench standard is 1400–1800`);
+  if (!existsSync(join(b, 'private', 'passage-notes.md'))) fail.push('private/passage-notes.md is missing');
+  const cp = join(b, 'private', 'claims.json');
+  let report = { id, words };
+  if (!existsSync(cp)) fail.push('private/claims.json is missing');
+  else {
+    const claims = readJson(cp);
+    if (!Array.isArray(claims) || !claims.length) fail.push('private/claims.json must be a non-empty array');
+    else {
+      for (const c of claims) {
+        if (!c.quote || !flat.includes(collapse(c.quote))) fail.push(`${c.id}: quote not found verbatim in passage.md`);
+        if ((c.naive_answer == null) !== (c.naive_is_right == null)) fail.push(`${c.id}: naive_is_right must be null exactly when naive_answer is`);
+      }
+      const directional = claims.filter((c) => c.naive_is_right != null);
+      const right = directional.filter((c) => c.naive_is_right === true).length;
+      const share = directional.length ? right / directional.length : null;
+      const passageOnly = claims.filter((c) => c.passage_only === true || c.naive_answer == null).length;
+      if (share != null && (share < 0.3 || share > 0.7)) fail.push(`naive answer is right on ${right}/${directional.length} directional claims (${fmtPct(share)}); the bench requires roughly half (30–70%) so that "reverse the obvious" is not a reliable rule`);
+      if (passageOnly < 4) fail.push(`${passageOnly} claim(s) have no sensible direction to guess; at least 4 are required`);
+      const heur = {};
+      for (const c of claims) {
+        for (const h of c.heuristics_right || []) (heur[h] ??= { right: 0, wrong: 0 }).right += 1;
+        for (const h of c.heuristics_wrong || []) (heur[h] ??= { right: 0, wrong: 0 }).wrong += 1;
+      }
+      for (const [h, v] of Object.entries(heur)) {
+        const t = v.right + v.wrong;
+        if (t >= 3 && (v.right / t >= 0.75 || v.wrong / t >= 0.75)) warn.push(`heuristic "${h}" is right ${v.right} and wrong ${v.wrong} times — a reader applying it gains or loses reliably`);
+      }
+      report = { ...report, claims: claims.length, directional: directional.length, naive_right: right, naive_right_share: share, passage_only: passageOnly, heuristics: heur };
+    }
+  }
+  report.fail = fail;
+  report.warn = warn;
+  writeJson(join(b, 'bench-check.json'), report);
+  console.log(`bench-check ${id}: ${fail.length} FAIL, ${warn.length} WARN${report.claims ? ` · ${report.claims} claims, naive right ${report.naive_right}/${report.directional}, ${report.passage_only} with no sensible guess` : ''}`);
+  for (const f of fail) console.log(`  FAIL ${f}`);
+  for (const w of warn) console.log(`  WARN ${w}`);
+  return report;
 }
 
 // -------------------------------------------------------- stage: score (t4)
@@ -2371,9 +2749,200 @@ function selftest() {
     'ablate-score refuses a pick for a file that is not in the manifest');
   writeJson(join(adRoot, 'picks.json'), { ...ablPicks, [abl.entries[0].file]: 'I think it is probably B' });
   const lad2 = stageAblateScore(label, slug);
-  check(lad2.unparsed === 1,
+  check(lad2.rungs.full.unparsed === 1 && lad2.rungs['options-only'].unparsed === 0,
     'a reply that is not a single letter is counted as a miss and reported, never dropped');
   rmSync(adRoot, { recursive: true, force: true });
+
+  // --- renderer hardening (review 2026-09-23 #13) -----------------------------
+  {
+    const td = join(runDir(label), 'prompts-fixture-2');
+    mkdirSync(join(td, '_partials'), { recursive: true });
+    writeFileSync(join(td, 'spaced.md'), '---\nplaceholders: []\noptional: []\n---\nhello {{ stem }}\n');
+    writeFileSync(join(td, 'autodecl.md'), '---\nplaceholders: [workdir]\noptional: []\n---\n{{workdir}}\n');
+    writeFileSync(join(td, 'bom.md'), '﻿---\nplaceholders: []\noptional: []\n---\nbody only\n');
+    writeFileSync(join(td, 'gaps.md'), '---\nplaceholders: [v]\noptional: [o]\n---\nA\n\n{{?o}}\n\nB {{v}}\n');
+    writeFileSync(join(td, 'badpath.md'), '---\nplaceholders: []\noptional: []\npaths: [nope]\n---\nx\n');
+    check(lintTemplate(loadTemplate('spaced', td)).some((x) => /malformed/.test(x)),
+      'lint catches a malformed token like "{{ stem }}" that would otherwise be sent literally');
+    check(lintTemplate(loadTemplate('autodecl', td), ['workdir']).some((x) => /auto-filled/.test(x)),
+      'lint refuses a template that declares an auto-filled key, so --set cannot override it');
+    check(renderTemplate('bom', {}, {}, td).trim() === 'body only',
+      'a byte-order mark does not stop front matter being stripped');
+    check(renderTemplate('gaps', { v: 'x\n\n\n\ny' }, {}, td) === 'A\n\nB x\n\n\n\ny\n',
+      'an empty optional line is dropped, and a value\'s own blank lines are never collapsed');
+    check(lintTemplate(loadTemplate('badpath', td)).some((x) => /paths/.test(x)),
+      'lint catches a paths: entry that names an undeclared placeholder');
+    rmSync(td, { recursive: true, force: true });
+
+    // Render every real template with dummy values: a broken include or a
+    // mis-declared placeholder in a rarely used template fails here, not mid-run.
+    const renderFails = listTemplates().filter((n) => {
+      const t = loadTemplate(n);
+      const vars = Object.fromEntries([...t.placeholders, ...t.optional].map((k) => [k, `<${k}>`]));
+      try { renderTemplate(n, vars, { workdir: ROOT, ...PROMPT_AUTO }); return false; } catch { return true; }
+    });
+    check(renderFails.length === 0, `every prompts/*.md renders with its declared placeholders${renderFails.length ? ` (failed: ${renderFails.join(', ')})` : ''}`);
+  }
+
+  // --- prompt: derivation, recording, refusals (review #4, #5) ------------------
+  {
+    const q = { quiet: true };
+    const g = stagePrompt(label, slug, { ...q, template: 'generate-section', model: 'sonnet', letter: 'q', set: ['n=8'] });
+    check(g.vars.id_prefix === `${slug}/sonnet` && g.vars.out === `runs/${label}/${slug}/candidates/${slug}-q.json`,
+      'prompt derives id_prefix and out from --model and --letter, in the shape merge reads back');
+    check(!!g.recorded && existsSync(join(ROOT, g.recorded)), 'every rendered prompt is written to disk');
+    const logged = readFileSync(join(runDir(label), 'run.log'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)).filter((l) => l.stage === 'prompt');
+    check(logged.length > 0 && logged.at(-1).template_sha256 && logged.at(-1).text_sha256,
+      'every rendered prompt is logged with the template\'s and the text\'s sha256');
+    check(dies(() => stagePrompt(label, slug, { ...q, template: 'generate-section', model: 'sonnet', letter: 'q', set: ['n=8', 'out=runs/x/y.json'] })),
+      'prompt refuses to let a derived value be set by hand without --override');
+    check(!dies(() => stagePrompt(label, slug, { ...q, template: 'generate-section', model: 'sonnet', letter: 'q', override: true, set: ['n=8', `out=runs/${label}/elsewhere.json`] })),
+      'with --override a derived value can be replaced (and the override is logged)');
+    check(dies(() => stagePrompt(label, slug, { ...q, template: 'generate-section', model: 'sonnet', letter: 'q', set: [`n=${2 * STEM_FORMATS.length + 1}`] })),
+      'prompt refuses a generate-section n that 2-per-stem-format makes unsatisfiable');
+    check(dies(() => stagePrompt(label, slug, { ...q, template: 'bench-rewrite-stem', set: ['passage=no/such/file.md', `candidates=runs/${label}/${slug}/candidates.json`, 'ids=a', `out=runs/${label}/o.json`] })),
+      'prompt refuses an input path that does not exist');
+    check(dies(() => stagePrompt(label, slug, { ...q, template: 'bench-rewrite-stem', set: [`passage=runs/${label}/${slug}/candidates.json`, `candidates=runs/${label}/${slug}/candidates.json`, 'ids=a', 'out=/tmp/escape.json'] })),
+      'prompt refuses an output outside runs/, bench/, reviews/ or staging/');
+  }
+
+  // --- rung parity, exclusions, sighted, recall (review #6, #7) -----------------
+  {
+    const exLabel = '_selftest-rungs';
+    const exSlug = 'sec';
+    const neg = { ...rcands[0], id: 'sec/sonnet/n01', stem: 'Which of these is NOT a reason given?', negation: true };
+    const plain = { ...rcands[0], id: 'sec/sonnet/p01', stem: 'A director swaps two performers between roles. What changes?' };
+    const listy = { ...rcands[0], id: 'sec/sonnet/l01', stem: 'Which of the following best explains the result?' };
+    writeJson(join(sectionDir(exLabel, exSlug), 'candidates.json'), [neg, plain, listy]);
+    const passageFile = join(sectionDir(exLabel, exSlug), 'passage.md');
+    writeFileSync(passageFile, 'A passage.\n');
+    const ab = stageAblate(exLabel, exSlug, { seeds: 1, rungs: 'full,options-only,sighted,stem-only', force: true, passage: rel(passageFile) });
+    const fileOf = (rung, id) => ab.entries.find((e) => e.rung === rung && e.id === id);
+    const txt = (e) => readFileSync(join(ab.dir, `${e.file}.txt`), 'utf8');
+    const f = fileOf('full', plain.id);
+    const o = fileOf('options-only', plain.id);
+    check(txt(o) === txt(f).replace(plain.stem, fillPartial('stem-withheld')),
+      'the options-only prompt is the full prompt with ONLY the stem slot replaced, byte for byte');
+    check(!fileOf('options-only', neg.id) && ab.excluded.some((x) => x.id === neg.id && x.rung === 'options-only'),
+      'a negation stem is excluded from options-only, and the exclusion is listed');
+    check(!fileOf('stem-only', listy.id) && !fileOf('stem-only', neg.id) && !!fileOf('stem-only', plain.id),
+      'stems that are ill-posed without options are excluded from stem-only');
+    check(fileOf('stem-only', plain.id).agent === 'quiz-recall' && fileOf('sighted', plain.id).agent === 'general-purpose' && f.agent === 'quiz-adversary',
+      'the manifest names the agent each rung must be answered by');
+    check(txt(fileOf('sighted', plain.id)).includes(rel(passageFile)),
+      'the sighted rung points its reader at the passage');
+    check(dies(() => stageAblate(exLabel, exSlug, { seeds: 1, rungs: 'sighted', force: true })),
+      'the sighted rung refuses to run without --passage');
+
+    const pk = {};
+    for (const e of ab.entries) pk[e.file] = e.rung === 'stem-only' ? 'refusal' : e.key_letter;
+    writeJson(join(ab.dir, 'picks.json'), pk);
+    const lad = stageAblateScore(exLabel, exSlug);
+    check(lad.rungs['stem-only'].refusals === 1 && lad.rungs['stem-only'].knows_rate === null,
+      'a recall refusal sits outside the denominator rather than counting as ignorance');
+    check(lad.rungs.sighted.hit_rate === 1 && lad.rungs.full.unparsed === 0,
+      'ablate-score reports every lettered rung, with its unparsed count');
+    check(lad.preregistered === false, 'ablate-score reports when no pre-registration preceded the ablation');
+    rmSync(runDir(exLabel), { recursive: true, force: true });
+
+    const pl = '_selftest-prereg';
+    const pre = join(runDir(pl), 'pre.md');
+    mkdirSync(runDir(pl), { recursive: true });
+    writeFileSync(pre, 'prediction: nothing changes\n');
+    stagePreregister(pl, { file: rel(pre) });
+    writeJson(join(sectionDir(pl, 's'), 'candidates.json'), [plain]);
+    const ab2 = stageAblate(pl, 's', { seeds: 1, rungs: 'full', force: true });
+    writeJson(join(ab2.dir, 'picks.json'), Object.fromEntries(ab2.entries.map((e) => [e.file, e.key_letter])));
+    check(stageAblateScore(pl, 's').preregistered === true, 'a pre-registration logged before the ablation is recognised');
+    rmSync(runDir(pl), { recursive: true, force: true });
+  }
+
+  // --- arm: apply a manipulation and prove what it held (review #1, #3) ---------
+  {
+    const src = '_selftest-armsrc';
+    const base = { ...rcands[0], id: 'a/sonnet/x01', stem: 'What does the index measure?' };
+    const keyIdx = base.options.findIndex((o) => o.key);
+    writeJson(join(sectionDir(src, 's'), 'candidates.json'), [base]);
+    const pas = join(runDir(src), 'passage.md');
+    writeFileSync(pas, 'The index is a rate. It says nothing about how often correction was needed. Load is a count.\n');
+    const good = [{ id: base.id, options: base.options.map((op, i) => (i === keyIdx ? { ...op } : {
+      text: `Rewritten wrong option ${i}`, key: false, family: 'a',
+      provenance: 'misreads "It says nothing about how often correction was needed" as a claim about load',
+      rules_out: 'The index is a rate.',
+    })) }];
+    const rw = join(runDir(src), 'rw.json');
+    const armLabel = '_selftest-arm';
+    writeJson(rw, good);
+    const res = stageArm(armLabel, { from: `${src}/s`, rewrite: rel(rw), kind: 'distractors', passage: rel(pas) });
+    check(res.arm[0].options[keyIdx].text === base.options[keyIdx].text && res.arm[0].stem === base.stem,
+      'arm keeps the stem and the key byte-identical, in the key\'s original slot');
+    check(JSON.stringify(readJson(join(sectionDir(armLabel, 'control'), 'candidates.json'))[0]) === JSON.stringify(base),
+      'arm writes an unmodified control of the same ids to compare against');
+    const moved = JSON.parse(JSON.stringify(good));
+    const other = keyIdx === 0 ? 1 : 0;
+    [moved[0].options[keyIdx], moved[0].options[other]] = [moved[0].options[other], moved[0].options[keyIdx]];
+    writeJson(rw, moved);
+    check(dies(() => stageArm(armLabel, { from: `${src}/s`, rewrite: rel(rw), kind: 'distractors', passage: rel(pas) })),
+      'arm dies if the key has moved slot, which would un-control its letter position');
+    const badQuote = JSON.parse(JSON.stringify(good));
+    badQuote[0].options[other].provenance = 'misreads "a sentence that is not in the passage" as something';
+    writeJson(rw, badQuote);
+    check(dies(() => stageArm(armLabel, { from: `${src}/s`, rewrite: rel(rw), kind: 'distractors', passage: rel(pas) })),
+      'arm dies if a provenance quote is not verbatim in the passage');
+    const edited = JSON.parse(JSON.stringify(good));
+    edited[0].options[keyIdx].text += ' (edited)';
+    writeJson(rw, edited);
+    check(dies(() => stageArm(armLabel, { from: `${src}/s`, rewrite: rel(rw), kind: 'distractors', passage: rel(pas) })),
+      'arm dies if the key\'s text was touched');
+    rmSync(runDir(src), { recursive: true, force: true });
+    rmSync(runDir(armLabel), { recursive: true, force: true });
+  }
+
+  // --- canary and bench-check ----------------------------------------------------
+  {
+    const cl = '_selftest-canary';
+    stageCanary(cl);
+    const cprompt = readFileSync(join(runDir(cl), 'canary-prompt.txt'), 'utf8');
+    check(cprompt.includes(`runs/${cl}/canary.txt`) && cprompt.startsWith('You have not read the textbook'),
+      'the canary renders the REAL adversary template, pointing at the planted file');
+    check(dies(() => { argv.push('--tool-uses', '1', '--reply', 'D'); try { stageCanaryRecord(cl); } finally { argv.splice(-4); } }),
+      'a canary with any tool use fails, voiding that run\'s adversary metric');
+    rmSync(runDir(cl), { recursive: true, force: true });
+
+    const bid = '_selftest-bench';
+    const bdir = join(ROOT, 'bench', bid);
+    mkdirSync(join(bdir, 'private'), { recursive: true });
+    const words = (n) => Array.from({ length: n }, (_, i) => `word${i}`).join(' ');
+    const claimsFor = (right, total) => Array.from({ length: total }, (_, i) => ({
+      id: `C${i}`, claim: 'c', naive_answer: 'n', naive_is_right: i < right, heuristics_right: [], heuristics_wrong: [],
+      passage_only: false, quote: 'word1 word2',
+    })).concat(Array.from({ length: 4 }, (_, i) => ({ id: `P${i}`, claim: 'p', naive_answer: null, naive_is_right: null, passage_only: true, quote: 'word3 word4' })));
+    writeFileSync(join(bdir, 'passage.md'), words(1500));
+    writeFileSync(join(bdir, 'private', 'passage-notes.md'), 'notes\n');
+    writeJson(join(bdir, 'private', 'claims.json'), claimsFor(3, 6));
+    check(stageBenchCheck({ bench: bid }).fail.length === 0, 'bench-check passes a balanced passage with no notice');
+    writeJson(join(bdir, 'private', 'claims.json'), claimsFor(0, 6));
+    check(stageBenchCheck({ bench: bid }).fail.some((x) => /reverse the obvious/.test(x)),
+      'bench-check fails a passage where the sensible guess is never right');
+    writeJson(join(bdir, 'private', 'claims.json'), claimsFor(3, 6));
+    writeFileSync(join(bdir, 'passage.md'), `This passage is fabricated. ${words(1500)}`);
+    check(stageBenchCheck({ bench: bid }).fail.some((x) => /analyst and generator/.test(x)),
+      'bench-check fails a passage that announces it is fabricated');
+    rmSync(bdir, { recursive: true, force: true });
+  }
+
+  // --- D-selfdefeat ------------------------------------------------------------------
+  {
+    const sd = {
+      ...twin, stem: 'Which objection to this claim has the most support?',
+      options: [{ text: 'The claim confuses a rate with a count.', key: true }, { text: 'There is no real objection to raise here.', key: false }],
+    };
+    check(lintCandidate(sd).some((x) => x.rule === 'D-selfdefeat'),
+      'lint flags a wrong option that denies what the stem presupposes');
+    const sdKey = { ...sd, options: [{ text: 'There is no real objection to raise here.', key: true }, { text: 'It confuses a rate with a count.', key: false }] };
+    check(!lintCandidate(sdKey).some((x) => x.rule === 'D-selfdefeat'),
+      'the self-defeat lint ignores the key — only a wrong option is eliminable this way');
+  }
 
   const lintHits = (c) => lintCandidate(c).map((x) => x.rule);
   check(lintHits({ ...twin, stem: 'He said “hi” now' }).includes('CANON-quote'),
@@ -2401,7 +2970,7 @@ function selftest() {
 
 // ---------------------------------------------------------------------- main
 
-const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report', 'ablate', 'ablate-score']);
+const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report', 'ablate', 'ablate-score', 'arm', 'preregister', 'canary', 'canary-record']);
 
 function main() {
   if (!stage || stage.startsWith('--')) {
@@ -2435,6 +3004,11 @@ function main() {
     case 'prompt': stagePrompt(label, slug); break;
     case 'ablate': stageAblate(label, slug); break;
     case 'ablate-score': stageAblateScore(label, slug); break;
+    case 'arm': stageArm(label); break;
+    case 'preregister': stagePreregister(label); break;
+    case 'canary': stageCanary(label); break;
+    case 'canary-record': stageCanaryRecord(label); break;
+    case 'bench-check': { const r = stageBenchCheck(); process.exit(r.fail.length ? 1 : 0); break; }
     default: die(`unknown stage "${stage}"`);
   }
 }

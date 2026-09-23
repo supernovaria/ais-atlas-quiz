@@ -1,15 +1,21 @@
 ---
 stage: generate — whole section (the default since the P1b sharding A/B)
 agent: quiz-generator
-model: sonnet (P1, bench) / opus + fable (production)
+model: sonnet (P1, bench) / opus + fable (production) — passed as --model, which also names the ids
 placeholders: [section, concept_map, prose, n, id_prefix, out]
-optional: [context_note]
+optional: [ideas]
+paths: [concept_map, prose]
 reply: OK <path> | FAIL <reason>
 notes: >
-  Replaces the shard request in the brief's Inputs §5. The two brief rules that
-  do not survive the move from a 3-candidate shard are overridden here, not in
-  the brief: stem-format variety (unsatisfiable at n > 6) and "your lens is
-  assigned" (there is no assignment). Everything else in the brief governs.
+  `id_prefix` (<slug>/<model>) and `out` (candidates/<slug>-<letter>.json) are
+  DERIVED by `prompt` from --model and --letter, never typed: merge reads the
+  model from the id and the shard letter from the file name (review #4).
+  `ideas` is derived from bench/<id>/ideas.json on bench runs, so iterations test
+  the same ideas and differ only in what is being changed (review #9).
+  This template overrides exactly four brief rules, all stated below: allocation,
+  lens, count, and the stem-format cap. Everything else in the brief governs —
+  including its "emit fewer" rule, which is why the count is "up to".
+  n is capped at 2 x the number of stem formats; render refuses more.
 ---
 Section: `{{section}}`. Mode: `section`. This is a **whole-section** request, not a shard.
 
@@ -22,19 +28,15 @@ Read:
 
 There is no `EXEMPLARS.md`, deliberately. Do not look for one and do not be cautious because of it.
 
-{{?context_note}}
+Your brief is written for a shard. For this call, four of its rules are replaced, and only these four:
 
-In place of a shard:
+- **Allocation.** Every idea with `earns_question: true` is yours; you choose how to spend candidates across them, treating each idea's `attempts` as a ceiling.
+{{?ideas}}
+- **Lens.** There is no assigned lens. Choose one per candidate, and use at least 4 of these across the set: {{lenses}}.
+- **Count.** Write **up to {{n}}** candidates. Your brief's rule stands: if an idea does not support a good candidate, write fewer, and say which ideas you skipped and why in the note.
+- **Stem formats.** The brief's "no two may share a `stem_format`" is written for three candidates. Here the rule is **at most 2 per `stem_format`**, from exactly these values: {{stem_formats}}.
 
-- Every idea with `earns_question: true` is yours. There is no assigned lens: choose the lens per candidate and the allocation across ideas.
-- Write exactly **{{n}} candidates**.
-- Treat each idea's `attempts` as a ceiling on how many of your {{n}} you spend on it.
-- Use at least 4 of these lenses across the set: {{lenses}}.
-- Stem-format variety: the brief's "no two may share a `stem_format`" is written for a 3-candidate shard. For this call the rule is **at most 2 candidates per `stem_format`**. Allowed values, exactly: {{stem_formats}}.
-- The map's `discrimination_pairs` are live. Where one contrast candidate spanning both members beats two separate ones, write it that way.
-- Honour `do_not_test` and `assumed_prior` exactly as listed. At most one candidate may set `bridge_from`.
-
-Output: **one JSON array** of {{n}} candidate objects. If you want to explain your allocation, put a `{"note": "..."}` object **as the last element inside the array** — never after the closing bracket. Set each `id` to `{{id_prefix}}/NN` (01…{{n}}); a later stage reassigns ids.
+Output: **one JSON array** of candidate objects. Put a `{"note": "..."}` object **as the last element inside the array** — never after the closing bracket. Set each `id` to `{{id_prefix}}/NN`, numbering from 01; a later stage reassigns ids.
 
 Write the array to exactly: `{{out}}`
 

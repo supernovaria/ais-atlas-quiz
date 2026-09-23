@@ -9,21 +9,48 @@ hit above the floor is the question leaking.
 How the bench is used is `docs/HANDOFF-ORCHESTRATOR.md` §9. This file records
 what is in it.
 
+## Layout of an entry
+
+```
+bench/<id>/
+  passage.md            the section, and nothing else — this is what the analyst and generator read
+  concept-map.json      from the real quiz-section-analyst
+  ideas.json            the fixed list of ideas a bench iteration tests, so iterations are comparable
+  bench-check.json      the mechanical checks, from `pipeline.mjs bench-check --bench <id>`
+  prompts/              every prompt rendered against this entry, with log.jsonl
+  reviews/              reviewer findings on the passage, and what was done about them
+  private/
+    passage-notes.md    the author's account: fabrication notice, discrimination pairs, honest weak points
+    claims.json         every load-bearing claim, tagged — see below
+```
+
 ## Rules
 
-- **The adversary never sees anything in this directory.** Not the passage, not
-  the notes, not a concept map, not a path. It receives one shuffled question,
-  pasted inline, and nothing else.
-- **A passage is fixed once it has results.** Rewriting a passage after seeing
-  how the blind reader did means measuring your own editing. A passage that turns
-  out to be flawed is retired and a new one added, never patched.
+- **Nothing in this directory is shown to the adversary** — no passage, notes,
+  concept map, or path. It receives one shuffled question, pasted inline.
+- **`passage.md` never says it is invented, or that it exists for measurement.**
+  The analyst and generator read it as their prose, and on real sections they
+  are never told they are being measured. That notice lives in
+  `private/passage-notes.md` and here. (Review 2026-09-23 #11.)
+- **Nothing under `private/` is named in any template**, and the analyse
+  template tells the analyst not to open it. That is behavioural, not
+  structural — the analyst has search tools — so it is stated rather than
+  assumed.
+- **Truth must not correlate with how a claim sounds.** Every load-bearing claim
+  is tagged in `private/claims.json` with the answer a sensible outsider would
+  guess, whether that guess is right, and which generic heuristics it rewards or
+  punishes. `bench-check` fails a passage where the sensible guess is right on
+  under 30% or over 70% of directional claims, or where fewer than four claims
+  have no sensible guess at all. The first bench passage had every one of its
+  directional claims going against the sensible guess, which makes "pick the
+  option that reverses the obvious" a reliable rule. (Review #2.)
+- **A passage is fixed once it has results.** Rewriting one after seeing how the
+  blind reader did means measuring your own editing. A flawed passage is retired
+  and a new one added, never patched.
 - **Each passage is reviewed before first use** (`prompts/review.md`, and
   `prompts/review-gemini.md` when available) for whether it is genuinely
-  unguessable, internally consistent and not an analogy in disguise.
-- Every entry keeps: `passage.md`, `passage-notes.md` (the author's own account
-  of its counterintuitive claims, discrimination pairs, passage-only facts and
-  known leak sites), `concept-map.json` (from the real `quiz-section-analyst`),
-  and `reviews/`.
+  unguessable, internally consistent and not an analogy in disguise, and passes
+  `bench-check`.
 
 ## Floors to compare against
 
@@ -40,10 +67,22 @@ that premium never goes away.
 
 | id | domain | status | results |
 |---|---|---|---|
-| `undercraft` | invented sociology of ensemble stage performance | **reference** — reviewed by the orchestrator only; predates this README | `runs/2026-09-20-FICTION` (75%, n = 8), `-FICTION-B` (stem rewrites: 15/15 → 14/15; options only: 4/6) |
+| `undercraft` | invented sociology of ensemble stage performance | **legacy reference** — fails `bench-check` (no claims file) | `runs/2026-09-20-FICTION` (75%, n = 8), `-FICTION-B` (stem rewrites: 15/15 → 14/15; options only: 4/6 across 4 questions) |
 
-Known weaknesses of `undercraft`, recorded by its author before any result:
-the projection/undercraft split is loosely evocative of the real
-stage-presence/stagecraft distinction, and its troupe-size effect is an inverse
-U — a shape a guesser can apply without reading anything. Its question on that
-effect was answered 3/3.
+### `undercraft`, and why its results carry two caveats
+
+It predates the rules above. Its author recorded, before any result, that its
+projection/undercraft split is loosely evocative of the real
+stage-presence/stagecraft distinction and that its troupe-size effect is an
+inverse U — a shape a guesser can apply without reading anything (that question
+was answered 3/3). Review #2 then showed all five of its directional claims go
+against the sensible guess, which is the imbalance `bench-check` now forbids.
+
+And the version the 2026-09-20 runs used **opened with a notice that it existed
+to measure a test-wise reader's hit rate**. The analyst and generator read that.
+It was removed on 2026-09-23; every other line is byte-identical, verified
+mechanically, and the original is `private/passage.original.md`. So the
+2026-09-20 figures were produced by a generator that knew it was being measured,
+and later `undercraft` runs are not strictly comparable with them.
+
+It stays on the bench because it is the only entry with manipulation-arm data.

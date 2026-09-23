@@ -1,16 +1,19 @@
 ---
-stage: critique — judge ONE candidate, pass 1 (DROPPED from the calibration/bench loop as of 2026-09-23)
+stage: critique — judge ONE candidate, pass 1 (DROPPED from the calibration loop, HANDOFF §9.2)
 agent: quiz-critic
 model: opus
 placeholders: [section, candidate_input, concept_map, prose, out]
-optional: [respawn_note]
+optional: []
+paths: [candidate_input, concept_map, prose]
 reply: OK <path> | FAIL <reason>
 notes: >
-  One candidate per spawn, always. The schema contract below was added after a
-  critic rewrite invented stem_format "scenario-application" (a03r, 2026-09-20);
-  render now refuses such a candidate regardless, so this is the cheap first line
-  of defence and render is the one that holds. Enum values are auto-filled from
-  the constants validate enforces.
+  One candidate per spawn, always. `out` is derived (verdicts/<short-id>.json).
+  The schema contract was added after a critic rewrite invented stem_format
+  "scenario-application" (a03r, 2026-09-20); render now refuses such a candidate
+  regardless, so this is the cheap first defence and render is the one that
+  holds. The quoting rule is stated here because it is in no critic brief and
+  not in RUBRIC — for the critic this is the only copy, not a restatement.
+  A re-spawn after a validate failure uses this prompt UNCHANGED (review #12).
 ---
 Judge exactly ONE candidate against the rubric.
 
@@ -23,8 +26,6 @@ Read:
 4. `{{prose}}` — the section prose, for provenance and answerability.
 
 Section: `{{section}}`.
-
-{{?respawn_note}}
 
 **The contract a rewrite must satisfy.** These are schema constraints; a rewrite that breaks one is discarded whole.
 

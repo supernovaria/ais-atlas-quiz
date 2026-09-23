@@ -1,0 +1,8 @@
+{
+  "id": "undercraft",
+  "words": 1518,
+  "fail": [
+    "private/claims.json is missing"
+  ],
+  "warn": []
+}

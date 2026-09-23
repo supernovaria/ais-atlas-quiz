@@ -13,9 +13,12 @@ each question is answerable without understanding.
 
 ## Configuration (fixed — do not "improve")
 
-- Agent `quiz-adversary`, `model: haiku`, **no tools**. The empty `tools:`
-  list is the isolation guarantee, not tidiness — it is what stops this agent
-  reading the chapter it is supposed not to have read.
+- Agent `quiz-adversary`, `model: haiku`. **Do not use any tools.** The
+  `tools: []` frontmatter was meant as the isolation guarantee, but in this
+  harness it has been observed to grant *all* tools rather than none (HANDOFF
+  §1, §8): isolation is behavioural. You must not open, search for or read any
+  file — reading the chapter you are supposed not to have read voids the metric.
+  The orchestrator records `tool_uses` on every spawn.
 - Context: this file + one question, passed inline in the spawn prompt. **No
   section prose, no rubric, no concept map, no explanation, no other
   questions — and no path to any of them.**
@@ -35,12 +38,17 @@ is an API-era figure. So **re-measure the current 40-question file with this
 same toolless agent** and make that the baseline. Never compare a Claude Code
 hit rate against an API-era one.
 
-## Prompt (verbatim)
+## Prompt
+
+The spawn prompt is `prompts/adversary-mc.md`, rendered by `pipeline.mjs` —
+never composed by hand. It reads as below. The session-B baseline was sent
+**without** the sentence "Do not use any tools."; every run since has included
+it.
 
 ```
 You have not read the textbook this question comes from. Answer from the
 question and options alone, using only general knowledge and test-taking
-instinct. Do not explain. Reply with a single letter.
+instinct. Do not use any tools. Do not explain. Reply with a single letter.
 
 {stem}
 
@@ -49,6 +57,9 @@ B. {option}
 C. {option}
 D. {option}
 ```
+
+For the options-only ablation rung, `{stem}` is replaced by a fixed line saying
+the question has been withheld. You still reply with a single letter.
 
 Options are presented in the *shuffled* order the app would show, seeded per
 run, so position tells are measured as the reader would see them.

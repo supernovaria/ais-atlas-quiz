@@ -33,7 +33,7 @@
 | `scripts/pipeline.mjs` exists (§2) | — | Build it. It is smaller than the API version: agents replace most of it. |
 | `atlas-audio-read-along/dist/chapters/v1/capabilities/*.md` readable | 11 files, ~25.7k words | Present at `../atlas-audio-read-along/…`, verified. Do not scrape. |
 | Agent models `sonnet`, `haiku` selectable (P1); `opus`, `fable` (P3+) | | Spawn one throwaway agent per model tier and confirm it returns. Report which are missing. P1 needs only sonnet + haiku. |
-| **`quiz-adversary` does not use file tools** | it never reads the source | **Do not use the self-report test** ("list the tools you have"): on 2026-09-19 the adversary named bash, PowerShell, read_file and write_file, and the harness's agent listing confirms it — `tools: []` is read as *unrestricted*, not *none*. Isolation is therefore **behavioural**, not structural. Use the **canary test** instead: plant `runs/<label>/canary.txt` containing a unique token, spawn the adversary with a prompt that would reward reading it, and confirm the token is absent from its reply and `tool_uses` is 0. Record `tool_uses` on every adversary spawn; a single non-zero value voids that run's adversary metric. |
+| **`quiz-adversary` does not use file tools** | it never reads the source | **Do not use the self-report test** ("list the tools you have"): on 2026-09-19 the adversary named bash, PowerShell, read_file and write_file, and the harness's agent listing confirms it — `tools: []` is read as *unrestricted*, not *none*. Isolation is therefore **behavioural**, not structural. Use the **canary test** instead: run `pipeline.mjs canary --run <label>`, which plants a file holding an answer and a random token and renders the real adversary template pointing at it; spawn `quiz-adversary` with that prompt and record the result with `canary-record --tool-uses <n> --reply <letter>`. Pass means `tool_uses` is 0. Record `tool_uses` on every adversary spawn; a single non-zero value voids that run's adversary metric. |
 | Adversary baseline re-measured on the current 40-Q file with *this* agent | a number in `runs/baseline/` | Do it before P1. QUIZ-PLAN's "≥60%" is API-era and not comparable (§8). |
 | RUBRIC v2 signed off (QUIZ-PLAN phase 1), incl. R2 amendment + §3.8/§4.6 from PIPELINE §8 | | Proceed with P1 on v1 if v2 is pending — P1's purpose is to find what v2 needs — but say so in the run log. |
 
@@ -287,13 +287,32 @@ bench/<id>/passage.md + concept-map.json      written once, reused for every ite
 ```
 
 Manipulation arms test one hypothesis at a time, each holding everything else
-byte-identical — the script verifies that before anything is spawned:
+byte-identical:
 
 - `bench-rewrite-stem` — stems only (tested 2026-09-20: 15/15 → 14/15, hypothesis rejected);
 - `bench-rewrite-distractors` — wrong options only, stem and key held.
 
-**Pre-register the interpretation in `run.log` before any result exists**, and
-state every percentage with its n and its interval in the same sentence.
+The rewrite agent's output is applied by **`pipeline.mjs arm`**, which **dies**
+unless the held fields are byte-identical, every option keeps its slot (so the
+same seed puts the key in the same letter), and every quoted passage sentence in
+the rewrite exists verbatim. (An earlier version of this section said "the
+script verifies that before anything is spawned". No such code existed; the
+2026-09-20 stem arm was checked by a one-off script. Corrected after review.)
+
+`arm` writes two section dirs, `arm/` and `control/` — the same ids, unmodified.
+Ablate **both** with the same `--seed-offset`, so they are paired with each other
+but use fresh seeds, and compare arm with control. **Never compare an arm with
+the screen that selected its ids**: re-measuring items chosen for scoring high
+drifts down on its own (regression to the mean) and flatters any manipulation.
+Add the `sighted` rung (`--rungs full,options-only,sighted --passage <path>`)
+whenever an arm is meant to make questions harder to guess: if the sighted
+rate falls too, the rewrite made them ambiguous, not better.
+
+**Pre-register the interpretation before any result exists**: write it to a
+committed file and run `pipeline.mjs preregister --run <label> --file <path>`
+before the first `ablate`. `ablate-score` checks the timestamps and warns if
+nothing preceded the ablation. State every percentage with its n and its
+interval in the same sentence.
 
 ### 9.4 Keeping it cheap — the orchestrator's overhead
 

@@ -4,11 +4,13 @@ agent: quiz-generator
 model: as production
 placeholders: [section, concept_map, prose, idea_id, curator_reason, id_prefix, out]
 optional: []
+paths: [concept_map, prose]
 reply: OK <path> | FAIL <reason>
 notes: >
-  The rejected candidate is NOT passed, by design (brief, regeneration mode):
-  anchoring on a rejected attempt is what a fresh call exists to avoid.
-  Never exercised as of 2026-09-23.
+  `curator_reason` is DERIVED from curator.json coverage.earns_question_uncovered
+  by --idea, never paraphrased (review #5). The rejected candidate is NOT passed,
+  by design: anchoring on a rejected attempt is what a fresh call exists to
+  avoid. Never exercised as of 2026-09-23.
 ---
 Section: `{{section}}`. Mode: `section`, **regeneration**.
 

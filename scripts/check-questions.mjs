@@ -377,6 +377,21 @@ export function lintCandidate(c) {
   if (!m.negation_in_stem && c.negation === true) {
     out.push({ rule: 'R13-flag', field: 'negation', detail: 'negation flag is true but no NOT/EXCEPT in stem' });
   }
+  // D-selfdefeat: a wrong option that denies what the stem presupposes. A stem
+  // asking which objection is strongest, or what is wrong, presupposes there is
+  // one, so an option saying there is none is eliminable without reading a word
+  // of the source. Observed on 2026-09-20 in two of the fiction questions the
+  // blind reader answered 3/3 (undercraft w04, w07). A WARN, and proposed for
+  // RUBRIC §4.3 alongside the other banned distractor patterns; not a gate yet.
+  const PRESUPPOSES = /\b(which|what)\b[^?]{0,80}\b(objections?|problems?|errors?|flaws?|mistakes?|weakness(es)?|wrong)\b/i;
+  const DENIES = /^\s*(there is no|there are no|there is nothing|nothing is wrong|no real|none of|it is not wrong|no objection)\b/i;
+  if (PRESUPPOSES.test(c.stem || '')) {
+    (c.options || []).forEach((o, i) => {
+      if (!o.key && DENIES.test(o.text || '')) {
+        out.push({ rule: 'D-selfdefeat', field: `options[${i}]`, detail: 'wrong option denies what the stem presupposes (e.g. "there is no objection" answering "which objection…")' });
+      }
+    });
+  }
   return out;
 }
 

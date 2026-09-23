@@ -1,5 +1,16 @@
 # Undercraft Theory in Ensemble Performance Studies
 
+**This is fiction. None of it is true.** It exists so that a test-wise reader's
+hit rate can be measured on material no model can possibly know, which is the
+only way to separate "the question leaks through its surface" from "the reader
+already knew the answer." Invented throughout: the theory, the terms, the
+researchers, the troupes, and the numbers.
+
+The `quiz-adversary` agent **never sees this passage.** It sees only a stem and
+shuffled options, exactly as in `runs/baseline/`.
+
+---
+
 ## Two kinds of contribution
 
 Ensemble craft studies is the branch of performance sociology concerned with
