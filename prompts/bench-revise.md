@@ -13,6 +13,9 @@ notes: >
   The tie-break is fixed here, not left to the reviser: a disputed tag goes the
   more guessable way, because a bench that overstates its unguessability makes
   its floor look like leakage.
+  Rev 2026-09-23: handles several review rounds — address the latest round
+  only, and APPEND to the revision log. The first version said "write" the log,
+  which a second round would have overwritten.
 ---
 Revise one bench passage against its review. Bench id: `{{bench_id}}`.
 
@@ -23,7 +26,9 @@ Read:
 2. `{{out_dir}}/passage.md`, `{{out_dir}}/private/claims.json`, `{{out_dir}}/private/passage-notes.md`.
 3. `prompts/bench-author.md` — the standard the passage must meet. It has been tightened since the passage was written; meet the current version.
 
-Then revise the three files in place so that every **accepted** finding is addressed.
+The decisions file may hold several rounds. **Address the accepted findings of its latest round.** Earlier rounds are already done; do not undo them.
+
+Revise the three files in place.
 
 Rules for the revision:
 
@@ -33,7 +38,7 @@ Rules for the revision:
 - Keep 1400–1800 words.
 - Every `quote` in `claims.json` must appear verbatim in the revised `passage.md`.
 
-Also write `{{out_dir}}/private/revision-log.md`: one line per accepted finding, saying what you changed, or — if you declined — why, with a passage quote.
+Also **append** to `{{out_dir}}/private/revision-log.md` (create it if absent) a section headed with the round's name: one line per accepted finding, saying what you changed, or — if you declined — why, with a passage quote. Never rewrite an earlier section: the log is the audit trail of every revision.
 
 `pipeline.mjs bench-check` is run on the result. A passage that cannot pass it is retired.
 

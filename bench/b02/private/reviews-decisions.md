@@ -23,3 +23,16 @@ like leakage.
 | 9 | Two discrimination pairs give themselves away by their names; pair 5 is not a pair | **accept** | Notes record which half each name gives away; pair 5 dropped; "names must not give the distinction away" added to the author template. |
 | 10 | Smaller consistency gaps (false crowns, C10's population, uncanted courses, "conflict", seed position) | **accept** | Fixed in revision. |
 | 11 | Smaller tagging points (C2's double naive answer, C9, two missing claims) | **accept** | Fixed in revision. |
+
+## Round 2 — verification review (`private/reviews/verify.md`)
+
+Verdict: *ready, with caveats*. Every round-1 finding was judged addressed. The
+caveats are accepted; they are tag corrections and one phrase, not structural.
+
+| # | finding | verdict | action |
+|---|---|---|---|
+| V1 | "Experts beat beginners" is now right 3 times, wrong once, and untagged; "two things that seem alike are actually different" is always right, untagged. The revise prompt was rendered before these heuristics reached `bench-author.md`, so the reviser never saw them. | **accept** | Tag both across every claim they apply to. If "experts beat beginners" stays lopsided, the cheapest fix the reviewer names is C19's "slightly better" becoming "no better". Record any remaining imbalance in the notes. |
+| V2 | C7 should be tagged naive-right (heavy stones stay put is physical intuition), which puts the share at 18/26 = 69%, one disputed tag from the cap | **accept** | Retag C7 as the reviewer describes, move "sensible causal story" to `heuristics_right`, and record the margin in the notes. If the share then exceeds 70%, fix it in the prose, not the tags. |
+| V3 | P2 carries the named-effect tag, but only half of P2 is a mistake | **accept** | Drop the tag from P2. |
+| V4 | A restored pell stone "reports a low ford whatever the water", but the next passer turns it | **accept** | "…where it reports a low ford until the next passer turns it." |
+| V5 | Two small definition edges from the crown fix | **accept the first only** | "…no deliberate cant in its body courses or crown." The second (locals reading a single reversed course by eye) is left, as the reviewer advises. |
