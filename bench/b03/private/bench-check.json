@@ -1,11 +1,11 @@
 {
   "id": "b03",
-  "words": 1772,
+  "words": 1792,
   "claims": 39,
-  "directional": 26,
-  "naive_right": 13,
-  "naive_right_share": 0.5,
-  "passage_only": 13,
+  "directional": 28,
+  "naive_right": 16,
+  "naive_right_share": 0.5714285714285714,
+  "passage_only": 11,
   "heuristics": {
     "experts beat beginners": {
       "right": 2,

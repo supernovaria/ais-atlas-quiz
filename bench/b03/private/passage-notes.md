@@ -1,6 +1,6 @@
 This passage is fabricated for measurement and is not a real source. The Aumark karst, the cord-snail, its lattices, the terms tharl/wennet, spur, vesk/orra, cant/pell, ostral/calvine, the tessel and fenn traces, the Orrin pattern, the Tasker pattern, slackening, silt film, tamber and pilse, the Sellen lattice, and the researchers Ilse Varrenby, Hallam Orrin, Beatrix Tasker, Joost Emmerick, Arnulf Aske and Mira Pole are all made up.
 
-Revised 2026-09-23 against `reviews/opus.md` (see `revision-log.md`). The old names (span/tie, founder/keeper, hold/reach, sheeted/corded, centre/rim trace, souring/fraying, "Tasker drift") were replaced because each gave its distinction away.
+Revised 2026-09-23 against `reviews/opus.md` (see `revision-log.md`). The old names (span/tie, founder/keeper, hold/reach, sheeted/corded, centre/rim trace, souring/fraying, "Tasker drift") were replaced because each gave its distinction away. Revised again (round 2) against `reviews/verify.md`: C13, C25 and C39 retagged guessable and naive-right; the wennet definition, the ostral rule's attribution, the Sellen lattice's current class and the Tasker mechanism's condition were tightened in the prose.
 
 ## Discrimination pairs, and what each name gives away
 
@@ -13,6 +13,11 @@ Revised 2026-09-23 against `reviews/opus.md` (see `revision-log.md`). The old na
 - **Orrin pattern vs Tasker pattern.** Same noun, so the noun gives nothing away. Orrin: compares lattices by how they were begun (several vesks -> shorter pell), colder galleries only. Tasker: one lattice through time (pell falls after the last tharl), draughty galleries only. The conditions are on different axes (temperature vs air movement), so one does not mirror the other.
 - **Slackening vs the Tasker pattern (one thing).** Varrenby's "slackening" is the Tasker pattern; her mechanism (the air stretches chains) is false. The name "slackening" points toward her false mechanism, i.e. the wrong way.
 - **Tamber vs pilse.** Tamber = gradual change in the mucus; pilse = wear by crawling snails. Neither name has an English meaning. The definitions in the text do describe each, so a stem that includes the definition gives the mechanism; the diagnostic (where the break falls) is not in the words.
+- **Residual name leaks (round 2).**
+  - "Orrin pattern" is nearly a homograph of "orra". It points the wrong way: the pattern concerns how many *vesks* began a lattice, not orras. A generator may use it as a lure.
+  - "Slackening" is Varrenby's name for a process she thought was *stretching*; the name points toward her false mechanism. The lamp sentence used to say the warmth "slackens" wennets, inviting a conflation of the two; it now says "softens".
+  - "Pilse" resembles "pilling", wear by friction, which gives away its definition (wear by crawling snails). The definition sits beside the name in the text, so the leak adds little.
+  - "Calvine" echoes Latin *calvus*, bald, which would point to the sparser, short-chain class, i.e. the right way. Weak.
 - **Four objectors.** Tasker objected to the Orrin pattern (anchoring speed; overruled). Emmerick objected to the ostral/calvine boundary (carried into practice). Aske objected to Varrenby's counting order (carried). Pole objected to the tessel trace (conceded, practice unchanged). Tasker is also the name of a pattern: deliberate.
 
 ## Thin renamings of real things
@@ -21,14 +26,14 @@ Revised 2026-09-23 against `reviews/opus.md` (see `revision-log.md`). The old na
 - Emmerick's objection (a category boundary that flips on one small change, fixed by averaging several values) is a generic brittleness-of-thresholds argument; his *proposal* follows from the objection and is tagged guessable (C37). That practice then adopted it is not guessable from the frame.
 - The Orrin/Tasker exchange follows a generic "confounder, then matched comparison" pattern. Tasker's confounder (quicker anchoring leaves fewer seasons of wennet-laying before the last tharl) is now consistent with the passage's own timing facts, so the passage does not refute it by itself; only Orrin's matched comparison does.
 - The Orrin pattern's direction matches "too many cooks spoil the broth". It is tagged naive-right for that reason (C18).
-- Physical intuition: the old soured-snaps-clean / frayed-brushes diagnostic was real fibre-failure knowledge and is gone. The new one (tamber breaks near a fastening, pilse near the middle) has stories both ways: crawling wears the middle (makes it guessable), or chafe concentrates at junctions (makes it wrong). Tagged guessable and naive-right under the first story (C34). The lamp-warmth reason for counting order (C13) is not a real material behaviour of any familiar thread.
+- Physical intuition: the old soured-snaps-clean / frayed-brushes diagnostic was real fibre-failure knowledge and is gone. The new one (tamber breaks near a fastening, pilse near the middle) has stories both ways: crawling wears the middle (makes it guessable), or chafe concentrates at junctions (makes it wrong). Tagged guessable and naive-right under the first story (C34). The lamp-warmth mechanism for counting order (C13) is not a real material behaviour of any familiar thread, but the class of reason (tracing the frame disturbs the wennets) is common sense, so C13 is tagged guessable.
 - Tie/rope imagery resembles spider webs, but no web-biology principle is used and no adaptive explanation is given.
 - Real frames a reader might bring: flood common sense ("higher is safer") is contradicted (C31); "cold slows animals" is confirmed (C27, kept as a plain naive-right claim); "wear comes from traffic" is contradicted (C33).
 
 ## Heuristic balance (from claims.json)
 
-- Naive guess right on 13 of 26 directional claims. 13 claims have no sensible guess.
-- Balanced 2+ each way: moderate middle (2/2), more is better (2 right / 5 wrong), causal story (2/2), objection-noted (2/2), trade-off (2/2), alike-are-different (2/2), experts-beat-beginners (2/2), surprising (6/5, tagged only where the answer genuinely surprises, so it is not the complement of `naive_is_right`).
+- Naive guess right on 16 of 28 directional claims (57%). 11 claims have no sensible guess. Round 2 moved C13 (lamp reason: "record the evidence before you disturb it"), C25 (the two patterns are distinct findings) and C39 (Emmerick's rule adopted) to guessable and naive-right under the tie-break.
+- Balanced 2+ each way: moderate middle (2/2), more is better (2 right / 5 wrong), causal story (3 right / 2 wrong), objection-noted (2/2), trade-off (2/2), alike-are-different (3 right / 2 wrong), experts-beat-beginners (2/2), surprising (6/5, tagged only where the answer genuinely surprises, so it is not the complement of `naive_is_right`).
 - Could not balance to two each way:
   - "quality peaks at a medium size": 1 right (C11 resting snails), 1 wrong (C30 no plateau). A third size-shaped claim would be a matched pair with one of these.
   - "the most insidious-sounding thing is the most dangerous": 1 right (C33 tamber), 1 wrong (C32 silt film).

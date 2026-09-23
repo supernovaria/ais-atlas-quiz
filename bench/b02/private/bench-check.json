@@ -1,10 +1,10 @@
 {
   "id": "b02",
   "words": 1794,
-  "claims": 31,
-  "directional": 26,
-  "naive_right": 17,
-  "naive_right_share": 0.6538461538461539,
+  "claims": 33,
+  "directional": 28,
+  "naive_right": 19,
+  "naive_right_share": 0.6785714285714286,
   "passage_only": 5,
   "heuristics": {
     "more is better": {
@@ -12,7 +12,7 @@
       "wrong": 4
     },
     "experts are better overall but stuck in their habits": {
-      "right": 4,
+      "right": 5,
       "wrong": 2
     },
     "quality peaks at a medium size": {
@@ -25,18 +25,22 @@
     },
     "the surprising answer is the right one": {
       "right": 9,
-      "wrong": 17
+      "wrong": 19
     },
     "the answer with a trade-off is right": {
       "right": 3,
       "wrong": 2
     },
+    "experts beat beginners": {
+      "right": 3,
+      "wrong": 2
+    },
     "the option with the most sensible causal story is right": {
-      "right": 9,
+      "right": 11,
       "wrong": 5
     },
     "an effect named after a researcher describes a mistake": {
-      "right": 2,
+      "right": 1,
       "wrong": 2
     },
     "a prediction named in the stem was refuted": {
@@ -58,6 +62,10 @@
     "the objection was noted but practice did not change": {
       "right": 1,
       "wrong": 1
+    },
+    "two things that seem alike are actually different": {
+      "right": 2,
+      "wrong": 1
     }
   },
   "shapes": {
@@ -69,7 +77,9 @@
   "fail": [],
   "warn": [
     "heuristic \"the surprising answer is the right one\" is tagged as the exact complement of naive_is_right — its balance is guaranteed and is not separate evidence",
+    "heuristic \"an effect named after a researcher describes a mistake\" is tagged only 1 right / 2 wrong — too few uses to be balanced",
     "heuristic \"the majority rules, the odd one out is something else\" is tagged only 1 right / 0 wrong — too few uses to be balanced",
-    "heuristic \"the objection was noted but practice did not change\" is tagged only 1 right / 1 wrong — too few uses to be balanced"
+    "heuristic \"the objection was noted but practice did not change\" is tagged only 1 right / 1 wrong — too few uses to be balanced",
+    "heuristic \"two things that seem alike are actually different\" is tagged only 2 right / 1 wrong — too few uses to be balanced"
   ]
 }

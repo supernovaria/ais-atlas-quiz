@@ -24,7 +24,8 @@
     "naive_is_right": false,
     "heuristics_right": [
       "the answer with a trade-off is right",
-      "the surprising answer is the right one"
+      "the surprising answer is the right one",
+      "experts beat beginners"
     ],
     "heuristics_wrong": [
       "more is better",
@@ -79,7 +80,8 @@
     "naive_answer": "The fresher information, the pell stone, is usually right, so the locals' habit costs them.",
     "naive_is_right": false,
     "heuristics_right": [
-      "the surprising answer is the right one"
+      "the surprising answer is the right one",
+      "experts beat beginners"
     ],
     "heuristics_wrong": [
       "experts are better overall but stuck in their habits",
@@ -99,7 +101,8 @@
       "experts are better overall but stuck in their habits"
     ],
     "heuristics_wrong": [
-      "the option with the most sensible causal story is right"
+      "the option with the most sensible causal story is right",
+      "experts beat beginners"
     ],
     "shape": null,
     "passage_only": false,
@@ -126,17 +129,17 @@
   {
     "id": "C7",
     "claim": "The heavier the pell stone, the more faithful its record: light stones are knocked about by sheep, and walkers who know the convention turn even the heaviest.",
-    "naive_answer": "A middling weight works best: light stones are knocked about, and very heavy ones go unturned.",
-    "naive_is_right": false,
+    "naive_answer": "Heavier stones are knocked about less, so they record more faithfully.",
+    "naive_is_right": true,
     "heuristics_right": [
       "more is better",
-      "the surprising answer is the right one"
+      "the option with the most sensible causal story is right"
     ],
     "heuristics_wrong": [
       "quality peaks at a medium size",
       "the moderate middle is right",
       "the answer with a trade-off is right",
-      "the option with the most sensible causal story is right"
+      "the surprising answer is the right one"
     ],
     "shape": "rising",
     "passage_only": false,
@@ -198,7 +201,8 @@
     "naive_answer": "Experienced locals misroute less often than strangers.",
     "naive_is_right": true,
     "heuristics_right": [
-      "experts are better overall but stuck in their habits"
+      "experts are better overall but stuck in their habits",
+      "experts beat beginners"
     ],
     "heuristics_wrong": [
       "the surprising answer is the right one"
@@ -225,7 +229,7 @@
   },
   {
     "id": "C13",
-    "claim": "A restored cairn says less than the one it replaced: conservators give every course the same cant, erasing hobs, and set the pell stone upslope.",
+    "claim": "A restored cairn says less than the one it replaced: conservators give every course the same cant, erasing hobs, and set the pell stone upslope, where it reports a low ford until the next passer turns it.",
     "naive_answer": "Rebuilding a cairn loses some of the original builder's meaning.",
     "naive_is_right": true,
     "heuristics_right": [
@@ -332,6 +336,39 @@
     "quote": "they misled locals more often than pell stones left stale for weeks on quiet routes."
   },
   {
+    "id": "C21",
+    "claim": "At leaning Garth cairns strangers misroute less often than locals: locals read the tilt of the silhouette as cant, while strangers find no offset between courses and take no direction from the cairn.",
+    "naive_answer": "Experienced locals misroute less often than strangers at any kind of cairn.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the surprising answer is the right one",
+      "experts are better overall but stuck in their habits"
+    ],
+    "heuristics_wrong": [
+      "experts beat beginners",
+      "the option with the most sensible causal story is right"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "At leaning Garth cairns strangers misrouted less often than locals, who read the tilt of the silhouette as cant; strangers found no offset between courses and took no direction from the cairn."
+  },
+  {
+    "id": "C22",
+    "claim": "The hask cairn (pell stone bedded into the crown), listed in older reports as a separate fault, is the same fault as the stale pell stone: a stone left unturned on a quiet route.",
+    "naive_answer": "A stone that has bedded in is one left unturned for a long time, so it is the same fault as a stale stone.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "two things that seem alike are actually different",
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Older reports list the hask cairn, whose pell stone has bedded into the crown, as a separate fault; Tessaly showed it is the same fault, a stone left unturned on a quiet route."
+  },
+  {
     "id": "P1",
     "claim": "The concord index excludes the footing, because it follows the slope of the ground and has no cant of its own.",
     "naive_answer": "The bottom course sits on the ground and carries no message, so it is left out.",
@@ -351,9 +388,7 @@
     "claim": "The Tessaly effect concerns experienced readers and a conflict between registers; the Orne effect concerns strangers misreading a hob in the courses.",
     "naive_answer": null,
     "naive_is_right": null,
-    "heuristics_right": [
-      "an effect named after a researcher describes a mistake"
-    ],
+    "heuristics_right": [],
     "heuristics_wrong": [],
     "shape": null,
     "passage_only": true,
@@ -418,7 +453,7 @@
   },
   {
     "id": "P6",
-    "claim": "A Hessle cairn has canted body courses but no pell stone (dorran sense only); a Garth cairn has a pell stone but no deliberate cant (lisk sense only).",
+    "claim": "A Hessle cairn has canted body courses but no pell stone (dorran sense only); a Garth cairn has a pell stone but no deliberate cant in its body courses or crown (lisk sense only).",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
@@ -444,7 +479,8 @@
     "naive_answer": "Once lean is defined as frost tilt and cant as a deliberate offset between courses, lean carries no meaning and does not change cant.",
     "naive_is_right": true,
     "heuristics_right": [
-      "the option with the most sensible causal story is right"
+      "the option with the most sensible causal story is right",
+      "two things that seem alike are actually different"
     ],
     "heuristics_wrong": [
       "the surprising answer is the right one"
@@ -458,7 +494,9 @@
     "claim": "On the current (Tessaly) index the worked-example cairn has a concord of 0.5; on Marhaug's crown-inclusive version, 0.6.",
     "naive_answer": "Given the cant sequence and the definition in the stem, count agreeing pairs: 2 of 4.",
     "naive_is_right": true,
-    "heuristics_right": [],
+    "heuristics_right": [
+      "two things that seem alike are actually different"
+    ],
     "heuristics_wrong": [
       "the surprising answer is the right one"
     ],

@@ -1508,6 +1508,12 @@ function stageBenchCheck(opts = {}) {
       for (const c of claims) {
         if (!c.quote || !flat.includes(collapse(c.quote))) fail.push(`${c.id}: quote not found verbatim in passage.md`);
         if ((c.naive_answer == null) !== (c.naive_is_right == null)) fail.push(`${c.id}: naive_is_right must be null exactly when naive_answer is`);
+        // A claim cannot have "no sensible guess" while a heuristic predicts its
+        // true answer: a blind reader applying that heuristic gets it right. Both
+        // verification reviews found this by reading (b02 P2; b03 C13, C25); it is
+        // a contradiction in the tags, so the script catches it.
+        const noGuess = c.passage_only === true || c.naive_answer == null;
+        if (noGuess && (c.heuristics_right || []).length) fail.push(`${c.id}: tagged as having no sensible guess, yet "${c.heuristics_right.join('", "')}" predicts its true answer — retag it guessable`);
       }
       const directional = claims.filter((c) => c.naive_is_right != null);
       const right = directional.filter((c) => c.naive_is_right === true).length;
@@ -3068,6 +3074,12 @@ function selftest() {
     writeFileSync(join(bdir, 'passage.md'), `This passage is fabricated. ${words(1500)}`);
     check(stageBenchCheck({ bench: bid }).fail.some((x) => /analyst and generator/.test(x)),
       'bench-check fails a passage that announces it is fabricated');
+    writeFileSync(join(bdir, 'passage.md'), words(1500));
+    const contra = claimsFor(3, 6);
+    contra[contra.length - 1].heuristics_right = ['the sensible causal story is right'];
+    writeJson(join(bdir, 'private', 'claims.json'), contra);
+    check(stageBenchCheck({ bench: bid }).fail.some((x) => /no sensible guess, yet/.test(x)),
+      'bench-check fails a claim tagged unguessable that a heuristic predicts');
     rmSync(bdir, { recursive: true, force: true });
   }
 

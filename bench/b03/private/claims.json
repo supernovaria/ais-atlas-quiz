@@ -1,7 +1,7 @@
 [
   {
     "id": "C1",
-    "claim": "A tharl is fastened to rock at both ends and a wennet only to other threads; the distinction is what a thread is fastened to, not its length or thickness.",
+    "claim": "A tharl is fastened to rock at both ends and a wennet only to other threads, at both ends; the distinction is what a thread is fastened to, not its length or thickness.",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
@@ -109,14 +109,14 @@
   },
   {
     "id": "C10",
-    "claim": "A lattice is ostral when its pell is more than twice its cant, and calvine otherwise.",
+    "claim": "By Varrenby's rule, a lattice is ostral when its pell is more than twice its cant, and calvine otherwise.",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
     "heuristics_wrong": [],
     "shape": null,
     "passage_only": true,
-    "quote": "a lattice is ostral when its pell is more than twice its cant, and calvine otherwise."
+    "quote": "by Varrenby's rule, a lattice is ostral when its pell is more than twice its cant, and calvine otherwise."
   },
   {
     "id": "C11",
@@ -151,16 +151,16 @@
   },
   {
     "id": "C13",
-    "claim": "The reason: tracing tharls brings the lamp close to the rock, and its warmth slackens nearby wennets so they sag together and cannot be told apart.",
-    "naive_answer": null,
-    "naive_is_right": null,
+    "claim": "The reason: tracing tharls brings the lamp close to the rock, and its warmth softens nearby wennets so they sag together and cannot be told apart.",
+    "naive_answer": "Tracing the tharls disturbs the wennets, so they are counted first.",
+    "naive_is_right": true,
     "heuristics_right": [
       "the option with the most sensible causal story is right"
     ],
     "heuristics_wrong": [],
     "shape": null,
-    "passage_only": true,
-    "quote": "following a tharl to its anchors means bringing the lamp close to the rock, and the warmth slackens nearby wennets so that they sag against one another and can no longer be told apart."
+    "passage_only": false,
+    "quote": "following a tharl to its anchors means bringing the lamp close to the rock, and the warmth softens nearby wennets so that they sag against one another and can no longer be told apart."
   },
   {
     "id": "C14",
@@ -295,7 +295,7 @@
   },
   {
     "id": "C24",
-    "claim": "The Tasker pattern's mechanism: wennets are laid and lost at about the same rate, but new wennets run more often from tharl to tharl, breaking long chains; the air does not stretch them.",
+    "claim": "The Tasker pattern's mechanism: in draughty galleries more old wennets are lost each season and orras replace them at about the same rate, but new wennets run more often from tharl to tharl, breaking long chains; the air does not stretch them.",
     "naive_answer": "The moving air stretches long chains until they part.",
     "naive_is_right": false,
     "heuristics_right": [
@@ -306,19 +306,19 @@
     ],
     "shape": null,
     "passage_only": false,
-    "quote": "Orras go on laying wennets and old wennets are lost at about the same rate, but the new wennets run more often from tharl to tharl than the ones they replace, so long chains are broken into short ones."
+    "quote": "In draughty galleries more old wennets are lost each season, and the orras replace them at about the same rate, but the new wennets run more often from tharl to tharl than the ones they replace, so long chains are broken into short ones."
   },
   {
     "id": "C25",
     "claim": "The Orrin pattern compares lattices by how they were begun; the Tasker pattern follows single lattices through time.",
-    "naive_answer": null,
-    "naive_is_right": null,
+    "naive_answer": "They are distinct findings, not versions of one.",
+    "naive_is_right": true,
     "heuristics_right": [
       "two things that seem alike are actually different"
     ],
     "heuristics_wrong": [],
     "shape": null,
-    "passage_only": true,
+    "passage_only": false,
     "quote": "The two regularities are not versions of one finding: the Orrin pattern compares lattices by how they were begun, while the Tasker pattern follows single lattices through time."
   },
   {
@@ -490,7 +490,7 @@
   },
   {
     "id": "C38",
-    "claim": "Under Emmerick's mean the Sellen lattice (chains of 7, 4 and 3; mean about 4.7, below 6) is calvine; breaking its centre wennet would also make it calvine under Varrenby's rule, with cant only falling to about 2.9.",
+    "claim": "Under Emmerick's mean the Sellen lattice (chains of 7, 4 and 3; mean about 4.7, below 6) is calvine, so under current practice it is calvine; breaking its centre wennet would also make it calvine under Varrenby's rule, with cant only falling to about 2.9.",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
@@ -502,8 +502,8 @@
   {
     "id": "C39",
     "claim": "Emmerick's objection was carried into practice: since the 1970s most surveys use his mean, keeping Varrenby's rule only for comparison with her survey.",
-    "naive_answer": "The objection was noted, and Varrenby's rule stayed standard.",
-    "naive_is_right": false,
+    "naive_answer": "The more robust rule was adopted.",
+    "naive_is_right": true,
     "heuristics_right": [
       "the answer with a trade-off is right"
     ],
