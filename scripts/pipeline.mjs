@@ -18,6 +18,11 @@
 //   node scripts/pipeline.mjs score    --out <dir>                          (baseline mode)
 //   node scripts/pipeline.mjs assemble --run <label>
 //   node scripts/pipeline.mjs report   --run <label>
+//   node scripts/pipeline.mjs prompt   <template> [--run <label> --section <slug>] [--id <id>]
+//                                      [--set key=value ...] [--set-file key=<path> ...] [--out <file>]
+//   node scripts/pipeline.mjs ablate   --run <label> --section <slug> [--rungs full,options-only]
+//                                      [--seeds 1] [--ids a,b] [--force]
+//   node scripts/pipeline.mjs ablate-score --run <label> --section <slug>
 //   node scripts/pipeline.mjs selftest
 //
 // Every stage is runnable in isolation and reads only artifacts already on disk.
@@ -30,6 +35,7 @@ import { join, dirname, resolve, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseChapterMarkdown } from '../src/quizParser.js';
 import { measure, contentWords, overlap, GATES, atlasSlug, lintCandidate } from './check-questions.mjs';
+import { renderTemplate, loadTemplate, lintTemplate, listTemplates, PromptError } from './prompts.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CHAPTER_DIR = resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/capabilities');
@@ -55,6 +61,16 @@ const STEM_FORMATS = [
   'claim-evaluation', 'two-scenario', 'thought-experiment',
   'direct-conceptual', 'mechanism', 'classification',
 ];
+// Filled into every spawn prompt by the renderer, from the same constants
+// validate enforces — so a prompt cannot state one enum while the checker
+// enforces another. See prompts/README.md.
+const PROMPT_AUTO = {
+  stem_formats: STEM_FORMATS.map((x) => `\`${x}\``).join(', '),
+  lenses: LENSES.map((x) => `\`${x}\``).join(', '),
+  levels: LEVELS.join(', '),
+  verdicts: VERDICTS.map((x) => `\`${x}\``).join(', '),
+};
+
 // §3.7 per-section targets. Used by report/curate checks, never to edit a set.
 const DIST_TARGET = { L2: 0.20, L3: 0.30, L4: 0.25 };
 
@@ -94,6 +110,17 @@ const fmtPct = (x) => `${(x * 100).toFixed(0)}%`;
 function die(msg) {
   console.error(`FAIL ${msg}`);
   process.exit(1);
+}
+
+// The only way this script builds a spawn prompt. A template problem is a
+// stage failure, never a half-rendered prompt handed to an agent.
+function render(name, vars) {
+  try {
+    return renderTemplate(name, vars, { workdir: ROOT, ...PROMPT_AUTO });
+  } catch (e) {
+    if (e instanceof PromptError) die(e.message);
+    throw e;
+  }
 }
 
 function need(p, what) {
@@ -725,17 +752,48 @@ function stageQueue(label, slug) {
 
 // ------------------------------------------------------ stage: shuffle (t4)
 
-// Builds the adversary prompt bodies, seeded. The prompt is the one in
-// quiz-adversary.md, verbatim. Options are shuffled per seed so position tells
-// are measured as the reader would see them; the key's letter is recorded here
-// so `score` can mark a hit without the adversary ever seeing it.
-const ADVERSARY_PREAMBLE = `You have not read the textbook this question comes from. Answer from the
-question and options alone, using only general knowledge and test-taking
-instinct. Do not explain. Reply with a single letter.`;
+// Builds the adversary prompt bodies, seeded. The text comes from
+// prompts/adversary-mc.md and nowhere else. Until 2026-09-23 it was a constant
+// here, and the prompt actually sent differed from it by one sentence ("Do not
+// use any tools.") for every spawn after the baseline — the drift the template
+// files exist to make impossible. Options are shuffled per seed so position
+// tells are measured as the reader would see them; the key's letter is recorded
+// here so `score` can mark a hit without the adversary ever seeing it.
+const optionLines = (texts) => texts.map((t, i) => `${String.fromCharCode(65 + i)}. ${t}`).join('\n');
 
 function adversaryPrompt(stem, optionTexts) {
-  const lines = optionTexts.map((t, i) => `${String.fromCharCode(65 + i)}. ${t}`);
-  return `${ADVERSARY_PREAMBLE}\n\n${stem}\n\n${lines.join('\n')}`;
+  return render('adversary-mc', { stem, options: optionLines(optionTexts) }).trimEnd();
+}
+
+// The seeded option orders for one question. Shared by `shuffle` and `ablate`
+// so that, for the same id#seed, every ablation rung shows the options in the
+// SAME order as the standard adversary run — position is then controlled and
+// the rungs differ in exactly the thing being ablated.
+//
+// The seeds must give DISTINCT arrangements, or "hit on ≥2/3 seeds" tests the
+// same arrangement twice and the flag is weaker than it looks. With independent
+// seeding, ~12% of 4-option questions draw a repeat, and the first baseline run
+// measured exactly that (5 of 40). So re-seed until the permutation is new,
+// bounded by how many distinct ones exist (k! — and k! ≤ seeds for a 2-option
+// question, where repeats are unavoidable).
+function seededOrders(it, seeds) {
+  const seen = new Set();
+  const maxPerms = it.options.reduce((a, _, i) => a * (i + 1), 1);
+  const orders = [];
+  let repeated = 0;
+  for (let s = 1; s <= seeds; s++) {
+    let order = it.no_shuffle ? it.options : shuffled(it.options, `${it.id}#${s}`);
+    if (!it.no_shuffle && seen.size < maxPerms) {
+      for (let salt = 0; salt < 64 && seen.has(order.map((o) => o.text).join('\u0000')); salt++) {
+        order = shuffled(it.options, `${it.id}#${s}#r${salt}`);
+      }
+    }
+    const permKey = order.map((o) => o.text).join('\u0000');
+    if (seen.has(permKey)) repeated++;
+    seen.add(permKey);
+    orders.push({ seed: s, order });
+  }
+  return { orders, repeated };
 }
 
 function stageShuffle(label, slug, opts = {}) {
@@ -785,24 +843,9 @@ function stageShuffle(label, slug, opts = {}) {
   const prompts = [];
   let repeatedPerms = 0;
   for (const it of items) {
-    // The seeds must give DISTINCT arrangements, or "hit on ≥2/3 seeds" tests
-    // the same arrangement twice and the flag is weaker than it looks. With
-    // independent seeding, ~12% of 4-option questions draw a repeat, and the
-    // first baseline run measured exactly that (5 of 40). So re-seed until the
-    // permutation is new, bounded by how many distinct ones exist (k! — and
-    // k! ≤ seeds for a 2-option question, where repeats are unavoidable).
-    const seen = new Set();
-    const maxPerms = it.options.reduce((a, _, i) => a * (i + 1), 1);
-    for (let s = 1; s <= seeds; s++) {
-      let order = it.no_shuffle ? it.options : shuffled(it.options, `${it.id}#${s}`);
-      if (!it.no_shuffle && seen.size < maxPerms) {
-        for (let salt = 0; salt < 64 && seen.has(order.map((o) => o.text).join('\u0000')); salt++) {
-          order = shuffled(it.options, `${it.id}#${s}#r${salt}`);
-        }
-      }
-      const permKey = order.map((o) => o.text).join('\u0000');
-      if (seen.has(permKey)) repeatedPerms++;
-      seen.add(permKey);
+    const { orders, repeated } = seededOrders(it, seeds);
+    repeatedPerms += repeated;
+    for (const { seed: s, order } of orders) {
       const keyIdx = order.findIndex((o) => o.key);
       prompts.push({
         id: it.id,
@@ -831,6 +874,250 @@ function stageShuffle(label, slug, opts = {}) {
   console.log(`shuffle  ${out.source}: ${items.length} questions × ${seeds} seeds = ${prompts.length} adversary prompts → ${p}`);
   if (repeatedPerms) console.log(`         note: ${repeatedPerms} prompt(s) repeat a permutation (fewer than ${seeds} distinct orders exist)`);
   return out;
+}
+
+
+// -------------------------------------------------------- stage: prompt
+
+// Render one spawn prompt from prompts/<template>.md. The orchestrator passes
+// the output, unmodified, as the Agent call's prompt, and never composes one.
+//
+// Convenience values are DERIVED from --run/--section/--id, but only for
+// placeholders the template actually declares, so a derived value can never
+// trip the renderer's unknown-variable check. Explicit --set always wins.
+function allFlags(name) {
+  const out = [];
+  for (let i = 0; i < argv.length - 1; i++) if (argv[i] === `--${name}`) out.push(argv[i + 1]);
+  return out;
+}
+
+function stagePrompt(label, slug, opts = {}) {
+  const name = opts.template ?? (argv[1] && !argv[1].startsWith('--') ? argv[1] : null);
+  if (!name) die('usage: pipeline.mjs prompt <template> [--run R --section S] [--id ID] [--set k=v ...] [--set-file k=path ...] [--out FILE]');
+  let tpl;
+  try { tpl = loadTemplate(name); } catch (e) { if (e instanceof PromptError) die(e.message); throw e; }
+  const declared = new Set([...tpl.placeholders, ...tpl.optional]);
+  const vars = {};
+  const derive = (k, v) => { if (declared.has(k) && v != null) vars[k] = v; };
+
+  if (label && slug) {
+    const dir = `runs/${label}/${slug}`;
+    derive('section', slug);
+    derive('dir', dir);
+    derive('concept_map', `${dir}/concept-map.json`);
+    const chapter = join(CHAPTER_DIR, `${slug}.md`);
+    if (existsSync(chapter)) derive('prose', `../atlas-audio-read-along/dist/chapters/v1/capabilities/${slug}.md`);
+    const id = opts.id ?? flag('id');
+    if (id) {
+      const short = id.split('/').pop();
+      derive('candidate_input', `${dir}/critic-inputs/${short}.json`);
+    }
+  }
+  for (const kv of opts.set ?? allFlags('set')) {
+    const i = kv.indexOf('=');
+    if (i < 1) die(`--set expects key=value, got "${kv}"`);
+    vars[kv.slice(0, i)] = kv.slice(i + 1);
+  }
+  for (const kv of opts.setFile ?? allFlags('set-file')) {
+    const i = kv.indexOf('=');
+    if (i < 1) die(`--set-file expects key=path, got "${kv}"`);
+    vars[kv.slice(0, i)] = readFileSync(resolve(ROOT, kv.slice(i + 1)), 'utf8').trimEnd();
+  }
+  const text = render(name, vars);
+  const out = opts.out ?? flag('out');
+  if (out) { writeFileSync(resolve(ROOT, out), text, 'utf8'); console.error(`prompt   ${name} → ${out}`); }
+  else if (!opts.quiet) process.stdout.write(text);
+  return text;
+}
+
+// -------------------------------------------------------- stage: ablate
+
+// The ablation ladder, as a stage rather than as orchestrator improvisation.
+//
+// For each candidate × seed × rung it writes one adversary prompt file, rendered
+// from the rung's template, plus a manifest that maps every file to its id,
+// seed, key letter and chance. The orchestrator then only has to record
+// "file -> letter" in ablation/picks.json: it never maps ids or seeds by hand,
+// which is where the 2026-09-20 control analysis briefly went wrong.
+//
+//   full          prompts/adversary-mc.md           stem + options
+//   options-only  prompts/adversary-options-only.md options, stem withheld
+//   stem-only     prompts/adversary-free-recall.md  stem, no options; graded by
+//                                                   hand, real sections only
+//
+// For the same id#seed every rung uses the SAME option order (seededOrders), so
+// the rungs differ only in what is withheld.
+//
+// Defaults follow the calibration policy (HANDOFF §9): screen at ONE seed, then
+// confirm flagged questions at three.
+const ABLATION_RUNGS = {
+  full: 'adversary-mc',
+  'options-only': 'adversary-options-only',
+  'stem-only': 'adversary-free-recall',
+};
+const RECALL_GRADES = ['match', 'partial', 'miss', 'idk', 'refusal'];
+
+function stageAblate(label, slug, opts = {}) {
+  const dir = sectionDir(label, slug);
+  const candidates = readJson(need(join(dir, 'candidates.json'), 'candidates.json'));
+  const seeds = Number(opts.seeds ?? flag('seeds', '1'));
+  const rungs = String(opts.rungs ?? flag('rungs', 'full,options-only')).split(',').map((r) => r.trim()).filter(Boolean);
+  const idsArg = opts.ids ?? flag('ids');
+  const force = opts.force ?? argv.includes('--force');
+  if (!Number.isInteger(seeds) || seeds < 1) die(`--seeds must be a positive integer, got ${seeds}`);
+  for (const r of rungs) if (!ABLATION_RUNGS[r]) die(`unknown rung "${r}" — known: ${Object.keys(ABLATION_RUNGS).join(', ')}`);
+
+  let items = candidates.filter((c) => c && c.stem && Array.isArray(c.options));
+  if (idsArg) {
+    const want = String(idsArg).split(',');
+    const have = new Set(items.map((c) => c.id));
+    const absent = want.filter((w) => !have.has(w));
+    if (absent.length) die(`ablate: id(s) not in candidates.json: ${absent.join(', ')}`);
+    const only = new Set(want);
+    items = items.filter((c) => only.has(c.id));
+  }
+  if (!items.length) die(`ablate: no candidates to ablate in ${dir}`);
+
+  const ad = join(dir, 'ablation');
+  // Never overwrite a manifest whose picks may already have been recorded: the
+  // picks are keyed by file name, and a rebuilt manifest silently re-points them.
+  if (existsSync(join(ad, 'picks.json')) && !force) {
+    die(`ablate: ${join(ad, 'picks.json')} already exists. A new manifest would re-point those picks.\n`
+      + '       Move the old ablation/ aside, or pass --force if the picks are known to be stale.');
+  }
+  rmSync(ad, { recursive: true, force: true });
+
+  const entries = [];
+  for (const rung of rungs) {
+    let k = 0;
+    for (const it of items) {
+      const { orders } = seededOrders(it, seeds);
+      for (const { seed, order } of orders) {
+        const texts = order.map((o) => o.text);
+        const keyIdx = order.findIndex((o) => o.key);
+        const vars = rung === 'full' ? { stem: it.stem, options: optionLines(texts) }
+          : rung === 'options-only' ? { options: optionLines(texts) }
+            : { stem: it.stem };
+        const file = `${rung}/${String(k).padStart(2, '0')}`;
+        const text = render(ABLATION_RUNGS[rung], vars).trimEnd();
+        mkdirSync(join(ad, rung), { recursive: true });
+        writeFileSync(join(ad, `${file}.txt`), `${text}\n`, 'utf8');
+        entries.push({
+          file,
+          rung,
+          id: it.id,
+          seed,
+          option_count: order.length,
+          key_letter: rung === 'stem-only' ? null : String.fromCharCode(65 + keyIdx),
+          chance: rung === 'stem-only' ? null : Number((1 / order.length).toFixed(4)),
+          // Recall is graded against the key's claim, so the grader needs it;
+          // the adversary never sees this file.
+          key_text: rung === 'stem-only' ? order[keyIdx].text : undefined,
+        });
+        k += 1;
+      }
+    }
+  }
+  writeJson(join(ad, 'manifest.json'), {
+    source: `${label}/${slug}`, seeds, rungs, n_questions: items.length, n_prompts: entries.length, entries,
+  });
+  writeJson(join(ad, 'picks.template.json'), Object.fromEntries(entries.map((e) => [e.file, ''])));
+  logLine(label, { stage: 'ablate', section: slug, rungs, seeds, n_questions: items.length, n_prompts: entries.length, ok: true });
+  console.log(`ablate   ${label}/${slug}: ${items.length} question(s) × ${seeds} seed(s) × ${rungs.length} rung(s) = ${entries.length} prompt(s)`);
+  console.log(`         → ${ad}  (fill picks.template.json → picks.json, then ablate-score)`);
+  return { entries, dir: ad };
+}
+
+// A 95% interval with the QUESTION as the unit. The seeds of one question are
+// not independent observations — per-question results clump — so a trial-level
+// binomial interval overstates precision. Returns null below n = 2.
+function questionUnitCI(rates) {
+  const n = rates.length;
+  if (n < 2) return null;
+  const m = mean(rates);
+  const sd = Math.sqrt(rates.reduce((a, r) => a + (r - m) ** 2, 0) / (n - 1));
+  const se = sd / Math.sqrt(n);
+  return { n, mean: m, sd, lo: Math.max(0, m - 1.96 * se), hi: Math.min(1, m + 1.96 * se) };
+}
+
+function stageAblateScore(label, slug) {
+  const ad = join(sectionDir(label, slug), 'ablation');
+  const man = readJson(need(join(ad, 'manifest.json'), 'ablation/manifest.json'));
+  const picks = readJson(need(join(ad, 'picks.json'), 'ablation/picks.json'));
+  if (!picks || typeof picks !== 'object' || Array.isArray(picks)) die('ablation/picks.json must be an object of {"<rung>/<NN>": "<letter or grade>"}');
+
+  const byFile = new Map(man.entries.map((e) => [e.file, e]));
+  const extra = Object.keys(picks).filter((f) => !byFile.has(f));
+  const missing = man.entries.filter((e) => picks[e.file] == null || String(picks[e.file]).trim() === '').map((e) => e.file);
+  // No partial scoring. The old score stage reported a passing gate on zero
+  // parsed data; a ladder with holes in it is the same failure.
+  if (extra.length) die(`ablate-score: picks for files not in the manifest: ${extra.join(', ')}`);
+  if (missing.length) die(`ablate-score: ${missing.length} prompt(s) have no pick: ${missing.join(', ')}`);
+
+  const rows = [];
+  let unparsed = 0;
+  for (const e of man.entries) {
+    const raw = String(picks[e.file]).trim();
+    if (e.rung === 'stem-only') {
+      const g = raw.toLowerCase();
+      if (!RECALL_GRADES.includes(g)) die(`ablate-score: ${e.file} grade "${raw}" is not one of ${RECALL_GRADES.join(', ')}`);
+      rows.push({ ...e, grade: g });
+      continue;
+    }
+    // Accept "B" or "B." — a bare letter with punctuation. Anything else is an
+    // unparsed reply: counted as a miss AND reported, never silently dropped.
+    const m = raw.match(/^\W*([A-Za-z])\W*$/);
+    const letter = m ? m[1].toUpperCase() : null;
+    const ok = letter && letter.charCodeAt(0) - 65 < e.option_count;
+    if (!ok) unparsed += 1;
+    rows.push({ ...e, picked: ok ? letter : null, hit: ok && letter === e.key_letter });
+  }
+
+  const ladder = { source: man.source, seeds: man.seeds, rungs: {}, per_question: {}, unparsed };
+  for (const rung of man.rungs) {
+    const rs = rows.filter((r) => r.rung === rung);
+    if (rung === 'stem-only') {
+      const counts = Object.fromEntries(RECALL_GRADES.map((g) => [g, rs.filter((r) => r.grade === g).length]));
+      ladder.rungs[rung] = { trials: rs.length, grades: counts };
+      continue;
+    }
+    const ids = uniq(rs.map((r) => r.id));
+    const perQ = ids.map((id) => {
+      const q = rs.filter((r) => r.id === id);
+      return { id, hits: q.filter((r) => r.hit).length, trials: q.length, rate: q.filter((r) => r.hit).length / q.length };
+    });
+    const hits = rs.filter((r) => r.hit).length;
+    const chance = mean(rs.map((r) => r.chance));
+    ladder.rungs[rung] = {
+      questions: ids.length, trials: rs.length, hits,
+      hit_rate: rs.length ? hits / rs.length : null,
+      mean_chance: chance,
+      excess_over_chance: rs.length ? hits / rs.length - chance : null,
+      ci_question_unit: questionUnitCI(perQ.map((q) => q.rate)),
+    };
+    for (const q of perQ) (ladder.per_question[q.id] ??= {})[rung] = `${q.hits}/${q.trials}`;
+  }
+
+  // Screening policy: at one seed, anything the full rung hit is a candidate
+  // for confirmation at three. Printed, not acted on — the orchestrator decides.
+  if (man.seeds === 1 && ladder.rungs.full) {
+    ladder.confirm_at_3_seeds = Object.entries(ladder.per_question)
+      .filter(([, r]) => r.full === '1/1').map(([id]) => id);
+  }
+
+  const p = writeJson(join(ad, 'ladder.json'), ladder);
+  logLine(label, { stage: 'ablate-score', section: slug, rungs: ladder.rungs, unparsed, artifact: p, ok: true });
+
+  console.log(`ablate-score ${man.source} (${man.seeds} seed(s)):`);
+  console.log('  rung           questions  trials   hit    over chance   95% CI, question as unit');
+  for (const [rung, r] of Object.entries(ladder.rungs)) {
+    if (r.grades) { console.log(`  ${rung.padEnd(14)} ${String(r.trials).padStart(9)}   graded: ${RECALL_GRADES.map((g) => `${g} ${r.grades[g]}`).join(', ')}`); continue; }
+    const ci = r.ci_question_unit ? `${fmtPct(r.ci_question_unit.lo)}–${fmtPct(r.ci_question_unit.hi)}` : 'n < 2';
+    console.log(`  ${rung.padEnd(14)} ${String(r.questions).padStart(9)} ${String(r.trials).padStart(7)}  ${fmtPct(r.hit_rate).padStart(5)}  ${`${r.excess_over_chance >= 0 ? '+' : ''}${r.excess_over_chance.toFixed(2)}`.padStart(11)}   ${ci}`);
+  }
+  if (unparsed) console.log(`  ${unparsed} reply(ies) were not a single letter — counted as misses`);
+  if (ladder.confirm_at_3_seeds?.length) console.log(`  confirm at 3 seeds: ${ladder.confirm_at_3_seeds.map((i) => i.split('/').pop()).join(', ')}`);
+  return ladder;
 }
 
 // -------------------------------------------------------- stage: score (t4)
@@ -1986,6 +2273,108 @@ function selftest() {
   check(diedEmpty, 'merge dies on an empty candidate pool rather than reporting 0 and exiting clean');
   rmSync(runDir(emptyLabel), { recursive: true, force: true });
 
+  // --- spawn-prompt templates ----------------------------------------------
+  // One source of truth per spawn. Each assertion below plants the specific
+  // failure the template system exists to stop.
+  const dies = (fn) => {
+    const saved = process.exit;
+    process.exit = () => { throw new Error('die'); };
+    try { fn(); return false; } catch { return true; } finally { process.exit = saved; }
+  };
+  const throwsPrompt = (fn) => { try { fn(); return false; } catch (e) { return e instanceof PromptError; } };
+  const AUTO_KEYS = ['workdir', ...Object.keys(PROMPT_AUTO)];
+
+  const badTemplates = listTemplates().filter((n) => lintTemplate(loadTemplate(n), AUTO_KEYS).length);
+  check(badTemplates.length === 0,
+    `every prompts/*.md declares exactly the placeholders it uses${badTemplates.length ? ` (bad: ${badTemplates.join(', ')})` : ''}`);
+
+  const tdir = join(runDir(label), 'prompts-fixture');
+  mkdirSync(join(tdir, '_partials'), { recursive: true });
+  writeFileSync(join(tdir, 't.md'), '---\nplaceholders: [a]\noptional: [b]\n---\nA={{a}} B={{?b}}\n');
+  writeFileSync(join(tdir, 'inc.md'), '---\nplaceholders: [a]\noptional: []\n---\n{{> part}}\n');
+  writeFileSync(join(tdir, '_partials', 'part.md'), 'part says {{a}}');
+  writeFileSync(join(tdir, 'nested.md'), '---\nplaceholders: []\noptional: []\n---\n{{> nest}}\n');
+  writeFileSync(join(tdir, '_partials', 'nest.md'), '{{> part}}');
+  writeFileSync(join(tdir, 'undeclared.md'), '---\nplaceholders: []\noptional: []\n---\n{{ghost}}\n');
+  writeFileSync(join(tdir, 'unused.md'), '---\nplaceholders: [ghost]\noptional: []\n---\nnothing here\n');
+
+  check(throwsPrompt(() => renderTemplate('t', {}, {}, tdir)),
+    'render refuses a prompt with a required placeholder unfilled');
+  check(throwsPrompt(() => renderTemplate('t', { a: '   ' }, {}, tdir)),
+    'render treats a whitespace-only required value as unfilled');
+  check(throwsPrompt(() => renderTemplate('t', { a: 'x', typo: 'y' }, {}, tdir)),
+    'render refuses an undeclared variable, so a typo cannot silently drop content');
+  check(renderTemplate('t', { a: 'x' }, {}, tdir).trim() === 'A=x B=',
+    'an optional placeholder renders empty when not supplied');
+  check(renderTemplate('t', { a: '{{b}}' }, {}, tdir).includes('A={{b}}'),
+    'a value containing "{{" is inserted literally and never re-read as a placeholder');
+  check(renderTemplate('inc', { a: 'z' }, {}, tdir).trim() === 'part says z',
+    'a template can include a shared partial');
+  check(throwsPrompt(() => loadTemplate('nested', tdir)),
+    'a partial may not include another partial');
+  check(lintTemplate(loadTemplate('undeclared', tdir)).length > 0,
+    'lint catches a placeholder used but not declared');
+  check(lintTemplate(loadTemplate('unused', tdir)).length > 0,
+    'lint catches a placeholder declared but never used');
+  rmSync(tdir, { recursive: true, force: true });
+
+  const shTpl = readJson(join(dir, 'shuffle.json'));
+  const sample = rcands.find((c) => c.id === shTpl.prompts[0].id) || rcands[0];
+  check(shTpl.prompts[0].prompt.startsWith(render('adversary-mc', { stem: sample.stem, options: 'A. x' }).split('\n\n')[0]),
+    'shuffle builds the adversary prompt from prompts/adversary-mc.md, not from an inline constant');
+  check(render('critique', {
+    section: 's', candidate_input: 'c', concept_map: 'm', prose: 'p', out: 'o',
+  }).includes(STEM_FORMATS.map((x) => `\`${x}\``).join(', ')),
+  'the critic prompt\'s stem_format list is filled from the constant validate enforces');
+
+  // --- ablate / ablate-score -------------------------------------------------
+  const abl = stageAblate(label, slug, { seeds: 2, rungs: 'full,options-only', force: true });
+  const optBlock = (t) => t.split('\n').filter((l) => /^[A-H]\. /.test(l)).join('\n');
+  const adRoot = abl.dir;
+  const fullE = abl.entries.filter((e) => e.rung === 'full');
+  const parity = fullE.every((e) => {
+    const o = abl.entries.find((x) => x.rung === 'options-only' && x.id === e.id && x.seed === e.seed);
+    return o && o.key_letter === e.key_letter
+      && optBlock(readFileSync(join(adRoot, `${e.file}.txt`), 'utf8')) === optBlock(readFileSync(join(adRoot, `${o.file}.txt`), 'utf8'));
+  });
+  check(parity, 'ablate shows every rung the SAME option order for the same id#seed');
+  const leaked = abl.entries.filter((e) => e.rung === 'options-only').some((e) => {
+    const c = rcands.find((x) => x.id === e.id);
+    return readFileSync(join(adRoot, `${e.file}.txt`), 'utf8').includes(c.stem);
+  });
+  check(!leaked, 'the options-only rung never contains the stem');
+  check(abl.entries.length === rcands.filter((c) => c.stem).length * 2 * 2,
+    'ablate writes one prompt per candidate × seed × rung');
+  check(dies(() => stageAblate(label, slug, { ids: 'no/such/id', force: true })),
+    'ablate dies on an id that is not in candidates.json');
+
+  // Score with a planted, fully known answer pattern: every full-rung pick
+  // correct, every options-only pick wrong.
+  const wrongOf = (e) => (e.key_letter === 'A' ? 'B' : 'A');
+  const ablPicks = Object.fromEntries(abl.entries.map((e) => [e.file, e.rung === 'full' ? e.key_letter : wrongOf(e)]));
+  writeJson(join(adRoot, 'picks.json'), ablPicks);
+  const lad = stageAblateScore(label, slug);
+  check(lad.rungs.full.hit_rate === 1 && lad.rungs['options-only'].hit_rate === 0,
+    'ablate-score reproduces a planted ladder exactly (full 100%, options-only 0%)');
+  check(lad.rungs.full.ci_question_unit && lad.rungs.full.ci_question_unit.n === rcands.filter((c) => c.stem).length,
+    'ablate-score computes its interval with the QUESTION as the unit, not the trial');
+  check(dies(() => stageAblate(label, slug, { seeds: 1 })),
+    'ablate refuses to rebuild a manifest whose picks have already been recorded');
+
+  const holed = { ...ablPicks };
+  delete holed[abl.entries[0].file];
+  writeJson(join(adRoot, 'picks.json'), holed);
+  check(dies(() => stageAblateScore(label, slug)),
+    'ablate-score refuses to score a ladder with a missing pick');
+  writeJson(join(adRoot, 'picks.json'), { ...ablPicks, 'full/99': 'A' });
+  check(dies(() => stageAblateScore(label, slug)),
+    'ablate-score refuses a pick for a file that is not in the manifest');
+  writeJson(join(adRoot, 'picks.json'), { ...ablPicks, [abl.entries[0].file]: 'I think it is probably B' });
+  const lad2 = stageAblateScore(label, slug);
+  check(lad2.unparsed === 1,
+    'a reply that is not a single letter is counted as a miss and reported, never dropped');
+  rmSync(adRoot, { recursive: true, force: true });
+
   const lintHits = (c) => lintCandidate(c).map((x) => x.rule);
   check(lintHits({ ...twin, stem: 'He said “hi” now' }).includes('CANON-quote'),
     'lint rejects typographic quotes in candidate text');
@@ -2012,18 +2401,18 @@ function selftest() {
 
 // ---------------------------------------------------------------------- main
 
-const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report']);
+const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report', 'ablate', 'ablate-score']);
 
 function main() {
   if (!stage || stage.startsWith('--')) {
-    console.error('usage: node scripts/pipeline.mjs <merge|shard|dedupe|measure|queue|shuffle|validate|score|render|assemble|report|selftest> [flags]');
+    console.error('usage: node scripts/pipeline.mjs <merge|shard|dedupe|measure|queue|shuffle|validate|score|render|assemble|report|prompt|ablate|ablate-score|selftest> [flags]');
     process.exit(1);
   }
   if (stage === 'selftest') process.exit(selftest() ? 0 : 1);
 
   const label = flag('run');
   const slug = flag('section');
-  const needsSection = ['merge', 'render', 'shard', 'dedupe', 'measure', 'queue'];
+  const needsSection = ['merge', 'render', 'shard', 'dedupe', 'measure', 'queue', 'ablate', 'ablate-score'];
   if (LABEL_STAGES.has(stage) && !label) die(`${stage} needs --run <label>`);
   if (needsSection.includes(stage) && !slug) die(`${stage} needs --section <slug>`);
 
@@ -2043,6 +2432,9 @@ function main() {
     }
     case 'assemble': stageAssemble(label); break;
     case 'report': stageReport(label); break;
+    case 'prompt': stagePrompt(label, slug); break;
+    case 'ablate': stageAblate(label, slug); break;
+    case 'ablate-score': stageAblateScore(label, slug); break;
     default: die(`unknown stage "${stage}"`);
   }
 }

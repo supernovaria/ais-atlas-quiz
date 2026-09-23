@@ -21,6 +21,17 @@ Graded by the orchestrator against the key's load-bearing claim, with every
 answer recorded verbatim in `answers.json` so the grading is auditable and can
 be overturned.
 
+## Correction, 2026-09-23
+
+The table below sets the multiple-choice score beside the free-recall grade for
+each question. **For `a03r` those are two different questions.** The MC 3/3
+was measured on the original `a03r`; a critic re-spawn later replaced it (the
+two share 0 of 4 option texts), and this probe graded the replacement. The
+current `a03r` has not been through the multiple-choice adversary at all. The
+other five rows compare like with like. The AGI column's conclusion — two of
+three answerable from the stem alone — rests on `w04r` and `w07r` and does not
+depend on `a03r`.
+
 ## Result
 
 | | `defining-and-measuring-agi` | `forecasting-timelines` |
