@@ -1,34 +1,75 @@
 {
   "id": "b02",
-  "words": 1640,
-  "claims": 23,
-  "directional": 13,
-  "naive_right": 7,
-  "naive_right_share": 0.5384615384615384,
-  "passage_only": 10,
+  "words": 1794,
+  "claims": 31,
+  "directional": 26,
+  "naive_right": 17,
+  "naive_right_share": 0.6538461538461539,
+  "passage_only": 5,
   "heuristics": {
     "more is better": {
-      "right": 3,
-      "wrong": 3
+      "right": 2,
+      "wrong": 4
+    },
+    "experts are better overall but stuck in their habits": {
+      "right": 4,
+      "wrong": 2
     },
     "quality peaks at a medium size": {
       "right": 2,
-      "wrong": 2
+      "wrong": 4
     },
     "the moderate middle is right": {
       "right": 2,
-      "wrong": 2
+      "wrong": 4
     },
     "the surprising answer is the right one": {
-      "right": 6,
-      "wrong": 7
+      "right": 9,
+      "wrong": 17
+    },
+    "the answer with a trade-off is right": {
+      "right": 3,
+      "wrong": 2
+    },
+    "the option with the most sensible causal story is right": {
+      "right": 9,
+      "wrong": 5
+    },
+    "an effect named after a researcher describes a mistake": {
+      "right": 2,
+      "wrong": 2
+    },
+    "a prediction named in the stem was refuted": {
+      "right": 2,
+      "wrong": 2
     },
     "the most insidious-sounding thing is the most dangerous": {
+      "right": 2,
+      "wrong": 2
+    },
+    "the mundane cause beats the dramatic one": {
+      "right": 2,
+      "wrong": 2
+    },
+    "the majority rules, the odd one out is something else": {
+      "right": 1,
+      "wrong": 0
+    },
+    "the objection was noted but practice did not change": {
       "right": 1,
       "wrong": 1
     }
   },
-  "shapes": {},
+  "shapes": {
+    "rising": 2,
+    "falling": 1,
+    "flat": 1,
+    "peaked": 2
+  },
   "fail": [],
-  "warn": []
+  "warn": [
+    "heuristic \"the surprising answer is the right one\" is tagged as the exact complement of naive_is_right — its balance is guaranteed and is not separate evidence",
+    "heuristic \"the majority rules, the odd one out is something else\" is tagged only 1 right / 0 wrong — too few uses to be balanced",
+    "heuristic \"the objection was noted but practice did not change\" is tagged only 1 right / 1 wrong — too few uses to be balanced"
+  ]
 }

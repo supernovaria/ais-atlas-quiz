@@ -1,231 +1,479 @@
 [
   {
     "id": "C1",
-    "claim": "Strangers read high-concord cairns more reliably than low-concord ones, monotonically across the whole range; locals are unaffected by concord.",
+    "claim": "Strangers read high-concord cairns more reliably than low-concord ones, rising across the whole range with no plateau.",
     "naive_answer": "More internally consistent cairns are easier for newcomers to read.",
     "naive_is_right": true,
-    "heuristics_right": ["more is better"],
-    "heuristics_wrong": ["quality peaks at a medium size", "the moderate middle is right", "the surprising answer is the right one"],
+    "heuristics_right": [
+      "more is better",
+      "experts are better overall but stuck in their habits"
+    ],
+    "heuristics_wrong": [
+      "quality peaks at a medium size",
+      "the moderate middle is right",
+      "the surprising answer is the right one"
+    ],
+    "shape": "rising",
     "passage_only": false,
     "quote": "In Tessaly's survey, strangers read high-concord cairns more reliably than low-concord ones, and the relation held across the whole range, with no point beyond which more concord stopped helping."
   },
   {
-    "id": "C2",
-    "claim": "Cairn height makes no difference to how often strangers misread a cairn; Marhaug's predicted peak at four to six body courses did not appear.",
-    "naive_answer": "Taller cairns, with more courses, are read better (or: a middling height is best).",
+    "id": "C19",
+    "claim": "Local walkers read low-concord cairns slightly better than high-concord ones (the Marhaug pattern), because to them a reversed course (a hob) is extra information.",
+    "naive_answer": "Consistent, high-concord cairns are at least as easy for experienced locals as inconsistent ones.",
     "naive_is_right": false,
-    "heuristics_right": ["the surprising answer is the right one"],
-    "heuristics_wrong": ["more is better", "quality peaks at a medium size", "the moderate middle is right"],
+    "heuristics_right": [
+      "the answer with a trade-off is right",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "more is better",
+      "quality peaks at a medium size",
+      "the moderate middle is right",
+      "experts are better overall but stuck in their habits",
+      "the option with the most sensible causal story is right",
+      "an effect named after a researcher describes a mistake"
+    ],
+    "shape": "falling",
+    "passage_only": false,
+    "quote": "they read low-concord cairns slightly better than high-concord ones, because to a reader who knows the convention a reversed course is extra information rather than noise."
+  },
+  {
+    "id": "C2",
+    "claim": "Cairn height makes no difference to how often strangers misread a cairn; Marhaug's predicted best range of four to six body courses did not appear.",
+    "naive_answer": "A middling height, four to six body courses, is read best.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the surprising answer is the right one",
+      "a prediction named in the stem was refuted"
+    ],
+    "heuristics_wrong": [
+      "more is better",
+      "quality peaks at a medium size",
+      "the moderate middle is right",
+      "the option with the most sensible causal story is right",
+      "the answer with a trade-off is right"
+    ],
+    "shape": "flat",
     "passage_only": false,
     "quote": "Tessaly found that strangers misread cairns at the same rate whatever their height."
   },
   {
     "id": "C3",
-    "claim": "When laid and worn sense conflict, local walkers almost always follow the laid sense.",
-    "naive_answer": "Experienced locals follow the fresher information, the worn sense.",
-    "naive_is_right": false,
-    "heuristics_right": ["the surprising answer is the right one"],
-    "heuristics_wrong": [],
+    "claim": "When the courses lead to the ford and the pell stone says the ford is high, local walkers almost always follow the courses (the dorran sense).",
+    "naive_answer": "Experienced locals keep to the builder's permanent courses out of habit.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "experts are better overall but stuck in their habits"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
     "passage_only": false,
-    "quote": "Local walkers facing such a cairn almost always followed the laid sense."
+    "quote": "Local walkers facing such a cairn almost always went down to the ford anyway, following the dorran sense."
   },
   {
     "id": "C4",
-    "claim": "In laid/worn conflicts the worn sense was correct in 58 of 71 cases, so Tessaly shadowing is costly rather than wise.",
-    "naive_answer": "The more recent information (worn sense) is usually the correct one.",
-    "naive_is_right": true,
-    "heuristics_right": [],
-    "heuristics_wrong": ["the surprising answer is the right one"],
+    "claim": "In those conflicts the ford was in fact passable in 52 of 71 cases (a downslope pell stone on the busy Oskel route more often records a careless hand than high water), so the Tessaly effect is a sound habit, not a costly one.",
+    "naive_answer": "The fresher information, the pell stone, is usually right, so the locals' habit costs them.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "experts are better overall but stuck in their habits",
+      "an effect named after a researcher describes a mistake"
+    ],
+    "shape": null,
     "passage_only": false,
-    "quote": "In 58 of the 71 conflicts the worn sense was the correct one, so Tessaly shadowing is a costly habit rather than a wise one."
+    "quote": "When Tessaly checked the ford on the same days, it was in fact passable in 52 of the 71 cases."
   },
   {
     "id": "C5",
     "claim": "Frost lean misleads experienced readers more often than strangers, because locals judge cant by eye against the vertical.",
     "naive_answer": "Strangers are misled by lean more than experienced readers.",
     "naive_is_right": false,
-    "heuristics_right": ["the surprising answer is the right one"],
-    "heuristics_wrong": [],
+    "heuristics_right": [
+      "the surprising answer is the right one",
+      "experts are better overall but stuck in their habits"
+    ],
+    "heuristics_wrong": [
+      "the option with the most sensible causal story is right"
+    ],
+    "shape": null,
     "passage_only": false,
     "quote": "Lean misleads experienced readers more often than it misleads strangers."
   },
   {
     "id": "C6",
-    "claim": "Worn-sense reliability peaks on routes of moderate traffic; it is lower on both quiet and busiest routes.",
-    "naive_answer": "The more walkers pass, the more reliable the tithe stone's record.",
+    "claim": "Lisk-sense (pell stone) reliability peaks on routes of moderate traffic; quiet routes go stale and the busiest are turned by walkers who do not know the convention.",
+    "naive_answer": "The more walkers pass, the more reliable the pell stone's record.",
     "naive_is_right": false,
-    "heuristics_right": ["quality peaks at a medium size", "the moderate middle is right", "the surprising answer is the right one"],
-    "heuristics_wrong": ["more is better"],
+    "heuristics_right": [
+      "quality peaks at a medium size",
+      "the moderate middle is right",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "more is better",
+      "a prediction named in the stem was refuted"
+    ],
+    "shape": "peaked",
     "passage_only": false,
-    "quote": "Worn sense is most reliable on routes of moderate traffic."
+    "quote": "Lisk sense is most reliable on routes of moderate traffic."
   },
   {
     "id": "C7",
-    "claim": "Tithe stones of middling weight give the most faithful worn-sense record; very light and very heavy stones do worse.",
-    "naive_answer": "A middling weight works best: light stones blow about, heavy ones are not moved.",
-    "naive_is_right": true,
-    "heuristics_right": ["quality peaks at a medium size", "the moderate middle is right"],
-    "heuristics_wrong": ["more is better", "the surprising answer is the right one"],
+    "claim": "The heavier the pell stone, the more faithful its record: light stones are knocked about by sheep, and walkers who know the convention turn even the heaviest.",
+    "naive_answer": "A middling weight works best: light stones are knocked about, and very heavy ones go unturned.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "more is better",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "quality peaks at a medium size",
+      "the moderate middle is right",
+      "the answer with a trade-off is right",
+      "the option with the most sensible causal story is right"
+    ],
+    "shape": "rising",
     "passage_only": false,
-    "quote": "A very light stone is shifted by wind and sheep, a very heavy one is not turned at all, and stones of middling weight give the most faithful record."
+    "quote": "Light ones are knocked about by sheep, while walkers who know the convention turn even the heaviest, so the heavier the pell stone, the more faithful its record."
   },
   {
     "id": "C8",
-    "claim": "Shepherds' cairns have higher average concord than guild cairns, because guild builders use cant-breaks.",
+    "claim": "Shepherds' cairns have higher average concord than guild cairns, because guild builders use hobs; Marhaug had predicted this.",
     "naive_answer": "Professional guild builders produce more consistent cairns than shepherds.",
     "naive_is_right": false,
-    "heuristics_right": ["the surprising answer is the right one"],
-    "heuristics_wrong": [],
+    "heuristics_right": [
+      "the surprising answer is the right one",
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "a prediction named in the stem was refuted"
+    ],
+    "shape": null,
     "passage_only": false,
-    "quote": "Because guild builders use cant-breaks and shepherds building for their own flocks do not, shepherds' cairns have a higher concord on average than guild cairns."
+    "quote": "Because guild builders use hobs and shepherds building for their own flocks do not, shepherds' cairns have a higher concord on average than guild cairns, as Marhaug had predicted."
   },
   {
     "id": "C9",
-    "claim": "Among strangers, Orne inversion (a subtle misreading) caused more misroutings than collapsed cairns (an obvious failure).",
-    "naive_answer": "Subtle misreadings are more dangerous than obviously ruined cairns, which people ignore.",
+    "claim": "Among strangers, the Orne effect caused more misroutings than collapsed cairns, which strangers recognise as unreadable and ignore.",
+    "naive_answer": "A subtle misreading causes more misroutings than an obviously ruined cairn, which people ignore.",
     "naive_is_right": true,
-    "heuristics_right": ["the most insidious-sounding thing is the most dangerous"],
-    "heuristics_wrong": ["the surprising answer is the right one"],
+    "heuristics_right": [
+      "the most insidious-sounding thing is the most dangerous",
+      "the option with the most sensible causal story is right",
+      "an effect named after a researcher describes a mistake",
+      "the mundane cause beats the dramatic one"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
     "passage_only": false,
-    "quote": "Among strangers, Orne inversion accounted for more misroutings than collapsed cairns, which strangers generally recognise as unreadable and ignore."
+    "quote": "Among strangers, the Orne effect accounted for more misroutings than collapsed cairns, which strangers generally recognise as unreadable and ignore."
   },
   {
     "id": "C10",
-    "claim": "False crowns placed by visitors caused fewer misroutings than ordinary frost lean.",
-    "naive_answer": "Deceptive false crowns cause more misroutings than natural frost lean.",
+    "claim": "Across all walkers, false pell stones placed on Hessle cairns caused fewer misroutings than ordinary frost lean; a false stone misleads only when it sits downslope.",
+    "naive_answer": "Deceptive false pell stones cause more misroutings than natural frost lean.",
     "naive_is_right": false,
-    "heuristics_right": ["the surprising answer is the right one"],
-    "heuristics_wrong": ["the most insidious-sounding thing is the most dangerous"],
+    "heuristics_right": [
+      "the surprising answer is the right one",
+      "the mundane cause beats the dramatic one"
+    ],
+    "heuristics_wrong": [
+      "the most insidious-sounding thing is the most dangerous"
+    ],
+    "shape": null,
     "passage_only": false,
-    "quote": "False crowns, loose stones placed on blind cairns by visitors who have seen tithe stones elsewhere, caused fewer misroutings than ordinary frost lean."
+    "quote": "caused fewer misroutings than ordinary frost lean; a false stone misleads only when it sits downslope and turns walkers away from a passable ford."
   },
   {
     "id": "C11",
     "claim": "Local walkers misroute far less often than strangers overall (about 4 per cent against about 19 per cent of cairns).",
     "naive_answer": "Experienced locals misroute less often than strangers.",
     "naive_is_right": true,
-    "heuristics_right": ["more is better"],
-    "heuristics_wrong": ["the surprising answer is the right one"],
+    "heuristics_right": [
+      "experts are better overall but stuck in their habits"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
     "passage_only": false,
     "quote": "In Tessaly's survey, local walkers misrouted at about 4 per cent of cairns and strangers at about 19 per cent."
   },
   {
     "id": "C12",
-    "claim": "Orne inversion is rarer when the next cairn is already in view.",
-    "naive_answer": "Seeing more of the route ahead reduces wrong turns.",
-    "naive_is_right": true,
-    "heuristics_right": ["more is better"],
-    "heuristics_wrong": ["the surprising answer is the right one"],
+    "claim": "The Orne effect is just as common where the next cairn is in view as where it is not, because a stranger who has taken a direction does not look for confirmation.",
+    "naive_answer": "Seeing the next cairn lets a stranger check the line, so the Orne effect is rarer there.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the surprising answer is the right one",
+      "a prediction named in the stem was refuted"
+    ],
+    "heuristics_wrong": [
+      "the option with the most sensible causal story is right"
+    ],
+    "shape": null,
     "passage_only": false,
-    "quote": "Orne inversion is rarer when the next cairn is already in view, because the stranger can check the line."
+    "quote": "Orne found it just as common where the next cairn was in view as where it was not, because a stranger who has taken a direction from a cairn does not look for confirmation."
   },
   {
     "id": "C13",
-    "claim": "Restoration lays every course with the same cant, erasing cant-breaks and resetting the tithe stone, so a restored cairn says less than the original.",
+    "claim": "A restored cairn says less than the one it replaced: conservators give every course the same cant, erasing hobs, and set the pell stone upslope.",
     "naive_answer": "Rebuilding a cairn loses some of the original builder's meaning.",
     "naive_is_right": true,
-    "heuristics_right": [],
-    "heuristics_wrong": ["the surprising answer is the right one"],
+    "heuristics_right": [
+      "the answer with a trade-off is right",
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
     "passage_only": false,
-    "quote": "A restored cairn is easier for a stranger to read, and it says less than the cairn it replaced."
+    "quote": "but it says less than the cairn it replaced."
+  },
+  {
+    "id": "C14",
+    "claim": "A restored cairn is easier for a stranger to read (its concord is raised).",
+    "naive_answer": "A tidied, rebuilt cairn is easier for a newcomer to read.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "A restored cairn is easier for a stranger to read"
+  },
+  {
+    "id": "C15",
+    "claim": "In the worked example the route turns east and a branch leaves before the next cairn; the lone west course is a hob, not the direction.",
+    "naive_answer": "The majority of courses gives the direction; the odd one out means something else.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the majority rules, the odd one out is something else"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The route turns east after this cairn, and a branch leaves it before the next one."
+  },
+  {
+    "id": "C16",
+    "claim": "Among local walkers, cairns re-canted by drovers caused more misroutings than frost lean.",
+    "naive_answer": "Deliberate tampering by drovers misleads locals more than frost lean does.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the most insidious-sounding thing is the most dangerous"
+    ],
+    "heuristics_wrong": [
+      "the mundane cause beats the dramatic one",
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Among local walkers, cairns re-canted by drovers, who shift the courses near their flocks to keep walkers off the grazing, caused more misroutings than frost lean did."
+  },
+  {
+    "id": "C17",
+    "claim": "Strangers read cant most reliably at an offset of about a finger's width; narrower offsets are missed and much wider ones are discounted as slipped stones.",
+    "naive_answer": "A middling offset reads best: too small is missed, too large looks like an accident.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "quality peaks at a medium size",
+      "the moderate middle is right",
+      "the option with the most sensible causal story is right",
+      "the answer with a trade-off is right"
+    ],
+    "heuristics_wrong": [
+      "more is better",
+      "the surprising answer is the right one"
+    ],
+    "shape": "peaked",
+    "passage_only": false,
+    "quote": "Strangers read cant most reliably when the offset is about a finger's width: narrower offsets are missed, and much wider ones look like stones that have slipped, which strangers discount."
+  },
+  {
+    "id": "C18",
+    "claim": "Tessaly's objection to counting the crown was carried into practice: since 1986 the survey protocol uses her crown-free index, and Marhaug's survives only in older reports.",
+    "naive_answer": "Tessaly's objection was sound, so it was adopted and the index now leaves the crown out.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "the objection was noted but practice did not change",
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Since 1986 the Serrow survey protocol has used Tessaly's version of the index, which leaves the crown out, and Marhaug's version survives only in older reports."
+  },
+  {
+    "id": "C20",
+    "claim": "Among local walkers, sudden spates (the ford rising within an hour of the last passer) caused more misroutings than pell stones left stale for weeks on quiet routes, and more than frost lean.",
+    "naive_answer": "A sudden flood, which no pell stone can report in time, misleads more walkers than a stone left stale on a quiet route.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "the mundane cause beats the dramatic one",
+      "the most insidious-sounding thing is the most dangerous",
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "they misled locals more often than pell stones left stale for weeks on quiet routes."
   },
   {
     "id": "P1",
-    "claim": "The concord index is the share of adjacent course pairs whose cants agree; the footing is excluded and the crown is included.",
-    "naive_answer": null,
-    "naive_is_right": null,
-    "heuristics_right": [],
-    "heuristics_wrong": [],
-    "passage_only": true,
-    "quote": "The footing is excluded, since it follows the slope of the ground and has no cant of its own; the crown is included and counted as the uppermost course."
+    "claim": "The concord index excludes the footing, because it follows the slope of the ground and has no cant of its own.",
+    "naive_answer": "The bottom course sits on the ground and carries no message, so it is left out.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The footing is excluded, since it follows the slope of the ground and has no cant of its own."
   },
   {
     "id": "P2",
-    "claim": "Tessaly shadowing concerns experienced readers and a conflict between registers; Orne inversion concerns strangers misreading a cant-break in the body courses.",
+    "claim": "The Tessaly effect concerns experienced readers and a conflict between registers; the Orne effect concerns strangers misreading a hob in the courses.",
     "naive_answer": null,
     "naive_is_right": null,
-    "heuristics_right": [],
+    "heuristics_right": [
+      "an effect named after a researcher describes a mistake"
+    ],
     "heuristics_wrong": [],
+    "shape": null,
     "passage_only": true,
-    "quote": "Tessaly shadowing concerns experienced readers and a conflict between the two registers."
+    "quote": "The Tessaly effect concerns experienced readers and a conflict between the two registers."
   },
   {
     "id": "P3",
-    "claim": "Brannagh objected to Marhaug's two-register model on the grounds that the builder sets the tithe stone's seed position, so worn sense is not independent of the builder.",
-    "naive_answer": null,
-    "naive_is_right": null,
-    "heuristics_right": [],
-    "heuristics_wrong": [],
-    "passage_only": true,
-    "quote": "Cormac Brannagh objected that the worn sense is not independent of the builder, because the builder sets the tithe stone's first position, its seed position, and passers on quiet routes rarely move it."
+    "claim": "Brannagh objected that the lisk sense is not independent of the builder, because the builder sets the pell stone's seed position and passers on quiet routes rarely move it; surveyors still record the registers separately.",
+    "naive_answer": "The obvious objection to two separate registers is that they are not really separate; the model survived it.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the objection was noted but practice did not change",
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Cormac Brannagh objected that the lisk sense is not independent of the builder, because the builder sets the pell stone's first position, its seed position, and passers on quiet routes rarely move it."
   },
   {
     "id": "P4",
-    "claim": "Tessaly objected to including the crown in the concord index, because passers reset the crown when turning the tithe stone; the standard index includes it anyway.",
-    "naive_answer": null,
-    "naive_is_right": null,
-    "heuristics_right": [],
-    "heuristics_wrong": [],
-    "passage_only": true,
-    "quote": "Oda Tessaly objected to including the crown, on the grounds that passers often reset the crown when they turn the tithe stone, so its cant records handling rather than building."
+    "claim": "Tessaly objected to including the crown in the concord index, because passers reset the crown when turning the pell stone.",
+    "naive_answer": "The objection to counting the top stone is that people handle it.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Oda Tessaly objected to including the crown, on the grounds that passers often reset the crown when they turn the pell stone, so its cant records handling rather than building."
   },
   {
-    "id": "P5",
-    "claim": "Survey order: tithe stone position first, then lean, then cant measured from the crown downward (a convention inherited from Marhaug's sheets).",
+    "id": "P5a",
+    "claim": "The pell stone's position is recorded first, before anyone touches the cairn, then lean with a plumb line.",
+    "naive_answer": "Record the loose stone before touching the cairn, since handling disturbs it.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The pell stone's position is recorded first, before anyone touches the cairn, since measuring the courses almost always knocks it."
+  },
+  {
+    "id": "P5b",
+    "claim": "Cant is measured course by course from the crown downward, a convention inherited from Marhaug's printed recording sheets.",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
     "heuristics_wrong": [],
+    "shape": null,
     "passage_only": true,
     "quote": "Cant is then measured course by course from the crown downward."
   },
   {
     "id": "P6",
-    "claim": "A blind cairn has laid sense but no tithe stone; a dumb cairn has a tithe stone but no deliberate cant.",
+    "claim": "A Hessle cairn has canted body courses but no pell stone (dorran sense only); a Garth cairn has a pell stone but no deliberate cant (lisk sense only).",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
     "heuristics_wrong": [],
+    "shape": null,
     "passage_only": true,
-    "quote": "A blind cairn has canted body courses but no tithe stone, so it has a laid sense and no worn sense."
+    "quote": "A Hessle cairn has canted body courses but no pell stone, so it has a dorran sense and no lisk sense."
   },
   {
     "id": "P7",
-    "claim": "A cant-break (a single course canted against those above and below) announces a branching route ahead; it does not give the route direction.",
+    "claim": "A hob (a single course canted against those above and below) announces a branching route before the next cairn; it does not give the route direction.",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
     "heuristics_wrong": [],
+    "shape": null,
     "passage_only": true,
-    "quote": "A cant-break does not give the route direction; it announces that a second route branches off before the next cairn."
+    "quote": "A hob does not give the route direction; it announces that a second route branches off before the next cairn."
   },
   {
     "id": "P8",
-    "claim": "Lean is the whole cairn's tilt from frost heave and carries no meaning; cant is a deliberate per-course offset relative to the course below.",
-    "naive_answer": null,
-    "naive_is_right": null,
-    "heuristics_right": [],
-    "heuristics_wrong": [],
-    "passage_only": true,
+    "claim": "Lean is the whole cairn's tilt from frost heave and carries no meaning; cant is a deliberate per-course offset relative to the course below, so lean does not alter cant.",
+    "naive_answer": "Once lean is defined as frost tilt and cant as a deliberate offset between courses, lean carries no meaning and does not change cant.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
     "quote": "Because cant is defined relative to the course below, a cairn's lean does not alter its cant at all."
   },
   {
     "id": "P9",
-    "claim": "The worked-example cairn (six courses above the footing, one reversed) has a concord of 0.6.",
-    "naive_answer": null,
-    "naive_is_right": null,
+    "claim": "On the current (Tessaly) index the worked-example cairn has a concord of 0.5; on Marhaug's crown-inclusive version, 0.6.",
+    "naive_answer": "Given the cant sequence and the definition in the stem, count agreeing pairs: 2 of 4.",
+    "naive_is_right": true,
     "heuristics_right": [],
-    "heuristics_wrong": [],
-    "passage_only": true,
-    "quote": "The concord is three in five, or 0.6."
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The concord is two in four, or 0.5."
   },
   {
     "id": "P10",
-    "claim": "The worn sense is carried by the tithe stone alone and reports route condition; the laid sense is in the body courses and reports direction. Upslope means the ford was low, downslope that it was not.",
+    "claim": "The lisk sense is carried by the pell stone alone and reports route condition; the dorran sense is in the courses and reports direction. Upslope means the ford was low, downslope that it was not.",
     "naive_answer": null,
     "naive_is_right": null,
     "heuristics_right": [],
     "heuristics_wrong": [],
+    "shape": null,
     "passage_only": true,
     "quote": "A passer who has just crossed the ford turns the stone to the upslope side of the crown if the water was low and to the downslope side if it was not."
   }
