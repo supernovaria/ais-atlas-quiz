@@ -1,10 +1,9 @@
----
-name: quiz-generator
-description: Writes candidate multiple-choice questions for one section from a concept map. Invoked ONLY by the question-generation orchestrator, never proactively. Spawn with an explicit model override (sonnet for P1; opus and fable for production).
-tools: Read, Write
-model: sonnet
----
-<!-- GENERATED from agents/quiz-generator.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
+# GENERATED from agents/quiz-generator.md by scripts/sync-agents.mjs. Edit the source, then run it.
+name = "quiz-generator"
+description = "Writes candidate multiple-choice questions for one section from a concept map. Invoked ONLY by the question-generation orchestrator, never proactively. Spawn with an explicit model override (sonnet for P1; opus and fable for production)."
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+developer_instructions = '''
 
 # Agent 2 — Generator (pass 1)
 
@@ -233,3 +232,4 @@ critic sees them too.
 - Cover test answer is "yes" and you can say why in one clause.
 - Cynic test names a specific tell you removed.
 - Level claimed matches the *task the reader performs*, not the stem's sophistication.
+'''

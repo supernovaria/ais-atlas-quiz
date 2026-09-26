@@ -24,7 +24,7 @@
 3. `QUIZ-PLAN.md` phases 0–4 — repo state, checker spec, pilot rationale.
 4. `.claude/agents/quiz-*.md` — one brief per sub-agent. **These are the agent
    definitions. They are used by spawning the agent, not by copying its text
-   into a prompt. Never paraphrase a brief into your own prompt.**
+   into a prompt. Never paraphrase a brief into your own prompt.** **Briefs are edited in `agents/quiz-*.md`**, never in the generated copies; `node scripts/sync-agents.mjs` writes `.claude/agents/` (Claude Code) and `.codex/agents/` (Codex) from them, and the selftest fails if they are out of step.
 
 ## 1. Preconditions — verify, do not assume
 
@@ -389,6 +389,15 @@ voices.mjs ask --prompt-file F --out O [--panel single]     one request, first v
   `ablation/voices/claude-haiku/<rung>/<NN>.txt`.
 - An API voice structurally cannot read files, which is the isolation the Claude
   adversary only has behaviourally.
+- **Codex voices** (provider `codex`, added 2026-09-26) run `codex exec` on the
+  user's ChatGPT subscription: one fresh, ephemeral process per prompt, in an
+  empty temp dir with a read-only sandbox and Codex's own preambles switched
+  off. Codex still has a shell, so their isolation is behavioural like the
+  Claude adversary's: any tool call in the event stream records the reply as
+  `tool-use`, never scored. Review voices run in the repo, read-only. Caching:
+  a fresh exec carries ~33k tokens of Codex's own prompt, ~21k of it cached
+  across sessions for hours and nearly all of it within seconds, so run a
+  voice's prompts back to back.
 - The only per-voice differences are API settings (lower thinking for letter
   mode where configured, JSON mode for explain mode), recorded per call with any
   the provider rejected.

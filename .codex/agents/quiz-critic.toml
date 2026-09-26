@@ -1,10 +1,9 @@
----
-name: quiz-critic
-description: Judges ONE candidate question against the rubric and emits a verdict object. Invoked ONLY by the question-generation orchestrator, never proactively. One candidate per spawn.
-tools: Read, Write
-model: opus
----
-<!-- GENERATED from agents/quiz-critic.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
+# GENERATED from agents/quiz-critic.md by scripts/sync-agents.mjs. Edit the source, then run it.
+name = "quiz-critic"
+description = "Judges ONE candidate question against the rubric and emits a verdict object. Invoked ONLY by the question-generation orchestrator, never proactively. One candidate per spawn."
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+developer_instructions = '''
 
 # Agent 3 — Critic (pass 2)
 
@@ -166,3 +165,4 @@ verdict.
 - On a `rewrite`, `preserve` names something specific — or you have gone back and asked yourself whether this is really a `reject`.
 - On a second pass, your verdict accounts for what pass 1 changed rather than ignoring or silently reverting it.
 - `reviewer_note` is not a restatement of `reasons`.
+'''

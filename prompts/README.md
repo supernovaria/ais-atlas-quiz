@@ -32,7 +32,7 @@ only be remembered. The first review of these templates is
 ## Conventions
 
 - **Agent briefs and spawn prompts are different things.** A brief
-  (`.claude/agents/*.md`) is the agent's standing system prompt: its role, its
+  (source `agents/*.md`, generated into `.claude/agents/` and `.codex/agents/`) is the agent's standing system prompt: its role, its
   rules, its output schema. A spawn prompt is the per-call request: which
   inputs, which paths, which parameters, where to write. **A template never
   restates a brief's rules** — duplicated rules drift apart, and the brief is the

@@ -40,6 +40,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, appendFileSync, rmSync } from 'node:fs';
 import { join, dirname, resolve, basename, relative, sep } from 'node:path';
 import { randomBytes } from 'node:crypto';
+import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parseChapterMarkdown } from '../src/quizParser.js';
 import { measure, contentWords, overlap, GATES, atlasSlug, lintCandidate, ABSOLUTES, countMatches } from './check-questions.mjs';
@@ -944,6 +945,7 @@ function deriveVars(name, tpl, ctx) {
 
   if (dir) {
     set('section', slug);
+    set('run_label', label);
     set('dir', dir);
     set('concept_map', `${dir}/concept-map.json`);
     // A bench iteration runs on a COPY of the passage at a neutral path inside
@@ -989,6 +991,8 @@ function deriveVars(name, tpl, ctx) {
       set('passage', `${b}/passage.md`);
       set('concept_map', `${b}/concept-map.json`);
     }
+    // A control author works inside a run but writes about the bench passage itself.
+    if (name === 'control-author') set('passage', `${b}/passage.md`);
     set('claims', `${b}/private/claims.json`);
     const dec = `${b}/private/reviews-decisions.md`;
     if (existsSync(join(ROOT, dec))) set('decisions', dec);
@@ -1358,7 +1362,7 @@ const listVoices = (ad) => {
 const voiceMeta = (ad, v) => maybeJson(join(ad, 'voices', v, 'voice.json'))
   ?? (v === CLAUDE_VOICE ? { id: v, provider: 'claude-code', model: 'haiku', family: 'anthropic' } : { id: v, family: v });
 
-const reasoningTokens = (u) => (u ? (u.thoughtsTokenCount ?? u.completion_tokens_details?.reasoning_tokens ?? null) : null);
+const reasoningTokens = (u) => (u ? (u.thoughtsTokenCount ?? u.completion_tokens_details?.reasoning_tokens ?? u.reasoning_output_tokens ?? null) : null);
 
 // Letter replies of every API voice, for the letter rungs an API voice can answer.
 // The Claude subagent's letters are picks.json and are not read from here.
@@ -2333,6 +2337,75 @@ function stageClaimMap(label, slug, opts = {}) {
   logLine(label, { stage: 'claim-map', section: slug, bench: id, n: cands.length, ok: true });
   console.log(`claim-map ${label}/${slug}: ${Object.values(map).filter((x) => x.type === 'directional').length} directional, ${Object.values(map).filter((x) => x.type === 'passage-only').length} passage-only, ${Object.values(map).filter((x) => x.type === 'unmapped').length} unmapped`);
   return out;
+}
+
+// -------------------------------------------------- stage: control-check
+//
+// Hand-authored ("clean") control items on a bench passage: the floor a
+// careful author's question has on content no reader can know. Authors write
+// runs/<R>/<S>/candidates.<author>.json and run this themselves until it passes;
+// it then merges every author file into candidates.json (with an `author`
+// field) and writes claim-map.raw.json from each item's `claim`, so the usual
+// claim-map / ablate / ablate-score path scores them.
+//
+// "Clean" is stricter than the rubric's gates, on purpose (runs/tier4-control):
+// four options, one key; key/distractor length ratio in the R8 band; spread
+// ≤ 1.6×; key neither the longest nor the shortest; no absolute word in any
+// option; key hedges no more than the median distractor; no R5 phrasing; and
+// every lint (self-defeating distractor, quotes, emphasis) clean.
+function controlProblems(c, claimIds) {
+  const p = [];
+  if (!c || typeof c !== 'object') return ['not an object'];
+  if (!isStr(c.id) || !isStr(c.stem) || !isArr(c.options)) return ['needs id, stem, options'];
+  if (c.options.length !== 4) p.push(`has ${c.options.length} options, needs 4`);
+  if (c.options.filter((o) => o.key === true).length !== 1) p.push('needs exactly one option with key: true');
+  if (!isStr(c.claim) || !claimIds.has(c.claim)) p.push(`claim "${c.claim}" is not an id in the passage's claims.json`);
+  if (c.group !== 'clean') p.push('group must be "clean"');
+  if (!isStr(c.author)) p.push('needs author');
+  for (const [i, o] of c.options.entries()) if (!o.key && !isStr(o.misreading)) p.push(`options[${i}] (a distractor) needs a "misreading": who would believe it, and why`);
+  if (p.length) return p;
+  const m = measure(asQuestion(c));
+  if (m.len_ratio == null || m.len_ratio < GATES.r8[0] || m.len_ratio > GATES.r8[1]) p.push(`key/distractor length ratio ${m.len_ratio} outside ${GATES.r8.join('–')}`);
+  if (m.max_over_min > GATES.spread) p.push(`longest/shortest option ${m.max_over_min}× > ${GATES.spread}×`);
+  if (m.correct_is_longest) p.push('key is the longest option');
+  if (m.correct_is_shortest) p.push('key is the shortest option');
+  if (m.absolute_count_key || m.absolute_count_distractors) p.push('an option carries an absolute word (checker list)');
+  const hm = [...m.hedge_counts.distractors].sort((a, b) => a - b);
+  const hedgeMedian = hm.length % 2 ? hm[(hm.length - 1) / 2] : (hm[hm.length / 2 - 1] + hm[hm.length / 2]) / 2;
+  if (m.hedge_counts.key > hedgeMedian) p.push(`key carries ${m.hedge_counts.key} hedge(s), distractor median ${hedgeMedian}`);
+  if (m.r5_matches.length || m.mentions_chapter) p.push('R5: the stem refers to the chapter/text/section');
+  for (const l of lintCandidate(c)) p.push(`${l.rule}: ${l.detail}`);
+  return p;
+}
+
+function stageControlCheck(label, slug, opts = {}) {
+  const id = opts.bench ?? flag('bench');
+  if (!id) die('control-check needs --bench <id>');
+  const d = sectionDir(label, slug);
+  const claims = readJson(need(join(ROOT, 'bench', id, 'private', 'claims.json'), `bench/${id}/private/claims.json`));
+  const claimIds = new Set(claims.map((c) => c.id));
+  const files = existsSync(d) ? readdirSync(d).filter((f) => /^candidates\.[a-z0-9-]+\.json$/.test(f)).sort() : [];
+  if (!files.length) die(`control-check: no candidates.<author>.json in ${d}`);
+  const all = [];
+  let bad = 0;
+  for (const f of files) {
+    let items;
+    try { items = readJson(join(d, f)); } catch (e) { console.log(`  FAIL ${f}: not valid JSON (${e.message})`); bad += 1; continue; }
+    if (!isArr(items)) { console.log(`  FAIL ${f}: must be a JSON array`); bad += 1; continue; }
+    for (const c of items) {
+      const p = controlProblems(c, claimIds);
+      if (all.some((x) => x.id === c?.id)) p.push('duplicate id');
+      console.log(`  ${p.length ? 'FAIL' : 'ok  '} ${f} ${c?.id ?? '?'}${p.length ? `\n         - ${p.join('\n         - ')}` : ''}`);
+      if (p.length) bad += 1;
+      all.push(c);
+    }
+  }
+  if (bad) { console.log(`control-check ${label}/${slug}: ${bad} problem item(s) — nothing merged`); process.exitCode = 1; return { ok: false, bad }; }
+  writeJson(join(d, 'candidates.json'), all);
+  writeJson(join(d, 'claim-map.raw.json'), Object.fromEntries(all.map((c) => [c.id, c.claim])));
+  logLine(label, { stage: 'control-check', section: slug, bench: id, n: all.length, authors: uniq(all.map((c) => c.author)), ok: true });
+  console.log(`control-check ${label}/${slug}: ${all.length} clean item(s) from ${files.length} author file(s) → candidates.json, claim-map.raw.json`);
+  return { ok: true, n: all.length };
 }
 
 // -------------------------------------------------------- stage: score (t4)
@@ -3974,6 +4047,37 @@ function selftest() {
   check(em.emphasis_counts.key === 1 && Math.max(...em.emphasis_counts.distractors) === 0,
     'emphasis is measured per option so asymmetry can be gated like length');
 
+  // --- control-check: a clean item passes, each planted defect fails ---------
+  {
+    const b02ids = new Set(readJson(join(ROOT, 'bench', 'b02', 'private', 'claims.json')).map((c) => c.id));
+    const claim = [...b02ids][0];
+    const clean = {
+      id: 'x/ctrl-test/01', group: 'clean', author: 'test', claim, stem: 'Which reading of a cairn does the survey support?',
+      options: [
+        { text: 'Strangers read cairns with higher concord more reliably than others', key: true },
+        { text: 'Strangers read cairns with lower concord more reliably than others', key: false, misreading: 'reverses the direction' },
+        { text: 'Local walkers read cairns with higher concord less reliably than others', key: false, misreading: 'swaps the reader group' },
+        { text: 'Strangers read cairns with middle concord more reliably than others', key: false, misreading: 'assumes a peak' },
+      ],
+    };
+    check(controlProblems(clean, b02ids).length === 0, 'control-check passes a clean item');
+    const longKey = structuredClone(clean); longKey.options[0].text += ' across every stretch of the survey route';
+    check(controlProblems(longKey, b02ids).some((x) => /longest|ratio|spread/.test(x)), 'control-check fails an item whose key is the longest');
+    const abs = structuredClone(clean); abs.options[1].text = 'Strangers always read cairns with lower concord more reliably';
+    check(controlProblems(abs, b02ids).some((x) => /absolute/.test(x)), 'control-check fails an item with an absolute word');
+    const noMis = structuredClone(clean); delete noMis.options[2].misreading;
+    check(controlProblems(noMis, b02ids).some((x) => /misreading/.test(x)), 'control-check fails a distractor with no stated misreading');
+    const badClaim = structuredClone(clean); badClaim.claim = 'NOPE';
+    check(controlProblems(badClaim, b02ids).some((x) => /claims\.json/.test(x)), 'control-check fails a claim id not in the passage\'s claims');
+    const hedged = structuredClone(clean); hedged.options[0].text = 'Strangers often read cairns with higher concord more reliably';
+    check(controlProblems(hedged, b02ids).some((x) => /hedge/.test(x)), 'control-check fails a key that hedges more than the distractors');
+  }
+
+  // The agent briefs for each harness are generated from agents/*.md; a hand
+  // edit to a generated copy, or a source edit not yet synced, fails here.
+  check(spawnSync(process.execPath, [join(ROOT, 'scripts', 'sync-agents.mjs'), '--check']).status === 0,
+    'the generated agent files (.claude/agents, .codex/agents) match their sources in agents/');
+
   console.log(`\n${bad === 0 ? 'All stages run in isolation and validate catches every planted defect.' : `${bad} self-test assertion(s) failed.`}`);
   console.log(`Fixtures left in runs/${label}/ — delete before a real run.\n`);
   return bad === 0;
@@ -3981,7 +4085,7 @@ function selftest() {
 
 // ---------------------------------------------------------------------- main
 
-const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report', 'ablate', 'ablate-score', 'arm', 'preregister', 'canary', 'canary-record', 'bench-run', 'claim-map']);
+const LABEL_STAGES = new Set(['shard', 'dedupe', 'measure', 'queue', 'validate', 'assemble', 'report', 'ablate', 'ablate-score', 'arm', 'preregister', 'canary', 'canary-record', 'bench-run', 'claim-map', 'control-check']);
 
 function main() {
   if (!stage || stage.startsWith('--')) {
@@ -3992,7 +4096,7 @@ function main() {
 
   const label = flag('run');
   const slug = flag('section');
-  const needsSection = ['merge', 'render', 'shard', 'dedupe', 'measure', 'queue', 'ablate', 'ablate-score', 'bench-run', 'claim-map'];
+  const needsSection = ['merge', 'render', 'shard', 'dedupe', 'measure', 'queue', 'ablate', 'ablate-score', 'bench-run', 'claim-map', 'control-check'];
   if (LABEL_STAGES.has(stage) && !label) die(`${stage} needs --run <label>`);
   if (needsSection.includes(stage) && !slug) die(`${stage} needs --section <slug>`);
 
@@ -4023,6 +4127,7 @@ function main() {
     case 'bench-run': stageBenchRun(label, slug); break;
     case 'bench-map': stageBenchMap(); break;
     case 'claim-map': stageClaimMap(label, slug); break;
+    case 'control-check': stageControlCheck(label, slug); break;
     default: die(`unknown stage "${stage}"`);
   }
 }

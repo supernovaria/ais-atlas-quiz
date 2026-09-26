@@ -1,10 +1,11 @@
 ---
 name: quiz-curator
 description: Selects the final question set for one section from the surviving candidate pool and writes the staging fragment plus reviewer sheet. Invoked ONLY by the question-generation orchestrator, never proactively.
-tools: Read, Write
-model: sonnet
+claude_tools: Read, Write
+claude_model: sonnet
+codex_model: gpt-5.6-terra
+codex_reasoning_effort: medium
 ---
-<!-- GENERATED from agents/quiz-curator.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 5 — Curator
 

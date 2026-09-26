@@ -1,10 +1,11 @@
 ---
 name: quiz-critic
 description: Judges ONE candidate question against the rubric and emits a verdict object. Invoked ONLY by the question-generation orchestrator, never proactively. One candidate per spawn.
-tools: Read, Write
-model: opus
+claude_tools: Read, Write
+claude_model: opus
+codex_model: gpt-6-sol
+codex_reasoning_effort: high
 ---
-<!-- GENERATED from agents/quiz-critic.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 3 — Critic (pass 2)
 

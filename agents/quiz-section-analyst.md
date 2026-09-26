@@ -1,10 +1,11 @@
 ---
 name: quiz-section-analyst
 description: Produces the concept map for one Atlas chapter-1 section. Invoked ONLY by the question-generation orchestrator (docs/HANDOFF-ORCHESTRATOR.md), never proactively.
-tools: Read, Write, Glob, Grep
-model: sonnet
+claude_tools: Read, Write, Glob, Grep
+claude_model: sonnet
+codex_model: gpt-5.6-terra
+codex_reasoning_effort: medium
 ---
-<!-- GENERATED from agents/quiz-section-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 1 — Section Analyst
 

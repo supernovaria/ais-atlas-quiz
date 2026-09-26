@@ -1,10 +1,9 @@
----
-name: quiz-curator
-description: Selects the final question set for one section from the surviving candidate pool and writes the staging fragment plus reviewer sheet. Invoked ONLY by the question-generation orchestrator, never proactively.
-tools: Read, Write
-model: sonnet
----
-<!-- GENERATED from agents/quiz-curator.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
+# GENERATED from agents/quiz-curator.md by scripts/sync-agents.mjs. Edit the source, then run it.
+name = "quiz-curator"
+description = "Selects the final question set for one section from the surviving candidate pool and writes the staging fragment plus reviewer sheet. Invoked ONLY by the question-generation orchestrator, never proactively."
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+developer_instructions = '''
 
 # Agent 5 — Curator
 
@@ -206,3 +205,4 @@ retry does not jump in difficulty.
 - Every `earns_question` idea appears in `covered` or `earns_question_uncovered`.
 - Every eligible candidate you did not ship is in `siblings` or `rejected_from_pool` — none silently dropped — and every sibling carries `key_disclosed_by_primary_explanation`.
 - You wrote no question text anywhere. If you find yourself typing a stem, an option or an explanation, stop: `render` emits those and `validate` will not accept a `selected` id that is not in `candidates.json`.
+'''

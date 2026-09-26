@@ -1,10 +1,9 @@
----
-name: quiz-section-analyst
-description: Produces the concept map for one Atlas chapter-1 section. Invoked ONLY by the question-generation orchestrator (docs/HANDOFF-ORCHESTRATOR.md), never proactively.
-tools: Read, Write, Glob, Grep
-model: sonnet
----
-<!-- GENERATED from agents/quiz-section-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
+# GENERATED from agents/quiz-section-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it.
+name = "quiz-section-analyst"
+description = "Produces the concept map for one Atlas chapter-1 section. Invoked ONLY by the question-generation orchestrator (docs/HANDOFF-ORCHESTRATOR.md), never proactively."
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+developer_instructions = '''
 
 # Agent 1 — Section Analyst
 
@@ -171,3 +170,4 @@ One JSON object, nothing outside it:
 - `volatile` is non-empty for any section RUBRIC §8.4 calls volatile
   (`current-capabilities`, `forecasting-timelines`).
 - `subheadings` are copied verbatim from the `##` lines (the checker slugifies these for E4a).
+'''

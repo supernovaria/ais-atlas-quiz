@@ -1,10 +1,11 @@
 ---
 name: quiz-generator
 description: Writes candidate multiple-choice questions for one section from a concept map. Invoked ONLY by the question-generation orchestrator, never proactively. Spawn with an explicit model override (sonnet for P1; opus and fable for production).
-tools: Read, Write
-model: sonnet
+claude_tools: Read, Write
+claude_model: sonnet
+codex_model: gpt-5.6-terra
+codex_reasoning_effort: medium
 ---
-<!-- GENERATED from agents/quiz-generator.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 2 — Generator (pass 1)
 

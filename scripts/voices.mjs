@@ -31,8 +31,10 @@
 // An API voice structurally cannot read files, which is the isolation the
 // quiz-adversary subagent only has behaviourally (HANDOFF §1).
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync, mkdtempSync, rmSync, readdirSync } from 'node:fs';
 import { join, dirname, resolve, relative } from 'node:path';
+import { spawn } from 'node:child_process';
+import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 
@@ -126,10 +128,101 @@ const usable = (v) => v.enabled !== false;
 
 // ---------------------------------------------------------------- calling
 
+// ------------------------------------------------------------- codex CLI
+//
+// The OpenAI family through the user's Codex subscription: `codex exec`, one
+// fresh process per prompt. Why fresh rather than one long session: a reader
+// must never see a second question (cross-question leakage), and a long session
+// re-sends its whole growing history every turn. Measured 2026-09-26 from the
+// session logs: a fresh exec carries ~33k tokens of Codex's own prompt, ~21k of
+// which stays cached across sessions for hours, and nearly all of it when calls
+// follow each other within seconds — so run a voice's prompts back to back.
+//
+// Isolation. A reader voice (workdir "empty") runs in a new empty temp dir with
+// a read-only sandbox, as an ephemeral session, with Codex's environment, apps,
+// permissions and collaboration preambles switched off. Codex still has a shell,
+// so isolation is behavioural, as for the Claude adversary: every tool call in
+// the event stream is counted, and a reply that used any tool is recorded as
+// status "tool-use" and never scored. A review voice (workdir "repo") runs in
+// the repository, read-only, because reading the files is its job.
+
+function codexBin() {
+  if (process.env.CODEX_BIN) return process.env.CODEX_BIN;
+  for (const raw of CONFIG.providers.codex?.bin_dirs ?? []) {
+    const d = raw.replace(/%([A-Z_]+)%/g, (_, k) => process.env[k] ?? '');
+    if (!existsSync(d)) continue;
+    const f = readdirSync(d).find((x) => /^codex(-x86_64[^.]*)?(\.exe)?$/.test(x));
+    if (f) return join(d, f);
+  }
+  return 'codex';
+}
+
+function run(bin, args, input, timeoutMs) {
+  return new Promise((res) => {
+    const ch = spawn(bin, args, { stdio: ['pipe', 'pipe', 'pipe'], windowsHide: true });
+    let out = ''; let err = ''; let timedOut = false;
+    const t = setTimeout(() => { timedOut = true; ch.kill(); }, timeoutMs);
+    ch.stdout.on('data', (d) => { out += d; });
+    ch.stderr.on('data', (d) => { err += d; });
+    ch.on('error', (e) => { clearTimeout(t); res({ code: -1, out, err: String(e.message), timedOut }); });
+    ch.on('close', (code) => { clearTimeout(t); res({ code, out, err, timedOut }); });
+    ch.stdin.end(input);
+  });
+}
+
+// "try again at 1:27 PM" → that local time today (or tomorrow if past); else +60 min.
+function codexRetryAt(msg) {
+  const m = String(msg).match(/try again at (\d{1,2}):(\d{2})\s*([AP]M)?/i);
+  const d = new Date();
+  if (m) {
+    let h = Number(m[1]) % 12; if (/pm/i.test(m[3] ?? '')) h += 12; if (!m[3]) h = Number(m[1]);
+    const r = new Date(d.getFullYear(), d.getMonth(), d.getDate(), h, Number(m[2]) + 2);
+    if (r <= d) r.setDate(r.getDate() + 1);
+    return r.toISOString();
+  }
+  return new Date(d.getTime() + 60 * 60000).toISOString();
+}
+
+const CODEX_TOOL_ITEMS = new Set(['command_execution', 'file_change', 'mcp_tool_call', 'web_search', 'function_call']);
+
+async function attemptCodex(v, prompt, mode, settings) {
+  const reader = v.workdir !== 'repo';
+  const work = reader ? mkdtempSync(join(tmpdir(), 'quiz-voice-')) : ROOT;
+  const outDir = reader ? work : mkdtempSync(join(tmpdir(), 'quiz-voice-out-'));
+  const outFile = join(outDir, 'last.txt');
+  const args = ['exec', '--json', '--ephemeral', '--skip-git-repo-check', '-C', work, '-s', 'read-only', '-m', v.model];
+  if (settings.thinking) args.push('-c', `model_reasoning_effort="${settings.thinking}"`);
+  if (reader) for (const k of ['include_environment_context', 'include_permissions_instructions', 'include_apps_instructions', 'include_collaboration_mode_instructions']) args.push('-c', `${k}=false`);
+  args.push('-o', outFile, '-');
+  try {
+    const r = await run(codexBin(), args, prompt, v.timeout_ms ?? 600000);
+    if (r.timedOut) return { ok: false, cls: 'transient', detail: 'codex exec timed out' };
+    const events = r.out.split('\n').map((l) => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+    const errors = events.filter((e) => e.type === 'error' || e.type === 'turn.failed').map((e) => e.message ?? e.error?.message ?? '');
+    const usage = events.filter((e) => e.type === 'turn.completed' && e.usage).map((e) => e.usage).pop() ?? null;
+    const toolUses = events.filter((e) => (e.type === 'item.completed' || e.type === 'item.started') && CODEX_TOOL_ITEMS.has(e.item?.type)).length;
+    if (errors.length) {
+      const msg = errors.join(' | ').slice(0, 400);
+      if (/usage limit/i.test(msg)) return { ok: false, cls: 'window', detail: msg, retryAt: codexRetryAt(msg) };
+      if (/high demand|overloaded|timed out|temporarily|stream disconnected|5\d\d/i.test(msg)) return { ok: false, cls: 'transient', detail: msg };
+      if (/model.*(not (found|supported|available))|unknown model/i.test(msg)) return { ok: false, cls: 'unavailable', detail: msg };
+      return { ok: false, cls: 'bad-request', detail: msg };
+    }
+    if (r.code !== 0) return { ok: false, cls: 'transient', detail: `codex exit ${r.code}: ${r.err.slice(-300)}` };
+    const text = existsSync(outFile) ? readFileSync(outFile, 'utf8') : '';
+    if (!text.trim()) return { ok: false, cls: 'empty', detail: 'no final message', usage };
+    return { ok: true, text, finish: 'stop', usage, model_version: v.model, tool_uses: toolUses };
+  } finally {
+    if (reader) rmSync(work, { recursive: true, force: true });
+    else rmSync(outDir, { recursive: true, force: true });
+  }
+}
+
 // One HTTP attempt. Returns { ok, text, finish, usage, http, cls, detail, retryAfterMs }.
 // `cls` classifies a failure: transient | rate | daily | unavailable | bad-request.
 async function attempt(v, prompt, mode, settings) {
-  const k = key(v.provider);
+  const k = v.provider === 'codex' ? null : key(v.provider);
+  if (v.provider === 'codex') return attemptCodex(v, prompt, mode, settings);
   if (!k) return { ok: false, cls: 'unavailable', detail: `no key for ${v.provider}` };
   const base = CONFIG.providers[v.provider].base;
   let url; let init;
@@ -201,8 +294,8 @@ async function attempt(v, prompt, mode, settings) {
 // one-off `ask` (mode "free") keeps the model's own thinking default.
 function settingsFor(v, mode) {
   return {
-    temperature: v.temperature ?? 1.0,
-    thinking: mode !== 'free' && v.thinking ? v.thinking : null,
+    temperature: v.provider === 'codex' ? null : (v.temperature ?? 1.0),
+    thinking: (mode !== 'free' || v.provider === 'codex') && v.thinking ? v.thinking : null,
     json: mode === 'explain' && v.json_mode !== false,
   };
 }
@@ -228,11 +321,18 @@ async function callVoice(v, prompt, mode, state) {
     last = await attempt(v, prompt, mode, settings);
     // A reply cut off by a token limit is recorded but never scored: its text is
     // a fragment, and counting it would turn a delivery failure into a miss (#8).
+    if (last.ok && last.tool_uses) {
+      return { record: { status: 'tool-use', tool_uses: last.tool_uses, reply_text: last.text, usage: last.usage, model_version: last.model_version, settings, settings_dropped: dropped, attempts: i + 1, latency_ms: Date.now() - t0 } };
+    }
     if (last.ok && !/^(stop|end_turn|STOP)$/.test(String(last.finish ?? 'stop'))) {
       return { record: { status: 'truncated', reply_text: last.text, finish: last.finish, usage: last.usage, model_version: last.model_version, settings, settings_dropped: dropped, attempts: i + 1, latency_ms: Date.now() - t0 } };
     }
     if (last.ok) {
       return { record: { status: 'ok', reply_text: last.text, finish: last.finish, usage: last.usage, model_version: last.model_version, settings, settings_dropped: dropped, attempts: i + 1, latency_ms: Date.now() - t0 } };
+    }
+    if (last.cls === 'window') {
+      markDown(state, v, last.retryAt, `window: ${last.detail}`);
+      return { down: `usage window until ${last.retryAt}` };
     }
     if (last.cls === 'daily' || last.cls === 'unavailable') {
       markDown(state, v, nextReset(v.provider), `${last.cls}: ${last.detail}`);
@@ -264,7 +364,7 @@ function cmdStatus() {
   console.log('voice              family         provider    model                                    status');
   for (const v of CONFIG.voices) {
     const d = isDown(state, v);
-    const s = !usable(v) ? `disabled — ${v.disabled_why ?? ''}` : d ? `down until ${d.down_until} — ${d.reason.slice(0, 80)}` : (key(v.provider) ? 'up (not probed)' : 'no key');
+    const s = !usable(v) ? `disabled — ${v.disabled_why ?? ''}` : d ? `down until ${d.down_until} — ${d.reason.slice(0, 80)}` : (v.provider === 'codex' || key(v.provider) ? 'up (not probed)' : 'no key');
     console.log(`${v.id.padEnd(18)} ${v.family.padEnd(14)} ${v.provider.padEnd(11)} ${v.model.padEnd(40)} ${s}`);
   }
   for (const [name, list] of Object.entries(CONFIG.panels)) if (!name.startsWith('_')) console.log(`panel ${name}: ${list.join(', ')}`);
@@ -277,6 +377,7 @@ async function cmdProbe() {
     if (!usable(v)) { console.log(`${v.id.padEnd(18)} disabled`); return; }
     const r = await attempt(v, 'Reply with the single letter B.', 'letter', settingsFor(v, 'letter'));
     if (r.ok) { delete state.voices[v.id]; console.log(`${v.id.padEnd(18)} OK   "${r.text.trim().slice(0, 20)}"`); return; }
+    if (r.cls === 'window') markDown(state, v, r.retryAt, `window: ${r.detail}`);
     if (r.cls === 'daily' || r.cls === 'unavailable') markDown(state, v, nextReset(v.provider), `${r.cls}: ${r.detail}`);
     console.log(`${v.id.padEnd(18)} ${r.cls.toUpperCase().padEnd(11)} ${r.http ?? ''} ${r.detail.slice(0, 140)}`);
   }));
@@ -324,6 +425,8 @@ async function cmdAnswer() {
         if (prev.status === 'ok' || !retryErrors) { s.cached += 1; continue; }
       }
       if (s.answered + s.errors >= maxPer) { s.stopped = `--max-per-voice ${maxPer}`; break; }
+      // A scarce voice (a subscription window, not a free API) carries its own cap.
+      if (v.max_per_invocation != null && s.answered + s.errors >= v.max_per_invocation) { s.stopped = `max_per_invocation ${v.max_per_invocation} (voices.json)`; break; }
       if (dry) { s.answered += 1; continue; }
       const prompt = readFileSync(join(ad, `${e.file}.txt`), 'utf8');
       const mode = e.rung.endsWith('-explain') ? 'explain' : 'letter';

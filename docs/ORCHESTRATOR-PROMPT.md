@@ -25,7 +25,8 @@ reporting honestly.
 3. `prompts/README.md` — every spawn prompt is a file; you never compose one.
 4. `bench/README.md` if the run uses the fiction bench.
 5. `docs/RUBRIC.md` and `docs/PIPELINE.md` as the handoff directs. Do not edit the rubric.
-6. `.claude/agents/quiz-*.md` — the subagent briefs. Read them to understand the
+6. `agents/quiz-*.md` — the subagent briefs (sources; `.claude/agents/` and
+   `.codex/agents/` are generated from them by `scripts/sync-agents.mjs`). Read them to understand the
    pipeline, never to copy their text into a prompt.
 
 Where this file and the handoff disagree, **this file wins**. Note the conflict
@@ -78,6 +79,14 @@ HANDOFF §9.6.
 - **Free quotas are small.** Gemini's free tier is about 20 requests per day per
   model; OpenRouter's free models are often overloaded. Mistral is the reliable
   bulk voice. Expect a run's panel data to arrive over several days.
+- **The OpenAI family runs through the user's Codex subscription** (provider
+  `codex` in `voices.json`), not an API: `gpt-luna` (gpt-5.6-luna, low effort)
+  is the panel reader, capped per invocation; `gpt-sol-review` and
+  `gpt-astra-review` are reviewers that read the repository read-only. The
+  subscription's 5-hour window is shared with the user's own Codex work, and
+  **GPT-6 Astra allows only a handful of calls per window**: use it only for
+  red-team and review requests, at medium effort, never for bulk. A usage-limit
+  error parks every call until the time Codex names.
 - Never let a voice's reply, or anything aggregated from it, reach a generator
   or critic prompt. That feedback loop is proposed, not adopted. If it is ever
   adopted (review 2026-09-23-voices #12): only cross-question aggregates reach a
@@ -110,8 +119,10 @@ Label `2026-09-2x-BENCH1` (use the actual date).
 
 1. Preflight: `git status` clean; `pipeline.mjs selftest` passes; `canary` passes;
    `voices.mjs probe`. Stop and report if the canary fails. Check that
-   `runs/2026-09-23-FLOORS` has been scored (`ablate-score`); if its coverage is
-   still thin, run `voices.mjs answer` on it first — it is free.
+   the floors are scored: `runs/2026-09-23-FLOORS` (old control set) and
+   `runs/2026-09-26-CONTROL` (clean control items on b02 and b03 by two author
+   families — the primary floor for this run). If coverage is thin, run
+   `voices.mjs answer` on them first.
 2. Per entry: `bench-run` → **two** `generate-section` calls, `--model sonnet`,
    letters `a` and `b`, n = 8 each (up to 16 candidates per passage, about 30 in
    total). → `merge` → `measure` → `bench-claim-map` → `claim-map`.
@@ -122,7 +133,9 @@ Label `2026-09-2x-BENCH1` (use the actual date).
    than the others on Claude-written questions; and which cues will show the
    highest cue-follow rate.
 4. `ablate --rungs full,options-only,full-explain,options-only-explain --seeds 7
-   --explain-seeds 2 --claude-seeds 1 --claude-explain-seeds 1`.
+   --explain-seeds 2 --claude-seeds 3 --claude-explain-seeds 1`. Haiku is cheap;
+   the limit on its seeds is your context (each spawn's prompt and reply pass
+   through it), not quota.
 5. Claude spawns for the prompts assigned to it. `voices.mjs answer`, repeated
    as quotas allow.
 6. `ablate-score`. Confirm flagged items at three seeds only where the panel
@@ -134,7 +147,7 @@ Label `2026-09-2x-BENCH1` (use the actual date).
    not, say the tagging is biased and weaken every cue claim accordingly. These
    are candidates for the causal test above, not for brief changes.
 
-**Cost:** 4 generator calls and 2 claim-map calls (Sonnet); about 60 Claude
-letter spawns and 60 explain spawns (Haiku, at roughly 0.45 points of a 5-hour
-window each, so about half a window). Each explain reply passes through your
+**Cost:** 4 generator calls and 2 claim-map calls (Sonnet); about 180 Claude
+letter spawns and 60 explain spawns (Haiku; cheap — the user has said not to
+economise on it). Each explain reply passes through your
 context once (~300 tokens). API voices are free-tier and cost no Claude quota.

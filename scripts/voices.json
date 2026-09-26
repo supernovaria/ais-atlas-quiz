@@ -25,6 +25,13 @@
       "env": "CORTECS_API_KEY",
       "base": "https://api.cortecs.ai/v1",
       "reset_tz": "UTC"
+    },
+    "codex": {
+      "bin_dirs": [
+        "%LOCALAPPDATA%/Microsoft/WinGet/Packages/OpenAI.Codex_Microsoft.Winget.Source_8wekyb3d8bbwe"
+      ],
+      "reset_tz": "UTC",
+      "note": "The Codex CLI on the user's ChatGPT subscription (not an API key). Usage is a 5-hour window plus a weekly cap shared with the user's own Codex use; GPT-6 Astra in particular allows only a handful of calls per window. A usage-limit error parks the voice until the time Codex names. Set CODEX_BIN to override the binary."
     }
   },
   "voices": [
@@ -129,6 +136,42 @@
       "min_interval_ms": 500,
       "enabled": false,
       "disabled_why": "paid only; account has no balance (2026-09-23)"
+    },
+    {
+      "id": "gpt-luna",
+      "provider": "codex",
+      "model": "gpt-5.6-luna",
+      "family": "openai",
+      "thinking": "low",
+      "workdir": "empty",
+      "min_interval_ms": 0,
+      "max_per_invocation": 60,
+      "timeout_ms": 300000,
+      "note": "Panel reader for the OpenAI family: the lightest GPT at low effort, the counterpart of Haiku."
+    },
+    {
+      "id": "gpt-sol-review",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "family": "openai",
+      "thinking": "high",
+      "workdir": "repo",
+      "min_interval_ms": 0,
+      "max_per_invocation": 6,
+      "timeout_ms": 1800000,
+      "note": "Reviewer and control-item author; reads the repository read-only."
+    },
+    {
+      "id": "gpt-astra-review",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "family": "openai",
+      "thinking": "medium",
+      "workdir": "repo",
+      "min_interval_ms": 0,
+      "max_per_invocation": 2,
+      "timeout_ms": 1800000,
+      "note": "Red-team and third reviewer. Scarce: a handful of calls per 5-hour window; medium effort by the user's choice (2026-09-26)."
     }
   ],
   "panels": {
@@ -143,7 +186,8 @@
       "ministral-8b",
       "glm-free",
       "qwen-free",
-      "nemotron-free"
+      "nemotron-free",
+      "gpt-luna"
     ],
     "single": [
       "gemini-flash-36",
@@ -152,6 +196,10 @@
       "ministral-14b",
       "glm-free",
       "qwen-free"
+    ],
+    "review": [
+      "gpt-astra-review",
+      "gpt-sol-review"
     ]
   }
 }

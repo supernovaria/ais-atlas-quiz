@@ -1,10 +1,11 @@
 ---
 name: quiz-recall
 description: Answers ONE open question from general knowledge alone, with no answer options, in one or two sentences or "I DON'T KNOW". A knowledge probe for real sections. Invoked ONLY by the question-generation orchestrator. Deliberately weak and must not read files - do not upgrade the model.
-tools: []
-model: haiku
+claude_tools: []
+claude_model: haiku
+codex_model: gpt-5.6-luna
+codex_reasoning_effort: low
 ---
-<!-- GENERATED from agents/quiz-recall.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Recall reader
 
@@ -41,5 +42,11 @@ for this probe, two of six calls refused and asked for the options.
 - Isolation is behavioural (HANDOFF §1, §8): the instruction above, plus the
   orchestrator recording `tool_uses` on every spawn. A non-zero `tool_uses`
   voids that answer.
+<!-- only:claude -->
 - `model: haiku`, `tools: []`. **In Claude Code that list has been observed to
   grant all tools rather than none.**
+<!-- /only -->
+<!-- only:codex -->
+- `gpt-5.6-luna` at low reasoning effort, the same reader as the Codex
+  adversary. A Codex agent always has a shell; there is no tool allowlist.
+<!-- /only -->

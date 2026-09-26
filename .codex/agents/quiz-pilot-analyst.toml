@@ -1,10 +1,9 @@
----
-name: quiz-pilot-analyst
-description: Reads the cheap pilot runs (P1/P2) and produces findings about the rubric and the agent briefs. Invoked ONLY by the question-generation orchestrator, never proactively.
-tools: Read, Write, Glob, Grep, Bash
-model: opus
----
-<!-- GENERATED from agents/quiz-pilot-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
+# GENERATED from agents/quiz-pilot-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it.
+name = "quiz-pilot-analyst"
+description = "Reads the cheap pilot runs (P1/P2) and produces findings about the rubric and the agent briefs. Invoked ONLY by the question-generation orchestrator, never proactively."
+model = "gpt-6-sol"
+model_reasoning_effort = "high"
+developer_instructions = '''
 
 # Agent 6 — Pilot Analyst
 
@@ -138,3 +137,4 @@ One paragraph. If no-go, the blocking finding by number.
 - §2 has per-criterion flip rates, not just overall agreement.
 - Every §3/§4 entry has ids + a proposed text change.
 - §5 is one paragraph.
+'''

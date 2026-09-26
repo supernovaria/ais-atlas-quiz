@@ -1,10 +1,11 @@
 ---
 name: quiz-pilot-analyst
 description: Reads the cheap pilot runs (P1/P2) and produces findings about the rubric and the agent briefs. Invoked ONLY by the question-generation orchestrator, never proactively.
-tools: Read, Write, Glob, Grep, Bash
-model: opus
+claude_tools: Read, Write, Glob, Grep, Bash
+claude_model: opus
+codex_model: gpt-6-sol
+codex_reasoning_effort: high
 ---
-<!-- GENERATED from agents/quiz-pilot-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 6 — Pilot Analyst
 
