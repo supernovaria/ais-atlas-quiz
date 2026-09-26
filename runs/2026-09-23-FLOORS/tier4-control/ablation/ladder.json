@@ -1,0 +1,1265 @@
+{
+  "source": "2026-09-23-FLOORS/tier4-control",
+  "seeds": 7,
+  "seed_offset": 0,
+  "preregistered": true,
+  "excluded": [],
+  "rungs": {},
+  "per_question": {
+    "ctrl/clean/01": {
+      "panel": {
+        "full": "26/29",
+        "options-only": "23/29"
+      },
+      "key_centrality": 0.127
+    },
+    "ctrl/clean/02": {
+      "panel": {
+        "full": "14/29",
+        "options-only": "9/28"
+      },
+      "key_centrality": 0.022
+    },
+    "ctrl/clean/03": {
+      "panel": {
+        "full": "23/28",
+        "options-only": "16/27"
+      },
+      "key_centrality": 0.105
+    },
+    "ctrl/clean/04": {
+      "panel": {
+        "full": "17/27",
+        "options-only": "16/28"
+      },
+      "key_centrality": -0.096
+    },
+    "ctrl/clean/05": {
+      "panel": {
+        "full": "19/27",
+        "options-only": "12/27"
+      },
+      "key_centrality": 0.04
+    },
+    "ctrl/key_longest/01": {
+      "panel": {
+        "full": "24/25",
+        "options-only": "22/25"
+      },
+      "key_centrality": 0.178
+    },
+    "ctrl/key_longest/02": {
+      "panel": {
+        "full": "25/25",
+        "options-only": "24/25"
+      },
+      "key_centrality": 0
+    },
+    "ctrl/key_longest/03": {
+      "panel": {
+        "full": "25/25",
+        "options-only": "23/24"
+      },
+      "key_centrality": 0.111
+    },
+    "ctrl/key_longest/04": {
+      "panel": {
+        "full": "22/24",
+        "options-only": "19/24"
+      },
+      "key_centrality": 0.185
+    },
+    "ctrl/key_longest/05": {
+      "panel": {
+        "full": "23/23",
+        "options-only": "24/24"
+      },
+      "key_centrality": 0.056
+    },
+    "ctrl/absolute/01": {
+      "panel": {
+        "full": "27/30",
+        "options-only": "20/31"
+      },
+      "key_centrality": -0.037
+    },
+    "ctrl/absolute/02": {
+      "panel": {
+        "full": "1/30",
+        "options-only": "23/30"
+      },
+      "key_centrality": 0.037
+    },
+    "ctrl/absolute/03": {
+      "panel": {
+        "full": "13/29",
+        "options-only": "22/29"
+      },
+      "key_centrality": 0.222
+    },
+    "ctrl/absolute/04": {
+      "panel": {
+        "full": "26/29",
+        "options-only": "21/29"
+      },
+      "key_centrality": 0
+    },
+    "ctrl/absolute/05": {
+      "panel": {
+        "full": "21/29",
+        "options-only": "15/29"
+      },
+      "key_centrality": 0.044
+    },
+    "ctrl/key_hedges/01": {
+      "panel": {
+        "full": "26/27",
+        "options-only": "23/26"
+      },
+      "key_centrality": -0.097
+    },
+    "ctrl/key_hedges/02": {
+      "panel": {
+        "full": "26/26",
+        "options-only": "22/26"
+      },
+      "key_centrality": -0.031
+    },
+    "ctrl/key_hedges/03": {
+      "panel": {
+        "full": "25/26",
+        "options-only": "22/24"
+      },
+      "key_centrality": -0.106
+    },
+    "ctrl/key_hedges/04": {
+      "panel": {
+        "full": "26/26",
+        "options-only": "19/26"
+      },
+      "key_centrality": -0.037
+    },
+    "ctrl/key_hedges/05": {
+      "panel": {
+        "full": "15/25",
+        "options-only": "14/25"
+      },
+      "key_centrality": -0.009
+    }
+  },
+  "voices": {
+    "gemini-flash": {
+      "meta": {
+        "id": "gemini-flash",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 40
+      },
+      "rungs": {
+        "full": {
+          "questions": 20,
+          "trials": 20,
+          "hits": 16,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.55,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.8,
+            "sd": 0.4103913408340617,
+            "lo": 0.6201380646454796,
+            "hi": 0.9798619353545205
+          },
+          "coverage": "20/140",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 20,
+          "trials": 20,
+          "hits": 16,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.55,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.8,
+            "sd": 0.4103913408340617,
+            "lo": 0.6201380646454796,
+            "hi": 0.9798619353545205
+          },
+          "coverage": "20/140",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 20,
+        "full": 0.8,
+        "options_only": 0.8
+      }
+    },
+    "gemini-flash-36": {
+      "meta": {
+        "id": "gemini-flash-36",
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 21
+      },
+      "rungs": {
+        "full": {
+          "questions": 11,
+          "trials": 11,
+          "hits": 7,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6363636363636364,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.38636363636363635,
+          "ci_question_unit": {
+            "n": 11,
+            "mean": 0.6363636363636364,
+            "sd": 0.504524979109513,
+            "lo": 0.3382084269078567,
+            "hi": 0.934518845819416
+          },
+          "coverage": "11/140",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 7,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.7,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.44999999999999996,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.7,
+            "sd": 0.48304589153964794,
+            "lo": 0.4006050545962184,
+            "hi": 0.9993949454037815
+          },
+          "coverage": "10/140",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 10,
+        "full": 0.6,
+        "options_only": 0.7
+      }
+    },
+    "gemini-flash-37": {
+      "meta": {
+        "id": "gemini-flash-37",
+        "provider": "gemini",
+        "model": "gemini-3.7-flash",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 18
+      },
+      "rungs": {
+        "full": {
+          "questions": 9,
+          "trials": 9,
+          "hits": 6,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6666666666666666,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.41666666666666663,
+          "ci_question_unit": {
+            "n": 9,
+            "mean": 0.6666666666666666,
+            "sd": 0.5,
+            "lo": 0.33999999999999997,
+            "hi": 0.9933333333333333
+          },
+          "coverage": "9/140",
+          "mean_reasoning_tokens": 200
+        },
+        "options-only": {
+          "questions": 9,
+          "trials": 9,
+          "hits": 7,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.7777777777777778,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.5277777777777778,
+          "ci_question_unit": {
+            "n": 9,
+            "mean": 0.7777777777777778,
+            "sd": 0.44095855184409843,
+            "lo": 0.4896848572396335,
+            "hi": 1
+          },
+          "coverage": "9/140",
+          "mean_reasoning_tokens": 257
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 9,
+        "full": 0.6666666666666666,
+        "options_only": 0.7777777777777778
+      }
+    },
+    "gemini-flash-38": {
+      "meta": {
+        "id": "gemini-flash-38",
+        "provider": "gemini",
+        "model": "gemini-3.8-flash",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 13
+      },
+      "rungs": {
+        "full": {
+          "questions": 7,
+          "trials": 7,
+          "hits": 6,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8571428571428571,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.6071428571428571,
+          "ci_question_unit": {
+            "n": 7,
+            "mean": 0.8571428571428571,
+            "sd": 0.37796447300922725,
+            "lo": 0.5771428571428572,
+            "hi": 1
+          },
+          "coverage": "7/140",
+          "mean_reasoning_tokens": 397
+        },
+        "options-only": {
+          "questions": 6,
+          "trials": 6,
+          "hits": 6,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 1,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.75,
+          "ci_question_unit": {
+            "n": 6,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          },
+          "coverage": "6/140",
+          "mean_reasoning_tokens": 310
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 6,
+        "full": 1,
+        "options_only": 1
+      }
+    },
+    "gemma-31b": {
+      "meta": {
+        "id": "gemma-31b",
+        "provider": "gemini",
+        "model": "gemma-4-31b-it",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 268
+      },
+      "rungs": {
+        "full": {
+          "questions": 20,
+          "trials": 134,
+          "hits": 113,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8432835820895522,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.5932835820895522,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.8345238095238094,
+            "sd": 0.2898072539129676,
+            "lo": 0.7075101803799098,
+            "hi": 0.9615374386677091
+          },
+          "coverage": "134/140",
+          "mean_reasoning_tokens": 539
+        },
+        "options-only": {
+          "questions": 20,
+          "trials": 134,
+          "hits": 122,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.9104477611940298,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.6604477611940298,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.9142857142857144,
+            "sd": 0.17588200321459785,
+            "lo": 0.8372020277052056,
+            "hi": 0.9913694008662232
+          },
+          "coverage": "134/140",
+          "mean_reasoning_tokens": 636
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 20,
+        "full": 0.8345238095238094,
+        "options_only": 0.9142857142857144
+      }
+    },
+    "glm-free": {
+      "meta": {
+        "id": "glm-free",
+        "provider": "openrouter",
+        "model": "z-ai/glm-5.2:free",
+        "family": "zhipu"
+      },
+      "statuses": {
+        "ok": 4
+      },
+      "rungs": {
+        "full": {
+          "questions": 2,
+          "trials": 2,
+          "hits": 1,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.5,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.25,
+          "ci_question_unit": {
+            "n": 2,
+            "mean": 0.5,
+            "sd": 0.7071067811865476,
+            "lo": 0,
+            "hi": 1
+          },
+          "coverage": "2/140",
+          "mean_reasoning_tokens": 2272
+        },
+        "options-only": {
+          "questions": 2,
+          "trials": 2,
+          "hits": 2,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 1,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.75,
+          "ci_question_unit": {
+            "n": 2,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          },
+          "coverage": "2/140",
+          "mean_reasoning_tokens": 523
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 1,
+        "full": 0,
+        "options_only": 1
+      }
+    },
+    "ministral-14b": {
+      "meta": {
+        "id": "ministral-14b",
+        "provider": "mistral",
+        "model": "ministral-14b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 280
+      },
+      "rungs": {
+        "full": {
+          "questions": 20,
+          "trials": 140,
+          "hits": 118,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8428571428571429,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.5928571428571429,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.8428571428571431,
+            "sd": 0.2698609261109522,
+            "lo": 0.7245853773071362,
+            "hi": 0.9611289084071499
+          },
+          "coverage": "140/140",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 20,
+          "trials": 140,
+          "hits": 87,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6214285714285714,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.37142857142857144,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.6214285714285714,
+            "sd": 0.25920227949827124,
+            "lo": 0.5078281637198887,
+            "hi": 0.7350289791372542
+          },
+          "coverage": "140/140",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 20,
+        "full": 0.8428571428571431,
+        "options_only": 0.6214285714285714
+      }
+    },
+    "ministral-8b": {
+      "meta": {
+        "id": "ministral-8b",
+        "provider": "mistral",
+        "model": "ministral-8b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 280
+      },
+      "rungs": {
+        "full": {
+          "questions": 20,
+          "trials": 140,
+          "hits": 99,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.7071428571428572,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.4571428571428572,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.7071428571428571,
+            "sd": 0.3020694821941464,
+            "lo": 0.5747550695044594,
+            "hi": 0.8395306447812547
+          },
+          "coverage": "140/140",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 20,
+          "trials": 140,
+          "hits": 88,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6285714285714286,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.37857142857142856,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.6285714285714284,
+            "sd": 0.29092984009588463,
+            "lo": 0.5010658043404702,
+            "hi": 0.7560770528023867
+          },
+          "coverage": "140/140",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 20,
+        "full": 0.7071428571428571,
+        "options_only": 0.6285714285714284
+      }
+    },
+    "nemotron-free": {
+      "meta": {
+        "id": "nemotron-free",
+        "provider": "openrouter",
+        "model": "nvidia/nemotron-3-super-120b-a12b:free",
+        "family": "nvidia"
+      },
+      "statuses": {
+        "ok": 148
+      },
+      "rungs": {
+        "full": {
+          "questions": 20,
+          "trials": 74,
+          "hits": 57,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.7702702702702703,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.5202702702702703,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.7791666666666667,
+            "sd": 0.32699567212830705,
+            "lo": 0.6358544946261496,
+            "hi": 0.9224788387071837
+          },
+          "coverage": "74/140",
+          "mean_reasoning_tokens": 502
+        },
+        "options-only": {
+          "questions": 20,
+          "trials": 74,
+          "hits": 54,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.7297297297297297,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.4797297297297297,
+          "ci_question_unit": {
+            "n": 20,
+            "mean": 0.7416666666666667,
+            "sd": 0.3524143958931708,
+            "lo": 0.5872142477552028,
+            "hi": 0.8961190855781306
+          },
+          "coverage": "74/140",
+          "mean_reasoning_tokens": 591
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 20,
+        "full": 0.7791666666666667,
+        "options_only": 0.7416666666666667
+      }
+    },
+    "qwen-free": {
+      "meta": {
+        "id": "qwen-free",
+        "provider": "openrouter",
+        "model": "qwen/qwen3.8-27b:free",
+        "family": "alibaba"
+      },
+      "statuses": {
+        "ok": 3
+      },
+      "rungs": {
+        "full": {
+          "questions": 2,
+          "trials": 2,
+          "hits": 1,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.5,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.25,
+          "ci_question_unit": {
+            "n": 2,
+            "mean": 0.5,
+            "sd": 0.7071067811865476,
+            "lo": 0,
+            "hi": 1
+          },
+          "coverage": "2/140",
+          "mean_reasoning_tokens": 276
+        },
+        "options-only": {
+          "questions": 1,
+          "trials": 1,
+          "hits": 0,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0,
+          "mean_chance": 0.25,
+          "excess_over_chance": -0.25,
+          "ci_question_unit": null,
+          "coverage": "1/140",
+          "mean_reasoning_tokens": 1119
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 1,
+        "full": 1,
+        "options_only": 0
+      }
+    }
+  },
+  "families": {
+    "full": {
+      "google": {
+        "voices": [
+          "gemini-flash",
+          "gemini-flash-36",
+          "gemini-flash-37",
+          "gemini-flash-38",
+          "gemma-31b"
+        ],
+        "questions": 20,
+        "rate": 0.8142857142857143,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.8142857142857143,
+          "sd": 0.3117502343491983,
+          "lo": 0.67765514994848,
+          "hi": 0.9509162786229486
+        }
+      },
+      "zhipu": {
+        "voices": [
+          "glm-free"
+        ],
+        "questions": 2,
+        "rate": 0.5,
+        "ci_question_unit": {
+          "n": 2,
+          "mean": 0.5,
+          "sd": 0.7071067811865476,
+          "lo": 0,
+          "hi": 1
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 20,
+        "rate": 0.775,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.775,
+          "sd": 0.257304669221989,
+          "lo": 0.6622312566635409,
+          "hi": 0.8877687433364592
+        }
+      },
+      "nvidia": {
+        "voices": [
+          "nemotron-free"
+        ],
+        "questions": 20,
+        "rate": 0.7791666666666667,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.7791666666666667,
+          "sd": 0.32699567212830705,
+          "lo": 0.6358544946261496,
+          "hi": 0.9224788387071837
+        }
+      },
+      "alibaba": {
+        "voices": [
+          "qwen-free"
+        ],
+        "questions": 2,
+        "rate": 0.5,
+        "ci_question_unit": {
+          "n": 2,
+          "mean": 0.5,
+          "sd": 0.7071067811865476,
+          "lo": 0,
+          "hi": 1
+        }
+      }
+    },
+    "options-only": {
+      "google": {
+        "voices": [
+          "gemini-flash",
+          "gemini-flash-36",
+          "gemini-flash-37",
+          "gemini-flash-38",
+          "gemma-31b"
+        ],
+        "questions": 20,
+        "rate": 0.8365476190476191,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.8365476190476191,
+          "sd": 0.2394152319713941,
+          "lo": 0.7316192672743831,
+          "hi": 0.9414759708208551
+        }
+      },
+      "zhipu": {
+        "voices": [
+          "glm-free"
+        ],
+        "questions": 2,
+        "rate": 1,
+        "ci_question_unit": {
+          "n": 2,
+          "mean": 1,
+          "sd": 0,
+          "lo": 1,
+          "hi": 1
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 20,
+        "rate": 0.625,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.625,
+          "sd": 0.24069693830979205,
+          "lo": 0.5195099156567934,
+          "hi": 0.7304900843432066
+        }
+      },
+      "nvidia": {
+        "voices": [
+          "nemotron-free"
+        ],
+        "questions": 20,
+        "rate": 0.7416666666666667,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.7416666666666667,
+          "sd": 0.3524143958931708,
+          "lo": 0.5872142477552028,
+          "hi": 0.8961190855781306
+        }
+      },
+      "alibaba": {
+        "voices": [
+          "qwen-free"
+        ],
+        "questions": 1,
+        "rate": 0,
+        "ci_question_unit": null
+      }
+    }
+  },
+  "panel": {
+    "full": {
+      "families": 5,
+      "complete_questions": 1,
+      "family_rates_on_complete": {
+        "google": 0.2,
+        "zhipu": 0,
+        "mistral": 0,
+        "nvidia": 0,
+        "alibaba": 0
+      },
+      "median_family_rate": 0,
+      "pooled_trials": {
+        "questions": 20,
+        "trials": 539,
+        "hits": 424,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.7866419294990723,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.5366419294990723,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.7968769595666148,
+          "sd": 0.25308154842301134,
+          "lo": 0.6859590805261622,
+          "hi": 0.9077948386070673
+        }
+      },
+      "voices": [
+        "gemini-flash",
+        "gemini-flash-36",
+        "gemini-flash-37",
+        "gemini-flash-38",
+        "gemma-31b",
+        "glm-free",
+        "ministral-14b",
+        "ministral-8b",
+        "nemotron-free",
+        "qwen-free"
+      ]
+    },
+    "options-only": {
+      "families": 5,
+      "complete_questions": 1,
+      "family_rates_on_complete": {
+        "google": 1,
+        "zhipu": 1,
+        "mistral": 0.3571428571428571,
+        "nvidia": 0.75,
+        "alibaba": 0
+      },
+      "median_family_rate": 0.75,
+      "pooled_trials": {
+        "questions": 20,
+        "trials": 536,
+        "hits": 389,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.7257462686567164,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.47574626865671643,
+        "ci_question_unit": {
+          "n": 20,
+          "mean": 0.7331515356682209,
+          "sd": 0.18585860931340262,
+          "lo": 0.6516954086810656,
+          "hi": 0.8146076626553762
+        }
+      },
+      "voices": [
+        "gemini-flash",
+        "gemini-flash-36",
+        "gemini-flash-37",
+        "gemini-flash-38",
+        "gemma-31b",
+        "glm-free",
+        "ministral-14b",
+        "ministral-8b",
+        "nemotron-free",
+        "qwen-free"
+      ]
+    }
+  },
+  "warnings": [],
+  "by_group": {
+    "full": {
+      "clean": {
+        "google": {
+          "rate": 0.6114285714285714,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.6114285714285714,
+            "sd": 0.3991714775390716,
+            "lo": 0.26153934451366473,
+            "hi": 0.9613177983434782
+          }
+        },
+        "mistral": {
+          "rate": 0.7285714285714285,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.7285714285714285,
+            "sd": 0.11736911946539277,
+            "lo": 0.625692859374535,
+            "hi": 0.8314499977683221
+          }
+        },
+        "nvidia": {
+          "rate": 0.7,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.7,
+            "sd": 0.32596012026013244,
+            "lo": 0.41428335715258024,
+            "hi": 0.9857166428474197
+          }
+        }
+      },
+      "key_longest": {
+        "google": {
+          "rate": 1,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          }
+        },
+        "mistral": {
+          "rate": 0.9571428571428573,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.9571428571428573,
+            "sd": 0.063887656499994,
+            "lo": 0.9011428571428572,
+            "hi": 1
+          }
+        },
+        "nvidia": {
+          "rate": 1,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          }
+        }
+      },
+      "absolute": {
+        "google": {
+          "rate": 0.7742857142857142,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.7742857142857142,
+            "sd": 0.34499334509996754,
+            "lo": 0.47188571428571424,
+            "hi": 1
+          }
+        },
+        "zhipu": {
+          "rate": 0.5,
+          "questions": 2,
+          "ci_question_unit": {
+            "n": 2,
+            "mean": 0.5,
+            "sd": 0.7071067811865476,
+            "lo": 0,
+            "hi": 1
+          }
+        },
+        "mistral": {
+          "rate": 0.5,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.5,
+            "sd": 0.331200660553418,
+            "lo": 0.20968982105341194,
+            "hi": 0.7903101789465881
+          }
+        },
+        "nvidia": {
+          "rate": 0.6,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.6,
+            "sd": 0.45414755311462374,
+            "lo": 0.201922118172838,
+            "hi": 0.998077881827162
+          }
+        },
+        "alibaba": {
+          "rate": 0.5,
+          "questions": 2,
+          "ci_question_unit": {
+            "n": 2,
+            "mean": 0.5,
+            "sd": 0.7071067811865476,
+            "lo": 0,
+            "hi": 1
+          }
+        }
+      },
+      "key_hedges": {
+        "google": {
+          "rate": 0.8714285714285713,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.8714285714285713,
+            "sd": 0.287494454249973,
+            "lo": 0.6194285714285713,
+            "hi": 1
+          }
+        },
+        "mistral": {
+          "rate": 0.9142857142857143,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.9142857142857143,
+            "sd": 0.15485345277627718,
+            "lo": 0.778550678278057,
+            "hi": 1
+          }
+        },
+        "nvidia": {
+          "rate": 0.8166666666666667,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.8166666666666667,
+            "sd": 0.29107081994288303,
+            "lo": 0.5615318439203826,
+            "hi": 1
+          }
+        }
+      }
+    },
+    "options-only": {
+      "clean": {
+        "google": {
+          "rate": 0.6261904761904762,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.6261904761904762,
+            "sd": 0.2745332051421532,
+            "lo": 0.38555151194920645,
+            "hi": 0.8668294404317459
+          }
+        },
+        "mistral": {
+          "rate": 0.45714285714285713,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.45714285714285713,
+            "sd": 0.21782786688538439,
+            "lo": 0.26620831338505513,
+            "hi": 0.6480774009006591
+          }
+        },
+        "nvidia": {
+          "rate": 0.45,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.45,
+            "sd": 0.51234753829798,
+            "lo": 0.0009075818943277136,
+            "hi": 0.8990924181056723
+          }
+        }
+      },
+      "key_longest": {
+        "google": {
+          "rate": 1,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          }
+        },
+        "mistral": {
+          "rate": 0.8571428571428573,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.8571428571428573,
+            "sd": 0.14285714285714288,
+            "lo": 0.7319230504028691,
+            "hi": 0.9823626638828455
+          }
+        },
+        "nvidia": {
+          "rate": 1,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          }
+        }
+      },
+      "absolute": {
+        "google": {
+          "rate": 0.9485714285714286,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.9485714285714286,
+            "sd": 0.0842736068785864,
+            "lo": 0.8747023552051003,
+            "hi": 1
+          }
+        },
+        "zhipu": {
+          "rate": 1,
+          "questions": 2,
+          "ci_question_unit": {
+            "n": 2,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          }
+        },
+        "mistral": {
+          "rate": 0.4428571428571429,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.4428571428571429,
+            "sd": 0.15485345277627716,
+            "lo": 0.3071221068494857,
+            "hi": 0.5785921788648001
+          }
+        },
+        "nvidia": {
+          "rate": 0.8,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.8,
+            "sd": 0.2091650066335189,
+            "lo": 0.616658788048077,
+            "hi": 0.9833412119519231
+          }
+        },
+        "alibaba": {
+          "rate": 0,
+          "questions": 1,
+          "ci_question_unit": null
+        }
+      },
+      "key_hedges": {
+        "google": {
+          "rate": 0.7714285714285715,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.7714285714285715,
+            "sd": 0.28302303937369927,
+            "lo": 0.5233479393752005,
+            "hi": 1
+          }
+        },
+        "mistral": {
+          "rate": 0.7428571428571429,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.7428571428571429,
+            "sd": 0.14811743823805518,
+            "lo": 0.613026483920203,
+            "hi": 0.8726878017940828
+          }
+        },
+        "nvidia": {
+          "rate": 0.7166666666666667,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.7166666666666667,
+            "sd": 0.2981423969999719,
+            "lo": 0.4553333333333334,
+            "hi": 0.978
+          }
+        }
+      }
+    }
+  }
+}

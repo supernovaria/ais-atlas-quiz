@@ -1,0 +1,6 @@
+{
+  "id": "gemini-flash-36",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "family": "google"
+}

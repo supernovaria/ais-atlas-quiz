@@ -103,7 +103,9 @@
       "provider": "openrouter",
       "model": "z-ai/glm-5.2:free",
       "family": "zhipu",
-      "min_interval_ms": 4000
+      "min_interval_ms": 4000,
+      "enabled": false,
+      "disabled_why": "OpenRouter: no longer free (\"This model is unavailable for free\", 2026-09-26)"
     },
     {
       "id": "qwen-free",

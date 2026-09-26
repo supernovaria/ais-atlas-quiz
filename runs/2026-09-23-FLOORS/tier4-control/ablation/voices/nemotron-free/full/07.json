@@ -1,0 +1,45 @@
+{
+  "file": "full/07",
+  "voice": "nemotron-free",
+  "provider": "openrouter",
+  "model": "nvidia/nemotron-3-super-120b-a12b:free",
+  "family": "nvidia",
+  "mode": "letter",
+  "prompt_sha256": "8b8585426778c6d8dd2f96ffa59bcc7b3cdb866d6e06037db2813591165b159d",
+  "ts": "2026-09-23T18:48:17.865Z",
+  "status": "ok",
+  "reply_text": "A",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 491,
+    "total_tokens": 644,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 630,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "model_version": "nvidia/nemotron-3-super-120b-a12b:free",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12545
+}

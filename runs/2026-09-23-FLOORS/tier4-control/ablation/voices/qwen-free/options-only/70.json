@@ -1,0 +1,45 @@
+{
+  "file": "options-only/70",
+  "voice": "qwen-free",
+  "provider": "openrouter",
+  "model": "qwen/qwen3.8-27b:free",
+  "family": "alibaba",
+  "mode": "letter",
+  "prompt_sha256": "9957e8058ec6b8e3684c2325f47eb8e9d438319323f65c572b927b71ba91dd71",
+  "ts": "2026-09-23T18:47:53.364Z",
+  "status": "ok",
+  "reply_text": "D",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 171,
+    "completion_tokens": 1121,
+    "total_tokens": 1292,
+    "cost": 0,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0,
+      "upstream_inference_prompt_cost": 0,
+      "upstream_inference_completions_cost": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1119,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "model_version": "qwen/qwen3.8-27b:free",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 34287
+}
