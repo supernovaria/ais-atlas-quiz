@@ -42,7 +42,7 @@ import { join, dirname, resolve, basename, relative, sep } from 'node:path';
 import { randomBytes } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { parseChapterMarkdown } from '../src/quizParser.js';
-import { measure, contentWords, overlap, GATES, atlasSlug, lintCandidate } from './check-questions.mjs';
+import { measure, contentWords, overlap, GATES, atlasSlug, lintCandidate, ABSOLUTES, countMatches } from './check-questions.mjs';
 import { renderTemplate, loadTemplate, loadPartial, lintTemplate, listTemplates, PromptError, sha256 } from './prompts.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -1091,12 +1091,38 @@ function stagePrompt(label, slug, opts = {}) {
 // negation stems are dropped from options-only (a reader asked for the correct
 // option picks a true-sounding one, and the key of a negation stem is the false
 // one), and stems that are ill-posed without options are dropped from stem-only.
+//
+//   full-explain          quiz-adversary + API voices   prompts/adversary-explain.md — per-option cue codes
+//   options-only-explain  the same, stem slot withheld
+//
+// The explain rungs are DIAGNOSIS, never the score: a reader asked to reason
+// cracks more than one asked for a letter, so their hit rates are reported apart
+// and never pooled with the letter rungs. `api: true` marks the rungs
+// scripts/voices.mjs can answer (a prompt that is complete as text); sighted
+// needs a file read and stem-only needs a grader, so both stay Claude-only.
 const ABLATION_RUNGS = {
-  full: { agent: 'quiz-adversary', model: 'haiku' },
-  'options-only': { agent: 'quiz-adversary', model: 'haiku' },
+  full: { agent: 'quiz-adversary', model: 'haiku', api: true },
+  'options-only': { agent: 'quiz-adversary', model: 'haiku', api: true },
   sighted: { agent: 'general-purpose', model: 'haiku' },
   'stem-only': { agent: 'quiz-recall', model: 'haiku' },
+  'full-explain': { agent: 'quiz-adversary', model: 'haiku', api: true, explain: true },
+  'options-only-explain': { agent: 'quiz-adversary', model: 'haiku', api: true, explain: true },
 };
+const isExplainRung = (r) => !!ABLATION_RUNGS[r]?.explain;
+const withholdsStem = (r) => r === 'options-only' || r === 'options-only-explain';
+
+// The cue codes, read from the partial every voice is shown, so the list the
+// reader chose from and the list the scorer accepts cannot drift apart.
+function tellCodes() {
+  const codes = [...loadPartial('tell-codes').matchAll(/^\s*- `([a-z-]+)`/gm)].map((m) => m[1]);
+  if (!codes.includes('other') || !codes.includes('no-tell')) die('tell-codes partial must define `other` and `no-tell`');
+  return codes;
+}
+
+// The one name the Claude subagent's replies are filed under. Its letters come
+// from ablation/picks.json (as before); its explain replies are saved verbatim
+// by the orchestrator to ablation/voices/claude-haiku/<rung>/<NN>.txt.
+const CLAUDE_VOICE = 'claude-haiku';
 const RECALL_GRADES = ['match', 'partial', 'miss', 'idk', 'refusal'];
 const LETTER_RUNGS = new Set(['full', 'options-only', 'sighted']);
 
@@ -1130,9 +1156,20 @@ function stageAblate(label, slug, opts = {}) {
   const idsArg = opts.ids ?? flag('ids');
   const force = opts.force ?? argv.includes('--force');
   const passage = opts.passage ?? flag('passage');
+  // Explain rungs use the first --explain-seeds of the seeds (default 1): their
+  // value is the cue codes, and diversity there comes from voices, not orders.
+  // --claude-seeds / --claude-explain-seeds say how many of each question's
+  // prompts the Claude subagent answers; API voices answer all of them. Default
+  // for letters is every seed, which is the behaviour before voices existed.
+  const explainSeeds = Number(opts.explainSeeds ?? flag('explain-seeds', '1'));
+  const claudeSeeds = Number(opts.claudeSeeds ?? flag('claude-seeds', String(seeds)));
+  const claudeExplainSeeds = Number(opts.claudeExplainSeeds ?? flag('claude-explain-seeds', '1'));
   if (!Number.isInteger(seeds) || seeds < 1) die(`--seeds must be a positive integer, got ${seeds}`);
   if (!Number.isInteger(offset) || offset < 0) die(`--seed-offset must be a non-negative integer, got ${offset}`);
   for (const r of rungs) if (!ABLATION_RUNGS[r]) die(`unknown rung "${r}" — known: ${Object.keys(ABLATION_RUNGS).join(', ')}`);
+  if (!Number.isInteger(explainSeeds) || explainSeeds < 1 || explainSeeds > seeds) die(`--explain-seeds must be 1..${seeds}, got ${explainSeeds}`);
+  if (!Number.isInteger(claudeSeeds) || claudeSeeds < 0 || claudeSeeds > seeds) die(`--claude-seeds must be 0..${seeds}, got ${claudeSeeds}`);
+  if (!Number.isInteger(claudeExplainSeeds) || claudeExplainSeeds < 0 || claudeExplainSeeds > explainSeeds) die(`--claude-explain-seeds must be 0..${explainSeeds}, got ${claudeExplainSeeds}`);
   if (rungs.includes('sighted')) {
     if (!passage) die('the sighted rung needs --passage <path to the section prose>');
     if (!existsSync(resolve(ROOT, passage))) die(`--passage ${passage} does not exist`);
@@ -1152,9 +1189,13 @@ function stageAblate(label, slug, opts = {}) {
   const ad = join(dir, 'ablation');
   // Never overwrite a manifest whose picks may already have been recorded: the
   // picks are keyed by file name, and a rebuilt manifest silently re-points them.
-  if (existsSync(join(ad, 'picks.json')) && !force) {
-    die(`ablate: ${join(ad, 'picks.json')} already exists. A new manifest would re-point those picks.\n`
-      + '       Move the old ablation/ aside, or pass --force if the picks are known to be stale.');
+  // The same holds for voice replies, which can take days of free quota to
+  // collect and exist even when picks.json does not (review 2026-09-23-voices #9).
+  const hasVoiceReplies = (d) => existsSync(d) && readdirSync(d, { withFileTypes: true })
+    .some((x) => (x.isDirectory() ? hasVoiceReplies(join(d, x.name)) : /\.(json|txt)$/.test(x.name) && x.name !== 'voice.json'));
+  if ((existsSync(join(ad, 'picks.json')) || hasVoiceReplies(join(ad, 'voices'))) && !force) {
+    die(`ablate: ${ad} already holds recorded replies (picks.json or voices/). A new manifest would re-point them.\n`
+      + '       Move the old ablation/ aside, or pass --force if the replies are known to be stale.');
   }
   rmSync(ad, { recursive: true, force: true });
 
@@ -1163,43 +1204,65 @@ function stageAblate(label, slug, opts = {}) {
   const excluded = [];
   for (const rung of rungs) {
     let k = 0;
+    const R = ABLATION_RUNGS[rung];
     for (const it of items) {
-      if (rung === 'options-only' && isNegationStem(it)) { excluded.push({ id: it.id, rung, reason: 'negation stem: the key is the false statement' }); continue; }
+      if (withholdsStem(rung) && isNegationStem(it)) { excluded.push({ id: it.id, rung, reason: 'negation stem: the key is the false statement' }); continue; }
       if (rung === 'stem-only' && illPosedWithoutOptions(it)) { excluded.push({ id: it.id, rung, reason: 'ill-posed without options' }); continue; }
       const { orders } = seededOrders(it, seeds, offset);
-      for (const { seed, order } of orders) {
+      const use = R.explain ? orders.slice(0, explainSeeds) : orders;
+      use.forEach(({ seed, order }, si) => {
         const texts = order.map((o) => o.text);
         const keyIdx = order.findIndex((o) => o.key);
         let text;
         if (rung === 'full') text = render('adversary-mc', { stem: it.stem, options: optionLines(texts) });
         else if (rung === 'options-only') text = render('adversary-mc', { stem: withheld, options: optionLines(texts) });
+        else if (rung === 'full-explain') text = render('adversary-explain', { stem: it.stem, options: optionLines(texts) });
+        else if (rung === 'options-only-explain') text = render('adversary-explain', { stem: withheld, options: optionLines(texts) });
         else if (rung === 'sighted') text = render('sighted-reader', { passage, stem: it.stem, options: optionLines(texts) });
         else text = render('adversary-free-recall', { stem: it.stem });
         const file = `${rung}/${String(k).padStart(2, '0')}`;
         mkdirSync(join(ad, rung), { recursive: true });
         writeFileSync(join(ad, `${file}.txt`), `${text.trimEnd()}\n`, 'utf8');
         entries.push({
-          file, rung, agent: ABLATION_RUNGS[rung].agent, model: ABLATION_RUNGS[rung].model,
+          file, rung, agent: R.agent, model: R.model,
           id: it.id, seed,
+          // Whether the Claude subagent answers this prompt. API voices answer
+          // every prompt of an `api` rung regardless.
+          claude: R.api ? si < (R.explain ? claudeExplainSeeds : claudeSeeds) : true,
           option_count: rung === 'stem-only' ? null : order.length,
           key_letter: rung === 'stem-only' ? null : String.fromCharCode(65 + keyIdx),
           chance: rung === 'stem-only' ? null : Number((1 / order.length).toFixed(4)),
           // The recall grader needs the key's claim; no reader ever sees this file.
           key_text: rung === 'stem-only' ? order[keyIdx].text : undefined,
+          // The explain analysis maps each displayed letter back to its option.
+          options_shown: R.explain ? texts : undefined,
+          // Scored against what the reader SAW, not the candidate as it is later (review #10).
+          stem_shown: rung === 'full-explain' ? it.stem : undefined,
         });
         k += 1;
-      }
+      });
     }
   }
   const centrality = Object.fromEntries(items.map((c) => [c.id, keyCentrality(c)]));
   writeJson(join(ad, 'manifest.json'), {
     source: `${label}/${slug}`, seeds, seed_offset: offset, rungs, passage: passage || null,
+    explain_seeds: explainSeeds, claude_seeds: claudeSeeds, claude_explain_seeds: claudeExplainSeeds,
+    // The code list the readers were shown, so later edits to the partial never re-score these replies.
+    tell_codes: rungs.some(isExplainRung) ? tellCodes() : undefined,
+    tell_codes_sha256: rungs.some(isExplainRung) ? sha256(loadPartial('tell-codes')) : undefined,
     n_questions: items.length, n_prompts: entries.length, excluded, key_centrality: centrality, entries,
   });
-  writeJson(join(ad, 'picks.template.json'), Object.fromEntries(entries.map((e) => [e.file, ''])));
-  logLine(label, { stage: 'ablate', section: slug, rungs, seeds, seed_offset: offset, n_questions: items.length, n_prompts: entries.length, excluded: excluded.length, ok: true });
+  // picks.json is the Claude subagent's LETTER replies only. Its explain replies
+  // are JSON and are saved as files (see CLAUDE_VOICE); API voices write their own.
+  writeJson(join(ad, 'picks.template.json'), Object.fromEntries(entries.filter((e) => e.claude && !isExplainRung(e.rung)).map((e) => [e.file, ''])));
+  logLine(label, { stage: 'ablate', section: slug, rungs, seeds, seed_offset: offset, explain_seeds: explainSeeds, claude_seeds: claudeSeeds, n_questions: items.length, n_prompts: entries.length, excluded: excluded.length, ok: true });
   console.log(`ablate   ${label}/${slug}: ${items.length} question(s) × ${seeds} seed(s) × ${rungs.length} rung(s) = ${entries.length} prompt(s)${offset ? `, seeds ${offset + 1}–${offset + seeds}` : ''}`);
-  for (const r of rungs) console.log(`         ${r.padEnd(13)} → agent ${ABLATION_RUNGS[r].agent} (${ABLATION_RUNGS[r].model})`);
+  for (const r of rungs) {
+    const n = entries.filter((e) => e.rung === r && e.claude).length;
+    console.log(`         ${r.padEnd(21)} → agent ${ABLATION_RUNGS[r].agent} (${ABLATION_RUNGS[r].model}) answers ${n}${ABLATION_RUNGS[r].api ? '; API voices answer all (scripts/voices.mjs)' : ''}`);
+  }
+  const claudeExplain = entries.filter((e) => e.claude && isExplainRung(e.rung)).length;
+  if (claudeExplain) console.log(`         claude explain replies: save each verbatim to ablation/voices/${CLAUDE_VOICE}/<rung>/<NN>.txt`);
   if (excluded.length) console.log(`         excluded: ${excluded.map((x) => `${x.id.split('/').pop()} from ${x.rung}`).join(', ')}`);
   console.log(`         → ${ad}  (fill picks.template.json → picks.json, then ablate-score)`);
   return { entries, excluded, dir: ad };
@@ -1229,22 +1292,540 @@ function preregisteredBefore(label, slug) {
   return !!(pre && abl && pre.ts <= abl.ts);
 }
 
+// Accept "B" or "B." — a bare letter with punctuation. Anything else is an
+// unparsed reply. For the Claude subagent it is counted as a miss AND reported,
+// never silently dropped — its baseline was built that way. For an API voice it
+// is reported and left out of the rate (review 2026-09-23-voices #8): a free
+// model cut off mid-sentence is a delivery failure, and counting it as a miss
+// would lower the hit rate, the non-conservative direction for a leak gate.
+function letterRow(e, raw, api = false) {
+  const m = String(raw).trim().match(/^\W*([A-Za-z])\W*$/);
+  const letter = m ? m[1].toUpperCase() : null;
+  const ok = letter && letter.charCodeAt(0) - 65 < e.option_count;
+  return { ...e, picked: ok ? letter : null, unparsed: !ok, excludeFromRate: api && !ok, hit: !!ok && letter === e.key_letter };
+}
+
+function letterStats(rs) {
+  const scored = rs.filter((r) => !r.excludeFromRate);
+  const ids = uniq(scored.map((r) => r.id));
+  const perQ = ids.map((id) => {
+    const q = scored.filter((r) => r.id === id);
+    return { id, hits: q.filter((r) => r.hit).length, trials: q.length, rate: q.filter((r) => r.hit).length / q.length };
+  });
+  const hits = scored.filter((r) => r.hit).length;
+  const chance = mean(scored.map((r) => r.chance));
+  return {
+    perQ,
+    stats: {
+      questions: ids.length, trials: scored.length, hits, unparsed: rs.filter((r) => r.unparsed).length,
+      unparsed_excluded: rs.filter((r) => r.excludeFromRate).length,
+      hit_rate: scored.length ? hits / scored.length : null,
+      mean_chance: chance,
+      excess_over_chance: scored.length ? hits / scored.length - chance : null,
+      ci_question_unit: questionUnitCI(perQ.map((q) => q.rate)),
+    },
+  };
+}
+
+// One voice's record for one prompt file. API voices write a call record
+// (<NN>.json, from scripts/voices.mjs); the orchestrator saves a Claude reply
+// verbatim (<NN>.txt). A record whose call failed, was truncated or came back
+// empty is "not answered", never a miss. An API record answered a prompt with a
+// recorded hash; if the prompt file has changed since, the manifest was rebuilt
+// under the replies and they no longer describe these prompts (review #10).
+function readVoiceRecord(ad, voice, e) {
+  const vdir = join(ad, 'voices');
+  const j = join(vdir, voice, `${e.file}.json`);
+  if (existsSync(j)) {
+    const r = readJson(j);
+    const pf = join(ad, `${e.file}.txt`);
+    if (r.prompt_sha256 && existsSync(pf) && sha256(readFileSync(pf, 'utf8')) !== r.prompt_sha256) {
+      die(`ablate-score: ${voice}/${e.file} answered a prompt that differs from ${e.file}.txt as it is now — the manifest was rebuilt under these replies`);
+    }
+    return r;
+  }
+  const t = join(vdir, voice, `${e.file}.txt`);
+  return existsSync(t) ? { status: 'ok', reply_text: readFileSync(t, 'utf8') } : null;
+}
+
+const listVoices = (ad) => {
+  const vdir = join(ad, 'voices');
+  return existsSync(vdir)
+    ? readdirSync(vdir, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort()
+    : [];
+};
+
+const voiceMeta = (ad, v) => maybeJson(join(ad, 'voices', v, 'voice.json'))
+  ?? (v === CLAUDE_VOICE ? { id: v, provider: 'claude-code', model: 'haiku', family: 'anthropic' } : { id: v, family: v });
+
+const reasoningTokens = (u) => (u ? (u.thoughtsTokenCount ?? u.completion_tokens_details?.reasoning_tokens ?? null) : null);
+
+// Letter replies of every API voice, for the letter rungs an API voice can answer.
+// The Claude subagent's letters are picks.json and are not read from here.
+function readVoiceLetterRows(ad, man) {
+  const out = {};
+  for (const v of listVoices(ad).filter((x) => x !== CLAUDE_VOICE)) {
+    const rows = [];
+    const status = {};
+    const versions = new Set();
+    const dropped = new Set();
+    for (const e of man.entries.filter((x) => ABLATION_RUNGS[x.rung].api && !isExplainRung(x.rung))) {
+      const rec = readVoiceRecord(ad, v, e);
+      if (!rec) continue;
+      status[rec.status] = (status[rec.status] ?? 0) + 1;
+      if (rec.status !== 'ok') continue;
+      if (rec.model_version) versions.add(rec.model_version);
+      dropped.add(JSON.stringify(rec.settings_dropped ?? []));
+      rows.push({ ...letterRow(e, rec.reply_text, true), reasoning_tokens: reasoningTokens(rec.usage) });
+    }
+    if (rows.length || Object.keys(status).length) {
+      out[v] = { meta: voiceMeta(ad, v), rows, status, model_versions: [...versions], settings_dropped_variants: [...dropped].map((d) => JSON.parse(d)) };
+    }
+  }
+  return out;
+}
+
+// Per family, one rate per question: the voices of a family are averaged at the
+// question level first, so a family with two voices counts once (review #2).
+function familyRates(rowsWithVoice, metaOf) {
+  const byFam = {};
+  for (const r of rowsWithVoice.filter((x) => !x.excludeFromRate)) (byFam[metaOf(r.voice).family ?? r.voice] ??= []).push(r);
+  const out = {};
+  for (const [f, rs] of Object.entries(byFam)) {
+    const perQ = {};
+    for (const id of uniq(rs.map((r) => r.id))) {
+      const vs = uniq(rs.filter((r) => r.id === id).map((r) => r.voice));
+      perQ[id] = mean(vs.map((v) => { const q = rs.filter((r) => r.id === id && r.voice === v); return q.filter((r) => r.hit).length / q.length; }));
+    }
+    const rates = Object.values(perQ);
+    out[f] = { voices: uniq(rs.map((r) => r.voice)), questions: rates.length, rate: rates.length ? mean(rates) : null, ci_question_unit: questionUnitCI(rates), per_question: perQ };
+  }
+  return out;
+}
+
+const median = (xs) => { const s = [...xs].sort((a, b) => a - b); const n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : null; };
+
+// The panel headline: the median of per-family rates, over only the questions
+// every family answered (complete cases), so a question is never made to look
+// leakier by which voices happened to have quota for it (review #2).
+function panelHeadline(fams) {
+  const names = Object.keys(fams);
+  if (!names.length) return null;
+  const common = Object.keys(fams[names[0]].per_question).filter((id) => names.every((f) => id in fams[f].per_question));
+  const famRates = Object.fromEntries(names.map((f) => [f, common.length ? mean(common.map((id) => fams[f].per_question[id])) : null]));
+  const vals = Object.values(famRates).filter((x) => x != null);
+  return { families: names.length, complete_questions: common.length, family_rates_on_complete: famRates, median_family_rate: vals.length ? median(vals) : null };
+}
+
+// Parse and check one explain reply. This parses; it never repairs. A single
+// surrounding code fence is unwrapped and noted — that removes no content. A
+// reply that is not one JSON object with an entry per shown letter is `ok:
+// false`. Within a usable reply, an option whose codes are missing, empty, all
+// unknown, or `no-tell` mixed with other codes is UNRATED: it stays out of every
+// denominator rather than posing as "rated, no cue" (review #4). Unknown codes
+// are recorded and dropped, never coerced to a known one.
+function parseExplainReply(raw, e, codes) {
+  const problems = [];
+  let text = String(raw).trim();
+  const fence = text.match(/^```[a-zA-Z]*\s*\n([\s\S]*?)\n```$/);
+  if (fence) { text = fence[1]; problems.push('fenced'); }
+  let vals;
+  try { vals = parseJsonValues(text); } catch { return { ok: false, problems: ['not-json'] }; }
+  if (vals.length !== 1) return { ok: false, problems: [vals.length ? 'several-json-values' : 'not-json'] };
+  const obj = vals[0];
+  if (text.slice(0, text.indexOf('{')).trim() || text.slice(text.lastIndexOf('}') + 1).trim()) problems.push('prose-around-json');
+  if (!obj || typeof obj !== 'object' || Array.isArray(obj) || !obj.options || typeof obj.options !== 'object' || Array.isArray(obj.options)) return { ok: false, problems: ['no-options-object'] };
+  const letters = Array.from({ length: e.option_count }, (_, i) => String.fromCharCode(65 + i));
+  const got = Object.keys(obj.options).map((k) => k.trim().toUpperCase());
+  if (got.length !== letters.length || letters.some((l) => !got.includes(l))) return { ok: false, problems: ['option-letters-mismatch'] };
+  const options = {};
+  for (const [k, v] of Object.entries(obj.options)) {
+    const L = k.trim().toUpperCase();
+    const p = Number(v?.p);
+    let rated = true;
+    let valid = [];
+    if (!v || !Array.isArray(v.codes)) { problems.push('codes-missing'); rated = false; }
+    else {
+      const rawCodes = v.codes.map((c) => String(c).trim().toLowerCase());
+      const invalid = rawCodes.filter((c) => !codes.includes(c));
+      if (invalid.length) problems.push(`invalid-code:${invalid.join('|')}`);
+      valid = uniq(rawCodes.filter((c) => codes.includes(c)));
+      if (!rawCodes.length) { problems.push('codes-empty'); rated = false; }
+      else if (!valid.length) { problems.push('codes-all-invalid'); rated = false; }
+      else if (valid.includes('no-tell') && valid.length > 1) { problems.push('no-tell-with-codes'); rated = false; }
+    }
+    const note = typeof v?.note === 'string' ? v.note.trim() : '';
+    if (valid.includes('other') && !note) problems.push('other-without-note');
+    if (!Number.isFinite(p) || p < 0) problems.push('p-missing');
+    options[L] = { p: Number.isFinite(p) && p >= 0 ? p : null, codes: valid, note, rated, invalid: v && Array.isArray(v.codes) && v.codes.some((c) => !codes.includes(String(c).trim().toLowerCase())) };
+  }
+  const sum = Object.values(options).reduce((a, o) => a + (o.p ?? 0), 0);
+  if (Math.abs(sum - 100) > 5) problems.push(`p-sum:${sum}`);
+  for (const o of Object.values(options)) o.pn = sum > 0 && o.p != null ? o.p / sum : null;
+  // "A", "A." and "Option A" name the same letter (Gemini review #1); anything
+  // else is pick-invalid, left out of the explain hit rate and counted.
+  const pm = String(obj.pick ?? '').trim().match(/^W*(?:options+)?([A-Za-z])W*$/i);
+  const pick = pm ? pm[1].toUpperCase() : '';
+  if (!letters.includes(pick)) problems.push('pick-invalid');
+  return { ok: true, problems, options, pick: letters.includes(pick) ? pick : null, strategy: typeof obj.strategy === 'string' ? obj.strategy.trim() : '' };
+}
+
+// Percentile rank of each value among the displayed options: 0 lowest, 1
+// highest, ties averaged. Used instead of "is the unique maximum", which capped
+// how often a claimed cue could ever count as true (review #5).
+function percentileRanks(xs) {
+  if (xs.length < 2) return xs.map(() => 0.5);
+  return xs.map((x) => {
+    const below = xs.filter((y) => y < x).length;
+    const equal = xs.filter((y) => y === x).length - 1;
+    return (below + equal / 2) / (xs.length - 1);
+  });
+}
+
+// What the text itself shows about each displayed option. `null` where not
+// measurable (no stem on the options-only rung).
+function optionMechanics(stem, texts) {
+  const words = texts.map((t) => contentWords(t));
+  const sw = stem ? contentWords(stem) : null;
+  const len = percentileRanks(texts.map((t) => t.length));
+  const echo = sw ? percentileRanks(words.map((w) => overlap(sw, w))) : null;
+  const cent = percentileRanks(words.map((w, i) => mean(words.filter((_, j) => j !== i).map((o) => overlap(w, o)))));
+  return texts.map((t, i) => ({
+    length_rank: len[i],
+    shortness_rank: 1 - len[i],
+    absolute: countMatches(t, ABSOLUTES) > 0,
+    stem_echo_rank: echo ? echo[i] : null,
+    centrality_rank: cent[i],
+  }));
+}
+
+// claimed code ↔ measurable property. Imperfect pairs on purpose (most-detailed
+// is not "longest"), so these are agreement, not accuracy. For ranked
+// properties: mean rank of options tagged with the code vs options not tagged
+// (0.5 = the tag is unrelated to the property).
+const FAITHFULNESS_PAIRS = [
+  ['longest', 'length_rank'],
+  ['shortest', 'shortness_rank'],
+  ['most-detailed', 'length_rank'],
+  ['echoes-stem', 'stem_echo_rank'],
+  ['like-the-others', 'centrality_rank'],
+  ['absolute', 'absolute'],
+];
+
+// Codes that readers are likely to use for one signal. Reported as a union beside
+// the separate codes, so a signal split across two names is still visible (#11).
+const CODE_GROUPS = {
+  'group:qualified': ['most-detailed', 'hedged', 'nuanced-turn', 'middle-ground'],
+  'group:dismissible': ['absolute', 'denies-question', 'implausible', 'off-target'],
+};
+
+// Question-level bootstrap interval of a mean of per-question values. Seeded, so
+// the same data always gives the same interval.
+function bootstrapCI(values, reps = 1000) {
+  if (values.length < 2) return null;
+  const rnd = mulberry32(20260923);
+  const means = [];
+  for (let b = 0; b < reps; b += 1) {
+    let s = 0;
+    for (let i = 0; i < values.length; i += 1) s += values[Math.floor(rnd() * values.length)];
+    means.push(s / values.length);
+  }
+  means.sort((a, b) => a - b);
+  return { n: values.length, lo: means[Math.floor(reps * 0.025)], hi: means[Math.floor(reps * 0.975)] };
+}
+
+function explainAnalysis(label, slug, ad, man, letterPicks) {
+  const codes = man.tell_codes ?? tellCodes();
+  const cands = maybeJson(join(sectionDir(label, slug), 'candidates.json')) ?? [];
+  const byId = new Map(cands.map((c) => [c.id, c]));
+  const entries = man.entries.filter((e) => isExplainRung(e.rung));
+  const replies = [];
+  const meta = {};
+  const status = {};
+  for (const v of listVoices(ad)) {
+    meta[v] = voiceMeta(ad, v);
+    for (const e of entries) {
+      const rec = readVoiceRecord(ad, v, e);
+      if (!rec) continue;
+      ((status[v] ??= {})[rec.status] = (status[v]?.[rec.status] ?? 0) + 1);
+      if (rec.status !== 'ok') continue;
+      replies.push({ voice: v, e, parsed: parseExplainReply(rec.reply_text, e, codes), reasoning_tokens: reasoningTokens(rec.usage) });
+    }
+  }
+
+  // One record per (reply, displayed option).
+  const recs = [];
+  for (const r of replies.filter((x) => x.parsed.ok)) {
+    const c = byId.get(r.e.id);
+    const shown = r.e.options_shown;
+    const stem = r.e.rung === 'full-explain' ? (r.e.stem_shown ?? c?.stem ?? null) : null;
+    const mech = optionMechanics(stem, shown);
+    shown.forEach((text, i) => {
+      const L = String.fromCharCode(65 + i);
+      const o = r.parsed.options[L];
+      recs.push({
+        voice: r.voice, family: meta[r.voice].family ?? r.voice, id: r.e.id, rung: r.e.rung, file: r.e.file, seed: r.e.seed, letter: L,
+        k: shown.length, option: c ? c.options.findIndex((x) => x.text === text) : -1, text, key: L === r.e.key_letter,
+        picked: r.parsed.pick === L, pick_valid: r.parsed.pick != null, p: o.pn, codes: o.codes, rated: o.rated, invalid: o.invalid, note: o.note, mech: mech[i],
+      });
+    });
+  }
+
+  // A voice whose options are often unrated would drag every rate toward zero
+  // unevenly; it is reported but left out of the pooled tables (review #4).
+  const perVoice = {};
+  const excludedVoices = [];
+  const rungsPresent = man.rungs.filter(isExplainRung);
+  for (const v of Object.keys(meta)) {
+    const rv = replies.filter((x) => x.voice === v);
+    if (!rv.length && !status[v]) continue;
+    const probs = {};
+    for (const r of rv) for (const pr of r.parsed.problems) { const k = pr.split(':')[0]; probs[k] = (probs[k] ?? 0) + 1; }
+    const vr = recs.filter((x) => x.voice === v);
+    const unratedShare = vr.length ? vr.filter((x) => !x.rated).length / vr.length : null;
+    if (unratedShare != null && unratedShare > 0.10) excludedVoices.push(v);
+    const byRung = {};
+    for (const rung of rungsPresent) {
+      const ok = rv.filter((x) => x.e.rung === rung && x.parsed.ok);
+      if (!ok.length) continue;
+      const withPick = ok.filter((x) => x.parsed.pick != null);
+      const kp = vr.filter((x) => x.rung === rung && x.key).map((x) => x.p).filter((p) => p != null);
+      // Does the explain pick agree with the same voice's letter pick on the same
+      // question and order? Low agreement means the codes explain a different
+      // decision from the one the letter rung scores (review #1).
+      const letterRung = rung.replace('-explain', '');
+      const pairs = withPick.map((x) => letterPicks[`${v}|${letterRung}|${x.e.id}|${x.e.seed}`]).filter((l) => l !== undefined);
+      const agree = withPick.filter((x) => letterPicks[`${v}|${letterRung}|${x.e.id}|${x.e.seed}`] === x.parsed.pick).length;
+      const rt = ok.map((x) => x.reasoning_tokens).filter((t) => t != null);
+      byRung[rung] = {
+        replies: ok.length, pick_invalid: ok.length - withPick.length,
+        explain_hit_rate: withPick.length ? withPick.filter((x) => x.parsed.pick === x.e.key_letter).length / withPick.length : null,
+        mean_p_key: kp.length ? mean(kp) : null,
+        letter_agreement: pairs.length ? { n: pairs.length, rate: agree / pairs.length } : null,
+        mean_reasoning_tokens: rt.length ? Math.round(mean(rt)) : null,
+      };
+    }
+    const vt = vr.filter((x) => x.rated).flatMap((x) => x.codes);
+    perVoice[v] = {
+      meta: meta[v], statuses: status[v] ?? {}, replies: rv.length, unusable: rv.filter((x) => !x.parsed.ok).length, problems: probs, rungs: byRung,
+      unrated_option_share: unratedShare,
+      invalid_code_option_share: vr.length ? vr.filter((x) => x.invalid).length / vr.length : null,
+      other_share: vt.length ? vt.filter((t) => t === 'other').length / vt.length : null,
+      no_tell_share: vt.length ? vt.filter((t) => t === 'no-tell').length / vt.length : null,
+      excluded_from_pooled_tables: excludedVoices.includes(v),
+    };
+  }
+
+  const pooled = recs.filter((x) => x.rated && !excludedVoices.includes(x.voice));
+  const has = (x, code) => (CODE_GROUPS[code] ? CODE_GROUPS[code].some((c) => x.codes.includes(c)) : x.codes.includes(code));
+  const allCodes = [...codes, ...Object.keys(CODE_GROUPS)];
+
+  // Replies whose every option is rated, grouped: the unit for the cue-follow statistic.
+  const fullyRated = {};
+  for (const x of recs.filter((y) => !excludedVoices.includes(y.voice))) (fullyRated[`${x.voice}|${x.file}`] ??= []).push(x);
+  const replyGroups = Object.values(fullyRated).filter((g) => g.every((x) => x.rated));
+
+  // "Hit rate if a reader followed only this cue", in the letter score's units
+  // (review #6). Per reply where the code is on some but not all options:
+  // toward = pick uniformly among the tagged options; away = among the untagged.
+  // Averaged per question first, then over questions, with a bootstrap interval.
+  const cueFollow = (groups, code) => {
+    const perQ = {};
+    for (const g of groups) {
+      const T = g.filter((x) => has(x, code));
+      if (!T.length || T.length === g.length) continue;
+      const keyIn = T.some((x) => x.key);
+      const q = (perQ[g[0].id] ??= { toward: [], away: [], chance: [] });
+      q.toward.push(keyIn ? 1 / T.length : 0);
+      q.away.push(keyIn ? 0 : 1 / (g.length - T.length));
+      q.chance.push(1 / g.length);
+    }
+    const qs = Object.values(perQ);
+    if (!qs.length) return null;
+    const tw = qs.map((q) => mean(q.toward));
+    const aw = qs.map((q) => mean(q.away));
+    return {
+      questions: qs.length, replies: qs.reduce((a, q) => a + q.toward.length, 0), chance: mean(qs.map((q) => mean(q.chance))),
+      toward: mean(tw), toward_ci: bootstrapCI(tw), away: mean(aw), away_ci: bootstrapCI(aw),
+    };
+  };
+
+  const codeTable = {};
+  for (const rung of rungsPresent) {
+    const rs = pooled.filter((x) => x.rung === rung);
+    const groups = replyGroups.filter((g) => g[0].rung === rung);
+    const K = rs.filter((x) => x.key).length;
+    const D = rs.length - K;
+    const nonPicked = rs.filter((x) => x.pick_valid && !x.picked);
+    const picked = rs.filter((x) => x.picked);
+    const Knp = nonPicked.filter((x) => x.key).length;
+    const Dnp = nonPicked.length - Knp;
+    codeTable[rung] = { key_options: K, distractor_options: D, codes: {} };
+    for (const code of allCodes) {
+      const onKey = rs.filter((x) => x.key && has(x, code)).length;
+      const onDist = rs.filter((x) => !x.key && has(x, code)).length;
+      if (!onKey && !onDist) continue;
+      const rk = K ? onKey / K : null;
+      const rd = D ? onDist / D : null;
+      const rp = picked.length ? picked.filter((x) => has(x, code)).length / picked.length : null;
+      const rnp = nonPicked.length ? nonPicked.filter((x) => has(x, code)).length / nonPicked.length : null;
+      const rkNp = Knp ? nonPicked.filter((x) => x.key && has(x, code)).length / Knp : null;
+      const rdNp = Dnp ? nonPicked.filter((x) => !x.key && has(x, code)).length / Dnp : null;
+      const byFamily = {};
+      for (const f of uniq(groups.map((g) => g[0].family))) {
+        const cf = cueFollow(groups.filter((g) => g[0].family === f), code);
+        if (cf) byFamily[f] = { questions: cf.questions, toward: cf.toward, away: cf.away, chance: cf.chance };
+      }
+      codeTable[rung].codes[code] = {
+        on_key: onKey, on_distractors: onDist, rate_key: rk, rate_distractors: rd, lift: rd ? rk / rd : null,
+        // Rationalisation check: a code that follows the reader's own pick sits on
+        // the picked option whatever the key is. Among options NOT picked, a real
+        // tell still sits on the key more than on distractors.
+        rate_on_picked: rp, rate_on_not_picked: rnp, lift_among_not_picked: rkNp != null && rdNp ? rkNp / rdNp : null,
+        cue_follow: cueFollow(groups, code), cue_follow_by_family: byFamily,
+      };
+    }
+  }
+
+  const faithfulness = {};
+  for (const [code, prop] of FAITHFULNESS_PAIRS) {
+    const rs = pooled.filter((x) => x.mech[prop] != null);
+    const tagged = rs.filter((x) => x.codes.includes(code));
+    const untagged = rs.filter((x) => !x.codes.includes(code));
+    if (prop === 'absolute') {
+      const both = tagged.filter((x) => x.mech.absolute).length;
+      const trueN = rs.filter((x) => x.mech.absolute).length;
+      faithfulness[code] = { property: 'has an absolute word (checker list)', options: rs.length, tagged: tagged.length, tagged_where_true: tagged.length ? both / tagged.length : null, property_true: trueN, true_and_tagged: trueN ? both / trueN : null };
+    } else {
+      faithfulness[code] = { property: prop, options: rs.length, tagged: tagged.length, mean_rank_tagged: tagged.length ? mean(tagged.map((x) => x.mech[prop])) : null, mean_rank_untagged: untagged.length ? mean(untagged.map((x) => x.mech[prop])) : null };
+    }
+  }
+  // Claims the reader could not have made: a stem echo with no stem shown.
+  const impossible = recs.filter((x) => x.rung === 'options-only-explain' && x.codes.includes('echoes-stem')).length;
+
+  const perQuestion = {};
+  for (const id of uniq(recs.map((x) => x.id))) {
+    const c = byId.get(id);
+    const q = { rungs: {}, options: [] };
+    for (const rung of rungsPresent) {
+      const rs = recs.filter((x) => x.id === id && x.rung === rung);
+      if (!rs.length) continue;
+      const kp = rs.filter((x) => x.key).map((x) => x.p).filter((p) => p != null);
+      q.rungs[rung] = { replies: uniq(rs.map((x) => `${x.voice}|${x.file}`)).length, picked_key: rs.filter((x) => x.key && x.picked).length, mean_p_key: kp.length ? mean(kp) : null, families: uniq(rs.map((x) => x.family)) };
+    }
+    const texts = c ? c.options.map((o) => o.text) : uniq(recs.filter((x) => x.id === id).map((x) => x.text));
+    texts.forEach((text, oi) => {
+      const rs = recs.filter((x) => x.id === id && x.text === text && x.rated);
+      const counts = {};
+      for (const x of rs) for (const code of x.codes) counts[code] = (counts[code] ?? 0) + 1;
+      const ps = rs.map((x) => x.p).filter((p) => p != null);
+      q.options.push({ option: oi, key: rs.length ? rs[0].key : (c ? !!c.options[oi].key : null), text, ratings: rs.length, mean_p: ps.length ? mean(ps) : null, codes: Object.fromEntries(Object.entries(counts).sort((a, b) => b[1] - a[1])) });
+    });
+    perQuestion[id] = q;
+  }
+
+  const notes = recs.filter((x) => x.codes.includes('other')).map((x) => ({ voice: x.voice, id: x.id, rung: x.rung, option: x.option, key: x.key, note: x.note }));
+  const strategies = replies.filter((x) => x.parsed.ok && x.parsed.strategy).map((x) => ({ voice: x.voice, id: x.e.id, rung: x.e.rung, hit: x.parsed.pick === x.e.key_letter, strategy: x.parsed.strategy }));
+  const allTags = pooled.flatMap((x) => x.codes);
+  const share = (code) => (allTags.length ? allTags.filter((t) => t === code).length / allTags.length : null);
+
+  const summary = {
+    replies: replies.length, unusable: replies.filter((x) => !x.parsed.ok).length, voices: Object.keys(perVoice),
+    // Calls that returned no scorable reply (truncated, empty, error): never
+    // scored, always reported, so delivery failures cannot hide (Gemini review #2).
+    not_ok: Object.fromEntries(Object.entries(status).map(([v, st]) => [v, Object.fromEntries(Object.entries(st).filter(([k]) => k !== 'ok'))]).filter(([, st]) => Object.keys(st).length)),
+    families: uniq(recs.map((x) => x.family)), excluded_voices: excludedVoices,
+    tags: allTags.length, other_share: share('other'), no_tell_share: share('no-tell'),
+    impossible_stem_echo_tags: impossible,
+    tell_codes_sha256: man.tell_codes_sha256 ?? null,
+  };
+  const tells = { source: man.source, codes, groups: CODE_GROUPS, summary, code_table: codeTable, faithfulness, per_voice: perVoice, per_question: perQuestion, other_notes: notes, strategies };
+  writeJson(join(ad, 'tells.json'), tells);
+  writeFileSync(join(ad, 'tells.md'), tellsMarkdown(tells), 'utf8');
+  return tells;
+}
+
+const pct = (x) => (x == null ? '—' : fmtPct(x));
+const ciPct = (c) => (c ? `${fmtPct(c.lo)}–${fmtPct(c.hi)}` : 'n<2');
+
+function tellsMarkdown(t) {
+  const L = [];
+  L.push(`# Tells — ${t.source}`, '');
+  L.push('Explain-mode replies are for diagnosis. They are not the score, and their hit rates are not comparable with the letter rungs.', '');
+  L.push(`${t.summary.replies} replies from ${t.summary.voices.length} voice(s) in ${t.summary.families.length} famil(ies); ${t.summary.unusable} unusable. ${t.summary.tags} cue tags in the pooled tables; \`other\` ${pct(t.summary.other_share)}, \`no-tell\` ${pct(t.summary.no_tell_share)}. Stem-echo tags on the options-only rung, where no stem was shown (claims that cannot be true): ${t.summary.impossible_stem_echo_tags}.`, '');
+  const notOk = Object.entries(t.summary.not_ok ?? {}).map(([v, st]) => `${v}: ${Object.entries(st).map(([k, n]) => `${k} ${n}`).join(', ')}`);
+  if (notOk.length) L.push(`Calls with no scorable reply (not counted anywhere above or below): ${notOk.join('; ')}.`, '');
+  if (t.summary.excluded_voices.length) L.push(`Left out of the pooled tables because more than 10% of their option ratings were unusable: ${t.summary.excluded_voices.join(', ')}.`, '');
+  L.push('**How to read the tables.** *Follow → key* is the hit rate of a reader who used only this cue and picked among the options carrying it. *Follow → away* is the same for a reader who avoided those options. Compare both with *chance*. Each is averaged per question and then over questions, with a bootstrap interval over questions. *Lift among not-picked* compares key and distractor rates only among options the reader did NOT pick. A cue the reader cites just to justify its own pick shows a high *on picked* rate and a lift near 1 here. A real tell still leans toward the key. `position` is a placebo: options are shuffled, so it should sit at chance with a lift near 1.', '');
+  for (const [rung, ct] of Object.entries(t.code_table)) {
+    L.push(`## ${rung}`, '', `${ct.key_options} key ratings, ${ct.distractor_options} distractor ratings.`, '');
+    L.push('| code | follow → key (CI) | follow → away (CI) | chance | q | on picked / not picked | lift | lift among not-picked | by family (→ key) |', '|---|---|---|---|---|---|---|---|---|');
+    // Sorted by how far the stronger direction sits from chance, so a distractor
+    // tell (high "away") ranks as high as a key tell (Gemini review #4).
+    const strength = (r) => (r.cue_follow ? Math.max(r.cue_follow.toward, r.cue_follow.away) - r.cue_follow.chance : -1);
+    const rows = Object.entries(ct.codes).sort((a, b) => strength(b[1]) - strength(a[1]));
+    for (const [code, r] of rows) {
+      const cf = r.cue_follow;
+      const fam = Object.entries(r.cue_follow_by_family).map(([f, x]) => `${f} ${pct(x.toward)}`).join(', ') || '—';
+      L.push(`| \`${code}\` | ${cf ? `${pct(cf.toward)} (${ciPct(cf.toward_ci)})` : '—'} | ${cf ? `${pct(cf.away)} (${ciPct(cf.away_ci)})` : '—'} | ${cf ? pct(cf.chance) : '—'} | ${cf ? cf.questions : 0} | ${pct(r.rate_on_picked)} / ${pct(r.rate_on_not_picked)} | ${r.lift == null ? '∞' : r.lift.toFixed(2)} | ${r.lift_among_not_picked == null ? '—' : r.lift_among_not_picked.toFixed(2)} | ${fam} |`);
+    }
+    L.push('');
+  }
+  L.push('## Do the claimed cues match the text?', '', 'Ranked properties: the mean percentile rank of options carrying the code, against options without it. 1 = highest among the shown options, 0.5 = unrelated. For `absolute`: how often the code sits where the checker finds an absolute word, and how often an option with one gets the code.', '');
+  L.push('| code | property | tagged | tagged | untagged / true and tagged |', '|---|---|---|---|---|');
+  for (const [code, f] of Object.entries(t.faithfulness)) {
+    if ('mean_rank_tagged' in f) L.push(`| \`${code}\` | ${f.property} | ${f.tagged} | rank ${f.mean_rank_tagged == null ? '—' : f.mean_rank_tagged.toFixed(2)} | rank ${f.mean_rank_untagged == null ? '—' : f.mean_rank_untagged.toFixed(2)} |`);
+    else L.push(`| \`${code}\` | ${f.property} | ${f.tagged} | ${pct(f.tagged_where_true)} where true | ${pct(f.true_and_tagged)} of ${f.property_true} true |`);
+  }
+  L.push('');
+  L.push('## Per voice', '', '| voice | family | model | replies | unusable | unrated options | explain hit (full / opt-only) | agrees with own letter pick | reasoning tokens | other | no-tell |', '|---|---|---|---|---|---|---|---|---|---|---|');
+  for (const [v, r] of Object.entries(t.per_voice)) {
+    const h = (rung) => (r.rungs[rung] ? pct(r.rungs[rung].explain_hit_rate) : '—');
+    const ag = Object.values(r.rungs).map((x) => (x.letter_agreement ? `${pct(x.letter_agreement.rate)} of ${x.letter_agreement.n}` : '—')).join(' / ') || '—';
+    const rt = Object.values(r.rungs).map((x) => x.mean_reasoning_tokens ?? '—').join(' / ') || '—';
+    L.push(`| ${v}${r.excluded_from_pooled_tables ? ' (excluded)' : ''} | ${r.meta.family ?? '?'} | ${r.meta.model ?? '?'} | ${r.replies} | ${r.unusable} | ${pct(r.unrated_option_share)} | ${h('full-explain')} / ${h('options-only-explain')} | ${ag} | ${rt} | ${pct(r.other_share)} | ${pct(r.no_tell_share)} |`);
+  }
+  L.push('');
+  L.push('## Per question', '');
+  for (const [id, q] of Object.entries(t.per_question)) {
+    const rs = Object.entries(q.rungs).map(([rung, r]) => `${rung}: key picked ${r.picked_key}/${r.replies}, mean p(key) ${pct(r.mean_p_key)}`).join(' · ');
+    L.push(`### ${id}`, '', rs, '');
+    for (const o of q.options) {
+      const top = Object.entries(o.codes).slice(0, 4).map(([c, n]) => `${c}×${n}`).join(', ') || '—';
+      L.push(`- ${o.key ? '**KEY**' : 'distractor'} p ${pct(o.mean_p)} — ${top} — "${o.text.length > 90 ? `${o.text.slice(0, 90)}…` : o.text}"`);
+    }
+    L.push('');
+  }
+  if (t.other_notes.length) {
+    L.push('## `other` notes', '');
+    for (const n of t.other_notes) L.push(`- ${n.voice} · ${n.id.split('/').pop()} · ${n.rung} · option ${n.option}${n.key ? ' (key)' : ''}: ${n.note}`);
+    L.push('');
+  }
+  L.push('## Strategies', '');
+  for (const s of t.strategies) L.push(`- ${s.voice} · ${s.id.split('/').pop()} · ${s.rung} · ${s.hit ? 'hit' : 'miss'}: ${s.strategy}`);
+  return `${L.join('\n')}\n`;
+}
+
 function stageAblateScore(label, slug) {
   const ad = join(sectionDir(label, slug), 'ablation');
   const man = readJson(need(join(ad, 'manifest.json'), 'ablation/manifest.json'));
-  const picks = readJson(need(join(ad, 'picks.json'), 'ablation/picks.json'));
+  // picks.json holds the Claude subagent's letter replies. Manifests from before
+  // voices existed have no `claude` field and every entry is Claude's. A run in
+  // which the subagent answers nothing (--claude-seeds 0) needs no picks.json.
+  const claudeEntries = man.entries.filter((e) => e.claude !== false && !isExplainRung(e.rung));
+  const picks = claudeEntries.length || existsSync(join(ad, 'picks.json'))
+    ? readJson(need(join(ad, 'picks.json'), 'ablation/picks.json')) : {};
   if (!picks || typeof picks !== 'object' || Array.isArray(picks)) die('ablation/picks.json must be an object of {"<rung>/<NN>": "<letter or grade>"}');
-
-  const byFile = new Map(man.entries.map((e) => [e.file, e]));
+  const byFile = new Map(claudeEntries.map((e) => [e.file, e]));
   const extra = Object.keys(picks).filter((f) => !byFile.has(f));
-  const missing = man.entries.filter((e) => picks[e.file] == null || String(picks[e.file]).trim() === '').map((e) => e.file);
+  const missing = claudeEntries.filter((e) => picks[e.file] == null || String(picks[e.file]).trim() === '').map((e) => e.file);
   // No partial scoring. The old score stage reported a passing gate on zero
   // parsed data; a ladder with holes in it is the same failure.
   if (extra.length) die(`ablate-score: picks for files not in the manifest: ${extra.join(', ')}`);
   if (missing.length) die(`ablate-score: ${missing.length} prompt(s) have no pick: ${missing.join(', ')}`);
 
   const rows = [];
-  for (const e of man.entries) {
+  for (const e of claudeEntries) {
     const raw = String(picks[e.file]).trim();
     if (e.rung === 'stem-only') {
       const g = raw.toLowerCase();
@@ -1252,12 +1833,7 @@ function stageAblateScore(label, slug) {
       rows.push({ ...e, grade: g });
       continue;
     }
-    // Accept "B" or "B." — a bare letter with punctuation. Anything else is an
-    // unparsed reply: counted as a miss AND reported, never silently dropped.
-    const m = raw.match(/^\W*([A-Za-z])\W*$/);
-    const letter = m ? m[1].toUpperCase() : null;
-    const ok = letter && letter.charCodeAt(0) - 65 < e.option_count;
-    rows.push({ ...e, picked: ok ? letter : null, unparsed: !ok, hit: !!ok && letter === e.key_letter });
+    rows.push(letterRow(e, raw));
   }
 
   const ladder = {
@@ -1265,8 +1841,11 @@ function stageAblateScore(label, slug) {
     preregistered: preregisteredBefore(label, slug), excluded: man.excluded ?? [],
     rungs: {}, per_question: {},
   };
-  for (const rung of man.rungs) {
+  // `rungs` and `per_question` stay the Claude subagent's, as before voices, so
+  // every earlier ladder remains comparable. Other voices are reported beside it.
+  for (const rung of man.rungs.filter((r) => !isExplainRung(r))) {
     const rs = rows.filter((r) => r.rung === rung);
+    if (!rs.length) continue;
     if (rung === 'stem-only') {
       const counts = Object.fromEntries(RECALL_GRADES.map((g) => [g, rs.filter((r) => r.grade === g).length]));
       const answered = rs.length - counts.refusal;
@@ -1274,21 +1853,81 @@ function stageAblateScore(label, slug) {
       ladder.rungs[rung] = { trials: rs.length, refusals: counts.refusal, grades: counts, knows_rate: answered ? (counts.match + counts.partial) / answered : null };
       continue;
     }
-    const ids = uniq(rs.map((r) => r.id));
-    const perQ = ids.map((id) => {
-      const q = rs.filter((r) => r.id === id);
-      return { id, hits: q.filter((r) => r.hit).length, trials: q.length, rate: q.filter((r) => r.hit).length / q.length };
-    });
-    const hits = rs.filter((r) => r.hit).length;
-    const chance = mean(rs.map((r) => r.chance));
-    ladder.rungs[rung] = {
-      questions: ids.length, trials: rs.length, hits, unparsed: rs.filter((r) => r.unparsed).length,
-      hit_rate: rs.length ? hits / rs.length : null,
-      mean_chance: chance,
-      excess_over_chance: rs.length ? hits / rs.length - chance : null,
-      ci_question_unit: questionUnitCI(perQ.map((q) => q.rate)),
-    };
+    const { stats, perQ } = letterStats(rs);
+    ladder.rungs[rung] = stats;
     for (const q of perQ) (ladder.per_question[q.id] ??= {})[rung] = `${q.hits}/${q.trials}`;
+  }
+
+  // Other voices (scripts/voices.mjs). Each is scored on what it answered, with
+  // its coverage beside it. The panel headline is per FAMILY — a family's voices
+  // are averaged at the question level — and is the median of family rates over
+  // the questions every family answered (review 2026-09-23-voices #2). A pooled
+  // trial rate is kept as a secondary figure only.
+  const voiceRows = readVoiceLetterRows(ad, man);
+  const letterPicks = {};
+  for (const r of rows) if (r.picked !== undefined) letterPicks[`${CLAUDE_VOICE}|${r.rung}|${r.id}|${r.seed}`] = r.picked;
+  let panel = null;
+  if (Object.keys(voiceRows).length) {
+    ladder.voices = {};
+    ladder.families = {};
+    ladder.panel = {};
+    ladder.warnings = [];
+    const apiLetterRungs = man.rungs.filter((r) => ABLATION_RUNGS[r].api && !isExplainRung(r));
+    panel = rows.filter((r) => r.picked !== undefined && apiLetterRungs.includes(r.rung)).map((r) => ({ ...r, voice: CLAUDE_VOICE }));
+    for (const [v, vr] of Object.entries(voiceRows)) {
+      for (const r of vr.rows) letterPicks[`${v}|${r.rung}|${r.id}|${r.seed}`] = r.picked;
+      ladder.voices[v] = { meta: vr.meta, statuses: vr.status, rungs: {} };
+      if (vr.model_versions.length > 1) ladder.warnings.push(`${v} answered under ${vr.model_versions.length} model versions: ${vr.model_versions.join(', ')}`);
+      if (vr.settings_dropped_variants.length > 1) ladder.warnings.push(`${v} ran with different dropped settings across calls: ${vr.settings_dropped_variants.map((d) => JSON.stringify(d)).join(' vs ')}`);
+      for (const rung of apiLetterRungs) {
+        const rs = vr.rows.filter((r) => r.rung === rung);
+        const total = man.entries.filter((e) => e.rung === rung).length;
+        const rt = rs.map((r) => r.reasoning_tokens).filter((t) => t != null);
+        ladder.voices[v].rungs[rung] = rs.length
+          ? { ...letterStats(rs).stats, coverage: `${rs.length}/${total}`, mean_reasoning_tokens: rt.length ? Math.round(mean(rt)) : null }
+          : { coverage: `0/${total}` };
+        panel.push(...rs.map((r) => ({ ...r, voice: v })));
+      }
+      // full vs options-only on the questions this voice answered in BOTH, so a
+      // quota cut-off cannot turn coverage into a contrast (review #3).
+      if (apiLetterRungs.includes('full') && apiLetterRungs.includes('options-only')) {
+        const f = letterStats(vr.rows.filter((r) => r.rung === 'full')).perQ;
+        const o = new Map(letterStats(vr.rows.filter((r) => r.rung === 'options-only')).perQ.map((q) => [q.id, q.rate]));
+        const both = f.filter((q) => o.has(q.id));
+        ladder.voices[v].paired_full_vs_options_only = { questions: both.length, full: both.length ? mean(both.map((q) => q.rate)) : null, options_only: both.length ? mean(both.map((q) => o.get(q.id))) : null };
+      }
+    }
+    const metaOf = (v) => (v === CLAUDE_VOICE ? voiceMeta(ad, CLAUDE_VOICE) : voiceRows[v]?.meta ?? { family: v });
+    for (const rung of apiLetterRungs) {
+      const rs = panel.filter((r) => r.rung === rung);
+      if (!rs.length) continue;
+      const fams = familyRates(rs, metaOf);
+      ladder.families[rung] = Object.fromEntries(Object.entries(fams).map(([f, x]) => [f, { voices: x.voices, questions: x.questions, rate: x.rate, ci_question_unit: x.ci_question_unit }]));
+      const { stats, perQ } = letterStats(rs);
+      ladder.panel[rung] = { ...panelHeadline(fams), pooled_trials: stats, voices: uniq(rs.map((r) => r.voice)) };
+      for (const q of perQ) ((ladder.per_question[q.id] ??= {}).panel ??= {})[rung] = `${q.hits}/${q.trials}`;
+    }
+    // Calibration sets (runs/tier4-control items) label each question with a
+    // `group` — clean, or one planted tell. Per family per group, so each family
+    // gets its own floor (the clean group) and its own sensitivity to each tell.
+    const groupOf = new Map((maybeJson(join(sectionDir(label, slug), 'candidates.json')) ?? []).filter((c) => c.group).map((c) => [c.id, c.group]));
+    if (groupOf.size) {
+      ladder.by_group = {};
+      for (const rung of apiLetterRungs) {
+        for (const g of uniq([...groupOf.values()])) {
+          const rs = panel.filter((r) => r.rung === rung && groupOf.get(r.id) === g);
+          if (!rs.length) continue;
+          const fams = familyRates(rs, metaOf);
+          ((ladder.by_group[rung] ??= {})[g] = Object.fromEntries(Object.entries(fams).map(([f, x]) => [f, { rate: x.rate, questions: x.questions, ci_question_unit: x.ci_question_unit }])));
+        }
+      }
+    }
+  }
+
+  // Explain rungs: parsed, validated and aggregated into tells.json / tells.md.
+  if (man.rungs.some(isExplainRung)) {
+    const tells = explainAnalysis(label, slug, ad, man, letterPicks);
+    ladder.explain = tells.summary;
   }
   for (const [id, c] of Object.entries(man.key_centrality ?? {})) (ladder.per_question[id] ??= {}).key_centrality = c;
 
@@ -1309,6 +1948,24 @@ function stageAblateScore(label, slug) {
         });
       }
     }
+    if (panel) {
+      // Per family, then the median, as for the panel headline — each family
+      // judged against the same floors as the Claude rows above.
+      ladder.panel_by_claim_type = {};
+      const metaOf = (v) => (v === CLAUDE_VOICE ? voiceMeta(ad, CLAUDE_VOICE) : voiceRows[v]?.meta ?? { family: v });
+      for (const rung of Object.keys(ladder.panel ?? {})) {
+        for (const type of ['directional', 'passage-only', 'unmapped']) {
+          const rs = panel.filter((r) => r.rung === rung && cmap.map[r.id]?.type === type);
+          if (!rs.length) continue;
+          const fams = familyRates(rs, metaOf);
+          (ladder.panel_by_claim_type[rung] ??= {})[type] = {
+            family_rates: Object.fromEntries(Object.entries(fams).map(([f, x]) => [f, x.rate])),
+            median_family_rate: median(Object.values(fams).map((x) => x.rate).filter((x) => x != null)),
+            floor: type === 'directional' ? cmap.directional_floor : 0.40,
+          };
+        }
+      }
+    }
   }
 
   // Screening policy: at one seed, anything the full rung hit is a candidate for
@@ -1322,7 +1979,8 @@ function stageAblateScore(label, slug) {
 
   console.log(`ablate-score ${man.source} (${man.seeds} seed(s)${ladder.seed_offset ? `, offset ${ladder.seed_offset}` : ''}):`);
   if (!ladder.preregistered) console.log('  WARN no preregister line precedes the first ablate of this section in run.log');
-  console.log('  rung           questions  trials   hit    over chance   95% CI, question as unit   unparsed');
+  if (Object.keys(ladder.rungs).length) console.log(`  ${CLAUDE_VOICE} (the subagent; picks.json)
+  rung           questions  trials   hit    over chance   95% CI, question as unit   unparsed`);
   for (const [rung, r] of Object.entries(ladder.rungs)) {
     if (r.grades) { console.log(`  ${rung.padEnd(14)} ${String(r.trials).padStart(9)}   knows ${r.knows_rate == null ? 'n/a' : fmtPct(r.knows_rate)} of answered · ${RECALL_GRADES.map((g) => `${g} ${r.grades[g]}`).join(', ')}`); continue; }
     const ci = r.ci_question_unit ? `${fmtPct(r.ci_question_unit.lo)}–${fmtPct(r.ci_question_unit.hi)}` : 'n < 2';
@@ -1333,6 +1991,39 @@ function stageAblateScore(label, slug) {
     for (const [type, r] of Object.entries(byType)) console.log(`  ${rung}/${type}: ${fmtPct(r.hit_rate)} of ${r.trials} against a floor of ${r.floor == null ? 'n/a' : fmtPct(r.floor)} (${r.floor_basis})`);
   }
   if (ladder.confirm_at_3_seeds?.length) console.log(`  confirm at 3 seeds: ${ladder.confirm_at_3_seeds.map((i) => i.split('/').pop()).join(', ')}`);
+  const ciTxt = (r) => (r.ci_question_unit ? `${fmtPct(r.ci_question_unit.lo)}–${fmtPct(r.ci_question_unit.hi)}` : 'n < 2');
+  if (ladder.voices) {
+    console.log('  API voices (each on what it answered; unparsed replies reported and left out of the rate):');
+    for (const [v, vr] of Object.entries(ladder.voices)) {
+      for (const [rung, r] of Object.entries(vr.rungs)) {
+        if (r.hit_rate == null) { console.log(`    ${v.padEnd(16)} ${rung.padEnd(13)} coverage ${r.coverage}`); continue; }
+        console.log(`    ${v.padEnd(16)} ${rung.padEnd(13)} ${fmtPct(r.hit_rate).padStart(5)} of ${r.trials} (${r.questions} q), CI ${ciTxt(r)}, coverage ${r.coverage}, unparsed ${r.unparsed}${r.mean_reasoning_tokens != null ? `, ~${r.mean_reasoning_tokens} reasoning tok` : ''}`);
+      }
+      const pf = vr.paired_full_vs_options_only;
+      if (pf?.questions) console.log(`    ${' '.repeat(16)} paired on ${pf.questions} q answered in both: full ${fmtPct(pf.full)} vs options-only ${fmtPct(pf.options_only)}`);
+    }
+    for (const [rung, fams] of Object.entries(ladder.families ?? {})) {
+      for (const [f, x] of Object.entries(fams)) console.log(`    family ${f.padEnd(14)} ${rung.padEnd(13)} ${x.rate == null ? 'n/a' : fmtPct(x.rate).padStart(5)} over ${x.questions} q, CI ${ciTxt(x)} (${x.voices.join(', ')})`);
+    }
+    for (const [rung, r] of Object.entries(ladder.panel ?? {})) {
+      if (r.complete_questions < 5) console.log(`    WARN PANEL ${rung}: only ${r.complete_questions} question(s) were answered by every family — the median below is not a result; get more coverage or drop the thin family with --voices`);
+      console.log(`    PANEL ${rung.padEnd(13)} median of ${r.families} family rate(s) ${r.median_family_rate == null ? 'n/a' : fmtPct(r.median_family_rate)} over the ${r.complete_questions} question(s) every family answered · pooled trials ${fmtPct(r.pooled_trials.hit_rate)} of ${r.pooled_trials.trials} (${r.pooled_trials.unparsed} unparsed)`);
+    }
+    for (const [rung, byType] of Object.entries(ladder.panel_by_claim_type ?? {})) {
+      for (const [type, r] of Object.entries(byType)) console.log(`    PANEL ${rung}/${type}: median family ${r.median_family_rate == null ? 'n/a' : fmtPct(r.median_family_rate)} against a floor of ${r.floor == null ? 'n/a' : fmtPct(r.floor)} (${Object.entries(r.family_rates).map(([f, x]) => `${f} ${x == null ? 'n/a' : fmtPct(x)}`).join(', ')})`);
+    }
+    for (const [rung, groups] of Object.entries(ladder.by_group ?? {})) {
+      for (const [g, fams] of Object.entries(groups)) {
+        console.log(`    group ${g.padEnd(12)} ${rung.padEnd(13)} ${Object.entries(fams).map(([f, x]) => `${f} ${x.rate == null ? 'n/a' : fmtPct(x.rate)} (${x.questions} q${x.ci_question_unit ? `, ${ciTxt(x)}` : ''})`).join(' · ')}`);
+      }
+    }
+    for (const w of ladder.warnings ?? []) console.log(`    WARN ${w}`);
+  }
+  if (ladder.explain) {
+    const x = ladder.explain;
+    console.log(`  explain (diagnosis, not the score): ${x.replies} replies, ${x.unusable} unusable, ${x.voices.length} voice(s); other ${x.other_share == null ? 'n/a' : fmtPct(x.other_share)}, no-tell ${x.no_tell_share == null ? 'n/a' : fmtPct(x.no_tell_share)}; impossible stem-echo tags ${x.impossible_stem_echo_tags}`);
+    console.log(`    → ${join(ad, 'tells.md')}`);
+  }
   return ladder;
 }
 
@@ -2898,6 +3589,122 @@ function selftest() {
   check(lad2.rungs.full.unparsed === 1 && lad2.rungs['options-only'].unparsed === 0,
     'a reply that is not a single letter is counted as a miss and reported, never dropped');
   rmSync(adRoot, { recursive: true, force: true });
+
+  // --- voices and the explain rungs ------------------------------------------
+  {
+    const codes = tellCodes();
+    check(codes.length >= 10 && codes.includes('other') && codes.includes('no-tell') && uniq(codes).length === codes.length,
+      'the cue codes are read from the partial every voice is shown, and include other and no-tell');
+    const ex = stageAblate(label, slug, { seeds: 3, rungs: 'full,options-only,full-explain,options-only-explain', explainSeeds: 2, claudeSeeds: 1, claudeExplainSeeds: 1, force: true });
+    const nq = rcands.filter((c) => c.stem).length;
+    const nNeg = rcands.filter((c) => c.stem && isNegationStem(c)).length;
+    check(ex.entries.filter((e) => e.rung === 'full-explain').length === nq * 2,
+      'explain rungs use --explain-seeds, not --seeds');
+    check(ex.entries.filter((e) => e.rung === 'options-only-explain').length === (nq - nNeg) * 2,
+      'the options-only explain rung excludes negation stems like its letter rung');
+    check(ex.entries.filter((e) => e.rung === 'full' && e.claude).length === nq
+      && ex.entries.filter((e) => e.rung === 'full-explain' && e.claude).length === nq,
+    'only the first --claude-seeds / --claude-explain-seeds prompts are assigned to the Claude subagent');
+    const tpl = readJson(join(ex.dir, 'picks.template.json'));
+    check(Object.keys(tpl).every((f) => !f.includes('explain')) && Object.keys(tpl).length === ex.entries.filter((e) => e.claude && !isExplainRung(e.rung)).length,
+      'picks.template.json lists only the Claude subagent\'s letter prompts');
+    const exLeak = ex.entries.filter((e) => e.rung === 'options-only-explain').some((e) => readFileSync(join(ex.dir, `${e.file}.txt`), 'utf8').includes(rcands.find((c) => c.id === e.id).stem));
+    check(!exLeak, 'the options-only explain rung never contains the stem');
+    const fe = ex.entries.find((e) => e.rung === 'full-explain');
+    const ff = ex.entries.find((e) => e.rung === 'full' && e.id === fe.id && e.seed === fe.seed);
+    check(optBlock(readFileSync(join(ex.dir, `${fe.file}.txt`), 'utf8')) === optBlock(readFileSync(join(ex.dir, `${ff.file}.txt`), 'utf8')),
+      'an explain prompt shows the same option order as the letter prompt for the same id#seed');
+
+    // parseExplainReply: parses, never repairs.
+    const e4 = { option_count: 4, key_letter: 'B' };
+    const good = { options: { A: { p: 10, codes: ['absolute'], note: '' }, B: { p: 70, codes: ['most-detailed'], note: '' }, C: { p: 10, codes: ['other'], note: 'odd' }, D: { p: 10, codes: ['no-tell'], note: '' } }, pick: 'B', strategy: 's' };
+    const pg = parseExplainReply(JSON.stringify(good), e4, codes);
+    check(pg.ok && pg.problems.length === 0 && pg.pick === 'B', 'a well-formed explain reply parses with no problems');
+    check(parseExplainReply(`\`\`\`json\n${JSON.stringify(good)}\n\`\`\``, e4, codes).problems.includes('fenced'),
+      'a fenced reply is unwrapped and the fence is recorded');
+    const badCode = parseExplainReply(JSON.stringify({ ...good, options: { ...good.options, A: { p: 10, codes: ['made-up'], note: '' } } }), e4, codes);
+    check(badCode.ok && badCode.problems.some((p) => p.startsWith('invalid-code')) && badCode.options.A.codes.length === 0,
+      'an unknown code is recorded and dropped, never coerced to a known one');
+    check(parseExplainReply(JSON.stringify({ ...good, options: { ...good.options, C: { p: 10, codes: ['other'], note: '' } } }), e4, codes).problems.includes('other-without-note'),
+      '`other` without a note is flagged');
+    const three = { ...good, options: { A: good.options.A, B: good.options.B, C: good.options.C } };
+    check(!parseExplainReply(JSON.stringify(three), e4, codes).ok, 'a reply missing an option letter is unusable, not guessed at');
+    check(!parseExplainReply('I think B.', e4, codes).ok, 'a prose reply is unusable');
+    const withD = (d) => parseExplainReply(JSON.stringify({ ...good, options: { ...good.options, D: d } }), e4, codes);
+    check(withD({ p: 10, codes: [], note: '' }).options.D.rated === false && withD({ p: 10, note: '' }).options.D.rated === false
+      && withD({ p: 10, codes: 'absolute', note: '' }).options.D.rated === false && withD({ p: 10, codes: ['made-up'], note: '' }).options.D.rated === false,
+    'an option with empty, missing, non-list or all-unknown codes is unrated, not "rated with no cue"');
+    check(withD({ p: 10, codes: ['no-tell', 'absolute'], note: '' }).problems.includes('no-tell-with-codes') && withD({ p: 10, codes: ['no-tell', 'absolute'], note: '' }).options.D.rated === false,
+      'no-tell mixed with other codes is flagged and unrated');
+
+    // Planted voice replies: a letter voice that always hits `full` and never
+    // `options-only`, one failed call that must not count, and explain replies
+    // that always tag the key most-detailed and a distractor absolute.
+    const vd = join(ex.dir, 'voices');
+    const wrong = (e) => (e.key_letter === 'A' ? 'B' : 'A');
+    const letterEntries = ex.entries.filter((e) => !isExplainRung(e.rung));
+    letterEntries.forEach((e, i) => {
+      const rec = i === 0 ? { status: 'error', error: 'planted' } : { status: 'ok', reply_text: e.rung === 'full' ? e.key_letter : wrong(e) };
+      writeJson(join(vd, 'fake-voice', `${e.file}.json`), rec);
+    });
+    writeJson(join(vd, 'fake-voice', 'voice.json'), { id: 'fake-voice', provider: 'x', model: 'x', family: 'x' });
+    for (const e of ex.entries.filter((x) => isExplainRung(x.rung))) {
+      const opts = {};
+      for (let i = 0; i < e.option_count; i += 1) {
+        const L = String.fromCharCode(65 + i);
+        opts[L] = { p: L === e.key_letter ? 100 : 0, codes: L === e.key_letter ? ['most-detailed', 'echoes-stem'] : ['absolute'], note: '' };
+      }
+      writeJson(join(vd, 'fake-voice', `${e.file}.json`), { status: 'ok', reply_text: JSON.stringify({ options: opts, pick: e.key_letter, strategy: 'planted' }) });
+    }
+    writeJson(join(ex.dir, 'picks.json'), Object.fromEntries(Object.keys(tpl).map((f) => [f, 'A'])));
+    const lv = stageAblateScore(label, slug);
+    const fv = lv.voices?.['fake-voice']?.rungs;
+    check(fv && fv.full.hit_rate === 1 && fv['options-only'].hit_rate === 0,
+      'ablate-score reproduces a planted voice ladder exactly');
+    check(fv && fv[letterEntries[0].rung].trials === letterEntries.filter((e) => e.rung === letterEntries[0].rung).length - 1,
+      'a failed API call is not answered, and is neither a hit nor a miss');
+    check(lv.panel?.full && lv.panel.full.voices.includes(CLAUDE_VOICE) && lv.panel.full.voices.includes('fake-voice'),
+      'the panel pools the Claude subagent with the API voices');
+    const tj = readJson(join(ex.dir, 'tells.json'));
+    const md = tj.code_table['full-explain'].codes['most-detailed'];
+    check(md && md.rate_key === 1 && md.on_distractors === 0 && tj.code_table['full-explain'].codes.absolute.on_key === 0,
+      'the explain analysis attributes planted cue codes to keys and distractors exactly');
+    check(tj.summary.impossible_stem_echo_tags === ex.entries.filter((e) => e.rung === 'options-only-explain').length,
+      'a stem-echo claim on the options-only rung is counted as impossible');
+    check(md.cue_follow && md.cue_follow.toward === 1 && md.cue_follow.away === 0,
+      'cue-follow: a code planted on every key gives a follower 100%, an avoider 0%');
+    check(md.rate_on_picked === 1 && md.rate_on_not_picked === 0,
+      'the pick-conditioned rates see a code that always sits on the picked option');
+    check(tj.per_voice['fake-voice'].rungs['full-explain'].letter_agreement?.rate != null,
+      'explain picks are compared with the same voice\'s letter picks on the same question and order');
+
+    // A second voice of the SAME family must not count as a second family.
+    for (const e of letterEntries) writeJson(join(vd, 'fake-twin', `${e.file}.json`), { status: 'ok', reply_text: wrong(e) });
+    writeJson(join(vd, 'fake-twin', 'voice.json'), { id: 'fake-twin', provider: 'x', model: 'y', family: 'x' });
+    const lf = stageAblateScore(label, slug);
+    check(Object.keys(lf.families.full).length === 2 && lf.families.full.x.voices.length === 2 && lf.families.full.x.rate === 0.5,
+      'voices of one family are averaged into one family rate, not counted as two families');
+    check(lf.panel.full.families === 2 && lf.panel.full.complete_questions > 0,
+      'the panel headline is over families and complete-case questions');
+
+    // A truncated API reply is not answered; an unparseable one is reported and left out of its rate.
+    writeJson(join(vd, 'fake-twin', `${letterEntries[1].file}.json`), { status: 'truncated', reply_text: 'The answer is' });
+    writeJson(join(vd, 'fake-twin', `${letterEntries[2].file}.json`), { status: 'ok', reply_text: 'Probably the second one' });
+    const lt = stageAblateScore(label, slug);
+    const twinFull = lt.voices['fake-twin'].rungs[letterEntries[2].rung];
+    check(twinFull.unparsed === 1 && twinFull.unparsed_excluded === 1 && lt.voices['fake-twin'].statuses.truncated === 1,
+      'an API voice\'s unparseable reply is reported and left out of its rate; a truncated one is not answered');
+
+    // Replies answer a specific prompt text: a rebuilt prompt under them is refused.
+    writeJson(join(vd, 'fake-twin', `${letterEntries[3].file}.json`), { status: 'ok', reply_text: 'A', prompt_sha256: 'not-the-hash' });
+    check(dies(() => stageAblateScore(label, slug)), 'ablate-score refuses a reply whose recorded prompt hash does not match the prompt file');
+    rmSync(join(vd, 'fake-twin'), { recursive: true, force: true });
+
+    rmSync(join(ex.dir, 'picks.json'));
+    check(dies(() => stageAblate(label, slug, { seeds: 1 })),
+      'ablate refuses to rebuild over recorded voice replies even when there is no picks.json');
+    rmSync(ex.dir, { recursive: true, force: true });
+  }
 
   // --- renderer hardening (review 2026-09-23 #13) -----------------------------
   {

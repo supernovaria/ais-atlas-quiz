@@ -81,6 +81,16 @@ run, so position tells are measured as the reader would see them.
   4-option-only rate so it stays comparable to today's ≥60% baseline.
 - **Run 3 seeds** per question. A Q hit on ≥2/3 seeds is flagged. Cents.
 
+## Explain mode (added 2026-09-23)
+
+For the rungs `full-explain` and `options-only-explain` the spawn prompt
+(`prompts/adversary-explain.md`) asks for a JSON object — a probability and cue
+codes per option, a pick and a one-sentence strategy — instead of one letter.
+That template overrides "Output: one letter" and the verbatim prompt's "Do not
+explain", for those rungs only. Everything else here still holds: no tools, no
+files, one question. The explain rungs are diagnosis; the letter rungs are the
+score, and the two are never pooled.
+
 ## Do not
 
 - Give it the explanation. The explanation contains the answer.

@@ -49,7 +49,7 @@ const R5_LOOSE = [/in the (chapter|text|section)('s)?\b/i];
 // D4. The rubric names the list prosaically ("words like …"); this is that list
 // plus `cannot`, which reproduces Appendix A's 22/120 distractors exactly.
 // See selftest() on why the 3/40 keys row does not reproduce.
-const ABSOLUTES = [
+export const ABSOLUTES = [
   /\balways\b/i, /\bnever\b/i, /\bentirely\b/i, /\bexclusively\b/i,
   /\bconclusively\b/i, /\bimpossible\b/i, /\bcannot\b/i, /\bno\b[^.]*\bat all\b/i,
 ];
@@ -128,7 +128,7 @@ const median = (xs) => {
   const m = s.length >> 1;
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 };
-const countMatches = (text, patterns) => patterns.filter((p) => p.test(text)).length;
+export const countMatches = (text, patterns) => patterns.filter((p) => p.test(text)).length;
 
 // The Atlas site's heading slugify, for E4a anchors. Deliberately NOT
 // quizParser's slugify: that one serves free-response refs and strips

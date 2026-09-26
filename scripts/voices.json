@@ -1,0 +1,157 @@
+{
+  "_about": "Non-Claude readers for the ablation ladder, and the fallback chain for single requests. Read by scripts/voices.mjs. Keys live OUTSIDE the repo at maddy-home/key-<provider>.txt (or <PROVIDER>_API_KEY) and are only ever sent as a request header. Free tiers only unless the user says otherwise (2026-09-23). A voice's `family` is its pretraining lineage: the point of a panel is several families, so two voices of one family add samples, not independence. `thinking` applies in both ablation modes; `temperature` defaults to 1.0 and is sent explicitly.",
+  "providers": {
+    "gemini": {
+      "key_file": "../../key-gemini.txt",
+      "env": "GEMINI_API_KEY",
+      "base": "https://generativelanguage.googleapis.com/v1beta",
+      "reset_tz": "America/Los_Angeles",
+      "free_tier_note": "about 20 requests per day PER MODEL on the free tier (measured 2026-09-23 on gemini-3.6-flash), so several Flash models are listed to spread one family across quotas; family rates average them."
+    },
+    "mistral": {
+      "key_file": "../../key-mistral.txt",
+      "env": "MISTRAL_API_KEY",
+      "base": "https://api.mistral.ai/v1",
+      "reset_tz": "UTC"
+    },
+    "openrouter": {
+      "key_file": "../../key-openrouter.txt",
+      "env": "OPENROUTER_API_KEY",
+      "base": "https://openrouter.ai/api/v1",
+      "reset_tz": "UTC"
+    },
+    "cortecs": {
+      "key_file": "../../key-cortecs.txt",
+      "env": "CORTECS_API_KEY",
+      "base": "https://api.cortecs.ai/v1",
+      "reset_tz": "UTC"
+    }
+  },
+  "voices": [
+    {
+      "id": "gemini-flash",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash",
+      "family": "google",
+      "min_interval_ms": 6500,
+      "thinking": "minimal"
+    },
+    {
+      "id": "gemini-flash-36",
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "family": "google",
+      "min_interval_ms": 6500,
+      "thinking": "minimal"
+    },
+    {
+      "id": "gemini-flash-37",
+      "provider": "gemini",
+      "model": "gemini-3.7-flash",
+      "family": "google",
+      "min_interval_ms": 6500,
+      "thinking": "minimal"
+    },
+    {
+      "id": "gemini-flash-38",
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "family": "google",
+      "min_interval_ms": 6500,
+      "thinking": "minimal"
+    },
+    {
+      "id": "gemini-flash-lite",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "family": "google",
+      "min_interval_ms": 4500,
+      "thinking": "minimal"
+    },
+    {
+      "id": "gemma-31b",
+      "provider": "gemini",
+      "model": "gemma-4-31b-it",
+      "family": "google",
+      "min_interval_ms": 2500,
+      "json_mode": false,
+      "family_note": "Gemma is trained from the Gemini line: same pretraining lineage, so the same family (review 2026-09-23-voices #2)."
+    },
+    {
+      "id": "ministral-14b",
+      "provider": "mistral",
+      "model": "ministral-14b-latest",
+      "family": "mistral",
+      "min_interval_ms": 1200
+    },
+    {
+      "id": "ministral-8b",
+      "provider": "mistral",
+      "model": "ministral-8b-latest",
+      "family": "mistral",
+      "min_interval_ms": 1200
+    },
+    {
+      "id": "glm-free",
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.2:free",
+      "family": "zhipu",
+      "min_interval_ms": 4000
+    },
+    {
+      "id": "qwen-free",
+      "provider": "openrouter",
+      "model": "qwen/qwen3.8-27b:free",
+      "family": "alibaba",
+      "min_interval_ms": 4000
+    },
+    {
+      "id": "nemotron-free",
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "family": "nvidia",
+      "min_interval_ms": 4000
+    },
+    {
+      "id": "deepseek-flash",
+      "provider": "cortecs",
+      "model": "deepseek-v4.1-flash",
+      "family": "deepseek",
+      "min_interval_ms": 500,
+      "enabled": false,
+      "disabled_why": "paid only; account has no balance (2026-09-23)"
+    },
+    {
+      "id": "qwen-cortecs",
+      "provider": "cortecs",
+      "model": "qwen3-235b-a22b-instruct-2507",
+      "family": "alibaba",
+      "min_interval_ms": 500,
+      "enabled": false,
+      "disabled_why": "paid only; account has no balance (2026-09-23)"
+    }
+  ],
+  "panels": {
+    "_about": "Named voice lists. `ablation` answers ablate prompt files: every voice listed answers every file it can reach today. `single` is a fallback CHAIN for one-off requests: the first voice that is up and has quota answers.",
+    "ablation": [
+      "gemini-flash",
+      "gemini-flash-36",
+      "gemini-flash-37",
+      "gemini-flash-38",
+      "gemma-31b",
+      "ministral-14b",
+      "ministral-8b",
+      "glm-free",
+      "qwen-free",
+      "nemotron-free"
+    ],
+    "single": [
+      "gemini-flash-36",
+      "gemini-flash",
+      "gemini-flash-lite",
+      "ministral-14b",
+      "glm-free",
+      "qwen-free"
+    ]
+  }
+}

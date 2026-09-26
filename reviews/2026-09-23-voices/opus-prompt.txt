@@ -1,0 +1,52 @@
+You are reviewing part of a question-generation pipeline for an AI-safety textbook quiz. Your job is to find what is wrong, missing, ambiguous or likely to fail — not to praise it.
+
+**What you are reviewing:** The multi-family reader panel (scripts/voices.mjs) and the explain mode of the blind-reader ladder (prompts/adversary-explain.md, its cue-code list, and the scoring in pipeline.mjs, given as an excerpt: stageAblate, readVoiceLetterRows, parseExplainReply, optionMechanics, explainAnalysis, stageAblateScore).
+
+**The files:** prompts/adversary-explain.md,prompts/_partials/tell-codes.md,prompts/adversary-mc.md,prompts/_partials/stem-withheld.md,scripts/voices.mjs,scripts/voices.json,reviews/2026-09-23-voices/pipeline-excerpt.mjs,.claude/agents/quiz-adversary.md
+
+**Context you should hold while reading.** The pipeline has an orchestrator that spawns subagents with fixed roles (analyst, generator, critic, adversary, curator, pilot analyst). A deterministic script does all counting and measurement; models do all judgment; the orchestrator never writes question text. Findings so far that bear on this review:
+
+- A weak blind reader (Haiku; the harness grants it tools but it has used none in ~70 spawns; never shown the source) answers the pipeline's questions far above chance: 75% on a passage invented for the purpose, where knowledge is zero by construction. The hand-authored floor on invented content is 40%; chance is 25%.
+- Rewriting stems to withhold their premises did not reduce this (15/15 to 14/15). Removing the stem entirely still left 4/6 correct across 4 distinct questions. The current lead is that **wrong answers are recognisably wrong** — a question asking which objection is strongest offered "there is no objection to raise".
+- Almost every enforced rule about wrong answers governs surface: relative length, hedging, absolute words, grammatical type. The rule about believability is a judgment call the critic applies inconsistently.
+- Rules stated only in an agent brief have measured compliance well below 100%: the generator broke a plainly stated quoting rule on 13 of 21 candidates. The project's standing response is to enforce mechanically wherever possible.
+- The critic stage is **deliberately dropped** from calibration runs for now. Do not recommend reinstating it there.
+- Templates are per-call requests. The agents' standing rules live in separate brief files and **must not be restated in templates**, because duplicated rules drift. Do not recommend copying brief rules into a template.
+
+**What changed, and why.** Two additions to the blind-reader layer. (1) A panel of non-Claude readers (Gemini, Gemma, Mistral, and free OpenRouter models such as GLM, Qwen and Nemotron), called by `scripts/voices.mjs`, which answer the same prompt files the Claude adversary answers. The reason: readers that share pretraining share priors, so a leak one Claude model finds in another Claude model's questions may be a family artifact rather than something any reader would exploit. (2) An **explain** mode (`prompts/adversary-explain.md`): per option, a probability and cue codes from a fixed list (`prompts/_partials/tell-codes.md`), with `other` plus a free-text note and `no-tell`. `pipeline.mjs ablate-score` aggregates these into `tells.json`/`tells.md`: how often each code sits on keys vs distractors ("lift"), and whether claimed cues match what the checker can measure in the text (e.g. `most-detailed` vs actually longest; `echoes-stem` claimed on a rung where no stem was shown). The explain mode is diagnosis only; the letter-only rungs stay the score. The intended use of the result: find recurring tells in the generator's output and turn them into generator-brief changes and mechanical checks.
+
+**Specific questions.** Answer these in addition to anything else you find.
+
+1. **The code list.** Is `tell-codes.md` missing a cue a test-wise reader really uses on multiple-choice questions? Are any two codes so close that readers will use them interchangeably, which would split one real signal into two weak ones? Does the grouping into "look right / look wrong / either way" push readers to attach codes in a particular direction, and is that a problem for the lift analysis?
+
+2. **Does explaining change what is measured?** Readers in explain mode assign probabilities and codes before picking. Is keeping those hit rates apart from the letter-only rungs enough, or does the explain mode also bias the *codes*, e.g. readers rationalising after an intuitive pick, and so naming the most nameable cue rather than the real one? What in the design would detect that? The faithfulness table and the impossible-claim count are the current attempt.
+
+3. **Lift as the headline statistic.** Lift is rate-on-keys / rate-on-distractors, pooled over voices and questions. Where does that mislead? Consider one voice dominating the count, one question contributing most tags, and codes that are correlated (`most-detailed` and `nuanced-turn` often co-occur). Is there a better simple statistic for "this cue identifies the key"?
+
+4. **Pooling voices.** The letter-only panel pools every voice's trials per question, with the question as the unit of the interval. The voices differ widely in strength (8B to frontier). Is a pooled panel hit rate meaningful, or should the headline be per voice, or per family? What should the pre-registered prediction be stated against?
+
+5. **The queue.** `voices.mjs` treats 503s and upstream 429s as "retry later" (nothing written), daily caps and auth failures as "voice down until reset", and a rejected optional setting (thinking level, JSON mode) as "drop it and retry", recording the drop. Can any of these make two runs of the same manifest differ in a way the scoring would not show? Is any failure silently counted as an answer, or an answer silently lost?
+
+6. **Parity across voices.** Every voice gets the byte-identical prompt file. Only API settings differ: lower thinking for letter mode on Gemini, JSON mode for explain mode where supported. Does either difference undermine the comparison between voices, or between API voices and the Claude subagent, which gets neither?
+
+7. **Feeding it back.** The plan is to give the critic the aggregated cue codes as evidence for its believability judgment, and to give the generator only the cues (not the winning letters) in a rewrite pass for flagged questions. One voice family is held out of the feedback and used only to measure. Where does this still Goodhart? What would you hold out, and how much?
+
+8. **Parsing.** `parseExplainReply` in `pipeline.mjs` claims to parse and never repair: it unwraps one code fence, drops unknown codes (recording them), and marks a reply unusable if it lacks an entry for every shown letter. Any way a malformed reply is counted as usable when it should not be, or the other way round?
+
+**Report format.** Numbered findings, most important first. For each:
+- **Where** — file and the specific passage.
+- **Problem** — concretely what goes wrong, and for whom.
+- **Why it matters** — the failure it causes, ideally a concrete scenario.
+- **Change** — the specific edit you would make.
+- **Severity** — blocking / important / minor.
+- **Confidence** — high / medium / low, and what would change your mind.
+
+Then a short section **"Leave alone"**: things that look odd but are right, so they are not "fixed" by mistake.
+
+Do not pad. If something is fine, say nothing about it. If you are unsure whether a finding is real, say so rather than asserting it — a confident wrong finding costs more than an uncertain right one.
+
+Read every file listed above yourself, from the working directory `C:\Users\sorcs\Documents\maddy-home\atlas\ais-atlas-quiz`. Also state your exact model ID in the first line of the review.
+
+Write your review to exactly: `reviews/2026-09-23-voices/opus.md`
+
+Reply with one line only: `OK reviews/2026-09-23-voices/opus.md` or `FAIL <one-clause reason>`. Nothing else.

@@ -11,7 +11,7 @@
 // contents are attached after the prompt, delimited and labelled by path.
 //
 // The API key is read from GEMINI_API_KEY, or else from --key-file (default
-// ../../gemini.txt, i.e. maddy-home/gemini.txt, which is outside this repo). It
+// ../../key-gemini.txt, i.e. maddy-home/key-gemini.txt, which is outside this repo). It
 // is sent ONLY as the x-goog-api-key request header — never in a URL, never
 // printed, never written to any file. Error bodies are scrubbed of it before
 // they are shown.
@@ -31,7 +31,7 @@ const die = (m) => { console.error(`FAIL ${m}`); process.exit(1); };
 
 function loadKey() {
   if (process.env.GEMINI_API_KEY?.trim()) return process.env.GEMINI_API_KEY.trim();
-  const kf = resolve(ROOT, flag('key-file', '../../gemini.txt'));
+  const kf = resolve(ROOT, flag('key-file', '../../key-gemini.txt'));
   if (!existsSync(kf)) die(`no GEMINI_API_KEY and no key file at ${kf}`);
   // A key file inside this repository could be committed. Refuse it outright.
   if (!relative(ROOT, kf).startsWith('..')) die(`key file ${kf} is inside the repository — move it out`);
@@ -43,14 +43,24 @@ function loadKey() {
 const KEY = loadKey();
 const scrub = (s) => String(s).split(KEY).join('***');
 
+// Free-tier Gemini returns 503 "high demand" and 500s in bursts. Those are
+// retried with backoff; anything else (auth, quota, bad request) fails at once.
 async function call(path, init = {}) {
-  const res = await fetch(`${API}/${path}`, {
-    ...init,
-    headers: { 'x-goog-api-key': KEY, 'content-type': 'application/json', ...(init.headers || {}) },
-  });
-  const text = await res.text();
-  if (!res.ok) die(`Gemini ${res.status}: ${scrub(text).slice(0, 800)}`);
-  return JSON.parse(text);
+  const waits = [5000, 15000, 30000, 60000, 90000];
+  for (let i = 0; ; i += 1) {
+    const res = await fetch(`${API}/${path}`, {
+      ...init,
+      headers: { 'x-goog-api-key': KEY, 'content-type': 'application/json', ...(init.headers || {}) },
+    });
+    const text = await res.text();
+    if (res.ok) return JSON.parse(text);
+    if ((res.status === 503 || res.status === 500) && i < waits.length) {
+      console.error(`Gemini ${res.status}, retrying in ${waits[i] / 1000}s`);
+      await new Promise((r) => setTimeout(r, waits[i]));
+      continue;
+    }
+    die(`Gemini ${res.status}: ${scrub(text).slice(0, 800)}`);
+  }
 }
 
 if (argv.includes('--list-models')) {

@@ -16,6 +16,8 @@
 
 ## 0. Read first, in this order
 
+**Starting a session?** `docs/ORCHESTRATOR-PROMPT.md` is the prompt to follow; it points back here.
+
 0. **`docs/STATE-2026-09-23.md`** — where things stand: what is established and how firmly, the claims that were made and withdrawn, the bench, open items and the traps that caught the last session. Read it before anything else.
 1. `docs/PIPELINE.md` — roles, flow, gates. Everything below assumes it.
 2. `docs/RUBRIC.md` — governing. Do not edit it; propose edits via the pilot findings.
@@ -355,3 +357,64 @@ with `scripts/gemini-review.mjs`). Both receive the same request body. Their
 findings are recorded under `reviews/<date>-<subject>/` together with **which
 were accepted and why each rejected one was rejected**. The Gemini key lives
 outside the repository and is sent only as a request header.
+
+### 9.6 The voice panel and the explain rungs (added 2026-09-23)
+
+**Why.** Readers that share pretraining share priors, so a leak that one Claude
+model finds in another Claude model's questions may be a family artifact rather
+than something any reader would exploit. Non-Claude readers answer the same
+prompt files, and the result is reported per voice and pooled.
+
+**How.** `scripts/voices.mjs` is the only code in the pipeline that calls a model
+API; `pipeline.mjs` stays model-free. Voices, families and panels are in
+`scripts/voices.json`; keys live outside the repository as
+`maddy-home/key-<provider>.txt` and are sent only as headers.
+
+```
+voices.mjs status | probe                                   which voices are up today
+voices.mjs answer --run R --section S [--panel P | --voices a,b] [--rungs ...] [--max-per-voice N]
+voices.mjs ask --prompt-file F --out O [--panel single]     one request, first voice that answers
+```
+
+- `answer` sends each prompt file byte-for-byte and files the reply as
+  `ablation/voices/<voice>/<rung>/<NN>.json`. A reply on disk is never re-sent;
+  transient failures are retried and otherwise left for the next invocation; a
+  daily cap or auth failure marks the voice down until its reset. It works
+  through first seeds before later ones, so partial coverage still covers every
+  question. Report coverage per voice; never treat an unanswered prompt as a miss.
+- API voices answer every prompt of the `full`, `options-only` and explain
+  rungs. The Claude subagent answers only what the manifest assigns it
+  (`ablate --claude-seeds K --claude-explain-seeds K`); its letters go in
+  `picks.json`, its explain replies verbatim to
+  `ablation/voices/claude-haiku/<rung>/<NN>.txt`.
+- An API voice structurally cannot read files, which is the isolation the Claude
+  adversary only has behaviourally.
+- The only per-voice differences are API settings (lower thinking for letter
+  mode where configured, JSON mode for explain mode), recorded per call with any
+  the provider rejected.
+
+**Reading the letter rungs across voices.** Per voice, with coverage. Per
+family (voices of one pretraining lineage averaged per question). The panel
+headline is the median of family rates over complete-case questions; pooled
+trials are secondary. Each family is judged against its own floor
+(`runs/2026-09-23-FLOORS`). Unparseable API replies are reported and left out of
+the rate; `truncated` and `empty` replies are recorded and never scored.
+
+**Explain rungs.** `ablate --rungs ...,full-explain,options-only-explain
+--explain-seeds K` renders `prompts/adversary-explain.md`: per option a
+probability and cue codes from `_partials/tell-codes.md`, with `other` + note
+and `no-tell`. `ablate-score` writes `tells.json` and `tells.md`. The headline per code is
+**cue-follow**: the hit rate of a reader who used only that cue, per question
+then over questions, with a bootstrap interval, per family and pooled. Beside it:
+the rate on picked vs not-picked options and **lift among not-picked options**
+(the rationalisation check), each voice's agreement between its explain pick
+and its own letter pick, the placebo `position` (should sit at chance),
+agreement between claimed cues and what the checker measures (mean rank of
+tagged vs untagged options), impossible claims (stem echo with no stem shown),
+the `other` share as the code list's coverage check, and per-question option
+ratings. Options with missing, empty or unknown codes are unrated and out of
+every denominator. Design and its review: `reviews/2026-09-23-voices/`. **Explain hit rates are diagnosis and are never pooled with the
+letter rungs**: a reader asked to reason cracks more than one asked for a letter.
+
+**Not adopted:** feeding cues back into the critic or generator. Proposed with a
+held-out family for measurement; needs its own decision.

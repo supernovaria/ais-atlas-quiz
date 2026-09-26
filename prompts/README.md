@@ -87,7 +87,8 @@ only be remembered. The first review of these templates is
 | `critique-pass2.md` | second pass on a rewrite that failed re-measurement | `quiz-critic` |
 | `curate.md` | select the shipped set, write the review sheet | `quiz-curator` |
 | `pilot-analyst.md` | findings over a set of runs | `quiz-pilot-analyst` |
-| `adversary-mc.md` | blind reader — rungs `full` and `options-only`, and the canary | `quiz-adversary` |
+| `adversary-mc.md` | blind reader — rungs `full` and `options-only`, and the canary | `quiz-adversary` + API voices |
+| `adversary-explain.md` | blind reader, explain mode — rungs `full-explain` and `options-only-explain`; diagnosis, never the score | `quiz-adversary` + API voices |
 | `sighted-reader.md` | the same question with the passage — rung `sighted` | `general-purpose` (haiku) |
 | `adversary-free-recall.md` | stem, no options — rung `stem-only`, real sections only | `quiz-recall` |
 | `grade-recall.md` | grade one free-recall answer | `general-purpose` (sonnet) |
@@ -99,7 +100,8 @@ only be remembered. The first review of these templates is
 | partial | inserted as |
 |---|---|
 | `_partials/review-body.md` | the shared body of both review templates |
-| `_partials/stem-withheld.md` | the stem slot of the options-only rung |
+| `_partials/stem-withheld.md` | the stem slot of the options-only rungs (letter and explain) |
+| `_partials/tell-codes.md` | the cue-code list of the explain rungs; `ablate-score` reads its codes from here |
 | `_partials/canary-stem.md` | the stem of the isolation canary |
 | `_partials/ideas-line.md` | a bench run's fixed idea list |
 | `_partials/extra-input-misconceptions.md` | a section's misconceptions file, when one exists |
