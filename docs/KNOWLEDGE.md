@@ -1,62 +1,37 @@
-# State of the quiz pipeline — briefing for the next agent
+# What this project knows — for agents
 
-> **Addendum, later on 2026-09-23 (voice-panel session).** Start new sessions
-> from `docs/ORCHESTRATOR-PROMPT.md`. Since this briefing was written:
->
-> - **A multi-family reader panel exists.** `scripts/voices.mjs` sends the same
->   ablation prompt files to non-Claude models: Gemini Flash models, Gemma,
->   Mistral's ministral-14b/8b, and free OpenRouter models (GLM, Qwen, Nemotron).
->   Motivation: readers that share pretraining share priors (Markov's advice,
->   2026-09-23). Keys live in `maddy-home/key-<provider>.txt`. All free tier:
->   Gemini allows about 20 requests/day per model; OpenRouter free models are
->   often overloaded; Mistral is the dependable bulk voice; Cortecs is paid-only
->   and disabled. HANDOFF §9.6.
-> - **Explain rungs exist** (`prompts/adversary-explain.md`): per-option cue
->   codes, `other` + note, `no-tell`, a placebo `position`. `ablate-score` writes
->   `tells.json`/`tells.md`, with cue-follow rates, the rationalisation check and
->   faithfulness against measured text. Diagnosis only, never the score.
-> - **Letter results are now reported per voice and per family**, with the panel
->   headline being the median family rate over complete-case questions.
-> - **Reviewed** by Opus and by Gemini (`reviews/2026-09-23-voices/`), both from
->   the same request. Opus found 14 issues and Gemini 8; nearly all were accepted and
->   implemented, with a verdict on each in `decisions.md`. Gemini read a pre-fix
->   excerpt of `pipeline.mjs`, so several of its findings had already been fixed.
-> - **Per-voice floors are being measured**: `runs/2026-09-23-FLOORS`, the
->   hand-authored control set, pre-registered, API voices only. Resume with
->   `voices.mjs answer --run 2026-09-23-FLOORS --section tier4-control`, then
->   `ablate-score`.
-> - Selftest: 164 assertions (was 136).
-> - **Not decided:** feeding cues back to the critic or generator. The reviewer's
->   design is in `ORCHESTRATOR-PROMPT.md`. A cue earns a brief change only after
->   a causal test.
-> - Open: the persona experiment (does an API voice given the adversary brief as
->   a system message read differently?), review #7.
+A living file. **Edit it in place; never add dated addenda or copies.** When a
+finding is established, weakened or withdrawn, or a trap catches you, change the
+row it belongs in and say so in the commit message. Git history holds what
+happened when; this file holds what is currently believed and how firmly.
 
-**Written 2026-09-23, at the end of the session that built the calibration
-tooling.** Read this before `docs/HANDOFF-ORCHESTRATOR.md` if you are picking up
-the work: the handoff is the operating manual; this is where things stand, what
-is known, what was found to be wrong, and what to do next. Where the two
-disagree, the handoff's §9 (standing rules) wins; tell the user about the
-conflict.
+- Where things stand and what is next: `STATUS.md` (written for the user).
+- How to run the pipeline: `docs/ORCHESTRATOR-PROMPT.md`, then
+  `docs/HANDOFF-ORCHESTRATOR.md`. Where this file and the handoff's standing
+  rules (§9) disagree, the handoff wins; tell the user about the conflict.
 
-Every number below carries its sample size. Several of them are small, and the
-single most common failure in this project's history has been an agent stating
-a small-sample result, or a plausible-sounding mechanism, as if it were
-established. Section 3 lists the claims that were made and then withdrawn, so
-that you do not make them again.
+Every number below carries its sample size. Several are small, and the single
+most common failure in this project's history has been an agent stating a
+small-sample result, or a plausible-sounding mechanism, as if it were
+established. §3 lists the claims that were made and then withdrawn, so that you
+do not make them again.
+
+(Replaces `docs/STATE-2026-09-23.md`, which is in git history.)
 
 ---
 
 ## 1. What this project is, in one paragraph
 
 A pipeline that writes multiple-choice questions for chapter 1 of the AI Safety
-Atlas. An **orchestrator** (you) runs a deterministic script,
-`scripts/pipeline.mjs`, and spawns subagents with fixed roles: section analyst,
-generator, critic, adversary, curator, pilot analyst, and — new this session —
-a recall reader. The script does all counting and measuring; agents do all
-judgment; **the orchestrator writes no question text and judges no question**.
-`docs/RUBRIC.md` governs question quality and is not the orchestrator's to edit.
-`public/questions/`, `README.md` and `ATLAS_HANDOFF.md` are off limits.
+Atlas. An **orchestrator** runs a deterministic script, `scripts/pipeline.mjs`,
+and spawns subagents with fixed roles: section analyst, generator, critic,
+adversary, curator, pilot analyst and recall reader. The script does all
+counting and measuring; agents do all judgment; **the orchestrator writes no
+question text and judges no question**. A **voice panel** (`scripts/voices.mjs`)
+sends the same reader prompts to non-Claude models, because readers that share
+pretraining share priors. `docs/RUBRIC.md` governs question quality and is not
+the orchestrator's to edit. `public/questions/`, `README.md` and
+`ATLAS_HANDOFF.md` are off limits.
 
 ## 2. What is established, and how firmly
 
@@ -64,15 +39,15 @@ judgment; **the orchestrator writes no question text and judges no question**.
 |---|---|---|
 | **A weak blind reader answers the pipeline's questions far above chance, including on content it cannot know.** | Invented passage, generator output (no critic): 18/24 correct, 75%. 95% interval with the *question* as the unit (n = 8): roughly 48–100%. | Direction solid; size not. n = 8. **Confounded** — see §3.4. |
 | **The leak is not mainly in the stem.** | Five leaking stems rewritten to withhold their premises, options byte-identical, option order controlled: 15/15 → 14/15. | Solid for those five. |
-| **The option set carries much of the answer.** | Stem removed entirely: 4 of 6 trials correct, across **4 distinct questions**, two of which split 1–1. | **A lead, not a result.** Tiny n, and the probe's wording was ad hoc (§7, item 3). Re-run it with the template before building on it. |
+| **The option set carries much of the answer.** | Stem removed entirely: 4 of 6 trials correct, across **4 distinct questions**, two of which split 1–1. | **A lead, not a result.** Tiny n, and the probe's wording was ad hoc. Re-run it with the template before building on it. |
 | **The adversary's 100% on the real AGI section is explained by knowledge; no leak is needed.** | Free recall, no options: 2 of the 3 AGI questions answered with the key's content. | n = 3. Shows a leak is not *needed*, not that the options are clean. |
 | **Uniform option length does not explain guessability.** | The AGI questions were clean on every tell the control priced (length, hedging, absolute words) and still scored 100%. | Solid. |
-| **The hand-authored floor on invented content is 40%, not 25%.** | `runs/tier4-control` clean group: 6/15. | n = 5 questions. |
+| **The hand-authored floor on invented content is 40%, not 25%.** | `runs/tier4-control` clean group: 6/15. | n = 5 questions. Per-voice floors are being measured in `runs/2026-09-23-FLOORS` and `runs/2026-09-26-CONTROL`. |
 | **On a balanced bench passage, directional items carry a floor of about 50%.** | Most directional claims are effectively binary, so a reader who always picks the sensible option scores the naive-right share. | Reasoning, accepted from review; **not yet measured**. It changes how every bench result must be read (§5.3). |
 | **Rules stated only in a brief hold roughly 60% of the time.** | The generator broke a plainly stated quoting rule on 13 of 21 candidates. | One rule, one run. Treat it as the default expectation for any brief-only rule. |
 | **Self-defeating wrong answers are real and lintable.** | Options like "there is no objection" answering "which objection…": the lint fires 3 times in 49 real candidates, all genuine. | Small n; precision looks good. |
 | **A strong model infers that invented content is invented, unprompted.** | The `b02` analyst called its prose "an invented domain" with no such word in it and no file search (3 tool calls). | One observation. The bench can hide the *purpose*, not the invention. |
-| **The adversary's isolation is behavioural, not structural.** | The harness lists `quiz-adversary` and `quiz-recall` with "Tools: All tools" despite `tools: []`. ~70 adversary spawns and one canary have used no tool. | Solid on the facts. The fix is open (§7). |
+| **The adversary's isolation is behavioural, not structural.** | The harness lists `quiz-adversary` and `quiz-recall` with "Tools: All tools" despite `tools: []`. ~70 adversary spawns and the canary (2026-09-23: `tool_uses` 0) have used no tool. | Solid on the facts. The structural fix is open (§7). |
 
 ## 3. Claims that were made and withdrawn — do not repeat them
 
@@ -94,18 +69,17 @@ judgment; **the orchestrator writes no question text and judges no question**.
    was replaced by a critic re-spawn after the adversary ran, and the current
    `a03r` has never been through the adversary.
 
-## 4. How the pipeline runs now — standing rules
+## 4. How the pipeline runs — the standing rules most easily broken
 
-Full text: `docs/HANDOFF-ORCHESTRATOR.md` §3, §6, §9. The rules you are most
-likely to break without meaning to:
+Full text: `docs/HANDOFF-ORCHESTRATOR.md` §3, §6, §9 and
+`docs/ORCHESTRATOR-PROMPT.md`.
 
 - **Every spawn prompt comes from `prompts/`.** Render it with
   `node scripts/pipeline.mjs prompt <template> ...`, or take it from a prompt
-  file the script wrote. Pass it unmodified. Never compose, paraphrase or edit
-  one. If a template does not fit, fix the template in a reviewed commit.
-- **Everything derivable is derived.** Paths, the model and shard letter that
-  `merge` reads back from ids and file names, a regeneration's reason. Setting a
-  derived value by hand needs `--override`, which is logged.
+  file the script wrote. Pass it unmodified. If a template does not fit, fix the
+  template in a reviewed commit.
+- **Everything derivable is derived.** Setting a derived value by hand needs
+  `--override`, which is logged.
 - **The critic is out of the calibration loop** (decision 2026-09-23). Every
   calibration number describes *generator* output. Never set it beside a
   post-critic number without saying so in the same sentence.
@@ -119,14 +93,21 @@ likely to break without meaning to:
   that selected its ids (regression to the mean).
 - **Record `tool_uses` for every adversary and recall spawn.** Any non-zero value
   voids that answer. Run `pipeline.mjs canary` at the start of a run.
+- **Voice replies never reach a generator or critic prompt**, and a cue earns a
+  brief change only after a causal test (ORCHESTRATOR-PROMPT, voice panel).
+- **Agent briefs are edited in `agents/quiz-*.md`**, then
+  `node scripts/sync-agents.mjs`; `.claude/agents/` and `.codex/agents/` are
+  generated, and the selftest fails when they drift.
 
 Cost, measured: an Opus critic call is ~7–14 points of a 5-hour window; a Haiku
 adversary call ~0.45. A calibration iteration without the critic is roughly a
-fifth of a window.
+fifth of a window. Free API voices cost no Claude quota but have small daily
+caps (Gemini ~20 requests/day per model); the Codex voices share the user's
+Codex 5-hour window, and GPT-6 Astra allows only a handful of calls per window.
 
 ## 5. The fiction bench
 
-`bench/README.md` has the rules and reasoning. The short version:
+`bench/README.md` has the rules and reasoning.
 
 ### 5.1 What it is
 
@@ -141,37 +122,26 @@ copy.
 
 | entry | domain | status | claims | naive right | passage-only | `bench-check` |
 |---|---|---|---|---|---|---|
-| `b02` | route-marker cairns read as a two-register signal | **ready** | 33 | 19/28 (68%) — **one disputed tag from the 70% cap** | 5 (minimum is 4) | 0 FAIL, 5 WARN |
-| `b03` | thread lattices spun by a cave snail | **ready** | 39 | 16/28 (57%) | 11 | 0 FAIL, 5 WARN |
+| `b02` | route-marker cairns read as a two-register signal | **ready**, concept map adopted (14 ideas, 4 discrimination pairs) | 33 | 19/28 (68%) — **one disputed tag from the 70% cap** | 5 (minimum is 4) | 0 FAIL, 5 WARN |
+| `b03` | thread lattices spun by a cave snail | **ready**, concept map adopted (18 ideas, 6 pairs) | 39 | 16/28 (57%) | 11 | 0 FAIL, 5 WARN |
 | `undercraft` | ensemble stage performance | **legacy reference** — fails `bench-check` | — | its directional claims all go against the sensible guess | — | 1 FAIL (no claims file) |
 
 The WARNs are all heuristics tagged too thinly to be balanced, which each
-passage's notes list. `b02`'s 68% and its 5 passage-only claims are the honest
-result of retagging under the tie-break; they leave little margin, so treat
-`b02` as the weaker of the two. `undercraft` holds the only arm data but is
-confounded (§3.4) and imbalanced; use it for comparison with 2026-09-20, not
-for new conclusions.
+passage's notes list. Treat `b02` as the weaker of the two: its 68% and its 5
+passage-only claims leave little margin. `undercraft` holds the only arm data
+but is confounded (§3.4) and imbalanced; use it for comparison with 2026-09-20,
+not for new conclusions.
 
-Neither new entry has results. **Both have their concept map adopted** (from
-`runs/2026-09-23-maps/`, via `bench-run`, the analyst and `bench-map` — the
-first real run of those stages). `b02`: 14 ideas earn a question, 4
-discrimination pairs; `b03`: 18 and 6.
-
-**A residual cue, found while building them.** The `b02` analyst wrote that the
-prose is "a self-contained invented domain", although no such word is in
-`section.md` and it made only three tool calls (read the rubric, read the
-section, write the map) — so it inferred it from the vocabulary rather than
-finding a private file. A strong model **cannot be kept from noticing** that
-invented content is invented. What the bench controls, and now does, is whether
-it is told the *purpose*. That note sits in the concept map the generator reads,
-so the generator will be told "invented domain" too. It was left as written —
-agent artifacts are not hand-edited — and must be stated as a caveat on any
-`b02` result. The `b03` map says nothing of the kind.
+**A residual cue in `b02`.** Its analyst wrote that the prose is "a
+self-contained invented domain", and that note sits in the concept map the
+generator reads. It was left as written — agent artifacts are not hand-edited —
+and **must be stated as a caveat on any `b02` result**. The `b03` map says
+nothing of the kind.
 
 ### 5.3 Reading a bench result
 
 - **Passage-only items** — built on a fact with no sensible guess — are judged
-  against 25% chance and the 40% hand-authored floor.
+  against 25% chance and the hand-authored floor.
 - **Directional items** are judged against max(share, 1 − share), where share is
   the naive-right fraction **among the directional items actually asked**. That
   is roughly 50% on a balanced set, and it is the score of a reader who always
@@ -179,16 +149,16 @@ agent artifacts are not hand-edited — and must be stated as a caveat on any
 - The split needs `claim-map.json`: run `bench-claim-map` (a tagger agent, after
   generation) and then `pipeline.mjs claim-map`. Without it, `ablate-score`
   reports only the pooled ladder, which cannot be read against a single floor.
+- Each voice family is judged against **its own floor**, and the panel headline
+  is the median family rate over complete-case questions.
 
-### 5.4 How the bench was built — and why that matters for trusting it
+### 5.4 How far to trust the bench
 
-Each new passage was written by Opus from `prompts/bench-author.md`, checked by
-`bench-check`, reviewed by a separate Opus reviewer, revised by the author
-against the accepted findings, and then verified by a further review. Every
-finding got a written verdict (`private/reviews-decisions.md`), and every
-revision an entry in `private/revision-log.md`. Tags follow a fixed tie-break:
-**where author and reviewer disagree about what an outsider would guess, the
-claim is tagged as guessable.**
+Each passage was written by Opus from `prompts/bench-author.md`, checked by
+`bench-check`, reviewed, revised, verification-reviewed and revised again, with
+a written verdict per finding (`private/reviews-decisions.md`) and a revision
+log. Tags follow a fixed tie-break: **where author and reviewer disagree about
+what an outsider would guess, the claim is tagged as guessable.**
 
 The claim tags are still **self-reported by a model**. `bench-check` catches
 imbalance, contradictions and thin tagging, but not a sincere misjudgment of
@@ -204,12 +174,15 @@ pipeline.mjs canary --run R          then   canary-record --run R --tool-uses N 
 pipeline.mjs bench-check --bench B
 pipeline.mjs bench-run --run R --section S --bench B
 pipeline.mjs bench-map --bench B --from R/S
+pipeline.mjs control-check --run R --section S --bench B
 pipeline.mjs merge | measure | dedupe | queue | render | validate   --run R --section S
-pipeline.mjs ablate --run R --section S [--rungs full,options-only,sighted,stem-only] [--seeds 1] [--seed-offset K] [--ids a,b] [--passage P]
+pipeline.mjs ablate --run R --section S [--rungs ...] [--seeds N] [--seed-offset K] [--ids a,b] [--passage P]
 pipeline.mjs ablate-score --run R --section S
 pipeline.mjs claim-map --run R --section S --bench B
 pipeline.mjs arm --run NEW --from R/S --rewrite <file> --kind stem|distractors [--passage P]
-pipeline.mjs selftest                (136 assertions; every guard verified against a planted defect)
+pipeline.mjs selftest                (171 assertions; every guard verified against a planted defect)
+node scripts/voices.mjs status | probe | answer --run R --section S
+node scripts/sync-agents.mjs         (agents/*.md → .claude/agents, .codex/agents)
 node scripts/gemini-review.mjs --list-models | --template review-gemini --model M --files a,b --out F
 npm run questions                    (every staged question in one stream, answers marked)
 ```
@@ -218,74 +191,64 @@ Ablation rungs and who answers them (the manifest names the agent per file):
 
 | rung | shows | agent |
 |---|---|---|
-| `full` | stem + options | `quiz-adversary` |
-| `options-only` | options, stem replaced by a fixed withheld line — byte-identical otherwise | `quiz-adversary` |
+| `full` | stem + options | `quiz-adversary` and the voice panel |
+| `options-only` | options, stem replaced by a fixed withheld line — byte-identical otherwise | `quiz-adversary` and the voice panel |
+| `*-explain` | as above, plus per-option probabilities and cue codes — diagnosis only, never the score | the same readers |
 | `sighted` | the question **with** the passage | `general-purpose` (haiku) |
 | `stem-only` | stem, no options — real sections only | `quiz-recall`, graded by `grade-recall.md` |
 
-## 7. Open items, in priority order
+## 7. Known defects and unbuilt pieces
 
-1. **Gemini reviews did not run.** Every call returned HTTP 402, "prepayment
-   credits are depleted". The requests are ready: the template review
-   (`reviews/2026-09-23-prompts/`) and each bench passage review. Once the user
-   adds credits, run them, and give their findings the same treatment — a
-   written verdict per finding.
-2. **Run the first bench iteration.** Neither new passage has results. Suggested
-   first run: `b02` or `b03`, the full loop in HANDOFF §9.3 with the claim map,
-   one seed. Pre-register first.
-3. **Re-run the options-only probe with the template's wording** (`ablate
-   --rungs full,options-only`) before anyone relies on "the options carry the
-   answer". The 4/6 came from an ad hoc prompt with a possible cue.
-4. **The distractor-rewrite arm** (`bench-rewrite-distractors` → `arm` →
-   `ablate` on arm and control, with the `sighted` rung) is the test the current
-   lead needs. It has not been run.
-5. **Adversary isolation.** Find out how to declare a subagent with genuinely no
-   tools in this harness. Until then, the canary and `tool_uses` checks are what
-   hold. Do not claim isolation is structural.
-6. **`defining-and-measuring-agi` has no review sheet, and its `a03r` has never
-   been through the adversary.** One curator re-spawn (`prompts/curate.md` now
-   names the sheet) and three adversary spawns.
-7. **`merge` does not read `verdicts-pass2/`.** The critic's second pass has never
-   run; wire it before it does.
-8. **The pilot-analyst brief has no bench mode.** Its section order is written
+1. **Adversary isolation is not structural.** Nobody has found how to declare a
+   subagent with genuinely no tools in this harness. Until then, the canary and
+   `tool_uses` checks are what hold. Do not claim isolation is structural.
+2. **`defining-and-measuring-agi` has no review sheet, and its `a03r` has never
+   been through the adversary.**
+3. **`merge` does not read `verdicts-pass2/`.** The critic's second pass has
+   never run; wire it before it does.
+4. **The pilot-analyst brief has no bench mode.** Its section order is written
    for the P1/P2 runs.
-9. **Review-block templates** (generation and curation across all sections) do
+5. **Review-block templates** (generation and curation across all sections) do
    not exist. Not needed until the full run.
-10. **`flag()` reads argv captured at load**, so the selftest's four
-    `process.argv` assignments are no-ops. Harmless today; do not rely on them.
+6. **`flag()` reads argv captured at load**, so the selftest's four
+   `process.argv` assignments are no-ops. Harmless today; do not rely on them.
 
-## 8. Traps that caught this session
+## 8. Traps
 
 - **Recorded is not sent.** `prompt` records every render, including ones made
   only to inspect a prompt. The `Agent` call is the send.
 - **A new agent file is only spawnable after the session restarts.**
 - **An agent can invent an enum value.** The critic set `stem_format` to a value
   outside the schema; `render` now refuses such a candidate.
-- **A template fix does not reach a prompt already rendered.** The `b02`
-  reviser was given its prompt five minutes before the author template gained
-  two heuristics, and so never saw them. Check the prompt's timestamp against
-  the template's last change.
+- **A template fix does not reach a prompt already rendered.** Check the
+  prompt's timestamp against the template's last change.
 - **Committing while an agent edits a file can capture it half-written.** Commit
-  explicit paths, and leave out the files an agent is editing.
+  explicit paths, and leave out the files another session is editing (the
+  dashboard, `npm run status`, shows them).
 - **A repeated `shuffle` on a changed candidate gives a different permutation**,
   so a stale adversary result can silently describe a question that no longer
   exists.
+- **Analyst spawns can stall on the stream watchdog** with no output and no
+  partial file. Re-spawn once with the identical prompt.
 
 ## 9. Where things are
 
 | what | where |
 |---|---|
+| where things stand, next steps (for the user) | `STATUS.md`, dashboard: `npm run status` |
+| start a session | `docs/ORCHESTRATOR-PROMPT.md` |
 | operating manual | `docs/HANDOFF-ORCHESTRATOR.md` |
 | rubric (governing, read-only) | `docs/RUBRIC.md` |
 | pilot findings | `docs/pilot-findings-2026-09-18.md` |
 | spawn templates | `prompts/` (index in `prompts/README.md`) |
-| template review and verdicts | `reviews/2026-09-23-prompts/` |
+| agent briefs (source) | `agents/quiz-*.md` |
+| voice panel config | `voices.json`, `scripts/voices.mjs` |
+| reviews and verdicts | `reviews/` |
 | bench | `bench/` (rules in `bench/README.md`) |
 | P1 run and report | `runs/2026-09-18-P1/` |
 | fiction control and stem arm | `runs/2026-09-20-FICTION/`, `-FICTION-B/` |
-| free-recall probe | `runs/2026-09-18-P1/stem-only/` |
+| per-voice floors | `runs/2026-09-23-FLOORS/`, `runs/2026-09-26-CONTROL/` |
 | staged questions | `staging/` — or `npm run questions` |
-| this session's canary and logs | `runs/2026-09-23-BENCH/` |
 
 ## 10. Codes used in the logs, in plain words
 

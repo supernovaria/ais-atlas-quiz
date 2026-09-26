@@ -37,3 +37,6 @@ runs/_selftest/
 
 # local smoke tests of the voice panel — not audit trail
 runs/_smoke*/
+
+# per-session registrations for the status dashboard (see CLAUDE.md)
+.agent-status/

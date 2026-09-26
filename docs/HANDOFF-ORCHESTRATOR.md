@@ -18,7 +18,7 @@
 
 **Starting a session?** `docs/ORCHESTRATOR-PROMPT.md` is the prompt to follow; it points back here.
 
-0. **`docs/STATE-2026-09-23.md`** — where things stand: what is established and how firmly, the claims that were made and withdrawn, the bench, open items and the traps that caught the last session. Read it before anything else.
+0. **`STATUS.md`** (where things stand, what is next) and **`docs/KNOWLEDGE.md`** (what is established and how firmly, the claims that were made and withdrawn, the bench, known defects and traps). Read them before anything else.
 1. `docs/PIPELINE.md` — roles, flow, gates. Everything below assumes it.
 2. `docs/RUBRIC.md` — governing. Do not edit it; propose edits via the pilot findings.
 3. `QUIZ-PLAN.md` phases 0–4 — repo state, checker spec, pilot rationale.

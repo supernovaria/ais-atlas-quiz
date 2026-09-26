@@ -1,0 +1,34 @@
+{
+  "project": "AI Safety Atlas quiz",
+  "tagline": "Agents write chapter-1 quiz questions; blind readers check they can't be guessed.",
+  "updated": "2026-09-26",
+  "hotspots": [
+    "scripts/pipeline.mjs",
+    "scripts/check-questions.mjs",
+    "scripts/voices.mjs",
+    "scripts/sync-agents.mjs",
+    "voices.json",
+    "agents/**",
+    ".claude/agents/**",
+    ".codex/agents/**",
+    "prompts/**",
+    "docs/RUBRIC.md",
+    "docs/HANDOFF-ORCHESTRATOR.md",
+    "docs/ORCHESTRATOR-PROMPT.md",
+    "package.json",
+    "CLAUDE.md"
+  ],
+  "milestones": [
+    { "label": "Rubric and question checker", "state": "done" },
+    { "label": "Pipeline script and agent roles", "state": "done" },
+    { "label": "Pilot run P1", "state": "done", "date": "2026-09-18" },
+    { "label": "Fiction control study", "state": "done", "date": "2026-09-20" },
+    { "label": "Invented bench passages b02, b03", "state": "done", "date": "2026-09-23" },
+    { "label": "Multi-family reader panel", "state": "done", "date": "2026-09-26" },
+    { "label": "Reader floors on control items", "state": "doing" },
+    { "label": "Bench iteration 1", "state": "next" },
+    { "label": "Causal tests of cues", "state": "later" },
+    { "label": "Full chapter-1 question set", "state": "later" }
+  ],
+  "display_requests": []
+}

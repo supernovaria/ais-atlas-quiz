@@ -18,8 +18,9 @@ reporting honestly.
 
 ## Read first, in this order
 
-1. `docs/STATE-*.md` (the newest) — where things stand, what is established and
-   how firmly, the claims that were made and withdrawn, open items, traps.
+1. `STATUS.md` — where things stand and what is next; then `docs/KNOWLEDGE.md`
+   — what is established and how firmly, the claims that were made and
+   withdrawn, known defects, traps.
 2. `docs/HANDOFF-ORCHESTRATOR.md` — the operating manual. §9 is the calibration
    loop; §3 and §6 are the rules you are most likely to break.
 3. `prompts/README.md` — every spawn prompt is a file; you never compose one.
