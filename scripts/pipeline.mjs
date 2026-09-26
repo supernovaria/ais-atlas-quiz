@@ -1914,7 +1914,22 @@ function stageAblateScore(label, slug) {
     // Calibration sets (runs/tier4-control items) label each question with a
     // `group` — clean, or one planted tell. Per family per group, so each family
     // gets its own floor (the clean group) and its own sensitivity to each tell.
-    const groupOf = new Map((maybeJson(join(sectionDir(label, slug), 'candidates.json')) ?? []).filter((c) => c.group).map((c) => [c.id, c.group]));
+    // Control items also carry an `author`: split by it too, so a reader family
+    // scoring higher on its own family's questions (recognition) is visible.
+    const candsForSplit = maybeJson(join(sectionDir(label, slug), 'candidates.json')) ?? [];
+    const authorOf = new Map(candsForSplit.filter((c) => c.author).map((c) => [c.id, c.author]));
+    if (authorOf.size) {
+      ladder.by_author = {};
+      for (const rung of apiLetterRungs) {
+        for (const a of uniq([...authorOf.values()])) {
+          const rs = panel.filter((r) => r.rung === rung && authorOf.get(r.id) === a);
+          if (!rs.length) continue;
+          const fams = familyRates(rs, metaOf);
+          ((ladder.by_author[rung] ??= {})[a] = Object.fromEntries(Object.entries(fams).map(([f, x]) => [f, { rate: x.rate, questions: x.questions, ci_question_unit: x.ci_question_unit }])));
+        }
+      }
+    }
+    const groupOf = new Map(candsForSplit.filter((c) => c.group).map((c) => [c.id, c.group]));
     if (groupOf.size) {
       ladder.by_group = {};
       for (const rung of apiLetterRungs) {
@@ -2015,6 +2030,11 @@ function stageAblateScore(label, slug) {
     }
     for (const [rung, byType] of Object.entries(ladder.panel_by_claim_type ?? {})) {
       for (const [type, r] of Object.entries(byType)) console.log(`    PANEL ${rung}/${type}: median family ${r.median_family_rate == null ? 'n/a' : fmtPct(r.median_family_rate)} against a floor of ${r.floor == null ? 'n/a' : fmtPct(r.floor)} (${Object.entries(r.family_rates).map(([f, x]) => `${f} ${x == null ? 'n/a' : fmtPct(x)}`).join(', ')})`);
+    }
+    for (const [rung, authors] of Object.entries(ladder.by_author ?? {})) {
+      for (const [a, fams] of Object.entries(authors)) {
+        console.log(`    author ${a.padEnd(11)} ${rung.padEnd(13)} ${Object.entries(fams).map(([f, x]) => `${f} ${x.rate == null ? 'n/a' : fmtPct(x.rate)} (${x.questions} q${x.ci_question_unit ? `, ${ciTxt(x)}` : ''})`).join(' · ')}`);
+      }
     }
     for (const [rung, groups] of Object.entries(ladder.by_group ?? {})) {
       for (const [g, fams] of Object.entries(groups)) {
