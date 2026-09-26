@@ -190,7 +190,10 @@ async function attemptCodex(v, prompt, mode, settings) {
   const work = reader ? mkdtempSync(join(tmpdir(), 'quiz-voice-')) : ROOT;
   const outDir = reader ? work : mkdtempSync(join(tmpdir(), 'quiz-voice-out-'));
   const outFile = join(outDir, 'last.txt');
-  const args = ['exec', '--json', '--ephemeral', '--skip-git-repo-check', '-C', work, '-s', 'read-only', '-m', v.model];
+  // Readers and reviewers are read-only. An author voice (sandbox "workspace-write")
+  // may write inside the repo, like the Claude general-purpose author it mirrors.
+  const sandbox = reader ? 'read-only' : (v.sandbox ?? 'read-only');
+  const args = ['exec', '--json', '--ephemeral', '--skip-git-repo-check', '-C', work, '-s', sandbox, '-m', v.model];
   if (settings.thinking) args.push('-c', `model_reasoning_effort="${settings.thinking}"`);
   if (reader) for (const k of ['include_environment_context', 'include_permissions_instructions', 'include_apps_instructions', 'include_collaboration_mode_instructions']) args.push('-c', `${k}=false`);
   args.push('-o', outFile, '-');

@@ -172,6 +172,19 @@
       "max_per_invocation": 2,
       "timeout_ms": 1800000,
       "note": "Red-team and third reviewer. Scarce: a handful of calls per 5-hour window; medium effort by the user's choice (2026-09-26)."
+    },
+    {
+      "id": "gpt-sol-author",
+      "provider": "codex",
+      "model": "gpt-6-sol",
+      "family": "openai",
+      "thinking": "high",
+      "workdir": "repo",
+      "sandbox": "workspace-write",
+      "min_interval_ms": 0,
+      "max_per_invocation": 2,
+      "timeout_ms": 1800000,
+      "note": "Writes control items (prompts/control-author.md): needs to write its file and run control-check, as the Opus author does. Not a reader: never in an ablation panel."
     }
   ],
   "panels": {

@@ -1,0 +1,49 @@
+You are writing **control questions**: multiple-choice questions about the invented textbook passage `bench/b02/passage.md`. They measure a floor: how often a reader who has **never seen the passage** can still pick the right answer of a question written with care. Blind readers from several model families will answer them from the stem and options alone. Your job is to write the least guessable **honest** questions you can: a reader who understood the passage should find each one straightforward, and a reader who did not should find every option believable.
+
+Read `bench/b02/passage.md` and `bench/b02/private/claims.json` (every load-bearing claim of the passage, tagged by its author). Write **5** questions, one claim each, no two on the same claim.
+
+**Which claims.** In `claims.json`, a claim with `naive_is_right` true or false is *directional*: a sensible outsider would guess its direction, and that guess is right or wrong. A claim with `naive_is_right` null is *passage-only*: nothing outside the passage suggests the answer. Choose about half directional and half passage-only. Among the directional ones, pick about as many where the outsider's guess is right as where it is wrong.
+
+**Each question**
+- Tests understanding of its claim — a reason, a consequence, an application, a contrast — not recall of a name or a number.
+- Has four options and exactly one correct answer. The correct answer must be unambiguously supported by the passage.
+- Every wrong option is a specific misreading a real reader of the passage could hold. Record it in that option's `"misreading"`: who would believe it, and why.
+- Surface parity: whatever form the correct option has — specific or general, qualified or plain, a contrast, a mechanism — the wrong options have the same form. Nothing about wording, length, register or structure should single out the correct option.
+- Never a wrong option that denies what the question takes for granted ("there is no such effect" answering "what is the effect of…").
+- Never refers to "the passage", "the text", "the section" or "the author" in the stem.
+
+**Mechanical criteria** (`control-check` enforces these; meet them on the first draft):
+- Option lengths within about 20% of each other; longest at most 1.6× the shortest; the correct option neither the longest nor the shortest.
+- No absolute words in any option: always, never, entirely, exclusively, conclusively, impossible, cannot, or "no … at all".
+- The correct option carries no more hedge words than the median wrong option (tends to, often, may, typically, largely, might, could, sometimes, generally, usually, likely, broadly, somewhat, partly).
+- Straight ASCII quotes only; no underscore emphasis.
+
+**Output.** Write a JSON array to `runs/2026-09-26-CONTROL/b02/candidates.sol.json`:
+
+```
+[
+  {
+    "id": "b02/ctrl-sol/01",
+    "group": "clean",
+    "author": "sol",
+    "claim": "<claim id from claims.json>",
+    "stem": "…",
+    "options": [
+      {"text": "…", "key": true},
+      {"text": "…", "key": false, "misreading": "…"},
+      {"text": "…", "key": false, "misreading": "…"},
+      {"text": "…", "key": false, "misreading": "…"}
+    ],
+    "explanation": "<two or three sentences: why the key is right, citing the passage>"
+  }
+]
+```
+
+Number the ids 01, 02, … in order. Then run:
+
+`node scripts/pipeline.mjs control-check --run 2026-09-26-CONTROL --section b02 --bench b02`
+
+and revise your own items until every one of them passes. Other authors' files may be in that directory: do not open or edit them, and do not read anything else under `runs/`.
+
+Write your output to `runs/2026-09-26-CONTROL/b02/candidates.sol.json`.
+Reply with one line only: `OK runs/2026-09-26-CONTROL/b02/candidates.sol.json`, or `FAIL <one-clause reason>`. Nothing else.
