@@ -1,6 +1,6 @@
 # AI Safety Atlas quiz — status
 
-*Last updated 2026-09-27. Rewritten, not appended: this page always describes now.*
+*Last updated 2026-09-27 (evening). Rewritten, not appended: this page always describes now.*
 
 ## What this is
 
@@ -22,15 +22,19 @@ guesser. There are two control sets:
 - **The old control set** (`runs/2026-09-23-FLOORS`): replies from the non-Claude
   readers are still coming in as free quotas allow. Some of them aren't
   committed yet.
-- **The new clean control items** (`runs/2026-09-26-CONTROL`): both halves are
-  written (Opus and GPT-6 Sol, 10 items per invented passage), and all pass
-  the checker. Haiku has answered all of them: it gets about a third right by
-  guessing (30% and 37% on the two passages). On the first passage the other
-  reader families land at 37–55%. The second passage's non-Claude replies are
-  still coming in. See `runs/2026-09-26-CONTROL/REPORT.md`.
+- **The new clean control items** (`runs/2026-09-26-CONTROL`): 10 items per
+  invented passage, half by Opus and half by GPT-6 Sol. Haiku guesses 30% and
+  37% right on the two passages (chance is 25%). On the first passage the
+  other reader families land at 29–52%, median 38%. Sonnet and Opus, asked
+  once each for comparison, guess 60% on the first passage; on the second,
+  Opus 60% and Sonnet 11%. Those are 10 questions each, so treat them as hints.
+  The second passage still lacks Gemini, Qwen and Nemotron (out of free quota)
+  and most of Gemma. See `runs/2026-09-26-CONTROL/REPORT.md`.
 
 ## Recently done
 
+- **09-27** — All clean control items written and answered by Haiku, Sonnet,
+  Opus and most of the reader panel.
 - **09-26** — A write-enabled Codex author voice for the GPT-6 Sol control items.
 - **09-26** — Opus's half of the clean control items, plus the predictions.
 - **09-26** — One source file per agent brief, feeding both Claude and Codex.
@@ -43,21 +47,19 @@ guesser. There are two control sets:
 
 ## Next up
 
-1. **GPT-6 Sol writes its half of the control items**, once Codex allows. Then
-   the readers answer all the control items and we score the floors.
-2. **Bench iteration 1**: the pipeline writes questions on both invented
+1. **Bench iteration 1** (starting 09-27): the pipeline writes questions on both invented
    passages, and every reader family tries to answer them blind. This tells us
    how guessable the questions are, which cues give them away, and whether
    non-Claude readers see the same cues. It's planned in detail in
    `docs/ORCHESTRATOR-PROMPT.md` ("This run").
-3. **Testing whether a cue is real**: take a suspected cue out of 5–10
+2. **Testing whether a cue is real**: take a suspected cue out of 5–10
    questions, change nothing else, and see whether guessing drops. Only then
    does a cue change the agents' instructions.
 
 ## Waiting on
 
-- **The Codex usage window**, for the Sol control items. It's shared with your
-  own Codex use.
+- **Free quotas, again**, to finish the second passage's control replies
+  (Gemini resets about 09:00, OpenRouter about 02:00 your time).
 - **Free API quotas**: Gemini allows about 20 requests a day per model, and
   OpenRouter's free models are often overloaded. Panel data arrives over
   several days.
