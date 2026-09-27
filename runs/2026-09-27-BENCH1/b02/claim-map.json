@@ -1,0 +1,88 @@
+{
+  "bench": "b02",
+  "passage_naive_right_share": 0.6785714285714286,
+  "asked_naive_right_share": 0.6,
+  "directional_floor": 0.6,
+  "map": {
+    "b02/sonnet/a01": {
+      "claim": "P10",
+      "type": "passage-only",
+      "naive_is_right": null
+    },
+    "b02/sonnet/a02": {
+      "claim": "P8",
+      "type": "directional",
+      "naive_is_right": true
+    },
+    "b02/sonnet/a03": {
+      "claim": "P7",
+      "type": "passage-only",
+      "naive_is_right": null
+    },
+    "b02/sonnet/a04": {
+      "claim": "C18",
+      "type": "directional",
+      "naive_is_right": true
+    },
+    "b02/sonnet/a05": {
+      "claim": "P2",
+      "type": "passage-only",
+      "naive_is_right": null
+    },
+    "b02/sonnet/a06": {
+      "claim": "C5",
+      "type": "directional",
+      "naive_is_right": false
+    },
+    "b02/sonnet/a07": {
+      "claim": "C19",
+      "type": "directional",
+      "naive_is_right": false
+    },
+    "b02/sonnet/a08": {
+      "claim": "C13",
+      "type": "directional",
+      "naive_is_right": true
+    },
+    "b02/sonnet/b01": {
+      "claim": "P10",
+      "type": "passage-only",
+      "naive_is_right": null
+    },
+    "b02/sonnet/b02": {
+      "claim": "P7",
+      "type": "passage-only",
+      "naive_is_right": null
+    },
+    "b02/sonnet/b03": {
+      "claim": "P8",
+      "type": "directional",
+      "naive_is_right": true
+    },
+    "b02/sonnet/b04": {
+      "claim": "C5",
+      "type": "directional",
+      "naive_is_right": false
+    },
+    "b02/sonnet/b05": {
+      "claim": "C18",
+      "type": "directional",
+      "naive_is_right": true
+    },
+    "b02/sonnet/b06": {
+      "claim": "P2",
+      "type": "passage-only",
+      "naive_is_right": null
+    },
+    "b02/sonnet/b07": {
+      "claim": "C19",
+      "type": "directional",
+      "naive_is_right": false
+    },
+    "b02/sonnet/b08": {
+      "claim": "C13",
+      "type": "directional",
+      "naive_is_right": true
+    }
+  }
+}

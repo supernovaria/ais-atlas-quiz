@@ -1,0 +1,15 @@
+Match each question to the passage claim it tests.
+
+Working directory: `C:\Users\sorcs\Documents\maddy-home\atlas\ais-atlas-quiz`.
+
+Read:
+1. `runs/2026-09-27-BENCH1/b02/candidates.json` — generated multiple-choice questions. Use each one's stem and correct option.
+2. `bench/b02/private/claims.json` — the passage's load-bearing claims, each with an id.
+
+For every question, find the **one** claim whose truth the correct option depends on. If the correct option depends on two claims equally, pick the one a reader would most need to know. If it depends on no listed claim, use `null`.
+
+Output one JSON object mapping each question's `id` to a claim `id` or `null`, with an entry for every question and nothing after the closing brace.
+
+Write it to exactly: `runs/2026-09-27-BENCH1/b02/claim-map.raw.json`
+
+Reply with one line only: `OK runs/2026-09-27-BENCH1/b02/claim-map.raw.json` or `FAIL <one-clause reason>`. Nothing else.
