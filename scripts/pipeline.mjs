@@ -955,7 +955,7 @@ function deriveVars(name, tpl, ctx) {
     // the run (see bench-run), so the analyst and generator are never pointed at
     // bench/, where files describe the passage as invented (b02 review #3).
     if (existsSync(join(ROOT, dir, 'section.md'))) set('prose', `${dir}/section.md`);
-    else if (existsSync(join(CHAPTER_DIR, `${slug}.md`))) set('prose', `../atlas-audio-read-along/dist/chapters/v1/capabilities/${slug}.md`);
+    else if (existsSync(join(CHAPTER_DIR, `${slug}.md`))) set('prose', relative(ROOT, join(CHAPTER_DIR, `${slug}.md`)).split(sep).join('/'));
     const runIdeas = join(ROOT, dir, 'ideas.json');
     if (existsSync(runIdeas)) set('ideas', fillPartial('ideas-line', { ideas_list: readJson(runIdeas).map((x) => `\`${x}\``).join(', ') }));
     set('candidates', `${dir}/candidates.json`);

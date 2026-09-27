@@ -47,6 +47,9 @@ the orchestrator's to edit. `public/questions/`, `README.md` and
 | **Rules stated only in a brief hold roughly 60% of the time.** | The generator broke a plainly stated quoting rule on 13 of 21 candidates. | One rule, one run. Treat it as the default expectation for any brief-only rule. |
 | **Self-defeating wrong answers are real and lintable.** | Options like "there is no objection" answering "which objection…": the lint fires 3 times in 49 real candidates, all genuine. | Small n; precision looks good. |
 | **A strong model infers that invented content is invented, unprompted.** | The `b02` analyst called its prose "an invented domain" with no such word in it and no file search (3 tool calls). | One observation. The bench can hide the *purpose*, not the invention. |
+| **On real sections, Opus generator output almost always trips R14.** | `runs/2026-09-27-P1`, all agents on Opus 5.5: `measure` found stem-word singletons in 53 of 58 candidates, and R14 was the cited failure in 7 of the 11 critic verdicts that ran. | One run, one model. Old code (see §8, stale base). The script already detects it, so it is a candidate generator self-check, not a critic job. |
+| **Opus generator output meets the length bands unaided.** | Same run: R8 + R9 + 1.6× passed on 58/58 before any critique. | One run, Opus only. Says nothing about sonnet or haiku. |
+| **The generator overclaims level.** | Same run: 6 of 11 critiqued candidates claimed a higher level than the critic assigned (three L4 → L2). | n = 11, one section. |
 | **The adversary's isolation is behavioural, not structural.** | The harness lists `quiz-adversary` and `quiz-recall` with "Tools: All tools" despite `tools: []`. ~70 adversary spawns and the canary (2026-09-23: `tool_uses` 0) have used no tool. | Solid on the facts. The structural fix is open (§7). |
 
 ## 3. Claims that were made and withdrawn — do not repeat them
@@ -212,6 +215,15 @@ Ablation rungs and who answers them (the manifest names the agent per file):
    not exist. Not needed until the full run.
 6. **`flag()` reads argv captured at load**, so the selftest's four
    `process.argv` assignments are no-ops. Harmless today; do not rely on them.
+7. **`shard` can give one idea the same lens on every attempt.** Reproduced on
+   current code with the 2026-09-27 `defining-and-measuring-agi` concept map:
+   DM-14's 2 attempts both land on "objection". `validate` catches it, but only
+   after generation has been paid for. Fix in `stageShard`'s lens assignment,
+   or run `validate` on `shards.json` before spawning any generator.
+8. **A missing chapter directory silently switches off anchor checks.**
+   `CHAPTER_DIR` now takes a `QUIZ_CHAPTER_DIR` override (both scripts), and
+   prompts derive the prose path from it, so a worktree can run. But if neither
+   path exists, `ANCHORS = false` without a warning; that should be an error.
 
 ## 8. Traps
 
@@ -230,6 +242,14 @@ Ablation rungs and who answers them (the manifest names the agent per file):
   exists.
 - **Analyst spawns can stall on the stream watchdog** with no output and no
   partial file. Re-spawn once with the identical prompt.
+- **A worktree can start from a stale commit.** On 2026-09-27 a session was
+  opened on a branch cut from `78e57dc`, 39 commits behind `main`. It read the old
+  P1 report as "where we left off" and re-ran P1 from scratch (34 Opus spawns)
+  before noticing. Before resuming anything, run
+  `git rev-list --count HEAD..main` and read `STATUS.md` on `main`.
+- **From a worktree, set `QUIZ_CHAPTER_DIR`** to the absolute path of
+  `atlas-audio-read-along/dist/chapters/v1/capabilities`. The default is
+  relative to the repo root, and a worktree sits three levels deeper.
 
 ## 9. Where things are
 
@@ -246,6 +266,7 @@ Ablation rungs and who answers them (the manifest names the agent per file):
 | reviews and verdicts | `reviews/` |
 | bench | `bench/` (rules in `bench/README.md`) |
 | P1 run and report | `runs/2026-09-18-P1/` |
+| P1 re-run on a stale base, all Opus, paused at critique 11/22 | `runs/2026-09-27-P1/` (superseded; kept for the §2 R14 and length rows) |
 | fiction control and stem arm | `runs/2026-09-20-FICTION/`, `-FICTION-B/` |
 | per-voice floors | `runs/2026-09-23-FLOORS/`, `runs/2026-09-26-CONTROL/` |
 | staged questions | `staging/` — or `npm run questions` |

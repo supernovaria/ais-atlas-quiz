@@ -16,7 +16,9 @@ import { parseChapterMarkdown } from '../src/quizParser.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DEFAULT_FILE = join(ROOT, 'public/questions/ch1-capabilities.md');
-const CHAPTER_DIR = resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/capabilities');
+const CHAPTER_DIR = process.env.QUIZ_CHAPTER_DIR
+  ? resolve(process.env.QUIZ_CHAPTER_DIR)
+  : resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/capabilities');
 
 // ---------------------------------------------------------------- thresholds
 

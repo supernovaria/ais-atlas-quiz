@@ -1,5 +1,9 @@
 # P1 re-run — 2026-09-27. PAUSED mid-critique (time-box), not stopped on a fault.
 
+> **Superseded.** This run started from a branch 39 commits behind `main`, which had
+> already completed P1 and moved on to the bench and floors. Kept for its findings,
+> which now live in `docs/KNOWLEDGE.md` §2, §7 and §8. Do not resume it.
+
 **First run where every precondition held at once.** Rooted at `ais-atlas-quiz/`
 (worktree), prose present (11 files, 25,726 words), six agents resolved, selftests
 green. Paused at a clean boundary after ~17 min, per the session's time-box.
