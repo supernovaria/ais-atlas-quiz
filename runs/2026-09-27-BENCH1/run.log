@@ -24,3 +24,5 @@
 {"ts":"2026-09-27T16:56:23.790Z","stage":"claim-map","section":"b02","bench":"b02","n":16,"ok":true}
 {"ts":"2026-09-27T16:56:23.865Z","stage":"claim-map","section":"b03","bench":"b03","n":16,"ok":true}
 {"ts":"2026-09-27T16:57:52.690Z","stage":"preregister","file":"runs/2026-09-27-BENCH1/preregistration-2.md","source":"runs/2026-09-27-BENCH1/preregistration.md","sha256":"642c644e173d80a9e9cc0ac6d84b0a31a1c2d2d488671d5d307f948f1c593b32","ok":true}
+{"ts":"2026-09-27T16:57:53.060Z","stage":"ablate","section":"b02","rungs":["full","options-only","full-explain","options-only-explain"],"seeds":7,"seed_offset":0,"explain_seeds":2,"claude_seeds":3,"n_questions":16,"n_prompts":288,"excluded":0,"ok":true}
+{"ts":"2026-09-27T16:57:53.319Z","stage":"ablate","section":"b03","rungs":["full","options-only","full-explain","options-only-explain"],"seeds":7,"seed_offset":0,"explain_seeds":2,"claude_seeds":3,"n_questions":16,"n_prompts":288,"excluded":0,"ok":true}

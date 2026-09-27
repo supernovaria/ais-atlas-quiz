@@ -1,0 +1,47 @@
+You have not read the textbook this question comes from. Answer from the question and options alone, using only general knowledge and test-taking instinct. Do not use any tools. This time, also say which features of the wording you went on.
+
+(The question has been withheld. Only its answer options are shown.)
+
+A. She has the mechanism right: builders deliberately tilt the whole cairn to reinforce the message already given by a canted course, so both features matter.
+B. She is right that the more visually obvious feature carries more meaning — lean is simply a larger-scale version of the same deliberate offset that produces cant.
+C. Her conclusion is wrong for a different reason: the finger's-width course offset is likely an unintentional flaw, so neither feature should be read as a signal.
+D. Her reasoning is backwards: only the course-to-course cant carries the builder's message; lean, the whole-cairn tilt, is an accidental frost-heave artifact with no meaning.
+
+For EACH option give:
+- "codes": every feature from this list that the option has AND that affected your judgement of it. Use only these codes:
+  - `longest` — longer than the others
+  - `shortest` — shorter than the others
+  - `most-detailed` — more specific or complete than the others, whatever its length
+  - `hedged` — carries qualifiers such as "often", "can", "in some cases"
+  - `nuanced-turn` — a "not merely X but Y", "it depends" or both-sides construction
+  - `middle-ground` — moderate where the others are extreme
+  - `textbook-voice` — sounds like the lesson a textbook would want to teach
+  - `echoes-stem` — reuses the question's own words or ideas
+  - `like-the-others` — the other options look like variations of this one
+  - `opposites` — this option and another one contradict each other
+  - `surprising` — counterintuitive
+  - `too-obvious` — the naive, common-sense answer
+  - `absolute` — always, never, only, entirely
+  - `denies-question` — rejects what the question takes for granted ("there is no problem")
+  - `implausible` — hard to imagine anyone believing it
+  - `off-target` — does not answer what was asked
+  - `grammatical-fit` — fits (or fails to fit) the grammar of the question
+  - `odd-one-out` — differs from the rest in form or grammar
+  - `position` — its place in the list
+  - `general-knowledge` — you know or can work out the subject matter itself
+  - `no-tell` — nothing to go on; use it alone
+  - `other` — a feature not listed here; describe it in "note"
+- "p": your probability, 0 to 100, that it is the intended correct answer. The values over all options must sum to 100.
+- "note": one short sentence on what you noticed. Required when "codes" contains "other"; otherwise may be "".
+
+Every option needs at least one code; use "no-tell" alone if nothing affected your judgement of it.
+
+Reply with only this JSON object and no other text. Give one entry under "options" for every option letter shown above:
+{
+  "options": {
+    "A": {"codes": ["<code>", ...], "p": <0-100>, "note": "<one sentence, or empty>"},
+    "B": {...}
+  },
+  "pick": "<the letter you would answer>",
+  "strategy": "<one sentence: the main thing you went on>"
+}

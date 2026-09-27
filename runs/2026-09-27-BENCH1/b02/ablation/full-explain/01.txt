@@ -1,0 +1,47 @@
+You have not read the textbook this question comes from. Answer from the question and options alone, using only general knowledge and test-taking instinct. Do not use any tools. This time, also say which features of the wording you went on.
+
+A survey team revisits two adjacent Serrow cairns a year apart. At the first, the arrangement of body-course cants is unchanged from the original survey. At the second, the pell stone has moved from the upslope to the downslope side of the crown, though the courses beneath it are canted exactly as before. What does this pair of observations illustrate about the two registers of meaning?
+
+A. Both registers are actually carried by the pell stone, so the unchanged courses simply mean that no one has visited the cairn recently.
+B. The lisk sense records where the route goes and the courses record recent conditions, so it is the builder who updates the pell stone on each revisit.
+C. Since a physical marker's meaning is fixed once it is built, the pell stone's shift must be an incidental disturbance rather than a deliberate update.
+D. The courses carry a fixed message set once at building and unchanged by revisits, while the pell stone alone carries a separate, updatable record that passers reset.
+
+For EACH option give:
+- "codes": every feature from this list that the option has AND that affected your judgement of it. Use only these codes:
+  - `longest` — longer than the others
+  - `shortest` — shorter than the others
+  - `most-detailed` — more specific or complete than the others, whatever its length
+  - `hedged` — carries qualifiers such as "often", "can", "in some cases"
+  - `nuanced-turn` — a "not merely X but Y", "it depends" or both-sides construction
+  - `middle-ground` — moderate where the others are extreme
+  - `textbook-voice` — sounds like the lesson a textbook would want to teach
+  - `echoes-stem` — reuses the question's own words or ideas
+  - `like-the-others` — the other options look like variations of this one
+  - `opposites` — this option and another one contradict each other
+  - `surprising` — counterintuitive
+  - `too-obvious` — the naive, common-sense answer
+  - `absolute` — always, never, only, entirely
+  - `denies-question` — rejects what the question takes for granted ("there is no problem")
+  - `implausible` — hard to imagine anyone believing it
+  - `off-target` — does not answer what was asked
+  - `grammatical-fit` — fits (or fails to fit) the grammar of the question
+  - `odd-one-out` — differs from the rest in form or grammar
+  - `position` — its place in the list
+  - `general-knowledge` — you know or can work out the subject matter itself
+  - `no-tell` — nothing to go on; use it alone
+  - `other` — a feature not listed here; describe it in "note"
+- "p": your probability, 0 to 100, that it is the intended correct answer. The values over all options must sum to 100.
+- "note": one short sentence on what you noticed. Required when "codes" contains "other"; otherwise may be "".
+
+Every option needs at least one code; use "no-tell" alone if nothing affected your judgement of it.
+
+Reply with only this JSON object and no other text. Give one entry under "options" for every option letter shown above:
+{
+  "options": {
+    "A": {"codes": ["<code>", ...], "p": <0-100>, "note": "<one sentence, or empty>"},
+    "B": {...}
+  },
+  "pick": "<the letter you would answer>",
+  "strategy": "<one sentence: the main thing you went on>"
+}

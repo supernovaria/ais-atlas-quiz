@@ -1,0 +1,47 @@
+You have not read the textbook this question comes from. Answer from the question and options alone, using only general knowledge and test-taking instinct. Do not use any tools. This time, also say which features of the wording you went on.
+
+A colleague argues: "A lattice hanging high, close under the crown of the vault, should be the safest place from a flood, since it's farthest from the rising water." Which objection does the text's account of lattice loss support?
+
+A. The opposite holds: the higher a lattice hangs, the less likely it is to survive a flood season, and lattices close under the crown are lost most often of all.
+B. The objection is that flood loss is mostly caused by silt film rather than by a lattice's height at all, so height is irrelevant to survival.
+C. The objection is that a lattice's cant, not its height, determines flood survival, so height plays no role either way.
+D. None — height above the water is exactly what protects a lattice from flood loss, so the colleague's reasoning is sound.
+
+For EACH option give:
+- "codes": every feature from this list that the option has AND that affected your judgement of it. Use only these codes:
+  - `longest` — longer than the others
+  - `shortest` — shorter than the others
+  - `most-detailed` — more specific or complete than the others, whatever its length
+  - `hedged` — carries qualifiers such as "often", "can", "in some cases"
+  - `nuanced-turn` — a "not merely X but Y", "it depends" or both-sides construction
+  - `middle-ground` — moderate where the others are extreme
+  - `textbook-voice` — sounds like the lesson a textbook would want to teach
+  - `echoes-stem` — reuses the question's own words or ideas
+  - `like-the-others` — the other options look like variations of this one
+  - `opposites` — this option and another one contradict each other
+  - `surprising` — counterintuitive
+  - `too-obvious` — the naive, common-sense answer
+  - `absolute` — always, never, only, entirely
+  - `denies-question` — rejects what the question takes for granted ("there is no problem")
+  - `implausible` — hard to imagine anyone believing it
+  - `off-target` — does not answer what was asked
+  - `grammatical-fit` — fits (or fails to fit) the grammar of the question
+  - `odd-one-out` — differs from the rest in form or grammar
+  - `position` — its place in the list
+  - `general-knowledge` — you know or can work out the subject matter itself
+  - `no-tell` — nothing to go on; use it alone
+  - `other` — a feature not listed here; describe it in "note"
+- "p": your probability, 0 to 100, that it is the intended correct answer. The values over all options must sum to 100.
+- "note": one short sentence on what you noticed. Required when "codes" contains "other"; otherwise may be "".
+
+Every option needs at least one code; use "no-tell" alone if nothing affected your judgement of it.
+
+Reply with only this JSON object and no other text. Give one entry under "options" for every option letter shown above:
+{
+  "options": {
+    "A": {"codes": ["<code>", ...], "p": <0-100>, "note": "<one sentence, or empty>"},
+    "B": {...}
+  },
+  "pick": "<the letter you would answer>",
+  "strategy": "<one sentence: the main thing you went on>"
+}
