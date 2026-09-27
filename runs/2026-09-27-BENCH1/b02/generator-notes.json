@@ -1,0 +1,10 @@
+[
+  {
+    "shard": "b02-a",
+    "note": "Skipped SC-15 (lisk reliability peaks at moderate traffic) and SC-16 (Marhaug's height prediction falsified) to stay within the 8-candidate cap, per the map's own priority order which flags SC-16 (attempts:1) as the weakest candidate and recommends cutting it first; SC-15 was the next-lowest priority given SC-1/SC-2, SC-10, SC-4/SC-5, SC-13/SC-14 (all flagged 'first' priority) and SC-6/SC-8/SC-9/SC-11/SC-17 already filled the remaining slots. Both are covered by other shards' attempts allocation per the concept map. Candidates 1, 2, 5 each merge a discrimination_pairs entry (SC-1/SC-2, SC-4/SC-5, SC-13/SC-14) into a single contrast candidate rather than writing two separate questions, per the brief's guidance that this is usually the stronger choice. Candidate 4 spends this section's one R11 durable-figure budget (the 0.5/0.6 concord pair, flagged budget_candidate:true in the map); no other candidate here has a load-bearing figure."
+  },
+  {
+    "shard": "b02-b",
+    "note": "Skipped SC-15 (lisk reliability peaks at moderate traffic) and SC-16 (Marhaug's height prediction falsified) to stay within 8 candidates; the concept map itself flags SC-16 (attempts:1) as the weakest item in the pool, and SC-15's best material (pell stone weight vs. traffic as separate causes) is explicitly earmarked in the map as distractor fodder rather than its own hold, so both are lower priority than the eight ideas covered here. Candidates 1 and 6 each span a discrimination_pairs entry (SC-1/SC-2 and SC-13/SC-14) as single contrast/objection candidates rather than two separate questions, per the brief's guidance."
+  }
+]

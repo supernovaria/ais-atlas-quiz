@@ -1,0 +1,211 @@
+[
+  {
+    "id": "b02/sonnet/01",
+    "targets": ["SC-1", "SC-2"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A survey team revisits two adjacent Serrow cairns a year apart. At the first, the arrangement of body-course cants is unchanged from the original survey. At the second, the pell stone has moved from the upslope to the downslope side of the crown, though the courses beneath it are canted exactly as before. What does this pair of observations illustrate about the two registers of meaning?",
+    "options": [
+      {"text": "The courses carry a fixed message set once at building and unchanged by revisits, while the pell stone alone carries a separate, updatable record that passers reset.", "key": true, "provenance": null, "family": null},
+      {"text": "Both registers are actually carried by the pell stone, so the unchanged courses simply mean that no one has visited the cairn recently.", "key": false, "provenance": "misreads 'a small loose stone rests on the crown' as the general carrier of meaning, not realizing the dorran sense lives in the courses", "family": "a"},
+      {"text": "The lisk sense records where the route goes and the courses record recent conditions, so it is the builder who updates the pell stone on each revisit.", "key": false, "provenance": "reverses which sense is fixed and which is dynamic, and swaps which party (builder vs. passer) does the updating", "family": "b"},
+      {"text": "Since a physical marker's meaning is fixed once it is built, the pell stone's shift must be an incidental disturbance rather than a deliberate update.", "key": false, "provenance": "misreads 'a small loose stone rests on the crown; it is called the pell stone' as non-functional ornament rather than the lisk sense's own carrier", "family": "c"}
+      ],
+    "explanation": "The dorran sense is whatever the builder set into the courses, and it does not change unless the cairn is rebuilt — that is exactly why the unchanged first cairn tells you nothing new happened there. The lisk sense is the opposite kind of fact: it lives entirely in the pell stone, and a passer updates it by turning the stone after crossing the ford, which is what moved at the second cairn. The 'both carried by the pell stone' distractor collapses the two registers into one; the 'builder updates the stone' distractor swaps which party does the updating and which register is stable. Reading a cairn means tracking these as two independent signals, not one blended one. (Reading the Serrow Cairns → Two registers)",
+    "takeaway": "Dorran (courses) is the builder's fixed message; lisk (pell stone) is a rolling record only a passer updates — collapsing them into one signal is the core misreading.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "Two registers"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood that dorran lives in the courses and lisk lives only in the pell stone can state the contrast unaided before seeing the options.",
+      "cynic_test": "A test-wise skipper might guess the longest or most hedged option is correct, but all four options are similar-length full sentences with no hedge or length tell to exploit."
+    }
+  },
+  {
+    "id": "b02/sonnet/02",
+    "targets": ["SC-4", "SC-5"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A hiker notices that a cairn tilts a full hand's-width off the vertical, and separately that one body course is offset from the one beneath it by about a finger's width to the east. She concludes the tilt is the more important signal, since it is the more visually obvious feature. Evaluate her reasoning.",
+    "options": [
+      {"text": "Her reasoning is backwards: only the course-to-course cant carries the builder's message; lean, the whole-cairn tilt, is an accidental frost-heave artifact with no meaning.", "key": true, "provenance": null, "family": null},
+      {"text": "She is right that the more visually obvious feature carries more meaning — lean is simply a larger-scale version of the same deliberate offset that produces cant.", "key": false, "provenance": "conflates lean with cant rather than treating lean as an accidental artifact of frost heave under the footing", "family": "a"},
+      {"text": "Her conclusion is wrong for a different reason: the finger's-width course offset is likely an unintentional flaw, so neither feature should be read as a signal.", "key": false, "provenance": "pre-chapter prior contradicted by cant being defined as the builder's deliberate direction-pointer, not a flaw", "family": "c"},
+      {"text": "She has the mechanism right: builders deliberately tilt the whole cairn to reinforce the message already given by a canted course, so both features matter.", "key": false, "provenance": "reverses the stated cause of lean, which 'is almost always produced by frost heave under the footing', not deliberate builder choice", "family": "b"}
+    ],
+    "explanation": "Cant and lean look similar — both are a stone sitting off true vertical — but they are unrelated facts. Cant is measured course against course and is the builder's deliberate direction signal; lean is the whole cairn tilting from frost heave under the footing and carries no meaning at all, however dramatic it looks. The hiker's instinct to trust the more visible feature is exactly backwards. The 'lean is a larger cant' distractor merges two things the section deliberately separates; the 'both are flaws' distractor denies that cant is meaningful in the first place, which the section's whole discussion of reading cant contradicts. (Reading the Serrow Cairns → Lean and cant)",
+    "takeaway": "Visual obviousness is not evidence of meaning — lean is loud and meaningless, cant is subtle and load-bearing.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "Lean and cant"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who has the lean/cant distinction can immediately say the hiker's conclusion is backwards before reading the options.",
+      "cynic_test": "A skipper might expect 'the obvious feature matters most' to be a strawman losing option, but two of the three distractors are genuine positions a half-attentive reader could hold, not jokes."
+    }
+  },
+  {
+    "id": "b02/sonnet/03",
+    "targets": ["SC-10"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A cairn on the Furrow Ridge path has four body courses: course one canted east, course two canted east, course three canted west, and course four canted east. A passer notices course three breaks the pattern and assumes it means the path turns west at this cairn. What does course three actually indicate?",
+    "options": [
+      {"text": "Because course three is a single reversed course flanked by agreeing courses, it is a hob: it signals a branch ahead, while the route itself continues east.", "key": true, "provenance": null, "family": null},
+      {"text": "It is the same kind of thing as a randomly mis-canted or collapsed course, meaning this cairn is simply poorly built and effectively unreadable to any passer.", "key": false, "provenance": "conflates a deliberately-placed hob with an accidental fault, which the text treats as a separate category strangers 'generally recognise as unreadable and ignore'", "family": "a"},
+      {"text": "A single reversed course lowers the concord score here, and a lower concord always signals a less reliable or worse-built cairn, discounting its message.", "key": false, "provenance": "pre-chapter prior contradicted by 'A low concord is not always noise'", "family": "c"},
+      {"text": "It reverses the route: since course three is canted west, the correct reading is that the path itself turns west immediately after this cairn.", "key": false, "provenance": "misreads the reversed course exactly as the text's own named error: 'A careless reading takes the west cant of course three as the message, because it is the odd one out'", "family": "d"}
+    ],
+    "explanation": "A hob is a single course canted against the courses flanking it, and its job is not to give direction — it announces that a second route branches off before the next cairn. The route direction here is still given by the three agreeing courses (east), and the passer should expect a junction ahead rather than a turn at this cairn. The 'odd one out is the message' reading is exactly the careless mistake the section warns against; the 'it's just a flaw' reading confuses a deliberate builder signal with an accidental fault, a distinction the text draws explicitly. A hob is information, not noise, even though it lowers the concord score. (Reading the Serrow Cairns → The concord index)",
+    "takeaway": "A single reversed course flanked by agreement is a hob announcing a junction ahead, not the route direction itself.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "The concord index"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understands the hob concept can classify this pattern (odd course flanked by agreement) as a hob without seeing the options.",
+      "cynic_test": "A skipper might pick the option matching the stem's own framing of 'course three breaks the pattern' as the answer, but that is precisely the trap the question is built to catch."
+    }
+  },
+  {
+    "id": "b02/sonnet/04",
+    "targets": ["SC-8", "SC-9"],
+    "lens": "figure",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "For a particular cairn, computing the concord index with the crown included as the uppermost course yields 0.6; computing it under the version that leaves the crown out yields 0.5. Which figure belongs to the current Serrow survey protocol, and why do the two differ?",
+    "options": [
+      {"text": "The current protocol (Tessaly's, standard since 1986) uses the 0.5 figure because it excludes the crown, whose cant records handling rather than building.", "key": true, "provenance": null, "family": null},
+      {"text": "The 0.6 figure reflects the current protocol, since Marhaug's original 1968 definition remains the field's standard reference for surveys today.", "key": false, "provenance": "misreads the historical framing and conflates the original 1968 definition with the current post-1986 protocol", "family": "a"},
+      {"text": "Whichever figure is higher must be closer to the truth, since including more courses in an index always makes the summary more accurate.", "key": false, "provenance": "pre-chapter prior contradicted by Tessaly's objection that the crown's cant 'records handling rather than building'", "family": "c"},
+      {"text": "The crown is excluded from the 0.5 figure for the same reason the footing is: both simply follow the slope of the ground and have no cant of their own.", "key": false, "provenance": "misapplies the footing's exclusion rationale to the crown, when the crown's actual reason is that passers reset it when turning the pell stone", "family": "d"}
+    ],
+    "explanation": "The two figures differ only in whether the crown's cant is counted, and the reason to drop it is specific: passers routinely reset the crown when they turn the pell stone, so its cant reflects recent handling rather than the builder's original arrangement. Tessaly's objection carried, and the crown-excluded 0.5 has been the Serrow protocol's number since 1986 — Marhaug's crown-included 0.6 now survives only in older reports. The 'more courses is always better' distractor treats the index as a pure statistics problem and misses that one of the inputs is contaminated by a different process entirely; the footing-parallel distractor borrows the wrong justification. (Reading the Serrow Cairns → The concord index)",
+    "takeaway": "The crown is dropped from the concord index not because it's uninformative but because its cant gets overwritten by pell-stone handling, not building.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "The concord index"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": ["concord of 0.5 under the current (Tessaly) index vs. 0.6 under Marhaug's index, for the worked Oskel Pass cairn"],
+    "self_check": {
+      "cover_test": "Yes — a reader who knows why the crown was excluded can identify which figure is current and why, with the numbers only serving as the given pair to distinguish.",
+      "cynic_test": "A skipper might assume the higher number is 'more complete' and thus more official, but the text gives a specific, non-numeric reason for the exclusion that this distractor is built to test."
+    }
+  },
+  {
+    "id": "b02/sonnet/05",
+    "targets": ["SC-13", "SC-14"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "At one cairn, an experienced local finds the courses point down to a ford while the pell stone reports the ford as high, and goes down anyway — correctly, as it turns out. At a different cairn, a first-time visitor encounters a hob and turns the wrong way, reading the reversed course as the route's own direction. Which pair of names correctly matches these two situations to the effects they illustrate?",
+    "options": [
+      {"text": "The local illustrates the Tessaly effect, trusting the courses over a stale stone; the visitor illustrates the Orne effect, misreading a hob as direction.", "key": true, "provenance": null, "family": null},
+      {"text": "Both situations illustrate the same phenomenon, since each involves an experienced or inexperienced reader being misled by one feature of the cairn.", "key": false, "provenance": "text explicitly warns 'The Tessaly effect must not be confused with the Orne effect'", "family": "a"},
+      {"text": "The local's choice illustrates the Orne effect, since it involves an experienced reader correctly interpreting a conflicting signal at the cairn.", "key": false, "provenance": "imports the Orne-effect label into the local's case, when the text attributes the Orne effect specifically to 'strangers and the courses alone'", "family": "d"},
+      {"text": "The visitor's mistake would have been avoided by checking the next cairn, since a stranger taking a wrong direction from a hob should self-correct.", "key": false, "provenance": "contradicted by 'Orne found it just as common where the next cairn was in view as where it was not'", "family": "c"}
+    ],
+    "explanation": "These are two different, deliberately separated findings. The Tessaly effect concerns experienced readers facing a conflict between the two registers, and it is a sound habit: trusting the dorran sense over a possibly stale pell stone. The Orne effect concerns strangers and the courses alone, misreading a hob's reversed course as the route direction — and it doesn't get better even when the next cairn is visible, because a stranger who has taken a direction doesn't look for confirmation. Collapsing the two into 'one misreading effect' loses exactly the distinction the section draws between an expert's correct override and a novice's structural error. (Reading the Serrow Cairns → When the registers disagree)",
+    "takeaway": "The Tessaly effect is an expert correctly overriding a stale signal; the Orne effect is a novice misreading a structural one — they are opposite in both population and correctness.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "When the registers disagree"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who kept the Tessaly/Orne distinction straight can match both scenarios to their correct named effect without seeing the options.",
+      "cynic_test": "A skipper might guess 'expert=right effect, novice=wrong effect' is a pattern and pick names by vibe alone, but the swapped-name distractor is built to catch exactly that kind of surface-level matching."
+    }
+  },
+  {
+    "id": "b02/sonnet/06",
+    "targets": ["SC-6"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose experience with the Serrow convention did nothing but improve accuracy uniformly, across every kind of misreading a reader could make. If that were true, which finding about lean would be impossible?",
+    "options": [
+      {"text": "That lean misleads experienced readers more than strangers, since locals judge cant by eye against the vertical rather than course against course.", "key": true, "provenance": null, "family": null},
+      {"text": "That locals are fooled by lean because they cannot perceive cant at all, unlike strangers who compare every course individually.", "key": false, "provenance": "misreads the actual mechanism, that locals 'judge cant by eye against the vertical' (silhouette) rather than course against course, not that they can't perceive cant at all", "family": "a"},
+      {"text": "That since strangers misroute more often overall, they must also be more often misled specifically by lean, at a similarly elevated rate.", "key": false, "provenance": "imports the general Sources-of-error finding (strangers misroute ~19% vs locals ~4%) into this specific case, where the relation is reversed", "family": "d"},
+      {"text": "That experienced readers develop a general immunity to visual distortion, so lean could only ever mislead strangers, never locals.", "key": false, "provenance": "pre-chapter prior contradicted directly by the stated finding that lean misleads experienced readers more", "family": "c"}
+    ],
+    "explanation": "If experience only ever helped, uniformly, there would be no case where more expertise produces more error — but that is exactly what happens with lean. Locals learn to glance at a cairn's silhouette and judge cant against the true vertical, a habit that works fine for cant itself but makes them vulnerable to lean, which does distort the silhouette. Strangers, who compare each course only against the one beneath it, are immune to this particular error. The 'strangers misroute more overall, so more on lean too' distractor wrongly imports the section's general error-rate finding into a case where the relationship is specifically reversed. (Reading the Serrow Cairns → Lean and cant)",
+    "takeaway": "Expertise is not a uniform accuracy boost — the specific habit that makes locals good at reading cant is the same habit that makes them vulnerable to lean.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "Lean and cant"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who knows locals read by silhouette rather than course-to-course can identify the lean finding as the one that breaks the 'experience always helps' premise.",
+      "cynic_test": "A skipper might assume 'more experience = fewer errors, no exceptions' and dismiss the counterintuitive finding as a trick, but it is the section's own explicit claim, not an invented reversal."
+    }
+  },
+  {
+    "id": "b02/sonnet/07",
+    "targets": ["SC-11"],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A trail-safety consultant argues: \"A cairn's readability should scale with how much its courses agree — the more internally consistent the cant pattern, the easier it is for any walker to read, expert or novice.\" Which objection does the framework's own findings support most strongly against this claim?",
+    "options": [
+      {"text": "The claim holds for strangers, whose accuracy rises with concord throughout, but not locals, who read low-concord cairns slightly better — the Marhaug pattern.", "key": true, "provenance": null, "family": null},
+      {"text": "The strongest objection is that it is strangers, not locals, who actually read low-concord cairns better, since they aren't anchored by the convention's expectations.", "key": false, "provenance": "reverses which population the Marhaug pattern describes", "family": "b"},
+      {"text": "There is no real objection here: guild cairns average lower concord than shepherds' cairns simply because guild builders use more courses overall.", "key": false, "provenance": "right-idea-wrong-slot: imports the guild-vs-shepherd concord difference (caused by hob use, not course count) to answer a question about populations, not builders", "family": "d"},
+      {"text": "There is no real objection: more agreement among courses is definitionally easier to parse, so any exception would be surveyor error rather than a real pattern.", "key": false, "provenance": "pre-chapter prior contradicted by locals reading low-concord cairns slightly better than high-concord ones", "family": "c"}
+    ],
+    "explanation": "The consultant's claim is exactly half right: for strangers, concord helps monotonically across the whole range, with no point where it stops mattering. But locals show the reverse — Tessaly's Marhaug pattern — because to someone who already knows the convention, a reversed course (a hob) is extra information rather than confusing noise. So readability doesn't scale the same way for both populations, which is the objection with the most direct support. The 'no real objection, it's surveyor error' option denies a finding the section states plainly; the guild/shepherd distractor answers a different question about builders, not readers. (Reading the Serrow Cairns → The concord index)",
+    "takeaway": "Concord helps strangers monotonically but hurts locals slightly, because the same reversed course means noise to one reader and information to the other.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "The concord index"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who knows the Marhaug pattern can state the population-split objection to the consultant's claim without seeing the options.",
+      "cynic_test": "A skipper might pick whichever option sounds most like a rebuttal in tone, but two of the three wrong options are themselves confident-sounding claims that require knowing the specific finding to reject."
+    }
+  },
+  {
+    "id": "b02/sonnet/08",
+    "targets": ["SC-17"],
+    "lens": "case",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A conservation team rebuilds a cairn that fell after a rockslide. They set every body course to the same cant so the pattern reads cleanly, and they place the pell stone on the upslope side of the crown as a default. A hiker afterward finds this cairn noticeably easier to follow than most others on the route. What has actually happened to the cairn's two registers of meaning?",
+    "options": [
+      {"text": "The cairn has become more readable at the cost of information: the uniform recant erases any hob that flagged a junction, and the reset stone gives a default reading.", "key": true, "provenance": null, "family": null},
+      {"text": "Since the conservators followed the standard convention carefully, the restoration should have preserved or even improved the cairn's original information.", "key": false, "provenance": "pre-chapter prior contradicted by conservators erasing any hob and resetting the pell stone to a default position", "family": "c"},
+      {"text": "The restoration succeeded on both counts: the cairn is now easier to read and at least as informative as the one it replaced, since careful rebuilding preserves intent.", "key": false, "provenance": "reverses the trade-off the text states: easier to read precisely because it says less", "family": "b"},
+      {"text": "The reset pell stone is effectively broken until someone notices, since a stone placed upslope by conservators cannot carry a genuine reading of its own.", "key": false, "provenance": "misreads the reset stone as a malfunction rather than as carrying a default ('low ford') reading until next turned by a passer", "family": "d"}
+    ],
+    "explanation": "Uniform recanting makes a cairn easy to parse precisely because it removes the one thing that made the original hard to parse: a deliberate exception, like a hob, that carried real information about a junction ahead. Likewise, resetting the pell stone upslope doesn't disable the lisk sense, it just gives it a specific default value (a low ford) that will read as true until the next passer updates it. Readability and informativeness move in opposite directions here, which is the opposite of what careful, well-intentioned rebuilding would lead you to expect. Neither distractor claiming 'no real cost' or 'the stone is simply broken' survives this trade-off. (Reading the Serrow Cairns → Sources of error)",
+    "takeaway": "A restored cairn is easier to read because restoration erases the very irregularities that carried the builder's harder information.",
+    "stem_format": "classification",
+    "citation": {"section": "Reading the Serrow Cairns", "subheading": "Sources of error"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood the restoration trade-off could state that ease of reading and richness of information move oppositely, before seeing options.",
+      "cynic_test": "A skipper might assume 'careful, well-meaning restoration' implies a good outcome across the board and pick the 'succeeded on both counts' option, which is exactly the intuitive but wrong pull this question targets."
+    }
+  },
+  {"note": "Skipped SC-15 (lisk reliability peaks at moderate traffic) and SC-16 (Marhaug's height prediction falsified) to stay within the 8-candidate cap, per the map's own priority order which flags SC-16 (attempts:1) as the weakest candidate and recommends cutting it first; SC-15 was the next-lowest priority given SC-1/SC-2, SC-10, SC-4/SC-5, SC-13/SC-14 (all flagged 'first' priority) and SC-6/SC-8/SC-9/SC-11/SC-17 already filled the remaining slots. Both are covered by other shards' attempts allocation per the concept map. Candidates 1, 2, 5 each merge a discrimination_pairs entry (SC-1/SC-2, SC-4/SC-5, SC-13/SC-14) into a single contrast candidate rather than writing two separate questions, per the brief's guidance that this is usually the stronger choice. Candidate 4 spends this section's one R11 durable-figure budget (the 0.5/0.6 concord pair, flagged budget_candidate:true in the map); no other candidate here has a load-bearing figure."}
+]

@@ -1,0 +1,211 @@
+[
+  {
+    "id": "b03/sonnet/01",
+    "targets": ["CSL-5", "CSL-6"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Lattice A has a cant of 4 and a pell of 3. Lattice B has a cant of 2 and a pell of 6. Which statement correctly compares what these two numbers tell you about the lattices?",
+    "options": [
+      {"text": "Lattice A has received more wennet-work relative to its tharl frame, but that work runs mostly tharl-to-tharl rather than chaining together; Lattice B has fewer wennets overall, but they have formed a longer chain that is comparatively independent of the frame.", "key": true, "provenance": null, "family": null},
+      {"text": "Lattice A's higher cant means its wennet-work is also more independent of the frame than Lattice B's, since cant is just the whole-lattice version of pell.", "key": false, "provenance": "misreads cant as also measuring structural independence, conflating it with pell (CSL-5 misconception)", "family": "a"},
+      {"text": "A cant as high as Lattice A's should predict at least as long a pell as Lattice B's, so one of the two figures given must be a measurement error.", "key": false, "provenance": "misreads 'A lattice with a high cant can easily have a short pell' as implying the two normally track each other reliably", "family": "b"},
+      {"text": "Lattice B must have had more wennets laid on it in total than Lattice A, since pell is the count that actually reflects how much wennet-laying has happened.", "key": false, "provenance": "misreads pell as a proxy for total wennet count rather than for how connected the wennet-work has become (CSL-6 misconception)", "family": "c"}
+    ],
+    "explanation": "Cant and pell measure different things: cant is a ratio of wennets to tharls for the whole lattice and says nothing about how those wennets connect. Pell measures how far the wennet-work has become structurally independent of the tharl frame, by tracing the longest chain of wennets fastened only to each other. Lattice A's high cant with a short pell means most of its wennets run directly between tharls; Lattice B's lower cant with a longer pell means fewer wennets, but more of them link into one long chain. The distractor treating pell as 'the count that matters' collapses it back into a wennet total, exactly the conflation the text warns against. (Cord-Snail Lattices → Cant and pell)",
+    "takeaway": "Cant tells you how much wennet-work a lattice has relative to its frame; pell tells you how connected that work is to itself, and the two can move independently.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "Cant and pell"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who understood that cant is a ratio and pell is a chain-length independent of the frame could reconstruct the key without seeing the options.",
+      "cynic_test": "A skipper might pick whichever option asserts a confident-sounding relationship between the two numbers, but each distractor states a relationship the text specifically denies."
+    }
+  },
+  {
+    "id": "b03/sonnet/02",
+    "targets": ["CSL-13", "CSL-14"],
+    "lens": "figure",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "In the Sellen lattice, cant is 3 and the full-trace pell is 7, so Varrenby's original rule (a lattice is ostral when pell exceeds twice its cant) calls it ostral. Under current field practice, using Emmerick's mean of its three longest non-overlapping chains (7, 4, and 3, averaging about 4.7), the same lattice is calvine. What does this disagreement, on the identical lattice, best illustrate?",
+    "options": [
+      {"text": "That a lattice's ostral/calvine class is partly a function of which counting convention the field has adopted, not a fixed property waiting to be read off — the underlying cant and pell barely change, but the classification flips depending on the rule applied.", "key": true, "provenance": null, "family": null},
+      {"text": "That once Varrenby saw Emmerick's calculation on the Sellen lattice, she accepted her rule had been wrong and endorsed his mean-of-three-chains method instead.", "key": false, "provenance": "misreads 'Her reply did not carry the field' as Varrenby conceding, when it was the field, not Varrenby, that moved on", "family": "b"},
+      {"text": "That Emmerick's calculation shows Varrenby's original definitions of cant and pell were themselves mistaken, not just her classification boundary.", "key": false, "provenance": "misreads Emmerick's objection to the ostral/calvine boundary as an objection to the cant/pell definitions themselves, which the text says he did not dispute", "family": "a"},
+      {"text": "That the disagreement is a measurement error a more careful observer could resolve, since the lattice's true cant and pell are objectively fixed quantities.", "key": false, "provenance": "treats a conceptual objection about classification-boundary fragility as an observer-error problem, borrowing the wrong kind of concern from the section's separate discussion of counting-order bias", "family": "d"}
+    ],
+    "explanation": "Emmerick's objection was never about how cant or pell are defined or measured; the Sellen lattice's cant and pell values are identical under both accounts. What differs is the classification rule built on top of them: Varrenby's boundary lets a single wennet's fate decide the class, and Emmerick's mean-of-three-chains smooths that out, giving the opposite verdict on the same lattice. The distractor claiming Varrenby conceded gets the history backwards — her reply that a fragile class 'is recording something real' did not carry the field, but she never renounced it; the field moved to Emmerick's method around her. Treat the specific digits here as scaffolding, not as what is being tested. (Cord-Snail Lattices → A worked example)",
+    "takeaway": "The Sellen lattice shows that a classification boundary can be a convention the field revises, not a fact waiting to be discovered.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "A worked example"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who grasped that Emmerick's objection targets the boundary rule rather than the underlying measures could answer using only the given numbers as illustration.",
+      "cynic_test": "A skipper might reach for 'one method must be wrong,' but each distractor either misattributes concession, conflates definitions with the boundary, or treats convention-dependence as measurement noise — all ruled out by the passage."
+    }
+  },
+  {
+    "id": "b03/sonnet/03",
+    "targets": ["CSL-7", "CSL-8"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague claims: \"The fenn trace is the more reliable pell shortcut, because starting from more wennets gives it more chances to find the true longest chain.\" Does the text's account of the two shortcuts support this claim?",
+    "options": [
+      {"text": "No: wennets near the anchors are mostly spurs, so chains begun there end quickly, which is why the tessel trace underestimates pell less often, and by less, than the fenn trace does.", "key": true, "provenance": null, "family": null},
+      {"text": "Yes: sampling more starting points gives the fenn trace a structurally better chance of finding the true longest chain, which matches why beginners prefer it.", "key": false, "provenance": "misreads 'Beginners tend to prefer the fenn trace because it uses more starting points' as an endorsement rather than the text's diagnosis of a beginner error", "family": "c"},
+      {"text": "No: but only because the tessel trace and the fenn trace always find the identical chain in practice, so neither method actually underestimates pell.", "key": false, "provenance": "misreads 'The tessel trace underestimates pell less often, and by less' as meaning it never underestimates", "family": "a"},
+      {"text": "Yes: Mira Pole's objection that the tessel trace can never find a chain avoiding the middle shows the fenn trace is the more accurate method overall.", "key": false, "provenance": "misreads a conceded flaw in the tessel trace as overturning its overall ranking, when the text keeps it as the standard despite the concession", "family": "d"}
+    ],
+    "explanation": "The fenn trace looks more thorough because it starts from every anchor-adjacent wennet, but those wennets are mostly spurs and their chains end quickly, so the fenn trace systematically underestimates pell more than the tessel trace does. The claim in the stem is exactly the beginner reasoning the text flags and rejects. The distractor invoking Mira Pole's objection gets the conclusion backwards: the text concedes her point that the tessel trace can miss chains avoiding the centre, but the tessel trace still remains the standard shortcut because it underestimates less overall — a conceded flaw did not overturn the ranking. (Cord-Snail Lattices → Cant and pell)",
+    "takeaway": null,
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "Cant and pell"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who remembered that anchor-adjacent wennets are mostly spurs could evaluate the claim as false without seeing the options.",
+      "cynic_test": "A skipper might pick the 'more starting points is better' option as generically reasonable, but the section specifically identifies that intuition as the beginner error the tessel trace corrects."
+    }
+  },
+  {
+    "id": "b03/sonnet/04",
+    "targets": ["CSL-11", "CSL-12"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A researcher reports two separate findings about pell. Finding (1): lattices begun by several vesks together have a shorter pell than lattices begun by a single vesk with the same tharl count, once anchoring time is controlled for — but only in colder galleries. Finding (2): in draughty galleries, a single lattice's pell falls season after season once its last tharl is anchored, even while its tharl count and cant stay roughly fixed. How should these two findings be classified?",
+    "options": [
+      {"text": "(1) is the Orrin pattern, which compares different lattices by how many vesks began them; (2) is the Tasker pattern, which follows one lattice's pell over time — the text treats these as distinct regularities, not two versions of the same finding.", "key": true, "provenance": null, "family": null},
+      {"text": "(1) and (2) are the same regularity described twice, since both show pell decreasing under some condition.", "key": false, "provenance": "misreads the shared direction of change as identity, contradicting the text's explicit statement that 'the two regularities are not versions of one finding'", "family": "c"},
+      {"text": "(2) is the Orrin pattern and (1) is the Tasker pattern, since Orrin's original comparison concerned changes across a lattice's seasons rather than how many vesks began it.", "key": false, "provenance": "swaps the two patterns' defining comparisons, reversing which one is between-lattices and which is within-lattice", "family": "b"},
+      {"text": "(2) shows that moving air in draughty galleries physically stretches long wennet chains until they part, the same mechanism that later explained Orrin's multi-vesk finding.", "key": false, "provenance": "reintroduces Varrenby's 'slackening' hypothesis, which the text explicitly overturns ('the air stretches nothing'), and wrongly ties it to Orrin's separate between-lattices finding", "family": "a"}
+    ],
+    "explanation": "The Orrin pattern is a between-lattices comparison — fewer vesks beginning a lattice correlates with a longer pell, in cold galleries specifically, once anchoring speed is controlled for. The Tasker pattern is a within-lattice comparison over time, tracking how pell can fall in draughty galleries after anchoring ends. The text is explicit that these are not versions of one finding. The distractor invoking 'slackening' — air physically stretching chains — is a mechanism the text directly overturns: the Tasker pattern's real mechanism is that replacement wennets run tharl-to-tharl more often than the ones they replace, not that anything stretches. (Cord-Snail Lattices → Two regularities)",
+    "takeaway": "Orrin compares different lattices by how they began; Tasker follows one lattice through time — the same direction of change, but a different question.",
+    "stem_format": "classification",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "Two regularities"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who tracked which regularity concerns lattice origin versus lattice change over time could match each finding to its name without the options.",
+      "cynic_test": "A skipper might merge the two into 'pell goes down somehow,' but the text explicitly separates them by comparison type, and one distractor smuggles in the explicitly-rejected slackening mechanism."
+    }
+  },
+  {
+    "id": "b03/sonnet/05",
+    "targets": ["CSL-1", "CSL-2"],
+    "lens": "case",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A thread in a lattice is thick and pulled taut, running between two points high above the gallery floor. Tracing it to both ends, an observer finds each end fastened only to other threads — never touching the rock. Under the Aumark field protocol, what is this thread?",
+    "options": [
+      {"text": "A wennet: the classification depends on what its ends touch, not on thickness or tautness, and this thread touches only other threads at both ends.", "key": true, "provenance": null, "family": null},
+      {"text": "A tharl, since thick, taut threads are tharls under the standard rule of thumb observers use to classify at a glance.", "key": false, "provenance": "misreads 'Beginners classify by appearance, calling thick, taut threads tharls' as the actual defining criterion rather than a fallible rule of thumb", "family": "c"},
+      {"text": "A spur, since it is a short thread whose two ends both lie near other threads rather than on the rock.", "key": false, "provenance": "misreads spur (a wennet whose two ends lie on the same tharl) as any thread that merely avoids the rock, dropping the same-tharl requirement", "family": "a"},
+      {"text": "It cannot be classified without knowing its length, since tharls and wennets are distinguished mainly by how long and how taut they are.", "key": false, "provenance": "reverses 'The distinction concerns what a thread is fastened to, not its length or thickness'", "family": "b"}
+    ],
+    "explanation": "The protocol classifies a thread by what its two ends are fastened to, not by how it looks. A thread touching only other threads at both ends is a wennet regardless of its thickness or tautness, which is precisely the case the field protocol was designed to catch after the appearance-based rule of thumb fails on it. The spur distractor borrows a real term but drops its actual requirement — a spur is specifically a wennet whose two ends land on the same tharl, not just any thread that avoids the rock. (Cord-Snail Lattices → Tharls and wennets)",
+    "takeaway": "A tharl or wennet is defined by what its ends touch, never by how the thread looks.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "Tharls and wennets"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who knew the fastening-point rule could classify the described thread as a wennet without seeing the options.",
+      "cynic_test": "A skipper might default to 'thick and taut, so tharl,' the exact appearance heuristic the protocol exists to override."
+    }
+  },
+  {
+    "id": "b03/sonnet/06",
+    "targets": ["CSL-18", "CSL-19"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An observer examines a broken wennet in a standing, surviving lattice. The break is close to one of the wennet's fastenings, not near its middle. Which cause does the field's diagnostic criterion point to, and is that cause the more common one for wennet failure in a standing lattice overall?",
+    "options": [
+      {"text": "Tamber — a break near a fastening indicates tamber, a gradual material change, and tamber is also the more common cause of wennet failure in a standing lattice, more common than pilse.", "key": true, "provenance": null, "family": null},
+      {"text": "Pilse — beginners generally attribute broken wennets to pilse, the wear of crawling, and pilse is indeed the dominant cause of failure in a standing lattice.", "key": false, "provenance": "misreads 'Beginners put most broken wennets down to pilse' as the confirmed conclusion rather than the error the text corrects", "family": "c"},
+      {"text": "Pilse — a break near a fastening is the sign of pilse, since that is where a snail's grip wears the thread as it crawls past.", "key": false, "provenance": "inverts the diagnostic: the text assigns fastening-point breaks to tamber and middle breaks to pilse", "family": "a"},
+      {"text": "Tamber — but pilse is actually the more common cause overall, and tamber only explains why some breaks happen near fastenings specifically.", "key": false, "provenance": "gets the diagnostic right but reverses the frequency claim, contradicting 'fail mostly through tamber... rather than through pilse'", "family": "b"}
+    ],
+    "explanation": "The field's diagnostic is location-based: a wennet lost to tamber, a gradual material change, parts close to one of its fastenings, while a wennet lost to pilse, the wear of crawling, parts near its middle. A fastening-point break therefore points to tamber, and tamber is also the more common cause of wennet failure within a standing lattice overall — the opposite of the beginner default the text names and corrects. The distractor that inverts the diagnostic swaps which location goes with which cause, while the frequency-reversal distractor gets the diagnosis right but still denies that tamber dominates. (Cord-Snail Lattices → Where lattices are found and how they fail)",
+    "takeaway": "Where a wennet breaks tells you why it broke: near a fastening means tamber, near the middle means pilse — and tamber is the more common failure in a standing lattice.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "Where lattices are found and how they fail"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who knew the fastening-point-versus-middle diagnostic could name tamber, and its dominance, without seeing the options.",
+      "cynic_test": "A skipper might default to pilse as the 'obvious' wear-and-tear explanation, which is exactly the beginner assumption the section names and overturns."
+    }
+  },
+  {
+    "id": "b03/sonnet/07",
+    "targets": ["CSL-16"],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A colleague argues: \"A lattice hanging high, close under the crown of the vault, should be the safest place from a flood, since it's farthest from the rising water.\" Which objection does the text's account of lattice loss support?",
+    "options": [
+      {"text": "The opposite holds: the higher a lattice hangs, the less likely it is to survive a flood season, and lattices close under the crown are lost most often of all.", "key": true, "provenance": null, "family": null},
+      {"text": "None — height above the water is exactly what protects a lattice from flood loss, so the colleague's reasoning is sound.", "key": false, "provenance": "restates the reversed claim as though it were correct, contradicting 'the higher a lattice hangs above the water, the less likely it is to survive a flood season'", "family": "b"},
+      {"text": "The objection is that flood loss is mostly caused by silt film rather than by a lattice's height at all, so height is irrelevant to survival.", "key": false, "provenance": "borrows the section's separate, minor-cause finding about silt film and misapplies it to the height/flood relationship, which the text discusses independently", "family": "d"},
+      {"text": "The objection is that a lattice's cant, not its height, determines flood survival, so height plays no role either way.", "key": false, "provenance": "conflates the true fact that higher cant improves flood survival with the false implication that height therefore has no effect, when the text asserts both", "family": "a"}
+    ],
+    "explanation": "The text reverses the colleague's intuition directly: a lattice's height above the water predicts worse flood survival, not better, and lattices close under the crown are lost most often of all. The distractor about silt film is a true fact from elsewhere in the section — silt film is a minor cause of loss overall — but it answers a different question than the one about height and floods. The cant distractor mixes a true claim (higher cant improves flood survival) with a false inference (that height therefore doesn't matter), when the text treats height and cant as two separate factors bearing on survival. (Cord-Snail Lattices → Where lattices are found and how they fail)",
+    "takeaway": null,
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "Where lattices are found and how they fail"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who recalled the height-survival finding could state the reversal without seeing the options.",
+      "cynic_test": "A skipper might reach for the intuitive 'higher is safer' framing baked into the colleague's claim itself, which the text specifically contradicts."
+    }
+  },
+  {
+    "id": "b03/sonnet/08",
+    "targets": ["CSL-15"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague claims: \"Varrenby's concern about silt film turned out to be justified — slow sediment buildup is the leading cause of lattice loss.\" Is this claim supported by the text's account of how lattices are lost?",
+    "options": [
+      {"text": "No — most lost lattices are lost to sudden violence, a flood or a fall of rock, and silt film accounts for only a small share of losses despite Varrenby's concern about it.", "key": true, "provenance": null, "family": null},
+      {"text": "Yes — gradual threats like silt film accumulate unnoticed over many seasons, so they are the dominant, if underappreciated, cause of loss.", "key": false, "provenance": "misreads Varrenby's stated worry as a validated conclusion, reversing 'silt film accounts for only a small share of lost lattices'", "family": "c"},
+      {"text": "No — but only because rockfalls specifically outpace silt film, not because sudden violence in general is the dominant cause.", "key": false, "provenance": "narrows 'violence: a flood... or a fall of rock' to rockfall alone, dropping flood as an equally cited cause of violent loss", "family": "b"},
+      {"text": "Yes — since a high cant is what determines whether a lattice survives a flood, gradual sediment buildup must be the deciding factor in the seasons between floods.", "key": false, "provenance": "conflates the unrelated cant-and-flood-survival finding with the separate question of silt film's overall share of lattice loss", "family": "a"}
+    ],
+    "explanation": "The text names silt film as Varrenby's particular worry, then directly undercuts it: most lattices that are lost are lost to sudden violence, a flood or a rockfall, and silt film accounts for only a small share of losses. The claim in the stem is exactly the reversal the text corrects. One distractor narrows 'violence' to rockfall alone, when the text cites flood and rockfall together as the dominant cause; another borrows the cant/flood-survival finding from elsewhere in the section and misapplies it to a question about silt film's overall share. (Cord-Snail Lattices → Where lattices are found and how they fail)",
+    "takeaway": "Varrenby's own worry about slow sediment loss turned out to be a minor cause next to sudden violence.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Cord-Snail Lattices", "subheading": "Where lattices are found and how they fail"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who remembered 'silt film accounts for only a small share of lost lattices' could reject the claim without seeing the options.",
+      "cynic_test": "A skipper might assume a founder's named worry must be validated by the text, which is the opposite of what the passage does here."
+    }
+  },
+  {"note": "Prioritized the map's own ranking (notes_for_generator): cant/pell and Varrenby/Emmerick (both threshold concepts) first, then tessel/fenn, Orrin/Tasker, tharl/wennet, tamber/pilse, height/flood, violence/silt film. Combined each discrimination_pairs entry into a single contrast/classification candidate per the brief's guidance (items 01, 04) rather than splitting into two. Skipped CSL-3 (vesk/orra per-lattice roles), CSL-4 (orra-timing overlap), CSL-9 (measurement-order protocol), and CSL-17 (orra-count independence from cant) as the map's own lower-priority backups, since the eight ideas above already exhaust the target_n and cover five of six discrimination_pairs plus one clean standalone pair (CSL-15/CSL-16, treated as two related but separately-earning ideas). Item 02 conditionalizes the Sellen lattice's raw figures into the stem as scaffolding per Pattern D and do_not_test's explicit guidance, never making them the discriminator between options. Lenses used: contrast (01, 04), figure (02), misconception (03, 08), case (05, 06), objection (07) — all five required lenses represented."}
+]

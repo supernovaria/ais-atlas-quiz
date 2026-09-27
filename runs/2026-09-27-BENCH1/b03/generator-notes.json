@@ -1,0 +1,10 @@
+[
+  {
+    "shard": "b03-a",
+    "note": "Prioritized the map's own ranking (notes_for_generator): cant/pell and Varrenby/Emmerick (both threshold concepts) first, then tessel/fenn, Orrin/Tasker, tharl/wennet, tamber/pilse, height/flood, violence/silt film. Combined each discrimination_pairs entry into a single contrast/classification candidate per the brief's guidance (items 01, 04) rather than splitting into two. Skipped CSL-3 (vesk/orra per-lattice roles), CSL-4 (orra-timing overlap), CSL-9 (measurement-order protocol), and CSL-17 (orra-count independence from cant) as the map's own lower-priority backups, since the eight ideas above already exhaust the target_n and cover five of six discrimination_pairs plus one clean standalone pair (CSL-15/CSL-16, treated as two related but separately-earning ideas). Item 02 conditionalizes the Sellen lattice's raw figures into the stem as scaffolding per Pattern D and do_not_test's explicit guidance, never making them the discriminator between options. Lenses used: contrast (01, 04), figure (02), misconception (03, 08), case (05, 06), objection (07) — all five required lenses represented."
+  },
+  {
+    "shard": "b03-b",
+    "note": "Covered 14 of 18 earns_question ideas via 8 candidates, following the map's own priority ranking (cant/pell, Varrenby/Emmerick, tessel/fenn, Orrin/Tasker, tharl/wennet, tamber/pilse, height/flood, violence/silt-film). Skipped the map's lower-priority backups — CSL-3 (vesk/orra per-lattice roles), CSL-4 (orra timing overlap), CSL-9 (wennet-before-tharl measurement order), and CSL-17 (orra count vs. cant) — per the map's own note that these are backups; none of the assigned lenses (misconception/contrast/case/figure/objection) added much beyond what the eight above already cover, and forcing a ninth candidate would have meant either a second negation stem or a weaker distractor set. Candidate 02 (CSL-13/14) uses an invented worked-example scenario rather than the Sellen lattice numbers themselves, per the map's guidance to condition raw figures into stems as scaffolding rather than reusing load-bearing digits from the text's own example."
+  }
+]

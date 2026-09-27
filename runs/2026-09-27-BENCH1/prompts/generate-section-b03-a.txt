@@ -1,0 +1,23 @@
+Section: `b03`. Mode: `section`. This is a **whole-section** request, not a shard.
+
+Working directory: `C:\Users\sorcs\Documents\maddy-home\atlas\ais-atlas-quiz`.
+
+Read:
+1. `docs/RUBRIC.md` — governing.
+2. `runs/2026-09-27-BENCH1/b03/concept-map.json` — the concept map.
+3. `runs/2026-09-27-BENCH1/b03/section.md` — the section prose.
+
+There is no `EXEMPLARS.md`, deliberately. Do not look for one and do not be cautious because of it.
+
+Your brief is written for a shard. For this call, four of its rules are replaced, and only these four:
+
+- **Allocation.** Every idea with `earns_question: true` is yours; you choose how to spend candidates across them, treating each idea's `attempts` as a ceiling.
+- **Lens.** There is no assigned lens. Choose one per candidate, and use at least 4 of these across the set: `misconception`, `contrast`, `case`, `figure`, `objection`.
+- **Count.** Write **up to 8** candidates. Your brief's rule stands: if an idea does not support a good candidate, write fewer, and say which ideas you skipped and why in the note.
+- **Stem formats.** The brief's "no two may share a `stem_format`" is written for three candidates. Here the rule is **at most 2 per `stem_format`**, from exactly these values: `claim-evaluation`, `two-scenario`, `thought-experiment`, `direct-conceptual`, `mechanism`, `classification`.
+
+Output: **one JSON array** of candidate objects. Put a `{"note": "..."}` object **as the last element inside the array** — never after the closing bracket. Set each `id` to `b03/sonnet/NN`, numbering from 01; a later stage reassigns ids.
+
+Write the array to exactly: `runs/2026-09-27-BENCH1/b03/candidates/b03-a.json`
+
+Reply with one line only: `OK runs/2026-09-27-BENCH1/b03/candidates/b03-a.json` or `FAIL <one-clause reason>`. Nothing else.

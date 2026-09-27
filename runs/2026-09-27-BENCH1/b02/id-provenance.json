@@ -1,0 +1,82 @@
+[
+  {
+    "generator_id": "b02/sonnet/01",
+    "id": "b02/sonnet/a01",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/02",
+    "id": "b02/sonnet/a02",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/03",
+    "id": "b02/sonnet/a03",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/04",
+    "id": "b02/sonnet/a04",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/05",
+    "id": "b02/sonnet/a05",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/06",
+    "id": "b02/sonnet/a06",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/07",
+    "id": "b02/sonnet/a07",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/08",
+    "id": "b02/sonnet/a08",
+    "shard": "b02-a"
+  },
+  {
+    "generator_id": "b02/sonnet/01",
+    "id": "b02/sonnet/b01",
+    "shard": "b02-b"
+  },
+  {
+    "generator_id": "b02/sonnet/02",
+    "id": "b02/sonnet/b02",
+    "shard": "b02-b"
+  },
+  {
+    "generator_id": "b02/sonnet/03",
+    "id": "b02/sonnet/b03",
+    "shard": "b02-b"
+  },
+  {
+    "generator_id": "b02/sonnet/04",
+    "id": "b02/sonnet/b04",
+    "shard": "b02-b"
+  },
+  {
+    "generator_id": "b02/sonnet/05",
+    "id": "b02/sonnet/b05",
+    "shard": "b02-b"
+  },
+  {
+    "generator_id": "b02/sonnet/06",
+    "id": "b02/sonnet/b06",
+    "shard": "b02-b"
+  },
+  {
+    "generator_id": "b02/sonnet/07",
+    "id": "b02/sonnet/b07",
+    "shard": "b02-b"
+  },
+  {
+    "generator_id": "b02/sonnet/08",
+    "id": "b02/sonnet/b08",
+    "shard": "b02-b"
+  }
+]

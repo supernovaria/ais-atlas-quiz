@@ -1,0 +1,783 @@
+{
+  "b02/sonnet/a01": {
+    "correct_len": 165,
+    "distractor_lens": [
+      135,
+      150,
+      150
+    ],
+    "mean_distractor_len": 145,
+    "len_ratio": 1.14,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 15,
+    "max_over_min": 1.22,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "revisits",
+      "registers",
+      "meaning"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 125,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/a02": {
+    "correct_len": 172,
+    "distractor_lens": [
+      162,
+      160,
+      155
+    ],
+    "mean_distractor_len": 159,
+    "len_ratio": 1.08,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 10,
+    "max_over_min": 1.11,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "width",
+      "finger",
+      "more",
+      "signal",
+      "visually",
+      "obvious",
+      "reasoning"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 112,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/a03": {
+    "correct_len": 156,
+    "distractor_lens": [
+      158,
+      153,
+      142
+    ],
+    "mean_distractor_len": 151,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.11,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "path",
+      "courses",
+      "east",
+      "west",
+      "passer",
+      "turns"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/a04": {
+    "correct_len": 154,
+    "distractor_lens": [
+      144,
+      136,
+      151
+    ],
+    "mean_distractor_len": 143.7,
+    "len_ratio": 1.07,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 3,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "index"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 112,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/a05": {
+    "correct_len": 154,
+    "distractor_lens": [
+      148,
+      145,
+      147
+    ],
+    "mean_distractor_len": 146.7,
+    "len_ratio": 1.05,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 6,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "one",
+      "courses",
+      "stone",
+      "correctly",
+      "wrong",
+      "situations",
+      "illustrate"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 112,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/a06": {
+    "correct_len": 146,
+    "distractor_lens": [
+      128,
+      137,
+      130
+    ],
+    "mean_distractor_len": 131.7,
+    "len_ratio": 1.11,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 9,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "every",
+      "could"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 112,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/a07": {
+    "correct_len": 159,
+    "distractor_lens": [
+      166,
+      146,
+      160
+    ],
+    "mean_distractor_len": 157.3,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "easier",
+      "any",
+      "claim"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 106,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/a08": {
+    "correct_len": 166,
+    "distractor_lens": [
+      155,
+      168,
+      153
+    ],
+    "mean_distractor_len": 158.7,
+    "len_ratio": 1.05,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "pell",
+      "upslope",
+      "default",
+      "easier"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 114,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b01": {
+    "correct_len": 165,
+    "distractor_lens": [
+      149,
+      156,
+      150
+    ],
+    "mean_distractor_len": 151.7,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 9,
+    "max_over_min": 1.11,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "since",
+      "changed",
+      "fixed"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 112,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b02": {
+    "correct_len": 137,
+    "distractor_lens": [
+      101,
+      123,
+      117
+    ],
+    "mean_distractor_len": 113.7,
+    "len_ratio": 1.21,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 14,
+    "max_over_min": 1.36,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "west",
+      "reversed",
+      "pattern"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 115,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b03": {
+    "correct_len": 165,
+    "distractor_lens": [
+      152,
+      133,
+      142
+    ],
+    "mean_distractor_len": 142.3,
+    "len_ratio": 1.16,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 13,
+    "max_over_min": 1.24,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "surveyor",
+      "measurements",
+      "structure",
+      "true",
+      "vertical",
+      "course"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 91,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b04": {
+    "correct_len": 188,
+    "distractor_lens": [
+      146,
+      117,
+      128
+    ],
+    "mean_distractor_len": 130.3,
+    "len_ratio": 1.44,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 42,
+    "max_over_min": 1.61,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "experienced",
+      "reader",
+      "cairn"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 90,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b05": {
+    "correct_len": 213,
+    "distractor_lens": [
+      105,
+      133,
+      145
+    ],
+    "mean_distractor_len": 127.7,
+    "len_ratio": 1.67,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 68,
+    "max_over_min": 2.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "other"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 99,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b06": {
+    "correct_len": 266,
+    "distractor_lens": [
+      148,
+      165,
+      174
+    ],
+    "mean_distractor_len": 162.3,
+    "len_ratio": 1.64,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 92,
+    "max_over_min": 1.8,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 1,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "readers",
+      "dorran"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 115,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b07": {
+    "correct_len": 214,
+    "distractor_lens": [
+      158,
+      161,
+      160
+    ],
+    "mean_distractor_len": 159.7,
+    "len_ratio": 1.34,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 53,
+    "max_over_min": 1.35,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "stranger",
+      "cairn",
+      "local",
+      "way",
+      "pattern"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 102,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "b02/sonnet/b08": {
+    "correct_len": 246,
+    "distractor_lens": [
+      166,
+      161,
+      145
+    ],
+    "mean_distractor_len": 157.3,
+    "len_ratio": 1.56,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 80,
+    "max_over_min": 1.7,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "reset",
+      "future",
+      "information"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 114,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  }
+}
