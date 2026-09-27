@@ -4,5 +4,5 @@
   "model": "sonnet",
   "family": "anthropic",
   "side": true,
-  "notes": "full/56 unanswered: the API usage filter blocked it twice (2026-09-27, [bio] false positive). Its options-only twin was answered."
+  "notes": "full/56 unanswered: the API usage filter blocked it twice ([bio] false positive). full/14, full/28, full/35 and options-only/63 were voided for a second hand-back (tool_uses 2) and answered cleanly on one re-spawn with the identical prompt. Recorded 2026-09-27."
 }

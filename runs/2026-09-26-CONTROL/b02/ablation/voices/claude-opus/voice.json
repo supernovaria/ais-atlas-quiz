@@ -3,5 +3,6 @@
   "provider": "claude-code",
   "model": "opus",
   "family": "anthropic",
-  "side": true
+  "side": true,
+  "notes": "All 20 spawns reported tool_uses 1 (the exempt hand-back). Recorded 2026-09-27."
 }

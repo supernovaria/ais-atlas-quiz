@@ -3,5 +3,6 @@
   "provider": "claude-code",
   "model": "sonnet",
   "family": "anthropic",
-  "side": true
+  "side": true,
+  "notes": "Voided for a second hand-back (tool_uses 2), re-spawned once with the identical prompt: full/07 and options-only/35 handed back twice again and stay unanswered; full/56 and options-only/63 were answered cleanly on the re-spawn. Recorded 2026-09-27."
 }
