@@ -1,0 +1,147 @@
+[
+  {
+    "id": "b02/ctrl-opus/01",
+    "group": "clean",
+    "author": "opus",
+    "claim": "P7",
+    "stem": "On a guild-built Serrow cairn, one body course is canted west while the courses directly above and below it are canted east. What does that reversed course tell a trained reader?",
+    "options": [
+      {
+        "text": "A second route branches off this one before the walker reaches the next cairn.",
+        "key": true
+      },
+      {
+        "text": "The route turns to the west after this cairn, whatever the other courses say.",
+        "key": false,
+        "misreading": "The careless reader (and the stranger of the Orne effect) who takes the odd course out as the message because it stands out."
+      },
+      {
+        "text": "The ford below this cairn was running high when the last walker crossed.",
+        "key": false,
+        "misreading": "A reader who mixes the two registers and thinks an anomaly in the courses reports the state of the route, which is the pell stone's job."
+      },
+      {
+        "text": "The course has slipped since it was built and its offset should be discounted.",
+        "key": false,
+        "misreading": "A reader who recalls that strangers discount wide offsets as slipped stones and applies that to any reversed course."
+      }
+    ],
+    "explanation": "A single course canted against the courses above and below it is a hob, which guild builders use to announce that a second route branches off before the next cairn. The passage says a hob does not give the route direction, and the worked example reads such a cairn as turning with the majority, with a branch ahead."
+  },
+  {
+    "id": "b02/ctrl-opus/02",
+    "group": "clean",
+    "author": "opus",
+    "claim": "P10",
+    "stem": "A walker reaches a Serrow cairn whose pell stone sits on the upslope side of the crown. What is the stone telling this walker?",
+    "options": [
+      {
+        "text": "That recent walkers found the ford low enough to cross.",
+        "key": true
+      },
+      {
+        "text": "That recent walkers found the ford too high to cross.",
+        "key": false,
+        "misreading": "A reader who reverses the convention, reasoning that 'up' signals high water."
+      },
+      {
+        "text": "That the route turns uphill once past this cairn.",
+        "key": false,
+        "misreading": "A reader who confuses the registers and thinks the pell stone gives route direction, which is the dorran sense carried by the courses."
+      },
+      {
+        "text": "That a second route branches off before the next cairn.",
+        "key": false,
+        "misreading": "A reader who confuses the pell stone with the hob, the course-level mark of a junction."
+      }
+    ],
+    "explanation": "The lisk sense is carried by the pell stone alone and reports the state of the route. A passer who has just crossed the ford turns the stone to the upslope side if the water was low and to the downslope side if it was not."
+  },
+  {
+    "id": "b02/ctrl-opus/03",
+    "group": "clean",
+    "author": "opus",
+    "claim": "P2",
+    "stem": "Two habits of Serrow walkers are easily confused: the Tessaly effect and the Orne effect. Which pairing describes each correctly?",
+    "options": [
+      {
+        "text": "Tessaly: locals weighing courses against the pell stone; Orne: strangers misreading a hob.",
+        "key": true
+      },
+      {
+        "text": "Tessaly: strangers weighing courses against the pell stone; Orne: locals misreading a hob.",
+        "key": false,
+        "misreading": "A reader who remembers the two situations but swaps which kind of walker each concerns."
+      },
+      {
+        "text": "Tessaly: locals misreading a hob; Orne: strangers weighing courses against the pell stone.",
+        "key": false,
+        "misreading": "A reader who keeps the walkers right but swaps the situations, attaching the register conflict to Orne."
+      },
+      {
+        "text": "Tessaly: locals weighing courses against the pell stone; Orne: strangers misreading frost lean.",
+        "key": false,
+        "misreading": "A reader who recalls that the Orne effect is a stranger's misreading of cant but attaches it to lean rather than to the hob."
+      }
+    ],
+    "explanation": "The Tessaly effect concerns experienced readers facing a conflict between the two registers: they follow the courses down to the ford even when the pell stone says the ford is high. The Orne effect concerns strangers and the courses alone: a stranger reads a hob's reversed course as the route direction."
+  },
+  {
+    "id": "b02/ctrl-opus/04",
+    "group": "clean",
+    "author": "opus",
+    "claim": "C5",
+    "stem": "Frost heave tilts a whole Serrow cairn away from the vertical. Which walkers does that lean mislead more often, and why?",
+    "options": [
+      {
+        "text": "Locals, because they judge cant by eye from the cairn's silhouette against the vertical.",
+        "key": true
+      },
+      {
+        "text": "Strangers, because they lack the practice to tell a frost tilt from a builder's offset.",
+        "key": false,
+        "misreading": "The natural outsider's view that experience protects against every kind of misreading."
+      },
+      {
+        "text": "Strangers, because they compare each stone with the one beneath it and see the tilt there.",
+        "key": false,
+        "misreading": "A reader who forgets that cant is defined course against course, so lean does not alter it."
+      },
+      {
+        "text": "Locals, because they expect frost lean and correct for more of it than is really there.",
+        "key": false,
+        "misreading": "A reader who remembers that locals are misled more but supplies an overcorrection story instead of the silhouette habit."
+      }
+    ],
+    "explanation": "Lean does not alter cant, which is measured course against course; it matters only to readers who judge cant by eye against the vertical. Locals learn to glance at the silhouette while strangers compare each stone with the one beneath, so lean misleads experienced readers more often."
+  },
+  {
+    "id": "b02/ctrl-opus/05",
+    "group": "clean",
+    "author": "opus",
+    "claim": "C7",
+    "stem": "A heavy pell stone keeps a more faithful record of the ford than a light one. What makes the difference?",
+    "options": [
+      {
+        "text": "Sheep knock light stones about, while walkers who know the convention do turn heavy ones.",
+        "key": true
+      },
+      {
+        "text": "Heavy stones bed into the crown, so they keep the position the builder first gave them.",
+        "key": false,
+        "misreading": "A reader who confuses a settled stone with a faithful one, when a bedded (hask) stone is in fact a stale one."
+      },
+      {
+        "text": "Frost heave shifts light stones on the crown, while heavy ones hold still through winter.",
+        "key": false,
+        "misreading": "A reader who carries frost heave over from lean and blames it for disturbing the pell stone."
+      },
+      {
+        "text": "Heavy stones stay put while the courses are measured, so surveyors record them accurately.",
+        "key": false,
+        "misreading": "A reader who recalls that measuring the courses knocks the pell stone and thinks weight is what protects the record."
+      }
+    ],
+    "explanation": "Light pell stones are knocked about by sheep, while walkers who know the convention turn even the heaviest. So the heavier the stone, the more its position reflects deliberate turning by passers rather than accident."
+  }
+]

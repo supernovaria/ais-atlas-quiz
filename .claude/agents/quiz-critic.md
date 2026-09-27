@@ -4,6 +4,7 @@ description: Judges ONE candidate question against the rubric and emits a verdic
 tools: Read, Write
 model: opus
 ---
+<!-- GENERATED from agents/quiz-critic.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 3 — Critic (pass 2)
 

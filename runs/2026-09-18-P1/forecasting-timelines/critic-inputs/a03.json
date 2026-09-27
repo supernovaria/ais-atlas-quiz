@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/a03",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A reader says: 'When people talk about effective compute growing, they really just mean AI labs have gotten more and faster GPUs — chip count is what's doing the work.' What does the section's decomposition of effective compute show is wrong with this reading?",
+    "options": [
+      {
+        "text": "The reading is wrong: effective compute multiplies three independent factors — chip count, hardware efficiency, software efficiency — so any one of them can drive growth alone.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Nothing is wrong with the reading: hardware and software efficiency are minor refinements on top of the chip-count trend, which still drives most of the growth.",
+        "key": false,
+        "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat rather than the section's central redefinition of the term",
+        "family": "a"
+      },
+      {
+        "text": "The reading is incomplete: if chip production slows, hardware and software efficiency slow with it, since all three factors rise and fall together.",
+        "key": false,
+        "provenance": "misreads the multiplication of three independent factors as implying they rise or fall together, when the text's point is that each 'can improve independently'",
+        "family": "c"
+      },
+      {
+        "text": "The reading is incomplete: it leaves out software efficiency, which contributes a small correction layered on top of the dominant chip and hardware trend.",
+        "key": false,
+        "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing they multiply as equal, independent terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is chip count times hardware efficiency times software efficiency — three factors that multiply and can each move independently. That's why 'more compute' isn't reducible to 'more GPUs': a doubling can come entirely from better algorithms, chip count unchanged. Distractor 1 treats hardware and software efficiency as minor add-ons to a dominant chip trend — the pre-chapter view the section opens by rejecting ('compute means more than just counting GPUs'). Distractor 2 assumes the three factors move together because they multiply, but the section's point is that they're independent: you can improve software without touching hardware at all. Distractor 3 misreads the car analogy as ranking importance rather than three equal, multiplying terms. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Effective compute is chip count, hardware efficiency, and software efficiency multiplied together as independent factors — not a stand-in for chip count alone.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who internalized the multiplicative, independent-factors definition could state the key without seeing the options.",
+      "cynic_test": "A skipper relying on length or hedge-density cues has no tell here since all four options are similar length and equally assertive, forcing an actual read of the definition."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 176,
+    "distractor_lens": [
+      160,
+      147,
+      154
+    ],
+    "mean_distractor_len": 153.7,
+    "len_ratio": 1.15,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 16,
+    "max_over_min": 1.2,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "effective",
+      "compute"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

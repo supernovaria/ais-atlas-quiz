@@ -1,0 +1,108 @@
+{
+  "id": "forecasting-timelines/sonnet/a01",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R5", "R14", "E3"],
+  "measurements": {
+    "correct_len": 160,
+    "distractor_lens": [144, 152, 142],
+    "mean_distractor_len": 146,
+    "len_ratio": 1.1,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 8,
+    "max_over_min": 1.13,
+    "r5_matches": [
+      "the (chapter|text|section) (identifies|argues|describes|states|claims|presents|discusses|lists|mentions|defines)"
+    ],
+    "r5_loose_matches": [],
+    "mentions_chapter": true,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": ["example", "beliefs", "belief", "each", "chapter", "rates"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["b", "c", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R5: gate-2 hard failure. The stem opens 'The section describes a worked example...', which fires the /the (chapter|text|section) (describes|...)/ pattern reported in r5_matches, and the embedded reader-claim adds 'the chapter's own predicted growth rates' (mentions_chapter true). Neither R5 exemption applies: the reader is not being asked to evaluate the Atlas's editorial position against an alternative, and nothing is quoted verbatim as an object of analysis — the attribution is doing pure narration of the passage, which also pre-summarises the paragraph the key paraphrases.",
+    "R14 (word-match tell): 'beliefs' is a distinctive stem content word (stem: 'your own beliefs about how fast investment...', 'your belief about how much automation') and appears in exactly one option — the key. A reader matching stem vocabulary to option vocabulary is pulled straight to '- [x] Testing whether your own separate beliefs...'. Symmetrically, 'example', 'rates' and 'chapter' are singletons that all land on the same distractor (option 1), marking it as the one built out of the stem.",
+    "E3: the explanation identifies its distractors positionally ('Distractor 1...', 'Distractor 2...', 'Distractor 3...'). The app shuffles options by default (the stated rationale under R12), so these labels refer to nothing the reader can see; the misreadings named are correct but unattachable. §4.5's 'never use letter references' applies to the explanation for the same reason."
+  ],
+  "preserve": "the three distractors' underlying content and provenance — they are the concept map's FT-2 misconceptions (c, d, b) used exactly as written, all three trace to sentences that really are in the prose, and all three are beliefs an attentive reader could hold; and the key's core claim (combined output is a coherence check on your own inputs, not a forecast to adopt). Only the attribution framing, the stem-vocabulary overlap and the explanation's positional labels need to change.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/a01",
+    "targets": ["FT-2"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A reading-group member picks their own figures for how fast investment, software efficiency, and hardware efficiency are improving, adds a figure for how much automation each order of magnitude of compute unlocks, multiplies them out, and announces: 'There - that combined number is when transformative AI arrives.' Which response best captures what the exercise has actually produced?",
+    "options": [
+      {
+        "text": "It checks whether their separate beliefs on each trend are mutually consistent; a surprising combined result is a signal to revisit one of the inputs.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It applies the field's consensus growth rates, so its output is the expected arrival date rather than something particular to this person's beliefs.",
+        "key": false,
+        "provenance": "misreads the worked example ('If you think investment grows 5x per year AND software efficiency improves 3x per year AND hardware scales 15% per year AND each order of magnitude automates at least 10% of tasks, then what does that imply?') as the section stating the rates it expects, rather than as placeholders for whatever the reader believes - a misreading the neighbouring paragraph's measured figures ('Training compute has grown 5x per year since 2020') actively invites",
+        "family": "c"
+      },
+      {
+        "text": "It converts individually reasonable inputs into a date that inherits their reasonableness, making the combined result the estimate to adopt.",
+        "key": false,
+        "provenance": "misreads 'If you're surprised, maybe one of your input beliefs needs updating' as licence to adopt the combined output once each input looks individually reasonable, instead of as an instruction to re-examine an input",
+        "family": "d"
+      },
+      {
+        "text": "It compounds each input's uncertainty until the margins swamp the answer, which is why the whole procedure gives you a number too soft to act on.",
+        "key": false,
+        "provenance": "misreads 'All forecasts come with wide error margins that compound over time' as showing the method has failed, reversing the section's point that the reported width of the uncertainty is itself the informative result",
+        "family": "b"
+      }
+    ],
+    "explanation": "Plug your own numbers into a growth-and-automation model and what comes out is a consistency check on those numbers, not a forecast to adopt: if the implied future surprises you, that is a signal one of your inputs needs revisiting, not that you now hold a new prediction. The option treating the input rates as field consensus misreads the worked 'if you think investment grows this fast AND software efficiency improves that fast' framing - those rates are placeholders for whatever you happen to believe, and the method works with any of them plugged in. The option about compounding error margins reverses their role: the width of the uncertainty is itself the informative output, and it is what stops any single combined number from being read as a date. (Forecasting Timelines)",
+    "takeaway": "Treat a forecasting exercise's combined output as a coherence check on your own beliefs, not as a prediction to adopt.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who grasped that forecasts here are scenarios for checking belief-coherence rather than predictions can state the key before seeing the options; the stem no longer narrates that framing back to them.",
+      "cynic_test": "No option repeats a distinctive stem word that the others lack ('beliefs' sits in the key and the first distractor, 'date' in two distractors, 'combined' in the key and one distractor); no figure appears in any option, so there is nothing to Ctrl-F and no length or hedge asymmetry to read off."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1].text",
+    "options[1].provenance",
+    "options[2].text",
+    "options[3].text",
+    "options[3].provenance",
+    "explanation",
+    "level_claimed",
+    "self_check"
+  ],
+  "reviewer_note": "The real risk a script cannot see is that the key still restates one sentence of the prose almost directly ('They let you check if your beliefs are internally coherent') - the rewrite moves the scenario onto a colleague's announcement so the reader has to apply the framing rather than recognise it, but please judge whether that is enough to keep this above a recall item, since it is the difference between the L3 I assigned and the L4 the generator claimed."
+}

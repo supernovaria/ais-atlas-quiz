@@ -1,0 +1,125 @@
+[
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/01",
+    "id": "defining-and-measuring-agi/sonnet/a01",
+    "shard": "defining-and-measuring-agi-a"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/02",
+    "id": "defining-and-measuring-agi/sonnet/a02",
+    "shard": "defining-and-measuring-agi-a"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/03",
+    "id": "defining-and-measuring-agi/sonnet/a03",
+    "shard": "defining-and-measuring-agi-a"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/01",
+    "id": "defining-and-measuring-agi/sonnet/b01",
+    "shard": "defining-and-measuring-agi-b"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/02",
+    "id": "defining-and-measuring-agi/sonnet/b02",
+    "shard": "defining-and-measuring-agi-b"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/01",
+    "id": "defining-and-measuring-agi/sonnet/w01",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/02",
+    "id": "defining-and-measuring-agi/sonnet/w02",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/03",
+    "id": "defining-and-measuring-agi/sonnet/w03",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/04",
+    "id": "defining-and-measuring-agi/sonnet/w04",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/05",
+    "id": "defining-and-measuring-agi/sonnet/w05",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/06",
+    "id": "defining-and-measuring-agi/sonnet/w06",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/07",
+    "id": "defining-and-measuring-agi/sonnet/w07",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/08",
+    "id": "defining-and-measuring-agi/sonnet/w08",
+    "shard": "defining-and-measuring-agi-w"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/01",
+    "id": "defining-and-measuring-agi/sonnet/x01",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/02",
+    "id": "defining-and-measuring-agi/sonnet/x02",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/03",
+    "id": "defining-and-measuring-agi/sonnet/x03",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/04",
+    "id": "defining-and-measuring-agi/sonnet/x04",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/05",
+    "id": "defining-and-measuring-agi/sonnet/x05",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/06",
+    "id": "defining-and-measuring-agi/sonnet/x06",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/07",
+    "id": "defining-and-measuring-agi/sonnet/x07",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": "defining-and-measuring-agi/sonnet/08",
+    "id": "defining-and-measuring-agi/sonnet/x08",
+    "shard": "defining-and-measuring-agi-x"
+  },
+  {
+    "generator_id": null,
+    "id": "defining-and-measuring-agi/sonnet/a03r",
+    "shard": "defining-and-measuring-agi-a",
+    "rewrite_of": "defining-and-measuring-agi/sonnet/a03"
+  },
+  {
+    "generator_id": null,
+    "id": "defining-and-measuring-agi/sonnet/w04r",
+    "shard": "defining-and-measuring-agi-w",
+    "rewrite_of": "defining-and-measuring-agi/sonnet/w04"
+  },
+  {
+    "generator_id": null,
+    "id": "defining-and-measuring-agi/sonnet/w07r",
+    "shard": "defining-and-measuring-agi-w",
+    "rewrite_of": "defining-and-measuring-agi/sonnet/w07"
+  }
+]

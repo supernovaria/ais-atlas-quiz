@@ -1,0 +1,31 @@
+{
+  "file": "full/05",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "letter",
+  "prompt_sha256": "5e9e3b7eec04d1b9f037b7e229d1718ac807ea2e30d2e10f17a90df1fc774674",
+  "ts": "2026-09-23T19:36:47.540Z",
+  "status": "ok",
+  "reply_text": "**B**",
+  "finish": "stop",
+  "usage": {
+    "prompt_tokens": 135,
+    "total_tokens": 139,
+    "completion_tokens": 4,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 747
+}

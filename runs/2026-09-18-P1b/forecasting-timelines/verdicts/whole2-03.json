@@ -1,0 +1,103 @@
+{
+  "id": "forecasting-timelines/sonnet-whole2/03",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L5",
+  "failed_criteria": ["R14", "D1", "D3", "D8", "D9", "E4"],
+  "measurements": {
+    "correct_len": 154,
+    "distractor_lens": [169, 148, 160],
+    "mean_distractor_len": 159,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": ["forecasting"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 119,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, false, true, true],
+  "families_present": ["a", "b"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": true,
+  "reasons": [
+    "R14: options 2 and 3 are the same objection at two scopes — 'wide error margins make the forecasting exercise uninformative' (general) and 'the twelve-orders-of-magnitude spread shows the method has failed' (a specific instance of that general move). A reader who notices they make the same argument eliminates both by structure without knowing anything about the section, which leaves the key against a single straw option.",
+    "D1: option 1's provenance names a real sentence (the 'if you think investment grows 5x per year AND...' worked example, line 13 of the prose) but fails the third test. The option claims the section wants readers to 'adopt as a single date' predictions of that kind, and the sentence immediately preceding the worked example says the opposite in the section's own voice — 'not as concrete predictions of timelines; but instead as scenarios'. No attentive reader arrives at this claim; the map's FT-2 family-c misconception has been overstated past the point where anyone holds it.",
+    "D3: option 1 opens 'There's no real objection here' and is a straw option. It is eliminable on general reasoning alone — a stem that asks which objection the framing best supports has, by construction, an objection — and with options 2 and 3 mutually eliminable (see R14) the effective guess rate for a reader who did no reading approaches 100%.",
+    "D8: option 1 is the banned meta-statement pattern named verbatim in §4.3 ('no critiques apply'). It is a claim about the question rather than about the world, and its presence signals that the answer is one of the substantive options.",
+    "D9: option grammar is not parallel. Options 2 and 3 self-label as 'The objection is that...', option 1 negates that frame, and the key alone is a statement about what the section treats a figure as. Every option must read as the same syntactic completion of the stem.",
+    "E4: the explanation's trailing citation reads '(Forecasting Timelines -> Training Data)', but the material the question turns on — the biological anchors, 'AGI in 2045' as a range center, the wide-error-margins paragraph — sits in the section's untitled opening, before any '##' heading. 'Training Data' is the data-wall subsection and is about a different constraint. The candidate's own citation object records subheading: null, contradicting the string it shipped in the explanation. Correct citation for this material is '(Forecasting Timelines)' with no sub-heading."
+  ],
+  "preserve": "the stem and the key claim: the claim-evaluation frame is exactly the L5 opener the concept map recommends for FT-2, the '2045' figure is conditionalized into the stem as scaffolding rather than made load-bearing (§5.4 Pattern D), and the biological-anchors distractor is a verified, genuinely tempting misreading worth keeping. Only options 1 and 2 need replacing, plus the key's phrasing for parallelism and the citation.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet-whole2/03",
+    "targets": ["FT-2", "FT-4"],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A friend tells you: \"The Atlas's forecasting section predicts AGI will arrive in 2045.\" Which objection does the section's own framing best support?",
+    "options": [
+      {
+        "text": "Such a figure is the rough center of a decades-wide range, and the range's width — driven by deep uncertainty over compute needs — is the actual finding.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The date is too late: chaining the section's own growth rates for investment, software, and hardware points to full labor automation well before then.",
+        "key": false,
+        "provenance": "misreads the worked example ('If you think investment grows 5x per year AND software efficiency improves 3x per year AND hardware scales 15% per year AND each order of magnitude automates at least 10% of tasks, then what does that imply?') as the section asserting those input rates and therefore implying an earlier date, rather than as a consistency check the reader runs against their own beliefs",
+        "family": "c"
+      },
+      {
+        "text": "A spread of twelve orders of magnitude in the biological-anchors estimates shows that method has failed, so its compute numbers should be discarded.",
+        "key": false,
+        "provenance": "misreads the wide bounds (~10^28 FLOP for a human lifetime's learning to ~10^41 FLOP for evolutionary history, 'twelve orders of magnitude of uncertainty') as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      },
+      {
+        "text": "Pinning a date is premature while the data wall is unresolved: the section leaves open whether text runs out before the needed scaling happens.",
+        "key": false,
+        "provenance": "misreads 'Three escape routes exist, whether data actually constrains scaling through 2030 depends on how well these alternatives work' as the section's reason for declining to name a date, rather than as one constraint analysis nested inside a framing that already treats every forecast as a range",
+        "family": "d"
+      }
+    ],
+    "explanation": "A stated date like 2045 is shorthand for a range spanning decades, with that year as a rough center; the width of the range, not its center, is the substantive claim. That width comes from genuine uncertainty about how much compute human-level performance requires — biological-anchor estimates run from the compute of a single human lifetime's learning to the compute of evolutionary history, twelve orders of magnitude apart. So the objection concerns the kind of claim being made, not which year is right. The 'chain the growth rates and you get an earlier date' option misreads the section's worked example — investment growth AND software efficiency AND hardware scaling, at rates quoted as of the 2025 edition — as the section's own forecast, when it is offered as a consistency check on the reader's own beliefs. (Forecasting Timelines)",
+    "takeaway": "A stated timeline figure is a range's center, and the range's width — not the center — is the section's actual finding.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who has internalised that the section's forecasts are consistency-check scenarios with honestly-wide margins can state the objection before seeing the options: the friend has turned a range into a point.",
+      "cynic_test": "No option is eliminable without domain knowledge. All four are substantive objections of the same grammatical shape and similar length; the three distractors are the map's own FT-2/FT-4/FT-6 misreadings, and none of them is a scoped restatement of another."
+    }
+  },
+  "rewrite_changed": [
+    "options[0].text",
+    "options[1]",
+    "options[2]",
+    "options[3]",
+    "explanation",
+    "level_claimed"
+  ],
+  "reviewer_note": "Check the key against the prose yourself — 'When someone says \"AGI in 2045,\" they mean \"somewhere in the 2030s-2050s range, with 2045 as a rough center\"' is a near-verbatim statement of the key in the section's opening, so a reader with the tab open answers this by Ctrl-F on '2045'; the whole value of the question now rests on whether the 'chain the growth rates' distractor is genuinely tempting, and if you judge it is not, this idea may be better served by a stem that hands the reader a claim the section does not pre-answer."
+}

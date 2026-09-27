@@ -1,0 +1,48 @@
+You are reviewing part of a question-generation pipeline for an AI-safety textbook quiz. Your job is to find what is wrong, missing, ambiguous or likely to fail — not to praise it.
+
+**What you are reviewing:** Bench passage b02: an invented textbook section written to test whether multiple-choice questions can be answered by a reader who has never seen the source, together with its author's claim tags and the script's mechanical check of them.
+
+**The files:** bench/b02/passage.md, bench/b02/private/claims.json, bench/b02/private/passage-notes.md, bench/b02/bench-check.json, bench/README.md, prompts/bench-author.md
+
+**Context you should hold while reading.** The pipeline has an orchestrator that spawns subagents with fixed roles (analyst, generator, critic, adversary, curator, pilot analyst). A deterministic script does all counting and measurement; models do all judgment; the orchestrator never writes question text. Findings so far that bear on this review:
+
+- A weak blind reader (Haiku; the harness grants it tools but it has used none in ~70 spawns; never shown the source) answers the pipeline's questions far above chance: 75% on a passage invented for the purpose, where knowledge is zero by construction. The hand-authored floor on invented content is 40%; chance is 25%.
+- Rewriting stems to withhold their premises did not reduce this (15/15 to 14/15). Removing the stem entirely still left 4/6 correct across 4 distinct questions. The current lead is that **wrong answers are recognisably wrong** — a question asking which objection is strongest offered "there is no objection to raise".
+- Almost every enforced rule about wrong answers governs surface: relative length, hedging, absolute words, grammatical type. The rule about believability is a judgment call the critic applies inconsistently.
+- Rules stated only in an agent brief have measured compliance well below 100%: the generator broke a plainly stated quoting rule on 13 of 21 candidates. The project's standing response is to enforce mechanically wherever possible.
+- The critic stage is **deliberately dropped** from calibration runs for now. Do not recommend reinstating it there.
+- Templates are per-call requests. The agents' standing rules live in separate brief files and **must not be restated in templates**, because duplicated rules drift. Do not recommend copying brief rules into a template.
+
+**Specific questions about this bench passage.** The passage exists so that the pipeline's multiple-choice questions can be tested on content a reader cannot know: an Opus-written invented section, which the pipeline's analyst and generator will read as ordinary textbook prose, and which the blind reader will never see. `private/claims.json` is the author's own tagging of every load-bearing claim; `bench-check.json` is the script's mechanical check of it. Answer these, in addition to anything else you find.
+
+1. **Analogy in disguise.** Does any part of the framework map cleanly onto a real theory, so that a reader could reason about the real thing instead? Name the real theory if so. A family resemblance to a whole field is less serious than a one-to-one mapping of a specific argument.
+
+2. **Honest tagging.** For each claim in `claims.json`, is `naive_answer` what a sensible outsider really would guess, and is `naive_is_right` recorded correctly against the passage? The balance check in `bench-check` is only as good as these tags. Name any claim you would tag differently, and say which way.
+
+3. **Heuristics.** Is any generic test-taking heuristic still a reliable guide to this passage's truths — including ones the author did not list, such as "the more specific option is right", "the option that names a mechanism is right", or "the answer that qualifies the claim is right"?
+
+4. **Passage-only facts.** Are the claims tagged as having no sensible guess genuinely unguessable, or can any be reconstructed by reasoning a reader could do without the passage?
+
+5. **Consistency and answerability.** Does any claim contradict another, or depend on something the passage never states? Would a careful reader of the passage be able to answer questions about each load-bearing claim correctly?
+
+6. **Framing leaks.** Does anything in `passage.md` itself tell a reader it is invented, or that it exists for testing or measurement?
+
+7. **Discrimination pairs.** Are they real distinctions that the passage states, rather than two names for one thing?
+
+**Report format.** Numbered findings, most important first. For each:
+- **Where** — file and the specific passage.
+- **Problem** — concretely what goes wrong, and for whom.
+- **Why it matters** — the failure it causes, ideally a concrete scenario.
+- **Change** — the specific edit you would make.
+- **Severity** — blocking / important / minor.
+- **Confidence** — high / medium / low, and what would change your mind.
+
+Then a short section **"Leave alone"**: things that look odd but are right, so they are not "fixed" by mistake.
+
+Do not pad. If something is fine, say nothing about it. If you are unsure whether a finding is real, say so rather than asserting it — a confident wrong finding costs more than an uncertain right one.
+
+Read every file listed above yourself, from the working directory `C:\Users\sorcs\Documents\maddy-home\atlas\ais-atlas-quiz`. Also state your exact model ID in the first line of the review.
+
+Write your review to exactly: `bench/b02/reviews/opus.md`
+
+Reply with one line only: `OK bench/b02/reviews/opus.md` or `FAIL <one-clause reason>`. Nothing else.

@@ -1,0 +1,348 @@
+{
+  "summary": {
+    "source": "2026-09-20-FICTION/undercraft-theory",
+    "n_questions": 8,
+    "n_answers": 24,
+    "unparsed": 0,
+    "verbose_answers": 0,
+    "missing_picks": 0,
+    "flagged": 6,
+    "mean_hit_rate": 0.75,
+    "mean_excess_over_chance": 0.5,
+    "gate_excess": 0.15,
+    "gate_excess_pass": false,
+    "four_option_hit_rate": 0.75,
+    "four_option_n": 8,
+    "key_position_of_hits": {
+      "0": 5,
+      "1": 6,
+      "2": 4,
+      "3": 3
+    }
+  },
+  "per_question": [
+    {
+      "id": "undercraft-theory/sonnet/w02",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "undercraft-theory/sonnet/w03",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "undercraft-theory/sonnet/w04",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "undercraft-theory/sonnet/w05",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "undercraft-theory/sonnet/w07",
+      "hits": 3,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 1,
+      "excess": 0.75,
+      "flagged": true
+    },
+    {
+      "id": "undercraft-theory/sonnet/w06",
+      "hits": 2,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.667,
+      "excess": 0.417,
+      "flagged": true
+    },
+    {
+      "id": "undercraft-theory/sonnet/w01",
+      "hits": 1,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0.333,
+      "excess": 0.083,
+      "flagged": false
+    },
+    {
+      "id": "undercraft-theory/sonnet/w08",
+      "hits": 0,
+      "seeds": 3,
+      "option_count": 4,
+      "chance": 0.25,
+      "hit_rate": 0,
+      "excess": -0.25,
+      "flagged": false
+    }
+  ],
+  "answers": [
+    {
+      "id": "undercraft-theory/sonnet/w01",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "undercraft-theory/sonnet/w01",
+      "seed": 2,
+      "picked": "C",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w01",
+      "seed": 3,
+      "picked": "B",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "undercraft-theory/sonnet/w02",
+      "seed": 1,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "undercraft-theory/sonnet/w02",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "undercraft-theory/sonnet/w02",
+      "seed": 3,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "undercraft-theory/sonnet/w03",
+      "seed": 1,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "undercraft-theory/sonnet/w03",
+      "seed": 2,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "undercraft-theory/sonnet/w03",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w04",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w04",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "undercraft-theory/sonnet/w04",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "undercraft-theory/sonnet/w05",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w05",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "undercraft-theory/sonnet/w05",
+      "seed": 3,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w06",
+      "seed": 1,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "undercraft-theory/sonnet/w06",
+      "seed": 2,
+      "picked": "B",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w06",
+      "seed": 3,
+      "picked": "D",
+      "key": "D",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    },
+    {
+      "id": "undercraft-theory/sonnet/w07",
+      "seed": 1,
+      "picked": "A",
+      "key": "A",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w07",
+      "seed": 2,
+      "picked": "B",
+      "key": "B",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 1
+    },
+    {
+      "id": "undercraft-theory/sonnet/w07",
+      "seed": 3,
+      "picked": "C",
+      "key": "C",
+      "hit": true,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "undercraft-theory/sonnet/w08",
+      "seed": 1,
+      "picked": "D",
+      "key": "A",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 0
+    },
+    {
+      "id": "undercraft-theory/sonnet/w08",
+      "seed": 2,
+      "picked": "A",
+      "key": "C",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 2
+    },
+    {
+      "id": "undercraft-theory/sonnet/w08",
+      "seed": 3,
+      "picked": "C",
+      "key": "D",
+      "hit": false,
+      "option_count": 4,
+      "chance": 0.25,
+      "key_position": 3
+    }
+  ],
+  "missing_picks": []
+}

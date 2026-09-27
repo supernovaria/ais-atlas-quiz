@@ -1,0 +1,105 @@
+{
+  "candidate": {
+    "id": "defining-and-measuring-agi/sonnet/w04",
+    "targets": [
+      "DM-9"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A hospital deploys the identical diagnostic AI system in two settings. In the first, it only flags anomalies for a radiologist who makes every final call. In the second, it independently orders follow-up tests and finalizes reports, with a human reviewing only a periodic sample. The system's underlying capability score is unchanged between the two settings. What follows about the risk of each deployment?",
+    "options": [
+      {
+        "text": "The two deployments carry different risk exposure even though the system's capability is identical, because how much of the task the AI is allowed to do on its own is a separate, deployment-time choice, not a property of the system's capability.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The second deployment is inherently more dangerous than the first, because letting an AI act with less human oversight is inherently more dangerous regardless of what changes in practice.",
+        "key": false,
+        "provenance": "conflates autonomy level with inherent danger directly, missing that autonomy level affects risk exposure rather than being dangerous in itself",
+        "family": "a"
+      },
+      {
+        "text": "Since the system is clearly capable enough to work with minimal oversight, using it under close supervision in the first setting wastes its capability and is itself the unsafe choice.",
+        "key": false,
+        "provenance": "misreads 'higher capability levels unlock higher autonomy' as capability requiring or mandating high autonomy, rather than merely making it possible while lower autonomy remains available",
+        "family": "b"
+      },
+      {
+        "text": "The system's underlying capability must actually be higher in the second setting, since operating with only periodic human review requires more capability than operating under full human control.",
+        "key": false,
+        "provenance": "misreads a change in deployment autonomy as necessarily reflecting a change in capability, when the stem stipulates capability is held constant and autonomy is set independently by the deployer",
+        "family": "c"
+      }
+    ],
+    "explanation": "Autonomy describes how a task is divided between human and AI at deployment time; capability describes what the system can do. Holding capability fixed while varying autonomy is exactly this case: a capable system deployed as a tool can be safer than the same system deployed as an agent, even though the underlying capability is identical. Distractor 1 treats autonomy itself as the source of danger rather than as a lever on exposure. Distractor 2 wrongly treats unlocking a higher autonomy level as an obligation to use it. Distractor 3 smuggles in a capability change the scenario explicitly rules out. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "Autonomy is a deployment-time choice layered on capability, not a symptom or a requirement of it.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who has separated capability from autonomy can state that risk exposure differs here while capability does not, without seeing the options.",
+      "cynic_test": "A skipper might pick whichever option calls the more autonomous setting inherently more dangerous, since that matches intuition, but the explanation specifically corrects the inherent-versus-exposure conflation."
+    },
+    "shard_id": "defining-and-measuring-agi-w",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 245,
+    "distractor_lens": [
+      187,
+      183,
+      195
+    ],
+    "mean_distractor_len": 188.3,
+    "len_ratio": 1.3,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 50,
+    "max_over_min": 1.34,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "identical",
+      "two",
+      "periodic",
+      "underlying",
+      "risk"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 108,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "b03",
+  "words": 1792,
+  "claims": 39,
+  "directional": 28,
+  "naive_right": 16,
+  "naive_right_share": 0.5714285714285714,
+  "passage_only": 11,
+  "heuristics": {
+    "experts beat beginners": {
+      "right": 2,
+      "wrong": 2
+    },
+    "experts are better overall but stuck in their habits": {
+      "right": 1,
+      "wrong": 2
+    },
+    "two things that seem alike are actually different": {
+      "right": 2,
+      "wrong": 2
+    },
+    "the moderate middle is right": {
+      "right": 2,
+      "wrong": 2
+    },
+    "quality peaks at a medium size": {
+      "right": 1,
+      "wrong": 1
+    },
+    "the surprising answer is the right one": {
+      "right": 6,
+      "wrong": 5
+    },
+    "more is better": {
+      "right": 2,
+      "wrong": 5
+    },
+    "the objection was noted but practice did not change": {
+      "right": 2,
+      "wrong": 2
+    },
+    "the option with the most sensible causal story is right": {
+      "right": 2,
+      "wrong": 2
+    },
+    "the answer with a trade-off is right": {
+      "right": 2,
+      "wrong": 2
+    },
+    "an effect named after a researcher describes a mistake": {
+      "right": 0,
+      "wrong": 2
+    },
+    "the mundane cause beats the dramatic one": {
+      "right": 1,
+      "wrong": 1
+    },
+    "the most insidious-sounding thing is the most dangerous": {
+      "right": 1,
+      "wrong": 1
+    }
+  },
+  "shapes": {
+    "peaked": 2,
+    "falling": 3,
+    "rising": 3,
+    "flat": 1
+  },
+  "fail": [],
+  "warn": [
+    "heuristic \"experts are better overall but stuck in their habits\" is tagged only 1 right / 2 wrong — too few uses to be balanced",
+    "heuristic \"quality peaks at a medium size\" is tagged only 1 right / 1 wrong — too few uses to be balanced",
+    "heuristic \"an effect named after a researcher describes a mistake\" is tagged only 0 right / 2 wrong — too few uses to be balanced",
+    "heuristic \"the mundane cause beats the dramatic one\" is tagged only 1 right / 1 wrong — too few uses to be balanced",
+    "heuristic \"the most insidious-sounding thing is the most dangerous\" is tagged only 1 right / 1 wrong — too few uses to be balanced"
+  ]
+}

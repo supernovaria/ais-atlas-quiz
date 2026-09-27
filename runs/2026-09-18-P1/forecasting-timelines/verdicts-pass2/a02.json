@@ -1,0 +1,108 @@
+{
+  "id": "forecasting-timelines/sonnet/a02",
+  "verdict": "rewrite",
+  "level": "L4",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["D3", "D1"],
+  "measurements": {
+    "correct_len": 175,
+    "distractor_lens": [161, 155, 175],
+    "mean_distractor_len": 163.7,
+    "len_ratio": 1.07,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 1, 0]
+    },
+    "stem_word_singletons": ["estimates", "compute", "orders", "magnitude", "reference", "wide"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 109,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, false],
+  "families_present": ["b", "c", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "D3: two of the three distractors are eliminable without having read the section, against a ceiling of one. The stem asks 'What's wrong with that conclusion?', which presupposes the conclusion is wrong and therefore kills option 1 ('The conclusion is right: ...') on stem-reading alone — and option 1 is the FT-4(a) pre-chapter prior, the one misconception this question exists to surface, so the presupposition disarms the question's own payload. Option 3 is killed the same way: the stem states outright that the span depends 'on which biological process is used as the reference point', and option 3 asserts the uncertainty 'is actually about how fast compute investment grows, not about which biological process best estimates the brain's equivalent' — a direct contradiction of a given. A test-wise reader with no domain knowledge is down to key-vs-midpoint, i.e. 50%.",
+    "D1: option 3's provenance fails the attentive-reader limb. The sentences it borrows from do exist ('if you think investment grows 5x per year AND...', the 1.35x/3x/2.3x growth-rate list, 'projections of available chips range by a factor of 20x'), and a misfiling of that uncertainty is imaginable in the abstract — but not against this stem, which has just told the reader where the twelve orders of magnitude come from. No attentive reader arrives at option 3 after reading the stem, so it is decoration rather than a distractor."
+  ],
+  "preserve": "the scenario and the key's diagnosis — biological anchors, a reader's 'that range is so wide it tells us nothing', and the answer that the width is disagreement about which process is the right stand-in rather than method failure; and option 2 (the midpoint distractor), which is the strongest option in the set and is anchored in two real sentences ('like not knowing if something costs one dollar or a trillion dollars' and 'somewhere in the 2030s-2050s range, with 2045 as a rough center'). Only the stem's presupposition and option 3 need to go.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/a02",
+    "targets": ["FT-4"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Biological-anchors estimates of the compute required to match human-level intelligence span twelve orders of magnitude. A reader concludes: 'A range that wide means the method has failed to tell us anything useful about compute requirements for TAI.' How should that conclusion be assessed?",
+    "options": [
+      {
+        "text": "It is wrong: the width reflects disagreement about which biological process is the right stand-in for a mind, and it still rules out most conceivable magnitudes.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It is right: once a range spans that many orders of magnitude it no longer constrains planning, so the effort is better spent on methods that produce tighter bounds.",
+        "key": false,
+        "provenance": "misreads 'twelve orders of magnitude of uncertainty' and the analogy that follows it ('It's like not knowing if something costs one dollar or a trillion dollars') as a report that the anchors method failed, rather than as an honestly-stated range that still bounds planning",
+        "family": "c"
+      },
+      {
+        "text": "It is wrong, but only because the true value most likely sits near the middle of that wide range, so both of the reported extremes can be set aside in practice.",
+        "key": false,
+        "provenance": "misreads the dollar analogy together with 'When someone says AGI in 2045, they mean somewhere in the 2030s-2050s range, with 2045 as a rough center' as licensing a best-guess midpoint for any reported range, rather than as an illustration of deep uncertainty about which reference process is right",
+        "family": "b"
+      },
+      {
+        "text": "It is wrong: the range is that wide because the processing a biological brain performs has not yet been measured precisely, and better neuroscience would narrow it.",
+        "key": false,
+        "provenance": "misreads 'These estimates vary dramatically depending on the biological process used as a reference' as imprecision in measuring one quantity (how much a brain computes), rather than as disagreement about which quantity to estimate at all — lifetime learning compute (~10^28 FLOP) and evolutionary compute (~10^41 FLOP) are different questions, not two noisy readings of one",
+        "family": "a"
+      }
+    ],
+    "explanation": "Twelve orders of magnitude is not a measurement error bar; it is the gap between two different questions — how much computation a human brain does over a lifetime of learning, and how much evolution spent producing a brain capable of that learning. Nobody knows which is the right stand-in, and saying so honestly still narrows the answer enormously compared with having no estimate at all. 'It is right' treats a wide interval as no information — the reaction a twelve-order-of-magnitude span invites but does not justify. The measurement-precision option makes a subtler slip: it reads uncertainty about which quantity to estimate as imprecision in estimating one quantity, and better neuroscience would not settle that choice. (Forecasting Timelines)",
+    "takeaway": "A wide uncertainty range that is honestly reported is a finding about what we don't know, not evidence the estimate has failed.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "twelve orders of magnitude of biological-anchors uncertainty"
+    ],
+    "self_check": {
+      "cover_test": "A reader who grasped that the width comes from not knowing which biological process is the right reference — and that an honest width still bounds the answer — could state the key without seeing the options.",
+      "cynic_test": "Three options say 'wrong' and one says 'right', so a skipper who assumes the stem is hostile to the quoted reader will land in the wrong-cluster — but the whole discrimination lives inside that cluster, and the 'right' option is now a live answer rather than a disallowed one, so the guess is not rewarded."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1].text",
+    "options[1].provenance",
+    "options[1].family",
+    "options[2].text",
+    "options[2].provenance",
+    "options[3]",
+    "explanation",
+    "self_check.cover_test",
+    "self_check.cynic_test"
+  ],
+  "reviewer_note": "Check the key's second clause — 'still rules out most conceivable magnitudes' is an inference the prose never actually states (the section reports the width and the dollar analogy but never says the range is still useful), so decide whether you are happy for the key to carry a claim the concept map asserts and the text only implies."
+}

@@ -1,0 +1,136 @@
+{
+  "section": "forecasting-timelines",
+  "n": 11,
+  "rationale": "coverage need: threshold concepts, then discrimination pairs, then criteria count; one candidate per idea per round",
+  "ideas_in_order": [
+    "FT-2",
+    "FT-5",
+    "FT-4",
+    "FT-6",
+    "FT-1"
+  ],
+  "queue": [
+    {
+      "position": 1,
+      "id": "forecasting-timelines/sonnet/a01",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 2,
+      "id": "forecasting-timelines/sonnet/a03",
+      "targets": [
+        "FT-5"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 3,
+      "id": "forecasting-timelines/sonnet/a02",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 4,
+      "id": "forecasting-timelines/sonnet/c01",
+      "targets": [
+        "FT-6"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 5,
+      "id": "forecasting-timelines/sonnet/c02",
+      "targets": [
+        "FT-1"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 6,
+      "id": "forecasting-timelines/sonnet/b01",
+      "targets": [
+        "FT-2",
+        "FT-4"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 7,
+      "id": "forecasting-timelines/sonnet/b02",
+      "targets": [
+        "FT-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 8,
+      "id": "forecasting-timelines/sonnet/d01",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 9,
+      "id": "forecasting-timelines/sonnet/d03",
+      "targets": [
+        "FT-6"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 10,
+      "id": "forecasting-timelines/sonnet/c03",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "threshold"
+    },
+    {
+      "position": 11,
+      "id": "forecasting-timelines/sonnet/d02",
+      "targets": [
+        "FT-5"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "threshold"
+    }
+  ]
+}

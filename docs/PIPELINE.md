@@ -43,7 +43,7 @@
 Roles run as **Claude Code subagents**, one `Agent` spawn per call. The briefs
 in `.claude/agents/` are the agent definitions: frontmatter (name, model, tools)
 plus the brief body verbatim as the system prompt. Spawn them; never copy their
-text into a prompt.
+text into a prompt. **Briefs are edited in `agents/quiz-*.md`**, never in the generated copies; `node scripts/sync-agents.mjs` writes `.claude/agents/` (Claude Code) and `.codex/agents/` (Codex) from them, and the selftest fails if they are out of step.
 
 **Two roles are new relative to QUIZ-PLAN:**
 

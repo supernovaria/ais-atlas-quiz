@@ -1,0 +1,81 @@
+[
+  {
+    "id": "forecasting-timelines/sonnet/01",
+    "targets": ["FT-2"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "The section describes a worked example: take your own beliefs about how fast investment, software efficiency, and hardware are improving, plus your belief about how much automation each order-of-magnitude of compute unlocks, and combine them to see what future they imply. A reader concludes: 'This exercise is telling us the chapter's own predicted growth rates for the future.' What is the exercise actually doing?",
+    "options": [
+      {"text": "Testing whether your own separate beliefs about these trends are mutually consistent, using the combined implication as a check rather than a forecast to adopt.", "key": true, "provenance": null, "family": null},
+      {"text": "Reporting the chapter's best estimate of how these trends will actually unfold, since the example works through a specific set of assumed rates.", "key": false, "provenance": "misreads the worked example ('if you think investment grows...AND...') as the chapter asserting those input rates, rather than as an illustration of how to test whether one's own beliefs cohere", "family": "c"},
+      {"text": "Showing that once each input belief looks individually reasonable on its own, the combined outcome they produce becomes the prediction you should adopt.", "key": false, "provenance": "misreads 'if you're surprised, maybe one of your input beliefs needs updating' as license to trust the combined output instead of as an instruction to re-examine an input", "family": "d"},
+      {"text": "Demonstrating that because the combined estimate carries such wide error margins, exercises like this don't actually tell you anything useful.", "key": false, "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the section's point that the margins are themselves the informative output", "family": "b"}
+    ],
+    "explanation": "The exercise exists to test whether your own separate beliefs are mutually consistent, not to hand you a forecast. Plug in what you believe about each trend and see what future they imply together; if the combined answer surprises you, that's a signal one of your inputs is off, not that the combination is now your prediction. Distractor 1 mistakes the worked example's placeholder rates for the chapter's actual claim about the future — the point is the method, and the same method works with different numbers plugged in. Distractor 2 inverts the instruction to re-examine a surprising input into permission to trust the output instead. Distractor 3 reverses the section's own point: the wide margins are the informative result, not evidence the exercise failed. (Forecasting Timelines)",
+    "takeaway": "Treat a forecasting exercise's combined output as a coherence check on your own beliefs, not as a prediction to adopt.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who understood the section's framing of forecasts as consistency checks, not predictions, could state the key without seeing the options.",
+      "cynic_test": "A skipper might reach for whichever option sounds most concrete or 'sciency' (the specific-rates one), but the stem gives no numeric anchor to Ctrl-F, so guessing offers no edge."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet/02",
+    "targets": ["FT-4"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Biological-anchors estimates of the compute required to match human-level intelligence span twelve orders of magnitude, depending on which biological process is used as the reference point. A reader concludes: 'A range that wide means the method has failed to tell us anything useful about compute requirements for TAI.' What's wrong with that conclusion?",
+    "options": [
+      {"text": "The conclusion is wrong: the wide range reflects genuine uncertainty about which biological process is the right reference, and it still rules out most implausible magnitudes.", "key": true, "provenance": null, "family": null},
+      {"text": "The conclusion is right: once an estimate spans that many orders of magnitude, it stops usefully constraining planning and should be dropped for tighter methods.", "key": false, "provenance": "misreads the wide bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning", "family": "a"},
+      {"text": "The conclusion is wrong, but only because the true value most likely sits near the range's midpoint, making either extreme equally implausible in practice.", "key": false, "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a uniform-ish distribution rather than illustrating genuine deep uncertainty about which reference process is right", "family": "b"},
+      {"text": "The conclusion is wrong because this uncertainty is actually about how fast compute investment grows, not about which biological process best estimates the brain's equivalent.", "key": false, "provenance": "borrows the section's separate uncertainty about investment and hardware growth rates and misfiles it as the source of the biological-anchors range, rather than the reference-process disagreement the anchors passage actually describes", "family": "d"}
+    ],
+    "explanation": "The point of a twelve-orders-of-magnitude range isn't that the estimate failed — it's that we're genuinely uncertain which biological process is the right stand-in for 'compute equivalent to a human,' and reporting that uncertainty still rules out the vast majority of conceivable magnitudes. Distractor 1 treats 'wide' as synonymous with 'useless,' the exact reaction this section corrects. Distractor 2 assumes the two anchors are equally likely, so the truth sits in the middle — but the dollar analogy makes the opposite point: we don't know which end is closer to right. Distractor 3 borrows real uncertainty from elsewhere in the section (investment growth) and misfiles it here. (Forecasting Timelines)",
+    "takeaway": "A wide uncertainty range that is honestly reported is a finding about what we don't know, not evidence the estimate has failed.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": ["twelve orders of magnitude of biological-anchors uncertainty"],
+    "self_check": {
+      "cover_test": "A reader who grasped that the range reflects deep reference-process uncertainty, not method failure, could state the key without seeing the options.",
+      "cynic_test": "A skipper might gravitate to the option that sounds most 'balanced' (the midpoint one), but nothing in the stem suggests either extreme is favored, so that instinct doesn't pay off."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet/03",
+    "targets": ["FT-5"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A reader says: 'When people talk about effective compute growing, they really just mean AI labs have gotten more and faster GPUs — chip count is what's doing the work.' What does the section's decomposition of effective compute show is wrong with this reading?",
+    "options": [
+      {"text": "The reading is wrong: effective compute multiplies three independent factors — chip count, hardware efficiency, software efficiency — so any one of them can drive growth alone.", "key": true, "provenance": null, "family": null},
+      {"text": "Nothing is wrong with the reading: hardware and software efficiency are minor refinements on top of the chip-count trend, which still drives most of the growth.", "key": false, "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat rather than the section's central redefinition of the term", "family": "a"},
+      {"text": "The reading is incomplete: if chip production slows, hardware and software efficiency slow with it, since all three factors rise and fall together.", "key": false, "provenance": "misreads the multiplication of three independent factors as implying they rise or fall together, when the text's point is that each 'can improve independently'", "family": "c"},
+      {"text": "The reading is incomplete: it leaves out software efficiency, which contributes a small correction layered on top of the dominant chip and hardware trend.", "key": false, "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing they multiply as equal, independent terms", "family": "b"}
+    ],
+    "explanation": "Effective compute is chip count times hardware efficiency times software efficiency — three factors that multiply and can each move independently. That's why 'more compute' isn't reducible to 'more GPUs': a doubling can come entirely from better algorithms, chip count unchanged. Distractor 1 treats hardware and software efficiency as minor add-ons to a dominant chip trend — the pre-chapter view the section opens by rejecting ('compute means more than just counting GPUs'). Distractor 2 assumes the three factors move together because they multiply, but the section's point is that they're independent: you can improve software without touching hardware at all. Distractor 3 misreads the car analogy as ranking importance rather than three equal, multiplying terms. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Effective compute is chip count, hardware efficiency, and software efficiency multiplied together as independent factors — not a stand-in for chip count alone.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "A reader who internalized the multiplicative, independent-factors definition could state the key without seeing the options.",
+      "cynic_test": "A skipper relying on length or hedge-density cues has no tell here since all four options are similar length and equally assertive, forcing an actual read of the definition."
+    }
+  },
+  {"note": "Skipped FT-4's family-c misconception (treating 'AGI in 2045' as a precise date) here — it's the FT-4/FT-2 discrimination_pairs entry and reads better as a single contrast candidate spanning both ideas in a contrast-lens shard than as a second misconception item on FT-4 alone. Used FT-4's family-a and family-b misconceptions plus one self-generated family-d (right-idea-wrong-slot, borrowing the section's investment-growth uncertainty) to keep three distinct families without overlapping that pair."}
+]

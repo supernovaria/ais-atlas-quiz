@@ -1,0 +1,50 @@
+You are reviewing part of a question-generation pipeline for an AI-safety textbook quiz. Your job is to find what is wrong, missing, ambiguous or likely to fail — not to praise it.
+
+**What you are reviewing:** The spawn-prompt templates in prompts/, their shared review partial, and the renderer scripts/prompts.mjs, which together replace prompts the orchestrator used to compose by hand. The agent briefs and the orchestrator handoff are included as context, so you can check the templates against them.
+
+**The files:** prompts/README.md, prompts/_partials/review-body.md, prompts/adversary-free-recall.md, prompts/adversary-mc.md, prompts/adversary-options-only.md, prompts/analyse.md, prompts/bench-author.md, prompts/bench-rewrite-distractors.md, prompts/bench-rewrite-stem.md, prompts/critique-pass2.md, prompts/critique.md, prompts/curate.md, prompts/generate-section.md, prompts/generate-shard.md, prompts/pilot-analyst.md, prompts/regenerate.md, prompts/review-gemini.md, prompts/review.md, scripts/prompts.mjs, .claude/agents/quiz-adversary.md, .claude/agents/quiz-critic.md, .claude/agents/quiz-curator.md, .claude/agents/quiz-generator.md, .claude/agents/quiz-pilot-analyst.md, .claude/agents/quiz-section-analyst.md, docs/HANDOFF-ORCHESTRATOR.md
+
+**Context you should hold while reading.** The pipeline has an orchestrator that spawns subagents with fixed roles (analyst, generator, critic, adversary, curator, pilot analyst). A deterministic script does all counting and measurement; models do all judgment; the orchestrator never writes question text. Findings so far that bear on this review:
+
+- A weak blind reader (Haiku; the harness grants it tools but it has used none in ~70 spawns; never shown the source) answers the pipeline's questions far above chance: 75% on a passage invented for the purpose, where knowledge is zero by construction. The hand-authored floor on invented content is 40%; chance is 25%.
+- Rewriting stems to withhold their premises did not reduce this (15/15 to 14/15). Removing the stem entirely still left 4/6 correct across 4 distinct questions. The current lead is that **wrong answers are recognisably wrong** — a question asking which objection is strongest offered "there is no objection to raise".
+- Almost every enforced rule about wrong answers governs surface: relative length, hedging, absolute words, grammatical type. The rule about believability is a judgment call the critic applies inconsistently.
+- Rules stated only in an agent brief have measured compliance well below 100%: the generator broke a plainly stated quoting rule on 13 of 21 candidates. The project's standing response is to enforce mechanically wherever possible.
+- The critic stage is **deliberately dropped** from calibration runs for now. Do not recommend reinstating it there.
+- Templates are per-call requests. The agents' standing rules live in separate brief files and **must not be restated in templates**, because duplicated rules drift. Do not recommend copying brief rules into a template.
+
+**Specific questions.** Answer these in addition to anything else you find.
+
+1. **Drift and conflict with the briefs.** Does any template restate a rule that its agent's brief already states (a drift risk), or instruct something that contradicts the brief? Where a template *overrides* a brief rule on purpose (e.g. `generate-section.md` relaxing stem-format variety), is the override clear enough that the agent will follow the template rather than the brief?
+
+2. **The two ablation rungs.** `adversary-mc.md` and `adversary-options-only.md` are meant to differ in exactly one thing: whether the stem is shown. Do they? Does anything in the options-only wording itself cue the reader toward a particular kind of option (the previous ad-hoc version said "an invented academic framework", which we removed)? Would you word it differently, and why?
+
+3. **Free recall.** `adversary-free-recall.md` asks the adversary for sentences, but the adversary's brief says its entire output is one letter and that it answers "from the stem and options alone". Two of six spawns refused last time. Will the template's "this is deliberate, so do not ask for them" be enough, or is the right fix structural (a separate agent)?
+
+4. **The bench author — the question I most want a careful answer to.** `bench-author.md` item 7 tells the author which generic heuristics leaked last time ("the moderate middle", inverse-U, "most insidious is most dangerous") and item 3 demands at least four counterintuitive claims. Could these together **create a new heuristic** — a passage where the contrarian answer is reliably right, so "pick the option that reverses the obvious" becomes the new leak? If so, what should the template ask for instead?
+
+5. **The distractor rewrite.** Can `bench-rewrite-distractors.md` be satisfied while keeping the leak? In particular: does "the correct option must not be identifiable as the balanced one" risk pushing the generator to make the key sound extreme, which is a different tell? Is naming a reader and misreading in `provenance` a check a model can actually be held to, or will it produce plausible-sounding provenance for implausible options?
+
+6. **Determinism.** Is there anything that would let two orchestrators render *different* prompts for the same call — an optional placeholder whose content is left to judgment (`context_note`, `finding`, `established`, `structure`, `domain_hint`), an ambiguous path, an unstated default? Which optionals should be required, or replaced by fixed text?
+
+7. **Missing pieces.** Is any stage of the pipeline (analyst, generator, critic, adversary, curator, pilot analyst, the bench loop) still without a template, or relying on something the orchestrator would have to improvise?
+
+8. **The renderer** (`scripts/prompts.mjs`). Any way to get a malformed or half-filled prompt past it?
+
+**Report format.** Numbered findings, most important first. For each:
+- **Where** — file and the specific passage.
+- **Problem** — concretely what goes wrong, and for whom.
+- **Why it matters** — the failure it causes, ideally a concrete scenario.
+- **Change** — the specific edit you would make.
+- **Severity** — blocking / important / minor.
+- **Confidence** — high / medium / low, and what would change your mind.
+
+Then a short section **"Leave alone"**: things that look odd but are right, so they are not "fixed" by mistake.
+
+Do not pad. If something is fine, say nothing about it. If you are unsure whether a finding is real, say so rather than asserting it — a confident wrong finding costs more than an uncertain right one.
+
+Read every file listed above yourself, from the working directory `C:\Users\sorcs\Documents\maddy-home\atlas\ais-atlas-quiz`. Also state your exact model ID in the first line of the review.
+
+Write your review to exactly: `reviews/2026-09-23-prompts/opus.md`
+
+Reply with one line only: `OK reviews/2026-09-23-prompts/opus.md` or `FAIL <one-clause reason>`. Nothing else.

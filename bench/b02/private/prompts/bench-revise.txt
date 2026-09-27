@@ -1,0 +1,24 @@
+Revise one bench passage against its review. Bench id: `b02`.
+
+Working directory: `C:\Users\sorcs\Documents\maddy-home\atlas\ais-atlas-quiz`.
+
+Read:
+1. `bench/b02/private/reviews-decisions.md` — which review findings were accepted, and what each requires. It names the review file(s); read those too.
+2. `bench/b02/passage.md`, `bench/b02/private/claims.json`, `bench/b02/private/passage-notes.md`.
+3. `prompts/bench-author.md` — the standard the passage must meet. It has been tightened since the passage was written; meet the current version.
+
+Then revise the three files in place so that every **accepted** finding is addressed.
+
+Rules for the revision:
+
+- **Tag disputes go the more guessable way.** Where a review says an outsider could guess a claim and you are not sure it is wrong, tag the claim as guessable. You may keep your original tag only where the review misread the passage, and you must quote the passage to show it.
+- **Rebalance by adding or changing claims, not by re-tagging.** If honest tags push the share of directional claims where the sensible guess is right outside 30–70%, fix it in the prose: add claims, or change what a claim says.
+- Keep `passage.md` to the section itself — no mention of invention, testing or measurement.
+- Keep 1400–1800 words.
+- Every `quote` in `claims.json` must appear verbatim in the revised `passage.md`.
+
+Also write `bench/b02/private/revision-log.md`: one line per accepted finding, saying what you changed, or — if you declined — why, with a passage quote.
+
+`pipeline.mjs bench-check` is run on the result. A passage that cannot pass it is retired.
+
+Reply with one line only: `OK bench/b02/passage.md` or `FAIL <one-clause reason>`. Nothing else.

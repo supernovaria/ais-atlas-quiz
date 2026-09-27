@@ -1,0 +1,118 @@
+{
+  "id": "defining-and-measuring-agi/sonnet/w04",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R8", "R9", "R14", "D1", "D3", "D6", "E3"],
+  "measurements": {
+    "correct_len": 245,
+    "distractor_lens": [187, 183, 195],
+    "mean_distractor_len": 188.3,
+    "len_ratio": 1.3,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 50,
+    "max_over_min": 1.34,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": ["identical", "two", "periodic", "underlying", "risk"],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 108,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, true, false],
+  "families_present": ["a", "b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R8: len_ratio 1.30, band 0.80-1.20. The key carries the full principle ('a separate, deployment-time choice, not a property of the system's capability') while each distractor carries only its own error; the qualification belongs in the explanation.",
+    "R9: correct_is_longest true with extremum_gap 50, allowance is 15 characters. The key is 50 characters longer than the longest distractor, so the length tell points at it unambiguously.",
+    "R14 (word-match tell): of the five stem_word_singletons, 'identical', 'two' and 'risk' each appear in exactly one option and that option is the key in all three cases. Stem says 'the identical diagnostic AI system' / 'the risk of each deployment'; only the key echoes 'identical' and 'risk'. Either put each word in two or more options or in none.",
+    "D1: option 4 fails the attentive-reader clause. The provenance names a real sentence ('A highly capable system can be deployed with varying levels of human oversight') and the DM-9 family-c misconception is real, but the claim as written - 'the system's underlying capability must actually be higher in the second setting' - contradicts an explicit stipulation of the stem ('The system's underlying capability score is unchanged'). The provenance line concedes this in its own text ('when the stem stipulates capability is held constant'). No attentive reader arrives at an option that denies the given.",
+    "D3: option 4 is eliminable from the stem alone, with no domain knowledge and without having read the section, because it denies a premise the stem states. That leaves the question effectively three-way for any careful reader and raises the guess rate from 25% to 33%.",
+    "D6: option 2's justification clause is circular - 'is inherently more dangerous, because letting an AI act with less human oversight is inherently more dangerous regardless of what changes in practice' restates the claim as its own reason. This is the option meant to be the top distractor (it is the intuitive answer), and the question-begging phrasing plus the 'regardless of what changes in practice' tail mark it as invented rather than held.",
+    "E3: the explanation names distractors by position ('Distractor 1', 'Distractor 2', 'Distractor 3'). The app shuffles options, so these indices do not correspond to anything the reader sees - the same reason R12 bans positional references. The misreadings identified are correct and specific; they must be attached to the options by content instead."
+  ],
+  "preserve": "The stem's two-deployment hospital scenario: it is not in the prose, it stipulates constant capability cleanly, and it makes the capability/autonomy separation bite on a case rather than a definition. Also preserve distractors 2 and 3 as ideas - the autonomy-as-inherent-danger conflation and the 'unlock means should use' reversal are the two right misconceptions for DM-9 and both have verified provenance; only their wording needs work.",
+  "rewrite": {
+    "id": "defining-and-measuring-agi/sonnet/w04",
+    "targets": ["DM-9"],
+    "lens": "case",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A hospital deploys the same diagnostic AI system in two settings. In the first, it only flags anomalies for a radiologist who makes every final call. In the second, it orders follow-up tests and finalizes reports on its own, with a human reviewing a sample of cases afterwards. The system's measured capability is unchanged across the two settings. What follows about the risk each deployment carries?",
+    "options": [
+      {
+        "text": "Risk exposure differs between the settings even though the system is the same, because how much of the task the AI does alone is set at deployment, not by capability.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The more autonomous setting is more dangerous in itself, because how much a system acts without oversight is part of what the system is, not of how it is used.",
+        "key": false,
+        "provenance": "misreads 'Autonomy describes how AI systems interact with humans, not what they can do' by treating autonomy as a property of the system itself, so that raising it makes the system inherently more dangerous rather than changing its risk exposure - the distinction the text draws in 'Autonomy level affects risk exposure, not inherent danger'",
+        "family": "a"
+      },
+      {
+        "text": "The system is capable enough to run with light oversight, so keeping it under close human supervision wastes capability and is itself the less responsible option here.",
+        "key": false,
+        "provenance": "misreads 'Higher capability levels \"unlock\" higher autonomy levels' as capability obliging maximum autonomy, ignoring the clause that follows it - 'but having the capability doesn't mean you should use maximum autonomy'",
+        "family": "b"
+      },
+      {
+        "text": "Both deployments carry the same risk, since capability is what determines how much harm a system can do, and the level of human oversight changes only who watches it work.",
+        "key": false,
+        "provenance": "misreads 'For safety purposes, capability and deployment autonomy should be considered separately' as meaning risk is fixed by capability alone, so the deployment choice cannot move it - the pre-chapter prior that danger is a property of the model",
+        "family": "c"
+      }
+    ],
+    "explanation": "Autonomy describes how a task is divided between a human and an AI at deployment; capability describes what the system can do. Holding capability fixed and changing only that division changes risk exposure, not the system. That is why a capable system deployed as a tool can be safer than the same system deployed as an agent. The option calling the more autonomous setting more dangerous in itself makes the change intrinsic to the system, when what moved was the deployment. The option saying both carry the same risk assumes danger tracks capability alone, which is the belief this separation exists to correct. And being capable enough for high autonomy unlocks it without obliging anyone to use it. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "Autonomy is a deployment-time choice layered on capability, not a symptom or a requirement of it.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who has separated capability from autonomy can say, before seeing the options, that exposure differs while the system does not, because the deployer chose how much of the task to hand over.",
+      "cynic_test": "The key is now neither the longest nor the shortest option (166 against 159/167/171), and 'risk', 'same', 'capability' and 'setting' each appear in two or more options, so the word-match and length routes to the key are closed. A skipper's remaining instinct is that the more autonomous setting is simply more dangerous, which is the family-a distractor rather than the key."
+    },
+    "shard_id": "defining-and-measuring-agi-w",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1].text",
+    "options[1].provenance",
+    "options[2].text",
+    "options[2].provenance",
+    "options[3].text",
+    "options[3].provenance",
+    "explanation",
+    "level_claimed",
+    "self_check.cynic_test"
+  ],
+  "reviewer_note": "Check whether the key still sits too close to the prose: the original key echoed line 94's 'even though the underlying capability is identical' almost word for word, and my rewrite deliberately paraphrases it ('even though the system is the same') - read the key against that sentence and decide whether the reader is reasoning or recognising."
+}

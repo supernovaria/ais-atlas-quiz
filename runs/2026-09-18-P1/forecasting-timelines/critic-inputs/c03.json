@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/c03",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A policy analyst estimates that global AI investment doubles every nine months, that chip supply triples every two years, and that every doubling of inference compute lets a system handle roughly one additional decade of task time-horizon. Combining these three assumptions, they calculate that within about three years virtually all long-horizon knowledge work becomes automatable — a conclusion far more extreme than anything in economic history. What should they do with this result?",
+    "options": [
+      {
+        "text": "Treat the extreme result as a signal to check each input assumption for error, rather than adopt it as their new best guess about the future.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Adopt the three-year figure as their working estimate, since it was reached using the same trend-extrapolation method used for other compute forecasts.",
+        "key": false,
+        "provenance": "misreads the worked illustration of combining growth-rate beliefs as the chapter asserting a forecast, rather than as a method for testing whether the beliefs behind such a number cohere",
+        "family": "c"
+      },
+      {
+        "text": "Accept that automation this fast is likely, since each of the three input rates looked individually reasonable when they chose it.",
+        "key": false,
+        "provenance": "misreads 'if you're surprised, maybe one of your input beliefs needs updating' as license to trust the combined output because the inputs seemed fine alone, instead of as an instruction to re-examine an input",
+        "family": "d"
+      },
+      {
+        "text": "Discard the exercise altogether, since a result this extreme shows that combining independently-estimated growth rates this way isn't a sound way to reason about the future.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the point that a shocking combined output is itself the informative signal",
+        "family": "b"
+      }
+    ],
+    "explanation": "Forecasting exercises like this one exist to test whether your beliefs are internally consistent, not to generate a number you then adopt. When combining plausible-looking inputs produces a wildly implausible output, that surprise is informative — it signals that at least one input rate is probably wrong, and the right move is to go back and interrogate the inputs individually. The first wrong option treats the output as validated by its method rather than as a candidate for scrutiny. The second wrong option repeats the same mistake in a different guise: 'each input looked fine alone' is exactly the reasoning the surprise should override, not confirm. The third wrong option reverses the point entirely — the wide margins and shocking outputs are the useful part of the exercise, not evidence it failed. (Forecasting Timelines)",
+    "takeaway": "A forecast that shocks you is telling you to re-examine your inputs, not handing you a new prediction.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood forecasts-as-consistency-checks would know a surprising combined result means an input is suspect, not that the output is a new belief to adopt.",
+      "cynic_test": "A skipper might pick 'discard the exercise' since an extreme conclusion feels disqualifying, but the case is built so the extremity is exactly the useful signal, not a flaw in the method."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 141,
+    "distractor_lens": [
+      151,
+      130,
+      173
+    ],
+    "mean_distractor_len": 151.3,
+    "len_ratio": 0.93,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.33,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "compute",
+      "combining"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 134,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

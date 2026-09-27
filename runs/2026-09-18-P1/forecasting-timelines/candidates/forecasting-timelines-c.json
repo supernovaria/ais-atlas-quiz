@@ -1,0 +1,81 @@
+[
+  {
+    "id": "forecasting-timelines/sonnet/01",
+    "targets": ["FT-6"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab's synthetic-data pipeline for post-training turns out too repetitive to improve model reasoning, so that route stops producing useful gains. The lab hasn't touched multimodal data or task-based self-play, and nothing about the failure affects either. What does this imply about whether data availability will still constrain scaling?",
+    "options": [
+      {"text": "Not necessarily — because the three routes work through separate mechanisms, one failing doesn't determine what the other two can still deliver.", "key": true, "provenance": null, "family": null},
+      {"text": "Scaling will stall soon, because losing the synthetic-data route removes the lab's only viable alternative to already-exhausted public text.", "key": false, "provenance": "misreads 'the internet has maybe 30 years worth of text data... we'll hit that wall around 2028' in isolation, treating one failed substitute as removing the last option and ignoring the two independent routes listed right after", "family": "c"},
+      {"text": "Multimodal and self-play data are lesser substitutes, so they can help fill the gap but cannot fully replace what synthetic data was meant to provide.", "key": false, "provenance": "misreads 'AI-generating its own training data removes the constraint entirely — if the outputs are high enough quality' as ranking synthetic data above the other two rather than as one of three equally-independent routes", "family": "a"},
+      {"text": "Self-play is beside the point here, since that method mainly produces useful data for rule-based games like Go or Chess.", "key": false, "provenance": "misreads the AlphaZero example as the ceiling of self-play rather than as one instance of a route the text says 'could be extended to teaching any arbitrary task'", "family": "b"}
+    ],
+    "explanation": "The three data-wall routes work through independent mechanisms: multimodal data adds a new source entirely, synthetic data manufactures text under a quality condition, and self-play generates data through task interaction. A failure in one doesn't touch what the other two can supply, so whether scaling is actually constrained through 2030 depends on how well whichever routes remain still perform. The first wrong option is the pre-chapter instinct that a single failed substitute means the wall has been hit — but the routes exist precisely because none of them depends on the others succeeding. The third wrong option overreads the AlphaZero example as self-play's ceiling, when it's offered as one instance of an approach that could extend to any formalizable task. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall is soft because its escape routes are independent — one failing tells you nothing about the other two.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood that the three data-wall routes are independent could conclude a single route's failure doesn't decide the overall outcome, without seeing the options.",
+      "cynic_test": "A test-wise skipper might reach for 'no absolutes = safe answer,' but only one distractor carries strong language, so that heuristic alone doesn't isolate the key without reasoning about independence."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet/02",
+    "targets": ["FT-1"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Group A is developing theoretical alignment methods that need years of basic research and aren't expected to run on any model built in the next decade. Group B is building monitoring add-ons that work on today's frontier models and can ship within months. A funder becomes convinced TAI is six years away rather than forty. Which grant allocation follows from the idea that how far off TAI is changes which safety strategies are viable?",
+    "options": [
+      {"text": "Weight the allocation toward Group B, since a short timeline leaves no room for methods that need architectures that don't exist yet.", "key": true, "provenance": null, "family": null},
+      {"text": "Keep the allocation unchanged, since timeline estimates are too uncertain to be a sound basis for choosing between research agendas.", "key": false, "provenance": "misreads the opening contrast between a near and distant TAI arrival as background motivation rather than a claim that timeline length itself determines which strategies are viable, regardless of exact precision", "family": "c"},
+      {"text": "Weight the allocation toward Group A, since a six-year arrival implies the transition itself will be too abrupt for monitoring add-ons to matter.", "key": false, "provenance": "misreads 'predicting when AI automates cognitive labor' (a timelines question) as settling how fast the transition happens once it starts, a takeoff-speed question this section does not address", "family": "a"},
+      {"text": "Split the allocation evenly between both groups, since the two agendas address different parts of safety and neither becomes more urgent than the other.", "key": false, "provenance": "misreads 'the difference between 10 years and 50 years fundamentally changes which safety strategies are viable' as implying the agendas are interchangeable regardless of timeline, when the text's claim is the opposite", "family": "b"}
+    ],
+    "explanation": "Timeline length is strategy-determining: a near TAI arrival leaves room only for approaches that work on systems already in front of us, while a distant one leaves room for foundational work that doesn't need to pay off soon. With TAI six years out, Group B's add-ons are the agenda that can produce anything before the deadline that matters — Group A's methods are built for architectures that may not exist by then. The first wrong option treats timeline estimates as too uncertain to act on, missing that the argument holds even under wide error margins, since it's the order-of-magnitude gap doing the work, not a precise date. The second wrong option conflates a short timeline with a fast takeoff, a separate question this section deliberately sets aside. (Forecasting Timelines)",
+    "takeaway": "How far off TAI is isn't an academic estimate — it decides which safety agendas are even worth funding now.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasped that timeline length determines viable strategies could work out that a six-year estimate favors deployable, current-system-compatible work over agendas needing future architectures.",
+      "cynic_test": "A skipper might pick the evenly-split option as the safely moderate-sounding choice, but the case is built so timeline length is decisive, which that option denies outright."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet/03",
+    "targets": ["FT-2"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A policy analyst estimates that global AI investment doubles every nine months, that chip supply triples every two years, and that every doubling of inference compute lets a system handle roughly one additional decade of task time-horizon. Combining these three assumptions, they calculate that within about three years virtually all long-horizon knowledge work becomes automatable — a conclusion far more extreme than anything in economic history. What should they do with this result?",
+    "options": [
+      {"text": "Treat the extreme result as a signal to check each input assumption for error, rather than adopt it as their new best guess about the future.", "key": true, "provenance": null, "family": null},
+      {"text": "Adopt the three-year figure as their working estimate, since it was reached using the same trend-extrapolation method used for other compute forecasts.", "key": false, "provenance": "misreads the worked illustration of combining growth-rate beliefs as the chapter asserting a forecast, rather than as a method for testing whether the beliefs behind such a number cohere", "family": "c"},
+      {"text": "Accept that automation this fast is likely, since each of the three input rates looked individually reasonable when they chose it.", "key": false, "provenance": "misreads 'if you're surprised, maybe one of your input beliefs needs updating' as license to trust the combined output because the inputs seemed fine alone, instead of as an instruction to re-examine an input", "family": "d"},
+      {"text": "Discard the exercise altogether, since a result this extreme shows that combining independently-estimated growth rates this way isn't a sound way to reason about the future.", "key": false, "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the point that a shocking combined output is itself the informative signal", "family": "b"}
+    ],
+    "explanation": "Forecasting exercises like this one exist to test whether your beliefs are internally consistent, not to generate a number you then adopt. When combining plausible-looking inputs produces a wildly implausible output, that surprise is informative — it signals that at least one input rate is probably wrong, and the right move is to go back and interrogate the inputs individually. The first wrong option treats the output as validated by its method rather than as a candidate for scrutiny. The second wrong option repeats the same mistake in a different guise: 'each input looked fine alone' is exactly the reasoning the surprise should override, not confirm. The third wrong option reverses the point entirely — the wide margins and shocking outputs are the useful part of the exercise, not evidence it failed. (Forecasting Timelines)",
+    "takeaway": "A forecast that shocks you is telling you to re-examine your inputs, not handing you a new prediction.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood forecasts-as-consistency-checks would know a surprising combined result means an input is suspect, not that the output is a new belief to adopt.",
+      "cynic_test": "A skipper might pick 'discard the exercise' since an extreme conclusion feels disqualifying, but the case is built so the extremity is exactly the useful signal, not a flaw in the method."
+    }
+  },
+  {"note": "All three candidates use the case lens as assigned. FT-2's map note suggests 'objection' is its strongest natural lens (hand the reader a wild claim in the wild), but case still reaches it cleanly here via a thought-experiment: an invented forecaster whose own combined estimate surprises them, which exercises the same consistency-check mechanism without needing an external claim to critique. No idea in the shard was skipped."}
+]

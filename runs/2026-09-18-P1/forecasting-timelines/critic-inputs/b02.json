@@ -1,0 +1,94 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/b02",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two labs each report an increase in effective compute ahead of a new training run. Lab A tripled its number of chips while leaving software and hardware unchanged. Lab B kept chip count fixed but improved software efficiency by that same multiplicative factor. According to the section's model, how do these two claims compare?",
+    "options": [
+      {
+        "text": "Both labs achieved an equivalent increase in effective compute, because chip count, hardware efficiency, and software efficiency multiply together as independent, equally-weighted factors.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Only Lab A actually increased its effective compute, since effective compute is at bottom a measure of how much physical hardware a lab is running.",
+        "key": false,
+        "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat and treats chip count as the real definition of effective compute, the naive pre-chapter view the section opens by rejecting",
+        "family": "a"
+      },
+      {
+        "text": "Lab B's gain will not hold up over time, because if chip production growth ever slows, the benefit of improved software efficiency stalls along with it.",
+        "key": false,
+        "provenance": "misreads the multiplication of three independent factors as implying they rise and fall together, when the text states each factor 'can improve independently'",
+        "family": "c"
+      },
+      {
+        "text": "Lab A made the larger improvement, since chip count is the dominant driver of effective compute and software efficiency only a secondary contributor.",
+        "key": false,
+        "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing they multiply as equal, independent terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is defined as three independent multiplicative factors — chip count, hardware efficiency, and software efficiency — so a doubling (or tripling) from any one of them is worth exactly as much as the same multiplicative gain from any other; that's why Lab A and Lab B end up equivalent. Distractor 1 is the naive view the section opens by rejecting: treating chip count as the real definition of compute ignores that software and hardware efficiency multiply on top of it. Distractor 2 mistakes independence for correlation — the point of 'each can improve independently' is precisely that a slowdown in one factor doesn't drag the others down. Distractor 3 imposes a ranking the section never makes; the three factors multiply as equals, not as one dominant term plus two minor ones. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Effective compute is a product of three equal, independent multipliers, not a stand-in for chip count.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasped 'three independent multiplicative factors of equal standing' could state that the two labs' gains are equivalent without seeing the options.",
+      "cynic_test": "A skipper might default to whichever option sounds most 'technical' (chip counts, hardware), but all four options are matched in length and none carries an absolute quantifier, so the tell that usually rewards guessing isn't present here."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 188,
+    "distractor_lens": [
+      147,
+      152,
+      149
+    ],
+    "mean_distractor_len": 149.3,
+    "len_ratio": 1.26,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 36,
+    "max_over_min": 1.28,
+    "r5_matches": [
+      "according to the (chapter|text|textbook|section|author|atlas)"
+    ],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "labs",
+      "increase",
+      "improved"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 138,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

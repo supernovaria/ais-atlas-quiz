@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/sonnet/01",
+    "targets": ["DM-10"],
+    "lens": "misconception",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Suppose a system's aggregate score across CHC-style cognitive domains rises from 40% to 70% over two years, and someone argues: \"we're now 70% of the way to AGI, advancing at the same rate as those first 40 points.\" Which objection would the section's own critique of percentage-based AGI measurement most directly support?",
+    "options": [
+      {"text": "The remaining gap likely covers harder bottleneck capabilities than the ground already covered, so equal-sized score gains don't mean equal-sized progress toward AGI.", "key": true, "provenance": null, "family": null},
+      {"text": "The claim holds, since benchmarks are calibrated to human performance and each percentage point represents an equally sized step toward AGI.", "key": false, "provenance": "misreads the warning that percentage scores 'misleadingly imply linear progress' as something to reject rather than as the exact naive view the passage is arguing against", "family": "c"},
+      {"text": "The comparison is sound, since scoring a given percentage on a human-normed test always means matching that same percentage of human-level competence.", "key": false, "provenance": "misreads 'An LLM scoring 90% on a Raven's progressive matrices test is not comparable to a human scoring 90%' as being about general test validity rather than about percentile scores not equating to matched competence", "family": "a"},
+      {"text": "The critique shows percentage scores are worthless for tracking progress and should give way to qualitative description instead.", "key": false, "provenance": "misreads the call to interpret percentage scores cautiously as a call to abandon quantitative measurement, reversing the section's stated goal of a framework that is both concrete and continuous", "family": "b"}
+    ],
+    "explanation": "We built the key around the actual failure mode: a rising aggregate score doesn't mean the remaining gap is uniform, because the hardest, most human-specific capabilities often cluster near the top of the scale, and CHC coverage itself may miss some of them entirely. Distractor 1 just restates the linear-progress assumption this critique exists to correct, treating each percentage point as a fixed unit of 'AGI-ness.' Distractor 2 repeats the Raven's-matrices error we flag directly: matching a human's percentile score is not the same as matching the underlying competence. Distractor 3 overcorrects — our point is to interpret scores cautiously, not to abandon measurement, which we still treat as essential. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A rising percentage score can hide non-linear difficulty — equal-sized gains are not equal-sized progress once you're near the hard end of the scale.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who had internalized the disproportionate-bottleneck critique would produce the key before seeing options, since it's the one substantive objection the section raises about percentage scoring.",
+      "cynic_test": "A test-wise skipper might reach for whichever option sounds most like a formal critique, but distractor 3's confident overcorrection is phrased with the same register as the key, so tone alone won't separate them — the reader has to know the section defends measurement, not abandons it."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/02",
+    "targets": ["DM-2"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "System A reaches expert-level performance on a dangerous planning task after extensive training on billions of examples (brute-force learning). System B reaches the identical expert-level performance after minimal, highly sample-efficient training. Under the section's behaviorist framing, how should their risk profiles compare?",
+    "options": [
+      {"text": "They pose equal risk, since what matters for safety is the capability a system now has, not the learning path that produced it.", "key": true, "provenance": null, "family": null},
+      {"text": "System A poses less risk than System B, since reaching the capability through brute force suggests a shallower, less generalizable intelligence.", "key": false, "provenance": "misreads 'forget about internal mental states and focus on observable behavior' plus the adaptability discussion as implying brute-force-acquired capability is less real or less dangerous than efficiently-acquired capability", "family": "c"},
+      {"text": "System B poses less risk than System A, since efficient learners are inherently more constrained and predictable than brute-force learners.", "key": false, "provenance": "reverses the same error in the other direction, treating efficient learning itself as a safety property rather than a separate axis the text declines to link to danger", "family": "b"},
+      {"text": "Whichever system can be said to truly understand the task poses more risk, since genuine understanding is what enables dangerous autonomous action.", "key": false, "provenance": "misreads the paired Chinese Room / consciousness discussion as meaning genuine understanding, not observable capability, is what makes a system dangerous", "family": "a"}
+    ],
+    "explanation": "Risk tracks what a system can do, not the route it took to get there — that is the whole point of setting the learning-path question aside for safety purposes. Distractor 1 revives the pre-chapter intuition that brute-force learning signals something shallower or less real, when the text is explicit that the risks exist either way once the capability is present. Distractor 2 makes the same mistake in the opposite direction, treating efficient learning as evidence of safety rather than as a separate axis entirely. Distractor 3 imports the consciousness debate this section deliberately sets aside — 'true understanding' has little bearing on whether a system can take a dangerous action. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Safety-relevant risk is set by what a system can do, not by the path — efficient or brute-force — it took to get there.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who had internalized 'risk tracks capability, not learning path' would state the key before seeing any option.",
+      "cynic_test": "A skipper might default to 'efficient learning = more advanced = safer,' but the paired scenario forces them to notice the text explicitly rejects learning-path as a safety-relevant variable, so that shortcut fails."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/03",
+    "targets": ["DM-3"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Chollet and Wang define intelligence as the efficiency with which a system turns experience into skill, rather than as final performance. By their own standard, how should we describe a system that needed a billion training examples to reach the same benchmark score a human reaches after ten?",
+    "options": [
+      {"text": "It matched the human's final capability, but by Chollet and Wang's measure it is markedly less intelligent, since it needed far more experience to get there.", "key": true, "provenance": null, "family": null},
+      {"text": "It is less capable than the human, since needing a billion examples to reach the same score means the underlying skill itself is weaker.", "key": false, "provenance": "misreads 'a system that needs a billion examples...might be less impressive even if both reach the same final capability' as meaning the billion-example system is actually less capable, collapsing the efficiency measure into the capability measure", "family": "a"},
+      {"text": "It is inherently safer than a system that reached the same score efficiently, since brute-force learning suggests less autonomous adaptability.", "key": false, "provenance": "borrows the brute-force-is-safer prior from the adjacent safety discussion into a question that is about the definition of intelligence, not about risk", "family": "c"},
+      {"text": "Chollet and Wang would call the two systems equally intelligent, since intelligence is ultimately just accumulated skill regardless of how it was acquired.", "key": false, "provenance": "hands Chollet and Wang the accumulated-skill, behaviorist conclusion the text explicitly contrasts their adaptability view against", "family": "d"}
+    ],
+    "explanation": "By Chollet and Wang's own standard, intelligence is measured by how efficiently experience converts into skill, so two systems at the same final score are not equally intelligent if one needed vastly more data to get there — final capability and learning efficiency are separate measures. Distractor 1 collapses that distinction, treating the billion-example system as less capable rather than merely less efficient at acquiring the capability. Distractor 2 smuggles in a safety claim this idea doesn't make — learning efficiency says nothing about danger on its own. Distractor 3 hands Chollet and Wang the opposite position, the accumulated-skill view their framework is built to contrast against. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Learning efficiency and final capability are two different measures; matching a score is not the same as matching the intelligence that produced it.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasped that Chollet and Wang score intelligence by efficiency, not outcome alone, would produce the key unprompted.",
+      "cynic_test": "A skipper might assume 'reached the same score' implies 'equally intelligent,' but naming Chollet and Wang's own standard in the stem blocks that shortcut and forces the efficiency/capability split."
+    }
+  },
+  {"note": "DM-2 and DM-3 form a discrimination_pairs entry, and a single contrast candidate spanning both would normally be preferred — but the assigned lens for this shard is misconception, not contrast, so I wrote one misconception-lens candidate per idea instead of substituting lenses. Each still uses the other idea's prior as a distractor family (q2 borrows DM-1's consciousness conflation; q3 borrows DM-2's brute-force-is-safer prior) to keep the pair in view without merging the questions."}
+]

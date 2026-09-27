@@ -1,0 +1,27 @@
+[
+  {
+    "id": "undercraft-theory/sonnet/w02",
+    "stem": "Troupe A's anchor performer needed exactly one backstage correction all night and made it invisibly. Troupe B's anchor performer needed thirty corrections over the course of the night and caught every single one invisibly. A colleague argues that Troupe B's performer must have the better Fen index, since catching so many corrections cleanly is the bigger achievement. Is the colleague right, and what does Kasch's account of the Fen index and the correction load say about it?",
+    "what_i_withheld": "The old stem stated outright that both performers' Fen index came to 'the same 1.0,' handing over the rate-vs-count conclusion; the new stem gives only the raw correction counts and a colleague's wrong guess, so the reader must apply the Fen index's success-over-attempts definition themselves."
+  },
+  {
+    "id": "undercraft-theory/sonnet/w03",
+    "stem": "A touring director is casting a new show. Performer X reliably draws the loudest audience reactions but has struggled in rehearsal to catch missed cues without being noticed. Performer Y, meanwhile, draws little audience attention. Based on Kasch's casting findings, how should the director assign the lead and anchor positions?",
+    "what_i_withheld": "The old stem told the reader that Performer Y had already caught nearly every backstage problem cleanly, so the correct casting fell out of simple skill-matching; the new stem withholds Y's correction record, requiring the reader to recall Kasch's specific finding that casting follows projection rank, not demonstrated backstage skill."
+  },
+  {
+    "id": "undercraft-theory/sonnet/w04",
+    "stem": "A touring manager reports: 'Our Fen index has held at a flawless 1.0 for six consecutive productions.' Using Kasch's account of rescue, repair, and correction load, which objection does his framework support?",
+    "what_i_withheld": "The old stem had the manager herself conclude 'our undercraft has never been better,' supplying the exact overclaim the objection needs to rebut; the new stem reports only the flawless score and consecutive count, leaving the undercraft-improved inference for the reader to supply and then dispute."
+  },
+  {
+    "id": "undercraft-theory/sonnet/w05",
+    "stem": "Over a touring season, a troupe's audience-rated gloss score climbs steadily month after month. A producer cites this rising trend as proof that the troupe's undercraft has been improving all season. Per Kasch's account of the gloss effect, how should this trend be interpreted?",
+    "what_i_withheld": "The old stem asked what could be concluded 'from this trend alone' and 'responsibly,' hedge words that signal a cautious answer regardless of content; the new stem has a producer assert undercraft has improved, so the reader must recall the gloss-versus-Fen-index mechanism to see why that claim is unsupported."
+  },
+  {
+    "id": "undercraft-theory/sonnet/w07",
+    "stem": "Kasch's survey found that average Fen index peaks among troupes with between five and seven performers. A director is puzzled that both her three-person troupe and her fourteen-person troupe post unusually low Fen indices this season, and concludes the underlying cause must be the same for both: not enough attentive people to catch backstage issues. What is wrong with this explanation, according to Kasch's account?",
+    "what_i_withheld": "The old stem stated the general rule that Fen index 'declines for troupes below four and troupes above ten' right before presenting the three-person and fourteen-person cases, making the two-sided structure -- and thus that two different mechanisms are likely -- obvious from the stem's own shape; the new stem gives only the specific troupe sizes, leaving the reader to supply both the below-four/above-ten pattern and its two distinct causes from the passage."
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "section": "defining-and-measuring-agi",
+  "target_n": 8,
+  "selected": [
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "level": "L3",
+      "targets": ["DM-3"],
+      "families": ["a", "c", "d"],
+      "bridge_from": null,
+      "negation": false,
+      "durable_figure": null,
+      "lineage": ["sonnet/a03", "critic-rewrite:sonnet/a03r"],
+      "why": "Only clean candidate on DM-3 (adaptability/efficiency vs. final-capability); rewrite resolved D3 (stem gave away the discriminator), R14 (word-match tell), and D1 (unverifiable distractor provenance); re-measured len_ratio 0.98, extremum_gap 0."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "level": "L3",
+      "targets": ["DM-9"],
+      "families": ["a", "b", "c"],
+      "bridge_from": null,
+      "negation": false,
+      "durable_figure": null,
+      "lineage": ["sonnet/w04", "critic-rewrite:sonnet/w04r"],
+      "why": "Covers a threshold concept (autonomy as separate, deployment-time axis); rewrite resolved R8/R9 (245-char key vs 188 mean), R14, D1, D3, D6, and the positional 'Distractor 1/2/3' references in the explanation (E3, which the app's shuffle makes meaningless); re-measured len_ratio 1.00, extremum_gap 0. Level dropped L4->L3 by the critic on rewrite."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "level": "L5",
+      "targets": ["DM-6"],
+      "families": ["a", "b", "c"],
+      "bridge_from": null,
+      "negation": false,
+      "durable_figure": null,
+      "lineage": ["sonnet/w07", "critic-rewrite:sonnet/w07r"],
+      "why": "Fills the mandatory >=1 L5 slot and a second threshold concept (continuum vs. stipulated AGI/TAI/ASI thresholds); rewrite resolved R9 (31-char extremum gap) and D1 (distractor 4's provenance named a family, not a referent); re-measured len_ratio 0.99, extremum_gap 0."
+    }
+  ],
+  "shipped_n": 3,
+  "underfill_reason": "Only 3 of 21 generated candidates (24 counting the 3 critic rewrites; 20 after w02 was collapsed as a dedupe loser against x01) were critiqued this run. The critic worked queue.json in coverage order and its window ran out after position 3 (b01/DM-4-5, w07/DM-6, w04/DM-9) -- of these, w07 and w04 needed and received rewrites that re-measured clean, while b01 (the section's own headline DM-4/DM-5 pair, queue position 1) was never reached. a03 was pulled from position 6 and also rewrote clean. The other 17 survivors of dedupe (a01, a02, b01, b02, w01, w03, w05, w06, w08, x01-x08) are uncritiqued, not rejected, and are therefore not eligible under this run's rule that no candidate a critic has not seen may ship. Per SS8.1, under-filling is preferred to filling with unreviewed material, so shipped_n is 3 against a target of 8. This is a critic-budget gap, not a quality or coverage-availability gap: eligible-once-critiqued candidates already exist for every uncovered idea (see coverage.earns_question_uncovered)."
+  ,
+  "distribution": {"L2": 0, "L3": 2, "L4": 0, "L5": 1},
+  "coverage": {
+    "covered": ["DM-3", "DM-6", "DM-9"],
+    "threshold_covered": ["DM-6", "DM-9"],
+    "earns_question_uncovered": [
+      {"id": "DM-1", "why": "Uncritiqued. w06 (L3) and x08 (L3) target it and are queue positions 9 and 17 respectively; neither has been seen by a critic."},
+      {"id": "DM-2", "why": "Uncritiqued. a02 (L4, queue position 4) targets DM-2 alone; w01 and x03 (queue positions 13 and 19) target the DM-2/DM-3 discrimination pair jointly. None critiqued."},
+      {"id": "DM-4", "why": "Uncritiqued and unshipped despite being the section's own headline distinction and the first item in queue.json's coverage order (position 1, priority 'threshold'). b01 (L4, position 1), b02 (L4, position 10, paired with DM-9), and x01 (L3, position 18, the dedupe survivor over w02) all target it. The critic budget ran out before reaching any of them. Its DM-5 pairing is likewise uncovered -- see next entry."},
+      {"id": "DM-5", "why": "Pairs with DM-4 (capability vs. generality); same uncritiqued candidates (b01, x01) would cover it. Uncovered for the same budget reason as DM-4."},
+      {"id": "DM-7", "why": "Uncritiqued. w03 (L3, queue position 5) and x02 (L4, queue position 14) target the DM-7/DM-8 (AGI vs. TAI) pair jointly."},
+      {"id": "DM-8", "why": "Pairs with DM-7; same uncritiqued candidates (w03, x02) would cover it."},
+      {"id": "DM-10", "why": "Uncritiqued. a01 (L5, queue position 7), w05 (L5, position 15), and x05 (L5, position 20) all target it. Concept-map notes DM-10 as the chapter's featured L5 seed (also used by RUBRIC SS3.6's Synthesis Q4 example), but the section's own required >=1 L5 slot was filled instead by DM-6 (w07r), since that is what cleared critique first. DM-10 is a strong second L5 candidate once critiqued."},
+      {"id": "DM-11", "why": "Uncritiqued. w08 (L4, queue position 8) and x07 (L4, queue position 16) target the (t,n)-AGI framework's parallel-copies logic."}
+    ]
+  },
+  "siblings": [],
+  "rejected_from_pool": [],
+  "flags_for_reviewer": [
+    {
+      "id": "defining-and-measuring-agi/sonnet/a03r",
+      "note": "Adversary hit 3/3 seeds (100%). Also, the critic's reviewer_note on the pre-rewrite verdict raises a truth concern that still applies post-rewrite: option 2 ('brute-forced systems are brittle off-distribution and therefore safer') is a real, defensible empirical claim some readers hold, not purely invented -- it is meant as the top distractor, but a sophisticated reader could argue for it as a second right answer. Also check that the path-vs-destination sentence this question turns on doesn't become load-bearing in a second question if a DM-2 candidate (a02/w01/x03) ships from this pool later."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w04r",
+      "note": "Adversary hit 3/3 seeds (100%). Critic's reviewer_note flags a residual near-restatement concern: the key ('even though the system is the same') sits close to the source sentence ('even though the underlying capability is identical') -- worth a fresh read for whether the task is reasoning or recognition before shipping."
+    },
+    {
+      "id": "defining-and-measuring-agi/sonnet/w07r",
+      "note": "Adversary hit 3/3 seeds (100%). Critic's reviewer_note raises an E8 (explanation-truth) concern: the key's claim that a stipulated percentile/domain threshold is what makes the human-level prediction checkable may overclaim, since the text also offers the (t,n)-AGI framework as an alternative checkable route and explicitly allows a system to fall short of '100% AGI' while already having all the capabilities of an educated adult. Verify the explanation reads as true standalone against that counter-argument passage."
+    },
+    {
+      "id": "section",
+      "note": "Coverage finding, not a single-question defect: the shipped set tests two of the section's three threshold concepts (DM-6, DM-9) but not DM-4/DM-5, the capability-vs-generality axis pair that is this section's concept-map takeaway. That happened purely because DM-4's queue-position-1 candidate (b01) fell outside the critic's budget window, not because it failed anything. A reader could clear this section's quiz without ever being tested on capability vs. generality."
+    },
+    {
+      "id": "section",
+      "note": "17 of 20 surviving generated candidates are uncritiqued (not rejected) due to budget truncation, not quality. Recommend a follow-up critic pass down queue.json (starting at position 1, b01) rather than regeneration -- regenerating would discard usable coverage work already sitting in candidates.json for DM-1, DM-2, DM-4, DM-5, DM-7, DM-8, DM-10, and DM-11."
+    },
+    {
+      "id": "section",
+      "note": "Adversary set-level: mean_hit_rate 1.0 (9/9 answers correct across 3 seeds x 3 questions), gate_excess_pass false. This is higher than the 98.3% baseline the rubric reports for the current 40-question file and, per that same baseline analysis, is not treated as a quality signal on its own (it flagged the file's own best two questions at a similar rate). Sample size here is 3 questions -- too small to be a trend by itself, but worth revisiting once more of this section clears critique."
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "defining-and-measuring-agi/sonnet/a03",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L3",
+  "failed_criteria": ["R14", "D1", "D3", "D9"],
+  "measurements": {
+    "correct_len": 157,
+    "distractor_lens": [136, 143, 155],
+    "mean_distractor_len": 144.7,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": [
+      "intelligence",
+      "system",
+      "experience",
+      "final",
+      "needed",
+      "billion",
+      "examples",
+      "reach"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 114,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, false, false],
+  "families_present": ["a", "c", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14 (word-match tell): three distinctive words from the stem - 'experience', 'final' and 'needed' - appear in exactly one option each, and that option is the key. The stem says intelligence is 'the efficiency with which a system turns experience into skill, rather than as final performance'; the key says it 'matched the human's final capability' and 'needed far more experience'. The key is the stem's own premise read back, so it is the option that looks like the stem, which is the tell R14 exists to stop. Either put those words in at least two options or in none.",
+    "D1 (provenance must name a real sentence that is really misreadable): option 3's provenance line - 'borrows the brute-force-is-safer prior from the adjacent safety discussion' - names no sentence at all, only a neighbourhood. The prior itself is real and is in the concept map (DM-3 misconception c), but the section states the opposite in so many words ('If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'), and, more importantly, the stem asks how Chollet and Wang would *describe* the system's intelligence, not whether it is safe. No attentive reader offers a safety verdict as an answer to a definitional question. Option 4's provenance does name real prose ('Process and adaptability focused views see intelligence as learning efficiency rather than accumulated skills'), but the misreading it describes is one the stem has already ruled out in its first sentence, so it cannot be verified as a claim a reader could still hold here.",
+    "D3 (straw ceiling: at most one option may be eliminable without having read the section): two are. Option 3 answers a different question (safety, not intelligence) and the candidate's own explanation concedes this - 'smuggles in a safety claim this idea doesn't make'. Option 4 flatly contradicts the definition the stem just supplied, so it is eliminable by reading the stem alone. Option 2 is the only distractor doing real work, and even it sits against the stem's stipulation that both reached the same score.",
+    "D9 (all options must be the same grammatical type): options 1-3 are 'It <predicate>' statements about the system; option 4 switches subject to 'Chollet and Wang would call...'. The odd one out is visible without reading any of them."
+  ],
+  "preserve": "the idea and the discrimination: DM-3's split between learning efficiency and final capability is worth a question, and option 2 - the reader who hears 'less impressive' and concludes 'less capable' - is a genuine misconception straight out of the section's own sentence about the billion-example learner. The rewrite keeps both, and keeps the billion-examples-versus-a-handful case.",
+  "rewrite": {
+    "id": "defining-and-measuring-agi/sonnet/a03",
+    "targets": ["DM-3"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two systems end up with identical expert-level scores across the same set of cognitive domains. One got there from a handful of demonstrations; the other required a billion training examples. A colleague argues: \"the second system is less intelligent, so it is also the less worrying one to deploy.\" How should that argument be assessed?",
+    "options": [
+      {
+        "text": "The intelligence claim is defensible on a learning-efficiency account, but the deployment claim is not: what these two systems can do, not how they learned it, sets the risk.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The intelligence claim is the mistaken step: needing a billion examples means the capability itself is shallower, so the matching scores overstate what it can really do.",
+        "key": false,
+        "provenance": "misreads 'A system that needs a billion examples to learn what humans get from ten examples might be less impressive even if both reach the same final capability' as meaning the sample-inefficient system is less capable, rather than equally capable and merely less impressive on one criterion",
+        "family": "a"
+      },
+      {
+        "text": "Both claims hold: a system that needs a billion examples has only memorised them, and cannot act outside that data, which is what makes it the safer deployment.",
+        "key": false,
+        "provenance": "misreads 'an AI that achieves superhuman performance at Go has mastered Go; it has not necessarily become more intelligent in a general sense' as meaning a brute-force learner is confined to what it was trained on and is therefore the safer system to deploy, against the same paragraph's 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'",
+        "family": "c"
+      },
+      {
+        "text": "Neither claim holds: intelligence is just what a system can do once trained, so two systems with matching scores are equally capable and equally risky.",
+        "key": false,
+        "provenance": "misreads 'Behaviorist (capabilities focused) approaches matter most for safety... These questions don't change the risk profile' as rejecting the learning-efficiency account of intelligence outright, when the text says it will 'acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The adaptability account of intelligence - the efficiency with which a system turns experience and priors into skills - does rate the sample-hungry system as the less intelligent of the two, so the first half of the argument stands. The risk conclusion does not follow. If a system can perform dangerous tasks, it makes no difference whether it got there by efficient learning or by brute-force memorisation; the risks exist either way. The option that endorses both halves is the common form of this slip, letting the learning path rather than the resulting capability decide how worrying a system is. The option that rejects both halves overcorrects: final capability is what gets prioritised for safety, but the efficiency point is acknowledged, not discarded. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "How a system learned something changes how intelligent it looks on the adaptability view; it does not change what the system can now do, and risk follows what it can do.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who took the section's point that the adaptability view is acknowledged but that final capability is what sets risk can produce the split verdict with the options covered.",
+      "cynic_test": "The stem no longer states the efficiency definition, so the key cannot be derived from the stem's own wording; the reader has to know both that the efficiency account is taken seriously and that it is deliberately not allowed to decide risk. All four options are verdicts of the same shape and none echoes the stem's vocabulary uniquely."
+    },
+    "shard_id": "defining-and-measuring-agi-a",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "stem_format",
+    "options[0].text",
+    "options[1]",
+    "options[2]",
+    "options[3]",
+    "explanation",
+    "takeaway",
+    "self_check"
+  ],
+  "reviewer_note": "Check the key's phrase 'defensible on a learning-efficiency account' against the paragraph beginning 'Process and adaptability focused views' - the Atlas presents that account approvingly but never itself pronounces the brute-force learner less intelligent, so the key has to stay at 'defensible on that account' rather than 'is less intelligent', and if you tighten the wording, do not tighten it past that line; stem_format is 'claim-evaluation' because the reader is judging a quoted argument, though it also has a two-scenario setup."
+}

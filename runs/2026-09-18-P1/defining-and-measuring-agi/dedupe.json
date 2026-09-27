@@ -1,0 +1,43 @@
+{
+  "section": "defining-and-measuring-agi",
+  "candidates_in": 21,
+  "survivors": 20,
+  "collapsed_count": 1,
+  "critic_calls_saved": 1,
+  "survivor_ids": [
+    "defining-and-measuring-agi/sonnet/a01",
+    "defining-and-measuring-agi/sonnet/a02",
+    "defining-and-measuring-agi/sonnet/a03",
+    "defining-and-measuring-agi/sonnet/b01",
+    "defining-and-measuring-agi/sonnet/b02",
+    "defining-and-measuring-agi/sonnet/w01",
+    "defining-and-measuring-agi/sonnet/x01",
+    "defining-and-measuring-agi/sonnet/w03",
+    "defining-and-measuring-agi/sonnet/w04",
+    "defining-and-measuring-agi/sonnet/w05",
+    "defining-and-measuring-agi/sonnet/w06",
+    "defining-and-measuring-agi/sonnet/w07",
+    "defining-and-measuring-agi/sonnet/w08",
+    "defining-and-measuring-agi/sonnet/x02",
+    "defining-and-measuring-agi/sonnet/x03",
+    "defining-and-measuring-agi/sonnet/x04",
+    "defining-and-measuring-agi/sonnet/x05",
+    "defining-and-measuring-agi/sonnet/x06",
+    "defining-and-measuring-agi/sonnet/x07",
+    "defining-and-measuring-agi/sonnet/x08"
+  ],
+  "collapsed": [
+    {
+      "collapsed_id": "defining-and-measuring-agi/sonnet/w02",
+      "survivor_id": "defining-and-measuring-agi/sonnet/x01",
+      "stem_overlap": 0.71,
+      "targets": [
+        "DM-4",
+        "DM-5"
+      ],
+      "why": "R4: ≥70% content-word overlap on stems and identical targets",
+      "loser_len_ratio": 1.08,
+      "keeper_len_ratio": 1.02
+    }
+  ]
+}

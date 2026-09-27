@@ -1,0 +1,57 @@
+[
+  {
+    "from": "forecasting-timelines/sonnet/01",
+    "to": "forecasting-timelines/sonnet/a01",
+    "shard": "forecasting-timelines-a"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/02",
+    "to": "forecasting-timelines/sonnet/a02",
+    "shard": "forecasting-timelines-a"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/03",
+    "to": "forecasting-timelines/sonnet/a03",
+    "shard": "forecasting-timelines-a"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/01",
+    "to": "forecasting-timelines/sonnet/b01",
+    "shard": "forecasting-timelines-b"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/02",
+    "to": "forecasting-timelines/sonnet/b02",
+    "shard": "forecasting-timelines-b"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/01",
+    "to": "forecasting-timelines/sonnet/c01",
+    "shard": "forecasting-timelines-c"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/02",
+    "to": "forecasting-timelines/sonnet/c02",
+    "shard": "forecasting-timelines-c"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/03",
+    "to": "forecasting-timelines/sonnet/c03",
+    "shard": "forecasting-timelines-c"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/01",
+    "to": "forecasting-timelines/sonnet/d01",
+    "shard": "forecasting-timelines-d"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/02",
+    "to": "forecasting-timelines/sonnet/d02",
+    "shard": "forecasting-timelines-d"
+  },
+  {
+    "from": "forecasting-timelines/sonnet/03",
+    "to": "forecasting-timelines/sonnet/d03",
+    "shard": "forecasting-timelines-d"
+  }
+]

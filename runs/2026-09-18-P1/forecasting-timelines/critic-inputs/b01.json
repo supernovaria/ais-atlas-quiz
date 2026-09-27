@@ -1,0 +1,97 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/b01",
+    "targets": [
+      "FT-2",
+      "FT-4"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A colleague summarizes this section as: 'The forecast is that AGI arrives in 2045 — the twelve orders of magnitude of uncertainty in the underlying compute estimates is just noise around that number.' Which of these best describes what the colleague has backwards?",
+    "options": [
+      {
+        "text": "The uncertainty is the finding itself: a figure like 2045 is useful only for checking whether your other beliefs cohere, not as a value the answer clusters around.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Nothing is backwards here — collapsing a wide-uncertainty estimate down to its center point is exactly how a biological-anchors forecast is meant to be used.",
+        "key": false,
+        "provenance": "misreads 'somewhere in the 2030s-2050s range, with 2045 as a rough center — not a precise date' as endorsing the center point as the intended output rather than the range around it",
+        "family": "c"
+      },
+      {
+        "text": "The colleague's real error is treating that spread as informative at all; a gap that wide means the biological-anchors method has failed and should be discarded.",
+        "key": false,
+        "provenance": "misreads 'twelve orders of magnitude of uncertainty' and 'all forecasts come with wide error margins that compound over time' as evidence the method failed, reversing the section's point that the margin is the informative output",
+        "family": "a"
+      },
+      {
+        "text": "The colleague's mistake is treating the lower and upper biological-anchor estimates as equally likely, when the true value more likely sits near the midpoint.",
+        "key": false,
+        "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a roughly uniform distribution centered on the midpoint, rather than genuine deep uncertainty about which reference process is right",
+        "family": "b"
+      }
+    ],
+    "explanation": "The section says outright that forecasts are 'not concrete predictions... but scenarios that help you reason about different potential futures' — so the twelve-orders-of-magnitude spread in the biological-anchors estimates isn't decoration, it's the result. Collapsing '2045' into a definite target throws that away. Distractor 2 repeats the same error, treating the wide margin as evidence of failure rather than as the honest output of compounding uncertainty across a decades-long trajectory. Distractor 3 assumes the range is roughly uniform and clusters near its middle, when the point of citing two very different biological reference processes (skill-learning compute vs. evolutionary compute) is that we don't know which one is even the right anchor. (Forecasting Timelines → Training Data)",
+    "takeaway": "A forecast's error bars are the finding — treat a stated center figure as a reasoning aid, not as the chapter's actual prediction.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [
+      "twelve orders of magnitude of biological-anchors uncertainty (durable, R11 budget)"
+    ],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood 'forecasts are consistency checks, not predictions' and 'the range is the finding' could state the colleague's error before seeing any option.",
+      "cynic_test": "A skipper might gravitate toward whichever option sounds most hedged or cautious, but all four are matched in register and none flags itself with an absolute quantifier, so guessing requires actually knowing which specific claim the section makes about uncertainty."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 163,
+    "distractor_lens": [
+      157,
+      161,
+      158
+    ],
+    "mean_distractor_len": 158.7,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "forecast",
+      "2045",
+      "estimates",
+      "around",
+      "backwards"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 116,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

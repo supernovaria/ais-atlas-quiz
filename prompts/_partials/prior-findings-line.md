@@ -1,0 +1,1 @@
+- `{{path}}` — prior findings. Treat what it establishes as established; do not re-derive it.

@@ -1,0 +1,171 @@
+{
+  "source": "2026-09-18-P1/forecasting-timelines",
+  "seeds": 3,
+  "n_questions": 6,
+  "n_prompts": 18,
+  "questions_with_a_repeated_permutation": 0,
+  "prompts": [
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA reading-group member picks their own figures for how fast investment, software efficiency, and hardware efficiency are improving, adds a figure for how much automation each order of magnitude of compute unlocks, multiplies them out, and announces: 'There - that combined number is when transformative AI arrives.' Which response best captures what the exercise has actually produced?\n\nA. It converts individually reasonable inputs into a date that inherits their reasonableness, making the combined result the estimate to adopt.\nB. It checks whether their separate beliefs on each trend are mutually consistent; a surprising combined result is a signal to revisit one of the inputs.\nC. It compounds each input's uncertainty until the margins swamp the answer, which is why the whole procedure gives you a number too soft to act on.\nD. It applies the field's consensus growth rates, so its output is the expected arrival date rather than something particular to this person's beliefs."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA reading-group member picks their own figures for how fast investment, software efficiency, and hardware efficiency are improving, adds a figure for how much automation each order of magnitude of compute unlocks, multiplies them out, and announces: 'There - that combined number is when transformative AI arrives.' Which response best captures what the exercise has actually produced?\n\nA. It compounds each input's uncertainty until the margins swamp the answer, which is why the whole procedure gives you a number too soft to act on.\nB. It checks whether their separate beliefs on each trend are mutually consistent; a surprising combined result is a signal to revisit one of the inputs.\nC. It converts individually reasonable inputs into a date that inherits their reasonableness, making the combined result the estimate to adopt.\nD. It applies the field's consensus growth rates, so its output is the expected arrival date rather than something particular to this person's beliefs."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA reading-group member picks their own figures for how fast investment, software efficiency, and hardware efficiency are improving, adds a figure for how much automation each order of magnitude of compute unlocks, multiplies them out, and announces: 'There - that combined number is when transformative AI arrives.' Which response best captures what the exercise has actually produced?\n\nA. It converts individually reasonable inputs into a date that inherits their reasonableness, making the combined result the estimate to adopt.\nB. It checks whether their separate beliefs on each trend are mutually consistent; a surprising combined result is a signal to revisit one of the inputs.\nC. It applies the field's consensus growth rates, so its output is the expected arrival date rather than something particular to this person's beliefs.\nD. It compounds each input's uncertainty until the margins swamp the answer, which is why the whole procedure gives you a number too soft to act on."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nEstimates of the compute a transformative AI system would need span roughly twelve orders of magnitude. A reader concludes that a spread that large makes the exercise worthless for planning. What is the strongest objection to that conclusion?\n\nA. The spread comes from disagreement about how fast investment and chip supply will grow, so it narrows as those trends are measured more precisely.\nB. The spread is real, but its midpoint is the usable number, since the two endpoint estimates are equally likely and either extreme is implausible in practice.\nC. The spread is an artifact of chaining several uncertain steps together, so it shrinks to a usable figure when the estimates are made in one step instead.\nD. The spread is the output the method is meant to produce: these forecasts are scenarios for checking whether a set of beliefs coheres, not attempts to name a figure."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nEstimates of the compute a transformative AI system would need span roughly twelve orders of magnitude. A reader concludes that a spread that large makes the exercise worthless for planning. What is the strongest objection to that conclusion?\n\nA. The spread comes from disagreement about how fast investment and chip supply will grow, so it narrows as those trends are measured more precisely.\nB. The spread is an artifact of chaining several uncertain steps together, so it shrinks to a usable figure when the estimates are made in one step instead.\nC. The spread is the output the method is meant to produce: these forecasts are scenarios for checking whether a set of beliefs coheres, not attempts to name a figure.\nD. The spread is real, but its midpoint is the usable number, since the two endpoint estimates are equally likely and either extreme is implausible in practice."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nEstimates of the compute a transformative AI system would need span roughly twelve orders of magnitude. A reader concludes that a spread that large makes the exercise worthless for planning. What is the strongest objection to that conclusion?\n\nA. The spread is the output the method is meant to produce: these forecasts are scenarios for checking whether a set of beliefs coheres, not attempts to name a figure.\nB. The spread is real, but its midpoint is the usable number, since the two endpoint estimates are equally likely and either extreme is implausible in practice.\nC. The spread comes from disagreement about how fast investment and chip supply will grow, so it narrows as those trends are measured more precisely.\nD. The spread is an artifact of chaining several uncertain steps together, so it shrinks to a usable figure when the estimates are made in one step instead."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA colleague argues: 'When people say the compute behind frontier models keeps growing, they just mean labs have more and faster chips — chip count is what's doing the work.' Which reply identifies the substantive error in that account of effective compute?\n\nA. Chip count, hardware efficiency and software efficiency are separate multiplied terms, so growth in one of them raises the total while the others sit still.\nB. Chip count is the dominant term, so the two efficiency factors amount to second-order corrections that can shift the total only at the margin.\nC. Chip production sets the ceiling for the other two, so growth in the total can only keep pace with the rate at which new chips are made.\nD. Hardware and software efficiency gains are ways of counting the same chips as though the fleet had grown, so chip count is still the quantity that really matters."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA colleague argues: 'When people say the compute behind frontier models keeps growing, they just mean labs have more and faster chips — chip count is what's doing the work.' Which reply identifies the substantive error in that account of effective compute?\n\nA. Chip count is the dominant term, so the two efficiency factors amount to second-order corrections that can shift the total only at the margin.\nB. Chip production sets the ceiling for the other two, so growth in the total can only keep pace with the rate at which new chips are made.\nC. Chip count, hardware efficiency and software efficiency are separate multiplied terms, so growth in one of them raises the total while the others sit still.\nD. Hardware and software efficiency gains are ways of counting the same chips as though the fleet had grown, so chip count is still the quantity that really matters."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA colleague argues: 'When people say the compute behind frontier models keeps growing, they just mean labs have more and faster chips — chip count is what's doing the work.' Which reply identifies the substantive error in that account of effective compute?\n\nA. Hardware and software efficiency gains are ways of counting the same chips as though the fleet had grown, so chip count is still the quantity that really matters.\nB. Chip count, hardware efficiency and software efficiency are separate multiplied terms, so growth in one of them raises the total while the others sit still.\nC. Chip count is the dominant term, so the two efficiency factors amount to second-order corrections that can shift the total only at the margin.\nD. Chip production sets the ceiling for the other two, so growth in the total can only keep pace with the rate at which new chips are made."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA colleague summarizes this section as: 'The forecast is that AGI arrives in 2045 — the twelve orders of magnitude of uncertainty in the underlying compute estimates is just noise around that number.' Which of these best describes what the colleague has backwards?\n\nA. The uncertainty is the finding itself: a figure like 2045 is useful only for checking whether your other beliefs cohere, not as a value the answer clusters around.\nB. The colleague's real error is treating that spread as informative at all; a gap that wide means the biological-anchors method has failed and should be discarded.\nC. The colleague's mistake is treating the lower and upper biological-anchor estimates as equally likely, when the true value more likely sits near the midpoint.\nD. The colleague's only error is the word 'noise': 2045 is the method's point estimate, and the twelve orders of magnitude are the error bars around any point estimate."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "A",
+      "key_position": 0,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA colleague summarizes this section as: 'The forecast is that AGI arrives in 2045 — the twelve orders of magnitude of uncertainty in the underlying compute estimates is just noise around that number.' Which of these best describes what the colleague has backwards?\n\nA. The uncertainty is the finding itself: a figure like 2045 is useful only for checking whether your other beliefs cohere, not as a value the answer clusters around.\nB. The colleague's mistake is treating the lower and upper biological-anchor estimates as equally likely, when the true value more likely sits near the midpoint.\nC. The colleague's only error is the word 'noise': 2045 is the method's point estimate, and the twelve orders of magnitude are the error bars around any point estimate.\nD. The colleague's real error is treating that spread as informative at all; a gap that wide means the biological-anchors method has failed and should be discarded."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA colleague summarizes this section as: 'The forecast is that AGI arrives in 2045 — the twelve orders of magnitude of uncertainty in the underlying compute estimates is just noise around that number.' Which of these best describes what the colleague has backwards?\n\nA. The colleague's real error is treating that spread as informative at all; a gap that wide means the biological-anchors method has failed and should be discarded.\nB. The colleague's only error is the word 'noise': 2045 is the method's point estimate, and the twelve orders of magnitude are the error bars around any point estimate.\nC. The uncertainty is the finding itself: a figure like 2045 is useful only for checking whether your other beliefs cohere, not as a value the answer clusters around.\nD. The colleague's mistake is treating the lower and upper biological-anchor estimates as equally likely, when the true value more likely sits near the midpoint."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA lab's synthetic-data pipeline turns out to produce text too repetitive to improve model reasoning, and the lab abandons that route. What does this failure establish about whether data availability will constrain scaling?\n\nA. That self-play goes with it, since both routes rely on a model producing its own training examples and share the same defect.\nB. That scaling now meets a hard limit, since manufacturing text was the only way to add supply once the public stock is consumed.\nC. That the other routes are untouched, since they draw on different sources, so whether data binds still turns on how well they work.\nD. That data now caps scaling at whatever images and video can add, since the routes left both draw on human-produced material."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA lab's synthetic-data pipeline turns out to produce text too repetitive to improve model reasoning, and the lab abandons that route. What does this failure establish about whether data availability will constrain scaling?\n\nA. That data now caps scaling at whatever images and video can add, since the routes left both draw on human-produced material.\nB. That self-play goes with it, since both routes rely on a model producing its own training examples and share the same defect.\nC. That the other routes are untouched, since they draw on different sources, so whether data binds still turns on how well they work.\nD. That scaling now meets a hard limit, since manufacturing text was the only way to add supply once the public stock is consumed."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "B",
+      "key_position": 1,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA lab's synthetic-data pipeline turns out to produce text too repetitive to improve model reasoning, and the lab abandons that route. What does this failure establish about whether data availability will constrain scaling?\n\nA. That scaling now meets a hard limit, since manufacturing text was the only way to add supply once the public stock is consumed.\nB. That the other routes are untouched, since they draw on different sources, so whether data binds still turns on how well they work.\nC. That self-play goes with it, since both routes rely on a model producing its own training examples and share the same defect.\nD. That data now caps scaling at whatever images and video can add, since the routes left both draw on human-produced material."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "seed": 1,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA funder backs two groups. Group A develops theoretical alignment methods aimed at systems more capable than anything that exists today, on a research agenda measured in decades. Group B builds monitoring tools that run on today's frontier models and can ship within months. New evidence moves the funder's view of when TAI arrives from roughly forty years out to roughly six. What follows for how the money should be divided?\n\nA. Shift the money toward Group A, since a near arrival means only a fundamental fix helps, and monitoring add-ons suit a distant one.\nB. Shift the money toward Group A, since an arrival that close implies a transition too abrupt for monitoring add-ons to keep pace with.\nC. Leave the allocation as it is, since arrival estimates carry error margins far too wide to be a sound basis for shifting grants.\nD. Shift the money toward Group B, since a horizon that short leaves time only for work that applies to what is already deployed."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "seed": 2,
+      "option_count": 4,
+      "key_letter": "C",
+      "key_position": 2,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA funder backs two groups. Group A develops theoretical alignment methods aimed at systems more capable than anything that exists today, on a research agenda measured in decades. Group B builds monitoring tools that run on today's frontier models and can ship within months. New evidence moves the funder's view of when TAI arrives from roughly forty years out to roughly six. What follows for how the money should be divided?\n\nA. Leave the allocation as it is, since arrival estimates carry error margins far too wide to be a sound basis for shifting grants.\nB. Shift the money toward Group A, since an arrival that close implies a transition too abrupt for monitoring add-ons to keep pace with.\nC. Shift the money toward Group B, since a horizon that short leaves time only for work that applies to what is already deployed.\nD. Shift the money toward Group A, since a near arrival means only a fundamental fix helps, and monitoring add-ons suit a distant one."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "seed": 3,
+      "option_count": 4,
+      "key_letter": "D",
+      "key_position": 3,
+      "chance": 0.25,
+      "prompt": "You have not read the textbook this question comes from. Answer from the\nquestion and options alone, using only general knowledge and test-taking\ninstinct. Do not explain. Reply with a single letter.\n\nA funder backs two groups. Group A develops theoretical alignment methods aimed at systems more capable than anything that exists today, on a research agenda measured in decades. Group B builds monitoring tools that run on today's frontier models and can ship within months. New evidence moves the funder's view of when TAI arrives from roughly forty years out to roughly six. What follows for how the money should be divided?\n\nA. Shift the money toward Group A, since an arrival that close implies a transition too abrupt for monitoring add-ons to keep pace with.\nB. Leave the allocation as it is, since arrival estimates carry error margins far too wide to be a sound basis for shifting grants.\nC. Shift the money toward Group A, since a near arrival means only a fundamental fix helps, and monitoring add-ons suit a distant one.\nD. Shift the money toward Group B, since a horizon that short leaves time only for work that applies to what is already deployed."
+    }
+  ]
+}

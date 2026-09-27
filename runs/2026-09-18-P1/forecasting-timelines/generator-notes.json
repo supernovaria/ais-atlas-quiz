@@ -1,0 +1,18 @@
+[
+  {
+    "shard": "forecasting-timelines-a",
+    "note": "Skipped FT-4's family-c misconception (treating 'AGI in 2045' as a precise date) here — it's the FT-4/FT-2 discrimination_pairs entry and reads better as a single contrast candidate spanning both ideas in a contrast-lens shard than as a second misconception item on FT-4 alone. Used FT-4's family-a and family-b misconceptions plus one self-generated family-d (right-idea-wrong-slot, borrowing the section's investment-growth uncertainty) to keep three distinct families without overlapping that pair."
+  },
+  {
+    "shard": "forecasting-timelines-b",
+    "note": "FT-2 and FT-4 are the discrimination_pairs entry named in the map (the '2045 is the chapter's prediction' conflation), so I wrote one contrast candidate spanning both rather than two separate ones, per the shard brief. That leaves two candidates for a three-idea shard; FT-5's contrast candidate is built directly on the FT-5/FT-5b pair the rubric names explicitly for this section ('effective compute vs. raw chip count')."
+  },
+  {
+    "shard": "forecasting-timelines-c",
+    "note": "All three candidates use the case lens as assigned. FT-2's map note suggests 'objection' is its strongest natural lens (hand the reader a wild claim in the wild), but case still reaches it cleanly here via a thought-experiment: an invented forecaster whose own combined estimate surprises them, which exercises the same consistency-check mechanism without needing an external claim to critique. No idea in the shard was skipped."
+  },
+  {
+    "shard": "forecasting-timelines-d",
+    "note": "All three ideas (FT-4, FT-5, FT-6) support the figure lens directly. FT-4 uses the section's one durable-figure budget slot (twelve orders of magnitude, R11) rather than a Pattern-D conversion of a volatile figure, per the concept map's own guidance that this is the natural home for that slot; I kept the exact FLOP endpoints (10^28/10^41) out of the stem since do_not_test flags those specific bounds as non-durable. FT-5 and FT-6 use Pattern D, conditionalizing a qualitative version of a volatile trend (chip-production stall; near-term text exhaustion) into the stem as a given, so neither answer turns on a number that will date. No idea in the shard was skipped."
+  }
+]

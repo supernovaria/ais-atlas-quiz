@@ -1,0 +1,213 @@
+[
+  {
+    "id": "defining-and-measuring-agi/sonnet/01",
+    "targets": ["DM-4", "DM-5"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two AI systems are described. System Meridian achieves superhuman performance on protein-folding prediction but produces nonsense when asked to summarize a document or plan a multi-step task. System Halcyon reaches expert-human level (80th-90th percentile) on eight different cognitive domains, including writing, math, and planning, but is never better than a strong human at any single one of them. Which statement correctly places these two systems on the capability and generality axes?",
+    "options": [
+      {"text": "Meridian is far higher in capability (task depth); Halcyon is far higher in generality (domain breadth) - the two axes are independent, not one scale.", "key": true, "provenance": null, "family": null},
+      {"text": "Halcyon has greater overall capability than Meridian, since expert-level performance across eight domains outweighs mastery of a single task.", "key": false, "provenance": "misreads 'capability measures depth - how good is the system at individual tasks' as an aggregate that sums across domains rather than a per-task measure", "family": "a"},
+      {"text": "Meridian has generality equal to or exceeding Halcyon's, since superhuman depth on one hard task implies the reasoning needed to transfer elsewhere.", "key": false, "provenance": "misreads AlphaGo-style superhuman narrow performance as evidence of broad transfer, the exact depth-for-breadth conflation the text warns against with 'ask it to write a sentence... and you get nothing'", "family": "a"},
+      {"text": "Capability and generality are the same underlying property for both Meridian and Halcyon, so they can be ranked simply by how impressive each one seems.", "key": false, "provenance": "misreads the pre-framework intuition that intelligence is one impressiveness score, which the text introduces the two-axis system specifically to replace", "family": "c"}
+    ],
+    "explanation": "We built capability and generality as deliberately independent axes: capability asks how deep a system goes on one task, generality asks how many domains it reaches expert level on. Meridian maxes out capability on a single domain - superhuman, but still 'artificial narrow intelligence' - while Halcyon trades depth for breadth, hitting expert level across eight domains without superhuman mastery of any. Distractor 1 conflates the two by summing across domains, but we measure capability per task, not by aggregating - a broad system with no depth isn't thereby 'more capable.' Distractor 3 is the very intuition this two-axis framework exists to replace: treating intelligence as one impressiveness score is the binary, hand-wavy approach we built this system to fix. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "Capability and generality are independent axes - a system can max out one while barely registering on the other.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who has internalized 'capability = depth, generality = breadth, and they are independent' can place both invented systems correctly with the options covered.",
+      "cynic_test": "A skipper might guess Halcyon 'sounds more well-rounded so it must win overall,' but the key's refusal to declare an overall winner and its explicit split by axis blocks that instinct."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/02",
+    "targets": ["DM-7", "DM-8"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A newly deployed AI system reaches only the 60th percentile across cognitive domains overall, but reaches the 99th percentile specifically on automated ML research, a domain its developers argue is disproportionately important to future AI progress. Which classification best fits, and why?",
+    "options": [
+      {"text": "It could count as TAI without counting as AGI, since TAI is defined by impact potential and a narrow but critical capability can satisfy that on its own.", "key": true, "provenance": null, "family": null},
+      {"text": "It counts as neither AGI nor TAI, because TAI requires the same broad cognitive versatility as AGI, just at a higher performance bar.", "key": false, "provenance": "misreads TAI as a higher-capability version of AGI rather than a differently-defined axis based on impact potential", "family": "a"},
+      {"text": "It cannot count as TAI, because transformative impact requires broad competence across most economically valuable domains, not excellence in one.", "key": false, "provenance": "misreads 'transformative AI' as needing AGI-style broad versatility, missing that exceptional capability on a critical narrow domain also counts as TAI", "family": "c"},
+      {"text": "It counts as both AGI and TAI, since exceptional performance in one critical domain is enough to satisfy the AGI definition as well.", "key": false, "provenance": "borrows TAI's alternative narrow-but-critical route and wrongly imports it into the AGI definition, which the text ties to cognitive versatility across most domains rather than to impact", "family": "d"}
+    ],
+    "explanation": "We define TAI and AGI on different bases entirely: AGI requires broad cognitive versatility across most domains, while TAI is about impact potential, reachable either through moderate capability spread widely or through exceptional capability concentrated in one critical domain - the 99th percentile on 20% of domains via automated ML R&D is our own worked example. This system's narrow excellence is exactly that second route: it doesn't need AGI's breadth to count as TAI. Distractor 1 treats TAI as simply AGI-plus. Distractor 2 assumes transformative impact must be broad, missing the concentrated-capability route we build in explicitly. Distractor 3 wrongly imports TAI's alternative route into the AGI definition, which has no such exception. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "TAI tracks impact, AGI tracks cognitive breadth - a system can be transformative without being general.",
+    "stem_format": "classification",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who knows TAI is defined by impact potential and admits a narrow-but-critical route can classify this system without seeing the options.",
+      "cynic_test": "A skipper might assume 'high percentile somewhere = advanced = counts as both' and pick the both-AGI-and-TAI option, but AGI's explicit breadth requirement blocks that shortcut."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/03",
+    "targets": ["DM-2", "DM-3"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague argues: \"System X, which needed a billion training examples to reach a skill, is less dangerous than System Y, which reached the identical skill from ten examples, because System X is less genuinely intelligent.\" Which response best reflects the position this framework actually takes on safety?",
+    "options": [
+      {"text": "The claim conflates two questions: efficiency measures how impressive a system is, but safety depends on resulting capability - identical for X and Y here.", "key": true, "provenance": null, "family": null},
+      {"text": "The claim is correct: a system that reaches a skill through brute-force memorization poses less risk than one that reaches it through efficient learning.", "key": false, "provenance": "misreads 'forget about internal mental states and focus on observable behavior' as meaning the learning path, not just the resulting capability, changes risk", "family": "c"},
+      {"text": "The claim is correct, because learning efficiency is itself part of what capability means, making System Y strictly more capable than System X.", "key": false, "provenance": "misreads 'a system that needs a billion examples might be less impressive' as folding efficiency into the definition of capability itself, rather than treating them as separate criteria", "family": "a"},
+      {"text": "The claim has it backwards: brute-force learners are the more dangerous of the two, since the scale of data required signals greater underlying capability.", "key": false, "provenance": "misreads data volume as a proxy for capability, inverting the colleague's error while making the same category mistake of tying danger to how a skill was learned", "family": "b"}
+    ],
+    "explanation": "We treat how a system learned as separate from what it can now do: the adaptability view cares about learning efficiency because it's a fair way to judge how impressive a system is, but for safety planning we prioritize final capability - if a system can perform a dangerous task, the risk is identical whether it got there from ten examples or a billion. Distractor 1 states the pre-framework intuition this section overturns: brute force is not safer. Distractor 2 smuggles efficiency into the definition of capability itself, exactly the conflation we're warning against. Distractor 3 just flips the same error - dangerousness still tracks the destination, not the path. (Defining and Measuring AGI -> Case Studies)",
+    "takeaway": "Learning efficiency judges how impressive a system is; safety judges what it can do - the two do not track each other.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who has separated 'how impressive' from 'how dangerous' can identify the conflation in the colleague's claim without seeing the options.",
+      "cynic_test": "A skipper might pick the 'brute force is safer' distractor because inefficiency sounds unsophisticated, but the explicit 'the risks exist either way' line closes that gap."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/04",
+    "targets": ["DM-9", "DM-4"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A hospital deploys the same diagnostic AI model twice: once at Level 2 (the model recommends, a physician decides and acts) and once at Level 5 (the model orders tests and adjusts treatment with minimal human check-in). The underlying weights, and therefore the model's capability and generality scores, are identical in both deployments. What does this framework say about the risk difference between the two deployments?",
+    "options": [
+      {"text": "Risk exposure differs between Level 2 and Level 5 here, even though capability and generality are unchanged, since autonomy is a separate, deployment-time choice.", "key": true, "provenance": null, "family": null},
+      {"text": "The Level 5 deployment must reflect a more capable underlying model, since higher autonomy only becomes possible once capability has increased enough to unlock it.", "key": false, "provenance": "misreads 'higher capability levels unlock higher autonomy' as evidence that any Level 5 deployment implies a hidden capability increase, ignoring the scenario's stipulation that the weights are identical", "family": "c"},
+      {"text": "Since the model is capable enough to be trusted at Level 5, deploying it at Level 2 instead wastes a safety precaution that isn't actually needed.", "key": false, "provenance": "misreads 'unlocks higher autonomy' as 'having the capability doesn't mean you should use maximum autonomy' being reversed into a mandate to use it", "family": "b"},
+      {"text": "The Level 5 deployment is inherently more dangerous than the Level 2 one, independent of the task, simply because it involves less human oversight.", "key": false, "provenance": "conflates autonomy level with inherent danger directly, missing 'autonomy level affects risk exposure, not inherent danger'", "family": "a"}
+    ],
+    "explanation": "Autonomy measures how a task is divided between human and AI, not what the AI can do - so identical weights, with identical capability and generality scores, carry different risk exposure depending on whether we deploy them as a consultant (Level 2) or an agent (Level 5). Distractor 1 smuggles capability back in: the scenario stipulates identical weights, so autonomy here is a deployment decision, not evidence of a hidden capability jump. Distractor 2 mistakes 'capable enough to unlock Level 5' for 'should be deployed at Level 5' - unlocking a level doesn't mandate using it. Distractor 3 states the exact misconception we're warning against: autonomy affects risk exposure, not inherent danger. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "Autonomy is a deployment choice layered on top of capability, not a property that capability determines.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who holds 'autonomy is separable from capability and affects exposure, not inherent danger' can produce the key from the fixed-weights scenario alone.",
+      "cynic_test": "A skipper's reflex is 'less oversight = more dangerous, full stop,' but stipulating identical weights across both deployments forces engagement with exposure versus inherent danger rather than a gut call."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/05",
+    "targets": ["DM-10"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A tech journalist writes: \"This model scored 90% on a standard human IQ test, so it is now 90% as intelligent as a well-educated adult.\" Which objection has the most support in the framework's own stated limitations?",
+    "options": [
+      {"text": "The comparison does not hold: matching a human's percentile score doesn't mean matching human competence, since the test can miss capabilities every human already has.", "key": true, "provenance": null, "family": null},
+      {"text": "The comparison is valid, since scoring 90% on a human-normed test means the model has captured 90% of a well-educated adult's competence on what the test measures.", "key": false, "provenance": "misreads 'an LLM scoring 90% on a Raven's progressive matrices test' as directly comparable to a human scoring 90%, the exact non-comparability the text flags", "family": "c"},
+      {"text": "The comparison fails in the opposite direction: since AI scores cannot be compared to human scores at all, psychometric tests give no useful signal about AI capability.", "key": false, "provenance": "overcorrects the coverage-bias critique into a blanket dismissal the text does not make; the text still treats CHC-style scores as informative, just not equivalent to human competence", "family": "b"},
+      {"text": "The comparison mainly shows the test is outdated, since human IQ-style tests were never designed with AI systems' unusual failure patterns in mind.", "key": false, "provenance": "misattributes the mismatch to test age rather than to the structural coverage bias the text names - CHC derives from human interindividual differences and can miss capabilities universal in humans", "family": "d"}
+    ],
+    "explanation": "Our critique of percentage/threshold scoring includes coverage bias: batteries like CHC are built from human interindividual differences, so they can miss capabilities every human has by default (like robust object permanence) while an AI can still 'ace' the battery through an entirely different route. That's why we say a 90% Raven's-matrices score isn't comparable to a human's 90% - the number doesn't certify the same competence. Distractor 1 takes the score at face value, exactly the naive reading our critique targets. Distractor 2 overcorrects into a nihilism we don't endorse - percentage scores are still informative, just not equivalent to human competence. Distractor 3 blames the test's age rather than the structural mismatch between human-normed batteries and AI failure modes. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "A matching percentile score does not certify matching competence, because human-normed tests can miss capabilities every human has by default.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who grasps the coverage-bias critique can identify the flaw in the journalist's equivalence claim unaided.",
+      "cynic_test": "A skipper might take the percentage at face value ('90% is 90%'), but the framework's explicit non-comparability point is built to catch exactly that reading."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/06",
+    "targets": ["DM-6"],
+    "lens": "misconception",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Capability and generality are built as continuous variables specifically to avoid \"binary AGI debates,\" yet the framework also stipulates fixed percentile thresholds (80-90th percentile, 80-90% of domains) for AGI. A reader concludes this is a contradiction. What is the best response?",
+    "options": [
+      {"text": "There is no contradiction: the variables stay continuous; thresholds are a separate practical layer for safety planning, not evidence of a sharp change.", "key": true, "provenance": null, "family": null},
+      {"text": "The reader is right: naming specific percentile cutoffs means the framework has quietly abandoned the continuum for the binary categories it claimed to reject.", "key": false, "provenance": "misreads 'no universally agreed upon threshold' as a refusal to give thresholds at all, missing that thresholds are then stipulated on top of the continuum for practical use", "family": "c"},
+      {"text": "The reader is right: naming safety-relevant thresholds is logically inconsistent with treating capability and generality as continuous in the first place.", "key": false, "provenance": "misreads 'certain thresholds still matter for safety planning' as inconsistent with the continuum claim rather than as a practical layer added on top of it", "family": "b"},
+      {"text": "The reader is right, but for a different reason: reporting capability and generality together, not the thresholds, is what reintroduces a binary framing.", "key": false, "provenance": "borrows the true fact that capability and generality are reported together for concreteness and misapplies it to explain the threshold tension, which it does not address", "family": "d"}
+    ],
+    "explanation": "The continuum and the thresholds do different jobs and were never meant to collide: capability and generality stay continuous the whole way through, tracking exactly how good and how broad a system is at any point. We then stipulate the 80-90th-percentile and 80-90%-of-domains cutoffs on top, purely so safety planning has a concrete trigger - a system at 50% and one at 90% pose different risks 'even if generality is a continuous variable.' Distractor 1 takes the mere existence of a cutoff as proof we abandoned the continuum. Distractor 2 makes the same move more bluntly. Distractor 3 borrows a true fact (we report the axes together) but applies it to the wrong question - that fact explains concreteness, not the threshold tension. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "Fixed thresholds layered on a continuum are a practical tool, not proof the continuum was abandoned.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who sees thresholds as a practical layer on top of a continuum, not evidence against it, can resolve the apparent contradiction unaided.",
+      "cynic_test": "A skipper is primed to side with 'gotcha, that's a contradiction' because the framing invites it, but the explicit 'layered on top for practical use' logic in the text blocks that reflex."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/07",
+    "targets": ["DM-11"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two teams each claim to have built a (one-day, one)-AGI system for a legal-research task. Team A's single instance matches one expert's full day of unaided work. Team B instead runs 500 copies of a weaker model in parallel for one day and pools their outputs to match the same expert's output. Under the (t,n)-AGI framework's own stated logic, which team's system actually qualifies?",
+    "options": [
+      {"text": "Only Team A's: the t-AGI definition asks whether one instance matches an expert in the given time, and it explicitly excludes credit for parallel copies.", "key": true, "provenance": null, "family": null},
+      {"text": "Both qualify equally, since matching the expert's output within the timeframe is all the definition requires, regardless of how many copies contributed.", "key": false, "provenance": "misreads the (t,n)-AGI framework as accounting for parallel copies, when the text states it 'does not account for how many copies of the AI run simultaneously'", "family": "c"},
+      {"text": "Team B's is the stronger (t,n)-AGI, because pooling 500 parallel copies is equivalent to the 'n experts' the framework already allows for in its notation.", "key": false, "provenance": "conflates 'n experts' (distinct humans being matched) with copies of the same AI run in parallel, two things the framework keeps separate", "family": "a"},
+      {"text": "Team B's qualifies, because the framework's point that projects can be divided into sub-tasks shows it credits exactly this kind of parallel division of labor.", "key": false, "provenance": "misapplies 'most projects can be divided into sub-tasks completed in shorter timeframes' - a point about one AI's sequential work over time - to justify crediting simultaneous parallel copies instead", "family": "d"}
+    ],
+    "explanation": "The (t,n)-AGI framework asks whether an AI can match n human experts working for time t - and we're explicit that it 'does not account for how many copies of the AI run simultaneously.' Team A's single instance is exactly the case this definition is built to credit; Team B's 500-copy pool is exactly the case it's built to exclude, however impressive the pooled output looks. Distractor 1 ignores that exclusion entirely. Distractor 2 conflates 'n experts' - the number of distinct humans being matched - with 'copies of the AI,' which we keep separate. Distractor 3 misapplies our separate point about dividing one AI's sequential work into shorter sub-tasks, which is about time, not about running many instances at once. (Defining and Measuring AGI -> Defining General Intelligence)",
+    "takeaway": "The (t,n)-AGI framework credits a single instance matching experts over time, not many copies working simultaneously.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader who knows the framework explicitly excludes parallel copies can pick Team A without seeing the options.",
+      "cynic_test": "A skipper's intuition is 'more copies = more total capability = qualifies,' but the framework's explicit exclusion clause is built to stop exactly that scaling instinct."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/sonnet/08",
+    "targets": ["DM-1"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "AlphaGo is clearly intelligent within Go and clearly not conscious. What does this combination establish about the relationship between consciousness and safety-relevant danger?",
+    "options": [
+      {"text": "It shows that consciousness and dangerousness are independent - a system's capacity for dangerous action doesn't depend on whether it is conscious.", "key": true, "provenance": null, "family": null},
+      {"text": "It shows that even narrow intelligence needs some minimal inner experience, since evident intelligence implies at least a rudimentary consciousness.", "key": false, "provenance": "misreads the Chinese Room / consciousness discussion as implying an AI must be conscious to be intelligent or dangerous, the exact reversal the AlphaGo example is meant to block", "family": "c"},
+      {"text": "It shows that intelligence and consciousness are the same underlying property, just expressed at different intensities depending on the domain.", "key": false, "provenance": "misreads 'consciousness often proves even harder to define than intelligence' as meaning the two are one property rather than separable in both directions", "family": "a"},
+      {"text": "It shows that AlphaGo is not dangerous within Go, since its narrow capability, not its lack of consciousness, is what actually limits it there.", "key": false, "provenance": "borrows the true, separate point that AlphaGo's capability is narrow (from the capability/generality discussion) and uses it to answer a question about consciousness and danger instead", "family": "d"}
+    ],
+    "explanation": "AlphaGo is our own case of something clearly intelligent within its domain and clearly not conscious - and the point of pairing those facts is that consciousness has no bearing on whether a system's actions can be high-impact or dangerous. That's the general lesson: for safety purposes, what a system can do sets the risk, not whether anything is happening 'inside.' Distractor 1 reverses the lesson, treating evident intelligence as evidence of at least minimal consciousness. Distractor 2 collapses intelligence and consciousness into one property, when we treat them as separable in both directions - a system can be highly intelligent without being conscious, or conscious without being particularly intelligent. Distractor 3 borrows a true-sounding claim about narrow capability but uses it to answer a different question than the one asked. (Defining and Measuring AGI -> Case Studies)",
+    "takeaway": "Whether an AI is conscious has no bearing on whether its actions can be dangerous.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes - a reader holding 'consciousness and danger are decoupled' can state the key directly from the AlphaGo fact pattern.",
+      "cynic_test": "A skipper might pick the intelligence-implies-consciousness distractor because the two concepts feel intuitively fused, but the text's explicit two-directional separability blocks that fusion."
+    }
+  },
+  {
+    "note": "11 earns_question ideas (DM-1..DM-11) against target_n 8, so three candidates each span a discrimination_pairs entry rather than getting separate items, per the map's own overfill guidance: candidate 01 spans DM-4/DM-5, candidate 02 spans DM-7/DM-8, candidate 03 spans DM-2/DM-3, and candidate 04 spans the DM-4/DM-9 pair (fixed capability/generality while autonomy varies) rather than testing DM-9 in isolation. That leaves one candidate each for DM-1, DM-6, DM-10, and DM-11. Lenses used: contrast (01-03), case (04, 07), objection (05), misconception (06, 08) - four of the five assigned lenses. The 'figure' lens was deliberately skipped: this section's volatile entries (the GPT-4/GPT-5 figure table and the METR task-horizon figure) are both explicitly flagged in the map's do_not_test/notes_for_generator as risky or belonging to a different section, and no durable figure in this section (the 80-90th-percentile threshold) needed conditionalizing into a stem to be interesting - it works better as scaffolding inside candidate 06's stem, non-load-bearing. Candidate 05 deliberately uses the Raven's-matrices/coverage-bias angle for DM-10 rather than the '57% AGI' framing, since the map notes that framing is reserved for the chapter-review Synthesis block and reusing it risks an R4 duplicate-stem flag."
+  }
+]

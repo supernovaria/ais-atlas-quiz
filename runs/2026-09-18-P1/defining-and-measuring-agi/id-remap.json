@@ -1,0 +1,27 @@
+[
+  {
+    "from": "defining-and-measuring-agi/sonnet/01",
+    "to": "defining-and-measuring-agi/sonnet/a01",
+    "shard": "defining-and-measuring-agi-a"
+  },
+  {
+    "from": "defining-and-measuring-agi/sonnet/02",
+    "to": "defining-and-measuring-agi/sonnet/a02",
+    "shard": "defining-and-measuring-agi-a"
+  },
+  {
+    "from": "defining-and-measuring-agi/sonnet/03",
+    "to": "defining-and-measuring-agi/sonnet/a03",
+    "shard": "defining-and-measuring-agi-a"
+  },
+  {
+    "from": "defining-and-measuring-agi/sonnet/01",
+    "to": "defining-and-measuring-agi/sonnet/b01",
+    "shard": "defining-and-measuring-agi-b"
+  },
+  {
+    "from": "defining-and-measuring-agi/sonnet/02",
+    "to": "defining-and-measuring-agi/sonnet/b02",
+    "shard": "defining-and-measuring-agi-b"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "section": "forecasting-timelines",
+  "target_n": 4,
+  "shard_size": 3,
+  "models": [
+    "sonnet"
+  ],
+  "pool_size": 12,
+  "shards": [
+    {
+      "shard_id": "forecasting-timelines-a",
+      "ideas": [
+        "FT-2",
+        "FT-4",
+        "FT-5"
+      ],
+      "lens": "misconception",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-b",
+      "ideas": [
+        "FT-2",
+        "FT-4",
+        "FT-5"
+      ],
+      "lens": "contrast",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-c",
+      "ideas": [
+        "FT-6",
+        "FT-1",
+        "FT-2"
+      ],
+      "lens": "case",
+      "model": "sonnet",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-d",
+      "ideas": [
+        "FT-4",
+        "FT-5",
+        "FT-6"
+      ],
+      "lens": "figure",
+      "model": "sonnet",
+      "mode": "section"
+    }
+  ],
+  "attempts_requested": {
+    "FT-1": 1,
+    "FT-2": 3,
+    "FT-4": 3,
+    "FT-5": 3,
+    "FT-6": 2
+  },
+  "attempts_unplaced": {},
+  "memberships_repeated_under_a_new_lens": 1,
+  "pairs_co_occurred": [
+    "FT-2|FT-4",
+    "FT-2|FT-5",
+    "FT-4|FT-5",
+    "FT-1|FT-6",
+    "FT-2|FT-6",
+    "FT-1|FT-2",
+    "FT-4|FT-6",
+    "FT-5|FT-6"
+  ]
+}

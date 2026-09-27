@@ -1,0 +1,22 @@
+  - `longest` — longer than the others
+  - `shortest` — shorter than the others
+  - `most-detailed` — more specific or complete than the others, whatever its length
+  - `hedged` — carries qualifiers such as "often", "can", "in some cases"
+  - `nuanced-turn` — a "not merely X but Y", "it depends" or both-sides construction
+  - `middle-ground` — moderate where the others are extreme
+  - `textbook-voice` — sounds like the lesson a textbook would want to teach
+  - `echoes-stem` — reuses the question's own words or ideas
+  - `like-the-others` — the other options look like variations of this one
+  - `opposites` — this option and another one contradict each other
+  - `surprising` — counterintuitive
+  - `too-obvious` — the naive, common-sense answer
+  - `absolute` — always, never, only, entirely
+  - `denies-question` — rejects what the question takes for granted ("there is no problem")
+  - `implausible` — hard to imagine anyone believing it
+  - `off-target` — does not answer what was asked
+  - `grammatical-fit` — fits (or fails to fit) the grammar of the question
+  - `odd-one-out` — differs from the rest in form or grammar
+  - `position` — its place in the list
+  - `general-knowledge` — you know or can work out the subject matter itself
+  - `no-tell` — nothing to go on; use it alone
+  - `other` — a feature not listed here; describe it in "note"

@@ -1,0 +1,84 @@
+{
+  "section": "forecasting-timelines",
+  "target_n": 4,
+  "selected": [
+    {
+      "id": "forecasting-timelines/sonnet/a03r",
+      "level": "L3",
+      "targets": ["FT-5"],
+      "families": ["a", "b", "c"],
+      "bridge_from": null,
+      "negation": false,
+      "durable_figure": null,
+      "lineage": ["forecasting-timelines/sonnet/a03", "critic-rewrite-1"],
+      "why": "cleanest mechanics in the whole pool (ratio 1.06, zero R14 tells) and lands directly on the RUBRIC §3.4-named FT-5/FT-5b discrimination pair."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/a01r",
+      "level": "L3",
+      "targets": ["FT-2"],
+      "families": ["b", "c", "d"],
+      "bridge_from": null,
+      "negation": false,
+      "durable_figure": null,
+      "lineage": ["forecasting-timelines/sonnet/a01", "critic-rewrite-1"],
+      "why": "sole eligible FT-2 candidate after b01r was rejected; fixes the original's R5/R14/E3 failures cleanly."
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c01r",
+      "level": "L4",
+      "targets": ["FT-6"],
+      "families": ["a", "b", "c"],
+      "bridge_from": null,
+      "negation": false,
+      "durable_figure": null,
+      "lineage": ["forecasting-timelines/sonnet/c01", "critic-rewrite-1"],
+      "why": "sole eligible FT-6 candidate; rewrite fixed D1 (defensible distractors) and the stem's L3-giving-away-the-answer problem, restoring L4."
+    }
+  ],
+  "shipped_n": 3,
+  "underfill_reason": "target_n is 4 but no L5-level candidate exists anywhere in this section's 11-candidate pool: every candidate claimed or was assessed L2-L4 except one (sonnet/b01, generator-claimed L5), which the critic downgraded to L4 for R14/D8/E4 failures. Its rewrite (b01r) fixed D8 and E4 but still carries an unresolved R14 word-match tell (the stem's distinctive word 'uncertainty' — from 'twelve orders of magnitude of uncertainty' — appears in exactly one option, the key, which opens 'The uncertainty is the finding itself'), so b01r does not re-measure clean and is not eligible. Per RUBRIC §3.7 ('If a section genuinely cannot support an L5 question, that is evidence the section should get fewer questions... not that the L5 requirement should be waived') and this brief's explicit instruction not to promote an L4 into the L5 slot, the fourth slot is left unfilled rather than backfilled with the next-best clean candidate (a02r, FT-4, L4). The 5 remaining unjudged candidates (b02, c03, d01, d02, d03) were never reached before this run's budget halt; none of them claims L5 either (all are level_claimed L4), so completing pass-2 on them would not by itself resolve the gap. The fastest paths to a full 4-question set: (1) a small text edit to b01r removing the 'uncertainty' echo — it is otherwise the strongest L4/L5-adjacent question in the pool and the closest thing to a finished L5, or (2) a fresh generation pass seeded on the concept map's own L5 note for FT-2 ('hand the reader a claim in the wild... and ask which objection the section's own stated framing supports').",
+  "distribution": {"L2": 0, "L3": 2, "L4": 1, "L5": 0},
+  "coverage": {
+    "covered": ["FT-2", "FT-5", "FT-6"],
+    "earns_question_uncovered": [
+      {"id": "FT-4", "why": "eligible clean L4 candidate (a02r) exists but lost its slot when shipped_n dropped from 4 to 3 for the missing-L5 hard bound; ranked 4th of 5 in the concept map's own strength ordering (FT-5 > FT-2 > FT-6 > FT-4 > FT-1); promote a02r first if this section ships a 4th question before an L5 is ready."},
+      {"id": "FT-1", "why": "eligible clean L3 candidate (c02r) exists but is the weakest of the five earns_question ideas (3 of 5 criteria vs 5 of 5 for the others); the concept map itself recommends deferring FT-1 to the chapter review block, where it pairs with Takeoff's timelines-vs-takeoff-speed distinction."}
+    ],
+    "threshold_covered": ["FT-2", "FT-5"]
+  },
+  "siblings": [
+    {
+      "id": "forecasting-timelines/sonnet/a02r",
+      "targets": ["FT-4"],
+      "level": "L4",
+      "primary": "forecasting-timelines/sonnet/a01r",
+      "why_not_shipped": "clean, eligible L4 candidate on FT-4; excluded only because shipped_n dropped from 4 to 3 to leave the unfillable L5 slot empty rather than backfilled, and FT-4 ranked below FT-2/FT-5/FT-6 in the concept map's strength ordering.",
+      "key_disclosed_by_primary_explanation": true
+    },
+    {
+      "id": "forecasting-timelines/sonnet/c02r",
+      "targets": ["FT-1"],
+      "level": "L3",
+      "primary": null,
+      "why_not_shipped": "clean, eligible L3 candidate on FT-1; excluded because it is the weakest-ranked earns_question idea in this section and the concept map recommends holding it for the chapter review block. Reviewer should also weigh the critic's reviewer_note before any future promotion: the 'only a fundamental fix helps' distractor is a position real alignment researchers hold, and it is marked wrong on the text's own authority — worth a second look, not a blocker.",
+      "key_disclosed_by_primary_explanation": false
+    }
+  ],
+  "rejected_from_pool": [
+    {
+      "id": "forecasting-timelines/sonnet/b01r",
+      "why": "needs edit: R14 word-match tell — the stem's distinctive word 'uncertainty' ('the twelve orders of magnitude of uncertainty in the underlying compute estimates') appears in exactly one option, the key ('The uncertainty is the finding itself...'), unaddressed by the rewrite that otherwise fixed the original's D8 and E4 failures. This is the run's only L5-adjacent candidate (critic-assessed L4, generator-claimed L5) and the fastest route to filling this section's missing L5 slot once the echo is removed — recommend re-running the critic on a fixed draft before regenerating from scratch."
+    }
+  ],
+  "flags_for_reviewer": [
+    "Missing-L5 hard bound: this section ships 3 of 4 target questions with zero L5 candidates, because none exist in the 11-candidate pool. See underfill_reason for the full account and the two fastest remediation paths (fix b01r's single R14 defect, or a fresh L5 generation pass on FT-2).",
+    "All 3 shipped questions are pass-2 critic rewrites (a01 -> a01r, a03 -> a03r, c01 -> c01r), not original pass-1 output; each rewrite's specific fixes are documented in verdicts.json and summarized on the review sheet.",
+    "Adversary flags on shipped questions: Q1 (a03r) hit 3/3 seeds; Q3 (c01r) hit 3/3 seeds. Per PIPELINE §7 and this brief, an adversary hit is a flag, not an auto-reject — both questions are otherwise clean, mechanically sound, and cover ideas the concept map marks durable. Q2 (a01r) was not flagged (1/3).",
+    "Lens diversity shortfall: the shipped set uses only 2 distinct lenses (misconception: a03r, a01r; case: c01r), short of the ≥3-distinct-lens target in the curation procedure. This is a pool-availability problem, not a selection choice: every 'contrast'-lens candidate (b01, b02) is either rejected (b01r) or unjudged (b02), and every 'figure'-lens candidate (d01, d02, d03) is unjudged. Judging the unjudged shard would be the fix, not a re-selection from what's currently eligible.",
+    "5 candidates (b02, c03, d01, d02, d03) were never reached by pass 2 before this run's budget halt. They are unjudged, not rejected. Each duplicates an idea already covered by a shipped or sibling rewrite (b02/d02 -> FT-5, c03 -> FT-2, d01 -> FT-4, d03 -> FT-6), so none is urgently needed for coverage, but judging them would produce backup siblings for B5 retry-serving.",
+    "c02r (sibling, FT-1, not shipped): critic's reviewer_note flags a truth concern worth carrying forward if this candidate is ever promoted — its 'only a fundamental fix helps' distractor states a position real alignment researchers hold, and the question marks it wrong on the text's own authority. Not a blocker, but a human should confirm the framing before shipping.",
+    "All 3 shipped keys sit at option-list position A (index 0) in the source data. The app shuffles by default so this has no live-reader effect, but it is a notable concentration worth a look if it recurs across other sections' staged sets.",
+    "No question in this section carries fewer than 4 options; option_count_reason is null throughout (not applicable)."
+  ]
+}

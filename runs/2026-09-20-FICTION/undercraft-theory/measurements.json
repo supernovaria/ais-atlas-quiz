@@ -1,0 +1,406 @@
+{
+  "undercraft-theory/sonnet/w01": {
+    "correct_len": 207,
+    "distractor_lens": [
+      191,
+      185,
+      177
+    ],
+    "mean_distractor_len": 184.3,
+    "len_ratio": 1.12,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 16,
+    "max_over_min": 1.17,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "independent",
+      "score"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 105,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "undercraft-theory/sonnet/w02": {
+    "correct_len": 187,
+    "distractor_lens": [
+      168,
+      159,
+      174
+    ],
+    "mean_distractor_len": 167,
+    "len_ratio": 1.12,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 13,
+    "max_over_min": 1.18,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "needed",
+      "one",
+      "backstage",
+      "correction",
+      "all",
+      "night",
+      "thirty",
+      "both",
+      "nights",
+      "load"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "undercraft-theory/sonnet/w03": {
+    "correct_len": 147,
+    "distractor_lens": [
+      170,
+      174,
+      151
+    ],
+    "mean_distractor_len": 165,
+    "len_ratio": 0.89,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 4,
+    "max_over_min": 1.18,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "show",
+      "performer",
+      "missed",
+      "cues",
+      "backstage",
+      "problem"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 117,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "undercraft-theory/sonnet/w04": {
+    "correct_len": 245,
+    "distractor_lens": [
+      225,
+      195,
+      198
+    ],
+    "mean_distractor_len": 206,
+    "len_ratio": 1.19,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 20,
+    "max_over_min": 1.26,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "manager",
+      "six",
+      "months",
+      "better",
+      "kasch",
+      "rescue",
+      "repair",
+      "most"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 132,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "undercraft-theory/sonnet/w05": {
+    "correct_len": 190,
+    "distractor_lens": [
+      203,
+      176,
+      192
+    ],
+    "mean_distractor_len": 190.3,
+    "len_ratio": 1,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "touring",
+      "troupe",
+      "audience",
+      "score",
+      "after"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 112,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "undercraft-theory/sonnet/w06": {
+    "correct_len": 252,
+    "distractor_lens": [
+      203,
+      216,
+      219
+    ],
+    "mean_distractor_len": 212.7,
+    "len_ratio": 1.18,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 33,
+    "max_over_min": 1.24,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "one",
+      "fen",
+      "troupe",
+      "care",
+      "castmates"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 113,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "undercraft-theory/sonnet/w07": {
+    "correct_len": 232,
+    "distractor_lens": [
+      208,
+      213,
+      192
+    ],
+    "mean_distractor_len": 204.3,
+    "len_ratio": 1.14,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 19,
+    "max_over_min": 1.21,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "declines",
+      "indices",
+      "problem",
+      "enough",
+      "attentive",
+      "wrong"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  },
+  "undercraft-theory/sonnet/w08": {
+    "correct_len": 254,
+    "distractor_lens": [
+      217,
+      213,
+      192
+    ],
+    "mean_distractor_len": 207.3,
+    "len_ratio": 1.23,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 37,
+    "max_over_min": 1.32,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "showed",
+      "objection"
+    ],
+    "emphasis_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "smart_quote_chars": 0,
+    "negation_in_stem": false,
+    "negation_uncapitalised": false,
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 114,
+    "key_count": 1,
+    "citation_anchor_resolves": false
+  }
+}

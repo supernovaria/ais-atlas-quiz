@@ -1,0 +1,108 @@
+{
+  "id": "forecasting-timelines/sonnet/b01",
+  "verdict": "rewrite",
+  "level": "L5",
+  "level_claimed_by_generator": "L5",
+  "failed_criteria": ["R14", "D8", "E4"],
+  "measurements": {
+    "correct_len": 163,
+    "distractor_lens": [157, 161, 158],
+    "mean_distractor_len": 158.7,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 1]
+    },
+    "stem_word_singletons": ["forecast", "2045", "estimates", "around", "backwards"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 116,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["c", "a", "b"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14 (word-match tell): `stem_word_singletons` includes \"2045\" and \"around\", and both land in the key — the stem's single most distinctive token, the date 2045, appears in exactly one option and that option is the correct one ('a figure like 2045 ... a value the answer clusters around'). R14 requires a distinctive stem word to sit in >=2 options or in none. A reader who skipped the section picks the only option that echoes the stem's figure. ('forecast', 'estimates' and 'backwards' are singletons in distractor 1, the same defect pointing the other way.)",
+    "D8 (meta-statement option): distractor 1 opens 'Nothing is backwards here —', which denies the stem's own presupposition rather than making a claim about the world. It is the same shape as the rubric's banned example ('This is a perfectly precise and meaningful statement — no critiques apply'): under a stem that asks what the colleague has *backwards*, the 'nothing is backwards' option signals that the answer is one of the substantive options, so it is eliminable on test-taking instinct alone. Its second clause is substantive and salvageable; the frame is not.",
+    "E4 (citation): the explanation closes '(Forecasting Timelines → Training Data)', but every sentence it rests on — 'all forecasts come with wide error margins', the biological anchors, the dollar analogy, the 2045/2030s-2050s gloss — sits in the section's unheaded opening, before '## Effective Compute'. 'Training Data' points the reader at the data-wall subsection, which has nothing to do with this question. The candidate's own `citation` field says `subheading: null`, contradicting its explanation text. Per E4a the correct move is to drop the sub-heading and keep the section link."
+  ],
+  "preserve": "the stem's scenario and the key's idea. Handing the reader a colleague who has collapsed a twelve-order-of-magnitude range into a point estimate is exactly the L5 form Appendix B asks for, it spends no volatile figure (the span is stem scaffolding, Pattern D), and it is the one candidate that uses FT-2 against FT-4 — the map's own discrimination pair. Distractor 3 (the range is real but peaks near the middle) is the strongest option in the set and should survive verbatim in substance: it is the belief a numerate reader actually walks in with, and the dollar-analogy provenance for it checks out.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/b01",
+    "targets": ["FT-2", "FT-4"],
+    "lens": "contrast",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A colleague who has read the same forecasting material says: \"So the forecast is AGI in 2045, and the twelve orders of magnitude of uncertainty in the compute figures is just noise around that date.\" Which objection to this has the most support?",
+    "options": [
+      {
+        "text": "The width of the range is itself the result: a single center figure is a handle for testing whether your other beliefs cohere, not a value the estimates cluster near.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The center is wrong, not the method: running the published growth trends through the consistency check would place the arrival somewhere in a different decade.",
+        "key": false,
+        "provenance": "misreads the worked consistency check ('If you think investment grows 5x per year AND software efficiency improves 3x per year AND hardware scales 15% per year AND each order of magnitude automates at least 10% of tasks, then what does that imply?') as the section computing its own arrival date, so the repair for a bad forecast looks like recalculating the center rather than giving up the point estimate",
+        "family": "c"
+      },
+      {
+        "text": "The spread is the real problem: a gap that wide means the biological-anchors method has failed as a guide and should be set aside rather than reported as a finding.",
+        "key": false,
+        "provenance": "misreads 'All forecasts come with wide error margins that compound over time' together with 'twelve orders of magnitude of uncertainty' as evidence the biological-anchors method failed, reversing the section's treatment of the margin as the honest output of the method",
+        "family": "a"
+      },
+      {
+        "text": "The spread is real but not flat: it is a distribution over the possible requirements that peaks near the middle, so the center figure is the best estimate.",
+        "key": false,
+        "provenance": "misreads \"It's like not knowing if something costs one dollar or a trillion dollars\" as a wide-but-peaked distribution over compute requirements, rather than as deep uncertainty about which biological reference process (lifetime skill learning vs. evolutionary history) is the right anchor at all",
+        "family": "b"
+      }
+    ],
+    "explanation": "A forecast here is a consistency check, not a prediction: you plug in your beliefs about growth and see whether the future they imply is one you can accept. The compute a transformative system needs is estimated from biological anchors running from human-lifetime skill learning to the whole of evolution — twelve orders of magnitude, the difference between something costing a dollar and costing a trillion. A stated center is shorthand for a range spanning decades, so calling the spread \"noise\" inverts which part is the finding. Distractor 1 keeps the point-estimate habit and only quibbles about the number. Distractor 3 reads the range as a bell curve; the width comes from not knowing which biological process is even the right reference, so the midpoint has no special claim on being right. (Forecasting Timelines)",
+    "takeaway": "A forecast's spread is the finding; a stated center figure is a handle for checking whether your beliefs cohere, not a prediction to aim at.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader holding 'forecasts are consistency checks, not predictions' (FT-2) plus 'the width of the anchor range is the finding' (FT-4) can state the objection before seeing any option.",
+      "cynic_test": "No stem token now appears in exactly one option: 2045, 'compute', 'uncertainty', 'noise', 'date' and 'around' appear in no option, and 'figure' appears in two. No option denies the stem's premise, no absolutes, no hedge asymmetry, and all four are same-shaped objections (claim, colon, elaboration), so a skipper has nothing to grip."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1]",
+    "options[2].text",
+    "options[3].text",
+    "options[2].provenance",
+    "options[3].provenance",
+    "explanation",
+    "takeaway",
+    "citation",
+    "load_bearing_figures",
+    "self_check"
+  ],
+  "reviewer_note": "Check whether the rewritten distractor 1 ('the center is wrong, not the method') is arguably true — recomputing with different growth trends genuinely would move the center, so its wrongness is that it is the wrong *kind* of objection, not a false statement; if that reads as unfair rather than as the point, swap it for the map's FT-2 family-d misconception (trusting a combined output whose inputs each look plausible)."
+}

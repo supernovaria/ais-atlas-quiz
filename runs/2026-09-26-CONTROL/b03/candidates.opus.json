@@ -1,0 +1,72 @@
+[
+  {
+    "id": "b03/ctrl-opus/01",
+    "group": "clean",
+    "author": "opus",
+    "claim": "C4",
+    "stem": "A vesk began lattice A. Later it works on lattice B, which a different snail began. What can it contribute to each lattice?",
+    "options": [
+      {"text": "It can lay wennets on lattice B but none on lattice A", "key": true},
+      {"text": "It can lay wennets on lattice A but none on lattice B", "key": false, "misreading": "A reader who remembers that the rule turns on which lattice the vesk began but reverses it, thinking a builder may later fill in its own frame."},
+      {"text": "It can lay wennets on both once their tharls are all in", "key": false, "misreading": "A reader who takes the restriction to be about timing (frame first, then wennets) rather than about who began the lattice."},
+      {"text": "It can lay tharls on lattice B but no wennets on either", "key": false, "misreading": "A reader who takes vesk to be a fixed identity of the snail, missing that a vesk may act as an orra on another snail's lattice."}
+    ],
+    "explanation": "A vesk never returns to lay wennets on a lattice it began, but it may act as an orra, laying wennets, on a lattice begun by another snail. So it can lay wennets on B and none on A."
+  },
+  {
+    "id": "b03/ctrl-opus/02",
+    "group": "clean",
+    "author": "opus",
+    "claim": "C20",
+    "stem": "Lattices begun by several vesks were found to have a shorter pell than single-vesk lattices with as many tharls. On what ground was this finding challenged?",
+    "options": [
+      {"text": "The multi-vesk lattices were anchored faster, so got fewer seasons of wennet-laying", "key": true},
+      {"text": "The multi-vesk lattices sat in draughty galleries, where pell falls after anchoring", "key": false, "misreading": "A reader who links the objector's name, Tasker, to the Tasker pattern and assumes her objection was that draught confounded the comparison."},
+      {"text": "The multi-vesk lattices were worked by more orras, each laying fewer wennets there", "key": false, "misreading": "A reader who carries over the point that orras sharing a lattice each lay fewer wennets and applies it to pell."},
+      {"text": "The multi-vesk lattices were measured by the fenn trace, which understates the pell", "key": false, "misreading": "A reader who remembers that the fenn trace underestimates pell and supposes it was the flaw in Orrin's comparison."}
+    ],
+    "explanation": "Tasker objected that Orrin's multi-vesk lattices had been anchored more quickly and so received fewer seasons of wennet-laying before their last tharl was in place. Orrin answered by comparing lattices with equal anchoring time."
+  },
+  {
+    "id": "b03/ctrl-opus/03",
+    "group": "clean",
+    "author": "opus",
+    "claim": "C19",
+    "stem": "In a warm gallery, a lattice begun by one vesk is compared with a lattice begun by several vesks, both with the same number of tharls. What is expected of their pell?",
+    "options": [
+      {"text": "Their pell is about equal, since the vesk-number gap appears in cold galleries", "key": true},
+      {"text": "The several-vesk one has the shorter pell, as it does in the colder galleries", "key": false, "misreading": "A reader who learned the Orrin pattern as a general rule and missed that it is confined to the colder galleries."},
+      {"text": "The several-vesk one has the longer pell, since warmth reverses the cold effect", "key": false, "misreading": "A reader who remembers that temperature matters and assumes warmth flips the direction rather than removing the difference."},
+      {"text": "The several-vesk one has the shorter pell, and the gap is wider where it is warm", "key": false, "misreading": "A reader who links warmth to faster anchoring (from Tasker's objection) and expects warm galleries to sharpen the difference."}
+    ],
+    "explanation": "The Orrin pattern appears only in the colder galleries; in the warmer ones, lattices begun by one vesk and by several have the same pell."
+  },
+  {
+    "id": "b03/ctrl-opus/04",
+    "group": "clean",
+    "author": "opus",
+    "claim": "C24",
+    "stem": "In draughty galleries, a lattice's pell falls from season to season once its last tharl is anchored. What produces the fall?",
+    "options": [
+      {"text": "Lost wennets are replaced by new ones, more of which run from tharl to tharl", "key": true},
+      {"text": "Moving air stretches the longest chains of wennets until they part in the middle", "key": false, "misreading": "A reader who takes Varrenby's account of slackening at face value, missing that the air stretches nothing."},
+      {"text": "Snails crawling along long chains wear the central wennets until those break", "key": false, "misreading": "A reader who shares the beginners' view that pilse, wear by crawling snails, is the main cause of wennet loss."},
+      {"text": "Draughts dry the mucus, so wennets break near their fastenings through tamber", "key": false, "misreading": "A reader who knows tamber is the main cause of wennet failure and assumes the draught works by accelerating it."}
+    ],
+    "explanation": "In draughty galleries more old wennets are lost each season and orras replace them at about the same rate, but the new wennets run more often from tharl to tharl, so long chains break into short ones. The air stretches nothing."
+  },
+  {
+    "id": "b03/ctrl-opus/05",
+    "group": "clean",
+    "author": "opus",
+    "claim": "C14",
+    "stem": "Two observers count the same lattice independently and arrive at different cants. Where does most of that difference come from?",
+    "options": [
+      {"text": "From the wennet count, on which the two agree less closely than on tharls", "key": true},
+      {"text": "From the tharl count, on which the two agree less closely than on wennets", "key": false, "misreading": "A reader who recalls that tracing tharls to their anchors is the hard, disruptive step and assumes it is also the less reliable count."},
+      {"text": "From the chain tracing, where the two start from different wennets", "key": false, "misreading": "A reader who conflates cant with pell and thinks chain-tracing enters the cant calculation."},
+      {"text": "From the spurs, which one of the two may still count as a third kind", "key": false, "misreading": "A reader who remembers the older three-kind scheme and assumes spur handling remains the main source of disagreement."}
+    ],
+    "explanation": "Independent observers' tharl counts agree more closely than their wennet counts, and cant inherits most of its measurement error from the wennet count."
+  }
+]

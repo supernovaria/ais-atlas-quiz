@@ -1,0 +1,89 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet-whole2/03",
+    "targets": [
+      "FT-2",
+      "FT-4"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A friend tells you: \"The Atlas's forecasting section predicts AGI will arrive in 2045.\" Which objection does the section's own framing best support?",
+    "options": [
+      {
+        "text": "The section treats such a figure as the center of a decades-wide range, driven by deep uncertainty about compute requirements — not a prediction to adopt.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "There's no real objection here — the section's worked examples of growth-rate assumptions are exactly the kind of predictions it wants readers to adopt as a single date.",
+        "key": false,
+        "provenance": "misreads the worked example ('if you think investment grows 5x per year AND...') as the section asserting those input rates as a prediction, rather than as an illustration for testing belief-consistency",
+        "family": "c"
+      },
+      {
+        "text": "The objection is that the section's wide error margins make the whole forecasting exercise uninformative and not worth taking seriously in practice.",
+        "key": false,
+        "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the section's point that the margin's width is itself informative",
+        "family": "b"
+      },
+      {
+        "text": "The objection is that the twelve-orders-of-magnitude spread in the biological-anchors estimates shows the method has failed and its numbers should be discarded.",
+        "key": false,
+        "provenance": "misreads the wide bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+        "family": "a"
+      }
+    ],
+    "explanation": "The section is explicit that a stated figure like '2045' means 'somewhere in the 2030s-2050s range, with 2045 as a rough center' — and that width isn't a flaw, it comes from genuine uncertainty about how much compute matching human-level intelligence takes, uncertainty the biological-anchors estimates bound to about twelve orders of magnitude. Treating '2045' as a prediction to adopt is exactly the reading the section warns against. The wide-margins distractor inverts the section's stated purpose: the margins are the informative part, not evidence the exercise failed. And a twelve-order-of-magnitude spread isn't a broken method — it's an honest report of how little we currently know, still narrow enough to be useful for planning. (Forecasting Timelines → Training Data)",
+    "takeaway": "A stated timeline figure is a range's center, and the range's width — not the center — is the section's actual finding.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understands the section's stated purpose (ranges as reasoning tools, wide uncertainty as honest reporting) can identify the key objection without seeing options.",
+      "cynic_test": "A skipper might pick 'no real objection' assuming worked examples are meant literally, but the stem flags a claim under evaluation, which won't reward that surface read alone."
+    }
+  },
+  "measurements": {
+    "correct_len": 154,
+    "distractor_lens": [
+      169,
+      148,
+      160
+    ],
+    "mean_distractor_len": 159,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "forecasting"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 119,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

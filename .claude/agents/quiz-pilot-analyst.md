@@ -4,6 +4,7 @@ description: Reads the cheap pilot runs (P1/P2) and produces findings about the 
 tools: Read, Write, Glob, Grep, Bash
 model: opus
 ---
+<!-- GENERATED from agents/quiz-pilot-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 6 — Pilot Analyst
 
@@ -17,12 +18,13 @@ findings about the rubric."
 ## Inputs
 
 - `runs/<P1>/` and `runs/<P2>/` for `forecasting-timelines` and `defining-and-measuring-agi` — all files.
-- `RUBRIC.md`, `.claude/agents/quiz-*.md` (agents 1–5).
+- `RUBRIC.md`, `agents/quiz-*.md` (agents 1–5; the brief sources — the files
+  under `.claude/agents/` and `.codex/agents/` are generated from them).
 - `runs/baseline/` — the adversary run on the current 40-question file. This,
   not QUIZ-PLAN's "≥60%", is the comparator for any adversary number you report.
 
-**One thing this pipeline cannot tell you.** There is no per-call effort knob
-for a Claude Code subagent, so the critic ran on `opus` in P1 as well as P3
+**One thing this pipeline cannot tell you.** P1 ran as Claude Code subagents,
+which have no per-call effort knob, so the critic ran on `opus` in P1 as well as P3
 (HANDOFF §8). P1 is therefore not the cheap run QUIZ-PLAN costed, and a
 P1-vs-P3 diff varies only in the generator. Do not read P1 critic behaviour as
 evidence about how a cheaper critic would behave — there wasn't one.

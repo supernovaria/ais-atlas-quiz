@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Project Status</title>
+<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+<style>
+  :root {
+    --bg: #f6f5f2; --panel: #ffffff; --ink: #1d1c1a; --muted: #6b6860; --line: #e3e0d8;
+    --accent: #3a5bd9; --hot: #f0440f; --hot-bg: #fff0ea; --ok: #2f8a4c; --warn-bg: #fff4d6; --warn-line: #e9c25a;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151514; --panel: #1f1f1d; --ink: #ecebe6; --muted: #9c9a92; --line: #33322e;
+      --accent: #8aa2ff; --hot: #ff6a3d; --hot-bg: #3a1d12; --ok: #6cc98a; --warn-bg: #3a3014; --warn-line: #8a6d1e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; }
+  h1 { font-size: 24px; margin: 0; letter-spacing: -0.01em; }
+  .tagline { color: var(--muted); margin: 2px 0 0; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .meta .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); margin-right: 6px; }
+  .meta.offline .dot { background: var(--hot); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 28px 0 10px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+
+  .banner { margin-top: 16px; padding: 10px 14px; border-radius: var(--radius); border: 1px solid var(--warn-line); background: var(--warn-bg); }
+  .banner.hot { border-color: var(--hot); background: var(--hot-bg); }
+  .banner b { color: var(--hot); }
+
+  .track { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ms { padding: 4px 10px; border-radius: 999px; font-size: 13px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); }
+  .ms.done { color: var(--ok); }
+  .ms.done::before { content: "✓ "; }
+  .ms.doing { color: var(--ink); border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); font-weight: 600; }
+  .ms.doing::before { content: "● "; color: var(--accent); }
+  .ms.next { color: var(--ink); }
+
+  .agents { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }
+  .agent h3 { margin: 0; font-size: 16px; }
+  .agent .where { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .agent .task { margin: 10px 0 6px; }
+  .agent ol { margin: 0 0 10px; padding-left: 20px; color: var(--muted); font-size: 14px; }
+  .agent.stale { opacity: 0.55; }
+  .tag { font-size: 11px; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); margin-left: 6px; vertical-align: 2px; }
+  .empty { color: var(--muted); font-style: italic; }
+
+  ul.files { list-style: none; margin: 0; padding: 0; font: 13px/1.7 ui-monospace, "Cascadia Code", Consolas, monospace; }
+  ul.files li { display: flex; gap: 8px; align-items: baseline; }
+  ul.files .mark { width: 1em; flex: none; text-align: center; color: var(--muted); }
+  ul.files li.active .mark { color: var(--accent); }
+  ul.files li.done .mark { color: var(--ok); }
+  ul.files .git { color: var(--muted); font-size: 11px; }
+  ul.files .path { word-break: break-all; }
+  .hot .path { text-decoration: underline 2px var(--hot); text-underline-offset: 3px; }
+  body.multi .hot .path { color: var(--hot); font-weight: 700; }
+  ul.files li.sep { height: 6px; }
+
+  .cols { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } }
+  .md h1 { font-size: 20px; margin: 0 0 4px; }
+  .md h2 { font-size: 17px; text-transform: none; letter-spacing: 0; color: var(--ink); margin: 22px 0 6px; }
+  .md p, .md li { max-width: 72ch; }
+  .md code { font-size: 0.9em; background: var(--bg); padding: 1px 5px; border-radius: 4px; }
+  .md table { border-collapse: collapse; font-size: 14px; width: 100%; }
+  .md td, .md th { border-bottom: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: top; }
+  .md em:first-child { color: var(--muted); }
+
+  .commits { list-style: none; margin: 0; padding: 0; font-size: 13px; }
+  .commits li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .commits li:last-child { border: 0; }
+  .commits .h { font-family: ui-monospace, Consolas, monospace; color: var(--muted); margin-right: 6px; }
+  .commits .d { color: var(--muted); font-size: 12px; display: block; }
+
+  .req { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .req:last-child { border: 0; }
+  .req .st { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; margin-right: 6px; }
+  .st.open { color: var(--accent); } .st.accepted { color: var(--ok); } .st.built { color: var(--ok); } .st.declined { color: var(--muted); }
+  .req .why, .req .note { color: var(--muted); font-size: 13px; margin-top: 3px; }
+  .req .note::before { content: "You: "; font-weight: 600; }
+
+  .legend { font-size: 12px; color: var(--muted); margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .legend .hot { text-decoration: underline 2px var(--hot); text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="project">Project status</h1>
+      <p class="tagline" id="tagline"></p>
+    </div>
+    <div class="meta" id="meta"><span class="dot"></span>connecting…</div>
+  </header>
+
+  <div id="banners"></div>
+
+  <h2>Milestones</h2>
+  <div class="track" id="milestones"></div>
+
+  <h2>Sessions at work</h2>
+  <div class="agents" id="agents"></div>
+  <div class="legend">
+    <span>● working on it now</span><span>○ planned</span><span>✓ done / committed</span>
+    <span class="hot">hotspot file</span><span>(bold when 2+ sessions are active)</span>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Status</h2>
+      <div class="panel md" id="status"></div>
+    </div>
+    <div>
+      <h2>Dashboard wishes</h2>
+      <div class="panel" id="requests"></div>
+      <h2>Recent commits</h2>
+      <div class="panel"><ul class="commits" id="commits"></ul></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const ago = iso => {
+  const s = Math.round((Date.now() - new Date(iso)) / 1000);
+  if (s < 90) return 'just now';
+  if (s < 5400) return `${Math.round(s / 60)} min ago`;
+  if (s < 129600) return `${Math.round(s / 3600)} h ago`;
+  return `${Math.round(s / 86400)} days ago`;
+};
+const MARK = { active: '●', planned: '○', done: '✓' };
+const ORDER = { active: 0, planned: 1, done: 2 };
+
+function fileList(files) {
+  if (!files.length) return '<p class="empty">No files listed yet.</p>';
+  const sorted = [...files].sort((a, b) =>
+    (b.hotspot - a.hotspot) || (ORDER[a.state] - ORDER[b.state]) || a.path.localeCompare(b.path));
+  const firstCold = sorted.findIndex(f => !f.hotspot);
+  return '<ul class="files">' + sorted.map((f, i) =>
+    (i === firstCold && i > 0 ? '<li class="sep"></li>' : '') +
+    `<li class="${f.state}${f.hotspot ? ' hot' : ''}" title="${f.hotspot ? 'Hotspot. ' : ''}${f.declared ? 'Declared by the session' : 'Seen by git, not declared'}">` +
+    `<span class="mark">${MARK[f.state]}</span><span class="path">${esc(f.path)}</span>` +
+    (f.git ? `<span class="git">${esc(f.git)}</span>` : '') + '</li>').join('') + '</ul>';
+}
+
+function where(wt) {
+  const folder = wt.path.split('/').pop();
+  return wt.isMain ? `main folder · ${esc(wt.branch)}` : `worktree ${esc(folder)} · branch ${esc(wt.branch)}`;
+}
+
+function render(s) {
+  const st = s.status || {};
+  document.title = `${st.project || 'Project'} status`;
+  $('project').textContent = st.project || 'Project status';
+  $('tagline').textContent = st.tagline || '';
+  document.body.classList.toggle('multi', s.activeAgentCount >= 2);
+
+  let banners = '';
+  if (s.overlaps.length) {
+    banners += `<div class="banner hot"><b>Two sessions plan to touch the same file.</b> Run them one after the other, or tell one to leave these alone: ` +
+      s.overlaps.map(o => `<code>${esc(o.path)}</code> (${o.agents.map(esc).join(', ')})`).join('; ') + '</div>';
+  }
+  if (s.activeAgentCount >= 2) {
+    banners += `<div class="banner">${s.activeAgentCount} sessions are active. Hotspot files are shown in <b>bold red-orange</b>; check none of them appear in two cards.</div>`;
+  }
+  $('banners').innerHTML = banners;
+
+  $('milestones').innerHTML = (st.milestones || []).map(m =>
+    `<span class="ms ${esc(m.state)}" title="${esc(m.date || m.state)}">${esc(m.label)}</span>`).join('');
+
+  const cards = [];
+  for (const wt of s.worktrees) {
+    for (const a of wt.agents) {
+      cards.push(`<div class="panel agent${a.stale ? ' stale' : ''}">
+        <h3>${esc(a.agent)}${a.stale ? '<span class="tag">stale — finished?</span>' : ''}</h3>
+        <div class="where">${where(wt)} · updated ${ago(a.updated)}</div>
+        ${a.error ? `<p class="banner hot">${esc(a.error)}</p>` : ''}
+        <div class="task">${esc(a.task) || '<span class="empty">No task given.</span>'}</div>
+        ${a.plan.length ? '<ol>' + a.plan.map(p => `<li>${esc(p)}</li>`).join('') + '</ol>' : ''}
+        ${fileList(a.files)}
+      </div>`);
+    }
+    if (wt.unclaimed.length) {
+      cards.push(`<div class="panel agent">
+        <h3>Changes nobody has claimed</h3>
+        <div class="where">${where(wt)}</div>
+        <div class="task">Uncommitted or unmerged files no registered session lists. Often leftovers from an earlier session.</div>
+        ${fileList(wt.unclaimed)}
+      </div>`);
+    }
+  }
+  $('agents').innerHTML = cards.join('') || '<p class="empty">No sessions registered. Nothing is being worked on, or sessions aren\'t registering.</p>';
+
+  $('status').innerHTML = window.marked ? marked.parse(s.statusMd) : `<pre>${esc(s.statusMd)}</pre>`;
+
+  const reqs = st.display_requests || [];
+  $('requests').innerHTML = reqs.length ? reqs.map(r => `<div class="req">
+      <span class="st ${esc(r.status)}">${esc(r.status || 'open')}</span>${esc(r.request)}
+      ${r.why ? `<div class="why">${esc(r.from ? r.from + ': ' : '')}${esc(r.why)}${r.date ? ' · ' + esc(r.date) : ''}</div>` : ''}
+      ${r.user_note ? `<div class="note">${esc(r.user_note)}</div>` : ''}
+    </div>`).join('')
+    : '<p class="empty">None yet. Sessions add ideas here when something can\'t be shown well.</p>';
+
+  $('commits').innerHTML = s.commits.map(c =>
+    `<li><span class="h">${esc(c.hash)}</span>${esc(c.subject)}<span class="d">${esc(c.date)}</span></li>`).join('');
+}
+
+let last = '';
+async function tick() {
+  try {
+    const text = await (await fetch('/api/state', { cache: 'no-store' })).text();
+    $('meta').className = 'meta';
+    $('meta').innerHTML = `<span class="dot"></span>live · updated ${new Date().toLocaleTimeString()}`;
+    if (text !== last) { last = text; render(JSON.parse(text)); }
+  } catch {
+    $('meta').className = 'meta offline';
+    $('meta').innerHTML = '<span class="dot"></span>server not reachable: run <code>npm run status</code>';
+  }
+}
+tick();
+setInterval(tick, 5000);
+</script>
+</body>
+</html>

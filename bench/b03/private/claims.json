@@ -1,0 +1,518 @@
+[
+  {
+    "id": "C1",
+    "claim": "A tharl is fastened to rock at both ends and a wennet only to other threads, at both ends; the distinction is what a thread is fastened to, not its length or thickness.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "The distinction concerns what a thread is fastened to, not its length or thickness."
+  },
+  {
+    "id": "C2",
+    "claim": "Beginners' rule of thumb (thick, taut threads are tharls; fine, slack ones are wennets) gives the right count in most lattices; the protocol makes observers trace every thread only because the exceptions cannot be spotted in advance.",
+    "naive_answer": "Thick, taut threads are usually the rock-anchored ones, so classifying by appearance mostly works.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "experts beat beginners"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "In most lattices this rule of thumb gives the right count; the Aumark field protocol still asks observers to follow every thread to both of its ends, because the lattices where it fails cannot be picked out in advance."
+  },
+  {
+    "id": "C3",
+    "claim": "The spur, which older surveys treated as a third kind of thread, is simply a wennet whose two ends lie on the same tharl; beginners, who counted spurs as wennets, were right.",
+    "naive_answer": "A spur is a separate, third kind of thread.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "experts are better overall but stuck in their habits"
+    ],
+    "heuristics_wrong": [
+      "two things that seem alike are actually different",
+      "experts beat beginners"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "A spur is simply a wennet whose two ends happen to lie on the same thread, and the protocol now counts it as one, as beginners always had."
+  },
+  {
+    "id": "C4",
+    "claim": "Vesks lay tharls and orras lay wennets; an orra never lays a tharl, and a vesk never lays wennets on a lattice it began, though it may act as an orra on another snail's lattice.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "An orra never lays a tharl, and a vesk never returns to lay wennets on a lattice it began, though it may act as an orra on a lattice begun by another snail."
+  },
+  {
+    "id": "C5",
+    "claim": "Orras begin laying wennets as soon as the first tharls are anchored; most wennets, and nearly all of a lattice's pell, are laid before its last tharl is in place.",
+    "naive_answer": "The frame of tharls is finished first, and the wennets and long chains are added afterwards.",
+    "naive_is_right": false,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The two measures are easy to conflate, because both rise while a lattice's tharls are still being anchored, and nearly all of a lattice's pell is laid in that period, but they answer different questions."
+  },
+  {
+    "id": "C6",
+    "claim": "Cant is the number of wennets divided by the number of tharls.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "is the number of wennets divided by the number of tharls."
+  },
+  {
+    "id": "C7",
+    "claim": "Cant is a whole-lattice ratio and ignores where the wennets are.",
+    "naive_answer": "A ratio for the whole lattice says nothing about where the wennets are.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "It is a ratio for the whole lattice and says nothing about where the wennets are."
+  },
+  {
+    "id": "C8",
+    "claim": "Pell is the number of wennets in the longest chain traced from wennet to wennet, never along a tharl and never passing through any wennet twice.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "Pell is the number of wennets in the longest such chain anywhere in the lattice."
+  },
+  {
+    "id": "C9",
+    "claim": "Cant and pell come apart: a lattice with a high cant can have a short pell if its wennets run directly from tharl to tharl.",
+    "naive_answer": "The two measures are distinct, and a lattice can be high on one and low on the other.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "two things that seem alike are actually different"
+    ],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "A lattice with a high cant can easily have a short pell if its many wennets each run directly from tharl to tharl."
+  },
+  {
+    "id": "C10",
+    "claim": "By Varrenby's rule, a lattice is ostral when its pell is more than twice its cant, and calvine otherwise.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "by Varrenby's rule, a lattice is ostral when its pell is more than twice its cant, and calvine otherwise."
+  },
+  {
+    "id": "C11",
+    "claim": "Most resting snails are on lattices of middling pell (about four to seven wennets); lattices with very short or very long pell carry few, even when large.",
+    "naive_answer": "Bigger lattices with longer chains carry the most resting snails.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the moderate middle is right",
+      "quality peaks at a medium size",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "more is better"
+    ],
+    "shape": "peaked",
+    "passage_only": false,
+    "quote": "At any one time, most resting snails are found on lattices of middling pell, from about four to seven wennets, and lattices with a very short or a very long pell carry few, even when they are large."
+  },
+  {
+    "id": "C12",
+    "claim": "Wennets are counted before tharls; Varrenby counted tharls first, and Aske's objection reversed the order.",
+    "naive_answer": "Count the frame (the tharls) first, in the order the lattice was built.",
+    "naive_is_right": false,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "the objection was noted but practice did not change",
+      "experts are better overall but stuck in their habits"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "In the field, wennets are counted before tharls."
+  },
+  {
+    "id": "C13",
+    "claim": "The reason: tracing tharls brings the lamp close to the rock, and its warmth softens nearby wennets so they sag together and cannot be told apart.",
+    "naive_answer": "Tracing the tharls disturbs the wennets, so they are counted first.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the option with the most sensible causal story is right"
+    ],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "following a tharl to its anchors means bringing the lamp close to the rock, and the warmth softens nearby wennets so that they sag against one another and can no longer be told apart."
+  },
+  {
+    "id": "C14",
+    "claim": "Independent observers agree more closely on tharl counts than on wennet counts; cant's error comes mostly from the wennet count.",
+    "naive_answer": "The fewer, anchored threads are easier to count consistently than the many hanging ones.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "When two observers count the same lattice independently, their tharl counts agree more closely than their wennet counts, and cant inherits most of its measurement error from the wennet count."
+  },
+  {
+    "id": "C15",
+    "claim": "The tessel trace finds the longest chain through the wennet nearest the middle; the fenn trace finds the longest chain beginning from the wennet nearest each anchor and keeps the best.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "The tessel trace finds the longest chain that passes through the wennet nearest the middle of the lattice."
+  },
+  {
+    "id": "C16",
+    "claim": "The tessel trace underestimates pell less often and by less than the fenn trace, which beginners prefer for its many starting points.",
+    "naive_answer": "The fenn trace, with more starting points, is the more accurate shortcut.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "experts beat beginners",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "more is better",
+      "the answer with a trade-off is right"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The tessel trace underestimates pell less often, and by less, than the fenn trace does."
+  },
+  {
+    "id": "C17",
+    "claim": "Pole's objection (the tessel trace can never find a longest chain that avoids the middle) is conceded, and the tessel trace remains the standard shortcut.",
+    "naive_answer": "The weakness is acknowledged and the shortcut stays in use.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the objection was noted but practice did not change",
+      "the answer with a trade-off is right"
+    ],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Mira Pole objected that it can never find a longest chain that avoids the middle; the point is conceded, and the tessel trace remains the standard shortcut."
+  },
+  {
+    "id": "C18",
+    "claim": "Orrin pattern: lattices begun by several vesks have shorter pell than single-vesk lattices with the same number of tharls.",
+    "naive_answer": "Several builders working at once get in each other's way, so the lattice comes out less elaborate.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "more is better",
+      "an effect named after a researcher describes a mistake",
+      "the surprising answer is the right one"
+    ],
+    "shape": "falling",
+    "passage_only": false,
+    "quote": "Hallam Orrin, re-examining Varrenby's survey of 212 lattices, found that lattices begun by several vesks together had a shorter pell than lattices begun by a single vesk with the same number of tharls."
+  },
+  {
+    "id": "C19",
+    "claim": "The Orrin pattern appears only in the colder galleries; in the warmer ones, vesk number makes no difference to pell.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "The Orrin pattern appears only in the colder galleries; in the warmer ones, lattices begun by one vesk and by several have the same pell."
+  },
+  {
+    "id": "C20",
+    "claim": "Tasker (not Emmerick) objected to Orrin's result, on the ground that multi-vesk lattices had been anchored more quickly and so had fewer seasons of wennet-laying before their last tharl.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "Beatrix Tasker objected to Orrin's result on the ground that his multi-vesk lattices had been anchored more quickly, and so had received fewer seasons of wennet-laying before their last tharl was in place."
+  },
+  {
+    "id": "C21",
+    "claim": "Orrin compared lattices whose anchoring took the same number of seasons; the difference persisted and the pattern is treated as established.",
+    "naive_answer": "The original result survived the objection.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the objection was noted but practice did not change"
+    ],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Orrin answered by comparing lattices whose anchoring had taken the same number of seasons, and the difference persisted, which is why the pattern is now treated as established."
+  },
+  {
+    "id": "C22",
+    "claim": "Tasker pattern: in draughty galleries a lattice's pell falls season by season after its last tharl is anchored, with tharl count fixed and cant barely changing; in still galleries it stays level.",
+    "naive_answer": "Moving air damages the long chains, so pell falls over time in draughty galleries.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "an effect named after a researcher describes a mistake"
+    ],
+    "shape": "falling",
+    "passage_only": false,
+    "quote": "In draughty galleries, a lattice's pell falls from season to season once its last tharl is anchored, while its tharl count stays fixed and its cant barely changes."
+  },
+  {
+    "id": "C23",
+    "claim": "Varrenby's 'slackening' is not a separate process: it is the Tasker pattern itself.",
+    "naive_answer": "Slackening and the Tasker pattern are two different processes.",
+    "naive_is_right": false,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "two things that seem alike are actually different"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Slackening is the Tasker pattern itself, and the air stretches nothing."
+  },
+  {
+    "id": "C24",
+    "claim": "The Tasker pattern's mechanism: in draughty galleries more old wennets are lost each season and orras replace them at about the same rate, but new wennets run more often from tharl to tharl, breaking long chains; the air does not stretch them.",
+    "naive_answer": "The moving air stretches long chains until they part.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the mundane cause beats the dramatic one"
+    ],
+    "heuristics_wrong": [
+      "the option with the most sensible causal story is right"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "In draughty galleries more old wennets are lost each season, and the orras replace them at about the same rate, but the new wennets run more often from tharl to tharl than the ones they replace, so long chains are broken into short ones."
+  },
+  {
+    "id": "C25",
+    "claim": "The Orrin pattern compares lattices by how they were begun; the Tasker pattern follows single lattices through time.",
+    "naive_answer": "They are distinct findings, not versions of one.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "two things that seem alike are actually different"
+    ],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The two regularities are not versions of one finding: the Orrin pattern compares lattices by how they were begun, while the Tasker pattern follows single lattices through time."
+  },
+  {
+    "id": "C26",
+    "claim": "Lattices are most common at middling damp, scarcer in the driest and in saturated galleries, though snails are no less numerous in saturated ones.",
+    "naive_answer": "The wettest galleries, where the snails thrive, have the most lattices.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the moderate middle is right",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "the option with the most sensible causal story is right"
+    ],
+    "shape": "peaked",
+    "passage_only": false,
+    "quote": "Lattices are most common in galleries of middling damp, and scarcer both in the driest galleries and in those whose air is saturated, although the snails themselves are no less numerous in the saturated galleries."
+  },
+  {
+    "id": "C27",
+    "claim": "The colder the gallery, the more seasons a lattice takes to reach its full count of tharls.",
+    "naive_answer": "Cold slows the animals, so building takes longer.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": "rising",
+    "passage_only": false,
+    "quote": "Cold slows building: the colder the gallery, the more seasons a lattice takes to reach its full count of tharls."
+  },
+  {
+    "id": "C28",
+    "claim": "The number of orras working a lattice has no bearing on its cant, because each orra lays fewer wennets when others share the lattice.",
+    "naive_answer": "More wennet-layers produce more wennets per tharl.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the option with the most sensible causal story is right",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "more is better"
+    ],
+    "shape": "flat",
+    "passage_only": false,
+    "quote": "The number of orras a lattice attracts has no bearing on its cant."
+  },
+  {
+    "id": "C29",
+    "claim": "The higher a lattice's cant, the more likely it is to survive a flood season.",
+    "naive_answer": "More wennets make a stronger lattice that survives floods better.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "more is better"
+    ],
+    "heuristics_wrong": [
+      "the surprising answer is the right one"
+    ],
+    "shape": "rising",
+    "passage_only": false,
+    "quote": "the higher a lattice's cant, the more likely it is to come through a flood season intact"
+  },
+  {
+    "id": "C30",
+    "claim": "There is no level of cant beyond which the survival advantage stops growing.",
+    "naive_answer": "The advantage levels off at high cant.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "more is better",
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "the moderate middle is right",
+      "quality peaks at a medium size",
+      "the answer with a trade-off is right"
+    ],
+    "shape": "rising",
+    "passage_only": false,
+    "quote": "Varrenby's figures show no level of cant beyond which the advantage stops growing."
+  },
+  {
+    "id": "C31",
+    "claim": "The higher a lattice hangs above the water, the less likely it is to survive a flood season; those under the crown are lost most often.",
+    "naive_answer": "Higher lattices are safer from floods.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the surprising answer is the right one"
+    ],
+    "heuristics_wrong": [
+      "more is better",
+      "the moderate middle is right"
+    ],
+    "shape": "falling",
+    "passage_only": false,
+    "quote": "The higher a lattice hangs above the water, the less likely it is to survive a flood season, and those close under the crown are lost most often of all."
+  },
+  {
+    "id": "C32",
+    "claim": "Most lost lattices are lost to floods and rockfalls; the silt film Varrenby feared accounts for only a small share.",
+    "naive_answer": "Violent events like floods and rockfalls destroy most lattices.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [
+      "the most insidious-sounding thing is the most dangerous",
+      "the mundane cause beats the dramatic one",
+      "the surprising answer is the right one"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Varrenby worried a great deal about silt film, the slow settling of fine sediment on the threads, but silt film accounts for only a small share of lost lattices."
+  },
+  {
+    "id": "C33",
+    "claim": "Wennets that fail in a standing lattice fail mostly through tamber (a gradual change in the mucus), not pilse (wear by crawling snails), which beginners blame.",
+    "naive_answer": "Wennets wear out mainly from snails crawling over them.",
+    "naive_is_right": false,
+    "heuristics_right": [
+      "the most insidious-sounding thing is the most dangerous",
+      "experts beat beginners"
+    ],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Wennets that fail in a standing lattice fail mostly through tamber, a gradual change in the hardened mucus, rather than through pilse, the wear of snails crawling over them."
+  },
+  {
+    "id": "C34",
+    "claim": "A wennet lost to tamber parts close to one of its fastenings; one lost to pilse parts near its middle.",
+    "naive_answer": "Crawling snails wear a wennet along its middle, where they cross it, so a worn one breaks there.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "The reliable way to tell them apart is where the break falls: a wennet lost to tamber parts close to one of its fastenings, and a wennet lost to pilse parts near its middle."
+  },
+  {
+    "id": "C35",
+    "claim": "Worked example: the Sellen lattice (27 wennets, 9 tharls, cant 3, full-trace and tessel-trace pell 7) is ostral by Varrenby's rule; the fenn trace's pell of 5 would have made it calvine.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "The full-trace pell of 7 is more than 6, so by Varrenby's rule the Sellen lattice is ostral."
+  },
+  {
+    "id": "C36",
+    "claim": "Emmerick (not Tasker) accepted Varrenby's definitions of cant and pell but objected that the ostral/calvine boundary makes a lattice's class depend on a single thread.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "Emmerick did not dispute Varrenby's definitions of cant or pell; he objected that the boundary between ostral and calvine makes a lattice's class depend on a single thread."
+  },
+  {
+    "id": "C37",
+    "claim": "Emmerick proposed assigning the class from the mean length of the three longest chains that share no wennet.",
+    "naive_answer": "Base the class on several chains rather than the single longest.",
+    "naive_is_right": true,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Emmerick proposed that the class be assigned from the mean length of the three longest chains that share no wennet, rather than from the single longest."
+  },
+  {
+    "id": "C38",
+    "claim": "Under Emmerick's mean the Sellen lattice (chains of 7, 4 and 3; mean about 4.7, below 6) is calvine, so under current practice it is calvine; breaking its centre wennet would also make it calvine under Varrenby's rule, with cant only falling to about 2.9.",
+    "naive_answer": null,
+    "naive_is_right": null,
+    "heuristics_right": [],
+    "heuristics_wrong": [],
+    "shape": null,
+    "passage_only": true,
+    "quote": "For the Sellen lattice those chains run through 7, 4 and 3 wennets, a mean of about 4.7, less than twice its cant, which makes it calvine."
+  },
+  {
+    "id": "C39",
+    "claim": "Emmerick's objection was carried into practice: since the 1970s most surveys use his mean, keeping Varrenby's rule only for comparison with her survey.",
+    "naive_answer": "The more robust rule was adopted.",
+    "naive_is_right": true,
+    "heuristics_right": [
+      "the answer with a trade-off is right"
+    ],
+    "heuristics_wrong": [
+      "the objection was noted but practice did not change",
+      "experts are better overall but stuck in their habits"
+    ],
+    "shape": null,
+    "passage_only": false,
+    "quote": "Since the 1970s most surveys have assigned the class from Emmerick's mean, keeping Varrenby's rule only for comparison with her own survey."
+  }
+]

@@ -1,0 +1,260 @@
+{
+  "section": "forecasting-timelines",
+  "heading": "Forecasting Timelines",
+  "target_n": 4,
+  "takeaway": "Timeline forecasts in this section are consistency-check scenarios built from independently-improving, multiplicative growth factors — not point predictions — so the width of the uncertainty (and the fact that no single factor is a hard stop) is the durable finding, not any date or growth rate.",
+  "subheadings": ["Effective Compute", "Training Data"],
+  "threshold_concepts": ["FT-2", "FT-5"],
+  "ideas": [
+    {
+      "id": "FT-1",
+      "label": "how far off TAI is determines which safety strategies are even viable",
+      "anchor": "The difference between 10 years and 50 years fundamentally changes which safety strategies are viable",
+      "criteria_met": [1, 2, 4],
+      "earns_question": true,
+      "attempts": 1,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": [],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "timeline forecasting is an academic exercise separate from deciding what safety work to do now",
+          "provenance": "misreads the opening paragraph's contrast (soon-arriving TAI needs fast, current-system-compatible approaches; distant TAI leaves room for theoretical work) as background motivation rather than a claim that timeline length is itself strategy-determining",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "a short timeline and a fast takeoff are the same claim about AI risk",
+          "provenance": "misreads 'predicting when AI automates cognitive labor' (a timelines question) as equivalent to the takeoff-speed question this section does not address",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["takeoff", "ch2"],
+      "disposition": "question"
+    },
+    {
+      "id": "FT-2",
+      "label": "forecasts are scenarios for checking belief-consistency, not concrete predictions of a date",
+      "anchor": "not as concrete predictions of timelines; but instead as scenarios that help you reason about",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L4", "L5"],
+      "pairs_with": ["FT-4"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a forecast like '5x/year investment growth' is a prediction the chapter is making about the future",
+          "provenance": "misreads the worked example ('if you think investment grows 5x per year AND...') as the chapter asserting those input rates, rather than as an illustration of how to test whether one's own beliefs cohere",
+          "source": "inferred"
+        },
+        {
+          "family": "d",
+          "claim": "if a forecast's inputs seem individually plausible, the combined output must also be the right prediction to adopt",
+          "provenance": "misreads 'if you're surprised, maybe one of your input beliefs needs updating' as license to trust the combined output instead of as an instruction to re-examine an input",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "wide error margins mean the forecasting exercise has failed and tells us nothing",
+          "provenance": "misreads 'all forecasts come with wide error margins that compound over time' as undermining the method, reversing the section's point that the margins are themselves the informative output",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["takeoff"],
+      "disposition": "question"
+    },
+    {
+      "id": "FT-3",
+      "label": "compute enabling automation, which increases productivity, which funds more compute, is a feedback loop toward full labor automation",
+      "anchor": "compute enabling automation, which increases productivity, which funds more compute—continues until full labor automation",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "duplicates the effective-compute-drives-automation mechanism already carrying FT-5's question, and is the direct setup for Takeoff's investment-loop-vs-automation-loop discrimination pair (RUBRIC §3.4); testing it here would spend that discrimination early and thin it there"
+    },
+    {
+      "id": "FT-4",
+      "label": "compute-for-TAI estimates span twelve orders of magnitude, so the width of the range is the finding, not any endpoint",
+      "anchor": "twelve orders of magnitude of uncertainty",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["FT-2"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a stated forecast like 'AGI in 2045' is the chapter's best-guess precise date",
+          "provenance": "misreads the worked contrast ('they mean somewhere in the 2030s-2050s range, with 2045 as a rough center — not a precise date') as the opposite, treating the center point as the claim",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "twelve orders of magnitude of uncertainty means the biological-anchors method is useless and should be discarded",
+          "provenance": "misreads the wide bounds (~10^28 to ~10^41 FLOP) as evidence the method failed, rather than as an honestly-reported range that still bounds planning",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "the upper and lower biological-anchor bounds are equally likely, so the true value is probably near the middle",
+          "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a uniform-ish distribution rather than illustrating genuine deep uncertainty about which reference process is right",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "FT-5",
+      "label": "effective compute is the product of three independently-improving factors (software efficiency x hardware efficiency x chip count), so it compounds faster than any one trend",
+      "subheading": "Effective Compute",
+      "anchor": "Effective compute combines three independent factors that each multiply your AI capabilities.",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L3", "L4", "L5"],
+      "pairs_with": ["FT-5b"],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "'more compute' just means more or faster chips",
+          "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat rather than the section's central redefinition of the term",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "if chip production growth slows, effective compute growth stalls",
+          "provenance": "misreads the multiplication of three independent factors as implying they rise or fall together, when the text's point is that each 'can improve independently'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "software and hardware efficiency gains are just smaller contributors alongside the dominant chip-count trend",
+          "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing they multiply as equal, independent terms",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["takeoff"],
+      "disposition": "question"
+    },
+    {
+      "id": "FT-5b",
+      "label": "the naive view that compute means simply the count of chips/GPUs",
+      "subheading": "Effective Compute",
+      "anchor": "compute\" means more than just counting GPUs",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "this is the naive pre-chapter view the text explicitly names and rejects; it exists to become FT-5's conflation distractor, not a question of its own"
+    },
+    {
+      "id": "FT-6",
+      "label": "the data wall is a soft constraint with multiple independent escape routes, not a hard stop on scaling",
+      "subheading": "Training Data",
+      "anchor": "Three escape routes exist, whether data actually constrains scaling through 2030 depends on how well these alternatives work",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": [],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "once public text data runs out, scaling stops",
+          "provenance": "misreads 'the internet has maybe 30 years worth of text data... but we'll hit that wall around 2028' in isolation, ignoring the escape routes the same subsection lists immediately after",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "synthetic data is a lesser substitute that only partially replaces running out of real text",
+          "provenance": "misreads 'AI-generating its own training data removes the constraint entirely — if the outputs are high enough quality' as a partial fix rather than a route that removes the constraint outright under its stated condition",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "self-play/task-based learning could only ever work for games like Go and Chess, never for general tasks",
+          "provenance": "misreads the AlphaZero example as the ceiling of the approach rather than as one instance of a route the text explicitly says 'could be extended to teaching any arbitrary task' (while also flagging it as speculative)",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    }
+  ],
+  "discrimination_pairs": [
+    {
+      "a": "FT-5",
+      "b": "FT-5b",
+      "conflation": "readers say 'we have more compute now' and mean only 'we have more/faster chips now', missing that software efficiency and chip-level hardware efficiency are separate multipliers stacked on top of chip count"
+    },
+    {
+      "a": "FT-4",
+      "b": "FT-2",
+      "conflation": "readers say 'the chapter predicts AGI around 2045' when the text's own point is that such a figure is the rough center of a range spanning decades, and the range itself (driven by ~twelve orders of magnitude of compute-requirement uncertainty) is the thing to reason with, not the center point"
+    }
+  ],
+  "volatile": [
+    {"text": "training compute has grown 5x per year since 2020", "class": "V1.3"},
+    {"text": "dataset sizes have grown by 3.7x/year", "class": "V1.3"},
+    {"text": "training costs by 3.5x/year", "class": "V1.3"},
+    {"text": "cost of training Grok-4 estimated at $480 million USD", "class": "V1.5"},
+    {"text": "by 2030... a single training run requiring hundreds of billions of dollars and gigawatts of power", "class": "V1.4/V1.5", "subheading": null},
+    {"text": "GPU performance (hardware efficiency) grows at 1.35x per year", "class": "V1.3", "subheading": "Effective Compute"},
+    {"text": "algorithmic efficiency improvements cut compute needed by ~3x per year", "class": "V1.3", "subheading": "Effective Compute"},
+    {"text": "chip production has grown 2.3x per year since 2019", "class": "V1.3", "subheading": "Effective Compute"},
+    {"text": "the indexed web contains roughly 500 trillion tokens", "class": "V1.5", "subheading": "Training Data"},
+    {"text": "largest models in 2024 train on about 15 trillion tokens", "class": "V1.5", "subheading": "Training Data"},
+    {"text": "we'll hit that wall around 2028", "class": "V1.4", "subheading": "Training Data"},
+    {"text": "exhaust high-quality public text data between 2026 and 2032", "class": "V1.4", "subheading": "Training Data"},
+    {"text": "GPT-4 used more compute than GPT-3", "class": "V1.2", "subheading": "Effective Compute"}
+  ],
+  "durable_figures": [
+    {"text": "biological-anchors compute-for-TAI estimates span from ~10^28 to ~10^41 FLOP, twelve orders of magnitude of uncertainty", "class": "V2.2", "budget_candidate": true},
+    {"text": "projections of available chips range by a factor of 20x, and some compute estimates span 50x", "class": "V2.2", "budget_candidate": false},
+    {"text": "the three escape routes for the data wall (multimodal, synthetic, task-based/self-play data)", "class": "V2.4", "budget_candidate": false},
+    {"text": "effective compute = software efficiency x hardware efficiency x number of chips (three independently-improving multiplicative factors)", "class": "V2.4", "budget_candidate": false}
+  ],
+  "cross_section_links": [],
+  "used_later_by_summary": ["takeoff", "ch2"],
+  "assumed_prior": [
+    {
+      "concept": "compute, parameters, data, and accuracy as the scaling-law variables, and the scaling hypothesis generally",
+      "from": "leveraging-scale",
+      "use": "this section says outright it 'builds on the scaling laws discussion,' then decomposes 'compute' into three independently-multiplying components (software efficiency, hardware efficiency, chip count). The decomposition (FT-5) may be tested; the bare four-variable list must not be re-tested on its own here."
+    }
+  ],
+  "do_not_test": [
+    {"item": "specific growth-rate figures (1.35x, ~3x, 2.3x, 5x, 3.7x, 3.5x, 4x per year)", "why": "R10 volatile trackers restated each Epoch AI edition"},
+    {"item": "specific dollar figures ($480M for Grok-4, 'hundreds of billions' by 2030) and gigawatt figures", "why": "R10 volatile current-moment figures"},
+    {"item": "specific forward-looking dates (2028 wall, 2026-2032 exhaustion window, 2030 scaling-continuation horizon, 2045/2030s-2050s AGI center)", "why": "R10 forward-looking dates within 8 years or containing the present"},
+    {"item": "footnote 6's definition of a 'task'", "why": "footnote content the Atlas marks as supplementary, not structural"},
+    {"item": "researcher and organisation names (Epoch AI, Carlsmith, Cotra, Ho, Sevilla et al., Villalobos et al., Erdil et al., Owen)", "why": "citation provenance, not an idea"},
+    {"item": "GATE model simulation specifics (Figures 1.40-1.41: aggressive/conservative parameter lines, labor-share decline curve)", "why": "illustrates the already-tested effective-compute-drives-automation link (FT-5/FT-3) and forward-projects a volatile date range; also forward-references chapter 2 automation risk, which is that chapter's job to test"},
+    {"item": "the exact FLOP endpoints of the biological-anchors range (~10^28, ~10^41)", "why": "the individual bounds are estimate-dependent and could shift; only the twelve-orders-of-magnitude width (FT-4) is durable"},
+    {"item": "the three escape routes for the data wall named as a memorized list", "why": "enumeration, L2 at best — same failure mode as leveraging-scale's four scaling-law variables; test the soft-constraint idea (FT-6) instead"},
+    {"item": "the AlphaZero self-play sub-example", "why": "illustrates one escape route already carrying FT-6's question at a higher level"},
+    {"item": "the car analogy (cars/speed/driving efficiency) for effective compute", "why": "teaching device, not itself an idea; its content is already covered by FT-5"},
+    {"item": "'All models are wrong, but some are useful'", "why": "aphorism/colour, not a load-bearing claim"},
+    {"item": "the three-resources roadmap paragraph (compute, data, economic returns as the chapter's organizing structure)", "why": "organizational scaffolding for the rest of the section, not itself a testable idea"}
+  ],
+  "notes_for_generator": [
+    "5 ideas earn a question (FT-1, FT-2, FT-4, FT-5, FT-6) against a target_n of 4. Ranked strongest to weakest: FT-5 > FT-2 > FT-6 > FT-4 > FT-1. If only 4 ship, fold FT-1 into stem scaffolding or leave it for the chapter review block, where it pairs naturally with Takeoff's timelines-vs-takeoff-speed distinction.",
+    "This section is almost entirely volatile at the surface and durable underneath (RUBRIC §8.4 says this explicitly). Every candidate should be drafted with a Pattern B (structure) or Pattern D (conditionalize into the stem) rewrite from the first draft — do not draft number-pinned first and fix later; the rubric's own worked example (§10.5) is this exact section's Q3 and shows the fix.",
+    "FT-4 (twelve orders of magnitude of anchor uncertainty) is the natural home for this section's one R11 durable-figure budget slot. Do not also make the 20x/50x chip-projection spread load-bearing in the same quiz — pick one.",
+    "FT-5 vs FT-5b is the RUBRIC §3.4 pair named explicitly for this section ('effective compute vs. raw chip count'). Build the L3 question directly on it: at least two distractors should be 'more chips = more compute' variants.",
+    "FT-2 is the best L5 seed: hand the reader a claim in the wild ('the chapter predicts AGI in 2045') and ask which objection the section's own stated framing supports (RUBRIC Appendix B L5 opener: 'Someone claims X...').",
+    "Do not write a question on FT-3 (the compute->automation->productivity feedback loop) — it is deliberately reserved as setup for Takeoff's investment-loop-vs-automation-loop discrimination pair; testing it here would thin that later question.",
+    "For FT-6, the strongest L4 form is conditional: given that one escape route (e.g. synthetic data) turns out low-quality, what does the text's framing imply about whether scaling still continues — this uses independence of the three routes rather than testing the list."
+  ]
+}

@@ -4,6 +4,7 @@ description: Produces the concept map for one Atlas chapter-1 section. Invoked O
 tools: Read, Write, Glob, Grep
 model: sonnet
 ---
+<!-- GENERATED from agents/quiz-section-analyst.md by scripts/sync-agents.mjs. Edit the source, then run it. -->
 
 # Agent 1 — Section Analyst
 

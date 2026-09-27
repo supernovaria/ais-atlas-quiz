@@ -1,0 +1,106 @@
+{
+  "id": "forecasting-timelines/sonnet/c01",
+  "verdict": "rewrite",
+  "level": "L4",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["D3", "D9"],
+  "measurements": {
+    "correct_len": 144,
+    "distractor_lens": [140, 150, 120],
+    "mean_distractor_len": 136.7,
+    "len_ratio": 1.05,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.25,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [0, 0, 0]
+    },
+    "stem_word_singletons": ["lab", "route", "useful", "multimodal", "based", "still", "scaling"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 125,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["a", "b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "D3: the ceiling is one distractor eliminable without domain knowledge; two are. The stem's second sentence ('The lab hasn't touched multimodal data or task-based self-play, and nothing about the failure affects either') stipulates the independence premise outright, which flatly contradicts option 2's 'synthetic data was the only viable alternative' — a reader who never opened the section deletes it on the stem alone. Option 4 goes with it on structure (see D9). The same stipulation makes the key a restatement of a given rather than a transfer of the section's claim, which is what the L4 task was supposed to be.",
+    "D9: option 4 ('Self-play is beside the point here, since that method mainly produces useful data for rule-based games like Go or Chess') is not a responsive completion of the stem. The stem asks whether data availability will still constrain scaling; the other three options answer that, option 4 answers a different question about one route's relevance. It is eliminable on grammar-of-answer alone, and near dead weight under D12: a reader who genuinely holds the 'self-play is only for games' misconception would still not pick an option that declines to answer. The misconception is real and map-sourced (FT-6, family b) — the phrasing is what fails, not the content."
+  ],
+  "preserve": "the case and the key claim: a synthetic-data pipeline that fails for a stated, non-generalising reason is exactly the conditional form the concept map recommends for FT-6 (notes_for_generator #7), and option 3 — multimodal and self-play as lesser substitutes — is the one genuinely hard distractor and must survive intact.",
+  "rewrite": {
+    "id": "forecasting-timelines/sonnet/c01",
+    "targets": ["FT-6"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab's synthetic-data pipeline for post-training turns out too repetitive to improve model reasoning, so that route stops producing useful gains. What does this failure tell us about whether data availability will constrain scaling from here?",
+    "options": [
+      {
+        "text": "Not much on its own — the three routes work through separate mechanisms, so one failing doesn't settle what the other two can still deliver.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Scaling will stall soon, since losing synthetic data removes the last viable substitute for public text that is already close to exhausted.",
+        "key": false,
+        "provenance": "misreads 'The internet has maybe 30 years worth of text data at current consumption rates—but we'll hit that wall around 2028' in isolation, treating the failure of one substitute as exhausting the options and ignoring the three escape routes the same subsection lists immediately after",
+        "family": "c"
+      },
+      {
+        "text": "Multimodal and self-play data are lesser substitutes, so they can soften the shortfall but cannot replace what synthetic data promised.",
+        "key": false,
+        "provenance": "misreads 'AI-generating it's own training data removes the constraint entirely—if the outputs are high enough quality' as ranking synthetic data above the other two routes, rather than as a quality condition attached to one route among three",
+        "family": "a"
+      },
+      {
+        "text": "Data will keep constraining scaling, since the self-play route produces usable training data just for rule-bounded games like Go or Chess.",
+        "key": false,
+        "provenance": "misreads 'AlphaZero learned superhuman strategies without any human gameplay examples, using only the game rules' as the ceiling of self-play, rather than as one instance of an approach the text says 'could be extended to teaching any arbitrary task'",
+        "family": "b"
+      }
+    ],
+    "explanation": "Three routes lead past the data wall — multimodal sources, synthetic generation, and task-based self-play — and whether data actually constrains scaling depends on how well those alternatives work. They run through different mechanisms: a new source of raw material, manufactured text conditional on output quality, and data produced by interacting with a task. A repetitive synthetic pipeline is therefore evidence about synthetic data, not a verdict on the other two. The option ranking multimodal and self-play as lesser substitutes reads 'removes the constraint entirely' as a ranking rather than a condition. The stalling option is the pre-chapter instinct that the wall is hard; the option confining self-play to Go and Chess treats AlphaZero as the method's ceiling, where the text offers it as one instance and flags the extension as speculative. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall is soft because its escape routes are independent — one failing tells you nothing about the other two.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood that the data wall has three separately-working escape routes can say 'one route failing doesn't settle it' before seeing any option. The stem no longer supplies that premise, so the reader must bring the other two routes themselves.",
+      "cynic_test": "No option is now deletable from the stem alone: the stem states only that one route failed, so 'synthetic data was the last substitute' is a position a skipper could hold. All four options answer the question asked, so none is eliminable on structure. Distinctive stem words ('route', 'scaling', 'synthetic', 'data') each appear in two or more options, so nothing is marked."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "sonnet"
+  },
+  "rewrite_changed": [
+    "stem",
+    "options[0].text",
+    "options[1].text",
+    "options[1].provenance",
+    "options[2].text",
+    "options[2].provenance",
+    "options[3].text",
+    "options[3].provenance",
+    "explanation",
+    "self_check.cover_test",
+    "self_check.cynic_test"
+  ],
+  "reviewer_note": "Check whether option 3 ('lesser substitutes') is arguably true rather than wrong — the text bounds multimodal at '3-10x the effective data supply' and calls self-play 'still very speculative', so the key wins only because the section refuses to settle the question ('depends on how well these alternatives work') rather than because the other routes are known to be sufficient; separately, the original explanation named distractors by position ('the first wrong option', 'the third wrong option'), which breaks under the app's default shuffle even though RUBRIC §10.1/§10.3/§10.4 exemplars do the same thing — that inconsistency is worth a rubric fix, not just a candidate fix."
+}

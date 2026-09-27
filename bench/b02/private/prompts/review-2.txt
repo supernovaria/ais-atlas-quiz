@@ -1,0 +1,44 @@
+You are reviewing part of a question-generation pipeline for an AI-safety textbook quiz. Your job is to find what is wrong, missing, ambiguous or likely to fail — not to praise it.
+
+**What you are reviewing:** The revision of bench passage b02, checked against the review findings it was meant to address.
+
+**The files:** bench/b02/passage.md, bench/b02/private/claims.json, bench/b02/private/passage-notes.md, bench/b02/private/reviews-decisions.md, bench/b02/private/revision-log.md, bench/b02/private/reviews/opus.md, bench/b02/private/bench-check.json, prompts/bench-author.md
+
+**Context you should hold while reading.** The pipeline has an orchestrator that spawns subagents with fixed roles (analyst, generator, critic, adversary, curator, pilot analyst). A deterministic script does all counting and measurement; models do all judgment; the orchestrator never writes question text. Findings so far that bear on this review:
+
+- A weak blind reader (Haiku; the harness grants it tools but it has used none in ~70 spawns; never shown the source) answers the pipeline's questions far above chance: 75% on a passage invented for the purpose, where knowledge is zero by construction. The hand-authored floor on invented content is 40%; chance is 25%.
+- Rewriting stems to withhold their premises did not reduce this (15/15 to 14/15). Removing the stem entirely still left 4/6 correct across 4 distinct questions. The current lead is that **wrong answers are recognisably wrong** — a question asking which objection is strongest offered "there is no objection to raise".
+- Almost every enforced rule about wrong answers governs surface: relative length, hedging, absolute words, grammatical type. The rule about believability is a judgment call the critic applies inconsistently.
+- Rules stated only in an agent brief have measured compliance well below 100%: the generator broke a plainly stated quoting rule on 13 of 21 candidates. The project's standing response is to enforce mechanically wherever possible.
+- The critic stage is **deliberately dropped** from calibration runs for now. Do not recommend reinstating it there.
+- Templates are per-call requests. The agents' standing rules live in separate brief files and **must not be restated in templates**, because duplicated rules drift. Do not recommend copying brief rules into a template.
+
+**This is a verification review of a REVISED bench passage**, not a fresh review. The passage was reviewed, the orchestrator accepted findings (`private/reviews-decisions.md`), and an author revised it (`private/revision-log.md`). Your job is to check the revision, briefly. Answer these, and nothing else unless it is serious.
+
+1. **Was each accepted finding actually addressed?** Go through `private/reviews-decisions.md` row by row. For each, say *addressed*, *partly*, or *not addressed*, with the passage text that shows it. Do not re-argue findings that were rejected.
+
+2. **Did the revision introduce new problems?** In particular: after renaming coined terms, does every definition still match every use, including the worked example? Did a new or changed claim contradict an existing one? Did a new name give its own distinction away?
+
+3. **Are the new tags honest?** Spot-check the claims the revision added or changed. Under the tie-break (disputed tags go the more guessable way), would you tag any differently?
+
+4. **Is it ready for first use?** One line: *ready*, *ready with the following caveats*, or *not ready*, and why.
+
+Keep it short. A verification review that re-litigates settled findings costs more than it finds.
+
+**Report format.** Numbered findings, most important first. For each:
+- **Where** — file and the specific passage.
+- **Problem** — concretely what goes wrong, and for whom.
+- **Why it matters** — the failure it causes, ideally a concrete scenario.
+- **Change** — the specific edit you would make.
+- **Severity** — blocking / important / minor.
+- **Confidence** — high / medium / low, and what would change your mind.
+
+Then a short section **"Leave alone"**: things that look odd but are right, so they are not "fixed" by mistake.
+
+Do not pad. If something is fine, say nothing about it. If you are unsure whether a finding is real, say so rather than asserting it — a confident wrong finding costs more than an uncertain right one.
+
+Read every file listed above yourself, from the working directory `C:\Users\sorcs\Documents\maddy-home\atlas\ais-atlas-quiz`. Also state your exact model ID in the first line of the review.
+
+Write your review to exactly: `bench/b02/private/reviews/verify.md`
+
+Reply with one line only: `OK bench/b02/private/reviews/verify.md` or `FAIL <one-clause reason>`. Nothing else.

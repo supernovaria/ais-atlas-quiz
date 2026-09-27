@@ -1,0 +1,96 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/sonnet/c01",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab's synthetic-data pipeline for post-training turns out too repetitive to improve model reasoning, so that route stops producing useful gains. The lab hasn't touched multimodal data or task-based self-play, and nothing about the failure affects either. What does this imply about whether data availability will still constrain scaling?",
+    "options": [
+      {
+        "text": "Not necessarily — because the three routes work through separate mechanisms, one failing doesn't determine what the other two can still deliver.",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Scaling will stall soon, because losing the synthetic-data route removes the lab's only viable alternative to already-exhausted public text.",
+        "key": false,
+        "provenance": "misreads 'the internet has maybe 30 years worth of text data... we'll hit that wall around 2028' in isolation, treating one failed substitute as removing the last option and ignoring the two independent routes listed right after",
+        "family": "c"
+      },
+      {
+        "text": "Multimodal and self-play data are lesser substitutes, so they can help fill the gap but cannot fully replace what synthetic data was meant to provide.",
+        "key": false,
+        "provenance": "misreads 'AI-generating its own training data removes the constraint entirely — if the outputs are high enough quality' as ranking synthetic data above the other two rather than as one of three equally-independent routes",
+        "family": "a"
+      },
+      {
+        "text": "Self-play is beside the point here, since that method mainly produces useful data for rule-based games like Go or Chess.",
+        "key": false,
+        "provenance": "misreads the AlphaZero example as the ceiling of self-play rather than as one instance of a route the text says 'could be extended to teaching any arbitrary task'",
+        "family": "b"
+      }
+    ],
+    "explanation": "The three data-wall routes work through independent mechanisms: multimodal data adds a new source entirely, synthetic data manufactures text under a quality condition, and self-play generates data through task interaction. A failure in one doesn't touch what the other two can supply, so whether scaling is actually constrained through 2030 depends on how well whichever routes remain still perform. The first wrong option is the pre-chapter instinct that a single failed substitute means the wall has been hit — but the routes exist precisely because none of them depends on the others succeeding. The third wrong option overreads the AlphaZero example as self-play's ceiling, when it's offered as one instance of an approach that could extend to any formalizable task. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall is soft because its escape routes are independent — one failing tells you nothing about the other two.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood that the three data-wall routes are independent could conclude a single route's failure doesn't decide the overall outcome, without seeing the options.",
+      "cynic_test": "A test-wise skipper might reach for 'no absolutes = safe answer,' but only one distractor carries strong language, so that heuristic alone doesn't isolate the key without reasoning about independence."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "sonnet"
+  },
+  "measurements": {
+    "correct_len": 144,
+    "distractor_lens": [
+      140,
+      150,
+      120
+    ],
+    "mean_distractor_len": 136.7,
+    "len_ratio": 1.05,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.25,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "lab",
+      "route",
+      "useful",
+      "multimodal",
+      "based",
+      "still",
+      "scaling"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 125,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

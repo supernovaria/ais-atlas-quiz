@@ -12,7 +12,9 @@
     "check:questions:selftest": "node scripts/check-questions.mjs --selftest",
     "check:exemplars": "node scripts/measure-exemplars.mjs",
     "pipeline": "node scripts/pipeline.mjs",
-    "pipeline:selftest": "node scripts/pipeline.mjs selftest"
+    "pipeline:selftest": "node scripts/pipeline.mjs selftest",
+    "questions": "node scripts/show-questions.mjs",
+    "status": "node scripts/status-dashboard.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

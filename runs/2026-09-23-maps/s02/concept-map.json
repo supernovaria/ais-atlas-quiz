@@ -1,0 +1,364 @@
+{
+  "section": "s02",
+  "heading": "Reading the Serrow Cairns: Registers, Cant and the Pell Stone",
+  "target_n": 8,
+  "takeaway": "A Serrow cairn carries two independent registers of meaning — a fixed builder's message encoded in course cant (dorran) and a rolling record of recent conditions carried only by the pell stone (lisk) — and most misreadings come from collapsing that distinction or from mistaking an incidental feature (lean, a low concord score, a stale or reset stone) for a meaningful signal in one register or the other.",
+  "subheadings": [
+    "The cairn as a text",
+    "Two registers",
+    "Lean and cant",
+    "The concord index",
+    "A worked example",
+    "When the registers disagree",
+    "Traffic and height",
+    "Sources of error"
+  ],
+  "threshold_concepts": ["SC-1", "SC-2", "SC-10"],
+  "ideas": [
+    {
+      "id": "SC-1",
+      "label": "dorran sense: the builder's fixed message, encoded in course cant, unchanged until rebuilding",
+      "subheading": "Two registers",
+      "anchor": "The dorran sense is whatever the builder put into the arrangement of the courses",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L3", "L5"],
+      "pairs_with": ["SC-2", "SC-17"],
+      "misconceptions": [
+        {"family": "c", "claim": "the builder's message can drift over time just like trail conditions do", "provenance": "misreads 'does not change unless the cairn is rebuilt' as a general tendency rather than an absolute", "source": "inferred"},
+        {"family": "a", "claim": "the dorran sense is carried by the pell stone, same as the lisk sense", "provenance": "misreads 'a small loose stone rests on the crown' as the general carrier of meaning, not realizing dorran lives in the courses", "source": "inferred"},
+        {"family": "d", "claim": "Brannagh's objection shows the dorran sense isn't really fixed either, since the builder's original choices were somewhat arbitrary", "provenance": "misreads Brannagh's point about the lisk sense's seed position as if it were about the dorran sense instead", "source": "inferred"}
+      ],
+      "used_later_by": ["When the registers disagree", "Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-2",
+      "label": "lisk sense: a rolling record of recent conditions, carried by the pell stone alone",
+      "subheading": "Two registers",
+      "anchor": "The lisk sense is carried by the pell stone alone",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L3", "L5"],
+      "pairs_with": ["SC-1"],
+      "misconceptions": [
+        {"family": "c", "claim": "a physical marker's meaning is fixed once built, so the pell stone must just be decoration", "provenance": "misreads 'a small loose stone rests on the crown; it is called the pell stone' as non-functional ornament", "source": "inferred"},
+        {"family": "b", "claim": "the lisk sense records where the route goes, and it is the builder who updates it on revisits", "provenance": "reverses which sense is fixed and which is dynamic, and swaps which party (builder vs. passer) updates it", "source": "inferred"},
+        {"family": "a", "claim": "the lisk sense is entirely independent of the builder", "provenance": "misreads Brannagh's objection ('the lisk sense is not independent of the builder... sets the pell stone's first position') as having been refuted, when surveyors 'nonetheless still record the two registers separately'", "source": "inferred"}
+      ],
+      "used_later_by": ["When the registers disagree", "Traffic and height", "Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-3",
+      "label": "Hessle cairns (dorran only) vs Garth cairns (lisk only) as single-register edge cases",
+      "subheading": "Two registers",
+      "anchor": "A Hessle cairn has canted body courses but no pell stone",
+      "criteria_met": [2, 3],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "corollary of SC-1/SC-2 naming the two single-register edge cases; folds naturally as a conflation distractor in the dorran/lisk question rather than supporting an independent hold"
+    },
+    {
+      "id": "SC-4",
+      "label": "lean: whole-cairn tilt from frost heave, meaningless",
+      "subheading": "Lean and cant",
+      "anchor": "Lean is the tilt of the cairn as a whole away from the vertical",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3"],
+      "pairs_with": ["SC-5", "SC-6"],
+      "misconceptions": [
+        {"family": "c", "claim": "any irregularity in a marker must be meaningful", "provenance": "misreads the existence of measurable lean as itself significant, contradicted by 'Lean... carries no meaning'", "source": "inferred"},
+        {"family": "a", "claim": "lean is the builder's deliberate offset of the whole cairn", "provenance": "conflates lean with cant rather than treating lean as an accidental artifact of frost heave under the footing", "source": "inferred"},
+        {"family": "b", "claim": "lean is caused by deliberate builder choice or by a heavy pell stone", "provenance": "reverses the stated cause: lean 'is almost always produced by frost heave under the footing'", "source": "inferred"}
+      ],
+      "used_later_by": ["Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-5",
+      "label": "cant: deliberate, course-relative offset that points the route's turn",
+      "subheading": "Lean and cant",
+      "anchor": "Cant is the deliberate offset of a single course, a body course or the crown",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3"],
+      "pairs_with": ["SC-4", "SC-6"],
+      "misconceptions": [
+        {"family": "a", "claim": "cant is judged against true vertical, the same way lean is", "provenance": "misreads 'relative to the course beneath it' as if cant were measured against the vertical like lean", "source": "inferred"},
+        {"family": "c", "claim": "a subtle offset in a course must be a construction flaw, not a signal", "provenance": "pre-chapter prior contradicted by cant being the builder's deliberate direction-pointer", "source": "inferred"},
+        {"family": "d", "claim": "an offset outside 'about a finger's width' isn't real cant at all", "provenance": "misapplies the reliability detail about how well strangers read cant into a claim about what counts as cant", "source": "inferred"}
+      ],
+      "used_later_by": ["Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-6",
+      "label": "lean misleads experienced readers more than it misleads strangers",
+      "subheading": "Lean and cant",
+      "anchor": "Lean misleads experienced readers more often than it misleads strangers",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L4"],
+      "pairs_with": ["SC-4", "SC-5"],
+      "misconceptions": [
+        {"family": "c", "claim": "expertise should reduce misreading error across the board", "provenance": "pre-chapter prior contradicted directly by the stated finding that lean misleads experienced readers more", "source": "inferred"},
+        {"family": "a", "claim": "locals are fooled by lean because they cannot perceive cant at all", "provenance": "misreads the actual mechanism, that locals 'judge cant by eye against the vertical' (silhouette) rather than course against course", "source": "inferred"},
+        {"family": "d", "claim": "since strangers misroute more often overall, they must also be more often misled by lean specifically", "provenance": "imports the general Sources-of-error finding (strangers misroute ~19% vs locals ~4%) into this specific case, where the relation is reversed", "source": "inferred"}
+      ],
+      "used_later_by": ["Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-7",
+      "label": "concord index counting mechanics: footing excluded, pairs with an uncanted course excluded",
+      "subheading": "The concord index",
+      "anchor": "The footing is excluded, since it follows the slope of the ground and has no cant of its own",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "computational bookkeeping rule; needed to compute SC-8/SC-9 and the worked example but is a procedural detail (fact to have), not a hold"
+    },
+    {
+      "id": "SC-8",
+      "label": "Marhaug's concord index includes the crown as the uppermost course",
+      "subheading": "The concord index",
+      "anchor": "In Marhaug's version the crown is included as the uppermost course",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["SC-9"],
+      "misconceptions": [
+        {"family": "a", "claim": "Marhaug's crown-included version is still the version in active use", "provenance": "misreads the historical framing and conflates the original 1968 definition with the current protocol", "source": "inferred"},
+        {"family": "c", "claim": "including more data points (the crown) always makes a summary index more accurate", "provenance": "pre-chapter prior contradicted by Tessaly's objection that the crown's cant 'records handling rather than building'", "source": "inferred"}
+      ],
+      "used_later_by": ["A worked example"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-9",
+      "label": "Tessaly's concord index (the current standard) excludes the crown",
+      "subheading": "The concord index",
+      "anchor": "Since 1986 the Serrow survey protocol has used Tessaly's version of the index, which leaves the crown out",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["SC-8"],
+      "misconceptions": [
+        {"family": "b", "claim": "the crown-excluded version is the older, superseded one", "provenance": "reverses which version is current; the text states Tessaly's crown-excluded version has been standard 'since 1986'", "source": "inferred"},
+        {"family": "d", "claim": "the crown is excluded for the same reason the footing is (it follows the slope of the ground)", "provenance": "misapplies the footing's exclusion rationale to the crown, when the crown's actual reason is that passers reset it when turning the pell stone", "source": "inferred"}
+      ],
+      "used_later_by": ["A worked example"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-10",
+      "label": "a hob (a single reversed course flanked by agreeing ones) signals an upcoming junction, not noise",
+      "subheading": "The concord index",
+      "anchor": "A hob does not give the route direction; it announces that a second route branches off before the next cairn",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L4", "L5"],
+      "pairs_with": ["SC-11", "SC-17"],
+      "misconceptions": [
+        {"family": "c", "claim": "a lower concord score always signals a less reliable or worse-built cairn", "provenance": "pre-chapter prior contradicted by 'A low concord is not always noise'", "source": "inferred"},
+        {"family": "b", "claim": "a hob points the route in the reversed course's own direction", "provenance": "reverses the hob's actual function: it announces a branch ahead rather than giving direction itself", "source": "inferred"},
+        {"family": "a", "claim": "a hob is the same thing as a randomly mis-canted or collapsed course", "provenance": "conflates a deliberately-placed hob with an accidental fault, which the text treats as a separate category strangers 'generally recognise as unreadable and ignore'", "source": "inferred"},
+        {"family": "d", "claim": "in the worked example, the west-canted course three means the route turns west", "provenance": "misreads the worked example exactly as the text's own named error: 'A careless reading takes the west cant of course three as the message, because it is the odd one out'", "source": "inferred"}
+      ],
+      "used_later_by": ["A worked example", "When the registers disagree", "Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-11",
+      "label": "the Marhaug pattern: concord helps strangers monotonically but locals read low-concord cairns slightly better",
+      "subheading": "The concord index",
+      "anchor": "Local walkers show the reverse, which Tessaly named the Marhaug pattern after its first observer",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["SC-10"],
+      "misconceptions": [
+        {"family": "c", "claim": "more internal agreement in a signal is always easier to read, for any reader", "provenance": "pre-chapter prior contradicted by locals reading low-concord cairns slightly better than high-concord ones", "source": "inferred"},
+        {"family": "b", "claim": "it is strangers, not locals, who read low-concord cairns better, since they aren't anchored by expectations", "provenance": "reverses which population the Marhaug pattern describes", "source": "inferred"}
+      ],
+      "used_later_by": ["Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-12",
+      "label": "guild cairns (which use hobs) average lower concord than shepherds' cairns (which don't)",
+      "subheading": "The concord index",
+      "anchor": "shepherds' cairns have a higher concord on average than guild cairns, as Marhaug had predicted",
+      "criteria_met": [2, 3],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "sub-example of SC-10 (hob); the guild-vs-shepherd concord difference is a specific instance already covered by the broader hob idea, not an independent hold"
+    },
+    {
+      "id": "SC-13",
+      "label": "the Tessaly effect: experienced readers facing a register conflict correctly follow the dorran sense over a stale pell stone",
+      "subheading": "When the registers disagree",
+      "anchor": "Local walkers facing such a cairn almost always went down to the ford anyway, following the dorran sense",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L4", "L5"],
+      "pairs_with": ["SC-14"],
+      "misconceptions": [
+        {"family": "c", "claim": "the freshest evidence (the pell stone) should always override an older, fixed message", "provenance": "pre-chapter prior contradicted by locals correctly following the dorran sense in 52 of 71 conflicting cases", "source": "inferred"},
+        {"family": "a", "claim": "the Tessaly effect is the same thing as the Orne effect", "provenance": "text explicitly warns 'The Tessaly effect must not be confused with the Orne effect'", "source": "inferred"},
+        {"family": "d", "claim": "the Tessaly effect describes strangers being misled by a single reversed course", "provenance": "imports the Orne-effect finding (about strangers and hobs) into this context, which the text specifically attributes to 'experienced readers' facing a register conflict", "source": "inferred"}
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-14",
+      "label": "the Orne effect: strangers who meet a hob misread the reversed course as the route direction, regardless of whether the next cairn is visible",
+      "subheading": "When the registers disagree",
+      "anchor": "a stranger who meets a hob reads the reversed course as the route direction, and so turns the wrong way",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["SC-13"],
+      "misconceptions": [
+        {"family": "a", "claim": "the Orne effect is the same thing as the Tessaly effect", "provenance": "text explicitly separates the two: 'The Tessaly effect concerns experienced readers... The Orne effect concerns strangers and the courses alone'", "source": "inferred"},
+        {"family": "c", "claim": "a stranger would check their reading against the next visible cairn and self-correct", "provenance": "contradicted by 'Orne found it just as common where the next cairn was in view as where it was not'", "source": "inferred"},
+        {"family": "b", "claim": "the Orne effect describes experienced locals misreading a hob, not strangers", "provenance": "reverses the subject population the text names", "source": "inferred"}
+      ],
+      "used_later_by": ["Sources of error"],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-15",
+      "label": "lisk-sense reliability is highest at moderate traffic, not monotonically increasing with traffic",
+      "subheading": "Traffic and height",
+      "anchor": "Lisk sense is most reliable on routes of moderate traffic",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["SC-16"],
+      "misconceptions": [
+        {"family": "c", "claim": "busier routes should have more reliable pell stones, since more people maintain them", "provenance": "pre-chapter prior contradicted by 'On the busiest routes the stone is turned by walkers who do not know the convention'", "source": "inferred"},
+        {"family": "a", "claim": "pell stone weight, not traffic level, is what mainly determines reliability", "provenance": "conflates the earlier note that heavier stones 'the more faithful its record' with the separate, traffic-driven cause of staleness", "source": "inferred"},
+        {"family": "b", "claim": "on quiet routes the stone is turned too often rather than too rarely", "provenance": "reverses the quiet-route failure mode, which the text describes as the stone going 'stale'", "source": "inferred"}
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-16",
+      "label": "Marhaug's height-based readability prediction was empirically falsified",
+      "subheading": "Traffic and height",
+      "anchor": "Tessaly found that strangers misread cairns at the same rate whatever their height",
+      "criteria_met": [2, 3],
+      "earns_question": true,
+      "attempts": 1,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3"],
+      "pairs_with": ["SC-15"],
+      "misconceptions": [
+        {"family": "c", "claim": "a plausible design rationale from a named authority should hold up empirically", "provenance": "pre-chapter prior contradicted by Tessaly's finding overturning Marhaug's four-to-six-course prediction", "source": "inferred"},
+        {"family": "a", "claim": "the falsified height effect and the real traffic effect are the same finding", "provenance": "conflates two separately-tested claims in the same subheading, one confirmed (traffic) and one not (height)", "source": "inferred"}
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "SC-17",
+      "label": "restoration trades informativeness for readability: a rebuilt cairn is easier to read but says less",
+      "subheading": "Sources of error",
+      "anchor": "A restored cairn is easier for a stranger to read, but it says less than the cairn it replaced",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L4", "L5"],
+      "pairs_with": ["SC-1", "SC-10"],
+      "misconceptions": [
+        {"family": "c", "claim": "faithful restoration should preserve or improve a marker's information", "provenance": "pre-chapter prior contradicted by conservators erasing any hob and resetting the pell stone to a default position", "source": "inferred"},
+        {"family": "b", "claim": "a restored cairn is both easier to read and more informative", "provenance": "reverses the trade-off the text states: easier to read precisely because it says less", "source": "inferred"},
+        {"family": "d", "claim": "the restored, upslope-set pell stone is simply broken or wrong", "provenance": "misreads the reset stone as a malfunction rather than as carrying a default ('low ford') reading until next turned by a passer", "source": "inferred"}
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    }
+  ],
+  "discrimination_pairs": [
+    {"a": "SC-1", "b": "SC-2", "conflation": "I read the pell stone's position as telling me which way the route goes, same as the courses — and if a passer just turned the stone, I take that as the builder's message updating."},
+    {"a": "SC-4", "b": "SC-5", "conflation": "The whole cairn is leaning, so that must be pointing somewhere — I'll read the tilt as a direction signal the same way I'd read a canted course."},
+    {"a": "SC-8", "b": "SC-9", "conflation": "The concord index is just 'how much the courses agree' — I don't track which version counts the crown, so I count it whenever it happens to have a cant."},
+    {"a": "SC-13", "b": "SC-14", "conflation": "It's the 'misread the cairn and go the wrong way' thing — I can't remember if it's the one about strangers missing a junction or the one about locals ignoring a stale pell stone."}
+  ],
+  "volatile": [
+    {"text": "strangers misread at about 19% and local walkers at about 4% of cairns (Tessaly's survey)", "class": "V1.1", "subheading": "Sources of error"},
+    {"text": "the ford was in fact passable in 52 of the 71 cases", "class": "V1.1", "subheading": "When the registers disagree"},
+    {"text": "Marhaug predicted cairns of four to six body courses would be read best", "class": "V1.1", "subheading": "Traffic and height"},
+    {"text": "strangers read cant most reliably when the offset is about a finger's width", "class": "V1.1", "subheading": "Lean and cant"},
+    {"text": "Tessaly's 1983 survey of the Oskel Pass route recorded 412 cairns", "class": "V1.1", "subheading": "When the registers disagree"}
+  ],
+  "durable_figures": [
+    {"text": "concord of 0.5 under the current (Tessaly) index vs. 0.6 under Marhaug's index, for the worked Oskel Pass cairn", "class": "V2.1", "budget_candidate": true},
+    {"text": "the Serrow survey protocol has used Tessaly's crown-excluded concord index since 1986", "class": "V2.3", "budget_candidate": false},
+    {"text": "a Serrow cairn has a footing, three to nine body courses, and a crown", "class": "V2.4", "budget_candidate": false}
+  ],
+  "cross_section_links": [],
+  "assumed_prior": [],
+  "do_not_test": [
+    {"item": "author/researcher names and publication years (Marhaug's 1968 monograph, Brannagh, Tessaly's 1983 survey and 1986 protocol change, Orne 1990)", "why": "researcher/date attribution, not an idea; the named effects (Tessaly effect, Orne effect, Marhaug pattern) are the ideas, the bibliographic details are not"},
+    {"item": "the three-part anatomy of a cairn (footing, body courses, crown) and the pell stone as a physical object", "why": "structural vocabulary/enumeration; criterion 2 only, needed as background, not as a hold"},
+    {"item": "pell stone weight/heaviness as a record-fidelity factor", "why": "sub-point best used as a distractor in the traffic-reliability question (SC-15), not its own idea"},
+    {"item": "false pell stones placed on Hessle cairns by visitors", "why": "illustrates the SC-1/SC-2/SC-3 conflation in the wild; belongs in a distractor or explanation, not its own question"},
+    {"item": "specific comparative misrouting-cause rankings in Sources of error (false pell stones vs. frost lean; drover re-canting vs. frost lean; sudden spates vs. stale stones)", "why": "single-survey magnitude comparisons; volatile and too close-margin to safely order into a key/distractor split"},
+    {"item": "the hask cairn (bedded pell stone) as a distinct fault category", "why": "the text itself resolves this into 'the same fault' as a stale stone; testing the old taxonomy would contradict the text's own correction"},
+    {"item": "exact concord fractions as arithmetic (e.g. 'two in four, or 0.5') outside the SC-8/SC-9 worked-example application", "why": "the worked-example concord figures already carry the section's one R11-style durable-figure load-bearing budget and must not be re-used as load-bearing elsewhere"}
+  ],
+  "notes_for_generator": [
+    "This section prose is a self-contained invented domain with no earlier or later sections supplied in this run, so cross_section_links and assumed_prior are empty by construction, not by omission.",
+    "No misconceptions/s02.md was read (task explicitly restricted input to RUBRIC.md and section.md), so every misconception below is source: inferred; none are source: observed.",
+    "threshold_concepts is 3 insights, not 4 ids: SC-1 and SC-2 (dorran vs. lisk) are one reorganizing insight split into two idea entries so they can anchor a discrimination_pairs question; SC-10 (the hob) is the second insight. Treat SC-1/SC-2 as a matched set when assigning L5 slots — do not ship separate L5 questions for both in the same quiz.",
+    "Candidate pool is 14 earns_question ideas against target_n 8 — healthy oversupply, well under the 2N=16 ceiling, so no forced trimming, but here is a priority order if the Curator needs to cut: keep SC-1/SC-2 (threshold), SC-10 (threshold), SC-4/SC-5 (foundational discrimination), SC-13/SC-14 (discrimination pair, good L4/L5 material) first; SC-16 (attempts:1, height-prediction-falsified) is the weakest candidate in the pool and can be dropped first if the set runs long.",
+    "SC-8/SC-9 (Marhaug's vs. Tessaly's concord index) and the SC-10 hob idea both cash out concretely in 'A worked example' — that worked example (course-by-course cant pattern on the Oskel Pass cairn) is the single best source for an L4 application question; it is deliberately not its own idea entry so as not to double-count against SC-8/SC-9/SC-10.",
+    "A recurring cross-idea pattern worth flagging for a future review-style L5 question if this section is ever combined with others: expertise changes which cues count as signal vs. noise — SC-6 (locals fooled by lean), SC-11 (locals prefer low concord), and SC-14 (strangers fooled by a hob) all instantiate the same shape, with SC-13 (Tessaly effect) as the case where the local's structural reading wins outright.",
+    "Do not build a question on the exact percentages or counts in 'Sources of error' (see volatile list and do_not_test) — use Pattern-D-style conditionalizing ('on a busy route, a downslope pell stone more often reflects X than Y') if a figure from that section is needed as stem colour."
+  ]
+}

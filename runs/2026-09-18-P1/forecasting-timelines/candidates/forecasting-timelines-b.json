@@ -1,0 +1,55 @@
+[
+  {
+    "id": "forecasting-timelines/sonnet/01",
+    "targets": ["FT-2", "FT-4"],
+    "lens": "contrast",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A colleague summarizes this section as: 'The forecast is that AGI arrives in 2045 — the twelve orders of magnitude of uncertainty in the underlying compute estimates is just noise around that number.' Which of these best describes what the colleague has backwards?",
+    "options": [
+      {"text": "The uncertainty is the finding itself: a figure like 2045 is useful only for checking whether your other beliefs cohere, not as a value the answer clusters around.", "key": true, "provenance": null, "family": null},
+      {"text": "Nothing is backwards here — collapsing a wide-uncertainty estimate down to its center point is exactly how a biological-anchors forecast is meant to be used.", "key": false, "provenance": "misreads 'somewhere in the 2030s-2050s range, with 2045 as a rough center — not a precise date' as endorsing the center point as the intended output rather than the range around it", "family": "c"},
+      {"text": "The colleague's real error is treating that spread as informative at all; a gap that wide means the biological-anchors method has failed and should be discarded.", "key": false, "provenance": "misreads 'twelve orders of magnitude of uncertainty' and 'all forecasts come with wide error margins that compound over time' as evidence the method failed, reversing the section's point that the margin is the informative output", "family": "a"},
+      {"text": "The colleague's mistake is treating the lower and upper biological-anchor estimates as equally likely, when the true value more likely sits near the midpoint.", "key": false, "provenance": "misreads the dollar analogy ('like not knowing if something costs one dollar or a trillion dollars') as implying a roughly uniform distribution centered on the midpoint, rather than genuine deep uncertainty about which reference process is right", "family": "b"}
+    ],
+    "explanation": "The section says outright that forecasts are 'not concrete predictions... but scenarios that help you reason about different potential futures' — so the twelve-orders-of-magnitude spread in the biological-anchors estimates isn't decoration, it's the result. Collapsing '2045' into a definite target throws that away. Distractor 2 repeats the same error, treating the wide margin as evidence of failure rather than as the honest output of compounding uncertainty across a decades-long trajectory. Distractor 3 assumes the range is roughly uniform and clusters near its middle, when the point of citing two very different biological reference processes (skill-learning compute vs. evolutionary compute) is that we don't know which one is even the right anchor. (Forecasting Timelines → Training Data)",
+    "takeaway": "A forecast's error bars are the finding — treat a stated center figure as a reasoning aid, not as the chapter's actual prediction.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": ["twelve orders of magnitude of biological-anchors uncertainty (durable, R11 budget)"],
+    "self_check": {
+      "cover_test": "Yes — a reader who understood 'forecasts are consistency checks, not predictions' and 'the range is the finding' could state the colleague's error before seeing any option.",
+      "cynic_test": "A skipper might gravitate toward whichever option sounds most hedged or cautious, but all four are matched in register and none flags itself with an absolute quantifier, so guessing requires actually knowing which specific claim the section makes about uncertainty."
+    }
+  },
+  {
+    "id": "forecasting-timelines/sonnet/02",
+    "targets": ["FT-5"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two labs each report an increase in effective compute ahead of a new training run. Lab A tripled its number of chips while leaving software and hardware unchanged. Lab B kept chip count fixed but improved software efficiency by that same multiplicative factor. According to the section's model, how do these two claims compare?",
+    "options": [
+      {"text": "Both labs achieved an equivalent increase in effective compute, because chip count, hardware efficiency, and software efficiency multiply together as independent, equally-weighted factors.", "key": true, "provenance": null, "family": null},
+      {"text": "Only Lab A actually increased its effective compute, since effective compute is at bottom a measure of how much physical hardware a lab is running.", "key": false, "provenance": "misreads 'compute means more than just counting GPUs' as a minor caveat and treats chip count as the real definition of effective compute, the naive pre-chapter view the section opens by rejecting", "family": "a"},
+      {"text": "Lab B's gain will not hold up over time, because if chip production growth ever slows, the benefit of improved software efficiency stalls along with it.", "key": false, "provenance": "misreads the multiplication of three independent factors as implying they rise and fall together, when the text states each factor 'can improve independently'", "family": "c"},
+      {"text": "Lab A made the larger improvement, since chip count is the dominant driver of effective compute and software efficiency only a secondary contributor.", "key": false, "provenance": "misreads the car analogy (cars, speed, driving efficiency) as ranking the three factors by importance rather than establishing they multiply as equal, independent terms", "family": "b"}
+    ],
+    "explanation": "Effective compute is defined as three independent multiplicative factors — chip count, hardware efficiency, and software efficiency — so a doubling (or tripling) from any one of them is worth exactly as much as the same multiplicative gain from any other; that's why Lab A and Lab B end up equivalent. Distractor 1 is the naive view the section opens by rejecting: treating chip count as the real definition of compute ignores that software and hardware efficiency multiply on top of it. Distractor 2 mistakes independence for correlation — the point of 'each can improve independently' is precisely that a slowdown in one factor doesn't drag the others down. Distractor 3 imposes a ranking the section never makes; the three factors multiply as equals, not as one dominant term plus two minor ones. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Effective compute is a product of three equal, independent multipliers, not a stand-in for chip count.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes — a reader who grasped 'three independent multiplicative factors of equal standing' could state that the two labs' gains are equivalent without seeing the options.",
+      "cynic_test": "A skipper might default to whichever option sounds most 'technical' (chip counts, hardware), but all four options are matched in length and none carries an absolute quantifier, so the tell that usually rewards guessing isn't present here."
+    }
+  },
+  {"note": "FT-2 and FT-4 are the discrimination_pairs entry named in the map (the '2045 is the chapter's prediction' conflation), so I wrote one contrast candidate spanning both rather than two separate ones, per the shard brief. That leaves two candidates for a three-idea shard; FT-5's contrast candidate is built directly on the FT-5/FT-5b pair the rubric names explicitly for this section ('effective compute vs. raw chip count')."}
+]
