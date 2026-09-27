@@ -1,0 +1,95 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/b01",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose chip designers hit a physical limit: new GPUs stop doing more operations per dollar than old ones. Meanwhile, chip fabs keep expanding and training methods keep improving at their recent pace. What happens to effective compute?",
+    "options": [
+      {
+        "text": "It keeps rising, though more slowly, since more chips and better algorithms still multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It stalls, since effective compute is chip count scaled by chip speed and chip speed has stopped rising",
+        "key": false,
+        "provenance": "misreads the Effective Compute subsection as tracking hardware trends (the FT-4/FT-5 pair conflation), against 'compounds much faster than hardware trends alone would suggest'",
+        "family": "c"
+      },
+      {
+        "text": "It stalls after a lag, since software gains need faster new chips before they become usable compute",
+        "key": false,
+        "provenance": "reverses 'You can develop better software to make use of existing hardware' into a coupling between the factors",
+        "family": "b"
+      },
+      {
+        "text": "It keeps rising at its old pace, since the funding loop now pours that money into chips and algorithms",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers the compute-automation-productivity funding loop (Figure 1.38) as the reason effective compute compounds, where the reason is independent multiplication of three factors",
+        "family": "d"
+      }
+    ],
+    "explanation": "Effective compute is the product of chip count, hardware efficiency and software efficiency, and each can improve without the others. If hardware efficiency flatlines while the other two keep their recent pace, the product still grows, just more slowly. The stall answer is the prior we wrote this subsection to dislodge: that AI compute is chip count times chip speed, so it lives or dies with chip progress. The lagged-stall answer reverses our point that better software makes better use of hardware you already have. The funding loop is real, but it is a separate mechanism, and with the two remaining factors fixed at their recent pace, losing a third multiplier has to slow the total. For colour: 2025 estimates put hardware efficiency near 1.35x a year, algorithms near 3x and chip production near 2.3x. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Because the three factors multiply and move independently, one stalled factor slows effective compute but does not stop it.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows the factors multiply and improve independently will say unaided that growth continues at a reduced rate.",
+      "cynic_test": "A skipper might pick the odd-one-out direction, so two options say 'rises' and two say 'stalls', and all four carry a parallel since-clause of similar length."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 100,
+    "distractor_lens": [
+      103,
+      99,
+      102
+    ],
+    "mean_distractor_len": 101.3,
+    "len_ratio": 0.99,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "chip",
+      "new",
+      "more",
+      "old",
+      "pace",
+      "effective"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 140,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

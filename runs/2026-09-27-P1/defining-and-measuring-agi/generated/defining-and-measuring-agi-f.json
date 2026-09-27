@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/f01",
+    "targets": ["DM-2"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems are assessed on the same ten cognitive domains. System A produces passable work in all ten but reaches only about median human performance in each. System B reaches expert level in four domains and cannot do the other six at all. Which has the greater generality, and why?",
+    "options": [
+      {"text": "System B, since breadth only counts domains reached at expert level, and System A reaches that level in none of them", "key": true, "provenance": null, "family": null},
+      {"text": "System A, since breadth counts every domain a system can work in at all, and System A can work in each of the ten", "key": false, "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing that a domain counts only at 'expert-level capability'", "family": "b"},
+      {"text": "System A, since its average performance taken across the ten domains is higher than System B's average across them", "key": false, "provenance": "misreads 'outperform 85% of humans in 30% of cognitive domains' as one averaged score rather than two numbers, one per axis", "family": "a"},
+      {"text": "System B, since its expert-level domains sit far higher on depth, and breadth rises with a system's peak depth", "key": false, "provenance": "conflates the capability axis with the generality axis, against 'Capability measures depth; generality measures breadth' and the AlphaGo example of maximal depth with no breadth", "family": "a"}
+    ],
+    "explanation": "Generality is the share of domains where a system reaches expert level; performance below that line adds nothing to breadth, however many domains it touches. System B has 40% generality. System A, with no domain at expert level, has none, even though it does something everywhere. The tempting answer counts coverage, meaning being able to attempt a domain at all. That is how 'one model handling writing, math, coding' reads on a quick pass, but coverage is not breadth. Averaging across domains fails for a different reason: it merges the two axes into one number, when the framework reports depth and breadth separately. B does win, but not because of its peak depth. A system that is superhuman in a single domain still has only 10% generality. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Doing something in every domain is coverage, not generality; only domains reached at expert level count.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'generality = share of domains at expert level' says B, because A has zero expert domains, before seeing any options.",
+      "cynic_test": "A skipper might favour 'A does something everywhere, so it is broader', which is the target misconception. Two options pick each system, so the answer cannot be guessed from the choice of system alone, and 'expert' appears in both B options."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/f02",
+    "targets": ["DM-3"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two researchers disagree about a recent model. One says its expert-level performance across several cognitive domains makes it AGI; the other says it cannot be AGI while it still fails at most domains. How does treating AGI as a continuous region change this dispute?",
+    "options": [
+      {"text": "It dissolves most of it: both can agree where the model sits on capability and generality, and differ only on calling it AGI", "key": true, "provenance": null, "family": null},
+      {"text": "It leaves it intact: the model still either is or is not AGI, and the continuum just helps pinpoint where it crossed over", "key": false, "provenance": "the pre-chapter threshold prior, against 'There's no universally agreed upon threshold where \"not AGI\" suddenly becomes \"AGI\"' and the rejection of 'binary categories that lead to endless semantic debates'", "family": "c"},
+      {"text": "It sides with the second researcher, since a model that still fails at most domains shows no general intelligence yet", "key": false, "provenance": "reverses the Wright-brothers point that systems at expert level on 'even a modest subset of cognitive domains represent genuine general intelligence - just early-stage (weak AGI)'", "family": "b"},
+      {"text": "It settles it with one aggregate score across domains, since the point of the framework is a number that decides the label", "key": false, "provenance": "misfiles the motivation for continuity as numeric precision, when the stated reason is 'to capture progress along multiple dimensions' and avoid semantic deadlock", "family": "d"}
+    ],
+    "explanation": "On a continuum, the facts that matter are the model's position: how good it is in each domain, and in how many domains it reaches expert level. Two people who agree on that position agree on everything relevant to safety. Whether to call it 'AGI' is a choice of label, which is why no agreed point exists where 'not AGI' suddenly becomes AGI. The first distractor is the threshold picture this framing replaces. Treating AGI as a line crossed at some moment is what keeps the semantic argument going. The second distractor gets the Wright-brothers point backwards: expert-level performance across even a modest subset of domains is genuine general intelligence, just at an early stage. And the aim is not a single decisive number, since aggregate percentages have their own problems. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Once you agree where a system sits on capability and generality, 'is it AGI?' becomes a question about labels, not about the system.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the continuous framing would say the argument is over a label, while the position on the two axes is what can be agreed, which is the key.",
+      "cynic_test": "A skipper might pick the option using the framework's own axis names. To weaken that tell, the other options also use section vocabulary ('continuum', 'aggregate score', 'general intelligence'), and the threshold option sounds just as reasonable to someone who holds the prior."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/f03",
+    "targets": ["DM-4"],
+    "lens": "misconception",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Having argued that AGI is a region of a continuous capability-generality space, the framework still gives rough cut-offs for AGI, TAI and ASI. What work are those cut-offs doing that the continuum alone does not?",
+    "options": [
+      {"text": "They give planners and regulators trigger points where risk changes enough to act, without claiming the continuum jumps there", "key": true, "provenance": null, "family": null},
+      {"text": "They admit the continuum is only approximate, and that underneath it AGI is a line that a system either crosses or does not", "key": false, "provenance": "misreads the threshold definitions as a retreat from 'AGI exists on a continuous spectrum', missing 'we can't ignore this reality even if generality is a continuous variable'", "family": "b"},
+      {"text": "They mark the points where dangerous behaviour has been measured to begin, which is why they sit where they do on each axis", "key": false, "provenance": "misreads 'here's our interpretation of roughly how terms map onto the (performance, generality) space' as an empirical finding about where risk starts", "family": "c"},
+      {"text": "They fix the moment AGI has arrived, so that claims of 'sparks' or of 'human-level AI' can be checked against a single line", "key": false, "provenance": "misfiles the purpose of thresholds, which the section ties to being able to 'identify thresholds for regulation, and emerging risks before they materialize', not to declaring arrival", "family": "d"}
+    ],
+    "explanation": "Capability and generality really are continuous, but safety planning still needs points at which to act. A system that performs well on half the domains poses different risks from one that excels at nearly all of them, and regulation and safety commitments need triggers. The cut-offs are those triggers, offered as our rough interpretation when concrete thresholds are demanded. They are stipulations laid over the continuum, not evidence that it has a step in it. That is where the first distractor goes wrong: acting at a threshold does not make the underlying quantity binary, just as a speed limit does not make speed binary. Nor are they measured points where danger begins. They are definitional choices, and some dangerous combinations of capabilities may appear before any of them is reached. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Thresholds are decision points laid over a continuum, not steps in it.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: asked what thresholds add to a continuum, a reader who understood the section says they give safety planning and regulation points to act on, which is the key.",
+      "cynic_test": "A skipper would lean towards the 'safety/regulation' wording as the most responsible-sounding option. To offset that, the measured-onset option is also about danger and sounds just as sober, and 'continuum' appears in two options, so the stem word does not single out the key."
+    }
+  },
+  {"note": "Three candidates, one per idea, all written through the misconception lens: f01 uses DM-2's family-(b) coverage misconception, f02 uses DM-3's family-(c) threshold prior, and f03 uses DM-4's family-(b) 'thresholds contradict the continuum'. DM-3 and DM-4 form a discrimination pair. I kept them as separate items because the misconception lens gives each one its own top distractor, and f03 already uses DM-3's binary misreading as its (b) option. If the Curator wants a single item, f03 is the stronger one to keep for the pair. f01 works out 40% vs 0% generality from the definition itself; no threshold digit decides the answer."}
+]

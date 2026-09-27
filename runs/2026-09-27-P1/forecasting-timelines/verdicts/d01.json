@@ -1,0 +1,90 @@
+{
+  "id": "forecasting-timelines/opus/d01",
+  "verdict": "rewrite",
+  "level": "L2",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R14", "E7", "E8", "E5"],
+  "measurements": {
+    "correct_len": 105,
+    "distractor_lens": [108, 112, 107],
+    "mean_distractor_len": 109,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 2,
+    "max_over_min": 1.07,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["model", "beliefs", "least", "expected"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["a", "b", "c"],
+  "explanation_true_standalone": false,
+  "answerable_from_text_alone": true,
+  "reasons": [
+    "R14: three of the four stem-word singletons ('beliefs', 'expected', 'least') appear only in the key ('Your input beliefs and your expected timeline ... at least one'), so the key repeats the stem's wording and a reader can spot it without knowing the material; the fourth singleton ('model') marks distractor 1.",
+    "E7: 'the check still tells you which of your inputs are doing the work' is a new claim the question never tested and the section never makes.",
+    "E8: that same sentence is false read on its own terms: one surprising run shows that the inputs and the expectation conflict, but not which input is responsible, which would need a sensitivity analysis.",
+    "E5: 'the use we recommend' and 'the prediction reading we warn against' speak in the Atlas authors' voice, so the explanation attributes a position to its own source when it should just state the claim."
+  ],
+  "preserve": "The idea and the option architecture: a forecast that surprises you should be read as a consistency check on your own inputs. Keep the three distractors: the model is wrong (b), the output is a date to validate (c), and error bars make it useless (a). All three have verified provenance and are real beliefs.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/d01",
+    "targets": ["FT-2"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An analyst holds that chip production keeps growing fast, that software keeps getting more efficient, that synthetic data will get past the data wall, and that each tenfold rise in compute automates a sizeable share of tasks. Yet they expect full automation of cognitive labor to be generations away. Fed only those four assumptions, a simple forecasting model puts full automation within a couple of decades. What does this most usefully tell the analyst?",
+    "options": [
+      {
+        "text": "That their views on the drivers and on the arrival time conflict, so at least one view has to change",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "That the method itself is flawed, since a good tool should agree with a view built on careful study",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into surprise indicting the model rather than the inputs you supplied",
+        "family": "b"
+      },
+      {
+        "text": "That the output is a prediction to test against expert surveys, adopted only if they agree with it",
+        "key": false,
+        "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason'",
+        "family": "c"
+      },
+      {
+        "text": "That little follows from it, since uncertain inputs compound into error bars too wide to act on",
+        "key": false,
+        "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the consistency check survives the uncertainty",
+        "family": "a"
+      }
+    ],
+    "explanation": "A forecasting model of this kind only works out what its inputs jointly imply. If four assumptions the analyst holds imply automation within decades while they expect it generations away, those views cannot all be right together: one of the drivers is weaker than they think, or the expectation is too long. Finding that tension is what such forecasts are for. They are scenarios for checking whether beliefs cohere, not predictions of a date. The error-bars option is the tempting one: forecasts really are highly uncertain, but uncertainty in the inputs does not dissolve a contradiction between the inputs and the expectation. Blaming the method reverses the logic, since the surprising output came from the analyst's own assumptions. Checking the output against expert surveys treats a scenario as a prediction. (Forecasting Timelines)",
+    "takeaway": "A surprising forecast is a signal about your own inputs, not a verdict to accept or a model to discard.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'check if your beliefs are internally coherent' would say 'either my assumptions or my expectation has to give' without seeing the options.",
+      "cynic_test": "No stem content word appears in exactly one option, there are no hedges or absolutes, and the lengths are within 5 characters of each other. A reader who skipped the section might lean towards the error-bars humility option."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "opus"
+  },
+  "rewrite_changed": ["stem", "options[0].text", "options[1].text", "options[2].text", "options[3].text", "explanation", "self_check"],
+  "reviewer_note": "Two things to check. First, the original stem was nearly word for word the section's own worked example (5x investment / 3x software / 15% hardware / 10% per order of magnitude, 'if you're surprised'), which is why I put it at L2 rather than L4. The rewrite uses a new set of beliefs drawn from the data-wall material, but check it is different enough from the text's example to count as transfer. Second, the 'method is flawed' distractor is arguably partly true ('all models are wrong'), so confirm that its 'should agree with a view built on careful study' justification is what makes it wrong, not the idea of doubting the model at all. The checker should also re-measure: I counted the rewritten option lengths by hand as roughly 100/99/98/95."
+}

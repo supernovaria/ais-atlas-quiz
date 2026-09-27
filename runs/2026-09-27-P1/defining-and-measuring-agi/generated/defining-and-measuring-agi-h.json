@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/h01",
+    "targets": ["DM-9"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems end up equally good at finding exploitable flaws in unfamiliar software. One got there from a few dozen worked examples; the other needed millions of examples and vast compute. How should the two be compared?",
+    "options": [
+      {"text": "The adaptability view rates the first as more intelligent; for safety, the two carry the same risk", "key": true, "provenance": null, "family": null},
+      {"text": "The adaptability view rates the first as more intelligent; for safety, the first carries more risk", "key": false, "provenance": "misreads 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'", "family": "c"},
+      {"text": "The adaptability view rates the two as equally intelligent; for safety, they carry the same risk", "key": false, "provenance": "collapses the adaptability view into the behaviourist one (the DM-8/DM-9 conflation 'there's no real disagreement here'), against 'general intelligence is not demonstrated by the possession of a specific skill, but by the efficiency of acquiring new skills'", "family": "a"},
+      {"text": "The adaptability view rates the second as more intelligent; for safety, the second carries more risk", "key": false, "provenance": "reverses 'High performance can be \"bought\" with sufficient data and compute' into 'more data and compute buys more intelligence', inverting the adaptability view's ranking", "family": "b"}
+    ],
+    "explanation": "On the adaptability view, intelligence is the efficiency of turning experience into skills, so the system that learned from a few dozen examples is the more generally intelligent one; the other bought its performance with data and compute. We accept that point but prioritise final capability for safety: both systems can now find the same flaws, so the risk is the same either way. If you picked 'the first carries more risk', you read 'less impressive' as 'less dangerous' - the learning path changes how impressive a system is, not what it can do once trained. The 'equally intelligent' option erases a real disagreement: the two views differ about intelligence and agree only about what matters for risk. The 'second rates higher' option inverts the point that performance can be bought. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "The learning path can change how intelligent a system is judged to be without changing how dangerous it is.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say 'adaptability ranks the efficient learner higher, but the risk is identical because final capability is what matters' unaided.",
+      "cynic_test": "A skipper might pick the 'same risk' options by symmetry, but two options say 'same risk' and two say 'first as more intelligent', so only the specific combination identifies the key and all four share one two-clause template."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/h02",
+    "targets": ["DM-1"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A drug-discovery lab builds a system that outperforms every human chemist at predicting how candidate molecules bind to proteins. It cannot write, answer questions, or reason about anything else. Where does it sit on the two axes?",
+    "options": [
+      {"text": "Far along the capability axis on one task and near zero on generality, so still narrow AI", "key": true, "provenance": null, "family": null},
+      {"text": "Far along the capability axis, and an early weak AGI, as the first aircraft was still a plane", "key": false, "provenance": "misapplies the Wright-brothers analogy ('systems achieving expert-level performance across even a modest subset of cognitive domains represent genuine general intelligence') to a single superhuman skill, the prior that superhuman on a hard task is a step toward general intelligence", "family": "c"},
+      {"text": "Partway along both axes, because superhuman depth on a hard task also counts toward breadth", "key": false, "provenance": "misreads 'systems in the last few years are climbing both axes simultaneously' as meaning depth and breadth move together, against 'Capability measures depth; generality measures breadth'", "family": "a"},
+      {"text": "Far along the capability axis, with generality set by the range of molecules it can handle", "key": false, "provenance": "misreads 'Generality measures breadth' as breadth of inputs within one task, rather than 'the percentage of cognitive domains where a system achieves expert-level capability'", "family": "b"}
+    ],
+    "explanation": "Capability is depth on individual tasks, and everything along that line - up to and including superhuman performance on a single task - is narrow AI. Beating every human chemist at binding prediction puts the system far out on capability for that task, but generality counts the share of cognitive domains where a system reaches expert level, and here that is one narrow skill. The 'weak AGI' option misapplies the first-aircraft analogy, which describes expert-level performance across a modest subset of several domains, not one superhuman skill. The 'both axes' option treats depth and breadth as one scale; AlphaGo was superhuman at Go and could not write a sentence. Handling many different molecules is range within one task, not breadth across domains. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "However superhuman, a system that is deep on one task and absent everywhere else is narrow AI.",
+    "stem_format": "classification",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section would say 'high capability, near-zero generality, still ANI' without seeing options.",
+      "cynic_test": "The skipper cannot use 'capability axis' as a tell because it appears in all four options and 'generality' in two; lengths are matched, and the tempting 'early AGI' option borrows the section's own analogy."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/h03",
+    "targets": ["DM-10"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose researchers proved tomorrow that a widely deployed AI model has no conscious experience. It can still plan multi-step operations and write persuasive messages to thousands of people. What does this finding change about its risk?",
+    "options": [
+      {"text": "Little or nothing, because its capacity to plan and persuade is the same as before the finding", "key": true, "provenance": null, "family": null},
+      {"text": "It lowers the risk, because a system without understanding is not pursuing harmful aims deliberately", "key": false, "provenance": "the pre-chapter prior corrected by 'A system doesn't need to be conscious to cause harm' and 'Whether an AI system is conscious has little, if any, bearing on its ability to make high-impact decisions'", "family": "c"},
+      {"text": "It raises the risk, because a system without inner experience lacks the empathy that restrains people", "key": false, "provenance": "reverses the direction of 'Whether an AI system is conscious has little, if any, bearing on its ability to ... take potentially dangerous actions', treating absence of consciousness as a risk factor rather than irrelevant", "family": "b"},
+      {"text": "It shows the model is less capable than it seems, because capability and consciousness tend to go together", "key": false, "provenance": "misses 'We are also unsure if intelligence and consciousness are necessarily linked' and 'AlphaGo is very intelligent within the context of playing Go, but it is clearly not conscious'", "family": "a"}
+    ],
+    "explanation": "The finding does not touch what the model can do: it still plans and persuades at the same level, so its risk profile is unchanged. A system doesn't need to be conscious to cause harm, which is why we set consciousness aside as not actionable for safety work - not because the question is unimportant, but because its answer does not move the risk. The most tempting wrong answer is the prior that a system must truly understand before it can be dangerous; high-impact actions need capability, not inner experience. The 'raises the risk' option makes the same mistake in reverse, treating consciousness as relevant to danger at all. The 'less capable' option assumes intelligence and consciousness travel together, and AlphaGo shows they need not. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Settling whether a system is conscious would not change what it can do, so it would not change its risk.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section would say 'nothing, its capabilities are unchanged and consciousness has no bearing on harm' unaided.",
+      "cynic_test": "A skipper might pick the hedged 'little or nothing' option as the moderate one, so the 'less capable' distractor also carries a hedge ('tend to'), and the two directional distractors are both real beliefs held about AI minds."
+    }
+  },
+  {"note": "Case lens reached all three ideas; no substitutions. No bridge candidate. Stem formats: two-scenario (h01), classification (h02), thought-experiment (h03)."}
+]

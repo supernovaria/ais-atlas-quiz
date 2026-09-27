@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/g01",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Lab A buys twice as many GPUs of the model it already uses and changes nothing else. Lab B keeps its hardware exactly as it is but adopts a training method that reaches the same result with a tenth of the FLOP. Which comparison of the two labs' gains in effective compute holds?",
+    "options": [
+      {
+        "text": "Lab B gained more: a tenfold software gain multiplies its compute as surely as extra chips would",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Lab A gained more: compute is the hardware a lab runs, and Lab B's hardware has not changed",
+        "key": false,
+        "provenance": "the pre-chapter prior the Effective Compute subsection targets directly ('compute means more than just counting GPUs ... not just talking about running more hardware for longer'), read as if compute were physical hardware",
+        "family": "c"
+      },
+      {
+        "text": "Lab A gained compute and Lab B gained efficiency, two separate kinds of progress with no common scale",
+        "key": false,
+        "provenance": "misreads 'Better algorithms multiply your effective compute without building a single new chip' as placing algorithmic progress outside the compute measure rather than as one of its three factors",
+        "family": "a"
+      },
+      {
+        "text": "They gained about equally: each improved one of the three factors, and each factor adds a similar share",
+        "key": false,
+        "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as a sum in which each improved factor contributes a comparable increment",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is a product: software efficiency times hardware efficiency times number of chips. A method that reaches the same result with a tenth of the FLOP multiplies the software factor by ten, so Lab B's gain outstrips Lab A's doubling without a single new chip. If you picked 'compute is the hardware a lab runs', you held the prior this idea exists to replace: when we say one model used more compute than another, we are not just counting GPUs or hours of run time. The 'separate kinds of progress' option makes a subtler mistake, filing algorithms outside compute when they are one of its factors. And because the factors multiply rather than add, a tenfold gain in one is not matched by a doubling in another. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Better algorithms are compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds effective compute as a product of three factors computes 10x for B against 2x for A and names B unaided.",
+      "cynic_test": "A skipper would lean to Lab A because 'more GPUs = more compute' is the common intuition, which is exactly the prior the section overturns; the options are verdict-plus-reason of matched length with no absolutes, so no surface tell points to B."
+    },
+    "shard_id": "forecasting-timelines-g",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 96,
+    "distractor_lens": [
+      91,
+      101,
+      103
+    ],
+    "mean_distractor_len": 98.3,
+    "len_ratio": 0.98,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "hardware",
+      "two"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 133,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

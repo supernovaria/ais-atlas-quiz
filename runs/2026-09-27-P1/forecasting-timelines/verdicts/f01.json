@@ -1,0 +1,87 @@
+{
+  "id": "forecasting-timelines/opus/f01",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R14"],
+  "measurements": {
+    "correct_len": 141,
+    "distractor_lens": [140, 129, 128],
+    "mean_distractor_len": 132.3,
+    "len_ratio": 1.07,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["training", "scaling"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["b", "c", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14: stem_word_singletons lists 'training' (appears only in the physical-ceiling option) and 'scaling' (appears only in the 'expected outcome' option). The rubric says a stem word must appear in two or more options or in none. The self_check's cynic_test checked 'power' but missed these two."
+  ],
+  "preserve": "The stem, the key and the 'feasible, so it will happen' distractor. Key and top distractor share the same opening and nearly the same length, so only the dropped economic condition separates them, which is exactly the distinction FT-10 is about. The data-wall wrong-slot distractor also works.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/f01",
+    "targets": ["FT-10"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Someone argues: \"Frontier training runs are heading toward drawing as much electricity as a small city. Nothing like that has ever been built for one computation, so scaling will have to stop within a few years.\" Which response best fits the current evidence on scaling?",
+    "options": [
+      {
+        "text": "Runs at that scale look feasible; the open questions are whether the economic returns justify them and whether chips and power arrive in time",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Runs at that scale look feasible, so continued scaling is the expected outcome and what remains is mostly engineering the physical build-out",
+        "key": false,
+        "provenance": "drops 'The question is whether the economic incentives justify it and whether the infrastructure constraints ... can be overcome in time', reading 'they aren't impossible' (and the bold lead 'scaling can continue through at least 2030') as 'they will happen'",
+        "family": "b"
+      },
+      {
+        "text": "The argument holds: power and chip supply impose a physical ceiling that runs this large cannot realistically get past, so scaling stalls",
+        "key": false,
+        "provenance": "misreads 'comparable to running a small city' as a ceiling, against 'These are unprecedented scales, but analysis suggests that they aren't impossible'",
+        "family": "c"
+      },
+      {
+        "text": "Power is a side issue; the binding limit is the stock of public text, which is used up well before power demand becomes decisive",
+        "key": false,
+        "provenance": "right idea, wrong slot: promotes the Training Data subsection's data wall ('we'll hit that wall around 2028') to the decisive constraint, when the text lists data as one infrastructure constraint among several ('chips, power, data, …') and says 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+        "family": "d"
+      }
+    ],
+    "explanation": "Published analyses, as of the 2025 edition, find city-scale training runs unprecedented but not impossible, so physical impossibility is the wrong objection. What stays open is conditional: whether the economic incentives justify spending at that scale, and whether chips, power and data can be supplied in time. If you picked the physical-ceiling option, you took the size of the number as a limit; unprecedented is not the same as unbuildable, and that is the prior this part of the section overturns. If you picked the 'expected outcome' option, you kept the feasibility finding but dropped its two conditions, and feasible-if-funded is not the same as inevitable. The data-wall option treats one constraint as decisive, when whether data binds depends on how well the escape routes work. (Forecasting Timelines)",
+    "takeaway": "Not impossible is a different claim from inevitable: feasibility leaves the economics and the build-out open.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'not impossible, but depends on incentives and infrastructure' can state the key's two-part answer unaided.",
+      "cynic_test": "Key and top distractor share the 'look feasible' opening and length, so only the dropped conditions separate them. Stem words: 'runs' appears in three options, 'scaling' in two (options 2 and 3), 'training' in none, so there is no word-match tell."
+    },
+    "shard_id": "forecasting-timelines-f",
+    "model": "opus"
+  },
+  "rewrite_changed": ["options[2].text", "options[1].provenance", "options[3].provenance", "explanation", "level_claimed", "self_check.cynic_test"],
+  "reviewer_note": "Two things to check. First, the 'expected outcome' distractor sits close to the section's own bold lead ('Current evidence suggests scaling can continue through at least 2030'), so confirm that 'expected outcome' reads as clearly stronger than 'can continue'. Second, this is L3, not L4: the stem is the text's own small-city example, and the verdict comes from the very next sentence. The key also depends on a 2025 feasibility finding that the refresh could reverse, so re-read it on refresh day. My rewrite of option 3 is 137 chars by my count; the checker should confirm."
+}

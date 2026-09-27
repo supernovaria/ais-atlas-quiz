@@ -1,0 +1,87 @@
+{
+  "id": "forecasting-timelines/opus/a03",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L3",
+  "failed_criteria": ["R14"],
+  "measurements": {
+    "correct_len": 99,
+    "distractor_lens": [97, 100, 94],
+    "mean_distractor_len": 97,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["number", "hours"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["c", "a", "b"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14: two problems. (1) Word-match: 'number' and 'hours' come from the stem and appear in only one option ('No increase in compute, because the lab ran the same chips for the same number of hours'), so the checker's stem_word_singletons flags that option. (2) Entailment: if option 3 ('...while the lab's compute itself stays flat') were true, option 2 ('No increase in compute, because the lab ran the same chips...') would be true too. The stem says the hardware was unchanged, so a test-wise reader can rule out option 3 on logic alone and the guess rate rises to 1 in 3. The two 'compute is flat' options cannot both stay; any rewording of the family-a option still implies flat compute, so one of the two has to go."
+  ],
+  "preserve": "The stem, the key and the 'smaller than four times the chips' distractor. The scenario (software gain, identical hardware) makes the reader apply the multiplying equation instead of recalling it, and the key's 'as large as four times as many chips' pins down that the factors count equally. The family-a 'separate algorithmic driver' distractor is also doing real work and stays; only the prior-family option is replaced.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/a03",
+    "targets": ["FT-4"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "For a year, a lab changes nothing about its hardware: same number of chips, same chip generation, same hours of use. Its researchers find training methods that reach the lab's previous results with a quarter of the operations. How should that year's change be classified?",
+    "options": [
+      {
+        "text": "A fourfold increase in effective compute, as large as the gain from buying four times as many chips",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "A fall in compute, since the lab now spends fewer FLOP to reach each of the scores it reached before",
+        "key": false,
+        "provenance": "misreads the illustrative example 'by 2025 ... you only need 100 million FLOP to hit that same 90% accuracy' (and 'you need less hardware to hit the same benchmark') as compute having fallen, against 'measured in ‘effective’ floating-point operations' and 'Your software got 10× more efficient'",
+        "family": "c"
+      },
+      {
+        "text": "An algorithmic gain that raises capability beside compute, while the lab's compute itself stays flat",
+        "key": false,
+        "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+        "family": "a"
+      },
+      {
+        "text": "A rise in effective compute, but a smaller one than buying four times as many chips would give",
+        "key": false,
+        "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as hardware setting the total and software only adjusting it, rather than three factors that multiply on equal terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is the product of software efficiency, hardware efficiency and number of chips. A method that reaches the same results with a quarter of the operations therefore multiplies effective compute by four, exactly as quadrupling the chips would. Nothing physical changed, and that is the point: compute here means more than counting GPUs or GPU-hours. Calling this a fall in compute counts the raw operations spent per result rather than what those operations now achieve; needing fewer FLOP for the same result is exactly what a software-efficiency gain is. Calling the gain a separate algorithmic driver misfiles software efficiency, which is one of compute's three factors, not a rival to it. And because the factors multiply, a fourfold software gain counts for exactly as much as a fourfold chip gain. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Better algorithms count as more compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+    "stem_format": "classification",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'effective compute = software x hardware x chips' says 'effective compute went up fourfold, same as four times the chips' with the options covered.",
+      "cynic_test": "The four options are now mutually exclusive on direction and size (fall / flat / smaller rise / equal rise), so none can be eliminated by entailment. No hedges or absolutes. 'chips' appears in two options, 'lab' in two, and 'number'/'hours' in none. The fourfold factor is invented rather than the text's 10x, so nothing on the surface points to the key."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  "rewrite_changed": ["options[1]", "explanation", "self_check.cynic_test"],
+  "reviewer_note": "Check whether the 'smaller than four times the chips' distractor is arguably true in the real world: algorithmic-efficiency gains measured at a fixed result may not carry over to frontier scale. The stem's 'reach the lab's previous results' wording and the text's own framing make the key correct within the Atlas's model, but a well-read reader could push back. Also check that the new 'fall in compute' distractor reads as a belief someone could hold, not a trick; I estimated its length at 100 chars, and the checker should confirm."
+}

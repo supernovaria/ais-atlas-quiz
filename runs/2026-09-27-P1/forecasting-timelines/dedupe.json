@@ -1,0 +1,44 @@
+{
+  "section": "forecasting-timelines",
+  "candidates_in": 23,
+  "survivors": 22,
+  "collapsed_count": 1,
+  "critic_calls_saved": 1,
+  "survivor_ids": [
+    "forecasting-timelines/opus/a01",
+    "forecasting-timelines/opus/a02",
+    "forecasting-timelines/opus/a03",
+    "forecasting-timelines/opus/b01",
+    "forecasting-timelines/opus/b02",
+    "forecasting-timelines/opus/b03",
+    "forecasting-timelines/opus/c01",
+    "forecasting-timelines/opus/c02",
+    "forecasting-timelines/opus/c03",
+    "forecasting-timelines/opus/d01",
+    "forecasting-timelines/opus/d02",
+    "forecasting-timelines/opus/g02",
+    "forecasting-timelines/opus/e01",
+    "forecasting-timelines/opus/e02",
+    "forecasting-timelines/opus/e03",
+    "forecasting-timelines/opus/f01",
+    "forecasting-timelines/opus/f02",
+    "forecasting-timelines/opus/f03",
+    "forecasting-timelines/opus/g01",
+    "forecasting-timelines/opus/g03",
+    "forecasting-timelines/opus/h01",
+    "forecasting-timelines/opus/h02"
+  ],
+  "collapsed": [
+    {
+      "collapsed_id": "forecasting-timelines/opus/d03",
+      "survivor_id": "forecasting-timelines/opus/g02",
+      "stem_overlap": 0.74,
+      "targets": [
+        "FT-5"
+      ],
+      "why": "R4: ≥70% content-word overlap on stems and identical targets",
+      "loser_len_ratio": 1.09,
+      "keeper_len_ratio": 1.03
+    }
+  ]
+}

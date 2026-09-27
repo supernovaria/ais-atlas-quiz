@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/f01",
+    "targets": [
+      "FT-10"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Someone argues: \"Frontier training runs are heading toward drawing as much electricity as a small city. Nothing like that has ever been built for one computation, so scaling will have to stop within a few years.\" Which response best fits the current evidence on scaling?",
+    "options": [
+      {
+        "text": "Runs at that scale look feasible; the open questions are whether the economic returns justify them and whether chips and power arrive in time",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Runs at that scale look feasible, so continued scaling is the expected outcome and what remains is mostly engineering the physical build-out",
+        "key": false,
+        "provenance": "drops 'The question is whether the economic incentives justify it and whether the infrastructure constraints ... can be overcome in time', reading 'they aren't impossible' as 'they will happen'",
+        "family": "b"
+      },
+      {
+        "text": "The argument holds: power and chip supply impose a physical ceiling that training runs of that size cannot realistically get past",
+        "key": false,
+        "provenance": "misreads 'comparable to running a small city' as a ceiling, against 'These are unprecedented scales, but analysis suggests that they aren't impossible'",
+        "family": "c"
+      },
+      {
+        "text": "Power is a side issue; the binding limit is the stock of public text, which is used up well before power demand becomes decisive",
+        "key": false,
+        "provenance": "right idea, wrong slot: promotes the Training Data subsection's data wall to the decisive constraint, when the text lists data as one infrastructure constraint among several and says whether it binds depends on the escape routes",
+        "family": "d"
+      }
+    ],
+    "explanation": "The analysis we draw on finds city-scale training runs unprecedented but not impossible, so physical impossibility is the wrong objection. What stays open is conditional: whether the economic incentives justify spending at that scale, and whether chips, power and data can be supplied in time. If you picked the physical-ceiling option, you took the size of the number as a limit; unprecedented is not the same as unbuildable, and that is the prior this part of the section overturns. If you picked the 'expected outcome' option, you kept the feasibility finding but dropped its two conditions, and feasible-if-funded is not the same as inevitable. The data-wall option treats one constraint as decisive, when whether data binds depends on how well the escape routes work. (Forecasting Timelines)",
+    "takeaway": "Not impossible is a different claim from inevitable: feasibility leaves the economics and the build-out open.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'not impossible, but depends on incentives and infrastructure' can state the key's two-part answer unaided.",
+      "cynic_test": "A skipper might pick the confident 'feasible, so it happens' option or the sceptical ceiling; the key and top distractor share the 'look feasible' opening and length, so only the dropped conditions separate them, and 'power' appears in three options, so no word-match tell."
+    },
+    "shard_id": "forecasting-timelines-f",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 141,
+    "distractor_lens": [
+      140,
+      129,
+      128
+    ],
+    "mean_distractor_len": 132.3,
+    "len_ratio": 1.07,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "training",
+      "scaling"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

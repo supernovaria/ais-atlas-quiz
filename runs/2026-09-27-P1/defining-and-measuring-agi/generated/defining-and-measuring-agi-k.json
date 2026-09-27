@@ -1,0 +1,83 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/k01",
+    "targets": ["DM-3"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A news headline asks: \"Has AI finally crossed the line into AGI?\" Judged by the capability-and-generality framework, what is the main problem with the question itself?",
+    "options": [
+      {"text": "It assumes a single moment of arrival, when systems improve by degrees on two axes and the label covers a region", "key": true, "provenance": null, "family": null},
+      {"text": "It asks too early: nothing counts as general intelligence until it reaches expert level on most domains", "key": false, "provenance": "misreads the AGI threshold definition ('expert-level performance ... across most cognitive domains') as the entry condition for any generality, against the Wright-brothers passage that early systems 'represent genuine general intelligence - just early-stage (weak AGI)'", "family": "c"},
+      {"text": "It asks about a real line that cannot be located yet, because benchmarks are too coarse to pinpoint it", "key": false, "provenance": "misreads 'There's no universally agreed upon threshold' as 'the threshold exists but has not been measured', keeping the binary prior and blaming measurement precision rather than the framing", "family": "b"},
+      {"text": "It tracks the wrong axis: the line that matters is crossed when systems start acting without human oversight", "key": false, "provenance": "carries in the charter wording 'highly autonomous systems' from Case Studies and treats autonomy as the AGI line, against 'Our working definition does not include the autonomy with which an AGI system operates'", "family": "a"}
+    ],
+    "explanation": "The headline treats AGI as an event: one day the system is not AGI, the next it is. We describe systems instead by where they sit on two continuous axes, capability (how good on each task) and generality (on how many domains it reaches expert level), and there is no agreed point where \"not AGI\" flips to \"AGI\". The tempting reply that the line is real but not yet located keeps the binary picture and only blames the benchmarks; the problem is the picture, not the measurement. Nor must a system clear expert level on most domains before it counts as general at all: like the Wright brothers' plane, an early general system is genuine but immature, which is what \"weak AGI\" means. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI names a region of a continuous two-axis space, so \"has it crossed the line?\" is the wrong question.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the continuum framing would say unprompted that the headline presumes a binary crossing point that the framework denies exists.",
+      "cynic_test": "A skipper might pick the measurement-precision option as the most sophisticated-sounding caveat, but it concedes the binary line the key rejects; the key is not the only option naming two axes or degrees in a way that marks it, and no absolutes appear."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/k02",
+    "targets": ["DM-4"],
+    "lens": "misconception",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "The framework insists that AGI sits on a continuum, yet it also offers rough percentile cut-offs for AGI, TAI and ASI. What do those cut-offs contribute that the continuum on its own does not?",
+    "options": [
+      {"text": "They give safety planning and regulation points at which to act, because risk differs across regions of the space", "key": true, "provenance": null, "family": null},
+      {"text": "They reinstate the yes-or-no framing for public audiences, a concession that sits in tension with the continuum", "key": false, "provenance": "misreads thresholds offered 'When pressed for concrete thresholds' as a retreat from 'AGI exists on a continuous spectrum', missing 'we can't ignore this reality even if generality is a continuous variable'", "family": "b"},
+      {"text": "They mark where measured risk begins, which is where the continuum turns out to have natural break points", "key": false, "provenance": "misreads 'here's our interpretation of roughly how terms map onto the (performance, generality) space' as an empirical finding that the space has natural discontinuities", "family": "c"},
+      {"text": "They let evaluators announce when a system has arrived at each named level, which a smooth scale cannot do", "key": false, "provenance": "misfiles the purpose of thresholds as declaring arrival, against the stated aim to 'identify thresholds for regulation, and emerging risks before they materialize'", "family": "d"}
+    ],
+    "explanation": "The cut-offs are overlays for action. A system strong on half the cognitive domains poses different risks from one strong on nine-tenths, and regulation and safety planning need points at which a response is triggered, so we mark rough regions without claiming the space breaks there. That is why they are not a contradiction: the underlying variable stays continuous, and the thresholds are an interpretation laid over it on request, not a return to yes-or-no. They are also not measured facts. We present them as our rough mapping of terms, and other researchers could set them differently. And their job is not to announce that a system has \"arrived\", which is exactly the semantic debate the continuum was built to avoid. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Thresholds are stipulated trigger points for safety and regulation laid over a continuum, not natural break points in it.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who followed the section would answer that thresholds give safety planning and regulation something to trigger on, without conceding that the continuum is broken.",
+      "cynic_test": "The 'tension' option is the tempting cynical pick; it fails because the text keeps the variable continuous. 'Continuum' appears in two distractors and 'risk' in the key and one distractor, so no word match picks out the key."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/k03",
+    "targets": ["DM-5"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Imagine a system that, on nearly every non-embodied cognitive domain, outperforms most trained professionals but never the very best human. How does the working definition classify it?",
+    "options": [
+      {"text": "As AGI, because expert-level performance across most domains is exactly the profile the term describes", "key": true, "provenance": null, "family": null},
+      {"text": "Short of AGI, because it has only matched strong humans in most domains rather than exceeded them all", "key": false, "provenance": "conflates the AGI definition ('expert-level performance (80-90th percentile)') with the ASI definition ('superhuman capability (>100%, greatly exceeding all humans)')", "family": "a"},
+      {"text": "Undecided, because AGI turns on outperforming humans at most economically valuable work, not on domain scores", "key": false, "provenance": "adopts the quoted OpenAI charter wording as the working definition, missing that such definitions 'lack precision for tracking progress and identifying risks'", "family": "a"},
+      {"text": "Undecided, because generality turns on how efficiently it acquires new skills, not on its fixed-task scores", "key": false, "provenance": "files the adaptability view (Chollet, Wang) as the working definition, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'", "family": "d"}
+    ],
+    "explanation": "Our working definition is a cognitive profile. AGI means matching a well-educated adult's versatility: expert-level performance, better than most people but short of the best, across most cognitive domains. This system fits that profile. The top distractor sets the bar at beating everyone, which is the definition of superintelligence (ASI), not AGI. AGI is expert parity, and ASI is greatly exceeding all humans across virtually all domains. The charter-style test, outperforming humans at most economically valuable work, points in the right direction but is too vague to settle a case like this. The adaptability view is one we acknowledge, but we rank systems on final capabilities rather than on learning efficiency. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI in this framework is expert parity across most domains; exceeding all humans is the ASI definition.",
+    "stem_format": "classification",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: given the profile, a reader who knows AGI means expert-level across most domains would say 'AGI', and would not demand superhuman performance.",
+      "cynic_test": "A skipper might pick 'short of AGI', reasoning that 'general intelligence' should mean beating humans. That is the ASI conflation the item targets. Two options open with 'Undecided', so there is no grammar or register outlier, and the stem gives the profile in qualitative bands rather than recalled percentile digits."
+    }
+  },
+  {
+    "note": "DM-3 and DM-4 form a discrimination_pairs entry. I wrote them as two separate misconception items rather than one contrast item, because the lens is misconception and each idea has its own top misconception: the binary-threshold prior for DM-3 and the 'thresholds contradict the continuum' reversal for DM-4. k02 is effectively the pair's L5 tension question, so the Curator should not ship both k02 and a contrast-lens candidate that spans the pair. In k03, both of DM-5's listed misconceptions are family (a), so the third distractor comes from DM-9's adaptability view (family d) to meet the two-family rule."
+  }
+]

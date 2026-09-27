@@ -1,0 +1,260 @@
+{
+  "section": "forecasting-timelines",
+  "n": 22,
+  "rationale": "coverage need: threshold concepts, then discrimination pairs, then criteria count; one candidate per idea per round",
+  "ideas_in_order": [
+    "FT-2",
+    "FT-4",
+    "FT-3",
+    "FT-5",
+    "FT-8",
+    "FT-9",
+    "FT-1",
+    "FT-6",
+    "FT-10"
+  ],
+  "queue": [
+    {
+      "position": 1,
+      "id": "forecasting-timelines/opus/a01",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 2,
+      "id": "forecasting-timelines/opus/a03",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 3,
+      "id": "forecasting-timelines/opus/a02",
+      "targets": [
+        "FT-3"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 4,
+      "id": "forecasting-timelines/opus/b01",
+      "targets": [
+        "FT-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 5,
+      "id": "forecasting-timelines/opus/b03",
+      "targets": [
+        "FT-8"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 6,
+      "id": "forecasting-timelines/opus/c01",
+      "targets": [
+        "FT-9"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 7,
+      "id": "forecasting-timelines/opus/c03",
+      "targets": [
+        "FT-1"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 8,
+      "id": "forecasting-timelines/opus/e01",
+      "targets": [
+        "FT-6"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 9,
+      "id": "forecasting-timelines/opus/f01",
+      "targets": [
+        "FT-10"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 10,
+      "id": "forecasting-timelines/opus/d01",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 11,
+      "id": "forecasting-timelines/opus/b02",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 12,
+      "id": "forecasting-timelines/opus/d02",
+      "targets": [
+        "FT-3"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 13,
+      "id": "forecasting-timelines/opus/g02",
+      "targets": [
+        "FT-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 14,
+      "id": "forecasting-timelines/opus/c02",
+      "targets": [
+        "FT-8"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 15,
+      "id": "forecasting-timelines/opus/e02",
+      "targets": [
+        "FT-9"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 16,
+      "id": "forecasting-timelines/opus/e03",
+      "targets": [
+        "FT-1"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 17,
+      "id": "forecasting-timelines/opus/g03",
+      "targets": [
+        "FT-6"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 18,
+      "id": "forecasting-timelines/opus/f02",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "threshold"
+    },
+    {
+      "position": 19,
+      "id": "forecasting-timelines/opus/g01",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 3,
+      "priority": "threshold"
+    },
+    {
+      "position": 20,
+      "id": "forecasting-timelines/opus/f03",
+      "targets": [
+        "FT-3"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 21,
+      "id": "forecasting-timelines/opus/h01",
+      "targets": [
+        "FT-8"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 22,
+      "id": "forecasting-timelines/opus/h02",
+      "targets": [
+        "FT-9"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    }
+  ]
+}

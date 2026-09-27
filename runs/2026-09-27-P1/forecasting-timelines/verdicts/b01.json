@@ -1,0 +1,89 @@
+{
+  "id": "forecasting-timelines/opus/b01",
+  "verdict": "rewrite",
+  "level": "L4",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["D1", "D6", "D3"],
+  "measurements": {
+    "correct_len": 100,
+    "distractor_lens": [103, 99, 102],
+    "mean_distractor_len": 101.3,
+    "len_ratio": 0.99,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["chip", "new", "more", "old", "pace", "effective"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 140,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, false, true, true],
+  "families_present": ["b", "c", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "D1: option 2's provenance sentence exists ('compounds much faster than hardware trends alone would suggest'), but the claim it produces cannot be held by an attentive reader. Its own model is 'chip count scaled by chip speed', and the stem says chip fabs keep expanding, so on that model effective compute still rises. A reader who holds this belief would not pick 'it stalls'.",
+    "D6: option 2's since-clause undercuts itself. It names chip count as a factor, and the stem has just said chip count keeps growing.",
+    "D3: the rule allows at most one distractor that a reader can rule out by general reasoning without having read the section. Here there are two. Option 2 falls to the chip-count inconsistency above. Option 4 ('at its old pace') falls because the stem holds the other two factors at their recent pace, so losing a third driver cannot leave the total pace unchanged. Only option 3 (the coupling claim) needs the section. A reader who skipped it can pick the key by elimination."
+  ],
+  "preserve": "Keep the stem, the key and option 3 (the lagged-stall coupling). The scenario is a clean L4 application of 'each factor can improve independently' that the prose never walks through, and the mechanics are already tight (ratio 0.99, no hedge or absolute tells). Only option 2 needs replacing.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/b01",
+    "targets": ["FT-5"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose chip designers hit a physical limit: new GPUs stop doing more operations per dollar than old ones. Meanwhile, chip fabs keep expanding and training methods keep improving at their recent pace. What happens to effective compute?",
+    "options": [
+      {
+        "text": "It keeps rising, though more slowly, since more chips and better algorithms still multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It keeps rising, though only via more chips, since better training methods improve models, not compute",
+        "key": false,
+        "provenance": "misreads the Effective Compute lead ('\"compute\" means more than just counting GPUs') by keeping the everyday hardware-only sense of compute, and so files 'Better algorithms multiply your effective compute without building a single new chip' as model progress outside the compute measure (FT-4 conflation)",
+        "family": "a"
+      },
+      {
+        "text": "It stalls after a lag, since software gains need faster new chips before they become usable compute",
+        "key": false,
+        "provenance": "reverses 'You can develop better software to make use of existing hardware' into a coupling between the factors",
+        "family": "b"
+      },
+      {
+        "text": "It keeps rising at its old pace, since the funding loop now pours that money into chips and algorithms",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers the compute-automation-productivity funding loop (Figure 1.38) as the reason effective compute compounds, where the reason is independent multiplication of three factors",
+        "family": "d"
+      }
+    ],
+    "explanation": "Effective compute is the product of chip count, hardware efficiency and software efficiency, and each can improve without the others. If hardware efficiency flatlines while the other two keep their recent pace, the product still grows, just more slowly. The chips-only answer is the prior we wrote this subsection to dislodge: that compute means hardware, so better training methods improve models without adding compute. They multiply effective compute just as more chips do. The lagged-stall answer reverses our point that better software makes better use of hardware you already have. The funding loop is real, but it is a separate mechanism, and with the two remaining factors fixed at their recent pace, losing a third multiplier has to slow the total. For colour: 2025 estimates put hardware efficiency near 1.35x a year, algorithms near 3x and chip production near 2.3x. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Because the three factors multiply and move independently, one stalled factor slows effective compute but does not stop it.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows the factors multiply and improve independently, and that algorithmic gains count as compute, will say unaided that growth continues at a reduced rate through both remaining factors.",
+      "cynic_test": "Three options say 'rises' and one says 'stalls', so a reader who picks the odd one out lands on a distractor. The key and option 2 agree on direction and differ only on whether algorithms count as compute, which takes the section to decide. All four keep a parallel since-clause of similar length."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  "rewrite_changed": ["options[1]", "explanation", "self_check"],
+  "reviewer_note": "Two things to check. First, the new option 2 and the key both say effective compute keeps rising and differ only on whether better training methods count as compute, so confirm this still reads as one clear answer rather than a near-duplicate pair. Second, option 4 can still be ruled out from the stem's premises alone; one such distractor is within the limit, but it means this question discriminates less than its level suggests."
+}

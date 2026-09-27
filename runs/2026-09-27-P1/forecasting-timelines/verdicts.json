@@ -1,0 +1,1371 @@
+[
+  {
+    "id": "forecasting-timelines/opus/a01",
+    "verdict": "rewrite",
+    "level": "L2",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "§3"
+    ],
+    "measurements": {
+      "correct_len": 117,
+      "distractor_lens": [
+        114,
+        112,
+        112
+      ],
+      "mean_distractor_len": 112.7,
+      "len_ratio": 1.04,
+      "correct_is_longest": true,
+      "correct_is_shortest": false,
+      "extremum_gap": 3,
+      "max_over_min": 1.04,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "expected"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 126,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": true,
+    "reasons": [
+      "§3: the generator claims L4 (applying the idea to a new case), but the stem's case is the section's own worked example. The three inputs listed (investment growth, algorithmic progress, tasks automated per order of magnitude) and the output-surprises-you setup are taken from the intro paragraph 'If you think investment grows 5x per year AND ... If you're surprised, maybe one of your input beliefs needs updating', and the key paraphrases that last sentence. A reader who searches the page for 'surprise' lands on the answer without understanding it. That makes this recognition of a stated principle (L2), not transfer. The rubric's L4 condition, 'the mapping must not be stated in the prose', fails."
+    ],
+    "preserve": "The idea (a forecast is a check on whether your own beliefs fit together, FT-2) and all three distractors. Each one is a real misreading with a verified source sentence: throwing out the forecast when it surprises you, reading the output as a date prediction, and treating wide error bars as making the forecast useless. The shared 'Treat it as ..., and ...' frame with no hedges also stays.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/a01",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "A safety team's research plan assumes transformative AI is still decades off. One member enters the team's own shared views on investment growth, algorithmic progress and how much each gain in compute automates into a compute-based forecasting model, and it outputs full automation far sooner than the plan allows. What is the most useful thing for the team to do with this result?",
+      "options": [
+        {
+          "text": "Treat it as a sign that an assumption they entered conflicts with the plan's timeline, and revisit those assumptions",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "Treat it as a sign that the forecast itself is miscalibrated, and discard its output in favour of the existing plan",
+          "key": false,
+          "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into the claim that a clash between output and expectation shows the forecast is wrong and should be thrown out",
+          "family": "b"
+        },
+        {
+          "text": "Treat it as the best available estimate of the arrival date, and redraw the plan to line up with that new date",
+          "key": false,
+          "provenance": "misreads the section's quantitative projections as date predictions, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason about different potential futures'",
+          "family": "c"
+        },
+        {
+          "text": "Treat it as noise within the forecast's wide error bars, and give it no weight in deciding whether the plan holds",
+          "key": false,
+          "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the coherence check ('They let you check if your beliefs are internally coherent') survives the uncertainty",
+          "family": "a"
+        }
+      ],
+      "explanation": "A forecasting model of this kind computes what a set of assumptions jointly implies; it is not an independent prediction of when automation arrives. Here the team's own views on investment, algorithms and automation imply a much earlier date than their plan assumes, so the model has exposed an inconsistency between their assumptions and their plan, and the assumptions are the first thing to re-examine. Discarding the output as miscalibrated misses that it follows from what the team entered. Redrawing the plan around the output makes the opposite mistake: it reads a scenario as a prediction of the arrival date. Wide error bars do not empty the result either, because checking whether beliefs are coherent works even when no date can be pinned down. (Forecasting Timelines)",
+      "takeaway": "A forecast that clashes with your plan points back at your own assumptions: it is a coherence check, not a date.",
+      "stem_format": "thought-experiment",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who took in that forecasts check whether your beliefs are coherent, rather than predict a date, can say 'the team's assumptions and its plan don't fit; check the assumptions' with the options covered.",
+        "cynic_test": "The stem no longer uses the section's 'surprised' / 'input beliefs' wording or its own worked example, so a page search does not land on the key. All four options share the 'Treat it as ..., and ...' frame, have no hedges or absolutes, and mention the plan, so none is marked on the surface. A skipper might pick redrawing the plan to defer to the model, or discarding the output as healthy scepticism."
+      },
+      "shard_id": "forecasting-timelines-a",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "stem",
+      "options[0].text",
+      "options[1].text",
+      "options[2].text",
+      "options[3].text",
+      "options[1].provenance",
+      "explanation",
+      "takeaway",
+      "self_check",
+      "level_claimed"
+    ],
+    "reviewer_note": "The redraw-the-plan distractor (options[2]) could be defended by a careful reader, in both the original and the rewrite. If the team really does hold its inputs, being consistent could mean changing the plan rather than the inputs. The key rests on the section's 'maybe one of your input beliefs needs updating' and on its rejection of reading forecasts as dates, so check that this distinction feels fair rather than like a trick. The checker's 'expected' singleton was not a real giveaway: in the original, forms of 'expect' appeared in three options, and the rewrite drops the word from the stem."
+  },
+  {
+    "id": "forecasting-timelines/opus/a02",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L3",
+    "failed_criteria": [
+      "R6"
+    ],
+    "measurements": {
+      "correct_len": 115,
+      "distractor_lens": [
+        112,
+        114
+      ],
+      "mean_distractor_len": 113,
+      "len_ratio": 1.02,
+      "correct_is_longest": true,
+      "correct_is_shortest": false,
+      "extremum_gap": 1,
+      "max_over_min": 1.03,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [],
+      "option_count": 3,
+      "has_explanation": true,
+      "explanation_words": 126,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "d"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": true,
+    "reasons": [
+      "R6: the stem's opening, 'Suppose compute-based scaling laws keep holding', lifts the text's own clause 'Even if we assume compute-based scaling laws hold' almost word for word. Searching for 'scaling laws hold' lands on that one sentence, and its next clause ('we still don't know how much compute TAI will actually require') is the key reworded. That points the reader to the answer just as surely as naming the subsection would, and makes the question answerable by search alone. The rewrite rephrases the premise so it no longer matches the text's wording."
+    ],
+    "preserve": "the key, the brain-measurement-noise distractor (a real family-(a) misreading of where the biological-anchors spread comes from, checked against 'vary dramatically depending on the biological process used as a reference'), the chip-supply wrong-slot distractor, the parallel 'Uncertainty about X, where Y' frame, and the explanation are all sound and unchanged apart from one phrase; only the stem's wording lifted from the text needed fixing.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/a02",
+      "targets": [
+        "FT-3"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "Suppose the relationship between compute and capability stays reliable, so capability rises predictably as effective compute grows. Forecasts of when full automation of cognitive labour arrives can still differ by decades. Where does most of that remaining spread come from?",
+      "options": [
+        {
+          "text": "Uncertainty about how much compute is needed at all, where plausible reference points sit orders of magnitude apart",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "Uncertainty about the brain's own compute, where noisy measurements blur what would otherwise be a narrow target",
+          "key": false,
+          "provenance": "misreads the biological-anchors paragraph as attributing the spread to measurement error, when it says the estimates 'vary dramatically depending on the biological process used as a reference' (lifetime learning ~10^28 vs evolutionary history ~10^41)",
+          "family": "a"
+        },
+        {
+          "text": "Uncertainty about how many chips will exist, where supply projections for the coming years disagree by over tenfold",
+          "key": false,
+          "provenance": "right idea, wrong slot: takes 'projections of available chips range by a factor of 20x', which the same paragraph offers as one more instance of 'the same principle', as the main source of spread, missing that it is small beside 'we still don't know how much compute TAI will actually require'",
+          "family": "d"
+        }
+      ],
+      "explanation": "Granting the scaling laws tells you how capability rises with compute. It does not tell you how much compute is enough, and that threshold is the dominant unknown: biological-anchor estimates of it span about twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion dollars. The width comes from which process you take as the reference, a human lifetime of learning or all of evolution. So the noisy-measurement option gets the cause wrong: measuring the brain more precisely would not close the gap, because the gap is a choice of reference, not a blurry reading. Chip supply is a genuine uncertainty too (projections varied by around 20x as of the 2025 edition), but twentyfold is tiny beside a trillionfold. (Forecasting Timelines)",
+      "takeaway": "Even if scaling laws hold, nobody knows how much compute is enough, and that unknown dwarfs every other source of spread.",
+      "stem_format": "mechanism",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": "Three options: the plausible remaining sources are the required-compute threshold, brain-measurement noise and supply-side spread. Other candidates either contradict the stem's premise (scaling laws failing) or are arguably true co-causes (compounding growth-rate error, economic returns, the data wall), which would create a second defensible key or a second family-(d) option.",
+      "load_bearing_figures": [
+        "biological anchors span ~twelve orders of magnitude (durable V2.2; spends this section's R11 budget). The chip-projection spread (20x, volatile V1.3) is paraphrased as 'over tenfold' in a distractor, but it does not decide the answer: any plausible refreshed value is still tiny beside twelve orders of magnitude."
+      ],
+      "self_check": {
+        "cover_test": "Yes: a reader who absorbed that scaling laws do not say how much compute TAI requires names the unknown compute threshold unaided.",
+        "cynic_test": "All three options share the 'Uncertainty about X, where Y' frame within 3 characters of each other; the stem no longer reuses the text's 'compute-based scaling laws hold' wording, so a search for the premise does not land on the answer sentence."
+      },
+      "shard_id": "forecasting-timelines-a",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "stem",
+      "options[2].text",
+      "options[2].provenance",
+      "options[1].provenance",
+      "option_count_reason",
+      "self_check"
+    ],
+    "reviewer_note": "Check whether the key ('how much compute is needed') reads as the umbrella over the brain-compute distractor (a special case of it) and so gives itself away to a test-wise reader; the two conflict only in their second clauses ('orders of magnitude apart' vs 'narrow target'), and I judged that enough to count as a real discrimination rather than one option containing the other (rubric R14)."
+  },
+  {
+    "id": "forecasting-timelines/opus/a03",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L3",
+    "failed_criteria": [
+      "R14"
+    ],
+    "measurements": {
+      "correct_len": 99,
+      "distractor_lens": [
+        97,
+        100,
+        94
+      ],
+      "mean_distractor_len": 97,
+      "len_ratio": 1.02,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.06,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "number",
+        "hours"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 127,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "c",
+      "a",
+      "b"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R14: two problems. (1) Word-match: 'number' and 'hours' come from the stem and appear in only one option ('No increase in compute, because the lab ran the same chips for the same number of hours'), so the checker's stem_word_singletons flags that option. (2) Entailment: if option 3 ('...while the lab's compute itself stays flat') were true, option 2 ('No increase in compute, because the lab ran the same chips...') would be true too. The stem says the hardware was unchanged, so a test-wise reader can rule out option 3 on logic alone and the guess rate rises to 1 in 3. The two 'compute is flat' options cannot both stay; any rewording of the family-a option still implies flat compute, so one of the two has to go."
+    ],
+    "preserve": "The stem, the key and the 'smaller than four times the chips' distractor. The scenario (software gain, identical hardware) makes the reader apply the multiplying equation instead of recalling it, and the key's 'as large as four times as many chips' pins down that the factors count equally. The family-a 'separate algorithmic driver' distractor is also doing real work and stays; only the prior-family option is replaced.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/a03",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "For a year, a lab changes nothing about its hardware: same number of chips, same chip generation, same hours of use. Its researchers find training methods that reach the lab's previous results with a quarter of the operations. How should that year's change be classified?",
+      "options": [
+        {
+          "text": "A fourfold increase in effective compute, as large as the gain from buying four times as many chips",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "A fall in compute, since the lab now spends fewer FLOP to reach each of the scores it reached before",
+          "key": false,
+          "provenance": "misreads the illustrative example 'by 2025 ... you only need 100 million FLOP to hit that same 90% accuracy' (and 'you need less hardware to hit the same benchmark') as compute having fallen, against 'measured in ‘effective’ floating-point operations' and 'Your software got 10× more efficient'",
+          "family": "c"
+        },
+        {
+          "text": "An algorithmic gain that raises capability beside compute, while the lab's compute itself stays flat",
+          "key": false,
+          "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+          "family": "a"
+        },
+        {
+          "text": "A rise in effective compute, but a smaller one than buying four times as many chips would give",
+          "key": false,
+          "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as hardware setting the total and software only adjusting it, rather than three factors that multiply on equal terms",
+          "family": "b"
+        }
+      ],
+      "explanation": "Effective compute is the product of software efficiency, hardware efficiency and number of chips. A method that reaches the same results with a quarter of the operations therefore multiplies effective compute by four, exactly as quadrupling the chips would. Nothing physical changed, and that is the point: compute here means more than counting GPUs or GPU-hours. Calling this a fall in compute counts the raw operations spent per result rather than what those operations now achieve; needing fewer FLOP for the same result is exactly what a software-efficiency gain is. Calling the gain a separate algorithmic driver misfiles software efficiency, which is one of compute's three factors, not a rival to it. And because the factors multiply, a fourfold software gain counts for exactly as much as a fourfold chip gain. (Forecasting Timelines → Effective Compute)",
+      "takeaway": "Better algorithms count as more compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+      "stem_format": "classification",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": "Effective Compute"
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who holds 'effective compute = software x hardware x chips' says 'effective compute went up fourfold, same as four times the chips' with the options covered.",
+        "cynic_test": "The four options are now mutually exclusive on direction and size (fall / flat / smaller rise / equal rise), so none can be eliminated by entailment. No hedges or absolutes. 'chips' appears in two options, 'lab' in two, and 'number'/'hours' in none. The fourfold factor is invented rather than the text's 10x, so nothing on the surface points to the key."
+      },
+      "shard_id": "forecasting-timelines-a",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[1]",
+      "explanation",
+      "self_check.cynic_test"
+    ],
+    "reviewer_note": "Check whether the 'smaller than four times the chips' distractor is arguably true in the real world: algorithmic-efficiency gains measured at a fixed result may not carry over to frontier scale. The stem's 'reach the lab's previous results' wording and the text's own framing make the key correct within the Atlas's model, but a well-read reader could push back. Also check that the new 'fall in compute' distractor reads as a belief someone could hold, not a trick; I estimated its length at 100 chars, and the checker should confirm."
+  },
+  {
+    "id": "forecasting-timelines/opus/b01",
+    "verdict": "rewrite",
+    "level": "L4",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "D1",
+      "D6",
+      "D3"
+    ],
+    "measurements": {
+      "correct_len": 100,
+      "distractor_lens": [
+        103,
+        99,
+        102
+      ],
+      "mean_distractor_len": 101.3,
+      "len_ratio": 0.99,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.04,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "chip",
+        "new",
+        "more",
+        "old",
+        "pace",
+        "effective"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 140,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      false,
+      true,
+      true
+    ],
+    "families_present": [
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "D1: option 2's provenance sentence exists ('compounds much faster than hardware trends alone would suggest'), but the claim it produces cannot be held by an attentive reader. Its own model is 'chip count scaled by chip speed', and the stem says chip fabs keep expanding, so on that model effective compute still rises. A reader who holds this belief would not pick 'it stalls'.",
+      "D6: option 2's since-clause undercuts itself. It names chip count as a factor, and the stem has just said chip count keeps growing.",
+      "D3: the rule allows at most one distractor that a reader can rule out by general reasoning without having read the section. Here there are two. Option 2 falls to the chip-count inconsistency above. Option 4 ('at its old pace') falls because the stem holds the other two factors at their recent pace, so losing a third driver cannot leave the total pace unchanged. Only option 3 (the coupling claim) needs the section. A reader who skipped it can pick the key by elimination."
+    ],
+    "preserve": "Keep the stem, the key and option 3 (the lagged-stall coupling). The scenario is a clean L4 application of 'each factor can improve independently' that the prose never walks through, and the mechanics are already tight (ratio 0.99, no hedge or absolute tells). Only option 2 needs replacing.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/b01",
+      "targets": [
+        "FT-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "Suppose chip designers hit a physical limit: new GPUs stop doing more operations per dollar than old ones. Meanwhile, chip fabs keep expanding and training methods keep improving at their recent pace. What happens to effective compute?",
+      "options": [
+        {
+          "text": "It keeps rising, though more slowly, since more chips and better algorithms still multiply the total",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "It keeps rising, though only via more chips, since better training methods improve models, not compute",
+          "key": false,
+          "provenance": "misreads the Effective Compute lead ('\"compute\" means more than just counting GPUs') by keeping the everyday hardware-only sense of compute, and so files 'Better algorithms multiply your effective compute without building a single new chip' as model progress outside the compute measure (FT-4 conflation)",
+          "family": "a"
+        },
+        {
+          "text": "It stalls after a lag, since software gains need faster new chips before they become usable compute",
+          "key": false,
+          "provenance": "reverses 'You can develop better software to make use of existing hardware' into a coupling between the factors",
+          "family": "b"
+        },
+        {
+          "text": "It keeps rising at its old pace, since the funding loop now pours that money into chips and algorithms",
+          "key": false,
+          "provenance": "right idea, wrong slot: offers the compute-automation-productivity funding loop (Figure 1.38) as the reason effective compute compounds, where the reason is independent multiplication of three factors",
+          "family": "d"
+        }
+      ],
+      "explanation": "Effective compute is the product of chip count, hardware efficiency and software efficiency, and each can improve without the others. If hardware efficiency flatlines while the other two keep their recent pace, the product still grows, just more slowly. The chips-only answer is the prior we wrote this subsection to dislodge: that compute means hardware, so better training methods improve models without adding compute. They multiply effective compute just as more chips do. The lagged-stall answer reverses our point that better software makes better use of hardware you already have. The funding loop is real, but it is a separate mechanism, and with the two remaining factors fixed at their recent pace, losing a third multiplier has to slow the total. For colour: 2025 estimates put hardware efficiency near 1.35x a year, algorithms near 3x and chip production near 2.3x. (Forecasting Timelines → Effective Compute)",
+      "takeaway": "Because the three factors multiply and move independently, one stalled factor slows effective compute but does not stop it.",
+      "stem_format": "thought-experiment",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": "Effective Compute"
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who knows the factors multiply and improve independently, and that algorithmic gains count as compute, will say unaided that growth continues at a reduced rate through both remaining factors.",
+        "cynic_test": "Three options say 'rises' and one says 'stalls', so a reader who picks the odd one out lands on a distractor. The key and option 2 agree on direction and differ only on whether algorithms count as compute, which takes the section to decide. All four keep a parallel since-clause of similar length."
+      },
+      "shard_id": "forecasting-timelines-b",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[1]",
+      "explanation",
+      "self_check"
+    ],
+    "reviewer_note": "Two things to check. First, the new option 2 and the key both say effective compute keeps rising and differ only on whether better training methods count as compute, so confirm this still reads as one clear answer rather than a near-duplicate pair. Second, option 4 can still be ruled out from the stem's premises alone; one such distractor is within the limit, but it means this question discriminates less than its level suggests."
+  },
+  {
+    "id": "forecasting-timelines/opus/b02",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L3",
+    "failed_criteria": [
+      "R14"
+    ],
+    "measurements": {
+      "correct_len": 100,
+      "distractor_lens": [
+        97,
+        98,
+        97
+      ],
+      "mean_distractor_len": 97.3,
+      "len_ratio": 1.03,
+      "correct_is_longest": true,
+      "correct_is_shortest": false,
+      "extremum_gap": 2,
+      "max_over_min": 1.03,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "each",
+        "compute",
+        "tenfold",
+        "accounting"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 120,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R14: the key is the only option that repeats the stem's words 'tenfold', 'accounting' and 'each'. 'Both are tenfold gains on that accounting' echoes the stem's 'On an effective-compute accounting' almost word for word, so a reader who skipped the section can find the key by matching words. The checker lists 'compute' as a singleton too; it sits only in option 2."
+    ],
+    "preserve": "Keep the two-lab stem, which is not in the prose and cleanly separates effective compute from raw chip count, and keep all three distractors unchanged: each one rests on a sentence I found in the prose, and all three are within 1 character of each other in length. Only the key's wording changes, plus the explanation's first-person voice.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/b02",
+      "targets": [
+        "FT-4"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "Two labs each announce that their compute grew tenfold this year. Lab A bought ten times as many GPUs of the model it already used. Lab B kept its cluster unchanged but adopted training methods that reach the same results with a tenth of the operations. On an effective-compute accounting, how do the two announcements compare?",
+      "options": [
+        {
+          "text": "Both are equal compute gains, because algorithms and chip count are factors that multiply the total",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "Only Lab A's is a compute gain; Lab B's is algorithmic progress, which is a separate kind of gain",
+          "key": false,
+          "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+          "family": "a"
+        },
+        {
+          "text": "Lab B's is the larger gain, because software gains compound on hardware while chip count only adds",
+          "key": false,
+          "provenance": "hybrid of FT-5's 'compounds' with an additive misreading of 'Software efficiency times Hardware efficiency times Number of chips', treating one factor as additive and another as multiplicative",
+          "family": "b"
+        },
+        {
+          "text": "Lab B's gain counts only once it moves to newer chips, because software needs hardware to pay off",
+          "key": false,
+          "provenance": "reverses FT-5's 'You can develop better software to make use of existing hardware' into a dependence of software gains on new hardware",
+          "family": "b"
+        }
+      ],
+      "explanation": "Effective compute is the product of software efficiency, hardware efficiency and chip count, so a tenfold gain in any one factor is a tenfold gain in the total. Lab A got its gain from chips; Lab B got the same gain from algorithms without building a single new chip. The tempting answer treats algorithmic progress as separate from compute, which is the everyday sense of 'compute' as hardware you can count; effective compute is defined to replace that sense. The option saying Lab B must wait for newer chips reverses the point that each factor can improve independently: better software can make use of existing hardware. The option saying chip count 'only adds' misreads the product: all three factors multiply, and none has a privileged role. (Forecasting Timelines → Effective Compute)",
+      "takeaway": "A tenfold algorithmic gain on the same chips is as much an increase in effective compute as ten times the chips.",
+      "stem_format": "two-scenario",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": "Effective Compute"
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who holds effective compute as a product of three factors will say both labs gained equally.",
+        "cynic_test": "The key no longer repeats 'tenfold', 'accounting' or 'each' from the stem, and 'compute' now appears in two options (the key and option 2), so matching words between stem and options does not single out the key. 'Both are equal' may still look like the safe middle; two distractors assert a specific comparison to offset that."
+      },
+      "shard_id": "forecasting-timelines-b",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[0].text",
+      "explanation",
+      "self_check"
+    ],
+    "reviewer_note": "The new key is 99 characters by my count, so it stays inside the length band (about 1.02 against the distractors) and at most 1 character longer than any of them, but the checker needs to confirm that. Also check whether 'both are equal', the symmetric middle option, is still a tell for a test-wise reader, because the stem says both labs made the same tenfold claim."
+  },
+  {
+    "id": "forecasting-timelines/opus/b03",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "R14"
+    ],
+    "measurements": {
+      "correct_len": 101,
+      "distractor_lens": [
+        95,
+        101,
+        101
+      ],
+      "mean_distractor_len": 99,
+      "len_ratio": 1.02,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.06,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "argument"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 128,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R14: the checker lists 'argument' as a stem-word singleton. It appears in the stem ('assessment of this argument') and in only one option, option 2 ('The argument is sound'), which marks that option. Reworded it to 'The reasoning is sound'; the explanation's matching phrase changed with it."
+    ],
+    "preserve": "The stem (the map's FT-8/FT-9 conflation stated as a claim to evaluate), the key word for word, and all three distractors in substance. Each distractor's provenance checks out against the Training Data subsection, so only one word of option 2 needed changing.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/b03",
+      "targets": [
+        "FT-8"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "A commentator argues: \"Frontier models will soon have trained on all the high-quality public text there is, so the era of scaling language models is ending.\" Which assessment of this argument holds up best?",
+      "options": [
+        {
+          "text": "The premise is well supported, but the conclusion turns on how well synthetic and self-play data work",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "The reasoning is sound, since pre-training needs human-written text and the stock of it is fixed",
+          "key": false,
+          "provenance": "conflates the data wall with its consequence (the FT-8/FT-9 pair conflation): reads 'we'll hit that wall' as the end of scaling, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+          "family": "a"
+        },
+        {
+          "text": "The premise is right but harmless, since images and video can stand in for text with no cap on supply",
+          "key": false,
+          "provenance": "misreads the multimodal escape route ('If encoded efficiently, this could 3-10x the effective data supply') as removing the limit, conflating it with synthetic data, the route that 'removes the constraint entirely—if the outputs are high enough quality'",
+          "family": "b"
+        },
+        {
+          "text": "The premise is right but harmless, since growth in effective compute can make up for the missing data",
+          "key": false,
+          "provenance": "misfiles data under Effective Compute, against 'Besides just effective compute, the second overarching factor that we have to take into consideration is the amount of available data to train on'",
+          "family": "d"
+        }
+      ],
+      "explanation": "The premise is well founded: at recent growth rates, frontier training runs exhaust the stock of high-quality public text within years (the 2024 projections put it between 2026 and 2032). But the conclusion does not follow. Running out of human text closes one supply rather than ending scaling, and whether data actually binds depends on the escape routes: synthetic data removes the constraint only if its quality holds, and self-play works only where a task has explicit rules and rewards. Calling the reasoning sound conflates the wall with its consequence. Multimodal data helps, but as a bounded multiplier on supply, not an unlimited one. And more effective compute is no fix: data is a second constraint alongside compute, not an input to it. (Forecasting Timelines → Training Data)",
+      "takeaway": "The data wall is real, but it ends scaling only if the escape routes fail, so the question is conditional rather than settled.",
+      "stem_format": "claim-evaluation",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": "Training Data"
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who separates the wall from the escape routes will say the premise holds but the conclusion depends on the alternatives.",
+        "cynic_test": "The key is the only conditional option, which is a semantic hedge the word-list count does not catch; every distractor grants or accepts the premise so the premise is not the tell, and the one absolute ('no cap') is a belief readers actually hold."
+      },
+      "shard_id": "forecasting-timelines-b",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[1].text",
+      "options[1].provenance",
+      "options[2].provenance",
+      "options[3].provenance",
+      "explanation",
+      "self_check.cynic_test"
+    ],
+    "reviewer_note": "Two things to judge that the script cannot: option 4 is arguably true, because synthetic data is compute turned into data, so 'compute can make up for the missing data' is only false under the text's framing of data as a separate factor; and the key is the only 'it depends' option, a semantic hedge that the D10 word count (0/0/0/0) cannot see, so a test-wise reader may pick it on instinct. Level is L3 rather than L4 because the text nearly states the verdict itself ('depends on how well these alternatives work')."
+  },
+  {
+    "id": "forecasting-timelines/opus/c01",
+    "verdict": "rewrite",
+    "level": "L4",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "R14"
+    ],
+    "measurements": {
+      "correct_len": 84,
+      "distractor_lens": [
+        81,
+        79,
+        99
+      ],
+      "mean_distractor_len": 86.3,
+      "len_ratio": 0.97,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.25,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 1,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "text"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 147,
+      "key_count": 1,
+      "citation_anchor_resolves": true
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R14: stem_word_singletons = ['text']. The stem word 'text' ('high-quality public text') shows up in only one option, option 4 ('existing stock of text'), which marks that option by word echo. The rule is that a stem word goes in two or more options or in none."
+    ],
+    "preserve": "Keep everything except that one word. The policy-memo scenario is not in the prose and makes the reader apply self-play's condition (explicit rules and a success metric) to a new case. The key is exactly that condition. All three distractors come from real sentences in the Task-based learning and Multimodal bullets, and the explanation deals with each one by name.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/c01",
+      "targets": [
+        "FT-9"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "A lab that has used up the high-quality public text it can find wants more training signal for a model that drafts persuasive policy memos, where no crisp score marks a good memo. A colleague proposes AlphaZero-style self-play. What is the strongest reason to doubt that proposal here?",
+      "options": [
+        {
+          "text": "The task cannot be cast as a game with explicit rules and a success metric to reward",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "The method is confined in principle to board games, whatever structure a task has",
+          "key": false,
+          "provenance": "misreads the Go/chess examples in the Task-based learning bullet as the limit of the route, against 'In principle, this approach could be extended to teaching any arbitrary task'",
+          "family": "b"
+        },
+        {
+          "text": "The method still needs a large stock of human-written examples to imitate first",
+          "key": false,
+          "provenance": "reverses 'AIs can learn without human-generated pretraining examples' and 'without any human gameplay examples' in the Task-based learning bullet",
+          "family": "b"
+        },
+        {
+          "text": "The method only multiplies the existing stock of data by a fixed factor, so it just delays the wall",
+          "key": false,
+          "provenance": "conflates self-play with the Multimodal bullet's condition ('could 3-10x the effective data supply'), attaching a bounded-multiplier limit to a route that generates data through interaction",
+          "family": "a"
+        }
+      ],
+      "explanation": "Self-play generates its own training data through interaction with an environment, but only where the task can be formalised as a game with explicit rules and a success metric. That is why it worked for Go and chess. A persuasive memo has no such scoring rule, so there is nothing to reward. If you picked 'confined to board games', you took the examples for the limit: in principle the approach extends to any task that can be specified this way, so the task's structure decides, not its domain. The 'fixed multiplier' option borrows multimodal data's condition, since images and video enlarge a finite stock, and attaches it to a route that makes data rather than finding it. And self-play's whole point is that it needs no human examples. Each escape route has its own condition, and you have to check that condition. (Forecasting Timelines → Training Data)",
+      "takeaway": "Each escape from the data wall has its own condition; self-play's is that the task can be written as a game with explicit rewards.",
+      "stem_format": "mechanism",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": "Training Data"
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who absorbed the self-play condition ('as long as tasks can be formalized as games with explicit rules and success metrics') produces 'no explicit reward for memos' unaided.",
+        "cynic_test": "A skipper might pick the 'board games' option as the intuitive objection, but the stem's 'no crisp score' points to the formalisation condition only for someone who knows that condition, and all four options share one grammatical shape and a similar length, with the only absolute ('only multiplies') sitting on a distractor."
+      },
+      "shard_id": "forecasting-timelines-c",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[3].text"
+    ],
+    "reviewer_note": "Check the cynic test by hand: the stem's 'no crisp score marks a good memo' is close to a paraphrase of the key's 'no success metric to reward', so a reader who skipped the chapter but knows that AlphaZero needs a win condition may get this right without the chapter. Also, the checker counts the key's 'cannot' as its one absolute and counts zero on the distractors, even though option 4 says 'only multiplies'. The key's absolute is backed by the stem's stipulation, but confirm the absolute-word list is behaving as intended."
+  },
+  {
+    "id": "forecasting-timelines/opus/c03",
+    "verdict": "rewrite",
+    "level": "L2",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "R14",
+      "§3.5"
+    ],
+    "measurements": {
+      "correct_len": 121,
+      "distractor_lens": [
+        127,
+        110,
+        113
+      ],
+      "mean_distractor_len": 116.7,
+      "len_ratio": 1.04,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.15,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "safety"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 128,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": true,
+    "reasons": [
+      "R14: stem word 'safety' appears in exactly one option (option 4, 'safety work'); the word-match rule requires it in two or more options or in none. It points at a distractor rather than the key, but the checker flags it and the fix costs nothing.",
+      "§3.5: not L4. §3.5 requires the reader to apply the framework to a case the prose does not walk through, but the stem's 'decade vs fifty years' is the text's own '10 years and 50 years' / 2030-vs-2050 paragraph recast as two groups, and the text states the mapping outright. The key is a near-verbatim paraphrase ('work on current systems and scale fast' vs 'approaches that work with current systems and scale quickly'), so a Ctrl-F on 'current systems' lands on the answering sentence. The reader's task is recognising a pairing the text states, which is L2."
+    ],
+    "preserve": "the two-group stem (a timing-only disagreement), the idea that timeline length changes the portfolio rather than the pace, and all three distractor misconceptions (pairing reversal, same-portfolio-faster, wait-and-see), each of which verified against paragraph 1 of the prose.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/c03",
+      "targets": [
+        "FT-1"
+      ],
+      "lens": "case",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "Two safety research groups agree on everything except timing: the first expects AI able to automate ML research within about a decade, the second in about fifty years. Which difference between their research plans follows from that one disagreement?",
+      "options": [
+        {
+          "text": "The first should concentrate on monitoring and fine-tuning safeguards for today's models; the second can fund long-horizon theory",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "The first should fund long-horizon theory that settles the problem; the second can concentrate on safeguards for today's models",
+          "key": false,
+          "provenance": "reverses the pairing in the 10-vs-50-years paragraph, where 'breathing room for fundamental alignment research' belongs to the long case and 'no time for slow theoretical research' to the short one",
+          "family": "b"
+        },
+        {
+          "text": "Both should split effort the same way between safeguards for today's models and long-horizon theory, the first on a tighter clock",
+          "key": false,
+          "provenance": "misreads 'we need safety solutions working soon' as a change of pace only, missing 'There's no time for slow theoretical research—we need approaches that work with current systems'",
+          "family": "b"
+        },
+        {
+          "text": "The first should begin at once; the second should hold off on most of its work until more capable systems exist to study",
+          "key": false,
+          "provenance": "the wait-and-see prior that a long timeline means nothing needs doing yet, against the bold lead 'Predicting when AI automates cognitive labor determines which safety strategies are viable' and the long case's list of work to do in the breathing room (fundamental alignment research, governance frameworks, evaluation methods)",
+          "family": "c"
+        }
+      ],
+      "explanation": "Timeline length changes which strategies are viable, not only how fast to carry them out. If AI can automate ML research within a decade, slow theoretical programmes may not finish in time, so effort has to go into safeguards that work on current systems and scale with them, such as monitoring and safety fine-tuning. Fifty years buys room for fundamental alignment research, robust governance and evaluation methods we can trust. The 'same split, tighter clock' option is the most tempting misreading: it treats a timeline as a deadline on a fixed plan, when a short timeline takes some projects off the table altogether. The reversed option swaps the pairing; foundational theory is what the long case can afford, not the short one. And a long timeline is room to do that deep work now, not a reason to wait for more capable systems. (Forecasting Timelines)",
+      "takeaway": "A shorter timeline doesn't just speed up the safety agenda; it changes which items can be on it.",
+      "stem_format": "two-scenario",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who took in the opening paragraph produces 'short: practical work on current systems; long: room for fundamental theory' unaided, then has to recognise monitoring and fine-tuning safeguards as the current-systems category.",
+        "cynic_test": "'today's models' and 'long-horizon theory' each appear in three options and no option copies the prose's wording, so neither word-matching nor Ctrl-F picks out the key. 'safety' now appears only in the stem. The most tempting wrong option for a reader who skipped the text is 'same split, tighter clock'."
+      },
+      "shard_id": "forecasting-timelines-c",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[0].text",
+      "options[1].text",
+      "options[1].provenance",
+      "options[2].text",
+      "options[3].text",
+      "options[3].provenance",
+      "explanation",
+      "level_claimed",
+      "self_check"
+    ],
+    "reviewer_note": "Check whether 'monitoring and fine-tuning safeguards for today's models' fairly stands in for the prose's 'approaches that work with current systems and scale quickly'. The rewrite drops 'scale', and a reader could argue the long-timeline group should do that work too. Also note that the key stays guessable from common sense (less time means less theory), so FT-1 may cap at L3 however it is dressed up."
+  },
+  {
+    "id": "forecasting-timelines/opus/d01",
+    "verdict": "rewrite",
+    "level": "L2",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "R14",
+      "E7",
+      "E8",
+      "E5"
+    ],
+    "measurements": {
+      "correct_len": 105,
+      "distractor_lens": [
+        108,
+        112,
+        107
+      ],
+      "mean_distractor_len": 109,
+      "len_ratio": 0.96,
+      "correct_is_longest": false,
+      "correct_is_shortest": true,
+      "extremum_gap": 2,
+      "max_over_min": 1.07,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "model",
+        "beliefs",
+        "least",
+        "expected"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 122,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation_true_standalone": false,
+    "answerable_from_text_alone": true,
+    "reasons": [
+      "R14: three of the four stem-word singletons ('beliefs', 'expected', 'least') appear only in the key ('Your input beliefs and your expected timeline ... at least one'), so the key repeats the stem's wording and a reader can spot it without knowing the material; the fourth singleton ('model') marks distractor 1.",
+      "E7: 'the check still tells you which of your inputs are doing the work' is a new claim the question never tested and the section never makes.",
+      "E8: that same sentence is false read on its own terms: one surprising run shows that the inputs and the expectation conflict, but not which input is responsible, which would need a sensitivity analysis.",
+      "E5: 'the use we recommend' and 'the prediction reading we warn against' speak in the Atlas authors' voice, so the explanation attributes a position to its own source when it should just state the claim."
+    ],
+    "preserve": "The idea and the option architecture: a forecast that surprises you should be read as a consistency check on your own inputs. Keep the three distractors: the model is wrong (b), the output is a date to validate (c), and error bars make it useless (a). All three have verified provenance and are real beliefs.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/d01",
+      "targets": [
+        "FT-2"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "An analyst holds that chip production keeps growing fast, that software keeps getting more efficient, that synthetic data will get past the data wall, and that each tenfold rise in compute automates a sizeable share of tasks. Yet they expect full automation of cognitive labor to be generations away. Fed only those four assumptions, a simple forecasting model puts full automation within a couple of decades. What does this most usefully tell the analyst?",
+      "options": [
+        {
+          "text": "That their views on the drivers and on the arrival time conflict, so at least one view has to change",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "That the method itself is flawed, since a good tool should agree with a view built on careful study",
+          "key": false,
+          "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into surprise indicting the model rather than the inputs you supplied",
+          "family": "b"
+        },
+        {
+          "text": "That the output is a prediction to test against expert surveys, adopted only if they agree with it",
+          "key": false,
+          "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason'",
+          "family": "c"
+        },
+        {
+          "text": "That little follows from it, since uncertain inputs compound into error bars too wide to act on",
+          "key": false,
+          "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the consistency check survives the uncertainty",
+          "family": "a"
+        }
+      ],
+      "explanation": "A forecasting model of this kind only works out what its inputs jointly imply. If four assumptions the analyst holds imply automation within decades while they expect it generations away, those views cannot all be right together: one of the drivers is weaker than they think, or the expectation is too long. Finding that tension is what such forecasts are for. They are scenarios for checking whether beliefs cohere, not predictions of a date. The error-bars option is the tempting one: forecasts really are highly uncertain, but uncertainty in the inputs does not dissolve a contradiction between the inputs and the expectation. Blaming the method reverses the logic, since the surprising output came from the analyst's own assumptions. Checking the output against expert surveys treats a scenario as a prediction. (Forecasting Timelines)",
+      "takeaway": "A surprising forecast is a signal about your own inputs, not a verdict to accept or a model to discard.",
+      "stem_format": "thought-experiment",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who took in 'check if your beliefs are internally coherent' would say 'either my assumptions or my expectation has to give' without seeing the options.",
+        "cynic_test": "No stem content word appears in exactly one option, there are no hedges or absolutes, and the lengths are within 5 characters of each other. A reader who skipped the section might lean towards the error-bars humility option."
+      },
+      "shard_id": "forecasting-timelines-d",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "stem",
+      "options[0].text",
+      "options[1].text",
+      "options[2].text",
+      "options[3].text",
+      "explanation",
+      "self_check"
+    ],
+    "reviewer_note": "Two things to check. First, the original stem was nearly word for word the section's own worked example (5x investment / 3x software / 15% hardware / 10% per order of magnitude, 'if you're surprised'), which is why I put it at L2 rather than L4. The rewrite uses a new set of beliefs drawn from the data-wall material, but check it is different enough from the text's example to count as transfer. Second, the 'method is flawed' distractor is arguably partly true ('all models are wrong'), so confirm that its 'should agree with a view built on careful study' justification is what makes it wrong, not the idea of doubting the model at all. The checker should also re-measure: I counted the rewritten option lengths by hand as roughly 100/99/98/95."
+  },
+  {
+    "id": "forecasting-timelines/opus/e01",
+    "verdict": "rewrite",
+    "level": "L4",
+    "level_claimed_by_generator": "L5",
+    "failed_criteria": [
+      "D1",
+      "D3",
+      "D6",
+      "E8"
+    ],
+    "measurements": {
+      "correct_len": 139,
+      "distractor_lens": [
+        140,
+        130,
+        132
+      ],
+      "mean_distractor_len": 134,
+      "len_ratio": 1.04,
+      "correct_is_longest": false,
+      "correct_is_shortest": false,
+      "extremum_gap": 0,
+      "max_over_min": 1.08,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 0,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "systems",
+        "automate",
+        "training",
+        "scaling",
+        "most"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 126,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      false
+    ],
+    "families_present": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation_true_standalone": false,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "D1: the provenance on option 4 (feasibility) points to a real sentence ('analysis suggests that they aren't impossible' / 'The question is whether the economic incentives justify it'), but the misreading it names (taking feasibility as settling the question) would lead a reader to 'feasible, so it will be built'. The option actually says 'feasibility is what bounds scaling', which no misreading of that passage produces.",
+      "D6: option 4 contradicts itself. It says city-scale runs are 'physically achievable, so feasibility ... is what bounds further scaling'. If the runs are achievable, feasibility is not the bound, so the option refutes itself without any domain knowledge.",
+      "D3: at most one distractor may be ruled out by general reasoning alone, and here two can. Option 4 contradicts itself (see D6). Option 3 ('returns are front-loaded ... deliver most of the value before compute budgets grow') is not an objection to the analyst at all: if most value arrives early and is still thin, that supports the analyst's conclusion. A reader can drop it from the stem's logic alone.",
+      "E8: the explanation is not fully true on its own. It says whether economic incentives justify city-scale runs is 'exactly the question the loop answers', but the text leaves that open ('The question is whether the economic incentives justify it'). The loop describes the mechanism; it does not settle the question. The explanation also contains a garble ('drops our other half of the sentence')."
+    ],
+    "preserve": "The stem, the key and option 2 (the research-automation conflation): accepting thin early returns as the loop's own starting point is a clean, durable use of FT-6 that the prose does not apply to this objection. Only options 3 and 4 and the explanation need replacing.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/e01",
+      "targets": [
+        "FT-6"
+      ],
+      "lens": "objection",
+      "level_claimed": "L4",
+      "bridge_from": null,
+      "stem": "An analyst argues: \"AI systems today automate only a thin slice of work and earn little compared with what their training costs, so the returns cannot sustain continued scaling.\" Which objection has the most support in how compute, automation and productivity interact?",
+      "options": [
+        {
+          "text": "Small early returns are what the loop predicts; value grows as bigger compute budgets automate more tasks, and that value buys more compute",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "The loop runs independently of these returns, because it closes once AI systems do the research that makes the next round of compute cheaper",
+          "key": false,
+          "provenance": "conflates the productivity-funds-compute loop ('compute enabling automation, which increases productivity, which funds more compute') with the automation-of-R&D loop, which a reader can read into the intro's 'automate ML RnD' and Figure 1.38's 'compute efficiency'; takeoff introduces it separately",
+          "family": "a"
+        },
+        {
+          "text": "The analyst understates today's returns: most of the value of automation arrives early, well before compute budgets grow very large",
+          "key": false,
+          "provenance": "reverses 'Initially, only a small fraction of tasks are automated, so running AI systems creates relatively little economic value' into early, front-loaded value, and so denies the analyst's premise instead of reinterpreting it",
+          "family": "b"
+        },
+        {
+          "text": "Analysis shows city-scale training runs are within reach, so returns need not justify them: feasible runs will be built regardless",
+          "key": false,
+          "provenance": "reads 'analysis suggests that they aren't impossible' as settling the matter and drops the next sentence, 'The question is whether the economic incentives justify it'",
+          "family": "b"
+        }
+      ],
+      "explanation": "The analyst's premise fits the feedback loop rather than refuting it. At first only a small fraction of tasks is automated, so AI creates relatively little value; as effective compute budgets grow, the range of automated tasks widens, productivity rises, and that productivity funds more compute, looping until labour is fully automated. Thin returns today are the loop's expected starting point. Denying the premise gets this backwards: on the loop's own account, early value is small. If you picked the research-automation answer, you merged this loop with a different one: here the loop closes through productivity paying for compute. The feasibility answer drops the sentence that follows it: runs not being impossible leaves open whether the economic incentives justify them, which is the question the loop bears on. (Forecasting Timelines)",
+      "takeaway": "Low early returns are the expected first stage of the compute-automation-productivity loop, not a refutation of it.",
+      "stem_format": "claim-evaluation",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who has the loop can say 'little value at first is what the model expects; value then funds compute' without seeing the options.",
+        "cynic_test": "Every distractor is a coherent objection. One says returns do not matter because AI does the research, one denies the premise, and one says feasibility makes returns irrelevant. None contradicts itself. Lengths are 139/140/132/130 by hand count, with no hedges and no absolutes ('within reach' stands in for 'not impossible', to avoid an absolute token)."
+      },
+      "shard_id": "forecasting-timelines-e",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[2]",
+      "options[3]",
+      "explanation",
+      "level_claimed",
+      "self_check",
+      "options[1].provenance"
+    ],
+    "reviewer_note": "Option 2 (the research-automation loop) is the investment-vs-automation pair that the concept map's generator notes reserve for takeoff, even though the map's FT-6 misconceptions list it. Figure 1.38 also says productivity raises 'compute efficiency'. Check that option 2 is not arguably true and does not duplicate a takeoff question. Level is L4, not the claimed L5, because paragraph 5 of the prose nearly states the key."
+  },
+  {
+    "id": "forecasting-timelines/opus/f01",
+    "verdict": "rewrite",
+    "level": "L3",
+    "level_claimed_by_generator": "L4",
+    "failed_criteria": [
+      "R14"
+    ],
+    "measurements": {
+      "correct_len": 141,
+      "distractor_lens": [
+        140,
+        129,
+        128
+      ],
+      "mean_distractor_len": 132.3,
+      "len_ratio": 1.07,
+      "correct_is_longest": true,
+      "correct_is_shortest": false,
+      "extremum_gap": 1,
+      "max_over_min": 1.1,
+      "r5_matches": [],
+      "r5_loose_matches": [],
+      "mentions_chapter": false,
+      "absolute_count_key": 0,
+      "absolute_count_distractors": 1,
+      "hedge_counts": {
+        "key": 0,
+        "distractors": [
+          0,
+          0,
+          0
+        ]
+      },
+      "stem_word_singletons": [
+        "training",
+        "scaling"
+      ],
+      "option_count": 4,
+      "has_explanation": true,
+      "explanation_words": 126,
+      "key_count": 1,
+      "citation_anchor_resolves": null
+    },
+    "provenance_verified": [
+      null,
+      true,
+      true,
+      true
+    ],
+    "families_present": [
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation_true_standalone": true,
+    "answerable_from_text_alone": false,
+    "reasons": [
+      "R14: stem_word_singletons lists 'training' (appears only in the physical-ceiling option) and 'scaling' (appears only in the 'expected outcome' option). The rubric says a stem word must appear in two or more options or in none. The self_check's cynic_test checked 'power' but missed these two."
+    ],
+    "preserve": "The stem, the key and the 'feasible, so it will happen' distractor. Key and top distractor share the same opening and nearly the same length, so only the dropped economic condition separates them, which is exactly the distinction FT-10 is about. The data-wall wrong-slot distractor also works.",
+    "rewrite": {
+      "id": "forecasting-timelines/opus/f01",
+      "targets": [
+        "FT-10"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "bridge_from": null,
+      "stem": "Someone argues: \"Frontier training runs are heading toward drawing as much electricity as a small city. Nothing like that has ever been built for one computation, so scaling will have to stop within a few years.\" Which response best fits the current evidence on scaling?",
+      "options": [
+        {
+          "text": "Runs at that scale look feasible; the open questions are whether the economic returns justify them and whether chips and power arrive in time",
+          "key": true,
+          "provenance": null,
+          "family": null
+        },
+        {
+          "text": "Runs at that scale look feasible, so continued scaling is the expected outcome and what remains is mostly engineering the physical build-out",
+          "key": false,
+          "provenance": "drops 'The question is whether the economic incentives justify it and whether the infrastructure constraints ... can be overcome in time', reading 'they aren't impossible' (and the bold lead 'scaling can continue through at least 2030') as 'they will happen'",
+          "family": "b"
+        },
+        {
+          "text": "The argument holds: power and chip supply impose a physical ceiling that runs this large cannot realistically get past, so scaling stalls",
+          "key": false,
+          "provenance": "misreads 'comparable to running a small city' as a ceiling, against 'These are unprecedented scales, but analysis suggests that they aren't impossible'",
+          "family": "c"
+        },
+        {
+          "text": "Power is a side issue; the binding limit is the stock of public text, which is used up well before power demand becomes decisive",
+          "key": false,
+          "provenance": "right idea, wrong slot: promotes the Training Data subsection's data wall ('we'll hit that wall around 2028') to the decisive constraint, when the text lists data as one infrastructure constraint among several ('chips, power, data, …') and says 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+          "family": "d"
+        }
+      ],
+      "explanation": "Published analyses, as of the 2025 edition, find city-scale training runs unprecedented but not impossible, so physical impossibility is the wrong objection. What stays open is conditional: whether the economic incentives justify spending at that scale, and whether chips, power and data can be supplied in time. If you picked the physical-ceiling option, you took the size of the number as a limit; unprecedented is not the same as unbuildable, and that is the prior this part of the section overturns. If you picked the 'expected outcome' option, you kept the feasibility finding but dropped its two conditions, and feasible-if-funded is not the same as inevitable. The data-wall option treats one constraint as decisive, when whether data binds depends on how well the escape routes work. (Forecasting Timelines)",
+      "takeaway": "Not impossible is a different claim from inevitable: feasibility leaves the economics and the build-out open.",
+      "stem_format": "claim-evaluation",
+      "citation": {
+        "section": "Forecasting Timelines",
+        "subheading": null
+      },
+      "negation": false,
+      "no_shuffle": false,
+      "option_count_reason": null,
+      "load_bearing_figures": [],
+      "self_check": {
+        "cover_test": "Yes: a reader who absorbed 'not impossible, but depends on incentives and infrastructure' can state the key's two-part answer unaided.",
+        "cynic_test": "Key and top distractor share the 'look feasible' opening and length, so only the dropped conditions separate them. Stem words: 'runs' appears in three options, 'scaling' in two (options 2 and 3), 'training' in none, so there is no word-match tell."
+      },
+      "shard_id": "forecasting-timelines-f",
+      "model": "opus"
+    },
+    "rewrite_changed": [
+      "options[2].text",
+      "options[1].provenance",
+      "options[3].provenance",
+      "explanation",
+      "level_claimed",
+      "self_check.cynic_test"
+    ],
+    "reviewer_note": "Two things to check. First, the 'expected outcome' distractor sits close to the section's own bold lead ('Current evidence suggests scaling can continue through at least 2030'), so confirm that 'expected outcome' reads as clearly stronger than 'can continue'. Second, this is L3, not L4: the stem is the text's own small-city example, and the verdict comes from the very next sentence. The key also depends on a 2025 feasibility finding that the refresh could reverse, so re-read it on refresh day. My rewrite of option 3 is 137 chars by my count; the checker should confirm."
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "section": "defining-and-measuring-agi",
+  "candidates_in": 37,
+  "survivors": 36,
+  "collapsed_count": 1,
+  "critic_calls_saved": 1,
+  "survivor_ids": [
+    "defining-and-measuring-agi/opus/a01",
+    "defining-and-measuring-agi/opus/f01",
+    "defining-and-measuring-agi/opus/a03",
+    "defining-and-measuring-agi/opus/b01",
+    "defining-and-measuring-agi/opus/b02",
+    "defining-and-measuring-agi/opus/b03",
+    "defining-and-measuring-agi/opus/c01",
+    "defining-and-measuring-agi/opus/c02",
+    "defining-and-measuring-agi/opus/c03",
+    "defining-and-measuring-agi/opus/d01",
+    "defining-and-measuring-agi/opus/d02",
+    "defining-and-measuring-agi/opus/d03",
+    "defining-and-measuring-agi/opus/e01",
+    "defining-and-measuring-agi/opus/e02",
+    "defining-and-measuring-agi/opus/e03",
+    "defining-and-measuring-agi/opus/f02",
+    "defining-and-measuring-agi/opus/f03",
+    "defining-and-measuring-agi/opus/g01",
+    "defining-and-measuring-agi/opus/g02",
+    "defining-and-measuring-agi/opus/g03",
+    "defining-and-measuring-agi/opus/h01",
+    "defining-and-measuring-agi/opus/h02",
+    "defining-and-measuring-agi/opus/h03",
+    "defining-and-measuring-agi/opus/i01",
+    "defining-and-measuring-agi/opus/i02",
+    "defining-and-measuring-agi/opus/i03",
+    "defining-and-measuring-agi/opus/j01",
+    "defining-and-measuring-agi/opus/j02",
+    "defining-and-measuring-agi/opus/j03",
+    "defining-and-measuring-agi/opus/k01",
+    "defining-and-measuring-agi/opus/k02",
+    "defining-and-measuring-agi/opus/k03",
+    "defining-and-measuring-agi/opus/l01",
+    "defining-and-measuring-agi/opus/l02",
+    "defining-and-measuring-agi/opus/l03",
+    "defining-and-measuring-agi/opus/m01"
+  ],
+  "collapsed": [
+    {
+      "collapsed_id": "defining-and-measuring-agi/opus/a02",
+      "survivor_id": "defining-and-measuring-agi/opus/f01",
+      "stem_overlap": 0.71,
+      "targets": [
+        "DM-2"
+      ],
+      "why": "R4: ≥70% content-word overlap on stems and identical targets",
+      "loser_len_ratio": 1.18,
+      "keeper_len_ratio": 1.03
+    }
+  ]
+}

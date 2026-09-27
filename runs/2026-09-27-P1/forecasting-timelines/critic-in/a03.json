@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/a03",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "For a year, a lab changes nothing about its hardware: same number of chips, same chip generation, same hours of use. Its researchers find training methods that reach the lab's previous results with a quarter of the operations. How should that year's change be classified?",
+    "options": [
+      {
+        "text": "A fourfold increase in effective compute, as large as the gain from buying four times as many chips",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "No increase in compute, because the lab ran the same chips for the same number of hours as before",
+        "key": false,
+        "provenance": "the prior the subsection targets directly: 'compute means more than just counting GPUs ... they're not just talking about running more hardware for longer'",
+        "family": "c"
+      },
+      {
+        "text": "An algorithmic gain that raises capability beside compute, while the lab's compute itself stays flat",
+        "key": false,
+        "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+        "family": "a"
+      },
+      {
+        "text": "A rise in effective compute, but a smaller one than buying four times as many chips would give",
+        "key": false,
+        "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as hardware setting the total and software only adjusting it, rather than three factors that multiply on equal terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is the product of software efficiency, hardware efficiency and number of chips. A method that reaches the same results with a quarter of the operations therefore multiplies effective compute by four, exactly as quadrupling the chips would. Nothing physical changed, and that is the point: compute here means more than counting GPUs or GPU-hours. The 'same chips, same hours' answer is the intuition this idea exists to replace, because it measures raw operations rather than what those operations achieve. Calling the gain a separate algorithmic driver misfiles software efficiency, which is one of compute's three factors, not a rival to it. And because the factors multiply, a fourfold software gain counts for exactly as much as a fourfold chip gain. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Better algorithms count as more compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'effective compute = software x hardware x chips' says 'effective compute went up fourfold, same as four times the chips' with the options covered.",
+      "cynic_test": "A skipper who counts physical resources picks 'no increase, same chips same hours', which sounds like careful accounting; there are no hedges or absolutes, 'chips' appears in three options, and the fourfold factor is invented (not the text's 10x example), so nothing on the surface points to the key."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 99,
+    "distractor_lens": [
+      97,
+      100,
+      94
+    ],
+    "mean_distractor_len": 97,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "number",
+      "hours"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

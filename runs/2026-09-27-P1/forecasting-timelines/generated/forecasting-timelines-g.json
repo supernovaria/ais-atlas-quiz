@@ -1,0 +1,83 @@
+[
+  {
+    "id": "forecasting-timelines/opus/g01",
+    "targets": ["FT-4"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Lab A buys twice as many GPUs of the model it already uses and changes nothing else. Lab B keeps its hardware exactly as it is but adopts a training method that reaches the same result with a tenth of the FLOP. Which comparison of the two labs' gains in effective compute holds?",
+    "options": [
+      {"text": "Lab B gained more: a tenfold software gain multiplies its compute as surely as extra chips would", "key": true, "provenance": null, "family": null},
+      {"text": "Lab A gained more: compute is the hardware a lab runs, and Lab B's hardware has not changed", "key": false, "provenance": "the pre-chapter prior the Effective Compute subsection targets directly ('compute means more than just counting GPUs ... not just talking about running more hardware for longer'), read as if compute were physical hardware", "family": "c"},
+      {"text": "Lab A gained compute and Lab B gained efficiency, two separate kinds of progress with no common scale", "key": false, "provenance": "misreads 'Better algorithms multiply your effective compute without building a single new chip' as placing algorithmic progress outside the compute measure rather than as one of its three factors", "family": "a"},
+      {"text": "They gained about equally: each improved one of the three factors, and each factor adds a similar share", "key": false, "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as a sum in which each improved factor contributes a comparable increment", "family": "b"}
+    ],
+    "explanation": "Effective compute is a product: software efficiency times hardware efficiency times number of chips. A method that reaches the same result with a tenth of the FLOP multiplies the software factor by ten, so Lab B's gain outstrips Lab A's doubling without a single new chip. If you picked 'compute is the hardware a lab runs', you held the prior this idea exists to replace: when we say one model used more compute than another, we are not just counting GPUs or hours of run time. The 'separate kinds of progress' option makes a subtler mistake, filing algorithms outside compute when they are one of its factors. And because the factors multiply rather than add, a tenfold gain in one is not matched by a doubling in another. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Better algorithms are compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds effective compute as a product of three factors computes 10x for B against 2x for A and names B unaided.",
+      "cynic_test": "A skipper would lean to Lab A because 'more GPUs = more compute' is the common intuition, which is exactly the prior the section overturns; the options are verdict-plus-reason of matched length with no absolutes, so no surface tell points to B."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/g02",
+    "targets": ["FT-5"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose that from next year, per-chip performance stopped improving entirely, while chip production and algorithmic efficiency kept improving at their recent pace. What happens to effective compute?",
+    "options": [
+      {"text": "It keeps growing, though more slowly, because the other two factors still multiply the total", "key": true, "provenance": null, "family": null},
+      {"text": "It levels off, because compute growth ultimately comes from each chip doing more operations", "key": false, "provenance": "the Moore's-law prior, the FT-4/FT-5 conflation 'effective compute is basically chip count scaled up by chip speed, so if chips stop getting faster, AI compute growth stops', against 'compounds much faster than hardware trends alone would suggest'", "family": "c"},
+      {"text": "It levels off after a lag, because software gains need faster chips before they pay off", "key": false, "provenance": "reverses 'You can develop better software to make use of existing hardware', reading the three factors as coupled rather than independent", "family": "b"},
+      {"text": "It keeps growing at the old pace, because the other two factors speed up to make up the gap", "key": false, "provenance": "misreads 'Each factor can improve independently' as the factors compensating for one another, missing that losing one multiplier lowers the compounding rate", "family": "b"}
+    ],
+    "explanation": "The three factors improve independently: you can build more chips without making them faster, and write better software for the hardware you already have. If per-chip performance froze, effective compute would keep compounding from the other two, just without the hardware multiplier. The 'levels off' option that ties compute growth to each chip doing more is the Moore's-law prior; our point is that the total compounds much faster than hardware trends alone would suggest, and so it also survives a hardware stall. The 'after a lag' option reverses the independence, since software gains pay off on existing chips. The 'old pace' option overcorrects: independence means the other factors do not speed up to compensate, so losing one multiplier slows the total. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Because the factors multiply and move independently, one stalled factor slows effective compute without stopping it.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood independent multiplying factors says 'still grows, slower, from the other two' without seeing options.",
+      "cynic_test": "A skipper might pick 'keeps growing at the old pace' as the optimistic-sounding middle or 'levels off' on Moore's-law instinct; two options say 'keeps growing' and two say 'levels off', so direction alone does not identify the key, and all four are matched verdict-plus-because clauses."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/g03",
+    "targets": ["FT-6"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An analyst argues: \"AI compute has grown for years, yet AI has automated only a sliver of the economy, so the loop from compute to automation to more compute is evidently not operating.\" Which verdict on this argument is best supported?",
+    "options": [
+      {"text": "The analyst is wrong: the loop returns little value early, until compute grows enough to widen the tasks automated", "key": true, "provenance": null, "family": null},
+      {"text": "The analyst is right: productivity only feeds back into compute once every task has been automated", "key": false, "provenance": "misreads 'continues until full labor automation' (where the loop ends) as the condition for the loop to begin", "family": "b"},
+      {"text": "The analyst is wrong: compute grows through independent chip, hardware and software gains, not through funding", "key": false, "provenance": "right idea, wrong slot: offers the Effective Compute subsection's independent-factors account as a rival to the loop, missing that chip production grows 'as more investment keeps flowing in' and that Figure 1.38 has the loop feeding both produced compute and efficiency", "family": "d"},
+      {"text": "The analyst is right: a loop this slow to start implies automation stays a small share for decades", "key": false, "provenance": "extrapolates the slow early phase linearly, against 'Once effective compute budgets grow large enough, the range of automated tasks expands until eventually all cognitive labor becomes automated'", "family": "c"}
+    ],
+    "explanation": "The loop runs from compute to automation to productivity and back to more compute, and it starts weak: while only a small fraction of tasks are automated, running AI returns relatively little economic value. A small automated share today is what the early phase looks like; the range of automated tasks widens once effective compute budgets grow large enough. The 'every task automated' option mistakes where the loop ends for where it begins. The 'independent gains, not funding' option sets the three effective-compute factors against the loop, but they are complements: chip production grows because investment keeps flowing, and productivity from automation is what the loop adds to that funding. The 'small share for decades' option extrapolates the slow start in a straight line, which is the one shape this loop is built not to have. (Forecasting Timelines)",
+    "takeaway": null,
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who remembers that the loop yields little value until compute widens the automated range can say 'a small share now is the expected early phase' unaided.",
+      "cynic_test": "A skipper cannot split on verdict because two options say the analyst is wrong and two say right; the independent-factors option is the sophisticated-sounding trap and is wrong because the factors and the loop are complementary, and the only absolute ('every') sits in one distractor that asserts it deliberately."
+    }
+  },
+  {
+    "note": "Lens held for all three. FT-4 and FT-5 are a discrimination_pairs entry, but I wrote them separately rather than spanning them in one candidate: g01 contrasts effective compute with raw chip count (FT-4's own contrast, RUBRIC §3.4), and g02 uses the pair's recorded conflation ('chip count scaled by chip speed, so stalls if chips stop getting faster') as its top distractor against FT-5. FT-6 has no discrimination pair; I contrasted it against FT-5's independent-factors account, which the map lists as FT-6's family-(d) wrong slot. I deliberately left out the map's other FT-6 misconception (the loop closed by AI doing AI research), because the notes reserve the investment-vs-automation-loop distinction for the takeoff section."
+  }
+]

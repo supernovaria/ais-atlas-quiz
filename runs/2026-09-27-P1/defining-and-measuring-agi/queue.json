@@ -1,0 +1,422 @@
+{
+  "section": "defining-and-measuring-agi",
+  "n": 36,
+  "rationale": "coverage need: threshold concepts, then discrimination pairs, then criteria count; one candidate per idea per round",
+  "ideas_in_order": [
+    "DM-1",
+    "DM-2",
+    "DM-3",
+    "DM-4",
+    "DM-6",
+    "DM-7",
+    "DM-8",
+    "DM-14",
+    "DM-5",
+    "DM-9",
+    "DM-15",
+    "DM-10",
+    "DM-13",
+    "DM-11",
+    "DM-12"
+  ],
+  "queue": [
+    {
+      "position": 1,
+      "id": "defining-and-measuring-agi/opus/a01",
+      "targets": [
+        "DM-1"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 2,
+      "id": "defining-and-measuring-agi/opus/f01",
+      "targets": [
+        "DM-2"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 3,
+      "id": "defining-and-measuring-agi/opus/b01",
+      "targets": [
+        "DM-3",
+        "DM-4"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L5",
+      "idea_attempt": 1,
+      "priority": "threshold"
+    },
+    {
+      "position": 4,
+      "id": "defining-and-measuring-agi/opus/f03",
+      "targets": [
+        "DM-4"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L5",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 5,
+      "id": "defining-and-measuring-agi/opus/c01",
+      "targets": [
+        "DM-6"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 6,
+      "id": "defining-and-measuring-agi/opus/a03",
+      "targets": [
+        "DM-7"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 7,
+      "id": "defining-and-measuring-agi/opus/c03",
+      "targets": [
+        "DM-8"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 8,
+      "id": "defining-and-measuring-agi/opus/e03",
+      "targets": [
+        "DM-14"
+      ],
+      "lens": "objection",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 9,
+      "id": "defining-and-measuring-agi/opus/c02",
+      "targets": [
+        "DM-5"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 10,
+      "id": "defining-and-measuring-agi/opus/d01",
+      "targets": [
+        "DM-9"
+      ],
+      "lens": "figure",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 11,
+      "id": "defining-and-measuring-agi/opus/j02",
+      "targets": [
+        "DM-15"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 1,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 12,
+      "id": "defining-and-measuring-agi/opus/e01",
+      "targets": [
+        "DM-10"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 13,
+      "id": "defining-and-measuring-agi/opus/b02",
+      "targets": [
+        "DM-13"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 14,
+      "id": "defining-and-measuring-agi/opus/i01",
+      "targets": [
+        "DM-11"
+      ],
+      "lens": "figure",
+      "level_claimed": "L3",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 15,
+      "id": "defining-and-measuring-agi/opus/i02",
+      "targets": [
+        "DM-12"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 1,
+      "priority": "ordinary"
+    },
+    {
+      "position": 16,
+      "id": "defining-and-measuring-agi/opus/d03",
+      "targets": [
+        "DM-1"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 17,
+      "id": "defining-and-measuring-agi/opus/j03",
+      "targets": [
+        "DM-2"
+      ],
+      "lens": "objection",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 18,
+      "id": "defining-and-measuring-agi/opus/b03",
+      "targets": [
+        "DM-3"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "threshold"
+    },
+    {
+      "position": 19,
+      "id": "defining-and-measuring-agi/opus/k02",
+      "targets": [
+        "DM-4"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 20,
+      "id": "defining-and-measuring-agi/opus/g02",
+      "targets": [
+        "DM-6",
+        "DM-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 21,
+      "id": "defining-and-measuring-agi/opus/g03",
+      "targets": [
+        "DM-7"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 22,
+      "id": "defining-and-measuring-agi/opus/d02",
+      "targets": [
+        "DM-8"
+      ],
+      "lens": "figure",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 23,
+      "id": "defining-and-measuring-agi/opus/j01",
+      "targets": [
+        "DM-14"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 24,
+      "id": "defining-and-measuring-agi/opus/g01",
+      "targets": [
+        "DM-5"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 25,
+      "id": "defining-and-measuring-agi/opus/h01",
+      "targets": [
+        "DM-9"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 26,
+      "id": "defining-and-measuring-agi/opus/h03",
+      "targets": [
+        "DM-10"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 27,
+      "id": "defining-and-measuring-agi/opus/e02",
+      "targets": [
+        "DM-13"
+      ],
+      "lens": "objection",
+      "level_claimed": "L5",
+      "idea_attempt": 2,
+      "priority": "ordinary"
+    },
+    {
+      "position": 28,
+      "id": "defining-and-measuring-agi/opus/h02",
+      "targets": [
+        "DM-1"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "threshold"
+    },
+    {
+      "position": 29,
+      "id": "defining-and-measuring-agi/opus/f02",
+      "targets": [
+        "DM-3"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 3,
+      "priority": "threshold"
+    },
+    {
+      "position": 30,
+      "id": "defining-and-measuring-agi/opus/l01",
+      "targets": [
+        "DM-6"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 31,
+      "id": "defining-and-measuring-agi/opus/l02",
+      "targets": [
+        "DM-7"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 32,
+      "id": "defining-and-measuring-agi/opus/l03",
+      "targets": [
+        "DM-8"
+      ],
+      "lens": "contrast",
+      "level_claimed": "L3",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 33,
+      "id": "defining-and-measuring-agi/opus/k03",
+      "targets": [
+        "DM-5"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 34,
+      "id": "defining-and-measuring-agi/opus/m01",
+      "targets": [
+        "DM-9"
+      ],
+      "lens": "case",
+      "level_claimed": "L4",
+      "idea_attempt": 3,
+      "priority": "discrimination-pair"
+    },
+    {
+      "position": 35,
+      "id": "defining-and-measuring-agi/opus/i03",
+      "targets": [
+        "DM-13"
+      ],
+      "lens": "figure",
+      "level_claimed": "L5",
+      "idea_attempt": 3,
+      "priority": "ordinary"
+    },
+    {
+      "position": 36,
+      "id": "defining-and-measuring-agi/opus/k01",
+      "targets": [
+        "DM-3"
+      ],
+      "lens": "misconception",
+      "level_claimed": "L3",
+      "idea_attempt": 4,
+      "priority": "threshold"
+    }
+  ]
+}

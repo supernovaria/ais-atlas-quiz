@@ -1,0 +1,712 @@
+{
+  "section": "defining-and-measuring-agi",
+  "heading": "Defining and Measuring AGI",
+  "target_n": 8,
+  "takeaway": "For safety purposes AGI is best described as a position on two continuous axes of observable performance, capability (depth) and generality (breadth), with autonomy handled separately as a deployment choice; the named thresholds (AGI, TAI, ASI) and percentage scores are useful but can mislead.",
+  "subheadings": ["Case Studies", "Defining General Intelligence"],
+  "threshold_concepts": ["DM-1", "DM-2", "DM-3"],
+  "ideas": [
+    {
+      "id": "DM-1",
+      "label": "capability is depth on individual tasks; any single-task position, even superhuman, is still narrow AI (ANI)",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Capability measures depth - how good is the system at individual tasks.",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["DM-2", "DM-7"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a system that is superhuman at a hard task (e.g. AlphaGo at Go) is thereby a step toward, or a form of, general intelligence",
+          "provenance": "misreads 'AlphaGo in 2016 achieved superhuman capability at Go' as progress on generality, missing that 'Everything along this line ... counts as artificial narrow intelligence (ANI)'",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "capability and generality are one scale: getting better at more tasks and getting better at one task are the same kind of progress",
+          "provenance": "misreads 'systems in the last few years are climbing both axes simultaneously' as meaning the axes move together, rather than being separate axes both currently rising",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "narrow AI is weak AI: systems that sit on the capability axis alone are low-performing",
+          "provenance": "misreads the label 'Weak AI' in the ANI definition as a performance claim, against ''Narrow' might be a more accurate descriptor ... as it is anything but weak'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["leveraging-scale", "forecasting-timelines", "takeoff", "ch2"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-2",
+      "label": "generality is breadth: the share of cognitive domains where a system reaches expert level, not the number of tasks it can attempt",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Generality is the percentage of these domains where a system achieves expert-level capability.",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["DM-1"],
+      "misconceptions": [
+        {
+          "family": "b",
+          "claim": "generality counts every domain where a system produces any output at all, however poor",
+          "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing that a domain only counts at 'expert-level capability' (80th percentile or higher)",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "a general system is one that is highly capable on average across all tasks, so high average scores mean high generality",
+          "provenance": "misreads the combined statement 'outperform 85% of humans in 30% of cognitive domains' as a single averaged score rather than two separate numbers, one per axis",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "because foundation models are general-purpose, current systems already have high generality",
+          "provenance": "misreads 'Foundation models dramatically increased this' as reaching high generality, against 'current systems still cover only a fraction of cognitive capabilities'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["current-capabilities-review", "forecasting-timelines", "takeoff", "ch2"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-3",
+      "label": "AGI is a continuous region of the capability x generality space, not a binary line a system crosses",
+      "subheading": "Defining General Intelligence",
+      "anchor": "There's no universally agreed upon threshold where \"not AGI\" suddenly becomes \"AGI.\"",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": true,
+      "durable": true,
+      "suggested_levels": ["L3", "L5"],
+      "pairs_with": ["DM-4"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "AGI is a threshold event: a system either is AGI or is not, and the key question is when the line is crossed",
+          "provenance": "the pre-chapter prior the section exists to overturn; the text rejects 'binary categories that lead to endless semantic debates about whether something \"counts\" as AGI'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "the 'sparks of AGI' claims are wrong because early systems are clearly not AGI",
+          "provenance": "misreads the Wright-brothers analogy in reverse; the text says early systems 'represent genuine general intelligence - just early-stage (weak AGI)'",
+          "source": "inferred"
+        },
+        {
+          "family": "d",
+          "claim": "the continuous framing is preferred mainly because it is more precise about percentages",
+          "provenance": "misfiles the motivation: the text's stated reason for continuity is avoiding semantic deadlock and capturing progress 'along multiple dimensions', not numeric precision for its own sake",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["forecasting-timelines", "takeoff"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-4",
+      "label": "thresholds (AGI/TAI/ASI) are pragmatic overlays on the continuum, kept because safety planning and regulation need trigger points",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Even though capability and generality exist on a continuum, certain thresholds still matter for safety planning.",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L5"],
+      "pairs_with": ["DM-3"],
+      "misconceptions": [
+        {
+          "family": "b",
+          "claim": "giving threshold definitions contradicts the continuum and reintroduces the binary framing",
+          "provenance": "misreads the threshold definitions as a retreat from 'AGI exists on a continuous spectrum', missing 'we can't ignore this reality even if generality is a continuous variable' and that they are offered 'When pressed for concrete thresholds'",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "the thresholds are measured facts about where risk begins, not stipulations",
+          "provenance": "misreads 'here's our interpretation of roughly how terms map' as an empirical finding",
+          "source": "inferred"
+        },
+        {
+          "family": "d",
+          "claim": "thresholds matter because they let us declare when AGI has been achieved",
+          "provenance": "misfiles the purpose; the text ties thresholds to 'identify thresholds for regulation, and emerging risks before they materialize', not to declaring arrival",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["ch2", "governance"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-5",
+      "label": "AGI is defined by cognitive profile: expert-level performance across most cognitive domains",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Matching a well-educated adult's cognitive versatility and proficiency.",
+      "criteria_met": [1, 2, 3, 4],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": ["DM-6"],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "AGI and superintelligence differ only in speed, or AGI means exceeding all humans",
+          "provenance": "conflates the AGI definition ('expert-level performance (80-90th percentile)') with the ASI definition ('superhuman capability (>100%, greatly exceeding all humans)')",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "AGI is whatever system can outperform humans at most economically valuable work",
+          "provenance": "adopts the quoted OpenAI charter wording as the section's working definition, missing that the text says such definitions 'lack precision for tracking progress'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["forecasting-timelines", "takeoff"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-6",
+      "label": "TAI is defined by impact potential, so a narrow-but-deep system (e.g. exceptional at ML R&D on ~20% of domains) can be TAI without being AGI",
+      "subheading": "Defining General Intelligence",
+      "anchor": "TAI is defined by impact potential rather than cognitive architecture.",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4", "L5"],
+      "pairs_with": ["DM-5"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "transformative impact requires AGI first; TAI is a later, stronger stage than AGI",
+          "provenance": "misreads TAI as a point further along the same scale, missing 'OR exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)'",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "TAI and AGI are two names for the same threshold",
+          "provenance": "misreads the adjacent definition boxes as synonyms, missing 'defined by impact potential rather than cognitive architecture'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "a system with low generality cannot be transformative",
+          "provenance": "reverses the TAI definition's disjunction, which explicitly admits a 20%-of-domains profile",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["takeoff", "forecasting-timelines"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-7",
+      "label": "autonomy is a separate axis about deployment (how the system interacts with humans), affecting risk exposure rather than inherent danger; excluded from the AGI definition",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Autonomy describes how AI systems interact with humans, not what they can do.",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4", "L5"],
+      "pairs_with": ["DM-1"],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "a more autonomous system is a more capable system; autonomy level is a measure of capability",
+          "provenance": "misreads the autonomy levels as a continuation of the capability curves ('Just like we had continuous curves for capability and generality'), against 'not what they can do'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "having enough capability for high autonomy means the system will or should be deployed at high autonomy",
+          "provenance": "reverses 'Higher capability levels \"unlock\" higher autonomy levels' into sufficiency, against 'having the capability doesn't mean you should use maximum autonomy'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "restricting autonomy makes a system inherently less dangerous by reducing what it can do",
+          "provenance": "misreads 'A capable system deployed as a tool (Level 1) might be safer' as a change in the system, against 'affects risk exposure, not inherent danger' and 'the underlying capability is identical'",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "AGI by definition means an autonomous agent",
+          "provenance": "carries in the charter framing 'highly autonomous systems' quoted earlier, against 'Our working definition does not include the autonomy with which an AGI system operates'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["ch2"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-8",
+      "label": "for safety, what a system can observably do matters more than how it got there; risk is path-independent",
+      "subheading": "Case Studies",
+      "anchor": "these risks exist regardless of how it achieved them.",
+      "criteria_met": [1, 2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L5"],
+      "pairs_with": ["DM-9"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a system that reached a dangerous capability by brute-force memorisation is less of a risk than one that learned it efficiently",
+          "provenance": "misreads the adaptability view's 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "the behaviourist approach is endorsed wholesale, including the Turing test as the measure",
+          "provenance": "misreads 'Behaviorist (capabilities focused) approaches matter most for safety' as endorsing Turing's test, against 'The test was too narrow' and 'Turing's core insight ... remains sound'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["ch2", "evaluations"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-9",
+      "label": "adaptability views define intelligence as skill-acquisition efficiency; the Atlas acknowledges this but prioritises final capabilities",
+      "subheading": "Case Studies",
+      "anchor": "general intelligence is not demonstrated by the possession of a specific skill, but by the efficiency of acquiring new skills",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L5"],
+      "pairs_with": ["DM-8"],
+      "misconceptions": [
+        {
+          "family": "b",
+          "claim": "the Atlas rejects the adaptability view as wrong",
+          "provenance": "misreads 'does the learning path matter more than the destination?' as dismissal, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "on the adaptability view, a superhuman Go system has shown high general intelligence",
+          "provenance": "conflates the capability-axis reading with the adaptability view, which says such a system 'has not necessarily become more intelligent in a general sense' because 'High performance can be \"bought\"'",
+          "source": "inferred"
+        },
+        {
+          "family": "d",
+          "claim": "the adaptability view's objection is that systems lack true understanding",
+          "provenance": "files the consciousness/Chinese Room objection under the adaptability view; the adaptability objection is about data efficiency, not understanding",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["leveraging-scale"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-10",
+      "label": "consciousness is set aside as not actionable for safety: a system need not be conscious to cause harm",
+      "subheading": "Case Studies",
+      "anchor": "A system doesn't need to be conscious to cause harm.",
+      "criteria_met": [1, 2, 3, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L5"],
+      "pairs_with": [],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "an AI must truly understand or be conscious before it can be dangerous",
+          "provenance": "the pre-chapter prior the paragraph corrects: 'Whether an AI system is conscious has little, if any, bearing on its ability to make high-impact decisions'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "setting consciousness aside means the Atlas considers the question unimportant or answered",
+          "provenance": "misreads 'set aside the consciousness debate as not actionable' as a verdict, against 'Research into consciousness ... are valuable, but less actionable for the type of safety work that this text focuses on'",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "intelligence and consciousness come together, so a highly intelligent system is probably conscious",
+          "provenance": "misses 'We are also unsure if intelligence and consciousness are necessarily linked' and the AlphaGo example",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["ch2"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-11",
+      "label": "the Turing test was too narrow (conversation is one capability), though its behaviourist core insight stands",
+      "subheading": "Case Studies",
+      "anchor": "The test was too narrow. Conversation is just one capability among many we care about.",
+      "criteria_met": [2, 3, 5],
+      "earns_question": true,
+      "attempts": 1,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L3", "L4"],
+      "pairs_with": [],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a system that passes a Turing-style conversation test has demonstrated general intelligence",
+          "provenance": "the prior corrected by 'GPT-4 can pass Turing-style conversation tests while struggling with basic spatial reasoning'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "LLMs showed the behaviourist approach itself is wrong",
+          "provenance": "misreads 'LLMs exposed some limitations to this approach' as refutation, against 'Turing's core insight - focus on observable capabilities, not internal states - remains sound'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-12",
+      "label": "the domains that count toward generality are non-embodied cognitive tasks (roughly: remote work on a computer), not every possible task",
+      "subheading": "Defining General Intelligence",
+      "anchor": "More formally, the domains we choose to focus on are non-embodied cognitive tasks.",
+      "criteria_met": [2, 3, 5],
+      "earns_question": true,
+      "attempts": 1,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L4"],
+      "pairs_with": [],
+      "misconceptions": [
+        {
+          "family": "b",
+          "claim": "generality is measured across all human activities, including physical and manual ones",
+          "provenance": "misses 'Not every possible task matters equally' and the knitting example; embodied tasks are outside the chosen domains",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "a robot's physical dexterity is part of how general its intelligence is on this framework",
+          "provenance": "misreads 'everything that can be done as remote work on a computer' as illustrative rather than as the scoping rule",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": [],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-13",
+      "label": "aggregate percentage scores mislead: coverage bias, arbitrary human thresholds, non-linear bottlenecks, species-specific risk profiles",
+      "subheading": "Defining General Intelligence",
+      "anchor": "percentage scores can misleadingly suggest linear progress toward AGI",
+      "criteria_met": [2, 3, 4, 5],
+      "earns_question": true,
+      "attempts": 3,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L5"],
+      "pairs_with": ["DM-4"],
+      "misconceptions": [
+        {
+          "family": "c",
+          "claim": "a system at 57% AGI is a bit over halfway there, so the remaining distance is comparable to what has been covered",
+          "provenance": "exactly the reading the 'Non-linear progress' item corrects: 'final capabilities may represent disproportionately difficult bottlenecks'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "a low score on human-centric tests means low risk",
+          "provenance": "reverses 'Species-specific risk: Non-human-like AI profiles may pose transformative risks despite low scores on human-centric tests'",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "if CHC-based tests show an AI at 100%, it has every capability of an educated adult",
+          "provenance": "reverses 'Coverage bias': CHC derives from human differences and may omit capabilities 'universal in humans (e.g., robust object permanence) that AI might lack'",
+          "source": "inferred"
+        },
+        {
+          "family": "a",
+          "claim": "an AI scoring 90% on a test designed for humans is at the same level as a human scoring 90%",
+          "provenance": "misses 'An LLM scoring 90% on a Raven’s progressive matrices test is not comparable to a human scoring 90%' and 'Arbitrary thresholds: Human percentile cutoffs ... may not translate to machines'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["forecasting-timelines", "evaluations"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-14",
+      "label": "(t,n)-AGI: define AGI by matching n experts working for time t; longer horizons subsume shorter ones via task decomposition",
+      "subheading": "Defining General Intelligence",
+      "anchor": "can AI match ‘n’ experts working together for time ‘t’",
+      "criteria_met": [1, 2, 3, 5],
+      "earns_question": true,
+      "attempts": 2,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L4"],
+      "pairs_with": ["DM-15"],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "t measures how fast the AI completes the task, so a one-second AGI is one that answers in one second",
+          "provenance": "misreads 'Given a time frame ‘t’' as the AI's latency rather than the time budget given equally to the human expert",
+          "source": "inferred"
+        },
+        {
+          "family": "b",
+          "claim": "(t,n) scores count how many copies of the AI are run in parallel",
+          "provenance": "reverses 'The (t,n)-AGI framework does not account for how many copies of the AI run simultaneously'; n counts human experts",
+          "source": "inferred"
+        },
+        {
+          "family": "c",
+          "claim": "a one-year AGI would only beat humans at year-long projects",
+          "provenance": "misses the stated reason 'most projects can be divided into sub-tasks that can be completed in shorter timeframes'",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["forecasting-timelines"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-15",
+      "label": "the two frameworks connect: short task horizons show up in capability x generality as weakness in memory domains",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Task time horizon limitations are implicitly captured in our generality measure",
+      "criteria_met": [3, 4, 5],
+      "earns_question": true,
+      "attempts": 1,
+      "threshold": false,
+      "durable": true,
+      "suggested_levels": ["L4", "L5"],
+      "pairs_with": ["DM-14"],
+      "misconceptions": [
+        {
+          "family": "a",
+          "claim": "(t,n)-AGI and the capability x generality framework measure unrelated things and cannot be reconciled",
+          "provenance": "misses 'implicitly captured in our generality measure as weaknesses in specific cognitive tasks like long-term memory storage and retrieval'",
+          "source": "inferred"
+        },
+        {
+          "family": "d",
+          "claim": "short task horizons reflect low capability on reasoning or math",
+          "provenance": "files the horizon limit under the wrong domain; the text locates it in memory ('Systems scoring poorly on memory naturally fail on multi-day projects')",
+          "source": "inferred"
+        }
+      ],
+      "used_later_by": ["forecasting-timelines"],
+      "disposition": "question"
+    },
+    {
+      "id": "DM-16",
+      "label": "the ten CHC cognitive domains",
+      "subheading": "Defining General Intelligence",
+      "anchor": "These break down into ten core capabilities from the Cattell-Horn-Carroll theory",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "enumeration; L2 at best; domain names may appear as stem scaffolding (e.g. memory domains in DM-15)"
+    },
+    {
+      "id": "DM-17",
+      "label": "Legg & Hutter goal-achievement definition: right intuition, too abstract to measure",
+      "subheading": "Case Studies",
+      "anchor": "But it's too abstract for practical measurement.",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "near-miss definition; usable as a conflation option in a definitions-for-safety question"
+    },
+    {
+      "id": "DM-18",
+      "label": "the synthesis: take Turing's behaviourism, CHC's measurement, acknowledge adaptability, set aside consciousness",
+      "subheading": "Case Studies",
+      "anchor": "Our approach attempts to synthesize the useful parts of all these views.",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "a list of what came from where; supplies wrong-slot (d) options for DM-8/DM-9/DM-10"
+    },
+    {
+      "id": "DM-19",
+      "label": "lab capability-based definitions point the right way but are too vague (which humans, what counts as economically valuable)",
+      "subheading": "Case Studies",
+      "anchor": "But even these capability-based definitions can be too vague.",
+      "criteria_met": [2, 3],
+      "earns_question": false,
+      "disposition": "review",
+      "reason": "best used as material against DM-7 (OpenAI's wording includes 'highly autonomous', which the Atlas definition excludes); not a standalone question"
+    },
+    {
+      "id": "DM-20",
+      "label": "capability is necessary for high autonomy but not sufficient to justify it",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Higher capability levels \"unlock\" higher autonomy levels",
+      "criteria_met": [3, 4],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "sub-point of DM-7; its reversal is DM-7's family-(b) distractor, so a separate question would duplicate"
+    },
+    {
+      "id": "DM-21",
+      "label": "weak AGI / Wright brothers analogy: early general systems are real but immature AGI",
+      "subheading": "Defining General Intelligence",
+      "anchor": "represent genuine general intelligence - just early-stage (weak AGI)",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "illustration of DM-3; colour for its explanation"
+    },
+    {
+      "id": "DM-22",
+      "label": "define-to-measure motivation (speed limits and units analogy)",
+      "subheading": "Case Studies",
+      "anchor": "If you can't define something, you can't measure it.",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "framing no reader disputes; nothing to get wrong"
+    },
+    {
+      "id": "DM-23",
+      "label": "the framework is not universally agreed; benchmarks and aggregation will be debated, the continuous two-axis framing expected to hold",
+      "subheading": "Defining General Intelligence",
+      "anchor": "What we presented in this section is nowhere near a universally agreed upon definition.",
+      "criteria_met": [2, 5],
+      "earns_question": false,
+      "disposition": "review",
+      "reason": "Pattern-E invariant material (what survives the refresh) for the review block; within the section it overlaps DM-13"
+    },
+    {
+      "id": "DM-24",
+      "label": "ANI definition box: narrow is not weak",
+      "subheading": "Defining General Intelligence",
+      "anchor": "'Narrow' might be a more accurate descriptor for this type of AI as it is anything but weak",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "folded into DM-1 as its family-(b) misconception"
+    },
+    {
+      "id": "DM-25",
+      "label": "METR operationalised t-AGI as task time horizons for n=1",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Researchers at METR operationalized this by measuring task completion time horizons for 1 expert (n=1)",
+      "criteria_met": [5],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "illustration for DM-14; results are volatile"
+    },
+    {
+      "id": "DM-26",
+      "label": "foundation models are why two axes are needed now",
+      "subheading": "Defining General Intelligence",
+      "anchor": "The shift from building one narrow system per task to training general-purpose models",
+      "criteria_met": [1, 2],
+      "earns_question": false,
+      "disposition": "review",
+      "reason": "bridge to foundation-models; better as one input to a review synthesis than a section question"
+    },
+    {
+      "id": "DM-27",
+      "label": "Krakovna: talk about capabilities, not intelligence",
+      "subheading": "Case Studies",
+      "anchor": "When discussing AI risks, talk about capabilities, not intelligence...",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "explanation",
+      "reason": "epigraph restating DM-8; colour only"
+    },
+    {
+      "id": "DM-28",
+      "label": "ASI definition: superhuman across virtually all domains",
+      "subheading": "Defining General Intelligence",
+      "anchor": "Any intellect that greatly exceeds human cognitive capability across virtually all domains of interest.",
+      "criteria_met": [2],
+      "earns_question": false,
+      "disposition": "distractor",
+      "reason": "third member of the AGI/TAI/ASI set; the conflation option in DM-5/DM-6 questions"
+    }
+  ],
+  "discrimination_pairs": [
+    {"a": "DM-1", "b": "DM-2", "conflation": "An AI that's superhuman at Go is more generally intelligent than one that's mediocre at lots of things; better is better."},
+    {"a": "DM-5", "b": "DM-6", "conflation": "TAI is just what you call AGI once it starts changing the economy, so you need AGI before you get TAI."},
+    {"a": "DM-1", "b": "DM-7", "conflation": "A Level 5 agent is a more capable AI than a Level 1 tool; autonomy is how advanced the system is."},
+    {"a": "DM-8", "b": "DM-9", "conflation": "Intelligence is how well it performs, and if it learned slowly with tons of data that's still the same intelligence, so there's no real disagreement here."},
+    {"a": "DM-3", "b": "DM-4", "conflation": "If AGI is really a continuum, giving percentile cut-offs for AGI, TAI and ASI undercuts the whole point."},
+    {"a": "DM-14", "b": "DM-15", "conflation": "The (t,n) framework measures something the capability/generality axes miss entirely, so we need both to be separate measures."}
+  ],
+  "volatile": [
+    {"text": "GPT-4 can pass Turing-style conversation tests while struggling with basic spatial reasoning", "class": "V1.2", "subheading": "Case Studies"},
+    {"text": "Figure 1.30: capabilities of GPT-4 and GPT-5 quantified on the CHC domains", "class": "V1.2", "subheading": "Defining General Intelligence"},
+    {"text": "current systems still cover only a fraction of cognitive capabilities, with particularly weak performance on long-term planning and memory", "class": "V1.6", "subheading": "Defining General Intelligence"},
+    {"text": "Current transformer-based architectures specifically struggle with limited context windows", "class": "V1.6", "subheading": "Defining General Intelligence"},
+    {"text": "METR task completion time horizons (Figure 1.32)", "class": "V1.1", "subheading": "Defining General Intelligence"},
+    {"text": "OpenAI charter AGI definition; Anthropic mission wording", "class": "V1.6", "subheading": "Case Studies"},
+    {"text": "\"57% AGI\" as an example aggregate score", "class": "V1.1", "subheading": "Defining General Intelligence"}
+  ],
+  "durable_figures": [
+    {"text": "TAI: 60th percentile on 50% of domains OR 99th percentile on ~20% of domains (e.g. automated ML R&D)", "class": "V2.5", "budget_candidate": true},
+    {"text": "expert-level parity at roughly the 80-90th percentile of humans", "class": "V2.5", "budget_candidate": false},
+    {"text": "AGI: 80-90th percentile across 80-90% of domains", "class": "V2.5", "budget_candidate": false},
+    {"text": "ASI: >100% (beyond all humans) across 95%+ of domains", "class": "V2.5", "budget_candidate": false},
+    {"text": "ten CHC cognitive domains", "class": "V2.4", "budget_candidate": false},
+    {"text": "six autonomy levels (0-5)", "class": "V2.4", "budget_candidate": false},
+    {"text": "worked example: 80th percentile on 3 of 10 domains = 30% generality", "class": "V2.5", "budget_candidate": false},
+    {"text": "ASI as (one year, eight billion)-AGI", "class": "V2.5", "budget_candidate": false},
+    {"text": "Turing 1950, Searle 1980, Deep Blue 1990s, AlphaGo 2016", "class": "V2.3", "budget_candidate": false}
+  ],
+  "cross_section_links": [
+    {"idea": "DM-1", "to": "current-capabilities", "relation": "the capability axis organises the narrow-system progression narrated there (chess programs, Deep Blue, AlphaGo)", "bridge_candidate": true},
+    {"idea": "DM-2", "to": "current-capabilities", "relation": "the generality axis is the framework for the narrow-to-general shift; LLMs, vision models and Minecraft agents 'map directly onto these domains'", "bridge_candidate": true},
+    {"idea": "DM-2", "to": "foundation-models", "relation": "general-purpose foundation models are the mechanism that moved systems along the generality axis", "bridge_candidate": true},
+    {"idea": "DM-9", "to": "foundation-models", "relation": "'High performance can be \"bought\" with sufficient data and compute' is the adaptability view's reading of the scale-driven training paradigm", "bridge_candidate": false}
+  ],
+  "assumed_prior": [
+    {"concept": "foundation models are broadly trained, general-purpose models adaptable to many tasks", "from": "foundation-models",
+     "use": "used here to explain why generality became measurable and rising; do not re-test what a foundation model is"},
+    {"concept": "the narrow-to-general progression of AI systems and the trajectory-over-snapshot framing", "from": "current-capabilities",
+     "use": "may be mapped onto the two axes (L4) but the progression itself, and its system names and dates, must not be re-tested here"}
+  ],
+  "do_not_test": [
+    {"item": "footnote [^3] (situational awareness measured in the risks chapters)", "why": "footnote; the Atlas marks it optional"},
+    {"item": "footnote [^4] (researchers may set the expert threshold higher or lower)", "why": "footnote; may colour a DM-13 explanation but must not decide an answer"},
+    {"item": "the ten CHC domains as a list, their abbreviations (K, RW, M, ...), or the sub-components in Figures 1.28-1.29", "why": "enumeration; DM-16 already disposes of it"},
+    {"item": "the name or number of each autonomy level (e.g. which level is 'Consultant')", "why": "enumeration of a framework constant; test the capability/autonomy separation through DM-7 instead"},
+    {"item": "researcher and organisation names (Turing, Searle, Legg & Hutter, Wang, Chollet, Krakovna, Hendrycks, Morris, Ngo, Pacchiardi, METR, OpenAI, Anthropic, Bubeck, Bengio)", "why": "names, not ideas; OK as stem context, never as the key"},
+    {"item": "the list of alternative frameworks (EU GPAI, OECD indicators)", "why": "enumeration of names mentioned in passing"},
+    {"item": "exact threshold digits (80-90 vs 70-80, 60th vs 50th percentile, 95%+)", "why": "L0 regardless of durability (RUBRIC §5.3.5); test the shape of the definitions instead"},
+    {"item": "ANI definition-box examples (Siri, Alexa, IBM Watson, autonomous vehicles)", "why": "illustrative sub-examples, partly volatile"},
+    {"item": "the speed-limit/royal-cubits units analogy and the Wright brothers analogy as facts", "why": "illustrations of points tested at a higher level (DM-3); explanation colour only"},
+    {"item": "dates of chess programs, Deep Blue, AlphaGo, Turing 1950, Searle 1980", "why": "historical trivia; stem context at most"},
+    {"item": "METR's specific time-horizon results", "why": "volatile; illustration for DM-14"},
+    {"item": "which view (psychologist, computer scientist, philosopher) emphasises what, in the opening paragraph", "why": "framing enumeration with no misconception to correct"}
+  ],
+  "notes_for_generator": [
+    "15 ideas earn a question against N=8, which is under 2N. Ranked strongest first: DM-1/DM-2 (axes), DM-7 (autonomy), DM-6/DM-5 (TAI vs AGI), DM-3/DM-4 (continuum vs thresholds), DM-13 (counter-argument), DM-8/DM-9 (behaviourist vs adaptability), DM-10, DM-14. Weakest: DM-11, DM-12, DM-15 (one attempt each). Paired ideas will usually share one question; expect about 8 distinct questions, not 15.",
+    "Only two real sub-headings exist ('Case Studies', 'Defining General Intelligence'). The autonomy, counter-argument and (t,n)-AGI blocks are bold pseudo-headings with no anchor id, so E4 citations for them must use '(Defining and Measuring AGI → Defining General Intelligence)'.",
+    "The counter-argument block (DM-13) is main-body prose, not a sidebar, and RUBRIC §8.4 names it the best L5 material in the chapter. It should carry at least one L5. The RUBRIC's §10.2 rewrite of the '57% AGI' question is the reference; the hypothetical percentage belongs in the stem, not the key.",
+    "L4 seed for DM-6: a described system that is exceptional at ML research and coding and weak elsewhere. The TAI definition's OR-clause admits it; the AGI definition does not. Give profiles in the stem as qualitative bands so the classification turns on the definitions' shape, not on recalled digits. If a threshold figure does become load-bearing, this is where to spend the R11 budget.",
+    "L5 tension for DM-7: the OpenAI charter the section quotes defines AGI as 'highly autonomous systems', while the Atlas's working definition explicitly excludes autonomy. A question asking what is lost or gained by folding autonomy into the definition uses the section against itself.",
+    "L5 tension for DM-3/DM-4: RUBRIC §3.6 already names this one (binary framing causes semantic deadlock, then threshold definitions are supplied). The text's answer is that thresholds serve regulation and risk triggers. Distractors should include 'this is inconsistent' (b) and 'the thresholds are measured facts' (c).",
+    "DM-8 vs DM-9 is an RUBRIC §3.4 pair. The honest key is not 'the adaptability view is wrong'. The Atlas acknowledges it and prioritises final capability because risk is path-independent. Keep the key from overclaiming.",
+    "DM-14 L4 seed: apply (t,n) to a concrete case, e.g. what n measures versus parallel AI copies, or why a long-horizon AGI subsumes shorter ones. DM-15 is best as a distractor or a second clause in the DM-14 question unless an L5 connection question emerges naturally.",
+    "DM-10 top distractor is the family-(c) prior 'must be conscious to be dangerous'; RUBRIC E3 requires the explanation to address that prior explicitly."
+  ]
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "forecasting-timelines/opus/d01",
+    "targets": ["FT-2"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You give a simple forecasting model four beliefs: investment grows 5x a year, software efficiency 3x a year, hardware 15% a year, and each tenfold rise in compute automates at least a tenth of tasks. It returns full automation far sooner than you had expected. What is the most useful thing to conclude?",
+    "options": [
+      {"text": "Your input beliefs and your expected timeline are inconsistent, so at least one of them has to be revised", "key": true, "provenance": null, "family": null},
+      {"text": "The model's structure is at fault, because a sound forecast should not contradict a well-informed prior view", "key": false, "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into surprise indicting the model rather than the inputs you supplied", "family": "b"},
+      {"text": "The output is a date estimate to be checked against expert surveys, and kept only if it falls inside their range", "key": false, "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason'", "family": "c"},
+      {"text": "The result carries little weight, because inputs this uncertain compound into error bars too wide to act on", "key": false, "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the consistency check survives the uncertainty", "family": "a"}
+    ],
+    "explanation": "The model only works out what your own four beliefs jointly imply. If that implication clashes with the future you expected, you are holding a contradiction: some input, or the expectation itself, has to give. That is the use we recommend for forecasts — checking whether your beliefs cohere, not reading off a date. The error-bars option is the tempting one: forecasts really are very uncertain, but the uncertainty is in the inputs, and the check still tells you which of your inputs are doing the work. Blaming the model reverses the logic, since the surprising output came from assumptions you supplied. Treating the output as a date to validate against surveys is exactly the prediction reading we warn against. (Forecasting Timelines)",
+    "takeaway": "A surprising forecast is a signal about your own inputs, not a verdict to accept or a model to discard.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'check if your beliefs are internally coherent' would say 'one of my assumptions or my expectation is wrong' unprompted.",
+      "cynic_test": "A skipper would lean to the error-bars option because humility sounds right; it fails because the question asks what the run is useful for, and the key keeps the same hedge-free register with no length or absolute tell."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/d02",
+    "targets": ["FT-3"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose training compute keeps growing about fivefold a year, as it has recently, and compute-based scaling laws continue to hold. Why would a forecast of when transformative AI arrives still span decades rather than a few years?",
+    "options": [
+      {"text": "Nobody knows how much compute transformative AI requires, and estimates of that threshold differ by many orders of magnitude", "key": true, "provenance": null, "family": null},
+      {"text": "Estimates of the brain's computing power are imprecise, and that measurement noise carries into the required-compute figure", "key": false, "provenance": "misreads the biological-anchors spread as measurement error, where the text attributes it to 'the biological process used as a reference' (lifetime learning vs evolutionary history)", "family": "a"},
+      {"text": "Empirical regularities like these tend to break, so a forecast must allow for them failing at some unknown future scale", "key": false, "provenance": "right idea, wrong slot: imports the empirical-not-physical-law point about scaling, against 'Even if we assume compute-based scaling laws hold, we still don't know how much compute TAI will actually require'", "family": "d"},
+      {"text": "Forecasters disagree mainly about what counts as transformative AI, so each of them is timing a different event", "key": false, "provenance": "pre-chapter prior that timeline disagreement is definitional; misses that the section's named source of spread persists with the TAI definition held fixed", "family": "c"}
+    ],
+    "explanation": "Knowing how fast compute grows tells you nothing about when it crosses a line if you do not know where the line is. Biological-anchor estimates of the compute needed run from about 10^28 FLOP (a human lifetime of learning) to about 10^41 FLOP (evolutionary history): twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion. The measurement-noise option misplaces that spread. It comes from which biological process you take as the reference, and better brain measurements would not settle that choice. The scaling-breaks option describes a real caveat, but the stem assumes the laws hold, and the range stays wide anyway. So 'AGI in 2045' means roughly the 2030s to 2050s, centred on 2045. (Forecasting Timelines)",
+    "takeaway": "A known growth rate still leaves the arrival date open when the target itself is uncertain by orders of magnitude.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: with the rate and the laws stipulated, a reader who understood the anchors paragraph names the unknown compute threshold as what is left.",
+      "cynic_test": "A skipper might take the scaling-breaks option as the sophisticated caveat; the stem's 'continue to hold' removes it, and the key's 'many orders of magnitude' is matched in specificity by the other three causal claims."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/d03",
+    "targets": ["FT-5"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A commentator argues that GPU performance per dollar is improving only about 1.35x a year and slowing, so the effective compute behind AI is about to stall. Suppose chip speed gains did stop entirely, while software efficiency and chip production kept their recent paces of roughly 3x and 2.3x a year. What would happen to effective compute?",
+    "options": [
+      {"text": "It would keep compounding, more slowly, because software gains and chip counts multiply it independently of chip speed", "key": true, "provenance": null, "family": null},
+      {"text": "It would level off, because better algorithms and more chips pay off only when paired with faster processors", "key": false, "provenance": "reverses 'You can develop better software to make use of existing hardware' and 'You can build more chips without improving their speed' into the factors being coupled", "family": "b"},
+      {"text": "It would track chip speed and flatten, because processor performance is what effective compute mainly measures", "key": false, "provenance": "the Moore's-law prior the subsection targets: 'compute means more than just counting GPUs' and 'compounds much faster than hardware trends alone would suggest'", "family": "c"},
+      {"text": "It would keep growing only while revenue from automation funds enough extra chips to offset the lost speed", "key": false, "provenance": "right idea, wrong slot: offers the compute-automation-productivity funding loop as the reason growth continues, where the Effective Compute subsection's reason is independent multiplication", "family": "d"}
+    ],
+    "explanation": "Effective compute is software efficiency times hardware efficiency times number of chips, and each factor can improve on its own. If hardware efficiency flatlines, it just stops contributing: the product still grows at the combined rate of the other two, which on 2025 trend estimates is several-fold a year. The funding-loop option names a real mechanism, the loop in which automation pays for more compute, but software gains do not wait on revenue to replace lost chip speed. The level-off option assumes the factors are coupled, when we say explicitly that better software makes use of existing hardware. The commentator's mistake is treating one factor, and the slowest-growing of the three, as the whole of compute. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "A stall in one multiplying factor slows effective compute; it does not stop it.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader holding 'each factor can improve independently' answers 'it keeps growing on the other two factors' without seeing options.",
+      "cynic_test": "A skipper might pick the funding-loop option because it sounds mechanistic and hedged; it fails because the stem already holds software and chip production at their paces, so no compensation is needed. The key carries no extra qualifiers and sits mid-length."
+    }
+  },
+  {
+    "note": "FT-2 and FT-3 form a discrimination pair, but under the figure lens I wrote them separately: d01 conditionalises the consistency-example inputs (V1.3) and d02 conditionalises the 5x/year training-compute trend (V1.3). A single spanning item would be the contrast lens's job. None of the three answers depends on a figure value: each key holds for any positive rates. d02's explanation cites the twelve-orders-of-magnitude anchor width as colour only, so it does not spend the R11 budget. I avoided RUBRIC 10.5's scenario, where the spread in a projection comes from compounding growth-rate assumptions."
+  }
+]

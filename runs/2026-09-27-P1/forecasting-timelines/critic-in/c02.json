@@ -1,0 +1,96 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/c02",
+    "targets": [
+      "FT-8"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a lab has already trained on nearly all the high-quality public text there is, and over the next year better algorithms and more chips triple its effective compute. What follows for its next model?",
+    "options": [
+      {
+        "text": "Its next gains depend on data beyond public text, because more effective compute does not enlarge that stock",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Its scaling is over, because a model cannot keep improving once no new human-written text is left to use",
+        "key": false,
+        "provenance": "conflates the data wall with its consequence, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+        "family": "a"
+      },
+      {
+        "text": "Little changes, because data is one of the factors that effective compute multiplies, so the tripling covers it",
+        "key": false,
+        "provenance": "misfiles data inside the Effective Compute equation, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'",
+        "family": "a"
+      },
+      {
+        "text": "Little changes, because the web grows fast enough each year to refill the stock of high-quality text",
+        "key": false,
+        "provenance": "the pre-chapter prior that internet text is effectively unlimited, which the Training Data subsection overturns with 'we'll hit that wall'",
+        "family": "c"
+      }
+    ],
+    "explanation": "Data is a separate constraint from effective compute. Software efficiency, hardware efficiency and chip count multiply each other, but none of them adds a token to the stock of high-quality public human text. Once that stock is spent, further gains depend on the escape routes: multimodal, synthetic and self-play data. The 'data is a factor effective compute multiplies' option files data inside the compute equation, but we treat it as the second overarching factor. The 'scaling is over' option conflates the wall with its consequence: whether data actually binds depends on how well those alternatives work. And the web does grow, just not remotely fast enough. At the time of writing, training sets were growing several-fold a year against a stock that was roughly fixed. (Forecasting Timelines → Training Data)",
+    "takeaway": "Tripling compute does nothing to the text stock; the data wall has to be handled by data, not by more chips.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds data and effective compute as separate factors says 'compute can't make more public text, so it needs new data sources' unaided.",
+      "cynic_test": "A skipper would avoid the one absolute ('cannot keep improving') and then face three even-length options split two-and-two by opening phrase; choosing between the key and the 'data is a compute factor' option requires knowing the section files data separately."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 108,
+    "distractor_lens": [
+      104,
+      111,
+      100
+    ],
+    "mean_distractor_len": 105,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.11,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "high",
+      "quality",
+      "public",
+      "next",
+      "year",
+      "more",
+      "model"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 130,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

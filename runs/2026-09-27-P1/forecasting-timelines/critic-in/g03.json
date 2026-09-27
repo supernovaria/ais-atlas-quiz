@@ -1,0 +1,90 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/g03",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An analyst argues: \"AI compute has grown for years, yet AI has automated only a sliver of the economy, so the loop from compute to automation to more compute is evidently not operating.\" Which verdict on this argument is best supported?",
+    "options": [
+      {
+        "text": "The analyst is wrong: the loop returns little value early, until compute grows enough to widen the tasks automated",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The analyst is right: productivity only feeds back into compute once every task has been automated",
+        "key": false,
+        "provenance": "misreads 'continues until full labor automation' (where the loop ends) as the condition for the loop to begin",
+        "family": "b"
+      },
+      {
+        "text": "The analyst is wrong: compute grows through independent chip, hardware and software gains, not through funding",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers the Effective Compute subsection's independent-factors account as a rival to the loop, missing that chip production grows 'as more investment keeps flowing in' and that Figure 1.38 has the loop feeding both produced compute and efficiency",
+        "family": "d"
+      },
+      {
+        "text": "The analyst is right: a loop this slow to start implies automation stays a small share for decades",
+        "key": false,
+        "provenance": "extrapolates the slow early phase linearly, against 'Once effective compute budgets grow large enough, the range of automated tasks expands until eventually all cognitive labor becomes automated'",
+        "family": "c"
+      }
+    ],
+    "explanation": "The loop runs from compute to automation to productivity and back to more compute, and it starts weak: while only a small fraction of tasks are automated, running AI returns relatively little economic value. A small automated share today is what the early phase looks like; the range of automated tasks widens once effective compute budgets grow large enough. The 'every task automated' option mistakes where the loop ends for where it begins. The 'independent gains, not funding' option sets the three effective-compute factors against the loop, but they are complements: chip production grows because investment keeps flowing, and productivity from automation is what the loop adds to that funding. The 'small share for decades' option extrapolates the slow start in a straight line, which is the one shape this loop is built not to have. (Forecasting Timelines)",
+    "takeaway": null,
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who remembers that the loop yields little value until compute widens the automated range can say 'a small share now is the expected early phase' unaided.",
+      "cynic_test": "A skipper cannot split on verdict because two options say the analyst is wrong and two say right; the independent-factors option is the sophisticated-sounding trap and is wrong because the factors and the loop are complementary, and the only absolute ('every') sits in one distractor that asserts it deliberately."
+    },
+    "shard_id": "forecasting-timelines-g",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 114,
+    "distractor_lens": [
+      98,
+      110,
+      98
+    ],
+    "mean_distractor_len": 102,
+    "len_ratio": 1.12,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 4,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "automation"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 138,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

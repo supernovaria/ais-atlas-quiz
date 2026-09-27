@@ -1,0 +1,130 @@
+{
+  "section": "forecasting-timelines",
+  "target_n": 4,
+  "shard_size": 3,
+  "models": [
+    "opus"
+  ],
+  "pool_size": 23,
+  "shards": [
+    {
+      "shard_id": "forecasting-timelines-a",
+      "ideas": [
+        "FT-2",
+        "FT-3",
+        "FT-4"
+      ],
+      "lens": "misconception",
+      "model": "opus",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-b",
+      "ideas": [
+        "FT-5",
+        "FT-4",
+        "FT-8"
+      ],
+      "lens": "contrast",
+      "model": "opus",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-c",
+      "ideas": [
+        "FT-9",
+        "FT-8",
+        "FT-1"
+      ],
+      "lens": "case",
+      "model": "opus",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-d",
+      "ideas": [
+        "FT-2",
+        "FT-3",
+        "FT-5"
+      ],
+      "lens": "figure",
+      "model": "opus",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-e",
+      "ideas": [
+        "FT-6",
+        "FT-9",
+        "FT-1"
+      ],
+      "lens": "objection",
+      "model": "opus",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-f",
+      "ideas": [
+        "FT-10",
+        "FT-2",
+        "FT-3"
+      ],
+      "lens": "misconception",
+      "model": "opus",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-g",
+      "ideas": [
+        "FT-4",
+        "FT-5",
+        "FT-6"
+      ],
+      "lens": "contrast",
+      "model": "opus",
+      "mode": "section"
+    },
+    {
+      "shard_id": "forecasting-timelines-h",
+      "ideas": [
+        "FT-8",
+        "FT-9"
+      ],
+      "lens": "case",
+      "model": "opus",
+      "mode": "section"
+    }
+  ],
+  "attempts_requested": {
+    "FT-1": 2,
+    "FT-2": 3,
+    "FT-3": 3,
+    "FT-4": 3,
+    "FT-5": 3,
+    "FT-6": 2,
+    "FT-8": 3,
+    "FT-9": 3,
+    "FT-10": 1
+  },
+  "attempts_unplaced": {},
+  "memberships_repeated_under_a_new_lens": 0,
+  "pairs_co_occurred": [
+    "FT-2|FT-3",
+    "FT-2|FT-4",
+    "FT-3|FT-4",
+    "FT-4|FT-5",
+    "FT-5|FT-8",
+    "FT-4|FT-8",
+    "FT-8|FT-9",
+    "FT-1|FT-9",
+    "FT-1|FT-8",
+    "FT-2|FT-5",
+    "FT-3|FT-5",
+    "FT-6|FT-9",
+    "FT-1|FT-6",
+    "FT-10|FT-2",
+    "FT-10|FT-3",
+    "FT-4|FT-6",
+    "FT-5|FT-6"
+  ]
+}

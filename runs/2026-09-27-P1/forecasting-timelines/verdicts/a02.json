@@ -1,0 +1,83 @@
+{
+  "id": "forecasting-timelines/opus/a02",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L3",
+  "failed_criteria": ["R6"],
+  "measurements": {
+    "correct_len": 115,
+    "distractor_lens": [112, 114],
+    "mean_distractor_len": 113,
+    "len_ratio": 1.02,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0]},
+    "stem_word_singletons": [],
+    "option_count": 3,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true],
+  "families_present": ["a", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": true,
+  "reasons": [
+    "R6: the stem's opening, 'Suppose compute-based scaling laws keep holding', lifts the text's own clause 'Even if we assume compute-based scaling laws hold' almost word for word. Searching for 'scaling laws hold' lands on that one sentence, and its next clause ('we still don't know how much compute TAI will actually require') is the key reworded. That points the reader to the answer just as surely as naming the subsection would, and makes the question answerable by search alone. The rewrite rephrases the premise so it no longer matches the text's wording."
+  ],
+  "preserve": "the key, the brain-measurement-noise distractor (a real family-(a) misreading of where the biological-anchors spread comes from, checked against 'vary dramatically depending on the biological process used as a reference'), the chip-supply wrong-slot distractor, the parallel 'Uncertainty about X, where Y' frame, and the explanation are all sound and unchanged apart from one phrase; only the stem's wording lifted from the text needed fixing.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/a02",
+    "targets": ["FT-3"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Suppose the relationship between compute and capability stays reliable, so capability rises predictably as effective compute grows. Forecasts of when full automation of cognitive labour arrives can still differ by decades. Where does most of that remaining spread come from?",
+    "options": [
+      {
+        "text": "Uncertainty about how much compute is needed at all, where plausible reference points sit orders of magnitude apart",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Uncertainty about the brain's own compute, where noisy measurements blur what would otherwise be a narrow target",
+        "key": false,
+        "provenance": "misreads the biological-anchors paragraph as attributing the spread to measurement error, when it says the estimates 'vary dramatically depending on the biological process used as a reference' (lifetime learning ~10^28 vs evolutionary history ~10^41)",
+        "family": "a"
+      },
+      {
+        "text": "Uncertainty about how many chips will exist, where supply projections for the coming years disagree by over tenfold",
+        "key": false,
+        "provenance": "right idea, wrong slot: takes 'projections of available chips range by a factor of 20x', which the same paragraph offers as one more instance of 'the same principle', as the main source of spread, missing that it is small beside 'we still don't know how much compute TAI will actually require'",
+        "family": "d"
+      }
+    ],
+    "explanation": "Granting the scaling laws tells you how capability rises with compute. It does not tell you how much compute is enough, and that threshold is the dominant unknown: biological-anchor estimates of it span about twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion dollars. The width comes from which process you take as the reference, a human lifetime of learning or all of evolution. So the noisy-measurement option gets the cause wrong: measuring the brain more precisely would not close the gap, because the gap is a choice of reference, not a blurry reading. Chip supply is a genuine uncertainty too (projections varied by around 20x as of the 2025 edition), but twentyfold is tiny beside a trillionfold. (Forecasting Timelines)",
+    "takeaway": "Even if scaling laws hold, nobody knows how much compute is enough, and that unknown dwarfs every other source of spread.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": "Three options: the plausible remaining sources are the required-compute threshold, brain-measurement noise and supply-side spread. Other candidates either contradict the stem's premise (scaling laws failing) or are arguably true co-causes (compounding growth-rate error, economic returns, the data wall), which would create a second defensible key or a second family-(d) option.",
+    "load_bearing_figures": [
+      "biological anchors span ~twelve orders of magnitude (durable V2.2; spends this section's R11 budget). The chip-projection spread (20x, volatile V1.3) is paraphrased as 'over tenfold' in a distractor, but it does not decide the answer: any plausible refreshed value is still tiny beside twelve orders of magnitude."
+    ],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed that scaling laws do not say how much compute TAI requires names the unknown compute threshold unaided.",
+      "cynic_test": "All three options share the 'Uncertainty about X, where Y' frame within 3 characters of each other; the stem no longer reuses the text's 'compute-based scaling laws hold' wording, so a search for the premise does not land on the answer sentence."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  "rewrite_changed": ["stem", "options[2].text", "options[2].provenance", "options[1].provenance", "option_count_reason", "self_check"],
+  "reviewer_note": "Check whether the key ('how much compute is needed') reads as the umbrella over the brain-compute distractor (a special case of it) and so gives itself away to a test-wise reader; the two conflict only in their second clauses ('orders of magnitude apart' vs 'narrow target'), and I judged that enough to count as a real discrimination rather than one option containing the other (rubric R14)."
+}

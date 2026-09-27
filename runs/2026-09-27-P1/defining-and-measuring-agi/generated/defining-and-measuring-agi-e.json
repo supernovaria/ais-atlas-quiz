@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/e01",
+    "targets": ["DM-10"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Someone argues: \"Worrying about AI danger is premature. Today's systems are not conscious; they manipulate symbols without understanding what they mean.\" Which objection to this argument has the most support?",
+    "options": [
+      {"text": "Consciousness has little bearing on what a system can do, so a capable system carries the same risks either way", "key": true, "provenance": null, "family": null},
+      {"text": "Consciousness could emerge abruptly with further scale, so its absence today says little about the next generation", "key": false, "provenance": "misreads 'A system doesn't need to be conscious to cause harm' as a claim about timing, keeping the prior that consciousness is what makes a system dangerous and only moving the date it arrives", "family": "c"},
+      {"text": "Intelligence and consciousness tend to arrive together, so systems capable enough to worry about are probably conscious too", "key": false, "provenance": "misses 'We are also unsure if intelligence and consciousness are necessarily linked' and the AlphaGo example ('very intelligent within the context of playing Go, but it is clearly not conscious'), reading them as linked", "family": "a"},
+      {"text": "Consciousness is too poorly defined for anyone to show that current systems lack it, so the premise cannot be checked", "key": false, "provenance": "misfiles 'consciousness often proves even harder to define than intelligence' (a problem with consciousness-based definitions of intelligence) as the decisive safety objection, which contests the premise while conceding that consciousness is what matters", "family": "d"}
+    ],
+    "explanation": "The argument's premise may well be true; the inference is what fails. Whether a system is conscious has little bearing on its ability to make high-impact decisions or take dangerous actions, so a system that can plan, manipulate or deceive carries those risks either way. That is the prior we most want to dislodge: a machine does not need to understand or be conscious before it can be dangerous. The \"emerges with scale\" option keeps exactly that prior and only moves the date. The \"too poorly defined\" option names a real difficulty, but it argues about the premise and so concedes that consciousness decides the risk. The \"arrive together\" option assumes a link we are not sure exists; AlphaGo is highly capable at Go and clearly not conscious. Setting consciousness aside is a scoping choice for safety work, not a verdict that the question is unimportant. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Danger tracks what a system can do, not whether anything is experienced inside it.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the consciousness paragraph would say unaided that consciousness is irrelevant to whether a capable system is dangerous, so the argument's inference fails.",
+      "cynic_test": "A skipper might pick the undefinability option as the cautious-sounding one, but it concedes the premise matters; three options argue about the premise or its timing and the key is the only one rejecting the inference, which a skipper cannot identify without the section's point, and no option carries an absolute or a stem-only word."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/e02",
+    "targets": ["DM-13"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Suppose a future lab reports that its system now scores 100% on a CHC-based generality measure, and announces that it can therefore do anything a well-educated adult can do. Which objection to that announcement has the most support?",
+    "options": [
+      {"text": "The domains were built from how humans differ from each other, so abilities every human shares may go untested", "key": true, "provenance": null, "family": null},
+      {"text": "A full score counts domains the system can attempt, so it may be only moderately capable within most of them", "key": false, "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing 'Generality is the percentage of these domains where a system achieves expert-level capability'", "family": "a"},
+      {"text": "Expert-level scores across the board still fall short of AGI, which also requires the system to act autonomously", "key": false, "provenance": "carries in the quoted charter wording 'highly autonomous systems' as part of the definition, against 'Our working definition does not include the autonomy with which an AGI system operates'", "family": "d"},
+      {"text": "A system could reach every score without genuine understanding, so its results overstate what it can really do", "key": false, "provenance": "misreads the Chinese Room paragraph as a limitation of the measurement framework, against 'we set aside the consciousness debate as not actionable for safety work' and the behaviourist focus on observable capability", "family": "c"}
+    ],
+    "explanation": "The CHC taxonomy was built to capture how people differ from one another, so it can omit abilities nearly every human has and AI might lack, such as robust object permanence. They never separate one person from another, so no domain tests for them. A system could top out every domain and still lack one, which is exactly what \"anything an adult can do\" assumes away. The \"domains it can attempt\" option misreads generality: a domain counts only where the system reaches expert level, so a full score already means expert depth everywhere. The autonomy option borrows the charter phrase \"highly autonomous\", which our working definition deliberately leaves out. The understanding option brings back the consciousness debate we set aside. The objection that holds is about what goes unmeasured, not what goes on inside. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A perfect score on a human-derived test battery certifies the battery, not everything the battery left out.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the counter-argument block would name coverage bias (human-derived domains can miss universally shared abilities) as the objection to 'anything an adult can do'.",
+      "cynic_test": "A skipper might pick the 'genuine understanding' option as the philosophically serious one, but the framework sets that debate aside; the other valid critiques (non-linear progress, arbitrary thresholds, species-specific risk) are kept out of the option set so the key is unique, the 57% scenario from RUBRIC 10.2 is not reused, and 'generality' and 'adult' appear only in the stem."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/e03",
+    "targets": ["DM-14"],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Under the (t,n)-AGI framing, one system outperforms a single expert given a day, and another outperforms a single expert given a year. A critic says the second system's edge matters only for the rare project that genuinely takes a year. Which response to the critic has the most support?",
+    "options": [
+      {"text": "Most projects can be split into shorter sub-tasks, so matching experts over a year means matching them on nearly all work", "key": true, "provenance": null, "family": null},
+      {"text": "The year is how long the system takes to finish, so the second is the slower system and matters even less than claimed", "key": false, "provenance": "misreads 'Given a time frame t to complete some cognitive task' as the AI's own running time, rather than the time budget given equally to the human expert", "family": "a"},
+      {"text": "A longer horizon mainly reflects stronger reasoning, so the second system would also outperform the first on short tasks", "key": false, "provenance": "misfiles the horizon limit under reasoning, against 'Task time horizon limitations are implicitly captured in our generality measure as weaknesses in ... long-term memory storage and retrieval'", "family": "d"},
+      {"text": "Year-long projects hold most of the economic value in expert work, so that is exactly where the second system counts", "key": false, "provenance": "imports the charter's 'most economically valuable work' framing into (t,n)-AGI, conceding the critic's premise that only year-long projects are affected and missing the decomposition argument", "family": "c"}
+    ],
+    "explanation": "A one-year AGI would beat humans at basically everything, mainly because most projects can be divided into sub-tasks that fit into shorter timeframes. So the long-horizon system is not a specialist in year-long jobs; its horizon covers nearly all the work the day-long system does, and more. The \"slower\" option misreads t: it is the time budget the system and the expert are both given, not how long the system takes to answer. The \"stronger reasoning\" option reaches a similar conclusion by the wrong route; in the capability-generality framing, short task horizons show up as weakness in long-term memory storage and retrieval. The economic-value option accepts the critic's premise that only year-long projects benefit and argues about their worth, which misses why the premise is false. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A longer t subsumes shorter ones, because long work decomposes into short work.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood (t,n)-AGI would answer unaided that year-long capability covers most work because projects decompose into shorter sub-tasks.",
+      "cynic_test": "A skipper might pick the economic-value option as the confident rebuttal, but it concedes the critic's premise; 'rare' and 'single' appear only in the stem, no option carries an absolute, and the reasoning option shares the key's conclusion so it cannot be eliminated on direction alone."
+    }
+  },
+  {"note": "All three ideas taken through the objection lens as assigned. No discrimination_pairs entry spans two of DM-10/DM-13/DM-14, so no combined candidate. DM-14 is claimed L4 rather than L5 because the decomposition verdict is stated in the prose; the reader applies it to a critic's claim rather than building the critique. DM-13 deliberately avoids RUBRIC 10.2's 57% non-linear scenario and targets coverage bias instead, with the other three stated limitations kept out of the options so the key stays unique."}
+]

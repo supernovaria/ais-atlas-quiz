@@ -1,0 +1,1217 @@
+[
+  {
+    "id": "forecasting-timelines/opus/a01",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You feed a compute-based forecasting model your own beliefs: how fast investment grows, how fast algorithms improve, and how many tasks each order of magnitude of compute automates. It outputs full automation decades earlier than you expected. What is the most useful thing to do with that surprise?",
+    "options": [
+      {
+        "text": "Treat it as a sign that one of the inputs you supplied conflicts with the future you expect, and revisit those inputs",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Treat it as a sign that the forecast itself is miscalibrated, and discard its output in favour of your expectation",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into the claim that surprise shows the forecast is wrong and should be thrown out",
+        "family": "b"
+      },
+      {
+        "text": "Treat it as the best available estimate of the arrival date, and shift your own expected date to line up with it",
+        "key": false,
+        "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason about different potential futures'",
+        "family": "c"
+      },
+      {
+        "text": "Treat it as noise within the forecast's wide error bars, and give it no weight in judging which future to expect",
+        "key": false,
+        "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the coherence check ('They let you check if your beliefs are internally coherent') survives the uncertainty",
+        "family": "a"
+      }
+    ],
+    "explanation": "A forecasting model takes beliefs you already hold (how fast investment grows, how fast algorithms improve, how much each order of magnitude of compute automates) and works out what they jointly imply. When that implication surprises you, the model has shown that your inputs and the future you expect do not fit together, so the inputs are what you revisit. Discarding the output treats the forecast as an independent prediction that got it wrong, when it is a consequence of what you told it. Adopting the output as your new arrival date makes the opposite mistake: it reads a scenario as a prediction. And wide error bars do not empty the exercise, because checking coherence works even when no date can be pinned down. (Forecasting Timelines)",
+    "takeaway": "A surprising forecast points back at your own inputs: it is a coherence check, not a date.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'if you're surprised, maybe one of your input beliefs needs updating' can say 'go back and check which of my assumptions is off' with the options covered.",
+      "cynic_test": "A skipper might pick the 'best available estimate' option as the sensible, deferential choice, or the 'discard' option as healthy scepticism; all four share the 'Treat it as ..., and ...' frame with no hedges or absolutes, so only the section's inputs-not-outputs point separates them."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/a02",
+    "targets": [
+      "FT-3"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Suppose compute-based scaling laws keep holding, so capability rises predictably as effective compute grows. Forecasts of when full automation of cognitive labour arrives can still differ by decades. Where does most of that remaining spread come from?",
+    "options": [
+      {
+        "text": "Uncertainty about how much compute is needed at all, where plausible reference points sit orders of magnitude apart",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Uncertainty about the brain's own compute, where noisy measurements blur what would otherwise be a narrow target",
+        "key": false,
+        "provenance": "misreads the biological-anchors paragraph as attributing the spread to measurement error, when it says the estimates 'vary dramatically depending on the biological process used as a reference'",
+        "family": "a"
+      },
+      {
+        "text": "Uncertainty about how many chips will exist, where supply projections for the next decade disagree by over tenfold",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers 'projections of available chips range by a factor of 20x', a real but far smaller uncertainty, as the main source, missing 'we still don't know how much compute TAI will actually require'",
+        "family": "d"
+      }
+    ],
+    "explanation": "Granting the scaling laws tells you how capability rises with compute. It does not tell you how much compute is enough, and that threshold is the dominant unknown: biological-anchor estimates of it span about twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion dollars. The width comes from which process you take as the reference, a human lifetime of learning or all of evolution. So the noisy-measurement option gets the cause wrong: measuring the brain more precisely would not close the gap, because the gap is a choice of reference, not a blurry reading. Chip supply is a genuine uncertainty too (projections varied by around 20x as of the 2025 edition), but twentyfold is tiny beside a trillionfold. (Forecasting Timelines)",
+    "takeaway": "Even if scaling laws hold, nobody knows how much compute is enough, and that unknown dwarfs every other source of spread.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": "Three options: the plausible remaining sources are the required-compute threshold, brain-measurement noise and supply-side spread. Other candidates either contradict the stem's premise (scaling laws failing) or are arguably true co-causes (compounding growth-rate error), which would create a second defensible key.",
+    "load_bearing_figures": [
+      "biological anchors span ~twelve orders of magnitude (durable V2.2; spends this section's R11 budget). The chip-projection spread (20x, volatile V1.3) is paraphrased as 'over tenfold' in a distractor, but it does not decide the answer: any plausible refreshed value is still tiny beside twelve orders of magnitude."
+    ],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'even if we assume compute-based scaling laws hold, we still don't know how much compute TAI will actually require' names the unknown compute requirement unaided.",
+      "cynic_test": "All three options share the 'Uncertainty about X, where Y' frame at similar length, and 'compute' appears in two options, so there is no word-match tell; a skipper might go for 'brain's own compute' because it sounds most scientific, and only knowing that the spread comes from the choice of reference rules it out."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/a03",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "For a year, a lab changes nothing about its hardware: same number of chips, same chip generation, same hours of use. Its researchers find training methods that reach the lab's previous results with a quarter of the operations. How should that year's change be classified?",
+    "options": [
+      {
+        "text": "A fourfold increase in effective compute, as large as the gain from buying four times as many chips",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "No increase in compute, because the lab ran the same chips for the same number of hours as before",
+        "key": false,
+        "provenance": "the prior the subsection targets directly: 'compute means more than just counting GPUs ... they're not just talking about running more hardware for longer'",
+        "family": "c"
+      },
+      {
+        "text": "An algorithmic gain that raises capability beside compute, while the lab's compute itself stays flat",
+        "key": false,
+        "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+        "family": "a"
+      },
+      {
+        "text": "A rise in effective compute, but a smaller one than buying four times as many chips would give",
+        "key": false,
+        "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as hardware setting the total and software only adjusting it, rather than three factors that multiply on equal terms",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is the product of software efficiency, hardware efficiency and number of chips. A method that reaches the same results with a quarter of the operations therefore multiplies effective compute by four, exactly as quadrupling the chips would. Nothing physical changed, and that is the point: compute here means more than counting GPUs or GPU-hours. The 'same chips, same hours' answer is the intuition this idea exists to replace, because it measures raw operations rather than what those operations achieve. Calling the gain a separate algorithmic driver misfiles software efficiency, which is one of compute's three factors, not a rival to it. And because the factors multiply, a fourfold software gain counts for exactly as much as a fourfold chip gain. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Better algorithms count as more compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'effective compute = software x hardware x chips' says 'effective compute went up fourfold, same as four times the chips' with the options covered.",
+      "cynic_test": "A skipper who counts physical resources picks 'no increase, same chips same hours', which sounds like careful accounting; there are no hedges or absolutes, 'chips' appears in three options, and the fourfold factor is invented (not the text's 10x example), so nothing on the surface points to the key."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/b01",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose chip designers hit a physical limit: new GPUs stop doing more operations per dollar than old ones. Meanwhile, chip fabs keep expanding and training methods keep improving at their recent pace. What happens to effective compute?",
+    "options": [
+      {
+        "text": "It keeps rising, though more slowly, since more chips and better algorithms still multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It stalls, since effective compute is chip count scaled by chip speed and chip speed has stopped rising",
+        "key": false,
+        "provenance": "misreads the Effective Compute subsection as tracking hardware trends (the FT-4/FT-5 pair conflation), against 'compounds much faster than hardware trends alone would suggest'",
+        "family": "c"
+      },
+      {
+        "text": "It stalls after a lag, since software gains need faster new chips before they become usable compute",
+        "key": false,
+        "provenance": "reverses 'You can develop better software to make use of existing hardware' into a coupling between the factors",
+        "family": "b"
+      },
+      {
+        "text": "It keeps rising at its old pace, since the funding loop now pours that money into chips and algorithms",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers the compute-automation-productivity funding loop (Figure 1.38) as the reason effective compute compounds, where the reason is independent multiplication of three factors",
+        "family": "d"
+      }
+    ],
+    "explanation": "Effective compute is the product of chip count, hardware efficiency and software efficiency, and each can improve without the others. If hardware efficiency flatlines while the other two keep their recent pace, the product still grows, just more slowly. The stall answer is the prior we wrote this subsection to dislodge: that AI compute is chip count times chip speed, so it lives or dies with chip progress. The lagged-stall answer reverses our point that better software makes better use of hardware you already have. The funding loop is real, but it is a separate mechanism, and with the two remaining factors fixed at their recent pace, losing a third multiplier has to slow the total. For colour: 2025 estimates put hardware efficiency near 1.35x a year, algorithms near 3x and chip production near 2.3x. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Because the three factors multiply and move independently, one stalled factor slows effective compute but does not stop it.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows the factors multiply and improve independently will say unaided that growth continues at a reduced rate.",
+      "cynic_test": "A skipper might pick the odd-one-out direction, so two options say 'rises' and two say 'stalls', and all four carry a parallel since-clause of similar length."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/b02",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two labs each announce that their compute grew tenfold this year. Lab A bought ten times as many GPUs of the model it already used. Lab B kept its cluster unchanged but adopted training methods that reach the same results with a tenth of the operations. On an effective-compute accounting, how do the two announcements compare?",
+    "options": [
+      {
+        "text": "Both are tenfold gains on that accounting, because algorithms and chip count each multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Only Lab A's is a compute gain; Lab B's is algorithmic progress, which is a separate kind of gain",
+        "key": false,
+        "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+        "family": "a"
+      },
+      {
+        "text": "Lab B's is the larger gain, because software gains compound on hardware while chip count only adds",
+        "key": false,
+        "provenance": "hybrid of FT-5's 'compounds' with an additive misreading of 'Software efficiency times Hardware efficiency times Number of chips', treating one factor as additive and another as multiplicative",
+        "family": "b"
+      },
+      {
+        "text": "Lab B's gain counts only once it moves to newer chips, because software needs hardware to pay off",
+        "key": false,
+        "provenance": "reverses FT-5's 'You can develop better software to make use of existing hardware' into a dependence of software gains on new hardware",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute multiplies software efficiency, hardware efficiency and chip count, so a tenfold gain in any one factor is a tenfold gain in the total. Lab A got its gain from chips; Lab B got the same gain from algorithms without building a single new chip. The tempting answer treats algorithmic progress as something separate from compute, which is the everyday sense of 'compute' as hardware you can count, and that is exactly the sense we replace. The option saying Lab B must wait for newer chips reverses our point that each factor improves independently. The option saying chip count 'only adds' misreads the product: all three factors multiply, and none has a privileged role. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "A tenfold algorithmic gain on the same chips is as much an increase in effective compute as ten times the chips.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds effective compute as a product of three factors will say both labs gained tenfold.",
+      "cynic_test": "'Both are equal' might look like the safe middle, so two distractors also assert a specific comparison, and the stem's 'effective compute' is kept out of every option so no single option echoes it."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/b03",
+    "targets": [
+      "FT-8"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A commentator argues: \"Frontier models will soon have trained on all the high-quality public text there is, so the era of scaling language models is ending.\" Which assessment of this argument holds up best?",
+    "options": [
+      {
+        "text": "The premise is well supported, but the conclusion turns on how well synthetic and self-play data work",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The argument is sound, since pre-training needs human-written text and the stock of it is fixed",
+        "key": false,
+        "provenance": "conflates the data wall with its consequence (the FT-8/FT-9 pair conflation), against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+        "family": "a"
+      },
+      {
+        "text": "The premise is right but harmless, since images and video can stand in for text with no cap on supply",
+        "key": false,
+        "provenance": "misreads the multimodal escape route ('could 3-10x the effective data supply') as removing the limit, conflating it with the synthetic-data route the text says could remove the constraint",
+        "family": "b"
+      },
+      {
+        "text": "The premise is right but harmless, since growth in effective compute can make up for the missing data",
+        "key": false,
+        "provenance": "misfiles data under Effective Compute, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The premise is well founded: at recent growth rates, frontier training runs exhaust the stock of high-quality public text within years (the 2024 projections put it between 2026 and 2032). But the conclusion does not follow. Running out of human text closes one supply rather than ending scaling, and whether data actually binds depends on the escape routes: synthetic data removes the constraint only if its quality holds, and self-play works only where a task has explicit rules and rewards. Calling the argument sound conflates the wall with its consequence. Multimodal data helps, but as a bounded multiplier on supply, not an unlimited one. And more effective compute is no fix: data is a second constraint alongside compute, not an input to it. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall is real, but it ends scaling only if the escape routes fail, so the question is conditional rather than settled.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who separates the wall from the escape routes will say the premise holds but the conclusion depends on the alternatives.",
+      "cynic_test": "The hedged 'it depends' key is a classic tell, so every distractor also concedes or grants the premise, and the one absolute ('no cap') is the multimodal-unlimited belief readers actually hold."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/c01",
+    "targets": [
+      "FT-9"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab that has used up the high-quality public text it can find wants more training signal for a model that drafts persuasive policy memos, where no crisp score marks a good memo. A colleague proposes AlphaZero-style self-play. What is the strongest reason to doubt that proposal here?",
+    "options": [
+      {
+        "text": "The task cannot be cast as a game with explicit rules and a success metric to reward",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The method is confined in principle to board games, whatever structure a task has",
+        "key": false,
+        "provenance": "misreads the Go/chess examples in the Task-based learning bullet as the limit of the route, against 'In principle, this approach could be extended to teaching any arbitrary task'",
+        "family": "b"
+      },
+      {
+        "text": "The method still needs a large stock of human-written examples to imitate first",
+        "key": false,
+        "provenance": "reverses 'AIs can learn without human-generated pretraining examples' and 'without any human gameplay examples' in the Task-based learning bullet",
+        "family": "b"
+      },
+      {
+        "text": "The method only multiplies the existing stock of text by a fixed factor, so it just delays the wall",
+        "key": false,
+        "provenance": "conflates self-play with the Multimodal bullet's condition ('could 3-10x the effective data supply'), attaching a bounded-multiplier limit to a route that generates data through interaction",
+        "family": "a"
+      }
+    ],
+    "explanation": "Self-play generates its own training data through interaction with an environment, but only where the task can be formalised as a game with explicit rules and a success metric. That is why it worked for Go and chess. A persuasive memo has no such scoring rule, so there is nothing to reward. If you picked 'confined to board games', you took the examples for the limit: in principle the approach extends to any task that can be specified this way, so the task's structure decides, not its domain. The 'fixed multiplier' option borrows multimodal data's condition, since images and video enlarge a finite stock, and attaches it to a route that makes data rather than finding it. And self-play's whole point is that it needs no human examples. Each escape route has its own condition, and you have to check that condition. (Forecasting Timelines → Training Data)",
+    "takeaway": "Each escape from the data wall has its own condition; self-play's is that the task can be written as a game with explicit rewards.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the self-play condition ('as long as tasks can be formalized as games with explicit rules and success metrics') produces 'no explicit reward for memos' unaided.",
+      "cynic_test": "A skipper might pick the 'board games' option as the intuitive objection, but the stem's 'no crisp score' points to the formalisation condition only for someone who knows that condition, and all four options share one grammatical shape and a similar length, with the only absolute ('only multiplies') sitting on a distractor."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/c02",
+    "targets": [
+      "FT-8"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a lab has already trained on nearly all the high-quality public text there is, and over the next year better algorithms and more chips triple its effective compute. What follows for its next model?",
+    "options": [
+      {
+        "text": "Its next gains depend on data beyond public text, because more effective compute does not enlarge that stock",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Its scaling is over, because a model cannot keep improving once no new human-written text is left to use",
+        "key": false,
+        "provenance": "conflates the data wall with its consequence, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+        "family": "a"
+      },
+      {
+        "text": "Little changes, because data is one of the factors that effective compute multiplies, so the tripling covers it",
+        "key": false,
+        "provenance": "misfiles data inside the Effective Compute equation, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'",
+        "family": "a"
+      },
+      {
+        "text": "Little changes, because the web grows fast enough each year to refill the stock of high-quality text",
+        "key": false,
+        "provenance": "the pre-chapter prior that internet text is effectively unlimited, which the Training Data subsection overturns with 'we'll hit that wall'",
+        "family": "c"
+      }
+    ],
+    "explanation": "Data is a separate constraint from effective compute. Software efficiency, hardware efficiency and chip count multiply each other, but none of them adds a token to the stock of high-quality public human text. Once that stock is spent, further gains depend on the escape routes: multimodal, synthetic and self-play data. The 'data is a factor effective compute multiplies' option files data inside the compute equation, but we treat it as the second overarching factor. The 'scaling is over' option conflates the wall with its consequence: whether data actually binds depends on how well those alternatives work. And the web does grow, just not remotely fast enough. At the time of writing, training sets were growing several-fold a year against a stock that was roughly fixed. (Forecasting Timelines → Training Data)",
+    "takeaway": "Tripling compute does nothing to the text stock; the data wall has to be handled by data, not by more chips.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds data and effective compute as separate factors says 'compute can't make more public text, so it needs new data sources' unaided.",
+      "cynic_test": "A skipper would avoid the one absolute ('cannot keep improving') and then face three even-length options split two-and-two by opening phrase; choosing between the key and the 'data is a compute factor' option requires knowing the section files data separately."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/c03",
+    "targets": [
+      "FT-1"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two safety research groups agree on everything except timing: the first expects AI able to automate ML research within about a decade, the second in about fifty years. Which difference between their research plans follows from that one disagreement?",
+    "options": [
+      {
+        "text": "The first should favour methods that work on current systems and scale fast; the second can invest in foundational theory",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The first should favour foundational theory that settles the problem at once; the second can refine methods for current systems",
+        "key": false,
+        "provenance": "reverses the pairing in the 2030-vs-2050 paragraph, where 'breathing room for fundamental alignment research' belongs to the long case",
+        "family": "b"
+      },
+      {
+        "text": "Both should pursue the same portfolio of projects, with the first simply running it on a much tighter schedule",
+        "key": false,
+        "provenance": "misreads 'we need safety solutions working soon' as a change of pace only, missing 'There's no time for slow theoretical research—we need approaches that work with current systems'",
+        "family": "b"
+      },
+      {
+        "text": "The second should defer most of its safety work until systems closer to transformative AI exist to study directly",
+        "key": false,
+        "provenance": "the wait-and-see prior that forecasting has no bearing on what to do now, against the bold lead 'Predicting when AI automates cognitive labor determines which safety strategies are viable' and the long case's list of work to do in the breathing room",
+        "family": "c"
+      }
+    ],
+    "explanation": "Timeline length changes which strategies are viable, not only how fast to carry them out. If AI can automate ML research within a decade, slow theoretical programmes may not finish in time, so the work has to function on current systems and scale quickly. Fifty years buys room for fundamental alignment research, robust governance and evaluation methods we can trust. The 'same portfolio, tighter schedule' option is the most tempting misreading. It treats a timeline as a deadline on a fixed plan, when a short timeline takes some projects off the table altogether. The reversed option swaps the pairing, because foundational theory is what the long case can afford. And a long timeline is room to do that deep work now, not a reason to wait. (Forecasting Timelines)",
+    "takeaway": "A shorter timeline doesn't just speed up the safety agenda; it changes which items can be on it.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in the opening paragraph produces 'short: work with current systems; long: room for fundamental research' unaided.",
+      "cynic_test": "A skipper might pick 'same portfolio, faster', which is the intuitive default, or be torn between the key and its mirror image; 'current systems' and 'foundational theory' each appear in two options, so no word match marks the key, and the decade/fifty-year figures are hypotheticals in the stem rather than forecast dates."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/d01",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You give a simple forecasting model four beliefs: investment grows 5x a year, software efficiency 3x a year, hardware 15% a year, and each tenfold rise in compute automates at least a tenth of tasks. It returns full automation far sooner than you had expected. What is the most useful thing to conclude?",
+    "options": [
+      {
+        "text": "Your input beliefs and your expected timeline are inconsistent, so at least one of them has to be revised",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The model's structure is at fault, because a sound forecast should not contradict a well-informed prior view",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into surprise indicting the model rather than the inputs you supplied",
+        "family": "b"
+      },
+      {
+        "text": "The output is a date estimate to be checked against expert surveys, and kept only if it falls inside their range",
+        "key": false,
+        "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason'",
+        "family": "c"
+      },
+      {
+        "text": "The result carries little weight, because inputs this uncertain compound into error bars too wide to act on",
+        "key": false,
+        "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the consistency check survives the uncertainty",
+        "family": "a"
+      }
+    ],
+    "explanation": "The model only works out what your own four beliefs jointly imply. If that implication clashes with the future you expected, you are holding a contradiction: some input, or the expectation itself, has to give. That is the use we recommend for forecasts — checking whether your beliefs cohere, not reading off a date. The error-bars option is the tempting one: forecasts really are very uncertain, but the uncertainty is in the inputs, and the check still tells you which of your inputs are doing the work. Blaming the model reverses the logic, since the surprising output came from assumptions you supplied. Treating the output as a date to validate against surveys is exactly the prediction reading we warn against. (Forecasting Timelines)",
+    "takeaway": "A surprising forecast is a signal about your own inputs, not a verdict to accept or a model to discard.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'check if your beliefs are internally coherent' would say 'one of my assumptions or my expectation is wrong' unprompted.",
+      "cynic_test": "A skipper would lean to the error-bars option because humility sounds right; it fails because the question asks what the run is useful for, and the key keeps the same hedge-free register with no length or absolute tell."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/d02",
+    "targets": [
+      "FT-3"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose training compute keeps growing about fivefold a year, as it has recently, and compute-based scaling laws continue to hold. Why would a forecast of when transformative AI arrives still span decades rather than a few years?",
+    "options": [
+      {
+        "text": "Nobody knows how much compute transformative AI requires, and estimates of that threshold differ by many orders of magnitude",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Estimates of the brain's computing power are imprecise, and that measurement noise carries into the required-compute figure",
+        "key": false,
+        "provenance": "misreads the biological-anchors spread as measurement error, where the text attributes it to 'the biological process used as a reference' (lifetime learning vs evolutionary history)",
+        "family": "a"
+      },
+      {
+        "text": "Empirical regularities like these tend to break, so a forecast must allow for them failing at some unknown future scale",
+        "key": false,
+        "provenance": "right idea, wrong slot: imports the empirical-not-physical-law point about scaling, against 'Even if we assume compute-based scaling laws hold, we still don't know how much compute TAI will actually require'",
+        "family": "d"
+      },
+      {
+        "text": "Forecasters disagree mainly about what counts as transformative AI, so each of them is timing a different event",
+        "key": false,
+        "provenance": "pre-chapter prior that timeline disagreement is definitional; misses that the section's named source of spread persists with the TAI definition held fixed",
+        "family": "c"
+      }
+    ],
+    "explanation": "Knowing how fast compute grows tells you nothing about when it crosses a line if you do not know where the line is. Biological-anchor estimates of the compute needed run from about 10^28 FLOP (a human lifetime of learning) to about 10^41 FLOP (evolutionary history): twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion. The measurement-noise option misplaces that spread. It comes from which biological process you take as the reference, and better brain measurements would not settle that choice. The scaling-breaks option describes a real caveat, but the stem assumes the laws hold, and the range stays wide anyway. So 'AGI in 2045' means roughly the 2030s to 2050s, centred on 2045. (Forecasting Timelines)",
+    "takeaway": "A known growth rate still leaves the arrival date open when the target itself is uncertain by orders of magnitude.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: with the rate and the laws stipulated, a reader who understood the anchors paragraph names the unknown compute threshold as what is left.",
+      "cynic_test": "A skipper might take the scaling-breaks option as the sophisticated caveat; the stem's 'continue to hold' removes it, and the key's 'many orders of magnitude' is matched in specificity by the other three causal claims."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/d03",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A commentator argues that GPU performance per dollar is improving only about 1.35x a year and slowing, so the effective compute behind AI is about to stall. Suppose chip speed gains did stop entirely, while software efficiency and chip production kept their recent paces of roughly 3x and 2.3x a year. What would happen to effective compute?",
+    "options": [
+      {
+        "text": "It would keep compounding, more slowly, because software gains and chip counts multiply it independently of chip speed",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It would level off, because better algorithms and more chips pay off only when paired with faster processors",
+        "key": false,
+        "provenance": "reverses 'You can develop better software to make use of existing hardware' and 'You can build more chips without improving their speed' into the factors being coupled",
+        "family": "b"
+      },
+      {
+        "text": "It would track chip speed and flatten, because processor performance is what effective compute mainly measures",
+        "key": false,
+        "provenance": "the Moore's-law prior the subsection targets: 'compute means more than just counting GPUs' and 'compounds much faster than hardware trends alone would suggest'",
+        "family": "c"
+      },
+      {
+        "text": "It would keep growing only while revenue from automation funds enough extra chips to offset the lost speed",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers the compute-automation-productivity funding loop as the reason growth continues, where the Effective Compute subsection's reason is independent multiplication",
+        "family": "d"
+      }
+    ],
+    "explanation": "Effective compute is software efficiency times hardware efficiency times number of chips, and each factor can improve on its own. If hardware efficiency flatlines, it just stops contributing: the product still grows at the combined rate of the other two, which on 2025 trend estimates is several-fold a year. The funding-loop option names a real mechanism, the loop in which automation pays for more compute, but software gains do not wait on revenue to replace lost chip speed. The level-off option assumes the factors are coupled, when we say explicitly that better software makes use of existing hardware. The commentator's mistake is treating one factor, and the slowest-growing of the three, as the whole of compute. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "A stall in one multiplying factor slows effective compute; it does not stop it.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader holding 'each factor can improve independently' answers 'it keeps growing on the other two factors' without seeing options.",
+      "cynic_test": "A skipper might pick the funding-loop option because it sounds mechanistic and hedged; it fails because the stem already holds software and chip production at their paces, so no compensation is needed. The key carries no extra qualifiers and sits mid-length."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/e01",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "An analyst argues: \"AI systems today automate only a thin slice of work and earn little compared with what their training costs, so the returns cannot sustain continued scaling.\" Which objection has the most support in how compute, automation and productivity interact?",
+    "options": [
+      {
+        "text": "Small early returns are what the loop predicts; value grows as bigger compute budgets automate more tasks, and that value buys more compute",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The loop runs independently of these returns, because it closes once AI systems do the research that makes the next round of compute cheaper",
+        "key": false,
+        "provenance": "conflates the productivity-funds-compute loop ('compute enabling automation, which increases productivity, which funds more compute') with the automation-of-R&D loop introduced separately in takeoff",
+        "family": "a"
+      },
+      {
+        "text": "The returns are front-loaded: the easiest tasks are automated first and deliver most of the value before compute budgets grow much",
+        "key": false,
+        "provenance": "reverses 'Initially, only a small fraction of tasks are automated, so running AI systems creates relatively little economic value'",
+        "family": "b"
+      },
+      {
+        "text": "Analysis shows city-scale training runs are physically achievable, so feasibility rather than returns is what bounds further scaling",
+        "key": false,
+        "provenance": "misreads 'analysis suggests that they aren't impossible' as settling the matter, dropping 'The question is whether the economic incentives justify it'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The analyst's premise is true and is exactly what the feedback loop expects. At first only a small fraction of tasks is automated, so AI creates relatively little value; as effective compute grows, the range of automated tasks widens, productivity rises, and that productivity funds more compute, looping until labour is fully automated. Thin returns today are the loop's starting point, not evidence against it. If you picked the research-automation answer, you merged this loop with a different one: here the loop closes through productivity paying for compute, not through AI improving itself. The feasibility answer drops our other half of the sentence: city-scale runs being possible leaves open whether the economic incentives justify them, and that is exactly the question the loop answers. (Forecasting Timelines)",
+    "takeaway": "Low early returns are the expected first stage of the compute-automation-productivity loop, not a refutation of it.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who has the loop can say 'little value at first is what the model expects; value then funds compute' without seeing options.",
+      "cynic_test": "A skipper might take the physical-feasibility option because it sounds empirical and confident, but it is the one that misses returns as the binding question; all four are same-length causal claims with no absolutes and no stem word unique to the key."
+    },
+    "shard_id": "forecasting-timelines-e",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/e02",
+    "targets": [
+      "FT-9"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Two researchers respond to the data wall. One says synthetic data makes it irrelevant, since models can generate their own training text; the other says self-play does, since AlphaZero needed no human games. Which objection applies to both claims?",
+    "options": [
+      {
+        "text": "Each route holds only under its own condition: one needs outputs of high enough quality, the other needs tasks formalised with explicit rewards",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Each route only multiplies the existing stock by a bounded factor, as encoding images and video does, rather than getting around the limit",
+        "key": false,
+        "provenance": "conflates synthetic data and self-play with the multimodal route, the one the Training Data subsection frames as a bounded 3-10x multiplier",
+        "family": "a"
+      },
+      {
+        "text": "Each route still needs human-written examples to start from, so at best it postpones the wall rather than removing the constraint",
+        "key": false,
+        "provenance": "carries in the model-collapse prior against 'AIs can learn without human-generated pretraining examples' in the task-based learning bullet",
+        "family": "c"
+      },
+      {
+        "text": "Each route is still speculative and untested at scale, so neither can yet be counted as evidence that the wall can be avoided",
+        "key": false,
+        "provenance": "extends 'This is still very speculative' from the self-play bullet to synthetic data, against 'Post-training methods like reinforcement learning on reasoning tasks already demonstrate this works for some domains'",
+        "family": "b"
+      }
+    ],
+    "explanation": "Both researchers name a real escape route but drop its condition. Synthetic data removes the constraint only if the outputs are high enough quality; self-play lets systems learn without human examples only where tasks can be formalised as games with explicit rules, rewards and tractable state spaces, as Go and chess can. AlphaZero shows the second route works, not that it generalises to arbitrary tasks. If you chose the 'speculative and untested' objection, you applied self-play's caveat to synthetic data too: reinforcement learning on reasoning tasks already shows synthetic data working in some domains. The bounded-multiplier objection belongs to the third route, multimodal data, which is why that route alone cannot remove the wall. Whether data constrains scaling depends on how well each condition holds. (Forecasting Timelines → Training Data)",
+    "takeaway": "Every escape from the data wall is conditional, and each has a different condition.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the routes would say 'synthetic needs quality, self-play needs formalisable tasks with rewards' unprompted.",
+      "cynic_test": "A skipper might favour the cautious 'still speculative' option as the safe hedge, but the text contradicts it for synthetic data; all options share the 'Each route' frame so grammar and the stem words 'synthetic'/'self-play' (absent from every option) give nothing away."
+    },
+    "shard_id": "forecasting-timelines-e",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/e03",
+    "targets": [
+      "FT-1"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Picture two worlds that are identical except that transformative AI arrives ten years from now in one and fifty years from now in the other. A safety lead says the right research portfolio is the same in both, and only the pace should differ. Which response has the most support?",
+    "options": [
+      {
+        "text": "The short world rules out slow theoretical work in favour of methods that run on current systems and scale; the long world keeps it open",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The long world is where methods proven on current systems pay off most, while the short world is better spent on fundamental theory",
+        "key": false,
+        "provenance": "reverses the pairing in the opening paragraph, where 'breathing room for fundamental alignment research' belongs to the later arrival and 'approaches that work with current systems' to the earlier one",
+        "family": "b"
+      },
+      {
+        "text": "Forecasts this uncertain can set how urgent the work is, but they cannot tell anyone which kinds of safety research to prioritise",
+        "key": false,
+        "provenance": "turns 'All forecasts come with wide error margins' into a reason timelines cannot guide strategy, against the bold lead 'Predicting when AI automates cognitive labor determines which safety strategies are viable'",
+        "family": "c"
+      },
+      {
+        "text": "The short world leaves governance frameworks as the main lever, since technical alignment work cannot mature within ten years",
+        "key": false,
+        "provenance": "moves 'building robust governance frameworks' from the long-timeline list of what breathing room allows into the short-timeline case",
+        "family": "b"
+      }
+    ],
+    "explanation": "Timeline length changes what is worth doing, not just how fast to do it. With ten years there is no time for slow theoretical research, so the work has to be approaches that function on today's systems and scale quickly. With fifty there is room for fundamental alignment research, robust governance frameworks and evaluation methods we can trust. If you picked the reversed pairing, notice that theory is the long-horizon bet because it pays off late. The 'uncertain forecasts only set urgency' answer is a common prior: the error bars are real, but the difference between ten and fifty years is exactly what decides which strategies are viable. Governance appears on the long-timeline list, because building robust frameworks is itself slow work. (Forecasting Timelines)",
+    "takeaway": "Timeline length decides which safety strategies are viable, not only how urgently to pursue them.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader could say 'short timelines force work that runs on current systems; long ones allow fundamental theory' without options.",
+      "cynic_test": "The reversed-pairing distractor mirrors the key's structure exactly, so a skipper cannot pick on shape; the 10-vs-50-year framing is the section's own durable contrast rather than the volatile 2030/2050 dates, and no option carries an absolute."
+    },
+    "shard_id": "forecasting-timelines-e",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/f01",
+    "targets": [
+      "FT-10"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Someone argues: \"Frontier training runs are heading toward drawing as much electricity as a small city. Nothing like that has ever been built for one computation, so scaling will have to stop within a few years.\" Which response best fits the current evidence on scaling?",
+    "options": [
+      {
+        "text": "Runs at that scale look feasible; the open questions are whether the economic returns justify them and whether chips and power arrive in time",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Runs at that scale look feasible, so continued scaling is the expected outcome and what remains is mostly engineering the physical build-out",
+        "key": false,
+        "provenance": "drops 'The question is whether the economic incentives justify it and whether the infrastructure constraints ... can be overcome in time', reading 'they aren't impossible' as 'they will happen'",
+        "family": "b"
+      },
+      {
+        "text": "The argument holds: power and chip supply impose a physical ceiling that training runs of that size cannot realistically get past",
+        "key": false,
+        "provenance": "misreads 'comparable to running a small city' as a ceiling, against 'These are unprecedented scales, but analysis suggests that they aren't impossible'",
+        "family": "c"
+      },
+      {
+        "text": "Power is a side issue; the binding limit is the stock of public text, which is used up well before power demand becomes decisive",
+        "key": false,
+        "provenance": "right idea, wrong slot: promotes the Training Data subsection's data wall to the decisive constraint, when the text lists data as one infrastructure constraint among several and says whether it binds depends on the escape routes",
+        "family": "d"
+      }
+    ],
+    "explanation": "The analysis we draw on finds city-scale training runs unprecedented but not impossible, so physical impossibility is the wrong objection. What stays open is conditional: whether the economic incentives justify spending at that scale, and whether chips, power and data can be supplied in time. If you picked the physical-ceiling option, you took the size of the number as a limit; unprecedented is not the same as unbuildable, and that is the prior this part of the section overturns. If you picked the 'expected outcome' option, you kept the feasibility finding but dropped its two conditions, and feasible-if-funded is not the same as inevitable. The data-wall option treats one constraint as decisive, when whether data binds depends on how well the escape routes work. (Forecasting Timelines)",
+    "takeaway": "Not impossible is a different claim from inevitable: feasibility leaves the economics and the build-out open.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'not impossible, but depends on incentives and infrastructure' can state the key's two-part answer unaided.",
+      "cynic_test": "A skipper might pick the confident 'feasible, so it happens' option or the sceptical ceiling; the key and top distractor share the 'look feasible' opening and length, so only the dropped conditions separate them, and 'power' appears in three options, so no word-match tell."
+    },
+    "shard_id": "forecasting-timelines-f",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/f02",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You enter your own views on investment growth, software efficiency gains, hardware improvement and how many tasks each extra order of magnitude of compute automates into a simple forecasting model. It says full automation arrives decades earlier than you had assumed. What is the most useful thing to do with that result?",
+    "options": [
+      {
+        "text": "Take the mismatch as a sign that one of your inputs or your prior expectation is off, and work out which of them to revise",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Take the mismatch as a sign that the model is mis-specified, and set its output aside in favour of the date you had expected",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating', pointing the surprise at the model rather than at the inputs you supplied",
+        "family": "b"
+      },
+      {
+        "text": "Take the mismatch as ordinary noise, since forecast ranges are far too wide for a single model output to carry much information",
+        "key": false,
+        "provenance": "conflates the section's 'wide error margins that compound over time' with uselessness, missing that the consistency check survives the uncertainty",
+        "family": "a"
+      },
+      {
+        "text": "Take the output as the model's prediction of the date, and judge the model later by whether automation arrives around then",
+        "key": false,
+        "provenance": "the prior the section targets: reads forecasts as 'concrete predictions of timelines' rather than 'scenarios that help you reason about different potential futures'",
+        "family": "c"
+      }
+    ],
+    "explanation": "A model like this is useful as a coherence check. The inputs were your own views, so an output that clashes with the date you expected means your views do not fit together: either one of the inputs is wrong, or the expectation is. Finding out which one is the point of the exercise. If you chose to judge the model later by the actual arrival date, you were treating it as a date prediction. We present forecasts as scenarios for reasoning about possible futures, and an arrival date can't tell you which of your beliefs was the odd one out. Setting the output aside because it surprised you throws away exactly the signal the check is designed to give you. Wide error bars are real, but they don't make an inconsistency between your own beliefs go away. (Forecasting Timelines)",
+    "takeaway": "When a forecast built from your own inputs surprises you, the surprise points back at your beliefs, not at the model.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood 'if you're surprised, maybe one of your input beliefs needs updating' would say 'find which of my beliefs is inconsistent' before seeing options.",
+      "cynic_test": "All four options open with the same 'Take the ... as' frame at similar length, and 'model' appears in two distractors but not the key, so a skipper can't lean on stem-word echo; the two 'humble' options (noise, discard) sound as reasonable as the key without the section."
+    },
+    "shard_id": "forecasting-timelines-f",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/f03",
+    "targets": [
+      "FT-3"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Suppose compute-based scaling laws keep holding for the next few decades. How much uncertainty would remain about when transformative AI (TAI) arrives, and why?",
+    "options": [
+      {
+        "text": "A lot: the laws tie compute to performance, but not to how much compute TAI needs, and estimates of that span many orders of magnitude",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Little: once compute is tied to performance, arrival follows from compute trends, which are tracked closely enough to name a year",
+        "key": false,
+        "provenance": "misreads 'Even if we assume compute-based scaling laws hold, we still don't know how much compute TAI will actually require' as saying the laws settle the timing",
+        "family": "b"
+      },
+      {
+        "text": "A lot: the compute TAI needs is pegged to the human brain, and direct measurements of the brain's compute are still too noisy to pin down",
+        "key": false,
+        "provenance": "misreads the source of the biological-anchors spread as measurement error, when the section attributes it to which biological process is taken as the reference (lifetime learning vs evolutionary history)",
+        "family": "a"
+      },
+      {
+        "text": "Some, but a bounded amount: errors in the compute trend stay about the same size however far ahead the forecast is run",
+        "key": false,
+        "provenance": "misses 'compound over time' in the lead 'All forecasts come with wide error margins that compound over time'",
+        "family": "b"
+      }
+    ],
+    "explanation": "Scaling laws tell you how performance rises with compute. They don't tell you where on that curve transformative AI sits, and that is the quantity people disagree about. Biological-anchor estimates of the compute TAI requires run from what a human uses learning skills over a lifetime to everything evolution spent shaping humans, which is roughly twelve orders of magnitude. The spread comes from choosing which biological process to treat as the reference, not from noisy brain measurements, so better neuroscience instruments wouldn't close it. The 'little' option assumes that fixing the curve fixes the target. The 'bounded' option misses that errors compound: a small miss in a yearly growth rate grows with every year the projection runs. That's why a date like '2045' should be read as the rough centre of a wide range. (Forecasting Timelines)",
+    "takeaway": "Scaling laws give you the curve, not the finish line; the uncertainty about how much compute TAI needs survives even if the laws hold perfectly.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: 'even if scaling laws hold we don't know how much compute TAI requires, and anchors span orders of magnitude' is a sentence a reader of the section can produce unaided.",
+      "cynic_test": "A skipper might pick either 'A lot' option by the section's obvious uncertainty theme, but the noisy-measurement option also says 'A lot' and names the brain, so the choice turns on knowing the spread comes from the reference process; 'TAI' and 'compute' appear in several options, so they are not a word-match tell."
+    },
+    "shard_id": "forecasting-timelines-f",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/g01",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Lab A buys twice as many GPUs of the model it already uses and changes nothing else. Lab B keeps its hardware exactly as it is but adopts a training method that reaches the same result with a tenth of the FLOP. Which comparison of the two labs' gains in effective compute holds?",
+    "options": [
+      {
+        "text": "Lab B gained more: a tenfold software gain multiplies its compute as surely as extra chips would",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Lab A gained more: compute is the hardware a lab runs, and Lab B's hardware has not changed",
+        "key": false,
+        "provenance": "the pre-chapter prior the Effective Compute subsection targets directly ('compute means more than just counting GPUs ... not just talking about running more hardware for longer'), read as if compute were physical hardware",
+        "family": "c"
+      },
+      {
+        "text": "Lab A gained compute and Lab B gained efficiency, two separate kinds of progress with no common scale",
+        "key": false,
+        "provenance": "misreads 'Better algorithms multiply your effective compute without building a single new chip' as placing algorithmic progress outside the compute measure rather than as one of its three factors",
+        "family": "a"
+      },
+      {
+        "text": "They gained about equally: each improved one of the three factors, and each factor adds a similar share",
+        "key": false,
+        "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as a sum in which each improved factor contributes a comparable increment",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is a product: software efficiency times hardware efficiency times number of chips. A method that reaches the same result with a tenth of the FLOP multiplies the software factor by ten, so Lab B's gain outstrips Lab A's doubling without a single new chip. If you picked 'compute is the hardware a lab runs', you held the prior this idea exists to replace: when we say one model used more compute than another, we are not just counting GPUs or hours of run time. The 'separate kinds of progress' option makes a subtler mistake, filing algorithms outside compute when they are one of its factors. And because the factors multiply rather than add, a tenfold gain in one is not matched by a doubling in another. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Better algorithms are compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds effective compute as a product of three factors computes 10x for B against 2x for A and names B unaided.",
+      "cynic_test": "A skipper would lean to Lab A because 'more GPUs = more compute' is the common intuition, which is exactly the prior the section overturns; the options are verdict-plus-reason of matched length with no absolutes, so no surface tell points to B."
+    },
+    "shard_id": "forecasting-timelines-g",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/g02",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose that from next year, per-chip performance stopped improving entirely, while chip production and algorithmic efficiency kept improving at their recent pace. What happens to effective compute?",
+    "options": [
+      {
+        "text": "It keeps growing, though more slowly, because the other two factors still multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It levels off, because compute growth ultimately comes from each chip doing more operations",
+        "key": false,
+        "provenance": "the Moore's-law prior, the FT-4/FT-5 conflation 'effective compute is basically chip count scaled up by chip speed, so if chips stop getting faster, AI compute growth stops', against 'compounds much faster than hardware trends alone would suggest'",
+        "family": "c"
+      },
+      {
+        "text": "It levels off after a lag, because software gains need faster chips before they pay off",
+        "key": false,
+        "provenance": "reverses 'You can develop better software to make use of existing hardware', reading the three factors as coupled rather than independent",
+        "family": "b"
+      },
+      {
+        "text": "It keeps growing at the old pace, because the other two factors speed up to make up the gap",
+        "key": false,
+        "provenance": "misreads 'Each factor can improve independently' as the factors compensating for one another, missing that losing one multiplier lowers the compounding rate",
+        "family": "b"
+      }
+    ],
+    "explanation": "The three factors improve independently: you can build more chips without making them faster, and write better software for the hardware you already have. If per-chip performance froze, effective compute would keep compounding from the other two, just without the hardware multiplier. The 'levels off' option that ties compute growth to each chip doing more is the Moore's-law prior; our point is that the total compounds much faster than hardware trends alone would suggest, and so it also survives a hardware stall. The 'after a lag' option reverses the independence, since software gains pay off on existing chips. The 'old pace' option overcorrects: independence means the other factors do not speed up to compensate, so losing one multiplier slows the total. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Because the factors multiply and move independently, one stalled factor slows effective compute without stopping it.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood independent multiplying factors says 'still grows, slower, from the other two' without seeing options.",
+      "cynic_test": "A skipper might pick 'keeps growing at the old pace' as the optimistic-sounding middle or 'levels off' on Moore's-law instinct; two options say 'keeps growing' and two say 'levels off', so direction alone does not identify the key, and all four are matched verdict-plus-because clauses."
+    },
+    "shard_id": "forecasting-timelines-g",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/g03",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An analyst argues: \"AI compute has grown for years, yet AI has automated only a sliver of the economy, so the loop from compute to automation to more compute is evidently not operating.\" Which verdict on this argument is best supported?",
+    "options": [
+      {
+        "text": "The analyst is wrong: the loop returns little value early, until compute grows enough to widen the tasks automated",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The analyst is right: productivity only feeds back into compute once every task has been automated",
+        "key": false,
+        "provenance": "misreads 'continues until full labor automation' (where the loop ends) as the condition for the loop to begin",
+        "family": "b"
+      },
+      {
+        "text": "The analyst is wrong: compute grows through independent chip, hardware and software gains, not through funding",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers the Effective Compute subsection's independent-factors account as a rival to the loop, missing that chip production grows 'as more investment keeps flowing in' and that Figure 1.38 has the loop feeding both produced compute and efficiency",
+        "family": "d"
+      },
+      {
+        "text": "The analyst is right: a loop this slow to start implies automation stays a small share for decades",
+        "key": false,
+        "provenance": "extrapolates the slow early phase linearly, against 'Once effective compute budgets grow large enough, the range of automated tasks expands until eventually all cognitive labor becomes automated'",
+        "family": "c"
+      }
+    ],
+    "explanation": "The loop runs from compute to automation to productivity and back to more compute, and it starts weak: while only a small fraction of tasks are automated, running AI returns relatively little economic value. A small automated share today is what the early phase looks like; the range of automated tasks widens once effective compute budgets grow large enough. The 'every task automated' option mistakes where the loop ends for where it begins. The 'independent gains, not funding' option sets the three effective-compute factors against the loop, but they are complements: chip production grows because investment keeps flowing, and productivity from automation is what the loop adds to that funding. The 'small share for decades' option extrapolates the slow start in a straight line, which is the one shape this loop is built not to have. (Forecasting Timelines)",
+    "takeaway": null,
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who remembers that the loop yields little value until compute widens the automated range can say 'a small share now is the expected early phase' unaided.",
+      "cynic_test": "A skipper cannot split on verdict because two options say the analyst is wrong and two say right; the independent-factors option is the sophisticated-sounding trap and is wrong because the factors and the loop are complementary, and the only absolute ('every') sits in one distractor that asserts it deliberately."
+    },
+    "shard_id": "forecasting-timelines-g",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/h01",
+    "targets": [
+      "FT-8"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a lab plans its next pre-training run at its usual growth rate and finds that the run would need more high-quality text than the whole indexed web contains, even after removing duplicates. Which consequence follows for that lab?",
+    "options": [
+      {
+        "text": "Growing the run now depends on data sources other than web text, and on how well they can substitute for it",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Growing the run is no longer possible, because a model cannot keep improving once it has trained on all the text there is",
+        "key": false,
+        "provenance": "conflates the data wall with its consequence, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+        "family": "a"
+      },
+      {
+        "text": "Growing the run is delayed only briefly, because new text is published online fast enough to refill the stock in a few years",
+        "key": false,
+        "provenance": "the pre-chapter prior that the internet is effectively unlimited, which the Training Data subsection overturns with the indexed-web vs. training-set comparison and 'we'll hit that wall'",
+        "family": "c"
+      },
+      {
+        "text": "Growing the run can continue on text alone, because extra effective compute makes up for the tokens the web cannot supply",
+        "key": false,
+        "provenance": "misfiles data under Effective Compute, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'",
+        "family": "a"
+      }
+    ],
+    "explanation": "High-quality public text is a finite stock, and demand for it has been growing several-fold per year (about 4x per year in the 2025 edition's trend), so a run that outgrows the stock has hit a wall on that one resource. Hitting that wall does not end scaling. It means further growth rests on the escape routes (multimodal data, synthetic data, self-play), and on whether they work. If you picked 'no longer possible', you treated the wall as if it were its consequence. The 'new text refills the stock' option is the common assumption that the web is bottomless: new writing arrives far too slowly to keep pace with that growth. Data is also a separate factor from effective compute. More chips do not create tokens. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall ends text-only scaling, not scaling; what happens next depends on whether the alternatives to human text work.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the subsection would say unprompted that running out of web text shifts scaling onto the escape routes rather than stopping it.",
+      "cynic_test": "A skipper might pick the 'no longer possible' option as the dramatic reading, or the effective-compute one as the most technical-sounding; all four share the 'Growing the run ... because/and' frame, the key is not the longest, and only one option uses an absolute ('all')."
+    },
+    "shard_id": "forecasting-timelines-h",
+    "model": "opus"
+  },
+  {
+    "id": "forecasting-timelines/opus/h02",
+    "targets": [
+      "FT-9"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two labs run out of high-quality human text. One is training a model to write proofs in a formal language, where a program verifies every proof automatically. The other is training a model to write persuasive essays, where no program can say which essay is better. Which comparison of their positions is best supported?",
+    "options": [
+      {
+        "text": "The proof lab has a route the essay lab lacks: self-play, which works where an explicit success metric exists, as it does for proofs",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The two labs are equally placed: self-play already extends to open-ended tasks by having models compete against their own copies",
+        "key": false,
+        "provenance": "misreads 'In principle, this approach could be extended to teaching any arbitrary task' as current fact, against 'This is still very speculative, it requires simulation environments ... explicit reward functions, and tractable state spaces'",
+        "family": "b"
+      },
+      {
+        "text": "The two labs are equally placed: having each model write its own training data removes the wall whether or not the outputs are good",
+        "key": false,
+        "provenance": "drops the conditional in 'removes the constraint entirely—if the outputs are high enough quality'",
+        "family": "b"
+      },
+      {
+        "text": "The essay lab is better placed: encoding speech and video of people arguing removes its data limit, which proof writing cannot share",
+        "key": false,
+        "provenance": "conflates multimodal data (a bounded multiplier on supply, 'could 3-10x the effective data supply') with synthetic data, the route that could remove the constraint",
+        "family": "a"
+      }
+    ],
+    "explanation": "Each escape route comes with its own condition. Self-play generates training signal through interaction, but only where the task can be formalised with explicit rules and a success metric. A proof checker supplies exactly that, and essay persuasiveness has nothing like it. The 'self-play already extends to open-ended tasks' option reads an in-principle possibility as current fact. Extending self-play beyond games is still speculative and needs simulation environments, explicit reward functions and tractable state spaces. The synthetic-data option drops that route's condition: model-written data removes the constraint only if the outputs are high enough quality. Multimodal data does add supply, estimated at a few times the text stock in the 2025 edition, but a multiplier on a finite stock does not remove the limit. (Forecasting Timelines → Training Data)",
+    "takeaway": "Every escape route from the data wall comes with a condition, and for self-play that condition is an explicit reward.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the self-play condition (explicit rules and success metrics) would say the verifiable-proof domain has an escape route that the essay domain lacks.",
+      "cynic_test": "A skipper might avoid the two 'equally placed' options as symmetric filler, but the options open three different ways ('has a route', 'equally placed' twice, 'better placed'), 'self-play' appears in both the key and a distractor, and every option names a specific route, so no option stands out as the odd one."
+    },
+    "shard_id": "forecasting-timelines-h",
+    "model": "opus"
+  }
+]

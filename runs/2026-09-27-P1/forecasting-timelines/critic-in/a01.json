@@ -1,0 +1,90 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/a01",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You feed a compute-based forecasting model your own beliefs: how fast investment grows, how fast algorithms improve, and how many tasks each order of magnitude of compute automates. It outputs full automation decades earlier than you expected. What is the most useful thing to do with that surprise?",
+    "options": [
+      {
+        "text": "Treat it as a sign that one of the inputs you supplied conflicts with the future you expect, and revisit those inputs",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Treat it as a sign that the forecast itself is miscalibrated, and discard its output in favour of your expectation",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into the claim that surprise shows the forecast is wrong and should be thrown out",
+        "family": "b"
+      },
+      {
+        "text": "Treat it as the best available estimate of the arrival date, and shift your own expected date to line up with it",
+        "key": false,
+        "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason about different potential futures'",
+        "family": "c"
+      },
+      {
+        "text": "Treat it as noise within the forecast's wide error bars, and give it no weight in judging which future to expect",
+        "key": false,
+        "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the coherence check ('They let you check if your beliefs are internally coherent') survives the uncertainty",
+        "family": "a"
+      }
+    ],
+    "explanation": "A forecasting model takes beliefs you already hold (how fast investment grows, how fast algorithms improve, how much each order of magnitude of compute automates) and works out what they jointly imply. When that implication surprises you, the model has shown that your inputs and the future you expect do not fit together, so the inputs are what you revisit. Discarding the output treats the forecast as an independent prediction that got it wrong, when it is a consequence of what you told it. Adopting the output as your new arrival date makes the opposite mistake: it reads a scenario as a prediction. And wide error bars do not empty the exercise, because checking coherence works even when no date can be pinned down. (Forecasting Timelines)",
+    "takeaway": "A surprising forecast points back at your own inputs: it is a coherence check, not a date.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'if you're surprised, maybe one of your input beliefs needs updating' can say 'go back and check which of my assumptions is off' with the options covered.",
+      "cynic_test": "A skipper might pick the 'best available estimate' option as the sensible, deferential choice, or the 'discard' option as healthy scepticism; all four share the 'Treat it as ..., and ...' frame with no hedges or absolutes, so only the section's inputs-not-outputs point separates them."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 117,
+    "distractor_lens": [
+      114,
+      112,
+      112
+    ],
+    "mean_distractor_len": 112.7,
+    "len_ratio": 1.04,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 3,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "expected"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

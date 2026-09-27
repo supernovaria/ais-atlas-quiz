@@ -1,0 +1,92 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/g02",
+    "targets": [
+      "FT-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose that from next year, per-chip performance stopped improving entirely, while chip production and algorithmic efficiency kept improving at their recent pace. What happens to effective compute?",
+    "options": [
+      {
+        "text": "It keeps growing, though more slowly, because the other two factors still multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It levels off, because compute growth ultimately comes from each chip doing more operations",
+        "key": false,
+        "provenance": "the Moore's-law prior, the FT-4/FT-5 conflation 'effective compute is basically chip count scaled up by chip speed, so if chips stop getting faster, AI compute growth stops', against 'compounds much faster than hardware trends alone would suggest'",
+        "family": "c"
+      },
+      {
+        "text": "It levels off after a lag, because software gains need faster chips before they pay off",
+        "key": false,
+        "provenance": "reverses 'You can develop better software to make use of existing hardware', reading the three factors as coupled rather than independent",
+        "family": "b"
+      },
+      {
+        "text": "It keeps growing at the old pace, because the other two factors speed up to make up the gap",
+        "key": false,
+        "provenance": "misreads 'Each factor can improve independently' as the factors compensating for one another, missing that losing one multiplier lowers the compounding rate",
+        "family": "b"
+      }
+    ],
+    "explanation": "The three factors improve independently: you can build more chips without making them faster, and write better software for the hardware you already have. If per-chip performance froze, effective compute would keep compounding from the other two, just without the hardware multiplier. The 'levels off' option that ties compute growth to each chip doing more is the Moore's-law prior; our point is that the total compounds much faster than hardware trends alone would suggest, and so it also survives a hardware stall. The 'after a lag' option reverses the independence, since software gains pay off on existing chips. The 'old pace' option overcorrects: independence means the other factors do not speed up to compensate, so losing one multiplier slows the total. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Because the factors multiply and move independently, one stalled factor slows effective compute without stopping it.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood independent multiplying factors says 'still grows, slower, from the other two' without seeing options.",
+      "cynic_test": "A skipper might pick 'keeps growing at the old pace' as the optimistic-sounding middle or 'levels off' on Moore's-law instinct; two options say 'keeps growing' and two say 'levels off', so direction alone does not identify the key, and all four are matched verdict-plus-because clauses."
+    },
+    "shard_id": "forecasting-timelines-g",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 92,
+    "distractor_lens": [
+      91,
+      87,
+      91
+    ],
+    "mean_distractor_len": 89.7,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "chip",
+      "pace",
+      "compute"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

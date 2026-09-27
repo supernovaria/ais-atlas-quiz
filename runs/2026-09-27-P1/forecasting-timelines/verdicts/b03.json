@@ -1,0 +1,87 @@
+{
+  "id": "forecasting-timelines/opus/b03",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R14"],
+  "measurements": {
+    "correct_len": 101,
+    "distractor_lens": [95, 101, 101],
+    "mean_distractor_len": 99,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["argument"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["a", "b", "d"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14: the checker lists 'argument' as a stem-word singleton. It appears in the stem ('assessment of this argument') and in only one option, option 2 ('The argument is sound'), which marks that option. Reworded it to 'The reasoning is sound'; the explanation's matching phrase changed with it."
+  ],
+  "preserve": "The stem (the map's FT-8/FT-9 conflation stated as a claim to evaluate), the key word for word, and all three distractors in substance. Each distractor's provenance checks out against the Training Data subsection, so only one word of option 2 needed changing.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/b03",
+    "targets": ["FT-8"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A commentator argues: \"Frontier models will soon have trained on all the high-quality public text there is, so the era of scaling language models is ending.\" Which assessment of this argument holds up best?",
+    "options": [
+      {
+        "text": "The premise is well supported, but the conclusion turns on how well synthetic and self-play data work",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The reasoning is sound, since pre-training needs human-written text and the stock of it is fixed",
+        "key": false,
+        "provenance": "conflates the data wall with its consequence (the FT-8/FT-9 pair conflation): reads 'we'll hit that wall' as the end of scaling, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+        "family": "a"
+      },
+      {
+        "text": "The premise is right but harmless, since images and video can stand in for text with no cap on supply",
+        "key": false,
+        "provenance": "misreads the multimodal escape route ('If encoded efficiently, this could 3-10x the effective data supply') as removing the limit, conflating it with synthetic data, the route that 'removes the constraint entirely—if the outputs are high enough quality'",
+        "family": "b"
+      },
+      {
+        "text": "The premise is right but harmless, since growth in effective compute can make up for the missing data",
+        "key": false,
+        "provenance": "misfiles data under Effective Compute, against 'Besides just effective compute, the second overarching factor that we have to take into consideration is the amount of available data to train on'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The premise is well founded: at recent growth rates, frontier training runs exhaust the stock of high-quality public text within years (the 2024 projections put it between 2026 and 2032). But the conclusion does not follow. Running out of human text closes one supply rather than ending scaling, and whether data actually binds depends on the escape routes: synthetic data removes the constraint only if its quality holds, and self-play works only where a task has explicit rules and rewards. Calling the reasoning sound conflates the wall with its consequence. Multimodal data helps, but as a bounded multiplier on supply, not an unlimited one. And more effective compute is no fix: data is a second constraint alongside compute, not an input to it. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall is real, but it ends scaling only if the escape routes fail, so the question is conditional rather than settled.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who separates the wall from the escape routes will say the premise holds but the conclusion depends on the alternatives.",
+      "cynic_test": "The key is the only conditional option, which is a semantic hedge the word-list count does not catch; every distractor grants or accepts the premise so the premise is not the tell, and the one absolute ('no cap') is a belief readers actually hold."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  "rewrite_changed": ["options[1].text", "options[1].provenance", "options[2].provenance", "options[3].provenance", "explanation", "self_check.cynic_test"],
+  "reviewer_note": "Two things to judge that the script cannot: option 4 is arguably true, because synthetic data is compute turned into data, so 'compute can make up for the missing data' is only false under the text's framing of data as a separate factor; and the key is the only 'it depends' option, a semantic hedge that the D10 word count (0/0/0/0) cannot see, so a test-wise reader may pick it on instinct. Level is L3 rather than L4 because the text nearly states the verdict itself ('depends on how well these alternatives work')."
+}

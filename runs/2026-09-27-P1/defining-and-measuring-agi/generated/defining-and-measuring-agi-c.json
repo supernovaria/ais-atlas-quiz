@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/c01",
+    "targets": ["DM-6"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A system performs at the level of the very best human researchers on automated ML research and the coding around it, but well below expert level on most other cognitive domains. Using the working definitions of AGI and TAI, how should it be classified?",
+    "options": [
+      {"text": "As TAI but not AGI, because impact potential rather than the number of expert domains is what qualifies a system as TAI", "key": true, "provenance": null, "family": null},
+      {"text": "As not yet TAI, because transformative impact only arrives once a system has first reached AGI-level breadth", "key": false, "provenance": "misreads the adjacent AGI/TAI/ASI definition boxes as successive stages on one scale, missing the TAI OR-clause 'exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)'", "family": "c"},
+      {"text": "As both AGI and TAI, because excelling at the most economically valuable work satisfies either definition", "key": false, "provenance": "misreads the quoted lab charter wording 'outperform humans at most economically valuable work' as the working AGI definition, against 'The definitions point in the right direction but lack precision'", "family": "a"},
+      {"text": "As narrow AI and not TAI, because expertise confined to a few domains cannot be transformative however deep", "key": false, "provenance": "reverses the TAI definition's disjunction into 'low generality cannot be transformative', reading 'TAI is defined by impact potential rather than cognitive architecture' as if breadth were still required", "family": "b"}
+    ],
+    "explanation": "We define TAI by impact potential rather than cognitive profile, and the definition is a disjunction: moderate capability across many domains, or exceptional capability on a few critical ones such as automated ML research. This system fits the second branch. AGI, by contrast, needs expert-level performance across most cognitive domains, which this system lacks. If you picked 'not yet TAI', you treated TAI as a later stage on the same scale as AGI; the two are defined on different criteria, and TAI can come first. The narrow-AI option makes the same mistake from the other side, assuming breadth is a precondition for impact. The 'both' option imports the lab-charter phrase about economically valuable work, which we treat as too vague to serve as a working definition. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is a claim about breadth of cognitive profile; TAI is a claim about impact, and a deep-but-narrow system can reach it first.",
+    "stem_format": "classification",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the TAI OR-clause would say unprompted that this profile can be transformative without being AGI.",
+      "cynic_test": "A skipper might favour the 'but not' hedge or the 'both' option; every option now pairs a classification with a same-length reason, and the stem's domain wording is spread across the key and one distractor so no single option echoes it."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/c02",
+    "targets": ["DM-5"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "System A performs at expert level, though not beyond the best humans, across nearly all non-embodied cognitive domains, and is deployed only to advise people who make every decision. System B is a fully autonomous agent that outperforms humans at most economically valuable work but sits below expert level on most cognitive domains. Which of them counts as AGI on the working definition?",
+    "options": [
+      {"text": "System A, because matching expert performance across most cognitive domains is what the definition requires", "key": true, "provenance": null, "family": null},
+      {"text": "System B, because outperforming humans at most economically valuable work is what the definition requires", "key": false, "provenance": "adopts the quoted lab charter definition 'highly autonomous systems that outperform humans at most economically valuable work' as the working one, missing that such definitions 'lack precision for tracking progress'", "family": "a"},
+      {"text": "Neither, because the definition requires exceeding the best human experts rather than matching them", "key": false, "provenance": "conflates the AGI definition 'expert-level performance (80-90th percentile)' with the ASI definition 'superhuman capability (>100%, greatly exceeding all humans)'", "family": "a"},
+      {"text": "Neither, because the definition requires operating without human oversight, which System A lacks", "key": false, "provenance": "carries in the charter's 'highly autonomous systems' framing, against 'Our working definition does not include the autonomy with which an AGI system operates'", "family": "c"}
+    ],
+    "explanation": "Our working definition of AGI is a cognitive profile: expert-level performance across most cognitive domains, matching a well-educated adult's versatility. System A meets it, and how it is deployed is beside the point, because we deliberately leave autonomy out of the definition and treat it as a deployment choice with its own risk consequences. System B is the tempting pick because 'outperforms humans at most economically valuable work' is how one lab charter defines AGI, but we treat that wording as too vague for tracking progress, and B's cognitive profile is narrow. Requiring performance beyond the best humans describes superintelligence, not AGI; matching a skilled professional is the bar. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": null,
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows AGI is defined as expert-level breadth, with autonomy excluded, names System A without seeing options.",
+      "cynic_test": "A skipper might pick B because 'economically valuable work' sounds like the familiar real-world definition, or pick the key for mirroring definition language; B's option is built on the identical template, so the wording gives no edge."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/c03",
+    "targets": ["DM-8"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two models can each reliably write working exploits for software vulnerabilities they have never seen before, at the same success rate. Model X picked the skill up from a few dozen worked examples; Model Y needed millions of examples and vast training runs to reach the same level. How should their risk from this capability compare?",
+    "options": [
+      {"text": "The two pose the same risk from this capability, because risk tracks what a system can do, not how it learned", "key": true, "provenance": null, "family": null},
+      {"text": "Model Y poses less risk from this capability, because a skill bought by brute-force memorisation reflects less real intelligence", "key": false, "provenance": "misreads the adaptability view's 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'", "family": "c"},
+      {"text": "Model X poses more risk from this capability, because learning efficiently is what general intelligence consists of", "key": false, "provenance": "misreads 'We acknowledge and incorporate the adaptability focused view's point about efficient learning' as adopting skill-acquisition efficiency as the measure of risk, rather than prioritising final capabilities", "family": "a"},
+      {"text": "Their risk from this capability cannot be ranked until we know whether either model understands what it does", "key": false, "provenance": "files the Chinese Room 'true understanding' question under risk assessment, against 'Is it conscious or just pattern-matching? These questions don't change the risk profile'", "family": "d"}
+    ],
+    "explanation": "For safety we care about what a system can observably do. If two models perform the same dangerous task equally well, the risk from that capability exists either way, whether it came from efficient learning or brute-force memorisation. The 'Model Y is less risky' option takes the adaptability view's judgement, that performance bought with data and compute is less impressive, and turns it into 'less dangerous'; that view is a claim about intelligence, not about risk. We acknowledge that learning efficiency matters and still prioritise final capabilities, which is why the 'Model X is riskier' option misfiles it too. The understanding option imports the consciousness debate, which we set aside because a system need not understand or be conscious to cause harm. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Risk is path-independent: how a system acquired a dangerous capability does not change the danger of having it.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'the risks exist either way' would answer 'the same' before seeing options.",
+      "cynic_test": "A skipper may lean to the balanced 'same risk' answer as a middle option; the non-committal 'cannot be ranked' option competes for that instinct, and both directional options carry reasons a thoughtful reader genuinely holds."
+    }
+  },
+  {"note": "DM-5 and DM-6 are a discrimination_pairs entry. I wrote them as two separate case candidates rather than one spanning item, because each case turns on a different neighbour: c01 separates TAI from AGI with a deep-but-narrow ML-R&D profile, and c02 separates AGI from ASI, from the lab-charter economic definition, and from autonomy. If the Curator keeps only one, c01 is the pair's contrast item. No threshold digits are load-bearing in either one: the profiles are given as qualitative bands. For c03, the stem scopes the question to risk 'from this capability', which stops the 'X learns faster, so it is riskier overall' reading from becoming a defensible second key."}
+]

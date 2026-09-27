@@ -1,0 +1,57 @@
+[
+  {
+    "id": "forecasting-timelines/opus/h01",
+    "targets": ["FT-8"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a lab plans its next pre-training run at its usual growth rate and finds that the run would need more high-quality text than the whole indexed web contains, even after removing duplicates. Which consequence follows for that lab?",
+    "options": [
+      {"text": "Growing the run now depends on data sources other than web text, and on how well they can substitute for it", "key": true, "provenance": null, "family": null},
+      {"text": "Growing the run is no longer possible, because a model cannot keep improving once it has trained on all the text there is", "key": false, "provenance": "conflates the data wall with its consequence, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'", "family": "a"},
+      {"text": "Growing the run is delayed only briefly, because new text is published online fast enough to refill the stock in a few years", "key": false, "provenance": "the pre-chapter prior that the internet is effectively unlimited, which the Training Data subsection overturns with the indexed-web vs. training-set comparison and 'we'll hit that wall'", "family": "c"},
+      {"text": "Growing the run can continue on text alone, because extra effective compute makes up for the tokens the web cannot supply", "key": false, "provenance": "misfiles data under Effective Compute, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'", "family": "a"}
+    ],
+    "explanation": "High-quality public text is a finite stock, and demand for it has been growing several-fold per year (about 4x per year in the 2025 edition's trend), so a run that outgrows the stock has hit a wall on that one resource. Hitting that wall does not end scaling. It means further growth rests on the escape routes (multimodal data, synthetic data, self-play), and on whether they work. If you picked 'no longer possible', you treated the wall as if it were its consequence. The 'new text refills the stock' option is the common assumption that the web is bottomless: new writing arrives far too slowly to keep pace with that growth. Data is also a separate factor from effective compute. More chips do not create tokens. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall ends text-only scaling, not scaling; what happens next depends on whether the alternatives to human text work.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the subsection would say unprompted that running out of web text shifts scaling onto the escape routes rather than stopping it.",
+      "cynic_test": "A skipper might pick the 'no longer possible' option as the dramatic reading, or the effective-compute one as the most technical-sounding; all four share the 'Growing the run ... because/and' frame, the key is not the longest, and only one option uses an absolute ('all')."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/h02",
+    "targets": ["FT-9"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two labs run out of high-quality human text. One is training a model to write proofs in a formal language, where a program verifies every proof automatically. The other is training a model to write persuasive essays, where no program can say which essay is better. Which comparison of their positions is best supported?",
+    "options": [
+      {"text": "The proof lab has a route the essay lab lacks: self-play, which works where an explicit success metric exists, as it does for proofs", "key": true, "provenance": null, "family": null},
+      {"text": "The two labs are equally placed: self-play already extends to open-ended tasks by having models compete against their own copies", "key": false, "provenance": "misreads 'In principle, this approach could be extended to teaching any arbitrary task' as current fact, against 'This is still very speculative, it requires simulation environments ... explicit reward functions, and tractable state spaces'", "family": "b"},
+      {"text": "The two labs are equally placed: having each model write its own training data removes the wall whether or not the outputs are good", "key": false, "provenance": "drops the conditional in 'removes the constraint entirely—if the outputs are high enough quality'", "family": "b"},
+      {"text": "The essay lab is better placed: encoding speech and video of people arguing removes its data limit, which proof writing cannot share", "key": false, "provenance": "conflates multimodal data (a bounded multiplier on supply, 'could 3-10x the effective data supply') with synthetic data, the route that could remove the constraint", "family": "a"}
+    ],
+    "explanation": "Each escape route comes with its own condition. Self-play generates training signal through interaction, but only where the task can be formalised with explicit rules and a success metric. A proof checker supplies exactly that, and essay persuasiveness has nothing like it. The 'self-play already extends to open-ended tasks' option reads an in-principle possibility as current fact. Extending self-play beyond games is still speculative and needs simulation environments, explicit reward functions and tractable state spaces. The synthetic-data option drops that route's condition: model-written data removes the constraint only if the outputs are high enough quality. Multimodal data does add supply, estimated at a few times the text stock in the 2025 edition, but a multiplier on a finite stock does not remove the limit. (Forecasting Timelines → Training Data)",
+    "takeaway": "Every escape route from the data wall comes with a condition, and for self-play that condition is an explicit reward.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the self-play condition (explicit rules and success metrics) would say the verifiable-proof domain has an escape route that the essay domain lacks.",
+      "cynic_test": "A skipper might avoid the two 'equally placed' options as symmetric filler, but the options open three different ways ('has a route', 'equally placed' twice, 'better placed'), 'self-play' appears in both the key and a distractor, and every option names a specific route, so no option stands out as the odd one."
+    }
+  },
+  {
+    "note": "FT-8 and FT-9 form a discrimination pair. I wrote one candidate per idea rather than a single spanning contrast because the lens is case, not contrast. h01 still brushes FT-9, since its key points to the escape routes without naming their conditions. h02 tests those conditions directly. No volatile figure is load-bearing in either candidate. The dated rates (4x per year, 3-10x multimodal) appear only in the explanations."
+  }
+]

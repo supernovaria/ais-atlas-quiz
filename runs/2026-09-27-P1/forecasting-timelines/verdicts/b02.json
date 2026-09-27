@@ -1,0 +1,87 @@
+{
+  "id": "forecasting-timelines/opus/b02",
+  "verdict": "rewrite",
+  "level": "L3",
+  "level_claimed_by_generator": "L3",
+  "failed_criteria": ["R14"],
+  "measurements": {
+    "correct_len": 100,
+    "distractor_lens": [97, 98, 97],
+    "mean_distractor_len": 97.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["each", "compute", "tenfold", "accounting"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["a", "b"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "R14: the key is the only option that repeats the stem's words 'tenfold', 'accounting' and 'each'. 'Both are tenfold gains on that accounting' echoes the stem's 'On an effective-compute accounting' almost word for word, so a reader who skipped the section can find the key by matching words. The checker lists 'compute' as a singleton too; it sits only in option 2."
+  ],
+  "preserve": "Keep the two-lab stem, which is not in the prose and cleanly separates effective compute from raw chip count, and keep all three distractors unchanged: each one rests on a sentence I found in the prose, and all three are within 1 character of each other in length. Only the key's wording changes, plus the explanation's first-person voice.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/b02",
+    "targets": ["FT-4"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two labs each announce that their compute grew tenfold this year. Lab A bought ten times as many GPUs of the model it already used. Lab B kept its cluster unchanged but adopted training methods that reach the same results with a tenth of the operations. On an effective-compute accounting, how do the two announcements compare?",
+    "options": [
+      {
+        "text": "Both are equal compute gains, because algorithms and chip count are factors that multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Only Lab A's is a compute gain; Lab B's is algorithmic progress, which is a separate kind of gain",
+        "key": false,
+        "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+        "family": "a"
+      },
+      {
+        "text": "Lab B's is the larger gain, because software gains compound on hardware while chip count only adds",
+        "key": false,
+        "provenance": "hybrid of FT-5's 'compounds' with an additive misreading of 'Software efficiency times Hardware efficiency times Number of chips', treating one factor as additive and another as multiplicative",
+        "family": "b"
+      },
+      {
+        "text": "Lab B's gain counts only once it moves to newer chips, because software needs hardware to pay off",
+        "key": false,
+        "provenance": "reverses FT-5's 'You can develop better software to make use of existing hardware' into a dependence of software gains on new hardware",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute is the product of software efficiency, hardware efficiency and chip count, so a tenfold gain in any one factor is a tenfold gain in the total. Lab A got its gain from chips; Lab B got the same gain from algorithms without building a single new chip. The tempting answer treats algorithmic progress as separate from compute, which is the everyday sense of 'compute' as hardware you can count; effective compute is defined to replace that sense. The option saying Lab B must wait for newer chips reverses the point that each factor can improve independently: better software can make use of existing hardware. The option saying chip count 'only adds' misreads the product: all three factors multiply, and none has a privileged role. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "A tenfold algorithmic gain on the same chips is as much an increase in effective compute as ten times the chips.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds effective compute as a product of three factors will say both labs gained equally.",
+      "cynic_test": "The key no longer repeats 'tenfold', 'accounting' or 'each' from the stem, and 'compute' now appears in two options (the key and option 2), so matching words between stem and options does not single out the key. 'Both are equal' may still look like the safe middle; two distractors assert a specific comparison to offset that."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  "rewrite_changed": ["options[0].text", "explanation", "self_check"],
+  "reviewer_note": "The new key is 99 characters by my count, so it stays inside the length band (about 1.02 against the distractors) and at most 1 character longer than any of them, but the checker needs to confirm that. Also check whether 'both are equal', the symmetric middle option, is still a tell for a test-wise reader, because the stem says both labs made the same tenfold claim."
+}

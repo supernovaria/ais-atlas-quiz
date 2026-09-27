@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/b01",
+    "targets": ["DM-3", "DM-4"],
+    "lens": "contrast",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A reader objects: \"This framework insists AGI is a continuum with no line where 'not AGI' becomes 'AGI', then hands out percentile cut-offs for AGI, TAI and ASI. It can't have both.\" What best resolves the apparent conflict?",
+    "options": [
+      {"text": "They are rough overlays placed on the continuum because safety planning and regulation need trigger points, not claims of a natural break", "key": true, "provenance": null, "family": null},
+      {"text": "They replace the continuum for practical use, so in policy settings AGI does become a line that a system has either crossed or not", "key": false, "provenance": "misreads the threshold definitions as a retreat from 'AGI exists on a continuous spectrum', missing 'we can't ignore this reality even if generality is a continuous variable' and that they are offered only 'when pressed for concrete thresholds'", "family": "b"},
+      {"text": "They mark measured points where risk changes sharply, so they are empirical findings about the space rather than chosen conventions", "key": false, "provenance": "misreads 'here's our interpretation of roughly how terms map onto the (performance, generality) space' as an empirical finding about where risk begins", "family": "c"},
+      {"text": "They give researchers an agreed point at which to declare AGI achieved, which settles the debate over whether a system counts", "key": false, "provenance": "misfiles the purpose of thresholds as declaring arrival, when the text ties them to 'identify thresholds for regulation, and emerging risks' and adopts continuity precisely to avoid 'endless semantic debates about whether something \"counts\" as AGI'", "family": "d"}
+    ],
+    "explanation": "The continuum describes where a system actually sits. The thresholds are our rough interpretation of where the named terms map onto that space, offered because safety planning and regulation need trigger points: a system expert on half the domains poses different risks from one expert on nine-tenths. Nothing about the underlying space changes at a cut-off. If you picked the option about declaring AGI achieved, you have the purpose backwards. We chose continuity precisely to escape arguments over whether a system 'counts', and the thresholds do not reopen them. The 'measured points' option mistakes a stipulation for a discovery: the cut-offs are conventions we chose, not boundaries anyone found in the data. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Thresholds are labels laid over a continuum for planning purposes; they do not turn it back into a binary.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say unaided that the cut-offs are pragmatic trigger points for safety and regulation, laid over a space that stays continuous.",
+      "cynic_test": "A skipper might pick the option closest to 'both can be true', but all four options reconcile the tension in some way, so none is marked as the conciliatory one; lengths are within about 12 characters and no stem word appears in only one option."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/b02",
+    "targets": ["DM-13"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An evaluation finds a system scores high enough to count on all ten tested cognitive domains. Yet in use it keeps losing track of the fact that keys put in a drawer are still there once the drawer is shut, which nearly every adult manages without effort. Which weakness of aggregate scores does this most directly show?",
+    "options": [
+      {"text": "The domains were built from how people vary, so a skill nearly every person shares can drop out of what gets measured", "key": true, "provenance": null, "family": null},
+      {"text": "Human percentile cut-offs do not carry over to machines, so a passing score means less for an AI than it does for a person", "key": false, "provenance": "conflates the 'Arbitrary thresholds' limitation (human percentile cutoffs may not translate to machines) with 'Coverage bias', which concerns capabilities the tests never probe", "family": "a"},
+      {"text": "Adding domains up as equal steps hides that the final capabilities are much harder, so a full score overstates real progress", "key": false, "provenance": "files the 'Non-linear progress' limitation ('final capabilities may represent disproportionately difficult bottlenecks') onto a case of a missing, untested capability", "family": "d"},
+      {"text": "The system has likely seen the test items in training, so its scores reflect recalled answers rather than the underlying ability", "key": false, "provenance": "pre-chapter prior that any gap between benchmark scores and real use means contamination, which would predict failures on fresh items inside tested domains rather than on an everyday skill outside them", "family": "c"}
+    ],
+    "explanation": "This is coverage bias. The ten domains come from psychometrics, which was built to measure how people differ from one another. A skill that virtually every adult has, such as knowing an object still exists once it is out of sight, barely varies between people, so tests built on those differences tend to leave it out. An AI can clear every domain and still lack it. The percentile-cutoff option names a real limitation, but it concerns how to read a score on a domain that was tested, and here the failure is on something no domain measured. Contamination would predict failures on fresh items inside the tested domains, not on an everyday skill outside them. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A full score on human-derived tests certifies only what those tests were built to tell apart, and people barely differ on universal skills.",
+    "stem_format": "classification",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the counter-argument block can say that human-derived test domains may omit capabilities universal in humans, which is exactly what this failure shows.",
+      "cynic_test": "A skipper would lean towards contamination as the familiar explanation for score/use gaps, but the stem's failure falls outside every tested domain; the key carries no stem-unique word, and it is the shortest option by only about 5 characters."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/b03",
+    "targets": ["DM-3"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "System P reaches expert level on three of ten cognitive domains; System Q reaches it on six. An analyst says: \"Neither is AGI, so nothing meaningful separates them until one crosses the line.\" How does the continuous framing assess the analyst's claim?",
+    "options": [
+      {"text": "It hides real progress: both are early-stage general systems, and Q has moved further along the same scale than P", "key": true, "provenance": null, "family": null},
+      {"text": "It is sound: neither reaches the working definition's share of domains, and grouping them until one does is what thresholds are for", "key": false, "provenance": "misreads the AGI threshold definition as the real category boundary, against 'Even though capability and generality exist on a continuum, certain thresholds still matter for safety planning' and 'There's no universally agreed upon threshold where \"not AGI\" suddenly becomes \"AGI\"'", "family": "c"},
+      {"text": "It sets the bar wrongly: Q already counts as a general system, because breadth starts to matter at half the domains", "key": false, "provenance": "keeps the binary view but moves the line, missing that 'systems achieving expert-level performance across even a modest subset of cognitive domains represent genuine general intelligence - just early-stage'", "family": "b"},
+      {"text": "It mixes up the axes: what separates P from Q is depth of capability, which a verdict about generality leaves out", "key": false, "provenance": "conflates the axes, reading 'climbing both axes simultaneously' as meaning extra expert-level domains are capability gains, when 'the percentage of these domains where a system achieves expert-level capability' is the definition of generality", "family": "a"}
+    ],
+    "explanation": "On the continuous framing, a system that is expert across even a modest subset of domains already shows genuine but early-stage general intelligence, much as the Wright brothers' first aircraft was still a plane. P and Q differ in degree along the generality axis, and that difference is exactly the progress we want to track. If you picked 'it is sound', you took the threshold definitions for the real categories. They are rough overlays for safety planning and do not erase the movement below them. The 'half the domains' option keeps the binary and just redraws its line. The axes option fails because being expert on more domains is breadth, which is what generality means. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": null,
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say the two systems differ in degree on one continuous generality scale and that both are early general systems, not 'not AGI' and therefore equivalent.",
+      "cynic_test": "A skipper might distrust 'it is sound' because the stem invites critique, but that option cites the section's own thresholds and a binary-minded reader will find it attractive; 'AGI', 'line' and 'continuous' appear in no option, so no stem word marks the key."
+    }
+  },
+  {"note": "DM-3 and DM-4 form a discrimination pair, so b01 covers both in one contrast item, as instructed. That left b03 for DM-3 alone. b03's top distractor is DM-4's misconception that thresholds reintroduce the binary, used this time inside a case, so b01 and b03 share a misreading but are built differently: b01 asks the reader to evaluate the tension, b03 to classify a pair of systems. DM-13 has no discrimination_pairs entry. For b02 I applied the contrast lens to its four sibling limitations: the key is coverage bias and the arbitrary-threshold and non-linear-progress critiques are the conflation distractors. I kept the stem's example close to the text's own object-permanence case but changed its surface. If the Critic finds that too easy to look up, a different universal-human skill can replace it without changing the options."}
+]

@@ -1,0 +1,804 @@
+{
+  "forecasting-timelines/opus/a01": {
+    "correct_len": 117,
+    "distractor_lens": [
+      114,
+      112,
+      112
+    ],
+    "mean_distractor_len": 112.7,
+    "len_ratio": 1.04,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 3,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "expected"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/a02": {
+    "correct_len": 115,
+    "distractor_lens": [
+      112,
+      114
+    ],
+    "mean_distractor_len": 113,
+    "len_ratio": 1.02,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 3,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/a03": {
+    "correct_len": 99,
+    "distractor_lens": [
+      97,
+      100,
+      94
+    ],
+    "mean_distractor_len": 97,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "number",
+      "hours"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 127,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/b01": {
+    "correct_len": 100,
+    "distractor_lens": [
+      103,
+      99,
+      102
+    ],
+    "mean_distractor_len": 101.3,
+    "len_ratio": 0.99,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "chip",
+      "new",
+      "more",
+      "old",
+      "pace",
+      "effective"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 140,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/b02": {
+    "correct_len": 100,
+    "distractor_lens": [
+      97,
+      98,
+      97
+    ],
+    "mean_distractor_len": 97.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "each",
+      "compute",
+      "tenfold",
+      "accounting"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/b03": {
+    "correct_len": 101,
+    "distractor_lens": [
+      95,
+      101,
+      101
+    ],
+    "mean_distractor_len": 99,
+    "len_ratio": 1.02,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "argument"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/c01": {
+    "correct_len": 84,
+    "distractor_lens": [
+      81,
+      79,
+      99
+    ],
+    "mean_distractor_len": 86.3,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.25,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 1,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "text"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 147,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/c02": {
+    "correct_len": 108,
+    "distractor_lens": [
+      104,
+      111,
+      100
+    ],
+    "mean_distractor_len": 105,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.11,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "high",
+      "quality",
+      "public",
+      "next",
+      "year",
+      "more",
+      "model"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 130,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/c03": {
+    "correct_len": 121,
+    "distractor_lens": [
+      127,
+      110,
+      113
+    ],
+    "mean_distractor_len": 116.7,
+    "len_ratio": 1.04,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "safety"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/d01": {
+    "correct_len": 105,
+    "distractor_lens": [
+      108,
+      112,
+      107
+    ],
+    "mean_distractor_len": 109,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 2,
+    "max_over_min": 1.07,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "model",
+      "beliefs",
+      "least",
+      "expected"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/d02": {
+    "correct_len": 124,
+    "distractor_lens": [
+      123,
+      119,
+      111
+    ],
+    "mean_distractor_len": 117.7,
+    "len_ratio": 1.05,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.12,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "forecast"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 121,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/e01": {
+    "correct_len": 139,
+    "distractor_lens": [
+      140,
+      130,
+      132
+    ],
+    "mean_distractor_len": 134,
+    "len_ratio": 1.04,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "systems",
+      "automate",
+      "training",
+      "scaling",
+      "most"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/e02": {
+    "correct_len": 143,
+    "distractor_lens": [
+      138,
+      129,
+      125
+    ],
+    "mean_distractor_len": 130.7,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 5,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "one",
+      "other",
+      "human"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 130,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/e03": {
+    "correct_len": 136,
+    "distractor_lens": [
+      131,
+      129,
+      125
+    ],
+    "mean_distractor_len": 128.3,
+    "len_ratio": 1.06,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 5,
+    "max_over_min": 1.09,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "ten",
+      "years",
+      "safety",
+      "research",
+      "most"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 124,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/f01": {
+    "correct_len": 141,
+    "distractor_lens": [
+      140,
+      129,
+      128
+    ],
+    "mean_distractor_len": 132.3,
+    "len_ratio": 1.07,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "training",
+      "scaling"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/f02": {
+    "correct_len": 122,
+    "distractor_lens": [
+      124,
+      127,
+      122
+    ],
+    "mean_distractor_len": 124.3,
+    "len_ratio": 0.98,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "automation",
+      "arrives"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 140,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/f03": {
+    "correct_len": 134,
+    "distractor_lens": [
+      129,
+      137,
+      118
+    ],
+    "mean_distractor_len": 128,
+    "len_ratio": 1.05,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "laws",
+      "much"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 136,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/g01": {
+    "correct_len": 96,
+    "distractor_lens": [
+      91,
+      101,
+      103
+    ],
+    "mean_distractor_len": 98.3,
+    "len_ratio": 0.98,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "hardware",
+      "two"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 133,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/g02": {
+    "correct_len": 92,
+    "distractor_lens": [
+      91,
+      87,
+      91
+    ],
+    "mean_distractor_len": 89.7,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "chip",
+      "pace",
+      "compute"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/g03": {
+    "correct_len": 114,
+    "distractor_lens": [
+      98,
+      110,
+      98
+    ],
+    "mean_distractor_len": 102,
+    "len_ratio": 1.12,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 4,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "automation"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 138,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "forecasting-timelines/opus/h01": {
+    "correct_len": 107,
+    "distractor_lens": [
+      121,
+      124,
+      121
+    ],
+    "mean_distractor_len": 122,
+    "len_ratio": 0.88,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 14,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "forecasting-timelines/opus/h02": {
+    "correct_len": 132,
+    "distractor_lens": [
+      128,
+      131,
+      132
+    ],
+    "mean_distractor_len": 130.3,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "training",
+      "model",
+      "write",
+      "proofs",
+      "better"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/c01",
+    "targets": [
+      "FT-9"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab that has used up the high-quality public text it can find wants more training signal for a model that drafts persuasive policy memos, where no crisp score marks a good memo. A colleague proposes AlphaZero-style self-play. What is the strongest reason to doubt that proposal here?",
+    "options": [
+      {
+        "text": "The task cannot be cast as a game with explicit rules and a success metric to reward",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The method is confined in principle to board games, whatever structure a task has",
+        "key": false,
+        "provenance": "misreads the Go/chess examples in the Task-based learning bullet as the limit of the route, against 'In principle, this approach could be extended to teaching any arbitrary task'",
+        "family": "b"
+      },
+      {
+        "text": "The method still needs a large stock of human-written examples to imitate first",
+        "key": false,
+        "provenance": "reverses 'AIs can learn without human-generated pretraining examples' and 'without any human gameplay examples' in the Task-based learning bullet",
+        "family": "b"
+      },
+      {
+        "text": "The method only multiplies the existing stock of text by a fixed factor, so it just delays the wall",
+        "key": false,
+        "provenance": "conflates self-play with the Multimodal bullet's condition ('could 3-10x the effective data supply'), attaching a bounded-multiplier limit to a route that generates data through interaction",
+        "family": "a"
+      }
+    ],
+    "explanation": "Self-play generates its own training data through interaction with an environment, but only where the task can be formalised as a game with explicit rules and a success metric. That is why it worked for Go and chess. A persuasive memo has no such scoring rule, so there is nothing to reward. If you picked 'confined to board games', you took the examples for the limit: in principle the approach extends to any task that can be specified this way, so the task's structure decides, not its domain. The 'fixed multiplier' option borrows multimodal data's condition, since images and video enlarge a finite stock, and attaches it to a route that makes data rather than finding it. And self-play's whole point is that it needs no human examples. Each escape route has its own condition, and you have to check that condition. (Forecasting Timelines → Training Data)",
+    "takeaway": "Each escape from the data wall has its own condition; self-play's is that the task can be written as a game with explicit rewards.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the self-play condition ('as long as tasks can be formalized as games with explicit rules and success metrics') produces 'no explicit reward for memos' unaided.",
+      "cynic_test": "A skipper might pick the 'board games' option as the intuitive objection, but the stem's 'no crisp score' points to the formalisation condition only for someone who knows that condition, and all four options share one grammatical shape and a similar length, with the only absolute ('only multiplies') sitting on a distractor."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 84,
+    "distractor_lens": [
+      81,
+      79,
+      99
+    ],
+    "mean_distractor_len": 86.3,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.25,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 1,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "text"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 147,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

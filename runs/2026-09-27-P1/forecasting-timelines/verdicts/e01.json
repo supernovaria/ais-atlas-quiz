@@ -1,0 +1,90 @@
+{
+  "id": "forecasting-timelines/opus/e01",
+  "verdict": "rewrite",
+  "level": "L4",
+  "level_claimed_by_generator": "L5",
+  "failed_criteria": ["D1", "D3", "D6", "E8"],
+  "measurements": {
+    "correct_len": 139,
+    "distractor_lens": [140, 130, 132],
+    "mean_distractor_len": 134,
+    "len_ratio": 1.04,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["systems", "automate", "training", "scaling", "most"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, false],
+  "families_present": ["a", "b", "d"],
+  "explanation_true_standalone": false,
+  "answerable_from_text_alone": false,
+  "reasons": [
+    "D1: the provenance on option 4 (feasibility) points to a real sentence ('analysis suggests that they aren't impossible' / 'The question is whether the economic incentives justify it'), but the misreading it names (taking feasibility as settling the question) would lead a reader to 'feasible, so it will be built'. The option actually says 'feasibility is what bounds scaling', which no misreading of that passage produces.",
+    "D6: option 4 contradicts itself. It says city-scale runs are 'physically achievable, so feasibility ... is what bounds further scaling'. If the runs are achievable, feasibility is not the bound, so the option refutes itself without any domain knowledge.",
+    "D3: at most one distractor may be ruled out by general reasoning alone, and here two can. Option 4 contradicts itself (see D6). Option 3 ('returns are front-loaded ... deliver most of the value before compute budgets grow') is not an objection to the analyst at all: if most value arrives early and is still thin, that supports the analyst's conclusion. A reader can drop it from the stem's logic alone.",
+    "E8: the explanation is not fully true on its own. It says whether economic incentives justify city-scale runs is 'exactly the question the loop answers', but the text leaves that open ('The question is whether the economic incentives justify it'). The loop describes the mechanism; it does not settle the question. The explanation also contains a garble ('drops our other half of the sentence')."
+  ],
+  "preserve": "The stem, the key and option 2 (the research-automation conflation): accepting thin early returns as the loop's own starting point is a clean, durable use of FT-6 that the prose does not apply to this objection. Only options 3 and 4 and the explanation need replacing.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/e01",
+    "targets": ["FT-6"],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An analyst argues: \"AI systems today automate only a thin slice of work and earn little compared with what their training costs, so the returns cannot sustain continued scaling.\" Which objection has the most support in how compute, automation and productivity interact?",
+    "options": [
+      {
+        "text": "Small early returns are what the loop predicts; value grows as bigger compute budgets automate more tasks, and that value buys more compute",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The loop runs independently of these returns, because it closes once AI systems do the research that makes the next round of compute cheaper",
+        "key": false,
+        "provenance": "conflates the productivity-funds-compute loop ('compute enabling automation, which increases productivity, which funds more compute') with the automation-of-R&D loop, which a reader can read into the intro's 'automate ML RnD' and Figure 1.38's 'compute efficiency'; takeoff introduces it separately",
+        "family": "a"
+      },
+      {
+        "text": "The analyst understates today's returns: most of the value of automation arrives early, well before compute budgets grow very large",
+        "key": false,
+        "provenance": "reverses 'Initially, only a small fraction of tasks are automated, so running AI systems creates relatively little economic value' into early, front-loaded value, and so denies the analyst's premise instead of reinterpreting it",
+        "family": "b"
+      },
+      {
+        "text": "Analysis shows city-scale training runs are within reach, so returns need not justify them: feasible runs will be built regardless",
+        "key": false,
+        "provenance": "reads 'analysis suggests that they aren't impossible' as settling the matter and drops the next sentence, 'The question is whether the economic incentives justify it'",
+        "family": "b"
+      }
+    ],
+    "explanation": "The analyst's premise fits the feedback loop rather than refuting it. At first only a small fraction of tasks is automated, so AI creates relatively little value; as effective compute budgets grow, the range of automated tasks widens, productivity rises, and that productivity funds more compute, looping until labour is fully automated. Thin returns today are the loop's expected starting point. Denying the premise gets this backwards: on the loop's own account, early value is small. If you picked the research-automation answer, you merged this loop with a different one: here the loop closes through productivity paying for compute. The feasibility answer drops the sentence that follows it: runs not being impossible leaves open whether the economic incentives justify them, which is the question the loop bears on. (Forecasting Timelines)",
+    "takeaway": "Low early returns are the expected first stage of the compute-automation-productivity loop, not a refutation of it.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who has the loop can say 'little value at first is what the model expects; value then funds compute' without seeing the options.",
+      "cynic_test": "Every distractor is a coherent objection. One says returns do not matter because AI does the research, one denies the premise, and one says feasibility makes returns irrelevant. None contradicts itself. Lengths are 139/140/132/130 by hand count, with no hedges and no absolutes ('within reach' stands in for 'not impossible', to avoid an absolute token)."
+    },
+    "shard_id": "forecasting-timelines-e",
+    "model": "opus"
+  },
+  "rewrite_changed": ["options[2]", "options[3]", "explanation", "level_claimed", "self_check", "options[1].provenance"],
+  "reviewer_note": "Option 2 (the research-automation loop) is the investment-vs-automation pair that the concept map's generator notes reserve for takeoff, even though the map's FT-6 misconceptions list it. Figure 1.38 also says productivity raises 'compute efficiency'. Check that option 2 is not arguably true and does not duplicate a takeoff question. Level is L4, not the claimed L5, because paragraph 5 of the prose nearly states the key."
+}

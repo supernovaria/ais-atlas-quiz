@@ -1,0 +1,83 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/d01",
+    "targets": ["DM-9"],
+    "lens": "figure",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A game-playing system reaches superhuman strength after self-play amounting to tens of millions of games, where a human grandmaster studies perhaps tens of thousands. An adaptability-focused researcher comments: \"This shows mastery of the game, not general intelligence.\" How does a safety-oriented, capability-focused definition of AGI treat that comment?",
+    "options": [
+      {"text": "It accepts the point about general intelligence but still judges risk by the final capability the system has reached", "key": true, "provenance": null, "family": null},
+      {"text": "It rejects the point, holding that general intelligence is simply high final performance, however it was acquired", "key": false, "provenance": "misreads 'does the learning path matter more than the destination?' as a dismissal of the adaptability view, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'", "family": "b"},
+      {"text": "It rejects the point, counting superhuman strength at a hard game as real progress along the generality axis", "key": false, "provenance": "misreads 'AlphaGo in 2016 achieved superhuman capability at Go' as generality progress, against 'Everything along this line ... counts as artificial narrow intelligence (ANI)'", "family": "a"},
+      {"text": "It accepts the point and sets it aside, grouping learning efficiency with consciousness as not actionable for safety", "key": false, "provenance": "misfiles the synthesis paragraph: consciousness is the view 'set aside ... as not actionable', whereas the adaptability view is 'acknowledge[d] and incorporate[d]'", "family": "d"}
+    ],
+    "explanation": "The adaptability view defines intelligence as the efficiency of acquiring new skills, so a system that needed vastly more experience than a grandmaster has mastered the game without necessarily becoming more generally intelligent. We grant that point: learning quickly from little data does matter. But for safety we prioritise the destination over the path, because what a system can do determines what it can do harmfully. If you picked the 'sets it aside' option, you merged two different moves: consciousness is the question we set aside as not actionable, while learning efficiency is acknowledged and kept. The option counting superhuman play as generality progress confuses depth on one task with breadth across domains; a superhuman Go player is still narrow AI. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "We accept the adaptability view's claim about intelligence and still rank risk by final capability; the two positions answer different questions.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'acknowledge and incorporate ... but prioritize final capabilities' can state 'grant the point, judge risk by capability' unaided.",
+      "cynic_test": "A skipper might pick whichever option sounds most balanced, but two options accept the point and two reject it with matched 'It accepts/rejects the point' framing, so accepting-versus-rejecting gives nothing away; choosing between the two 'accepts' options requires knowing that consciousness, not adaptability, is the view set aside."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/d02",
+    "targets": ["DM-8"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems each score at about the 90th percentile of security professionals on the same evaluation of multi-step intrusion planning. System A reached that score from a modest training set; System B needed thousands of times more examples, much of it memorised worked cases. For a safety assessment of this capability, how should the two compare?",
+    "options": [
+      {"text": "They pose comparable risk from this capability, because the danger follows from what each can do, not how it learned", "key": true, "provenance": null, "family": null},
+      {"text": "System B poses less risk, because capability bought with data is memorisation rather than genuine intelligence", "key": false, "provenance": "misreads the adaptability view's 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'", "family": "c"},
+      {"text": "Their risk depends on which one understands the steps it plans, because symbol-shuffling alone cannot cause harm", "key": false, "provenance": "carries the Chinese Room 'true understanding' criterion into risk assessment, against 'A system doesn't need to be conscious to cause harm' and 'Is it conscious or just pattern-matching? These questions don't change the risk profile'", "family": "a"},
+      {"text": "System A poses more risk, because efficient learning is the mark of general intelligence and so of danger", "key": false, "provenance": "takes the adaptability definition 'the efficiency with which a system can turn experience and priors into skills' as a risk measure, reversing 'Did it learn efficiently or through brute force? ... These questions don't change the risk profile'", "family": "b"}
+    ],
+    "explanation": "The two systems can do the same dangerous thing equally well, so for this capability they carry comparable risk: harm comes from what a system can do, and the route it took to get there does not change that. The strongest pull is the option rating System B as less risky. That comes from the adaptability view, which is right that B is less impressive as a learner; being less impressive is not the same as being less dangerous, and B's memorised plans work just as well. The option about which system 'understands' its plans imports the consciousness debate, which we set aside precisely because a system needs no understanding to cause harm. This is why we treat behaviourist, capability-focused approaches as the ones that matter most for safety. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "For safety, risk is path-independent: equal capability means equal exposure, however the capability was acquired.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: with the options hidden, a reader who took in 'these risks exist regardless of how it achieved them' answers 'same risk, because the capability is the same'.",
+      "cynic_test": "A skipper might think 'comparable' is the safe middle option, but two distractors are also comparative verdicts and all four share the 'because' structure, so the choice turns on knowing that learning efficiency and understanding do not change the risk profile."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/d03",
+    "targets": ["DM-1"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "In one year a model's score on a competition-mathematics benchmark climbed from about 60% to about 95%, taking it from already above expert level to beyond almost every human competitor. Its results on the other cognitive domains stayed where they were, several of them below expert level. How does this change register on the capability × generality framework?",
+    "options": [
+      {"text": "As a gain in capability on one domain, leaving the share of domains that count toward generality unchanged", "key": true, "provenance": null, "family": null},
+      {"text": "As a gain on both capability and generality, because superhuman skill in one domain is evidence of broad ability", "key": false, "provenance": "misreads 'systems in the last few years are climbing both axes simultaneously' as meaning the axes move together, rather than being separate axes that are both currently rising", "family": "a"},
+      {"text": "As movement toward AGI, because reaching superhuman level on a hard domain is how general intelligence first emerges", "key": false, "provenance": "reads 'AlphaGo in 2016 achieved superhuman capability at Go' as a step toward general intelligence, missing 'Everything along this line ... counts as artificial narrow intelligence (ANI)'", "family": "c"},
+      {"text": "As little real change, because a system that is strong in only one domain remains weak AI whatever its score", "key": false, "provenance": "reads the 'Weak AI' label in the ANI definition as a performance claim, against ''Narrow' might be a more accurate descriptor ... as it is anything but weak'", "family": "b"}
+    ],
+    "explanation": "Capability measures depth on individual tasks and generality measures breadth: the percentage of domains where a system is at expert level. Mathematics was already above expert level, so pushing it to superhuman adds depth on that one domain and leaves the count of expert-level domains, and so generality, exactly where it was. If you chose 'movement toward AGI', you made the mistake AlphaGo invites: superhuman performance on one task is still narrow AI, however hard the task. If you chose 'little real change', you took 'weak AI' literally; a narrow system can be extremely strong, and this is a real capability gain. The benchmark figures are only there to set the scene. What matters is the shape of the change: large on one axis, zero on the other. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": null,
+    "stem_format": "classification",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'capability is depth, generality is the share of expert-level domains' says 'more depth on one domain, generality flat' unaided.",
+      "cynic_test": "A skipper might pick the most restrained-sounding option, but 'little real change' is equally restrained and wrong. 'Capability' and 'generality' each appear in two options, so no stem word points to the key; the 60%-to-95% benchmark figure is scene-setting, and the answer is the same whatever the figure, because the phrase 'already above expert level' carries the weight."
+    }
+  },
+  {
+    "note": "Lens caveat: the map's volatile list has no entries for DM-8 or DM-9. The volatile figures there are Turing-test, CHC-chart, METR and '57%' material, all of which belong to other ideas. So d01 and d02 use the Pattern-D shape with invented, non-load-bearing magnitudes in the stem (tens of millions vs tens of thousands of games; thousands of times more examples at an equal ~90th-percentile score) rather than a listed volatile entry. d03 uses a benchmark-score jump of the volatile V1.1 kind as a scene-setting given. DM-8 and DM-9 form a discrimination pair. I wrote them as two separate candidates, not one spanning contrast item, because the brief asks for one per idea and the two stems test different tasks: d01 asks where the adaptability view is placed in the synthesis, and d02 asks the reader to apply path-independence to a case. The option lengths are estimated by eye and need the checker."
+  }
+]

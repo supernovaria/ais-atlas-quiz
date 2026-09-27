@@ -1,0 +1,1318 @@
+{
+  "defining-and-measuring-agi/opus/a01": {
+    "correct_len": 132,
+    "distractor_lens": [
+      134,
+      129,
+      128
+    ],
+    "mean_distractor_len": 130.3,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.05,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/a03": {
+    "correct_len": 111,
+    "distractor_lens": [
+      114,
+      113,
+      107
+    ],
+    "mean_distractor_len": 111.3,
+    "len_ratio": 1,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.07,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "runs",
+      "reviewer"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 124,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/b01": {
+    "correct_len": 137,
+    "distractor_lens": [
+      130,
+      131,
+      125
+    ],
+    "mean_distractor_len": 128.7,
+    "len_ratio": 1.06,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 6,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "line"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/b02": {
+    "correct_len": 117,
+    "distractor_lens": [
+      122,
+      124,
+      128
+    ],
+    "mean_distractor_len": 124.7,
+    "len_ratio": 0.94,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 5,
+    "max_over_min": 1.09,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "system",
+      "scores",
+      "nearly",
+      "every"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 123,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/b03": {
+    "correct_len": 113,
+    "distractor_lens": [
+      131,
+      115,
+      113
+    ],
+    "mean_distractor_len": 119.7,
+    "len_ratio": 0.94,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "system",
+      "reaches",
+      "neither",
+      "separates",
+      "until",
+      "one"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 123,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/c01": {
+    "correct_len": 119,
+    "distractor_lens": [
+      108,
+      105,
+      107
+    ],
+    "mean_distractor_len": 106.7,
+    "len_ratio": 1.12,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 11,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "level",
+      "expert",
+      "most"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 134,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/c02": {
+    "correct_len": 107,
+    "distractor_lens": [
+      105,
+      99,
+      96
+    ],
+    "mean_distractor_len": 100,
+    "len_ratio": 1.07,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.11,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "expert",
+      "best",
+      "humans",
+      "across",
+      "cognitive",
+      "domains",
+      "economically",
+      "valuable",
+      "work"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 117,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/c03": {
+    "correct_len": 109,
+    "distractor_lens": [
+      128,
+      115,
+      108
+    ],
+    "mean_distractor_len": 117,
+    "len_ratio": 0.93,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.19,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "skill"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/d01": {
+    "correct_len": 116,
+    "distractor_lens": [
+      113,
+      108,
+      116
+    ],
+    "mean_distractor_len": 112.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.07,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "game",
+      "system",
+      "superhuman",
+      "strength",
+      "safety",
+      "capability"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/d02": {
+    "correct_len": 116,
+    "distractor_lens": [
+      110,
+      112,
+      105
+    ],
+    "mean_distractor_len": 109,
+    "len_ratio": 1.06,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 4,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "each",
+      "more"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 136,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/d03": {
+    "correct_len": 106,
+    "distractor_lens": [
+      112,
+      116,
+      108
+    ],
+    "mean_distractor_len": 112,
+    "len_ratio": 0.95,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 2,
+    "max_over_min": 1.09,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "score",
+      "level",
+      "domains",
+      "change"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 136,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/e01": {
+    "correct_len": 111,
+    "distractor_lens": [
+      114,
+      123,
+      117
+    ],
+    "mean_distractor_len": 118,
+    "len_ratio": 0.94,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 3,
+    "max_over_min": 1.11,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "today",
+      "conscious"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 153,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/e02": {
+    "correct_len": 110,
+    "distractor_lens": [
+      108,
+      112,
+      110
+    ],
+    "mean_distractor_len": 110,
+    "len_ratio": 1,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        1,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "scores",
+      "most"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 142,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/e03": {
+    "correct_len": 121,
+    "distractor_lens": [
+      118,
+      120,
+      116
+    ],
+    "mean_distractor_len": 118,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "expert",
+      "matters",
+      "takes"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 134,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/f01": {
+    "correct_len": 116,
+    "distractor_lens": [
+      113,
+      114,
+      110
+    ],
+    "mean_distractor_len": 112.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.05,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "work",
+      "all",
+      "reaches",
+      "performance",
+      "each"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 135,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/f02": {
+    "correct_len": 124,
+    "distractor_lens": [
+      121,
+      117,
+      122
+    ],
+    "mean_distractor_len": 120,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "one",
+      "across",
+      "fails"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 139,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/f03": {
+    "correct_len": 125,
+    "distractor_lens": [
+      123,
+      123,
+      123
+    ],
+    "mean_distractor_len": 123,
+    "len_ratio": 1.02,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.02,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 138,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/g01": {
+    "correct_len": 120,
+    "distractor_lens": [
+      115,
+      113,
+      115
+    ],
+    "mean_distractor_len": 114.3,
+    "len_ratio": 1.05,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 5,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "work"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 118,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/g02": {
+    "correct_len": 113,
+    "distractor_lens": [
+      113,
+      113,
+      109
+    ],
+    "mean_distractor_len": 111.7,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "two",
+      "level"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 125,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/g03": {
+    "correct_len": 111,
+    "distractor_lens": [
+      107,
+      110,
+      105
+    ],
+    "mean_distractor_len": 107.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "minimal"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 119,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/h01": {
+    "correct_len": 98,
+    "distractor_lens": [
+      98,
+      96,
+      100
+    ],
+    "mean_distractor_len": 98,
+    "len_ratio": 1,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "equally"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 138,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/h02": {
+    "correct_len": 89,
+    "distractor_lens": [
+      93,
+      91,
+      90
+    ],
+    "mean_distractor_len": 91.3,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 1,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "molecules",
+      "axes"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 130,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/h03": {
+    "correct_len": 94,
+    "distractor_lens": [
+      100,
+      101,
+      106
+    ],
+    "mean_distractor_len": 102.3,
+    "len_ratio": 0.92,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 6,
+    "max_over_min": 1.13,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "model",
+      "experience",
+      "plan",
+      "people",
+      "finding"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 132,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/i01": {
+    "correct_len": 124,
+    "distractor_lens": [
+      125,
+      129,
+      122
+    ],
+    "mean_distractor_len": 125.3,
+    "len_ratio": 0.99,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "test"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 137,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/i02": {
+    "correct_len": 112,
+    "distractor_lens": [
+      120,
+      116,
+      113
+    ],
+    "mean_distractor_len": 116.3,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 1,
+    "max_over_min": 1.07,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "domains",
+      "expert",
+      "level",
+      "human",
+      "capability"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 137,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/i03": {
+    "correct_len": 131,
+    "distractor_lens": [
+      131,
+      133,
+      134
+    ],
+    "mean_distractor_len": 132.7,
+    "len_ratio": 0.99,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.02,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        1,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "aggregate",
+      "domains",
+      "serious"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/j01": {
+    "correct_len": 111,
+    "distractor_lens": [
+      116,
+      118,
+      113
+    ],
+    "mean_distractor_len": 115.7,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 2,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "less",
+      "tasks",
+      "real"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/j02": {
+    "correct_len": 114,
+    "distractor_lens": [
+      111,
+      115,
+      105
+    ],
+    "mean_distractor_len": 110.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "generality",
+      "axes",
+      "system",
+      "response",
+      "framework"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 125,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/j03": {
+    "correct_len": 112,
+    "distractor_lens": [
+      114,
+      118,
+      114
+    ],
+    "mean_distractor_len": 115.3,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 2,
+    "max_over_min": 1.05,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "more",
+      "general",
+      "four"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/k01": {
+    "correct_len": 112,
+    "distractor_lens": [
+      103,
+      102,
+      108
+    ],
+    "mean_distractor_len": 104.3,
+    "len_ratio": 1.07,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 4,
+    "max_over_min": 1.1,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "crossed"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/k02": {
+    "correct_len": 113,
+    "distractor_lens": [
+      111,
+      105,
+      106
+    ],
+    "mean_distractor_len": 107.3,
+    "len_ratio": 1.05,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "sits"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/k03": {
+    "correct_len": 102,
+    "distractor_lens": [
+      101,
+      109,
+      107
+    ],
+    "mean_distractor_len": 105.7,
+    "len_ratio": 0.97,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "domain"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 119,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/l01": {
+    "correct_len": 123,
+    "distractor_lens": [
+      120,
+      121,
+      114
+    ],
+    "mean_distractor_len": 118.3,
+    "len_ratio": 1.04,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 141,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/l02": {
+    "correct_len": 120,
+    "distractor_lens": [
+      116,
+      122,
+      119
+    ],
+    "mean_distractor_len": 119,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.05,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        1
+      ]
+    },
+    "stem_word_singletons": [
+      "model",
+      "suggestions",
+      "step"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 139,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/l03": {
+    "correct_len": 113,
+    "distractor_lens": [
+      117,
+      125,
+      112
+    ],
+    "mean_distractor_len": 118,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.12,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 1,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "system"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  },
+  "defining-and-measuring-agi/opus/m01": {
+    "correct_len": 109,
+    "distractor_lens": [
+      107,
+      103,
+      106
+    ],
+    "mean_distractor_len": 105.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.06,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "equally",
+      "system"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 154,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

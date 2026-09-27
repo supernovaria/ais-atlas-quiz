@@ -1,0 +1,94 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/h02",
+    "targets": [
+      "FT-9"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two labs run out of high-quality human text. One is training a model to write proofs in a formal language, where a program verifies every proof automatically. The other is training a model to write persuasive essays, where no program can say which essay is better. Which comparison of their positions is best supported?",
+    "options": [
+      {
+        "text": "The proof lab has a route the essay lab lacks: self-play, which works where an explicit success metric exists, as it does for proofs",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The two labs are equally placed: self-play already extends to open-ended tasks by having models compete against their own copies",
+        "key": false,
+        "provenance": "misreads 'In principle, this approach could be extended to teaching any arbitrary task' as current fact, against 'This is still very speculative, it requires simulation environments ... explicit reward functions, and tractable state spaces'",
+        "family": "b"
+      },
+      {
+        "text": "The two labs are equally placed: having each model write its own training data removes the wall whether or not the outputs are good",
+        "key": false,
+        "provenance": "drops the conditional in 'removes the constraint entirely—if the outputs are high enough quality'",
+        "family": "b"
+      },
+      {
+        "text": "The essay lab is better placed: encoding speech and video of people arguing removes its data limit, which proof writing cannot share",
+        "key": false,
+        "provenance": "conflates multimodal data (a bounded multiplier on supply, 'could 3-10x the effective data supply') with synthetic data, the route that could remove the constraint",
+        "family": "a"
+      }
+    ],
+    "explanation": "Each escape route comes with its own condition. Self-play generates training signal through interaction, but only where the task can be formalised with explicit rules and a success metric. A proof checker supplies exactly that, and essay persuasiveness has nothing like it. The 'self-play already extends to open-ended tasks' option reads an in-principle possibility as current fact. Extending self-play beyond games is still speculative and needs simulation environments, explicit reward functions and tractable state spaces. The synthetic-data option drops that route's condition: model-written data removes the constraint only if the outputs are high enough quality. Multimodal data does add supply, estimated at a few times the text stock in the 2025 edition, but a multiplier on a finite stock does not remove the limit. (Forecasting Timelines → Training Data)",
+    "takeaway": "Every escape route from the data wall comes with a condition, and for self-play that condition is an explicit reward.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the self-play condition (explicit rules and success metrics) would say the verifiable-proof domain has an escape route that the essay domain lacks.",
+      "cynic_test": "A skipper might avoid the two 'equally placed' options as symmetric filler, but the options open three different ways ('has a route', 'equally placed' twice, 'better placed'), 'self-play' appears in both the key and a distractor, and every option names a specific route, so no option stands out as the odd one."
+    },
+    "shard_id": "forecasting-timelines-h",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 132,
+    "distractor_lens": [
+      128,
+      131,
+      132
+    ],
+    "mean_distractor_len": 130.3,
+    "len_ratio": 1.01,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 1,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "training",
+      "model",
+      "write",
+      "proofs",
+      "better"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 129,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/e02",
+    "targets": [
+      "FT-9"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Two researchers respond to the data wall. One says synthetic data makes it irrelevant, since models can generate their own training text; the other says self-play does, since AlphaZero needed no human games. Which objection applies to both claims?",
+    "options": [
+      {
+        "text": "Each route holds only under its own condition: one needs outputs of high enough quality, the other needs tasks formalised with explicit rewards",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Each route only multiplies the existing stock by a bounded factor, as encoding images and video does, rather than getting around the limit",
+        "key": false,
+        "provenance": "conflates synthetic data and self-play with the multimodal route, the one the Training Data subsection frames as a bounded 3-10x multiplier",
+        "family": "a"
+      },
+      {
+        "text": "Each route still needs human-written examples to start from, so at best it postpones the wall rather than removing the constraint",
+        "key": false,
+        "provenance": "carries in the model-collapse prior against 'AIs can learn without human-generated pretraining examples' in the task-based learning bullet",
+        "family": "c"
+      },
+      {
+        "text": "Each route is still speculative and untested at scale, so neither can yet be counted as evidence that the wall can be avoided",
+        "key": false,
+        "provenance": "extends 'This is still very speculative' from the self-play bullet to synthetic data, against 'Post-training methods like reinforcement learning on reasoning tasks already demonstrate this works for some domains'",
+        "family": "b"
+      }
+    ],
+    "explanation": "Both researchers name a real escape route but drop its condition. Synthetic data removes the constraint only if the outputs are high enough quality; self-play lets systems learn without human examples only where tasks can be formalised as games with explicit rules, rewards and tractable state spaces, as Go and chess can. AlphaZero shows the second route works, not that it generalises to arbitrary tasks. If you chose the 'speculative and untested' objection, you applied self-play's caveat to synthetic data too: reinforcement learning on reasoning tasks already shows synthetic data working in some domains. The bounded-multiplier objection belongs to the third route, multimodal data, which is why that route alone cannot remove the wall. Whether data constrains scaling depends on how well each condition holds. (Forecasting Timelines → Training Data)",
+    "takeaway": "Every escape from the data wall is conditional, and each has a different condition.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the routes would say 'synthetic needs quality, self-play needs formalisable tasks with rewards' unprompted.",
+      "cynic_test": "A skipper might favour the cautious 'still speculative' option as the safe hedge, but the text contradicts it for synthetic data; all options share the 'Each route' frame so grammar and the stem words 'synthetic'/'self-play' (absent from every option) give nothing away."
+    },
+    "shard_id": "forecasting-timelines-e",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 143,
+    "distractor_lens": [
+      138,
+      129,
+      125
+    ],
+    "mean_distractor_len": 130.7,
+    "len_ratio": 1.09,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 5,
+    "max_over_min": 1.14,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "one",
+      "other",
+      "human"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 130,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/e03",
+    "targets": [
+      "FT-1"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Picture two worlds that are identical except that transformative AI arrives ten years from now in one and fifty years from now in the other. A safety lead says the right research portfolio is the same in both, and only the pace should differ. Which response has the most support?",
+    "options": [
+      {
+        "text": "The short world rules out slow theoretical work in favour of methods that run on current systems and scale; the long world keeps it open",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The long world is where methods proven on current systems pay off most, while the short world is better spent on fundamental theory",
+        "key": false,
+        "provenance": "reverses the pairing in the opening paragraph, where 'breathing room for fundamental alignment research' belongs to the later arrival and 'approaches that work with current systems' to the earlier one",
+        "family": "b"
+      },
+      {
+        "text": "Forecasts this uncertain can set how urgent the work is, but they cannot tell anyone which kinds of safety research to prioritise",
+        "key": false,
+        "provenance": "turns 'All forecasts come with wide error margins' into a reason timelines cannot guide strategy, against the bold lead 'Predicting when AI automates cognitive labor determines which safety strategies are viable'",
+        "family": "c"
+      },
+      {
+        "text": "The short world leaves governance frameworks as the main lever, since technical alignment work cannot mature within ten years",
+        "key": false,
+        "provenance": "moves 'building robust governance frameworks' from the long-timeline list of what breathing room allows into the short-timeline case",
+        "family": "b"
+      }
+    ],
+    "explanation": "Timeline length changes what is worth doing, not just how fast to do it. With ten years there is no time for slow theoretical research, so the work has to be approaches that function on today's systems and scale quickly. With fifty there is room for fundamental alignment research, robust governance frameworks and evaluation methods we can trust. If you picked the reversed pairing, notice that theory is the long-horizon bet because it pays off late. The 'uncertain forecasts only set urgency' answer is a common prior: the error bars are real, but the difference between ten and fifty years is exactly what decides which strategies are viable. Governance appears on the long-timeline list, because building robust frameworks is itself slow work. (Forecasting Timelines)",
+    "takeaway": "Timeline length decides which safety strategies are viable, not only how urgently to pursue them.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader could say 'short timelines force work that runs on current systems; long ones allow fundamental theory' without options.",
+      "cynic_test": "The reversed-pairing distractor mirrors the key's structure exactly, so a skipper cannot pick on shape; the 10-vs-50-year framing is the section's own durable contrast rather than the volatile 2030/2050 dates, and no option carries an absolute."
+    },
+    "shard_id": "forecasting-timelines-e",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 136,
+    "distractor_lens": [
+      131,
+      129,
+      125
+    ],
+    "mean_distractor_len": 128.3,
+    "len_ratio": 1.06,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 5,
+    "max_over_min": 1.09,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "ten",
+      "years",
+      "safety",
+      "research",
+      "most"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 124,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

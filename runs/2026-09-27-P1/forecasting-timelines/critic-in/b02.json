@@ -1,0 +1,93 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/b02",
+    "targets": [
+      "FT-4"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two labs each announce that their compute grew tenfold this year. Lab A bought ten times as many GPUs of the model it already used. Lab B kept its cluster unchanged but adopted training methods that reach the same results with a tenth of the operations. On an effective-compute accounting, how do the two announcements compare?",
+    "options": [
+      {
+        "text": "Both are tenfold gains on that accounting, because algorithms and chip count each multiply the total",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Only Lab A's is a compute gain; Lab B's is algorithmic progress, which is a separate kind of gain",
+        "key": false,
+        "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'",
+        "family": "a"
+      },
+      {
+        "text": "Lab B's is the larger gain, because software gains compound on hardware while chip count only adds",
+        "key": false,
+        "provenance": "hybrid of FT-5's 'compounds' with an additive misreading of 'Software efficiency times Hardware efficiency times Number of chips', treating one factor as additive and another as multiplicative",
+        "family": "b"
+      },
+      {
+        "text": "Lab B's gain counts only once it moves to newer chips, because software needs hardware to pay off",
+        "key": false,
+        "provenance": "reverses FT-5's 'You can develop better software to make use of existing hardware' into a dependence of software gains on new hardware",
+        "family": "b"
+      }
+    ],
+    "explanation": "Effective compute multiplies software efficiency, hardware efficiency and chip count, so a tenfold gain in any one factor is a tenfold gain in the total. Lab A got its gain from chips; Lab B got the same gain from algorithms without building a single new chip. The tempting answer treats algorithmic progress as something separate from compute, which is the everyday sense of 'compute' as hardware you can count, and that is exactly the sense we replace. The option saying Lab B must wait for newer chips reverses our point that each factor improves independently. The option saying chip count 'only adds' misreads the product: all three factors multiply, and none has a privileged role. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "A tenfold algorithmic gain on the same chips is as much an increase in effective compute as ten times the chips.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Effective Compute"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds effective compute as a product of three factors will say both labs gained tenfold.",
+      "cynic_test": "'Both are equal' might look like the safe middle, so two distractors also assert a specific comparison, and the stem's 'effective compute' is kept out of every option so no single option echoes it."
+    },
+    "shard_id": "forecasting-timelines-b",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 100,
+    "distractor_lens": [
+      97,
+      98,
+      97
+    ],
+    "mean_distractor_len": 97.3,
+    "len_ratio": 1.03,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 2,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "each",
+      "compute",
+      "tenfold",
+      "accounting"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 120,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

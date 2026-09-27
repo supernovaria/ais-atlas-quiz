@@ -1,0 +1,28 @@
+# P1 re-run — 2026-09-27, rooted at ais-atlas-quiz/ (worktree resume-opus-5-5-run-c1f020), prose present.
+# Resumes from runs/2026-09-18-P1/REPORT.md "Recommended next action": re-run P1 from analyse.
+{"stage":"authorization","note":"Proceeding on RUBRIC v1 (v2 not signed off; HANDOFF §1). No EXEMPLARS.md by decision. Fixed-frame out of scope. Sharding as A/B."}
+{"stage":"authorization","note":"USER DIRECTIVE 2026-09-27: all agents on Opus 5.5 (model: opus) this run — overrides P1's sonnet generator/analyst/curator. Conflicts with the adversary brief (haiku, 'do not upgrade'); adversary stage will pause for Em before running on opus, since results would not be comparable to runs/baseline/ (haiku)."}
+{"stage":"authorization","note":"Time-boxed: pause at the next clean stage boundary after 20 min or 85% usage."}
+{"stage":"preflight","git":"clean, worktree branch claude/resume-opus-5-5-run-c1f020 (not main)","selftest":"ok (1 documented divergence)","exemplars":"exit 0, absent","prose":"11 files, 25,726 words at maddy-home/atlas/atlas-audio-read-along/dist/chapters/v1/capabilities/","agents":"six quiz-* files present","ok":true}
+{"stage":"analyse","start":"2026-09-27T13:40:04+02:00","model":"opus","sections":["forecasting-timelines","defining-and-measuring-agi"]}
+{"ts":"2026-09-27T11:42:47.289Z","stage":"validate","sections":["forecasting-timelines"],"checked":1,"failures":0,"ok":true}
+{"ts":"2026-09-27T11:42:52.914Z","stage":"shard","section":"forecasting-timelines","shards":8,"pool":23,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\forecasting-timelines\\shards.json","ok":true}
+{"stage":"shard","section":"forecasting-timelines","shards":8,"pool":23,"target_n":4,"note":"analyst attempts sum to 23 ≈ 5.75N, above the ~4N guide; ran as the analyst decided","models":"opus","ok":true}
+{"stage":"generate","section":"forecasting-timelines","start":"2026-09-27T13:43:09+02:00","model":"opus","note":"per-shard outputs to generated/<shard_id>.json, merged by script into candidates.json"}
+{"ts":"2026-09-27T11:44:01.200Z","stage":"validate","sections":["defining-and-measuring-agi"],"checked":1,"failures":0,"ok":true}
+{"ts":"2026-09-27T11:44:01.270Z","stage":"shard","section":"defining-and-measuring-agi","shards":13,"pool":37,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\defining-and-measuring-agi\\shards.json","ok":true}
+{"stage":"analyse","end":"2026-09-27T13:44:01+02:00","artifacts":2,"validated":true,"ok":true}
+{"stage":"generate","section":"forecasting-timelines","end":"2026-09-27T13:47:34+02:00","spawns":8,"candidates":23,"failures":0,"note":"merged generated/*.json → candidates.json by script; shard_id/model added as metadata only, no text touched; trailing {note} objects kept in generated/","ok":true}
+{"ts":"2026-09-27T11:47:34.887Z","stage":"dedupe","section":"forecasting-timelines","in":23,"out":22,"saved":1,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\forecasting-timelines\\dedupe.json","ok":true}
+{"ts":"2026-09-27T11:47:34.976Z","stage":"measure","section":"forecasting-timelines","n":22,"r8_pass":22,"all_pass":22,"r5":0,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\forecasting-timelines\\measurements.json","ok":true}
+{"ts":"2026-09-27T11:47:35.052Z","stage":"queue","section":"forecasting-timelines","n":22,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\forecasting-timelines\\queue.json","ok":true}
+{"ts":"2026-09-27T11:47:35.125Z","stage":"validate","sections":["forecasting-timelines"],"checked":4,"failures":0,"ok":true}
+{"stage":"generate","section":"defining-and-measuring-agi","end":"2026-09-27T13:53:17+02:00","spawns":13,"failures":0,"ok":true}
+{"ts":"2026-09-27T11:53:17.811Z","stage":"dedupe","section":"defining-and-measuring-agi","in":37,"out":36,"saved":1,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\defining-and-measuring-agi\\dedupe.json","ok":true}
+{"ts":"2026-09-27T11:53:17.901Z","stage":"measure","section":"defining-and-measuring-agi","n":36,"r8_pass":36,"all_pass":36,"r5":0,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\defining-and-measuring-agi\\measurements.json","ok":true}
+{"ts":"2026-09-27T11:53:18.003Z","stage":"queue","section":"defining-and-measuring-agi","n":36,"artifact":"C:\\Users\\sorcs\\Documents\\maddy-home\\atlas\\ais-atlas-quiz\\.claude\\worktrees\\resume-opus-5-5-run-c1f020\\runs\\2026-09-27-P1\\defining-and-measuring-agi\\queue.json","ok":true}
+{"ts":"2026-09-27T11:53:18.118Z","stage":"validate","sections":["defining-and-measuring-agi","forecasting-timelines"],"checked":8,"failures":1,"ok":false}
+{"ts":"2026-09-27T11:53:27.237Z","stage":"validate","sections":["forecasting-timelines"],"checked":5,"failures":0,"ok":true}
+{"ts":"2026-09-27T11:56:29.715Z","stage":"validate","sections":["defining-and-measuring-agi","forecasting-timelines"],"checked":9,"failures":1,"ok":false}
+{"stage":"critique","section":"forecasting-timelines","pass":1,"done":11,"of":22,"split":{"rewrite":11,"pass":0,"reject":0},"validated":true}
+{"stage":"PAUSE","at":"2026-09-27T13:57:09+02:00","reason":"20-min time-box","spawns":34,"weekly_usage":"66%→77%","see":"REPORT.md"}

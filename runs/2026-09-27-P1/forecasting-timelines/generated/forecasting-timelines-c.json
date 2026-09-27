@@ -1,0 +1,81 @@
+[
+  {
+    "id": "forecasting-timelines/opus/c01",
+    "targets": ["FT-9"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab that has used up the high-quality public text it can find wants more training signal for a model that drafts persuasive policy memos, where no crisp score marks a good memo. A colleague proposes AlphaZero-style self-play. What is the strongest reason to doubt that proposal here?",
+    "options": [
+      {"text": "The task cannot be cast as a game with explicit rules and a success metric to reward", "key": true, "provenance": null, "family": null},
+      {"text": "The method is confined in principle to board games, whatever structure a task has", "key": false, "provenance": "misreads the Go/chess examples in the Task-based learning bullet as the limit of the route, against 'In principle, this approach could be extended to teaching any arbitrary task'", "family": "b"},
+      {"text": "The method still needs a large stock of human-written examples to imitate first", "key": false, "provenance": "reverses 'AIs can learn without human-generated pretraining examples' and 'without any human gameplay examples' in the Task-based learning bullet", "family": "b"},
+      {"text": "The method only multiplies the existing stock of text by a fixed factor, so it just delays the wall", "key": false, "provenance": "conflates self-play with the Multimodal bullet's condition ('could 3-10x the effective data supply'), attaching a bounded-multiplier limit to a route that generates data through interaction", "family": "a"}
+    ],
+    "explanation": "Self-play generates its own training data through interaction with an environment, but only where the task can be formalised as a game with explicit rules and a success metric. That is why it worked for Go and chess. A persuasive memo has no such scoring rule, so there is nothing to reward. If you picked 'confined to board games', you took the examples for the limit: in principle the approach extends to any task that can be specified this way, so the task's structure decides, not its domain. The 'fixed multiplier' option borrows multimodal data's condition, since images and video enlarge a finite stock, and attaches it to a route that makes data rather than finding it. And self-play's whole point is that it needs no human examples. Each escape route has its own condition, and you have to check that condition. (Forecasting Timelines → Training Data)",
+    "takeaway": "Each escape from the data wall has its own condition; self-play's is that the task can be written as a game with explicit rewards.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the self-play condition ('as long as tasks can be formalized as games with explicit rules and success metrics') produces 'no explicit reward for memos' unaided.",
+      "cynic_test": "A skipper might pick the 'board games' option as the intuitive objection, but the stem's 'no crisp score' points to the formalisation condition only for someone who knows that condition, and all four options share one grammatical shape and a similar length, with the only absolute ('only multiplies') sitting on a distractor."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/c02",
+    "targets": ["FT-8"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a lab has already trained on nearly all the high-quality public text there is, and over the next year better algorithms and more chips triple its effective compute. What follows for its next model?",
+    "options": [
+      {"text": "Its next gains depend on data beyond public text, because more effective compute does not enlarge that stock", "key": true, "provenance": null, "family": null},
+      {"text": "Its scaling is over, because a model cannot keep improving once no new human-written text is left to use", "key": false, "provenance": "conflates the data wall with its consequence, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'", "family": "a"},
+      {"text": "Little changes, because data is one of the factors that effective compute multiplies, so the tripling covers it", "key": false, "provenance": "misfiles data inside the Effective Compute equation, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'", "family": "a"},
+      {"text": "Little changes, because the web grows fast enough each year to refill the stock of high-quality text", "key": false, "provenance": "the pre-chapter prior that internet text is effectively unlimited, which the Training Data subsection overturns with 'we'll hit that wall'", "family": "c"}
+    ],
+    "explanation": "Data is a separate constraint from effective compute. Software efficiency, hardware efficiency and chip count multiply each other, but none of them adds a token to the stock of high-quality public human text. Once that stock is spent, further gains depend on the escape routes: multimodal, synthetic and self-play data. The 'data is a factor effective compute multiplies' option files data inside the compute equation, but we treat it as the second overarching factor. The 'scaling is over' option conflates the wall with its consequence: whether data actually binds depends on how well those alternatives work. And the web does grow, just not remotely fast enough. At the time of writing, training sets were growing several-fold a year against a stock that was roughly fixed. (Forecasting Timelines → Training Data)",
+    "takeaway": "Tripling compute does nothing to the text stock; the data wall has to be handled by data, not by more chips.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds data and effective compute as separate factors says 'compute can't make more public text, so it needs new data sources' unaided.",
+      "cynic_test": "A skipper would avoid the one absolute ('cannot keep improving') and then face three even-length options split two-and-two by opening phrase; choosing between the key and the 'data is a compute factor' option requires knowing the section files data separately."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/c03",
+    "targets": ["FT-1"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two safety research groups agree on everything except timing: the first expects AI able to automate ML research within about a decade, the second in about fifty years. Which difference between their research plans follows from that one disagreement?",
+    "options": [
+      {"text": "The first should favour methods that work on current systems and scale fast; the second can invest in foundational theory", "key": true, "provenance": null, "family": null},
+      {"text": "The first should favour foundational theory that settles the problem at once; the second can refine methods for current systems", "key": false, "provenance": "reverses the pairing in the 2030-vs-2050 paragraph, where 'breathing room for fundamental alignment research' belongs to the long case", "family": "b"},
+      {"text": "Both should pursue the same portfolio of projects, with the first simply running it on a much tighter schedule", "key": false, "provenance": "misreads 'we need safety solutions working soon' as a change of pace only, missing 'There's no time for slow theoretical research—we need approaches that work with current systems'", "family": "b"},
+      {"text": "The second should defer most of its safety work until systems closer to transformative AI exist to study directly", "key": false, "provenance": "the wait-and-see prior that forecasting has no bearing on what to do now, against the bold lead 'Predicting when AI automates cognitive labor determines which safety strategies are viable' and the long case's list of work to do in the breathing room", "family": "c"}
+    ],
+    "explanation": "Timeline length changes which strategies are viable, not only how fast to carry them out. If AI can automate ML research within a decade, slow theoretical programmes may not finish in time, so the work has to function on current systems and scale quickly. Fifty years buys room for fundamental alignment research, robust governance and evaluation methods we can trust. The 'same portfolio, tighter schedule' option is the most tempting misreading. It treats a timeline as a deadline on a fixed plan, when a short timeline takes some projects off the table altogether. The reversed option swaps the pairing, because foundational theory is what the long case can afford. And a long timeline is room to do that deep work now, not a reason to wait. (Forecasting Timelines)",
+    "takeaway": "A shorter timeline doesn't just speed up the safety agenda; it changes which items can be on it.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in the opening paragraph produces 'short: work with current systems; long: room for fundamental research' unaided.",
+      "cynic_test": "A skipper might pick 'same portfolio, faster', which is the intuitive default, or be torn between the key and its mirror image; 'current systems' and 'foundational theory' each appear in two options, so no word match marks the key, and the decade/fifty-year figures are hypotheticals in the stem rather than forecast dates."
+    }
+  },
+  {"note": "Three candidates for three ideas, all through the case lens. FT-8 and FT-9 form a discrimination pair, but we kept them as separate candidates because the shard asks for one per idea: c02 separates data from effective compute and from 'scaling stops', and c01 tests self-play's condition against multimodal data's condition. c01 names the route in the stem instead of asking which route fails, because options headed by a repeated route name would have marked the key. No volatile figure is load-bearing. The 10- and 50-year spans in c03 are the text's own hypothetical contrast, not forecast dates."}
+]

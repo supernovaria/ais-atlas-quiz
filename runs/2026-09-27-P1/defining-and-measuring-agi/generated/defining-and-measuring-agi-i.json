@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/i01",
+    "targets": ["DM-11"],
+    "lens": "figure",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A chatbot convinces most interrogators it is human in a Turing-style conversation test. In the same evaluation it fails simple spatial-reasoning puzzles and loses the thread of multi-step plans. What does this combination show about Turing's approach to measuring intelligence?",
+    "options": [
+      {"text": "It tested only one capability, so passing showed depth in conversation rather than breadth; judging by behaviour still holds", "key": true, "provenance": null, "family": null},
+      {"text": "The test worked as intended, since open conversation draws on reasoning and planning, and the puzzle failures are narrow gaps", "key": false, "provenance": "misreads 'If a machine could imitate human conversation well enough ... it should be considered intelligent' as still valid, missing 'The test was too narrow. Conversation is just one capability among many we care about'", "family": "c"},
+      {"text": "Judging by outputs alone proved unreliable, so a sound measure has to examine a system's internal states as well as its behaviour", "key": false, "provenance": "misreads 'LLMs exposed some limitations to this approach' as refuting behaviourism, against 'Turing's core insight - focus on observable capabilities, not internal states - remains sound'", "family": "b"},
+      {"text": "Passing showed fluent symbol manipulation without true understanding, which is why its reasoning broke down on other tasks", "key": false, "provenance": "files the Chinese Room 'processing symbols without grasping their meaning' objection as the diagnosis of the Turing test's failure, when the stated problem is narrowness of the capability sampled", "family": "d"}
+    ],
+    "explanation": "Turing's test samples one capability, conversation, so passing it tells you the system is deep on that task and says nothing about breadth. The spatial and planning failures are exactly what a narrow test cannot see. What survives is the core move: judge a system by what it observably does, not by its inner states. We keep that move and widen the set of things observed. If you picked the internal-states option, you took 'the test was too narrow' as 'behaviourism failed'; the fix is more behaviours, not a look inside. The 'no true understanding' option imports Searle's consciousness objection, which we set aside as not actionable for safety. It is a separate critique, not the diagnosis here. (GPT-4 was the example of this gap at the time of writing.) (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "The Turing test failed by being narrow, not by being behaviourist.",
+    "stem_format": "direct-conceptual",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section would say 'the test only checks conversation, but judging by behaviour is still right' unprompted.",
+      "cynic_test": "A skipper might pick the 'no true understanding' option as the sophisticated-sounding one; it fails because the section files that objection under consciousness, and the key's two-part hedge is balanced by two-clause distractors."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/i02",
+    "targets": ["DM-12"],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a published profile of a model across the ten CHC domains puts it at expert level on three of them, which is 30% generality. Its developer then connects it to a robot body that learns to fold laundry and assemble furniture as well as a skilled human. What happens to the model's position on the capability and generality axes?",
+    "options": [
+      {"text": "Generality stays at 30%, because physical tasks lie outside the non-embodied cognitive domains it is scored over", "key": true, "provenance": null, "family": null},
+      {"text": "Generality rises, because it is the share of all human activities, physical ones included, where it reaches expert level", "key": false, "provenance": "misses 'Not every possible task matters equally' and the knitting example; reads generality as covering every human activity rather than 'non-embodied cognitive tasks'", "family": "b"},
+      {"text": "Generality rises, because competent action in the physical world is the clearest sign of broad, general intelligence", "key": false, "provenance": "the pre-chapter prior that embodiment is the mark of general intelligence; misreads 'everything that can be done as remote work on a computer' as illustrative rather than as the scoping rule", "family": "c"},
+      {"text": "Generality stays at 30%, but capability rises, because dexterity deepens performance on the tasks already counted", "key": false, "provenance": "misreads the capability axis ('how well a system executes specific cognitive tasks') as covering any task, so physical skill is scored as depth rather than falling outside both axes", "family": "a"}
+    ],
+    "explanation": "Neither axis moves. We score generality over non-embodied cognitive tasks only, roughly anything that could be done as remote work on a computer, broken into the ten CHC domains. Folding laundry is not one of them, so the count of expert-level domains stays at three. The capability-rises option is the near miss: capability also measures cognitive tasks, so physical dexterity adds no depth on any domain already counted. If you picked the physical-world option, you brought in a reasonable intuition that embodiment signals intelligence. We deliberately set it aside: the domains were chosen because they bear on the risks we track, and we care much less whether AI gets better at knitting sweaters. The 30% is only a worked number here. The reasoning holds whatever a real profile shows. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Generality counts cognitive domains, so physical skill moves neither axis.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows generality is scored over non-embodied cognitive domains would say 'nothing changes' without seeing options.",
+      "cynic_test": "A skipper might guess that the two 'stays at 30%' options signal the key, but they then have to choose between them, and that choice needs the fact that the capability axis is also cognitive-only; the figure is a durable worked example, not load-bearing."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/i03",
+    "targets": ["DM-13"],
+    "lens": "figure",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "An evaluation puts a new model at 30% on an aggregate CHC-based AGI score. Its strengths are concentrated in a handful of domains, where it is near-superhuman, and it is weak elsewhere. A policymaker concludes: \"At 30%, this model is nowhere near the level where serious risk begins.\" Which response is best supported by the framework's own stated limitations?",
+    "options": [
+      {"text": "Its profile is unlike a human's, and a lopsided non-human profile can carry serious risk despite a low score on human-centric tests", "key": true, "provenance": null, "family": null},
+      {"text": "The domains it still lacks are likely the easiest ones for it, so its score will climb quickly and the risk is only a short way off", "key": false, "provenance": "reverses the 'Non-linear progress' limitation, which says the final capabilities 'may represent disproportionately difficult bottlenecks', not easy ones", "family": "b"},
+      {"text": "Human tests omit abilities universal in people that it may lack, so its real standing is lower still and the risk is even further off", "key": false, "provenance": "applies the 'Coverage bias' limitation correctly but in the wrong slot: coverage bias qualifies how human-like a score is, and here it is used to endorse a risk conclusion that 'Species-specific risk' undercuts", "family": "d"},
+      {"text": "An aggregate score tracks capability, but risk comes from the autonomy it is deployed with, so the score is the wrong quantity to cite", "key": false, "provenance": "misreads 'Autonomy level affects risk exposure, not inherent danger' as making autonomy the sole source of risk, so capability scores become irrelevant to it", "family": "a"}
+    ],
+    "explanation": "The limitation that fits is species-specific risk. A human-centric aggregate rewards a human-like spread of abilities, so a system that is near-superhuman in a few domains and weak elsewhere scores low while possibly carrying transformative risk. The TAI definition anticipates this: exceptional capability on a small set of critical domains can be enough. If you picked the coverage-bias option, you recalled a real limitation but put it in the wrong place. It says the score may flatter human-likeness, which does nothing to rescue a claim about risk. The easy-remaining-domains option reverses the non-linear point: the last domains are likely the hardest. The autonomy option confuses exposure with danger. Deployment changes how much of a capability gets exercised, not what the model can do. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A low human-centric score is not a low-risk score when the profile is lopsided.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows the four limitations would say 'non-human profiles can be risky despite low human-centric scores' when shown a low score with a lopsided profile.",
+      "cynic_test": "A skipper keying on 'lopsided' in the stem might favour the key, so the stem word 'concentrated' is used instead and 'risk'/'score' appear in every option; the coverage-bias distractor is a genuine limitation, which defeats 'pick the one that names a real critique'."
+    }
+  },
+  {"note": "Figure lens applied via Pattern D to all three. DM-11 and DM-13 use volatile entries (GPT-4 Turing/spatial gap; an aggregate percentage like '57% AGI') moved into the stem as hypotheticals. The 57% number and the non-linear-progress key are deliberately avoided because RUBRIC 10.2 uses them. DM-12 has no volatile entry of its own; the closest was Figure 1.30 (a CHC profile of a model), so the stem uses a hypothetical published profile plus the durable 3-of-10 = 30% worked example as a non-load-bearing given. DM-13's stem touches DM-6 (TAI's narrow-but-deep route) only in the explanation."}
+]

@@ -1,0 +1,1965 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/a01",
+    "targets": [
+      "DM-1"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A commentator calls AlphaGo's 2016 win over the world's best Go players \"a major step toward AGI\", because it mastered a game experts expected computers to need decades more to crack. How does that assessment fare on the capability-generality framework?",
+    "options": [
+      {
+        "text": "It overstates it: play beyond any human is capability on one task, and capability on a single task is narrow AI however high it goes",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It understates it: beating every human expert is what lifts a system out of narrow AI, which by definition tops out below expert level",
+        "key": false,
+        "provenance": "misreads the ANI definition box's label 'Weak AI' as a performance ceiling, against ''Narrow' might be a more accurate descriptor ... as it is anything but weak' and 'from basic competence to superhuman capability on a single task - counts as artificial narrow intelligence'",
+        "family": "b"
+      },
+      {
+        "text": "It is fair: mastering a task that hard shows the kind of flexible, learned competence that general intelligence is assembled from",
+        "key": false,
+        "provenance": "the pre-chapter prior that superhuman performance on a hard task is progress toward generality, missing 'Everything along this line ... counts as artificial narrow intelligence (ANI)' and 'Capability alone isn't enough to define and measure progress'",
+        "family": "c"
+      },
+      {
+        "text": "It overstates it: skill bought with vast data and compute is memorisation, so it should not be counted as capability on the task",
+        "key": false,
+        "provenance": "files the adaptability view's point ('High performance can be \"bought\" with sufficient data and compute') under the capability axis, against 'the risks exist either way' and 'prioritize final capabilities'; the adaptability view disputes general intelligence, not task capability",
+        "family": "d"
+      }
+    ],
+    "explanation": "Capability is depth: how well a system does individual tasks. Going from novice to superhuman at Go is movement along that one axis, and every point on it, however high, is narrow AI. AlphaGo could not write a sentence or solve an algebra problem, so its breadth stayed near zero. If you judged the claim fair, you treated \"mastered a very hard task\" as evidence of breadth, which is exactly the intuition the two-axis framing is built to separate out. The \"understates\" option reads the older label \"weak AI\" as a cap on performance, but narrow systems can be superhuman. The \"bought with data\" option borrows the adaptability view's objection, which is about general intelligence, not about whether task performance counts as capability. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Depth without breadth is narrow AI, however superhuman the depth.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say unprompted that superhuman play on one task is capability only, so it is still narrow AI and not progress on generality.",
+      "cynic_test": "A skipper would lean toward 'It is fair' as the charitable, non-pedantic answer or toward the key's 'overstates' opener, but two options share that opener, all four open with a verdict-colon clause, and none carries an absolute or hedge the others lack."
+    },
+    "shard_id": "defining-and-measuring-agi-a",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/a02",
+    "targets": [
+      "DM-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "System A produces work in all ten cognitive domains, each at about the level of a median person. System B outperforms nearly all human experts in four domains and cannot do the other six. Which comparison of the two fits how generality is measured?",
+    "options": [
+      {
+        "text": "B is more general: a domain counts only once performance reaches expert level, so B scores four domains and A scores zero",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "A is more general and B more capable: A spans all ten domains, while B goes deep in only four of them",
+        "key": false,
+        "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing that generality is 'the percentage of these domains where a system achieves expert-level capability'",
+        "family": "b"
+      },
+      {
+        "text": "A is more general: averaged across all ten domains, its scores come out higher than B's lopsided profile",
+        "key": false,
+        "provenance": "misreads the combined statement 'outperform 85% of humans in 30% of cognitive domains' as one averaged score rather than two numbers, one per axis",
+        "family": "a"
+      },
+      {
+        "text": "Neither registers yet: generality only starts counting once a system is at expert level in most domains",
+        "key": false,
+        "provenance": "conflates the AGI threshold ('expert-level performance ... across most cognitive domains (80-90%)') with the precondition for measuring generality, against the worked example 'three out of ten domains, that's 30% generality'",
+        "family": "a"
+      }
+    ],
+    "explanation": "Generality is the share of cognitive domains where a system reaches expert level. B clears that bar in four of ten, so it sits at 40% generality; A clears it in none, so its generality is zero even though it produces output everywhere. The hybrid option is the tempting one because it uses the real depth-versus-breadth split, but it reads breadth as coverage, when a domain only counts at expert-level performance. Averaging collapses the two axes into one score, which is why we report them as a pair (\"outperforms X% of humans in Y% of domains\"). And generality is measured at every level, not just near AGI: the AGI definition marks one region of the scale, not where the scale begins. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A domain counts toward generality only when the system is expert-level in it; merely working in a domain adds nothing.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows generality is the percentage of domains at expert level will compute B at four domains and A at zero without seeing options.",
+      "cynic_test": "A skipper's instinct is that the system working in all ten domains is 'more general', which points to the two A options; the key is the counterintuitive one and carries no length, hedge, or word-match tell (profiles are given as qualitative bands, so no recalled percentile decides it)."
+    },
+    "shard_id": "defining-and-measuring-agi-a",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/a03",
+    "targets": [
+      "DM-7"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab runs one model in two deployments: as a reviewer whose suggestions engineers approve or reject, and as an agent that merges its own changes and decides when to involve a human. Which account of why the agent deployment is riskier fits the framework?",
+    "options": [
+      {
+        "text": "More of the work runs without a human check, so risk exposure rises while the model's capability stays the same",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Operating as an agent is a higher capability level than reviewing, and that extra capability is what adds the risk",
+        "key": false,
+        "provenance": "misreads the autonomy levels as a continuation of the capability curves ('Just like we had continuous curves for capability and generality'), against 'Autonomy describes how AI systems interact with humans, not what they can do'",
+        "family": "a"
+      },
+      {
+        "text": "Human approval lowers the model's inherent danger by limiting what it can do, a limit that the agent role removes",
+        "key": false,
+        "provenance": "misreads 'A capable system deployed as a tool (Level 1) might be safer' as a change to the system itself, against 'Autonomy level affects risk exposure, not inherent danger' and 'the underlying capability is identical'",
+        "family": "b"
+      },
+      {
+        "text": "An autonomous agent counts as AGI in a way a supervised reviewer does not, and AGI carries risks of its own",
+        "key": false,
+        "provenance": "carries in the quoted charter framing of AGI as 'highly autonomous systems', against 'Our working definition does not include the autonomy with which an AGI system operates'",
+        "family": "c"
+      }
+    ],
+    "explanation": "Autonomy describes how a system interacts with humans, not what it can do. Both deployments run the same model, so capability is identical; what changes is how much of the work proceeds before a human can catch a problem. That is risk exposure. The option about human approval limiting the model is the closest miss: oversight does reduce exposure, but the model can do exactly as much as before, so its inherent danger is unchanged. Treating the agent role as a higher capability level confuses the autonomy scale with the capability curve it resembles. And our working definition of AGI deliberately leaves autonomy out, so the agent deployment is no more \"AGI\" than the reviewer is. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Autonomy is a deployment choice that sets risk exposure; it neither measures nor changes capability.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the autonomy passage would say the same model has the same capability, and the agent role raises exposure by removing human checks.",
+      "cynic_test": "A skipper might pick the 'human approval lowers inherent danger' option as the common-sense safety answer; it fails only on the exposure-versus-inherent-danger distinction the section draws, and all four options are single-mechanism causal sentences of matched length with no absolutes."
+    },
+    "shard_id": "defining-and-measuring-agi-a",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/b01",
+    "targets": [
+      "DM-3",
+      "DM-4"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A reader objects: \"This framework insists AGI is a continuum with no line where 'not AGI' becomes 'AGI', then hands out percentile cut-offs for AGI, TAI and ASI. It can't have both.\" What best resolves the apparent conflict?",
+    "options": [
+      {
+        "text": "They are rough overlays placed on the continuum because safety planning and regulation need trigger points, not claims of a natural break",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "They replace the continuum for practical use, so in policy settings AGI does become a line that a system has either crossed or not",
+        "key": false,
+        "provenance": "misreads the threshold definitions as a retreat from 'AGI exists on a continuous spectrum', missing 'we can't ignore this reality even if generality is a continuous variable' and that they are offered only 'when pressed for concrete thresholds'",
+        "family": "b"
+      },
+      {
+        "text": "They mark measured points where risk changes sharply, so they are empirical findings about the space rather than chosen conventions",
+        "key": false,
+        "provenance": "misreads 'here's our interpretation of roughly how terms map onto the (performance, generality) space' as an empirical finding about where risk begins",
+        "family": "c"
+      },
+      {
+        "text": "They give researchers an agreed point at which to declare AGI achieved, which settles the debate over whether a system counts",
+        "key": false,
+        "provenance": "misfiles the purpose of thresholds as declaring arrival, when the text ties them to 'identify thresholds for regulation, and emerging risks' and adopts continuity precisely to avoid 'endless semantic debates about whether something \"counts\" as AGI'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The continuum describes where a system actually sits. The thresholds are our rough interpretation of where the named terms map onto that space, offered because safety planning and regulation need trigger points: a system expert on half the domains poses different risks from one expert on nine-tenths. Nothing about the underlying space changes at a cut-off. If you picked the option about declaring AGI achieved, you have the purpose backwards. We chose continuity precisely to escape arguments over whether a system 'counts', and the thresholds do not reopen them. The 'measured points' option mistakes a stipulation for a discovery: the cut-offs are conventions we chose, not boundaries anyone found in the data. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Thresholds are labels laid over a continuum for planning purposes; they do not turn it back into a binary.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say unaided that the cut-offs are pragmatic trigger points for safety and regulation, laid over a space that stays continuous.",
+      "cynic_test": "A skipper might pick the option closest to 'both can be true', but all four options reconcile the tension in some way, so none is marked as the conciliatory one; lengths are within about 12 characters and no stem word appears in only one option."
+    },
+    "shard_id": "defining-and-measuring-agi-b",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/b02",
+    "targets": [
+      "DM-13"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "An evaluation finds a system scores high enough to count on all ten tested cognitive domains. Yet in use it keeps losing track of the fact that keys put in a drawer are still there once the drawer is shut, which nearly every adult manages without effort. Which weakness of aggregate scores does this most directly show?",
+    "options": [
+      {
+        "text": "The domains were built from how people vary, so a skill nearly every person shares can drop out of what gets measured",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Human percentile cut-offs do not carry over to machines, so a passing score means less for an AI than it does for a person",
+        "key": false,
+        "provenance": "conflates the 'Arbitrary thresholds' limitation (human percentile cutoffs may not translate to machines) with 'Coverage bias', which concerns capabilities the tests never probe",
+        "family": "a"
+      },
+      {
+        "text": "Adding domains up as equal steps hides that the final capabilities are much harder, so a full score overstates real progress",
+        "key": false,
+        "provenance": "files the 'Non-linear progress' limitation ('final capabilities may represent disproportionately difficult bottlenecks') onto a case of a missing, untested capability",
+        "family": "d"
+      },
+      {
+        "text": "The system has likely seen the test items in training, so its scores reflect recalled answers rather than the underlying ability",
+        "key": false,
+        "provenance": "pre-chapter prior that any gap between benchmark scores and real use means contamination, which would predict failures on fresh items inside tested domains rather than on an everyday skill outside them",
+        "family": "c"
+      }
+    ],
+    "explanation": "This is coverage bias. The ten domains come from psychometrics, which was built to measure how people differ from one another. A skill that virtually every adult has, such as knowing an object still exists once it is out of sight, barely varies between people, so tests built on those differences tend to leave it out. An AI can clear every domain and still lack it. The percentile-cutoff option names a real limitation, but it concerns how to read a score on a domain that was tested, and here the failure is on something no domain measured. Contamination would predict failures on fresh items inside the tested domains, not on an everyday skill outside them. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A full score on human-derived tests certifies only what those tests were built to tell apart, and people barely differ on universal skills.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the counter-argument block can say that human-derived test domains may omit capabilities universal in humans, which is exactly what this failure shows.",
+      "cynic_test": "A skipper would lean towards contamination as the familiar explanation for score/use gaps, but the stem's failure falls outside every tested domain; the key carries no stem-unique word, and it is the shortest option by only about 5 characters."
+    },
+    "shard_id": "defining-and-measuring-agi-b",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/b03",
+    "targets": [
+      "DM-3"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "System P reaches expert level on three of ten cognitive domains; System Q reaches it on six. An analyst says: \"Neither is AGI, so nothing meaningful separates them until one crosses the line.\" How does the continuous framing assess the analyst's claim?",
+    "options": [
+      {
+        "text": "It hides real progress: both are early-stage general systems, and Q has moved further along the same scale than P",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It is sound: neither reaches the working definition's share of domains, and grouping them until one does is what thresholds are for",
+        "key": false,
+        "provenance": "misreads the AGI threshold definition as the real category boundary, against 'Even though capability and generality exist on a continuum, certain thresholds still matter for safety planning' and 'There's no universally agreed upon threshold where \"not AGI\" suddenly becomes \"AGI\"'",
+        "family": "c"
+      },
+      {
+        "text": "It sets the bar wrongly: Q already counts as a general system, because breadth starts to matter at half the domains",
+        "key": false,
+        "provenance": "keeps the binary view but moves the line, missing that 'systems achieving expert-level performance across even a modest subset of cognitive domains represent genuine general intelligence - just early-stage'",
+        "family": "b"
+      },
+      {
+        "text": "It mixes up the axes: what separates P from Q is depth of capability, which a verdict about generality leaves out",
+        "key": false,
+        "provenance": "conflates the axes, reading 'climbing both axes simultaneously' as meaning extra expert-level domains are capability gains, when 'the percentage of these domains where a system achieves expert-level capability' is the definition of generality",
+        "family": "a"
+      }
+    ],
+    "explanation": "On the continuous framing, a system that is expert across even a modest subset of domains already shows genuine but early-stage general intelligence, much as the Wright brothers' first aircraft was still a plane. P and Q differ in degree along the generality axis, and that difference is exactly the progress we want to track. If you picked 'it is sound', you took the threshold definitions for the real categories. They are rough overlays for safety planning and do not erase the movement below them. The 'half the domains' option keeps the binary and just redraws its line. The axes option fails because being expert on more domains is breadth, which is what generality means. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": null,
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say the two systems differ in degree on one continuous generality scale and that both are early general systems, not 'not AGI' and therefore equivalent.",
+      "cynic_test": "A skipper might distrust 'it is sound' because the stem invites critique, but that option cites the section's own thresholds and a binary-minded reader will find it attractive; 'AGI', 'line' and 'continuous' appear in no option, so no stem word marks the key."
+    },
+    "shard_id": "defining-and-measuring-agi-b",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/c01",
+    "targets": [
+      "DM-6"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A system performs at the level of the very best human researchers on automated ML research and the coding around it, but well below expert level on most other cognitive domains. Using the working definitions of AGI and TAI, how should it be classified?",
+    "options": [
+      {
+        "text": "As TAI but not AGI, because impact potential rather than the number of expert domains is what qualifies a system as TAI",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "As not yet TAI, because transformative impact only arrives once a system has first reached AGI-level breadth",
+        "key": false,
+        "provenance": "misreads the adjacent AGI/TAI/ASI definition boxes as successive stages on one scale, missing the TAI OR-clause 'exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)'",
+        "family": "c"
+      },
+      {
+        "text": "As both AGI and TAI, because excelling at the most economically valuable work satisfies either definition",
+        "key": false,
+        "provenance": "misreads the quoted lab charter wording 'outperform humans at most economically valuable work' as the working AGI definition, against 'The definitions point in the right direction but lack precision'",
+        "family": "a"
+      },
+      {
+        "text": "As narrow AI and not TAI, because expertise confined to a few domains cannot be transformative however deep",
+        "key": false,
+        "provenance": "reverses the TAI definition's disjunction into 'low generality cannot be transformative', reading 'TAI is defined by impact potential rather than cognitive architecture' as if breadth were still required",
+        "family": "b"
+      }
+    ],
+    "explanation": "We define TAI by impact potential rather than cognitive profile, and the definition is a disjunction: moderate capability across many domains, or exceptional capability on a few critical ones such as automated ML research. This system fits the second branch. AGI, by contrast, needs expert-level performance across most cognitive domains, which this system lacks. If you picked 'not yet TAI', you treated TAI as a later stage on the same scale as AGI; the two are defined on different criteria, and TAI can come first. The narrow-AI option makes the same mistake from the other side, assuming breadth is a precondition for impact. The 'both' option imports the lab-charter phrase about economically valuable work, which we treat as too vague to serve as a working definition. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is a claim about breadth of cognitive profile; TAI is a claim about impact, and a deep-but-narrow system can reach it first.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the TAI OR-clause would say unprompted that this profile can be transformative without being AGI.",
+      "cynic_test": "A skipper might favour the 'but not' hedge or the 'both' option; every option now pairs a classification with a same-length reason, and the stem's domain wording is spread across the key and one distractor so no single option echoes it."
+    },
+    "shard_id": "defining-and-measuring-agi-c",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/c02",
+    "targets": [
+      "DM-5"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "System A performs at expert level, though not beyond the best humans, across nearly all non-embodied cognitive domains, and is deployed only to advise people who make every decision. System B is a fully autonomous agent that outperforms humans at most economically valuable work but sits below expert level on most cognitive domains. Which of them counts as AGI on the working definition?",
+    "options": [
+      {
+        "text": "System A, because matching expert performance across most cognitive domains is what the definition requires",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "System B, because outperforming humans at most economically valuable work is what the definition requires",
+        "key": false,
+        "provenance": "adopts the quoted lab charter definition 'highly autonomous systems that outperform humans at most economically valuable work' as the working one, missing that such definitions 'lack precision for tracking progress'",
+        "family": "a"
+      },
+      {
+        "text": "Neither, because the definition requires exceeding the best human experts rather than matching them",
+        "key": false,
+        "provenance": "conflates the AGI definition 'expert-level performance (80-90th percentile)' with the ASI definition 'superhuman capability (>100%, greatly exceeding all humans)'",
+        "family": "a"
+      },
+      {
+        "text": "Neither, because the definition requires operating without human oversight, which System A lacks",
+        "key": false,
+        "provenance": "carries in the charter's 'highly autonomous systems' framing, against 'Our working definition does not include the autonomy with which an AGI system operates'",
+        "family": "c"
+      }
+    ],
+    "explanation": "Our working definition of AGI is a cognitive profile: expert-level performance across most cognitive domains, matching a well-educated adult's versatility. System A meets it, and how it is deployed is beside the point, because we deliberately leave autonomy out of the definition and treat it as a deployment choice with its own risk consequences. System B is the tempting pick because 'outperforms humans at most economically valuable work' is how one lab charter defines AGI, but we treat that wording as too vague for tracking progress, and B's cognitive profile is narrow. Requiring performance beyond the best humans describes superintelligence, not AGI; matching a skilled professional is the bar. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": null,
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows AGI is defined as expert-level breadth, with autonomy excluded, names System A without seeing options.",
+      "cynic_test": "A skipper might pick B because 'economically valuable work' sounds like the familiar real-world definition, or pick the key for mirroring definition language; B's option is built on the identical template, so the wording gives no edge."
+    },
+    "shard_id": "defining-and-measuring-agi-c",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/c03",
+    "targets": [
+      "DM-8"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two models can each reliably write working exploits for software vulnerabilities they have never seen before, at the same success rate. Model X picked the skill up from a few dozen worked examples; Model Y needed millions of examples and vast training runs to reach the same level. How should their risk from this capability compare?",
+    "options": [
+      {
+        "text": "The two pose the same risk from this capability, because risk tracks what a system can do, not how it learned",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Model Y poses less risk from this capability, because a skill bought by brute-force memorisation reflects less real intelligence",
+        "key": false,
+        "provenance": "misreads the adaptability view's 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'",
+        "family": "c"
+      },
+      {
+        "text": "Model X poses more risk from this capability, because learning efficiently is what general intelligence consists of",
+        "key": false,
+        "provenance": "misreads 'We acknowledge and incorporate the adaptability focused view's point about efficient learning' as adopting skill-acquisition efficiency as the measure of risk, rather than prioritising final capabilities",
+        "family": "a"
+      },
+      {
+        "text": "Their risk from this capability cannot be ranked until we know whether either model understands what it does",
+        "key": false,
+        "provenance": "files the Chinese Room 'true understanding' question under risk assessment, against 'Is it conscious or just pattern-matching? These questions don't change the risk profile'",
+        "family": "d"
+      }
+    ],
+    "explanation": "For safety we care about what a system can observably do. If two models perform the same dangerous task equally well, the risk from that capability exists either way, whether it came from efficient learning or brute-force memorisation. The 'Model Y is less risky' option takes the adaptability view's judgement, that performance bought with data and compute is less impressive, and turns it into 'less dangerous'; that view is a claim about intelligence, not about risk. We acknowledge that learning efficiency matters and still prioritise final capabilities, which is why the 'Model X is riskier' option misfiles it too. The understanding option imports the consciousness debate, which we set aside because a system need not understand or be conscious to cause harm. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Risk is path-independent: how a system acquired a dangerous capability does not change the danger of having it.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'the risks exist either way' would answer 'the same' before seeing options.",
+      "cynic_test": "A skipper may lean to the balanced 'same risk' answer as a middle option; the non-committal 'cannot be ranked' option competes for that instinct, and both directional options carry reasons a thoughtful reader genuinely holds."
+    },
+    "shard_id": "defining-and-measuring-agi-c",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/d01",
+    "targets": [
+      "DM-9"
+    ],
+    "lens": "figure",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A game-playing system reaches superhuman strength after self-play amounting to tens of millions of games, where a human grandmaster studies perhaps tens of thousands. An adaptability-focused researcher comments: \"This shows mastery of the game, not general intelligence.\" How does a safety-oriented, capability-focused definition of AGI treat that comment?",
+    "options": [
+      {
+        "text": "It accepts the point about general intelligence but still judges risk by the final capability the system has reached",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It rejects the point, holding that general intelligence is simply high final performance, however it was acquired",
+        "key": false,
+        "provenance": "misreads 'does the learning path matter more than the destination?' as a dismissal of the adaptability view, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
+        "family": "b"
+      },
+      {
+        "text": "It rejects the point, counting superhuman strength at a hard game as real progress along the generality axis",
+        "key": false,
+        "provenance": "misreads 'AlphaGo in 2016 achieved superhuman capability at Go' as generality progress, against 'Everything along this line ... counts as artificial narrow intelligence (ANI)'",
+        "family": "a"
+      },
+      {
+        "text": "It accepts the point and sets it aside, grouping learning efficiency with consciousness as not actionable for safety",
+        "key": false,
+        "provenance": "misfiles the synthesis paragraph: consciousness is the view 'set aside ... as not actionable', whereas the adaptability view is 'acknowledge[d] and incorporate[d]'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The adaptability view defines intelligence as the efficiency of acquiring new skills, so a system that needed vastly more experience than a grandmaster has mastered the game without necessarily becoming more generally intelligent. We grant that point: learning quickly from little data does matter. But for safety we prioritise the destination over the path, because what a system can do determines what it can do harmfully. If you picked the 'sets it aside' option, you merged two different moves: consciousness is the question we set aside as not actionable, while learning efficiency is acknowledged and kept. The option counting superhuman play as generality progress confuses depth on one task with breadth across domains; a superhuman Go player is still narrow AI. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "We accept the adaptability view's claim about intelligence and still rank risk by final capability; the two positions answer different questions.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'acknowledge and incorporate ... but prioritize final capabilities' can state 'grant the point, judge risk by capability' unaided.",
+      "cynic_test": "A skipper might pick whichever option sounds most balanced, but two options accept the point and two reject it with matched 'It accepts/rejects the point' framing, so accepting-versus-rejecting gives nothing away; choosing between the two 'accepts' options requires knowing that consciousness, not adaptability, is the view set aside."
+    },
+    "shard_id": "defining-and-measuring-agi-d",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/d02",
+    "targets": [
+      "DM-8"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems each score at about the 90th percentile of security professionals on the same evaluation of multi-step intrusion planning. System A reached that score from a modest training set; System B needed thousands of times more examples, much of it memorised worked cases. For a safety assessment of this capability, how should the two compare?",
+    "options": [
+      {
+        "text": "They pose comparable risk from this capability, because the danger follows from what each can do, not how it learned",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "System B poses less risk, because capability bought with data is memorisation rather than genuine intelligence",
+        "key": false,
+        "provenance": "misreads the adaptability view's 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'",
+        "family": "c"
+      },
+      {
+        "text": "Their risk depends on which one understands the steps it plans, because symbol-shuffling alone cannot cause harm",
+        "key": false,
+        "provenance": "carries the Chinese Room 'true understanding' criterion into risk assessment, against 'A system doesn't need to be conscious to cause harm' and 'Is it conscious or just pattern-matching? These questions don't change the risk profile'",
+        "family": "a"
+      },
+      {
+        "text": "System A poses more risk, because efficient learning is the mark of general intelligence and so of danger",
+        "key": false,
+        "provenance": "takes the adaptability definition 'the efficiency with which a system can turn experience and priors into skills' as a risk measure, reversing 'Did it learn efficiently or through brute force? ... These questions don't change the risk profile'",
+        "family": "b"
+      }
+    ],
+    "explanation": "The two systems can do the same dangerous thing equally well, so for this capability they carry comparable risk: harm comes from what a system can do, and the route it took to get there does not change that. The strongest pull is the option rating System B as less risky. That comes from the adaptability view, which is right that B is less impressive as a learner; being less impressive is not the same as being less dangerous, and B's memorised plans work just as well. The option about which system 'understands' its plans imports the consciousness debate, which we set aside precisely because a system needs no understanding to cause harm. This is why we treat behaviourist, capability-focused approaches as the ones that matter most for safety. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "For safety, risk is path-independent: equal capability means equal exposure, however the capability was acquired.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: with the options hidden, a reader who took in 'these risks exist regardless of how it achieved them' answers 'same risk, because the capability is the same'.",
+      "cynic_test": "A skipper might think 'comparable' is the safe middle option, but two distractors are also comparative verdicts and all four share the 'because' structure, so the choice turns on knowing that learning efficiency and understanding do not change the risk profile."
+    },
+    "shard_id": "defining-and-measuring-agi-d",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/d03",
+    "targets": [
+      "DM-1"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "In one year a model's score on a competition-mathematics benchmark climbed from about 60% to about 95%, taking it from already above expert level to beyond almost every human competitor. Its results on the other cognitive domains stayed where they were, several of them below expert level. How does this change register on the capability × generality framework?",
+    "options": [
+      {
+        "text": "As a gain in capability on one domain, leaving the share of domains that count toward generality unchanged",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "As a gain on both capability and generality, because superhuman skill in one domain is evidence of broad ability",
+        "key": false,
+        "provenance": "misreads 'systems in the last few years are climbing both axes simultaneously' as meaning the axes move together, rather than being separate axes that are both currently rising",
+        "family": "a"
+      },
+      {
+        "text": "As movement toward AGI, because reaching superhuman level on a hard domain is how general intelligence first emerges",
+        "key": false,
+        "provenance": "reads 'AlphaGo in 2016 achieved superhuman capability at Go' as a step toward general intelligence, missing 'Everything along this line ... counts as artificial narrow intelligence (ANI)'",
+        "family": "c"
+      },
+      {
+        "text": "As little real change, because a system that is strong in only one domain remains weak AI whatever its score",
+        "key": false,
+        "provenance": "reads the 'Weak AI' label in the ANI definition as a performance claim, against ''Narrow' might be a more accurate descriptor ... as it is anything but weak'",
+        "family": "b"
+      }
+    ],
+    "explanation": "Capability measures depth on individual tasks and generality measures breadth: the percentage of domains where a system is at expert level. Mathematics was already above expert level, so pushing it to superhuman adds depth on that one domain and leaves the count of expert-level domains, and so generality, exactly where it was. If you chose 'movement toward AGI', you made the mistake AlphaGo invites: superhuman performance on one task is still narrow AI, however hard the task. If you chose 'little real change', you took 'weak AI' literally; a narrow system can be extremely strong, and this is a real capability gain. The benchmark figures are only there to set the scene. What matters is the shape of the change: large on one axis, zero on the other. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": null,
+    "stem_format": "classification",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'capability is depth, generality is the share of expert-level domains' says 'more depth on one domain, generality flat' unaided.",
+      "cynic_test": "A skipper might pick the most restrained-sounding option, but 'little real change' is equally restrained and wrong. 'Capability' and 'generality' each appear in two options, so no stem word points to the key; the 60%-to-95% benchmark figure is scene-setting, and the answer is the same whatever the figure, because the phrase 'already above expert level' carries the weight."
+    },
+    "shard_id": "defining-and-measuring-agi-d",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/e01",
+    "targets": [
+      "DM-10"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Someone argues: \"Worrying about AI danger is premature. Today's systems are not conscious; they manipulate symbols without understanding what they mean.\" Which objection to this argument has the most support?",
+    "options": [
+      {
+        "text": "Consciousness has little bearing on what a system can do, so a capable system carries the same risks either way",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Consciousness could emerge abruptly with further scale, so its absence today says little about the next generation",
+        "key": false,
+        "provenance": "misreads 'A system doesn't need to be conscious to cause harm' as a claim about timing, keeping the prior that consciousness is what makes a system dangerous and only moving the date it arrives",
+        "family": "c"
+      },
+      {
+        "text": "Intelligence and consciousness tend to arrive together, so systems capable enough to worry about are probably conscious too",
+        "key": false,
+        "provenance": "misses 'We are also unsure if intelligence and consciousness are necessarily linked' and the AlphaGo example ('very intelligent within the context of playing Go, but it is clearly not conscious'), reading them as linked",
+        "family": "a"
+      },
+      {
+        "text": "Consciousness is too poorly defined for anyone to show that current systems lack it, so the premise cannot be checked",
+        "key": false,
+        "provenance": "misfiles 'consciousness often proves even harder to define than intelligence' (a problem with consciousness-based definitions of intelligence) as the decisive safety objection, which contests the premise while conceding that consciousness is what matters",
+        "family": "d"
+      }
+    ],
+    "explanation": "The argument's premise may well be true; the inference is what fails. Whether a system is conscious has little bearing on its ability to make high-impact decisions or take dangerous actions, so a system that can plan, manipulate or deceive carries those risks either way. That is the prior we most want to dislodge: a machine does not need to understand or be conscious before it can be dangerous. The \"emerges with scale\" option keeps exactly that prior and only moves the date. The \"too poorly defined\" option names a real difficulty, but it argues about the premise and so concedes that consciousness decides the risk. The \"arrive together\" option assumes a link we are not sure exists; AlphaGo is highly capable at Go and clearly not conscious. Setting consciousness aside is a scoping choice for safety work, not a verdict that the question is unimportant. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Danger tracks what a system can do, not whether anything is experienced inside it.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the consciousness paragraph would say unaided that consciousness is irrelevant to whether a capable system is dangerous, so the argument's inference fails.",
+      "cynic_test": "A skipper might pick the undefinability option as the cautious-sounding one, but it concedes the premise matters; three options argue about the premise or its timing and the key is the only one rejecting the inference, which a skipper cannot identify without the section's point, and no option carries an absolute or a stem-only word."
+    },
+    "shard_id": "defining-and-measuring-agi-e",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/e02",
+    "targets": [
+      "DM-13"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Suppose a future lab reports that its system now scores 100% on a CHC-based generality measure, and announces that it can therefore do anything a well-educated adult can do. Which objection to that announcement has the most support?",
+    "options": [
+      {
+        "text": "The domains were built from how humans differ from each other, so abilities every human shares may go untested",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "A full score counts domains the system can attempt, so it may be only moderately capable within most of them",
+        "key": false,
+        "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing 'Generality is the percentage of these domains where a system achieves expert-level capability'",
+        "family": "a"
+      },
+      {
+        "text": "Expert-level scores across the board still fall short of AGI, which also requires the system to act autonomously",
+        "key": false,
+        "provenance": "carries in the quoted charter wording 'highly autonomous systems' as part of the definition, against 'Our working definition does not include the autonomy with which an AGI system operates'",
+        "family": "d"
+      },
+      {
+        "text": "A system could reach every score without genuine understanding, so its results overstate what it can really do",
+        "key": false,
+        "provenance": "misreads the Chinese Room paragraph as a limitation of the measurement framework, against 'we set aside the consciousness debate as not actionable for safety work' and the behaviourist focus on observable capability",
+        "family": "c"
+      }
+    ],
+    "explanation": "The CHC taxonomy was built to capture how people differ from one another, so it can omit abilities nearly every human has and AI might lack, such as robust object permanence. They never separate one person from another, so no domain tests for them. A system could top out every domain and still lack one, which is exactly what \"anything an adult can do\" assumes away. The \"domains it can attempt\" option misreads generality: a domain counts only where the system reaches expert level, so a full score already means expert depth everywhere. The autonomy option borrows the charter phrase \"highly autonomous\", which our working definition deliberately leaves out. The understanding option brings back the consciousness debate we set aside. The objection that holds is about what goes unmeasured, not what goes on inside. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A perfect score on a human-derived test battery certifies the battery, not everything the battery left out.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the counter-argument block would name coverage bias (human-derived domains can miss universally shared abilities) as the objection to 'anything an adult can do'.",
+      "cynic_test": "A skipper might pick the 'genuine understanding' option as the philosophically serious one, but the framework sets that debate aside; the other valid critiques (non-linear progress, arbitrary thresholds, species-specific risk) are kept out of the option set so the key is unique, the 57% scenario from RUBRIC 10.2 is not reused, and 'generality' and 'adult' appear only in the stem."
+    },
+    "shard_id": "defining-and-measuring-agi-e",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/e03",
+    "targets": [
+      "DM-14"
+    ],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Under the (t,n)-AGI framing, one system outperforms a single expert given a day, and another outperforms a single expert given a year. A critic says the second system's edge matters only for the rare project that genuinely takes a year. Which response to the critic has the most support?",
+    "options": [
+      {
+        "text": "Most projects can be split into shorter sub-tasks, so matching experts over a year means matching them on nearly all work",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The year is how long the system takes to finish, so the second is the slower system and matters even less than claimed",
+        "key": false,
+        "provenance": "misreads 'Given a time frame t to complete some cognitive task' as the AI's own running time, rather than the time budget given equally to the human expert",
+        "family": "a"
+      },
+      {
+        "text": "A longer horizon mainly reflects stronger reasoning, so the second system would also outperform the first on short tasks",
+        "key": false,
+        "provenance": "misfiles the horizon limit under reasoning, against 'Task time horizon limitations are implicitly captured in our generality measure as weaknesses in ... long-term memory storage and retrieval'",
+        "family": "d"
+      },
+      {
+        "text": "Year-long projects hold most of the economic value in expert work, so that is exactly where the second system counts",
+        "key": false,
+        "provenance": "imports the charter's 'most economically valuable work' framing into (t,n)-AGI, conceding the critic's premise that only year-long projects are affected and missing the decomposition argument",
+        "family": "c"
+      }
+    ],
+    "explanation": "A one-year AGI would beat humans at basically everything, mainly because most projects can be divided into sub-tasks that fit into shorter timeframes. So the long-horizon system is not a specialist in year-long jobs; its horizon covers nearly all the work the day-long system does, and more. The \"slower\" option misreads t: it is the time budget the system and the expert are both given, not how long the system takes to answer. The \"stronger reasoning\" option reaches a similar conclusion by the wrong route; in the capability-generality framing, short task horizons show up as weakness in long-term memory storage and retrieval. The economic-value option accepts the critic's premise that only year-long projects benefit and argues about their worth, which misses why the premise is false. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A longer t subsumes shorter ones, because long work decomposes into short work.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood (t,n)-AGI would answer unaided that year-long capability covers most work because projects decompose into shorter sub-tasks.",
+      "cynic_test": "A skipper might pick the economic-value option as the confident rebuttal, but it concedes the critic's premise; 'rare' and 'single' appear only in the stem, no option carries an absolute, and the reasoning option shares the key's conclusion so it cannot be eliminated on direction alone."
+    },
+    "shard_id": "defining-and-measuring-agi-e",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/f01",
+    "targets": [
+      "DM-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems are assessed on the same ten cognitive domains. System A produces passable work in all ten but reaches only about median human performance in each. System B reaches expert level in four domains and cannot do the other six at all. Which has the greater generality, and why?",
+    "options": [
+      {
+        "text": "System B, since breadth only counts domains reached at expert level, and System A reaches that level in none of them",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "System A, since breadth counts every domain a system can work in at all, and System A can work in each of the ten",
+        "key": false,
+        "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing that a domain counts only at 'expert-level capability'",
+        "family": "b"
+      },
+      {
+        "text": "System A, since its average performance taken across the ten domains is higher than System B's average across them",
+        "key": false,
+        "provenance": "misreads 'outperform 85% of humans in 30% of cognitive domains' as one averaged score rather than two numbers, one per axis",
+        "family": "a"
+      },
+      {
+        "text": "System B, since its expert-level domains sit far higher on depth, and breadth rises with a system's peak depth",
+        "key": false,
+        "provenance": "conflates the capability axis with the generality axis, against 'Capability measures depth; generality measures breadth' and the AlphaGo example of maximal depth with no breadth",
+        "family": "a"
+      }
+    ],
+    "explanation": "Generality is the share of domains where a system reaches expert level; performance below that line adds nothing to breadth, however many domains it touches. System B has 40% generality. System A, with no domain at expert level, has none, even though it does something everywhere. The tempting answer counts coverage, meaning being able to attempt a domain at all. That is how 'one model handling writing, math, coding' reads on a quick pass, but coverage is not breadth. Averaging across domains fails for a different reason: it merges the two axes into one number, when the framework reports depth and breadth separately. B does win, but not because of its peak depth. A system that is superhuman in a single domain still has only 10% generality. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Doing something in every domain is coverage, not generality; only domains reached at expert level count.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'generality = share of domains at expert level' says B, because A has zero expert domains, before seeing any options.",
+      "cynic_test": "A skipper might favour 'A does something everywhere, so it is broader', which is the target misconception. Two options pick each system, so the answer cannot be guessed from the choice of system alone, and 'expert' appears in both B options."
+    },
+    "shard_id": "defining-and-measuring-agi-f",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/f02",
+    "targets": [
+      "DM-3"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two researchers disagree about a recent model. One says its expert-level performance across several cognitive domains makes it AGI; the other says it cannot be AGI while it still fails at most domains. How does treating AGI as a continuous region change this dispute?",
+    "options": [
+      {
+        "text": "It dissolves most of it: both can agree where the model sits on capability and generality, and differ only on calling it AGI",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It leaves it intact: the model still either is or is not AGI, and the continuum just helps pinpoint where it crossed over",
+        "key": false,
+        "provenance": "the pre-chapter threshold prior, against 'There's no universally agreed upon threshold where \"not AGI\" suddenly becomes \"AGI\"' and the rejection of 'binary categories that lead to endless semantic debates'",
+        "family": "c"
+      },
+      {
+        "text": "It sides with the second researcher, since a model that still fails at most domains shows no general intelligence yet",
+        "key": false,
+        "provenance": "reverses the Wright-brothers point that systems at expert level on 'even a modest subset of cognitive domains represent genuine general intelligence - just early-stage (weak AGI)'",
+        "family": "b"
+      },
+      {
+        "text": "It settles it with one aggregate score across domains, since the point of the framework is a number that decides the label",
+        "key": false,
+        "provenance": "misfiles the motivation for continuity as numeric precision, when the stated reason is 'to capture progress along multiple dimensions' and avoid semantic deadlock",
+        "family": "d"
+      }
+    ],
+    "explanation": "On a continuum, the facts that matter are the model's position: how good it is in each domain, and in how many domains it reaches expert level. Two people who agree on that position agree on everything relevant to safety. Whether to call it 'AGI' is a choice of label, which is why no agreed point exists where 'not AGI' suddenly becomes AGI. The first distractor is the threshold picture this framing replaces. Treating AGI as a line crossed at some moment is what keeps the semantic argument going. The second distractor gets the Wright-brothers point backwards: expert-level performance across even a modest subset of domains is genuine general intelligence, just at an early stage. And the aim is not a single decisive number, since aggregate percentages have their own problems. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Once you agree where a system sits on capability and generality, 'is it AGI?' becomes a question about labels, not about the system.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the continuous framing would say the argument is over a label, while the position on the two axes is what can be agreed, which is the key.",
+      "cynic_test": "A skipper might pick the option using the framework's own axis names. To weaken that tell, the other options also use section vocabulary ('continuum', 'aggregate score', 'general intelligence'), and the threshold option sounds just as reasonable to someone who holds the prior."
+    },
+    "shard_id": "defining-and-measuring-agi-f",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/f03",
+    "targets": [
+      "DM-4"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Having argued that AGI is a region of a continuous capability-generality space, the framework still gives rough cut-offs for AGI, TAI and ASI. What work are those cut-offs doing that the continuum alone does not?",
+    "options": [
+      {
+        "text": "They give planners and regulators trigger points where risk changes enough to act, without claiming the continuum jumps there",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "They admit the continuum is only approximate, and that underneath it AGI is a line that a system either crosses or does not",
+        "key": false,
+        "provenance": "misreads the threshold definitions as a retreat from 'AGI exists on a continuous spectrum', missing 'we can't ignore this reality even if generality is a continuous variable'",
+        "family": "b"
+      },
+      {
+        "text": "They mark the points where dangerous behaviour has been measured to begin, which is why they sit where they do on each axis",
+        "key": false,
+        "provenance": "misreads 'here's our interpretation of roughly how terms map onto the (performance, generality) space' as an empirical finding about where risk starts",
+        "family": "c"
+      },
+      {
+        "text": "They fix the moment AGI has arrived, so that claims of 'sparks' or of 'human-level AI' can be checked against a single line",
+        "key": false,
+        "provenance": "misfiles the purpose of thresholds, which the section ties to being able to 'identify thresholds for regulation, and emerging risks before they materialize', not to declaring arrival",
+        "family": "d"
+      }
+    ],
+    "explanation": "Capability and generality really are continuous, but safety planning still needs points at which to act. A system that performs well on half the domains poses different risks from one that excels at nearly all of them, and regulation and safety commitments need triggers. The cut-offs are those triggers, offered as our rough interpretation when concrete thresholds are demanded. They are stipulations laid over the continuum, not evidence that it has a step in it. That is where the first distractor goes wrong: acting at a threshold does not make the underlying quantity binary, just as a speed limit does not make speed binary. Nor are they measured points where danger begins. They are definitional choices, and some dangerous combinations of capabilities may appear before any of them is reached. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Thresholds are decision points laid over a continuum, not steps in it.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: asked what thresholds add to a continuum, a reader who understood the section says they give safety planning and regulation points to act on, which is the key.",
+      "cynic_test": "A skipper would lean towards the 'safety/regulation' wording as the most responsible-sounding option. To offset that, the measured-onset option is also about danger and sounds just as sober, and 'continuum' appears in two options, so the stem word does not single out the key."
+    },
+    "shard_id": "defining-and-measuring-agi-f",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/g01",
+    "targets": [
+      "DM-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague proposes defining AGI as \"an AI that outperforms humans at most economically valuable work.\" Measured against a working definition built for tracking progress, what is the main shortcoming of that phrasing?",
+    "options": [
+      {
+        "text": "It leaves open which humans are the bar and what work counts; the working definition fixes expert parity on most domains",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It sets the bar too low: AGI means exceeding the best humans, not merely outperforming typical workers at most jobs",
+        "key": false,
+        "provenance": "misreads the AGI definition ('expert-level performance (80-90th percentile) across most cognitive domains') as the ASI definition ('superhuman capability (>100%, greatly exceeding all humans)')",
+        "family": "a"
+      },
+      {
+        "text": "It sets the bar too high: exceptional skill on a few critical domains, such as ML research, already counts as AGI",
+        "key": false,
+        "provenance": "misreads the TAI definition's OR-clause ('exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)') as a route to AGI",
+        "family": "a"
+      },
+      {
+        "text": "It leaves out autonomy, which the working definition counts as part of AGI alongside expert-level breadth and depth",
+        "key": false,
+        "provenance": "reverses 'Our working definition does not include the autonomy with which an AGI system operates', perhaps carrying in the 'highly autonomous systems' charter wording quoted in Case Studies",
+        "family": "b"
+      }
+    ],
+    "explanation": "Our working definition pins AGI to a cognitive profile: expert-level performance, roughly the 80th to 90th percentile of humans, across most cognitive domains. The colleague's phrasing points in the right direction, since it is about what systems can do, but it never says whether \"humans\" means top experts or average workers, or whether \"valuable work\" means today's jobs or future ones, so it cannot track progress. The bar-too-high option imports the TAI definition, where exceptional depth on a few critical domains can be transformative without being general. The bar-too-low option describes ASI, which exceeds all humans. And autonomy is deliberately left out of the AGI definition as a deployment matter. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is pinned to a cognitive profile, expert parity across most domains, which is exactly what vaguer economic definitions leave unspecified.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say the economic phrasing is vague about the human benchmark and scope, whereas the working definition specifies expert parity across most cognitive domains.",
+      "cynic_test": "A skipper might pick 'sets the bar too low' because AGI sounds grander than beating typical workers, or pick autonomy because the familiar lab wording includes it; the two options are paired (both 'bar' claims, both 'leaves' claims) and have matched lengths, so neither structure nor length points to the key."
+    },
+    "shard_id": "defining-and-measuring-agi-g",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/g02",
+    "targets": [
+      "DM-6",
+      "DM-5"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems are evaluated on the same set of cognitive domains. System P performs at roughly expert level on most of them. System Q far outperforms every human at ML research and coding but is weak on most other domains. How do the AGI and TAI definitions classify them?",
+    "options": [
+      {
+        "text": "P fits AGI; Q can count as TAI without counting as AGI, because TAI turns on potential impact rather than breadth",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "P fits AGI; Q is neither, because transformative impact is a later stage that requires expert-level breadth first",
+        "key": false,
+        "provenance": "misreads TAI as a point further along the same scale as AGI, missing the OR-clause 'exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)'",
+        "family": "c"
+      },
+      {
+        "text": "P and Q both count as AGI and as TAI, because the two terms name the same region of the capability-generality map",
+        "key": false,
+        "provenance": "misreads the adjacent AGI and TAI definition boxes as synonyms, missing 'TAI is defined by impact potential rather than cognitive architecture'",
+        "family": "a"
+      },
+      {
+        "text": "Q is closer to AGI than P, because superhuman skill in critical areas outranks expert parity across the board",
+        "key": false,
+        "provenance": "misreads the capability spectrum ('from basic competence to superhuman capability on a single task') as progress toward AGI, missing that depth alone 'counts as artificial narrow intelligence'",
+        "family": "a"
+      }
+    ],
+    "explanation": "AGI is defined by cognitive profile, expert-level performance across most cognitive domains, so P fits it and Q does not. TAI is defined by impact potential, and its definition explicitly admits two shapes: moderate capability across many economically important domains, or exceptional capability on a critical minority such as automated ML R&D. Q has the second shape, so it can be transformative without being general. The \"Q is neither\" option treats TAI as a milestone beyond AGI on one scale, when it describes systems along a different dimension, by what they could do to the world. The \"Q is closer to AGI\" option trades breadth for depth, but superhuman depth on a few domains is still narrow. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is a breadth claim and TAI an impact claim, so a deep-but-narrow system can be transformative without being general.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'AGI = broad expert parity, TAI = impact, with an explicit narrow-but-exceptional route' will classify P as AGI and Q as possibly TAI but not AGI before seeing options.",
+      "cynic_test": "A skipper would lean on the intuition that transformative must mean more advanced than AGI and pick 'Q is neither'; profiles are given as qualitative bands so no recalled percentile decides it, and stem words like 'domains' and 'every human' were kept out of the options to avoid a word-match tell."
+    },
+    "shard_id": "defining-and-measuring-agi-g",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/g03",
+    "targets": [
+      "DM-7"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A lab takes one model and ships it in two products: in one it only offers suggestions that a person accepts or rejects; in the other it carries out tasks end to end with minimal oversight. What does the choice between these deployments change?",
+    "options": [
+      {
+        "text": "The risk exposure: the same underlying capability is given more room to act, so its mistakes can travel further",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The capability: acting without oversight draws on more of the model's skills than offering suggestions does",
+        "key": false,
+        "provenance": "misreads the autonomy levels as a continuation of the capability curves ('Just like we had continuous curves for capability and generality'), against 'Autonomy describes how AI systems interact with humans, not what they can do'",
+        "family": "a"
+      },
+      {
+        "text": "The inherent danger: confining it to suggestions reduces what the model is able to do, not only what it may do",
+        "key": false,
+        "provenance": "misreads 'A capable system deployed as a tool (Level 1) might be safer' as a change in the system itself, against 'Autonomy level affects risk exposure, not inherent danger' and 'the underlying capability is identical'",
+        "family": "b"
+      },
+      {
+        "text": "The classification: working with minimal oversight is part of what the working definition of AGI requires",
+        "key": false,
+        "provenance": "carries in the 'highly autonomous systems' charter framing quoted in Case Studies, against 'Our working definition does not include the autonomy with which an AGI system operates'",
+        "family": "c"
+      }
+    ],
+    "explanation": "Autonomy describes how a system interacts with people, not what it can do. The weights are the same in both products, so capability is identical; what changes is how far the system's actions run before a human can catch them, which is its risk exposure. The tempting error is the inherent-danger option: the suggestion-only product may well be safer, but not because confining the model shrinks its abilities. Give the same model more room and the same danger is back. Nor does autonomy raise capability, although enough capability is a prerequisite for the higher levels. And our working definition of AGI deliberately leaves autonomy out, treating it as a deployment choice. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Autonomy changes how exposed we are to a system's capability, not the capability or the danger inherent in it.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood that autonomy is a deployment axis will say only risk exposure changes, because it is one model with identical capability.",
+      "cynic_test": "A skipper would likely pick 'inherent danger' because restricting an AI intuitively feels like making it less dangerous; the key and that distractor each use one half of the same contrast ('risk exposure' vs 'inherent danger'), so matching phrases from the text gives no advantage, and all four options share the 'The X:' frame at matched length."
+    },
+    "shard_id": "defining-and-measuring-agi-g",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/h01",
+    "targets": [
+      "DM-9"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems end up equally good at finding exploitable flaws in unfamiliar software. One got there from a few dozen worked examples; the other needed millions of examples and vast compute. How should the two be compared?",
+    "options": [
+      {
+        "text": "The adaptability view rates the first as more intelligent; for safety, the two carry the same risk",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The adaptability view rates the first as more intelligent; for safety, the first carries more risk",
+        "key": false,
+        "provenance": "misreads 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'If a system can perform dangerous tasks whether through efficient learning or brute-force memorization, the risks exist either way'",
+        "family": "c"
+      },
+      {
+        "text": "The adaptability view rates the two as equally intelligent; for safety, they carry the same risk",
+        "key": false,
+        "provenance": "collapses the adaptability view into the behaviourist one (the DM-8/DM-9 conflation 'there's no real disagreement here'), against 'general intelligence is not demonstrated by the possession of a specific skill, but by the efficiency of acquiring new skills'",
+        "family": "a"
+      },
+      {
+        "text": "The adaptability view rates the second as more intelligent; for safety, the second carries more risk",
+        "key": false,
+        "provenance": "reverses 'High performance can be \"bought\" with sufficient data and compute' into 'more data and compute buys more intelligence', inverting the adaptability view's ranking",
+        "family": "b"
+      }
+    ],
+    "explanation": "On the adaptability view, intelligence is the efficiency of turning experience into skills, so the system that learned from a few dozen examples is the more generally intelligent one; the other bought its performance with data and compute. We accept that point but prioritise final capability for safety: both systems can now find the same flaws, so the risk is the same either way. If you picked 'the first carries more risk', you read 'less impressive' as 'less dangerous' - the learning path changes how impressive a system is, not what it can do once trained. The 'equally intelligent' option erases a real disagreement: the two views differ about intelligence and agree only about what matters for risk. The 'second rates higher' option inverts the point that performance can be bought. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "The learning path can change how intelligent a system is judged to be without changing how dangerous it is.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say 'adaptability ranks the efficient learner higher, but the risk is identical because final capability is what matters' unaided.",
+      "cynic_test": "A skipper might pick the 'same risk' options by symmetry, but two options say 'same risk' and two say 'first as more intelligent', so only the specific combination identifies the key and all four share one two-clause template."
+    },
+    "shard_id": "defining-and-measuring-agi-h",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/h02",
+    "targets": [
+      "DM-1"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A drug-discovery lab builds a system that outperforms every human chemist at predicting how candidate molecules bind to proteins. It cannot write, answer questions, or reason about anything else. Where does it sit on the two axes?",
+    "options": [
+      {
+        "text": "Far along the capability axis on one task and near zero on generality, so still narrow AI",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Far along the capability axis, and an early weak AGI, as the first aircraft was still a plane",
+        "key": false,
+        "provenance": "misapplies the Wright-brothers analogy ('systems achieving expert-level performance across even a modest subset of cognitive domains represent genuine general intelligence') to a single superhuman skill, the prior that superhuman on a hard task is a step toward general intelligence",
+        "family": "c"
+      },
+      {
+        "text": "Partway along both axes, because superhuman depth on a hard task also counts toward breadth",
+        "key": false,
+        "provenance": "misreads 'systems in the last few years are climbing both axes simultaneously' as meaning depth and breadth move together, against 'Capability measures depth; generality measures breadth'",
+        "family": "a"
+      },
+      {
+        "text": "Far along the capability axis, with generality set by the range of molecules it can handle",
+        "key": false,
+        "provenance": "misreads 'Generality measures breadth' as breadth of inputs within one task, rather than 'the percentage of cognitive domains where a system achieves expert-level capability'",
+        "family": "b"
+      }
+    ],
+    "explanation": "Capability is depth on individual tasks, and everything along that line - up to and including superhuman performance on a single task - is narrow AI. Beating every human chemist at binding prediction puts the system far out on capability for that task, but generality counts the share of cognitive domains where a system reaches expert level, and here that is one narrow skill. The 'weak AGI' option misapplies the first-aircraft analogy, which describes expert-level performance across a modest subset of several domains, not one superhuman skill. The 'both axes' option treats depth and breadth as one scale; AlphaGo was superhuman at Go and could not write a sentence. Handling many different molecules is range within one task, not breadth across domains. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "However superhuman, a system that is deep on one task and absent everywhere else is narrow AI.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section would say 'high capability, near-zero generality, still ANI' without seeing options.",
+      "cynic_test": "The skipper cannot use 'capability axis' as a tell because it appears in all four options and 'generality' in two; lengths are matched, and the tempting 'early AGI' option borrows the section's own analogy."
+    },
+    "shard_id": "defining-and-measuring-agi-h",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/h03",
+    "targets": [
+      "DM-10"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose researchers proved tomorrow that a widely deployed AI model has no conscious experience. It can still plan multi-step operations and write persuasive messages to thousands of people. What does this finding change about its risk?",
+    "options": [
+      {
+        "text": "Little or nothing, because its capacity to plan and persuade is the same as before the finding",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It lowers the risk, because a system without understanding is not pursuing harmful aims deliberately",
+        "key": false,
+        "provenance": "the pre-chapter prior corrected by 'A system doesn't need to be conscious to cause harm' and 'Whether an AI system is conscious has little, if any, bearing on its ability to make high-impact decisions'",
+        "family": "c"
+      },
+      {
+        "text": "It raises the risk, because a system without inner experience lacks the empathy that restrains people",
+        "key": false,
+        "provenance": "reverses the direction of 'Whether an AI system is conscious has little, if any, bearing on its ability to ... take potentially dangerous actions', treating absence of consciousness as a risk factor rather than irrelevant",
+        "family": "b"
+      },
+      {
+        "text": "It shows the model is less capable than it seems, because capability and consciousness tend to go together",
+        "key": false,
+        "provenance": "misses 'We are also unsure if intelligence and consciousness are necessarily linked' and 'AlphaGo is very intelligent within the context of playing Go, but it is clearly not conscious'",
+        "family": "a"
+      }
+    ],
+    "explanation": "The finding does not touch what the model can do: it still plans and persuades at the same level, so its risk profile is unchanged. A system doesn't need to be conscious to cause harm, which is why we set consciousness aside as not actionable for safety work - not because the question is unimportant, but because its answer does not move the risk. The most tempting wrong answer is the prior that a system must truly understand before it can be dangerous; high-impact actions need capability, not inner experience. The 'raises the risk' option makes the same mistake in reverse, treating consciousness as relevant to danger at all. The 'less capable' option assumes intelligence and consciousness travel together, and AlphaGo shows they need not. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Settling whether a system is conscious would not change what it can do, so it would not change its risk.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section would say 'nothing, its capabilities are unchanged and consciousness has no bearing on harm' unaided.",
+      "cynic_test": "A skipper might pick the hedged 'little or nothing' option as the moderate one, so the 'less capable' distractor also carries a hedge ('tend to'), and the two directional distractors are both real beliefs held about AI minds."
+    },
+    "shard_id": "defining-and-measuring-agi-h",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/i01",
+    "targets": [
+      "DM-11"
+    ],
+    "lens": "figure",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A chatbot convinces most interrogators it is human in a Turing-style conversation test. In the same evaluation it fails simple spatial-reasoning puzzles and loses the thread of multi-step plans. What does this combination show about Turing's approach to measuring intelligence?",
+    "options": [
+      {
+        "text": "It tested only one capability, so passing showed depth in conversation rather than breadth; judging by behaviour still holds",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The test worked as intended, since open conversation draws on reasoning and planning, and the puzzle failures are narrow gaps",
+        "key": false,
+        "provenance": "misreads 'If a machine could imitate human conversation well enough ... it should be considered intelligent' as still valid, missing 'The test was too narrow. Conversation is just one capability among many we care about'",
+        "family": "c"
+      },
+      {
+        "text": "Judging by outputs alone proved unreliable, so a sound measure has to examine a system's internal states as well as its behaviour",
+        "key": false,
+        "provenance": "misreads 'LLMs exposed some limitations to this approach' as refuting behaviourism, against 'Turing's core insight - focus on observable capabilities, not internal states - remains sound'",
+        "family": "b"
+      },
+      {
+        "text": "Passing showed fluent symbol manipulation without true understanding, which is why its reasoning broke down on other tasks",
+        "key": false,
+        "provenance": "files the Chinese Room 'processing symbols without grasping their meaning' objection as the diagnosis of the Turing test's failure, when the stated problem is narrowness of the capability sampled",
+        "family": "d"
+      }
+    ],
+    "explanation": "Turing's test samples one capability, conversation, so passing it tells you the system is deep on that task and says nothing about breadth. The spatial and planning failures are exactly what a narrow test cannot see. What survives is the core move: judge a system by what it observably does, not by its inner states. We keep that move and widen the set of things observed. If you picked the internal-states option, you took 'the test was too narrow' as 'behaviourism failed'; the fix is more behaviours, not a look inside. The 'no true understanding' option imports Searle's consciousness objection, which we set aside as not actionable for safety. It is a separate critique, not the diagnosis here. (GPT-4 was the example of this gap at the time of writing.) (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "The Turing test failed by being narrow, not by being behaviourist.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section would say 'the test only checks conversation, but judging by behaviour is still right' unprompted.",
+      "cynic_test": "A skipper might pick the 'no true understanding' option as the sophisticated-sounding one; it fails because the section files that objection under consciousness, and the key's two-part hedge is balanced by two-clause distractors."
+    },
+    "shard_id": "defining-and-measuring-agi-i",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/i02",
+    "targets": [
+      "DM-12"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a published profile of a model across the ten CHC domains puts it at expert level on three of them, which is 30% generality. Its developer then connects it to a robot body that learns to fold laundry and assemble furniture as well as a skilled human. What happens to the model's position on the capability and generality axes?",
+    "options": [
+      {
+        "text": "Generality stays at 30%, because physical tasks lie outside the non-embodied cognitive domains it is scored over",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Generality rises, because it is the share of all human activities, physical ones included, where it reaches expert level",
+        "key": false,
+        "provenance": "misses 'Not every possible task matters equally' and the knitting example; reads generality as covering every human activity rather than 'non-embodied cognitive tasks'",
+        "family": "b"
+      },
+      {
+        "text": "Generality rises, because competent action in the physical world is the clearest sign of broad, general intelligence",
+        "key": false,
+        "provenance": "the pre-chapter prior that embodiment is the mark of general intelligence; misreads 'everything that can be done as remote work on a computer' as illustrative rather than as the scoping rule",
+        "family": "c"
+      },
+      {
+        "text": "Generality stays at 30%, but capability rises, because dexterity deepens performance on the tasks already counted",
+        "key": false,
+        "provenance": "misreads the capability axis ('how well a system executes specific cognitive tasks') as covering any task, so physical skill is scored as depth rather than falling outside both axes",
+        "family": "a"
+      }
+    ],
+    "explanation": "Neither axis moves. We score generality over non-embodied cognitive tasks only, roughly anything that could be done as remote work on a computer, broken into the ten CHC domains. Folding laundry is not one of them, so the count of expert-level domains stays at three. The capability-rises option is the near miss: capability also measures cognitive tasks, so physical dexterity adds no depth on any domain already counted. If you picked the physical-world option, you brought in a reasonable intuition that embodiment signals intelligence. We deliberately set it aside: the domains were chosen because they bear on the risks we track, and we care much less whether AI gets better at knitting sweaters. The 30% is only a worked number here. The reasoning holds whatever a real profile shows. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Generality counts cognitive domains, so physical skill moves neither axis.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows generality is scored over non-embodied cognitive domains would say 'nothing changes' without seeing options.",
+      "cynic_test": "A skipper might guess that the two 'stays at 30%' options signal the key, but they then have to choose between them, and that choice needs the fact that the capability axis is also cognitive-only; the figure is a durable worked example, not load-bearing."
+    },
+    "shard_id": "defining-and-measuring-agi-i",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/i03",
+    "targets": [
+      "DM-13"
+    ],
+    "lens": "figure",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "An evaluation puts a new model at 30% on an aggregate CHC-based AGI score. Its strengths are concentrated in a handful of domains, where it is near-superhuman, and it is weak elsewhere. A policymaker concludes: \"At 30%, this model is nowhere near the level where serious risk begins.\" Which response is best supported by the framework's own stated limitations?",
+    "options": [
+      {
+        "text": "Its profile is unlike a human's, and a lopsided non-human profile can carry serious risk despite a low score on human-centric tests",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The domains it still lacks are likely the easiest ones for it, so its score will climb quickly and the risk is only a short way off",
+        "key": false,
+        "provenance": "reverses the 'Non-linear progress' limitation, which says the final capabilities 'may represent disproportionately difficult bottlenecks', not easy ones",
+        "family": "b"
+      },
+      {
+        "text": "Human tests omit abilities universal in people that it may lack, so its real standing is lower still and the risk is even further off",
+        "key": false,
+        "provenance": "applies the 'Coverage bias' limitation correctly but in the wrong slot: coverage bias qualifies how human-like a score is, and here it is used to endorse a risk conclusion that 'Species-specific risk' undercuts",
+        "family": "d"
+      },
+      {
+        "text": "An aggregate score tracks capability, but risk comes from the autonomy it is deployed with, so the score is the wrong quantity to cite",
+        "key": false,
+        "provenance": "misreads 'Autonomy level affects risk exposure, not inherent danger' as making autonomy the sole source of risk, so capability scores become irrelevant to it",
+        "family": "a"
+      }
+    ],
+    "explanation": "The limitation that fits is species-specific risk. A human-centric aggregate rewards a human-like spread of abilities, so a system that is near-superhuman in a few domains and weak elsewhere scores low while possibly carrying transformative risk. The TAI definition anticipates this: exceptional capability on a small set of critical domains can be enough. If you picked the coverage-bias option, you recalled a real limitation but put it in the wrong place. It says the score may flatter human-likeness, which does nothing to rescue a claim about risk. The easy-remaining-domains option reverses the non-linear point: the last domains are likely the hardest. The autonomy option confuses exposure with danger. Deployment changes how much of a capability gets exercised, not what the model can do. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A low human-centric score is not a low-risk score when the profile is lopsided.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows the four limitations would say 'non-human profiles can be risky despite low human-centric scores' when shown a low score with a lopsided profile.",
+      "cynic_test": "A skipper keying on 'lopsided' in the stem might favour the key, so the stem word 'concentrated' is used instead and 'risk'/'score' appear in every option; the coverage-bias distractor is a genuine limitation, which defeats 'pick the one that names a real critique'."
+    },
+    "shard_id": "defining-and-measuring-agi-i",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/j01",
+    "targets": [
+      "DM-14"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A commentator writes: \"Calling a system a one-year AGI is less impressive than it sounds. It has only been shown to beat experts on year-long tasks, and those are a small share of real work.\" Which objection does the (t,n)-AGI framework best support?",
+    "options": [
+      {
+        "text": "Almost any project divides into sub-tasks of a year or less, so a one-year horizon reaches nearly all real work",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The t is the time the AI itself takes to respond, so a one-year system is slow to answer rather than narrow in scope",
+        "key": false,
+        "provenance": "misreads 'Given a time frame t to complete some cognitive task' as the AI's response latency rather than the time budget given equally to the human expert",
+        "family": "a"
+      },
+      {
+        "text": "The n counts parallel copies of the AI, so a one-year system is really many copies each tackling a short piece of work",
+        "key": false,
+        "provenance": "reverses 'The (t,n)-AGI framework does not account for how many copies of the AI run simultaneously' into n counting AI copies, when n counts human experts",
+        "family": "b"
+      },
+      {
+        "text": "Short horizons already show up as weak memory scores, so a one-year label mostly restates the system's generality",
+        "key": false,
+        "provenance": "misreads 'Task time horizon limitations are implicitly captured in our generality measure' as making the t label redundant, which does not touch the claim about how much work a year-long horizon covers",
+        "family": "d"
+      }
+    ],
+    "explanation": "A t-AGI beats a human expert who is given the same time t. A one-year horizon is not a niche: most projects can be split into sub-tasks that fit inside a year, which is why we say a one-year AGI would beat humans at basically everything. The commentator treats the horizon as a narrow task category when it is a ceiling that covers everything shorter. If you read t as the AI's response time, note that the clock belongs to the task, and the human expert gets the same clock. And n counts human experts working together; the framework deliberately does not count how many copies of the AI run at once. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A t-AGI horizon is a ceiling, not a category: long horizons subsume shorter work because projects decompose.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood (t,n)-AGI would say long horizons subsume shorter work because projects decompose into sub-tasks, which is the section's stated reason.",
+      "cynic_test": "A skipper might pick the copies option because parallelism sounds technical, but it contradicts the framework's explicit exclusion of copies; all four options share the 'X, so Y' shape and similar length, so there is no length or hedge tell."
+    },
+    "shard_id": "defining-and-measuring-agi-j",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/j02",
+    "targets": [
+      "DM-15"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A reviewer argues: \"The capability and generality axes are blind to time horizon. A system can look broadly expert-level on them while failing every project that takes several days, so horizon needs its own separate scale.\" Which response does the framework support best?",
+    "options": [
+      {
+        "text": "A short horizon shows up as low scores on long-term memory storage and retrieval, which lowers measured generality",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "A short horizon shows up as low scores on reasoning and mathematics, the domains that long projects stress most",
+        "key": false,
+        "provenance": "files the horizon limit under the wrong domains; 'Systems scoring poorly on memory naturally fail on multi-day projects' locates it in memory, not reasoning or maths",
+        "family": "d"
+      },
+      {
+        "text": "Horizon is a deployment property like autonomy, so neither framework should count it toward whether a system is AGI",
+        "key": false,
+        "provenance": "misreads 'Our working definition does not include the autonomy with which an AGI system operates' as covering time horizon, conflating a capability limit with a deployment choice",
+        "family": "a"
+      },
+      {
+        "text": "The t in (t,n) tracks response speed, which the CHC speed domain scores, so the two axes cover it already",
+        "key": false,
+        "provenance": "misreads 'Given a time frame t' as the AI's latency and maps it onto the Speed domain, instead of the time budget for a task",
+        "family": "a"
+      }
+    ],
+    "explanation": "The reviewer is right that horizon matters but wrong that the axes miss it. Time horizon limitations are implicitly captured in the generality measure as weakness in specific domains, chiefly long-term memory storage and retrieval: a system that cannot retain and recall context fails multi-day projects and scores poorly on those domains. So the two frameworks describe the same deficit from different angles. If you picked reasoning and mathematics, you placed the weakness in the domain that feels hardest, but multi-day failure comes from losing context, not from failing individual inferences. Horizon is also not like autonomy: autonomy is a choice about how a system is deployed, while a short horizon is something the system cannot do. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Short task horizons are not invisible to the two axes; they appear as low scores in the memory domains.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the link between the frameworks would say horizon limits surface as weak long-term memory scores inside generality.",
+      "cynic_test": "Key and top distractor share an identical frame and differ only in the domain named, so test-taking instinct cannot separate them; the reasoning/maths option is the tempting guess because long projects feel like hard thinking."
+    },
+    "shard_id": "defining-and-measuring-agi-j",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/j03",
+    "targets": [
+      "DM-2"
+    ],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A launch post claims System A is \"more general than System B, because A handles all ten cognitive domains while B handles only four.\" On testing, A reaches expert level on two domains; B reaches expert level on all four it handles. Which assessment of the claim is best supported?",
+    "options": [
+      {
+        "text": "Generality counts only domains reached at expert level, so B is the more general system despite attempting fewer",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Generality is an average across the ten domains, so both systems' mean percentiles must be compared before judging",
+        "key": false,
+        "provenance": "misreads 'outperform 85% of humans in 30% of cognitive domains' as one averaged score rather than two separate numbers, one per axis",
+        "family": "a"
+      },
+      {
+        "text": "B's expert-level depth on four domains raises its capability, but A's wider coverage still gives it greater generality",
+        "key": false,
+        "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing that a domain only counts at expert-level capability",
+        "family": "b"
+      },
+      {
+        "text": "Neither system has meaningful generality yet: both fall well short of the AGI threshold on most of the ten domains",
+        "key": false,
+        "provenance": "misreads the AGI threshold definition as a precondition for having any generality, against 'AGI exists on a continuous spectrum' and early systems being 'genuine general intelligence - just early-stage'",
+        "family": "c"
+      }
+    ],
+    "explanation": "Generality is the share of cognitive domains where a system reaches expert level. A counts on two of ten (20%); B counts on four (40%), so B is more general even though A attempts more. The launch post measures how many domains a system can produce output in, which is coverage, not generality. If you picked the capability-versus-coverage option, you split depth and breadth correctly but mislabelled breadth: domains a system handles below expert level add nothing to its generality. Generality is also not an average of percentiles, since that would blur the two axes into one number. And a system short of the AGI threshold still has a generality score; the thresholds are overlays on a continuum. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Breadth counts only where a system is expert; attempting a domain badly adds nothing to generality.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows generality is the percentage of domains at expert level would compute 2/10 vs 4/10 and conclude B is more general.",
+      "cynic_test": "A skipper would likely pick the capability-versus-coverage option because it sounds balanced and uses both axes, but it counts attempted domains as breadth; 'expert' appears in two options and all four share length and register."
+    },
+    "shard_id": "defining-and-measuring-agi-j",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/k01",
+    "targets": [
+      "DM-3"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A news headline asks: \"Has AI finally crossed the line into AGI?\" Judged by the capability-and-generality framework, what is the main problem with the question itself?",
+    "options": [
+      {
+        "text": "It assumes a single moment of arrival, when systems improve by degrees on two axes and the label covers a region",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "It asks too early: nothing counts as general intelligence until it reaches expert level on most domains",
+        "key": false,
+        "provenance": "misreads the AGI threshold definition ('expert-level performance ... across most cognitive domains') as the entry condition for any generality, against the Wright-brothers passage that early systems 'represent genuine general intelligence - just early-stage (weak AGI)'",
+        "family": "c"
+      },
+      {
+        "text": "It asks about a real line that cannot be located yet, because benchmarks are too coarse to pinpoint it",
+        "key": false,
+        "provenance": "misreads 'There's no universally agreed upon threshold' as 'the threshold exists but has not been measured', keeping the binary prior and blaming measurement precision rather than the framing",
+        "family": "b"
+      },
+      {
+        "text": "It tracks the wrong axis: the line that matters is crossed when systems start acting without human oversight",
+        "key": false,
+        "provenance": "carries in the charter wording 'highly autonomous systems' from Case Studies and treats autonomy as the AGI line, against 'Our working definition does not include the autonomy with which an AGI system operates'",
+        "family": "a"
+      }
+    ],
+    "explanation": "The headline treats AGI as an event: one day the system is not AGI, the next it is. We describe systems instead by where they sit on two continuous axes, capability (how good on each task) and generality (on how many domains it reaches expert level), and there is no agreed point where \"not AGI\" flips to \"AGI\". The tempting reply that the line is real but not yet located keeps the binary picture and only blames the benchmarks; the problem is the picture, not the measurement. Nor must a system clear expert level on most domains before it counts as general at all: like the Wright brothers' plane, an early general system is genuine but immature, which is what \"weak AGI\" means. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI names a region of a continuous two-axis space, so \"has it crossed the line?\" is the wrong question.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed the continuum framing would say unprompted that the headline presumes a binary crossing point that the framework denies exists.",
+      "cynic_test": "A skipper might pick the measurement-precision option as the most sophisticated-sounding caveat, but it concedes the binary line the key rejects; the key is not the only option naming two axes or degrees in a way that marks it, and no absolutes appear."
+    },
+    "shard_id": "defining-and-measuring-agi-k",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/k02",
+    "targets": [
+      "DM-4"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "The framework insists that AGI sits on a continuum, yet it also offers rough percentile cut-offs for AGI, TAI and ASI. What do those cut-offs contribute that the continuum on its own does not?",
+    "options": [
+      {
+        "text": "They give safety planning and regulation points at which to act, because risk differs across regions of the space",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "They reinstate the yes-or-no framing for public audiences, a concession that sits in tension with the continuum",
+        "key": false,
+        "provenance": "misreads thresholds offered 'When pressed for concrete thresholds' as a retreat from 'AGI exists on a continuous spectrum', missing 'we can't ignore this reality even if generality is a continuous variable'",
+        "family": "b"
+      },
+      {
+        "text": "They mark where measured risk begins, which is where the continuum turns out to have natural break points",
+        "key": false,
+        "provenance": "misreads 'here's our interpretation of roughly how terms map onto the (performance, generality) space' as an empirical finding that the space has natural discontinuities",
+        "family": "c"
+      },
+      {
+        "text": "They let evaluators announce when a system has arrived at each named level, which a smooth scale cannot do",
+        "key": false,
+        "provenance": "misfiles the purpose of thresholds as declaring arrival, against the stated aim to 'identify thresholds for regulation, and emerging risks before they materialize'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The cut-offs are overlays for action. A system strong on half the cognitive domains poses different risks from one strong on nine-tenths, and regulation and safety planning need points at which a response is triggered, so we mark rough regions without claiming the space breaks there. That is why they are not a contradiction: the underlying variable stays continuous, and the thresholds are an interpretation laid over it on request, not a return to yes-or-no. They are also not measured facts. We present them as our rough mapping of terms, and other researchers could set them differently. And their job is not to announce that a system has \"arrived\", which is exactly the semantic debate the continuum was built to avoid. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Thresholds are stipulated trigger points for safety and regulation laid over a continuum, not natural break points in it.",
+    "stem_format": "direct-conceptual",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who followed the section would answer that thresholds give safety planning and regulation something to trigger on, without conceding that the continuum is broken.",
+      "cynic_test": "The 'tension' option is the tempting cynical pick; it fails because the text keeps the variable continuous. 'Continuum' appears in two distractors and 'risk' in the key and one distractor, so no word match picks out the key."
+    },
+    "shard_id": "defining-and-measuring-agi-k",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/k03",
+    "targets": [
+      "DM-5"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Imagine a system that, on nearly every non-embodied cognitive domain, outperforms most trained professionals but never the very best human. How does the working definition classify it?",
+    "options": [
+      {
+        "text": "As AGI, because expert-level performance across most domains is exactly the profile the term describes",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Short of AGI, because it has only matched strong humans in most domains rather than exceeded them all",
+        "key": false,
+        "provenance": "conflates the AGI definition ('expert-level performance (80-90th percentile)') with the ASI definition ('superhuman capability (>100%, greatly exceeding all humans)')",
+        "family": "a"
+      },
+      {
+        "text": "Undecided, because AGI turns on outperforming humans at most economically valuable work, not on domain scores",
+        "key": false,
+        "provenance": "adopts the quoted OpenAI charter wording as the working definition, missing that such definitions 'lack precision for tracking progress and identifying risks'",
+        "family": "a"
+      },
+      {
+        "text": "Undecided, because generality turns on how efficiently it acquires new skills, not on its fixed-task scores",
+        "key": false,
+        "provenance": "files the adaptability view (Chollet, Wang) as the working definition, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
+        "family": "d"
+      }
+    ],
+    "explanation": "Our working definition is a cognitive profile. AGI means matching a well-educated adult's versatility: expert-level performance, better than most people but short of the best, across most cognitive domains. This system fits that profile. The top distractor sets the bar at beating everyone, which is the definition of superintelligence (ASI), not AGI. AGI is expert parity, and ASI is greatly exceeding all humans across virtually all domains. The charter-style test, outperforming humans at most economically valuable work, points in the right direction but is too vague to settle a case like this. The adaptability view is one we acknowledge, but we rank systems on final capabilities rather than on learning efficiency. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI in this framework is expert parity across most domains; exceeding all humans is the ASI definition.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: given the profile, a reader who knows AGI means expert-level across most domains would say 'AGI', and would not demand superhuman performance.",
+      "cynic_test": "A skipper might pick 'short of AGI', reasoning that 'general intelligence' should mean beating humans. That is the ASI conflation the item targets. Two options open with 'Undecided', so there is no grammar or register outlier, and the stem gives the profile in qualitative bands rather than recalled percentile digits."
+    },
+    "shard_id": "defining-and-measuring-agi-k",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/l01",
+    "targets": [
+      "DM-6"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A system performs beyond nearly every human expert at automated ML research and the closely related coding work, and falls well short of expert level at everything else. How do the AGI and TAI definitions classify it?",
+    "options": [
+      {
+        "text": "TAI but not AGI: TAI can be reached through extreme depth in a few critical areas, while AGI needs expert level across most",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Neither: transformative impact is a later stage than AGI, so it cannot arrive before broad expert-level performance does",
+        "key": false,
+        "provenance": "misreads TAI as a point further along the same scale as AGI, missing the OR-clause 'exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)'",
+        "family": "c"
+      },
+      {
+        "text": "AGI but not TAI: its superhuman depth counts as general intelligence, while transformation needs reach across the economy",
+        "key": false,
+        "provenance": "hybrid: reads superhuman single-area capability as generality (against 'Everything along this line ... counts as ANI') and reverses the TAI disjunction into 'low generality cannot be transformative'",
+        "family": "b"
+      },
+      {
+        "text": "Both: AGI and TAI name the same threshold, one described by cognitive profile and the other by its economic effect",
+        "key": false,
+        "provenance": "misreads the adjacent AGI and TAI definition boxes as synonyms, missing 'TAI is defined by impact potential rather than cognitive architecture'",
+        "family": "a"
+      }
+    ],
+    "explanation": "TAI is defined by impact potential rather than cognitive profile, and one of the ways we say it can be reached is exceptional depth on a small set of critical domains such as automated ML research. This system fits that route. AGI is a cognitive-profile definition: expert-level performance across most domains, which this system lacks. The most tempting wrong answer treats TAI as a later rung on the AGI ladder, so impact would have to wait for breadth. That is the ordering many readers bring with them, and the TAI definition deliberately breaks it: a narrow-but-deep system aimed at the right domain could transform the economy while still being ANI on most of the map. Nor are the two terms synonyms. They measure different things and can come apart, as they do here. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is about breadth of expert-level cognition; TAI is about impact, and extreme depth in the right domain can be enough for it.",
+    "stem_format": "classification",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows TAI is impact-defined with a deep-but-narrow OR-clause, and AGI needs breadth, would say 'TAI, not AGI' unprompted.",
+      "cynic_test": "A skipper might pick 'Neither' on the prior that TAI is the bigger milestone, or 'Both' on the idea that superhuman means advanced; each option names a distinct classification in the same format, and the percentile digits are left out of the stem so recalled numbers cannot decide it."
+    },
+    "shard_id": "defining-and-measuring-agi-l",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/l02",
+    "targets": [
+      "DM-7"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two teams deploy the same model weights. One uses it to draft suggestions that a person accepts or rejects; the other lets it carry out multi-step tasks and decide for itself when to check in. What differs between the two setups?",
+    "options": [
+      {
+        "text": "Their risk exposure: capability is identical, but the agent setup leaves more consequential actions without human review",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Their capability level: autonomy is a further step up the same scale, so the agent setup is the more advanced system",
+        "key": false,
+        "provenance": "misreads 'Just like we had continuous curves for capability and generality, we can similarly have an increasing level of autonomy' as autonomy being a continuation of the capability curve, against 'not what they can do'",
+        "family": "a"
+      },
+      {
+        "text": "Their inherent danger: holding the model to suggestions shrinks what it is able to do, so the tool setup is a safer system",
+        "key": false,
+        "provenance": "misreads 'A capable system deployed as a tool (Level 1) might be safer' as a change in the system itself, against 'affects risk exposure, not inherent danger' and 'the underlying capability is identical'",
+        "family": "b"
+      },
+      {
+        "text": "Their AGI status: general intelligence is defined as autonomous operation, so only the agent setup could qualify as AGI",
+        "key": false,
+        "provenance": "carries in the quoted charter wording 'highly autonomous systems', against 'Our working definition does not include the autonomy with which an AGI system operates'",
+        "family": "c"
+      }
+    ],
+    "explanation": "Autonomy describes how a system interacts with humans, not what it can do. The weights are the same, so capability and generality are the same. What changes is how many consequential actions happen before a human sees them, which is risk exposure. The closest wrong answer says the suggestion-only setup is inherently less dangerous. Restricting autonomy does not remove any ability from the model. It changes how much of that ability reaches the world unchecked, which is why we say autonomy affects exposure rather than inherent danger. Treating the agent as the more capable system confuses the two axes. Capability is needed before higher autonomy is possible, but switching autonomy on adds no capability. And our working definition of AGI deliberately leaves autonomy out, even though some lab definitions include it. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Autonomy is a deployment choice layered on a fixed capability: it changes exposure, not what the system can do.",
+    "stem_format": "two-scenario",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Defining General Intelligence"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader holding 'same capability, different deployment' would answer 'how much risk reaches the world, not what it can do' before seeing options.",
+      "cynic_test": "A skipper would lean to 'inherent danger' because common sense says tools are safer; that option shares the safety direction with the key, so the choice turns on exposure versus inherent danger, which only the section supplies. No level names or numbers appear."
+    },
+    "shard_id": "defining-and-measuring-agi-l",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/l03",
+    "targets": [
+      "DM-8"
+    ],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two systems end up equally good at writing convincing, targeted phishing messages. System A got there from a handful of examples; System B needed billions of examples and largely memorised patterns. For safety planning, how should they be compared?",
+    "options": [
+      {
+        "text": "Equal risk from that ability; B's costly route may make it less impressive as an intelligence, not less dangerous",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Less risk from B; an ability bought with data and compute rather than learned efficiently is not genuine intelligence",
+        "key": false,
+        "provenance": "misreads the adaptability view's 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'the risks exist either way'",
+        "family": "c"
+      },
+      {
+        "text": "More risk from A; efficient skill acquisition is what general intelligence is, and general intelligence is what drives danger",
+        "key": false,
+        "provenance": "conflates the adaptability definition ('the efficiency of acquiring new skills') with the safety-relevant quantity, against 'Did it learn efficiently or through brute force? ... These questions don't change the risk profile'",
+        "family": "a"
+      },
+      {
+        "text": "Equal risk from both; learning efficiency has turned out to say nothing about how intelligent a system really is",
+        "key": false,
+        "provenance": "misreads 'does the learning path matter more than the destination?' as rejecting the adaptability view, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'",
+        "family": "b"
+      }
+    ],
+    "explanation": "For safety, what a system can observably do matters more than how it got there. Both systems can produce the same harmful output, so the risk from that ability is the same. This does not mean the adaptability view is wrong, which is where the second 'equal risk' option goes astray. We accept that learning efficiently from few examples says something real about intelligence, and B may well be the less impressive system. We simply rank final capability higher for safety. The option that rates B as less risky makes the common move from 'less impressive' to 'less dangerous'. A phishing message works the same way whether the skill behind it was learned elegantly or memorised by brute force. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Learning efficiency can bear on how intelligent a system is without bearing on how dangerous its abilities are.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'the risks exist either way' plus 'acknowledge but prioritise final capabilities' would say 'same risk, though B is less impressive'.",
+      "cynic_test": "A skipper might spot that two options say 'equal risk' and guess between them, but the choice then depends on whether the adaptability view is rejected or merely deprioritised, which only the section settles; the one absolute ('nothing') sits on a position people genuinely assert."
+    },
+    "shard_id": "defining-and-measuring-agi-l",
+    "model": "opus"
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/m01",
+    "targets": [
+      "DM-9"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems end up equally good at writing working exploits for a programming language released after both were trained. System A got there from a few dozen worked examples; System B needed millions of examples and far more compute. The lab argues: \"B is less intelligent than A, since it bought its skill with data rather than learning efficiently, so B can ship with lighter safeguards.\" What is the best assessment of this argument?",
+    "options": [
+      {
+        "text": "Its premise is defensible, but equal skill at the task means equal risk from it, however the skill was gained",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Its premise is mistaken, since a skill counts equally as intelligence however the system came to acquire it",
+        "key": false,
+        "provenance": "misreads 'does the learning path matter more than the destination?' and the priority on final capabilities as a rejection of the adaptability view, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning'",
+        "family": "b"
+      },
+      {
+        "text": "Its conclusion holds, since skill gained by brute-force memorisation tends to break on real-world cases",
+        "key": false,
+        "provenance": "misreads 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'whether through efficient learning or brute-force memorization, the risks exist either way'",
+        "family": "c"
+      },
+      {
+        "text": "Its conclusion holds, since B matches patterns in code without understanding what its output actually does",
+        "key": false,
+        "provenance": "files the Chinese Room / 'true understanding' objection under the adaptability view, whose objection is about data efficiency; and misses 'Is it conscious or just pattern-matching? These questions don't change the risk profile'",
+        "family": "d"
+      }
+    ],
+    "explanation": "We accept the lab's premise: on the adaptability view, intelligence is how efficiently a system turns experience into new skills, so a system that needs millions of examples where another needs a few dozen is less impressive even at the same final level. But for safety we prioritise final capabilities, because risk does not depend on the path. Two systems that write working exploits equally well pose the same risk from that skill. The answer that rejects the premise outright mistakes that prioritisation for dismissal of the adaptability view. The memorisation answer is the tempting prior that \"bought\" skill is fragile and therefore safer, but the case stipulates equal performance, and if a system can do the dangerous task the risk exists either way. Whether B truly understands its output belongs to the consciousness debate, not the adaptability one, and it does not change the risk either. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Learning efficiency can tell you how intelligent a system is without telling you how dangerous its capabilities are.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Defining and Measuring AGI",
+      "subheading": "Case Studies"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say unaided that the adaptability view grants A more intelligence but equal capability means equal risk, so the premise stands and the conclusion fails.",
+      "cynic_test": "A skipper might go for the most balanced-sounding 'premise yes, conclusion no' option, so the verdicts are split two 'conclusion holds' and two 'conclusion fails', every option carries a reason clause, the lengths are near-equal (roughly 102-108 chars), and stem words (examples, exploits, learning) were kept out of single options."
+    },
+    "shard_id": "defining-and-measuring-agi-m",
+    "model": "opus"
+  }
+]

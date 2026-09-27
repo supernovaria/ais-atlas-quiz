@@ -32,7 +32,10 @@ import { parseChapterMarkdown } from '../src/quizParser.js';
 import { measure, contentWords, overlap, GATES, atlasSlug } from './check-questions.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const CHAPTER_DIR = resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/capabilities');
+// QUIZ_CHAPTER_DIR overrides the sibling-repo default (needed when running from a worktree).
+const CHAPTER_DIR = process.env.QUIZ_CHAPTER_DIR
+  ? resolve(process.env.QUIZ_CHAPTER_DIR)
+  : resolve(ROOT, '../atlas-audio-read-along/dist/chapters/v1/capabilities');
 
 // The chapter's own section order, and the `#` headings the parser and checker
 // tier 1 depend on. Copied from the existing question file; never re-derived.

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/m01",
+    "targets": ["DM-9"],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems end up equally good at writing working exploits for a programming language released after both were trained. System A got there from a few dozen worked examples; System B needed millions of examples and far more compute. The lab argues: \"B is less intelligent than A, since it bought its skill with data rather than learning efficiently, so B can ship with lighter safeguards.\" What is the best assessment of this argument?",
+    "options": [
+      {"text": "Its premise is defensible, but equal skill at the task means equal risk from it, however the skill was gained", "key": true, "provenance": null, "family": null},
+      {"text": "Its premise is mistaken, since a skill counts equally as intelligence however the system came to acquire it", "key": false, "provenance": "misreads 'does the learning path matter more than the destination?' and the priority on final capabilities as a rejection of the adaptability view, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning'", "family": "b"},
+      {"text": "Its conclusion holds, since skill gained by brute-force memorisation tends to break on real-world cases", "key": false, "provenance": "misreads 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'whether through efficient learning or brute-force memorization, the risks exist either way'", "family": "c"},
+      {"text": "Its conclusion holds, since B matches patterns in code without understanding what its output actually does", "key": false, "provenance": "files the Chinese Room / 'true understanding' objection under the adaptability view, whose objection is about data efficiency; and misses 'Is it conscious or just pattern-matching? These questions don't change the risk profile'", "family": "d"}
+    ],
+    "explanation": "We accept the lab's premise: on the adaptability view, intelligence is how efficiently a system turns experience into new skills, so a system that needs millions of examples where another needs a few dozen is less impressive even at the same final level. But for safety we prioritise final capabilities, because risk does not depend on the path. Two systems that write working exploits equally well pose the same risk from that skill. The answer that rejects the premise outright mistakes that prioritisation for dismissal of the adaptability view. The memorisation answer is the tempting prior that \"bought\" skill is fragile and therefore safer, but the case stipulates equal performance, and if a system can do the dangerous task the risk exists either way. Whether B truly understands its output belongs to the consciousness debate, not the adaptability one, and it does not change the risk either. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Learning efficiency can tell you how intelligent a system is without telling you how dangerous its capabilities are.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say unaided that the adaptability view grants A more intelligence but equal capability means equal risk, so the premise stands and the conclusion fails.",
+      "cynic_test": "A skipper might go for the most balanced-sounding 'premise yes, conclusion no' option, so the verdicts are split two 'conclusion holds' and two 'conclusion fails', every option carries a reason clause, the lengths are near-equal (roughly 102-108 chars), and stem words (examples, exploits, learning) were kept out of single options."
+    }
+  },
+  {"note": "One candidate, as requested. The key necessarily draws on DM-8 (risk is path-independent) as the reason the Atlas prioritises final capabilities; the item targets DM-9 because it turns on the premise being accepted (acknowledged, not rejected). The Curator should treat it as overlapping any DM-8 path-independence item. Stem is claim-evaluation in form, but the task is applying the synthesis to an invented two-system case, so L4 is claimed rather than L5."}
+]

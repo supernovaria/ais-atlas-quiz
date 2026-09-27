@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/a01",
+    "targets": ["DM-1"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A commentator calls AlphaGo's 2016 win over the world's best Go players \"a major step toward AGI\", because it mastered a game experts expected computers to need decades more to crack. How does that assessment fare on the capability-generality framework?",
+    "options": [
+      {"text": "It overstates it: play beyond any human is capability on one task, and capability on a single task is narrow AI however high it goes", "key": true, "provenance": null, "family": null},
+      {"text": "It understates it: beating every human expert is what lifts a system out of narrow AI, which by definition tops out below expert level", "key": false, "provenance": "misreads the ANI definition box's label 'Weak AI' as a performance ceiling, against ''Narrow' might be a more accurate descriptor ... as it is anything but weak' and 'from basic competence to superhuman capability on a single task - counts as artificial narrow intelligence'", "family": "b"},
+      {"text": "It is fair: mastering a task that hard shows the kind of flexible, learned competence that general intelligence is assembled from", "key": false, "provenance": "the pre-chapter prior that superhuman performance on a hard task is progress toward generality, missing 'Everything along this line ... counts as artificial narrow intelligence (ANI)' and 'Capability alone isn't enough to define and measure progress'", "family": "c"},
+      {"text": "It overstates it: skill bought with vast data and compute is memorisation, so it should not be counted as capability on the task", "key": false, "provenance": "files the adaptability view's point ('High performance can be \"bought\" with sufficient data and compute') under the capability axis, against 'the risks exist either way' and 'prioritize final capabilities'; the adaptability view disputes general intelligence, not task capability", "family": "d"}
+    ],
+    "explanation": "Capability is depth: how well a system does individual tasks. Going from novice to superhuman at Go is movement along that one axis, and every point on it, however high, is narrow AI. AlphaGo could not write a sentence or solve an algebra problem, so its breadth stayed near zero. If you judged the claim fair, you treated \"mastered a very hard task\" as evidence of breadth, which is exactly the intuition the two-axis framing is built to separate out. The \"understates\" option reads the older label \"weak AI\" as a cap on performance, but narrow systems can be superhuman. The \"bought with data\" option borrows the adaptability view's objection, which is about general intelligence, not about whether task performance counts as capability. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Depth without breadth is narrow AI, however superhuman the depth.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say unprompted that superhuman play on one task is capability only, so it is still narrow AI and not progress on generality.",
+      "cynic_test": "A skipper would lean toward 'It is fair' as the charitable, non-pedantic answer or toward the key's 'overstates' opener, but two options share that opener, all four open with a verdict-colon clause, and none carries an absolute or hedge the others lack."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/a02",
+    "targets": ["DM-2"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "System A produces work in all ten cognitive domains, each at about the level of a median person. System B outperforms nearly all human experts in four domains and cannot do the other six. Which comparison of the two fits how generality is measured?",
+    "options": [
+      {"text": "B is more general: a domain counts only once performance reaches expert level, so B scores four domains and A scores zero", "key": true, "provenance": null, "family": null},
+      {"text": "A is more general and B more capable: A spans all ten domains, while B goes deep in only four of them", "key": false, "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing that generality is 'the percentage of these domains where a system achieves expert-level capability'", "family": "b"},
+      {"text": "A is more general: averaged across all ten domains, its scores come out higher than B's lopsided profile", "key": false, "provenance": "misreads the combined statement 'outperform 85% of humans in 30% of cognitive domains' as one averaged score rather than two numbers, one per axis", "family": "a"},
+      {"text": "Neither registers yet: generality only starts counting once a system is at expert level in most domains", "key": false, "provenance": "conflates the AGI threshold ('expert-level performance ... across most cognitive domains (80-90%)') with the precondition for measuring generality, against the worked example 'three out of ten domains, that's 30% generality'", "family": "a"}
+    ],
+    "explanation": "Generality is the share of cognitive domains where a system reaches expert level. B clears that bar in four of ten, so it sits at 40% generality; A clears it in none, so its generality is zero even though it produces output everywhere. The hybrid option is the tempting one because it uses the real depth-versus-breadth split, but it reads breadth as coverage, when a domain only counts at expert-level performance. Averaging collapses the two axes into one score, which is why we report them as a pair (\"outperforms X% of humans in Y% of domains\"). And generality is measured at every level, not just near AGI: the AGI definition marks one region of the scale, not where the scale begins. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A domain counts toward generality only when the system is expert-level in it; merely working in a domain adds nothing.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows generality is the percentage of domains at expert level will compute B at four domains and A at zero without seeing options.",
+      "cynic_test": "A skipper's instinct is that the system working in all ten domains is 'more general', which points to the two A options; the key is the counterintuitive one and carries no length, hedge, or word-match tell (profiles are given as qualitative bands, so no recalled percentile decides it)."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/a03",
+    "targets": ["DM-7"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A lab runs one model in two deployments: as a reviewer whose suggestions engineers approve or reject, and as an agent that merges its own changes and decides when to involve a human. Which account of why the agent deployment is riskier fits the framework?",
+    "options": [
+      {"text": "More of the work runs without a human check, so risk exposure rises while the model's capability stays the same", "key": true, "provenance": null, "family": null},
+      {"text": "Operating as an agent is a higher capability level than reviewing, and that extra capability is what adds the risk", "key": false, "provenance": "misreads the autonomy levels as a continuation of the capability curves ('Just like we had continuous curves for capability and generality'), against 'Autonomy describes how AI systems interact with humans, not what they can do'", "family": "a"},
+      {"text": "Human approval lowers the model's inherent danger by limiting what it can do, a limit that the agent role removes", "key": false, "provenance": "misreads 'A capable system deployed as a tool (Level 1) might be safer' as a change to the system itself, against 'Autonomy level affects risk exposure, not inherent danger' and 'the underlying capability is identical'", "family": "b"},
+      {"text": "An autonomous agent counts as AGI in a way a supervised reviewer does not, and AGI carries risks of its own", "key": false, "provenance": "carries in the quoted charter framing of AGI as 'highly autonomous systems', against 'Our working definition does not include the autonomy with which an AGI system operates'", "family": "c"}
+    ],
+    "explanation": "Autonomy describes how a system interacts with humans, not what it can do. Both deployments run the same model, so capability is identical; what changes is how much of the work proceeds before a human can catch a problem. That is risk exposure. The option about human approval limiting the model is the closest miss: oversight does reduce exposure, but the model can do exactly as much as before, so its inherent danger is unchanged. Treating the agent role as a higher capability level confuses the autonomy scale with the capability curve it resembles. And our working definition of AGI deliberately leaves autonomy out, so the agent deployment is no more \"AGI\" than the reviewer is. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Autonomy is a deployment choice that sets risk exposure; it neither measures nor changes capability.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the autonomy passage would say the same model has the same capability, and the agent role raises exposure by removing human checks.",
+      "cynic_test": "A skipper might pick the 'human approval lowers inherent danger' option as the common-sense safety answer; it fails only on the exposure-versus-inherent-danger distinction the section draws, and all four options are single-mechanism causal sentences of matched length with no absolutes."
+    }
+  },
+  {"note": "Shard lens misconception applied to all three ideas; no substitution. DM-1 and DM-7 form a discrimination pair, but under the misconception lens I kept them separate: a01 builds on DM-1's family-(c) prior (superhuman depth = progress toward generality), a03 on DM-7's family-(b) inherent-danger misreading with the autonomy-as-capability conflation as a second distractor. a02 uses DM-2's coverage misreading as a hybrid top distractor that borrows the true depth/breadth split."}
+]

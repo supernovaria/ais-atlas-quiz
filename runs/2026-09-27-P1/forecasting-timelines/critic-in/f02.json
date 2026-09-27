@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/f02",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You enter your own views on investment growth, software efficiency gains, hardware improvement and how many tasks each extra order of magnitude of compute automates into a simple forecasting model. It says full automation arrives decades earlier than you had assumed. What is the most useful thing to do with that result?",
+    "options": [
+      {
+        "text": "Take the mismatch as a sign that one of your inputs or your prior expectation is off, and work out which of them to revise",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Take the mismatch as a sign that the model is mis-specified, and set its output aside in favour of the date you had expected",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating', pointing the surprise at the model rather than at the inputs you supplied",
+        "family": "b"
+      },
+      {
+        "text": "Take the mismatch as ordinary noise, since forecast ranges are far too wide for a single model output to carry much information",
+        "key": false,
+        "provenance": "conflates the section's 'wide error margins that compound over time' with uselessness, missing that the consistency check survives the uncertainty",
+        "family": "a"
+      },
+      {
+        "text": "Take the output as the model's prediction of the date, and judge the model later by whether automation arrives around then",
+        "key": false,
+        "provenance": "the prior the section targets: reads forecasts as 'concrete predictions of timelines' rather than 'scenarios that help you reason about different potential futures'",
+        "family": "c"
+      }
+    ],
+    "explanation": "A model like this is useful as a coherence check. The inputs were your own views, so an output that clashes with the date you expected means your views do not fit together: either one of the inputs is wrong, or the expectation is. Finding out which one is the point of the exercise. If you chose to judge the model later by the actual arrival date, you were treating it as a date prediction. We present forecasts as scenarios for reasoning about possible futures, and an arrival date can't tell you which of your beliefs was the odd one out. Setting the output aside because it surprised you throws away exactly the signal the check is designed to give you. Wide error bars are real, but they don't make an inconsistency between your own beliefs go away. (Forecasting Timelines)",
+    "takeaway": "When a forecast built from your own inputs surprises you, the surprise points back at your beliefs, not at the model.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood 'if you're surprised, maybe one of your input beliefs needs updating' would say 'find which of my beliefs is inconsistent' before seeing options.",
+      "cynic_test": "All four options open with the same 'Take the ... as' frame at similar length, and 'model' appears in two distractors but not the key, so a skipper can't lean on stem-word echo; the two 'humble' options (noise, discard) sound as reasonable as the key without the section."
+    },
+    "shard_id": "forecasting-timelines-f",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 122,
+    "distractor_lens": [
+      124,
+      127,
+      122
+    ],
+    "mean_distractor_len": 124.3,
+    "len_ratio": 0.98,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "automation",
+      "arrives"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 140,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

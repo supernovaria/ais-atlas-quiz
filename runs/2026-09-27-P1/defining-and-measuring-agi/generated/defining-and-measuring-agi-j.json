@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/j01",
+    "targets": ["DM-14"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A commentator writes: \"Calling a system a one-year AGI is less impressive than it sounds. It has only been shown to beat experts on year-long tasks, and those are a small share of real work.\" Which objection does the (t,n)-AGI framework best support?",
+    "options": [
+      {"text": "Almost any project divides into sub-tasks of a year or less, so a one-year horizon reaches nearly all real work", "key": true, "provenance": null, "family": null},
+      {"text": "The t is the time the AI itself takes to respond, so a one-year system is slow to answer rather than narrow in scope", "key": false, "provenance": "misreads 'Given a time frame t to complete some cognitive task' as the AI's response latency rather than the time budget given equally to the human expert", "family": "a"},
+      {"text": "The n counts parallel copies of the AI, so a one-year system is really many copies each tackling a short piece of work", "key": false, "provenance": "reverses 'The (t,n)-AGI framework does not account for how many copies of the AI run simultaneously' into n counting AI copies, when n counts human experts", "family": "b"},
+      {"text": "Short horizons already show up as weak memory scores, so a one-year label mostly restates the system's generality", "key": false, "provenance": "misreads 'Task time horizon limitations are implicitly captured in our generality measure' as making the t label redundant, which does not touch the claim about how much work a year-long horizon covers", "family": "d"}
+    ],
+    "explanation": "A t-AGI beats a human expert who is given the same time t. A one-year horizon is not a niche: most projects can be split into sub-tasks that fit inside a year, which is why we say a one-year AGI would beat humans at basically everything. The commentator treats the horizon as a narrow task category when it is a ceiling that covers everything shorter. If you read t as the AI's response time, note that the clock belongs to the task, and the human expert gets the same clock. And n counts human experts working together; the framework deliberately does not count how many copies of the AI run at once. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "A t-AGI horizon is a ceiling, not a category: long horizons subsume shorter work because projects decompose.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood (t,n)-AGI would say long horizons subsume shorter work because projects decompose into sub-tasks, which is the section's stated reason.",
+      "cynic_test": "A skipper might pick the copies option because parallelism sounds technical, but it contradicts the framework's explicit exclusion of copies; all four options share the 'X, so Y' shape and similar length, so there is no length or hedge tell."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/j02",
+    "targets": ["DM-15"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "A reviewer argues: \"The capability and generality axes are blind to time horizon. A system can look broadly expert-level on them while failing every project that takes several days, so horizon needs its own separate scale.\" Which response does the framework support best?",
+    "options": [
+      {"text": "A short horizon shows up as low scores on long-term memory storage and retrieval, which lowers measured generality", "key": true, "provenance": null, "family": null},
+      {"text": "A short horizon shows up as low scores on reasoning and mathematics, the domains that long projects stress most", "key": false, "provenance": "files the horizon limit under the wrong domains; 'Systems scoring poorly on memory naturally fail on multi-day projects' locates it in memory, not reasoning or maths", "family": "d"},
+      {"text": "Horizon is a deployment property like autonomy, so neither framework should count it toward whether a system is AGI", "key": false, "provenance": "misreads 'Our working definition does not include the autonomy with which an AGI system operates' as covering time horizon, conflating a capability limit with a deployment choice", "family": "a"},
+      {"text": "The t in (t,n) tracks response speed, which the CHC speed domain scores, so the two axes cover it already", "key": false, "provenance": "misreads 'Given a time frame t' as the AI's latency and maps it onto the Speed domain, instead of the time budget for a task", "family": "a"}
+    ],
+    "explanation": "The reviewer is right that horizon matters but wrong that the axes miss it. Time horizon limitations are implicitly captured in the generality measure as weakness in specific domains, chiefly long-term memory storage and retrieval: a system that cannot retain and recall context fails multi-day projects and scores poorly on those domains. So the two frameworks describe the same deficit from different angles. If you picked reasoning and mathematics, you placed the weakness in the domain that feels hardest, but multi-day failure comes from losing context, not from failing individual inferences. Horizon is also not like autonomy: autonomy is a choice about how a system is deployed, while a short horizon is something the system cannot do. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Short task horizons are not invisible to the two axes; they appear as low scores in the memory domains.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the link between the frameworks would say horizon limits surface as weak long-term memory scores inside generality.",
+      "cynic_test": "Key and top distractor share an identical frame and differ only in the domain named, so test-taking instinct cannot separate them; the reasoning/maths option is the tempting guess because long projects feel like hard thinking."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/j03",
+    "targets": ["DM-2"],
+    "lens": "objection",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A launch post claims System A is \"more general than System B, because A handles all ten cognitive domains while B handles only four.\" On testing, A reaches expert level on two domains; B reaches expert level on all four it handles. Which assessment of the claim is best supported?",
+    "options": [
+      {"text": "Generality counts only domains reached at expert level, so B is the more general system despite attempting fewer", "key": true, "provenance": null, "family": null},
+      {"text": "Generality is an average across the ten domains, so both systems' mean percentiles must be compared before judging", "key": false, "provenance": "misreads 'outperform 85% of humans in 30% of cognitive domains' as one averaged score rather than two separate numbers, one per axis", "family": "a"},
+      {"text": "B's expert-level depth on four domains raises its capability, but A's wider coverage still gives it greater generality", "key": false, "provenance": "misreads 'one model handling writing, math, coding, and visual understanding represents unprecedented breadth' as breadth-of-coverage, missing that a domain only counts at expert-level capability", "family": "b"},
+      {"text": "Neither system has meaningful generality yet: both fall well short of the AGI threshold on most of the ten domains", "key": false, "provenance": "misreads the AGI threshold definition as a precondition for having any generality, against 'AGI exists on a continuous spectrum' and early systems being 'genuine general intelligence - just early-stage'", "family": "c"}
+    ],
+    "explanation": "Generality is the share of cognitive domains where a system reaches expert level. A counts on two of ten (20%); B counts on four (40%), so B is more general even though A attempts more. The launch post measures how many domains a system can produce output in, which is coverage, not generality. If you picked the capability-versus-coverage option, you split depth and breadth correctly but mislabelled breadth: domains a system handles below expert level add nothing to its generality. Generality is also not an average of percentiles, since that would blur the two axes into one number. And a system short of the AGI threshold still has a generality score; the thresholds are overlays on a continuum. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Breadth counts only where a system is expert; attempting a domain badly adds nothing to generality.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows generality is the percentage of domains at expert level would compute 2/10 vs 4/10 and conclude B is more general.",
+      "cynic_test": "A skipper would likely pick the capability-versus-coverage option because it sounds balanced and uses both axes, but it counts attempted domains as breadth; 'expert' appears in two options and all four share length and register."
+    }
+  },
+  {"note": "DM-14 and DM-15 are a discrimination_pairs entry; I wrote them as separate objection candidates rather than one spanning contrast, because the objection lens gives each a distinct wild claim (horizon scope for DM-14, horizon blindness for DM-15). j01's weakest distractor (memory-restates-generality) touches DM-15 as a wrong-slot option. The counts in j03's stem (two and four of ten domains) are givens, not recalled thresholds, and no volatile figure is used."}
+]

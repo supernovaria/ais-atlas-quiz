@@ -1,0 +1,82 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/a02",
+    "targets": [
+      "FT-3"
+    ],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Suppose compute-based scaling laws keep holding, so capability rises predictably as effective compute grows. Forecasts of when full automation of cognitive labour arrives can still differ by decades. Where does most of that remaining spread come from?",
+    "options": [
+      {
+        "text": "Uncertainty about how much compute is needed at all, where plausible reference points sit orders of magnitude apart",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Uncertainty about the brain's own compute, where noisy measurements blur what would otherwise be a narrow target",
+        "key": false,
+        "provenance": "misreads the biological-anchors paragraph as attributing the spread to measurement error, when it says the estimates 'vary dramatically depending on the biological process used as a reference'",
+        "family": "a"
+      },
+      {
+        "text": "Uncertainty about how many chips will exist, where supply projections for the next decade disagree by over tenfold",
+        "key": false,
+        "provenance": "right idea, wrong slot: offers 'projections of available chips range by a factor of 20x', a real but far smaller uncertainty, as the main source, missing 'we still don't know how much compute TAI will actually require'",
+        "family": "d"
+      }
+    ],
+    "explanation": "Granting the scaling laws tells you how capability rises with compute. It does not tell you how much compute is enough, and that threshold is the dominant unknown: biological-anchor estimates of it span about twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion dollars. The width comes from which process you take as the reference, a human lifetime of learning or all of evolution. So the noisy-measurement option gets the cause wrong: measuring the brain more precisely would not close the gap, because the gap is a choice of reference, not a blurry reading. Chip supply is a genuine uncertainty too (projections varied by around 20x as of the 2025 edition), but twentyfold is tiny beside a trillionfold. (Forecasting Timelines)",
+    "takeaway": "Even if scaling laws hold, nobody knows how much compute is enough, and that unknown dwarfs every other source of spread.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": "Three options: the plausible remaining sources are the required-compute threshold, brain-measurement noise and supply-side spread. Other candidates either contradict the stem's premise (scaling laws failing) or are arguably true co-causes (compounding growth-rate error), which would create a second defensible key.",
+    "load_bearing_figures": [
+      "biological anchors span ~twelve orders of magnitude (durable V2.2; spends this section's R11 budget). The chip-projection spread (20x, volatile V1.3) is paraphrased as 'over tenfold' in a distractor, but it does not decide the answer: any plausible refreshed value is still tiny beside twelve orders of magnitude."
+    ],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'even if we assume compute-based scaling laws hold, we still don't know how much compute TAI will actually require' names the unknown compute requirement unaided.",
+      "cynic_test": "All three options share the 'Uncertainty about X, where Y' frame at similar length, and 'compute' appears in two options, so there is no word-match tell; a skipper might go for 'brain's own compute' because it sounds most scientific, and only knowing that the spread comes from the choice of reference rules it out."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 115,
+    "distractor_lens": [
+      112,
+      114
+    ],
+    "mean_distractor_len": 113,
+    "len_ratio": 1.02,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.03,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 3,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

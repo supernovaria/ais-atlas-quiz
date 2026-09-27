@@ -1,0 +1,81 @@
+[
+  {
+    "id": "forecasting-timelines/opus/e01",
+    "targets": ["FT-6"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "An analyst argues: \"AI systems today automate only a thin slice of work and earn little compared with what their training costs, so the returns cannot sustain continued scaling.\" Which objection has the most support in how compute, automation and productivity interact?",
+    "options": [
+      {"text": "Small early returns are what the loop predicts; value grows as bigger compute budgets automate more tasks, and that value buys more compute", "key": true, "provenance": null, "family": null},
+      {"text": "The loop runs independently of these returns, because it closes once AI systems do the research that makes the next round of compute cheaper", "key": false, "provenance": "conflates the productivity-funds-compute loop ('compute enabling automation, which increases productivity, which funds more compute') with the automation-of-R&D loop introduced separately in takeoff", "family": "a"},
+      {"text": "The returns are front-loaded: the easiest tasks are automated first and deliver most of the value before compute budgets grow much", "key": false, "provenance": "reverses 'Initially, only a small fraction of tasks are automated, so running AI systems creates relatively little economic value'", "family": "b"},
+      {"text": "Analysis shows city-scale training runs are physically achievable, so feasibility rather than returns is what bounds further scaling", "key": false, "provenance": "misreads 'analysis suggests that they aren't impossible' as settling the matter, dropping 'The question is whether the economic incentives justify it'", "family": "d"}
+    ],
+    "explanation": "The analyst's premise is true and is exactly what the feedback loop expects. At first only a small fraction of tasks is automated, so AI creates relatively little value; as effective compute grows, the range of automated tasks widens, productivity rises, and that productivity funds more compute, looping until labour is fully automated. Thin returns today are the loop's starting point, not evidence against it. If you picked the research-automation answer, you merged this loop with a different one: here the loop closes through productivity paying for compute, not through AI improving itself. The feasibility answer drops our other half of the sentence: city-scale runs being possible leaves open whether the economic incentives justify them, and that is exactly the question the loop answers. (Forecasting Timelines)",
+    "takeaway": "Low early returns are the expected first stage of the compute-automation-productivity loop, not a refutation of it.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who has the loop can say 'little value at first is what the model expects; value then funds compute' without seeing options.",
+      "cynic_test": "A skipper might take the physical-feasibility option because it sounds empirical and confident, but it is the one that misses returns as the binding question; all four are same-length causal claims with no absolutes and no stem word unique to the key."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/e02",
+    "targets": ["FT-9"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Two researchers respond to the data wall. One says synthetic data makes it irrelevant, since models can generate their own training text; the other says self-play does, since AlphaZero needed no human games. Which objection applies to both claims?",
+    "options": [
+      {"text": "Each route holds only under its own condition: one needs outputs of high enough quality, the other needs tasks formalised with explicit rewards", "key": true, "provenance": null, "family": null},
+      {"text": "Each route only multiplies the existing stock by a bounded factor, as encoding images and video does, rather than getting around the limit", "key": false, "provenance": "conflates synthetic data and self-play with the multimodal route, the one the Training Data subsection frames as a bounded 3-10x multiplier", "family": "a"},
+      {"text": "Each route still needs human-written examples to start from, so at best it postpones the wall rather than removing the constraint", "key": false, "provenance": "carries in the model-collapse prior against 'AIs can learn without human-generated pretraining examples' in the task-based learning bullet", "family": "c"},
+      {"text": "Each route is still speculative and untested at scale, so neither can yet be counted as evidence that the wall can be avoided", "key": false, "provenance": "extends 'This is still very speculative' from the self-play bullet to synthetic data, against 'Post-training methods like reinforcement learning on reasoning tasks already demonstrate this works for some domains'", "family": "b"}
+    ],
+    "explanation": "Both researchers name a real escape route but drop its condition. Synthetic data removes the constraint only if the outputs are high enough quality; self-play lets systems learn without human examples only where tasks can be formalised as games with explicit rules, rewards and tractable state spaces, as Go and chess can. AlphaZero shows the second route works, not that it generalises to arbitrary tasks. If you chose the 'speculative and untested' objection, you applied self-play's caveat to synthetic data too: reinforcement learning on reasoning tasks already shows synthetic data working in some domains. The bounded-multiplier objection belongs to the third route, multimodal data, which is why that route alone cannot remove the wall. Whether data constrains scaling depends on how well each condition holds. (Forecasting Timelines → Training Data)",
+    "takeaway": "Every escape from the data wall is conditional, and each has a different condition.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the routes would say 'synthetic needs quality, self-play needs formalisable tasks with rewards' unprompted.",
+      "cynic_test": "A skipper might favour the cautious 'still speculative' option as the safe hedge, but the text contradicts it for synthetic data; all options share the 'Each route' frame so grammar and the stem words 'synthetic'/'self-play' (absent from every option) give nothing away."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/e03",
+    "targets": ["FT-1"],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "Picture two worlds that are identical except that transformative AI arrives ten years from now in one and fifty years from now in the other. A safety lead says the right research portfolio is the same in both, and only the pace should differ. Which response has the most support?",
+    "options": [
+      {"text": "The short world rules out slow theoretical work in favour of methods that run on current systems and scale; the long world keeps it open", "key": true, "provenance": null, "family": null},
+      {"text": "The long world is where methods proven on current systems pay off most, while the short world is better spent on fundamental theory", "key": false, "provenance": "reverses the pairing in the opening paragraph, where 'breathing room for fundamental alignment research' belongs to the later arrival and 'approaches that work with current systems' to the earlier one", "family": "b"},
+      {"text": "Forecasts this uncertain can set how urgent the work is, but they cannot tell anyone which kinds of safety research to prioritise", "key": false, "provenance": "turns 'All forecasts come with wide error margins' into a reason timelines cannot guide strategy, against the bold lead 'Predicting when AI automates cognitive labor determines which safety strategies are viable'", "family": "c"},
+      {"text": "The short world leaves governance frameworks as the main lever, since technical alignment work cannot mature within ten years", "key": false, "provenance": "moves 'building robust governance frameworks' from the long-timeline list of what breathing room allows into the short-timeline case", "family": "b"}
+    ],
+    "explanation": "Timeline length changes what is worth doing, not just how fast to do it. With ten years there is no time for slow theoretical research, so the work has to be approaches that function on today's systems and scale quickly. With fifty there is room for fundamental alignment research, robust governance frameworks and evaluation methods we can trust. If you picked the reversed pairing, notice that theory is the long-horizon bet because it pays off late. The 'uncertain forecasts only set urgency' answer is a common prior: the error bars are real, but the difference between ten and fifty years is exactly what decides which strategies are viable. Governance appears on the long-timeline list, because building robust frameworks is itself slow work. (Forecasting Timelines)",
+    "takeaway": "Timeline length decides which safety strategies are viable, not only how urgently to pursue them.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader could say 'short timelines force work that runs on current systems; long ones allow fundamental theory' without options.",
+      "cynic_test": "The reversed-pairing distractor mirrors the key's structure exactly, so a skipper cannot pick on shape; the 10-vs-50-year framing is the section's own durable contrast rather than the volatile 2030/2050 dates, and no option carries an absolute."
+    }
+  },
+  {"note": "Shard forecasting-timelines-e: one objection-lens candidate per idea (FT-6, FT-9, FT-1), all L5, stem formats claim-evaluation / two-scenario / thought-experiment. No bridge candidate. FT-6 deliberately avoids testing the investment-vs-automation loop distinction (owned by takeoff) as the key; the takeoff R&D loop appears only as a conflation distractor. FT-1 uses '10 vs 50 years' rather than the volatile 2030/2050 dates. e02 distractor 2 (needs human examples) is a family-c prior not stated in the text; the critic may judge its provenance thin."}
+]

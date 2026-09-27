@@ -1,0 +1,83 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/g01",
+    "targets": ["DM-5"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A colleague proposes defining AGI as \"an AI that outperforms humans at most economically valuable work.\" Measured against a working definition built for tracking progress, what is the main shortcoming of that phrasing?",
+    "options": [
+      {"text": "It leaves open which humans are the bar and what work counts; the working definition fixes expert parity on most domains", "key": true, "provenance": null, "family": null},
+      {"text": "It sets the bar too low: AGI means exceeding the best humans, not merely outperforming typical workers at most jobs", "key": false, "provenance": "misreads the AGI definition ('expert-level performance (80-90th percentile) across most cognitive domains') as the ASI definition ('superhuman capability (>100%, greatly exceeding all humans)')", "family": "a"},
+      {"text": "It sets the bar too high: exceptional skill on a few critical domains, such as ML research, already counts as AGI", "key": false, "provenance": "misreads the TAI definition's OR-clause ('exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)') as a route to AGI", "family": "a"},
+      {"text": "It leaves out autonomy, which the working definition counts as part of AGI alongside expert-level breadth and depth", "key": false, "provenance": "reverses 'Our working definition does not include the autonomy with which an AGI system operates', perhaps carrying in the 'highly autonomous systems' charter wording quoted in Case Studies", "family": "b"}
+    ],
+    "explanation": "Our working definition pins AGI to a cognitive profile: expert-level performance, roughly the 80th to 90th percentile of humans, across most cognitive domains. The colleague's phrasing points in the right direction, since it is about what systems can do, but it never says whether \"humans\" means top experts or average workers, or whether \"valuable work\" means today's jobs or future ones, so it cannot track progress. The bar-too-high option imports the TAI definition, where exceptional depth on a few critical domains can be transformative without being general. The bar-too-low option describes ASI, which exceeds all humans. And autonomy is deliberately left out of the AGI definition as a deployment matter. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is pinned to a cognitive profile, expert parity across most domains, which is exactly what vaguer economic definitions leave unspecified.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the section can say the economic phrasing is vague about the human benchmark and scope, whereas the working definition specifies expert parity across most cognitive domains.",
+      "cynic_test": "A skipper might pick 'sets the bar too low' because AGI sounds grander than beating typical workers, or pick autonomy because the familiar lab wording includes it; the two options are paired (both 'bar' claims, both 'leaves' claims) and have matched lengths, so neither structure nor length points to the key."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/g02",
+    "targets": ["DM-6", "DM-5"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Two systems are evaluated on the same set of cognitive domains. System P performs at roughly expert level on most of them. System Q far outperforms every human at ML research and coding but is weak on most other domains. How do the AGI and TAI definitions classify them?",
+    "options": [
+      {"text": "P fits AGI; Q can count as TAI without counting as AGI, because TAI turns on potential impact rather than breadth", "key": true, "provenance": null, "family": null},
+      {"text": "P fits AGI; Q is neither, because transformative impact is a later stage that requires expert-level breadth first", "key": false, "provenance": "misreads TAI as a point further along the same scale as AGI, missing the OR-clause 'exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)'", "family": "c"},
+      {"text": "P and Q both count as AGI and as TAI, because the two terms name the same region of the capability-generality map", "key": false, "provenance": "misreads the adjacent AGI and TAI definition boxes as synonyms, missing 'TAI is defined by impact potential rather than cognitive architecture'", "family": "a"},
+      {"text": "Q is closer to AGI than P, because superhuman skill in critical areas outranks expert parity across the board", "key": false, "provenance": "misreads the capability spectrum ('from basic competence to superhuman capability on a single task') as progress toward AGI, missing that depth alone 'counts as artificial narrow intelligence'", "family": "a"}
+    ],
+    "explanation": "AGI is defined by cognitive profile, expert-level performance across most cognitive domains, so P fits it and Q does not. TAI is defined by impact potential, and its definition explicitly admits two shapes: moderate capability across many economically important domains, or exceptional capability on a critical minority such as automated ML R&D. Q has the second shape, so it can be transformative without being general. The \"Q is neither\" option treats TAI as a milestone beyond AGI on one scale, when it describes systems along a different dimension, by what they could do to the world. The \"Q is closer to AGI\" option trades breadth for depth, but superhuman depth on a few domains is still narrow. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is a breadth claim and TAI an impact claim, so a deep-but-narrow system can be transformative without being general.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'AGI = broad expert parity, TAI = impact, with an explicit narrow-but-exceptional route' will classify P as AGI and Q as possibly TAI but not AGI before seeing options.",
+      "cynic_test": "A skipper would lean on the intuition that transformative must mean more advanced than AGI and pick 'Q is neither'; profiles are given as qualitative bands so no recalled percentile decides it, and stem words like 'domains' and 'every human' were kept out of the options to avoid a word-match tell."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/g03",
+    "targets": ["DM-7"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A lab takes one model and ships it in two products: in one it only offers suggestions that a person accepts or rejects; in the other it carries out tasks end to end with minimal oversight. What does the choice between these deployments change?",
+    "options": [
+      {"text": "The risk exposure: the same underlying capability is given more room to act, so its mistakes can travel further", "key": true, "provenance": null, "family": null},
+      {"text": "The capability: acting without oversight draws on more of the model's skills than offering suggestions does", "key": false, "provenance": "misreads the autonomy levels as a continuation of the capability curves ('Just like we had continuous curves for capability and generality'), against 'Autonomy describes how AI systems interact with humans, not what they can do'", "family": "a"},
+      {"text": "The inherent danger: confining it to suggestions reduces what the model is able to do, not only what it may do", "key": false, "provenance": "misreads 'A capable system deployed as a tool (Level 1) might be safer' as a change in the system itself, against 'Autonomy level affects risk exposure, not inherent danger' and 'the underlying capability is identical'", "family": "b"},
+      {"text": "The classification: working with minimal oversight is part of what the working definition of AGI requires", "key": false, "provenance": "carries in the 'highly autonomous systems' charter framing quoted in Case Studies, against 'Our working definition does not include the autonomy with which an AGI system operates'", "family": "c"}
+    ],
+    "explanation": "Autonomy describes how a system interacts with people, not what it can do. The weights are the same in both products, so capability is identical; what changes is how far the system's actions run before a human can catch them, which is its risk exposure. The tempting error is the inherent-danger option: the suggestion-only product may well be safer, but not because confining the model shrinks its abilities. Give the same model more room and the same danger is back. Nor does autonomy raise capability, although enough capability is a prerequisite for the higher levels. And our working definition of AGI deliberately leaves autonomy out, treating it as a deployment choice. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Autonomy changes how exposed we are to a system's capability, not the capability or the danger inherent in it.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood that autonomy is a deployment axis will say only risk exposure changes, because it is one model with identical capability.",
+      "cynic_test": "A skipper would likely pick 'inherent danger' because restricting an AI intuitively feels like making it less dangerous; the key and that distractor each use one half of the same contrast ('risk exposure' vs 'inherent danger'), so matching phrases from the text gives no advantage, and all four options share the 'The X:' frame at matched length."
+    }
+  },
+  {
+    "note": "Contrast lens reached all three ideas. g02 spans the DM-5/DM-6 discrimination pair (AGI vs TAI) and is primarily a DM-6 item. g01 still targets DM-5 separately, contrasting AGI with ASI and with a TAI hybrid, so each idea has one candidate. g03 contrasts DM-7 (autonomy) with its capability pair member DM-1. No load-bearing figures; threshold digits appear only in explanations."
+  }
+]

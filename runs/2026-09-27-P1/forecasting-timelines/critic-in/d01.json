@@ -1,0 +1,93 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/d01",
+    "targets": [
+      "FT-2"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You give a simple forecasting model four beliefs: investment grows 5x a year, software efficiency 3x a year, hardware 15% a year, and each tenfold rise in compute automates at least a tenth of tasks. It returns full automation far sooner than you had expected. What is the most useful thing to conclude?",
+    "options": [
+      {
+        "text": "Your input beliefs and your expected timeline are inconsistent, so at least one of them has to be revised",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The model's structure is at fault, because a sound forecast should not contradict a well-informed prior view",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into surprise indicting the model rather than the inputs you supplied",
+        "family": "b"
+      },
+      {
+        "text": "The output is a date estimate to be checked against expert surveys, and kept only if it falls inside their range",
+        "key": false,
+        "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason'",
+        "family": "c"
+      },
+      {
+        "text": "The result carries little weight, because inputs this uncertain compound into error bars too wide to act on",
+        "key": false,
+        "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the consistency check survives the uncertainty",
+        "family": "a"
+      }
+    ],
+    "explanation": "The model only works out what your own four beliefs jointly imply. If that implication clashes with the future you expected, you are holding a contradiction: some input, or the expectation itself, has to give. That is the use we recommend for forecasts — checking whether your beliefs cohere, not reading off a date. The error-bars option is the tempting one: forecasts really are very uncertain, but the uncertainty is in the inputs, and the check still tells you which of your inputs are doing the work. Blaming the model reverses the logic, since the surprising output came from assumptions you supplied. Treating the output as a date to validate against surveys is exactly the prediction reading we warn against. (Forecasting Timelines)",
+    "takeaway": "A surprising forecast is a signal about your own inputs, not a verdict to accept or a model to discard.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'check if your beliefs are internally coherent' would say 'one of my assumptions or my expectation is wrong' unprompted.",
+      "cynic_test": "A skipper would lean to the error-bars option because humility sounds right; it fails because the question asks what the run is useful for, and the key keeps the same hedge-free register with no length or absolute tell."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 105,
+    "distractor_lens": [
+      108,
+      112,
+      107
+    ],
+    "mean_distractor_len": 109,
+    "len_ratio": 0.96,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 2,
+    "max_over_min": 1.07,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "model",
+      "beliefs",
+      "least",
+      "expected"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 122,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

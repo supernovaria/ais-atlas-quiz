@@ -1,0 +1,88 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/h01",
+    "targets": [
+      "FT-8"
+    ],
+    "lens": "case",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose a lab plans its next pre-training run at its usual growth rate and finds that the run would need more high-quality text than the whole indexed web contains, even after removing duplicates. Which consequence follows for that lab?",
+    "options": [
+      {
+        "text": "Growing the run now depends on data sources other than web text, and on how well they can substitute for it",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Growing the run is no longer possible, because a model cannot keep improving once it has trained on all the text there is",
+        "key": false,
+        "provenance": "conflates the data wall with its consequence, against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'",
+        "family": "a"
+      },
+      {
+        "text": "Growing the run is delayed only briefly, because new text is published online fast enough to refill the stock in a few years",
+        "key": false,
+        "provenance": "the pre-chapter prior that the internet is effectively unlimited, which the Training Data subsection overturns with the indexed-web vs. training-set comparison and 'we'll hit that wall'",
+        "family": "c"
+      },
+      {
+        "text": "Growing the run can continue on text alone, because extra effective compute makes up for the tokens the web cannot supply",
+        "key": false,
+        "provenance": "misfiles data under Effective Compute, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'",
+        "family": "a"
+      }
+    ],
+    "explanation": "High-quality public text is a finite stock, and demand for it has been growing several-fold per year (about 4x per year in the 2025 edition's trend), so a run that outgrows the stock has hit a wall on that one resource. Hitting that wall does not end scaling. It means further growth rests on the escape routes (multimodal data, synthetic data, self-play), and on whether they work. If you picked 'no longer possible', you treated the wall as if it were its consequence. The 'new text refills the stock' option is the common assumption that the web is bottomless: new writing arrives far too slowly to keep pace with that growth. Data is also a separate factor from effective compute. More chips do not create tokens. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall ends text-only scaling, not scaling; what happens next depends on whether the alternatives to human text work.",
+    "stem_format": "thought-experiment",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": "Training Data"
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who understood the subsection would say unprompted that running out of web text shifts scaling onto the escape routes rather than stopping it.",
+      "cynic_test": "A skipper might pick the 'no longer possible' option as the dramatic reading, or the effective-compute one as the most technical-sounding; all four share the 'Growing the run ... because/and' frame, the key is not the longest, and only one option uses an absolute ('all')."
+    },
+    "shard_id": "forecasting-timelines-h",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 107,
+    "distractor_lens": [
+      121,
+      124,
+      121
+    ],
+    "mean_distractor_len": 122,
+    "len_ratio": 0.88,
+    "correct_is_longest": false,
+    "correct_is_shortest": true,
+    "extremum_gap": 14,
+    "max_over_min": 1.16,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 2,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 131,
+    "key_count": 1,
+    "citation_anchor_resolves": true
+  }
+}

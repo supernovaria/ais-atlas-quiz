@@ -1,0 +1,81 @@
+[
+  {
+    "id": "defining-and-measuring-agi/opus/l01",
+    "targets": ["DM-6"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A system performs beyond nearly every human expert at automated ML research and the closely related coding work, and falls well short of expert level at everything else. How do the AGI and TAI definitions classify it?",
+    "options": [
+      {"text": "TAI but not AGI: TAI can be reached through extreme depth in a few critical areas, while AGI needs expert level across most", "key": true, "provenance": null, "family": null},
+      {"text": "Neither: transformative impact is a later stage than AGI, so it cannot arrive before broad expert-level performance does", "key": false, "provenance": "misreads TAI as a point further along the same scale as AGI, missing the OR-clause 'exceptional capability (99th percentile) on critical domains like automated ML R&D (20% of domains)'", "family": "c"},
+      {"text": "AGI but not TAI: its superhuman depth counts as general intelligence, while transformation needs reach across the economy", "key": false, "provenance": "hybrid: reads superhuman single-area capability as generality (against 'Everything along this line ... counts as ANI') and reverses the TAI disjunction into 'low generality cannot be transformative'", "family": "b"},
+      {"text": "Both: AGI and TAI name the same threshold, one described by cognitive profile and the other by its economic effect", "key": false, "provenance": "misreads the adjacent AGI and TAI definition boxes as synonyms, missing 'TAI is defined by impact potential rather than cognitive architecture'", "family": "a"}
+    ],
+    "explanation": "TAI is defined by impact potential rather than cognitive profile, and one of the ways we say it can be reached is exceptional depth on a small set of critical domains such as automated ML research. This system fits that route. AGI is a cognitive-profile definition: expert-level performance across most domains, which this system lacks. The most tempting wrong answer treats TAI as a later rung on the AGI ladder, so impact would have to wait for breadth. That is the ordering many readers bring with them, and the TAI definition deliberately breaks it: a narrow-but-deep system aimed at the right domain could transform the economy while still being ANI on most of the map. Nor are the two terms synonyms. They measure different things and can come apart, as they do here. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "AGI is about breadth of expert-level cognition; TAI is about impact, and extreme depth in the right domain can be enough for it.",
+    "stem_format": "classification",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows TAI is impact-defined with a deep-but-narrow OR-clause, and AGI needs breadth, would say 'TAI, not AGI' unprompted.",
+      "cynic_test": "A skipper might pick 'Neither' on the prior that TAI is the bigger milestone, or 'Both' on the idea that superhuman means advanced; each option names a distinct classification in the same format, and the percentile digits are left out of the stem so recalled numbers cannot decide it."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/l02",
+    "targets": ["DM-7"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two teams deploy the same model weights. One uses it to draft suggestions that a person accepts or rejects; the other lets it carry out multi-step tasks and decide for itself when to check in. What differs between the two setups?",
+    "options": [
+      {"text": "Their risk exposure: capability is identical, but the agent setup leaves more consequential actions without human review", "key": true, "provenance": null, "family": null},
+      {"text": "Their capability level: autonomy is a further step up the same scale, so the agent setup is the more advanced system", "key": false, "provenance": "misreads 'Just like we had continuous curves for capability and generality, we can similarly have an increasing level of autonomy' as autonomy being a continuation of the capability curve, against 'not what they can do'", "family": "a"},
+      {"text": "Their inherent danger: holding the model to suggestions shrinks what it is able to do, so the tool setup is a safer system", "key": false, "provenance": "misreads 'A capable system deployed as a tool (Level 1) might be safer' as a change in the system itself, against 'affects risk exposure, not inherent danger' and 'the underlying capability is identical'", "family": "b"},
+      {"text": "Their AGI status: general intelligence is defined as autonomous operation, so only the agent setup could qualify as AGI", "key": false, "provenance": "carries in the quoted charter wording 'highly autonomous systems', against 'Our working definition does not include the autonomy with which an AGI system operates'", "family": "c"}
+    ],
+    "explanation": "Autonomy describes how a system interacts with humans, not what it can do. The weights are the same, so capability and generality are the same. What changes is how many consequential actions happen before a human sees them, which is risk exposure. The closest wrong answer says the suggestion-only setup is inherently less dangerous. Restricting autonomy does not remove any ability from the model. It changes how much of that ability reaches the world unchecked, which is why we say autonomy affects exposure rather than inherent danger. Treating the agent as the more capable system confuses the two axes. Capability is needed before higher autonomy is possible, but switching autonomy on adds no capability. And our working definition of AGI deliberately leaves autonomy out, even though some lab definitions include it. (Defining and Measuring AGI → Defining General Intelligence)",
+    "takeaway": "Autonomy is a deployment choice layered on a fixed capability: it changes exposure, not what the system can do.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Defining General Intelligence"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader holding 'same capability, different deployment' would answer 'how much risk reaches the world, not what it can do' before seeing options.",
+      "cynic_test": "A skipper would lean to 'inherent danger' because common sense says tools are safer; that option shares the safety direction with the key, so the choice turns on exposure versus inherent danger, which only the section supplies. No level names or numbers appear."
+    }
+  },
+  {
+    "id": "defining-and-measuring-agi/opus/l03",
+    "targets": ["DM-8"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two systems end up equally good at writing convincing, targeted phishing messages. System A got there from a handful of examples; System B needed billions of examples and largely memorised patterns. For safety planning, how should they be compared?",
+    "options": [
+      {"text": "Equal risk from that ability; B's costly route may make it less impressive as an intelligence, not less dangerous", "key": true, "provenance": null, "family": null},
+      {"text": "Less risk from B; an ability bought with data and compute rather than learned efficiently is not genuine intelligence", "key": false, "provenance": "misreads the adaptability view's 'might be less impressive even if both reach the same final capability' as 'less dangerous', against 'the risks exist either way'", "family": "c"},
+      {"text": "More risk from A; efficient skill acquisition is what general intelligence is, and general intelligence is what drives danger", "key": false, "provenance": "conflates the adaptability definition ('the efficiency of acquiring new skills') with the safety-relevant quantity, against 'Did it learn efficiently or through brute force? ... These questions don't change the risk profile'", "family": "a"},
+      {"text": "Equal risk from both; learning efficiency has turned out to say nothing about how intelligent a system really is", "key": false, "provenance": "misreads 'does the learning path matter more than the destination?' as rejecting the adaptability view, against 'We acknowledge and incorporate the adaptability focused view's point about efficient learning but prioritize final capabilities'", "family": "b"}
+    ],
+    "explanation": "For safety, what a system can observably do matters more than how it got there. Both systems can produce the same harmful output, so the risk from that ability is the same. This does not mean the adaptability view is wrong, which is where the second 'equal risk' option goes astray. We accept that learning efficiently from few examples says something real about intelligence, and B may well be the less impressive system. We simply rank final capability higher for safety. The option that rates B as less risky makes the common move from 'less impressive' to 'less dangerous'. A phishing message works the same way whether the skill behind it was learned elegantly or memorised by brute force. (Defining and Measuring AGI → Case Studies)",
+    "takeaway": "Learning efficiency can bear on how intelligent a system is without bearing on how dangerous its abilities are.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Defining and Measuring AGI", "subheading": "Case Studies"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'the risks exist either way' plus 'acknowledge but prioritise final capabilities' would say 'same risk, though B is less impressive'.",
+      "cynic_test": "A skipper might spot that two options say 'equal risk' and guess between them, but the choice then depends on whether the adaptability view is rejected or merely deprioritised, which only the section settles; the one absolute ('nothing') sits on a position people genuinely assert."
+    }
+  },
+  {"note": "No discrimination_pairs entry links two ideas in this shard (DM-6 pairs with DM-5, DM-7 with DM-1, DM-8 with DM-9), so each candidate contrasts its idea with its out-of-shard partner. l01 uses qualitative bands, so no durable threshold figure is load-bearing and the R11 budget is left unspent. l02's inherent-danger distractor shares the safety direction with the key on purpose: the discrimination is exposure versus inherent danger."}
+]

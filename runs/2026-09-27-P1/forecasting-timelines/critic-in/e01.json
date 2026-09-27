@@ -1,0 +1,94 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/e01",
+    "targets": [
+      "FT-6"
+    ],
+    "lens": "objection",
+    "level_claimed": "L5",
+    "bridge_from": null,
+    "stem": "An analyst argues: \"AI systems today automate only a thin slice of work and earn little compared with what their training costs, so the returns cannot sustain continued scaling.\" Which objection has the most support in how compute, automation and productivity interact?",
+    "options": [
+      {
+        "text": "Small early returns are what the loop predicts; value grows as bigger compute budgets automate more tasks, and that value buys more compute",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The loop runs independently of these returns, because it closes once AI systems do the research that makes the next round of compute cheaper",
+        "key": false,
+        "provenance": "conflates the productivity-funds-compute loop ('compute enabling automation, which increases productivity, which funds more compute') with the automation-of-R&D loop introduced separately in takeoff",
+        "family": "a"
+      },
+      {
+        "text": "The returns are front-loaded: the easiest tasks are automated first and deliver most of the value before compute budgets grow much",
+        "key": false,
+        "provenance": "reverses 'Initially, only a small fraction of tasks are automated, so running AI systems creates relatively little economic value'",
+        "family": "b"
+      },
+      {
+        "text": "Analysis shows city-scale training runs are physically achievable, so feasibility rather than returns is what bounds further scaling",
+        "key": false,
+        "provenance": "misreads 'analysis suggests that they aren't impossible' as settling the matter, dropping 'The question is whether the economic incentives justify it'",
+        "family": "d"
+      }
+    ],
+    "explanation": "The analyst's premise is true and is exactly what the feedback loop expects. At first only a small fraction of tasks is automated, so AI creates relatively little value; as effective compute grows, the range of automated tasks widens, productivity rises, and that productivity funds more compute, looping until labour is fully automated. Thin returns today are the loop's starting point, not evidence against it. If you picked the research-automation answer, you merged this loop with a different one: here the loop closes through productivity paying for compute, not through AI improving itself. The feasibility answer drops our other half of the sentence: city-scale runs being possible leaves open whether the economic incentives justify them, and that is exactly the question the loop answers. (Forecasting Timelines)",
+    "takeaway": "Low early returns are the expected first stage of the compute-automation-productivity loop, not a refutation of it.",
+    "stem_format": "claim-evaluation",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who has the loop can say 'little value at first is what the model expects; value then funds compute' without seeing options.",
+      "cynic_test": "A skipper might take the physical-feasibility option because it sounds empirical and confident, but it is the one that misses returns as the binding question; all four are same-length causal claims with no absolutes and no stem word unique to the key."
+    },
+    "shard_id": "forecasting-timelines-e",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 139,
+    "distractor_lens": [
+      140,
+      130,
+      132
+    ],
+    "mean_distractor_len": 134,
+    "len_ratio": 1.04,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.08,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        0,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "systems",
+      "automate",
+      "training",
+      "scaling",
+      "most"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

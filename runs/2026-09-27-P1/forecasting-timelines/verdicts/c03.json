@@ -1,0 +1,88 @@
+{
+  "id": "forecasting-timelines/opus/c03",
+  "verdict": "rewrite",
+  "level": "L2",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["R14", "§3.5"],
+  "measurements": {
+    "correct_len": 121,
+    "distractor_lens": [127, 110, 113],
+    "mean_distractor_len": 116.7,
+    "len_ratio": 1.04,
+    "correct_is_longest": false,
+    "correct_is_shortest": false,
+    "extremum_gap": 0,
+    "max_over_min": 1.15,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["safety"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 128,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": true,
+  "reasons": [
+    "R14: stem word 'safety' appears in exactly one option (option 4, 'safety work'); the word-match rule requires it in two or more options or in none. It points at a distractor rather than the key, but the checker flags it and the fix costs nothing.",
+    "§3.5: not L4. §3.5 requires the reader to apply the framework to a case the prose does not walk through, but the stem's 'decade vs fifty years' is the text's own '10 years and 50 years' / 2030-vs-2050 paragraph recast as two groups, and the text states the mapping outright. The key is a near-verbatim paraphrase ('work on current systems and scale fast' vs 'approaches that work with current systems and scale quickly'), so a Ctrl-F on 'current systems' lands on the answering sentence. The reader's task is recognising a pairing the text states, which is L2."
+  ],
+  "preserve": "the two-group stem (a timing-only disagreement), the idea that timeline length changes the portfolio rather than the pace, and all three distractor misconceptions (pairing reversal, same-portfolio-faster, wait-and-see), each of which verified against paragraph 1 of the prose.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/c03",
+    "targets": ["FT-1"],
+    "lens": "case",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two safety research groups agree on everything except timing: the first expects AI able to automate ML research within about a decade, the second in about fifty years. Which difference between their research plans follows from that one disagreement?",
+    "options": [
+      {
+        "text": "The first should concentrate on monitoring and fine-tuning safeguards for today's models; the second can fund long-horizon theory",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "The first should fund long-horizon theory that settles the problem; the second can concentrate on safeguards for today's models",
+        "key": false,
+        "provenance": "reverses the pairing in the 10-vs-50-years paragraph, where 'breathing room for fundamental alignment research' belongs to the long case and 'no time for slow theoretical research' to the short one",
+        "family": "b"
+      },
+      {
+        "text": "Both should split effort the same way between safeguards for today's models and long-horizon theory, the first on a tighter clock",
+        "key": false,
+        "provenance": "misreads 'we need safety solutions working soon' as a change of pace only, missing 'There's no time for slow theoretical research—we need approaches that work with current systems'",
+        "family": "b"
+      },
+      {
+        "text": "The first should begin at once; the second should hold off on most of its work until more capable systems exist to study",
+        "key": false,
+        "provenance": "the wait-and-see prior that a long timeline means nothing needs doing yet, against the bold lead 'Predicting when AI automates cognitive labor determines which safety strategies are viable' and the long case's list of work to do in the breathing room (fundamental alignment research, governance frameworks, evaluation methods)",
+        "family": "c"
+      }
+    ],
+    "explanation": "Timeline length changes which strategies are viable, not only how fast to carry them out. If AI can automate ML research within a decade, slow theoretical programmes may not finish in time, so effort has to go into safeguards that work on current systems and scale with them, such as monitoring and safety fine-tuning. Fifty years buys room for fundamental alignment research, robust governance and evaluation methods we can trust. The 'same split, tighter clock' option is the most tempting misreading: it treats a timeline as a deadline on a fixed plan, when a short timeline takes some projects off the table altogether. The reversed option swaps the pairing; foundational theory is what the long case can afford, not the short one. And a long timeline is room to do that deep work now, not a reason to wait for more capable systems. (Forecasting Timelines)",
+    "takeaway": "A shorter timeline doesn't just speed up the safety agenda; it changes which items can be on it.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in the opening paragraph produces 'short: practical work on current systems; long: room for fundamental theory' unaided, then has to recognise monitoring and fine-tuning safeguards as the current-systems category.",
+      "cynic_test": "'today's models' and 'long-horizon theory' each appear in three options and no option copies the prose's wording, so neither word-matching nor Ctrl-F picks out the key. 'safety' now appears only in the stem. The most tempting wrong option for a reader who skipped the text is 'same split, tighter clock'."
+    },
+    "shard_id": "forecasting-timelines-c",
+    "model": "opus"
+  },
+  "rewrite_changed": ["options[0].text", "options[1].text", "options[1].provenance", "options[2].text", "options[3].text", "options[3].provenance", "explanation", "level_claimed", "self_check"],
+  "reviewer_note": "Check whether 'monitoring and fine-tuning safeguards for today's models' fairly stands in for the prose's 'approaches that work with current systems and scale quickly'. The rewrite drops 'scale', and a reader could argue the long-timeline group should do that work too. Also note that the key stays guessable from common sense (less time means less theory), so FT-1 may cap at L3 however it is dressed up."
+}

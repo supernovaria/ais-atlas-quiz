@@ -1,0 +1,90 @@
+{
+  "candidate": {
+    "id": "forecasting-timelines/opus/d02",
+    "targets": [
+      "FT-3"
+    ],
+    "lens": "figure",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose training compute keeps growing about fivefold a year, as it has recently, and compute-based scaling laws continue to hold. Why would a forecast of when transformative AI arrives still span decades rather than a few years?",
+    "options": [
+      {
+        "text": "Nobody knows how much compute transformative AI requires, and estimates of that threshold differ by many orders of magnitude",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Estimates of the brain's computing power are imprecise, and that measurement noise carries into the required-compute figure",
+        "key": false,
+        "provenance": "misreads the biological-anchors spread as measurement error, where the text attributes it to 'the biological process used as a reference' (lifetime learning vs evolutionary history)",
+        "family": "a"
+      },
+      {
+        "text": "Empirical regularities like these tend to break, so a forecast must allow for them failing at some unknown future scale",
+        "key": false,
+        "provenance": "right idea, wrong slot: imports the empirical-not-physical-law point about scaling, against 'Even if we assume compute-based scaling laws hold, we still don't know how much compute TAI will actually require'",
+        "family": "d"
+      },
+      {
+        "text": "Forecasters disagree mainly about what counts as transformative AI, so each of them is timing a different event",
+        "key": false,
+        "provenance": "pre-chapter prior that timeline disagreement is definitional; misses that the section's named source of spread persists with the TAI definition held fixed",
+        "family": "c"
+      }
+    ],
+    "explanation": "Knowing how fast compute grows tells you nothing about when it crosses a line if you do not know where the line is. Biological-anchor estimates of the compute needed run from about 10^28 FLOP (a human lifetime of learning) to about 10^41 FLOP (evolutionary history): twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion. The measurement-noise option misplaces that spread. It comes from which biological process you take as the reference, and better brain measurements would not settle that choice. The scaling-breaks option describes a real caveat, but the stem assumes the laws hold, and the range stays wide anyway. So 'AGI in 2045' means roughly the 2030s to 2050s, centred on 2045. (Forecasting Timelines)",
+    "takeaway": "A known growth rate still leaves the arrival date open when the target itself is uncertain by orders of magnitude.",
+    "stem_format": "mechanism",
+    "citation": {
+      "section": "Forecasting Timelines",
+      "subheading": null
+    },
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: with the rate and the laws stipulated, a reader who understood the anchors paragraph names the unknown compute threshold as what is left.",
+      "cynic_test": "A skipper might take the scaling-breaks option as the sophisticated caveat; the stem's 'continue to hold' removes it, and the key's 'many orders of magnitude' is matched in specificity by the other three causal claims."
+    },
+    "shard_id": "forecasting-timelines-d",
+    "model": "opus"
+  },
+  "measurements": {
+    "correct_len": 124,
+    "distractor_lens": [
+      123,
+      119,
+      111
+    ],
+    "mean_distractor_len": 117.7,
+    "len_ratio": 1.05,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 1,
+    "max_over_min": 1.12,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {
+      "key": 0,
+      "distractors": [
+        0,
+        1,
+        0
+      ]
+    },
+    "stem_word_singletons": [
+      "forecast"
+    ],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 121,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  }
+}

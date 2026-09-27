@@ -1,0 +1,81 @@
+[
+  {
+    "id": "forecasting-timelines/opus/b01",
+    "targets": ["FT-5"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "Suppose chip designers hit a physical limit: new GPUs stop doing more operations per dollar than old ones. Meanwhile, chip fabs keep expanding and training methods keep improving at their recent pace. What happens to effective compute?",
+    "options": [
+      {"text": "It keeps rising, though more slowly, since more chips and better algorithms still multiply the total", "key": true, "provenance": null, "family": null},
+      {"text": "It stalls, since effective compute is chip count scaled by chip speed and chip speed has stopped rising", "key": false, "provenance": "misreads the Effective Compute subsection as tracking hardware trends (the FT-4/FT-5 pair conflation), against 'compounds much faster than hardware trends alone would suggest'", "family": "c"},
+      {"text": "It stalls after a lag, since software gains need faster new chips before they become usable compute", "key": false, "provenance": "reverses 'You can develop better software to make use of existing hardware' into a coupling between the factors", "family": "b"},
+      {"text": "It keeps rising at its old pace, since the funding loop now pours that money into chips and algorithms", "key": false, "provenance": "right idea, wrong slot: offers the compute-automation-productivity funding loop (Figure 1.38) as the reason effective compute compounds, where the reason is independent multiplication of three factors", "family": "d"}
+    ],
+    "explanation": "Effective compute is the product of chip count, hardware efficiency and software efficiency, and each can improve without the others. If hardware efficiency flatlines while the other two keep their recent pace, the product still grows, just more slowly. The stall answer is the prior we wrote this subsection to dislodge: that AI compute is chip count times chip speed, so it lives or dies with chip progress. The lagged-stall answer reverses our point that better software makes better use of hardware you already have. The funding loop is real, but it is a separate mechanism, and with the two remaining factors fixed at their recent pace, losing a third multiplier has to slow the total. For colour: 2025 estimates put hardware efficiency near 1.35x a year, algorithms near 3x and chip production near 2.3x. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Because the three factors multiply and move independently, one stalled factor slows effective compute but does not stop it.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who knows the factors multiply and improve independently will say unaided that growth continues at a reduced rate.",
+      "cynic_test": "A skipper might pick the odd-one-out direction, so two options say 'rises' and two say 'stalls', and all four carry a parallel since-clause of similar length."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/b02",
+    "targets": ["FT-4"],
+    "lens": "contrast",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Two labs each announce that their compute grew tenfold this year. Lab A bought ten times as many GPUs of the model it already used. Lab B kept its cluster unchanged but adopted training methods that reach the same results with a tenth of the operations. On an effective-compute accounting, how do the two announcements compare?",
+    "options": [
+      {"text": "Both are tenfold gains on that accounting, because algorithms and chip count each multiply the total", "key": true, "provenance": null, "family": null},
+      {"text": "Only Lab A's is a compute gain; Lab B's is algorithmic progress, which is a separate kind of gain", "key": false, "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'", "family": "a"},
+      {"text": "Lab B's is the larger gain, because software gains compound on hardware while chip count only adds", "key": false, "provenance": "hybrid of FT-5's 'compounds' with an additive misreading of 'Software efficiency times Hardware efficiency times Number of chips', treating one factor as additive and another as multiplicative", "family": "b"},
+      {"text": "Lab B's gain counts only once it moves to newer chips, because software needs hardware to pay off", "key": false, "provenance": "reverses FT-5's 'You can develop better software to make use of existing hardware' into a dependence of software gains on new hardware", "family": "b"}
+    ],
+    "explanation": "Effective compute multiplies software efficiency, hardware efficiency and chip count, so a tenfold gain in any one factor is a tenfold gain in the total. Lab A got its gain from chips; Lab B got the same gain from algorithms without building a single new chip. The tempting answer treats algorithmic progress as something separate from compute, which is the everyday sense of 'compute' as hardware you can count, and that is exactly the sense we replace. The option saying Lab B must wait for newer chips reverses our point that each factor improves independently. The option saying chip count 'only adds' misreads the product: all three factors multiply, and none has a privileged role. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "A tenfold algorithmic gain on the same chips is as much an increase in effective compute as ten times the chips.",
+    "stem_format": "two-scenario",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds effective compute as a product of three factors will say both labs gained tenfold.",
+      "cynic_test": "'Both are equal' might look like the safe middle, so two distractors also assert a specific comparison, and the stem's 'effective compute' is kept out of every option so no single option echoes it."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/b03",
+    "targets": ["FT-8"],
+    "lens": "contrast",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "A commentator argues: \"Frontier models will soon have trained on all the high-quality public text there is, so the era of scaling language models is ending.\" Which assessment of this argument holds up best?",
+    "options": [
+      {"text": "The premise is well supported, but the conclusion turns on how well synthetic and self-play data work", "key": true, "provenance": null, "family": null},
+      {"text": "The argument is sound, since pre-training needs human-written text and the stock of it is fixed", "key": false, "provenance": "conflates the data wall with its consequence (the FT-8/FT-9 pair conflation), against 'whether data actually constrains scaling through 2030 depends on how well these alternatives work'", "family": "a"},
+      {"text": "The premise is right but harmless, since images and video can stand in for text with no cap on supply", "key": false, "provenance": "misreads the multimodal escape route ('could 3-10x the effective data supply') as removing the limit, conflating it with the synthetic-data route the text says could remove the constraint", "family": "b"},
+      {"text": "The premise is right but harmless, since growth in effective compute can make up for the missing data", "key": false, "provenance": "misfiles data under Effective Compute, against 'Besides just effective compute, the second overarching factor ... is the amount of available data'", "family": "d"}
+    ],
+    "explanation": "The premise is well founded: at recent growth rates, frontier training runs exhaust the stock of high-quality public text within years (the 2024 projections put it between 2026 and 2032). But the conclusion does not follow. Running out of human text closes one supply rather than ending scaling, and whether data actually binds depends on the escape routes: synthetic data removes the constraint only if its quality holds, and self-play works only where a task has explicit rules and rewards. Calling the argument sound conflates the wall with its consequence. Multimodal data helps, but as a bounded multiplier on supply, not an unlimited one. And more effective compute is no fix: data is a second constraint alongside compute, not an input to it. (Forecasting Timelines → Training Data)",
+    "takeaway": "The data wall is real, but it ends scaling only if the escape routes fail, so the question is conditional rather than settled.",
+    "stem_format": "claim-evaluation",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Training Data"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who separates the wall from the escape routes will say the premise holds but the conclusion depends on the alternatives.",
+      "cynic_test": "The hedged 'it depends' key is a classic tell, so every distractor also concedes or grants the premise, and the one absolute ('no cap') is the multimodal-unlimited belief readers actually hold."
+    }
+  },
+  {"note": "Shard spans the FT-4/FT-5 discrimination pair; I kept one candidate per idea rather than merging, because b01 (one factor stalls: FT-5) and b02 (algorithmic gain vs chip gain: FT-4) exercise different halves of the pair, and each uses the other member's misreadings as its contrast distractors. b02's Lab B scenario resembles the do_not_test 1B-vs-100M illustrative example in shape, but it is an invented comparison and does not ask about the example. FT-8's contrast partner is FT-9; b03 uses FT-9 misreadings as two of its three distractors, which leans into FT-9 territory, so the Curator may want to avoid shipping it next to an FT-9 escape-route question."}
+]

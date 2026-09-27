@@ -1,0 +1,82 @@
+[
+  {
+    "id": "forecasting-timelines/opus/a01",
+    "targets": ["FT-2"],
+    "lens": "misconception",
+    "level_claimed": "L4",
+    "bridge_from": null,
+    "stem": "You feed a compute-based forecasting model your own beliefs: how fast investment grows, how fast algorithms improve, and how many tasks each order of magnitude of compute automates. It outputs full automation decades earlier than you expected. What is the most useful thing to do with that surprise?",
+    "options": [
+      {"text": "Treat it as a sign that one of the inputs you supplied conflicts with the future you expect, and revisit those inputs", "key": true, "provenance": null, "family": null},
+      {"text": "Treat it as a sign that the forecast itself is miscalibrated, and discard its output in favour of your expectation", "key": false, "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into the claim that surprise shows the forecast is wrong and should be thrown out", "family": "b"},
+      {"text": "Treat it as the best available estimate of the arrival date, and shift your own expected date to line up with it", "key": false, "provenance": "misreads the section's quantitative projections as the product, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason about different potential futures'", "family": "c"},
+      {"text": "Treat it as noise within the forecast's wide error bars, and give it no weight in judging which future to expect", "key": false, "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the coherence check ('They let you check if your beliefs are internally coherent') survives the uncertainty", "family": "a"}
+    ],
+    "explanation": "A forecasting model takes beliefs you already hold (how fast investment grows, how fast algorithms improve, how much each order of magnitude of compute automates) and works out what they jointly imply. When that implication surprises you, the model has shown that your inputs and the future you expect do not fit together, so the inputs are what you revisit. Discarding the output treats the forecast as an independent prediction that got it wrong, when it is a consequence of what you told it. Adopting the output as your new arrival date makes the opposite mistake: it reads a scenario as a prediction. And wide error bars do not empty the exercise, because checking coherence works even when no date can be pinned down. (Forecasting Timelines)",
+    "takeaway": "A surprising forecast points back at your own inputs: it is a coherence check, not a date.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in 'if you're surprised, maybe one of your input beliefs needs updating' can say 'go back and check which of my assumptions is off' with the options covered.",
+      "cynic_test": "A skipper might pick the 'best available estimate' option as the sensible, deferential choice, or the 'discard' option as healthy scepticism; all four share the 'Treat it as ..., and ...' frame with no hedges or absolutes, so only the section's inputs-not-outputs point separates them."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/a02",
+    "targets": ["FT-3"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "Suppose compute-based scaling laws keep holding, so capability rises predictably as effective compute grows. Forecasts of when full automation of cognitive labour arrives can still differ by decades. Where does most of that remaining spread come from?",
+    "options": [
+      {"text": "Uncertainty about how much compute is needed at all, where plausible reference points sit orders of magnitude apart", "key": true, "provenance": null, "family": null},
+      {"text": "Uncertainty about the brain's own compute, where noisy measurements blur what would otherwise be a narrow target", "key": false, "provenance": "misreads the biological-anchors paragraph as attributing the spread to measurement error, when it says the estimates 'vary dramatically depending on the biological process used as a reference'", "family": "a"},
+      {"text": "Uncertainty about how many chips will exist, where supply projections for the next decade disagree by over tenfold", "key": false, "provenance": "right idea, wrong slot: offers 'projections of available chips range by a factor of 20x', a real but far smaller uncertainty, as the main source, missing 'we still don't know how much compute TAI will actually require'", "family": "d"}
+    ],
+    "explanation": "Granting the scaling laws tells you how capability rises with compute. It does not tell you how much compute is enough, and that threshold is the dominant unknown: biological-anchor estimates of it span about twelve orders of magnitude, like not knowing whether something costs a dollar or a trillion dollars. The width comes from which process you take as the reference, a human lifetime of learning or all of evolution. So the noisy-measurement option gets the cause wrong: measuring the brain more precisely would not close the gap, because the gap is a choice of reference, not a blurry reading. Chip supply is a genuine uncertainty too (projections varied by around 20x as of the 2025 edition), but twentyfold is tiny beside a trillionfold. (Forecasting Timelines)",
+    "takeaway": "Even if scaling laws hold, nobody knows how much compute is enough, and that unknown dwarfs every other source of spread.",
+    "stem_format": "mechanism",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": "Three options: the plausible remaining sources are the required-compute threshold, brain-measurement noise and supply-side spread. Other candidates either contradict the stem's premise (scaling laws failing) or are arguably true co-causes (compounding growth-rate error), which would create a second defensible key.",
+    "load_bearing_figures": ["biological anchors span ~twelve orders of magnitude (durable V2.2; spends this section's R11 budget). The chip-projection spread (20x, volatile V1.3) is paraphrased as 'over tenfold' in a distractor, but it does not decide the answer: any plausible refreshed value is still tiny beside twelve orders of magnitude."],
+    "self_check": {
+      "cover_test": "Yes: a reader who absorbed 'even if we assume compute-based scaling laws hold, we still don't know how much compute TAI will actually require' names the unknown compute requirement unaided.",
+      "cynic_test": "All three options share the 'Uncertainty about X, where Y' frame at similar length, and 'compute' appears in two options, so there is no word-match tell; a skipper might go for 'brain's own compute' because it sounds most scientific, and only knowing that the spread comes from the choice of reference rules it out."
+    }
+  },
+  {
+    "id": "forecasting-timelines/opus/a03",
+    "targets": ["FT-4"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "For a year, a lab changes nothing about its hardware: same number of chips, same chip generation, same hours of use. Its researchers find training methods that reach the lab's previous results with a quarter of the operations. How should that year's change be classified?",
+    "options": [
+      {"text": "A fourfold increase in effective compute, as large as the gain from buying four times as many chips", "key": true, "provenance": null, "family": null},
+      {"text": "No increase in compute, because the lab ran the same chips for the same number of hours as before", "key": false, "provenance": "the prior the subsection targets directly: 'compute means more than just counting GPUs ... they're not just talking about running more hardware for longer'", "family": "c"},
+      {"text": "An algorithmic gain that raises capability beside compute, while the lab's compute itself stays flat", "key": false, "provenance": "misreads software efficiency as outside the compute measure, against 'Better algorithms multiply your effective compute without building a single new chip'", "family": "a"},
+      {"text": "A rise in effective compute, but a smaller one than buying four times as many chips would give", "key": false, "provenance": "misreads the equation 'Software efficiency times Hardware efficiency times Number of chips' as hardware setting the total and software only adjusting it, rather than three factors that multiply on equal terms", "family": "b"}
+    ],
+    "explanation": "Effective compute is the product of software efficiency, hardware efficiency and number of chips. A method that reaches the same results with a quarter of the operations therefore multiplies effective compute by four, exactly as quadrupling the chips would. Nothing physical changed, and that is the point: compute here means more than counting GPUs or GPU-hours. The 'same chips, same hours' answer is the intuition this idea exists to replace, because it measures raw operations rather than what those operations achieve. Calling the gain a separate algorithmic driver misfiles software efficiency, which is one of compute's three factors, not a rival to it. And because the factors multiply, a fourfold software gain counts for exactly as much as a fourfold chip gain. (Forecasting Timelines → Effective Compute)",
+    "takeaway": "Better algorithms count as more compute: effective compute multiplies software efficiency, hardware efficiency and chip count.",
+    "stem_format": "classification",
+    "citation": {"section": "Forecasting Timelines", "subheading": "Effective Compute"},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who holds 'effective compute = software x hardware x chips' says 'effective compute went up fourfold, same as four times the chips' with the options covered.",
+      "cynic_test": "A skipper who counts physical resources picks 'no increase, same chips same hours', which sounds like careful accounting; there are no hedges or absolutes, 'chips' appears in three options, and the fourfold factor is invented (not the text's 10x example), so nothing on the surface points to the key."
+    }
+  },
+  {
+    "note": "FT-2 and FT-3 form a discrimination pair, but under the misconception lens I wrote them separately, each starting from its own misconception entry (a01: surprise means discard the model; a02: the spread comes from brain-measurement noise). This leaves the pair's own conflation ('error bars that wide make forecasts worthless') to a contrast shard, and it appears here only as a01's family-(a) distractor. a02 is at 3 options (reason given) and spends the section's R11 budget on the twelve-orders-of-magnitude width; if another shard also spends it, the Curator should pick one."
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "id": "forecasting-timelines/opus/a01",
+  "verdict": "rewrite",
+  "level": "L2",
+  "level_claimed_by_generator": "L4",
+  "failed_criteria": ["§3"],
+  "measurements": {
+    "correct_len": 117,
+    "distractor_lens": [114, 112, 112],
+    "mean_distractor_len": 112.7,
+    "len_ratio": 1.04,
+    "correct_is_longest": true,
+    "correct_is_shortest": false,
+    "extremum_gap": 3,
+    "max_over_min": 1.04,
+    "r5_matches": [],
+    "r5_loose_matches": [],
+    "mentions_chapter": false,
+    "absolute_count_key": 0,
+    "absolute_count_distractors": 0,
+    "hedge_counts": {"key": 0, "distractors": [0, 0, 0]},
+    "stem_word_singletons": ["expected"],
+    "option_count": 4,
+    "has_explanation": true,
+    "explanation_words": 126,
+    "key_count": 1,
+    "citation_anchor_resolves": null
+  },
+  "provenance_verified": [null, true, true, true],
+  "families_present": ["a", "b", "c"],
+  "explanation_true_standalone": true,
+  "answerable_from_text_alone": true,
+  "reasons": [
+    "§3: the generator claims L4 (applying the idea to a new case), but the stem's case is the section's own worked example. The three inputs listed (investment growth, algorithmic progress, tasks automated per order of magnitude) and the output-surprises-you setup are taken from the intro paragraph 'If you think investment grows 5x per year AND ... If you're surprised, maybe one of your input beliefs needs updating', and the key paraphrases that last sentence. A reader who searches the page for 'surprise' lands on the answer without understanding it. That makes this recognition of a stated principle (L2), not transfer. The rubric's L4 condition, 'the mapping must not be stated in the prose', fails."
+  ],
+  "preserve": "The idea (a forecast is a check on whether your own beliefs fit together, FT-2) and all three distractors. Each one is a real misreading with a verified source sentence: throwing out the forecast when it surprises you, reading the output as a date prediction, and treating wide error bars as making the forecast useless. The shared 'Treat it as ..., and ...' frame with no hedges also stays.",
+  "rewrite": {
+    "id": "forecasting-timelines/opus/a01",
+    "targets": ["FT-2"],
+    "lens": "misconception",
+    "level_claimed": "L3",
+    "bridge_from": null,
+    "stem": "A safety team's research plan assumes transformative AI is still decades off. One member enters the team's own shared views on investment growth, algorithmic progress and how much each gain in compute automates into a compute-based forecasting model, and it outputs full automation far sooner than the plan allows. What is the most useful thing for the team to do with this result?",
+    "options": [
+      {
+        "text": "Treat it as a sign that an assumption they entered conflicts with the plan's timeline, and revisit those assumptions",
+        "key": true,
+        "provenance": null,
+        "family": null
+      },
+      {
+        "text": "Treat it as a sign that the forecast itself is miscalibrated, and discard its output in favour of the existing plan",
+        "key": false,
+        "provenance": "reverses 'If you're surprised, maybe one of your input beliefs needs updating' into the claim that a clash between output and expectation shows the forecast is wrong and should be thrown out",
+        "family": "b"
+      },
+      {
+        "text": "Treat it as the best available estimate of the arrival date, and redraw the plan to line up with that new date",
+        "key": false,
+        "provenance": "misreads the section's quantitative projections as date predictions, against 'not as concrete predictions of timelines; but instead as scenarios that help you reason about different potential futures'",
+        "family": "c"
+      },
+      {
+        "text": "Treat it as noise within the forecast's wide error bars, and give it no weight in deciding whether the plan holds",
+        "key": false,
+        "provenance": "conflates 'All forecasts come with wide error margins that compound over time' with uselessness, missing that the coherence check ('They let you check if your beliefs are internally coherent') survives the uncertainty",
+        "family": "a"
+      }
+    ],
+    "explanation": "A forecasting model of this kind computes what a set of assumptions jointly implies; it is not an independent prediction of when automation arrives. Here the team's own views on investment, algorithms and automation imply a much earlier date than their plan assumes, so the model has exposed an inconsistency between their assumptions and their plan, and the assumptions are the first thing to re-examine. Discarding the output as miscalibrated misses that it follows from what the team entered. Redrawing the plan around the output makes the opposite mistake: it reads a scenario as a prediction of the arrival date. Wide error bars do not empty the result either, because checking whether beliefs are coherent works even when no date can be pinned down. (Forecasting Timelines)",
+    "takeaway": "A forecast that clashes with your plan points back at your own assumptions: it is a coherence check, not a date.",
+    "stem_format": "thought-experiment",
+    "citation": {"section": "Forecasting Timelines", "subheading": null},
+    "negation": false,
+    "no_shuffle": false,
+    "option_count_reason": null,
+    "load_bearing_figures": [],
+    "self_check": {
+      "cover_test": "Yes: a reader who took in that forecasts check whether your beliefs are coherent, rather than predict a date, can say 'the team's assumptions and its plan don't fit; check the assumptions' with the options covered.",
+      "cynic_test": "The stem no longer uses the section's 'surprised' / 'input beliefs' wording or its own worked example, so a page search does not land on the key. All four options share the 'Treat it as ..., and ...' frame, have no hedges or absolutes, and mention the plan, so none is marked on the surface. A skipper might pick redrawing the plan to defer to the model, or discarding the output as healthy scepticism."
+    },
+    "shard_id": "forecasting-timelines-a",
+    "model": "opus"
+  },
+  "rewrite_changed": ["stem", "options[0].text", "options[1].text", "options[2].text", "options[3].text", "options[1].provenance", "explanation", "takeaway", "self_check", "level_claimed"],
+  "reviewer_note": "The redraw-the-plan distractor (options[2]) could be defended by a careful reader, in both the original and the rewrite. If the team really does hold its inputs, being consistent could mean changing the plan rather than the inputs. The key rests on the section's 'maybe one of your input beliefs needs updating' and on its rejection of reading forecasts as dates, so check that this distinction feels fair rather than like a trick. The checker's 'expected' singleton was not a real giveaway: in the original, forms of 'expect' appeared in three options, and the rewrite drops the word from the stem."
+}
