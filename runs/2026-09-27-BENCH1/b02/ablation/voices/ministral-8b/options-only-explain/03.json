@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/03",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "75a7cb86756318e30b942b0c01a6c43a720a9894c4791e37ebe7ce7457777b3c",
+  "ts": "2026-09-27T17:00:52.579Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Assumes a clear hierarchy between features without addressing why one would be more deliberate than the other.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"Balances both features meaningfully, suggesting a deliberate design choice rather than a simple hierarchy.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"absolute\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Introduces an unintentional flaw claim, which contradicts the premise that features carry meaning.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Flips the relationship between deliberate design and accidental artifacts, creating a clear contradiction with option B.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that align with a balanced, deliberate interpretation of both features while avoiding absolute or contradictory claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 801,
+    "total_tokens": 1093,
+    "completion_tokens": 292,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3109
+}

@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/18",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "05499a74b397d91834a7288bdcc722fc94669c43121c19318513ceffc974c26e",
+  "ts": "2026-09-27T17:20:31.795Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\"codes\": [\"echoes-stem\", \"opposites\"], \"p\": 3, \"note\": \"\"},\n    \"B\": {\"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"grammatical-fit\"], \"p\": 94, \"note\": \"\"},\n    \"C\": {\"codes\": [\"opposites\", \"surprising\"], \"p\": 1, \"note\": \"\"},\n    \"D\": {\"codes\": [\"too-obvious\", \"absolute\", \"echoes-stem\"], \"p\": 2, \"note\": \"\"}\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I went mainly on the explicit contrast between the original single-longest-chain rule and current practice using the mean of three chains.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15838,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 295,
+    "reasoning_output_tokens": 118
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9834
+}

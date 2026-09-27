@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/18",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "5976c5c60ae596d71a8b1b905a173ca0d972271c4105fff32184a00989a7b790",
+  "ts": "2026-09-27T17:03:52.828Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\"codes\": [\"longest\", \"absolute\", \"opposites\"], \"p\": 8, \"note\": \"It makes an unusually sweeping claim that both registers are wholly untrustworthy.\"},\n    \"B\": {\"codes\": [\"too-obvious\", \"echoes-stem\"], \"p\": 12, \"note\": \"It gives the straightforward directional interpretation using the stem's route language.\"},\n    \"C\": {\"codes\": [\"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"surprising\", \"general-knowledge\"], \"p\": 70, \"note\": \"It offers a specialized term and explains a less obvious branching-route function.\"},\n    \"D\": {\"codes\": [\"opposites\", \"denies-question\", \"off-target\"], \"p\": 10, \"note\": \"It treats the pattern as meaningless rather than interpreting it as an intentional signal.\"}\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I favored the option with the specialized textbook-like term, the detailed explanation, and the counterintuitive distinction between a reversed course and a directional message.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15776,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 317,
+    "reasoning_output_tokens": 69
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 11261
+}

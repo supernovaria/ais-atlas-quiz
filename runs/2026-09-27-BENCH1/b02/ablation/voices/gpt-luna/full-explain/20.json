@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/20",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "1898890543477880d7df81a3fc8c678e15a14e86bbe295ef838a14af3967e4cc",
+  "ts": "2026-09-27T17:04:16.960Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"general-knowledge\",\"grammatical-fit\",\"textbook-voice\"],\"p\":65,\"note\":\"It matches the ordinary distinction between whole-structure lean and course-to-course cant.\"},\"B\":{\"codes\":[\"general-knowledge\",\"grammatical-fit\",\"opposites\"],\"p\":25,\"note\":\"The term pairing fits, but its proposed causes seem reversed.\"},\"C\":{\"codes\":[\"opposites\",\"off-target\",\"surprising\"],\"p\":7,\"note\":\"It reverses the usual meanings of lean and cant.\"},\"D\":{\"codes\":[\"too-obvious\",\"denies-question\",\"absolute\"],\"p\":3,\"note\":\"It dismisses the distinction the question is testing.\"}},\"pick\":\"A\",\"strategy\":\"I relied mainly on the standard meaning of lean as whole-structure deviation from vertical and cant as a course-level offset.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15838,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 515,
+    "reasoning_output_tokens": 330
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 13909
+}

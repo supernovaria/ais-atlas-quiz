@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/15",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a22a5ae1a0febda645d2398c311a885882bd3e20f7ea9e0ebf276e3bd72f8647",
+  "ts": "2026-09-27T17:18:26.717Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"hedged\", \"longest\", \"most-detailed\", \"textbook-voice\"],\n      \"p\": 30,\n      \"note\": \"Uses 'gradual threats' and 'dominant, if underappreciated,' which mirrors the claim but introduces some uncertainty.\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"shortest\", \"nuanced-turn\", \"absolute\"],\n      \"p\": 10,\n      \"note\": \"Suggests rockfalls outpace silt film, but the claim is about *gradual* buildup being the leading cause, not relative to sudden violence.\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"surprising\", \"absolute\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"Introduces 'high cant' as a factor, which is unrelated to the claim about silt film and loss.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"opposites\", \"middle-ground\", \"absolute\", \"grammatical-fit\"],\n      \"p\": 55,\n      \"note\": \"Directly contradicts the claim by stating sudden violence is the primary cause, not gradual sediment buildup.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The claim asserts that slow sediment buildup is the *leading cause* of lattice loss, so the correct answer must either support or refute this directly. Option D explicitly denies it by stating sudden violence causes most losses, which aligns with the idea that the claim is unjustified.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 839,
+    "total_tokens": 1203,
+    "completion_tokens": 364,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3972
+}

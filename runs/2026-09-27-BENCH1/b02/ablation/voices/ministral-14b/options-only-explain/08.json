@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/08",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f00e7c45a96d5432086ca52ece15457e4b467e1566a4db4541d19b5095e703d4",
+  "ts": "2026-09-27T16:59:07.251Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"textbook-voice\", \"longest\"],\n      \"p\": 40,\n      \"note\": \"Uses the exact terms 'Tessaly effect' and 'Orne effect' from the question, implying familiarity with the concepts.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"Defines the Orne effect in a way that contradicts the question's phrasing ('experienced reader correctly interpreting').\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\", \"general-knowledge\", \"middle-ground\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"Assumes a simplistic 'self-correct' logic that ignores the complexity of the Orne/Tessaly effects.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"nuanced-turn\", \"denies-question\", \"odd-one-out\"],\n      \"p\": 45,\n      \"note\": \"Claims both scenarios illustrate the *same* phenomenon, which contradicts the question's framing of distinct effects.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Chose **A** because it directly mirrors the question’s terms ('Tessaly effect', 'Orne effect') and provides a plausible, detailed contrast between local/visitor errors, unlike the others.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 786,
+    "total_tokens": 1115,
+    "completion_tokens": 329,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3980
+}

@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/06",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "137476e252eb0e8da8490b3da147e13bf0364de3147b6ee61fbc663741faade2",
+  "ts": "2026-09-27T17:16:57.550Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"denies-question\"],\n      \"p\": 1,\n      \"note\": \"It collapses two explicitly different designs into one broad trend.\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"grammatical-fit\"],\n      \"p\": 2,\n      \"note\": \"It recognizes the cross-sectional versus longitudinal distinction but assigns the named patterns in reverse.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"nuanced-turn\"],\n      \"p\": 96,\n      \"note\": \"It precisely matches the two findings to between-lattice comparison versus within-lattice change over time.\"\n    },\n    \"D\": {\n      \"codes\": [\"off-target\", \"implausible\", \"other\"],\n      \"p\": 1,\n      \"note\": \"It invents a physical mechanism and incorrectly links the two findings.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I relied on the wording that contrasts several lattices with one lattice and controlled comparison with following change over time, plus C's explicit textbook-style distinction.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15926,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 329,
+    "reasoning_output_tokens": 65
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10032
+}

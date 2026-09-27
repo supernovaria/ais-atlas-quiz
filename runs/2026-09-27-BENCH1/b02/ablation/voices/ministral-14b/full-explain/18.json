@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/18",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a5a516f4afd86d5915de78be3d12f93a4f5c1e24b5748ae8fa6edf2eb55b0828",
+  "ts": "2026-09-27T16:59:57.588Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"off-target\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"Introduces an abstract 'concord score' not in the question and uses absolute language ('unreliable', 'neither should be trusted').\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 40,\n      \"note\": \"Directly references the 'west cant' and 'immediately after,' matching the structure of the question's directional focus.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"general-knowledge\", \"echoes-stem\"],\n      \"p\": 35,\n      \"note\": \"Explains the 'reversed course' as a branching signal, aligning with cairn lore and the question’s structure of a 'lone reversed course.'\"\n    },\n    \"D\": {\n      \"codes\": [\"shortest\", \"hedged\", \"implausible\", \"denies-question\"],\n      \"p\": 20,\n      \"note\": \"Assumes the pattern is 'accidental' without evidence, contradicting the question’s implication of intentional design.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question emphasizes the *pattern* of the reversed course and its placement, pointing to a deliberate signal (like a hob) rather than a directional turn or fault.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 799,
+    "total_tokens": 1127,
+    "completion_tokens": 328,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5044
+}

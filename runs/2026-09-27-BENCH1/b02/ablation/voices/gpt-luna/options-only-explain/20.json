@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/20",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "c7a928888f4ec0fce7ebb68d0cd1960cc38becb57f8190c2f02a14cd12c068e2",
+  "ts": "2026-09-27T17:04:32.291Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"general-knowledge\", \"opposites\"],\n      \"p\": 65,\n      \"note\": \"It matches the general distinction between accidental leaning and deliberate canting.\"\n    },\n    \"B\": {\n      \"codes\": [\"surprising\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"It reverses the likely causes and makes frost heave produce the deliberate feature.\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"off-target\", \"implausible\"],\n      \"p\": 5,\n      \"note\": \"It appears to swap the meanings of lean and cant while focusing on measurement.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\"],\n      \"p\": 20,\n      \"note\": \"Its claim that every measurable offset is deliberate is overly categorical.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I went mainly on the ordinary distinction between an accidental structural lean and a deliberate cant, while penalizing reversals and absolute claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15798,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 582,
+    "reasoning_output_tokens": 324
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 15328
+}

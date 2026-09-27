@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/02",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "7e47fce7ec999d79c728adf1c203a303929002fc7091c289a1d5b1de09bb3354",
+  "ts": "2026-09-27T17:15:42.579Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"denies-question\", \"odd-one-out\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Assumes an objective, fixed truth about cant and pell, ignoring potential subjectivity or context.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"like-the-others\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"Describes a resolution through acceptance, but lacks depth or nuance about the underlying issue.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"grammatical-fit\", \"position\"],\n      \"p\": 35,\n      \"note\": \"Suggests a deeper critique of definitions, aligning with a common academic test-taking instinct for precision.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"surprising\", \"general-knowledge\", \"textbook-voice\", \"position\"],\n      \"p\": 40,\n      \"note\": \"Introduces a contextual, convention-dependent perspective, which often fits advanced or critical thinking questions.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that introduced nuance, context, and a shift from absolute definitions to convention-dependent frameworks, common in advanced critical analysis questions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 813,
+    "total_tokens": 1134,
+    "completion_tokens": 321,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5606
+}

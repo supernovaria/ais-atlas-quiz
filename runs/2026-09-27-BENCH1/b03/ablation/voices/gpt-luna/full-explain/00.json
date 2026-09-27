@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/00",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "0c67baf6f2cb9b51dba45a65a588c80916b1088da5b179d9ccd5620e3c5b0520",
+  "ts": "2026-09-27T17:15:14.814Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 86,\n      \"note\": \"It gives a differentiated interpretation of both measures and explains how they can diverge.\"\n    },\n    \"B\": {\n      \"codes\": [\"implausible\", \"denies-question\"],\n      \"p\": 4,\n      \"note\": \"It treats the figures as inconsistent measurements instead of interpreting what each measure represents.\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\", \"opposites\"],\n      \"p\": 3,\n      \"note\": \"It makes the tempting but likely mistaken assumption that one number directly counts total work.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"opposites\", \"like-the-others\"],\n      \"p\": 7,\n      \"note\": \"It collapses the two concepts into the same measure, reversing the distinction suggested by the question.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I relied mainly on A's detailed, textbook-like distinction between overall amount of work and the independence or chaining of that work.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15877,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 369,
+    "reasoning_output_tokens": 85
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10731
+}

@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/06",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "db582e4d09d48874dc0490d28fc0aaa784c3efff1a9d027f7a8f5dc4e7a66239",
+  "ts": "2026-09-27T17:00:15.547Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\"],\n      \"p\": 2,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"like-the-others\", \"implausible\", \"off-target\"],\n      \"p\": 8,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 82,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"surprising\", \"echoes-stem\"],\n      \"p\": 8,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I relied on the unusually specific protocol attribution and the textbook-like causal explanation distinguishing the crown's handling-related cant from the cairn's construction.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15854,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 320,
+    "reasoning_output_tokens": 107
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10595
+}

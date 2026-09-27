@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/10",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0143ac0c32b6f8dc8af634744e96075c5a5da31faa7c860ce1edf2787da8b2c0",
+  "ts": "2026-09-27T17:15:49.320Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"grammatical-fit\", \"like-the-others\", \"odd-one-out\", \"most-detailed\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Uses absolute language ('more common') and is longer but contradicts other options' nuances.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"grammatical-fit\", \"echoes-stem\", \"surprising\", \"shortest\"],\n      \"p\": 30,\n      \"note\": \"Overstates pilse as *the* cause and ignores broader context, despite being concise.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"hedged\", \"grammatical-fit\", \"most-detailed\"],\n      \"p\": 35,\n      \"note\": \"Balances tamber/pilse but leans toward pilse as dominant—appears nuanced and textbook-like.\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"nuanced-turn\", \"echoes-stem\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Avoids absolutes, aligns with beginner misconceptions, and highlights dominant causes.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized options that balanced nuance, textbook-like phrasing, and avoided absolute claims while addressing both tamber and pilse.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 809,
+    "total_tokens": 1135,
+    "completion_tokens": 326,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2618
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/08",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "94b8d7a80ce1f2b9ea3540dfffc5a349833c4f2624b686d3c65ab3b53d956172",
+  "ts": "2026-09-27T16:59:03.268Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"textbook-voice\",\n        \"nuanced-turn\"\n      ],\n      \"p\": 40,\n      \"note\": \"Uses the question's own terminology ('courses', 'pell stone', 'hob') and contrasts the two scenarios clearly.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"denies-question\",\n        \"off-target\",\n        \"absolute\",\n        \"odd-one-out\"\n      ],\n      \"p\": 5,\n      \"note\": \"Misrepresents the local's action as 'Orne effect' (contradicts the question's framing) and is overly prescriptive.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"too-obvious\",\n        \"middle-ground\",\n        \"like-the-others\",\n        \"hedged\"\n      ],\n      \"p\": 20,\n      \"note\": \"Overly simplistic in assuming self-correction from a 'next cairn' check, ignoring the question's nuance.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"absolute\",\n        \"surprising\",\n        \"denies-question\"\n      ],\n      \"p\": 5,\n      \"note\": \"Claims both scenarios illustrate the *same* phenomenon, which contradicts the question's setup of distinct effects.\"\n    },\n    \"\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 30,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question contrasts two distinct scenarios (local vs. visitor) and asks for matching names to their *effects*; **A** is the only option that aligns with this structure by naming two different phenomena ('Tessaly' and 'Orne') and echoing the question's wording.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 855,
+    "total_tokens": 1260,
+    "completion_tokens": 405,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5866
+}

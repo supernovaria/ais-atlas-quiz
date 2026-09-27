@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/03",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "75a7cb86756318e30b942b0c01a6c43a720a9894c4791e37ebe7ce7457777b3c",
+  "ts": "2026-09-27T17:01:20.525Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"middle-ground\", \"echoes-stem\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"absolute\", \"denies-question\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"like-the-others\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that align with deliberate design reasoning, nuanced duality of features, and textbook-like explanations over extreme or dismissive claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 801,
+    "total_tokens": 1038,
+    "completion_tokens": 237,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2898
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/24",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "d36f72951bca05a2d739d647a5484eefb1925c643f062504c9f6afd4f173a48e",
+  "ts": "2026-09-27T17:00:32.678Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"absolute\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Reuses 'Marhaug's crown-included version' and 'current survey protocol' directly, but sounds definitive without nuance.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"like-the-others\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Introduces a 'both-sides' logic but lacks specificity about the crown's role beyond the footing.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"hedged\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 70,\n      \"note\": \"Provides a specific reason ('passers often reset the crown') and explains why exclusion matters, matching a plausible test-taking scenario.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"odd-one-out\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Contradicts A directly but lacks supporting detail or nuance, making it less likely.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized the option that explained *why* the crown was excluded (handling vs. building) with specific reasoning and hedges, fitting a question testing critical analysis.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 796,
+    "total_tokens": 1118,
+    "completion_tokens": 322,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3610
+}

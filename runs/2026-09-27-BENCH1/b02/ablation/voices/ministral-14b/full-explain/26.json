@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/26",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "21ba217f00e716b3e2fbcdb80d1e01b0858525acd87fc256feb89b33b53ababf",
+  "ts": "2026-09-27T17:00:39.023Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"opposites\",\n        \"textbook-voice\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 15,\n      \"note\": \"Reverses populations but does not address register conflict explicitly.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"most-detailed\",\n        \"absolute\",\n        \"off-target\"\n      ],\n      \"p\": 10,\n      \"note\": \"Overly specific about 'single reversed course' and ignores the broader 'dorran register' issue.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"denies-question\",\n        \"too-obvious\",\n        \"shortest\",\n        \"absolute\"\n      ],\n      \"p\": 5,\n      \"note\": \"Fails to differentiate the findings, directly contradicting the question's premise.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"most-detailed\",\n        \"nuanced-turn\",\n        \"textbook-voice\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 70,\n      \"note\": \"Explicitly contrasts the two effects by population, register conflict, and mechanism, matching the question's phrasing.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question hinges on distinguishing two separate findings (register conflict vs. misreading direction), and D is the only option that explicitly separates them by population *and* mechanism.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 838,
+    "total_tokens": 1183,
+    "completion_tokens": 345,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4867
+}

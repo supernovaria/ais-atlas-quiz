@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/31",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "09034f3cbf394a4bd21c31c73b143955d6d9e6633d2c2248304e00cdbf2a93a3",
+  "ts": "2026-09-27T17:02:58.893Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"middle-ground\",\n        \"textbook-voice\",\n        \"absolute\"\n      ],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"grammatical-fit\",\n        \"like-the-others\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"opposites\",\n        \"general-knowledge\",\n        \"odd-one-out\",\n        \"position\"\n      ],\n      \"p\": 75,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"shortest\",\n        \"hedged\",\n        \"surprising\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question focuses on trade-offs between readability and informativeness, and the strongest objection would highlight how restoration *actively reduces* information (e.g., erasing junction marks or resetting user annotations), which only option C explicitly addresses.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 848,
+    "total_tokens": 1124,
+    "completion_tokens": 276,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3142
+}

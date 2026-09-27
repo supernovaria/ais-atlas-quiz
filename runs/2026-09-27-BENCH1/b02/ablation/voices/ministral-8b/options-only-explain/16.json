@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/16",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a67820894c5a5cb6e4ae8f218c80e9c8f288cf02edc7bf67cd455f894d303344",
+  "ts": "2026-09-27T16:59:28.487Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"hedged\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Uses 'somewhat arbitrary' to soften the claim, acknowledging flexibility in the dorran sense while still critiquing it.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"absolute\", \"odd-one-out\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Explicitly ties the dorran sense to the physical stone and rebuilt courses, framing causality strongly.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"opposites\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Distinguishes between two separate mechanisms (turning the stone vs. rebuilding courses) for two different senses.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"surprising\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Reduces the dorran and lisk senses to a singular process, dismissing the question’s implied distinction.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized options that explicitly address how the dorran and lisk senses are *distinctly* affected by different actions (turning the stone vs. rebuilding courses), avoiding absolutes or hedging.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 790,
+    "total_tokens": 1129,
+    "completion_tokens": 339,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2382
+}

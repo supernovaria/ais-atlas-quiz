@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/08",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "94b8d7a80ce1f2b9ea3540dfffc5a349833c4f2624b686d3c65ab3b53d956172",
+  "ts": "2026-09-27T16:58:53.949Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Reuses question terms but misassigns effects—Orne is about misreading hobs, but Tessaly is not a known term here.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"middle-ground\", \"general-knowledge\", \"opposites\"],\n      \"p\": 40,\n      \"note\": \"Correctly links the local’s choice to Orne effect (correctly interpreting conflicting signals) but ignores the visitor’s hob confusion.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"like-the-others\", \"surprising\", \"no-tell\"],\n      \"p\": 15,\n      \"note\": \"Assumes self-correction is guaranteed, which is not supported by the scenario.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"too-obvious\", \"off-target\"],\n      \"p\": 25,\n      \"note\": \"Claims both situations illustrate the *same* phenomenon, but they describe distinct errors (conflicting signals vs. misreading hobs).\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized matching the local’s correct interpretation of conflicting signals to the Orne effect, though it missed the visitor’s hob misreading entirely.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 855,
+    "total_tokens": 1208,
+    "completion_tokens": 353,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4742
+}

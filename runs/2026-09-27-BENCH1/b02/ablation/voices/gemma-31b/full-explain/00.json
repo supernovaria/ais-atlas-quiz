@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/00",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "ec8ae0124ac170a848883f705afd7a6b32ab50933ed5d6dd1935cd1d565624ab",
+  "ts": "2026-09-27T17:01:20.292Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\", \"most-detailed\"],\n      \"p\": 75,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\", \"denies-question\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"implausible\", \"denies-question\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I looked for the option that logically mapped the two observed physical states (unchanging courses vs. changing pell stone) to the 'two registers of meaning' mentioned in the stem.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 878,
+    "candidatesTokenCount": 229,
+    "totalTokenCount": 1808,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 878
+      }
+    ],
+    "thoughtsTokenCount": 701,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 89684
+}

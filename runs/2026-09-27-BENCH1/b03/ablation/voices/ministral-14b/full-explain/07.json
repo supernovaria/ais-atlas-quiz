@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/07",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "b9c1cd3008a923e29f77f22e999a79f706512a3361512b49efcb15d62d1a6cdb",
+  "ts": "2026-09-27T17:18:53.011Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"denies-question\",\n        \"off-target\",\n        \"echoes-stem\",\n        \"too-obvious\",\n        \"absolute\"\n      ],\n      \"p\": 0,\n      \"note\": \"Ignores the distinction between *Orrin* (comparative) and *Tasker* (longitudinal) patterns in the question.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"hedged\",\n        \"general-knowledge\",\n        \"nuanced-turn\",\n        \"surprising\"\n      ],\n      \"p\": 10,\n      \"note\": \"Assumes a speculative mechanism ('physically stretches') not stated in the question.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"textbook-voice\",\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"middle-ground\",\n        \"most-detailed\"\n      ],\n      \"p\": 75,\n      \"note\": \"Matches the question’s contrast between *Orrin* (multi-vesk comparison) and *Tasker* (single lattice over time).\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"opposites\",\n        \"off-target\",\n        \"absolute\"\n      ],\n      \"p\": 15,\n      \"note\": \"Inverts the definitions of *Orrin* and *Tasker* without support from the question.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question explicitly names *Orrin* and *Tasker* patterns, so the correct answer must align with their distinct definitions (comparative vs. longitudinal).\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 921,
+    "total_tokens": 1274,
+    "completion_tokens": 353,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4798
+}

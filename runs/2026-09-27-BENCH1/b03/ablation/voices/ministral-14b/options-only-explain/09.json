@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/09",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "44e7aeb600fab7ffaa6a13e24f1f3f63f1343e3aedbb0e2ab6e03f63a4b876f4",
+  "ts": "2026-09-27T17:19:09.796Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"absolute\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"Uses the question's own terms ('ends touch', 'thickness', 'tautness') and provides a precise rule-based classification.\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"denies-question\", \"off-target\"],\n      \"p\": 10,\n      \"note\": \"Introduces uncertainty and dismisses the question's premise by claiming the thread cannot be classified without length.\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"general-knowledge\", \"position\"],\n      \"p\": 15,\n      \"note\": \"Introduces a new term ('spur') not mentioned in the question, making it feel like an outlier.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"like-the-others\", \"opposites\", \"echoes-stem\", \"textbook-voice\"],\n      \"p\": 35,\n      \"note\": \"Contradicts A by asserting classification depends on 'thick, taut threads' and uses a common-sense rule.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Chose A for its direct use of the question's terms and precise rule-based reasoning, avoiding hedging or introducing new terms.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 781,
+    "total_tokens": 1105,
+    "completion_tokens": 324,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3886
+}

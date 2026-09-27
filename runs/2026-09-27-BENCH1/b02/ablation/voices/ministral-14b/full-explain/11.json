@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/11",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "91835ae9f13bfb5288101b02f9fd64fa1246d5be09177a3703d53d5cf80e5221",
+  "ts": "2026-09-27T17:01:57.437Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"denies-question\", \"opposites\"],\n      \"p\": 0,\n      \"note\": \"Uses 'only ever' and 'never', directly contradicting the question's premise of *uniform* improvement.\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"echoes-stem\", \"middle-ground\", \"textbook-voice\"],\n      \"p\": 60,\n      \"note\": \"Aligns with the idea that strangers' general misrouting might correlate with lean misrouting, but does not *deny* uniform improvement.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"general-knowledge\", \"nuanced-turn\", \"surprising\"],\n      \"p\": 20,\n      \"note\": \"Introduces new terms ('cant', 'course') and a counterintuitive claim about locals being more misled, but doesn't *deny* uniform improvement.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"Uses 'cannot perceive' and 'always' (implied), contradicting the premise of *any* improvement by experience.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question asks which finding would be *impossible* if Serrow improved accuracy *uniformly*; only B does not *deny* the premise while A and D do, and C introduces unsupported claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 795,
+    "total_tokens": 1146,
+    "completion_tokens": 351,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4853
+}

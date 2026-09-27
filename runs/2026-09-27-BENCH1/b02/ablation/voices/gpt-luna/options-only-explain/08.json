@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/08",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "f00e7c45a96d5432086ca52ece15457e4b467e1566a4db4541d19b5095e703d4",
+  "ts": "2026-09-27T17:00:58.678Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"longest\",\"most-detailed\",\"textbook-voice\",\"general-knowledge\"],\"p\":70,\"note\":\"\"},\"B\":{\"codes\":[\"surprising\",\"opposites\",\"grammatical-fit\"],\"p\":12,\"note\":\"\"},\"C\":{\"codes\":[\"too-obvious\",\"echoes-stem\"],\"p\":8,\"note\":\"\"},\"D\":{\"codes\":[\"middle-ground\",\"echoes-stem\"],\"p\":10,\"note\":\"\"}},\"pick\":\"A\",\"strategy\":\"I favored the option that gives a specific textbook-style distinction between the two named effects.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15793,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 327,
+    "reasoning_output_tokens": 196
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9835
+}

@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/10",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "894c5a076f568a0aa4ccb7ee1c4eb35f0e0dd2a6e67bfa0dfb7242ee7560632c",
+  "ts": "2026-09-27T17:01:26.690Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"surprising\"],\n      \"p\": 20,\n      \"note\": \"The absolute claim that locals are never misled makes it suspicious, but general immunity could fit uniform improvement.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"surprising\", \"opposites\", \"general-knowledge\"],\n      \"p\": 55,\n      \"note\": \"It directly says experienced locals are more misled than strangers, contradicting uniform accuracy improvement.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"most-detailed\", \"echoes-stem\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"It describes a local-specific perceptual failure, but does not clearly say experience makes accuracy worse.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"grammatical-fit\", \"textbook-voice\"],\n      \"p\": 5,\n      \"note\": \"This is a qualified statistical inference and is comparatively compatible with uniform improvement.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I focused on which option most directly contradicts the premise that experience improves accuracy uniformly rather than selectively.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15804,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 684,
+    "reasoning_output_tokens": 405
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 16578
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/14",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1d603c7813e9354af16fe620d61f335881f2a1a9c64c88b9fb06e88a43a0d6ee",
+  "ts": "2026-09-27T17:16:02.287Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"absolute\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"position\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"hedged\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"position\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"surprising\",\n        \"position\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"most-detailed\",\n        \"textbook-voice\",\n        \"position\"\n      ],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I focused on the claim that 'slow sediment buildup is the leading cause of lattice loss' and looked for options that explicitly validate or refute this by emphasizing gradual threats like silt film as dominant or underappreciated, while the others either contradict or downplay this claim.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 839,
+    "total_tokens": 1129,
+    "completion_tokens": 290,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3513
+}

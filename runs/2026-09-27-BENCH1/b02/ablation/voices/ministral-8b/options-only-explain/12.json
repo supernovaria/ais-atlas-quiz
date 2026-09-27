@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/12",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "7c1ba2d4fabb372ab4117f00003d26fd63d80a6f8baf08c2141999dcc81d4433",
+  "ts": "2026-09-27T16:59:12.207Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"middle-ground\", \"echoes-stem\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Assumes the question’s premise ('no real objection') without engaging the data or patterns.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"hedged\", \"odd-one-out\"],\n      \"p\": 30,\n      \"note\": \"Uses 'simply because' to attribute a causal mechanism (course count) but lacks direct evidence of correlation.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"nuanced-turn\", \"off-target\", \"odd-one-out\"],\n      \"p\": 25,\n      \"note\": \"Flips the question’s focus to strangers vs. locals but doesn’t explain the *concord* pattern’s origin.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Balances both groups (locals/strangers) with a clear pattern ('Marhaug pattern') and aligns with 'concord' terminology.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options with nuanced, evidence-backed explanations that directly addressed the 'concord' and 'locals vs. strangers' contrast.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 797,
+    "total_tokens": 1122,
+    "completion_tokens": 325,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3575
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/17",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c49557fedea9e298fd0ed6bdee321254ceab4aface2e1e4911b878b430278f0d",
+  "ts": "2026-09-27T17:02:29.149Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"denies-question\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Overstates the role of the pell stone and dismisses the rebuilt courses as irrelevant to dorran sense.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"textbook-voice\", \"like-the-others\", \"position\"],\n      \"p\": 15,\n      \"note\": \"Introduces an external reference ('Brannagh's objection') and complicates the question's premise.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"middle-ground\", \"general-knowledge\", \"no-tell\"],\n      \"p\": 10,\n      \"note\": \"Assumes a generic 'aging process' without addressing the specific registers mentioned.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"grammatical-fit\", \"surprising\"],\n      \"p\": 65,\n      \"note\": \"Directly addresses both registers and ties them to the question's specific actions (turning the pell stone and rebuilding courses).\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question asks which registers changed on the second visit, and only **D** explicitly ties the *lisk sense* to the turned pell stone and the *dorran sense* to the rebuilt courses, avoiding contradictions or overgeneralizations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 836,
+    "total_tokens": 1169,
+    "completion_tokens": 333,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5433
+}

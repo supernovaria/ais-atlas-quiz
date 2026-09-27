@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/02",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "de7224f209c831ffb5f55321acfda93de0adbf45c4bfecd08941d91e16171c52",
+  "ts": "2026-09-27T17:06:07.482Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"middle-ground\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"surprising\", \"absolute\", \"opposites\", \"most-detailed\"],\n      \"p\": 70,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The presence of a highly specific technical term ('frost-heave artifact') combined with a counter-intuitive correction of the hiker's naive logic is a classic hallmark of a textbook-derived correct answer.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 877,
+    "candidatesTokenCount": 233,
+    "totalTokenCount": 2950,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 877
+      }
+    ],
+    "thoughtsTokenCount": 1840,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 83985
+}

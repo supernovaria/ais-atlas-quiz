@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/14",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "e4d9f8a89a5447de120092aa03d46992a0d38afce579f689c485928feb34b29e",
+  "ts": "2026-09-27T17:49:11.468Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"nuanced-turn\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I identified the classic academic trade-off pattern where increased readability (the hiker's experience) comes at the expense of nuanced information (the loss of original intent/markers), supported by the introduction of specific terminology that complements the stem.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 879,
+    "candidatesTokenCount": 250,
+    "totalTokenCount": 3288,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 879
+      }
+    ],
+    "thoughtsTokenCount": 2159,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 96029
+}

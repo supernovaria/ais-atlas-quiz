@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/01",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "92080f0441a66172491471a570cfd98272f029f08040f6acc0a2184432ad3d7f",
+  "ts": "2026-09-27T17:00:29.073Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"like-the-others\", \"echoes-stem\", \"hedged\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"grammatical-fit\", \"nuanced-turn\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"odd-one-out\", \"surprising\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"grammatical-fit\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that reuse question terms while offering clear distinctions between fixed and updatable records, avoiding absolutes and textbook-sounding dogma.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 790,
+    "total_tokens": 1028,
+    "completion_tokens": 238,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2328
+}

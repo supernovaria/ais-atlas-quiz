@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/04",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "61fc47ac3d6d6c61cea45b4d94a844400232d397abda4699a41133dd1ba59582",
+  "ts": "2026-09-27T17:13:15.781Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"textbook-voice\", \"opposites\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The introduction of a specific technical term ('hob') to explain a counterintuitive function is a strong indicator of the intended correct answer in academic tests.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 814,
+    "candidatesTokenCount": 216,
+    "totalTokenCount": 2825,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 814
+      }
+    ],
+    "thoughtsTokenCount": 1795,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 147549
+}

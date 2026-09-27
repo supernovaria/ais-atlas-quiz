@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/09",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "43e6c73c61879d60d2cc7147254206f998de893caa2c2b493809a7163e447908",
+  "ts": "2026-09-27T17:01:46.849Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"like-the-others\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 0,\n      \"note\": \"Claims both situations illustrate the *same* phenomenon without distinguishing them, contradicting the question's setup.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"most-detailed\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 70,\n      \"note\": \"Links the *Tessaly effect* (trusting courses over stale stone) and *Orne effect* (misreading hobs) to the scenarios, matching terms and actions precisely.\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"absolute\", \"implausible\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Misassigns the *Orne effect* to the local's *correct* choice, ignoring the visitor's mistake and contradicting known definitions.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"denies-question\", \"surprising\", \"shortest\"],\n      \"p\": 25,\n      \"note\": \"Suggests a naive self-correction without addressing the *effects* named in the question or the cairn's conflicting signals.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question hinges on matching *named effects* (Tessaly/Orne) to the scenarios, and B is the only option that does so while reusing the question's wording.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 855,
+    "total_tokens": 1217,
+    "completion_tokens": 362,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4890
+}

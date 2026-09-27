@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/12",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "056f5a47f3fe1febe38339a5d267fd1e3d402090675e72bffdb35867cb9385c6",
+  "ts": "2026-09-27T17:49:00.650Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"opposites\", \"surprising\", \"textbook-voice\", \"echoes-stem\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The most likely answer in a textbook context is the counter-intuitive reversal of the character's common-sense assumption.\"\n}\n\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 841,
+    "candidatesTokenCount": 230,
+    "totalTokenCount": 2776,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 841
+      }
+    ],
+    "thoughtsTokenCount": 1705,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 102074
+}

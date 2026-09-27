@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/31",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1a5b302957878724be3c5f00caba3fe8089cf783e684a130bd5179641ceb8183",
+  "ts": "2026-09-27T17:19:31.185Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"odd-one-out\", \"echoes-stem\", \"absolute\", \"position\"],\n      \"p\": 25,\n      \"note\": \"Introduces new terms ('wennet failure', 'tamber') without context, making it feel off-topic.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Provides a balanced, data-driven argument that contrasts gradual vs. sudden threats, avoiding absolutes.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"denies-question\", \"too-obvious\"],\n      \"p\": 15,\n      \"note\": \"Reiterates the original assumption without adding new evidence or nuance.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"surprising\", \"absolute\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"Directly contradicts the premise by emphasizing sudden violence over silt film, which feels counterintuitive.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Selected the option that introduces a balanced, evidence-based perspective contrasting gradual and sudden threats, avoiding absolutes and aligning with logical reasoning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 803,
+    "total_tokens": 1101,
+    "completion_tokens": 298,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2540
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/04",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "587395dc4eed9a9d62c6af7687ffe2181ba0bc30e82ff1cc15d16985283efc56",
+  "ts": "2026-09-27T16:58:40.855Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"absolute\", \"denies-question\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"nuanced-turn\", \"grammatical-fit\"],\n      \"p\": 55,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"like-the-others\", \"implausible\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"absolute\", \"opposites\", \"position\"],\n      \"p\": 30,\n      \"note\": \"Contradicts B directly; seems like a naive interpretation.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question highlights a single reversed course breaking a pattern, and B is the only option that explains this as a deliberate signal (a 'hob') rather than a flaw or a full direction reversal, aligning with how such navigational markers often work.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 850,
+    "total_tokens": 1132,
+    "completion_tokens": 282,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4445
+}

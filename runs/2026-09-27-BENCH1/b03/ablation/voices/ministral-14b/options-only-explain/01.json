@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/01",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "78a0ae07186cb99f59dd98250fa18617dbed5eb6fc50e2c58734f383ec31d9c4",
+  "ts": "2026-09-27T17:18:26.485Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"too-obvious\", \"echoes-stem\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Assumes 'pell' is the only relevant metric without considering nuance or relative independence.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"middle-ground\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 50,\n      \"note\": \"Balances multiple factors (work relative to frame, chaining, independence) with clear comparisons.\"\n    },\n    \"C\": {\n      \"codes\": [\"general-knowledge\", \"surprising\", \"absolute\", \"off-target\", \"like-the-others\"],\n      \"p\": 15,\n      \"note\": \"Misinterprets 'cant' as a direct measure of independence without defining its relation to 'pell'.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"odd-one-out\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Invokes 'measurement error' without any evidence or context, dismissing the question entirely.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Chose the option that acknowledges complexity by comparing relative work, independence, and structure rather than relying on absolute metrics or dismissing the question.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 837,
+    "total_tokens": 1184,
+    "completion_tokens": 347,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3835
+}

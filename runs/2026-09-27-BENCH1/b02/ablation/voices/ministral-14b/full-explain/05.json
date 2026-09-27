@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/05",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "4cece83f4a97f5d5f6e71d2e211015cdab236780189530384a4a3aff44466b11",
+  "ts": "2026-09-27T17:01:26.172Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"denies-question\", \"absolute\", \"echoes-stem\"],\n      \"p\": 5,\n      \"note\": \"Assumes the question's premise of a 'pattern' is invalid without explanation.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"textbook-voice\", \"general-knowledge\", \"most-detailed\"],\n      \"p\": 60,\n      \"note\": \"Introduces the concept of a 'hob' as a plausible navigational signal.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"off-target\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"Contradicts the idea of a 'branch' and overstates the reversal.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"implausible\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"Mentions 'concord score' as a vague, unexplained metric.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized the option that introduced a plausible navigational convention ('hob') and explained the reversal as a signal rather than an error or absolute turn.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 850,
+    "total_tokens": 1131,
+    "completion_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4197
+}

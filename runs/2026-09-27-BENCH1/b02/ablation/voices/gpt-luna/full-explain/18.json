@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/18",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "a5a516f4afd86d5915de78be3d12f93a4f5c1e24b5748ae8fa6edf2eb55b0828",
+  "ts": "2026-09-27T17:03:41.566Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"absolute\",\"denies-question\",\"off-target\",\"position\"],\"p\":3,\"note\":\"\"},\"B\":{\"codes\":[\"echoes-stem\",\"too-obvious\",\"opposites\",\"position\"],\"p\":8,\"note\":\"\"},\"C\":{\"codes\":[\"most-detailed\",\"nuanced-turn\",\"textbook-voice\",\"surprising\",\"echoes-stem\",\"position\"],\"p\":84,\"note\":\"\"},\"D\":{\"codes\":[\"too-obvious\",\"implausible\",\"opposites\",\"position\"],\"p\":5,\"note\":\"\"}},\"pick\":\"C\",\"strategy\":\"I went on the distinctive textbook-like term and the nuanced wording that explains why the reversed course is meaningful without treating it as a literal westward sign.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15809,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 303,
+    "reasoning_output_tokens": 141
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10094
+}

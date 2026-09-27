@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/06",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "8e4b1406e3be20c51b436efcef0fbf23a0707732c01bc73cb0e57c4e6fec5904",
+  "ts": "2026-09-27T17:17:10.783Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\"],\n      \"p\": 8,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"opposites\", \"implausible\"],\n      \"p\": 7,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"middle-ground\"],\n      \"p\": 82,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"off-target\", \"implausible\", \"surprising\"],\n      \"p\": 3,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I favored the option with the clearest textbook-style distinction and the explicit clarification that the patterns are distinct rather than duplicates.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15837,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 279,
+    "reasoning_output_tokens": 71
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 13233
+}

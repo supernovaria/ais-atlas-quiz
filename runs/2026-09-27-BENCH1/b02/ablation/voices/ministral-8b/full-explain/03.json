@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/03",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "fe33b20acbeab58b6272e1b28b9b3c3caefabf8eb74638d5b62eec8c58e85b47",
+  "ts": "2026-09-27T17:00:49.467Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"like-the-others\", \"general-knowledge\", \"hedged\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"middle-ground\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"hedged\", \"general-knowledge\", \"surprising\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 35,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized the option that directly contradicts the hiker’s assumption that tilt is more meaningful, implying one feature is intentional while the other is accidental—aligning with the idea that only deliberate offsets (like course-to-course cant) carry meaning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 853,
+    "total_tokens": 1100,
+    "completion_tokens": 247,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 18844
+}

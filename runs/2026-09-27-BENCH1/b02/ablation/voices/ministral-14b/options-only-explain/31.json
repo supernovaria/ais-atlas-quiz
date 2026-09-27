@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/31",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "eb080184270320837cbd64edf06ba74ac621f2dad01a79f00c884867e9e0c578",
+  "ts": "2026-09-27T17:03:46.765Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"like-the-others\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"textbook-voice\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"surprising\", \"general-knowledge\", \"echoes-stem\"],\n      \"p\": 70,\n      \"note\": \"Specific details about hob marking and pell stone recording align with a plausible objection to restoration.\"\n    },\n    \"D\": {\n      \"codes\": [\"shortest\", \"implausible\", \"off-target\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Focuses on a broken pell stone rather than the broader informativeness/readability trade-off.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized the option that detailed a clear trade-off between readability and informativeness, fitting the implied objection structure.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 804,
+    "total_tokens": 1084,
+    "completion_tokens": 280,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3426
+}

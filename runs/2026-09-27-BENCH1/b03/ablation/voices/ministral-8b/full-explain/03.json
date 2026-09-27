@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/03",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "5daefffab04d4a7f8263f16678b2ec2d18dfc3f7ea0e988a1519e81aac9234c8",
+  "ts": "2026-09-27T17:17:19.226Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"absolute\",\n        \"off-target\",\n        \"implied-fact\"\t\t],\n      \"p\": 0,\n      \"note\": \"Assumes a historical acceptance of Emmerick's method without evidence; the question focuses on the *disagreement* in classification, not a resolution.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"textbook-voice\",\n        \"general-knowledge\",\n        \"middle-ground\"\n      ],\n      \"p\": 65,\n      \"note\": \"Directly mirrors the question's core tension: classification depends on *rule adoption*, not inherent properties.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"surprising\",\n        \"off-target\",\n        \"absolute\"\n      ],\n      \"p\": 10,\n      \"note\": \"Overstates Emmerick’s calculation as disproving *definitions* of cant/pell, when the question only contrasts *classification rules*.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"absolute\",\n        \"denies-question\",\n        \"off-target\"\n      ],\n      \"p\": 5,\n      \"note\": \"Contradicts the premise that the lattice’s classification is *not* fixed; it implies an objective truth that the question undermines.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question highlights a *classification conflict* based on different conventions, so the answer must emphasize that the disagreement arises from *adopted rules*, not inherent properties or measurement error.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 901,
+    "total_tokens": 1247,
+    "completion_tokens": 346,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3957
+}

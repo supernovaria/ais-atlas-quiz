@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/01",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "2e89d7ca712a8409e842a330f952d4c33a2f23a75e43129914e66233c3ef33e0",
+  "ts": "2026-09-27T17:18:22.650Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"absolute\", \"denies-question\", \"like-the-others\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Overstates the meaning of *pell* and ignores *cant* entirely.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"middle-ground\", \"textbook-voice\"],\n      \"p\": 65,\n      \"note\": \"Balances both *cant* and *pell* with plausible contrasts and avoids absolutes.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"off-target\", \"absolute\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Misrepresents *cant* as a lattice-wide version of *pell* with no support.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"odd-one-out\", \"position\"],\n      \"p\": 20,\n      \"note\": \"Assumes measurement error without justification and contradicts the given data.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Looked for the option that meaningfully contrasted *cant* (frame independence) and *pell* (chaining) while avoiding overgeneralizations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 871,
+    "total_tokens": 1178,
+    "completion_tokens": 307,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4808
+}

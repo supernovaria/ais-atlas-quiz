@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/16",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f291f47b24e01bcc958befe247874732b6693db81021c47acf3f52f63a98fb89",
+  "ts": "2026-09-27T17:16:10.218Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"grammatical-fit\", \"general-knowledge\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"grammatical-fit\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"denies-question\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"most-detailed\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 70,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question implies a structural difference in how wennets connect despite equal cant, so the nuanced explanation that accounts for differing chain lengths without implying more total wennet-work or absolute differences was most compelling.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 839,
+    "total_tokens": 1083,
+    "completion_tokens": 244,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3381
+}

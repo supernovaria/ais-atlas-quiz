@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/00",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "c0c078764c38190209067154308e1deb9425d5ce994bd71eaaf52e307ed21c43",
+  "ts": "2026-09-27T17:02:39.609Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"textbook-voice\", \"opposites\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The most detailed and balanced explanation typically mimics the intended correct answer in textbook-style questions.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 810,
+    "candidatesTokenCount": 212,
+    "totalTokenCount": 2114,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 810
+      }
+    ],
+    "thoughtsTokenCount": 1092,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 79305
+}

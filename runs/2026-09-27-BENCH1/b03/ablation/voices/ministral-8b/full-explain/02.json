@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/02",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "4a59668e936e61ec46aea4696d0580d9a8b9d5ecfe8b6e5d2e5d42dc38957996",
+  "ts": "2026-09-27T17:15:09.726Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Claims the lattice's properties are objectively fixed, ignoring the explicit disagreement in classification.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"implausible\", \"no-tell\"],\n      \"p\": 0,\n      \"note\": \"No evidence Varrenby ever accepted Emmerick’s method or changed her rule.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"middle-ground\"],\n      \"p\": 30,\n      \"note\": \"Acknowledges Emmerick’s calculation as a challenge but focuses on definitions rather than the broader issue of classification rules.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"nuanced-turn\", \"general-knowledge\"],\n      \"p\": 65,\n      \"note\": \"Highlights the role of counting conventions in classification, aligning with the question’s focus on differing rules.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Focused on how the question emphasizes differing classification rules (ostral vs. calvine) due to competing conventions, not just fixed properties.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 901,
+    "total_tokens": 1187,
+    "completion_tokens": 286,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3350
+}

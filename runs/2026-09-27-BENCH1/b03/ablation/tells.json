@@ -1,0 +1,5311 @@
+{
+  "source": "2026-09-27-BENCH1/b03",
+  "codes": [
+    "longest",
+    "shortest",
+    "most-detailed",
+    "hedged",
+    "nuanced-turn",
+    "middle-ground",
+    "textbook-voice",
+    "echoes-stem",
+    "like-the-others",
+    "opposites",
+    "surprising",
+    "too-obvious",
+    "absolute",
+    "denies-question",
+    "implausible",
+    "off-target",
+    "grammatical-fit",
+    "odd-one-out",
+    "position",
+    "general-knowledge",
+    "no-tell",
+    "other"
+  ],
+  "groups": {
+    "group:qualified": [
+      "most-detailed",
+      "hedged",
+      "nuanced-turn",
+      "middle-ground"
+    ],
+    "group:dismissible": [
+      "absolute",
+      "denies-question",
+      "implausible",
+      "off-target"
+    ]
+  },
+  "summary": {
+    "replies": 169,
+    "unusable": 3,
+    "voices": [
+      "gemma-31b",
+      "gpt-luna",
+      "ministral-14b",
+      "ministral-8b"
+    ],
+    "not_ok": {},
+    "families": [
+      "google",
+      "openai",
+      "mistral"
+    ],
+    "excluded_voices": [],
+    "tags": 2749,
+    "other_share": 0.0007275372862859222,
+    "no_tell_share": 0,
+    "impossible_stem_echo_tags": 181,
+    "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
+  },
+  "code_table": {
+    "full-explain": {
+      "key_options": 84,
+      "distractor_options": 245,
+      "codes": {
+        "longest": {
+          "on_key": 13,
+          "on_distractors": 8,
+          "rate_key": 0.15476190476190477,
+          "rate_distractors": 0.0326530612244898,
+          "lift": 4.739583333333333,
+          "rate_on_picked": 0.13253012048192772,
+          "rate_on_not_picked": 0.04065040650406504,
+          "lift_among_not_picked": 6.160714285714286,
+          "cue_follow": {
+            "questions": 13,
+            "replies": 20,
+            "chance": 0.25,
+            "toward": 0.6730769230769231,
+            "toward_ci": {
+              "n": 13,
+              "lo": 0.4423076923076923,
+              "hi": 0.8846153846153846
+            },
+            "away": 0.10897435897435896,
+            "away_ci": {
+              "n": 13,
+              "lo": 0.038461538461538464,
+              "hi": 0.18589743589743588
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 6,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 9,
+              "toward": 0.4074074074074074,
+              "away": 0.19753086419753083,
+              "chance": 0.25
+            }
+          }
+        },
+        "shortest": {
+          "on_key": 0,
+          "on_distractors": 11,
+          "rate_key": 0,
+          "rate_distractors": 0.044897959183673466,
+          "lift": 0,
+          "rate_on_picked": 0.012048192771084338,
+          "rate_on_not_picked": 0.04065040650406504,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 7,
+            "replies": 11,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 7,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3333333333333333,
+            "away_ci": {
+              "n": 7,
+              "lo": 0.3333333333333333,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 7,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "most-detailed": {
+          "on_key": 62,
+          "on_distractors": 18,
+          "rate_key": 0.7380952380952381,
+          "rate_distractors": 0.07346938775510205,
+          "lift": 10.046296296296296,
+          "rate_on_picked": 0.6867469879518072,
+          "rate_on_not_picked": 0.09349593495934959,
+          "lift_among_not_picked": 7.666666666666667,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 68,
+            "chance": 0.25,
+            "toward": 0.8229166666666666,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.7145833333333333,
+              "hi": 0.9203125
+            },
+            "away": 0.042361111111111106,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.010416666666666666,
+              "hi": 0.08159722222222222
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.9333333333333333,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.7916666666666667,
+              "away": 0.05381944444444445,
+              "chance": 0.25
+            }
+          }
+        },
+        "hedged": {
+          "on_key": 8,
+          "on_distractors": 36,
+          "rate_key": 0.09523809523809523,
+          "rate_distractors": 0.1469387755102041,
+          "lift": 0.648148148148148,
+          "rate_on_picked": 0.10843373493975904,
+          "rate_on_not_picked": 0.14227642276422764,
+          "lift_among_not_picked": 0.4227941176470588,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 40,
+            "chance": 0.25,
+            "toward": 0.12222222222222222,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.03333333333333333,
+              "hi": 0.21666666666666667
+            },
+            "away": 0.2962962962962962,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.2648148148148148,
+              "hi": 0.32592592592592595
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.10555555555555556,
+              "away": 0.30185185185185187,
+              "chance": 0.25
+            }
+          }
+        },
+        "nuanced-turn": {
+          "on_key": 33,
+          "on_distractors": 34,
+          "rate_key": 0.39285714285714285,
+          "rate_distractors": 0.13877551020408163,
+          "lift": 2.8308823529411766,
+          "rate_on_picked": 0.4457831325301205,
+          "rate_on_not_picked": 0.12195121951219512,
+          "lift_among_not_picked": 0.4956896551724138,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 57,
+            "chance": 0.25,
+            "toward": 0.4791666666666667,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.29166666666666663,
+              "hi": 0.6770833333333334
+            },
+            "away": 0.1690972222222222,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.10069444444444443,
+              "hi": 0.24131944444444448
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 3,
+              "toward": 0.6666666666666666,
+              "away": 0.1111111111111111,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 10,
+              "toward": 0.6,
+              "away": 0.14999999999999997,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4479166666666667,
+              "away": 0.1779513888888889,
+              "chance": 0.25
+            }
+          }
+        },
+        "middle-ground": {
+          "on_key": 14,
+          "on_distractors": 29,
+          "rate_key": 0.16666666666666666,
+          "rate_distractors": 0.11836734693877551,
+          "lift": 1.4080459770114941,
+          "rate_on_picked": 0.21686746987951808,
+          "rate_on_not_picked": 0.1016260162601626,
+          "lift_among_not_picked": 0.5989583333333334,
+          "cue_follow": {
+            "questions": 13,
+            "replies": 39,
+            "chance": 0.25,
+            "toward": 0.3647435897435898,
+            "toward_ci": {
+              "n": 13,
+              "lo": 0.15961538461538463,
+              "hi": 0.5993589743589743
+            },
+            "away": 0.20854700854700856,
+            "away_ci": {
+              "n": 13,
+              "lo": 0.13162393162393163,
+              "hi": 0.2794871794871795
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0.3685897435897436,
+              "away": 0.20726495726495728,
+              "chance": 0.25
+            }
+          }
+        },
+        "textbook-voice": {
+          "on_key": 47,
+          "on_distractors": 24,
+          "rate_key": 0.5595238095238095,
+          "rate_distractors": 0.09795918367346938,
+          "lift": 5.711805555555556,
+          "rate_on_picked": 0.5421686746987951,
+          "rate_on_not_picked": 0.10569105691056911,
+          "lift_among_not_picked": 5.296052631578948,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 58,
+            "chance": 0.25,
+            "toward": 0.701388888888889,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.55625,
+              "hi": 0.8371527777777776
+            },
+            "away": 0.08472222222222223,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.03958333333333333,
+              "hi": 0.13958333333333334
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0.8888888888888888,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 14,
+              "toward": 0.8928571428571429,
+              "away": 0.023809523809523808,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.609375,
+              "away": 0.11979166666666666,
+              "chance": 0.25
+            }
+          }
+        },
+        "echoes-stem": {
+          "on_key": 70,
+          "on_distractors": 106,
+          "rate_key": 0.8333333333333334,
+          "rate_distractors": 0.4326530612244898,
+          "lift": 1.9261006289308176,
+          "rate_on_picked": 0.7831325301204819,
+          "rate_on_not_picked": 0.45121951219512196,
+          "lift_among_not_picked": 2.0747422680412373,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 73,
+            "chance": 0.25,
+            "toward": 0.4439236111111111,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.35416666666666663,
+              "hi": 0.5345486111111111
+            },
+            "away": 0.07048611111111111,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.028819444444444443,
+              "hi": 0.12013888888888889
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.4,
+              "away": 0.2,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.43333333333333324,
+              "away": 0.02222222222222222,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.46527777777777773,
+              "away": 0.06684027777777778,
+              "chance": 0.25
+            }
+          }
+        },
+        "like-the-others": {
+          "on_key": 1,
+          "on_distractors": 36,
+          "rate_key": 0.011904761904761904,
+          "rate_distractors": 0.1469387755102041,
+          "lift": 0.0810185185185185,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.15040650406504066,
+          "lift_among_not_picked": 0.3993055555555555,
+          "cue_follow": {
+            "questions": 13,
+            "replies": 29,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 13,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3491452991452991,
+            "away_ci": {
+              "n": 13,
+              "lo": 0.3333333333333333,
+              "hi": 0.3670940170940172
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 3,
+              "toward": 0,
+              "away": 0.38888888888888884,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0,
+              "away": 0.34722222222222227,
+              "chance": 0.25
+            }
+          }
+        },
+        "opposites": {
+          "on_key": 24,
+          "on_distractors": 55,
+          "rate_key": 0.2857142857142857,
+          "rate_distractors": 0.22448979591836735,
+          "lift": 1.2727272727272727,
+          "rate_on_picked": 0.26506024096385544,
+          "rate_on_not_picked": 0.23170731707317074,
+          "lift_among_not_picked": 1.6911764705882353,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 51,
+            "chance": 0.25,
+            "toward": 0.28740740740740744,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.13907407407407407,
+              "hi": 0.4368518518518519
+            },
+            "away": 0.2175925925925926,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.13796296296296295,
+              "hi": 0.30648148148148147
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 0.5,
+              "away": 0.08333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0.15277777777777776,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.2722222222222222,
+              "away": 0.21666666666666667,
+              "chance": 0.25
+            }
+          }
+        },
+        "surprising": {
+          "on_key": 11,
+          "on_distractors": 38,
+          "rate_key": 0.13095238095238096,
+          "rate_distractors": 0.15510204081632653,
+          "lift": 0.8442982456140351,
+          "rate_on_picked": 0.1686746987951807,
+          "rate_on_not_picked": 0.14227642276422764,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 45,
+            "chance": 0.25,
+            "toward": 0.2390625,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.09375,
+              "hi": 0.4140625
+            },
+            "away": 0.25659722222222225,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.19583333333333336,
+              "hi": 0.3107638888888889
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 7,
+              "toward": 0.5714285714285714,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.15104166666666666,
+              "away": 0.2829861111111111,
+              "chance": 0.25
+            }
+          }
+        },
+        "too-obvious": {
+          "on_key": 0,
+          "on_distractors": 64,
+          "rate_key": 0,
+          "rate_distractors": 0.2612244897959184,
+          "lift": 0,
+          "rate_on_picked": 0.024096385542168676,
+          "rate_on_not_picked": 0.25203252032520324,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 57,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.34236111111111106,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.33333333333333326,
+              "hi": 0.3541666666666666
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 14,
+              "toward": 0,
+              "away": 0.369047619047619,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0,
+              "away": 0.33333333333333326,
+              "chance": 0.25
+            }
+          }
+        },
+        "absolute": {
+          "on_key": 25,
+          "on_distractors": 119,
+          "rate_key": 0.2976190476190476,
+          "rate_distractors": 0.4857142857142857,
+          "lift": 0.6127450980392157,
+          "rate_on_picked": 0.1686746987951807,
+          "rate_on_not_picked": 0.5284552845528455,
+          "lift_among_not_picked": 1.328781512605042,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 68,
+            "chance": 0.25,
+            "toward": 0.19930555555555554,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.0965277777777778,
+              "hi": 0.3295138888888889
+            },
+            "away": 0.32274305555555555,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.2164930555555555,
+              "hi": 0.42256944444444444
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 3,
+              "toward": 0,
+              "away": 0.38888888888888884,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 10,
+              "toward": 0.05,
+              "away": 0.35,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.2126736111111111,
+              "away": 0.3368055555555556,
+              "chance": 0.25
+            }
+          }
+        },
+        "denies-question": {
+          "on_key": 1,
+          "on_distractors": 54,
+          "rate_key": 0.011904761904761904,
+          "rate_distractors": 0.22040816326530613,
+          "lift": 0.05401234567901234,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.22357723577235772,
+          "lift_among_not_picked": 0.2662037037037037,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 47,
+            "chance": 0.25,
+            "toward": 0.06666666666666667,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0,
+              "hi": 0.2
+            },
+            "away": 0.32111111111111107,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.26888888888888896,
+              "hi": 0.35333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 3,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 9,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 14,
+              "toward": 0.07142857142857142,
+              "away": 0.3244047619047619,
+              "chance": 0.25
+            }
+          }
+        },
+        "implausible": {
+          "on_key": 1,
+          "on_distractors": 31,
+          "rate_key": 0.011904761904761904,
+          "rate_distractors": 0.12653061224489795,
+          "lift": 0.09408602150537634,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.13008130081300814,
+          "lift_among_not_picked": 0.4637096774193548,
+          "cue_follow": {
+            "questions": 13,
+            "replies": 31,
+            "chance": 0.25,
+            "toward": 0.02564102564102564,
+            "toward_ci": {
+              "n": 13,
+              "lo": 0,
+              "hi": 0.07692307692307693
+            },
+            "away": 0.3247863247863248,
+            "away_ci": {
+              "n": 13,
+              "lo": 0.3076923076923077,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 10,
+              "toward": 0.1,
+              "away": 0.3,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 11,
+              "toward": 0,
+              "away": 0.33333333333333337,
+              "chance": 0.25
+            }
+          }
+        },
+        "off-target": {
+          "on_key": 0,
+          "on_distractors": 68,
+          "rate_key": 0,
+          "rate_distractors": 0.27755102040816326,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.2764227642276423,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 50,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.37968749999999996,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.3479166666666666,
+              "hi": 0.42239583333333325
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 0,
+              "away": 0.49999999999999994,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 11,
+              "toward": 0,
+              "away": 0.3939393939393939,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0,
+              "away": 0.3722222222222221,
+              "chance": 0.25
+            }
+          }
+        },
+        "grammatical-fit": {
+          "on_key": 35,
+          "on_distractors": 65,
+          "rate_key": 0.4166666666666667,
+          "rate_distractors": 0.2653061224489796,
+          "lift": 1.5705128205128205,
+          "rate_on_picked": 0.4819277108433735,
+          "rate_on_not_picked": 0.24390243902439024,
+          "lift_among_not_picked": 0.4956896551724138,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 47,
+            "chance": 0.25,
+            "toward": 0.4315972222222222,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.2987847222222222,
+              "hi": 0.5644097222222223
+            },
+            "away": 0.18784722222222225,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.12708333333333333,
+              "hi": 0.25000000000000006
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 13,
+              "toward": 0.5384615384615384,
+              "away": 0.10256410256410256,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.421875,
+              "away": 0.21875,
+              "chance": 0.25
+            }
+          }
+        },
+        "odd-one-out": {
+          "on_key": 6,
+          "on_distractors": 43,
+          "rate_key": 0.07142857142857142,
+          "rate_distractors": 0.17551020408163265,
+          "lift": 0.4069767441860465,
+          "rate_on_picked": 0.04819277108433735,
+          "rate_on_not_picked": 0.18292682926829268,
+          "lift_among_not_picked": 1.0267857142857142,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 41,
+            "chance": 0.25,
+            "toward": 0.06770833333333333,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0,
+              "hi": 0.15104166666666666
+            },
+            "away": 0.3064236111111111,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.2595486111111111,
+              "hi": 0.33854166666666663
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.06770833333333333,
+              "away": 0.3064236111111111,
+              "chance": 0.25
+            }
+          }
+        },
+        "position": {
+          "on_key": 13,
+          "on_distractors": 21,
+          "rate_key": 0.15476190476190477,
+          "rate_distractors": 0.08571428571428572,
+          "lift": 1.8055555555555556,
+          "rate_on_picked": 0.1566265060240964,
+          "rate_on_not_picked": 0.08536585365853659,
+          "lift_among_not_picked": 2.395833333333333,
+          "cue_follow": {
+            "questions": 12,
+            "replies": 18,
+            "chance": 0.25,
+            "toward": 0.4583333333333333,
+            "toward_ci": {
+              "n": 12,
+              "lo": 0.20833333333333334,
+              "hi": 0.7083333333333334
+            },
+            "away": 0.15277777777777776,
+            "away_ci": {
+              "n": 12,
+              "lo": 0.06944444444444443,
+              "hi": 0.23611111111111113
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 2,
+              "toward": 0.5,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 11,
+              "toward": 0.4090909090909091,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            }
+          }
+        },
+        "general-knowledge": {
+          "on_key": 41,
+          "on_distractors": 80,
+          "rate_key": 0.4880952380952381,
+          "rate_distractors": 0.32653061224489793,
+          "lift": 1.4947916666666667,
+          "rate_on_picked": 0.5060240963855421,
+          "rate_on_not_picked": 0.32113821138211385,
+          "lift_among_not_picked": 1.8482142857142856,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 43,
+            "chance": 0.25,
+            "toward": 0.3836805555555555,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.2326388888888889,
+              "hi": 0.5416666666666666
+            },
+            "away": 0.14322916666666666,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.08159722222222222,
+              "hi": 0.2152777777777778
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 2,
+              "toward": 0.5,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.3723958333333333,
+              "away": 0.1467013888888889,
+              "chance": 0.25
+            }
+          }
+        },
+        "other": {
+          "on_key": 0,
+          "on_distractors": 1,
+          "rate_key": 0,
+          "rate_distractors": 0.004081632653061225,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.0040650406504065045,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 1,
+            "replies": 1,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": null,
+            "away": 0.3333333333333333,
+            "away_ci": null
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:qualified": {
+          "on_key": 70,
+          "on_distractors": 77,
+          "rate_key": 0.8333333333333334,
+          "rate_distractors": 0.3142857142857143,
+          "lift": 2.651515151515152,
+          "rate_on_picked": 0.8795180722891566,
+          "rate_on_not_picked": 0.3008130081300813,
+          "lift_among_not_picked": 1.7424242424242424,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 77,
+            "chance": 0.25,
+            "toward": 0.5550347222222223,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.43454861111111115,
+              "hi": 0.6729166666666668
+            },
+            "away": 0.07725694444444445,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.028125,
+              "hi": 0.13246527777777778
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0.8333333333333334,
+              "away": 0.05555555555555555,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.7777777777777778,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4722222222222222,
+              "away": 0.09635416666666667,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:dismissible": {
+          "on_key": 26,
+          "on_distractors": 162,
+          "rate_key": 0.30952380952380953,
+          "rate_distractors": 0.6612244897959184,
+          "lift": 0.46810699588477367,
+          "rate_on_picked": 0.1686746987951807,
+          "rate_on_not_picked": 0.7073170731707317,
+          "lift_among_not_picked": 1.0648148148148147,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 75,
+            "chance": 0.25,
+            "toward": 0.1388888888888889,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.06666666666666667,
+              "hi": 0.21805555555555559
+            },
+            "away": 0.45868055555555554,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.3298611111111111,
+              "hi": 0.6059027777777777
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0,
+              "away": 0.5,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.05555555555555555,
+              "away": 0.5222222222222221,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.17274305555555558,
+              "away": 0.44184027777777773,
+              "chance": 0.25
+            }
+          }
+        }
+      }
+    },
+    "options-only-explain": {
+      "key_options": 82,
+      "distractor_options": 242,
+      "codes": {
+        "longest": {
+          "on_key": 19,
+          "on_distractors": 20,
+          "rate_key": 0.23170731707317074,
+          "rate_distractors": 0.08264462809917356,
+          "lift": 2.803658536585366,
+          "rate_on_picked": 0.17073170731707318,
+          "rate_on_not_picked": 0.10330578512396695,
+          "lift_among_not_picked": 4.092592592592593,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 36,
+            "chance": 0.25,
+            "toward": 0.5488888888888889,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.3777777777777777,
+              "hi": 0.7166666666666667
+            },
+            "away": 0.15407407407407406,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.09814814814814814,
+              "hi": 0.21185185185185185
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 8,
+              "toward": 0.625,
+              "away": 0.125,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 12,
+              "toward": 0.4305555555555555,
+              "away": 0.19675925925925922,
+              "chance": 0.25
+            }
+          }
+        },
+        "shortest": {
+          "on_key": 1,
+          "on_distractors": 16,
+          "rate_key": 0.012195121951219513,
+          "rate_distractors": 0.06611570247933884,
+          "lift": 0.18445121951219512,
+          "rate_on_picked": 0.036585365853658534,
+          "rate_on_not_picked": 0.05785123966942149,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 10,
+            "replies": 17,
+            "chance": 0.25,
+            "toward": 0.1,
+            "toward_ci": {
+              "n": 10,
+              "lo": 0,
+              "hi": 0.3
+            },
+            "away": 0.3,
+            "away_ci": {
+              "n": 10,
+              "lo": 0.2333333333333333,
+              "hi": 0.33333333333333337
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 3,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 7,
+              "toward": 0.14285714285714285,
+              "away": 0.2857142857142857,
+              "chance": 0.25
+            }
+          }
+        },
+        "most-detailed": {
+          "on_key": 66,
+          "on_distractors": 33,
+          "rate_key": 0.8048780487804879,
+          "rate_distractors": 0.13636363636363635,
+          "lift": 5.902439024390245,
+          "rate_on_picked": 0.7560975609756098,
+          "rate_on_not_picked": 0.15289256198347106,
+          "lift_among_not_picked": 5.700396825396825,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 73,
+            "chance": 0.25,
+            "toward": 0.6909722222222221,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.5625,
+              "hi": 0.8159722222222222
+            },
+            "away": 0.06440972222222222,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.02552083333333333,
+              "hi": 0.10920138888888888
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.7333333333333333,
+              "away": 0.02222222222222222,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.6918402777777778,
+              "away": 0.06770833333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "hedged": {
+          "on_key": 18,
+          "on_distractors": 35,
+          "rate_key": 0.21951219512195122,
+          "rate_distractors": 0.1446280991735537,
+          "lift": 1.5177700348432057,
+          "rate_on_picked": 0.1951219512195122,
+          "rate_on_not_picked": 0.15289256198347106,
+          "lift_among_not_picked": 1.644345238095238,
+          "cue_follow": {
+            "questions": 14,
+            "replies": 48,
+            "chance": 0.25,
+            "toward": 0.37321428571428567,
+            "toward_ci": {
+              "n": 14,
+              "lo": 0.15714285714285717,
+              "hi": 0.6160714285714286
+            },
+            "away": 0.20892857142857144,
+            "away_ci": {
+              "n": 14,
+              "lo": 0.12857142857142856,
+              "hi": 0.28273809523809523
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 8,
+              "toward": 0.4375,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0.30448717948717946,
+              "away": 0.23611111111111113,
+              "chance": 0.25
+            }
+          }
+        },
+        "nuanced-turn": {
+          "on_key": 40,
+          "on_distractors": 48,
+          "rate_key": 0.4878048780487805,
+          "rate_distractors": 0.19834710743801653,
+          "lift": 2.4593495934959346,
+          "rate_on_picked": 0.5,
+          "rate_on_not_picked": 0.19421487603305784,
+          "lift_among_not_picked": 1.5400696864111496,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 68,
+            "chance": 0.25,
+            "toward": 0.4661458333333333,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.3104166666666667,
+              "hi": 0.6291666666666667
+            },
+            "away": 0.1572916666666667,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.09930555555555555,
+              "hi": 0.21458333333333335
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 0.625,
+              "away": 0.125,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0.625,
+              "away": 0.1111111111111111,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.44010416666666663,
+              "away": 0.16145833333333334,
+              "chance": 0.25
+            }
+          }
+        },
+        "middle-ground": {
+          "on_key": 15,
+          "on_distractors": 42,
+          "rate_key": 0.18292682926829268,
+          "rate_distractors": 0.17355371900826447,
+          "lift": 1.0540069686411149,
+          "rate_on_picked": 0.25609756097560976,
+          "rate_on_not_picked": 0.1487603305785124,
+          "lift_among_not_picked": 0.3006802721088435,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 51,
+            "chance": 0.25,
+            "toward": 0.2421875,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.090625,
+              "hi": 0.4109375
+            },
+            "away": 0.2560763888888889,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.19687500000000002,
+              "hi": 0.3118055555555555
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 6,
+              "toward": 0.5,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.22916666666666666,
+              "away": 0.2604166666666667,
+              "chance": 0.25
+            }
+          }
+        },
+        "textbook-voice": {
+          "on_key": 35,
+          "on_distractors": 47,
+          "rate_key": 0.4268292682926829,
+          "rate_distractors": 0.19421487603305784,
+          "lift": 2.197716658017644,
+          "rate_on_picked": 0.5121951219512195,
+          "rate_on_not_picked": 0.1652892561983471,
+          "lift_among_not_picked": 1.5034013605442176,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 63,
+            "chance": 0.25,
+            "toward": 0.4333333333333333,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.3055555555555555,
+              "hi": 0.5711111111111111
+            },
+            "away": 0.16777777777777778,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.11185185185185184,
+              "hi": 0.22481481481481477
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.8666666666666666,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 14,
+              "toward": 0.738095238095238,
+              "away": 0.05952380952380952,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.2888888888888889,
+              "away": 0.21481481481481482,
+              "chance": 0.25
+            }
+          }
+        },
+        "echoes-stem": {
+          "on_key": 58,
+          "on_distractors": 122,
+          "rate_key": 0.7073170731707317,
+          "rate_distractors": 0.5041322314049587,
+          "lift": 1.4030387844862056,
+          "rate_on_picked": 0.6829268292682927,
+          "rate_on_not_picked": 0.512396694214876,
+          "lift_among_not_picked": 1.2325182325182327,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 65,
+            "chance": 0.25,
+            "toward": 0.3548611111111111,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.26840277777777777,
+              "hi": 0.4444444444444443
+            },
+            "away": 0.14479166666666665,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.06302083333333333,
+              "hi": 0.23385416666666664
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 12,
+              "toward": 0.5416666666666666,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.3263888888888889,
+              "away": 0.16319444444444442,
+              "chance": 0.25
+            }
+          }
+        },
+        "like-the-others": {
+          "on_key": 2,
+          "on_distractors": 30,
+          "rate_key": 0.024390243902439025,
+          "rate_distractors": 0.12396694214876033,
+          "lift": 0.1967479674796748,
+          "rate_on_picked": 0.06097560975609756,
+          "rate_on_not_picked": 0.1115702479338843,
+          "lift_among_not_picked": 0.40476190476190477,
+          "cue_follow": {
+            "questions": 14,
+            "replies": 31,
+            "chance": 0.25,
+            "toward": 0.023809523809523808,
+            "toward_ci": {
+              "n": 14,
+              "lo": 0,
+              "hi": 0.07142857142857142
+            },
+            "away": 0.3253968253968254,
+            "away_ci": {
+              "n": 14,
+              "lo": 0.3095238095238095,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0.02564102564102564,
+              "away": 0.32478632478632485,
+              "chance": 0.25
+            }
+          }
+        },
+        "opposites": {
+          "on_key": 25,
+          "on_distractors": 48,
+          "rate_key": 0.3048780487804878,
+          "rate_distractors": 0.19834710743801653,
+          "lift": 1.5370934959349594,
+          "rate_on_picked": 0.23170731707317074,
+          "rate_on_not_picked": 0.2231404958677686,
+          "lift_among_not_picked": 1.8302277432712213,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 50,
+            "chance": 0.25,
+            "toward": 0.33229166666666665,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.14791666666666667,
+              "hi": 0.5333333333333333
+            },
+            "away": 0.20868055555555556,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.13333333333333333,
+              "hi": 0.2815972222222222
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0.25,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 11,
+              "toward": 0.3939393939393939,
+              "away": 0.19696969696969696,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.3333333333333333,
+              "away": 0.21701388888888892,
+              "chance": 0.25
+            }
+          }
+        },
+        "surprising": {
+          "on_key": 17,
+          "on_distractors": 36,
+          "rate_key": 0.2073170731707317,
+          "rate_distractors": 0.1487603305785124,
+          "lift": 1.393631436314363,
+          "rate_on_picked": 0.2073170731707317,
+          "rate_on_not_picked": 0.1487603305785124,
+          "lift_among_not_picked": 1.3154761904761902,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 47,
+            "chance": 0.25,
+            "toward": 0.40208333333333335,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.21250000000000002,
+              "hi": 0.6104166666666666
+            },
+            "away": 0.18541666666666667,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.11145833333333333,
+              "hi": 0.25416666666666665
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 9,
+              "toward": 0.5555555555555556,
+              "away": 0.14814814814814814,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.31666666666666665,
+              "away": 0.21111111111111114,
+              "chance": 0.25
+            }
+          }
+        },
+        "too-obvious": {
+          "on_key": 0,
+          "on_distractors": 42,
+          "rate_key": 0,
+          "rate_distractors": 0.17355371900826447,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.17355371900826447,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 38,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.34629629629629627,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.3361111111111111,
+              "hi": 0.3638888888888889
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 0,
+              "away": 0.37499999999999994,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0,
+              "away": 0.375,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "absolute": {
+          "on_key": 24,
+          "on_distractors": 120,
+          "rate_key": 0.2926829268292683,
+          "rate_distractors": 0.49586776859504134,
+          "lift": 0.5902439024390244,
+          "rate_on_picked": 0.2682926829268293,
+          "rate_on_not_picked": 0.5041322314049587,
+          "lift_among_not_picked": 0.939625850340136,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 72,
+            "chance": 0.25,
+            "toward": 0.16874999999999998,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.07916666666666668,
+              "hi": 0.2671875
+            },
+            "away": 0.34531249999999997,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.24791666666666673,
+              "hi": 0.4432291666666667
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 3,
+              "toward": 0,
+              "away": 0.4444444444444444,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0,
+              "away": 0.375,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.20312499999999997,
+              "away": 0.3454861111111111,
+              "chance": 0.25
+            }
+          }
+        },
+        "denies-question": {
+          "on_key": 1,
+          "on_distractors": 45,
+          "rate_key": 0.012195121951219513,
+          "rate_distractors": 0.1859504132231405,
+          "lift": 0.06558265582655827,
+          "rate_on_picked": 0.012195121951219513,
+          "rate_on_not_picked": 0.1859504132231405,
+          "lift_among_not_picked": 0.23917748917748918,
+          "cue_follow": {
+            "questions": 14,
+            "replies": 41,
+            "chance": 0.25,
+            "toward": 0.07142857142857142,
+            "toward_ci": {
+              "n": 14,
+              "lo": 0,
+              "hi": 0.21428571428571427
+            },
+            "away": 0.3154761904761905,
+            "away_ci": {
+              "n": 14,
+              "lo": 0.2648809523809524,
+              "hi": 0.3452380952380953
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 7,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 14,
+              "toward": 0.07142857142857142,
+              "away": 0.3174603174603175,
+              "chance": 0.25
+            }
+          }
+        },
+        "implausible": {
+          "on_key": 0,
+          "on_distractors": 26,
+          "rate_key": 0,
+          "rate_distractors": 0.10743801652892562,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.10743801652892562,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 12,
+            "replies": 23,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 12,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.35185185185185186,
+            "away_ci": {
+              "n": 12,
+              "lo": 0.3333333333333333,
+              "hi": 0.3796296296296296
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 10,
+              "toward": 0,
+              "away": 0.3666666666666667,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 8,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "off-target": {
+          "on_key": 2,
+          "on_distractors": 32,
+          "rate_key": 0.024390243902439025,
+          "rate_distractors": 0.1322314049586777,
+          "lift": 0.18445121951219512,
+          "rate_on_picked": 0.012195121951219513,
+          "rate_on_not_picked": 0.13636363636363635,
+          "lift_among_not_picked": 0.32886904761904756,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 32,
+            "chance": 0.25,
+            "toward": 0.05208333333333333,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0,
+              "hi": 0.12499999999999999
+            },
+            "away": 0.32465277777777773,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.29687500000000006,
+              "hi": 0.3489583333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 6,
+              "toward": 0,
+              "away": 0.3611111111111111,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.0625,
+              "away": 0.31770833333333326,
+              "chance": 0.25
+            }
+          }
+        },
+        "grammatical-fit": {
+          "on_key": 28,
+          "on_distractors": 66,
+          "rate_key": 0.34146341463414637,
+          "rate_distractors": 0.2727272727272727,
+          "lift": 1.2520325203252034,
+          "rate_on_picked": 0.2804878048780488,
+          "rate_on_not_picked": 0.29338842975206614,
+          "lift_among_not_picked": 1.9293650793650796,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 41,
+            "chance": 0.25,
+            "toward": 0.3536458333333333,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.24479166666666669,
+              "hi": 0.4749999999999999
+            },
+            "away": 0.20225694444444442,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.12499999999999997,
+              "hi": 0.2829861111111111
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 2,
+              "toward": 0.5,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.3619791666666667,
+              "away": 0.19878472222222218,
+              "chance": 0.25
+            }
+          }
+        },
+        "odd-one-out": {
+          "on_key": 8,
+          "on_distractors": 45,
+          "rate_key": 0.0975609756097561,
+          "rate_distractors": 0.1859504132231405,
+          "lift": 0.5246612466124662,
+          "rate_on_picked": 0.0975609756097561,
+          "rate_on_not_picked": 0.1859504132231405,
+          "lift_among_not_picked": 0.23917748917748918,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 47,
+            "chance": 0.25,
+            "toward": 0.17916666666666667,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.078125,
+              "hi": 0.2989583333333333
+            },
+            "away": 0.2925347222222221,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.25052083333333336,
+              "hi": 0.3326388888888888
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.18229166666666666,
+              "away": 0.29253472222222215,
+              "chance": 0.25
+            }
+          }
+        },
+        "position": {
+          "on_key": 11,
+          "on_distractors": 39,
+          "rate_key": 0.13414634146341464,
+          "rate_distractors": 0.16115702479338842,
+          "lift": 0.8323952470293935,
+          "rate_on_picked": 0.13414634146341464,
+          "rate_on_not_picked": 0.16115702479338842,
+          "lift_among_not_picked": 1.202721088435374,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 23,
+            "chance": 0.25,
+            "toward": 0.18888888888888886,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.06666666666666667,
+              "hi": 0.3555555555555555
+            },
+            "away": 0.2592592592592593,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.2,
+              "hi": 0.31111111111111106
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 3,
+              "toward": 0.3333333333333333,
+              "away": 0.27777777777777773,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.16666666666666666,
+              "away": 0.2555555555555556,
+              "chance": 0.25
+            }
+          }
+        },
+        "general-knowledge": {
+          "on_key": 41,
+          "on_distractors": 99,
+          "rate_key": 0.5,
+          "rate_distractors": 0.4090909090909091,
+          "lift": 1.222222222222222,
+          "rate_on_picked": 0.5365853658536586,
+          "rate_on_not_picked": 0.39669421487603307,
+          "lift_among_not_picked": 1.361904761904762,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 48,
+            "chance": 0.25,
+            "toward": 0.38559027777777777,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.2486111111111111,
+              "hi": 0.5246527777777777
+            },
+            "away": 0.18663194444444445,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.10850694444444445,
+              "hi": 0.28645833333333326
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 3,
+              "toward": 0.6666666666666666,
+              "away": 0.1111111111111111,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.37239583333333326,
+              "away": 0.19010416666666666,
+              "chance": 0.25
+            }
+          }
+        },
+        "other": {
+          "on_key": 1,
+          "on_distractors": 0,
+          "rate_key": 0.012195121951219513,
+          "rate_distractors": 0,
+          "lift": null,
+          "rate_on_picked": 0.012195121951219513,
+          "rate_on_not_picked": 0,
+          "lift_among_not_picked": null,
+          "cue_follow": {
+            "questions": 1,
+            "replies": 1,
+            "chance": 0.25,
+            "toward": 1,
+            "toward_ci": null,
+            "away": 0,
+            "away_ci": null
+          },
+          "cue_follow_by_family": {
+            "mistral": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:qualified": {
+          "on_key": 74,
+          "on_distractors": 101,
+          "rate_key": 0.9024390243902439,
+          "rate_distractors": 0.41735537190082644,
+          "lift": 2.1622796425984063,
+          "rate_on_picked": 0.8780487804878049,
+          "rate_on_not_picked": 0.4256198347107438,
+          "lift_among_not_picked": 1.9354132457580733,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 73,
+            "chance": 0.25,
+            "toward": 0.47065972222222224,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.36874999999999997,
+              "hi": 0.5774305555555556
+            },
+            "away": 0.05520833333333333,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.015625,
+              "hi": 0.10520833333333332
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.7,
+              "away": 0.1,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.5444444444444444,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4375,
+              "away": 0.0625,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:dismissible": {
+          "on_key": 25,
+          "on_distractors": 151,
+          "rate_key": 0.3048780487804878,
+          "rate_distractors": 0.6239669421487604,
+          "lift": 0.48861250201905987,
+          "rate_on_picked": 0.2804878048780488,
+          "rate_on_not_picked": 0.6322314049586777,
+          "lift_among_not_picked": 0.7359307359307359,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 76,
+            "chance": 0.25,
+            "toward": 0.12951388888888887,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.06666666666666667,
+              "hi": 0.1954861111111111
+            },
+            "away": 0.41128472222222223,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.30225694444444434,
+              "hi": 0.5246527777777777
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 0,
+              "away": 0.5416666666666666,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0,
+              "away": 0.5111111111111111,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.1701388888888889,
+              "away": 0.37934027777777773,
+              "chance": 0.25
+            }
+          }
+        }
+      }
+    }
+  },
+  "faithfulness": {
+    "longest": {
+      "property": "length_rank",
+      "options": 653,
+      "tagged": 60,
+      "mean_rank_tagged": 0.775,
+      "mean_rank_untagged": 0.4761101742551993
+    },
+    "shortest": {
+      "property": "shortness_rank",
+      "options": 653,
+      "tagged": 28,
+      "mean_rank_tagged": 0.8452380952380952,
+      "mean_rank_untagged": 0.4808000000000001
+    },
+    "most-detailed": {
+      "property": "length_rank",
+      "options": 653,
+      "tagged": 179,
+      "mean_rank_tagged": 0.8286778398510244,
+      "mean_rank_untagged": 0.380801687763713
+    },
+    "echoes-stem": {
+      "property": "stem_echo_rank",
+      "options": 329,
+      "tagged": 176,
+      "mean_rank_tagged": 0.4602272727272729,
+      "mean_rank_untagged": 0.5403050108932461
+    },
+    "like-the-others": {
+      "property": "centrality_rank",
+      "options": 653,
+      "tagged": 69,
+      "mean_rank_tagged": 0.5338164251207729,
+      "mean_rank_untagged": 0.49857305936073043
+    },
+    "absolute": {
+      "property": "has an absolute word (checker list)",
+      "options": 653,
+      "tagged": 288,
+      "tagged_where_true": 0.09722222222222222,
+      "property_true": 43,
+      "true_and_tagged": 0.6511627906976745
+    }
+  },
+  "per_voice": {
+    "gemma-31b": {
+      "meta": {
+        "id": "gemma-31b",
+        "provider": "gemini",
+        "model": "gemma-4-31b-it",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 11
+      },
+      "replies": 11,
+      "unusable": 0,
+      "problems": {
+        "fenced": 11
+      },
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.8333333333333334,
+          "mean_p_key": 0.6833333333333332,
+          "letter_agreement": {
+            "n": 5,
+            "rate": 1
+          },
+          "mean_reasoning_tokens": 1121
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.8,
+          "mean_p_key": 0.6000000000000001,
+          "letter_agreement": {
+            "n": 5,
+            "rate": 0.8
+          },
+          "mean_reasoning_tokens": 1190
+        }
+      },
+      "unrated_option_share": 0,
+      "invalid_code_option_share": 0,
+      "other_share": 0,
+      "no_tell_share": 0,
+      "excluded_from_pooled_tables": false
+    },
+    "gpt-luna": {
+      "meta": {
+        "id": "gpt-luna",
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "family": "openai"
+      },
+      "statuses": {
+        "ok": 30
+      },
+      "replies": 30,
+      "unusable": 0,
+      "problems": {
+        "invalid-code": 1
+      },
+      "rungs": {
+        "full-explain": {
+          "replies": 15,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.8666666666666667,
+          "mean_p_key": 0.7533333333333333,
+          "letter_agreement": {
+            "n": 15,
+            "rate": 1
+          },
+          "mean_reasoning_tokens": 133
+        },
+        "options-only-explain": {
+          "replies": 15,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.9333333333333333,
+          "mean_p_key": 0.6466666666666666,
+          "letter_agreement": {
+            "n": 15,
+            "rate": 0.7333333333333333
+          },
+          "mean_reasoning_tokens": 126
+        }
+      },
+      "unrated_option_share": 0,
+      "invalid_code_option_share": 0.008333333333333333,
+      "other_share": 0.0021598272138228943,
+      "no_tell_share": 0,
+      "excluded_from_pooled_tables": false
+    },
+    "ministral-14b": {
+      "meta": {
+        "id": "ministral-14b",
+        "provider": "mistral",
+        "model": "ministral-14b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 64
+      },
+      "replies": 64,
+      "unusable": 2,
+      "problems": {
+        "no-tell-with-codes": 7,
+        "p-sum": 5,
+        "option-letters-mismatch": 2,
+        "invalid-code": 1
+      },
+      "rungs": {
+        "full-explain": {
+          "replies": 31,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.8387096774193549,
+          "mean_p_key": 0.5958302363609335,
+          "letter_agreement": {
+            "n": 31,
+            "rate": 0.8709677419354839
+          },
+          "mean_reasoning_tokens": null
+        },
+        "options-only-explain": {
+          "replies": 31,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.6774193548387096,
+          "mean_p_key": 0.4335125448028674,
+          "letter_agreement": {
+            "n": 31,
+            "rate": 0.7096774193548387
+          },
+          "mean_reasoning_tokens": null
+        }
+      },
+      "unrated_option_share": 0.028225806451612902,
+      "invalid_code_option_share": 0.004032258064516129,
+      "other_share": 0,
+      "no_tell_share": 0,
+      "excluded_from_pooled_tables": false
+    },
+    "ministral-8b": {
+      "meta": {
+        "id": "ministral-8b",
+        "provider": "mistral",
+        "model": "ministral-8b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 64
+      },
+      "replies": 64,
+      "unusable": 1,
+      "problems": {
+        "no-tell-with-codes": 4,
+        "invalid-code": 1,
+        "p-sum": 3,
+        "option-letters-mismatch": 1
+      },
+      "rungs": {
+        "full-explain": {
+          "replies": 32,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.75,
+          "mean_p_key": 0.4910156249999999,
+          "letter_agreement": {
+            "n": 32,
+            "rate": 0.8125
+          },
+          "mean_reasoning_tokens": null
+        },
+        "options-only-explain": {
+          "replies": 31,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.7096774193548387,
+          "mean_p_key": 0.3951612903225807,
+          "letter_agreement": {
+            "n": 31,
+            "rate": 0.6451612903225806
+          },
+          "mean_reasoning_tokens": null
+        }
+      },
+      "unrated_option_share": 0.015873015873015872,
+      "invalid_code_option_share": 0.003968253968253968,
+      "other_share": 0.0008976660682226212,
+      "no_tell_share": 0,
+      "excluded_from_pooled_tables": false
+    }
+  },
+  "per_question": {
+    "b03/sonnet/a01": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 5,
+          "mean_p_key": 0.6266666666666666,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 4,
+          "mean_p_key": 0.576,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Lattice A has received more wennet-work relative to its tharl frame, but that work runs mostly tharl-to-tharl rather than chaining together; Lattice B has fewer wennets overall, but they have formed a longer chain that is comparatively independent of the frame.",
+          "ratings": 11,
+          "mean_p": 0.6036363636363635,
+          "codes": {
+            "most-detailed": 11,
+            "nuanced-turn": 9,
+            "echoes-stem": 9,
+            "textbook-voice": 6,
+            "general-knowledge": 6,
+            "longest": 5,
+            "grammatical-fit": 5,
+            "middle-ground": 3,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Lattice A's higher cant means its wennet-work is also more independent of the frame than Lattice B's, since cant is just the whole-lattice version of pell.",
+          "ratings": 11,
+          "mean_p": 0.21909090909090911,
+          "codes": {
+            "echoes-stem": 7,
+            "absolute": 5,
+            "general-knowledge": 5,
+            "like-the-others": 4,
+            "opposites": 3,
+            "grammatical-fit": 3,
+            "hedged": 3,
+            "too-obvious": 2,
+            "surprising": 2,
+            "odd-one-out": 2,
+            "off-target": 1,
+            "textbook-voice": 1,
+            "nuanced-turn": 1,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "A cant as high as Lattice A's should predict at least as long a pell as Lattice B's, so one of the two figures given must be a measurement error.",
+          "ratings": 11,
+          "mean_p": 0.09272727272727273,
+          "codes": {
+            "absolute": 8,
+            "denies-question": 8,
+            "implausible": 5,
+            "off-target": 4,
+            "surprising": 4,
+            "odd-one-out": 3,
+            "hedged": 2,
+            "too-obvious": 2,
+            "position": 2,
+            "grammatical-fit": 2,
+            "echoes-stem": 1,
+            "opposites": 1,
+            "nuanced-turn": 1,
+            "general-knowledge": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Lattice B must have had more wennets laid on it in total than Lattice A, since pell is the count that actually reflects how much wennet-laying has happened.",
+          "ratings": 11,
+          "mean_p": 0.08454545454545453,
+          "codes": {
+            "absolute": 9,
+            "too-obvious": 5,
+            "grammatical-fit": 5,
+            "echoes-stem": 4,
+            "off-target": 4,
+            "opposites": 3,
+            "like-the-others": 3,
+            "general-knowledge": 3,
+            "odd-one-out": 1,
+            "denies-question": 1,
+            "implausible": 1,
+            "surprising": 1,
+            "longest": 1,
+            "textbook-voice": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/a02": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.7937499999999998,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.54,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "That a lattice's ostral/calvine class is partly a function of which counting convention the field has adopted, not a fixed property waiting to be read off — the underlying cant and pell barely change, but the classification flips depending on the rule applied.",
+          "ratings": 11,
+          "mean_p": 0.678409090909091,
+          "codes": {
+            "nuanced-turn": 10,
+            "textbook-voice": 9,
+            "echoes-stem": 9,
+            "most-detailed": 7,
+            "middle-ground": 4,
+            "general-knowledge": 4,
+            "longest": 3,
+            "grammatical-fit": 3,
+            "hedged": 3,
+            "position": 2,
+            "surprising": 2,
+            "opposites": 1,
+            "off-target": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "That once Varrenby saw Emmerick's calculation on the Sellen lattice, she accepted her rule had been wrong and endorsed his mean-of-three-chains method instead.",
+          "ratings": 10,
+          "mean_p": 0.06100000000000001,
+          "codes": {
+            "absolute": 5,
+            "implausible": 4,
+            "off-target": 3,
+            "most-detailed": 3,
+            "position": 3,
+            "echoes-stem": 3,
+            "like-the-others": 3,
+            "grammatical-fit": 3,
+            "denies-question": 2,
+            "shortest": 1,
+            "odd-one-out": 1,
+            "middle-ground": 1,
+            "general-knowledge": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "That Emmerick's calculation shows Varrenby's original definitions of cant and pell were themselves mistaken, not just her classification boundary.",
+          "ratings": 11,
+          "mean_p": 0.17772727272727273,
+          "codes": {
+            "absolute": 5,
+            "off-target": 5,
+            "echoes-stem": 5,
+            "nuanced-turn": 4,
+            "most-detailed": 3,
+            "opposites": 2,
+            "position": 2,
+            "middle-ground": 2,
+            "too-obvious": 1,
+            "like-the-others": 1,
+            "grammatical-fit": 1,
+            "surprising": 1,
+            "textbook-voice": 1,
+            "general-knowledge": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "That the disagreement is a measurement error a more careful observer could resolve, since the lattice's true cant and pell are objectively fixed quantities.",
+          "ratings": 11,
+          "mean_p": 0.08840909090909091,
+          "codes": {
+            "absolute": 10,
+            "denies-question": 9,
+            "too-obvious": 5,
+            "off-target": 3,
+            "opposites": 2,
+            "position": 2,
+            "textbook-voice": 2,
+            "echoes-stem": 2,
+            "implausible": 2,
+            "odd-one-out": 2,
+            "grammatical-fit": 1,
+            "general-knowledge": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/a03": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.7260752688172043,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 6,
+          "picked_key": 3,
+          "mean_p_key": 0.395,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "No: wennets near the anchors are mostly spurs, so chains begun there end quickly, which is why the tessel trace underestimates pell less often, and by less, than the fenn trace does.",
+          "ratings": 12,
+          "mean_p": 0.5605376344086022,
+          "codes": {
+            "most-detailed": 10,
+            "echoes-stem": 9,
+            "general-knowledge": 8,
+            "grammatical-fit": 6,
+            "textbook-voice": 5,
+            "hedged": 5,
+            "nuanced-turn": 4,
+            "opposites": 3,
+            "surprising": 3,
+            "position": 3,
+            "longest": 2,
+            "absolute": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Yes: sampling more starting points gives the fenn trace a structurally better chance of finding the true longest chain, which matches why beginners prefer it.",
+          "ratings": 12,
+          "mean_p": 0.19838709677419356,
+          "codes": {
+            "echoes-stem": 9,
+            "too-obvious": 8,
+            "general-knowledge": 5,
+            "like-the-others": 4,
+            "textbook-voice": 4,
+            "grammatical-fit": 3,
+            "absolute": 3,
+            "longest": 2,
+            "surprising": 2,
+            "hedged": 2,
+            "opposites": 1,
+            "most-detailed": 1,
+            "position": 1,
+            "nuanced-turn": 1,
+            "off-target": 1,
+            "odd-one-out": 1,
+            "middle-ground": 1,
+            "shortest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "No: but only because the tessel trace and the fenn trace always find the identical chain in practice, so neither method actually underestimates pell.",
+          "ratings": 12,
+          "mean_p": 0.10005376344086021,
+          "codes": {
+            "absolute": 9,
+            "denies-question": 8,
+            "implausible": 5,
+            "off-target": 4,
+            "odd-one-out": 4,
+            "grammatical-fit": 4,
+            "hedged": 3,
+            "general-knowledge": 3,
+            "nuanced-turn": 2,
+            "middle-ground": 2,
+            "opposites": 2,
+            "position": 1,
+            "like-the-others": 1,
+            "echoes-stem": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Yes: Mira Pole's objection that the tessel trace can never find a chain avoiding the middle shows the fenn trace is the more accurate method overall.",
+          "ratings": 11,
+          "mean_p": 0.1509090909090909,
+          "codes": {
+            "echoes-stem": 9,
+            "absolute": 6,
+            "grammatical-fit": 4,
+            "general-knowledge": 4,
+            "surprising": 3,
+            "textbook-voice": 3,
+            "off-target": 2,
+            "opposites": 2,
+            "position": 2,
+            "odd-one-out": 2,
+            "most-detailed": 2,
+            "too-obvious": 1,
+            "hedged": 1,
+            "like-the-others": 1,
+            "longest": 1,
+            "nuanced-turn": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/a04": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.7016666666666667,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.62,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "(1) is the Orrin pattern, which compares different lattices by how many vesks began them; (2) is the Tasker pattern, which follows one lattice's pell over time — the text treats these as distinct regularities, not two versions of the same finding.",
+          "ratings": 12,
+          "mean_p": 0.6608333333333333,
+          "codes": {
+            "textbook-voice": 11,
+            "most-detailed": 10,
+            "echoes-stem": 9,
+            "middle-ground": 7,
+            "nuanced-turn": 6,
+            "grammatical-fit": 5,
+            "general-knowledge": 4,
+            "opposites": 2,
+            "longest": 1,
+            "position": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "(1) and (2) are the same regularity described twice, since both show pell decreasing under some condition.",
+          "ratings": 12,
+          "mean_p": 0.06166666666666667,
+          "codes": {
+            "echoes-stem": 10,
+            "absolute": 8,
+            "too-obvious": 7,
+            "denies-question": 5,
+            "like-the-others": 3,
+            "off-target": 2,
+            "implausible": 2,
+            "position": 2,
+            "grammatical-fit": 2,
+            "shortest": 1,
+            "surprising": 1,
+            "most-detailed": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "(2) is the Orrin pattern and (1) is the Tasker pattern, since Orrin's original comparison concerned changes across a lattice's seasons rather than how many vesks began it.",
+          "ratings": 12,
+          "mean_p": 0.16166666666666665,
+          "codes": {
+            "opposites": 7,
+            "grammatical-fit": 6,
+            "general-knowledge": 6,
+            "echoes-stem": 5,
+            "absolute": 3,
+            "odd-one-out": 3,
+            "most-detailed": 2,
+            "off-target": 2,
+            "middle-ground": 2,
+            "implausible": 1,
+            "textbook-voice": 1,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "(2) shows that moving air in draughty galleries physically stretches long wennet chains until they part, the same mechanism that later explained Orrin's multi-vesk finding.",
+          "ratings": 12,
+          "mean_p": 0.11583333333333333,
+          "codes": {
+            "surprising": 7,
+            "off-target": 6,
+            "odd-one-out": 6,
+            "general-knowledge": 6,
+            "implausible": 4,
+            "most-detailed": 3,
+            "grammatical-fit": 3,
+            "hedged": 2,
+            "longest": 2,
+            "other": 1,
+            "nuanced-turn": 1,
+            "absolute": 1,
+            "textbook-voice": 1,
+            "like-the-others": 1,
+            "echoes-stem": 1,
+            "opposites": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/a05": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.6683333333333333,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 3,
+          "mean_p_key": 0.3706666666666666,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "A wennet: the classification depends on what its ends touch, not on thickness or tautness, and this thread touches only other threads at both ends.",
+          "ratings": 11,
+          "mean_p": 0.5330303030303031,
+          "codes": {
+            "echoes-stem": 11,
+            "most-detailed": 9,
+            "textbook-voice": 6,
+            "grammatical-fit": 6,
+            "absolute": 6,
+            "general-knowledge": 4,
+            "nuanced-turn": 2,
+            "surprising": 2,
+            "odd-one-out": 1,
+            "opposites": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "A tharl, since thick, taut threads are tharls under the standard rule of thumb observers use to classify at a glance.",
+          "ratings": 11,
+          "mean_p": 0.25626262626262625,
+          "codes": {
+            "too-obvious": 6,
+            "opposites": 6,
+            "echoes-stem": 6,
+            "general-knowledge": 6,
+            "absolute": 6,
+            "textbook-voice": 5,
+            "like-the-others": 5,
+            "hedged": 1,
+            "nuanced-turn": 1,
+            "most-detailed": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "A spur, since it is a short thread whose two ends both lie near other threads rather than on the rock.",
+          "ratings": 10,
+          "mean_p": 0.11366666666666667,
+          "codes": {
+            "off-target": 4,
+            "shortest": 4,
+            "too-obvious": 4,
+            "absolute": 4,
+            "general-knowledge": 4,
+            "grammatical-fit": 3,
+            "implausible": 2,
+            "position": 2,
+            "odd-one-out": 2,
+            "surprising": 1,
+            "opposites": 1,
+            "like-the-others": 1,
+            "echoes-stem": 1,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "It cannot be classified without knowing its length, since tharls and wennets are distinguished mainly by how long and how taut they are.",
+          "ratings": 10,
+          "mean_p": 0.10311111111111111,
+          "codes": {
+            "hedged": 7,
+            "nuanced-turn": 6,
+            "denies-question": 4,
+            "off-target": 4,
+            "absolute": 3,
+            "longest": 2,
+            "position": 2,
+            "echoes-stem": 2,
+            "odd-one-out": 2,
+            "grammatical-fit": 2,
+            "general-knowledge": 2,
+            "textbook-voice": 1,
+            "opposites": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/a06": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 3,
+          "mean_p_key": 0.42,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 6,
+          "picked_key": 2,
+          "mean_p_key": 0.31722222222222224,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Tamber — a break near a fastening indicates tamber, a gradual material change, and tamber is also the more common cause of wennet failure in a standing lattice, more common than pilse.",
+          "ratings": 12,
+          "mean_p": 0.36861111111111117,
+          "codes": {
+            "textbook-voice": 10,
+            "most-detailed": 8,
+            "echoes-stem": 7,
+            "absolute": 7,
+            "opposites": 6,
+            "grammatical-fit": 4,
+            "general-knowledge": 4,
+            "longest": 2,
+            "position": 2,
+            "nuanced-turn": 2,
+            "odd-one-out": 2,
+            "hedged": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Pilse — beginners generally attribute broken wennets to pilse, the wear of crawling, and pilse is indeed the dominant cause of failure in a standing lattice.",
+          "ratings": 12,
+          "mean_p": 0.19685185185185183,
+          "codes": {
+            "too-obvious": 9,
+            "echoes-stem": 8,
+            "general-knowledge": 7,
+            "textbook-voice": 4,
+            "absolute": 4,
+            "opposites": 3,
+            "like-the-others": 3,
+            "hedged": 3,
+            "nuanced-turn": 2,
+            "off-target": 2,
+            "odd-one-out": 2,
+            "middle-ground": 2,
+            "shortest": 1,
+            "grammatical-fit": 1,
+            "surprising": 1,
+            "longest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Pilse — a break near a fastening is the sign of pilse, since that is where a snail's grip wears the thread as it crawls past.",
+          "ratings": 12,
+          "mean_p": 0.152962962962963,
+          "codes": {
+            "echoes-stem": 9,
+            "shortest": 7,
+            "general-knowledge": 6,
+            "absolute": 5,
+            "off-target": 4,
+            "opposites": 3,
+            "surprising": 3,
+            "odd-one-out": 3,
+            "implausible": 2,
+            "textbook-voice": 2,
+            "grammatical-fit": 2,
+            "too-obvious": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Tamber — but pilse is actually the more common cause overall, and tamber only explains why some breaks happen near fastenings specifically.",
+          "ratings": 12,
+          "mean_p": 0.2815740740740741,
+          "codes": {
+            "nuanced-turn": 11,
+            "hedged": 6,
+            "opposites": 5,
+            "textbook-voice": 4,
+            "most-detailed": 4,
+            "middle-ground": 4,
+            "grammatical-fit": 4,
+            "echoes-stem": 3,
+            "general-knowledge": 3,
+            "absolute": 2,
+            "longest": 2,
+            "surprising": 1,
+            "like-the-others": 1,
+            "position": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/a07": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.62,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 3,
+          "mean_p_key": 0.3,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The opposite holds: the higher a lattice hangs, the less likely it is to survive a flood season, and lattices close under the crown are lost most often of all.",
+          "ratings": 10,
+          "mean_p": 0.45999999999999996,
+          "codes": {
+            "opposites": 10,
+            "echoes-stem": 6,
+            "surprising": 6,
+            "absolute": 6,
+            "position": 5,
+            "most-detailed": 4,
+            "grammatical-fit": 4,
+            "textbook-voice": 3,
+            "general-knowledge": 2,
+            "hedged": 1,
+            "nuanced-turn": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "None — height above the water is exactly what protects a lattice from flood loss, so the colleague's reasoning is sound.",
+          "ratings": 10,
+          "mean_p": 0.221,
+          "codes": {
+            "too-obvious": 8,
+            "denies-question": 8,
+            "absolute": 7,
+            "position": 6,
+            "grammatical-fit": 5,
+            "echoes-stem": 3,
+            "opposites": 2,
+            "surprising": 2,
+            "textbook-voice": 2,
+            "odd-one-out": 1,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The objection is that flood loss is mostly caused by silt film rather than by a lattice's height at all, so height is irrelevant to survival.",
+          "ratings": 10,
+          "mean_p": 0.12499999999999997,
+          "codes": {
+            "general-knowledge": 6,
+            "off-target": 5,
+            "echoes-stem": 5,
+            "absolute": 5,
+            "nuanced-turn": 3,
+            "like-the-others": 3,
+            "position": 3,
+            "most-detailed": 3,
+            "denies-question": 2,
+            "middle-ground": 1,
+            "hedged": 1,
+            "odd-one-out": 1,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The objection is that a lattice's cant, not its height, determines flood survival, so height plays no role either way.",
+          "ratings": 10,
+          "mean_p": 0.194,
+          "codes": {
+            "nuanced-turn": 7,
+            "like-the-others": 6,
+            "echoes-stem": 6,
+            "general-knowledge": 5,
+            "absolute": 4,
+            "position": 3,
+            "middle-ground": 3,
+            "odd-one-out": 2,
+            "off-target": 1,
+            "opposites": 1,
+            "grammatical-fit": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/a08": {
+      "rungs": {
+        "full-explain": {
+          "replies": 4,
+          "picked_key": 2,
+          "mean_p_key": 0.40750000000000003,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 3,
+          "mean_p_key": 0.36000000000000004,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "No — most lost lattices are lost to sudden violence, a flood or a fall of rock, and silt film accounts for only a small share of losses despite Varrenby's concern about it.",
+          "ratings": 9,
+          "mean_p": 0.3811111111111112,
+          "codes": {
+            "echoes-stem": 9,
+            "absolute": 7,
+            "general-knowledge": 5,
+            "most-detailed": 4,
+            "opposites": 3,
+            "grammatical-fit": 3,
+            "position": 3,
+            "longest": 2,
+            "denies-question": 2,
+            "surprising": 2,
+            "nuanced-turn": 1,
+            "like-the-others": 1,
+            "middle-ground": 1,
+            "shortest": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Yes — gradual threats like silt film accumulate unnoticed over many seasons, so they are the dominant, if underappreciated, cause of loss.",
+          "ratings": 9,
+          "mean_p": 0.3722222222222222,
+          "codes": {
+            "textbook-voice": 8,
+            "echoes-stem": 8,
+            "most-detailed": 5,
+            "position": 3,
+            "hedged": 3,
+            "general-knowledge": 3,
+            "opposites": 2,
+            "too-obvious": 2,
+            "absolute": 2,
+            "longest": 2,
+            "denies-question": 1,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "No — but only because rockfalls specifically outpace silt film, not because sudden violence in general is the dominant cause.",
+          "ratings": 9,
+          "mean_p": 0.16666666666666669,
+          "codes": {
+            "nuanced-turn": 7,
+            "opposites": 5,
+            "hedged": 5,
+            "position": 4,
+            "echoes-stem": 4,
+            "middle-ground": 3,
+            "shortest": 2,
+            "grammatical-fit": 2,
+            "most-detailed": 2,
+            "odd-one-out": 2,
+            "general-knowledge": 2,
+            "absolute": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Yes — since a high cant is what determines whether a lattice survives a flood, gradual sediment buildup must be the deciding factor in the seasons between floods.",
+          "ratings": 8,
+          "mean_p": 0.08374999999999999,
+          "codes": {
+            "general-knowledge": 5,
+            "off-target": 5,
+            "odd-one-out": 4,
+            "absolute": 3,
+            "opposites": 2,
+            "implausible": 2,
+            "echoes-stem": 2,
+            "nuanced-turn": 2,
+            "surprising": 2,
+            "grammatical-fit": 1,
+            "textbook-voice": 1,
+            "too-obvious": 1,
+            "position": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b01": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.806,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.68,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Lattice A's wennets have linked into longer wennet-to-wennet chains, while Lattice B's wennets more often run directly from tharl to tharl; both lattices have received the same amount of wennet-work relative to their frames.",
+          "ratings": 10,
+          "mean_p": 0.743,
+          "codes": {
+            "most-detailed": 10,
+            "nuanced-turn": 10,
+            "echoes-stem": 9,
+            "grammatical-fit": 6,
+            "textbook-voice": 4,
+            "hedged": 4,
+            "general-knowledge": 4,
+            "middle-ground": 4,
+            "surprising": 3,
+            "longest": 2,
+            "opposites": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Lattice A must have received more wennet-work overall than Lattice B, since a longer pell means more total wennets were laid on it.",
+          "ratings": 10,
+          "mean_p": 0.067,
+          "codes": {
+            "absolute": 10,
+            "echoes-stem": 7,
+            "too-obvious": 6,
+            "general-knowledge": 5,
+            "grammatical-fit": 5,
+            "like-the-others": 4,
+            "opposites": 3,
+            "denies-question": 2,
+            "textbook-voice": 2,
+            "off-target": 1,
+            "longest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Since the two lattices have equal cant, their pells should also be roughly equal, so the difference is most likely a counting error.",
+          "ratings": 10,
+          "mean_p": 0.088,
+          "codes": {
+            "denies-question": 9,
+            "middle-ground": 5,
+            "hedged": 5,
+            "surprising": 4,
+            "grammatical-fit": 4,
+            "odd-one-out": 3,
+            "too-obvious": 2,
+            "opposites": 2,
+            "absolute": 2,
+            "textbook-voice": 1,
+            "implausible": 1,
+            "general-knowledge": 1,
+            "echoes-stem": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Lattice A must have more tharls than Lattice B, and that larger frame is what lets its chains run longer.",
+          "ratings": 10,
+          "mean_p": 0.10200000000000001,
+          "codes": {
+            "absolute": 7,
+            "grammatical-fit": 6,
+            "general-knowledge": 6,
+            "echoes-stem": 4,
+            "off-target": 4,
+            "opposites": 2,
+            "like-the-others": 2,
+            "most-detailed": 2,
+            "implausible": 1,
+            "textbook-voice": 1,
+            "position": 1,
+            "nuanced-turn": 1,
+            "odd-one-out": 1,
+            "shortest": 1,
+            "middle-ground": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b02": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.6980000000000001,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.626,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Ostral under Varrenby's original rule, because its single longest chain (9) exceeds twice its cant (8); calvine under current practice, because Emmerick's mean of the three longest chains (about 5.3) does not.",
+          "ratings": 10,
+          "mean_p": 0.662,
+          "codes": {
+            "most-detailed": 10,
+            "echoes-stem": 9,
+            "general-knowledge": 9,
+            "nuanced-turn": 6,
+            "textbook-voice": 4,
+            "grammatical-fit": 3,
+            "position": 3,
+            "opposites": 2,
+            "longest": 1,
+            "absolute": 1,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Ostral under both rules, since a chain of 9 is more than double a cant of 4 regardless of which method is used.",
+          "ratings": 10,
+          "mean_p": 0.10500000000000002,
+          "codes": {
+            "absolute": 10,
+            "echoes-stem": 7,
+            "too-obvious": 6,
+            "general-knowledge": 4,
+            "off-target": 3,
+            "like-the-others": 2,
+            "grammatical-fit": 2,
+            "odd-one-out": 2,
+            "opposites": 1,
+            "denies-question": 1,
+            "implausible": 1,
+            "longest": 1,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Calvine under both rules, since the mean of the three longest chains falls below twice the cant either way.",
+          "ratings": 10,
+          "mean_p": 0.096,
+          "codes": {
+            "echoes-stem": 7,
+            "middle-ground": 6,
+            "grammatical-fit": 4,
+            "absolute": 4,
+            "general-knowledge": 4,
+            "hedged": 3,
+            "opposites": 2,
+            "nuanced-turn": 2,
+            "textbook-voice": 2,
+            "like-the-others": 2,
+            "denies-question": 1,
+            "implausible": 1,
+            "most-detailed": 1,
+            "off-target": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Ostral under current practice, but calvine under Varrenby's original rule.",
+          "ratings": 10,
+          "mean_p": 0.137,
+          "codes": {
+            "opposites": 10,
+            "surprising": 4,
+            "general-knowledge": 4,
+            "grammatical-fit": 3,
+            "odd-one-out": 3,
+            "nuanced-turn": 3,
+            "absolute": 2,
+            "echoes-stem": 2,
+            "shortest": 1,
+            "implausible": 1,
+            "position": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b03": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.582857142857143,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 3,
+          "mean_p_key": 0.4144444444444445,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "No — wennets near the anchors are mostly spurs, so chains begun there end quickly, which is why the tessel trace underestimates pell less often and by less than the fenn trace does.",
+          "ratings": 10,
+          "mean_p": 0.49865079365079373,
+          "codes": {
+            "echoes-stem": 10,
+            "most-detailed": 8,
+            "nuanced-turn": 7,
+            "general-knowledge": 7,
+            "hedged": 5,
+            "grammatical-fit": 4,
+            "textbook-voice": 3,
+            "middle-ground": 3,
+            "longest": 1,
+            "opposites": 1,
+            "absolute": 1,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Yes — since the fenn trace samples more starting wennets, it is the more thorough method and should be preferred over the tessel trace.",
+          "ratings": 10,
+          "mean_p": 0.10125396825396824,
+          "codes": {
+            "echoes-stem": 9,
+            "absolute": 7,
+            "too-obvious": 5,
+            "grammatical-fit": 4,
+            "longest": 4,
+            "textbook-voice": 3,
+            "like-the-others": 3,
+            "opposites": 3,
+            "off-target": 1,
+            "position": 1,
+            "general-knowledge": 1,
+            "hedged": 1,
+            "shortest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "No — the tessel trace is not really a shortcut at all, since it always finds the exact same pell that a full trace would find.",
+          "ratings": 10,
+          "mean_p": 0.16569841269841273,
+          "codes": {
+            "absolute": 10,
+            "denies-question": 10,
+            "implausible": 6,
+            "odd-one-out": 6,
+            "grammatical-fit": 4,
+            "off-target": 3,
+            "surprising": 2,
+            "position": 1,
+            "like-the-others": 1,
+            "textbook-voice": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "No — the fenn trace is actually the more reliable of the two, since chains beginning near an anchor tend to run especially long.",
+          "ratings": 10,
+          "mean_p": 0.23439682539682544,
+          "codes": {
+            "echoes-stem": 8,
+            "opposites": 7,
+            "surprising": 7,
+            "grammatical-fit": 4,
+            "general-knowledge": 4,
+            "absolute": 4,
+            "odd-one-out": 3,
+            "nuanced-turn": 2,
+            "off-target": 1,
+            "most-detailed": 1,
+            "hedged": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b04": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 2,
+          "mean_p_key": 0.364,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 4,
+          "mean_p_key": 0.49000000000000005,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Finding 1 (the Orrin pattern) compares different lattices by how many vesks founded them and appears only in colder galleries; Finding 2 (the Tasker pattern) follows one lattice's pell over time and appears only in draughty galleries.",
+          "ratings": 10,
+          "mean_p": 0.42700000000000005,
+          "codes": {
+            "echoes-stem": 9,
+            "most-detailed": 8,
+            "absolute": 7,
+            "textbook-voice": 5,
+            "odd-one-out": 4,
+            "general-knowledge": 4,
+            "opposites": 2,
+            "position": 2,
+            "grammatical-fit": 2,
+            "longest": 1,
+            "off-target": 1,
+            "like-the-others": 1,
+            "other": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Both findings describe the same underlying process — pell falling because the moving air in a gallery physically stretches long wennet chains until they part.",
+          "ratings": 10,
+          "mean_p": 0.182,
+          "codes": {
+            "off-target": 6,
+            "absolute": 6,
+            "general-knowledge": 6,
+            "implausible": 5,
+            "surprising": 5,
+            "most-detailed": 3,
+            "echoes-stem": 2,
+            "denies-question": 2,
+            "textbook-voice": 2,
+            "too-obvious": 1,
+            "longest": 1,
+            "grammatical-fit": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Finding 1 and Finding 2 are the same regularity studied at two different scales — one measuring the group of founders, one measuring a single lattice.",
+          "ratings": 9,
+          "mean_p": 0.3055555555555556,
+          "codes": {
+            "echoes-stem": 8,
+            "middle-ground": 7,
+            "grammatical-fit": 5,
+            "nuanced-turn": 4,
+            "general-knowledge": 4,
+            "textbook-voice": 2,
+            "like-the-others": 2,
+            "position": 1,
+            "implausible": 1,
+            "longest": 1,
+            "most-detailed": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Finding 1 holds everywhere, while Finding 2 only appears in warmer galleries.",
+          "ratings": 8,
+          "mean_p": 0.08249999999999999,
+          "codes": {
+            "absolute": 7,
+            "off-target": 4,
+            "echoes-stem": 2,
+            "position": 2,
+            "odd-one-out": 2,
+            "hedged": 2,
+            "grammatical-fit": 2,
+            "middle-ground": 2,
+            "opposites": 1,
+            "shortest": 1,
+            "surprising": 1,
+            "general-knowledge": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b05": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.634,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.616,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Nothing conclusive — a thread's kind is defined by what its two ends touch, not by its thickness or slackness, so the appearance-based shortcut can mis-sort exactly the lattices where it fails.",
+          "ratings": 10,
+          "mean_p": 0.6249999999999999,
+          "codes": {
+            "most-detailed": 9,
+            "nuanced-turn": 9,
+            "echoes-stem": 8,
+            "textbook-voice": 6,
+            "hedged": 6,
+            "middle-ground": 5,
+            "general-knowledge": 4,
+            "longest": 3,
+            "surprising": 2,
+            "odd-one-out": 1,
+            "position": 1,
+            "grammatical-fit": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "The observer has correctly identified a wennet, since fineness and slackness are the defining features of that category of thread.",
+          "ratings": 10,
+          "mean_p": 0.087,
+          "codes": {
+            "absolute": 10,
+            "too-obvious": 7,
+            "echoes-stem": 6,
+            "general-knowledge": 4,
+            "textbook-voice": 3,
+            "denies-question": 2,
+            "off-target": 2,
+            "position": 2,
+            "grammatical-fit": 2,
+            "opposites": 1,
+            "like-the-others": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The observer has identified a spur, a distinct third category of thread separate from tharls and wennets.",
+          "ratings": 9,
+          "mean_p": 0.13,
+          "codes": {
+            "surprising": 6,
+            "odd-one-out": 5,
+            "general-knowledge": 5,
+            "off-target": 4,
+            "implausible": 4,
+            "absolute": 2,
+            "opposites": 2,
+            "echoes-stem": 2,
+            "shortest": 1,
+            "too-obvious": 1,
+            "grammatical-fit": 1,
+            "position": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The observer has at least ruled out that the thread is a tharl, since a tharl must be thick and taut by definition.",
+          "ratings": 10,
+          "mean_p": 0.161,
+          "codes": {
+            "echoes-stem": 10,
+            "absolute": 8,
+            "middle-ground": 4,
+            "general-knowledge": 4,
+            "opposites": 3,
+            "grammatical-fit": 2,
+            "too-obvious": 1,
+            "denies-question": 1,
+            "off-target": 1,
+            "nuanced-turn": 1,
+            "position": 1,
+            "hedged": 1,
+            "odd-one-out": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b06": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 4,
+          "mean_p_key": 0.6060000000000001,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.526,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Tamber — a gradual change in the hardened mucus — because tamber breaks occur near a fastening, while pilse (wear from crawling) breaks occur near a wennet's middle.",
+          "ratings": 10,
+          "mean_p": 0.5660000000000001,
+          "codes": {
+            "most-detailed": 9,
+            "textbook-voice": 7,
+            "opposites": 7,
+            "general-knowledge": 7,
+            "grammatical-fit": 5,
+            "nuanced-turn": 3,
+            "absolute": 3,
+            "odd-one-out": 3,
+            "echoes-stem": 2,
+            "longest": 2,
+            "middle-ground": 1,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Pilse, because most broken wennets in a standing lattice are caused by snails wearing them down as they crawl across.",
+          "ratings": 10,
+          "mean_p": 0.12999999999999998,
+          "codes": {
+            "absolute": 9,
+            "echoes-stem": 8,
+            "too-obvious": 6,
+            "general-knowledge": 6,
+            "like-the-others": 3,
+            "grammatical-fit": 2,
+            "textbook-voice": 2,
+            "longest": 2,
+            "opposites": 1,
+            "implausible": 1,
+            "denies-question": 1,
+            "odd-one-out": 1,
+            "most-detailed": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Pilse, because a break near a fastening is where a crawling snail would grip on to cross from one thread to another.",
+          "ratings": 10,
+          "mean_p": 0.186,
+          "codes": {
+            "echoes-stem": 8,
+            "grammatical-fit": 7,
+            "general-knowledge": 7,
+            "most-detailed": 4,
+            "absolute": 3,
+            "implausible": 2,
+            "position": 2,
+            "textbook-voice": 2,
+            "odd-one-out": 2,
+            "nuanced-turn": 2,
+            "shortest": 2,
+            "off-target": 1,
+            "too-obvious": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Neither can be determined — break location doesn't reliably indicate cause once a wennet has already parted.",
+          "ratings": 10,
+          "mean_p": 0.11800000000000002,
+          "codes": {
+            "hedged": 10,
+            "middle-ground": 8,
+            "denies-question": 6,
+            "nuanced-turn": 3,
+            "grammatical-fit": 3,
+            "odd-one-out": 3,
+            "general-knowledge": 2,
+            "surprising": 1,
+            "textbook-voice": 1,
+            "opposites": 1,
+            "off-target": 1,
+            "position": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b07": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 0,
+          "mean_p_key": 0.146,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 4,
+          "mean_p_key": 0.27999999999999997,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Lattice X — height above the water correlates with greater flood risk, and lattices closest to the crown, the highest position available, are lost most often of all.",
+          "ratings": 10,
+          "mean_p": 0.213,
+          "codes": {
+            "echoes-stem": 10,
+            "absolute": 8,
+            "most-detailed": 7,
+            "longest": 5,
+            "general-knowledge": 4,
+            "opposites": 3,
+            "textbook-voice": 2,
+            "nuanced-turn": 2,
+            "position": 2,
+            "implausible": 1,
+            "surprising": 1,
+            "grammatical-fit": 1,
+            "hedged": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Lattice Y — hanging closer to the crown puts it farther from the rising floodwater, so it should be safer.",
+          "ratings": 10,
+          "mean_p": 0.44000000000000006,
+          "codes": {
+            "general-knowledge": 6,
+            "echoes-stem": 6,
+            "opposites": 6,
+            "surprising": 5,
+            "too-obvious": 4,
+            "grammatical-fit": 4,
+            "middle-ground": 3,
+            "like-the-others": 2,
+            "position": 2,
+            "shortest": 2,
+            "longest": 1,
+            "hedged": 1,
+            "nuanced-turn": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Both are equally likely to survive, since flood risk depends only on the gallery's overall dampness category, not on where within it a lattice hangs.",
+          "ratings": 10,
+          "mean_p": 0.095,
+          "codes": {
+            "denies-question": 9,
+            "absolute": 7,
+            "middle-ground": 5,
+            "odd-one-out": 5,
+            "general-knowledge": 4,
+            "off-target": 2,
+            "textbook-voice": 2,
+            "hedged": 2,
+            "implausible": 1,
+            "position": 1,
+            "nuanced-turn": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Lattice X, but only because lattices near the waterline tend to have higher cant, and it is the higher cant that protects them.",
+          "ratings": 10,
+          "mean_p": 0.252,
+          "codes": {
+            "general-knowledge": 8,
+            "nuanced-turn": 7,
+            "hedged": 4,
+            "echoes-stem": 4,
+            "longest": 3,
+            "most-detailed": 3,
+            "surprising": 3,
+            "textbook-voice": 2,
+            "like-the-others": 2,
+            "implausible": 2,
+            "opposites": 1,
+            "off-target": 1,
+            "position": 1,
+            "absolute": 1,
+            "odd-one-out": 1
+          }
+        }
+      ]
+    },
+    "b03/sonnet/b08": {
+      "rungs": {
+        "full-explain": {
+          "replies": 4,
+          "picked_key": 3,
+          "mean_p_key": 0.5125,
+          "families": [
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 4,
+          "picked_key": 1,
+          "mean_p_key": 0.375,
+          "families": [
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Most lost lattices are lost to sudden violence — a scouring flood or a rockfall — while silt film accounts for only a small share of losses; effort would be better aimed at flood and rockfall risk.",
+          "ratings": 8,
+          "mean_p": 0.4437499999999999,
+          "codes": {
+            "opposites": 7,
+            "general-knowledge": 6,
+            "grammatical-fit": 5,
+            "most-detailed": 4,
+            "surprising": 4,
+            "echoes-stem": 2,
+            "absolute": 2,
+            "longest": 2,
+            "nuanced-turn": 1,
+            "textbook-voice": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "None — silt film is confirmed as the dominant cause of lattice loss, so the group's priority is well-founded.",
+          "ratings": 8,
+          "mean_p": 0.08750000000000001,
+          "codes": {
+            "absolute": 8,
+            "denies-question": 7,
+            "echoes-stem": 5,
+            "too-obvious": 4,
+            "textbook-voice": 3,
+            "grammatical-fit": 3,
+            "odd-one-out": 1,
+            "shortest": 1,
+            "position": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The data actually shows that gradual threats in general, including silt film, destroy more lattices than sudden violent events do, so any gradual-threat program would help.",
+          "ratings": 8,
+          "mean_p": 0.36249999999999993,
+          "codes": {
+            "middle-ground": 6,
+            "general-knowledge": 6,
+            "nuanced-turn": 5,
+            "most-detailed": 5,
+            "echoes-stem": 4,
+            "grammatical-fit": 3,
+            "hedged": 2,
+            "longest": 1,
+            "textbook-voice": 1,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The group should instead focus on wennet failure from tamber, since that is the field's leading cause of lattice loss overall.",
+          "ratings": 6,
+          "mean_p": 0.125,
+          "codes": {
+            "odd-one-out": 4,
+            "echoes-stem": 4,
+            "absolute": 4,
+            "off-target": 2,
+            "general-knowledge": 2,
+            "opposites": 2,
+            "grammatical-fit": 2,
+            "position": 1
+          }
+        }
+      ]
+    }
+  },
+  "other_notes": [
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a04",
+      "rung": "full-explain",
+      "option": 3,
+      "key": false,
+      "note": "It invents a physical mechanism and incorrectly links the two findings."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b04",
+      "rung": "options-only-explain",
+      "option": 0,
+      "key": true,
+      "note": "Provides specific names ('Orrin pattern,' 'Tasker pattern') and distinctions, which feels textbook-like and detailed."
+    }
+  ],
+  "strategies": [
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Selected the most detailed and nuanced option that assigns distinct, complementary meanings to the two unfamiliar variables."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Selected the option with the most sophisticated academic phrasing and conceptual depth, which typically identifies the correct answer in textbook-style questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I chose the option that refutes a simplistic claim with a specific, technical explanation, which is a common pattern for correct answers in reading comprehension tests."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Identified that the question distinguishes between cross-sectional and longitudinal observations, and selected the option that describes this distinction in a formal, textbook-like manner while contrasting with its opposite."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The correct answer typically utilizes the specific constraint mentioned in the stem (the ends of the thread) rather than the general descriptors (thick and taut) or a 'rule of thumb'."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a06",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "I chose the option that creates a distinction between the specific diagnostic symptom and the general statistical prevalence, as this is a common pattern in academic test questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The most detailed option that provides a structural mechanism to explain a discrepancy is usually the correct one in these types of tests."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the longest, most conceptually complex option that provides a theoretical synthesis rather than a simple narrative or corrective detail."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the option that uses technical jargon to provide a nuanced, mechanical explanation rather than a simplistic or absolute one."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I chose the longest and most detailed option that uses a nuanced-turn to explicitly distinguish between two patterns, which is a common trait of correct answers in complex reading comprehension tests."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized the option that provided a distinction between a specific diagnostic sign and a general frequency, as this nuance is characteristic of correct answers in academic multiple-choice questions."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied mainly on A's detailed, textbook-like distinction between overall amount of work and the independence or chaining of that work."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I focused on the explicit contrast between the two counting rules and on D's textbook-like, nuanced wording that explains the classification flip."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on A's specific causal explanation and its textbook-like correction of the colleague's intuitive claim."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied on the wording that contrasts several lattices with one lattice and controlled comparison with following change over time, plus C's explicit textbook-style distinction."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on B's specific rule based on what the thread's ends touch, contrasted with D's tempting but superficial focus on thickness and tautness."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on the direct grammatical fit, textbook-like wording, and the option that answers both parts without introducing an unnecessary reversal."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went on the wording's implied reversal, the direct echo of the stem, and A's textbook-like statement of the strongest objection."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I focused on the direct contrast between sudden violence as the dominant cause and gradual silt buildup as a minority cause, while treating the yes/no wording and qualified distractor as clues."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I favored the most detailed, textbook-like option that directly explains the contrast while respecting the equal-cant condition."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on the explicit contrast between the original single-longest-chain rule and current practice using the mean of three chains."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on A's specific causal explanation that starting near anchors produces short spur chains, making the broader sampling less reliable."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b04",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "I focused on the basic cross-sectional-versus-longitudinal distinction and treated extra claims about temperature or draught as unsupported."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on the contrast between the tempting appearance-based answers and B's more careful wording about classification depending on what the thread's ends touch."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied on the precise near-fastening-versus-middle contrast and the textbook-like causal distinction in C."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b07",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "I relied mainly on general knowledge that floodwater rises from below, while noting the wording contrast and the distractors' qualifications."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the longest, most nuanced, textbook-sounding option because it explains how the two measures can differ rather than collapsing them into a simple equivalence."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the nuanced, textbook-like option that explains the apparent disagreement as rule-dependent rather than denying the premise or claiming a total reversal."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I favored the option with the clearest textbook-style causal explanation and avoided absolute or overgeneralized claims."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option with the clearest textbook-style distinction and the explicit clarification that the patterns are distinct rather than duplicates."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option with the most specific, textbook-sounding classification rule and the explicit distinction between the relevant features."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option with the clearest textbook-style causal distinction and treated the crawling-wear explanation as the tempting common-sense distractor."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on the direct reversal in A, the unsupported specificity of B and C, and D's overly obvious certainty."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on the qualified causal distinction, the contrast between sudden violence and gradual silt buildup, and the overly absolute wording in the yes options."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the longest, most qualified, textbook-sounding option that explains the contrast without relying on an absolute or dismissing the question."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the most detailed, textbook-sounding option that distinguishes the original rule from current practice and supplies explicit calculations."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the qualified, mechanistic explanation and treated the absolute denial and overly simple thoroughness claim as distractors."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the most detailed, textbook-like option that cleanly distinguishes the two findings, while treating the others as vaguer, overabsolute, or implausible alternatives."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the qualified, nuanced, textbook-like option and distrusted the absolute appearance-based claims and the unsupported extra category."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on the precise textbook-style contrast between two named causes and their predicted break locations."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b03/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on the contrast between the counterintuitive textbook-style claim in A and the too-obvious common-sense reasoning in D."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Selected the option that framed cant/pell as complementary *qualified* measures, avoiding absolutes or contradictions."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Looked for the option that meaningfully contrasted *cant* (frame independence) and *pell* (chaining) while avoiding overgeneralizations."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights *two rules yielding different classifications for the same lattice*, so the answer must focus on *convention-dependent classification*, not error or definition flaws."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights a disagreement about classification based on different rules applied to the same lattice, and **B** directly addresses this by emphasizing the role of counting conventions, not fixed properties."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The claim's wording about 'wennets', 'anchors', and 'true longest chain' aligns best with **A**, which directly addresses these terms and provides a nuanced rebuttal."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The claim hinges on *reliability* and *longest chain*, so the option that explains *why* the fenn trace fails (spurs near anchors) and contradicts the claim’s logic won."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes treating findings (1) and (2) as *distinct* regularities, and option C explicitly names them as such (Orrin vs. Tasker), matching the phrasing about ‘not two versions of the same finding.’"
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question explicitly names *Orrin* and *Tasker* patterns, so the correct answer must align with their distinct definitions (comparative vs. longitudinal)."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes the thread's ends touching only other threads (not rock), and B is the only option that directly mirrors this condition."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes *what the thread touches* (other threads, not rock), and A is the only option that explicitly aligns with this."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a06",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Prioritized the option that balanced diagnostic specificity with prevalence without absolutes, aligning with typical diagnostic reasoning."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes a *diagnostic criterion* for a break near a fastening and asks whether that cause is also the *more common* one overall; **C** is the only option that directly links 'break near fastening' to *tamber* (a gradual change) and claims it’s the more common cause, matching both parts of the question."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The colleague argues height *should* protect lattices, so the text’s objection must *contradict* that height *does* matter but in the opposite way, making **A** the most direct and likely correct answer."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question implies the colleague’s reasoning is flawed, so the correct answer must contradict height being protective, making **D** the best fit."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a08",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Selected the option that aligns with the claim’s framing of *gradual* (silt film) as underappreciated yet dominant, while rejecting sudden violence as the primary cause, as implied by the colleague’s phrasing."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question’s phrasing emphasizes *equal cant* and *difference in pell length*, so the answer must account for structural vs. compositional differences in wennet arrangement."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Prioritized options that accounted for the 'same cant' condition while explaining chain length variation without introducing contradictions or overgeneralizations."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The longest chain (9) exceeds twice the cant (8), matching Varrenby’s original rule, while the mean of the three longest chains (5.3) does not, aligning with current practice."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Varrenby’s original rule likely focuses on the longest chain exceeding twice the cant (9 > 8), while current practice uses the mean of the three longest chains (5.3) to determine classification."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question's wording highlights a trade-off between sampling breadth (fenn trace) and reliability (tessel trace), and option A directly addresses this with hedged language and nuance, matching the 'often' and 'less' framing."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The claim’s logic (more *wennets* → more thorough) is challenged by B’s detail that ‘chains begun there end quickly,’ which explains why the fenn trace might *overestimate* rather than be better, matching the ‘underestimates pell less’ phrasing in the question’s context."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Chose the option that most directly named and distinguished the findings by their scale (group vs single lattice) and introduced plausible but specific environmental qualifiers, mirroring the question’s framing."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Distinguished the findings by their scale (group vs. single lattice) and named patterns, matching the question’s phrasing and implied structure."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes uncertainty ('without tracing it further') and hints at ambiguity in classification, making the nuanced, hedged option the best fit."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes the observer’s *lack of tracing* and the risk of misclassification, which aligns with C’s ‘nothing conclusive’ warning."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes *where* the break occurs, and only C directly ties break location to a specific cause (tamber) while explaining why."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The break location near a fastening and the mention of 'tamber' (gradual change in hardened mucus) aligns with structural failure patterns, not wear from snails, and directly addresses the question's specific clue."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b07",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Lattice Y’s position *far above* the waterline directly aligns with floodwater’s rising path, making it the safer choice by spatial logic and common sense."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b07",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Lattice X’s proximity to waterline is explicitly linked to a structural feature (higher cant) that might protect it, making it the most plausible nuanced answer despite seeming counterintuitive at first."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b08",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question asks which objection the *field's own data* supports, and D is the only option that generalizes from the data without introducing new or contradictory terms."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes *gradual buildup* as the main threat, but D directly contradicts this by stating that most losses are sudden, making it the most plausible objection to the group’s focus."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that best retained the question’s technical terms and nuanced comparison without making absolute claims."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduced nuance, context, and a shift from absolute definitions to convention-dependent frameworks, common in advanced critical analysis questions."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the option that best balances nuance, technical specificity, and avoidance of absolutes, aligning with a likely test emphasis on methodological relativity."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that sound authoritative (echoes-stem, absolute claims) and rejected those that contradict the question’s premise (denies-question)."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that explained *why* one trace underestimates less than the other, using domain-specific terms and a causal chain."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The question emphasizes distinguishing two patterns ('regularities') as separate findings, and option C explicitly addresses that distinction."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The option that distinguishes the two patterns (Orrin vs. Tasker) as separate regularities, aligns with the phrasing of the question about 'two versions of the same finding,' and avoids contradictions or oversimplifications."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that directly referenced the question’s criteria (ends touching) and avoided hedging or contradictions."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose A for its direct use of the question's terms and precise rule-based reasoning, avoiding hedging or introducing new terms."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Selected the option that provided a balanced, hedged, and detailed explanation while avoiding implausibility or oversimplification."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized the option that directly linked the break *near a fastening* to *pilse* with a mechanistic explanation, while avoiding overqualification or contradiction."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Selected based on introducing a plausible alternative factor ('cant') while avoiding absolute claims and addressing the question's implied need for nuance."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Chose the option that aligns with standard cause-effect reasoning (height → survival) and textbook-style clarity, while avoiding the implausible or overly qualified alternatives."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized the option that (1) avoided absolute claims, (2) engaged with the question’s theme of underappreciated causes, and (3) used textbook-like phrasing to imply nuanced reasoning."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that directly contradicted the 'gradual threat' framing (A/B) and used absolute, specific language (D) to match test-taking instinct for definitive answers."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The option that provides a detailed, balanced explanation without absolutes or external dismissals aligns best with the question’s implied complexity."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that explains the difference without assuming errors or extremes, balancing both sides of the comparison with detail."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that best aligns with the question’s phrasing and provides a detailed, rule-specific comparison of outcomes."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The option that explicitly distinguishes between the original and current rules while referencing specific calculation methods (longest chain vs. mean of three longest) aligns best with the question’s phrasing and test-taking logic."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized the option that contradicted the majority (A/B) and introduced a novel, plausible technical justification ('chains near anchors run long')."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that directly addressed the question’s implied critique of the tessel trace as a shortcut and avoided contradictions or implausibilities."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Choosing the option that aligns most closely with a plausible scientific explanation and reuses the question's terminology while avoiding contradictions or absolute claims."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected B for its specificity, technical terminology, and alignment with a likely textbook-style answer."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that directly addresses ambiguity in classification and uses nuanced reasoning about definitions, matching the question's implied critique of shortcuts."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The option that introduces a critical flaw in the observer's reasoning (mis-sorting lattices) and provides the most detailed, nuanced critique of the method."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that provides the most specific, differentiated explanation with technical terms and avoids absolutes."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the option that introduced a novel, specific mechanism ('tamber') and contradicted the others' assumptions."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that mirror the question’s phrasing ('correlates,' 'lost most often') and avoid introducing new variables (like 'cant')."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose A due to its direct echo of question phrasing ('correlates', 'lost most often') and nuanced framing, balancing specificity with plausibility."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b08",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized the option that balanced opposing claims (gradual vs sudden threats) and reused the question’s framing of silt film as a gradual threat."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b03/sonnet/b08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that contradicts the others and introduces a counterintuitive but logically consistent perspective, leveraging the 'general-knowledge' code for plausibility."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a01",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Prioritized options that directly compare cant and pell as measures of wennet-work independence and relative structure, avoiding absolute or contradictory claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that provided a balanced, nuanced explanation of the relationship between cant, pell, and wennet-laying, using the question's terms while avoiding absolutes or contradictions."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Focused on how the question emphasizes differing classification rules (ostral vs. calvine) due to competing conventions, not just fixed properties."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights a *classification conflict* based on different conventions, so the answer must emphasize that the disagreement arises from *adopted rules*, not inherent properties or measurement error."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on whether sampling more starting points (`fenn trace`) inherently improves reliability, and option A provides a plausible reason why it might not by discussing the nature of `wennets` and `spurs`."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The option that logically contradicts the colleague’s claim by explaining why the tessel trace performs better in practice, using specific structural reasoning about 'wennets' and 'anchors'."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I focused on the question’s wording to identify distinct patterns: (1) compares *how* lattices are begun (vesks count) under specific conditions, while (2) tracks *how* pell changes over time for a single lattice in another condition, aligning with known ‘Orrin’ vs. ‘Tasker’ distinctions."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question explicitly contrasts two separate findings about pell based on distinct experimental designs—one comparing different lattices (Orrin pattern) and the other tracking a single lattice over time (Tasker pattern). Option C mirrors this distinction."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes that the thread's classification depends on what its ends *touch*—other threads, not rock—so the option that aligns with this detail and reuses the question’s wording is most likely correct."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that directly aligned with the question's explicit condition (thread touching only other threads) and used the most detailed, unambiguous wording."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a06",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question emphasizes a break near a fastening, and the most plausible explanation is that **pilse** (wear from crawling) occurs at fastenings, but the broader diagnostic criterion and common failure mode favor **tamber** as the general cause, making option C the nuanced and likely intended answer."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that explicitly linked the break location to a specific cause ('tamber') and framed it as the *overall* more common failure mode, even though I noted it leaned toward overgeneralization—likely the intended 'textbook' answer."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question’s wording implies a contradiction to the colleague’s claim, and option A directly opposes it with strong language ('lost most often'), making it the most plausible objection."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I focused on the colleague’s claim that height is the key factor and looked for the option that directly contradicts it or introduces a new, counterintuitive variable (like 'cant' or 'higher = less survival'), which aligns with the idea that the text’s account would challenge the colleague’s reasoning."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a08",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "I focused on the claim that 'slow sediment buildup is the leading cause of lattice loss' and looked for options that explicitly validate or refute this by emphasizing gradual threats like silt film as dominant or underappreciated, while the others either contradict or downplay this claim."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The claim asserts that slow sediment buildup is the *leading cause* of lattice loss, so the correct answer must either support or refute this directly. Option D explicitly denies it by stating sudden violence causes most losses, which aligns with the idea that the claim is unjustified."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question implies a structural difference in how wennets connect despite equal cant, so the nuanced explanation that accounts for differing chain lengths without implying more total wennet-work or absolute differences was most compelling."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Prioritized options that explain the discrepancy by leveraging the question’s terms (‘pells,’ ‘wennets,’ ‘tharls’) and avoid absolute claims, focusing on structural differences rather than quantity alone."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied on the key distinction between Varrenby’s original rule (using the longest chain alone) and current practice (using Emmerick’s mean of the three longest chains), and matched the wording of the question’s criteria."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question requires comparing Varrenby’s original rule (longest chain > 2× cant) with current practice (Emmerick’s mean of 3 longest chains > 2× cant). Option C correctly reflects this contrast."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized options that provided specific, technical reasoning aligned with the question’s terminology and offered nuanced explanations rather than absolute or dismissive claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question’s claim was that the fenn trace is better because it samples more starting wennets, so I looked for an option that either supported this or explained why it’s flawed, especially with nuanced reasoning about the limitations of sampling from more wennets (e.g., spurs ending chains quickly)."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b04",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question contrasts two findings about pell in lattices: one about collective founding (group scale) and one about individual lattice progression (single scale). Option A captures this distinction by framing them as two scales of the same regularity, aligning with the wording's emphasis on 'several vesks' versus 'a single lattice' and their respective observations."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b04",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question asks for a distinction between two findings about lattice behavior over time and scale, so I prioritized options that compare the findings logically (like C) rather than introducing speculative conditions or off-topic explanations."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes the observer’s *lack of further tracing* and the ambiguity of defining threads by appearance alone, which aligns with the nuanced, cautionary tone of option B."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question implies the observer’s classification is uncertain, so I prioritized the option that acknowledges ambiguity and introduces a conditional or nuanced explanation, which aligns with common textbook logic."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Prioritized options that explained the **location-specific** break pattern (fastening vs. middle) as the key diagnostic clue, rejecting vague or contradictory choices."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b06",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The break near a fastening aligns with a snail’s gripping behavior, making option B’s detail about snail crossing behavior the most plausible cause."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b07",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question implies rising water as the primary hazard, so the lattice farther from the waterline (Y) is safer by basic logic—unless there’s a hidden factor like structural instability or crown vulnerability, which isn’t mentioned."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b07",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Prioritized the most straightforward physical reasoning (floodwater proximity) while discounting options introducing unsupported assumptions or contradictions."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks which objection the field’s own data supports, implying the data contradicts the group’s reasoning. Option B explicitly refutes the claim that silt film is the main threat by citing sudden violence as the dominant cause, making it the most directly supported objection."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks which objection *the field's own data* supports, implying the data contradicts the group's claim that silt film is the main threat. Options that align with the group's claim (C) or hedge without clear contradiction (B) are less likely. The strongest objection would be the one that directly contradicts the group's priority by citing data showing silt film is not the dominant cause (D)."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that echoed the question’s terminology, avoided absolute claims, and offered a nuanced comparison of *cant* and *pell* as structural properties."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that offered balanced, nuanced explanations while avoiding absolute claims or contradictions, focusing on relative differences in wennet-work and frame dependency."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduced nuance, avoided absolutes, and addressed the core tension in the question about classification conventions rather than just resolving or rejecting the disagreement outright."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized options that echoed the question's terminology, provided nuanced explanations, and avoided absolute denials or contradictions, favoring the most balanced and textbook-like answer."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that introduces a nuanced, contrasting argument ('not merely X but Y') and avoids absolute language, aligning with typical textbook logic while addressing the question with technical depth."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The best option is the one that clearly differentiates the two patterns as distinct regularities, supported by detailed wording and textbook-like clarity."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that distinguishes the two patterns clearly and aligns with a textbook-like explanation, avoiding absolutes and hedging, while using the question's terminology."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized options that provided clear, definitive criteria (like thickness, tautness, and position relative to other threads) while avoiding hedging or ambiguity, which aligns with typical textbook expectations for classification rules."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that mirrored the question’s terminology ('ends,' 'thickness/tautness') and used authoritative, textbook-like phrasing while avoiding hedging or contradictions."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that balanced nuance, textbook-like phrasing, and avoided absolute claims while addressing both tamber and pilse."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that provided a clear, definitive causal chain while acknowledging overall prevalence, favoring the one that explicitly stated *pilsé* is the dominant cause of failure in a standing lattice and used textbook-like terminology."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The question seems to be testing the ability to recognize contradictions and nuanced reasoning, so I prioritized options that directly oppose or challenge the original reasoning while providing a detailed alternative."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I focused on the **opposites** and **surprising** nature of D, which stands out as a deliberate reversal of the expected reasoning, while other options either echo the question or offer more conventional objections."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "The question asks whether silt film is the *dominant* cause of lost lattices, and only option D explicitly frames it as the underappreciated but key factor—ignoring sudden violence as secondary."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option that directly contradicts the implied concern in the question (silt film) while providing a clear, decisive answer about sudden violence as the primary cause."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that provided nuanced, contrasting explanations rather than absolute or overly simplistic claims, while also ensuring the answer echoed the question’s terminology."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the option that offered a balanced, explanatory account of the differences in wennet-work chains while avoiding absolute or dismissive claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The correct answer must align with the question’s focus on *both* rules (Varrenby’s original and current practice) and distinguish between them, favoring the option that provides a clear, detailed comparison."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that explicitly address both rules and outcomes with nuanced distinctions, avoiding absolute claims and favoring those that balance contradictions."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that used technical terms from the question and provided nuanced, detailed reasoning rather than absolute or contradictory claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the option that provided a reasoned, context-specific explanation rather than absolute claims or contradictions."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that explicitly linked findings to distinct patterns, conditions, and terminology from the question while avoiding vague qualifiers."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The most detailed and specific option, with named patterns and clear distinctions, aligns best with typical textbook expectations and general knowledge of pattern differentiation."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The question hinges on ambiguity and definitions, so the nuanced, middle-ground option that acknowledges uncertainty and complexity is most likely intended as correct."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that acknowledged ambiguity, nuance, or limitations of appearance-based reasoning, ruling out absolute claims and those that introduced new categories without context."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that provided the most specific, nuanced explanation and introduced a new term ('tamber') that distinguishes causes by location, which aligns with the question’s implicit need for differentiation."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduced new, differentiated concepts (like 'tamber') and avoided hedging, favoring a structured explanation over vague or repetitive claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that introduced logical contradictions or nuanced reversals of the question’s implied causality, favoring the one that flipped the expected relationship."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that directly engaged with the question’s wording and provided clear, causal reasoning without introducing extraneous factors."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b08",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized the option that introduces nuance and contradicts the initial assumption in the question, as this is often a hallmark of correct answers in analytical questions."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b03/sonnet/b08",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Selected the option that introduces a balanced, evidence-based perspective contrasting gradual and sudden threats, avoiding absolutes and aligning with logical reasoning."
+    }
+  ]
+}

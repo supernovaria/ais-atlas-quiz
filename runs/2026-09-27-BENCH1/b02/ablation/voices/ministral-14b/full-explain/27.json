@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/27",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "513651567431763d9dd912e4c7dbe19c3601a95d439c2b38fe88bfd288fe1efa",
+  "ts": "2026-09-27T17:03:19.186Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"off-target\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Uses the question's phrasing but introduces 'single reversed course' not mentioned in the stem.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"textbook-voice\"],\n      \"p\": 35,\n      \"note\": \"Explicitly contrasts populations (locals vs. strangers) and effects, matching the question's framing of 'two separate findings.'\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"too-obvious\", \"absolute\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"Rejects the premise of two distinct findings, which the question explicitly states.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"general-knowledge\", \"opposites\", \"textbook-voice\", \"echoes-stem\"],\n      \"p\": 50,\n      \"note\": \"Fully distinguishes the two effects (Tessaly: resolving conflicts; Orne: misreading hobs) and aligns with the question's 'deliberately kept separate' phrasing.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Focused on the question's emphasis on *two distinct findings* and the need for an objection that separates them by mechanism (register conflict vs. misreading), not just population.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 838,
+    "total_tokens": 1179,
+    "completion_tokens": 341,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5107
+}

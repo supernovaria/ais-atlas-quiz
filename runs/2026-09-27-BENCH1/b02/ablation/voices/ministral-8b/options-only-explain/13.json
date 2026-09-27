@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/13",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "35a7ec24149e1a35c51be3b188e9c49a42b44c28b478f49e3678e4d9d303fba6",
+  "ts": "2026-09-27T17:01:30.097Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"absolute\",\n        \"odd-one-out\",\n        \"longest\",\n        \"surprising\",\n        \"echoes-stem\",\n        \"general-knowledge\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"most-detailed\",\n        \"echoes-stem\",\n        \"general-knowledge\"\n      ],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"denies-question\",\n        \"middle-ground\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"odd-one-out\",\n        \"surprising\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 25,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I prioritized options that provide a balanced, nuanced explanation with empirical distinctions (e.g., 'strangers vs. locals') rather than absolute denials or surprising claims, as such nuances are more likely to reflect a textbook’s careful analysis of complex data.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 797,
+    "total_tokens": 1098,
+    "completion_tokens": 301,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2335
+}

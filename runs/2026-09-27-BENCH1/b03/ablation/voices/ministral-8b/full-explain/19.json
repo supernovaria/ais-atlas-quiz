@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/19",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "3e4913046c2531c01addeb571e62a00888ef926fc5d763144880c096145ad44c",
+  "ts": "2026-09-27T17:18:42.500Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"too-obvious\", \"grammatical-fit\"],\n      \"p\": 0,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"middle-ground\", \"hedged\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"general-knowledge\", \"nuanced-turn\", \"opposites\", \"grammatical-fit\", \"position\"],\n      \"p\": 70,\n      \"note\": \"The option explicitly contrasts rules and uses numerical reasoning (9 > 8 vs. mean of 9,5,2 ≈5.3 < 8).\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question requires comparing Varrenby’s original rule (longest chain > 2× cant) with current practice (Emmerick’s mean of 3 longest chains > 2× cant). Option C correctly reflects this contrast.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 833,
+    "total_tokens": 1115,
+    "completion_tokens": 282,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3985
+}

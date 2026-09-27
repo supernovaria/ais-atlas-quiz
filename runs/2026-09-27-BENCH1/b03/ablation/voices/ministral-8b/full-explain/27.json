@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/27",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "70d88a2dc4f191b453616a5db7b2e900e43670ea7b147c8688f90030d0de3923",
+  "ts": "2026-09-27T17:19:12.458Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"too-obvious\",\n        \"absolute\",\n        \"general-knowledge\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"most-detailed\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"hedged\",\n        \"middle-ground\",\n        \"opposites\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"opposites\",\n        \"textbook-voice\",\n        \"absolute\",\n        \"odd-one-out\",\n        \"general-knowledge\"\n      ],\n      \"p\": 30,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The break near a fastening aligns with a snail’s gripping behavior, making option B’s detail about snail crossing behavior the most plausible cause.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 813,
+    "total_tokens": 1075,
+    "completion_tokens": 262,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3335
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/22",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "2ebd6199b1b7cdf1451a1382f091c3a9fbb9c5185d7bf6ee12f76a45c5219388",
+  "ts": "2026-09-27T16:59:48.381Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"hedged\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Assumes locals cannot perceive cant at all, which is an extreme and likely incorrect claim.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"middle-ground\", \"echoes-stem\", \"like-the-others\"],\n      \"p\": 20,\n      \"note\": \"Overgeneralizes expertise as reducing error universally, ignoring context.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 60,\n      \"note\": \"Logically explains why a local might misread the tilt due to whole-cairn perception, while strangers compare individual courses.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 15,\n      \"note\": \"Reinforces a naive assumption without addressing the specific tilt issue.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The correct answer must logically explain why a local’s established method of judging tilt would fail when the whole cairn is tilted, while a stranger’s approach might be less affected.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 810,
+    "total_tokens": 1109,
+    "completion_tokens": 299,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4340
+}

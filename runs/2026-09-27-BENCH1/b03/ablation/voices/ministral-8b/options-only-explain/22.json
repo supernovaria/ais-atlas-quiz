@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/22",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "fc6f574b917710629f28b72aed830e39ec66b26ae2bc4b4ba42931ce3e6ab04e",
+  "ts": "2026-09-27T17:16:37.341Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"longest\", \"most-detailed\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Uses question terminology but lacks specificity about the 'process' or conditions.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"absolute\", \"general-knowledge\", \"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"Introduces a physical mechanism but feels too specific and unlinked to the given findings.\"\n    },\n    \"C\": {\n      \"codes\": [\"middle-ground\", \"hedged\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Attempts balance but lacks concrete ties to the findings or scale differences.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"absolute\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 55,\n      \"note\": \"Explicitly contrasts two patterns (Orrin vs. Tasker) and links them to environmental conditions, making it the most structured and plausible.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that explicitly linked findings to distinct patterns, conditions, and terminology from the question while avoiding vague qualifiers.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 800,
+    "total_tokens": 1095,
+    "completion_tokens": 295,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2550
+}

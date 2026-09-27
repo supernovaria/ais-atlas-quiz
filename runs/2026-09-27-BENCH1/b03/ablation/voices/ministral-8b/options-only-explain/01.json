@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/01",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "78a0ae07186cb99f59dd98250fa18617dbed5eb6fc50e2c58734f383ec31d9c4",
+  "ts": "2026-09-27T17:17:13.843Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"echoes-stem\", \"absolute\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Overstates the relationship between pell and wennet-laying without addressing relative independence or frame dependency.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 60,\n      \"note\": \"Balances quantitative and qualitative aspects of wennet-work while explaining differences in frame dependency and chaining.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"echoes-stem\", \"surprising\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Equates cant and pell in a way that feels forced; 'cant' is described as a whole-lattice version of pell, but this is not supported by the question’s phrasing.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Presumes error rather than interpreting the given data, which is unlikely in a question designed to test understanding.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that offered balanced, nuanced explanations while avoiding absolute claims or contradictions, focusing on relative differences in wennet-work and frame dependency.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 837,
+    "total_tokens": 1178,
+    "completion_tokens": 341,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2838
+}

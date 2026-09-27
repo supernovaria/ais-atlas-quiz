@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/09",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c374fa8b8a616d3fe83f6e2fc20d814b3c261079c513010e846c0c1482832402",
+  "ts": "2026-09-27T17:19:05.910Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"textbook-voice\", \"most-detailed\"],\n      \"p\": 40,\n      \"note\": \"Explicitly references the question's detail about ends touching only other threads, not rock, and uses 'only' for classification.\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"off-target\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Introduces uncertainty ('cannot be classified') and focuses on length/tautness, which the question does not emphasize.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"absolute\", \"grammatical-fit\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"Uses 'short' and 'near' to contradict the given tautness and height, but fits the grammar of the question.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\", \"general-knowledge\", \"like-the-others\"],\n      \"p\": 35,\n      \"note\": \"Relies on 'thick and taut' as defining features, mirroring the question's wording and common-sense classification.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question emphasizes *what the thread touches* (other threads, not rock), and A is the only option that explicitly aligns with this.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 824,
+    "total_tokens": 1151,
+    "completion_tokens": 327,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4836
+}

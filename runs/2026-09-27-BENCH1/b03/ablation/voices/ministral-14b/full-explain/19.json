@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/19",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "3e4913046c2531c01addeb571e62a00888ef926fc5d763144880c096145ad44c",
+  "ts": "2026-09-27T17:20:25.823Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"off-target\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Repeats the question's phrasing but ignores the distinction between rules; assumes one-size-fits-all.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"middle-ground\", \"textbook-voice\"],\n      \"p\": 20,\n      \"note\": \"Attempts to apply both rules but conflates 'mean of chains' with Varrenby's original rule, which seems less likely.\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"position\"],\n      \"p\": 60,\n      \"note\": \"Uses the longest chain (9) for Varrenby’s rule and the mean (5.3) for current practice, which aligns with the phrasing of the question and common test logic.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"surprising\", \"absolute\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Reverses the classification from C in a way that feels arbitrary without additional context.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Varrenby’s original rule likely focuses on the longest chain exceeding twice the cant (9 > 8), while current practice uses the mean of the three longest chains (5.3) to determine classification.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 833,
+    "total_tokens": 1179,
+    "completion_tokens": 346,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4634
+}

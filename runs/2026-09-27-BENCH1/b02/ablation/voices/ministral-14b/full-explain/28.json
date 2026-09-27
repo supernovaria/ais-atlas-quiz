@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/28",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "b1fd10859310e77e4ed056f9b3784701ac9173266b48cf950320edbf6fc556c5",
+  "ts": "2026-09-27T17:00:48.894Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"echoes-stem\", \"textbook-voice\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"Ignores the key contrast in the question by assuming concord should universally help.\"\n    },\n    \"B\": {\n      \"codes\": [\"surprising\", \"general-knowledge\", \"nuanced-turn\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Introduces an unmentioned concept ('conventional expectations') without grounding in the question.\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"absolute\", \"no-tell\"],\n      \"p\": 5,\n      \"note\": \"Shifts focus to guild-built cairns and junctions, which were not mentioned.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"grammatical-fit\", \"nuanced-turn\", \"middle-ground\"],\n      \"p\": 80,\n      \"note\": \"Directly explains the contrast by framing concord as context-dependent, aligning with the Marhaug pattern.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question highlights a contrast where concord’s meaning *reverses* depending on the reader’s familiarity, and D is the only option that explicitly addresses this duality by framing concord as a signal with *reader-dependent* information.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 870,
+    "total_tokens": 1185,
+    "completion_tokens": 315,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4812
+}

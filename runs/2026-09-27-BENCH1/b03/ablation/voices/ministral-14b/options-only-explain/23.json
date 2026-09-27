@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/23",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "80ea96bdbda5be7f48c8aa7e2ea75248ddc342e12487c305ebcc9bfdca3b6e06",
+  "ts": "2026-09-27T17:21:00.078Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"shortest\", \"absolute\", \"echoes-stem\", \"grammatical-fit\", \"no-tell\"],\n      \"p\": 10,\n      \"note\": \"Reuses key terms ('Finding 1', 'Finding 2', 'galleries') but is too simplistic and absolute.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"absolute\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 50,\n      \"note\": \"Provides specific names ('Orrin', 'Tasker') and distinct mechanisms, fitting a technical/educational tone.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Introduces a 'both-sides' relationship but lacks specificity about 'vesks', 'pell', or 'wennet chains'.\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"general-knowledge\", \"surprising\", \"absolute\", \"implausible\"],\n      \"p\": 15,\n      \"note\": \"Introduces new terms ('pell falling', 'moving air', 'wennet chains') without grounding in the question.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Selected B for its specificity, technical terminology, and alignment with a likely textbook-style answer.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 800,
+    "total_tokens": 1131,
+    "completion_tokens": 331,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4044
+}

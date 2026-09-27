@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/20",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1898890543477880d7df81a3fc8c678e15a14e86bbe295ef838a14af3967e4cc",
+  "ts": "2026-09-27T17:00:06.811Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"nuanced-turn\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Uses the question’s own terms ('lean' and 'cant') and contrasts deliberate offset with structural issue.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"absolute\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"Swaps the meanings of lean and cant and assigns frost heave to cant, contradicting A.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"nuanced-turn\", \"textbook-voice\", \"most-detailed\"],\n      \"p\": 45,\n      \"note\": \"Reverses the definitions but clarifies how each is measured, aligning with surveying logic.\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"implausible\", \"off-target\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"Ignores the question’s distinction between deliberate and accidental offsets.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question implies one measurement is against vertical (lean) and the other course-to-course (cant), so C’s reversal of terms but precise definitions best fits.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1142,
+    "completion_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4201
+}

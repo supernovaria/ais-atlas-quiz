@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/25",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1005e82743c1d009371a22d00165f2180a724ea32cbf9b0792107093ec809a18",
+  "ts": "2026-09-27T17:02:36.579Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"hedged\", \"general-knowledge\", \"echoes-stem\", \"position\"],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"absolute\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\", \"denies-question\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"surprising\"],\n      \"p\": 30,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question hinges on whether the crown *should* be counted in the concord index, and the most plausible textbook response is that the original version (Marhaug) counts it, while the current protocol excludes it because of handling artifacts, matching the detail in option A.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 828,
+    "total_tokens": 1091,
+    "completion_tokens": 263,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 6706
+}

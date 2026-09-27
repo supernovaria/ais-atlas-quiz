@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/27",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "002d11358889f545f62bb7c8358a86f9d1930c6271c8d00b75654effd81088de",
+  "ts": "2026-09-27T17:03:21.874Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"opposites\", \"grammatical-fit\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"middle-ground\", \"textbook-voice\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"off-target\", \"shortest\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"general-knowledge\", \"longest\", \"surprising\"],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Focused on the most detailed and specific description of the effects, contrasting populations and mechanisms directly, as the others either contradicted or ignored key distinctions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 811,
+    "total_tokens": 1035,
+    "completion_tokens": 224,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2676
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/17",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e1fd197ce2f5af14e31a62584443d8557e27087260370ee98c0314cebf8a82ab",
+  "ts": "2026-09-27T17:18:37.098Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"grammatical-fit\", \"too-obvious\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Assumes a direct linear relationship between pell length and total wennets without considering chain structures or relative frame sizes.\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"echoes-stem\", \"grammatical-fit\", \"most-detailed\"],\n      \"p\": 25,\n      \"note\": \"Introduces tharls and frame size as explanations, but the phrasing still leans toward absolute claims about lattice A.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"echoes-stem\", \"grammatical-fit\", \"most-detailed\"],\n      \"p\": 55,\n      \"note\": \"Balances both lattices' wennet-work while explaining differences in chain structure—most plausible and nuanced.\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"opposites\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Dismisses the question's implication of a meaningful difference between lattices by attributing it to error.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Selected the option that offered a balanced, explanatory account of the differences in wennet-work chains while avoiding absolute or dismissive claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 811,
+    "total_tokens": 1139,
+    "completion_tokens": 328,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2493
+}

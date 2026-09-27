@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/00",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c0c078764c38190209067154308e1deb9425d5ce994bd71eaaf52e307ed21c43",
+  "ts": "2026-09-27T16:58:23.994Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"longest\",\n        \"most-detailed\",\n        \"echoes-stem\",\n        \"absolute\",\n        \"general-knowledge\"\n      ],\n      \"p\": 30,\n      \"note\": \"Explicitly contrasts the fixed nature of 'courses' with the updatable 'pell stone' record, mirroring the question’s phrasing.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"middle-ground\",\n        \"general-knowledge\"\n      ],\n      \"p\": 25,\n      \"note\": \"Introduces a third party ('builder') and implies a collaborative dynamic, which is less extreme than others.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"shortest\",\n        \"absolute\",\n        \"denies-question\",\n        \"surprising\",\n        \"general-knowledge\"\n      ],\n      \"p\": 15,\n      \"note\": \"Dismisses the idea of deliberate updates entirely, which feels like a contrarian stance on the question’s premise.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"odd-one-out\",\n        \"implausible\",\n        \"absolute\",\n        \"off-target\",\n        \"general-knowledge\"\n      ],\n      \"p\": 10,\n      \"note\": \"Suggests both registers are on the pell stone, which contradicts the phrasing of the question and feels convoluted.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Prioritized options that directly mirrored the question’s phrasing ('fixed message set,' 'updatable record') and assumed a clear, non-contradictory relationship between the elements.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 790,
+    "total_tokens": 1193,
+    "completion_tokens": 403,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3329
+}

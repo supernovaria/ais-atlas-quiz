@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/21",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "4d05bbf44184f8c8552613b2289b7863d812c3bd1e5a636e4f7fc7440b9df78f",
+  "ts": "2026-09-27T17:02:00.359Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"general-knowledge\",\n        \"absolute\",\n        \"textbook-voice\",\n        \"echoes-stem\",\n        \"most-detailed\"\n      ],\n      \"p\": 30,\n      \"note\": \"Assumes clear causal relationships between physical forces and terms without ambiguity.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"denies-question\",\n        \"middle-ground\",\n        \"absolute\",\n        \"odd-one-out\"\n      ],\n      \"p\": 10,\n      \"note\": \"Rejects the premise that offsets are meaningful signals, which contradicts the question's framing.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"general-knowledge\",\n        \"grammatical-fit\",\n        \"nuanced-turn\",\n        \"echoes-stem\"\n      ],\n      \"p\": 50,\n      \"note\": \"Correctly distinguishes between terms by their definitions and measurement contexts, fitting the question's phrasing.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"general-knowledge\",\n        \"absolute\",\n        \"surprising\",\n        \"opposites\"\n      ],\n      \"p\": 10,\n      \"note\": \"Reverses the plausible causal relationships and implies one measurement is meaningless, which feels counterintuitive.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question asks for which terms correctly label the two measurements and their meanings, so I prioritized options that define 'lean' and 'cant' accurately and align with common usage in surveying/architecture.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1175,
+    "completion_tokens": 344,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4923
+}

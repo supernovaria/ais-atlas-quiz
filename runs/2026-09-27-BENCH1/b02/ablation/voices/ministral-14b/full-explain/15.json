@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/15",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0b80249be3788012908b58eaf728e53294f720995c95e24706157d6cabad3d75",
+  "ts": "2026-09-27T17:02:19.252Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"denies-question\", \"middle-ground\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"too-obvious\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Uses 'both counts' without defining them clearly, ignores nuance in the question.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 70,\n      \"note\": \"Explicitly addresses the trade-off between readability and informational loss, matching the question's emphasis on 'easier to follow' vs. 'original information'.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"implausible\", \"off-target\", \"odd-one-out\"],\n      \"p\": 0,\n      \"note\": \"Introduces an unsupported claim about the pell stone being 'broken,' which contradicts the given context.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question highlights a trade-off between readability and information loss in cairn restoration, and option C directly addresses this duality with specific details about uniformity and default placement.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 863,
+    "total_tokens": 1174,
+    "completion_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4697
+}

@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/10",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "0143ac0c32b6f8dc8af634744e96075c5a5da31faa7c860ce1edf2787da8b2c0",
+  "ts": "2026-09-27T17:45:10.138Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"textbook-voice\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"textbook-voice\"],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"textbook-voice\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized the option that provided a distinction between a specific diagnostic sign and a general frequency, as this nuance is characteristic of correct answers in academic multiple-choice questions.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 824,
+    "candidatesTokenCount": 228,
+    "totalTokenCount": 3330,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 824
+      }
+    ],
+    "thoughtsTokenCount": 2278,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 101427
+}

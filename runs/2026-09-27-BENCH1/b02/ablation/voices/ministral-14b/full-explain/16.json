@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/16",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e233ee4bef80a62a4b9da01faf53572fbbfa84ece9c7eae27ba20928ba0dbcfb",
+  "ts": "2026-09-27T16:59:47.215Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"hedged\", \"textbook-voice\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"Introduces a new concept ('Brannagh’s objection') and qualifies 'fixed,' but does not directly address the question’s scenario.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"implausible\", \"off-target\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Overstates the pell stone’s role and ignores the question’s distinction between the two registers.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"middle-ground\", \"most-detailed\"],\n      \"p\": 50,\n      \"note\": \"Directly maps the question’s events (turned stone, rebuilt courses) to the two registers without overcomplicating.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"general-knowledge\", \"too-obvious\", \"denies-question\"],\n      \"p\": 35,\n      \"note\": \"Reduces the question to a generic aging process, ignoring the specific actions described.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question asks which *registers* changed or stayed fixed based on the *specific* actions (turned stone, rebuilt courses), so the answer must directly tie those actions to the two registers without introducing unrelated concepts.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 836,
+    "total_tokens": 1169,
+    "completion_tokens": 333,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4733
+}

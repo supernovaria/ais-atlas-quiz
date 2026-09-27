@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/15",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a22a5ae1a0febda645d2398c311a885882bd3e20f7ea9e0ebf276e3bd72f8647",
+  "ts": "2026-09-27T17:19:42.124Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"hedged\", \"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"Reuses key terms ('slow sediment buildup', 'leading cause') but softens the claim with qualifiers ('dominant, if underappreciated').\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"opposites\", \"absolute\", \"odd-one-out\"],\n      \"p\": 15,\n      \"note\": \"Contrasts 'rockfalls' with 'silt film' but introduces an unsupported 'sudden violence' generalization.\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"general-knowledge\", \"absolute\", \"impossible\"],\n      \"p\": 5,\n      \"note\": \"Shifts focus to 'high cant' and flood survival, which is irrelevant to *gradual* sediment buildup as a *seasonal* cause.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"denies-question\", \"absolute\", \"like-the-others\", \"position\"],\n      \"p\": 60,\n      \"note\": \"Directly contradicts the claim by stating 'sudden violence' dominates, using the stem's wording ('silt film accounts for only a small share').\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 0,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question hinges on whether *gradual* causes (silt film) dominate or *sudden* causes (floods/rockfalls) do. D is the only option that explicitly rejects the claim while fitting the grammar and logic of a 'no' answer.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 839,
+    "total_tokens": 1243,
+    "completion_tokens": 404,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5502
+}

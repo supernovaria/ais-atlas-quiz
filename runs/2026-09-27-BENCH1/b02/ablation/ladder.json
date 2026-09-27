@@ -1,0 +1,746 @@
+{
+  "source": "2026-09-27-BENCH1/b02",
+  "seeds": 7,
+  "seed_offset": 0,
+  "preregistered": true,
+  "excluded": [],
+  "rungs": {
+    "full": {
+      "questions": 16,
+      "trials": 48,
+      "hits": 43,
+      "unparsed": 0,
+      "unparsed_excluded": 0,
+      "hit_rate": 0.8958333333333334,
+      "mean_chance": 0.25,
+      "excess_over_chance": 0.6458333333333334,
+      "ci_question_unit": {
+        "n": 16,
+        "mean": 0.8958333333333334,
+        "sd": 0.15957118462605635,
+        "lo": 0.8176434528665657,
+        "hi": 0.974023213800101
+      }
+    },
+    "options-only": {
+      "questions": 16,
+      "trials": 48,
+      "hits": 41,
+      "unparsed": 0,
+      "unparsed_excluded": 0,
+      "hit_rate": 0.8541666666666666,
+      "mean_chance": 0.25,
+      "excess_over_chance": 0.6041666666666666,
+      "ci_question_unit": {
+        "n": 16,
+        "mean": 0.8541666666666666,
+        "sd": 0.2097176232019653,
+        "lo": 0.7514050312977036,
+        "hi": 0.9569283020356296
+      }
+    }
+  },
+  "per_question": {
+    "b02/sonnet/a01": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "20/20",
+        "options-only": "15/19"
+      },
+      "key_centrality": 0.069
+    },
+    "b02/sonnet/a02": {
+      "full": "3/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "11/19",
+        "options-only": "6/19"
+      },
+      "key_centrality": 0.069
+    },
+    "b02/sonnet/a03": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "19/19",
+        "options-only": "13/19"
+      },
+      "key_centrality": 0.01
+    },
+    "b02/sonnet/a04": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "19/19",
+        "options-only": "16/19"
+      },
+      "key_centrality": 0.094
+    },
+    "b02/sonnet/a05": {
+      "full": "2/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "17/19",
+        "options-only": "15/18"
+      },
+      "key_centrality": -0.023
+    },
+    "b02/sonnet/a06": {
+      "full": "2/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "6/19",
+        "options-only": "11/19"
+      },
+      "key_centrality": 0.111
+    },
+    "b02/sonnet/a07": {
+      "full": "2/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "12/19",
+        "options-only": "12/19"
+      },
+      "key_centrality": 0.021
+    },
+    "b02/sonnet/a08": {
+      "full": "3/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "19/19",
+        "options-only": "9/19"
+      },
+      "key_centrality": -0.01
+    },
+    "b02/sonnet/b01": {
+      "full": "2/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "14/18",
+        "options-only": "13/18"
+      },
+      "key_centrality": 0.115
+    },
+    "b02/sonnet/b02": {
+      "full": "3/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "16/18",
+        "options-only": "11/18"
+      },
+      "key_centrality": 0.063
+    },
+    "b02/sonnet/b03": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "9/18",
+        "options-only": "9/18"
+      },
+      "key_centrality": 0.159
+    },
+    "b02/sonnet/b04": {
+      "full": "3/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "15/18",
+        "options-only": "13/18"
+      },
+      "key_centrality": 0.093
+    },
+    "b02/sonnet/b05": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "16/18",
+        "options-only": "14/18"
+      },
+      "key_centrality": 0.082
+    },
+    "b02/sonnet/b06": {
+      "full": "2/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "16/18",
+        "options-only": "13/18"
+      },
+      "key_centrality": 0.063
+    },
+    "b02/sonnet/b07": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "18/18",
+        "options-only": "14/18"
+      },
+      "key_centrality": -0.027
+    },
+    "b02/sonnet/b08": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "17/17",
+        "options-only": "14/17"
+      },
+      "key_centrality": -0.042
+    }
+  },
+  "voices": {
+    "gemini-flash-36": {
+      "meta": {
+        "id": "gemini-flash-36",
+        "provider": "gemini",
+        "model": "gemini-3.6-flash",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 1
+      },
+      "rungs": {
+        "full": {
+          "questions": 1,
+          "trials": 1,
+          "hits": 1,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 1,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.75,
+          "ci_question_unit": null,
+          "coverage": "1/112",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "coverage": "0/112"
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 0,
+        "full": null,
+        "options_only": null
+      }
+    },
+    "gemma-31b": {
+      "meta": {
+        "id": "gemma-31b",
+        "provider": "gemini",
+        "model": "gemma-4-31b-it",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 15
+      },
+      "rungs": {
+        "full": {
+          "questions": 8,
+          "trials": 8,
+          "hits": 8,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 1,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.75,
+          "ci_question_unit": {
+            "n": 8,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          },
+          "coverage": "8/112",
+          "mean_reasoning_tokens": 789
+        },
+        "options-only": {
+          "questions": 7,
+          "trials": 7,
+          "hits": 7,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 1,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.75,
+          "ci_question_unit": {
+            "n": 7,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          },
+          "coverage": "7/112",
+          "mean_reasoning_tokens": 456
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 7,
+        "full": 1,
+        "options_only": 1
+      }
+    },
+    "gpt-luna": {
+      "meta": {
+        "id": "gpt-luna",
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "family": "openai"
+      },
+      "statuses": {
+        "ok": 30
+      },
+      "rungs": {
+        "full": {
+          "questions": 15,
+          "trials": 15,
+          "hits": 13,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8666666666666667,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.6166666666666667,
+          "ci_question_unit": {
+            "n": 15,
+            "mean": 0.8666666666666667,
+            "sd": 0.35186577527449836,
+            "lo": 0.6885980157355036,
+            "hi": 1
+          },
+          "coverage": "15/112",
+          "mean_reasoning_tokens": 13
+        },
+        "options-only": {
+          "questions": 15,
+          "trials": 15,
+          "hits": 13,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8666666666666667,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.6166666666666667,
+          "ci_question_unit": {
+            "n": 15,
+            "mean": 0.8666666666666667,
+            "sd": 0.35186577527449836,
+            "lo": 0.6885980157355036,
+            "hi": 1
+          },
+          "coverage": "15/112",
+          "mean_reasoning_tokens": 19
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 15,
+        "full": 0.8666666666666667,
+        "options_only": 0.8666666666666667
+      }
+    },
+    "ministral-14b": {
+      "meta": {
+        "id": "ministral-14b",
+        "provider": "mistral",
+        "model": "ministral-14b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 224
+      },
+      "rungs": {
+        "full": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 96,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8571428571428571,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.6071428571428571,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.857142857142857,
+            "sd": 0.23904572186687872,
+            "lo": 0.7400104534280865,
+            "hi": 0.9742752608576275
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 79,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.7053571428571429,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.4553571428571429,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.7053571428571428,
+            "sd": 0.17665639810999562,
+            "lo": 0.618795507783245,
+            "hi": 0.7919187779310406
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 16,
+        "full": 0.857142857142857,
+        "options_only": 0.7053571428571428
+      }
+    },
+    "ministral-8b": {
+      "meta": {
+        "id": "ministral-8b",
+        "provider": "mistral",
+        "model": "ministral-8b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 224
+      },
+      "rungs": {
+        "full": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 83,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.7410714285714286,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.4910714285714286,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.7410714285714286,
+            "sd": 0.3224850363031684,
+            "lo": 0.5830537607828761,
+            "hi": 0.8990890963599811
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 58,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.5178571428571429,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.2678571428571429,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.5178571428571428,
+            "sd": 0.2205435462268459,
+            "lo": 0.4097908052059883,
+            "hi": 0.6259234805082973
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 16,
+        "full": 0.7410714285714286,
+        "options_only": 0.5178571428571428
+      }
+    }
+  },
+  "families": {
+    "full": {
+      "anthropic": {
+        "voices": [
+          "claude-haiku"
+        ],
+        "questions": 16,
+        "rate": 0.8958333333333334,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.8958333333333334,
+          "sd": 0.15957118462605635,
+          "lo": 0.8176434528665657,
+          "hi": 0.974023213800101
+        }
+      },
+      "google": {
+        "voices": [
+          "gemini-flash-36",
+          "gemma-31b"
+        ],
+        "questions": 8,
+        "rate": 1,
+        "ci_question_unit": {
+          "n": 8,
+          "mean": 1,
+          "sd": 0,
+          "lo": 1,
+          "hi": 1
+        }
+      },
+      "openai": {
+        "voices": [
+          "gpt-luna"
+        ],
+        "questions": 15,
+        "rate": 0.8666666666666667,
+        "ci_question_unit": {
+          "n": 15,
+          "mean": 0.8666666666666667,
+          "sd": 0.35186577527449836,
+          "lo": 0.6885980157355036,
+          "hi": 1
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 16,
+        "rate": 0.799107142857143,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.799107142857143,
+          "sd": 0.2571676575342099,
+          "lo": 0.6730949906653801,
+          "hi": 0.9251192950489059
+        }
+      }
+    },
+    "options-only": {
+      "anthropic": {
+        "voices": [
+          "claude-haiku"
+        ],
+        "questions": 16,
+        "rate": 0.8541666666666666,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.8541666666666666,
+          "sd": 0.2097176232019653,
+          "lo": 0.7514050312977036,
+          "hi": 0.9569283020356296
+        }
+      },
+      "google": {
+        "voices": [
+          "gemma-31b"
+        ],
+        "questions": 7,
+        "rate": 1,
+        "ci_question_unit": {
+          "n": 7,
+          "mean": 1,
+          "sd": 0,
+          "lo": 1,
+          "hi": 1
+        }
+      },
+      "openai": {
+        "voices": [
+          "gpt-luna"
+        ],
+        "questions": 15,
+        "rate": 0.8666666666666667,
+        "ci_question_unit": {
+          "n": 15,
+          "mean": 0.8666666666666667,
+          "sd": 0.35186577527449836,
+          "lo": 0.6885980157355036,
+          "hi": 1
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 16,
+        "rate": 0.6116071428571428,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.6116071428571428,
+          "sd": 0.17490279127148833,
+          "lo": 0.5259047751341135,
+          "hi": 0.6973095105801721
+        }
+      }
+    }
+  },
+  "panel": {
+    "full": {
+      "families": 4,
+      "complete_questions": 8,
+      "family_rates_on_complete": {
+        "anthropic": 0.8750000000000001,
+        "google": 1,
+        "openai": 0.875,
+        "mistral": 0.7678571428571429
+      },
+      "median_family_rate": 0.875,
+      "pooled_trials": {
+        "questions": 16,
+        "trials": 296,
+        "hits": 244,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.8243243243243243,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.5743243243243243,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.8249269005847955,
+          "sd": 0.2107181143859696,
+          "lo": 0.7216750245356703,
+          "hi": 0.9281787766339206
+        }
+      },
+      "voices": [
+        "claude-haiku",
+        "gemini-flash-36",
+        "gemma-31b",
+        "gpt-luna",
+        "ministral-14b",
+        "ministral-8b"
+      ]
+    },
+    "options-only": {
+      "families": 4,
+      "complete_questions": 7,
+      "family_rates_on_complete": {
+        "anthropic": 0.8095238095238095,
+        "google": 1,
+        "openai": 1,
+        "mistral": 0.5204081632653061
+      },
+      "median_family_rate": 0.9047619047619048,
+      "pooled_trials": {
+        "questions": 16,
+        "trials": 294,
+        "hits": 198,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.673469387755102,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.423469387755102,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.675374097007224,
+          "sd": 0.14864640636396115,
+          "lo": 0.602537357888883,
+          "hi": 0.7482108361255649
+        }
+      },
+      "voices": [
+        "claude-haiku",
+        "gemma-31b",
+        "gpt-luna",
+        "ministral-14b",
+        "ministral-8b"
+      ]
+    }
+  },
+  "warnings": [],
+  "explain": {
+    "replies": 169,
+    "unusable": 10,
+    "voices": [
+      "gemma-31b",
+      "gpt-luna",
+      "ministral-14b",
+      "ministral-8b"
+    ],
+    "not_ok": {
+      "ministral-8b": {
+        "truncated": 1
+      }
+    },
+    "families": [
+      "google",
+      "openai",
+      "mistral"
+    ],
+    "excluded_voices": [],
+    "tags": 2495,
+    "other_share": 0.0012024048096192384,
+    "no_tell_share": 0.0004008016032064128,
+    "impossible_stem_echo_tags": 153,
+    "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
+  },
+  "by_claim_type": {
+    "full": {
+      "directional": {
+        "trials": 30,
+        "hit_rate": 0.9333333333333333,
+        "floor": 0.6,
+        "floor_basis": "max(share, 1 - share) over the directional items asked"
+      },
+      "passage-only": {
+        "trials": 18,
+        "hit_rate": 0.8333333333333334,
+        "floor": 0.4,
+        "floor_basis": "hand-authored fiction, 40%"
+      }
+    },
+    "options-only": {
+      "directional": {
+        "trials": 30,
+        "hit_rate": 0.8333333333333334,
+        "floor": 0.6,
+        "floor_basis": "max(share, 1 - share) over the directional items asked"
+      },
+      "passage-only": {
+        "trials": 18,
+        "hit_rate": 0.8888888888888888,
+        "floor": 0.4,
+        "floor_basis": "hand-authored fiction, 40%"
+      }
+    }
+  },
+  "panel_by_claim_type": {
+    "full": {
+      "directional": {
+        "family_rates": {
+          "anthropic": 0.9333333333333332,
+          "google": 1,
+          "openai": 0.7777777777777778,
+          "mistral": 0.7285714285714286
+        },
+        "median_family_rate": 0.8555555555555555,
+        "floor": 0.6
+      },
+      "passage-only": {
+        "family_rates": {
+          "anthropic": 0.8333333333333334,
+          "google": 1,
+          "openai": 1,
+          "mistral": 0.9166666666666666
+        },
+        "median_family_rate": 0.9583333333333333,
+        "floor": 0.4
+      }
+    },
+    "options-only": {
+      "directional": {
+        "family_rates": {
+          "anthropic": 0.8333333333333333,
+          "google": 1,
+          "openai": 0.8888888888888888,
+          "mistral": 0.5714285714285714
+        },
+        "median_family_rate": 0.861111111111111,
+        "floor": 0.6
+      },
+      "passage-only": {
+        "family_rates": {
+          "anthropic": 0.8888888888888888,
+          "google": 1,
+          "openai": 0.8333333333333334,
+          "mistral": 0.6785714285714285
+        },
+        "median_family_rate": 0.8611111111111112,
+        "floor": 0.4
+      }
+    }
+  }
+}

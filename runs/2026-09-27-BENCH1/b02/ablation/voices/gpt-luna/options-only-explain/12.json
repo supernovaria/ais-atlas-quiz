@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/12",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "7c1ba2d4fabb372ab4117f00003d26fd63d80a6f8baf08c2141999dcc81d4433",
+  "ts": "2026-09-27T17:02:13.132Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"too-obvious\", \"absolute\", \"implausible\"],\n      \"p\": 2,\n      \"note\": \"It dismisses the possibility of a genuine exception and relies on an overly absolute common-sense explanation.\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"echoes-stem\", \"implausible\"],\n      \"p\": 3,\n      \"note\": \"It offers a simple quantity-based explanation while denying that the stated objection is real.\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"surprising\", \"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"It presents a counterintuitive reversal that directly conflicts with the local-versus-stranger distinction in D.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"surprising\", \"grammatical-fit\", \"position\"],\n      \"p\": 85,\n      \"note\": \"It gives a qualified two-group pattern and names the distinctive result as the Marhaug pattern.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I went mainly on D's specific, nuanced textbook-style wording and its named pattern, contrasted with the dismissive or overly simple alternatives.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15804,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 365,
+    "reasoning_output_tokens": 59
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 11792
+}

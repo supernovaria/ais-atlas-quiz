@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/12",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "7c1ba2d4fabb372ab4117f00003d26fd63d80a6f8baf08c2141999dcc81d4433",
+  "ts": "2026-09-27T16:59:29.885Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"echoes-stem\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Assumes the question's premise ('real objection') is invalid outright, which is too dismissive.\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"general-knowledge\", \"nuanced-turn\", \"echoes-stem\"],\n      \"p\": 25,\n      \"note\": \"Attempts to explain the pattern with plausible causal reasoning about guild vs. shepherd builders.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"opposites\", \"absolute\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Flips the logic entirely by introducing strangers vs. locals, which contradicts the implied focus on locals.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"position\"],\n      \"p\": 60,\n      \"note\": \"Provides a specific, both-sides answer ('Marhaug pattern') that aligns with the question's implied complexity.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that introduced nuance, specificity, and avoided outright dismissal of the question's premise.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 797,
+    "total_tokens": 1113,
+    "completion_tokens": 316,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5033
+}

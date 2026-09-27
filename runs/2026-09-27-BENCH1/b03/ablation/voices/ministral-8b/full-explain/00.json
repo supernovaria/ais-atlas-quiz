@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/00",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0c67baf6f2cb9b51dba45a65a588c80916b1088da5b179d9ccd5620e3c5b0520",
+  "ts": "2026-09-27T17:15:02.209Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"most-detailed\",\n        \"grammatical-fit\",\n        \"middle-ground\",\n        \"general-knowledge\"\n      ],\n      \"p\": 30,\n      \"note\": \"Uses the question's terms ('cant,' 'pell,' 'wifnet-work,' 'tharl-to-tharl') to explain relative complexity and independence.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"absolute\",\n        \"denies-question\",\n        \"surprising\",\n        \"grammatical-fit\",\n        \"off-target\"\n      ],\n      \"p\": 5,\n      \"note\": \"Suggests a measurement error based on a naive assumption about proportionality, ignoring the context of the question.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"absolute\",\n        \"off-target\",\n        \"grammatical-fit\",\n        \"like-the-others\"\n      ],\n      \"p\": 10,\n      \"note\": \"Misinterprets 'pell' as a direct count of wennet-laying, ignoring its possible role as a measure of chain length or independence.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"odd-one-out\",\n        \"grammatical-fit\",\n        \"hedged\",\n        \"general-knowledge\"\n      ],\n      \"p\": 55,\n      \"note\": \"Implies a direct correspondence between cant and independence, mirroring pell's role, which aligns with the question's focus on comparing relative work and structure.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that directly compare cant and pell as measures of wennet-work independence and relative structure, avoiding absolute or contradictory claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 871,
+    "total_tokens": 1251,
+    "completion_tokens": 380,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 7509
+}

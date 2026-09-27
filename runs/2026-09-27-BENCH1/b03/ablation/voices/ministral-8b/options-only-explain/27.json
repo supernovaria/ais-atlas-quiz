@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/27",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "9171b3c1f473ee878a1fd81840d97aa876445eecfa12d8a1306eb37c910dd758",
+  "ts": "2026-09-27T17:19:14.996Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"absolute\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Assumes causality without nuance and directly repeats question terms ('broken wennets,' 'snails').\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"most-detailed\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Focuses on a plausible mechanism (snail grip near fastenings) but is concise and specific.\"\n    },\n    \"C\": {\n      \"codes\": [\"middle-ground\", \"hedged\", \"nuanced-turn\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Avoids overgeneralizing but feels like a cop-out without concrete reasoning.\"\n    },\n    \"D\": {\n      \"codes\": [\"odd-one-out\", \"most-detailed\", \"textbook-voice\", \"general-knowledge\", \"opposites\"],\n      \"p\": 40,\n      \"note\": \"Introduces a new term ('tamber') and contrasts causes, which stands out as more analytical.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that introduced new, differentiated concepts (like 'tamber') and avoided hedging, favoring a structured explanation over vague or repetitive claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 780,
+    "total_tokens": 1098,
+    "completion_tokens": 318,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2536
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/19",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c5f724fe7d2b76934cb20f956b38b87c4552a8773adc60c69f9f15c4068f78c5",
+  "ts": "2026-09-27T17:01:54.026Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 35,\n      \"note\": \"Explains a complex relationship between routes, using the question's framing of 'reversed course' and 'branching off,' which feels deliberate and nuanced.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"absolute\",\n        \"grammatical-fit\",\n        \"too-obvious\",\n        \"like-the-others\"\n      ],\n      \"p\": 15,\n      \"note\": \"Overstates the certainty of the builder's intent with 'the message' and lacks explanation for why others might not agree.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"hedged\",\n        \"middle-ground\",\n        \"echoes-stem\",\n        \"general-knowledge\"\n      ],\n      \"p\": 25,\n      \"note\": \"Uses 'accidental fault' to suggest randomness, but the phrasing 'learn to recognise' implies intentionality, creating ambiguity.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"absolute\",\n        \"off-target\",\n        \"implausible\",\n        \"odd-one-out\"\n      ],\n      \"p\": 25,\n      \"note\": \"Introduces a statistical concept ('concord score') that seems unrelated to the context of cairns and routes.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Prioritized options that provided detailed explanations and echoed the question's terminology while avoiding absolute or off-target claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 768,
+    "total_tokens": 1121,
+    "completion_tokens": 353,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2843
+}

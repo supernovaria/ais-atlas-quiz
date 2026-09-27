@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/25",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "8f4ba878651541ba5a66280b2f4eb6789cd205553c3bfe94219cb49d75100832",
+  "ts": "2026-09-27T17:19:07.694Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"general-knowledge\", \"textbook-voice\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Assumes fineness and slackness are universally defining features without acknowledging exceptions or ambiguity.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"general-knowledge\", \"middle-ground\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"Correctly negates *one* category but does not address the broader ambiguity or other categories.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"middle-ground\", \"grammatical-fit\", \"most-detailed\", \"echoes-stem\"],\n      \"p\": 50,\n      \"note\": \"Balances all possibilities and explicitly acknowledges limitations of appearance-based shortcuts.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"general-knowledge\", \"opposites\", \"surprising\"],\n      \"p\": 20,\n      \"note\": \"Introduces a new category without evidence or context, making it unlikely without prior definition.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized options that acknowledged ambiguity, nuance, or limitations of appearance-based reasoning, ruling out absolute claims and those that introduced new categories without context.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 789,
+    "total_tokens": 1107,
+    "completion_tokens": 318,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3666
+}

@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/04",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "d984f5c0dda9b3ca0fd95cb05e0e7a1c59fdfbb5b6b3271788647a22106916ec",
+  "ts": "2026-09-27T17:16:24.428Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"longest\",\"most-detailed\",\"textbook-voice\",\"echoes-stem\",\"grammatical-fit\",\"opposites\"],\"p\":85,\"note\":\"\"},\"B\":{\"codes\":[\"too-obvious\",\"echoes-stem\",\"grammatical-fit\",\"opposites\",\"like-the-others\"],\"p\":7,\"note\":\"\"},\"C\":{\"codes\":[\"absolute\",\"denies-question\",\"implausible\",\"off-target\",\"odd-one-out\"],\"p\":2,\"note\":\"\"},\"D\":{\"codes\":[\"absolute\",\"echoes-stem\",\"too-obvious\",\"grammatical-fit\",\"opposites\"],\"p\":6,\"note\":\"\"}},\"pick\":\"A\",\"strategy\":\"I went mainly on A's specific causal explanation and its textbook-like correction of the colleague's intuitive claim.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15844,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 340,
+    "reasoning_output_tokens": 164
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9612
+}

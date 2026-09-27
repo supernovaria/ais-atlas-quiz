@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/21",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "dd13568c5133bbb84c926ffd3e77ecd43aebbedb1efc79e42b2b9d07b831597c",
+  "ts": "2026-09-27T17:20:34.784Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"too-obvious\", \"absolute\", \"longest\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"hedged\", \"most-detailed\", \"grammatical-fit\"],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"opposites\", \"absolute\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"implausible\", \"absolute\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The claim’s logic (more *wennets* → more thorough) is challenged by B’s detail that ‘chains begun there end quickly,’ which explains why the fenn trace might *overestimate* rather than be better, matching the ‘underestimates pell less’ phrasing in the question’s context.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 817,
+    "total_tokens": 1082,
+    "completion_tokens": 265,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4096
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/10",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "826c0e5f46afd86a5531bd6e28cdb4df791d4018673e025cffe28c08715adadd",
+  "ts": "2026-09-27T17:16:26.256Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"absolute\", \"opposites\"],\n      \"p\": 40,\n      \"note\": \"Uses the question's own wording ('near a fastening') and presents a clear, definitive answer with 'always' logic, but contradicts other options.\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"echoes-stem\", \"general-knowledge\", \"surprising\"],\n      \"p\": 15,\n      \"note\": \"Briefly ties the break to pilse but lacks nuance or supporting context about prevalence.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"textbook-voice\", \"hedged\"],\n      \"p\": 30,\n      \"note\": \"Balances both causes and prevalence, avoiding absolutes, which aligns with diagnostic caution.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\", \"general-knowledge\", \"absolute\", \"odd-one-out\"],\n      \"p\": 15,\n      \"note\": \"Overly simplistic, dismisses nuance, and leans into beginner assumptions.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized the option that balanced diagnostic specificity with prevalence without absolutes, aligning with typical diagnostic reasoning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 858,
+    "total_tokens": 1169,
+    "completion_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4270
+}

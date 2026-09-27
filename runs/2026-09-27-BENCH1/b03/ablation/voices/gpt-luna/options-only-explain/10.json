@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/10",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "0143ac0c32b6f8dc8af634744e96075c5a5da31faa7c860ce1edf2787da8b2c0",
+  "ts": "2026-09-27T17:18:27.338Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"opposites\"],\n      \"p\": 62,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"implausible\", \"echoes-stem\", \"opposites\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"opposites\"],\n      \"p\": 24,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"textbook-voice\", \"echoes-stem\", \"opposites\"],\n      \"p\": 9,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I favored the option with the clearest textbook-style causal distinction and treated the crawling-wear explanation as the tempting common-sense distractor.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15815,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 442,
+    "reasoning_output_tokens": 208
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 11629
+}

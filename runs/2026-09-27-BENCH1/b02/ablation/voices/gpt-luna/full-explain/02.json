@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/02",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "de7224f209c831ffb5f55321acfda93de0adbf45c4bfecd08941d91e16171c52",
+  "ts": "2026-09-27T16:59:11.457Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"most-detailed\",\"textbook-voice\",\"opposites\"],\"p\":8,\"note\":\"\"},\"B\":{\"codes\":[\"too-obvious\",\"echoes-stem\",\"opposites\"],\"p\":7,\"note\":\"\"},\"C\":{\"codes\":[\"surprising\",\"opposites\"],\"p\":5,\"note\":\"\"},\"D\":{\"codes\":[\"absolute\",\"textbook-voice\",\"surprising\",\"opposites\",\"position\"],\"p\":80,\"note\":\"\"}},\"pick\":\"D\",\"strategy\":\"I relied on the sharp distinction between a deliberate course-to-course cant and an accidental whole-structure lean, plus D’s textbook-like corrective wording.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15861,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 346,
+    "reasoning_output_tokens": 199
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10522
+}

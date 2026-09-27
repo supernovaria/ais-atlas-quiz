@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/05",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0bd988f23a991831d626857219254d6c43d1aac87c2f61586834aee0e75573e5",
+  "ts": "2026-09-27T17:18:46.794Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"textbook-voice\", \"longest\"],\n      \"p\": 5,\n      \"note\": \"Uses the question’s own phrases ('tessel trace', 'fenn trace') but frames it as a definitive conclusion.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"middle-ground\", \"opposites\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Introduces a practical equivalence ('identical chain') that contrasts with A’s absolute claim.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"too-obvious\", \"off-target\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Beginners’ preference is irrelevant to the question’s technical comparison of traces.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"general-knowledge\", \"echoes-stem\", \"position\"],\n      \"p\": 70,\n      \"note\": \"Provides a mechanistic explanation ('wennets near anchors') that directly addresses underestimation.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized the option that explained *why* one trace underestimates less than the other, using domain-specific terms and a causal chain.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 804,
+    "total_tokens": 1106,
+    "completion_tokens": 302,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4296
+}

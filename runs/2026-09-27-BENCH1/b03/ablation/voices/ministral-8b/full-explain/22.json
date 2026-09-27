@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/22",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1cffe13c8b636e1657b159dddec281491e343f588dce882090cdf8a88ab4fee1",
+  "ts": "2026-09-27T17:16:34.790Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"middle-ground\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"off-target\", \"implausible\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"Assumes a physical explanation based on air and chains, which is speculative given the question's wording.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"absolute\", \"off-target\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Introduces environmental conditions (warmer/draughty galleries) not mentioned in the question.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"most-detailed\", \"odd-one-out\", \"echoes-stem\", \"position\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Introduces specific patterns (Orrin, Tasker) and gallery conditions not referenced in the question.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"off-target\", \"implausible\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n    },\n    \"pick\": \"A\",\n    \"strategy\": \"The question contrasts two findings about pell in lattices: one about collective founding (group scale) and one about individual lattice progression (single scale). Option A captures this distinction by framing them as two scales of the same regularity, aligning with the wording's emphasis on 'several vesks' versus 'a single lattice' and their respective observations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 860,
+    "total_tokens": 1228,
+    "completion_tokens": 368,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3773
+}

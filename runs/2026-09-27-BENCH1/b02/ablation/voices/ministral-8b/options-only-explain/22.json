@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/22",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "02a268bef8f23a019d6c3cb21379b064c21d286c2b09eec0742621bbad2a6800",
+  "ts": "2026-09-27T16:59:50.472Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"absolute\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"hedged\", \"nuanced-turn\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"textbook-voice\", \"absolute\", \"general-knowledge\"],\n      \"p\": 45,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"shortest\", \"echoes-stem\", \"surprising\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized the option that provided the clearest, most specific reasoning—particularly one that explained *why* locals would be more affected by distortion, using terms like 'vertical silhouette' and 'whole-cairn tilt' that mirrored the question's phrasing.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 781,
+    "total_tokens": 1033,
+    "completion_tokens": 252,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2088
+}

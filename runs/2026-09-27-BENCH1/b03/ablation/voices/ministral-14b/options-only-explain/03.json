@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/03",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "ff6e53a51e0932c00e7eb95a351adc6a23449fa57e3a296462a3560da3550de9",
+  "ts": "2026-09-27T17:18:36.316Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"grammatical-fit\", \"like-the-others\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Assumes a clear-cut, definitive shift without nuance or process.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"hedged\", \"textbook-voice\", \"echoes-stem\", \"middle-ground\"],\n      \"p\": 40,\n      \"note\": \"Introduces contingency ('partly a function'), contrasts fixed vs. rule-dependent, and avoids absolutes.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"absolute\", \"echoes-stem\", \"opposites\"],\n      \"p\": 35,\n      \"note\": \"Claims Emmerick's work invalidates Varrenby's *definitions*, not just her classification boundary.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"too-obvious\", \"implausible\", \"off-target\"],\n      \"p\": 20,\n      \"note\": \"Frames the disagreement as a resolvable error, ignoring the question's implied theoretical complexity.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Selected the option that best balances nuance, technical specificity, and avoidance of absolutes, aligning with a likely test emphasis on methodological relativity.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 813,
+    "total_tokens": 1133,
+    "completion_tokens": 320,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4176
+}

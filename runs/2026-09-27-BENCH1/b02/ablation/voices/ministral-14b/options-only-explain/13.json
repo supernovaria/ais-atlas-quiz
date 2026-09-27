@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/13",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "35a7ec24149e1a35c51be3b188e9c49a42b44c28b478f49e3678e4d9d303fba6",
+  "ts": "2026-09-27T17:02:13.114Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"opposites\", \"absolute\", \"position\"],\n      \"p\": 20,\n      \"note\": \"Contradicts B explicitly and uses strong language ('actually', 'anchored by').\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"general-knowledge\", \"position\"],\n      \"p\": 40,\n      \"note\": \"Introduces the 'Marhaug pattern' and distinguishes locals vs. strangers with empirical nuance.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"middle-ground\", \"too-obvious\", \"off-target\", \"grammatical-fit\", \"position\"],\n      \"p\": 15,\n      \"note\": \"Dismissive of the objection by introducing unrelated detail ('guild' vs. 'shepherds').\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"surprising\", \"implausible\", \"grammatical-fit\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Claims exceptions are 'surveyor error,' ignoring the pattern's existence.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Chose the option that introduced a named pattern ('Marhaug'), balanced locals/strangers, and avoided absolute dismissals.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 797,
+    "total_tokens": 1152,
+    "completion_tokens": 355,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3850
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/12",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "45b5abd1000e00984f4d21a3b7eef4dd9e6f8eb31915d53589892f971bc15901",
+  "ts": "2026-09-27T17:15:57.349Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"opposites\",\n        \"absolute\",\n        \"most-detailed\",\n        \"grammatical-fit\",\n        \"echoes-stem\"\n      ],\n      \"p\": 25,\n      \"note\": \"Contradicts the implied premise and provides a detailed but extreme reversal of the original claim.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"off-target\",\n        \"absolute\",\n        \"echoes-stem\",\n        \"general-knowledge\"\n      ],\n      \"p\": 10,\n      \"note\": \"Shifts focus to silt film, which may not directly address the question about lattice height.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"opposites\",\n        \"absolute\",\n        \"echoes-stem\",\n        \"general-knowledge\"\n      ],\n      \"p\": 30,\n      \"note\": \"Introduces a new factor (cant) without clarifying its relationship to height or flood survival.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"too-obvious\",\n        \"grammatical-fit\",\n        \"echoes-stem\"\n      ],\n      \"p\": 35,\n      \"note\": \"Reiterates the original claim without addressing any objections or nuances.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question seems to be testing the ability to recognize contradictions and nuanced reasoning, so I prioritized options that directly oppose or challenge the original reasoning while providing a detailed alternative.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 787,
+    "total_tokens": 1130,
+    "completion_tokens": 343,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2807
+}

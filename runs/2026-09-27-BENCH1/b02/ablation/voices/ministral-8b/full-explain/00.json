@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/00",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "ec8ae0124ac170a848883f705afd7a6b32ab50933ed5d6dd1935cd1d565624ab",
+  "ts": "2026-09-27T16:58:20.661Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Explicitly references both the 'fixed message set' of courses and the 'updatable record' of the pell stone, aligning with the question’s structure.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Introduces new actors ('builder') and a functional distinction ('lisk sense'), which isn't implied by the question.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"off-target\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Rejects deliberate updates entirely, ignoring the explicit observation of movement as a possible meaning.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"off-target\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Inverts the relationship of meaning carriers without evidence from the question.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 0,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question emphasizes two distinct behaviors (fixed vs. changed) and the option that most clearly distinguishes these two registers as stable and updatable—while avoiding unnecessary assumptions—seems most aligned with the observations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 857,
+    "total_tokens": 1201,
+    "completion_tokens": 344,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3585
+}

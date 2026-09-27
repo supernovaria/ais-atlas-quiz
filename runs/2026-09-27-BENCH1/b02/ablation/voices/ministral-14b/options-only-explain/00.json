@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/00",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c0c078764c38190209067154308e1deb9425d5ce994bd71eaaf52e307ed21c43",
+  "ts": "2026-09-27T16:58:26.256Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"grammatical-fit\", \"position\"],\n      \"p\": 30,\n      \"note\": \"Uses 'fixed,' 'unchanged,' and 'separate, updatable,' directly mirroring the question’s phrasing about fixed vs. updatable records.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"textbook-voice\", \"like-the-others\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Introduces a third agent ('builder') and a process ('updates on each revisit'), which feels like a textbook explanation of roles.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"absolute\", \"middle-ground\", \"odd-one-out\"],\n      \"p\": 15,\n      \"note\": \"Claims the shift is 'incidental disturbance,' contradicting the question’s implication of deliberate updates, and stands out grammatically.\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"implausible\", \"off-target\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Asserts both registers are on the pell stone, directly contradicting the question’s setup and ignoring the courses entirely.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question emphasizes *fixed* vs. *updatable* records, and only **A** directly mirrors that contrast without introducing contradictions or new agents.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 790,
+    "total_tokens": 1126,
+    "completion_tokens": 336,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4737
+}

@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/04",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "d984f5c0dda9b3ca0fd95cb05e0e7a1c59fdfbb5b6b3271788647a22106916ec",
+  "ts": "2026-09-27T17:25:14.431Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"textbook-voice\",\n        \"opposites\",\n        \"surprising\",\n        \"hedged\"\n      ],\n      \"p\": 75,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"too-obvious\",\n        \"echoes-stem\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"absolute\",\n        \"denies-question\"\n      ],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"off-target\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I chose the option that refutes a simplistic claim with a specific, technical explanation, which is a common pattern for correct answers in reading comprehension tests.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 846,
+    "candidatesTokenCount": 261,
+    "totalTokenCount": 2598,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 846
+      }
+    ],
+    "thoughtsTokenCount": 1491,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 76116
+}

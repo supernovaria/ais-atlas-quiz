@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/26",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "15593755dde38666657ac6fc1db9462056e39441491adf71ca5192fe45d378b0",
+  "ts": "2026-09-27T17:00:42.561Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"opposites\", \"echoes-stem\", \"grammatical-fit\", \"position\"],\n      \"p\": 20,\n      \"note\": \"Directly contradicts B and D; mentions 'experienced locals' vs 'strangers' as a reversal, which aligns with the question’s phrasing about population swapping.\"\n    },\n    \"B\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"off-target\"],\n      \"p\": 10,\n      \"note\": \"Overly specific about 'a single reversed course' and 'register conflict,' which seems like overinterpretation of a vague question.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"too-obvious\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Ignores the question’s implied conflict about population differences entirely.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 60,\n      \"note\": \"Provides a clear, plausible distinction between the two effects, using terms like 'genuine conflict' and 'no register conflict,' which aligns with typical effect definitions.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Chose the option that provided the most logical and detailed distinction between the two effects while avoiding contradictions and overcomplication.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 811,
+    "total_tokens": 1142,
+    "completion_tokens": 331,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3535
+}

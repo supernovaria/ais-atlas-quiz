@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/06",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "137476e252eb0e8da8490b3da147e13bf0364de3147b6ee61fbc663741faade2",
+  "ts": "2026-09-27T17:16:04.862Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"too-obvious\", \"absolute\", \"echoes-stem\"],\n      \"p\": 5,\n      \"note\": \"Ignores the distinction between patterns across lattices (1) and within a single lattice over time (2).\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"most-detailed\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Explicitly names patterns (Orrin/Tasker) and aligns them with the question’s wording, but may overfit.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"textbook-voice\", \"grammatical-fit\", \"middle-ground\"],\n      \"p\": 55,\n      \"note\": \"Matches the question’s phrasing about ‘distinct regularities’ and aligns findings (1) and (2) with named patterns.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"implausible\", \"general-knowledge\", \"off-target\"],\n      \"p\": 15,\n      \"note\": \"Introduces a physical mechanism not grounded in the question’s wording or patterns.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question emphasizes treating findings (1) and (2) as *distinct* regularities, and option C explicitly names them as such (Orrin vs. Tasker), matching the phrasing about ‘not two versions of the same finding.’\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 921,
+    "total_tokens": 1265,
+    "completion_tokens": 344,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 6981
+}

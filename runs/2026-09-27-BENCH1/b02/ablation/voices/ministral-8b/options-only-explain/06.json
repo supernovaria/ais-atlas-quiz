@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/06",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "bb952ca61bcee53eb40f26cb9e91a53ff8848944474311ecef64991404d422c9",
+  "ts": "2026-09-27T16:58:47.802Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"off-target\", \"too-obvious\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Assumes a mathematical certainty about index accuracy, which is not implied by the question.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Explains a specific exclusion (crown and footing) but lacks temporal or protocol-specific context.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 55,\n      \"note\": \"Introduces a protocol (Tessaly’s 1986) and clarifies the reasoning behind the 0.5 figure, which aligns well with the question’s implied need for a standard reference.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Contradicts the implied shift in standards by claiming Marhaug’s 1968 definition is still the standard, which seems outdated.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized the option that introduced a clear, protocol-specific explanation (C) while avoiding contradictions or oversimplifications.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 805,
+    "total_tokens": 1136,
+    "completion_tokens": 331,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4572
+}

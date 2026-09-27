@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/22",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1cffe13c8b636e1657b159dddec281491e343f588dce882090cdf8a88ab4fee1",
+  "ts": "2026-09-27T17:17:27.555Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"middle-ground\", \"grammatical-fit\", \"position\"],\n      \"p\": 30,\n      \"note\": \"Reuses 'different scales' and 'group vs single lattice' from the question’s framing of the two findings.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"absolute\", \"denies-question\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"Introduces a physical explanation not mentioned in the question, ignoring the comparative/contrastive nature of the findings.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"hedged\", \"surprising\", \"no-tell\"],\n      \"p\": 10,\n      \"note\": \"Introduces environmental conditions ('warmer galleries') without basis in the question’s wording.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"absolute\", \"odd-one-out\", \"textbook-voice\"],\n      \"p\": 55,\n      \"note\": \"Names patterns ('Orrin', 'Tasker'), reuses 'vesks', 'pell', and 'tharl', and introduces environmental qualifiers ('colder', 'draughty') as distinguishing features.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Chose the option that most directly named and distinguished the findings by their scale (group vs single lattice) and introduced plausible but specific environmental qualifiers, mirroring the question’s framing.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 860,
+    "total_tokens": 1203,
+    "completion_tokens": 343,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5209
+}

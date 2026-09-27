@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/00",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0c67baf6f2cb9b51dba45a65a588c80916b1088da5b179d9ccd5620e3c5b0520",
+  "ts": "2026-09-27T17:14:59.328Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"textbook-voice\", \"most-detailed\", \"grammatical-fit\"],\n      \"p\": 50,\n      \"note\": \"Uses 'relative to,' 'mostly,' and 'comparatively' to balance cant vs. pell without overgeneralizing.\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"implausible\", \"too-obvious\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Assumes a measurement error without explaining why cant/pell would relate that way.\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"absolute\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Claims pell is the sole count of wennet-laying, ignoring cant’s role entirely.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"opposites\", \"like-the-others\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Uses 'independent' to contrast cant/pell but oversimplifies their relationship.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Selected the option that framed cant/pell as complementary *qualified* measures, avoiding absolutes or contradictions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 871,
+    "total_tokens": 1176,
+    "completion_tokens": 305,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4563
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/23",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "80ea96bdbda5be7f48c8aa7e2ea75248ddc342e12487c305ebcc9bfdca3b6e06",
+  "ts": "2026-09-27T17:18:59.463Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"middle-ground\",\n        \"absolute\",\n        \"grammatical-fit\",\n        \"position\"\n      ],\n      \"p\": 20,\n      \"note\": \"Uses the question's terms but overgeneralizes without nuance.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"echoes-stem\",\n        \"absolute\",\n        \"grammatical-fit\",\n        \"general-knowledge\",\n        \"other\"\n      ],\n      \"p\": 45,\n      \"note\": \"Provides specific names ('Orrin pattern,' 'Tasker pattern') and distinctions, which feels textbook-like and detailed.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"middle-ground\",\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 20,\n      \"note\": \"Attempts nuance but lacks concrete distinctions or names, sounding vague.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"surprising\",\n        \"implausible\",\n        \"off-target\",\n        \"absolute\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 15,\n      \"note\": \"Introduces a physical mechanism (pell falling) that seems unrelated to the abstract terms in the question.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The most detailed and specific option, with named patterns and clear distinctions, aligns best with typical textbook expectations and general knowledge of pattern differentiation.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 800,
+    "total_tokens": 1150,
+    "completion_tokens": 350,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2578
+}

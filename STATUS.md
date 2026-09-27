@@ -33,6 +33,10 @@ guesser. There are two control sets:
 
 ## Recently done
 
+- **09-27** — Bench iteration 1: the question writer's own questions on the two
+  invented passages are guessed right 79–90% of the time without the passage,
+  by every reader family (floor about a third). The right answer is nearly
+  always the longest, most detailed option. `runs/2026-09-27-BENCH1/REPORT.md`.
 - **09-27** — All clean control items written and answered by Haiku, Sonnet,
   Opus and most of the reader panel.
 - **09-26** — A write-enabled Codex author voice for the GPT-6 Sol control items.
@@ -47,12 +51,15 @@ guesser. There are two control sets:
 
 ## Next up
 
-1. **Bench iteration 1** (starting 09-27): the pipeline writes questions on both invented
+1. **Test whether length is the cause**: rewrite the wrong answers of 5–10
+   bench questions to match the right one in length and detail, change
+   nothing else, and see whether guessing drops.
+2. **Bench iteration 1, done 09-27** (see above): the pipeline writes questions on both invented
    passages, and every reader family tries to answer them blind. This tells us
    how guessable the questions are, which cues give them away, and whether
    non-Claude readers see the same cues. It's planned in detail in
    `docs/ORCHESTRATOR-PROMPT.md` ("This run").
-2. **Testing whether a cue is real**: take a suspected cue out of 5–10
+3. **Testing other cues the same way**: take a suspected cue out of 5–10
    questions, change nothing else, and see whether guessing drops. Only then
    does a cue change the agents' instructions.
 

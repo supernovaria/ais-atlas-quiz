@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/07",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "8625b444b10c34796c5ca9b8b6b4f959f4ab5c2d52f8bb434d12f8c9e02ced6d",
+  "ts": "2026-09-27T17:01:36.299Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"absolute\", \"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"Uses 'original 1968 definition' and 'field's standard reference,' but no hint of a 1986 update.\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\", \"off-target\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"Overly simplistic and does not explain the difference or protocol.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"grammatical-fit\"],\n      \"p\": 15,\n      \"note\": \"Explains exclusion but lacks protocol-specific justification.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"textbook-voice\", \"position\"],\n      \"p\": 65,\n      \"note\": \"Connects crown exclusion to Tessaly's protocol (1986), explains cant logic, and fits the question’s phrasing.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question emphasizes a *current* protocol (1986) and a reason tied to crown exclusion and cant, which only D provides.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 850,
+    "total_tokens": 1181,
+    "completion_tokens": 331,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4731
+}

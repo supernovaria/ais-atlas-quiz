@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/09",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "5ce3635b7280e66df4edf1b1fd57ad8d41bff2ca47f8571ed3894b6d08640576",
+  "ts": "2026-09-27T17:01:51.118Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"like-the-others\", \"absolute\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"Assumes both scenarios involve the same phenomenon without defining what that is or connecting it to known terms.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"general-knowledge\", \"echoes-stem\", \"nuanced-turn\"],\n      \"p\": 60,\n      \"note\": \"Introduces specific effects ('Tessaly' and 'Orne') and distinguishes between local and visitor perspectives, which aligns with the question's implied contrast.\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"absolute\", \"off-target\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Contradicts B by reversing roles (local as 'Orne effect') and implies correctness where the question suggests misinterpretation.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"general-knowledge\", \"odd-one-out\", \"denies-question\"],\n      \"p\": 30,\n      \"note\": \"Offers a simplistic solution ('checking the next cairn') that ignores the question's focus on misinterpretation of signals.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Chose the option that introduced specific, plausible psychological effects and explicitly addressed the contrast between local and visitor perspectives.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 786,
+    "total_tokens": 1116,
+    "completion_tokens": 330,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4267
+}

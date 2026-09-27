@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/20",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "66d217c89430f6b216fda156e64f6061724f29d9b4d908a1b582482dccc31f15",
+  "ts": "2026-09-27T17:21:00.982Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"textbook-voice\",\"most-detailed\",\"echoes-stem\",\"grammatical-fit\"],\"p\":80,\"note\":\"\"},\"B\":{\"codes\":[\"too-obvious\",\"echoes-stem\",\"grammatical-fit\"],\"p\":8,\"note\":\"\"},\"C\":{\"codes\":[\"absolute\",\"denies-question\",\"surprising\",\"off-target\"],\"p\":3,\"note\":\"\"},\"D\":{\"codes\":[\"opposites\",\"surprising\",\"echoes-stem\",\"grammatical-fit\"],\"p\":9,\"note\":\"\"}},\"pick\":\"A\",\"strategy\":\"I went mainly on A's specific causal explanation that starting near anchors produces short spur chains, making the broader sampling less reliable.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15826,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 245,
+    "reasoning_output_tokens": 89
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 7715
+}

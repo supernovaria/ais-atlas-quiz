@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/20",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1898890543477880d7df81a3fc8c678e15a14e86bbe295ef838a14af3967e4cc",
+  "ts": "2026-09-27T16:59:40.557Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"absolute\", \"hedged\", \"general-knowledge\", \"echoes-stem\"],\n      \"p\": 10,\n      \"note\": \"Assumes 'cant' is meaningless and leans toward dismissing deliberate offsets as irrelevant.\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"echoes-stem\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 35,\n      \"note\": \"Balances deliberate and unintentional causes, but still frames frost heave as unintentional.\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"Swaps terms from the question's phrasing and introduces a novel distinction between vertical and course offsets.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"surprising\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Asserts all offsets are deliberate, which contradicts the question's framing of two distinct measurements.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized the option that accurately aligns the terms ‘lean’ and ‘cant’ with the question’s phrasing—*lean* as deviation from true vertical, *cant* as offset between courses—while also recognizing the surveyor’s focus on course-to-course measurement rather than vertical alignment alone.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1172,
+    "completion_tokens": 341,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3404
+}

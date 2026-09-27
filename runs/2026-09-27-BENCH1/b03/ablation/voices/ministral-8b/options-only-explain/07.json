@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/07",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "21b8dd3e75c56a3df3a2dfd93ee45adf6e2c0a50f86c348d8093f87076880125",
+  "ts": "2026-09-27T17:17:57.254Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"absolute\",\n        \"most-detailed\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"most-detailed\",\n        \"general-knowledge\",\n        \"opposites\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"middle-ground\",\n        \"most-detailed\",\n        \"general-knowledge\"\n      ],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"odd-one-out\",\n        \"absolute\",\n        \"general-knowledge\"\n      ],\n      \"p\": 25,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized the option that distinguishes the two patterns clearly and aligns with a textbook-like explanation, avoiding absolutes and hedging, while using the question's terminology.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1113,
+    "completion_tokens": 282,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2778
+}

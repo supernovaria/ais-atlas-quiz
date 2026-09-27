@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/14",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "1d603c7813e9354af16fe620d61f335881f2a1a9c64c88b9fb06e88a43a0d6ee",
+  "ts": "2026-09-27T17:19:21.509Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"echoes-stem\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 78,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"nuanced-turn\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"implausible\", \"grammatical-fit\"],\n      \"p\": 4,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\", \"opposites\", \"too-obvious\"],\n      \"p\": 8,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I focused on the direct contrast between sudden violence as the dominant cause and gradual silt buildup as a minority cause, while treating the yes/no wording and qualified distractor as clues.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15838,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 412,
+    "reasoning_output_tokens": 173
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12245
+}

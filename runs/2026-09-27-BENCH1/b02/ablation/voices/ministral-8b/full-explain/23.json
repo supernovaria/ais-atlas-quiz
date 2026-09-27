@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/23",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "93f25b4b53027cbe71720d801597a86ce04e4ab08eefb7a2ac09b044d35b1373",
+  "ts": "2026-09-27T17:02:07.446Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"absolute\", \"off-target\", \"implied-knowledge\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Assumes locals have a universal inability to perceive cant, which contradicts the idea of local expertise.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 70,\n      \"note\": \"Explains why locals might misread due to their method of judging tilt against the vertical, while strangers use relative course comparison.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"surprising\", \"off-target\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Overgeneralizes expertise as reducing all errors, ignoring the specific context of tilt perception.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"like-the-others\", \"general-knowledge\", \"off-target\"],\n      \"p\": 10,\n      \"note\": \"Circular reasoning—assumes strangers misroute more often due to tilt, but this doesn’t explain *why* tilt affects them more.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question implies expertise (locals) affects how tilt is interpreted, so the correct answer should explain a method-based misreading by locals, not a blanket assumption about experience.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 810,
+    "total_tokens": 1131,
+    "completion_tokens": 321,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3376
+}

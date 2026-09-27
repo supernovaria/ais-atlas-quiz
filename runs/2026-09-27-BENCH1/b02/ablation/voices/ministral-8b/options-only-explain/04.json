@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/04",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "61fc47ac3d6d6c61cea45b4d94a844400232d397abda4699a41133dd1ba59582",
+  "ts": "2026-09-27T16:58:37.601Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"longest\", \"most-detailed\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"nuanced-turn\", \"middle-ground\"],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"odd-one-out\", \"general-knowledge\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"surprising\", \"grammatical-fit\", \"general-knowledge\", \"opposites\"],\n      \"p\": 30,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that balanced nuance with directness while avoiding absolutes, leveraging textbook-like phrasing and logical consistency with the question’s structure.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 797,
+    "total_tokens": 1046,
+    "completion_tokens": 249,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2274
+}

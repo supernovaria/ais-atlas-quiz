@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/05",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "4cece83f4a97f5d5f6e71d2e211015cdab236780189530384a4a3aff44466b11",
+  "ts": "2026-09-27T17:00:57.337Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"odd-one-out\", \"position\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"middle-ground\"],\n      \"p\": 60,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"surprising\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question describes a passerby interpreting a reversed course as a path turn, so the most plausible answer is the one that clarifies the reversed course has a specific meaning (a hob/branch) rather than being a mistake or a literal turn.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 850,
+    "total_tokens": 1091,
+    "completion_tokens": 241,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3339
+}

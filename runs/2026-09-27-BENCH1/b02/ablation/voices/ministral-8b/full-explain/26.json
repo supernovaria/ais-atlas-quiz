@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/26",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "21ba217f00e716b3e2fbcdb80d1e01b0858525acd87fc256feb89b33b53ababf",
+  "ts": "2026-09-27T17:00:02.256Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"opposites\",\n        \"hedged\",\n        \"general-knowledge\",\n        \"absolute\"\n      ],\n      \"p\": 15,\n      \"note\": \"The option introduces new terms ('Orne effect', 'Tessaly effect') and reverses populations, but it does not directly address the register/dorran issue.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"shortest\",\n        \"nuanced-turn\",\n        \"general-knowledge\",\n        \"odd-one-out\"\n      ],\n      \"p\": 20,\n      \"note\": \"This option contradicts the stem's claim about the dorran register by introducing a reversed course, but it is vague and doesn't clearly explain the separation.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"grammatical-fit\",\n        \"like-the-others\"\n      ],\n      \"p\": 10,\n      \"note\": \"This option dismisses the separation entirely, which contradicts the question's premise that two distinct findings exist.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"textbook-voice\",\n        \"opposites\",\n        \"middle-ground\"\n      ],\n      \"p\": 55,\n      \"note\": \"This option clearly differentiates the two effects by describing their distinct mechanisms and populations, addressing the dorran register issue directly.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized the option that explicitly separated the two findings by detailing distinct mechanisms (register conflict vs. misreading a hob) and populations (experienced vs. strangers), which directly addressed the collapsing of findings in the question.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 838,
+    "total_tokens": 1244,
+    "completion_tokens": 406,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3697
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/02",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "de7224f209c831ffb5f55321acfda93de0adbf45c4bfecd08941d91e16171c52",
+  "ts": "2026-09-27T16:58:31.673Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\", \"like-the-others\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"absolute\", \"surprising\", \"longest\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\", \"opposites\", \"most-detailed\", \"general-knowledge\", \"position\"],\n      \"p\": 65,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question highlights that the hiker prioritizes the *visually obvious* tilt, but the correct answer must explain why her reasoning is flawed by introducing an external factor (frost-heave) that explains the tilt, making the canted course the *only meaningful signal*—a detail absent from the other options.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 853,
+    "total_tokens": 1126,
+    "completion_tokens": 273,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3986
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/07",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "21b8dd3e75c56a3df3a2dfd93ee45adf6e2c0a50f86c348d8093f87076880125",
+  "ts": "2026-09-27T17:18:59.545Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"absolute\",\n        \"denies-question\",\n        \"implausible\",\n        \"position\"\n      ],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"general-knowledge\",\n        \"textbook-voice\",\n        \"like-the-others\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"textbook-voice\",\n        \"grammatical-fit\",\n        \"middle-ground\"\n      ],\n      \"p\": 55,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"general-knowledge\",\n        \"surprising\",\n        \"absolute\",\n        \"opposites\",\n        \"odd-one-out\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The option that distinguishes the two patterns (Orrin vs. Tasker) as separate regularities, aligns with the phrasing of the question about 'two versions of the same finding,' and avoids contradictions or oversimplifications.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1126,
+    "completion_tokens": 295,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 6523
+}

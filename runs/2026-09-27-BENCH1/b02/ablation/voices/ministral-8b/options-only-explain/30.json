@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/30",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f4f628583472afac2c3279d6cf1bf8bb5a8c664c4403355b5e9c104b0a733bad",
+  "ts": "2026-09-27T17:00:22.094Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"grammatical-fit\", \"textbook-voice\", \"echoes-stem\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"like-the-others\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 45,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"nuanced-turn\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I prioritized the option that most directly addresses the trade-off between readability and informativeness in restoration, while also providing specific examples (e.g., hob markings, pell stone) that suggest a nuanced understanding of the problem.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 804,
+    "total_tokens": 1054,
+    "completion_tokens": 250,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2609
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/31",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "09034f3cbf394a4bd21c31c73b143955d6d9e6633d2c2248304e00cdbf2a93a3",
+  "ts": "2026-09-27T17:03:43.337Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\", \"nuanced-turn\", \"echoes-stem\", \"opposites\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"Claims restoration improves both readability and informativeness, but the stem suggests a trade-off or loss of originality.\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"too-obvious\", \"grammatical-fit\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Directly contradicts the conservator's implied concern about loss of original information by framing restoration as purely beneficial.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"middle-ground\", \"general-knowledge\", \"surprising\"],\n      \"p\": 80,\n      \"note\": \"Matches the conservator's critique by explaining how uniformity erases original markers and resets overwrite records, fitting the chapter's likely objection.\"\n    },\n    \"D\": {\n      \"codes\": [\"shortest\", \"odd-one-out\", \"off-target\", \"no-tell\"],\n      \"p\": 5,\n      \"note\": \"Focuses on the *pell stone* being broken, which is irrelevant to the broader argument about informativeness vs. readability.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question frames restoration as potentially *removing* original information (e.g., 'can't make it worse'), so the answer must align with a loss of informativeness despite improved readability.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 848,
+    "total_tokens": 1195,
+    "completion_tokens": 347,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5045
+}

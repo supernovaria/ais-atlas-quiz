@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/07",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "7d2d89fe1a290bf699c362b21ded715f6f7e6d3ed2f0ff89e71b3cc42b2b92ff",
+  "ts": "2026-09-27T17:01:40.502Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"Uses 'current protocol' and 'standard reference,' but seems to ignore the 0.5 vs. 0.6 distinction.\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\", \"implausible\", \"off-target\", \"denies-question\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"Assumes more data always equals better accuracy, which is simplistic and ignores context.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"general-knowledge\", \"position\", \"no-tell\"],\n      \"p\": 20,\n      \"note\": \"Introduces a new concept ('crown,' 'footing,' 'cant') without linking it to the 0.5/0.6 figures.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"grammatical-fit\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 65,\n      \"note\": \"Directly addresses the 0.5 figure, explains the exclusion of the crown, and aligns with 'current protocol' and dates.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that directly addressed the 0.5/0.6 figures, used 'current protocol,' and explained the exclusion of the crown, while avoiding implausible or off-target reasoning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 805,
+    "total_tokens": 1157,
+    "completion_tokens": 352,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4200
+}

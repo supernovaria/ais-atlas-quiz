@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/28",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c786fc5f2a0cd41e22ae20418188306c4133c8673c01a8900b4909d87b55ea03",
+  "ts": "2026-09-27T17:00:13.349Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"longest\",\n        \"absolute\",\n        \"echoes-stem\",\n        \"like-the-others\",\n        \"grammatical-fit\",\n        \"textbook-voice\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"middle-ground\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"odd-one-out\"\n      ],\n      \"p\": 30,\n      \"note\": \"Assumes a clear distinction between 'strangers' and 'locals' without further context about 'convention' or 'cairn' design.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"shortest\",\n        \"absolute\",\n        \"implausible\",\n        \"off-target\"\n      ],\n      \"p\": 5,\n      \"note\": \"Introduces an unmentioned concept ('junction for guild-built cairns') without evidence.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"nuanced-turn\",\n        \"surprising\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"odd-one-out\"\n      ],\n      \"p\": 55,\n      \"note\": \"Introduces a contextual, dual meaning for 'concord' that aligns with nuanced interpretation.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that introduced nuanced interpretations and avoided absolute claims while fitting the context of the question.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 805,
+    "total_tokens": 1142,
+    "completion_tokens": 337,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2601
+}

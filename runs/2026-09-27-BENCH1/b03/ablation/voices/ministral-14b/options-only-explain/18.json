@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/18",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0ea11e717991bb45499cd8dad2523ea1a2e03da82cb00699221b9c0ef0f8ca51",
+  "ts": "2026-09-27T17:17:08.906Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"grammatical-fit\", \"echoes-stem\", \"like-the-others\", \"absolute\", \"off-target\"],\n      \"p\": 0,\n      \"note\": \"Assumes both rules yield the same outcome without justification, ignoring nuanced differences in 'longest chain' vs. 'mean of three longest chains'.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\", \"textbook-voice\"],\n      \"p\": 70,\n      \"note\": \"Explicitly contrasts the two rules and provides concrete calculations (9 > 8 vs. ~5.3 < 8), matching the question’s structure.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"opposites\", \"odd-one-out\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Reverses the order of outcomes compared to B, which feels counterintuitive given the phrasing of the question.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\", \"implausible\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"Ignores the 'mean of three longest chains' rule entirely, focusing only on the longest chain and a misstated cant value (4 vs. 8).\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Chose the option that best aligns with the question’s phrasing and provides a detailed, rule-specific comparison of outcomes.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 791,
+    "total_tokens": 1149,
+    "completion_tokens": 358,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3878
+}

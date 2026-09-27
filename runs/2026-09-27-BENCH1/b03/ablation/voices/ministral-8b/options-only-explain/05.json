@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/05",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0bd988f23a991831d626857219254d6c43d1aac87c2f61586834aee0e75573e5",
+  "ts": "2026-09-27T17:17:30.381Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"most-detailed\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"hedged\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"absolute\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"The option contains technical terms like 'wennets' and 'spurs,' which feel domain-specific and less likely to be the textbook's intended answer.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized the option that introduces a nuanced, contrasting argument ('not merely X but Y') and avoids absolute language, aligning with typical textbook logic while addressing the question with technical depth.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 804,
+    "total_tokens": 1067,
+    "completion_tokens": 263,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2769
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/30",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c6776c1f4d6ec27736fe13312a043ae861d117317b95e8f4bb4a3d9abf26107e",
+  "ts": "2026-09-27T17:00:19.484Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"echoes-stem\", \"absolute\", \"grammatical-fit\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"opposites\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"odd-one-out\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question asks what objection the chapter’s account of restoration *supports*, and option B is the only one that aligns with a critical perspective on restoration erasing original information, matching the conservator’s claim being challenged.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 848,
+    "total_tokens": 1097,
+    "completion_tokens": 249,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4689
+}

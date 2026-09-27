@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/27",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "9171b3c1f473ee878a1fd81840d97aa876445eecfa12d8a1306eb37c910dd758",
+  "ts": "2026-09-27T17:21:20.003Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"like-the-others\", \"absolute\", \"too-obvious\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Uses the question's own terms ('broken wennets', 'snails') in a straightforward way.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Combines the question's terms with a plausible behavioral detail ('grip on to cross').\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"middle-ground\", \"denies-question\", \"textbook-voice\"],\n      \"p\": 30,\n      \"note\": \"Introduces uncertainty ('can't be determined') and a general principle about causality.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"most-detailed\", \"absolute\", \"surprising\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Contradicts A/B by introducing a new factor ('tamber') and precise causal links ('gradual change').\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Selected the option that introduced a novel, specific mechanism ('tamber') and contradicted the others' assumptions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 780,
+    "total_tokens": 1091,
+    "completion_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3584
+}

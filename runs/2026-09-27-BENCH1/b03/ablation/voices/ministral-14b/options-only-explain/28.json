@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/28",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "abe29738805c25401379852d05fbc6f95ef453ada138bc88aa87b4f755739fb2",
+  "ts": "2026-09-27T17:18:07.510Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"nuanced-turn\", \"grammatical-fit\", \"position\"],\n      \"p\": 25,\n      \"note\": \"Uses 'correlates' and 'lost most often'—specific but absolute in phrasing.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"most-detailed\", \"opposites\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Introduces 'cant' as a new variable, contradicting A's directness.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"middle-ground\", \"textbook-voice\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Overly simplistic, dismissing positional risk entirely.\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"surprising\", \"too-obvious\", \"like-the-others\", \"general-knowledge\"],\n      \"p\": 45,\n      \"note\": \"Contradicts A/B by flipping the risk logic but feels 'common-sense' reversed.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Prioritized options that mirror the question’s phrasing ('correlates,' 'lost most often') and avoid introducing new variables (like 'cant').\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 791,
+    "total_tokens": 1109,
+    "completion_tokens": 318,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4315
+}

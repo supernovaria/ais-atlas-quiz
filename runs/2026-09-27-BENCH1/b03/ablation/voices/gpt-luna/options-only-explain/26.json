@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/26",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "17820ffaa990c4cda4be9c47f76b40452a3af44be214be95974823dc83436d9e",
+  "ts": "2026-09-27T17:22:45.450Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"implausible\",\"too-obvious\",\"grammatical-fit\"],\"p\":4,\"note\":\"It relies on a vivid but unlikely crawling-snail explanation.\"},\"B\":{\"codes\":[\"absolute\",\"implausible\",\"grammatical-fit\"],\"p\":2,\"note\":\"It makes a broad causal claim that seems invented and unsupported.\"},\"C\":{\"codes\":[\"most-detailed\",\"textbook-voice\",\"echoes-stem\",\"opposites\",\"grammatical-fit\"],\"p\":88,\"note\":\"It gives a precise causal distinction tied directly to break location.\"},\"D\":{\"codes\":[\"hedged\",\"nuanced-turn\",\"grammatical-fit\"],\"p\":6,\"note\":\"It cautiously rejects using location as evidence, but seems less like the intended lesson.\"}},\"pick\":\"C\",\"strategy\":\"I went mainly on the precise textbook-style contrast between two named causes and their predicted break locations.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15786,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 398,
+    "reasoning_output_tokens": 203
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10995
+}

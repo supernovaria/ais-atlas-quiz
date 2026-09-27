@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/02",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "7e47fce7ec999d79c728adf1c203a303929002fc7091c289a1d5b1de09bb3354",
+  "ts": "2026-09-27T17:22:10.934Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"too-obvious\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\"],\n      \"p\": 60,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Selected the longest, most conceptually complex option that provides a theoretical synthesis rather than a simple narrative or corrective detail.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 837,
+    "candidatesTokenCount": 207,
+    "totalTokenCount": 1765,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 837
+      }
+    ],
+    "thoughtsTokenCount": 721,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 55300
+}

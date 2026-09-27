@@ -1,0 +1,28 @@
+{
+  "file": "options-only-explain/31",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "eb080184270320837cbd64edf06ba74ac621f2dad01a79f00c884867e9e0c578",
+  "ts": "2026-09-27T17:03:02.575Z",
+  "status": "truncated",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"middle-ground\",\n        \"most-detailed\",\n        \"textbook-voice\"\n      ],\n      \"p\": 15,\n      \"note\": \"Uses the question’s phrasing ('easier to read and more informative') to frame its argument, but leans slightly toward a balanced view.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"too-obvious\",\n        \"odd-one-out\"\n      ],\n      \"p\": 10,\n      \"note\": \"Directly contradicts the premise of the question by claiming no objection exists, which feels like a naive or dismissive response.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"opposites\",\n        \"surprising\",\n        \"most-detailed\",\n        \"general-knowledge\"\n      ],\n      \"p\": 65,\n      \"note\": \"Argues restoration reduces informativeness by erasing specific markings and resetting stones, which directly counters the implied benefit of restoration.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"nuanced-turn\",\n        \"shortest\",\n        \"surprising\"\n      ],\n      \"p\": 10,\n      \"note\": \"Focuses on a single component (pell stone) and introduces a mechanical interpretation of \"\t\n              \t\t\n              \t\t\n              \t\t\n              \t\n              \t\n              \t\t\n              \t\t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n              \t\n",
+  "finish": "error",
+  "usage": {
+    "prompt_tokens": 804,
+    "total_tokens": 1254,
+    "completion_tokens": 450,
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3681
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/18",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "5976c5c60ae596d71a8b1b905a173ca0d972271c4105fff32184a00989a7b790",
+  "ts": "2026-09-27T17:00:00.905Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"textbook-voice\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"middle-ground\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"like-the-others\", \"general-knowledge\", \"absolute\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The option that introduced a nuanced, specific interpretation of the cairn's purpose while avoiding outright dismissal or unqualified claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 768,
+    "total_tokens": 985,
+    "completion_tokens": 217,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3314
+}

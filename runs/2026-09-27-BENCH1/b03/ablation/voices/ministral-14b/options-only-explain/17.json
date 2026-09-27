@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/17",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e1fd197ce2f5af14e31a62584443d8557e27087260370ee98c0314cebf8a82ab",
+  "ts": "2026-09-27T17:20:19.755Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"textbook-voice\", \"echoes-stem\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"general-knowledge\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"middle-ground\", \"hedged\", \"textbook-voice\"],\n      \"p\": 75,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"surprising\", \"absolute\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Chose the option that explains the difference without assuming errors or extremes, balancing both sides of the comparison with detail.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 811,
+    "total_tokens": 1028,
+    "completion_tokens": 217,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2731
+}

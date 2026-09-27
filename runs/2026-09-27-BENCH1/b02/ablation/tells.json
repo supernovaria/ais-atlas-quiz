@@ -1,0 +1,5267 @@
+{
+  "source": "2026-09-27-BENCH1/b02",
+  "codes": [
+    "longest",
+    "shortest",
+    "most-detailed",
+    "hedged",
+    "nuanced-turn",
+    "middle-ground",
+    "textbook-voice",
+    "echoes-stem",
+    "like-the-others",
+    "opposites",
+    "surprising",
+    "too-obvious",
+    "absolute",
+    "denies-question",
+    "implausible",
+    "off-target",
+    "grammatical-fit",
+    "odd-one-out",
+    "position",
+    "general-knowledge",
+    "no-tell",
+    "other"
+  ],
+  "groups": {
+    "group:qualified": [
+      "most-detailed",
+      "hedged",
+      "nuanced-turn",
+      "middle-ground"
+    ],
+    "group:dismissible": [
+      "absolute",
+      "denies-question",
+      "implausible",
+      "off-target"
+    ]
+  },
+  "summary": {
+    "replies": 169,
+    "unusable": 10,
+    "voices": [
+      "gemma-31b",
+      "gpt-luna",
+      "ministral-14b",
+      "ministral-8b"
+    ],
+    "not_ok": {
+      "ministral-8b": {
+        "truncated": 1
+      }
+    },
+    "families": [
+      "google",
+      "openai",
+      "mistral"
+    ],
+    "excluded_voices": [],
+    "tags": 2495,
+    "other_share": 0.0012024048096192384,
+    "no_tell_share": 0.0004008016032064128,
+    "impossible_stem_echo_tags": 153,
+    "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
+  },
+  "code_table": {
+    "full-explain": {
+      "key_options": 79,
+      "distractor_options": 231,
+      "codes": {
+        "longest": {
+          "on_key": 7,
+          "on_distractors": 3,
+          "rate_key": 0.08860759493670886,
+          "rate_distractors": 0.012987012987012988,
+          "lift": 6.822784810126582,
+          "rate_on_picked": 0.0759493670886076,
+          "rate_on_not_picked": 0.017316017316017316,
+          "lift_among_not_picked": 9.291666666666666,
+          "cue_follow": {
+            "questions": 7,
+            "replies": 10,
+            "chance": 0.25,
+            "toward": 0.7142857142857143,
+            "toward_ci": {
+              "n": 7,
+              "lo": 0.42857142857142855,
+              "hi": 0.9285714285714286
+            },
+            "away": 0.09523809523809523,
+            "away_ci": {
+              "n": 7,
+              "lo": 0.023809523809523808,
+              "hi": 0.19047619047619047
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 3,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 4,
+              "toward": 0.375,
+              "away": 0.20833333333333331,
+              "chance": 0.25
+            }
+          }
+        },
+        "shortest": {
+          "on_key": 0,
+          "on_distractors": 10,
+          "rate_key": 0,
+          "rate_distractors": 0.04329004329004329,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.04329004329004329,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 5,
+            "replies": 10,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 5,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3333333333333333,
+            "away_ci": {
+              "n": 5,
+              "lo": 0.3333333333333333,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "mistral": {
+              "questions": 5,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "most-detailed": {
+          "on_key": 59,
+          "on_distractors": 18,
+          "rate_key": 0.7468354430379747,
+          "rate_distractors": 0.07792207792207792,
+          "lift": 9.584388185654008,
+          "rate_on_picked": 0.7468354430379747,
+          "rate_on_not_picked": 0.07792207792207792,
+          "lift_among_not_picked": 3.484375,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 62,
+            "chance": 0.25,
+            "toward": 0.7911458333333333,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.6598958333333333,
+              "hi": 0.9026041666666667
+            },
+            "away": 0.04583333333333334,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.009375,
+              "hi": 0.09166666666666665
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0.9166666666666666,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 14,
+              "toward": 0.7738095238095237,
+              "away": 0.023809523809523808,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.8151041666666666,
+              "away": 0.048611111111111105,
+              "chance": 0.25
+            }
+          }
+        },
+        "hedged": {
+          "on_key": 4,
+          "on_distractors": 32,
+          "rate_key": 0.05063291139240506,
+          "rate_distractors": 0.13852813852813853,
+          "lift": 0.36550632911392406,
+          "rate_on_picked": 0.05063291139240506,
+          "rate_on_not_picked": 0.13852813852813853,
+          "lift_among_not_picked": 0.8991935483870966,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 32,
+            "chance": 0.25,
+            "toward": 0.13333333333333333,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0,
+              "hi": 0.3333333333333333
+            },
+            "away": 0.30462962962962964,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.237962962962963,
+              "hi": 0.361111111111111
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.13333333333333333,
+              "away": 0.30462962962962964,
+              "chance": 0.25
+            }
+          }
+        },
+        "nuanced-turn": {
+          "on_key": 32,
+          "on_distractors": 30,
+          "rate_key": 0.4050632911392405,
+          "rate_distractors": 0.12987012987012986,
+          "lift": 3.118987341772152,
+          "rate_on_picked": 0.4177215189873418,
+          "rate_on_not_picked": 0.12554112554112554,
+          "lift_among_not_picked": 4.46,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 47,
+            "chance": 0.25,
+            "toward": 0.4638888888888889,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.2777777777777778,
+              "hi": 0.6527777777777778
+            },
+            "away": 0.1592592592592593,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.09259259259259259,
+              "hi": 0.2277777777777778
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 4,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.425,
+              "away": 0.16666666666666669,
+              "chance": 0.25
+            }
+          }
+        },
+        "middle-ground": {
+          "on_key": 13,
+          "on_distractors": 23,
+          "rate_key": 0.16455696202531644,
+          "rate_distractors": 0.09956709956709957,
+          "lift": 1.6527242707760044,
+          "rate_on_picked": 0.189873417721519,
+          "rate_on_not_picked": 0.09090909090909091,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 31,
+            "chance": 0.25,
+            "toward": 0.2944444444444444,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.13333333333333333,
+              "hi": 0.47777777777777775
+            },
+            "away": 0.22592592592592595,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.16296296296296295,
+              "hi": 0.28148148148148155
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.2944444444444444,
+              "away": 0.22592592592592595,
+              "chance": 0.25
+            }
+          }
+        },
+        "textbook-voice": {
+          "on_key": 41,
+          "on_distractors": 39,
+          "rate_key": 0.5189873417721519,
+          "rate_distractors": 0.16883116883116883,
+          "lift": 3.074001947419669,
+          "rate_on_picked": 0.5443037974683544,
+          "rate_on_not_picked": 0.16017316017316016,
+          "lift_among_not_picked": 0.7743055555555556,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 58,
+            "chance": 0.25,
+            "toward": 0.5401041666666667,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.3963541666666666,
+              "hi": 0.6869791666666667
+            },
+            "away": 0.12118055555555556,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.0642361111111111,
+              "hi": 0.178125
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0.8333333333333334,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.7888888888888889,
+              "away": 0.02222222222222222,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4036458333333333,
+              "away": 0.16753472222222224,
+              "chance": 0.25
+            }
+          }
+        },
+        "echoes-stem": {
+          "on_key": 62,
+          "on_distractors": 93,
+          "rate_key": 0.7848101265822784,
+          "rate_distractors": 0.4025974025974026,
+          "lift": 1.9493670886075947,
+          "rate_on_picked": 0.8227848101265823,
+          "rate_on_not_picked": 0.38961038961038963,
+          "lift_among_not_picked": 1.2965116279069768,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 70,
+            "chance": 0.25,
+            "toward": 0.4274305555555556,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.3336805555555556,
+              "hi": 0.5201388888888888
+            },
+            "away": 0.08680555555555555,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.04010416666666667,
+              "hi": 0.13784722222222223
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0.4166666666666667,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 14,
+              "toward": 0.4523809523809524,
+              "away": 0.09523809523809523,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4210069444444445,
+              "away": 0.0763888888888889,
+              "chance": 0.25
+            }
+          }
+        },
+        "like-the-others": {
+          "on_key": 0,
+          "on_distractors": 30,
+          "rate_key": 0,
+          "rate_distractors": 0.12987012987012986,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.12987012987012986,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 13,
+            "replies": 26,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 13,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3333333333333333,
+            "away_ci": {
+              "n": 13,
+              "lo": 0.3333333333333333,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 11,
+              "toward": 0,
+              "away": 0.33333333333333337,
+              "chance": 0.25
+            }
+          }
+        },
+        "opposites": {
+          "on_key": 19,
+          "on_distractors": 56,
+          "rate_key": 0.24050632911392406,
+          "rate_distractors": 0.24242424242424243,
+          "lift": 0.9920886075949367,
+          "rate_on_picked": 0.21518987341772153,
+          "rate_on_not_picked": 0.2510822510822511,
+          "lift_among_not_picked": 1.5204545454545455,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 52,
+            "chance": 0.25,
+            "toward": 0.23958333333333334,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.103125,
+              "hi": 0.3927083333333334
+            },
+            "away": 0.2767361111111111,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.20347222222222222,
+              "hi": 0.35381944444444435
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 6,
+              "toward": 0.3333333333333333,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 13,
+              "toward": 0.11538461538461539,
+              "away": 0.38461538461538464,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 14,
+              "toward": 0.2857142857142857,
+              "away": 0.22619047619047622,
+              "chance": 0.25
+            }
+          }
+        },
+        "surprising": {
+          "on_key": 16,
+          "on_distractors": 42,
+          "rate_key": 0.20253164556962025,
+          "rate_distractors": 0.18181818181818182,
+          "lift": 1.1139240506329113,
+          "rate_on_picked": 0.189873417721519,
+          "rate_on_not_picked": 0.18614718614718614,
+          "lift_among_not_picked": 2.090625,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 48,
+            "chance": 0.25,
+            "toward": 0.19666666666666668,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.08333333333333333,
+              "hi": 0.3177777777777777
+            },
+            "away": 0.2566666666666667,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.2122222222222222,
+              "hi": 0.3011111111111111
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 0.75,
+              "away": 0.08333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0.375,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.09166666666666666,
+              "away": 0.29814814814814816,
+              "chance": 0.25
+            }
+          }
+        },
+        "too-obvious": {
+          "on_key": 0,
+          "on_distractors": 43,
+          "rate_key": 0,
+          "rate_distractors": 0.18614718614718614,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.18614718614718614,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 14,
+            "replies": 38,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 14,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.35317460317460314,
+            "away_ci": {
+              "n": 14,
+              "lo": 0.33730158730158727,
+              "hi": 0.38095238095238093
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 4,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 13,
+              "toward": 0,
+              "away": 0.37179487179487175,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 9,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "absolute": {
+          "on_key": 10,
+          "on_distractors": 118,
+          "rate_key": 0.12658227848101267,
+          "rate_distractors": 0.5108225108225108,
+          "lift": 0.24780090109418582,
+          "rate_on_picked": 0.0759493670886076,
+          "rate_on_not_picked": 0.5281385281385281,
+          "lift_among_not_picked": 1.1912393162393162,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 67,
+            "chance": 0.25,
+            "toward": 0.08784722222222223,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0,
+              "hi": 0.19027777777777777
+            },
+            "away": 0.41562499999999997,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.33854166666666663,
+              "hi": 0.4854166666666666
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.2,
+              "away": 0.29999999999999993,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0.08333333333333333,
+              "away": 0.375,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.08072916666666666,
+              "away": 0.4279513888888889,
+              "chance": 0.25
+            }
+          }
+        },
+        "denies-question": {
+          "on_key": 0,
+          "on_distractors": 61,
+          "rate_key": 0,
+          "rate_distractors": 0.26406926406926406,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.26406926406926406,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 47,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3611111111111111,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.34027777777777773,
+              "hi": 0.38888888888888884
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 3,
+              "toward": 0,
+              "away": 0.4444444444444444,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 10,
+              "toward": 0,
+              "away": 0.35000000000000003,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0,
+              "away": 0.3576388888888888,
+              "chance": 0.25
+            }
+          }
+        },
+        "implausible": {
+          "on_key": 0,
+          "on_distractors": 30,
+          "rate_key": 0,
+          "rate_distractors": 0.12987012987012986,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.12987012987012986,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 12,
+            "replies": 27,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 12,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.33796296296296297,
+            "away_ci": {
+              "n": 12,
+              "lo": 0.3333333333333333,
+              "hi": 0.34722222222222227
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 9,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 11,
+              "toward": 0,
+              "away": 0.3409090909090909,
+              "chance": 0.25
+            }
+          }
+        },
+        "off-target": {
+          "on_key": 0,
+          "on_distractors": 52,
+          "rate_key": 0,
+          "rate_distractors": 0.22510822510822512,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.22510822510822512,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 42,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.37444444444444436,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.34148148148148144,
+              "hi": 0.4203703703703703
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.6666666666666666,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0,
+              "away": 0.375,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0,
+              "away": 0.35370370370370363,
+              "chance": 0.25
+            }
+          }
+        },
+        "grammatical-fit": {
+          "on_key": 31,
+          "on_distractors": 50,
+          "rate_key": 0.3924050632911392,
+          "rate_distractors": 0.21645021645021645,
+          "lift": 1.8129113924050633,
+          "rate_on_picked": 0.4050632911392405,
+          "rate_on_not_picked": 0.21212121212121213,
+          "lift_among_not_picked": 1.1861702127659575,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 48,
+            "chance": 0.25,
+            "toward": 0.3911458333333333,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.2578125,
+              "hi": 0.5182291666666666
+            },
+            "away": 0.19392361111111112,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.12152777777777778,
+              "hi": 0.28385416666666663
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 8,
+              "toward": 0.75,
+              "away": 0.041666666666666664,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.3125,
+              "away": 0.2126736111111111,
+              "chance": 0.25
+            }
+          }
+        },
+        "odd-one-out": {
+          "on_key": 7,
+          "on_distractors": 40,
+          "rate_key": 0.08860759493670886,
+          "rate_distractors": 0.17316017316017315,
+          "lift": 0.5117088607594937,
+          "rate_on_picked": 0.08860759493670886,
+          "rate_on_not_picked": 0.17316017316017315,
+          "lift_among_not_picked": 0.7147435897435898,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 38,
+            "chance": 0.25,
+            "toward": 0.16944444444444443,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.06666666666666667,
+              "hi": 0.2833333333333333
+            },
+            "away": 0.28240740740740744,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.24259259259259258,
+              "hi": 0.3222222222222222
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.175,
+              "away": 0.2805555555555556,
+              "chance": 0.25
+            }
+          }
+        },
+        "position": {
+          "on_key": 9,
+          "on_distractors": 23,
+          "rate_key": 0.11392405063291139,
+          "rate_distractors": 0.09956709956709957,
+          "lift": 1.144193725921849,
+          "rate_on_picked": 0.11392405063291139,
+          "rate_on_not_picked": 0.09956709956709957,
+          "lift_among_not_picked": 1.2670454545454546,
+          "cue_follow": {
+            "questions": 11,
+            "replies": 18,
+            "chance": 0.25,
+            "toward": 0.25757575757575757,
+            "toward_ci": {
+              "n": 11,
+              "lo": 0.09090909090909091,
+              "hi": 0.45454545454545453
+            },
+            "away": 0.2462121212121212,
+            "away_ci": {
+              "n": 11,
+              "lo": 0.1818181818181818,
+              "hi": 0.3030303030303031
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 2,
+              "toward": 0.5,
+              "away": 0.25,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 11,
+              "toward": 0.2676767676767677,
+              "away": 0.23737373737373735,
+              "chance": 0.25
+            }
+          }
+        },
+        "general-knowledge": {
+          "on_key": 50,
+          "on_distractors": 60,
+          "rate_key": 0.6329113924050633,
+          "rate_distractors": 0.2597402597402597,
+          "lift": 2.436708860759494,
+          "rate_on_picked": 0.620253164556962,
+          "rate_on_not_picked": 0.26406926406926406,
+          "lift_among_not_picked": 3.613425925925926,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 42,
+            "chance": 0.25,
+            "toward": 0.6481481481481481,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.5407407407407407,
+              "hi": 0.750925925925926
+            },
+            "away": 0.03148148148148148,
+            "away_ci": {
+              "n": 15,
+              "lo": 0,
+              "hi": 0.07037037037037037
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 3,
+              "toward": 0.8333333333333334,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.6370370370370372,
+              "away": 0.03148148148148148,
+              "chance": 0.25
+            }
+          }
+        },
+        "other": {
+          "on_key": 1,
+          "on_distractors": 1,
+          "rate_key": 0.012658227848101266,
+          "rate_distractors": 0.004329004329004329,
+          "lift": 2.9240506329113924,
+          "rate_on_picked": 0.012658227848101266,
+          "rate_on_not_picked": 0.004329004329004329,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 2,
+            "replies": 2,
+            "chance": 0.25,
+            "toward": 0.5,
+            "toward_ci": {
+              "n": 2,
+              "lo": 0,
+              "hi": 1
+            },
+            "away": 0.16666666666666666,
+            "away_ci": {
+              "n": 2,
+              "lo": 0,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:qualified": {
+          "on_key": 69,
+          "on_distractors": 85,
+          "rate_key": 0.8734177215189873,
+          "rate_distractors": 0.36796536796536794,
+          "lift": 2.3736411020104247,
+          "rate_on_picked": 0.8987341772151899,
+          "rate_on_not_picked": 0.3593073593073593,
+          "lift_among_not_picked": 1.7868589743589742,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 72,
+            "chance": 0.25,
+            "toward": 0.5090277777777777,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.43229166666666663,
+              "hi": 0.5904513888888889
+            },
+            "away": 0.06267361111111111,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.016493055555555556,
+              "hi": 0.1140625
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 7,
+              "toward": 0.7142857142857143,
+              "away": 0.047619047619047616,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 14,
+              "toward": 0.7738095238095237,
+              "away": 0.023809523809523808,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4036458333333333,
+              "away": 0.07552083333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:dismissible": {
+          "on_key": 10,
+          "on_distractors": 159,
+          "rate_key": 0.12658227848101267,
+          "rate_distractors": 0.6883116883116883,
+          "lift": 0.1839025555290184,
+          "rate_on_picked": 0.0759493670886076,
+          "rate_on_not_picked": 0.7056277056277056,
+          "lift_among_not_picked": 0.8821202531645569,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 72,
+            "chance": 0.25,
+            "toward": 0.056597222222222215,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0,
+              "hi": 0.1298611111111111
+            },
+            "away": 0.5498263888888889,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.44670138888888894,
+              "hi": 0.6453125000000001
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 7,
+              "toward": 0.07142857142857142,
+              "away": 0.4523809523809524,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.06666666666666667,
+              "away": 0.5555555555555555,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.05989583333333333,
+              "away": 0.5434027777777778,
+              "chance": 0.25
+            }
+          }
+        }
+      }
+    },
+    "options-only-explain": {
+      "key_options": 80,
+      "distractor_options": 238,
+      "codes": {
+        "longest": {
+          "on_key": 8,
+          "on_distractors": 14,
+          "rate_key": 0.1,
+          "rate_distractors": 0.058823529411764705,
+          "lift": 1.7000000000000002,
+          "rate_on_picked": 0.1,
+          "rate_on_not_picked": 0.058823529411764705,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 14,
+            "replies": 22,
+            "chance": 0.25,
+            "toward": 0.38095238095238093,
+            "toward_ci": {
+              "n": 14,
+              "lo": 0.16666666666666666,
+              "hi": 0.619047619047619
+            },
+            "away": 0.20634920634920634,
+            "away_ci": {
+              "n": 14,
+              "lo": 0.12698412698412695,
+              "hi": 0.27777777777777785
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 3,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 4,
+              "toward": 0.5,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 10,
+              "toward": 0.25,
+              "away": 0.25,
+              "chance": 0.25
+            }
+          }
+        },
+        "shortest": {
+          "on_key": 0,
+          "on_distractors": 14,
+          "rate_key": 0,
+          "rate_distractors": 0.058823529411764705,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.058823529411764705,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 9,
+            "replies": 14,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 9,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3333333333333333,
+            "away_ci": {
+              "n": 9,
+              "lo": 0.3333333333333333,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 9,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "most-detailed": {
+          "on_key": 60,
+          "on_distractors": 30,
+          "rate_key": 0.75,
+          "rate_distractors": 0.12605042016806722,
+          "lift": 5.95,
+          "rate_on_picked": 0.7875,
+          "rate_on_not_picked": 0.1134453781512605,
+          "lift_among_not_picked": 3.0100334448160533,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 76,
+            "chance": 0.25,
+            "toward": 0.7119791666666667,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.5750000000000002,
+              "hi": 0.8296875000000001
+            },
+            "away": 0.075,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.03055555555555555,
+              "hi": 0.1270833333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.9,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.8,
+              "away": 0.02222222222222222,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.6666666666666666,
+              "away": 0.09461805555555554,
+              "chance": 0.25
+            }
+          }
+        },
+        "hedged": {
+          "on_key": 4,
+          "on_distractors": 26,
+          "rate_key": 0.05,
+          "rate_distractors": 0.1092436974789916,
+          "lift": 0.45769230769230773,
+          "rate_on_picked": 0.05,
+          "rate_on_not_picked": 0.1092436974789916,
+          "lift_among_not_picked": 0.6923076923076924,
+          "cue_follow": {
+            "questions": 12,
+            "replies": 29,
+            "chance": 0.25,
+            "toward": 0.06666666666666667,
+            "toward_ci": {
+              "n": 12,
+              "lo": 0,
+              "hi": 0.20000000000000004
+            },
+            "away": 0.3145833333333334,
+            "away_ci": {
+              "n": 12,
+              "lo": 0.2666666666666667,
+              "hi": 0.34375
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 12,
+              "toward": 0.0625,
+              "away": 0.31597222222222227,
+              "chance": 0.25
+            }
+          }
+        },
+        "nuanced-turn": {
+          "on_key": 37,
+          "on_distractors": 38,
+          "rate_key": 0.4625,
+          "rate_distractors": 0.15966386554621848,
+          "lift": 2.8967105263157897,
+          "rate_on_picked": 0.5125,
+          "rate_on_not_picked": 0.14285714285714285,
+          "lift_among_not_picked": 1.674937965260546,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 62,
+            "chance": 0.25,
+            "toward": 0.45625,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.2859375,
+              "hi": 0.6296875
+            },
+            "away": 0.159375,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.10104166666666668,
+              "hi": 0.221875
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0.25,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 8,
+              "toward": 0.8125,
+              "away": 0.041666666666666664,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4296875,
+              "away": 0.1675347222222222,
+              "chance": 0.25
+            }
+          }
+        },
+        "middle-ground": {
+          "on_key": 8,
+          "on_distractors": 42,
+          "rate_key": 0.1,
+          "rate_distractors": 0.17647058823529413,
+          "lift": 0.5666666666666667,
+          "rate_on_picked": 0.175,
+          "rate_on_not_picked": 0.15126050420168066,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 48,
+            "chance": 0.25,
+            "toward": 0.16874999999999998,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.05416666666666667,
+              "hi": 0.31666666666666665
+            },
+            "away": 0.27916666666666673,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.2291666666666667,
+              "hi": 0.3173611111111111
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 2,
+              "toward": 0.5,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.15625,
+              "away": 0.2838541666666667,
+              "chance": 0.25
+            }
+          }
+        },
+        "textbook-voice": {
+          "on_key": 31,
+          "on_distractors": 43,
+          "rate_key": 0.3875,
+          "rate_distractors": 0.18067226890756302,
+          "lift": 2.1447674418604654,
+          "rate_on_picked": 0.4625,
+          "rate_on_not_picked": 0.15546218487394958,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 61,
+            "chance": 0.25,
+            "toward": 0.4552083333333334,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.3041666666666667,
+              "hi": 0.6125
+            },
+            "away": 0.17482638888888888,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.1111111111111111,
+              "hi": 0.234375
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.8,
+              "away": 0.06666666666666667,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.8,
+              "away": 0.05555555555555555,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.3046875,
+              "away": 0.21961805555555555,
+              "chance": 0.25
+            }
+          }
+        },
+        "echoes-stem": {
+          "on_key": 50,
+          "on_distractors": 103,
+          "rate_key": 0.625,
+          "rate_distractors": 0.4327731092436975,
+          "lift": 1.4441747572815533,
+          "rate_on_picked": 0.675,
+          "rate_on_not_picked": 0.41596638655462187,
+          "lift_among_not_picked": 1.521555367709214,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 72,
+            "chance": 0.25,
+            "toward": 0.31197916666666664,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.2734375,
+              "hi": 0.3604166666666666
+            },
+            "away": 0.1390625,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.10208333333333333,
+              "hi": 0.17395833333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 14,
+              "toward": 0.34523809523809523,
+              "away": 0.11904761904761904,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.3055555555555555,
+              "away": 0.1440972222222222,
+              "chance": 0.25
+            }
+          }
+        },
+        "like-the-others": {
+          "on_key": 6,
+          "on_distractors": 26,
+          "rate_key": 0.075,
+          "rate_distractors": 0.1092436974789916,
+          "lift": 0.6865384615384615,
+          "rate_on_picked": 0.075,
+          "rate_on_not_picked": 0.1092436974789916,
+          "lift_among_not_picked": 0.6923076923076924,
+          "cue_follow": {
+            "questions": 13,
+            "replies": 31,
+            "chance": 0.25,
+            "toward": 0.17307692307692307,
+            "toward_ci": {
+              "n": 13,
+              "lo": 0.07051282051282051,
+              "hi": 0.2948717948717949
+            },
+            "away": 0.2713675213675214,
+            "away_ci": {
+              "n": 13,
+              "lo": 0.23076923076923073,
+              "hi": 0.3076923076923077
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0.2115384615384615,
+              "away": 0.25854700854700857,
+              "chance": 0.25
+            }
+          }
+        },
+        "opposites": {
+          "on_key": 22,
+          "on_distractors": 49,
+          "rate_key": 0.275,
+          "rate_distractors": 0.20588235294117646,
+          "lift": 1.3357142857142859,
+          "rate_on_picked": 0.175,
+          "rate_on_not_picked": 0.23949579831932774,
+          "lift_among_not_picked": 3.2451923076923075,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 55,
+            "chance": 0.25,
+            "toward": 0.22444444444444447,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0.08666666666666667,
+              "hi": 0.3833333333333334
+            },
+            "away": 0.25074074074074076,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.1837037037037037,
+              "hi": 0.3174074074074074
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.5,
+              "away": 0.06666666666666667,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 14,
+              "toward": 0.13095238095238096,
+              "away": 0.2857142857142857,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0.22115384615384615,
+              "away": 0.25000000000000006,
+              "chance": 0.25
+            }
+          }
+        },
+        "surprising": {
+          "on_key": 18,
+          "on_distractors": 41,
+          "rate_key": 0.225,
+          "rate_distractors": 0.1722689075630252,
+          "lift": 1.3060975609756098,
+          "rate_on_picked": 0.1875,
+          "rate_on_not_picked": 0.18487394957983194,
+          "lift_among_not_picked": 1.7307692307692308,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 53,
+            "chance": 0.25,
+            "toward": 0.3328125,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.178125,
+              "hi": 0.48489583333333336
+            },
+            "away": 0.22552083333333334,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.16527777777777777,
+              "hi": 0.29149305555555555
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 13,
+              "toward": 0.4230769230769231,
+              "away": 0.16666666666666666,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0.31666666666666665,
+              "away": 0.2277777777777778,
+              "chance": 0.25
+            }
+          }
+        },
+        "too-obvious": {
+          "on_key": 0,
+          "on_distractors": 34,
+          "rate_key": 0,
+          "rate_distractors": 0.14285714285714285,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.14285714285714285,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 28,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3648148148148148,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.337037037037037,
+              "hi": 0.39814814814814803
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 2,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0,
+              "away": 0.3777777777777777,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 7,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "absolute": {
+          "on_key": 14,
+          "on_distractors": 115,
+          "rate_key": 0.175,
+          "rate_distractors": 0.4831932773109244,
+          "lift": 0.36217391304347823,
+          "rate_on_picked": 0.075,
+          "rate_on_not_picked": 0.5168067226890757,
+          "lift_among_not_picked": 1.3663967611336032,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 75,
+            "chance": 0.25,
+            "toward": 0.09149305555555556,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.0234375,
+              "hi": 0.1776041666666667
+            },
+            "away": 0.37343750000000003,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.30208333333333337,
+              "hi": 0.43906249999999997
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.2,
+              "away": 0.29999999999999993,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 12,
+              "toward": 0.08333333333333333,
+              "away": 0.3888888888888889,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.09375,
+              "away": 0.3732638888888889,
+              "chance": 0.25
+            }
+          }
+        },
+        "denies-question": {
+          "on_key": 0,
+          "on_distractors": 56,
+          "rate_key": 0,
+          "rate_distractors": 0.23529411764705882,
+          "lift": 0,
+          "rate_on_picked": 0.0125,
+          "rate_on_not_picked": 0.23109243697478993,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 15,
+            "replies": 48,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 15,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.357037037037037,
+            "away_ci": {
+              "n": 15,
+              "lo": 0.33703703703703697,
+              "hi": 0.3829629629629629
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 3,
+              "toward": 0,
+              "away": 0.4444444444444444,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 10,
+              "toward": 0,
+              "away": 0.35000000000000003,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 15,
+              "toward": 0,
+              "away": 0.35370370370370363,
+              "chance": 0.25
+            }
+          }
+        },
+        "implausible": {
+          "on_key": 0,
+          "on_distractors": 31,
+          "rate_key": 0,
+          "rate_distractors": 0.13025210084033614,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.13025210084033614,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 14,
+            "replies": 26,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 14,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3551587301587302,
+            "away_ci": {
+              "n": 14,
+              "lo": 0.3333333333333333,
+              "hi": 0.3829365079365079
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 6,
+              "toward": 0,
+              "away": 0.4166666666666667,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 13,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "off-target": {
+          "on_key": 0,
+          "on_distractors": 26,
+          "rate_key": 0,
+          "rate_distractors": 0.1092436974789916,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.1092436974789916,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 12,
+            "replies": 25,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": {
+              "n": 12,
+              "lo": 0,
+              "hi": 0
+            },
+            "away": 0.3333333333333333,
+            "away_ci": {
+              "n": 12,
+              "lo": 0.3333333333333333,
+              "hi": 0.3333333333333333
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 5,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 12,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "grammatical-fit": {
+          "on_key": 28,
+          "on_distractors": 57,
+          "rate_key": 0.35,
+          "rate_distractors": 0.23949579831932774,
+          "lift": 1.4614035087719297,
+          "rate_on_picked": 0.3625,
+          "rate_on_not_picked": 0.23529411764705882,
+          "lift_among_not_picked": 1.3313609467455623,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 46,
+            "chance": 0.25,
+            "toward": 0.2916666666666667,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.19270833333333331,
+              "hi": 0.4010416666666667
+            },
+            "away": 0.1935763888888889,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.13281249999999997,
+              "hi": 0.24913194444444442
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 4,
+              "toward": 0.75,
+              "away": 0.08333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.2552083333333333,
+              "away": 0.20659722222222224,
+              "chance": 0.25
+            }
+          }
+        },
+        "odd-one-out": {
+          "on_key": 13,
+          "on_distractors": 54,
+          "rate_key": 0.1625,
+          "rate_distractors": 0.226890756302521,
+          "lift": 0.7162037037037038,
+          "rate_on_picked": 0.125,
+          "rate_on_not_picked": 0.23949579831932774,
+          "lift_among_not_picked": 1.6642011834319528,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 54,
+            "chance": 0.25,
+            "toward": 0.18489583333333334,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.10416666666666667,
+              "hi": 0.2708333333333333
+            },
+            "away": 0.2847222222222222,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.23958333333333331,
+              "hi": 0.3315972222222222
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.18489583333333334,
+              "away": 0.2847222222222222,
+              "chance": 0.25
+            }
+          }
+        },
+        "position": {
+          "on_key": 8,
+          "on_distractors": 25,
+          "rate_key": 0.1,
+          "rate_distractors": 0.10504201680672269,
+          "lift": 0.9520000000000001,
+          "rate_on_picked": 0.1,
+          "rate_on_not_picked": 0.10504201680672269,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 10,
+            "replies": 18,
+            "chance": 0.25,
+            "toward": 0.26666666666666666,
+            "toward_ci": {
+              "n": 10,
+              "lo": 0.05,
+              "hi": 0.5
+            },
+            "away": 0.2638888888888889,
+            "away_ci": {
+              "n": 10,
+              "lo": 0.18055555555555552,
+              "hi": 0.3416666666666667
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 2,
+              "toward": 0.5,
+              "away": 0.25,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 10,
+              "toward": 0.25,
+              "away": 0.26666666666666666,
+              "chance": 0.25
+            }
+          }
+        },
+        "general-knowledge": {
+          "on_key": 52,
+          "on_distractors": 95,
+          "rate_key": 0.65,
+          "rate_distractors": 0.39915966386554624,
+          "lift": 1.628421052631579,
+          "rate_on_picked": 0.65,
+          "rate_on_not_picked": 0.39915966386554624,
+          "lift_among_not_picked": 1.5915119363395227,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 48,
+            "chance": 0.25,
+            "toward": 0.45625,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.33177083333333335,
+              "hi": 0.5842013888888888
+            },
+            "away": 0.11388888888888889,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.041666666666666664,
+              "hi": 0.2095486111111111
+            }
+          },
+          "cue_follow_by_family": {
+            "openai": {
+              "questions": 4,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.4131944444444445,
+              "away": 0.11979166666666667,
+              "chance": 0.25
+            }
+          }
+        },
+        "no-tell": {
+          "on_key": 0,
+          "on_distractors": 1,
+          "rate_key": 0,
+          "rate_distractors": 0.004201680672268907,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.004201680672268907,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 1,
+            "replies": 1,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": null,
+            "away": 0.3333333333333333,
+            "away_ci": null
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
+        "other": {
+          "on_key": 1,
+          "on_distractors": 0,
+          "rate_key": 0.0125,
+          "rate_distractors": 0,
+          "lift": null,
+          "rate_on_picked": 0.0125,
+          "rate_on_not_picked": 0,
+          "lift_among_not_picked": null,
+          "cue_follow": {
+            "questions": 1,
+            "replies": 1,
+            "chance": 0.25,
+            "toward": 1,
+            "toward_ci": null,
+            "away": 0,
+            "away_ci": null
+          },
+          "cue_follow_by_family": {
+            "mistral": {
+              "questions": 1,
+              "toward": 1,
+              "away": 0,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:qualified": {
+          "on_key": 68,
+          "on_distractors": 98,
+          "rate_key": 0.85,
+          "rate_distractors": 0.4117647058823529,
+          "lift": 2.0642857142857145,
+          "rate_on_picked": 0.9375,
+          "rate_on_not_picked": 0.38235294117647056,
+          "lift_among_not_picked": 1.2217194570135748,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 75,
+            "chance": 0.25,
+            "toward": 0.4803819444444444,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.4053819444444444,
+              "hi": 0.5510416666666665
+            },
+            "away": 0.06753472222222222,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.018229166666666668,
+              "hi": 0.12656249999999997
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.7333333333333333,
+              "away": 0,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 15,
+              "toward": 0.7555555555555554,
+              "away": 0.02222222222222222,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.38541666666666663,
+              "away": 0.08854166666666667,
+              "chance": 0.25
+            }
+          }
+        },
+        "group:dismissible": {
+          "on_key": 14,
+          "on_distractors": 145,
+          "rate_key": 0.175,
+          "rate_distractors": 0.6092436974789915,
+          "lift": 0.2872413793103448,
+          "rate_on_picked": 0.075,
+          "rate_on_not_picked": 0.6428571428571429,
+          "lift_among_not_picked": 1.0817307692307692,
+          "cue_follow": {
+            "questions": 16,
+            "replies": 76,
+            "chance": 0.25,
+            "toward": 0.07482638888888889,
+            "toward_ci": {
+              "n": 16,
+              "lo": 0.022395833333333334,
+              "hi": 0.14184027777777777
+            },
+            "away": 0.4590277777777777,
+            "away_ci": {
+              "n": 16,
+              "lo": 0.37187499999999996,
+              "hi": 0.5331597222222222
+            }
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 5,
+              "toward": 0.1,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
+            "openai": {
+              "questions": 13,
+              "toward": 0.038461538461538464,
+              "away": 0.5641025641025641,
+              "chance": 0.25
+            },
+            "mistral": {
+              "questions": 16,
+              "toward": 0.08506944444444443,
+              "away": 0.43923611111111105,
+              "chance": 0.25
+            }
+          }
+        }
+      }
+    }
+  },
+  "faithfulness": {
+    "longest": {
+      "property": "length_rank",
+      "options": 628,
+      "tagged": 32,
+      "mean_rank_tagged": 0.5729166666666666,
+      "mean_rank_untagged": 0.49916107382550334
+    },
+    "shortest": {
+      "property": "shortness_rank",
+      "options": 628,
+      "tagged": 24,
+      "mean_rank_tagged": 0.7222222222222222,
+      "mean_rank_untagged": 0.48813465783664445
+    },
+    "most-detailed": {
+      "property": "length_rank",
+      "options": 628,
+      "tagged": 167,
+      "mean_rank_tagged": 0.7704590818363273,
+      "mean_rank_untagged": 0.4060014461315979
+    },
+    "echoes-stem": {
+      "property": "stem_echo_rank",
+      "options": 310,
+      "tagged": 155,
+      "mean_rank_tagged": 0.46666666666666673,
+      "mean_rank_untagged": 0.5397849462365591
+    },
+    "like-the-others": {
+      "property": "centrality_rank",
+      "options": 628,
+      "tagged": 62,
+      "mean_rank_tagged": 0.314516129032258,
+      "mean_rank_untagged": 0.5244405182567727
+    },
+    "absolute": {
+      "property": "has an absolute word (checker list)",
+      "options": 628,
+      "tagged": 257,
+      "tagged_where_true": 0.2490272373540856,
+      "property_true": 82,
+      "true_and_tagged": 0.7804878048780488
+    }
+  },
+  "per_voice": {
+    "gemma-31b": {
+      "meta": {
+        "id": "gemma-31b",
+        "provider": "gemini",
+        "model": "gemma-4-31b-it",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 12
+      },
+      "replies": 12,
+      "unusable": 0,
+      "problems": {
+        "fenced": 12
+      },
+      "rungs": {
+        "full-explain": {
+          "replies": 7,
+          "pick_invalid": 0,
+          "explain_hit_rate": 1,
+          "mean_p_key": 0.7571428571428571,
+          "letter_agreement": {
+            "n": 7,
+            "rate": 1
+          },
+          "mean_reasoning_tokens": 1567
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "pick_invalid": 0,
+          "explain_hit_rate": 1,
+          "mean_p_key": 0.6699999999999999,
+          "letter_agreement": {
+            "n": 5,
+            "rate": 1
+          },
+          "mean_reasoning_tokens": 1534
+        }
+      },
+      "unrated_option_share": 0,
+      "invalid_code_option_share": 0,
+      "other_share": 0,
+      "no_tell_share": 0.009433962264150943,
+      "excluded_from_pooled_tables": false
+    },
+    "gpt-luna": {
+      "meta": {
+        "id": "gpt-luna",
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "family": "openai"
+      },
+      "statuses": {
+        "ok": 30
+      },
+      "replies": 30,
+      "unusable": 0,
+      "problems": {},
+      "rungs": {
+        "full-explain": {
+          "replies": 15,
+          "pick_invalid": 0,
+          "explain_hit_rate": 1,
+          "mean_p_key": 0.8086666666666668,
+          "letter_agreement": {
+            "n": 15,
+            "rate": 0.8666666666666667
+          },
+          "mean_reasoning_tokens": 164
+        },
+        "options-only-explain": {
+          "replies": 15,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.9333333333333333,
+          "mean_p_key": 0.6793333333333335,
+          "letter_agreement": {
+            "n": 15,
+            "rate": 0.8
+          },
+          "mean_reasoning_tokens": 119
+        }
+      },
+      "unrated_option_share": 0,
+      "invalid_code_option_share": 0,
+      "other_share": 0.002386634844868735,
+      "no_tell_share": 0,
+      "excluded_from_pooled_tables": false
+    },
+    "ministral-14b": {
+      "meta": {
+        "id": "ministral-14b",
+        "provider": "mistral",
+        "model": "ministral-14b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 64
+      },
+      "replies": 64,
+      "unusable": 4,
+      "problems": {
+        "no-tell-with-codes": 8,
+        "p-sum": 5,
+        "option-letters-mismatch": 4,
+        "invalid-code": 6
+      },
+      "rungs": {
+        "full-explain": {
+          "replies": 29,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.896551724137931,
+          "mean_p_key": 0.5790817476415855,
+          "letter_agreement": {
+            "n": 29,
+            "rate": 0.7931034482758621
+          },
+          "mean_reasoning_tokens": null
+        },
+        "options-only-explain": {
+          "replies": 31,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.8387096774193549,
+          "mean_p_key": 0.4660926509822944,
+          "letter_agreement": {
+            "n": 31,
+            "rate": 0.7419354838709677
+          },
+          "mean_reasoning_tokens": null
+        }
+      },
+      "unrated_option_share": 0.03333333333333333,
+      "invalid_code_option_share": 0.025,
+      "other_share": 0,
+      "no_tell_share": 0,
+      "excluded_from_pooled_tables": false
+    },
+    "ministral-8b": {
+      "meta": {
+        "id": "ministral-8b",
+        "provider": "mistral",
+        "model": "ministral-8b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 63,
+        "truncated": 1
+      },
+      "replies": 63,
+      "unusable": 6,
+      "problems": {
+        "option-letters-mismatch": 6,
+        "p-missing": 2,
+        "p-sum": 3,
+        "invalid-code": 2
+      },
+      "rungs": {
+        "full-explain": {
+          "replies": 28,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.8214285714285714,
+          "mean_p_key": 0.49814814814814806,
+          "letter_agreement": {
+            "n": 28,
+            "rate": 0.8214285714285714
+          },
+          "mean_reasoning_tokens": null
+        },
+        "options-only-explain": {
+          "replies": 29,
+          "pick_invalid": 0,
+          "explain_hit_rate": 0.7586206896551724,
+          "mean_p_key": 0.39960317460317457,
+          "letter_agreement": {
+            "n": 29,
+            "rate": 0.7241379310344828
+          },
+          "mean_reasoning_tokens": null
+        }
+      },
+      "unrated_option_share": 0,
+      "invalid_code_option_share": 0.008771929824561403,
+      "other_share": 0.0020222446916076846,
+      "no_tell_share": 0,
+      "excluded_from_pooled_tables": false
+    }
+  },
+  "per_question": {
+    "b02/sonnet/a01": {
+      "rungs": {
+        "full-explain": {
+          "replies": 4,
+          "picked_key": 4,
+          "mean_p_key": 0.7610714285714286,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.52,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The courses carry a fixed message set once at building and unchanged by revisits, while the pell stone alone carries a separate, updatable record that passers reset.",
+          "ratings": 9,
+          "mean_p": 0.6271428571428571,
+          "codes": {
+            "textbook-voice": 7,
+            "echoes-stem": 7,
+            "most-detailed": 7,
+            "grammatical-fit": 6,
+            "opposites": 2,
+            "general-knowledge": 2,
+            "middle-ground": 2,
+            "longest": 1,
+            "nuanced-turn": 1,
+            "absolute": 1,
+            "position": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Both registers are actually carried by the pell stone, so the unchanged courses simply mean that no one has visited the cairn recently.",
+          "ratings": 9,
+          "mean_p": 0.09126984126984128,
+          "codes": {
+            "implausible": 5,
+            "denies-question": 5,
+            "absolute": 5,
+            "off-target": 5,
+            "opposites": 2,
+            "like-the-others": 2,
+            "echoes-stem": 2,
+            "too-obvious": 1,
+            "general-knowledge": 1,
+            "odd-one-out": 1,
+            "grammatical-fit": 1,
+            "hedged": 1,
+            "position": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The lisk sense records where the route goes and the courses record recent conditions, so it is the builder who updates the pell stone on each revisit.",
+          "ratings": 9,
+          "mean_p": 0.1757142857142857,
+          "codes": {
+            "opposites": 4,
+            "echoes-stem": 4,
+            "general-knowledge": 4,
+            "nuanced-turn": 4,
+            "most-detailed": 2,
+            "odd-one-out": 2,
+            "off-target": 2,
+            "textbook-voice": 2,
+            "grammatical-fit": 2,
+            "surprising": 1,
+            "absolute": 1,
+            "position": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Since a physical marker's meaning is fixed once it is built, the pell stone's shift must be an incidental disturbance rather than a deliberate update.",
+          "ratings": 8,
+          "mean_p": 0.10125,
+          "codes": {
+            "absolute": 7,
+            "denies-question": 5,
+            "surprising": 4,
+            "too-obvious": 3,
+            "middle-ground": 3,
+            "odd-one-out": 2,
+            "opposites": 1,
+            "grammatical-fit": 1,
+            "implausible": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/a02": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 5,
+          "mean_p_key": 0.5583333333333333,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 6,
+          "picked_key": 2,
+          "mean_p_key": 0.33428571428571424,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Her reasoning is backwards: only the course-to-course cant carries the builder's message; lean, the whole-cairn tilt, is an accidental frost-heave artifact with no meaning.",
+          "ratings": 12,
+          "mean_p": 0.44630952380952377,
+          "codes": {
+            "opposites": 12,
+            "absolute": 11,
+            "general-knowledge": 6,
+            "surprising": 5,
+            "echoes-stem": 5,
+            "textbook-voice": 4,
+            "most-detailed": 4,
+            "position": 3,
+            "odd-one-out": 3,
+            "longest": 1,
+            "like-the-others": 1,
+            "grammatical-fit": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "She is right that the more visually obvious feature carries more meaning — lean is simply a larger-scale version of the same deliberate offset that produces cant.",
+          "ratings": 12,
+          "mean_p": 0.1594047619047619,
+          "codes": {
+            "echoes-stem": 8,
+            "nuanced-turn": 6,
+            "general-knowledge": 6,
+            "too-obvious": 3,
+            "absolute": 3,
+            "middle-ground": 3,
+            "like-the-others": 2,
+            "surprising": 2,
+            "opposites": 1,
+            "longest": 1,
+            "off-target": 1,
+            "most-detailed": 1,
+            "textbook-voice": 1,
+            "grammatical-fit": 1,
+            "hedged": 1,
+            "shortest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Her conclusion is wrong for a different reason: the finger's-width course offset is likely an unintentional flaw, so neither feature should be read as a signal.",
+          "ratings": 12,
+          "mean_p": 0.12095238095238094,
+          "codes": {
+            "surprising": 7,
+            "denies-question": 6,
+            "absolute": 6,
+            "odd-one-out": 6,
+            "general-knowledge": 5,
+            "opposites": 4,
+            "grammatical-fit": 2,
+            "hedged": 2,
+            "implausible": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "She has the mechanism right: builders deliberately tilt the whole cairn to reinforce the message already given by a canted course, so both features matter.",
+          "ratings": 12,
+          "mean_p": 0.2733333333333333,
+          "codes": {
+            "textbook-voice": 11,
+            "echoes-stem": 10,
+            "middle-ground": 7,
+            "general-knowledge": 7,
+            "most-detailed": 5,
+            "opposites": 2,
+            "nuanced-turn": 2,
+            "like-the-others": 2,
+            "grammatical-fit": 1,
+            "absolute": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/a03": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.684,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.5299999999999999,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Because course three is a single reversed course flanked by agreeing courses, it is a hob: it signals a branch ahead, while the route itself continues east.",
+          "ratings": 11,
+          "mean_p": 0.6000000000000001,
+          "codes": {
+            "most-detailed": 9,
+            "textbook-voice": 8,
+            "general-knowledge": 7,
+            "echoes-stem": 6,
+            "nuanced-turn": 5,
+            "surprising": 3,
+            "grammatical-fit": 3,
+            "longest": 2,
+            "position": 2,
+            "middle-ground": 2,
+            "opposites": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "It is the same kind of thing as a randomly mis-canted or collapsed course, meaning this cairn is simply poorly built and effectively unreadable to any passer.",
+          "ratings": 11,
+          "mean_p": 0.07090909090909091,
+          "codes": {
+            "like-the-others": 5,
+            "absolute": 5,
+            "denies-question": 4,
+            "off-target": 4,
+            "odd-one-out": 4,
+            "shortest": 3,
+            "implausible": 3,
+            "too-obvious": 3,
+            "echoes-stem": 3,
+            "general-knowledge": 2,
+            "position": 2,
+            "hedged": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "A single reversed course lowers the concord score here, and a lower concord always signals a less reliable or worse-built cairn, discounting its message.",
+          "ratings": 11,
+          "mean_p": 0.14363636363636362,
+          "codes": {
+            "absolute": 8,
+            "textbook-voice": 4,
+            "echoes-stem": 4,
+            "most-detailed": 3,
+            "hedged": 3,
+            "general-knowledge": 3,
+            "surprising": 3,
+            "odd-one-out": 2,
+            "longest": 2,
+            "implausible": 1,
+            "denies-question": 1,
+            "middle-ground": 1,
+            "nuanced-turn": 1,
+            "grammatical-fit": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "It reverses the route: since course three is canted west, the correct reading is that the path itself turns west immediately after this cairn.",
+          "ratings": 11,
+          "mean_p": 0.18545454545454546,
+          "codes": {
+            "opposites": 10,
+            "grammatical-fit": 7,
+            "absolute": 6,
+            "too-obvious": 5,
+            "echoes-stem": 3,
+            "surprising": 3,
+            "general-knowledge": 2,
+            "off-target": 1,
+            "shortest": 1,
+            "middle-ground": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/a04": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.6925,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.6057017543859649,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The current protocol (Tessaly's, standard since 1986) uses the 0.5 figure because it excludes the crown, whose cant records handling rather than building.",
+          "ratings": 11,
+          "mean_p": 0.6404210526315789,
+          "codes": {
+            "textbook-voice": 11,
+            "most-detailed": 9,
+            "echoes-stem": 9,
+            "general-knowledge": 7,
+            "grammatical-fit": 5,
+            "middle-ground": 2,
+            "longest": 1,
+            "opposites": 1,
+            "position": 1,
+            "other": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "The 0.6 figure reflects the current protocol, since Marhaug's original 1968 definition remains the field's standard reference for surveys today.",
+          "ratings": 11,
+          "mean_p": 0.15599681020733652,
+          "codes": {
+            "opposites": 7,
+            "absolute": 7,
+            "general-knowledge": 6,
+            "echoes-stem": 5,
+            "surprising": 3,
+            "textbook-voice": 2,
+            "implausible": 2,
+            "odd-one-out": 2,
+            "off-target": 1,
+            "position": 1,
+            "hedged": 1,
+            "longest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Whichever figure is higher must be closer to the truth, since including more courses in an index always makes the summary more accurate.",
+          "ratings": 11,
+          "mean_p": 0.05054226475279107,
+          "codes": {
+            "absolute": 11,
+            "too-obvious": 10,
+            "off-target": 6,
+            "denies-question": 4,
+            "implausible": 2,
+            "general-knowledge": 2,
+            "position": 1,
+            "longest": 1,
+            "textbook-voice": 1,
+            "odd-one-out": 1,
+            "shortest": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The crown is excluded from the 0.5 figure for the same reason the footing is: both simply follow the slope of the ground and have no cant of their own.",
+          "ratings": 10,
+          "mean_p": 0.21133333333333332,
+          "codes": {
+            "echoes-stem": 5,
+            "general-knowledge": 5,
+            "grammatical-fit": 3,
+            "middle-ground": 3,
+            "nuanced-turn": 3,
+            "like-the-others": 2,
+            "implausible": 2,
+            "textbook-voice": 2,
+            "no-tell": 1,
+            "off-target": 1,
+            "surprising": 1,
+            "odd-one-out": 1,
+            "most-detailed": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/a05": {
+      "rungs": {
+        "full-explain": {
+          "replies": 4,
+          "picked_key": 4,
+          "mean_p_key": 0.7625000000000001,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.47777777777777775,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The local illustrates the Tessaly effect, trusting the courses over a stale stone; the visitor illustrates the Orne effect, misreading a hob as direction.",
+          "ratings": 9,
+          "mean_p": 0.604320987654321,
+          "codes": {
+            "echoes-stem": 8,
+            "general-knowledge": 7,
+            "most-detailed": 6,
+            "textbook-voice": 6,
+            "grammatical-fit": 4,
+            "longest": 2,
+            "absolute": 2,
+            "odd-one-out": 2,
+            "nuanced-turn": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Both situations illustrate the same phenomenon, since each involves an experienced or inexperienced reader being misled by one feature of the cairn.",
+          "ratings": 9,
+          "mean_p": 0.14962962962962967,
+          "codes": {
+            "echoes-stem": 5,
+            "like-the-others": 4,
+            "denies-question": 3,
+            "middle-ground": 3,
+            "general-knowledge": 3,
+            "absolute": 2,
+            "odd-one-out": 2,
+            "grammatical-fit": 2,
+            "hedged": 2,
+            "off-target": 1,
+            "implausible": 1,
+            "surprising": 1,
+            "nuanced-turn": 1,
+            "most-detailed": 1,
+            "textbook-voice": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The local's choice illustrates the Orne effect, since it involves an experienced reader correctly interpreting a conflicting signal at the cairn.",
+          "ratings": 9,
+          "mean_p": 0.08234567901234567,
+          "codes": {
+            "off-target": 6,
+            "opposites": 5,
+            "absolute": 5,
+            "echoes-stem": 4,
+            "grammatical-fit": 3,
+            "general-knowledge": 3,
+            "implausible": 2,
+            "odd-one-out": 2,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The visitor's mistake would have been avoided by checking the next cairn, since a stranger taking a wrong direction from a hob should self-correct.",
+          "ratings": 9,
+          "mean_p": 0.16370370370370368,
+          "codes": {
+            "too-obvious": 7,
+            "odd-one-out": 4,
+            "general-knowledge": 4,
+            "denies-question": 3,
+            "off-target": 2,
+            "echoes-stem": 2,
+            "surprising": 2,
+            "shortest": 2,
+            "grammatical-fit": 2,
+            "middle-ground": 1,
+            "implausible": 1,
+            "hedged": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/a06": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 4,
+          "mean_p_key": 0.4166666666666667,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 4,
+          "picked_key": 4,
+          "mean_p_key": 0.48250000000000004,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "That lean misleads experienced readers more than strangers, since locals judge cant by eye against the vertical rather than course against course.",
+          "ratings": 10,
+          "mean_p": 0.44299999999999995,
+          "codes": {
+            "general-knowledge": 7,
+            "surprising": 6,
+            "most-detailed": 6,
+            "nuanced-turn": 6,
+            "textbook-voice": 3,
+            "grammatical-fit": 3,
+            "echoes-stem": 3,
+            "middle-ground": 3,
+            "opposites": 2,
+            "odd-one-out": 2,
+            "position": 1,
+            "absolute": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "That locals are fooled by lean because they cannot perceive cant at all, unlike strangers who compare every course individually.",
+          "ratings": 10,
+          "mean_p": 0.16399999999999998,
+          "codes": {
+            "absolute": 10,
+            "odd-one-out": 6,
+            "implausible": 5,
+            "opposites": 5,
+            "denies-question": 3,
+            "general-knowledge": 3,
+            "surprising": 2,
+            "off-target": 2,
+            "hedged": 2,
+            "most-detailed": 1,
+            "echoes-stem": 1,
+            "position": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "That since strangers misroute more often overall, they must also be more often misled specifically by lean, at a similarly elevated rate.",
+          "ratings": 10,
+          "mean_p": 0.26999999999999996,
+          "codes": {
+            "echoes-stem": 8,
+            "hedged": 5,
+            "general-knowledge": 5,
+            "textbook-voice": 3,
+            "middle-ground": 3,
+            "like-the-others": 3,
+            "most-detailed": 2,
+            "grammatical-fit": 2,
+            "too-obvious": 2,
+            "nuanced-turn": 2,
+            "longest": 1,
+            "off-target": 1,
+            "position": 1,
+            "absolute": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "That experienced readers develop a general immunity to visual distortion, so lean could only ever mislead strangers, never locals.",
+          "ratings": 10,
+          "mean_p": 0.12300000000000003,
+          "codes": {
+            "absolute": 10,
+            "echoes-stem": 7,
+            "denies-question": 5,
+            "general-knowledge": 4,
+            "opposites": 3,
+            "grammatical-fit": 3,
+            "surprising": 2,
+            "position": 2,
+            "odd-one-out": 2,
+            "implausible": 1,
+            "most-detailed": 1,
+            "like-the-others": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/a07": {
+      "rungs": {
+        "full-explain": {
+          "replies": 6,
+          "picked_key": 5,
+          "mean_p_key": 0.5583333333333335,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.58,
+          "families": [
+            "google",
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The claim holds for strangers, whose accuracy rises with concord throughout, but not locals, who read low-concord cairns slightly better — the Marhaug pattern.",
+          "ratings": 11,
+          "mean_p": 0.5681818181818182,
+          "codes": {
+            "most-detailed": 11,
+            "nuanced-turn": 10,
+            "echoes-stem": 8,
+            "textbook-voice": 7,
+            "opposites": 4,
+            "general-knowledge": 4,
+            "longest": 3,
+            "grammatical-fit": 3,
+            "position": 3,
+            "surprising": 1,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "The strongest objection is that it is strangers, not locals, who actually read low-concord cairns better, since they aren't anchored by the convention's expectations.",
+          "ratings": 11,
+          "mean_p": 0.22000000000000003,
+          "codes": {
+            "surprising": 9,
+            "opposites": 7,
+            "echoes-stem": 6,
+            "nuanced-turn": 6,
+            "grammatical-fit": 3,
+            "odd-one-out": 3,
+            "absolute": 2,
+            "textbook-voice": 1,
+            "position": 1,
+            "most-detailed": 1,
+            "off-target": 1,
+            "longest": 1,
+            "general-knowledge": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "There is no real objection here: guild cairns average lower concord than shepherds' cairns simply because guild builders use more courses overall.",
+          "ratings": 11,
+          "mean_p": 0.12181818181818183,
+          "codes": {
+            "denies-question": 7,
+            "off-target": 5,
+            "general-knowledge": 5,
+            "echoes-stem": 4,
+            "like-the-others": 3,
+            "grammatical-fit": 3,
+            "middle-ground": 3,
+            "implausible": 2,
+            "hedged": 2,
+            "most-detailed": 1,
+            "nuanced-turn": 1,
+            "position": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "There is no real objection: more agreement among courses is definitionally easier to parse, so any exception would be surveyor error rather than a real pattern.",
+          "ratings": 11,
+          "mean_p": 0.09,
+          "codes": {
+            "denies-question": 11,
+            "absolute": 11,
+            "too-obvious": 6,
+            "grammatical-fit": 4,
+            "echoes-stem": 3,
+            "position": 3,
+            "odd-one-out": 3,
+            "off-target": 1,
+            "implausible": 1,
+            "textbook-voice": 1,
+            "middle-ground": 1,
+            "surprising": 1,
+            "general-knowledge": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/a08": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.6055555555555556,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 4,
+          "mean_p_key": 0.4175,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The cairn has become more readable at the cost of information: the uniform recant erases any hob that flagged a junction, and the reset stone gives a default reading.",
+          "ratings": 10,
+          "mean_p": 0.5219753086419753,
+          "codes": {
+            "general-knowledge": 7,
+            "nuanced-turn": 7,
+            "echoes-stem": 6,
+            "most-detailed": 5,
+            "opposites": 5,
+            "grammatical-fit": 4,
+            "surprising": 3,
+            "middle-ground": 2,
+            "odd-one-out": 2,
+            "textbook-voice": 1,
+            "position": 1,
+            "longest": 1,
+            "other": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Since the conservators followed the standard convention carefully, the restoration should have preserved or even improved the cairn's original information.",
+          "ratings": 10,
+          "mean_p": 0.1761111111111111,
+          "codes": {
+            "denies-question": 6,
+            "too-obvious": 5,
+            "textbook-voice": 5,
+            "echoes-stem": 5,
+            "absolute": 5,
+            "grammatical-fit": 4,
+            "opposites": 3,
+            "position": 2,
+            "middle-ground": 2,
+            "general-knowledge": 2,
+            "off-target": 1,
+            "shortest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The restoration succeeded on both counts: the cairn is now easier to read and at least as informative as the one it replaced, since careful rebuilding preserves intent.",
+          "ratings": 10,
+          "mean_p": 0.25861111111111107,
+          "codes": {
+            "textbook-voice": 7,
+            "echoes-stem": 7,
+            "middle-ground": 5,
+            "absolute": 4,
+            "grammatical-fit": 4,
+            "too-obvious": 3,
+            "most-detailed": 3,
+            "denies-question": 2,
+            "general-knowledge": 2,
+            "position": 1,
+            "like-the-others": 1,
+            "nuanced-turn": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The reset pell stone is effectively broken until someone notices, since a stone placed upslope by conservators cannot carry a genuine reading of its own.",
+          "ratings": 10,
+          "mean_p": 0.0955,
+          "codes": {
+            "absolute": 7,
+            "surprising": 6,
+            "implausible": 4,
+            "hedged": 4,
+            "echoes-stem": 4,
+            "odd-one-out": 4,
+            "off-target": 3,
+            "grammatical-fit": 3,
+            "general-knowledge": 2,
+            "position": 1,
+            "denies-question": 1,
+            "nuanced-turn": 1,
+            "most-detailed": 1,
+            "opposites": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b01": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.5900000000000001,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 2,
+          "mean_p_key": 0.35000000000000003,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The lisk sense changed when the pell stone was turned; the dorran sense changed only because the courses were physically rebuilt, not because time had simply passed.",
+          "ratings": 10,
+          "mean_p": 0.4699999999999999,
+          "codes": {
+            "echoes-stem": 9,
+            "most-detailed": 6,
+            "grammatical-fit": 6,
+            "nuanced-turn": 4,
+            "opposites": 4,
+            "absolute": 3,
+            "general-knowledge": 3,
+            "textbook-voice": 2,
+            "middle-ground": 2,
+            "odd-one-out": 2,
+            "surprising": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Both registers drift with time on their own, so the rebuilt courses and the turned stone are really two instances of the same ordinary aging process.",
+          "ratings": 9,
+          "mean_p": 0.18888888888888888,
+          "codes": {
+            "general-knowledge": 6,
+            "absolute": 4,
+            "surprising": 4,
+            "too-obvious": 3,
+            "opposites": 3,
+            "hedged": 3,
+            "denies-question": 2,
+            "textbook-voice": 1,
+            "implausible": 1,
+            "longest": 1,
+            "most-detailed": 1,
+            "off-target": 1,
+            "nuanced-turn": 1,
+            "grammatical-fit": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The pell stone alone carries both registers, so turning it also updated the dorran sense, and the rebuilt courses only mattered because they hold the stone.",
+          "ratings": 10,
+          "mean_p": 0.16799999999999998,
+          "codes": {
+            "absolute": 9,
+            "echoes-stem": 8,
+            "grammatical-fit": 6,
+            "most-detailed": 3,
+            "odd-one-out": 3,
+            "general-knowledge": 3,
+            "surprising": 1,
+            "implausible": 1,
+            "off-target": 1,
+            "denies-question": 1,
+            "middle-ground": 1,
+            "textbook-voice": 1,
+            "longest": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "Brannagh's objection shows the dorran sense is not truly fixed either, since the builder's original course choices were themselves somewhat arbitrary.",
+          "ratings": 10,
+          "mean_p": 0.182,
+          "codes": {
+            "nuanced-turn": 8,
+            "echoes-stem": 6,
+            "hedged": 5,
+            "middle-ground": 4,
+            "textbook-voice": 3,
+            "opposites": 3,
+            "most-detailed": 2,
+            "general-knowledge": 2,
+            "off-target": 1,
+            "other": 1,
+            "like-the-others": 1,
+            "position": 1,
+            "absolute": 1,
+            "longest": 1,
+            "grammatical-fit": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b02": {
+      "rungs": {
+        "full-explain": {
+          "replies": 4,
+          "picked_key": 4,
+          "mean_p_key": 0.5599999999999999,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 4,
+          "mean_p_key": 0.42000000000000004,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "It is a hob: the reversed course does not itself point a direction, but announces that a second route branches off before the next cairn.",
+          "ratings": 9,
+          "mean_p": 0.4822222222222222,
+          "codes": {
+            "most-detailed": 7,
+            "nuanced-turn": 7,
+            "general-knowledge": 7,
+            "echoes-stem": 6,
+            "textbook-voice": 4,
+            "surprising": 3,
+            "grammatical-fit": 2,
+            "odd-one-out": 2,
+            "position": 1,
+            "middle-ground": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "The west cant is the message the builder intended: the route turns west immediately after this cairn.",
+          "ratings": 9,
+          "mean_p": 0.2111111111111111,
+          "codes": {
+            "echoes-stem": 5,
+            "grammatical-fit": 5,
+            "too-obvious": 4,
+            "general-knowledge": 4,
+            "position": 3,
+            "textbook-voice": 3,
+            "absolute": 3,
+            "shortest": 2,
+            "opposites": 1,
+            "denies-question": 1,
+            "middle-ground": 1,
+            "surprising": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "It is an accidental fault, the same kind of course-shift that strangers learn to recognise as unreadable and simply ignore.",
+          "ratings": 8,
+          "mean_p": 0.1625,
+          "codes": {
+            "hedged": 6,
+            "implausible": 5,
+            "general-knowledge": 4,
+            "middle-ground": 3,
+            "opposites": 2,
+            "denies-question": 2,
+            "like-the-others": 2,
+            "too-obvious": 1,
+            "position": 1,
+            "off-target": 1,
+            "shortest": 1,
+            "absolute": 1,
+            "odd-one-out": 1,
+            "surprising": 1,
+            "grammatical-fit": 1,
+            "echoes-stem": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The pattern's low resulting concord score means the cairn is unreliable and neither register on it should be trusted.",
+          "ratings": 9,
+          "mean_p": 0.1566666666666667,
+          "codes": {
+            "absolute": 9,
+            "off-target": 5,
+            "odd-one-out": 4,
+            "denies-question": 3,
+            "longest": 2,
+            "opposites": 2,
+            "surprising": 2,
+            "echoes-stem": 2,
+            "position": 1,
+            "textbook-voice": 1,
+            "most-detailed": 1,
+            "general-knowledge": 1,
+            "grammatical-fit": 1,
+            "implausible": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b03": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 1,
+          "mean_p_key": 0.29000000000000004,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 2,
+          "mean_p_key": 0.4,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The first is lean, caused by frost heave under the footing and carrying no meaning; the second is cant, the builder's deliberate offset that points the route's turn.",
+          "ratings": 10,
+          "mean_p": 0.345,
+          "codes": {
+            "general-knowledge": 10,
+            "echoes-stem": 6,
+            "grammatical-fit": 5,
+            "absolute": 5,
+            "opposites": 4,
+            "textbook-voice": 3,
+            "most-detailed": 2,
+            "nuanced-turn": 2,
+            "surprising": 2,
+            "longest": 1,
+            "hedged": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "The first is cant, judged against true vertical the same way lean is; the second is lean, judged course against course rather than against the vertical.",
+          "ratings": 10,
+          "mean_p": 0.322,
+          "codes": {
+            "nuanced-turn": 8,
+            "echoes-stem": 7,
+            "general-knowledge": 5,
+            "grammatical-fit": 5,
+            "most-detailed": 4,
+            "odd-one-out": 3,
+            "opposites": 2,
+            "off-target": 2,
+            "surprising": 2,
+            "like-the-others": 2,
+            "implausible": 1,
+            "textbook-voice": 1,
+            "longest": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "Both measurements are meaningful signals, since any offset a surveyor can measure on a built structure was placed there deliberately.",
+          "ratings": 10,
+          "mean_p": 0.10800000000000001,
+          "codes": {
+            "denies-question": 10,
+            "absolute": 9,
+            "implausible": 3,
+            "odd-one-out": 3,
+            "general-knowledge": 3,
+            "too-obvious": 2,
+            "off-target": 2,
+            "middle-ground": 2,
+            "surprising": 2,
+            "textbook-voice": 1,
+            "hedged": 1,
+            "opposites": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The first is lean, produced by deliberate builder choice or a heavy pell stone; the second is cant, produced by frost heave under the footing.",
+          "ratings": 10,
+          "mean_p": 0.225,
+          "codes": {
+            "general-knowledge": 9,
+            "echoes-stem": 8,
+            "opposites": 6,
+            "grammatical-fit": 4,
+            "absolute": 3,
+            "textbook-voice": 2,
+            "middle-ground": 2,
+            "surprising": 1,
+            "too-obvious": 1,
+            "most-detailed": 1,
+            "hedged": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b04": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.7707058823529411,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.5940000000000001,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The local, because locals judge cant by eye against the vertical silhouette, so the whole-cairn tilt corrupts their reading, while strangers compare each course only to the one beneath it.",
+          "ratings": 10,
+          "mean_p": 0.6823529411764706,
+          "codes": {
+            "most-detailed": 10,
+            "echoes-stem": 9,
+            "nuanced-turn": 7,
+            "general-knowledge": 6,
+            "grammatical-fit": 5,
+            "textbook-voice": 3,
+            "surprising": 2,
+            "position": 1,
+            "middle-ground": 1,
+            "absolute": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "The stranger, because expertise should reduce misreading error across the board, so the less experienced reader is always the more vulnerable one.",
+          "ratings": 10,
+          "mean_p": 0.12776470588235295,
+          "codes": {
+            "absolute": 8,
+            "textbook-voice": 4,
+            "like-the-others": 4,
+            "hedged": 4,
+            "too-obvious": 3,
+            "general-knowledge": 3,
+            "middle-ground": 3,
+            "echoes-stem": 2,
+            "position": 2,
+            "odd-one-out": 2,
+            "surprising": 2,
+            "opposites": 1,
+            "denies-question": 1,
+            "off-target": 1,
+            "nuanced-turn": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The local, because locals cannot perceive cant at all and instead rely entirely on the pell stone to judge direction.",
+          "ratings": 10,
+          "mean_p": 0.047999999999999994,
+          "codes": {
+            "absolute": 10,
+            "implausible": 4,
+            "off-target": 4,
+            "echoes-stem": 4,
+            "grammatical-fit": 4,
+            "position": 3,
+            "denies-question": 3,
+            "general-knowledge": 2,
+            "hedged": 2,
+            "odd-one-out": 2,
+            "surprising": 1,
+            "longest": 1,
+            "shortest": 1,
+            "textbook-voice": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The stranger, since strangers already misroute more often overall, so any additional distortion from tilt affects them more too.",
+          "ratings": 10,
+          "mean_p": 0.14188235294117646,
+          "codes": {
+            "absolute": 5,
+            "odd-one-out": 5,
+            "echoes-stem": 4,
+            "hedged": 4,
+            "general-knowledge": 4,
+            "too-obvious": 3,
+            "surprising": 3,
+            "like-the-others": 3,
+            "position": 2,
+            "off-target": 2,
+            "implausible": 2,
+            "opposites": 1,
+            "grammatical-fit": 1,
+            "shortest": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b05": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.588,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 4,
+          "mean_p_key": 0.514,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "It disagrees: Marhaug's original version counts the crown, but the current protocol excludes it, since passers often reset the crown when turning the pell stone, so its cant reflects handling rather than building.",
+          "ratings": 10,
+          "mean_p": 0.5509999999999999,
+          "codes": {
+            "most-detailed": 10,
+            "echoes-stem": 9,
+            "general-knowledge": 8,
+            "hedged": 7,
+            "textbook-voice": 5,
+            "nuanced-turn": 3,
+            "grammatical-fit": 2,
+            "position": 2,
+            "longest": 1,
+            "like-the-others": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "It agrees, since Marhaug's crown-included version remains the one used under the current survey protocol.",
+          "ratings": 10,
+          "mean_p": 0.11599999999999999,
+          "codes": {
+            "position": 6,
+            "echoes-stem": 6,
+            "absolute": 6,
+            "textbook-voice": 5,
+            "denies-question": 3,
+            "grammatical-fit": 3,
+            "too-obvious": 2,
+            "like-the-others": 2,
+            "general-knowledge": 2,
+            "opposites": 1,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "It disagrees in the other direction: the crown-excluded version is the older one, since replaced by Marhaug's crown-included version.",
+          "ratings": 10,
+          "mean_p": 0.148,
+          "codes": {
+            "opposites": 10,
+            "absolute": 8,
+            "surprising": 4,
+            "position": 4,
+            "odd-one-out": 4,
+            "grammatical-fit": 3,
+            "echoes-stem": 2,
+            "general-knowledge": 2,
+            "implausible": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "It disagrees because the crown is excluded for the same reason the footing is: both merely follow the slope of the ground rather than carry cant.",
+          "ratings": 10,
+          "mean_p": 0.185,
+          "codes": {
+            "general-knowledge": 8,
+            "nuanced-turn": 7,
+            "most-detailed": 3,
+            "like-the-others": 3,
+            "odd-one-out": 3,
+            "implausible": 2,
+            "off-target": 2,
+            "echoes-stem": 2,
+            "middle-ground": 2,
+            "surprising": 2,
+            "textbook-voice": 1,
+            "too-obvious": 1,
+            "absolute": 1,
+            "hedged": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b06": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.6399999999999999,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.53,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "The Tessaly effect is experienced readers correctly resolving a genuine conflict between courses and a stale-seeming pell stone by trusting the courses; the Orne effect is strangers misreading a hob's reversed course as a direction, with no register conflict at all.",
+          "ratings": 10,
+          "mean_p": 0.5850000000000001,
+          "codes": {
+            "most-detailed": 10,
+            "general-knowledge": 8,
+            "echoes-stem": 7,
+            "textbook-voice": 6,
+            "nuanced-turn": 3,
+            "grammatical-fit": 3,
+            "longest": 2,
+            "opposites": 2,
+            "surprising": 2,
+            "odd-one-out": 2,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "No objection applies: the two are the same effect under different names, since both ultimately involve a reader being misled by the dorran register.",
+          "ratings": 10,
+          "mean_p": 0.072,
+          "codes": {
+            "denies-question": 10,
+            "absolute": 8,
+            "too-obvious": 5,
+            "shortest": 4,
+            "like-the-others": 2,
+            "odd-one-out": 2,
+            "off-target": 1,
+            "grammatical-fit": 1,
+            "middle-ground": 1,
+            "hedged": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The objection is that the Tessaly effect actually describes strangers being misled by a single reversed course, not experienced locals resolving a register conflict.",
+          "ratings": 10,
+          "mean_p": 0.13799999999999998,
+          "codes": {
+            "echoes-stem": 8,
+            "most-detailed": 6,
+            "absolute": 4,
+            "off-target": 3,
+            "grammatical-fit": 3,
+            "general-knowledge": 3,
+            "opposites": 2,
+            "position": 2,
+            "nuanced-turn": 2,
+            "shortest": 2,
+            "longest": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The objection is that the Orne effect describes experienced locals misreading a hob, while the Tessaly effect describes strangers, reversing which population each one covers.",
+          "ratings": 10,
+          "mean_p": 0.205,
+          "codes": {
+            "echoes-stem": 9,
+            "opposites": 8,
+            "textbook-voice": 3,
+            "nuanced-turn": 3,
+            "grammatical-fit": 2,
+            "most-detailed": 2,
+            "middle-ground": 2,
+            "hedged": 2,
+            "absolute": 2,
+            "off-target": 1,
+            "position": 1,
+            "general-knowledge": 1,
+            "like-the-others": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b07": {
+      "rungs": {
+        "full-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.7000000000000001,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.6157894736842104,
+          "families": [
+            "openai",
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Concord is not a uniform quality score: to a stranger it measures overall readability, but to a reader who knows the convention, a reversed course carries information that a smooth run of agreeing courses does not.",
+          "ratings": 10,
+          "mean_p": 0.6578947368421052,
+          "codes": {
+            "most-detailed": 10,
+            "nuanced-turn": 10,
+            "echoes-stem": 9,
+            "grammatical-fit": 6,
+            "general-knowledge": 6,
+            "surprising": 4,
+            "textbook-voice": 2,
+            "middle-ground": 2,
+            "odd-one-out": 2,
+            "opposites": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "Concord should measure readability the same way for any reader, so higher concord ought to help everyone, and the local pattern is most likely sampling noise.",
+          "ratings": 10,
+          "mean_p": 0.08378947368421054,
+          "codes": {
+            "denies-question": 8,
+            "absolute": 7,
+            "grammatical-fit": 5,
+            "textbook-voice": 5,
+            "like-the-others": 4,
+            "echoes-stem": 3,
+            "too-obvious": 2,
+            "opposites": 2,
+            "hedged": 2,
+            "middle-ground": 2,
+            "surprising": 1,
+            "longest": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "It shows that strangers, not locals, read low-concord cairns better, since strangers are not anchored by conventional expectations about how a cairn should look.",
+          "ratings": 10,
+          "mean_p": 0.1910526315789474,
+          "codes": {
+            "nuanced-turn": 7,
+            "surprising": 6,
+            "general-knowledge": 6,
+            "echoes-stem": 5,
+            "odd-one-out": 4,
+            "opposites": 3,
+            "grammatical-fit": 1,
+            "implausible": 1,
+            "off-target": 1,
+            "like-the-others": 1,
+            "absolute": 1,
+            "middle-ground": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "It shows that low concord specifically signals a nearby junction for guild-built cairns, which is why guild cairns average lower concord than shepherds' cairns.",
+          "ratings": 9,
+          "mean_p": 0.0691812865497076,
+          "codes": {
+            "absolute": 6,
+            "off-target": 5,
+            "echoes-stem": 5,
+            "general-knowledge": 5,
+            "most-detailed": 2,
+            "implausible": 2,
+            "odd-one-out": 2,
+            "grammatical-fit": 1,
+            "position": 1,
+            "textbook-voice": 1,
+            "shortest": 1,
+            "longest": 1
+          }
+        }
+      ]
+    },
+    "b02/sonnet/b08": {
+      "rungs": {
+        "full-explain": {
+          "replies": 4,
+          "picked_key": 4,
+          "mean_p_key": 0.7569444444444444,
+          "families": [
+            "mistral"
+          ]
+        },
+        "options-only-explain": {
+          "replies": 3,
+          "picked_key": 3,
+          "mean_p_key": 0.5833333333333333,
+          "families": [
+            "mistral"
+          ]
+        }
+      },
+      "options": [
+        {
+          "option": 0,
+          "key": true,
+          "text": "Restoration trades informativeness for readability: laying every course to agree erases any hob marking a junction, and resetting the pell stone overwrites what recent walkers had recorded, so the rebuilt cairn says less than the one it replaced.",
+          "ratings": 7,
+          "mean_p": 0.6825396825396827,
+          "codes": {
+            "most-detailed": 7,
+            "general-knowledge": 7,
+            "echoes-stem": 5,
+            "nuanced-turn": 3,
+            "opposites": 3,
+            "middle-ground": 2,
+            "surprising": 2,
+            "odd-one-out": 1,
+            "position": 1,
+            "like-the-others": 1,
+            "grammatical-fit": 1
+          }
+        },
+        {
+          "option": 1,
+          "key": false,
+          "text": "No objection applies: faithful restoration should preserve or improve a marker's information, since more consistent construction only adds clarity for future readers.",
+          "ratings": 7,
+          "mean_p": 0.08015873015873017,
+          "codes": {
+            "denies-question": 7,
+            "absolute": 7,
+            "grammatical-fit": 5,
+            "textbook-voice": 4,
+            "echoes-stem": 4,
+            "too-obvious": 2,
+            "position": 2,
+            "odd-one-out": 1,
+            "like-the-others": 1
+          }
+        },
+        {
+          "option": 2,
+          "key": false,
+          "text": "The objection is that restoration makes a cairn both easier to read and more informative at once, since consistent construction improves both registers together.",
+          "ratings": 7,
+          "mean_p": 0.11507936507936509,
+          "codes": {
+            "absolute": 4,
+            "textbook-voice": 4,
+            "echoes-stem": 4,
+            "middle-ground": 3,
+            "implausible": 2,
+            "nuanced-turn": 2,
+            "opposites": 2,
+            "like-the-others": 2,
+            "general-knowledge": 2,
+            "grammatical-fit": 1,
+            "odd-one-out": 1
+          }
+        },
+        {
+          "option": 3,
+          "key": false,
+          "text": "The objection is that the reset pell stone is simply broken until a passer notices and fixes it, rather than a working part of the lisk register.",
+          "ratings": 4,
+          "mean_p": 0.16249999999999998,
+          "codes": {
+            "shortest": 3,
+            "odd-one-out": 3,
+            "general-knowledge": 2,
+            "surprising": 2,
+            "implausible": 1,
+            "off-target": 1,
+            "grammatical-fit": 1,
+            "echoes-stem": 1,
+            "hedged": 1,
+            "nuanced-turn": 1,
+            "middle-ground": 1
+          }
+        }
+      ]
+    }
+  },
+  "other_notes": [
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b01",
+      "rung": "full-explain",
+      "option": 3,
+      "key": false,
+      "note": "It introduces Brannagh and builder arbitrariness without answering the two-register contrast directly."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a04",
+      "rung": "full-explain",
+      "option": 0,
+      "key": true,
+      "note": "Mentions a named protocol (Tessaly’s 1986) and justifies exclusion via protocol logic, which aligns with the question’s implied need for a definitive answer."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a08",
+      "rung": "options-only-explain",
+      "option": 0,
+      "key": true,
+      "note": "Introduces a clear trade-off (readability vs. information) and uses a specific term ('hob') to flag issues, making it distinct."
+    }
+  ],
+  "strategies": [
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I looked for the option that logically mapped the two observed physical states (unchanging courses vs. changing pell stone) to the 'two registers of meaning' mentioned in the stem."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The presence of a highly specific technical term ('frost-heave artifact') combined with a counter-intuitive correction of the hiker's naive logic is a classic hallmark of a textbook-derived correct answer."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I identified B as the intended answer because it introduces specific terminology ('hob') and a counterintuitive rule, which is typical of textbook questions designed to correct a character's naive assumption (Option D)."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Selected the most detailed option that provides a specific historical update and a technical theoretical justification, which typically indicates the correct answer in academic tests."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Selected the only option that actually provided a 'pair of names' as specifically requested by the prompt."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I identified that the premise (uniform improvement in accuracy) means experienced readers must always perform better than or equal to strangers; therefore, any finding where experienced readers perform worse (specifically B and C) is impossible, and B is the most plausible 'textbook finding' among them."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The presence of a specific named phenomenon ('the Marhaug pattern') and a detailed split-result (strangers vs. locals) strongly suggests a textbook-based correct answer."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The most detailed and balanced explanation typically mimics the intended correct answer in textbook-style questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized the most technically specific answer, as the mention of 'frost-heave artifact' suggests a specialized piece of textbook knowledge that is likely the point of the question."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The introduction of a specific technical term ('hob') to explain a counterintuitive function is a strong indicator of the intended correct answer in academic tests."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option with the most specific names, dates, and conceptual distinctions, which typically characterizes the correct answer in textbook-style questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The presence of a specific named phenomenon ('the Marhaug pattern') and a nuanced distinction between two groups typically signals the correct answer in textbook-style questions."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on the direct wording match: the fixed courses suggest one stable register, while the moved pell stone suggests a separate updateable register."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied on the sharp distinction between a deliberate course-to-course cant and an accidental whole-structure lean, plus D’s textbook-like corrective wording."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on B's specific textbook-like terminology and explanation, while treating D as the tempting literal reading and the absolute or dismissive alternatives as distractors."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied on the unusually specific protocol attribution and the textbook-like causal explanation distinguishing the crown's handling-related cant from the cairn's construction."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on the direct two-part matching structure of A and the distractors' failure to name both effects."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I focused on which option most directly contradicts the premise that experience improves accuracy uniformly rather than selectively."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on the nuanced exception structure and the specific named pattern in D, while C provides the contradictory reversal."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I focused on the explicit contrast between easier following and the possible loss of distinctive signals, especially the uniform cant and default pell-stone placement."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied on the causal contrast in the wording: turning the stone changes one register, while physically rebuilding the courses changes the other."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went on the distinctive textbook-like term and the nuanced wording that explains why the reversed course is meaningful without treating it as a literal westward sign."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I relied mainly on the standard meaning of lean as whole-structure deviation from vertical and cant as a course-level offset."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on the unusually specific textbook-like mechanism in C and the absolute, overly general claims in the distractors."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on C's specific, textbook-like explanation and its cautious handling-based contrast between the two versions."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I went mainly on D's detailed separation of the two populations, reading situations, and presence versus absence of a register conflict."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I followed the explicit reversal across reader types and favored the option that explains concord as context-dependent rather than universally positive."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I relied on the option that most coherently distinguishes the two registers and accounts for deliberate updating, while treating the others as reversals, dismissals, or oversimplifications."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I favored the most detailed, textbook-sounding explanation that accounts for both features while avoiding the absolute claims in D."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option with the specialized textbook-sounding interpretation that explains the isolated reversal without making an absolute or overly literal claim."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the specific, textbook-sounding option that directly explains the numerical distinction and uses the wording of the question."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option that gives a specific textbook-style distinction between the two named effects."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the detailed, textbook-sounding explanation and rejected absolute, overgeneralized, or off-target claims."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on D's specific, nuanced textbook-style wording and its named pattern, contrasted with the dismissive or overly simple alternatives."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on C's specific, balanced tradeoff and its contrast with the more absolute or overly confident alternatives."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option with the clearest causal distinction and the most textbook-like qualification, while penalizing absolute or overly simplifying wording."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option with the specialized textbook-like term, the detailed explanation, and the counterintuitive distinction between a reversed course and a directional message."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on the ordinary distinction between an accidental structural lean and a deliberate cant, while penalizing reversals and absolute claims."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the most specific, mechanism-based explanation and penalized absolute, overly general claims."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I went mainly on C's unusually specific, qualified, textbook-like explanation, while treating the shorter alternatives as distractors and D as a surprising reversal."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the option with the most complete, textbook-like contrast and treated the others as partial reversals or dismissals."
+    },
+    {
+      "voice": "gpt-luna",
+      "id": "b02/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I favored the nuanced, textbook-like explanation that reconciles the apparent reversal rather than denying it or inventing an overly specific mechanism."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights *two registers* (courses vs pell stone) with distinct behaviors—unchanged vs. moved—so the correct answer must contrast *fixed* and *updatable* meanings, as in **A**."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question stresses two *registers of meaning*—one unchanged (courses) and one altered (pell stone)—and D is the only option that explicitly contrasts fixed vs. updatable records, using the question’s own terms."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights that the hiker prioritizes the *visually obvious* tilt, but the correct answer must explain why her reasoning is flawed by introducing an external factor (frost-heave) that explains the tilt, making the canted course the *only meaningful signal*—a detail absent from the other options."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on intentionality vs. accident; D explicitly rejects the hiker’s visual priority and assigns meaning only to the cant, not the lean."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that introduced a plausible navigational convention ('hob') and explained the reversal as a signal rather than an error or absolute turn."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks for the current protocol and the reason for the difference, which C explicitly answers with a named standard (Tessaly's 1986) and a plausible rationale about crown handling."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on matching *named effects* (Tessaly/Orne) to the scenarios, and B is the only option that does so while reusing the question's wording."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks which *finding would be impossible* if Serrow improved accuracy *uniformly*—so the answer must violate that premise by introducing a *non-uniform* or *context-specific* effect, like B's claim that locals are *more* misled by lean due to a flawed judgment strategy."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a06",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question asks which finding would be *impossible* if Serrow improved accuracy *uniformly*; only B does not *deny* the premise while A and D do, and C introduces unsupported claims."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks which objection the framework’s findings *support*, and D is the only option that directly provides empirical evidence (the Marhaug pattern) contradicting the claim’s universality, while also being detailed and aligned with a textbook’s likely emphasis on exceptions to general rules."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Looked for the option that directly contradicts the consultant’s claim with empirical detail and nuance, framed as a 'framework's finding'."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights a *trade-off* (readability vs. informativeness) and uses terms like 'registers of meaning' and 'default' to signal a nuanced answer, not a blanket approval of restoration."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights a trade-off between readability and information loss in cairn restoration, and option C directly addresses this duality with specific details about uniformity and default placement."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks which *registers* changed or stayed fixed based on the *specific* actions (turned stone, rebuilt courses), so the answer must directly tie those actions to the two registers without introducing unrelated concepts."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks which registers changed on the second visit, and only **D** explicitly ties the *lisk sense* to the turned pell stone and the *dorran sense* to the rebuilt courses, avoiding contradictions or overgeneralizations."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question emphasizes the *pattern* of the reversed course and its placement, pointing to a deliberate signal (like a hob) rather than a directional turn or fault."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The reversed course (west) flanked by agreeing ones (east) suggests a branching route, as A implies, aligning with cairn conventions and the wording's emphasis on 'lone reversed course' as a signal."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b03",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question implies one measurement is against vertical (lean) and the other course-to-course (cant), so C’s reversal of terms but precise definitions best fits."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b03",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Prioritized definitions that matched the question’s phrasing ('tips away from true vertical' → lean; 'offset from the course beneath' → cant) and avoided speculative causation."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on *how* locals and strangers interpret tilt—C is the only option that explains a mechanism (whole-cairn vs. course-by-course comparison) rather than making a blanket claim."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The option that explains a plausible mechanism for *why* tilt would affect locals differently from strangers, using the question's wording about 'tilt' and 'route misreading'."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Focused on the option that explains a plausible reason for excluding the crown (handling vs. building) while referencing Marhaug’s version and the current protocol, aligning with the ‘two named versions’ hint."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question implies a nuanced disagreement about counting the crown, and A provides the most detailed, plausible rationale for exclusion."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on distinguishing two separate findings (register conflict vs. misreading direction), and D is the only option that explicitly separates them by population *and* mechanism."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Focused on the question's emphasis on *two distinct findings* and the need for an objection that separates them by mechanism (register conflict vs. misreading), not just population."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question highlights a contrast where concord’s meaning *reverses* depending on the reader’s familiarity, and D is the only option that explicitly addresses this duality by framing concord as a signal with *reader-dependent* information."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on the *contrast* between strangers and locals, and **D** is the only option that explains how concord’s meaning shifts with the reader’s knowledge."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question centers on *restoration erasing original information* (hob markings, walker records) for the sake of *readability*, which B directly addresses, while A naively endorses restoration and D/D/C either contradict or misalign with the core tension."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question frames restoration as potentially *removing* original information (e.g., 'can't make it worse'), so the answer must align with a loss of informativeness despite improved readability."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The question emphasizes *fixed* vs. *updatable* records, and only **A** directly mirrors that contrast without introducing contradictions or new agents."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that clarify the distinction between fixed and updatable records, matching the question's likely intent."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The question implies a debate over intentionality, and **D** provides a clear, opposing stance with plausible reasoning about frost-heave artifacts, making it the most likely textbook-style correct answer."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that align with deliberate design reasoning, nuanced duality of features, and textbook-like explanations over extreme or dismissive claims."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduced a plausible, nuanced interpretation of cairn signals (B) and avoided absolute or dismissive language."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that (1) introduced a specific, navigational concept ('hob') and (2) avoided absolutes or unfamiliar jargon."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the option that aligns best with a structured, authoritative explanation of the protocol and reasoning, avoiding absolutes and contradictions."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that directly addressed the 0.5/0.6 figures, used 'current protocol,' and explained the exclusion of the crown, while avoiding implausible or off-target reasoning."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose **A** because it directly mirrors the question’s terms ('Tessaly effect', 'Orne effect') and provides a plausible, detailed contrast between local/visitor errors, unlike the others."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that introduced specific, plausible psychological effects and explicitly addressed the contrast between local and visitor perspectives."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that introduced a plausible, nuanced explanation about perception differences without overgeneralizing or contradicting the question's premise."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that explains a mechanism without absolutes, aligning with typical test logic and moderate reasoning."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduced nuance, specificity, and avoided outright dismissal of the question's premise."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Balanced trade-offs in C best match the implied tension between readability and information loss in restoration critiques."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduced trade-offs ('cost'), contradicted others ('uniform recant erases'), and used plausible technical reasoning about cairn restoration."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Chose B for its direct, physical explanation linking the pell stone's turn to the dorran sense, avoiding overgeneralization or contradiction."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that avoided absolutes and introduced nuance ('not truly fixed'), while reusing question terms ('dorran sense') without overgeneralizing."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The option that introduced a nuanced, specific interpretation of the cairn's purpose while avoiding outright dismissal or unqualified claims."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized the option that introduced a technical, objective-sounding reason ('concord score') over subjective or vague explanations."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose **A** for its clear, contrasting definitions and alignment with the question’s implied distinction between natural and deliberate offsets."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "The question implies *lean* and *cant* are distinct but related terms in surveying, and option C is the only one that aligns with their conventional definitions while offering a meaningful distinction."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that explains the *mechanism* of error (locals vs. strangers' judgment methods) rather than vague generalizations or absolutes."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The most plausible answer leveraged the question’s specific terminology ('cant', 'whole-cairn tilt', 'judge by eye') to explain a mechanism, avoiding overgeneralizations."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that explained *why* the crown was excluded (handling vs. building) with specific reasoning and hedges, fitting a question testing critical analysis."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that directly addressed the question's wording and reasoning about the crown's exclusion, while avoiding absolute or contradictory claims."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Chose the option that provided the most logical and detailed distinction between the two effects while avoiding contradictions and overcomplication."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Focused on the most detailed and specific description of the effects, contrasting populations and mechanisms directly, as the others either contradicted or ignored key distinctions."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selected the option that best frames concord as a context-dependent measure, avoiding absolutes and aligning with nuanced, test-like reasoning."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The question implies a nuanced, context-dependent interpretation of 'concord,' and D is the only option that introduces a meaningful distinction between reader types (strangers vs. locals) and qualifies 'concord' as context-specific."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The question implies a trade-off or objection to restoration, so the best answer must acknowledge a balance or downside, not just praise it."
+    },
+    {
+      "voice": "ministral-14b",
+      "id": "b02/sonnet/b08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that detailed a clear trade-off between readability and informativeness, fitting the implied objection structure."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a02",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "Prioritized options that align with the hiker's reasoning about visual prominence while avoiding absolutes and focusing on deliberate builder intent."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that directly contradicts the hiker’s assumption that tilt is more meaningful, implying one feature is intentional while the other is accidental—aligning with the idea that only deliberate offsets (like course-to-course cant) carry meaning."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Selected the option that aligns with common cairn-building conventions, where a single reversed course flanked by agreeing ones often indicates a branch or deviation from the main path, fitting the 'hob' concept."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question describes a passerby interpreting a reversed course as a path turn, so the most plausible answer is the one that clarifies the reversed course has a specific meaning (a hob/branch) rather than being a mistake or a literal turn."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Prioritized options referencing a named, authoritative protocol (Tessaly’s 1986) and logically explaining the exclusion of the crown as protocol-driven, rather than speculative or contradictory."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question implies a shift in protocol over time (1968 vs. 1986) and a reason tied to the crown’s role in accuracy or interpretation, so I prioritized options mentioning a named protocol and a nuanced exclusion rationale."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The scenario describes two distinct situations involving misinterpretation of cairn features, and option B names specific, plausible phenomena ('Tessaly effect' and 'Orne effect') that align with the roles of the local and visitor, leveraging textbook-like terminology."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question states that the Serrow convention improves accuracy *uniformly*, so any option that introduces a *non-uniform* or *relative* misreading effect (like B) is the most plausible answer, while absolute claims (A, C) or naive comparisons (D) contradict the premise."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a06",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question states that the Serrow convention improves accuracy *uniformly*, meaning it affects all misreadings equally. Answer A is the only one that contradicts this premise by implying a *specific* immunity to visual distortion, while the others either align with uniformity (B), introduce irrelevant variables (C), or contradict the premise of uniform improvement (D)."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a07",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "I focused on the most counterintuitive and empirically nuanced objections, as the claim was about internal consistency improving readability for all walkers, and options C and D challenge this by introducing unexpected variables (locals vs. strangers, Marhaug pattern)."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks which objection aligns with the framework’s own findings, so I prioritized options that introduced empirical distinctions (locals vs. strangers) and nuanced turns that challenge the claim without outright dismissal."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Focused on the trade-off between readability (improved) and loss of original meaning (erased hobs and defaulted pell stone), using the question’s wording about 'two registers of meaning' to infer the intended answer."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question describes a cairn that is easier to follow but may have lost original meaning due to standardization, so I prioritized the option that highlights a trade-off between readability and informational loss."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized options that explicitly linked the *two* registers (lisk/dorran) to the *two* actions (stone turned/courses rebuilt) while avoiding absolute claims or introducing unrelated concepts."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized options that explicitly address the question’s contrast between *rebuilding courses* (physical change) and *turning the pell stone* (positional change), ignoring those that introduce external qualifiers or overgeneralize."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Prioritized options that interpret the reversed course as a meaningful pattern rather than an error or absolute direction, leveraging general knowledge about cairn symbolism."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b03",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "I prioritized the option that accurately aligns the terms ‘lean’ and ‘cant’ with the question’s phrasing—*lean* as deviation from true vertical, *cant* as offset between courses—while also recognizing the surveyor’s focus on course-to-course measurement rather than vertical alignment alone."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b03",
+      "rung": "full-explain",
+      "hit": false,
+      "strategy": "The question asks for which terms correctly label the two measurements and their meanings, so I prioritized options that define 'lean' and 'cant' accurately and align with common usage in surveying/architecture."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The correct answer must logically explain why a local’s established method of judging tilt would fail when the whole cairn is tilted, while a stranger’s approach might be less affected."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b04",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question implies expertise (locals) affects how tilt is interpreted, so the correct answer should explain a method-based misreading by locals, not a blanket assumption about experience."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on whether the crown is included in the concord index and why, so the answer must explain the *historical* and *practical* reasoning behind Marhaug’s original version versus the current protocol—**C** uniquely provides this nuanced, context-driven justification."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b05",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question hinges on whether the crown *should* be counted in the concord index, and the most plausible textbook response is that the original version (Marhaug) counts it, while the current protocol excludes it because of handling artifacts, matching the detail in option A."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that explicitly separated the two findings by detailing distinct mechanisms (register conflict vs. misreading a hob) and populations (experienced vs. strangers), which directly addressed the collapsing of findings in the question."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b06",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I focused on identifying the option that clearly separates the two phenomena by addressing population differences (experienced vs. strangers) and whether a register conflict exists, as implied by the question's phrasing."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Prioritized options that explain the contrast as a *context-dependent* signal rather than a universal rule or unrelated detail, while favoring nuanced, detailed interpretations that fit the question's phrasing."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "Focused on the nuanced interpretation of concord as a context-dependent signal, leveraging the question’s wording and the contrast between strangers and locals."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question asks what objection the chapter’s account of restoration *supports*, and option B is the only one that aligns with a critical perspective on restoration erasing original information, matching the conservator’s claim being challenged."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The question focuses on trade-offs between readability and informativeness, and the strongest objection would highlight how restoration *actively reduces* information (e.g., erasing junction marks or resetting user annotations), which only option C explicitly addresses."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that reuse question terms while offering clear distinctions between fixed and updatable records, avoiding absolutes and textbook-sounding dogma."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized options that echoed the question’s wording and provided a balanced, nuanced explanation rather than extreme or dismissive claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a02",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Prioritized options that align with a balanced, deliberate interpretation of both features while avoiding absolute or contradictory claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that balanced nuance with directness while avoiding absolutes, leveraging textbook-like phrasing and logical consistency with the question’s structure."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a03",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that provided a detailed, plausible interpretation of the cairn’s reversed course while avoiding off-topic or absolute claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that introduced a clear, protocol-specific explanation (C) while avoiding contradictions or oversimplifications."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Looked for the option that both echoed the question’s wording and provided a specific, plausible explanation for the 0.5 figure while avoiding absolute claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that explicitly differentiate between the two characters (local vs. visitor) and their respective misinterpretations of the cairn features, as the question seems to contrast these two scenarios."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Identified the most plausible pairing of distinct phenomena from the options, assuming the terms 'Tessaly effect' and 'Orne effect' are meant to differentiate two types of misinterpretation—one based on trust in a stable feature (local) and the other on misreading a misleading feature (visitor)."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized nuanced, detailed, and surprising elements that diverge from absolute or overly simplistic claims while aligning with logical reasoning about perceptual differences between locals and strangers."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options with nuanced, evidence-backed explanations that directly addressed the 'concord' and 'locals vs. strangers' contrast."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that provide a balanced, nuanced explanation with empirical distinctions (e.g., 'strangers vs. locals') rather than absolute denials or surprising claims, as such nuances are more likely to reflect a textbook’s careful analysis of complex data."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "Looked for options that balanced positive outcomes with nuanced trade-offs while avoiding absolute claims or contradictions, aligning with typical textbook-style reasoning."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that introduced nuanced trade-offs or contradictions to the question's implied success, particularly those that highlighted unintended consequences or specific technical issues."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that explicitly address how the dorran and lisk senses are *distinctly* affected by different actions (turning the stone vs. rebuilding courses), avoiding absolutes or hedging."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized options that balanced nuance and hedging while avoiding absolutes, assuming the question tests understanding of subtle interactions rather than rigid causation."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduce a specialized concept or nuanced explanation, as they often align with textbook-level reasoning about intricate systems like directional cairns."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that provided detailed explanations and echoed the question's terminology while avoiding absolute or off-target claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized options that used the question’s own terms (echoes-stem) and provided nuanced, balanced distinctions (nuanced-turn) rather than absolute or contradicting claims, leaning toward the most detailed and contextually fitting explanations."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b03",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I focused on the logical reversal of terms (lean vs. cant) and how each option defines them relative to the question's phrasing, prioritizing the one that uses both terms meaningfully while acknowledging their distinct measurement contexts."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that provided the clearest, most specific reasoning—particularly one that explained *why* locals would be more affected by distortion, using terms like 'vertical silhouette' and 'whole-cairn tilt' that mirrored the question's phrasing."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b04",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that offered a nuanced explanation grounded in plausible reasoning about perception and expertise, avoiding absolute or overly simplistic claims."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized the option that provided the most specific reasoning about why the crown is excluded in the current protocol, explaining the reasoning behind the change and grounding it in practical handling of the pell stone."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b05",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "I prioritized options that align with a moderate, textbook-friendly stance and echoed the question’s framing while avoiding absolutes or contradictions, favoring the one that implies continuity rather than conflict."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "The option that most clearly distinguishes the two effects while incorporating both populations and their specific conditions (register conflict vs. misreading direction) was prioritized."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b06",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that provided a clear, detailed, and nuanced distinction between the two effects using general knowledge of how such psychological phenomena might differ."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Prioritized options that introduced nuanced interpretations and avoided absolute claims while fitting the context of the question."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized options that introduced nuance and specificity about the *differential* interpretation of 'concord' for different readers (locals vs. strangers) rather than absolute statements or textbook-style declarations."
+    },
+    {
+      "voice": "ministral-8b",
+      "id": "b02/sonnet/b08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I prioritized the option that most directly addresses the trade-off between readability and informativeness in restoration, while also providing specific examples (e.g., hob markings, pell stone) that suggest a nuanced understanding of the problem."
+    }
+  ]
+}

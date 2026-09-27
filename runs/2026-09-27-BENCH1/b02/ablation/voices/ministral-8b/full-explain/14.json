@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/14",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e4d9f8a89a5447de120092aa03d46992a0d38afce579f689c485928feb34b29e",
+  "ts": "2026-09-27T16:59:16.915Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"hedged\", \"echoes-stem\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"Assumes the pell stone's meaning is inherently tied to its original placement, ignoring the possibility of intentional defaulting.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"echoes-stem\"],\n      \"p\": 20,\n      \"note\": \"Overstates the preservation of intent without acknowledging potential loss of nuanced information.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 55,\n      \"note\": \"Balances readability and loss of information, aligning with the idea that uniformity may erase subtle cues.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"Claims no problem exists, which contradicts the question’s premise about improved readability at a cost.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Focused on the trade-off between readability (improved) and loss of original meaning (erased hobs and defaulted pell stone), using the question’s wording about 'two registers of meaning' to infer the intended answer.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 863,
+    "total_tokens": 1176,
+    "completion_tokens": 313,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3283
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/01",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "2e89d7ca712a8409e842a330f952d4c33a2f23a75e43129914e66233c3ef33e0",
+  "ts": "2026-09-27T17:17:11.005Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"grammatical-fit\", \"echoes-stem\", \"surprising\", \"off-target\", \"general-knowledge\"],\n      \"p\": 0,\n      \"note\": \"Assumes 'pell' is a definitive count of wennets, ignoring that 'cant' might also relate to wennet-laying.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 60,\n      \"note\": \"Balances relative wennet-work with their arrangement, distinguishing between tharl-to-tharl and chaining.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"Equates 'cant' and 'pell' as whole-lattice and local measures, but the question does not support this direct equivalence.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"surprising\", \"off-target\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"Suggests a measurement error without evidence, ignoring possible independent meanings of cant and pell.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I prioritized the option that provided a balanced, nuanced explanation of the relationship between cant, pell, and wennet-laying, using the question's terms while avoiding absolutes or contradictions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 871,
+    "total_tokens": 1223,
+    "completion_tokens": 352,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3602
+}

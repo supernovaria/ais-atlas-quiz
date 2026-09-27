@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/13",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a3dbd8b64d9ea4c7f3f062644fcb5bd8944840ea49748340095ddde0690306e8",
+  "ts": "2026-09-27T17:02:09.251Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"Introduces an unexpected group ('strangers') and contradicts the consultant’s claim about 'any walker'.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"nuanced-turn\", \"general-knowledge\", \"textbook-voice\"],\n      \"p\": 50,\n      \"note\": \"Provides a specific empirical finding ('Marhaug pattern') that directly challenges the claim’s universality.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"off-target\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"Irrelevant to the consultant’s core argument about readability and consistency.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\", \"odd-one-out\"],\n      \"p\": 15,\n      \"note\": \"Dismissive and dogmatic, contradicting the question’s premise of a 'framework's findings' that might challenge the claim.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Looked for the option that directly contradicts the consultant’s claim with empirical detail and nuance, framed as a 'framework's finding'.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 843,
+    "total_tokens": 1157,
+    "completion_tokens": 314,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4530
+}

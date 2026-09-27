@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/02",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "4a59668e936e61ec46aea4696d0580d9a8b9d5ecfe8b6e5d2e5d42dc38957996",
+  "ts": "2026-09-27T17:15:36.972Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"textbook-voice\", \"echoes-stem\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"Assumes the disagreement is purely observational error, ignoring the explicit *rule-based* disagreement in the question.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"implausible\", \"odd-one-out\", \"denies-question\"],\n      \"p\": 5,\n      \"note\": \"Implausible because the question states a *disagreement* persists, not that Varrenby changed her rule.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"off-target\", \"too-obvious\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"Overstates the disagreement by claiming Emmerick’s method *disproves* Varrenby’s definitions, not just her boundary.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"echoes-stem\", \"most-detailed\", \"grammatical-fit\"],\n      \"p\": 75,\n      \"note\": \"Matches the question’s framing of *classification flipping* due to *rule adoption*, not underlying lattice change.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question highlights *two rules yielding different classifications for the same lattice*, so the answer must focus on *convention-dependent classification*, not error or definition flaws.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 901,
+    "total_tokens": 1235,
+    "completion_tokens": 334,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 32422
+}

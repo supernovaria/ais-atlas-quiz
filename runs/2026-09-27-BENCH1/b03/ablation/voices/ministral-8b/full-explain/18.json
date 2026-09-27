@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/18",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "05499a74b397d91834a7288bdcc722fc94669c43121c19318513ceffc974c26e",
+  "ts": "2026-09-27T17:16:17.441Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"middle-ground\", \"hedged\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"absolute\", \"general-knowledge\"],\n      \"p\": 60,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I relied on the key distinction between Varrenby’s original rule (using the longest chain alone) and current practice (using Emmerick’s mean of the three longest chains), and matched the wording of the question’s criteria.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 833,
+    "total_tokens": 1070,
+    "completion_tokens": 237,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2506
+}

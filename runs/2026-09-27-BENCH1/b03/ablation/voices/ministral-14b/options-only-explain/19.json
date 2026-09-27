@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/19",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "59472ad5a3cef2332ebe0a011d0edf285b5750bc5a44e27b2afe86821b7347ff",
+  "ts": "2026-09-27T17:20:29.226Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"absolute\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"Assumes a straightforward comparison without considering nuanced rules.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Balances both rules but lacks specificity in how the mean is calculated.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 65,\n      \"note\": \"Explicitly contrasts original and current rules, referencing specific methods (longest chain vs. mean of three longest).\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Contradicts C and A by flipping the outcomes under the two rules.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The option that explicitly distinguishes between the original and current rules while referencing specific calculation methods (longest chain vs. mean of three longest) aligns best with the question’s phrasing and test-taking logic.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 791,
+    "total_tokens": 1101,
+    "completion_tokens": 310,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3400
+}

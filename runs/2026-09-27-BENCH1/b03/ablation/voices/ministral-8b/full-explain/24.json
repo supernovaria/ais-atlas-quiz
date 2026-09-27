@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/24",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "53da34e9e6d4345c6024dee64d0f5309fb212478627bb8ad46fe4f058ea3382a",
+  "ts": "2026-09-27T17:16:41.851Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"absolute\",\n        \"general-knowledge\",\n        \"position\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"middle-ground\",\n        \"textbook-voice\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"position\"\n      ],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"absolute\",\n        \"too-obvious\",\n        \"off-target\",\n        \"grammatical-fit\",\n        \"position\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"surprising\",\n        \"opposites\",\n        \"general-knowledge\",\n        \"position\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question emphasizes the observer’s *lack of further tracing* and the ambiguity of defining threads by appearance alone, which aligns with the nuanced, cautionary tone of option B.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 810,
+    "total_tokens": 1081,
+    "completion_tokens": 271,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3119
+}

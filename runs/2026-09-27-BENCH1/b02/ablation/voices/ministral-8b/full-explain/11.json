@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/11",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "91835ae9f13bfb5288101b02f9fd64fa1246d5be09177a3703d53d5cf80e5221",
+  "ts": "2026-09-27T17:01:19.947Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"most-detailed\", \"surprising\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"middle-ground\", \"absolute\", \"like-the-others\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"nuanced-turn\", \"general-knowledge\", \"absolute\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"absolute\", \"off-target\", \"odd-one-out\"],\n      \"p\": 25,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question states that the Serrow convention improves accuracy *uniformly*, meaning it affects all misreadings equally. Answer A is the only one that contradicts this premise by implying a *specific* immunity to visual distortion, while the others either align with uniformity (B), introduce irrelevant variables (C), or contradict the premise of uniform improvement (D).\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 795,
+    "total_tokens": 1062,
+    "completion_tokens": 267,
+    "prompt_tokens_details": {
+      "cached_tokens": 100
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2895
+}

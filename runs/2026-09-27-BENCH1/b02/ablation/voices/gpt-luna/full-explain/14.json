@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/14",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "e4d9f8a89a5447de120092aa03d46992a0d38afce579f689c485928feb34b29e",
+  "ts": "2026-09-27T17:02:31.755Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"surprising\", \"implausible\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"It treats the reset stone as incapable of conveying meaning at all.\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\", \"textbook-voice\", \"echoes-stem\"],\n      \"p\": 8,\n      \"note\": \"It assumes careful restoration preserves both readability and information.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"opposites\", \"general-knowledge\"],\n      \"p\": 80,\n      \"note\": \"It directly distinguishes improved readability from lost informational variation.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"textbook-voice\", \"opposites\", \"echoes-stem\"],\n      \"p\": 7,\n      \"note\": \"It treats adherence to convention as sufficient to preserve the original information.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I focused on the explicit contrast between easier following and the possible loss of distinctive signals, especially the uniform cant and default pell-stone placement.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15870,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 343,
+    "reasoning_output_tokens": 78
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9907
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/28",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "b1fd10859310e77e4ed056f9b3784701ac9173266b48cf950320edbf6fc556c5",
+  "ts": "2026-09-27T17:00:10.747Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"absolute\",\n        \"hedged\",\n        \"grammatical-fit\",\n        \"like-the-others\",\n        \"textbook-voice\"\n      ],\n      \"p\": 10,\n      \"note\": \"Assumes a universal standard for readability, ignoring the contrast described.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"surprising\"\n      ],\n      \"p\": 25,\n      \"note\": \"Suggests a behavioral explanation for the contrast but does not address the *signal* nature of concord.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"absolute\",\n        \"off-target\",\n        \"odd-one-out\"\n      ],\n      \"p\": 5,\n      \"note\": \"Introduces an unrelated concept (junctions) instead of analyzing 'concord as a signal.'\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"surprising\",\n        \"general-knowledge\"\n      ],\n      \"p\": 60,\n      \"note\": \"Directly interprets the contrast as a *context-dependent* signal, aligning with the question's phrasing and the idea of 'not uniform.'\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that explain the contrast as a *context-dependent* signal rather than a universal rule or unrelated detail, while favoring nuanced, detailed interpretations that fit the question's phrasing.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 870,
+    "total_tokens": 1231,
+    "completion_tokens": 361,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4174
+}

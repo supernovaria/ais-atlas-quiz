@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/28",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c786fc5f2a0cd41e22ae20418188306c4133c8673c01a8900b4909d87b55ea03",
+  "ts": "2026-09-27T17:00:52.233Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"Assumes a contrast between locals and strangers based on expectations, but does not address concord's role beyond that.\"\n    },\n    \"C\": {\n      \"codes\": [\"specific\", \"absolute\", \"off-target\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Introduces new terms ('guild-built cairns', 'junction') without grounding in the question.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 65,\n      \"note\": \"Explains discord as context-dependent, aligning with 'concord' as a relative, not absolute, measure.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Selected the option that best frames concord as a context-dependent measure, avoiding absolutes and aligning with nuanced, test-like reasoning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 805,
+    "total_tokens": 1096,
+    "completion_tokens": 291,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3337
+}

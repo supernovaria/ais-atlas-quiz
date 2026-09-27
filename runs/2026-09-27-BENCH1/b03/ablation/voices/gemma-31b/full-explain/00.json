@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/00",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "0c67baf6f2cb9b51dba45a65a588c80916b1088da5b179d9ccd5620e3c5b0520",
+  "ts": "2026-09-27T17:17:52.299Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\"],\n      \"p\": 85,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"denies-question\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Selected the most detailed and nuanced option that assigns distinct, complementary meanings to the two unfamiliar variables.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 884,
+    "candidatesTokenCount": 204,
+    "totalTokenCount": 1784,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 884
+      }
+    ],
+    "thoughtsTokenCount": 696,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 75584
+}

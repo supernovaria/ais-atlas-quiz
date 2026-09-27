@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/23",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "62e236b63acabf9366476c52188f989229862c88b73d45805d43e9eb32a4fe88",
+  "ts": "2026-09-27T17:18:56.884Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"off-target\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Introduces irrelevant factors like 'warmer' and 'draughty galleries' not mentioned in the question.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"like-the-others\", \"odd-one-out\"],\n      \"p\": 25,\n      \"note\": \"Uses question terms ('Orrin pattern', 'Tasker pattern') but introduces speculative conditions ('colder', 'draughty') not in the question.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"middle-ground\", \"textbook-voice\", \"no-tell\"],\n      \"p\": 30,\n      \"note\": \"Directly compares the two findings as scales of study, using logical phrasing that aligns with the question’s focus on differences in approach.\"\n    },\n    \"D\": {\n      \"codes\": [\"general-knowledge\", \"absolute\", \"off-target\", \"surprising\"],\n      \"p\": 40,\n      \"note\": \"Attempts to explain *why* pell falls but misinterprets the question’s focus on distinguishing findings, not causality.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question asks for a distinction between two findings about lattice behavior over time and scale, so I prioritized options that compare the findings logically (like C) rather than introducing speculative conditions or off-topic explanations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 860,
+    "total_tokens": 1193,
+    "completion_tokens": 333,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3513
+}

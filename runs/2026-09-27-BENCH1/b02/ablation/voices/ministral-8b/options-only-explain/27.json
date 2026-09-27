@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/27",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "002d11358889f545f62bb7c8358a86f9d1930c6271c8d00b75654effd81088de",
+  "ts": "2026-09-27T17:02:45.956Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"grammatical-fit\", \"most-detailed\"],\n      \"p\": 20,\n      \"note\": \"Relies heavily on exact phrasing from the question but overstates the distinction as absolute and ignores nuance.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"opposites\", \"nuanced-turn\", \"like-the-others\"],\n      \"p\": 25,\n      \"note\": \"Attempts to correct the population reversal but still leans on question phrasing and feels like a rephrasing of A.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"hedged\", \"shortest\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Directly contradicts the premise of the question by denying any objection exists.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"general-knowledge\", \"grammatical-fit\", \"surprising\"],\n      \"p\": 45,\n      \"note\": \"Provides a clear distinction between the two effects with concrete differences in behavior and context.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized the option that provided a clear, detailed, and nuanced distinction between the two effects using general knowledge of how such psychological phenomena might differ.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 811,
+    "total_tokens": 1121,
+    "completion_tokens": 310,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2717
+}

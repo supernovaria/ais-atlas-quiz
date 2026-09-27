@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/02",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1b1dc8b5f4a7b4f210a6fdec6df864ff4b0b8d6705ed08a670c886d98411fc3f",
+  "ts": "2026-09-27T16:58:34.891Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"general-knowledge\", \"surprising\"],\n      \"p\": 30,\n      \"note\": \"Compares 'lean' and 'cant' as scaled versions, which feels like a plausible interpretation.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"implausible\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Assumes intentionality is impossible without evidence, which feels dismissive of context.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"textbook-voice\", \"echoes-stem\", \"position\"],\n      \"p\": 40,\n      \"note\": \"Contradicts B directly and feels like a classic 'one feature is accidental' answer.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question implies a debate over intentionality, and **D** provides a clear, opposing stance with plausible reasoning about frost-heave artifacts, making it the most likely textbook-style correct answer.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 801,
+    "total_tokens": 1096,
+    "completion_tokens": 295,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3215
+}

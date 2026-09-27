@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/06",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "8e4b1406e3be20c51b436efcef0fbf23a0707732c01bc73cb0e57c4e6fec5904",
+  "ts": "2026-09-27T17:15:33.578Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"like-the-others\", \"echoes-stem\", \"position\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"opposites\", \"general-knowledge\"],\n      \"p\": 45,\n      \"note\": \"Distinguishes patterns explicitly and aligns with a clear, structured explanation.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"off-target\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"Introduces unrelated physical mechanisms, diverging from the question's focus.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The best option is the one that clearly differentiates the two patterns as distinct regularities, supported by detailed wording and textbook-like clarity.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1086,
+    "completion_tokens": 255,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3530
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/00",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "988316bdeef54f25a802fd3708f3764a990fc0ae36f98126b7c21ee961561a9d",
+  "ts": "2026-09-27T17:15:04.724Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"longest\", \"most-detailed\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Uses the question’s terms (*tharl*, *wifnet*, *chaining*, *frame*) and compares two lattices with concrete differences, making it detailed and specific.\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"absolute\", \"off-target\", \"odd-one-out\", \"surprising\"],\n      \"p\": 10,\n      \"note\": \"Introduces a statistical claim (*measurement error*) that feels forced and contradicts the given structural descriptions.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"off-target\", \"grammatical-fit\", \"like-the-others\"],\n      \"p\": 25,\n      \"note\": \"Misinterprets *pell* as a total-count metric rather than a chain-length metric, ignoring the question’s focus on structural differences.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"middle-ground\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Relates *cant* to *pell* and *frame independence* in a way that feels like a textbook’s core insight, avoiding absolute claims.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that echoed the question’s terminology, avoided absolute claims, and offered a nuanced comparison of *cant* and *pell* as structural properties.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 837,
+    "total_tokens": 1204,
+    "completion_tokens": 367,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2511
+}

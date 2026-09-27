@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/11",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "afa1633b1891882d70cb59af483511a7e7a3a6dba96cd7f45542bbcec4a9a6af",
+  "ts": "2026-09-27T17:19:18.298Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"absolute\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"textbook-voice\", \"odd-one-out\", \"off-target\"],\n      \"p\": 15,\n      \"note\": \"Explicitly ties 'break near fastening' to *pils*e without nuance, contradicting the question’s phrasing about *tamber* being a gradual change.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"most-detailed\", \"grammatical-fit\", \"textbook-voice\"],\n      \"p\": 55,\n      \"note\": \"Aligns with the question’s phrasing about 'gradual material change' (tamber) and claims it’s the *more common* cause, matching the structure of the question.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"too-obvious\", \"like-the-others\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"States *pils*e is 'dominant' but lacks the diagnostic criterion’s specificity, appearing simplistic.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question emphasizes a *diagnostic criterion* for a break near a fastening and asks whether that cause is also the *more common* one overall; **C** is the only option that directly links 'break near fastening' to *tamber* (a gradual change) and claims it’s the more common cause, matching both parts of the question.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 858,
+    "total_tokens": 1239,
+    "completion_tokens": 381,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 6895
+}

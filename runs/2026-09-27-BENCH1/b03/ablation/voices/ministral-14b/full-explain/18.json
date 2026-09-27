@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/18",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "05499a74b397d91834a7288bdcc722fc94669c43121c19318513ceffc974c26e",
+  "ts": "2026-09-27T17:17:05.027Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"absolute\", \"denies-question\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"Ignores the explicit rule about the longest chain exceeding twice the cant and instead focuses on mean.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"nuanced-turn\", \"general-knowledge\", \"position\"],\n      \"p\": 65,\n      \"note\": \"Aligns with the idea that Varrenby’s rule focuses on the longest chain, while current practice uses Emmerick’s mean.\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Reverses the expected relationship between Varrenby’s and current practice.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"off-target\", \"like-the-others\"],\n      \"p\": 15,\n      \"note\": \"Overly simplistic and ignores the nuance of current practice.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The longest chain (9) exceeds twice the cant (8), matching Varrenby’s original rule, while the mean of the three longest chains (5.3) does not, aligning with current practice.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 833,
+    "total_tokens": 1151,
+    "completion_tokens": 318,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4484
+}

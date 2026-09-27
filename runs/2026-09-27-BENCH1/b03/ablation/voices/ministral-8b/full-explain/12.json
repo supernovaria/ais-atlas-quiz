@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/12",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "056f5a47f3fe1febe38339a5d267fd1e3d402090675e72bffdb35867cb9385c6",
+  "ts": "2026-09-27T17:15:54.541Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"opposites\", \"absolute\", \"echoes-stem\", \"most-detailed\", \"position\"],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"off-target\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"B shifts focus to silt film, which is unrelated to the question’s direct comparison of height and flood survival.\"\n    },\n    \"C\": {\n      \"codes\": [\"like-the-others\", \"echoes-stem\", \"nuanced-turn\", \"absolute\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"too-obvious\", \"grammatical-fit\", \"position\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question’s wording implies a contradiction to the colleague’s claim, and option A directly opposes it with strong language ('lost most often'), making it the most plausible objection.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 823,
+    "total_tokens": 1080,
+    "completion_tokens": 257,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3782
+}

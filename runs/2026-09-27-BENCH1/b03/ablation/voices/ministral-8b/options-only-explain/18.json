@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/18",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0ea11e717991bb45499cd8dad2523ea1a2e03da82cb00699221b9c0ef0f8ca51",
+  "ts": "2026-09-27T17:16:19.829Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"hedged\", \"grammatical-fit\", \"general-knowledge\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"textbook-voice\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 50,\n      \"note\": \"This option provides a nuanced comparison of past and current rules, aligning closely with the question’s structure.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"opposites\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"off-target\", \"general-knowledge\", \"surprising\"],\n      \"p\": 20,\n      \"note\": \"Incorrectly conflates unrelated data (9 vs. 4) and ignores the question’s context.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The correct answer must align with the question’s focus on *both* rules (Varrenby’s original and current practice) and distinguish between them, favoring the option that provides a clear, detailed comparison.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 791,
+    "total_tokens": 1079,
+    "completion_tokens": 288,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2387
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/21",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "d9b8cd1a95f030855a6c8673488893cf51c659b6304f7f9d27f4ecb7307283ae",
+  "ts": "2026-09-27T17:20:49.382Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"absolute\",\n        \"longest\",\n        \"textbook-voice\",\n        \"opposites\"\n      ],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"most-detailed\",\n        \"middle-ground\",\n        \"echoes-stem\",\n        \"hedged\",\n        \"general-knowledge\"\n      ],\n      \"p\": 35,\n      \"note\": \"Mentions spurs, underestimation context, and relative comparison explicitly.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"odd-one-out\",\n        \"off-target\",\n        \"surprising\",\n        \"absolute\"\n      ],\n      \"p\": 5,\n      \"note\": \"Contradicts the idea of 'underestimates' by claiming longer chains, which seems counterintuitive given the stem.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"like-the-others\",\n        \"textbook-voice\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 55,\n      \"p\": 55,\n      \"note\": \"Directly claims the tessel trace is not a shortcut, which aligns with the stem's implied critique.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that directly addressed the question’s implied critique of the tessel trace as a shortcut and avoided contradictions or implausibilities.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 796,
+    "total_tokens": 1140,
+    "completion_tokens": 344,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 14595
+}

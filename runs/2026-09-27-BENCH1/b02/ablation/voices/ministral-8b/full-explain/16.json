@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/16",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e233ee4bef80a62a4b9da01faf53572fbbfa84ece9c7eae27ba20928ba0dbcfb",
+  "ts": "2026-09-27T16:59:26.101Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"nuanced-turn\",\n        \"most-detailed\",\n        \"hedged\",\n        \"general-knowledge\"\n      ],\n      \"p\": 20,\n      \"note\": \"Introduces a new concept (Brannagh's objection) without direct evidence from the question.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"absolute\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 15,\n      \"note\": \"Overstates the pell stone’s role by claiming it carries *both* registers without explanation.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"middle-ground\",\n        \"general-knowledge\"\n      ],\n      \"p\": 50,\n      \"note\": \"Directly addresses the question’s mechanics (courses rebuilt vs. stone turned) without overreach.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"hedged\",\n        \"surprising\",\n        \"opposites\",\n        \"general-knowledge\"\n      ],\n      \"p\": 15,\n      \"note\": \"Equates aging to intentional changes, ignoring the question’s distinction between time and action.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized options that explicitly linked the *two* registers (lisk/dorran) to the *two* actions (stone turned/courses rebuilt) while avoiding absolute claims or introducing unrelated concepts.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 836,
+    "total_tokens": 1184,
+    "completion_tokens": 348,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4306
+}

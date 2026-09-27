@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/04",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "587395dc4eed9a9d62c6af7687ffe2181ba0bc30e82ff1cc15d16985283efc56",
+  "ts": "2026-09-27T17:10:48.223Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"absolute\",\n        \"textbook-voice\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"textbook-voice\",\n        \"surprising\"\n      ],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"like-the-others\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"too-obvious\",\n        \"opposites\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I identified B as the intended answer because it introduces specific terminology ('hob') and a counterintuitive rule, which is typical of textbook questions designed to correct a character's naive assumption (Option D).\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 867,
+    "candidatesTokenCount": 260,
+    "totalTokenCount": 1847,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 867
+      }
+    ],
+    "thoughtsTokenCount": 720,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 80799
+}

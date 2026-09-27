@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/08",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "900f6e6d636ab42ca3ccd09cbc3e6f0c9c6058c84807cafeb3f09b0fbae9d845",
+  "ts": "2026-09-27T17:16:19.259Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"denies-question\", \"off-target\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Introduces uncertainty and avoids classification, which seems evasive given the question’s focus on distinguishing types.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 35,\n      \"note\": \"Directly ties classification to the question’s criteria of 'ends touching' and avoids vague terms like 'tautness'.\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"too-obvious\", \"absolute\", \"like-the-others\"],\n      \"p\": 15,\n      \"note\": \"Overly simplistic; assumes 'short' and 'near other threads' are definitive without addressing tautness or thickness.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"absolute\", \"textbook-voice\", \"opposites\"],\n      \"p\": 45,\n      \"note\": \"Contradicts B by asserting 'thick, taut' as definitive, but aligns with a 'rule of thumb'—appears to be a textbook-like rule.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that directly referenced the question’s criteria (ends touching) and avoided hedging or contradictions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 781,
+    "total_tokens": 1103,
+    "completion_tokens": 322,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4078
+}

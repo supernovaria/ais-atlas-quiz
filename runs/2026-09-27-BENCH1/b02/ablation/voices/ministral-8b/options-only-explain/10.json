@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/10",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "3b46a4c7975729b97c8db4f174a38ff56194cfd96ff2b13ff681e81be3e19a3f",
+  "ts": "2026-09-27T16:59:03.968Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"like-the-others\", \"grammatical-fit\", \"position\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"odd-one-out\", \"absolute\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"off-target\", \"too-obvious\", \"position\", \"other\"],\n      \"note\": \"Overgeneralizes 'misroute' to 'misled by lean' without distinguishing cause.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 0\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that introduced nuance or middle-ground reasoning, rejecting absolute or off-target claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 771,
+    "total_tokens": 1033,
+    "completion_tokens": 262,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2107
+}

@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/14",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e4d9f8a89a5447de120092aa03d46992a0d38afce579f689c485928feb34b29e",
+  "ts": "2026-09-27T16:59:36.941Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"surprising\", \"denies-question\", \"echoes-stem\"],\n      \"p\": 10,\n      \"note\": \"Implies the pell stone's upslope placement invalidates its meaning entirely, which contradicts the hiker's experience.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"denies-question\", \"absolute\", \"like-the-others\"],\n      \"p\": 20,\n      \"note\": \"Assumes restoration *always* preserves intent and readability, ignoring potential loss of original nuance.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 55,\n      \"note\": \"Balances readability gain with loss of information (hob/junction cues), directly addressing the question's two registers.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"off-target\", \"position\"],\n      \"p\": 15,\n      \"note\": \"Repeats the question's premise about following convention without addressing the trade-off implied by the hiker's observation.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question highlights a *trade-off* (readability vs. informativeness) and uses terms like 'registers of meaning' and 'default' to signal a nuanced answer, not a blanket approval of restoration.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 863,
+    "total_tokens": 1190,
+    "completion_tokens": 327,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5539
+}

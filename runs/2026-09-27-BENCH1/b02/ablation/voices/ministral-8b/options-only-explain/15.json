@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/15",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "be4364bf39043da5af1e5f2a1637a04b3fa29319cc6f32909561c8c345d6e4ba",
+  "ts": "2026-09-27T17:01:37.367Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"echoes-stem\", \"middle-ground\", \"absolute\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Assumes restoration was flawless and aligns too closely with the question's implied success, ignoring potential issues.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 25,\n      \"note\": \"Balanced assessment but leans toward a positive outcome without addressing any trade-offs or negatives.\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"nuanced-turn\", \"surprising\", \"grammatical-fit\", \"other\"],\n      \"note\": \"Introduces a clear trade-off (readability vs. information) and uses a specific term ('hob') to flag issues, making it distinct.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"absolute\", \"odd-one-out\", \"implausible\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Focuses on a single, unlikely scenario without broader context, making it seem off-target.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized options that introduced nuanced trade-offs or contradictions to the question's implied success, particularly those that highlighted unintended consequences or specific technical issues.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 794,
+    "total_tokens": 1114,
+    "completion_tokens": 320,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2648
+}

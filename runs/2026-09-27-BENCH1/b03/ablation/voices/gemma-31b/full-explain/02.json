@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/02",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "4a59668e936e61ec46aea4696d0580d9a8b9d5ecfe8b6e5d2e5d42dc38957996",
+  "ts": "2026-09-27T17:21:15.632Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"absolute\", \"off-target\"],\n      \"p\": 2,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"implausible\", \"off-target\"],\n      \"p\": 2,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"off-target\"],\n      \"p\": 1,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"textbook-voice\", \"nuanced-turn\", \"echoes-stem\"],\n      \"p\": 95,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Selected the option with the most sophisticated academic phrasing and conceptual depth, which typically identifies the correct answer in textbook-style questions.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 926,
+    "candidatesTokenCount": 226,
+    "totalTokenCount": 1929,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 926
+      }
+    ],
+    "thoughtsTokenCount": 777,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 56374
+}

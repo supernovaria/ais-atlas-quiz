@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/12",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "45b5abd1000e00984f4d21a3b7eef4dd9e6f8eb31915d53589892f971bc15901",
+  "ts": "2026-09-27T17:18:59.556Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"opposites\",\"surprising\",\"hedged\",\"position\"],\"p\":35,\"note\":\"\"},\"B\":{\"codes\":[\"most-detailed\",\"off-target\",\"position\"],\"p\":20,\"note\":\"\"},\"C\":{\"codes\":[\"nuanced-turn\",\"position\"],\"p\":20,\"note\":\"\"},\"D\":{\"codes\":[\"too-obvious\",\"denies-question\",\"absolute\",\"position\"],\"p\":25,\"note\":\"\"}},\"pick\":\"A\",\"strategy\":\"I went mainly on the direct reversal in A, the unsupported specificity of B and C, and D's overly obvious certainty.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15794,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 302,
+    "reasoning_output_tokens": 169
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9782
+}

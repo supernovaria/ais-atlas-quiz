@@ -1,0 +1,6 @@
+{
+  "id": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral"
+}

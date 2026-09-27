@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/02",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "7e47fce7ec999d79c728adf1c203a303929002fc7091c289a1d5b1de09bb3354",
+  "ts": "2026-09-27T17:15:13.153Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"absolute\", \"grammatical-fit\", \"general-knowledge\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"textbook-voice\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"surprising\", \"off-target\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that introduced nuance, avoided absolutes, and addressed the core tension in the question about classification conventions rather than just resolving or rejecting the disagreement outright.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 813,
+    "total_tokens": 1070,
+    "completion_tokens": 257,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3425
+}

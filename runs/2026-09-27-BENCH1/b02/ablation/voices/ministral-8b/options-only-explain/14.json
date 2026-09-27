@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/14",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0e67989dd95f39c9fecc3f516de593587b5f5a4dda3cd62ce250027fba57c292",
+  "ts": "2026-09-27T16:59:20.391Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"hedged\",\n        \"grammatical-fit\",\n        \"opposites\",\n        \"absolute\",\n        \"general-knowledge\"\n      ],\n      \"p\": 20,\n      \"note\": \"The option assumes a rigid causality between placement and readability, ignoring potential alternative interpretations of the restoration's intent.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"middle-ground\",\n        \"echoes-stem\",\n        \"textbook-voice\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 35,\n      \"note\": \"Balances positive and negative outcomes of the restoration while aligning with the question’s framing of success.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"odd-one-out\",\n        \"grammatical-fit\",\n        \"general-knowledge\",\n        \"surprising\"\n      ],\n      \"p\": 25,\n      \"note\": \"Highlights a trade-off (readability vs. information) but uses more technical phrasing than the others.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"denies-question\",\n        \"too-obvious\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 20,\n      \"note\": \"Assumes the standard convention inherently preserves information, which may overlook unintended consequences.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Looked for options that balanced positive outcomes with nuanced trade-offs while avoiding absolute claims or contradictions, aligning with typical textbook-style reasoning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 794,
+    "total_tokens": 1153,
+    "completion_tokens": 359,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3474
+}

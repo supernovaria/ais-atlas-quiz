@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/09",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "5ce3635b7280e66df4edf1b1fd57ad8d41bff2ca47f8571ed3894b6d08640576",
+  "ts": "2026-09-27T17:01:15.294Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"most-detailed\",\n        \"textbook-voice\",\n        \"general-knowledge\"\n      ],\n      \"p\": 15,\n      \"note\": \"Assumes both cases are directly comparable despite different phenomena.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"absolute\",\n        \"odd-one-out\"\n      ],\n      \"p\": 35,\n      \"note\": \"Uses the 'Tessaly effect' and 'Orne effect' as if they were established, but these are likely placeholders or fictional terms for this question.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"absolute\",\n        \"general-knowledge\",\n        \"off-target\"\n      ],\n      \"p\": 10,\n      \"note\": \"Incorrectly labels the local's choice as 'Orne effect' and ignores the misinterpretation aspect.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"general-knowledge\",\n        \"too-obvious\",\n        \"hedged\",\n        \"odd-one-out\"\n      ],\n      \"p\": 30,\n      \"note\": \"Overly simplistic; assumes self-correction is always valid without acknowledging the possibility of persistent error.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Identified the most plausible pairing of distinct phenomena from the options, assuming the terms 'Tessaly effect' and 'Orne effect' are meant to differentiate two types of misinterpretation—one based on trust in a stable feature (local) and the other on misreading a misleading feature (visitor).\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 786,
+    "total_tokens": 1161,
+    "completion_tokens": 375,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3480
+}

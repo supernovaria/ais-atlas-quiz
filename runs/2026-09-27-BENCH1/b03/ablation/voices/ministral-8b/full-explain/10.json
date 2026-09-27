@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/10",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "826c0e5f46afd86a5531bd6e28cdb4df791d4018673e025cffe28c08715adadd",
+  "ts": "2026-09-27T17:15:46.701Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"absolute\", \"grammatical-fit\", \"textbook-voice\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Assumes tamber is the sole cause for breaks near fastenings and is also the most common failure mode, which feels overgeneralized.\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"Directly contradicts option A by assigning pilse as the cause for breaks near fastenings, but lacks broader context.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"grammatical-fit\", \"general-knowledge\", \"opposites\"],\n      \"p\": 30,\n      \"note\": \"Balances tamber and pilse, acknowledging that pilse is the more common cause overall, which aligns with a nuanced diagnostic perspective.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"too-obvious\", \"grammatical-fit\", \"general-knowledge\", \"off-target\"],\n      \"p\": 20,\n      \"note\": \"Begins with a common misconception (beginners attribute breaks to pilse) but fails to address the question’s specifics about fastenings.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question emphasizes a break near a fastening, and the most plausible explanation is that **pilse** (wear from crawling) occurs at fastenings, but the broader diagnostic criterion and common failure mode favor **tamber** as the general cause, making option C the nuanced and likely intended answer.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 858,
+    "total_tokens": 1258,
+    "completion_tokens": 400,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4453
+}

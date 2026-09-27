@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/08",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f00e7c45a96d5432086ca52ece15457e4b467e1566a4db4541d19b5095e703d4",
+  "ts": "2026-09-27T16:58:57.201Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"like-the-others\",\n        \"echoes-stem\",\n        \"most-detailed\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"absolute\",\n        \"grammatical-fit\",\n        \"opposites\",\n        \"general-knowledge\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"odd-one-out\",\n        \"surprising\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"middle-ground\",\n        \"hedged\",\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 35,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I prioritized options that explicitly differentiate between the two characters (local vs. visitor) and their respective misinterpretations of the cairn features, as the question seems to contrast these two scenarios.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 786,
+    "total_tokens": 1073,
+    "completion_tokens": 287,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3251
+}

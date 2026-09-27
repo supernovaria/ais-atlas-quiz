@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/22",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "2ebd6199b1b7cdf1451a1382f091c3a9fbb9c5185d7bf6ee12f76a45c5219388",
+  "ts": "2026-09-27T17:00:19.361Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"echoes-stem\"],\n      \"p\": 1,\n      \"note\": \"Claims locals *cannot perceive cant at all*—an extreme, unqualified denial of the question's premise.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"general-knowledge\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"Assumes expertise always reduces error universally, ignoring context like local terrain adaptation.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 85,\n      \"note\": \"Explains *how* locals vs. strangers differ in perception (whole-cairn vs. course-by-course), matching the question’s contrast.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"off-target\", \"surprising\", \"odd-one-out\"],\n      \"p\": 9,\n      \"note\": \"Focuses on *general* misrouting rates, not the *specific* tilt effect asked about.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question hinges on *how* locals and strangers interpret tilt—C is the only option that explains a mechanism (whole-cairn vs. course-by-course comparison) rather than making a blanket claim.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 810,
+    "total_tokens": 1133,
+    "completion_tokens": 323,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 6038
+}

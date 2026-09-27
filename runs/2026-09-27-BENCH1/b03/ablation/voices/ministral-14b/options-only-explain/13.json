@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/13",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "eb97d0c9303a6b36f004bf4861cc6dcd8e4c50a807db249f57c53be166060f54",
+  "ts": "2026-09-27T17:19:35.085Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"denies-question\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Rejects the premise that height matters ('irrelevant') and frames it as a clear-cut objection.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"middle-ground\", \"position\"],\n      \"p\": 25,\n      \"note\": \"Introduces a new factor ('cant') while still denying height’s role, but in a nuanced way.\"\n    },\n    \"C\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"grammatical-fit\", \"position\"],\n      \"p\": 35,\n      \"note\": \"Affirms height’s primacy in a straightforward, lesson-like manner, matching typical textbook reasoning.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"opposites\", \"absolute\", \"general-knowledge\", \"position\"],\n      \"p\": 30,\n      \"note\": \"Contradicts C directly with an unexpected claim about height *reducing* survival, leveraging plausible real-world logic.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Chose the option that aligns with standard cause-effect reasoning (height → survival) and textbook-style clarity, while avoiding the implausible or overly qualified alternatives.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 787,
+    "total_tokens": 1102,
+    "completion_tokens": 315,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4195
+}

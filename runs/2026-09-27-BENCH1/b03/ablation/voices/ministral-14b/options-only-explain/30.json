@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/30",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "de4688ba1ac2177d03f490387f8811ff8e4f62675217f7592c4b493fcf6e6d60",
+  "ts": "2026-09-27T17:18:16.381Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"absolute\", \"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"opposites\", \"general-knowledge\", \"surprising\"],\n      \"p\": 35,\n      \"note\": \"Introduces new causes (flood, rockfall) not mentioned in stem but plausible from context.\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"odd-one-out\", \"no-tell\"],\n      \"p\": 5,\n      \"note\": \"Introduces unrelated term *wennet failure* and shifts focus entirely.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"longest\", \"textbook-voice\", \"general-knowledge\", \"most-detailed\"],\n      \"p\": 50,\n      \"note\": \"Balances gradual vs sudden threats with a broad claim, fits data interpretation best.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized the option that balanced opposing claims (gradual vs sudden threats) and reused the question’s framing of silt film as a gradual threat.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 803,
+    "total_tokens": 1082,
+    "completion_tokens": 279,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3185
+}

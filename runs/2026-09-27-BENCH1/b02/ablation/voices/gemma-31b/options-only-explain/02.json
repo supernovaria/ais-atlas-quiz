@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/02",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "1b1dc8b5f4a7b4f210a6fdec6df864ff4b0b8d6705ed08a670c886d98411fc3f",
+  "ts": "2026-09-27T17:07:56.177Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\", \"middle-ground\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"absolute\", \"opposites\"],\n      \"p\": 65,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized the most technically specific answer, as the mention of 'frost-heave artifact' suggests a specialized piece of textbook knowledge that is likely the point of the question.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 825,
+    "candidatesTokenCount": 217,
+    "totalTokenCount": 3426,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 825
+      }
+    ],
+    "thoughtsTokenCount": 2384,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 108694
+}

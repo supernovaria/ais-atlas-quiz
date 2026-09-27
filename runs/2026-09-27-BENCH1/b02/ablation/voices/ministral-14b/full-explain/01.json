@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/01",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e990fbcfebe4f2627cd6fe9516ddd3610bce215d4aa5fc4bf1a4bcefdb78e3f2",
+  "ts": "2026-09-27T17:01:07.753Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"off-target\", \"echoes-stem\"],\n      \"p\": 0,\n      \"note\": \"Claims the pell stone carries both registers and dismisses the movement as irrelevant, ignoring the contrast between the two cairns.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"textbook-voice\", \"grammatical-fit\", \"position\"],\n      \"p\": 20,\n      \"note\": \"Introduces an external 'builder' updating the pell stone, which feels speculative and doesn't directly address the two registers' contrast.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"surprising\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Suggests the pell stone's movement is incidental, but this doesn't explain why the question highlights the contrast between the two cairns.\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"textbook-voice\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 70,\n      \"note\": \"Directly addresses the contrast: fixed courses vs. updatable pell stone, matching the question’s emphasis on two registers of meaning.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question stresses two *registers of meaning*—one unchanged (courses) and one altered (pell stone)—and D is the only option that explicitly contrasts fixed vs. updatable records, using the question’s own terms.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 857,
+    "total_tokens": 1214,
+    "completion_tokens": 357,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5387
+}

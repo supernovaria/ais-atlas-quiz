@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/06",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "137476e252eb0e8da8490b3da147e13bf0364de3147b6ee61fbc663741faade2",
+  "ts": "2026-09-27T17:29:57.380Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"opposites\"],\n      \"p\": 65,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"off-target\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Identified that the question distinguishes between cross-sectional and longitudinal observations, and selected the option that describes this distinction in a formal, textbook-like manner while contrasting with its opposite.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 934,
+    "candidatesTokenCount": 225,
+    "totalTokenCount": 2319,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 934
+      }
+    ],
+    "thoughtsTokenCount": 1160,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 93346
+}

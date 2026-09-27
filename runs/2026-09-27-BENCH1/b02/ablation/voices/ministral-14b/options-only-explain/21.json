@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/21",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "82efea680177e862904f3d607b2e02e6b471c004268a5cbd545a894fab41e8ab",
+  "ts": "2026-09-27T17:02:53.009Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"absolute\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"Uses terms *lean* and *cant* but pairs them with causes that contradict typical definitions.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"denies-question\", \"middle-ground\", \"hedged\"],\n      \"p\": 10,\n      \"note\": \"Assumes all offsets are deliberate, which seems to dismiss the question’s implication of a meaningful distinction.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"grammatical-fit\", \"echoes-stem\"],\n      \"p\": 40,\n      \"note\": \"Swaps *lean* and *cant* definitions logically, matching their typical surveying usage (lean = vertical offset, cant = horizontal offset).\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"general-knowledge\", \"surprising\"],\n      \"p\": 30,\n      \"note\": \"Inverts the causes of *lean* and *cant* from common understanding, attributing frost heave to *lean* (usually horizontal) and design to *cant* (usually vertical).\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question implies *lean* and *cant* are distinct but related terms in surveying, and option C is the only one that aligns with their conventional definitions while offering a meaningful distinction.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 792,
+    "total_tokens": 1143,
+    "completion_tokens": 351,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4372
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/05",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f83c2954dfaf73d06acd2da7e5954c2c2e04841deebeff00f52d790abfa43216",
+  "ts": "2026-09-27T17:01:29.762Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"like-the-others\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\", \"most-detailed\"],\n      \"p\": 50,\n      \"note\": \"Explicitly defines a cairn feature ('hob') and ties it to a clear navigational implication.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"grammatical-fit\", \"general-knowledge\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"Uses 'reverses' as an absolute and conflicts with B's nuanced interpretation.\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"general-knowledge\", \"odd-one-out\", \"surprising\"],\n      \"p\": 25,\n      \"note\": \"Introduces an unfamiliar term ('concord score') as a definitive metric, distinct from others.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that (1) introduced a specific, navigational concept ('hob') and (2) avoided absolutes or unfamiliar jargon.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 797,
+    "total_tokens": 1093,
+    "completion_tokens": 296,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3588
+}

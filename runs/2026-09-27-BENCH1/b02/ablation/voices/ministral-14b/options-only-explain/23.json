@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/23",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "5a3043cb77292676d0ccfcc2dee5989f4426c0b27c484aa20acaf6d5b5bdf7e4",
+  "ts": "2026-09-27T17:03:02.834Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"surprising\", \"grammatical-fit\", \"position\"],\n      \"p\": 5,\n      \"note\": \"Overstates the locals' inability to perceive cant at all; ignores the 'pell stone' as a tool.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"grammatical-fit\", \"middle-ground\"],\n      \"p\": 45,\n      \"note\": \"Explains a plausible mechanism for tilt corruption specific to locals, using the question's terms.\"\n    },\n    \"C\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"denies-question\", \"implied-general-rule\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Overgeneralizes 'expertise' without addressing the question's specific context of tilt.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"like-the-others\", \"general-knowledge\", \"position\"],\n      \"p\": 40,\n      \"note\": \"Uses 'often' and 'more' to align with a probabilistic answer, but less detailed than B.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The most plausible answer leveraged the question’s specific terminology ('cant', 'whole-cairn tilt', 'judge by eye') to explain a mechanism, avoiding overgeneralizations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 781,
+    "total_tokens": 1110,
+    "completion_tokens": 329,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3789
+}

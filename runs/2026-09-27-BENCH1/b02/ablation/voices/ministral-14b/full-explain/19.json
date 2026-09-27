@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/19",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "811956e7735ef419c778a1ede916f01d8de0f68c1f6c4fcfbb2689dc5e33d650",
+  "ts": "2026-09-27T17:02:38.560Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"general-knowledge\", \"textbook-voice\"],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\", \"grammatical-fit\", \"position\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"implausible\", \"off-target\", \"no-tell\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"surprising\", \"odd-one-out\", \"opposites\"],\n      \"p\": 40,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The reversed course (west) flanked by agreeing ones (east) suggests a branching route, as A implies, aligning with cairn conventions and the wording's emphasis on 'lone reversed course' as a signal.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 799,
+    "total_tokens": 1037,
+    "completion_tokens": 238,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4070
+}

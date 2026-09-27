@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/08",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "eb7a3bc39834ce35ad325a5b748a0c214991331b1cf1c62a3e3017990200fb7c",
+  "ts": "2026-09-27T17:16:15.180Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"hedged\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"Overly dependent on undefined terms ('length') and contradicts the given details ('thick and taut').\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"absolute\", \"odd-one-out\"],\n      \"p\": 70,\n      \"note\": \"Directly aligns with the question's description of ends touching only other threads, not rock.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"no-tell\", \"opposites\", \"too-obvious\"],\n      \"p\": 5,\n      \"note\": \"Assumes 'short' from no length mention, contradicts 'high above' and 'taut.'\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"absolute\", \"like-the-others\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Relies on 'rule of thumb' and tautness, but ignores the key detail about ends touching threads.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question emphasizes the thread's ends touching only other threads (not rock), and B is the only option that directly mirrors this condition.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 824,
+    "total_tokens": 1139,
+    "completion_tokens": 315,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5272
+}

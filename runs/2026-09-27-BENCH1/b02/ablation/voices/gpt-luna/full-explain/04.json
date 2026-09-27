@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/04",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "587395dc4eed9a9d62c6af7687ffe2181ba0bc30e82ff1cc15d16985283efc56",
+  "ts": "2026-09-27T16:59:44.498Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"textbook-voice\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 82,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"off-target\", \"implausible\"],\n      \"p\": 3,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I went mainly on B's specific textbook-like terminology and explanation, while treating D as the tempting literal reading and the absolute or dismissive alternatives as distractors.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15859,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 442,
+    "reasoning_output_tokens": 212
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 11770
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/05",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f83c2954dfaf73d06acd2da7e5954c2c2e04841deebeff00f52d790abfa43216",
+  "ts": "2026-09-27T17:00:59.532Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"shortest\", \"absolute\", \"echoes-stem\", \"off-target\", \"odd-one-out\"],\n      \"p\": 15,\n      \"note\": \"Uses the question's wording ('poorly built') but ignores the 'coursed' structure entirely.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 40,\n      \"note\": \"Provides a specific interpretation of a reversed course and aligns with cairn signaling conventions.\"\n    },\n    \"C\": {\n      \"codes\": [\"middle-ground\", \"absolute\", \"grammatical-fit\"],\n      \"p\": 25,\n      \"note\": \"Claims a direct reversal but lacks nuance about why or how this is the 'correct reading.'\"\n    },\n    \"D\": {\n      \"codes\": [\"like-the-others\", \"hedged\", \"surprising\", \"absolute\"],\n      \"p\": 20,\n      \"note\": \"Introduces a new concept ('concord score') without prior context, making it less likely as a standalone answer.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that provided a detailed, plausible interpretation of the cairn’s reversed course while avoiding off-topic or absolute claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 797,
+    "total_tokens": 1098,
+    "completion_tokens": 301,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2194
+}

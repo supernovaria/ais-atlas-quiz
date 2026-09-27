@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/03",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "ff6e53a51e0932c00e7eb95a351adc6a23449fa57e3a296462a3560da3550de9",
+  "ts": "2026-09-27T17:17:21.758Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"echoes-stem\", \"absolute\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"nuanced-turn\", \"most-detailed\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"absolute\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"denies-question\", \"opposites\", \"grammatical-fit\", \"too-obvious\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 0,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I prioritized options that introduced nuance (like 'partly a function' or 'it depends') and avoided absolutes, since a scientific or mathematical disagreement typically hinges on methodological or interpretive subtleties rather than outright rejection or naive resolution.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 813,
+    "total_tokens": 1099,
+    "completion_tokens": 286,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2531
+}

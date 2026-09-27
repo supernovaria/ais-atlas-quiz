@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/08",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "94b8d7a80ce1f2b9ea3540dfffc5a349833c4f2624b686d3c65ab3b53d956172",
+  "ts": "2026-09-27T17:27:46.370Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 95,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"off-target\", \"opposites\"],\n      \"p\": 3,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"odd-one-out\"],\n      \"p\": 1,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"off-target\"],\n      \"p\": 1,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Selected the only option that actually provided a 'pair of names' as specifically requested by the prompt.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 875,
+    "candidatesTokenCount": 207,
+    "totalTokenCount": 1697,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 875
+      }
+    ],
+    "thoughtsTokenCount": 615,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 56541
+}

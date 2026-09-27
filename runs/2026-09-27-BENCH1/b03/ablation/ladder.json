@@ -1,0 +1,706 @@
+{
+  "source": "2026-09-27-BENCH1/b03",
+  "seeds": 7,
+  "seed_offset": 0,
+  "preregistered": true,
+  "excluded": [],
+  "rungs": {
+    "full": {
+      "questions": 16,
+      "trials": 48,
+      "hits": 38,
+      "unparsed": 0,
+      "unparsed_excluded": 0,
+      "hit_rate": 0.7916666666666666,
+      "mean_chance": 0.25,
+      "excess_over_chance": 0.5416666666666666,
+      "ci_question_unit": {
+        "n": 16,
+        "mean": 0.7916666666666666,
+        "sd": 0.3415650255319866,
+        "lo": 0.6242998041559932,
+        "hi": 0.9590335291773401
+      }
+    },
+    "options-only": {
+      "questions": 16,
+      "trials": 48,
+      "hits": 28,
+      "unparsed": 0,
+      "unparsed_excluded": 0,
+      "hit_rate": 0.5833333333333334,
+      "mean_chance": 0.25,
+      "excess_over_chance": 0.33333333333333337,
+      "ci_question_unit": {
+        "n": 16,
+        "mean": 0.5833333333333334,
+        "sd": 0.3548604316149181,
+        "lo": 0.4094517218420235,
+        "hi": 0.7572149448246432
+      }
+    }
+  },
+  "per_question": {
+    "b03/sonnet/a01": {
+      "full": "3/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "19/19",
+        "options-only": "14/19"
+      },
+      "key_centrality": -0.004
+    },
+    "b03/sonnet/a02": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "19/19",
+        "options-only": "16/19"
+      },
+      "key_centrality": 0.031
+    },
+    "b03/sonnet/a03": {
+      "full": "3/3",
+      "options-only": "0/3",
+      "panel": {
+        "full": "18/18",
+        "options-only": "10/19"
+      },
+      "key_centrality": -0.063
+    },
+    "b03/sonnet/a04": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "19/19",
+        "options-only": "16/19"
+      },
+      "key_centrality": 0.112
+    },
+    "b03/sonnet/a05": {
+      "full": "2/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "18/19",
+        "options-only": "12/19"
+      },
+      "key_centrality": -0.004
+    },
+    "b03/sonnet/a06": {
+      "full": "0/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "12/19",
+        "options-only": "7/19"
+      },
+      "key_centrality": 0.161
+    },
+    "b03/sonnet/a07": {
+      "full": "3/3",
+      "options-only": "0/3",
+      "panel": {
+        "full": "16/18",
+        "options-only": "4/19"
+      },
+      "key_centrality": -0.107
+    },
+    "b03/sonnet/a08": {
+      "full": "2/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "15/18",
+        "options-only": "11/18"
+      },
+      "key_centrality": -0.003
+    },
+    "b03/sonnet/b01": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "18/18",
+        "options-only": "13/18"
+      },
+      "key_centrality": 0.133
+    },
+    "b03/sonnet/b02": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "14/18",
+        "options-only": "11/18"
+      },
+      "key_centrality": 0.25
+    },
+    "b03/sonnet/b03": {
+      "full": "3/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "16/18",
+        "options-only": "7/18"
+      },
+      "key_centrality": 0.021
+    },
+    "b03/sonnet/b04": {
+      "full": "2/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "11/18",
+        "options-only": "10/18"
+      },
+      "key_centrality": 0.15
+    },
+    "b03/sonnet/b05": {
+      "full": "3/3",
+      "options-only": "3/3",
+      "panel": {
+        "full": "17/18",
+        "options-only": "17/18"
+      },
+      "key_centrality": -0.111
+    },
+    "b03/sonnet/b06": {
+      "full": "2/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "16/18",
+        "options-only": "11/18"
+      },
+      "key_centrality": 0.085
+    },
+    "b03/sonnet/b07": {
+      "full": "0/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "4/18",
+        "options-only": "13/18"
+      },
+      "key_centrality": 0.069
+    },
+    "b03/sonnet/b08": {
+      "full": "3/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "17/17",
+        "options-only": "12/17"
+      },
+      "key_centrality": -0.019
+    }
+  },
+  "voices": {
+    "gemma-31b": {
+      "meta": {
+        "id": "gemma-31b",
+        "provider": "gemini",
+        "model": "gemma-4-31b-it",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 12
+      },
+      "rungs": {
+        "full": {
+          "questions": 5,
+          "trials": 5,
+          "hits": 4,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.55,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.8,
+            "sd": 0.4472135954999579,
+            "lo": 0.4080000000000001,
+            "hi": 1
+          },
+          "coverage": "5/112",
+          "mean_reasoning_tokens": 624
+        },
+        "options-only": {
+          "questions": 7,
+          "trials": 7,
+          "hits": 7,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 1,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.75,
+          "ci_question_unit": {
+            "n": 7,
+            "mean": 1,
+            "sd": 0,
+            "lo": 1,
+            "hi": 1
+          },
+          "coverage": "7/112",
+          "mean_reasoning_tokens": 892
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 5,
+        "full": 0.8,
+        "options_only": 1
+      }
+    },
+    "gpt-luna": {
+      "meta": {
+        "id": "gpt-luna",
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "family": "openai"
+      },
+      "statuses": {
+        "ok": 30
+      },
+      "rungs": {
+        "full": {
+          "questions": 15,
+          "trials": 15,
+          "hits": 13,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8666666666666667,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.6166666666666667,
+          "ci_question_unit": {
+            "n": 15,
+            "mean": 0.8666666666666667,
+            "sd": 0.3518657752744984,
+            "lo": 0.6885980157355035,
+            "hi": 1
+          },
+          "coverage": "15/112",
+          "mean_reasoning_tokens": 2
+        },
+        "options-only": {
+          "questions": 15,
+          "trials": 15,
+          "hits": 10,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6666666666666666,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.41666666666666663,
+          "ci_question_unit": {
+            "n": 15,
+            "mean": 0.6666666666666666,
+            "sd": 0.4879500364742666,
+            "lo": 0.4197298776339715,
+            "hi": 0.9136034556993617
+          },
+          "coverage": "15/112",
+          "mean_reasoning_tokens": 37
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 15,
+        "full": 0.8666666666666667,
+        "options_only": 0.6666666666666666
+      }
+    },
+    "ministral-14b": {
+      "meta": {
+        "id": "ministral-14b",
+        "provider": "mistral",
+        "model": "ministral-14b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 224
+      },
+      "rungs": {
+        "full": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 103,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.9196428571428571,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.6696428571428571,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.9196428571428572,
+            "sd": 0.15622023526023096,
+            "lo": 0.8430949418653441,
+            "hi": 0.9961907724203704
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 69,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6160714285714286,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.3660714285714286,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.6160714285714286,
+            "sd": 0.25404884633969627,
+            "lo": 0.49158749386497747,
+            "hi": 0.7405553632778797
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 16,
+        "full": 0.9196428571428572,
+        "options_only": 0.6160714285714286
+      }
+    },
+    "ministral-8b": {
+      "meta": {
+        "id": "ministral-8b",
+        "provider": "mistral",
+        "model": "ministral-8b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 224
+      },
+      "rungs": {
+        "full": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 91,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.8125,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.5625,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.8125,
+            "sd": 0.25934900185253223,
+            "lo": 0.6854189890922592,
+            "hi": 0.9395810109077408
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 16,
+          "trials": 112,
+          "hits": 70,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.625,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.375,
+          "ci_question_unit": {
+            "n": 16,
+            "mean": 0.6249999999999999,
+            "sd": 0.17975796274454167,
+            "lo": 0.5369185982551745,
+            "hi": 0.7130814017448253
+          },
+          "coverage": "112/112",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 16,
+        "full": 0.8125,
+        "options_only": 0.6249999999999999
+      }
+    }
+  },
+  "families": {
+    "full": {
+      "anthropic": {
+        "voices": [
+          "claude-haiku"
+        ],
+        "questions": 16,
+        "rate": 0.7916666666666666,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.7916666666666666,
+          "sd": 0.3415650255319866,
+          "lo": 0.6242998041559932,
+          "hi": 0.9590335291773401
+        }
+      },
+      "google": {
+        "voices": [
+          "gemma-31b"
+        ],
+        "questions": 5,
+        "rate": 0.8,
+        "ci_question_unit": {
+          "n": 5,
+          "mean": 0.8,
+          "sd": 0.4472135954999579,
+          "lo": 0.4080000000000001,
+          "hi": 1
+        }
+      },
+      "openai": {
+        "voices": [
+          "gpt-luna"
+        ],
+        "questions": 15,
+        "rate": 0.8666666666666667,
+        "ci_question_unit": {
+          "n": 15,
+          "mean": 0.8666666666666667,
+          "sd": 0.3518657752744984,
+          "lo": 0.6885980157355035,
+          "hi": 1
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 16,
+        "rate": 0.8660714285714286,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.8660714285714286,
+          "sd": 0.19144100883547807,
+          "lo": 0.7722653342420444,
+          "hi": 0.9598775229008129
+        }
+      }
+    },
+    "options-only": {
+      "anthropic": {
+        "voices": [
+          "claude-haiku"
+        ],
+        "questions": 16,
+        "rate": 0.5833333333333334,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.5833333333333334,
+          "sd": 0.3548604316149181,
+          "lo": 0.4094517218420235,
+          "hi": 0.7572149448246432
+        }
+      },
+      "google": {
+        "voices": [
+          "gemma-31b"
+        ],
+        "questions": 7,
+        "rate": 1,
+        "ci_question_unit": {
+          "n": 7,
+          "mean": 1,
+          "sd": 0,
+          "lo": 1,
+          "hi": 1
+        }
+      },
+      "openai": {
+        "voices": [
+          "gpt-luna"
+        ],
+        "questions": 15,
+        "rate": 0.6666666666666666,
+        "ci_question_unit": {
+          "n": 15,
+          "mean": 0.6666666666666666,
+          "sd": 0.4879500364742666,
+          "lo": 0.4197298776339715,
+          "hi": 0.9136034556993617
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 16,
+        "rate": 0.6205357142857143,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.6205357142857143,
+          "sd": 0.19116319558675196,
+          "lo": 0.5268657484482059,
+          "hi": 0.7142056801232227
+        }
+      }
+    }
+  },
+  "panel": {
+    "full": {
+      "families": 4,
+      "complete_questions": 5,
+      "family_rates_on_complete": {
+        "anthropic": 0.7333333333333333,
+        "google": 0.8,
+        "openai": 1,
+        "mistral": 0.9571428571428571
+      },
+      "median_family_rate": 0.8785714285714286,
+      "pooled_trials": {
+        "questions": 16,
+        "trials": 292,
+        "hits": 249,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.8527397260273972,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.6027397260273972,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.8521564327485381,
+          "sd": 0.21011701806468214,
+          "lo": 0.7491990938968439,
+          "hi": 0.9551137716002324
+        }
+      },
+      "voices": [
+        "claude-haiku",
+        "gemma-31b",
+        "gpt-luna",
+        "ministral-14b",
+        "ministral-8b"
+      ]
+    },
+    "options-only": {
+      "families": 4,
+      "complete_questions": 7,
+      "family_rates_on_complete": {
+        "anthropic": 0.4761904761904762,
+        "google": 1,
+        "openai": 0.5714285714285714,
+        "mistral": 0.5918367346938774
+      },
+      "median_family_rate": 0.5816326530612244,
+      "pooled_trials": {
+        "questions": 16,
+        "trials": 294,
+        "hits": 184,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.6258503401360545,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.37585034013605445,
+        "ci_question_unit": {
+          "n": 16,
+          "mean": 0.6269027347781216,
+          "sd": 0.19022160554434947,
+          "lo": 0.5336941480613904,
+          "hi": 0.7201113214948529
+        }
+      },
+      "voices": [
+        "claude-haiku",
+        "gemma-31b",
+        "gpt-luna",
+        "ministral-14b",
+        "ministral-8b"
+      ]
+    }
+  },
+  "warnings": [],
+  "explain": {
+    "replies": 169,
+    "unusable": 3,
+    "voices": [
+      "gemma-31b",
+      "gpt-luna",
+      "ministral-14b",
+      "ministral-8b"
+    ],
+    "not_ok": {},
+    "families": [
+      "google",
+      "openai",
+      "mistral"
+    ],
+    "excluded_voices": [],
+    "tags": 2749,
+    "other_share": 0.0007275372862859222,
+    "no_tell_share": 0,
+    "impossible_stem_echo_tags": 181,
+    "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
+  },
+  "by_claim_type": {
+    "full": {
+      "directional": {
+        "trials": 39,
+        "hit_rate": 0.7692307692307693,
+        "floor": 0.6923076923076923,
+        "floor_basis": "max(share, 1 - share) over the directional items asked"
+      },
+      "passage-only": {
+        "trials": 9,
+        "hit_rate": 0.8888888888888888,
+        "floor": 0.4,
+        "floor_basis": "hand-authored fiction, 40%"
+      }
+    },
+    "options-only": {
+      "directional": {
+        "trials": 39,
+        "hit_rate": 0.5384615384615384,
+        "floor": 0.6923076923076923,
+        "floor_basis": "max(share, 1 - share) over the directional items asked"
+      },
+      "passage-only": {
+        "trials": 9,
+        "hit_rate": 0.7777777777777778,
+        "floor": 0.4,
+        "floor_basis": "hand-authored fiction, 40%"
+      }
+    }
+  },
+  "panel_by_claim_type": {
+    "full": {
+      "directional": {
+        "family_rates": {
+          "anthropic": 0.7692307692307693,
+          "google": 0.6666666666666666,
+          "openai": 0.8333333333333334,
+          "mistral": 0.8571428571428572
+        },
+        "median_family_rate": 0.8012820512820513,
+        "floor": 0.6923076923076923
+      },
+      "passage-only": {
+        "family_rates": {
+          "anthropic": 0.8888888888888888,
+          "google": 1,
+          "openai": 1,
+          "mistral": 0.9047619047619048
+        },
+        "median_family_rate": 0.9523809523809523,
+        "floor": 0.4
+      }
+    },
+    "options-only": {
+      "directional": {
+        "family_rates": {
+          "anthropic": 0.5384615384615384,
+          "google": 1,
+          "openai": 0.5833333333333334,
+          "mistral": 0.6153846153846153
+        },
+        "median_family_rate": 0.5993589743589743,
+        "floor": 0.6923076923076923
+      },
+      "passage-only": {
+        "family_rates": {
+          "anthropic": 0.7777777777777777,
+          "google": 1,
+          "openai": 1,
+          "mistral": 0.6428571428571428
+        },
+        "median_family_rate": 0.8888888888888888,
+        "floor": 0.4
+      }
+    }
+  }
+}

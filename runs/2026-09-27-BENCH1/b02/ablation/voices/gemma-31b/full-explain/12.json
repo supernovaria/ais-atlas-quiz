@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/12",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "77fd0f50da6446643ee1c6fd8a4ae60040cdccc91f1ec35863061adc81e58e2d",
+  "ts": "2026-09-27T17:43:10.682Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"surprising\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\"],\n      \"p\": 70,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The presence of a specific named phenomenon ('the Marhaug pattern') and a detailed split-result (strangers vs. locals) strongly suggests a textbook-based correct answer.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 864,
+    "candidatesTokenCount": 231,
+    "totalTokenCount": 1946,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 864
+      }
+    ],
+    "thoughtsTokenCount": 851,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 66520
+}

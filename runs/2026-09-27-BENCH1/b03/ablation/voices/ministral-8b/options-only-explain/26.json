@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/26",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "17820ffaa990c4cda4be9c47f76b40452a3af44be214be95974823dc83436d9e",
+  "ts": "2026-09-27T17:16:51.236Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"shortest\",\n        \"grammatical-fit\",\n        \"general-knowledge\",\n        \"absolute\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"longest\",\n        \"most-detailed\",\n        \"absolute\",\n        \"textbook-voice\"\n      ],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"nuanced-turn\",\n        \"general-knowledge\",\n        \"odd-one-out\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"hedged\",\n        \"middle-ground\",\n        \"off-target\",\n        \"denies-question\",\n        \"position\"\n      ],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized the option that provided the most specific, nuanced explanation and introduced a new term ('tamber') that distinguishes causes by location, which aligns with the question’s implicit need for differentiation.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 780,
+    "total_tokens": 1066,
+    "completion_tokens": 286,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2211
+}

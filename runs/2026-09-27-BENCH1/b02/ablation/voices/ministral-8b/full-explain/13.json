@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/13",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a3dbd8b64d9ea4c7f3f062644fcb5bd8944840ea49748340095ddde0690306e8",
+  "ts": "2026-09-27T17:01:27.756Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"opposites\",\n        \"surprising\",\n        \"echoes-stem\",\n        \"nuanced-turn\",\n        \"most-detailed\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 30,\n      \"note\": \"Directly counters the claim by introducing a distinction between locals and strangers with empirical support.\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"middle-ground\",\n        \"most-detailed\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 55,\n      \"note\": \"Balances the claim with empirical evidence for locals, suggesting a partial objection rather than a full rejection.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"denies-question\",\n        \"off-target\",\n        \"like-the-others\",\n        \"implied-explanation\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 5,\n      \"note\": \"Attempts to dismiss the objection by introducing irrelevant statistical differences rather than addressing the claim directly.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"too-obvious\",\n        \"grammatical-fit\",\n        \"odd-one-out\"\n      ],\n      \"p\": 10,\n      \"note\": \"Rejects the objection outright with a naive, definition-based claim that ignores empirical nuance.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question asks which objection aligns with the framework’s own findings, so I prioritized options that introduced empirical distinctions (locals vs. strangers) and nuanced turns that challenge the claim without outright dismissal.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 843,
+    "total_tokens": 1220,
+    "completion_tokens": 377,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4312
+}

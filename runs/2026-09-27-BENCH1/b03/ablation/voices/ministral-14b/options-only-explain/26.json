@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/26",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "17820ffaa990c4cda4be9c47f76b40452a3af44be214be95974823dc83436d9e",
+  "ts": "2026-09-27T17:17:57.938Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"grammatical-fit\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Uses question terms ('fastening', 'crawling snail') and provides a plausible, specific mechanism.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"too-obvious\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Overgeneralizes 'most' and lacks nuance; seems simplistic compared to others.\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"nuanced-turn\", \"most-detailed\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 50,\n      \"note\": \"Introduces new terms ('tamber') and explains a clear, differentiated causal relationship.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"denies-question\", \"middle-ground\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"Rejects the premise of deducing cause from location and relies on uncertainty.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Chose the option that provides the most specific, differentiated explanation with technical terms and avoids absolutes.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 780,
+    "total_tokens": 1094,
+    "completion_tokens": 314,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3597
+}

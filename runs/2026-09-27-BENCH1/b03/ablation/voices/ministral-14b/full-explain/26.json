@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/26",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a19a7ffc37fe0a1201624bdd86c5c34071047cbd816e5e0ad47e0732140537b0",
+  "ts": "2026-09-27T17:17:54.339Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"textbook-voice\", \"echoes-stem\", \"like-the-others\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Uses snail imagery but makes a definitive claim about pilse without nuance.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"general-knowledge\", \"too-obvious\"],\n      \"p\": 5,\n      \"note\": \"Overstates pilse as the *only* cause and generalizes broadly.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"middle-ground\", \"echoes-stem\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 80,\n      \"note\": \"Distinguishes between tamber and pilse by break location, matching the question’s specificity.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"denies-question\", \"surprising\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Rejects the premise of deducing cause from location entirely.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question emphasizes *where* the break occurs, and only C directly ties break location to a specific cause (tamber) while explaining why.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 813,
+    "total_tokens": 1124,
+    "completion_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4277
+}

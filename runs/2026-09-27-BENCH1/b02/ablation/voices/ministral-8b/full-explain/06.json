@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/06",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "db582e4d09d48874dc0490d28fc0aaa784c3efff1a9d027f7a8f5dc4e7a66239",
+  "ts": "2026-09-27T16:58:43.229Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"absolute\", \"textbook-voice\", \"too-obvious\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Assumes more data always improves accuracy without context or protocol-specific rules.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"Uses the question’s wording ('for the same reason') but lacks authority or protocol reference.\"\n    },\n    \"C\": {\n      \"codes\": [\"middle-ground\", \"textbook-voice\", \"grammatical-fit\", \"general-knowledge\", \"other\"],\n      \"note\": \"Mentions a named protocol (Tessaly’s 1986) and justifies exclusion via protocol logic, which aligns with the question’s implied need for a definitive answer.\"\n    },\n    \"D\": {\n      \"codes\": [\"odd-one-out\", \"absolute\", \"implausible\", \"position\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"Refers to an outdated or hypothetical standard (Marhaug 1968) and contradicts the implied current protocol in the question.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized options referencing a named, authoritative protocol (Tessaly’s 1986) and logically explaining the exclusion of the crown as protocol-driven, rather than speculative or contradictory.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 850,
+    "total_tokens": 1184,
+    "completion_tokens": 334,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4213
+}

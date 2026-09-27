@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/03",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "fe33b20acbeab58b6272e1b28b9b3c3caefabf8eb74638d5b62eec8c58e85b47",
+  "ts": "2026-09-27T17:01:17.625Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"off-target\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"Attempts to link tilt and offset but oversimplifies and ignores the question's focus on intentionality vs. observation.\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"textbook-voice\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Balances both features as intentional but lacks a clear *why* the hiker’s reasoning is wrong.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"surprising\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Introduces an unintentional flaw assumption without evidence, contradicting the question’s premise of intentional signals.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"echoes-stem\", \"longest\", \"most-detailed\", \"general-knowledge\"],\n      \"p\": 50,\n      \"note\": \"Directly contradicts A/B, attributes lean to accidental causes, and aligns with the hiker’s *visual* reasoning being backwards.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question hinges on intentionality vs. accident; D explicitly rejects the hiker’s visual priority and assigns meaning only to the cant, not the lean.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 853,
+    "total_tokens": 1182,
+    "completion_tokens": 329,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4828
+}

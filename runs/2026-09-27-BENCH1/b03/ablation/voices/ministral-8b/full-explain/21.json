@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/21",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "dd13568c5133bbb84c926ffd3e77ecd43aebbedb1efc79e42b2b9d07b831597c",
+  "ts": "2026-09-27T17:18:49.780Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"echoes-stem\", \"absolute\", \"grammatical-fit\", \"opposites\"],\n      \"p\": 0,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\", \"surprising\"],\n      \"p\": 60,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"echoes-stem\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"odd-one-out\", \"implausible\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question’s claim was that the fenn trace is better because it samples more starting wennets, so I looked for an option that either supported this or explained why it’s flawed, especially with nuanced reasoning about the limitations of sampling from more wennets (e.g., spurs ending chains quickly).\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 817,
+    "total_tokens": 1091,
+    "completion_tokens": 274,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2987
+}

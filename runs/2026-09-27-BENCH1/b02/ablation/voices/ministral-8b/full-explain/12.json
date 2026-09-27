@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/12",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "77fd0f50da6446643ee1c6fd8a4ae60040cdccc91f1ec35863061adc81e58e2d",
+  "ts": "2026-09-27T16:59:08.629Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"too-obvious\", \"grammatical-fit\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"echoes-stem\", \"general-knowledge\", \"middle-ground\", \"position\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"nuanced-turn\", \"opposites\", \"grammatical-fit\", \"position\"],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"opposites\", \"position\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I focused on the most counterintuitive and empirically nuanced objections, as the claim was about internal consistency improving readability for all walkers, and options C and D challenge this by introducing unexpected variables (locals vs. strangers, Marhaug pattern).\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 843,
+    "total_tokens": 1107,
+    "completion_tokens": 264,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3211
+}

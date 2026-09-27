@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/28",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "f05e1c43670ebbca96dab90b5fabaf97a18971d47b73c5a33ea5583b053ceef0",
+  "ts": "2026-09-27T17:23:07.824Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"echoes-stem\", \"opposites\", \"implausible\"],\n      \"p\": 3,\n      \"note\": \"It reverses the ordinary relationship between height and flood exposure.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"echoes-stem\"],\n      \"p\": 7,\n      \"note\": \"It offers a qualified alternative explanation but introduces cant without support.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"middle-ground\"],\n      \"p\": 5,\n      \"note\": \"It says location does not matter despite the stem emphasizing the lattices' different heights.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"general-knowledge\", \"echoes-stem\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 85,\n      \"note\": \"It follows the common-sense inference that being farther from rising water is safer.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I relied mainly on general knowledge that floodwater rises from below, while noting the wording contrast and the distractors' qualifications.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15834,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 458,
+    "reasoning_output_tokens": 178
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12848
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/14",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "03a0159314461f2451a66d4bdd746b7f31fcc77e9eff215ae5d3666b2cf5a1c8",
+  "ts": "2026-09-27T17:16:05.247Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"echoes-stem\", \"absolute\", \"grammatical-fit\", \"surprising\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"odd-one-out\", \"hedged\", \"echoes-stem\", \"grammatical-fit\", \"middle-ground\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"general-knowledge\", \"off-target\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Lacks direct engagement with the question's core issue (silt film vs. sudden violence).\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"textbook-voice\", \"surprising\", \"absolute\"],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question asks whether silt film is the *dominant* cause of lost lattices, and only option D explicitly frames it as the underappreciated but key factor—ignoring sudden violence as secondary.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 803,
+    "total_tokens": 1081,
+    "completion_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2959
+}

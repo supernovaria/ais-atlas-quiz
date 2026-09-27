@@ -26,8 +26,8 @@
     { "label": "Invented bench passages b02, b03", "state": "done", "date": "2026-09-23" },
     { "label": "Multi-family reader panel", "state": "done", "date": "2026-09-26" },
     { "label": "Reader floors on control items", "state": "doing" },
-    { "label": "Bench iteration 1", "state": "doing" },
-    { "label": "Causal tests of cues", "state": "later" },
+    { "label": "Bench iteration 1", "state": "done", "date": "2026-09-27" },
+    { "label": "Causal tests of cues", "state": "next" },
     { "label": "Full chapter-1 question set", "state": "later" }
   ],
   "display_requests": []

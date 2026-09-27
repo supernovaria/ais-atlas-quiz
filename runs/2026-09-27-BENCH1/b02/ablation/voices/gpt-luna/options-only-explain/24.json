@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/24",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "d36f72951bca05a2d739d647a5484eefb1925c643f062504c9f6afd4f173a48e",
+  "ts": "2026-09-27T17:05:38.318Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"position\"],\n      \"p\": 8,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"too-obvious\"],\n      \"p\": 12,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"hedged\", \"textbook-voice\", \"echoes-stem\"],\n      \"p\": 72,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"opposites\", \"position\"],\n      \"p\": 8,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I went mainly on C's unusually specific, qualified, textbook-like explanation, while treating the shorter alternatives as distractors and D as a surprising reversal.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15804,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 305,
+    "reasoning_output_tokens": 99
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9570
+}

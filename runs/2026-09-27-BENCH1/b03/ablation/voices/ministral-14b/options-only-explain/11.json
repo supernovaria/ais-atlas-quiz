@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/11",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "00142765c6bb315513b6ef102edacfc4bae0a4e5e0e9d5496ad5fa63a1989857",
+  "ts": "2026-09-27T17:19:24.512Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"echoes-stem\", \"absolute\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Uses 'only' and 'specifically,' which feels overly restrictive and contradicts the stem's implied universality.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"textbook-voice\", \"like-the-others\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"Directly ties the break location to *pilse* with a plausible mechanism, but lacks nuance about prevalence.\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"hedged\", \"nuanced-turn\", \"textbook-voice\", \"opposites\"],\n      \"p\": 25,\n      \"note\": \"Contradicts B by prioritizing *tamber* while acknowledging *pilse*, but feels overloaded with qualifiers.\"\n    },\n    \"D\": {\n      \"codes\": [\"shortest\", \"absolute\", \"too-obvious\", \"echoes-stem\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 25,\n      \"note\": \"Overly simplistic, dismisses nuance ('beginners generally attribute'), but aligns with 'common-sense' framing.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized the option that directly linked the break *near a fastening* to *pilse* with a mechanistic explanation, while avoiding overqualification or contradiction.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 809,
+    "total_tokens": 1164,
+    "completion_tokens": 355,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 6214
+}

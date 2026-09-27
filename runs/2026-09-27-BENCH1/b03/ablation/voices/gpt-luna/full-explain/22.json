@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/22",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "1cffe13c8b636e1657b159dddec281491e343f588dce882090cdf8a88ab4fee1",
+  "ts": "2026-09-27T17:21:28.812Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"textbook-voice\",\"echoes-stem\",\"grammatical-fit\"],\"p\":80,\"note\":\"\"},\"B\":{\"codes\":[\"implausible\",\"off-target\",\"echoes-stem\"],\"p\":5,\"note\":\"\"},\"C\":{\"codes\":[\"absolute\",\"off-target\"],\"p\":3,\"note\":\"\"},\"D\":{\"codes\":[\"most-detailed\",\"absolute\",\"echoes-stem\",\"textbook-voice\"],\"p\":12,\"note\":\"\"}},\"pick\":\"A\",\"strategy\":\"I focused on the basic cross-sectional-versus-longitudinal distinction and treated extra claims about temperature or draught as unsupported.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15865,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 289,
+    "reasoning_output_tokens": 147
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 8837
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/20",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c7a928888f4ec0fce7ebb68d0cd1960cc38becb57f8190c2f02a14cd12c068e2",
+  "ts": "2026-09-27T16:59:42.634Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"most-detailed\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"hedged\",\n        \"grammatical-fit\",\n        \"opposites\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"nuanced-turn\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"like-the-others\",\n        \"odd-one-out\"\n      ],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"denies-question\",\n        \"absolute\",\n        \"general-knowledge\",\n        \"off-target\",\n        \"surprising\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized options that used the question’s own terms (echoes-stem) and provided nuanced, balanced distinctions (nuanced-turn) rather than absolute or contradicting claims, leaning toward the most detailed and contextually fitting explanations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 792,
+    "total_tokens": 1087,
+    "completion_tokens": 295,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2075
+}

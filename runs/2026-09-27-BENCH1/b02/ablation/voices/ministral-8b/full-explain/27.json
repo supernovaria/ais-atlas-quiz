@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/27",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "513651567431763d9dd912e4c7dbe19c3601a95d439c2b38fe88bfd288fe1efa",
+  "ts": "2026-09-27T17:02:43.234Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"absolute\", \"most-detailed\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"hedged\", \"middle-ground\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"denies-question\", \"absolute\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"grammatical-fit\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 60,\n      \"note\": \"This option explicitly distinguishes the two effects by contrasting populations, mechanisms, and register conflicts.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I focused on identifying the option that clearly separates the two phenomena by addressing population differences (experienced vs. strangers) and whether a register conflict exists, as implied by the question's phrasing.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 838,
+    "total_tokens": 1090,
+    "completion_tokens": 252,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3049
+}

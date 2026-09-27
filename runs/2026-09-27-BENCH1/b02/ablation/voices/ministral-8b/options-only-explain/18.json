@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/18",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "5976c5c60ae596d71a8b1b905a173ca0d972271c4105fff32184a00989a7b790",
+  "ts": "2026-09-27T16:59:35.713Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"grammatical-fit\", \"off-target\", \"echoes-stem\"],\n      \"p\": 10,\n      \"note\": \"Assumes the cairn is entirely unreliable without explaining why the score matters beyond its length.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\", \"general-knowledge\", \"position\"],\n      \"p\": 25,\n      \"note\": \"Makes a direct, plausible claim about the builder's intent, but seems too straightforward.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"like-the-others\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Introduces a concept (hob) that feels like a specialized term for a directional marker, adding depth.\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"middle-ground\", \"surprising\", \"implausible\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Uses qualifiers but leans toward dismissing the cairn entirely, which feels less likely as a correct answer.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized options that introduce a specialized concept or nuanced explanation, as they often align with textbook-level reasoning about intricate systems like directional cairns.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 768,
+    "total_tokens": 1091,
+    "completion_tokens": 323,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2584
+}

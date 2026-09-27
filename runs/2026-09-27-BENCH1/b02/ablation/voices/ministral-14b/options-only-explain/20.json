@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/20",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c7a928888f4ec0fce7ebb68d0cd1960cc38becb57f8190c2f02a14cd12c068e2",
+  "ts": "2026-09-27T17:00:11.749Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"Distinguishes between 'lean' (frost heave) and 'cant' (deliberate offset) with clear, contrasting definitions.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"too-obvious\", \"opposites\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"Swaps the definitions of 'lean' and 'cant' from A, making it contradict A directly without nuance.\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"Introduces a complex comparison between 'lean' and 'cant' judged against vertical vs. course, implying equivalence in some ways.\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"implausible\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Claims all offsets are deliberate, ignoring the question’s implication that some might be accidental.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Chose **A** for its clear, contrasting definitions and alignment with the question’s implied distinction between natural and deliberate offsets.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 792,
+    "total_tokens": 1122,
+    "completion_tokens": 330,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4936
+}

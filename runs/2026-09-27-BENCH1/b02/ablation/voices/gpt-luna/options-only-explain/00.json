@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/00",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "c0c078764c38190209067154308e1deb9425d5ce994bd71eaaf52e307ed21c43",
+  "ts": "2026-09-27T16:58:48.661Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 65,\n      \"note\": \"It gives a clear two-register distinction and explains how the information changes on revisits.\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"surprising\", \"echoes-stem\"],\n      \"p\": 15,\n      \"note\": \"It reverses the apparent roles of the route and marker and assigns updating to the builder.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\"],\n      \"p\": 8,\n      \"note\": \"It treats physical markers as inherently fixed and dismisses the observed shift as accidental.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"too-obvious\", \"off-target\"],\n      \"p\": 12,\n      \"note\": \"It collapses the two registers into one and explains the unchanged courses by lack of visitation.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I relied on the option that most coherently distinguishes the two registers and accounts for deliberate updating, while treating the others as reversals, dismissals, or oversimplifications.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15798,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 408,
+    "reasoning_output_tokens": 121
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12004
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/29",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a1ecda2902653bbbd8d5afc88d80f64d073c09bb07da4e39edc374c0095d9af1",
+  "ts": "2026-09-27T17:21:29.240Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"nuanced-turn\", \"most-detailed\", \"position\"],\n      \"p\": 30,\n      \"note\": \"Uses 'correlates' and 'most often'—specific but extreme in framing.\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"opposites\", \"surprising\", \"grammatical-fit\", \"position\"],\n      \"p\": 20,\n      \"note\": \"Introduces 'should be safer' as a conditional, contradicting A's certainty.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"odd-one-out\", \"textbook-voice\", \"position\"],\n      \"p\": 10,\n      \"note\": \"Asserts a categorical rule ('only on dampness') ignoring positional nuance.\"\n    },\n    \"D\": {\n      \"codes\": [\"implausible\", \"off-target\", \"longest\", \"general-knowledge\", \"position\"],\n      \"p\": 40,\n      \"note\": \"Introduces 'cant' (unmentioned in context) as a protective factor—overcomplicates.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Chose A due to its direct echo of question phrasing ('correlates', 'lost most often') and nuanced framing, balancing specificity with plausibility.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 791,
+    "total_tokens": 1104,
+    "completion_tokens": 313,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4290
+}

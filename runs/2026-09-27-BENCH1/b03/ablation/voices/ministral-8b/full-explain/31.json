@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/31",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "13f4bdffd436502e3c789fdd60f46135ca491c801269f29febcc3da3dc25817b",
+  "ts": "2026-09-27T17:19:28.643Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"opposites\",\n        \"absolute\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"hedged\",\n        \"middle-ground\",\n        \"echoes-stem\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"shortest\",\n        \"absolute\",\n        \"grammatical-fit\",\n        \"too-obvious\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"longest\",\n        \"opposites\",\n        \"general-knowledge\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 40,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question asks which objection *the field's own data* supports, implying the data contradicts the group's claim that silt film is the main threat. Options that align with the group's claim (C) or hedge without clear contradiction (B) are less likely. The strongest objection would be the one that directly contradicts the group's priority by citing data showing silt film is not the dominant cause (D).\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 838,
+    "total_tokens": 1155,
+    "completion_tokens": 317,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3435
+}

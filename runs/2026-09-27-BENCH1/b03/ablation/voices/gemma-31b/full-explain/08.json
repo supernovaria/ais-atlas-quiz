@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/08",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "eb7a3bc39834ce35ad325a5b748a0c214991331b1cf1c62a3e3017990200fb7c",
+  "ts": "2026-09-27T17:35:10.340Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\", \"most-detailed\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"implausible\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The correct answer typically utilizes the specific constraint mentioned in the stem (the ends of the thread) rather than the general descriptors (thick and taut) or a 'rule of thumb'.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 842,
+    "candidatesTokenCount": 219,
+    "totalTokenCount": 1883,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 842
+      }
+    ],
+    "thoughtsTokenCount": 822,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 102231
+}

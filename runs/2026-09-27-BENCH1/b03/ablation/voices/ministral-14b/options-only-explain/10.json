@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/10",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0143ac0c32b6f8dc8af634744e96075c5a5da31faa7c860ce1edf2787da8b2c0",
+  "ts": "2026-09-27T17:16:29.438Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\", \"absolute\", \"nuanced-turn\"],\n      \"p\": 30,\n      \"note\": \"Combines specific terms from the question and presents a definitive, layered explanation.\"\n    },\n    \"B\": {\n      \"codes\": [\"general-knowledge\", \"surprising\", \"odd-one-out\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"Introduces an implausible biological metaphor (snail's grip) unrelated to typical technical contexts.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"hedged\", \"most-detailed\"],\n      \"p\": 35,\n      \"note\": \"Balances both terms with conditional language, offering a nuanced but specific perspective.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"absolute\", \"like-the-others\", \"echoes-stem\"],\n      \"p\": 20,\n      \"note\": \"Simplistic and aligns with common assumptions, but lacks depth or nuance.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Selected the option that provided a balanced, hedged, and detailed explanation while avoiding implausibility or oversimplification.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 809,
+    "total_tokens": 1095,
+    "completion_tokens": 286,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3180
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/25",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e5c8f210e58843cec9c7abe8057e2e2f48cc4d0e90dbb0e7ee150c0edb910739",
+  "ts": "2026-09-27T17:02:38.786Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"hedged\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"absolute\", \"echoes-stem\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"middle-ground\", \"textbook-voice\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"odd-one-out\", \"surprising\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized options that align with a moderate, textbook-friendly stance and echoed the question’s framing while avoiding absolutes or contradictions, favoring the one that implies continuity rather than conflict.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 796,
+    "total_tokens": 1026,
+    "completion_tokens": 230,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2205
+}

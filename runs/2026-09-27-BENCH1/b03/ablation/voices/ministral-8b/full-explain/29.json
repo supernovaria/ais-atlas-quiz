@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/29",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "52b34c3ee58774b9cef2bc47de619d0f265755f4ae636e31da7ab9c4cdacee96",
+  "ts": "2026-09-27T17:19:19.995Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"hedged\", \"absolute\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Assumes a direct correlation between height and risk, but the wording suggests the crown (highest) is *far* above water, making this less likely.\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"Logical if rising floodwater is the only threat, but ignores potential structural vulnerabilities at the crown.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"absolute\", \"off-target\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"Dismisses positional differences entirely, which contradicts the question’s focus on relative placement.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"absolute\", \"implausible\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Introduces an unrelated concept ('cant') without supporting evidence in the question.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized the most straightforward physical reasoning (floodwater proximity) while discounting options introducing unsupported assumptions or contradictions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 826,
+    "total_tokens": 1140,
+    "completion_tokens": 314,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3484
+}

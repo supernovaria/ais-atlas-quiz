@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/01",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "92080f0441a66172491471a570cfd98272f029f08040f6acc0a2184432ad3d7f",
+  "ts": "2026-09-27T17:01:11.298Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Assumes no deliberate action, which feels like ignoring the question's implied problem.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Links the question's terms ('records', 'updates') but feels overly specific without context.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"surprising\", \"middle-ground\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"Claims 'incidental disturbance' as the only explanation, which seems dismissive of the question's intent.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"like-the-others\", \"grammatical-fit\"],\n      \"p\": 55,\n      \"note\": \"Distinguishes fixed vs. updatable records, aligning with the question's implied contrast.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized options that clarify the distinction between fixed and updatable records, matching the question's likely intent.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 790,
+    "total_tokens": 1079,
+    "completion_tokens": 289,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3543
+}

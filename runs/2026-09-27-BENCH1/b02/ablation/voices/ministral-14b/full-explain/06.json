@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/06",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "db582e4d09d48874dc0490d28fc0aaa784c3efff1a9d027f7a8f5dc4e7a66239",
+  "ts": "2026-09-27T16:58:51.351Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"absolute\", \"denies-question\", \"off-target\"],\n      \"p\": 0,\n      \"note\": \"Assumes a false premise that more courses always improve accuracy.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Mentions crown and footing exclusion, but doesn't cite protocol or historical context.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"textbook-voice\", \"position\"],\n      \"p\": 60,\n      \"note\": \"Explicitly ties 0.5 to protocol, mentions Tessaly's 1986 standard, and explains crown's role.\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"absolute\", \"off-target\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"Claims Marhaug's 1968 definition is still standard, contradicting C and general knowledge.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question asks for the current protocol and the reason for the difference, which C explicitly answers with a named standard (Tessaly's 1986) and a plausible rationale about crown handling.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 850,
+    "total_tokens": 1170,
+    "completion_tokens": 320,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4547
+}

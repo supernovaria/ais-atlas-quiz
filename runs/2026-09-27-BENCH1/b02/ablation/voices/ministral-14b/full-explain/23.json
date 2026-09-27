@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/23",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "93f25b4b53027cbe71720d801597a86ce04e4ab08eefb7a2ac09b044d35b1373",
+  "ts": "2026-09-27T17:02:59.044Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"implausible\", \"off-target\", \"denies-question\", \"grammatical-fit\"],\n      \"p\": 0,\n      \"note\": \"Assumes locals *cannot* perceive cant at all, which contradicts the question's premise of tilt affecting perception.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 70,\n      \"note\": \"Explains why locals might misread due to tilt by contrasting their reliance on whole-cairn visual cues with strangers' sequential comparison.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"textbook-voice\", \"too-obvious\", \"hedged\"],\n      \"p\": 10,\n      \"note\": \"Overgeneralizes expertise as universally reducing error, ignoring context of tilt.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"implausible\", \"like-the-others\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Suggests strangers misroute *more often overall*, which is unsupported by the question's focus on tilt.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The option that explains a plausible mechanism for *why* tilt would affect locals differently from strangers, using the question's wording about 'tilt' and 'route misreading'.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 810,
+    "total_tokens": 1132,
+    "completion_tokens": 322,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4587
+}

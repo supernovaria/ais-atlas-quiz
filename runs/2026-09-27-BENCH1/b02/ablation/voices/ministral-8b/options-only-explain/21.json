@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/21",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "82efea680177e862904f3d607b2e02e6b471c004268a5cbd545a894fab41e8ab",
+  "ts": "2026-09-27T17:02:02.604Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"opposites\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"nuanced-turn\", \"most-detailed\", \"general-knowledge\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"opposites\", \"general-knowledge\", \"absolute\"],\n      \"p\": 40,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I focused on the logical reversal of terms (lean vs. cant) and how each option defines them relative to the question's phrasing, prioritizing the one that uses both terms meaningfully while acknowledging their distinct measurement contexts.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 792,
+    "total_tokens": 1047,
+    "completion_tokens": 255,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2242
+}

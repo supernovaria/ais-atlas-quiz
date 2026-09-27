@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/00",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "988316bdeef54f25a802fd3708f3764a990fc0ae36f98126b7c21ee961561a9d",
+  "ts": "2026-09-27T17:15:24.724Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"surprising\"],\n      \"p\": 78,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"echoes-stem\", \"opposites\"],\n      \"p\": 8,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"echoes-stem\", \"opposites\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"echoes-stem\", \"like-the-others\"],\n      \"p\": 9,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I favored the longest, most nuanced, textbook-sounding option because it explains how the two measures can differ rather than collapsing them into a simple equivalence.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15843,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 343,
+    "reasoning_output_tokens": 109
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9909
+}

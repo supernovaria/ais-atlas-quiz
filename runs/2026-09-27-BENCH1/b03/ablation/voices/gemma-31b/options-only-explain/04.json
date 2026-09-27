@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/04",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "620153e79fcdcf873563765fd9b45ed205ee8ccd51e56a89d0a359e3aab9ac61",
+  "ts": "2026-09-27T17:26:26.279Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"hedged\"],\n      \"p\": 75,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Selected the option that uses technical jargon to provide a nuanced, mechanical explanation rather than a simplistic or absolute one.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 814,
+    "candidatesTokenCount": 194,
+    "totalTokenCount": 2221,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 814
+      }
+    ],
+    "thoughtsTokenCount": 1213,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 71835
+}

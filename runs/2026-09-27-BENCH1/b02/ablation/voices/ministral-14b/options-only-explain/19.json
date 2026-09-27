@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/19",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c5f724fe7d2b76934cb20f956b38b87c4552a8773adc60c69f9f15c4068f78c5",
+  "ts": "2026-09-27T17:02:42.138Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Uses 'hob' (likely a cairn term) and frames the issue as a branching route indicator, but feels overly technical.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"shortest\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Clear, direct, and aligns with typical 'follow the cairn' logic, but may be too straightforward.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"middle-ground\", \"like-the-others\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"Introduces 'accidental fault' as a dismissive explanation, which feels passive and unlikely.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"surprising\", \"denies-question\", \"absolute\", \"odd-one-out\"],\n      \"p\": 40,\n      \"note\": \"Uses 'concord score' and outright dismisses the cairn, which feels technical and extreme.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized the option that introduced a technical, objective-sounding reason ('concord score') over subjective or vague explanations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 768,
+    "total_tokens": 1090,
+    "completion_tokens": 322,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3576
+}

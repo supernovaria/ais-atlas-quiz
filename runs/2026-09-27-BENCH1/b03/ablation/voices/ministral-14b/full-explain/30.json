@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/30",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "2ab161da353e4e7959a73c0cc6fd172d756b99214c44014550201e862f80cf46",
+  "ts": "2026-09-27T17:18:13.195Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"echoes-stem\", \"textbook-voice\"],\n      \"p\": 5,\n      \"note\": \"Reinforces the group's reasoning without nuance or contradiction.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"opposites\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"Contrasts sudden violence with silt film, directly addressing the group's focus.\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"off-target\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"Introduces a new term ('wennet failure') not mentioned in the question.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 50,\n      \"note\": \"Balances gradual vs. sudden threats and aligns with the data's broader implication.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question asks which objection the *field's own data* supports, and D is the only option that generalizes from the data without introducing new or contradictory terms.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 838,
+    "total_tokens": 1134,
+    "completion_tokens": 296,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4213
+}

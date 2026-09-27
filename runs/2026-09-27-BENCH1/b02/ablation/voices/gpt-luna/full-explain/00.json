@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/00",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "ec8ae0124ac170a848883f705afd7a6b32ab50933ed5d6dd1935cd1d565624ab",
+  "ts": "2026-09-27T16:58:36.645Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 88,\n      \"note\": \"It directly matches the contrast between unchanged courses and the pell stone's deliberate movement.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"opposites\", \"off-target\"],\n      \"p\": 6,\n      \"note\": \"It reverses the apparent roles and adds an unsupported claim about the builder.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\", \"opposites\"],\n      \"p\": 3,\n      \"note\": \"It treats the shift as accidental despite the question framing it as meaningful evidence.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"off-target\", \"implausible\", \"opposites\"],\n      \"p\": 3,\n      \"note\": \"It collapses the two registers into one and ignores the distinction highlighted by the observations.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I went mainly on the direct wording match: the fixed courses suggest one stable register, while the moved pell stone suggests a separate updateable register.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15866,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 471,
+    "reasoning_output_tokens": 187
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12632
+}

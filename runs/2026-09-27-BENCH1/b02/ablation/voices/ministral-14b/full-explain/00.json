@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/00",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "ec8ae0124ac170a848883f705afd7a6b32ab50933ed5d6dd1935cd1d565624ab",
+  "ts": "2026-09-27T16:58:21.507Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"nuanced-turn\",\n        \"textbook-voice\",\n        \"grammatical-fit\",\n        \"middle-ground\"\n      ],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"odd-one-out\",\n        \"off-target\",\n        \"general-knowledge\",\n        \"absolute\"\n      ],\n      \"p\": 5,\n      \"note\": \"Introduces 'lisk sense' and 'builder' without context, contradicts 'passers reset' with 'builder updates'.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"absolute\",\n        \"denies-question\",\n        \"surprising\",\n        \"no-tell\"\n      ],\n      \"p\": 10,\n      \"note\": \"Dismisses deliberate meaning shift as 'incidental disturbance', ignoring the question's deliberate revisit framing.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"absolute\",\n        \"implausible\",\n        \"off-target\",\n        \"like-the-others\"\n      ],\n      \"p\": 5,\n      \"note\": \"Claims *both* registers are in the pell stone, contradicting the question's explicit mention of *two* registers.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question highlights *two registers* (courses vs pell stone) with distinct behaviors—unchanged vs. moved—so the correct answer must contrast *fixed* and *updatable* meanings, as in **A**.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 857,
+    "total_tokens": 1202,
+    "completion_tokens": 345,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4954
+}

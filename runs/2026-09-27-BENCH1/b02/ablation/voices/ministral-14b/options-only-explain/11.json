@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/11",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "6d3b39d8331f5f50118e3e473fa2a054e7d01ef99bd64ff1af54a91f512b44a3",
+  "ts": "2026-09-27T17:02:03.201Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Uses 'only ever' and 'never locals,' which feels extreme and dismissive of the premise that lean *does* mislead.\"\n    },\n    \"B\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Links 'misroute more often' to 'misled specifically by lean' with conditional logic, but feels overly statistical.\"\n    },\n    \"C\": {\n      \"codes\": [\"textbook-voice\", \"middle-ground\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 40,\n      \"note\": \"Explains a plausible mechanism ('judge cant by eye') without absolutes, fitting a typical textbook explanation.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"implausible\", \"surprising\", \"off-target\", \"odd-one-out\"],\n      \"p\": 25,\n      \"note\": \"'Cannot perceive cant at all' is an extreme claim that contradicts the premise of a *gradual* misreading effect.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Chose the option that explains a mechanism without absolutes, aligning with typical test logic and moderate reasoning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 771,
+    "total_tokens": 1096,
+    "completion_tokens": 325,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5762
+}

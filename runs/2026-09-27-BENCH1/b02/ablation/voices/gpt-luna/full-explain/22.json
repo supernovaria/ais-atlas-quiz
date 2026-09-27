@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/22",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "2ebd6199b1b7cdf1451a1382f091c3a9fbb9c5185d7bf6ee12f76a45c5219388",
+  "ts": "2026-09-27T17:04:56.291Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"implausible\", \"off-target\"],\n      \"p\": 2,\n      \"note\": \"Its claim that locals cannot perceive cant at all is implausibly extreme.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"opposites\"],\n      \"p\": 3,\n      \"note\": \"It relies on a sweeping expertise principle rather than the specific tilt mechanism.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"surprising\"],\n      \"p\": 88,\n      \"note\": \"It gives a precise, counterintuitive explanation distinguishing how locals and strangers read tilt.\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\", \"opposites\"],\n      \"p\": 7,\n      \"note\": \"It extends the general tendency for strangers to misroute without explaining the distinctive effect of tilt.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I went mainly on the unusually specific textbook-like mechanism in C and the absolute, overly general claims in the distractors.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15819,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 371,
+    "reasoning_output_tokens": 102
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 15575
+}

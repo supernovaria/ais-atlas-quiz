@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/10",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "3b46a4c7975729b97c8db4f174a38ff56194cfd96ff2b13ff681e81be3e19a3f",
+  "ts": "2026-09-27T17:01:39.236Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"opposites\", \"position\"],\n      \"p\": 3,\n      \"note\": \"Its claims that experienced readers are immune and locals can never be misled are too absolute.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"surprising\", \"grammatical-fit\", \"position\"],\n      \"p\": 78,\n      \"note\": \"It offers a specific, counterintuitive mechanism distinguishing locals' and strangers' ways of judging lean.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"implausible\", \"opposites\", \"position\"],\n      \"p\": 4,\n      \"note\": \"The claim that locals cannot perceive cant at all is implausibly extreme.\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"echoes-stem\", \"too-obvious\", \"off-target\", \"position\"],\n      \"p\": 15,\n      \"note\": \"It extends a general difference in misrouting to lean specifically without establishing that connection.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I favored the detailed, textbook-sounding explanation and rejected absolute, overgeneralized, or off-target claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 16447,
+    "cached_input_tokens": 15104,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 357,
+    "reasoning_output_tokens": 59
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12544
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/14",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0e67989dd95f39c9fecc3f516de593587b5f5a4dda3cd62ce250027fba57c292",
+  "ts": "2026-09-27T16:59:40.931Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"odd-one-out\", \"general-knowledge\", \"echoes-stem\"],\n      \"p\": 10,\n      \"note\": \"Assumes a negative outcome ('broken') and uses 'until' as a conditional, but lacks clarity on intent.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"echoes-stem\", \"middle-ground\", \"most-detailed\"],\n      \"p\": 30,\n      \"note\": \"Uses 'both counts' and 'careful rebuilding' to imply restoration success without contradiction.\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"nuanced-turn\", \"opposites\", \"general-knowledge\", \"echoes-stem\"],\n      \"p\": 25,\n      \"note\": \"Balances readability vs. lost information ('cost of information'), but overly detailed.\"\n    },\n    \"D\": {\n      \"codes\": [\"shortest\", \"too-obvious\", \"denies-question\", \"absolute\", \"grammatical-fit\"],\n      \"p\": 35,\n      \"note\": \"Assumes unqualified success ('preserved or improved') without addressing trade-offs.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Balanced trade-offs in C best match the implied tension between readability and information loss in restoration critiques.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 794,
+    "total_tokens": 1106,
+    "completion_tokens": 312,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3985
+}

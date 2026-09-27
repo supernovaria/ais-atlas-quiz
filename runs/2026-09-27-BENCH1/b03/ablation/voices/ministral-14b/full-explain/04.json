@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/04",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "d984f5c0dda9b3ca0fd95cb05e0e7a1c59fdfbb5b6b3271788647a22106916ec",
+  "ts": "2026-09-27T17:15:50.102Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"hedged\", \"general-knowledge\", \"opposites\"],\n      \"p\": 50,\n      \"note\": \"Uses the question's terminology ('wennets', 'anchors', 'spurs') and provides a plausible explanation for why the claim is false.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"like-the-others\", \"too-obvious\", \"absolute\"],\n      \"p\": 5,\n      \"note\": \"Echoes the claim but adds a vague justification ('beginners prefer it') without addressing the question's specifics.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"implausible\", \"absolute\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Contradicts the premise that the two methods differ in accuracy, making it highly unlikely.\"\n    },\n    \"D\": {\n      \"codes\": [\"off-target\", \"general-knowledge\", \"no-tell\"],\n      \"p\": 2,\n      \"note\": \"Introduces an unrelated figure ('Mira Pole') and shifts focus to a different argument.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The claim's wording about 'wennets', 'anchors', and 'true longest chain' aligns best with **A**, which directly addresses these terms and provides a nuanced rebuttal.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 836,
+    "total_tokens": 1161,
+    "completion_tokens": 325,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 6109
+}

@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/06",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "8e4b1406e3be20c51b436efcef0fbf23a0707732c01bc73cb0e57c4e6fec5904",
+  "ts": "2026-09-27T17:31:04.686Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"textbook-voice\", \"nuanced-turn\"],\n      \"p\": 60,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"odd-one-out\", \"surprising\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I chose the longest and most detailed option that uses a nuanced-turn to explicitly distinguish between two patterns, which is a common trait of correct answers in complex reading comprehension tests.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 849,
+    "candidatesTokenCount": 223,
+    "totalTokenCount": 2058,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 849
+      }
+    ],
+    "thoughtsTokenCount": 986,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 67304
+}

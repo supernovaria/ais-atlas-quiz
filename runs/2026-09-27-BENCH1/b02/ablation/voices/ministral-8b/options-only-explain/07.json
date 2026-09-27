@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/07",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "7d2d89fe1a290bf699c362b21ded715f6f7e6d3ed2f0ff89e71b3cc42b2b92ff",
+  "ts": "2026-09-27T17:01:06.043Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"echoes-stem\", \"absolute\", \"general-knowledge\"],\n      \"p\": 0,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"absolute\", \"implausible\", \"off-target\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"middle-ground\", \"nuanced-turn\", \"grammatical-fit\", \"like-the-others\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"odd-one-out\", \"most-detailed\", \"echoes-stem\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 60,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Looked for the option that both echoed the question’s wording and provided a specific, plausible explanation for the 0.5 figure while avoiding absolute claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 805,
+    "total_tokens": 1036,
+    "completion_tokens": 231,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 1767
+}

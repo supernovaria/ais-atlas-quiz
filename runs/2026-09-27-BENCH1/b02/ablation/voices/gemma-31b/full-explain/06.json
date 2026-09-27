@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/06",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "db582e4d09d48874dc0490d28fc0aaa784c3efff1a9d027f7a8f5dc4e7a66239",
+  "ts": "2026-09-27T17:20:18.201Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"too-obvious\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"textbook-voice\", \"opposites\", \"echoes-stem\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Selected the most detailed option that provides a specific historical update and a technical theoretical justification, which typically indicates the correct answer in academic tests.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 869,
+    "candidatesTokenCount": 222,
+    "totalTokenCount": 3611,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 869
+      }
+    ],
+    "thoughtsTokenCount": 2520,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 162298
+}

@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/18",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "0ea11e717991bb45499cd8dad2523ea1a2e03da82cb00699221b9c0ef0f8ca51",
+  "ts": "2026-09-27T17:20:41.944Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"middle-ground\",\"echoes-stem\",\"opposites\"],\"p\":8,\"note\":\"\"},\"B\":{\"codes\":[\"most-detailed\",\"nuanced-turn\",\"textbook-voice\",\"echoes-stem\",\"general-knowledge\"],\"p\":78,\"note\":\"\"},\"C\":{\"codes\":[\"opposites\",\"shortest\",\"implausible\"],\"p\":6,\"note\":\"\"},\"D\":{\"codes\":[\"too-obvious\",\"echoes-stem\",\"absolute\",\"opposites\"],\"p\":8,\"note\":\"\"}},\"pick\":\"B\",\"strategy\":\"I favored the most detailed, textbook-sounding option that distinguishes the original rule from current practice and supplies explicit calculations.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15797,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 256,
+    "reasoning_output_tokens": 104
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10148
+}

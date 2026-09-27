@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/29",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "742e0df862dfd48dcf64f4bf0c2962da9ef1f0d7d80b28d3da38482c7884c2d1",
+  "ts": "2026-09-27T17:03:34.044Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"absolute\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Introduces a new detail ('guild-built cairns vs. shepherds’ cairns') not in the question.\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"hedged\", \"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"Dismisses the pattern as 'sampling noise' without addressing the contrast described.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"nuanced-turn\", \"opposites\", \"like-the-others\"],\n      \"p\": 15,\n      \"note\": \"Inverts the observed pattern (strangers better at low concord) but doesn’t explain the *contrast* fully.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"nuanced-turn\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 70,\n      \"note\": \"Directly explains the *contrast* by framing concord as context-dependent (strangers vs. locals).\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question hinges on the *contrast* between strangers and locals, and **D** is the only option that explains how concord’s meaning shifts with the reader’s knowledge.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 870,
+    "total_tokens": 1191,
+    "completion_tokens": 321,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3528
+}

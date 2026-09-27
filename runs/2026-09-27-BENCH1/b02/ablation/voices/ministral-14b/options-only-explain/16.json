@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/16",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "a67820894c5a5cb6e4ae8f218c80e9c8f288cf02edc7bf67cd455f894d303344",
+  "ts": "2026-09-27T16:59:51.082Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"absolute\", \"longest\"],\n      \"p\": 20,\n      \"note\": \"Uses 'not truly fixed' and 'arbitrary,' echoing the idea of instability in the dorran sense.\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Links the pell stone directly to updating the dorran sense, grounding it in a physical action.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"opposites\", \"most-detailed\", \"absolute\"],\n      \"p\": 15,\n      \"note\": \"Contrasts 'changed when the pell stone was turned' with 'only because the courses were physically rebuilt,' creating a sharp divide.\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"hedged\", \"general-knowledge\", \"implausible\", \"surprising\"],\n      \"p\": 35,\n      \"note\": \"Frames both registers as drifting naturally with time, which feels like a textbook explanation but seems too broad.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Chose B for its direct, physical explanation linking the pell stone's turn to the dorran sense, avoiding overgeneralization or contradiction.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 790,
+    "total_tokens": 1109,
+    "completion_tokens": 319,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3865
+}

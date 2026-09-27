@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/24",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "53da34e9e6d4345c6024dee64d0f5309fb212478627bb8ad46fe4f058ea3382a",
+  "ts": "2026-09-27T17:17:39.970Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"middle-ground\", \"hedged\", \"echoes-stem\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"too-obvious\", \"denies-question\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"implausible\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question emphasizes uncertainty ('without tracing it further') and hints at ambiguity in classification, making the nuanced, hedged option the best fit.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 810,
+    "total_tokens": 1032,
+    "completion_tokens": 222,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3780
+}

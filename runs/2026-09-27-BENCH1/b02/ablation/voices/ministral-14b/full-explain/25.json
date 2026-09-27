@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/25",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1005e82743c1d009371a22d00165f2180a724ea32cbf9b0792107093ec809a18",
+  "ts": "2026-09-27T17:03:08.554Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"textbook-voice\"],\n      \"p\": 50,\n      \"note\": \"Explains a rationale for excluding the crown based on handling, not just agreement.\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"absolute\", \"implausible\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"Claims the crown-excluded version is older and replaced, which contradicts A and seems unlikely without context.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"too-obvious\", \"absolute\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"Agrees with the colleague’s statement outright, but the question implies disagreement is expected.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"general-knowledge\", \"absolute\", \"odd-one-out\"],\n      \"p\": 30,\n      \"note\": \"Introduces a new comparison (footing) and excludes the crown for a different reason, which feels speculative.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question implies a nuanced disagreement about counting the crown, and A provides the most detailed, plausible rationale for exclusion.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 828,
+    "total_tokens": 1130,
+    "completion_tokens": 302,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3710
+}

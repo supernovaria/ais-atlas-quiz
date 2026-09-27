@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/28",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "b1fd10859310e77e4ed056f9b3784701ac9173266b48cf950320edbf6fc556c5",
+  "ts": "2026-09-27T17:06:35.337Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"too-obvious\", \"denies-question\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 3,\n      \"note\": \"It treats the explicitly described local reversal as noise and assumes one universal meaning.\"\n    },\n    \"B\": {\n      \"codes\": [\"opposites\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 2,\n      \"note\": \"It reverses the stranger-versus-local pattern stated in the question.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"off-target\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"It introduces a specific junction and guild-cairn explanation that the contrast itself does not establish.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 90,\n      \"note\": \"It directly explains why concord has opposite meanings for strangers and convention-aware locals.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I followed the explicit reversal across reader types and favored the option that explains concord as context-dependent rather than universally positive.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15878,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 382,
+    "reasoning_output_tokens": 88
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10811
+}

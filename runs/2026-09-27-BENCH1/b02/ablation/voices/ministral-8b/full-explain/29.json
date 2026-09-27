@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/29",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "742e0df862dfd48dcf64f4bf0c2962da9ef1f0d7d80b28d3da38482c7884c2d1",
+  "ts": "2026-09-27T17:02:51.993Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"off-target\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"Assumes a direct causal link between low concord and junctions, which is not implied by the pattern described.\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"middle-ground\", \"echoes-stem\"],\n      \"p\": 15,\n      \"note\": \"Rejects the observed pattern as noise while trying to maintain a textbook-like consistency, but contradicts the core finding.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"absolute\", \"odd-one-out\"],\n      \"p\": 30,\n      \"note\": \"Suggests an absolute difference in reader groups' ability, which the question does not explicitly support as a primary conclusion.\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"grammatical-fit\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 50,\n      \"note\": \"Best captures the contrast by interpreting concord as a dual-purpose signal, aligning with the idea of context-dependent readability.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Focused on the nuanced interpretation of concord as a context-dependent signal, leveraging the question’s wording and the contrast between strangers and locals.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 870,
+    "total_tokens": 1182,
+    "completion_tokens": 312,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4309
+}

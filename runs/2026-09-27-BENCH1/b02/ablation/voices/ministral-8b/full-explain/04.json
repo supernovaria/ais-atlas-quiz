@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/04",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "587395dc4eed9a9d62c6af7687ffe2181ba0bc30e82ff1cc15d16985283efc56",
+  "ts": "2026-09-27T16:58:35.322Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"middle-ground\", \"absolute\", \"echoes-stem\", \"most-detailed\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"general-knowledge\", \"echoes-stem\", \"textbook-voice\", \"position\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\", \"hedged\", \"off-target\", \"shortest\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"absolute\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Selected the option that aligns with common cairn-building conventions, where a single reversed course flanked by agreeing ones often indicates a branch or deviation from the main path, fitting the 'hob' concept.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 850,
+    "total_tokens": 1082,
+    "completion_tokens": 232,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3202
+}

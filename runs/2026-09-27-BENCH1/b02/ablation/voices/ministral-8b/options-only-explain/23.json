@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/23",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "5a3043cb77292676d0ccfcc2dee5989f4426c0b27c484aa20acaf6d5b5bdf7e4",
+  "ts": "2026-09-27T17:02:28.437Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"shortest\", \"textbook-voice\", \"echoes-stem\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"The claim that locals cannot perceive cant at all is an extreme, absolute statement that doesn't account for nuance or partial perception.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 60,\n      \"note\": \"This option provides a plausible explanation for why locals might misread the tilt, while strangers rely on relative course comparison, which aligns with common-sense reasoning about perception and expertise.\"\n    },\n    \"C\": {\n      \"codes\": [\"middle-ground\", \"hedged\", \"absolute\", \"like-the-others\", \"surprising\"],\n      \"p\": 20,\n      \"note\": \"The argument that expertise reduces misreading error is plausible but oversimplifies the context by ignoring the specifics of the cant and tilt.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"odd-one-out\", \"implausible\"],\n      \"p\": 15,\n      \"note\": \"The phrasing 'misroute more often overall' is vague and doesn't logically tie into the specifics of the cant or the whole-cairn tilt.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I prioritized options that offered a nuanced explanation grounded in plausible reasoning about perception and expertise, avoiding absolute or overly simplistic claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 781,
+    "total_tokens": 1130,
+    "completion_tokens": 349,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 20990
+}

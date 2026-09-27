@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/29",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "473abbe9068edc068c3ce08db280109fdd949ed3d6d741bba673e8a3ed2f397d",
+  "ts": "2026-09-27T17:03:36.789Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"position\", \"general-knowledge\", \"textbook-voice\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"surprising\", \"like-the-others\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"general-knowledge\", \"opposites\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question implies a nuanced, context-dependent interpretation of 'concord,' and D is the only option that introduces a meaningful distinction between reader types (strangers vs. locals) and qualifies 'concord' as context-specific.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 805,
+    "total_tokens": 1044,
+    "completion_tokens": 239,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2732
+}

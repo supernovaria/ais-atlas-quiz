@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/26",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "a19a7ffc37fe0a1201624bdd86c5c34071047cbd816e5e0ad47e0732140537b0",
+  "ts": "2026-09-27T17:22:34.454Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"implausible\",\"off-target\",\"position\"],\"p\":2,\"note\":\"\"},\"B\":{\"codes\":[\"too-obvious\",\"echoes-stem\",\"opposites\"],\"p\":8,\"note\":\"\"},\"C\":{\"codes\":[\"most-detailed\",\"textbook-voice\",\"grammatical-fit\",\"opposites\"],\"p\":88,\"note\":\"\"},\"D\":{\"codes\":[\"hedged\",\"denies-question\",\"middle-ground\"],\"p\":2,\"note\":\"\"}},\"pick\":\"C\",\"strategy\":\"I relied on the precise near-fastening-versus-middle contrast and the textbook-like causal distinction in C.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15820,
+    "cached_input_tokens": 11008,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 335,
+    "reasoning_output_tokens": 195
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12159
+}

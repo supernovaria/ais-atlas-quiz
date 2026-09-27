@@ -1,0 +1,30 @@
+{
+  "file": "options-only-explain/24",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "8ae951372232a6f3e780e0fb8e20e62e0d96e9871ffd5c82feca5d86069a2156",
+  "ts": "2026-09-27T17:22:11.627Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"too-obvious\"],\n      \"p\": 8,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"middle-ground\"],\n      \"p\": 78,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"too-obvious\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"odd-one-out\", \"implausible\", \"off-target\"],\n      \"p\": 4,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I favored the qualified, nuanced, textbook-like option and distrusted the absolute appearance-based claims and the unsupported extra category.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15794,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 343,
+    "reasoning_output_tokens": 128
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10660
+}

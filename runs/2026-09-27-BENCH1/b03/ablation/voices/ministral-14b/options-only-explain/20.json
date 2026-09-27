@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/20",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0b4e6a6ce8150daefc3f09d2f8a89efb92a2a4f218ee321d56c1c72af38191ef",
+  "ts": "2026-09-27T17:17:20.946Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"echoes-stem\", \"general-knowledge\", \"nuanced-turn\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"Uses technical terms from the question ('wennets', 'anchors', 'tessel', 'pell', 'fenn') and qualifies claims ('often', 'less').\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"textbook-voice\", \"general-knowledge\", \"echoes-stem\", \"like-the-others\"],\n      \"p\": 10,\n      \"note\": \"Makes a strong, general claim about thoroughness without qualification, reusing 'fenn' and 'tessel' from the question.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"odd-one-out\", \"position\"],\n      \"p\": 5,\n      \"note\": \" Claims the 'tessel trace' is *never* a shortcut, which contradicts the question's implied trade-off.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"surprising\", \"general-knowledge\", \"echoes-stem\"],\n      \"p\": 55,\n      \"note\": \"Contradicts A/B by asserting the 'fenn trace' is more reliable, with a counterintuitive claim about 'chains beginning near an anchor.'\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized the option that contradicted the majority (A/B) and introduced a novel, plausible technical justification ('chains near anchors run long').\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 796,
+    "total_tokens": 1167,
+    "completion_tokens": 371,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5378
+}

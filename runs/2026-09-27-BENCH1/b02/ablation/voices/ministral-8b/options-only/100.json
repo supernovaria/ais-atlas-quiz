@@ -1,0 +1,32 @@
+{
+  "file": "options-only/100",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "letter",
+  "prompt_sha256": "dfeccca56533485dc93761729a4b02acfc305ac0dc0f46bceb58b3eda3f9fd46",
+  "ts": "2026-09-27T17:03:38.107Z",
+  "status": "ok",
+  "reply_text": "C",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 206,
+    "total_tokens": 208,
+    "completion_tokens": 2,
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 1206
+}

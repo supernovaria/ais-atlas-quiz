@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/15",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "3aaa7cb45aa386c58e28bb113da875dbfab3c52f204e6f70484978d0bd89f4e9",
+  "ts": "2026-09-27T17:20:10.959Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"textbook-voice\", \"echoes-stem\", \"denies-question\"],\n      \"p\": 10,\n      \"note\": \"Overstates gradual causes as 'dominant' without context, sounds like a textbook lesson dismissing complexity.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"hedged\", \"opposites\", \"position\"],\n      \"p\": 20,\n      \"note\": \"Introduces a conditional ('only because') and contrasts rockfalls vs. sudden violence, but feels like a compromise.\"\n    },\n    \"C\": {\n      \"codes\": [\"absolute\", \"off-target\", \"odd-one-out\", \"no-tell\"],\n      \"p\": 5,\n      \"note\": \"Shifts focus to 'high cant' and lattice survival, unrelated to the question’s 'gradual threats vs. sudden violence' framing.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"surprising\", \"general-knowledge\", \"echoes-stem\", \"like-the-others\"],\n      \"p\": 65,\n      \"note\": \"Directly contradicts A/B by emphasizing sudden violence, uses 'most lost' and 'small share'—clear, counterintuitive but plausible.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized the option that directly contradicted the 'gradual threat' framing (A/B) and used absolute, specific language (D) to match test-taking instinct for definitive answers.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 803,
+    "total_tokens": 1146,
+    "completion_tokens": 343,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 28834
+}

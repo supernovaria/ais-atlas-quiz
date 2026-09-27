@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/25",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "0971a31ce967a4dfcdbf2be084f094fcf8fb792de0ad941b1816613afe9fd7ec",
+  "ts": "2026-09-27T17:19:04.027Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"general-knowledge\", \"too-obvious\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"middle-ground\", \"hedged\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"textbook-voice\"],\n      \"p\": 50,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"off-target\", \"surprising\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question implies the observer’s classification is uncertain, so I prioritized the option that acknowledges ambiguity and introduces a conditional or nuanced explanation, which aligns with common textbook logic.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 810,
+    "total_tokens": 1049,
+    "completion_tokens": 239,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3160
+}

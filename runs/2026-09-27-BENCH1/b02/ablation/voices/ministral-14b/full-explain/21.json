@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/21",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "4d05bbf44184f8c8552613b2289b7863d812c3bd1e5a636e4f7fc7440b9df78f",
+  "ts": "2026-09-27T17:02:48.635Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"textbook-voice\", \"not-off-target\"],\n      \"p\": 30,\n      \"note\": \"Defines 'lean' and 'cant' clearly, but the causal attribution (pell stone/frost heave) seems speculative.\"\n    },\n    \"B\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"implausible\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Rejects the premise that offsets could be accidental or structural, which contradicts the question's framing.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"grammatical-fit\", \"like-the-others\", \"surprising\"],\n      \"p\": 35,\n      \"note\": \"Swaps 'lean' and 'cant' definitions in a way that fits the question’s phrasing but contradicts common usage.\"\n    },\n    \"D\": {\n      \"codes\": [\"general-knowledge\", \"echoes-stem\", \"absolute\", \"textbook-voice\"],\n      \"p\": 30,\n      \"note\": \"Matches the question’s phrasing well and aligns with plausible definitions, but 'frost heave' attribution is uncertain.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Prioritized definitions that matched the question’s phrasing ('tips away from true vertical' → lean; 'offset from the course beneath' → cant) and avoided speculative causation.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1175,
+    "completion_tokens": 344,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5044
+}

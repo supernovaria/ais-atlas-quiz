@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/13",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "3dcd9ffc33c1a96ea9342349723802b69c99c9f27331c8b30012be59adc736a3",
+  "ts": "2026-09-27T17:19:30.889Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"nuanced-turn\", \"most-detailed\"],\n      \"p\": 10,\n      \"note\": \"Connects flood loss to silt film, directly addressing the colleague’s assumption about height.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"absolute\", \"like-the-others\"],\n      \"p\": 5,\n      \"note\": \"Introduces 'cant' as a factor, but lacks detail on why it contradicts height.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"too-obvious\", \"absolute\", \"denies-question\"],\n      \"p\": 5,\n      \"note\": \"Directly validates the colleague’s reasoning, which feels counterintuitive given the premise of 'lattice loss.'\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"surprising\", \"grammatical-fit\", \"echoes-stem\", \"most-detailed\"],\n      \"p\": 80,\n      \"note\": \"Contradicts the colleague’s claim with a specific, counterintuitive relationship between height and loss.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question implies the colleague’s reasoning is flawed, so the correct answer must contradict height being protective, making **D** the best fit.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 823,
+    "total_tokens": 1137,
+    "completion_tokens": 314,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4872
+}

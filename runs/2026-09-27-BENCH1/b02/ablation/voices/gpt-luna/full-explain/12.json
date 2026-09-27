@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/12",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "77fd0f50da6446643ee1c6fd8a4ae60040cdccc91f1ec35863061adc81e58e2d",
+  "ts": "2026-09-27T17:02:01.338Z",
+  "status": "ok",
+  "reply_text": "{\"options\":{\"A\":{\"codes\":[\"denies-question\",\"absolute\",\"too-obvious\",\"off-target\"],\"p\":2,\"note\":\"\"},\"B\":{\"codes\":[\"denies-question\",\"off-target\",\"implausible\"],\"p\":1,\"note\":\"\"},\"C\":{\"codes\":[\"surprising\",\"echoes-stem\",\"opposites\"],\"p\":7,\"note\":\"\"},\"D\":{\"codes\":[\"longest\",\"most-detailed\",\"nuanced-turn\",\"textbook-voice\",\"echoes-stem\",\"opposites\"],\"p\":90,\"note\":\"\"}},\"pick\":\"D\",\"strategy\":\"I went mainly on the nuanced exception structure and the specific named pattern in D, while C provides the contradictory reversal.\"}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15850,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 338,
+    "reasoning_output_tokens": 185
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 11924
+}

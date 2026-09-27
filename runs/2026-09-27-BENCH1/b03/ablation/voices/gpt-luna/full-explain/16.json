@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/16",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "f291f47b24e01bcc958befe247874732b6693db81021c47acf3f52f63a98fb89",
+  "ts": "2026-09-27T17:19:59.144Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"too-obvious\", \"absolute\", \"opposites\"],\n      \"p\": 4,\n      \"note\": \"It treats the longer pell as direct evidence of more total wennet-work.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"off-target\"],\n      \"p\": 2,\n      \"note\": \"It introduces a larger tharl frame instead of explaining how equal cant can yield different pell lengths.\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"too-obvious\", \"opposites\"],\n      \"p\": 1,\n      \"note\": \"It dismisses the stated difference as an error rather than classifying the underlying pattern.\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 93,\n      \"note\": \"It gives a specific both-sides mechanism that preserves equal work relative to the frames while explaining unequal pell length.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I favored the most detailed, textbook-like option that directly explains the contrast while respecting the equal-cant condition.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15844,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 462,
+    "reasoning_output_tokens": 165
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 13665
+}

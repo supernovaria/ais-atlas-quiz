@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/24",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "d36f72951bca05a2d739d647a5484eefb1925c643f062504c9f6afd4f173a48e",
+  "ts": "2026-09-27T16:59:56.915Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"textbook-voice\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"like-the-others\", \"hedged\", \"nuanced-turn\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"like-the-others\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 45,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"surprising\", \"absolute\", \"odd-one-out\"],\n      \"p\": 20,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized the option that provided the most specific reasoning about why the crown is excluded in the current protocol, explaining the reasoning behind the change and grounding it in practical handling of the pell stone.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 796,
+    "total_tokens": 1039,
+    "completion_tokens": 243,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 1895
+}

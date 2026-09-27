@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/11",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "6d3b39d8331f5f50118e3e473fa2a054e7d01ef99bd64ff1af54a91f512b44a3",
+  "ts": "2026-09-27T17:01:21.988Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"like-the-others\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"general-knowledge\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"odd-one-out\", \"general-knowledge\", \"surprising\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"odd-one-out\", \"general-knowledge\", \"absolute\", \"opposites\"],\n      \"p\": 25,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized nuanced, detailed, and surprising elements that diverge from absolute or overly simplistic claims while aligning with logical reasoning about perceptual differences between locals and strangers.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 771,
+    "total_tokens": 1013,
+    "completion_tokens": 242,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2039
+}

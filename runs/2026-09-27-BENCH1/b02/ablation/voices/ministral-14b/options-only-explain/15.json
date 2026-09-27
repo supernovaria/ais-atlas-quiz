@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/15",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "be4364bf39043da5af1e5f2a1637a04b3fa29319cc6f32909561c8c345d6e4ba",
+  "ts": "2026-09-27T17:02:22.304Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"absolute\", \"denies-question\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"most-detailed\", \"grammatical-fit\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"specific\", \"opposites\", \"general-knowledge\"],\n      \"p\": 45,\n      \"note\": \"Uses 'cost' and 'uniform recant' (likely typo for 'recanting?', but implies erasure), which aligns with a plausible critique of restoration.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"implausible\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 15,\n      \"note\": \"References 'pell stone' and 'upslope' in a way that feels overly technical and speculative.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Prioritized options that introduced trade-offs ('cost'), contradicted others ('uniform recant erases'), and used plausible technical reasoning about cairn restoration.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 794,
+    "total_tokens": 1076,
+    "completion_tokens": 282,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3049
+}

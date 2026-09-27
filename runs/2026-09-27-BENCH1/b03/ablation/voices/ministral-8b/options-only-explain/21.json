@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/21",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "d9b8cd1a95f030855a6c8673488893cf51c659b6304f7f9d27f4ecb7307283ae",
+  "ts": "2026-09-27T17:18:51.990Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"echoes-stem\", \"absolute\", \"like-the-others\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 45,\n      \"note\": \"Uses specific reasoning about 'spurs,' 'chains,' and 'underestimates,' which fits the context of comparing methods.\"\n    },\n    \"C\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"opposites\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"denies-question\", \"implausible\", \"odd-one-out\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"Implies the tessel trace is redundant, which contradicts the question’s premise of a comparison.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Selected the option that provided a reasoned, context-specific explanation rather than absolute claims or contradictions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 796,
+    "total_tokens": 1079,
+    "completion_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2209
+}

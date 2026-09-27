@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/17",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "32dd4999742b4659212b4ab86be22b821188b4e150974d05c0f2308df538ac62",
+  "ts": "2026-09-27T17:02:33.060Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"absolute\"],\n      \"p\": 10,\n      \"note\": \"Uses terms from the question ('pell stone', 'dorran sense', 'rebuilt courses') but is too absolute ('only mattered because').\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"middle-ground\"],\n      \"p\": 35,\n      \"note\": \"Introduces a 'both-sides' idea ('not truly fixed') and reuses 'dorran sense' and 'course choices' without being extreme.\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Longer and introduces 'aging process,' which feels like an external generalization rather than a direct answer.\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"odd-one-out\", \"echoes-stem\"],\n      \"p\": 35,\n      \"note\": \"Contradicts B ('lisk sense changed... dorran sense changed only because') and is grammatically distinct ('changed when... changed only because').\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that avoided absolutes and introduced nuance ('not truly fixed'), while reusing question terms ('dorran sense') without overgeneralizing.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 790,
+    "total_tokens": 1117,
+    "completion_tokens": 327,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3910
+}

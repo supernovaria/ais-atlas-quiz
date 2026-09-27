@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/27",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "70d88a2dc4f191b453616a5db7b2e900e43670ea7b147c8688f90030d0de3923",
+  "ts": "2026-09-27T17:21:16.417Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"too-obvious\",\n        \"denies-question\",\n        \"grammatical-fit\",\n        \"like-the-others\",\n        \"absolute\",\n        \"echoes-stem\"\n      ],\n      \"p\": 0,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"nuanced-turn\",\n        \"position\"\n      ],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"middle-ground\",\n        \"hedged\",\n        \"nuanced-turn\",\n        \"odd-one-out\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"longest\",\n        \"most-detailed\",\n        \"absolute\",\n        \"opposites\",\n        \"textbook-voice\",\n        \"general-knowledge\"\n      ],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The break location near a fastening and the mention of 'tamber' (gradual change in hardened mucus) aligns with structural failure patterns, not wear from snails, and directly addresses the question's specific clue.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 813,
+    "total_tokens": 1111,
+    "completion_tokens": 298,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4554
+}

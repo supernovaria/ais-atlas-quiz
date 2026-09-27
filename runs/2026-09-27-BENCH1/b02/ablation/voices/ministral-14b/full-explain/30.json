@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/30",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c6776c1f4d6ec27736fe13312a043ae861d117317b95e8f4bb4a3d9abf26107e",
+  "ts": "2026-09-27T17:00:57.739Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"textbook-voice\", \"echoes-stem\", \"absolute\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 70,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"odd-one-out\", \"no-tell\"],\n      \"p\": 5,\n      \"note\": \"Focuses on 'pell stone' and 'lisk register,' which aren't central to the question's core about *informativeness* vs. *readability*.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"contradicts-B\", \"implausible\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question centers on *restoration erasing original information* (hob markings, walker records) for the sake of *readability*, which B directly addresses, while A naively endorses restoration and D/D/C either contradict or misalign with the core tension.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 848,
+    "total_tokens": 1126,
+    "completion_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3993
+}

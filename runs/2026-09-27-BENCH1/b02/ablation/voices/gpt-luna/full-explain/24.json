@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/24",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "7e23ba7e616aafb974606ba90beb6b8c5278341b3686666d8f7565784a685065",
+  "ts": "2026-09-27T17:05:28.746Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"opposites\", \"position\"],\n      \"p\": 3,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"implausible\", \"off-target\"],\n      \"p\": 8,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"hedged\", \"textbook-voice\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 84,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"surprising\", \"position\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I went mainly on C's specific, textbook-like explanation and its cautious handling-based contrast between the two versions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15836,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 288,
+    "reasoning_output_tokens": 75
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 10015
+}

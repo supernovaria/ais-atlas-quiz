@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/07",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "b9c1cd3008a923e29f77f22e999a79f706512a3361512b49efcb15d62d1a6cdb",
+  "ts": "2026-09-27T17:17:54.466Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"absolute\",\n        \"like-the-others\",\n        \"echoes-stem\",\n        \"grammatical-fit\",\n        \"surprising\"\n      ],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"hedged\",\n        \"general-knowledge\",\n        \"odd-one-out\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 10,\n      \"note\": \"Assumes a physical mechanism explanation not provided in the question.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"echoes-stem\",\n        \"middle-ground\",\n        \"textbook-voice\",\n        \"general-knowledge\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 60,\n      \"note\": \"Directly aligns with the question's distinction between two separate patterns.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"opposites\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"grammatical-fit\"\n      ],\n      \"p\": 25,\n      \"note\": \"Swaps the classifications of findings (1) and (2) compared to option C.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question explicitly contrasts two separate findings about pell based on distinct experimental designs—one comparing different lattices (Orrin pattern) and the other tracking a single lattice over time (Tasker pattern). Option C mirrors this distinction.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 921,
+    "total_tokens": 1259,
+    "completion_tokens": 338,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 22677
+}

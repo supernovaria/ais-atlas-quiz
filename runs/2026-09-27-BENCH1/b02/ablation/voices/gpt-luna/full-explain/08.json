@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/08",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "94b8d7a80ce1f2b9ea3540dfffc5a349833c4f2624b686d3c65ab3b53d956172",
+  "ts": "2026-09-27T17:00:48.841Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"grammatical-fit\"],\n      \"p\": 80,\n      \"note\": \"It directly assigns distinct names to the two described effects and explains each match.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"off-target\"],\n      \"p\": 8,\n      \"note\": \"It focuses on the local's experience but fails to identify the visitor's named effect.\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\", \"off-target\", \"echoes-stem\"],\n      \"p\": 5,\n      \"note\": \"It offers practical advice instead of matching both situations to effect names.\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\", \"implausible\", \"like-the-others\"],\n      \"p\": 7,\n      \"note\": \"It collapses two contrasting cases into one phenomenon without supplying the requested names.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"I went mainly on the direct two-part matching structure of A and the distractors' failure to name both effects.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15863,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 374,
+    "reasoning_output_tokens": 108
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 11985
+}

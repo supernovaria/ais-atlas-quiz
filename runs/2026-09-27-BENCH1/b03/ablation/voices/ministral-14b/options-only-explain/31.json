@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/31",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "1a5b302957878724be3c5f00caba3fe8089cf783e684a130bd5179641ceb8183",
+  "ts": "2026-09-27T17:21:38.224Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"odd-one-out\", \"off-target\", \"absolute\", \"echoes-stem\"],\n      \"p\": 5,\n      \"note\": \"Reuses 'wennet failure' and 'tamber' (likely typos for 'lattice' and 'silt'), which are not in the question's context.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"middle-ground\", \"general-knowledge\"],\n      \"p\": 30,\n      \"note\": \"Introduces 'gradual threats' and 'silt film' as broader categories, offering a balanced view beyond the question's focus.\"\n    },\n    \"C\": {\n      \"codes\": [\"too-obvious\", \"absolute\", \"denies-question\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Assumes the question's premise ('silt film is confirmed') without nuance, sounding like a textbook summary.\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"opposites\", \"surprising\", \"general-knowledge\"],\n      \"p\": 55,\n      \"note\": \"Contradicts B and C by emphasizing sudden violence as the dominant cause, offering a counterintuitive but plausible alternative.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized the option that contradicts the others and introduces a counterintuitive but logically consistent perspective, leveraging the 'general-knowledge' code for plausibility.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 803,
+    "total_tokens": 1143,
+    "completion_tokens": 340,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3656
+}

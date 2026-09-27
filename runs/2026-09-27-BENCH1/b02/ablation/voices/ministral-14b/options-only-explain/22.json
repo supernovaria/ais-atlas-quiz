@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/22",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "02a268bef8f23a019d6c3cb21379b064c21d286c2b09eec0742621bbad2a6800",
+  "ts": "2026-09-27T17:00:23.423Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"off-target\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"Uses 'cannot perceive cant at all' as an absolute claim, which feels extreme and dismissive of partial perception.\"\n    },\n    \"B\": {\n      \"codes\": [\"textbook-voice\", \"hedged\", \"like-the-others\", \"general-knowledge\", \"position\"],\n      \"p\": 15,\n      \"note\": \"Uses generic expertise reasoning but lacks specificity about the *cant* or *pell stone*.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 65,\n      \"note\": \"Explains *how* locals and strangers differ in their method of judgment, directly addressing 'cant' and 'tilt'.\"\n    },\n    \"D\": {\n      \"codes\": [\"absolute\", \"hedged\", \"surprising\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 15,\n      \"note\": \"Introduces an unsupported baseline ('strangers already misroute more') without context about *cant* or *tilt*.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"Chose the option that explains the *mechanism* of error (locals vs. strangers' judgment methods) rather than vague generalizations or absolutes.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 781,
+    "total_tokens": 1126,
+    "completion_tokens": 345,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4061
+}

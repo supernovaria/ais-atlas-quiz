@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/30",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "de4688ba1ac2177d03f490387f8811ff8e4f62675217f7592c4b493fcf6e6d60",
+  "ts": "2026-09-27T17:17:05.940Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"grammatical-fit\", \"echoes-stem\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"general-knowledge\", \"opposites\", \"grammatical-fit\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"implausible\", \"no-tell\"],\n      \"p\": 5,\n      \"note\": \"The term 'wennet failure from tamber' is unclear and does not logically relate to 'silt film' or 'lattice loss' as described in the other options.\"\n    },\n    \"D\": {\n      \"codes\": [\"middle-ground\", \"general-knowledge\", \"surprising\", \"grammatical-fit\"],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized the option that introduces nuance and contradicts the initial assumption in the question, as this is often a hallmark of correct answers in analytical questions.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 803,
+    "total_tokens": 1069,
+    "completion_tokens": 266,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2132
+}

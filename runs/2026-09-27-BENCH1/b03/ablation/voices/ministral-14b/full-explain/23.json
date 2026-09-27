@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/23",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "62e236b63acabf9366476c52188f989229862c88b73d45805d43e9eb32a4fe88",
+  "ts": "2026-09-27T17:20:56.033Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"off-target\", \"position\"],\n      \"p\": 0,\n      \"note\": \"Reuses 'everywhere' and 'only in warmer galleries' but ignores the core difference in scale and process.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"most-detailed\", \"textbook-voice\", \"grammatical-fit\"],\n      \"p\": 70,\n      \"note\": \"Explicitly names patterns (Orrin/Tasker), distinguishes scale (group vs. single lattice), and matches the question’s phrasing.\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"middle-ground\", \"like-the-others\", \"implausible\"],\n      \"p\": 10,\n      \"note\": \"Suggests the findings are the same process at different scales, which contradicts the distinct comparisons in the question.\"\n    },\n    \"D\": {\n      \"codes\": [\"general-knowledge\", \"surprising\", \"too-obvious\", \"denies-question\"],\n      \"p\": 20,\n      \"note\": \"Introduces a physical mechanism ('stretching wennet chains') not hinted at in the question, overcomplicating.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Distinguished the findings by their scale (group vs. single lattice) and named patterns, matching the question’s phrasing and implied structure.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 860,
+    "total_tokens": 1186,
+    "completion_tokens": 326,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5085
+}

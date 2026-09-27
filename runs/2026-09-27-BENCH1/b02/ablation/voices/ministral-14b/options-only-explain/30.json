@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/30",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f4f628583472afac2c3279d6cf1bf8bb5a8c664c4403355b5e9c104b0a733bad",
+  "ts": "2026-09-27T17:01:00.948Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\", \"denies-question\", \"echoes-stem\", \"too-obvious\", \"absolute\"],\n      \"p\": 10,\n      \"note\": \"Assumes restoration is inherently good without acknowledging trade-offs.\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"middle-ground\", \"echoes-stem\", \"general-knowledge\", \"opposites\"],\n      \"p\": 60,\n      \"note\": \"Balances informativeness vs. readability and directly addresses the trade-off of restoration.\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"off-target\", \"odd-one-out\", \"no-tell\"],\n      \"p\": 10,\n      \"note\": \"Focuses on a narrow, specific issue (pell stone) rather than the broader restoration objection.\"\n    },\n    \"D\": {\n      \"codes\": [\"implausible\", \"absolute\", \"contradicts-others\", \"textbook-voice\"],\n      \"p\": 20,\n      \"note\": \"Claims restoration improves *both* readability and informativeness, which contradicts the question's implied tension.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question implies a trade-off or objection to restoration, so the best answer must acknowledge a balance or downside, not just praise it.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 804,
+    "total_tokens": 1115,
+    "completion_tokens": 311,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3207
+}

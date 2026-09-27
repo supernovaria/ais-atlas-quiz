@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/08",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "900f6e6d636ab42ca3ccd09cbc3e6f0c9c6058c84807cafeb3f09b0fbae9d845",
+  "ts": "2026-09-27T17:15:40.779Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"echoes-stem\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"absolute\", \"grammatical-fit\"],\n      \"p\": 25,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"echoes-stem\", \"general-knowledge\", \"middle-ground\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"absolute\", \"textbook-voice\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized options that provided clear, definitive criteria (like thickness, tautness, and position relative to other threads) while avoiding hedging or ambiguity, which aligns with typical textbook expectations for classification rules.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 781,
+    "total_tokens": 1026,
+    "completion_tokens": 245,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 1836
+}

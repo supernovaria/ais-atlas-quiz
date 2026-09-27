@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/11",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "00142765c6bb315513b6ef102edacfc4bae0a4e5e0e9d5496ad5fa63a1989857",
+  "ts": "2026-09-27T17:18:13.457Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"longest\",\n        \"hedged\",\n        \"nuanced-turn\",\n        \"grammatical-fit\",\n        \"general-knowledge\"\n      ],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"shortest\",\n        \"absolute\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"odd-one-out\"\n      ],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"most-detailed\",\n        \"absolute\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"opposites\"\n      ],\n      \"p\": 40,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"longest\",\n        \"hedged\",\n        \"echoes-stem\",\n        \"general-knowledge\",\n        \"middle-ground\"\n      ],\n      \"p\": 30,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized options that provided a clear, definitive causal chain while acknowledging overall prevalence, favoring the one that explicitly stated *pilsé* is the dominant cause of failure in a standing lattice and used textbook-like terminology.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 809,
+    "total_tokens": 1099,
+    "completion_tokens": 290,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2164
+}

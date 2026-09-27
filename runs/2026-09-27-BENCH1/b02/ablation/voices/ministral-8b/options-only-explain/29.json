@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/29",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "473abbe9068edc068c3ce08db280109fdd949ed3d6d741bba673e8a3ed2f397d",
+  "ts": "2026-09-27T17:02:54.342Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"echoes-stem\", \"absolute\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"middle-ground\", \"denies-question\", \"grammatical-fit\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"nuanced-turn\", \"echoes-stem\", \"general-knowledge\", \"surprising\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"most-detailed\", \"echoes-stem\", \"nuanced-turn\", \"general-knowledge\"],\n      \"p\": 55,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized options that introduced nuance and specificity about the *differential* interpretation of 'concord' for different readers (locals vs. strangers) rather than absolute statements or textbook-style declarations.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 805,
+    "total_tokens": 1045,
+    "completion_tokens": 240,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 2348
+}

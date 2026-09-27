@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/25",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "e5c8f210e58843cec9c7abe8057e2e2f48cc4d0e90dbb0e7ee150c0edb910739",
+  "ts": "2026-09-27T17:03:12.644Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"hedged\", \"most-detailed\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 40,\n      \"note\": \"Uses specific reasoning about 'passers often reset the crown' and directly references the question's context.\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"opposites\", \"absolute\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 20,\n      \"note\": \"Contradicts A explicitly and uses 'original'/'replaced,' which could be plausible but lacks nuance.\"\n    },\n    \"C\": {\n      \"codes\": [\"textbook-voice\", \"absolute\", \"like-the-others\", \"grammatical-fit\"],\n      \"p\": 10,\n      \"note\": \"Too simplistic; claims agreement without justification, ignoring the disagreement in A/B.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"general-knowledge\", \"odd-one-out\", \"most-detailed\"],\n      \"p\": 30,\n      \"note\": \"Introduces a new comparison ('footing') and shifts focus from the crown alone, hinting at broader logic.\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Prioritized the option that directly addressed the question's wording and reasoning about the crown's exclusion, while avoiding absolute or contradictory claims.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 796,
+    "total_tokens": 1118,
+    "completion_tokens": 322,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4088
+}

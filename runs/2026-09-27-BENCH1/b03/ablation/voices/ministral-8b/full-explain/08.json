@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/08",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "eb7a3bc39834ce35ad325a5b748a0c214991331b1cf1c62a3e3017990200fb7c",
+  "ts": "2026-09-27T17:15:38.942Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"hedged\", \"nuanced-turn\", \"absolute\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"opposites\"],\n      \"p\": 65,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"odd-one-out\", \"off-target\", \"absolute\", \"general-knowledge\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"general-knowledge\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The question emphasizes that the thread's classification depends on what its ends *touch*—other threads, not rock—so the option that aligns with this detail and reuses the question’s wording is most likely correct.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 824,
+    "total_tokens": 1063,
+    "completion_tokens": 239,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3957
+}

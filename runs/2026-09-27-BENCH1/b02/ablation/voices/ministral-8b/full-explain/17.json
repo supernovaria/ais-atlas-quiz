@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/17",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "c49557fedea9e298fd0ed6bdee321254ceab4aface2e1e4911b878b430278f0d",
+  "ts": "2026-09-27T17:01:42.642Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"most-detailed\", \"grammatical-fit\"],\n      \"p\": 25,\n      \"note\": \"Assumes the pell stone is the sole carrier of both registers, ignoring any ambiguity in the question’s phrasing.\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"hedged\", \"middle-ground\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"Introduces an external reference (Brannagh’s objection) without direct support from the question’s wording.\"\n    },\n    \"C\": {\n      \"codes\": [\"surprising\", \"absolute\", \"off-target\"],\n      \"p\": 10,\n      \"note\": \"Overgeneralizes aging as the sole cause, ignoring the specific actions described (rebuilding/repositioning).\"\n    },\n    \"D\": {\n      \"codes\": [\"echoes-stem\", \"grammatical-fit\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 50,\n      \"note\": \"Explicitly distinguishes between the two registers’ changes based on actions, aligning with the question’s focus on *what changed* during the second visit.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"I prioritized options that explicitly address the question’s contrast between *rebuilding courses* (physical change) and *turning the pell stone* (positional change), ignoring those that introduce external qualifiers or overgeneralize.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 836,
+    "total_tokens": 1168,
+    "completion_tokens": 332,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3842
+}

@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/14",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "03a0159314461f2451a66d4bdd746b7f31fcc77e9eff215ae5d3666b2cf5a1c8",
+  "ts": "2026-09-27T17:16:48.966Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"absolute\", \"denies-question\", \"general-knowledge\", \"position\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"position\"],\n      \"p\": 20,\n      \"note\": \"Refines the denial of A with a specific contrast ('rockfalls specifically')\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"too-obvious\", \"odd-one-out\", \"general-knowledge\"],\n      \"p\": 5,\n      \"note\": \"Introduces irrelevant 'cant' concept and ignores 'sudden violence'\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"hedged\", \"most-detailed\", \"general-knowledge\", \"position\"],\n      \"p\": 65,\n      \"note\": \"Balances 'gradual' and 'unnoticed' with 'dominant'—plausible scholarly framing\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Prioritized the option that (1) avoided absolute claims, (2) engaged with the question’s theme of underappreciated causes, and (3) used textbook-like phrasing to imply nuanced reasoning.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 803,
+    "total_tokens": 1104,
+    "completion_tokens": 301,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3321
+}

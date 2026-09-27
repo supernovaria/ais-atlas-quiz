@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/02",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "de7224f209c831ffb5f55321acfda93de0adbf45c4bfecd08941d91e16171c52",
+  "ts": "2026-09-27T16:58:28.631Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"absolute\", \"like-the-others\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"nuanced-turn\", \"general-knowledge\", \"middle-ground\", \"grammatical-fit\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"opposites\", \"hedged\", \"surprising\", \"grammatical-fit\", \"odd-one-out\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"absolute\", \"general-knowledge\", \"grammatical-fit\", \"surprising\"],\n      \"p\": 35,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"Prioritized options that align with the hiker's reasoning about visual prominence while avoiding absolutes and focusing on deliberate builder intent.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 853,
+    "total_tokens": 1097,
+    "completion_tokens": 244,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3172
+}

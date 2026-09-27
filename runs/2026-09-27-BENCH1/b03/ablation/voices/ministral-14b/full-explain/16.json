@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/16",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "f291f47b24e01bcc958befe247874732b6693db81021c47acf3f52f63a98fb89",
+  "ts": "2026-09-27T17:16:55.212Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"echoes-stem\", \"too-obvious\", \"denies-question\", \"off-target\"],\n      \"p\": 0,\n      \"note\": \"Assumes a direct, unqualified relationship between pell length and total wennet-work without addressing cant or frame differences.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"opposites\", \"off-target\", \"grammatical-fit\"],\n      \"p\": 5,\n      \"note\": \"Implies a structural (tharl) difference, but the question states equal cant, making this contradictory.\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"denies-question\", \"middle-ground\", \"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"Acknowledges the question’s premise but dismisses it as an error, which feels like a cop-out.\"\n    },\n    \"D\": {\n      \"codes\": [\"nuanced-turn\", \"most-detailed\", \"echoes-stem\", \"general-knowledge\", \"middle-ground\"],\n      \"p\": 85,\n      \"note\": \"Explains the discrepancy in terms of *how* wennets are linked (chain vs. direct), preserving equal wennet-work and cant.\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The question’s phrasing emphasizes *equal cant* and *difference in pell length*, so the answer must account for structural vs. compositional differences in wennet arrangement.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 839,
+    "total_tokens": 1173,
+    "completion_tokens": 334,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4830
+}

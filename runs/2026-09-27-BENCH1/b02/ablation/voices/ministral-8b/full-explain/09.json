@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/09",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "43e6c73c61879d60d2cc7147254206f998de893caa2c2b493809a7163e447908",
+  "ts": "2026-09-27T17:01:11.812Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"like-the-others\",\n        \"middle-ground\",\n        \"echoes-stem\",\n        \"hedged\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"general-knowledge\",\n        \"textbook-voice\",\n        \"echoes-stem\",\n        \"absolute\",\n        \"odd-one-out\"\n      ],\n      \"p\": 60,\n      \"note\": \"Assumes 'Tessaly effect' and 'Orne effect' are distinct, known phenomena tied to the scenario.\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"general-knowledge\",\n        \"implausible\",\n        \"odd-one-out\",\n        \"opposites\"\n      ],\n      \"p\": 5,\n      \"note\": \"Reverses the expected roles of 'experienced' and 'effect' naming without clear justification.\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"too-obvious\",\n        \"denies-question\",\n        \"grammatical-fit\",\n        \"shortest\"\n      ],\n      \"p\": 20,\n      \"note\": \"Overlooks the core conflict and instead focuses on a trivial solution.\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"The scenario describes two distinct situations involving misinterpretation of cairn features, and option B names specific, plausible phenomena ('Tessaly effect' and 'Orne effect') that align with the roles of the local and visitor, leveraging textbook-like terminology.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 855,
+    "total_tokens": 1198,
+    "completion_tokens": 343,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4338
+}

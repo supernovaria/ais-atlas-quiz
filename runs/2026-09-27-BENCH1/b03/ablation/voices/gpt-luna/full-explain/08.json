@@ -1,0 +1,30 @@
+{
+  "file": "full-explain/08",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "explain",
+  "prompt_sha256": "eb7a3bc39834ce35ad325a5b748a0c214991331b1cf1c62a3e3017990200fb7c",
+  "ts": "2026-09-27T17:17:34.937Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\"],\n      \"p\": 4,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"nuanced-turn\", \"textbook-voice\", \"echoes-stem\", \"surprising\"],\n      \"p\": 86,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"off-target\", \"implausible\", \"grammatical-fit\"],\n      \"p\": 2,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\", \"echoes-stem\", \"opposites\"],\n      \"p\": 8,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I went mainly on B's specific rule based on what the thread's ends touch, contrasted with D's tempting but superficial focus on thickness and tautness.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15832,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 421,
+    "reasoning_output_tokens": 211
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 12982
+}

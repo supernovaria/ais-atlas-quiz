@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/29",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "52b34c3ee58774b9cef2bc47de619d0f265755f4ae636e31da7ab9c4cdacee96",
+  "ts": "2026-09-27T17:21:24.948Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"absolute\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"echoes-stem\", \"general-knowledge\", \"middle-ground\", \"like-the-others\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"absolute\", \"implausible\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"surprising\", \"general-knowledge\", \"nuanced-turn\", \"longest\"],\n      \"p\": 50,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Lattice X’s proximity to waterline is explicitly linked to a structural feature (higher cant) that might protect it, making it the most plausible nuanced answer despite seeming counterintuitive at first.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 826,
+    "total_tokens": 1064,
+    "completion_tokens": 238,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3493
+}

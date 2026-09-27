@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/11",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "afa1633b1891882d70cb59af483511a7e7a3a6dba96cd7f45542bbcec4a9a6af",
+  "ts": "2026-09-27T17:18:11.293Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"hedged\", \"opposites\", \"general-knowledge\", \"grammatical-fit\"],\n      \"p\": 15,\n      \"note\": \"Explicitly contradicts B and C while introducing 'pilse' as the more common cause, but hedges with 'only explains why some breaks happen near fastenings'—making it feel like a nuanced but less direct answer.\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"echoes-stem\", \"absolute\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"Directly ties the break location to 'pilse' and uses the question's wording ('near a fastening') but leans toward an absolute causal link.\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"absolute\", \"general-knowledge\", \"odd-one-out\"],\n      \"p\": 35,\n      \"note\": \"Most detailed and authoritative, but overstates 'tamber' as both the cause for the specific break location *and* the overall dominant cause, which feels like a stretch.\"\n    },\n    \"D\": {\n      \"codes\": [\"like-the-others\", \"hedged\", \"surprising\", \"general-knowledge\", \"too-obvious\"],\n      \"p\": 30,\n      \"note\": \"Blends 'pilse' as the dominant cause with a beginner's attribution, making it feel like a common-sense but implausibly simplistic answer.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I prioritized the option that explicitly linked the break location to a specific cause ('tamber') and framed it as the *overall* more common failure mode, even though I noted it leaned toward overgeneralization—likely the intended 'textbook' answer.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 858,
+    "total_tokens": 1266,
+    "completion_tokens": 408,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4215
+}

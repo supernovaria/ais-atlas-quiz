@@ -1,0 +1,32 @@
+{
+  "file": "full-explain/19",
+  "voice": "ministral-8b",
+  "provider": "mistral",
+  "model": "ministral-8b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "811956e7735ef419c778a1ede916f01d8de0f68c1f6c4fcfbb2689dc5e33d650",
+  "ts": "2026-09-27T17:01:51.180Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"textbook-voice\", \"general-knowledge\", \"middle-ground\", \"absolute\"],\n      \"p\": 35,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"shortest\", \"absolute\", \"odd-one-out\", \"general-knowledge\", \"surprising\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"hedged\", \"opposites\", \"echoes-stem\", \"grammatical-fit\", \"general-knowledge\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"off-target\", \"no-tell\", \"other\"],\n      \"note\": \"The term 'concord score' is not referenced in the question—this feels like a forced fit or unrelated jargon.\"\n    },\n    \"E\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 0,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"The question describes a deliberate reversal in a pattern that otherwise aligns, which strongly suggests a deliberate message about branching or divergence—option A’s framing of it as a 'hob' (a cairn marker indicating a route split) fits best with the idea of a lone reversed course as a directional cue, while others either oversimplify, contradict, or introduce irrelevant concepts.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 799,
+    "total_tokens": 1131,
+    "completion_tokens": 332,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-8b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 4549
+}

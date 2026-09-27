@@ -1,0 +1,32 @@
+{
+  "file": "options-only-explain/06",
+  "voice": "ministral-14b",
+  "provider": "mistral",
+  "model": "ministral-14b-latest",
+  "family": "mistral",
+  "mode": "explain",
+  "prompt_sha256": "8e4b1406e3be20c51b436efcef0fbf23a0707732c01bc73cb0e57c4e6fec5904",
+  "ts": "2026-09-27T17:16:08.438Z",
+  "status": "ok",
+  "reply_text": "{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"echoes-stem\", \"denies-question\", \"implausible\", \"absolute\", \"like-the-others\"],\n      \"p\": 0,\n      \"note\": \"Assumes redundancy in the question's phrasing without justification and contradicts the text's implied distinction.\"\n    },\n    \"B\": {\n      \"codes\": [\"odd-one-out\", \"grammatical-fit\", \"general-knowledge\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"Mixes up the patterns without referencing the key distinction (vesks vs. lattice seasons).\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"middle-ground\", \"nuanced-turn\"],\n      \"p\": 80,\n      \"note\": \"Matches the question's phrasing about 'distinct regularities' and provides clear, opposing definitions for each pattern.\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"surprising\", \"general-knowledge\", \"absolute\", \"odd-one-out\"],\n      \"p\": 15,\n      \"note\": \"Introduces a new mechanism (physical stretching) not referenced in the question or options about patterns.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"The question emphasizes distinguishing two patterns ('regularities') as separate findings, and option C explicitly addresses that distinction.\"\n}",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "prompt_tokens": 831,
+    "total_tokens": 1144,
+    "completion_tokens": 313,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "service_tier": "standard"
+  },
+  "model_version": "ministral-14b-latest",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": true
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 3576
+}
