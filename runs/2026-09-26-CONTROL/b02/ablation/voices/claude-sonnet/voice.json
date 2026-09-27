@@ -1,0 +1,7 @@
+{
+  "id": "claude-sonnet",
+  "provider": "claude-code",
+  "model": "sonnet",
+  "family": "anthropic",
+  "side": true
+}

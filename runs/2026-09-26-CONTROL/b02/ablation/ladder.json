@@ -45,8 +45,8 @@
       "full": "0/3",
       "options-only": "2/3",
       "panel": {
-        "full": "18/27",
-        "options-only": "14/26"
+        "full": "20/29",
+        "options-only": "14/27"
       },
       "key_centrality": 0.077
     },
@@ -54,8 +54,8 @@
       "full": "0/3",
       "options-only": "2/3",
       "panel": {
-        "full": "12/27",
-        "options-only": "14/26"
+        "full": "12/29",
+        "options-only": "16/28"
       },
       "key_centrality": 0.111
     },
@@ -63,8 +63,8 @@
       "full": "2/3",
       "options-only": "2/3",
       "panel": {
-        "full": "18/27",
-        "options-only": "16/27"
+        "full": "19/28",
+        "options-only": "17/28"
       },
       "key_centrality": 0.02
     },
@@ -72,8 +72,8 @@
       "full": "0/3",
       "options-only": "2/3",
       "panel": {
-        "full": "6/27",
-        "options-only": "8/26"
+        "full": "8/29",
+        "options-only": "9/27"
       },
       "key_centrality": -0.074
     },
@@ -81,8 +81,8 @@
       "full": "0/3",
       "options-only": "0/3",
       "panel": {
-        "full": "1/25",
-        "options-only": "0/25"
+        "full": "1/27",
+        "options-only": "1/27"
       },
       "key_centrality": 0.027
     },
@@ -90,8 +90,8 @@
       "full": "2/3",
       "options-only": "2/3",
       "panel": {
-        "full": "19/26",
-        "options-only": "6/25"
+        "full": "20/27",
+        "options-only": "6/27"
       },
       "key_centrality": 0
     },
@@ -99,8 +99,8 @@
       "full": "1/3",
       "options-only": "2/3",
       "panel": {
-        "full": "5/24",
-        "options-only": "10/24"
+        "full": "5/26",
+        "options-only": "10/26"
       },
       "key_centrality": -0.117
     },
@@ -108,8 +108,8 @@
       "full": "0/3",
       "options-only": "1/3",
       "panel": {
-        "full": "2/23",
-        "options-only": "6/23"
+        "full": "2/26",
+        "options-only": "7/26"
       },
       "key_centrality": -0.037
     },
@@ -117,8 +117,8 @@
       "full": "2/3",
       "options-only": "3/3",
       "panel": {
-        "full": "11/23",
-        "options-only": "14/23"
+        "full": "13/25",
+        "options-only": "16/26"
       },
       "key_centrality": 0.089
     },
@@ -126,13 +126,127 @@
       "full": "2/3",
       "options-only": "1/3",
       "panel": {
-        "full": "8/23",
-        "options-only": "3/23"
+        "full": "8/25",
+        "options-only": "4/25"
       },
       "key_centrality": 0
     }
   },
   "voices": {
+    "claude-opus": {
+      "meta": {
+        "id": "claude-opus",
+        "provider": "claude-code",
+        "model": "opus",
+        "family": "anthropic",
+        "side": true
+      },
+      "statuses": {
+        "ok": 20
+      },
+      "rungs": {
+        "full": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 6,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.35,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.6,
+            "sd": 0.5163977794943222,
+            "lo": 0.27993334027633143,
+            "hi": 0.9200666597236685
+          },
+          "coverage": "10/70",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 5,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.5,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.25,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.5,
+            "sd": 0.5270462766947299,
+            "lo": 0.17333333333333334,
+            "hi": 0.8266666666666667
+          },
+          "coverage": "10/70",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 10,
+        "full": 0.6,
+        "options_only": 0.5
+      }
+    },
+    "claude-sonnet": {
+      "meta": {
+        "id": "claude-sonnet",
+        "provider": "claude-code",
+        "model": "sonnet",
+        "family": "anthropic",
+        "side": true
+      },
+      "statuses": {
+        "ok": 20
+      },
+      "rungs": {
+        "full": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 6,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.35,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.6,
+            "sd": 0.5163977794943222,
+            "lo": 0.27993334027633143,
+            "hi": 0.9200666597236685
+          },
+          "coverage": "10/70",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 4,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.4,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.15000000000000002,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.4,
+            "sd": 0.5163977794943223,
+            "lo": 0.07993334027633142,
+            "hi": 0.7200666597236687
+          },
+          "coverage": "10/70",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 10,
+        "full": 0.6,
+        "options_only": 0.4
+      }
+    },
     "gemini-flash-36": {
       "meta": {
         "id": "gemini-flash-36",
@@ -309,52 +423,52 @@
         "family": "google"
       },
       "statuses": {
-        "ok": 13
+        "ok": 51
       },
       "rungs": {
         "full": {
-          "questions": 6,
-          "trials": 6,
-          "hits": 3,
+          "questions": 10,
+          "trials": 25,
+          "hits": 11,
           "unparsed": 0,
           "unparsed_excluded": 0,
-          "hit_rate": 0.5,
+          "hit_rate": 0.44,
           "mean_chance": 0.25,
-          "excess_over_chance": 0.25,
+          "excess_over_chance": 0.19,
           "ci_question_unit": {
-            "n": 6,
-            "mean": 0.5,
-            "sd": 0.5477225575051661,
-            "lo": 0.06173067641004126,
-            "hi": 0.9382693235899587
+            "n": 10,
+            "mean": 0.4666666666666666,
+            "sd": 0.5018484351393873,
+            "lo": 0.15561778400124476,
+            "hi": 0.7777155493320884
           },
-          "coverage": "6/70",
-          "mean_reasoning_tokens": 596
+          "coverage": "25/70",
+          "mean_reasoning_tokens": 880
         },
         "options-only": {
-          "questions": 7,
-          "trials": 7,
-          "hits": 2,
+          "questions": 10,
+          "trials": 26,
+          "hits": 11,
           "unparsed": 0,
           "unparsed_excluded": 0,
-          "hit_rate": 0.2857142857142857,
+          "hit_rate": 0.4230769230769231,
           "mean_chance": 0.25,
-          "excess_over_chance": 0.0357142857142857,
+          "excess_over_chance": 0.17307692307692307,
           "ci_question_unit": {
-            "n": 7,
-            "mean": 0.2857142857142857,
-            "sd": 0.48795003647426666,
-            "lo": 0,
-            "hi": 0.6471927313603113
+            "n": 10,
+            "mean": 0.45,
+            "sd": 0.3047970383187823,
+            "lo": 0.26108483842844976,
+            "hi": 0.6389151615715503
           },
-          "coverage": "7/70",
-          "mean_reasoning_tokens": 1111
+          "coverage": "26/70",
+          "mean_reasoning_tokens": 1030
         }
       },
       "paired_full_vs_options_only": {
-        "questions": 6,
-        "full": 0.5,
-        "options_only": 0.3333333333333333
+        "questions": 10,
+        "full": 0.4666666666666666,
+        "options_only": 0.45
       }
     },
     "gpt-luna": {
@@ -606,13 +720,13 @@
           "gemma-31b"
         ],
         "questions": 10,
-        "rate": 0.55,
+        "rate": 0.5166666666666666,
         "ci_question_unit": {
           "n": 10,
-          "mean": 0.55,
-          "sd": 0.49721446300587663,
-          "lo": 0.2418232830194843,
-          "hi": 0.8581767169805158
+          "mean": 0.5166666666666666,
+          "sd": 0.4743416490252569,
+          "lo": 0.22266666666666662,
+          "hi": 0.8106666666666666
         }
       },
       "openai": {
@@ -682,13 +796,13 @@
           "gemma-31b"
         ],
         "questions": 10,
-        "rate": 0.4,
+        "rate": 0.41388888888888886,
         "ci_question_unit": {
           "n": 10,
-          "mean": 0.4,
-          "sd": 0.4661372658534007,
-          "lo": 0.11108512937348519,
-          "hi": 0.6889148706265149
+          "mean": 0.41388888888888886,
+          "sd": 0.3500073485413153,
+          "lo": 0.19695208672824296,
+          "hi": 0.6308256910495348
         }
       },
       "openai": {
@@ -742,7 +856,7 @@
       "complete_questions": 10,
       "family_rates_on_complete": {
         "anthropic": 0.29999999999999993,
-        "google": 0.55,
+        "google": 0.5166666666666666,
         "openai": 0.4333333333333333,
         "mistral": 0.3785714285714286,
         "nvidia": 0.36666666666666664
@@ -750,19 +864,19 @@
       "median_family_rate": 0.3785714285714286,
       "pooled_trials": {
         "questions": 10,
-        "trials": 252,
-        "hits": 100,
+        "trials": 271,
+        "hits": 108,
         "unparsed": 0,
         "unparsed_excluded": 0,
-        "hit_rate": 0.3968253968253968,
+        "hit_rate": 0.3985239852398524,
         "mean_chance": 0.25,
-        "excess_over_chance": 0.1468253968253968,
+        "excess_over_chance": 0.14852398523985239,
         "ci_question_unit": {
           "n": 10,
-          "mean": 0.3892146042363434,
-          "sd": 0.24882539992752414,
-          "lo": 0.23499102355558205,
-          "hi": 0.5434381849171048
+          "mean": 0.39448903204075625,
+          "sd": 0.25667967184605356,
+          "lo": 0.23539732318952364,
+          "hi": 0.5535807408919888
         }
       },
       "voices": [
@@ -782,27 +896,27 @@
       "complete_questions": 10,
       "family_rates_on_complete": {
         "anthropic": 0.5666666666666667,
-        "google": 0.4,
+        "google": 0.41388888888888886,
         "openai": 0.4666666666666666,
         "mistral": 0.2928571428571429,
         "nvidia": 0.4
       },
-      "median_family_rate": 0.4,
+      "median_family_rate": 0.41388888888888886,
       "pooled_trials": {
         "questions": 10,
-        "trials": 248,
-        "hits": 91,
+        "trials": 267,
+        "hits": 100,
         "unparsed": 0,
         "unparsed_excluded": 0,
-        "hit_rate": 0.36693548387096775,
+        "hit_rate": 0.37453183520599254,
         "mean_chance": 0.25,
-        "excess_over_chance": 0.11693548387096775,
+        "excess_over_chance": 0.12453183520599254,
         "ci_question_unit": {
           "n": 10,
-          "mean": 0.36338746438746433,
-          "sd": 0.20870110784226,
-          "lo": 0.2340331775949981,
-          "hi": 0.4927417511799306
+          "mean": 0.3718913308913309,
+          "sd": 0.20208933411251434,
+          "lo": 0.24663506391335863,
+          "hi": 0.4971475978693032
         }
       },
       "voices": [
@@ -834,14 +948,14 @@
           }
         },
         "google": {
-          "rate": 0.5,
+          "rate": 0.5333333333333333,
           "questions": 5,
           "ci_question_unit": {
             "n": 5,
-            "mean": 0.5,
-            "sd": 0.5,
-            "lo": 0.06173067641004126,
-            "hi": 0.9382693235899587
+            "mean": 0.5333333333333333,
+            "sd": 0.5055250296034367,
+            "lo": 0.09022110776914916,
+            "hi": 0.9764455588975175
           }
         },
         "openai": {
@@ -891,14 +1005,14 @@
           }
         },
         "google": {
-          "rate": 0.6,
+          "rate": 0.5,
           "questions": 5,
           "ci_question_unit": {
             "n": 5,
-            "mean": 0.6,
-            "sd": 0.5477225575051662,
-            "lo": 0.11990001041449705,
-            "hi": 1
+            "mean": 0.5,
+            "sd": 0.5,
+            "lo": 0.06173067641004126,
+            "hi": 0.9382693235899587
           }
         },
         "openai": {
@@ -950,14 +1064,14 @@
           }
         },
         "google": {
-          "rate": 0.4,
+          "rate": 0.4777777777777777,
           "questions": 5,
           "ci_question_unit": {
             "n": 5,
-            "mean": 0.4,
-            "sd": 0.4346134936801766,
-            "lo": 0.019044476203440408,
-            "hi": 0.7809555237965596
+            "mean": 0.4777777777777777,
+            "sd": 0.3438166321503512,
+            "lo": 0.17640921215475353,
+            "hi": 0.7791463434008019
           }
         },
         "openai": {
@@ -1007,14 +1121,14 @@
           }
         },
         "google": {
-          "rate": 0.4,
+          "rate": 0.35,
           "questions": 5,
           "ci_question_unit": {
             "n": 5,
-            "mean": 0.4,
-            "sd": 0.5477225575051662,
-            "lo": 0,
-            "hi": 0.880099989585503
+            "mean": 0.35,
+            "sd": 0.3836954811073779,
+            "lo": 0.013676082061091333,
+            "hi": 0.6863239179389087
           }
         },
         "openai": {
@@ -1068,14 +1182,14 @@
           }
         },
         "google": {
-          "rate": 0.55,
+          "rate": 0.5166666666666666,
           "questions": 10,
           "ci_question_unit": {
             "n": 10,
-            "mean": 0.55,
-            "sd": 0.49721446300587663,
-            "lo": 0.2418232830194843,
-            "hi": 0.8581767169805158
+            "mean": 0.5166666666666666,
+            "sd": 0.4743416490252569,
+            "lo": 0.22266666666666662,
+            "hi": 0.8106666666666666
           }
         },
         "openai": {
@@ -1127,14 +1241,14 @@
           }
         },
         "google": {
-          "rate": 0.4,
+          "rate": 0.41388888888888886,
           "questions": 10,
           "ci_question_unit": {
             "n": 10,
-            "mean": 0.4,
-            "sd": 0.4661372658534007,
-            "lo": 0.11108512937348519,
-            "hi": 0.6889148706265149
+            "mean": 0.41388888888888886,
+            "sd": 0.3500073485413153,
+            "lo": 0.19695208672824296,
+            "hi": 0.6308256910495348
           }
         },
         "openai": {

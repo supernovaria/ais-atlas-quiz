@@ -1,0 +1,8 @@
+{
+  "id": "claude-sonnet",
+  "provider": "claude-code",
+  "model": "sonnet",
+  "family": "anthropic",
+  "side": true,
+  "notes": "full/56 unanswered: the API usage filter blocked it twice (2026-09-27, [bio] false positive). Its options-only twin was answered."
+}

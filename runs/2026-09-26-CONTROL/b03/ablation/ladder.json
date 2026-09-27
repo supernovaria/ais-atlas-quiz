@@ -1,0 +1,935 @@
+{
+  "source": "2026-09-26-CONTROL/b03",
+  "seeds": 7,
+  "seed_offset": 0,
+  "preregistered": true,
+  "excluded": [],
+  "rungs": {
+    "full": {
+      "questions": 10,
+      "trials": 30,
+      "hits": 11,
+      "unparsed": 0,
+      "unparsed_excluded": 0,
+      "hit_rate": 0.36666666666666664,
+      "mean_chance": 0.25,
+      "excess_over_chance": 0.11666666666666664,
+      "ci_question_unit": {
+        "n": 10,
+        "mean": 0.36666666666666664,
+        "sd": 0.3668349782048706,
+        "lo": 0.1392999915837258,
+        "hi": 0.5940333417496075
+      }
+    },
+    "options-only": {
+      "questions": 10,
+      "trials": 30,
+      "hits": 7,
+      "unparsed": 0,
+      "unparsed_excluded": 0,
+      "hit_rate": 0.23333333333333334,
+      "mean_chance": 0.25,
+      "excess_over_chance": -0.016666666666666663,
+      "ci_question_unit": {
+        "n": 10,
+        "mean": 0.2333333333333333,
+        "sd": 0.27442420078285484,
+        "lo": 0.06324345150247732,
+        "hi": 0.40342321516418933
+      }
+    }
+  },
+  "per_question": {
+    "b03/ctrl-opus/01": {
+      "full": "1/3",
+      "options-only": "0/3",
+      "panel": {
+        "full": "2/21",
+        "options-only": "3/21"
+      },
+      "key_centrality": 0.089
+    },
+    "b03/ctrl-opus/02": {
+      "full": "1/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "3/21",
+        "options-only": "13/21"
+      },
+      "key_centrality": 0
+    },
+    "b03/ctrl-opus/03": {
+      "full": "1/3",
+      "options-only": "0/3",
+      "panel": {
+        "full": "1/21",
+        "options-only": "0/21"
+      },
+      "key_centrality": -0.119
+    },
+    "b03/ctrl-opus/04": {
+      "full": "0/3",
+      "options-only": "0/3",
+      "panel": {
+        "full": "1/21",
+        "options-only": "1/21"
+      },
+      "key_centrality": -0.065
+    },
+    "b03/ctrl-opus/05": {
+      "full": "1/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "5/20",
+        "options-only": "7/20"
+      },
+      "key_centrality": 0.085
+    },
+    "b03/ctrl-sol/01": {
+      "full": "3/3",
+      "options-only": "2/3",
+      "panel": {
+        "full": "17/20",
+        "options-only": "12/20"
+      },
+      "key_centrality": 0.056
+    },
+    "b03/ctrl-sol/02": {
+      "full": "0/3",
+      "options-only": "0/3",
+      "panel": {
+        "full": "4/20",
+        "options-only": "2/20"
+      },
+      "key_centrality": -0.133
+    },
+    "b03/ctrl-sol/03": {
+      "full": "1/3",
+      "options-only": "0/3",
+      "panel": {
+        "full": "7/20",
+        "options-only": "5/20"
+      },
+      "key_centrality": 0.12
+    },
+    "b03/ctrl-sol/04": {
+      "full": "3/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "8/20",
+        "options-only": "8/20"
+      },
+      "key_centrality": 0.067
+    },
+    "b03/ctrl-sol/05": {
+      "full": "0/3",
+      "options-only": "1/3",
+      "panel": {
+        "full": "4/20",
+        "options-only": "8/20"
+      },
+      "key_centrality": 0.131
+    }
+  },
+  "voices": {
+    "claude-opus": {
+      "meta": {
+        "id": "claude-opus",
+        "provider": "claude-code",
+        "model": "opus",
+        "family": "anthropic",
+        "side": true
+      },
+      "statuses": {
+        "ok": 20
+      },
+      "rungs": {
+        "full": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 6,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.6,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.35,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.6,
+            "sd": 0.5163977794943223,
+            "lo": 0.2799333402763314,
+            "hi": 0.9200666597236686
+          },
+          "coverage": "10/70",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 3,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.3,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.04999999999999999,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.3,
+            "sd": 0.4830458915396479,
+            "lo": 0.0006050545962185128,
+            "hi": 0.5993949454037815
+          },
+          "coverage": "10/70",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 10,
+        "full": 0.6,
+        "options_only": 0.3
+      }
+    },
+    "claude-sonnet": {
+      "meta": {
+        "id": "claude-sonnet",
+        "provider": "claude-code",
+        "model": "sonnet",
+        "family": "anthropic",
+        "side": true,
+        "notes": "full/56 unanswered: the API usage filter blocked it twice (2026-09-27, [bio] false positive). Its options-only twin was answered."
+      },
+      "statuses": {
+        "ok": 19
+      },
+      "rungs": {
+        "full": {
+          "questions": 9,
+          "trials": 9,
+          "hits": 1,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.1111111111111111,
+          "mean_chance": 0.25,
+          "excess_over_chance": -0.1388888888888889,
+          "ci_question_unit": {
+            "n": 9,
+            "mean": 0.1111111111111111,
+            "sd": 0.33333333333333337,
+            "lo": 0,
+            "hi": 0.3288888888888889
+          },
+          "coverage": "9/70",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 10,
+          "hits": 1,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.1,
+          "mean_chance": 0.25,
+          "excess_over_chance": -0.15,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.1,
+            "sd": 0.31622776601683794,
+            "lo": 0,
+            "hi": 0.296
+          },
+          "coverage": "10/70",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 9,
+        "full": 0.1111111111111111,
+        "options_only": 0.1111111111111111
+      }
+    },
+    "gemma-31b": {
+      "meta": {
+        "id": "gemma-31b",
+        "provider": "gemini",
+        "model": "gemma-4-31b-it",
+        "family": "google"
+      },
+      "statuses": {
+        "ok": 8
+      },
+      "rungs": {
+        "full": {
+          "questions": 4,
+          "trials": 4,
+          "hits": 0,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0,
+          "mean_chance": 0.25,
+          "excess_over_chance": -0.25,
+          "ci_question_unit": {
+            "n": 4,
+            "mean": 0,
+            "sd": 0,
+            "lo": 0,
+            "hi": 0
+          },
+          "coverage": "4/70",
+          "mean_reasoning_tokens": 1338
+        },
+        "options-only": {
+          "questions": 4,
+          "trials": 4,
+          "hits": 0,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0,
+          "mean_chance": 0.25,
+          "excess_over_chance": -0.25,
+          "ci_question_unit": {
+            "n": 4,
+            "mean": 0,
+            "sd": 0,
+            "lo": 0,
+            "hi": 0
+          },
+          "coverage": "4/70",
+          "mean_reasoning_tokens": 840
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 4,
+        "full": 0,
+        "options_only": 0
+      }
+    },
+    "gpt-luna": {
+      "meta": {
+        "id": "gpt-luna",
+        "provider": "codex",
+        "model": "gpt-5.6-luna",
+        "family": "openai"
+      },
+      "statuses": {
+        "ok": 60
+      },
+      "rungs": {
+        "full": {
+          "questions": 10,
+          "trials": 30,
+          "hits": 12,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.4,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.15000000000000002,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.4,
+            "sd": 0.3784308081316978,
+            "lo": 0.1654461550670305,
+            "hi": 0.6345538449329695
+          },
+          "coverage": "30/70",
+          "mean_reasoning_tokens": 54
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 30,
+          "hits": 10,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.3333333333333333,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.08333333333333331,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.33333333333333337,
+            "sd": 0.41573970964154905,
+            "lo": 0.07565519166943901,
+            "hi": 0.5910114749972277
+          },
+          "coverage": "30/70",
+          "mean_reasoning_tokens": 44
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 10,
+        "full": 0.4,
+        "options_only": 0.33333333333333337
+      }
+    },
+    "ministral-14b": {
+      "meta": {
+        "id": "ministral-14b",
+        "provider": "mistral",
+        "model": "ministral-14b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 140
+      },
+      "rungs": {
+        "full": {
+          "questions": 10,
+          "trials": 70,
+          "hits": 18,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.2571428571428571,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.0071428571428571175,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.2571428571428571,
+            "sd": 0.30713362850661147,
+            "lo": 0.06677946196872644,
+            "hi": 0.4475062523169878
+          },
+          "coverage": "70/70",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 70,
+          "hits": 22,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.3142857142857143,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.06428571428571428,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.3142857142857142,
+            "sd": 0.22131333406899525,
+            "lo": 0.17711428868985626,
+            "hi": 0.4514571398815722
+          },
+          "coverage": "70/70",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 10,
+        "full": 0.2571428571428571,
+        "options_only": 0.3142857142857142
+      }
+    },
+    "ministral-8b": {
+      "meta": {
+        "id": "ministral-8b",
+        "provider": "mistral",
+        "model": "ministral-8b-latest",
+        "family": "mistral"
+      },
+      "statuses": {
+        "ok": 140
+      },
+      "rungs": {
+        "full": {
+          "questions": 10,
+          "trials": 70,
+          "hits": 11,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.15714285714285714,
+          "mean_chance": 0.25,
+          "excess_over_chance": -0.09285714285714286,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.1571428571428571,
+            "sd": 0.18381199110113122,
+            "lo": 0.043215004729342574,
+            "hi": 0.27107070955637164
+          },
+          "coverage": "70/70",
+          "mean_reasoning_tokens": null
+        },
+        "options-only": {
+          "questions": 10,
+          "trials": 70,
+          "hits": 20,
+          "unparsed": 0,
+          "unparsed_excluded": 0,
+          "hit_rate": 0.2857142857142857,
+          "mean_chance": 0.25,
+          "excess_over_chance": 0.0357142857142857,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.2857142857142857,
+            "sd": 0.22335313142016333,
+            "lo": 0.14727858062183333,
+            "hi": 0.4241499908067381
+          },
+          "coverage": "70/70",
+          "mean_reasoning_tokens": null
+        }
+      },
+      "paired_full_vs_options_only": {
+        "questions": 10,
+        "full": 0.1571428571428571,
+        "options_only": 0.2857142857142857
+      }
+    }
+  },
+  "families": {
+    "full": {
+      "anthropic": {
+        "voices": [
+          "claude-haiku"
+        ],
+        "questions": 10,
+        "rate": 0.36666666666666664,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.36666666666666664,
+          "sd": 0.3668349782048706,
+          "lo": 0.1392999915837258,
+          "hi": 0.5940333417496075
+        }
+      },
+      "google": {
+        "voices": [
+          "gemma-31b"
+        ],
+        "questions": 4,
+        "rate": 0,
+        "ci_question_unit": {
+          "n": 4,
+          "mean": 0,
+          "sd": 0,
+          "lo": 0,
+          "hi": 0
+        }
+      },
+      "openai": {
+        "voices": [
+          "gpt-luna"
+        ],
+        "questions": 10,
+        "rate": 0.4,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.4,
+          "sd": 0.3784308081316978,
+          "lo": 0.1654461550670305,
+          "hi": 0.6345538449329695
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 10,
+        "rate": 0.20714285714285713,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.20714285714285713,
+          "sd": 0.22195278450326508,
+          "lo": 0.0695750960616762,
+          "hi": 0.34471061822403803
+        }
+      }
+    },
+    "options-only": {
+      "anthropic": {
+        "voices": [
+          "claude-haiku"
+        ],
+        "questions": 10,
+        "rate": 0.2333333333333333,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.2333333333333333,
+          "sd": 0.27442420078285484,
+          "lo": 0.06324345150247732,
+          "hi": 0.40342321516418933
+        }
+      },
+      "google": {
+        "voices": [
+          "gemma-31b"
+        ],
+        "questions": 4,
+        "rate": 0,
+        "ci_question_unit": {
+          "n": 4,
+          "mean": 0,
+          "sd": 0,
+          "lo": 0,
+          "hi": 0
+        }
+      },
+      "openai": {
+        "voices": [
+          "gpt-luna"
+        ],
+        "questions": 10,
+        "rate": 0.33333333333333337,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.33333333333333337,
+          "sd": 0.41573970964154905,
+          "lo": 0.07565519166943901,
+          "hi": 0.5910114749972277
+        }
+      },
+      "mistral": {
+        "voices": [
+          "ministral-14b",
+          "ministral-8b"
+        ],
+        "questions": 10,
+        "rate": 0.29999999999999993,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.29999999999999993,
+          "sd": 0.1957600456294711,
+          "lo": 0.1786666666666666,
+          "hi": 0.4213333333333332
+        }
+      }
+    }
+  },
+  "panel": {
+    "full": {
+      "families": 4,
+      "complete_questions": 4,
+      "family_rates_on_complete": {
+        "anthropic": 0.25,
+        "google": 0,
+        "openai": 0.08333333333333333,
+        "mistral": 0.05357142857142857
+      },
+      "median_family_rate": 0.06845238095238095,
+      "pooled_trials": {
+        "questions": 10,
+        "trials": 204,
+        "hits": 52,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.2549019607843137,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.004901960784313708,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.2583333333333333,
+          "sd": 0.23901475880303702,
+          "lo": 0.11019045101951133,
+          "hi": 0.4064762156471553
+        }
+      },
+      "voices": [
+        "claude-haiku",
+        "gemma-31b",
+        "gpt-luna",
+        "ministral-14b",
+        "ministral-8b"
+      ]
+    },
+    "options-only": {
+      "families": 4,
+      "complete_questions": 4,
+      "family_rates_on_complete": {
+        "anthropic": 0.16666666666666666,
+        "google": 0,
+        "openai": 0.25,
+        "mistral": 0.21428571428571427
+      },
+      "median_family_rate": 0.19047619047619047,
+      "pooled_trials": {
+        "questions": 10,
+        "trials": 204,
+        "hits": 59,
+        "unparsed": 0,
+        "unparsed_excluded": 0,
+        "hit_rate": 0.28921568627450983,
+        "mean_chance": 0.25,
+        "excess_over_chance": 0.03921568627450983,
+        "ci_question_unit": {
+          "n": 10,
+          "mean": 0.29095238095238096,
+          "sd": 0.2196873565854144,
+          "lo": 0.15478874664188685,
+          "hi": 0.42711601526287507
+        }
+      },
+      "voices": [
+        "claude-haiku",
+        "gemma-31b",
+        "gpt-luna",
+        "ministral-14b",
+        "ministral-8b"
+      ]
+    }
+  },
+  "warnings": [],
+  "by_author": {
+    "full": {
+      "opus": {
+        "anthropic": {
+          "rate": 0.26666666666666666,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.26666666666666666,
+            "sd": 0.14907119849998596,
+            "lo": 0.13600000000000004,
+            "hi": 0.3973333333333333
+          }
+        },
+        "google": {
+          "rate": 0,
+          "questions": 4,
+          "ci_question_unit": {
+            "n": 4,
+            "mean": 0,
+            "sd": 0,
+            "lo": 0,
+            "hi": 0
+          }
+        },
+        "openai": {
+          "rate": 0.13333333333333333,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.13333333333333333,
+            "sd": 0.18257418583505536,
+            "lo": 0,
+            "hi": 0.2933666631951676
+          }
+        },
+        "mistral": {
+          "rate": 0.08571428571428572,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.08571428571428572,
+            "sd": 0.07824607964359516,
+            "lo": 0.017128572916356735,
+            "hi": 0.1542999985122147
+          }
+        }
+      },
+      "sol": {
+        "anthropic": {
+          "rate": 0.4666666666666666,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.4666666666666666,
+            "sd": 0.5055250296034368,
+            "lo": 0.023554441102482337,
+            "hi": 0.909778892230851
+          }
+        },
+        "openai": {
+          "rate": 0.6666666666666667,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.6666666666666667,
+            "sd": 0.33333333333333337,
+            "lo": 0.37448711760669423,
+            "hi": 0.9588462157266393
+          }
+        },
+        "mistral": {
+          "rate": 0.3285714285714285,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.3285714285714285,
+            "sd": 0.26049403612586386,
+            "lo": 0.10023833854722725,
+            "hi": 0.5569045185956298
+          }
+        }
+      }
+    },
+    "options-only": {
+      "opus": {
+        "anthropic": {
+          "rate": 0.2,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.2,
+            "sd": 0.29814239699997197,
+            "lo": 0,
+            "hi": 0.4613333333333333
+          }
+        },
+        "google": {
+          "rate": 0,
+          "questions": 4,
+          "ci_question_unit": {
+            "n": 4,
+            "mean": 0,
+            "sd": 0,
+            "lo": 0,
+            "hi": 0
+          }
+        },
+        "openai": {
+          "rate": 0.26666666666666666,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.26666666666666666,
+            "sd": 0.43461349368017665,
+            "lo": 0,
+            "hi": 0.6476221904632263
+          }
+        },
+        "mistral": {
+          "rate": 0.24285714285714283,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.24285714285714283,
+            "sd": 0.22924009336973158,
+            "lo": 0.04191934153544033,
+            "hi": 0.44379494417884535
+          }
+        }
+      },
+      "sol": {
+        "anthropic": {
+          "rate": 0.26666666666666666,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.26666666666666666,
+            "sd": 0.2788866755113585,
+            "lo": 0.02221171739743588,
+            "hi": 0.5111216159358974
+          }
+        },
+        "openai": {
+          "rate": 0.4,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.4,
+            "sd": 0.4346134936801766,
+            "lo": 0.019044476203440408,
+            "hi": 0.7809555237965596
+          }
+        },
+        "mistral": {
+          "rate": 0.3571428571428571,
+          "questions": 5,
+          "ci_question_unit": {
+            "n": 5,
+            "mean": 0.3571428571428571,
+            "sd": 0.15971914124998496,
+            "lo": 0.21714285714285714,
+            "hi": 0.49714285714285705
+          }
+        }
+      }
+    }
+  },
+  "by_group": {
+    "full": {
+      "clean": {
+        "anthropic": {
+          "rate": 0.36666666666666664,
+          "questions": 10,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.36666666666666664,
+            "sd": 0.3668349782048706,
+            "lo": 0.1392999915837258,
+            "hi": 0.5940333417496075
+          }
+        },
+        "google": {
+          "rate": 0,
+          "questions": 4,
+          "ci_question_unit": {
+            "n": 4,
+            "mean": 0,
+            "sd": 0,
+            "lo": 0,
+            "hi": 0
+          }
+        },
+        "openai": {
+          "rate": 0.4,
+          "questions": 10,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.4,
+            "sd": 0.3784308081316978,
+            "lo": 0.1654461550670305,
+            "hi": 0.6345538449329695
+          }
+        },
+        "mistral": {
+          "rate": 0.20714285714285713,
+          "questions": 10,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.20714285714285713,
+            "sd": 0.22195278450326508,
+            "lo": 0.0695750960616762,
+            "hi": 0.34471061822403803
+          }
+        }
+      }
+    },
+    "options-only": {
+      "clean": {
+        "anthropic": {
+          "rate": 0.2333333333333333,
+          "questions": 10,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.2333333333333333,
+            "sd": 0.27442420078285484,
+            "lo": 0.06324345150247732,
+            "hi": 0.40342321516418933
+          }
+        },
+        "google": {
+          "rate": 0,
+          "questions": 4,
+          "ci_question_unit": {
+            "n": 4,
+            "mean": 0,
+            "sd": 0,
+            "lo": 0,
+            "hi": 0
+          }
+        },
+        "openai": {
+          "rate": 0.33333333333333337,
+          "questions": 10,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.33333333333333337,
+            "sd": 0.41573970964154905,
+            "lo": 0.07565519166943901,
+            "hi": 0.5910114749972277
+          }
+        },
+        "mistral": {
+          "rate": 0.29999999999999993,
+          "questions": 10,
+          "ci_question_unit": {
+            "n": 10,
+            "mean": 0.29999999999999993,
+            "sd": 0.1957600456294711,
+            "lo": 0.1786666666666666,
+            "hi": 0.4213333333333332
+          }
+        }
+      }
+    }
+  }
+}

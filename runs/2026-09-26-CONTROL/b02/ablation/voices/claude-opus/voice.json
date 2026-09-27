@@ -1,0 +1,7 @@
+{
+  "id": "claude-opus",
+  "provider": "claude-code",
+  "model": "opus",
+  "family": "anthropic",
+  "side": true
+}

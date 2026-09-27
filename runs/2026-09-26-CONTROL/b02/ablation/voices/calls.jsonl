@@ -452,3 +452,50 @@
 {"ts":"2026-09-27T14:43:32.018Z","voice":"gemma-31b","file":"options-only/35","result":"ok","detail":null}
 {"ts":"2026-09-27T14:44:32.433Z","voice":"gemma-31b","file":"full/42","result":"ok","detail":null}
 {"ts":"2026-09-27T14:47:08.718Z","voice":"gemma-31b","file":"options-only/42","result":"ok","detail":null}
+{"ts":"2026-09-27T14:50:31.241Z","voice":"gemma-31b","file":"full/49","result":"ok","detail":null}
+{"ts":"2026-09-27T14:51:40.688Z","voice":"gemma-31b","file":"options-only/49","result":"ok","detail":null}
+{"ts":"2026-09-27T14:52:26.724Z","voice":"gemma-31b","file":"full/56","result":"skip","detail":"transient x4: Internal error encountered."}
+{"ts":"2026-09-27T14:53:08.708Z","voice":"gemma-31b","file":"options-only/56","result":"ok","detail":null}
+{"ts":"2026-09-27T14:54:06.926Z","voice":"gemma-31b","file":"full/63","result":"ok","detail":null}
+{"ts":"2026-09-27T14:56:18.229Z","voice":"gemma-31b","file":"options-only/63","result":"skip","detail":"transient x4: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."}
+{"ts":"2026-09-27T14:57:11.027Z","voice":"gemma-31b","file":"full/01","result":"ok","detail":null}
+{"ts":"2026-09-27T14:58:22.134Z","voice":"gemma-31b","file":"options-only/01","result":"ok","detail":null}
+{"ts":"2026-09-27T14:59:20.149Z","voice":"gemma-31b","file":"full/08","result":"ok","detail":null}
+{"ts":"2026-09-27T15:00:40.637Z","voice":"gemma-31b","file":"options-only/08","result":"ok","detail":null}
+{"ts":"2026-09-27T15:01:51.341Z","voice":"gemma-31b","file":"full/15","result":"ok","detail":null}
+{"ts":"2026-09-27T15:02:34.245Z","voice":"gemma-31b","file":"options-only/15","result":"ok","detail":null}
+{"ts":"2026-09-27T15:04:14.645Z","voice":"gemma-31b","file":"full/22","result":"ok","detail":null}
+{"ts":"2026-09-27T15:05:30.750Z","voice":"gemma-31b","file":"options-only/22","result":"ok","detail":null}
+{"ts":"2026-09-27T15:07:55.831Z","voice":"gemma-31b","file":"full/29","result":"ok","detail":null}
+{"ts":"2026-09-27T15:09:21.526Z","voice":"gemma-31b","file":"options-only/29","result":"ok","detail":null}
+{"ts":"2026-09-27T15:10:23.674Z","voice":"gemma-31b","file":"full/36","result":"ok","detail":null}
+{"ts":"2026-09-27T15:12:12.776Z","voice":"gemma-31b","file":"options-only/36","result":"ok","detail":null}
+{"ts":"2026-09-27T15:12:52.117Z","voice":"gemma-31b","file":"full/43","result":"ok","detail":null}
+{"ts":"2026-09-27T15:14:00.365Z","voice":"gemma-31b","file":"options-only/43","result":"ok","detail":null}
+{"ts":"2026-09-27T15:15:00.573Z","voice":"gemma-31b","file":"full/50","result":"ok","detail":null}
+{"ts":"2026-09-27T15:16:26.516Z","voice":"gemma-31b","file":"options-only/50","result":"ok","detail":null}
+{"ts":"2026-09-27T15:17:11.797Z","voice":"gemma-31b","file":"full/57","result":"ok","detail":null}
+{"ts":"2026-09-27T15:18:04.582Z","voice":"gemma-31b","file":"options-only/57","result":"ok","detail":null}
+{"ts":"2026-09-27T15:19:09.014Z","voice":"gemma-31b","file":"full/64","result":"ok","detail":null}
+{"ts":"2026-09-27T15:20:29.098Z","voice":"gemma-31b","file":"options-only/64","result":"ok","detail":null}
+{"ts":"2026-09-27T15:21:33.310Z","voice":"gemma-31b","file":"full/02","result":"skip","detail":"transient x4: Internal error encountered."}
+{"ts":"2026-09-27T15:23:14.312Z","voice":"gemma-31b","file":"options-only/02","result":"skip","detail":"transient x4: Internal error encountered."}
+{"ts":"2026-09-27T15:24:01.413Z","voice":"gemma-31b","file":"full/09","result":"ok","detail":null}
+{"ts":"2026-09-27T15:25:26.452Z","voice":"gemma-31b","file":"options-only/09","result":"ok","detail":null}
+{"ts":"2026-09-27T15:27:10.982Z","voice":"gemma-31b","file":"full/16","result":"skip","detail":"transient x4: Internal error encountered."}
+{"ts":"2026-09-27T15:28:22.535Z","voice":"gemma-31b","file":"options-only/16","result":"skip","detail":"transient x4: Internal error encountered."}
+{"ts":"2026-09-27T15:30:28.994Z","voice":"gemma-31b","file":"full/23","result":"ok","detail":null}
+{"ts":"2026-09-27T15:33:29.979Z","voice":"gemma-31b","file":"options-only/23","result":"skip","detail":"transient x4: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."}
+{"ts":"2026-09-27T15:34:33.098Z","voice":"gemma-31b","file":"full/30","result":"ok","detail":null}
+{"ts":"2026-09-27T15:35:40.389Z","voice":"gemma-31b","file":"options-only/30","result":"ok","detail":null}
+{"ts":"2026-09-27T15:37:33.916Z","voice":"gemma-31b","file":"full/37","result":"skip","detail":"transient x4: Internal error encountered."}
+{"ts":"2026-09-27T15:39:22.667Z","voice":"gemma-31b","file":"options-only/37","result":"ok","detail":null}
+{"ts":"2026-09-27T15:40:41.566Z","voice":"gemma-31b","file":"full/44","result":"ok","detail":null}
+{"ts":"2026-09-27T15:44:13.108Z","voice":"gemma-31b","file":"options-only/44","result":"ok","detail":null}
+{"ts":"2026-09-27T15:45:49.601Z","voice":"gemma-31b","file":"full/51","result":"ok","detail":null}
+{"ts":"2026-09-27T15:46:50.892Z","voice":"gemma-31b","file":"options-only/51","result":"ok","detail":null}
+{"ts":"2026-09-27T15:47:26.742Z","voice":"gemma-31b","file":"full/58","result":"ok","detail":null}
+{"ts":"2026-09-27T15:48:15.747Z","voice":"gemma-31b","file":"options-only/58","result":"ok","detail":null}
+{"ts":"2026-09-27T15:50:18.560Z","voice":"gemma-31b","file":"full/65","result":"skip","detail":"transient x4: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."}
+{"ts":"2026-09-27T15:51:38.776Z","voice":"gemma-31b","file":"options-only/65","result":"ok","detail":null}
+{"ts":"2026-09-27T15:52:24.809Z","voice":"gemma-31b","file":"full/03","result":"ok","detail":null}
