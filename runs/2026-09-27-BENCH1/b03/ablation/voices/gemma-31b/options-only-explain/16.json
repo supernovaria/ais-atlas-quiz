@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/16",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "7b3262c65b6d7114a9fe5401023fa62c366c2b1a4f85277ee6e7e67a3fa42623",
+  "ts": "2026-09-27T18:06:25.755Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"too-obvious\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\", \"too-obvious\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"denies-question\", \"shortest\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"hedged\", \"nuanced-turn\", \"textbook-voice\"],\n      \"p\": 80,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"Selecting the longest, most nuanced, and most detailed option, which typically characterizes the correct answer in conceptual textbook questions.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 824,
+    "candidatesTokenCount": 219,
+    "totalTokenCount": 2380,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 824
+      }
+    ],
+    "thoughtsTokenCount": 1337,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 117658
+}

@@ -39,7 +39,7 @@
     ]
   },
   "summary": {
-    "replies": 169,
+    "replies": 176,
     "unusable": 10,
     "voices": [
       "gemma-31b",
@@ -58,46 +58,46 @@
       "mistral"
     ],
     "excluded_voices": [],
-    "tags": 2495,
-    "other_share": 0.0012024048096192384,
-    "no_tell_share": 0.0004008016032064128,
+    "tags": 2550,
+    "other_share": 0.001176470588235294,
+    "no_tell_share": 0.000784313725490196,
     "impossible_stem_echo_tags": 153,
     "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
   },
   "code_table": {
     "full-explain": {
-      "key_options": 79,
-      "distractor_options": 231,
+      "key_options": 83,
+      "distractor_options": 243,
       "codes": {
         "longest": {
-          "on_key": 7,
+          "on_key": 8,
           "on_distractors": 3,
-          "rate_key": 0.08860759493670886,
-          "rate_distractors": 0.012987012987012988,
-          "lift": 6.822784810126582,
-          "rate_on_picked": 0.0759493670886076,
-          "rate_on_not_picked": 0.017316017316017316,
-          "lift_among_not_picked": 9.291666666666666,
+          "rate_key": 0.0963855421686747,
+          "rate_distractors": 0.012345679012345678,
+          "lift": 7.807228915662652,
+          "rate_on_picked": 0.08433734939759036,
+          "rate_on_not_picked": 0.01646090534979424,
+          "lift_among_not_picked": 9.791666666666668,
           "cue_follow": {
-            "questions": 7,
-            "replies": 10,
+            "questions": 8,
+            "replies": 11,
             "chance": 0.25,
-            "toward": 0.7142857142857143,
+            "toward": 0.75,
             "toward_ci": {
-              "n": 7,
-              "lo": 0.42857142857142855,
-              "hi": 0.9285714285714286
+              "n": 8,
+              "lo": 0.5,
+              "hi": 0.9375
             },
-            "away": 0.09523809523809523,
+            "away": 0.08333333333333333,
             "away_ci": {
-              "n": 7,
-              "lo": 0.023809523809523808,
-              "hi": 0.19047619047619047
+              "n": 8,
+              "lo": 0.020833333333333332,
+              "hi": 0.16666666666666666
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 2,
+              "questions": 3,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -120,10 +120,10 @@
           "on_key": 0,
           "on_distractors": 10,
           "rate_key": 0,
-          "rate_distractors": 0.04329004329004329,
+          "rate_distractors": 0.0411522633744856,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.04329004329004329,
+          "rate_on_not_picked": 0.0411522633744856,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 5,
@@ -152,35 +152,35 @@
           }
         },
         "most-detailed": {
-          "on_key": 59,
+          "on_key": 62,
           "on_distractors": 18,
-          "rate_key": 0.7468354430379747,
-          "rate_distractors": 0.07792207792207792,
-          "lift": 9.584388185654008,
-          "rate_on_picked": 0.7468354430379747,
-          "rate_on_not_picked": 0.07792207792207792,
-          "lift_among_not_picked": 3.484375,
+          "rate_key": 0.7469879518072289,
+          "rate_distractors": 0.07407407407407407,
+          "lift": 10.08433734939759,
+          "rate_on_picked": 0.7469879518072289,
+          "rate_on_not_picked": 0.07407407407407407,
+          "lift_among_not_picked": 3.671875,
           "cue_follow": {
             "questions": 16,
-            "replies": 62,
+            "replies": 65,
             "chance": 0.25,
-            "toward": 0.7911458333333333,
+            "toward": 0.8119791666666667,
             "toward_ci": {
               "n": 16,
-              "lo": 0.6598958333333333,
-              "hi": 0.9026041666666667
+              "lo": 0.7088541666666667,
+              "hi": 0.909375
             },
-            "away": 0.04583333333333334,
+            "away": 0.03888888888888889,
             "away_ci": {
               "n": 16,
               "lo": 0.009375,
-              "hi": 0.09166666666666665
+              "hi": 0.07708333333333334
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
-              "toward": 0.9166666666666666,
+              "questions": 9,
+              "toward": 0.9444444444444444,
               "away": 0,
               "chance": 0.25
             },
@@ -201,12 +201,12 @@
         "hedged": {
           "on_key": 4,
           "on_distractors": 32,
-          "rate_key": 0.05063291139240506,
-          "rate_distractors": 0.13852813852813853,
-          "lift": 0.36550632911392406,
-          "rate_on_picked": 0.05063291139240506,
-          "rate_on_not_picked": 0.13852813852813853,
-          "lift_among_not_picked": 0.8991935483870966,
+          "rate_key": 0.04819277108433735,
+          "rate_distractors": 0.13168724279835392,
+          "lift": 0.36596385542168675,
+          "rate_on_picked": 0.04819277108433735,
+          "rate_on_not_picked": 0.13168724279835392,
+          "lift_among_not_picked": 0.9475806451612904,
           "cue_follow": {
             "questions": 15,
             "replies": 32,
@@ -246,34 +246,34 @@
           }
         },
         "nuanced-turn": {
-          "on_key": 32,
+          "on_key": 34,
           "on_distractors": 30,
-          "rate_key": 0.4050632911392405,
-          "rate_distractors": 0.12987012987012986,
-          "lift": 3.118987341772152,
-          "rate_on_picked": 0.4177215189873418,
-          "rate_on_not_picked": 0.12554112554112554,
-          "lift_among_not_picked": 4.46,
+          "rate_key": 0.40963855421686746,
+          "rate_distractors": 0.12345679012345678,
+          "lift": 3.3180722891566266,
+          "rate_on_picked": 0.42168674698795183,
+          "rate_on_not_picked": 0.11934156378600823,
+          "lift_among_not_picked": 4.7,
           "cue_follow": {
             "questions": 15,
-            "replies": 47,
+            "replies": 49,
             "chance": 0.25,
             "toward": 0.4638888888888889,
             "toward_ci": {
               "n": 15,
-              "lo": 0.2777777777777778,
-              "hi": 0.6527777777777778
+              "lo": 0.28055555555555556,
+              "hi": 0.663888888888889
             },
             "away": 0.1592592592592593,
             "away_ci": {
               "n": 15,
-              "lo": 0.09259259259259259,
+              "lo": 0.09074074074074073,
               "hi": 0.2277777777777778
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 3,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -295,11 +295,11 @@
         "middle-ground": {
           "on_key": 13,
           "on_distractors": 23,
-          "rate_key": 0.16455696202531644,
-          "rate_distractors": 0.09956709956709957,
-          "lift": 1.6527242707760044,
-          "rate_on_picked": 0.189873417721519,
-          "rate_on_not_picked": 0.09090909090909091,
+          "rate_key": 0.1566265060240964,
+          "rate_distractors": 0.09465020576131687,
+          "lift": 1.6547930853850183,
+          "rate_on_picked": 0.18072289156626506,
+          "rate_on_not_picked": 0.08641975308641975,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 15,
@@ -334,35 +334,35 @@
           }
         },
         "textbook-voice": {
-          "on_key": 41,
-          "on_distractors": 39,
-          "rate_key": 0.5189873417721519,
-          "rate_distractors": 0.16883116883116883,
-          "lift": 3.074001947419669,
-          "rate_on_picked": 0.5443037974683544,
-          "rate_on_not_picked": 0.16017316017316016,
-          "lift_among_not_picked": 0.7743055555555556,
+          "on_key": 45,
+          "on_distractors": 40,
+          "rate_key": 0.5421686746987951,
+          "rate_distractors": 0.1646090534979424,
+          "lift": 3.2936746987951806,
+          "rate_on_picked": 0.5662650602409639,
+          "rate_on_not_picked": 0.15637860082304528,
+          "lift_among_not_picked": 0.7939189189189189,
           "cue_follow": {
             "questions": 16,
-            "replies": 58,
+            "replies": 62,
             "chance": 0.25,
-            "toward": 0.5401041666666667,
+            "toward": 0.5654513888888889,
             "toward_ci": {
               "n": 16,
-              "lo": 0.3963541666666666,
-              "hi": 0.6869791666666667
+              "lo": 0.42569444444444443,
+              "hi": 0.696875
             },
-            "away": 0.12118055555555556,
+            "away": 0.11076388888888887,
             "away_ci": {
               "n": 16,
-              "lo": 0.0642361111111111,
-              "hi": 0.178125
+              "lo": 0.05729166666666666,
+              "hi": 0.16770833333333332
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
-              "toward": 0.8333333333333334,
+              "questions": 10,
+              "toward": 0.85,
               "away": 0,
               "chance": 0.25
             },
@@ -381,36 +381,36 @@
           }
         },
         "echoes-stem": {
-          "on_key": 62,
+          "on_key": 64,
           "on_distractors": 93,
-          "rate_key": 0.7848101265822784,
-          "rate_distractors": 0.4025974025974026,
-          "lift": 1.9493670886075947,
-          "rate_on_picked": 0.8227848101265823,
-          "rate_on_not_picked": 0.38961038961038963,
-          "lift_among_not_picked": 1.2965116279069768,
+          "rate_key": 0.7710843373493976,
+          "rate_distractors": 0.38271604938271603,
+          "lift": 2.014768752429071,
+          "rate_on_picked": 0.8072289156626506,
+          "rate_on_not_picked": 0.37037037037037035,
+          "lift_among_not_picked": 1.366279069767442,
           "cue_follow": {
             "questions": 16,
-            "replies": 70,
+            "replies": 72,
             "chance": 0.25,
-            "toward": 0.4274305555555556,
+            "toward": 0.4430555555555556,
             "toward_ci": {
               "n": 16,
-              "lo": 0.3336805555555556,
-              "hi": 0.5201388888888888
+              "lo": 0.35173611111111114,
+              "hi": 0.5402777777777779
             },
-            "away": 0.08680555555555555,
+            "away": 0.08524305555555556,
             "away_ci": {
               "n": 16,
-              "lo": 0.04010416666666667,
-              "hi": 0.13784722222222223
+              "lo": 0.03923611111111111,
+              "hi": 0.13819444444444445
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
-              "toward": 0.4166666666666667,
-              "away": 0.16666666666666666,
+              "questions": 8,
+              "toward": 0.5625,
+              "away": 0.125,
               "chance": 0.25
             },
             "openai": {
@@ -429,16 +429,16 @@
         },
         "like-the-others": {
           "on_key": 0,
-          "on_distractors": 30,
+          "on_distractors": 32,
           "rate_key": 0,
-          "rate_distractors": 0.12987012987012986,
+          "rate_distractors": 0.13168724279835392,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.12987012987012986,
+          "rate_on_not_picked": 0.13168724279835392,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 13,
-            "replies": 26,
+            "replies": 28,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -455,7 +455,7 @@
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 3,
               "toward": 0,
               "away": 0.3333333333333333,
               "chance": 0.25
@@ -476,35 +476,35 @@
         },
         "opposites": {
           "on_key": 19,
-          "on_distractors": 56,
-          "rate_key": 0.24050632911392406,
-          "rate_distractors": 0.24242424242424243,
-          "lift": 0.9920886075949367,
-          "rate_on_picked": 0.21518987341772153,
-          "rate_on_not_picked": 0.2510822510822511,
-          "lift_among_not_picked": 1.5204545454545455,
+          "on_distractors": 59,
+          "rate_key": 0.2289156626506024,
+          "rate_distractors": 0.24279835390946503,
+          "lift": 0.9428221360016336,
+          "rate_on_picked": 0.20481927710843373,
+          "rate_on_not_picked": 0.25102880658436216,
+          "lift_among_not_picked": 1.519396551724138,
           "cue_follow": {
             "questions": 16,
-            "replies": 52,
+            "replies": 54,
             "chance": 0.25,
-            "toward": 0.23958333333333334,
+            "toward": 0.22916666666666666,
             "toward_ci": {
               "n": 16,
-              "lo": 0.103125,
-              "hi": 0.3927083333333334
+              "lo": 0.10312500000000001,
+              "hi": 0.375
             },
-            "away": 0.2767361111111111,
+            "away": 0.2836805555555556,
             "away_ci": {
               "n": 16,
-              "lo": 0.20347222222222222,
-              "hi": 0.35381944444444435
+              "lo": 0.21145833333333333,
+              "hi": 0.35277777777777775
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
-              "toward": 0.3333333333333333,
-              "away": 0.16666666666666666,
+              "questions": 8,
+              "toward": 0.25,
+              "away": 0.22916666666666666,
               "chance": 0.25
             },
             "openai": {
@@ -523,35 +523,35 @@
         },
         "surprising": {
           "on_key": 16,
-          "on_distractors": 42,
-          "rate_key": 0.20253164556962025,
-          "rate_distractors": 0.18181818181818182,
-          "lift": 1.1139240506329113,
-          "rate_on_picked": 0.189873417721519,
-          "rate_on_not_picked": 0.18614718614718614,
-          "lift_among_not_picked": 2.090625,
+          "on_distractors": 43,
+          "rate_key": 0.1927710843373494,
+          "rate_distractors": 0.17695473251028807,
+          "lift": 1.0893807789296723,
+          "rate_on_picked": 0.18072289156626506,
+          "rate_on_not_picked": 0.18106995884773663,
+          "lift_among_not_picked": 2.149390243902439,
           "cue_follow": {
             "questions": 15,
-            "replies": 48,
+            "replies": 49,
             "chance": 0.25,
-            "toward": 0.19666666666666668,
+            "toward": 0.19333333333333336,
             "toward_ci": {
               "n": 15,
-              "lo": 0.08333333333333333,
-              "hi": 0.3177777777777777
+              "lo": 0.08,
+              "hi": 0.3177777777777778
             },
-            "away": 0.2566666666666667,
+            "away": 0.25777777777777783,
             "away_ci": {
               "n": 15,
-              "lo": 0.2122222222222222,
-              "hi": 0.3011111111111111
+              "lo": 0.2111111111111111,
+              "hi": 0.30000000000000004
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
-              "toward": 0.75,
-              "away": 0.08333333333333333,
+              "questions": 5,
+              "toward": 0.6,
+              "away": 0.13333333333333333,
               "chance": 0.25
             },
             "openai": {
@@ -570,16 +570,16 @@
         },
         "too-obvious": {
           "on_key": 0,
-          "on_distractors": 43,
+          "on_distractors": 46,
           "rate_key": 0,
-          "rate_distractors": 0.18614718614718614,
+          "rate_distractors": 0.18930041152263374,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.18614718614718614,
+          "rate_on_not_picked": 0.18930041152263374,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 14,
-            "replies": 38,
+            "replies": 40,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -587,18 +587,18 @@
               "lo": 0,
               "hi": 0
             },
-            "away": 0.35317460317460314,
+            "away": 0.3492063492063492,
             "away_ci": {
               "n": 14,
-              "lo": 0.33730158730158727,
-              "hi": 0.38095238095238093
+              "lo": 0.3333333333333333,
+              "hi": 0.36706349206349204
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
+              "questions": 6,
               "toward": 0,
-              "away": 0.3333333333333333,
+              "away": 0.3611111111111111,
               "chance": 0.25
             },
             "openai": {
@@ -617,35 +617,35 @@
         },
         "absolute": {
           "on_key": 10,
-          "on_distractors": 118,
-          "rate_key": 0.12658227848101267,
-          "rate_distractors": 0.5108225108225108,
-          "lift": 0.24780090109418582,
-          "rate_on_picked": 0.0759493670886076,
-          "rate_on_not_picked": 0.5281385281385281,
-          "lift_among_not_picked": 1.1912393162393162,
+          "on_distractors": 121,
+          "rate_key": 0.12048192771084337,
+          "rate_distractors": 0.49794238683127573,
+          "lift": 0.24195957383252015,
+          "rate_on_picked": 0.07228915662650602,
+          "rate_on_not_picked": 0.51440329218107,
+          "lift_among_not_picked": 1.2239583333333335,
           "cue_follow": {
             "questions": 16,
-            "replies": 67,
+            "replies": 70,
             "chance": 0.25,
-            "toward": 0.08784722222222223,
+            "toward": 0.08506944444444445,
             "toward_ci": {
               "n": 16,
               "lo": 0,
-              "hi": 0.19027777777777777
+              "hi": 0.1875
             },
-            "away": 0.41562499999999997,
+            "away": 0.4145833333333333,
             "away_ci": {
               "n": 16,
-              "lo": 0.33854166666666663,
-              "hi": 0.4854166666666666
+              "lo": 0.34374999999999994,
+              "hi": 0.4829861111111111
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.2,
-              "away": 0.29999999999999993,
+              "questions": 8,
+              "toward": 0.125,
+              "away": 0.3125,
               "chance": 0.25
             },
             "openai": {
@@ -664,16 +664,16 @@
         },
         "denies-question": {
           "on_key": 0,
-          "on_distractors": 61,
+          "on_distractors": 64,
           "rate_key": 0,
-          "rate_distractors": 0.26406926406926406,
+          "rate_distractors": 0.26337448559670784,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.26406926406926406,
+          "rate_on_not_picked": 0.26337448559670784,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 16,
-            "replies": 47,
+            "replies": 50,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -681,18 +681,18 @@
               "lo": 0,
               "hi": 0
             },
-            "away": 0.3611111111111111,
+            "away": 0.36111111111111105,
             "away_ci": {
               "n": 16,
               "lo": 0.34027777777777773,
-              "hi": 0.38888888888888884
+              "hi": 0.3854166666666667
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 3,
+              "questions": 6,
               "toward": 0,
-              "away": 0.4444444444444444,
+              "away": 0.38888888888888884,
               "chance": 0.25
             },
             "openai": {
@@ -713,10 +713,10 @@
           "on_key": 0,
           "on_distractors": 30,
           "rate_key": 0,
-          "rate_distractors": 0.12987012987012986,
+          "rate_distractors": 0.12345679012345678,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.12987012987012986,
+          "rate_on_not_picked": 0.12345679012345678,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 12,
@@ -758,16 +758,16 @@
         },
         "off-target": {
           "on_key": 0,
-          "on_distractors": 52,
+          "on_distractors": 54,
           "rate_key": 0,
-          "rate_distractors": 0.22510822510822512,
+          "rate_distractors": 0.2222222222222222,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.22510822510822512,
+          "rate_on_not_picked": 0.2222222222222222,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 15,
-            "replies": 42,
+            "replies": 44,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -778,15 +778,15 @@
             "away": 0.37444444444444436,
             "away_ci": {
               "n": 15,
-              "lo": 0.34148148148148144,
-              "hi": 0.4203703703703703
+              "lo": 0.34259259259259256,
+              "hi": 0.4155555555555555
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 2,
+              "questions": 4,
               "toward": 0,
-              "away": 0.6666666666666666,
+              "away": 0.49999999999999994,
               "chance": 0.25
             },
             "openai": {
@@ -806,12 +806,12 @@
         "grammatical-fit": {
           "on_key": 31,
           "on_distractors": 50,
-          "rate_key": 0.3924050632911392,
-          "rate_distractors": 0.21645021645021645,
-          "lift": 1.8129113924050633,
-          "rate_on_picked": 0.4050632911392405,
-          "rate_on_not_picked": 0.21212121212121213,
-          "lift_among_not_picked": 1.1861702127659575,
+          "rate_key": 0.37349397590361444,
+          "rate_distractors": 0.205761316872428,
+          "lift": 1.8151807228915662,
+          "rate_on_picked": 0.3855421686746988,
+          "rate_on_not_picked": 0.20164609053497942,
+          "lift_among_not_picked": 1.25,
           "cue_follow": {
             "questions": 16,
             "replies": 48,
@@ -852,33 +852,33 @@
         },
         "odd-one-out": {
           "on_key": 7,
-          "on_distractors": 40,
-          "rate_key": 0.08860759493670886,
-          "rate_distractors": 0.17316017316017315,
-          "lift": 0.5117088607594937,
-          "rate_on_picked": 0.08860759493670886,
-          "rate_on_not_picked": 0.17316017316017315,
-          "lift_among_not_picked": 0.7147435897435898,
+          "on_distractors": 41,
+          "rate_key": 0.08433734939759036,
+          "rate_distractors": 0.16872427983539096,
+          "lift": 0.49985307081986474,
+          "rate_on_picked": 0.08433734939759036,
+          "rate_on_not_picked": 0.16872427983539096,
+          "lift_among_not_picked": 0.734375,
           "cue_follow": {
             "questions": 15,
-            "replies": 38,
+            "replies": 39,
             "chance": 0.25,
-            "toward": 0.16944444444444443,
+            "toward": 0.15833333333333333,
             "toward_ci": {
               "n": 15,
-              "lo": 0.06666666666666667,
-              "hi": 0.2833333333333333
+              "lo": 0.06111111111111111,
+              "hi": 0.2638888888888889
             },
-            "away": 0.28240740740740744,
+            "away": 0.28611111111111115,
             "away_ci": {
               "n": 15,
-              "lo": 0.24259259259259258,
-              "hi": 0.3222222222222222
+              "lo": 0.24537037037037032,
+              "hi": 0.3212962962962963
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 2,
               "toward": 0,
               "away": 0.3333333333333333,
               "chance": 0.25
@@ -894,12 +894,12 @@
         "position": {
           "on_key": 9,
           "on_distractors": 23,
-          "rate_key": 0.11392405063291139,
-          "rate_distractors": 0.09956709956709957,
-          "lift": 1.144193725921849,
-          "rate_on_picked": 0.11392405063291139,
-          "rate_on_not_picked": 0.09956709956709957,
-          "lift_among_not_picked": 1.2670454545454546,
+          "rate_key": 0.10843373493975904,
+          "rate_distractors": 0.09465020576131687,
+          "lift": 1.1456259821896282,
+          "rate_on_picked": 0.10843373493975904,
+          "rate_on_not_picked": 0.09465020576131687,
+          "lift_among_not_picked": 1.3352272727272727,
           "cue_follow": {
             "questions": 11,
             "replies": 18,
@@ -935,12 +935,12 @@
         "general-knowledge": {
           "on_key": 50,
           "on_distractors": 60,
-          "rate_key": 0.6329113924050633,
-          "rate_distractors": 0.2597402597402597,
-          "lift": 2.436708860759494,
-          "rate_on_picked": 0.620253164556962,
-          "rate_on_not_picked": 0.26406926406926406,
-          "lift_among_not_picked": 3.613425925925926,
+          "rate_key": 0.6024096385542169,
+          "rate_distractors": 0.24691358024691357,
+          "lift": 2.4397590361445785,
+          "rate_on_picked": 0.5903614457831325,
+          "rate_on_not_picked": 0.25102880658436216,
+          "lift_among_not_picked": 3.8078703703703702,
           "cue_follow": {
             "questions": 15,
             "replies": 42,
@@ -976,11 +976,11 @@
         "other": {
           "on_key": 1,
           "on_distractors": 1,
-          "rate_key": 0.012658227848101266,
-          "rate_distractors": 0.004329004329004329,
-          "lift": 2.9240506329113924,
-          "rate_on_picked": 0.012658227848101266,
-          "rate_on_not_picked": 0.004329004329004329,
+          "rate_key": 0.012048192771084338,
+          "rate_distractors": 0.00411522633744856,
+          "lift": 2.927710843373494,
+          "rate_on_picked": 0.012048192771084338,
+          "rate_on_not_picked": 0.00411522633744856,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 2,
@@ -1015,36 +1015,36 @@
           }
         },
         "group:qualified": {
-          "on_key": 69,
+          "on_key": 72,
           "on_distractors": 85,
-          "rate_key": 0.8734177215189873,
-          "rate_distractors": 0.36796536796536794,
-          "lift": 2.3736411020104247,
-          "rate_on_picked": 0.8987341772151899,
-          "rate_on_not_picked": 0.3593073593073593,
-          "lift_among_not_picked": 1.7868589743589742,
+          "rate_key": 0.8674698795180723,
+          "rate_distractors": 0.3497942386831276,
+          "lift": 2.4799433026222535,
+          "rate_on_picked": 0.891566265060241,
+          "rate_on_not_picked": 0.34156378600823045,
+          "lift_among_not_picked": 1.8830128205128207,
           "cue_follow": {
             "questions": 16,
-            "replies": 72,
+            "replies": 75,
             "chance": 0.25,
-            "toward": 0.5090277777777777,
+            "toward": 0.528298611111111,
             "toward_ci": {
               "n": 16,
-              "lo": 0.43229166666666663,
-              "hi": 0.5904513888888889
+              "lo": 0.4529513888888888,
+              "hi": 0.6081597222222223
             },
-            "away": 0.06267361111111111,
+            "away": 0.058506944444444445,
             "away_ci": {
               "n": 16,
-              "lo": 0.016493055555555556,
-              "hi": 0.1140625
+              "lo": 0.017534722222222222,
+              "hi": 0.10659722222222222
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 7,
-              "toward": 0.7142857142857143,
-              "away": 0.047619047619047616,
+              "questions": 10,
+              "toward": 0.8,
+              "away": 0.03333333333333333,
               "chance": 0.25
             },
             "openai": {
@@ -1063,35 +1063,35 @@
         },
         "group:dismissible": {
           "on_key": 10,
-          "on_distractors": 159,
-          "rate_key": 0.12658227848101267,
-          "rate_distractors": 0.6883116883116883,
-          "lift": 0.1839025555290184,
-          "rate_on_picked": 0.0759493670886076,
-          "rate_on_not_picked": 0.7056277056277056,
-          "lift_among_not_picked": 0.8821202531645569,
+          "on_distractors": 165,
+          "rate_key": 0.12048192771084337,
+          "rate_distractors": 0.6790123456790124,
+          "lift": 0.17743702081051477,
+          "rate_on_picked": 0.07228915662650602,
+          "rate_on_not_picked": 0.6954732510288066,
+          "lift_among_not_picked": 0.8955792682926829,
           "cue_follow": {
             "questions": 16,
-            "replies": 72,
+            "replies": 76,
             "chance": 0.25,
-            "toward": 0.056597222222222215,
+            "toward": 0.05381944444444444,
             "toward_ci": {
               "n": 16,
               "lo": 0,
-              "hi": 0.1298611111111111
+              "hi": 0.12326388888888888
             },
-            "away": 0.5498263888888889,
+            "away": 0.5493055555555556,
             "away_ci": {
               "n": 16,
-              "lo": 0.44670138888888894,
-              "hi": 0.6453125000000001
+              "lo": 0.4501736111111111,
+              "hi": 0.6411458333333333
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 7,
-              "toward": 0.07142857142857142,
-              "away": 0.4523809523809524,
+              "questions": 11,
+              "toward": 0.045454545454545456,
+              "away": 0.46969696969696967,
               "chance": 0.25
             },
             "openai": {
@@ -1111,38 +1111,38 @@
       }
     },
     "options-only-explain": {
-      "key_options": 80,
-      "distractor_options": 238,
+      "key_options": 83,
+      "distractor_options": 247,
       "codes": {
         "longest": {
-          "on_key": 8,
+          "on_key": 10,
           "on_distractors": 14,
-          "rate_key": 0.1,
-          "rate_distractors": 0.058823529411764705,
-          "lift": 1.7000000000000002,
-          "rate_on_picked": 0.1,
-          "rate_on_not_picked": 0.058823529411764705,
+          "rate_key": 0.12048192771084337,
+          "rate_distractors": 0.05668016194331984,
+          "lift": 2.125645438898451,
+          "rate_on_picked": 0.12048192771084337,
+          "rate_on_not_picked": 0.05668016194331984,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 14,
-            "replies": 22,
+            "replies": 24,
             "chance": 0.25,
-            "toward": 0.38095238095238093,
+            "toward": 0.41666666666666663,
             "toward_ci": {
               "n": 14,
-              "lo": 0.16666666666666666,
-              "hi": 0.619047619047619
+              "lo": 0.20238095238095238,
+              "hi": 0.6428571428571429
             },
-            "away": 0.20634920634920634,
+            "away": 0.19444444444444445,
             "away_ci": {
               "n": 14,
-              "lo": 0.12698412698412695,
-              "hi": 0.27777777777777785
+              "lo": 0.11904761904761905,
+              "hi": 0.26587301587301587
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 3,
+              "questions": 5,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -1165,10 +1165,10 @@
           "on_key": 0,
           "on_distractors": 14,
           "rate_key": 0,
-          "rate_distractors": 0.058823529411764705,
+          "rate_distractors": 0.05668016194331984,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.058823529411764705,
+          "rate_on_not_picked": 0.05668016194331984,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 9,
@@ -1203,35 +1203,35 @@
           }
         },
         "most-detailed": {
-          "on_key": 60,
-          "on_distractors": 30,
-          "rate_key": 0.75,
-          "rate_distractors": 0.12605042016806722,
-          "lift": 5.95,
-          "rate_on_picked": 0.7875,
-          "rate_on_not_picked": 0.1134453781512605,
-          "lift_among_not_picked": 3.0100334448160533,
+          "on_key": 63,
+          "on_distractors": 31,
+          "rate_key": 0.7590361445783133,
+          "rate_distractors": 0.12550607287449392,
+          "lift": 6.047804119704625,
+          "rate_on_picked": 0.7951807228915663,
+          "rate_on_not_picked": 0.11336032388663968,
+          "lift_among_not_picked": 3.0000000000000004,
           "cue_follow": {
             "questions": 16,
-            "replies": 76,
+            "replies": 79,
             "chance": 0.25,
-            "toward": 0.7119791666666667,
+            "toward": 0.7223958333333333,
             "toward_ci": {
               "n": 16,
-              "lo": 0.5750000000000002,
-              "hi": 0.8296875000000001
+              "lo": 0.6041666666666667,
+              "hi": 0.8385416666666666
             },
-            "away": 0.075,
+            "away": 0.06979166666666667,
             "away_ci": {
               "n": 16,
-              "lo": 0.03055555555555555,
-              "hi": 0.1270833333333333
+              "lo": 0.027777777777777776,
+              "hi": 0.11527777777777776
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.9,
+              "questions": 8,
+              "toward": 0.875,
               "away": 0,
               "chance": 0.25
             },
@@ -1251,16 +1251,16 @@
         },
         "hedged": {
           "on_key": 4,
-          "on_distractors": 26,
-          "rate_key": 0.05,
-          "rate_distractors": 0.1092436974789916,
-          "lift": 0.45769230769230773,
-          "rate_on_picked": 0.05,
-          "rate_on_not_picked": 0.1092436974789916,
+          "on_distractors": 27,
+          "rate_key": 0.04819277108433735,
+          "rate_distractors": 0.10931174089068826,
+          "lift": 0.44087460954930835,
+          "rate_on_picked": 0.04819277108433735,
+          "rate_on_not_picked": 0.10931174089068826,
           "lift_among_not_picked": 0.6923076923076924,
           "cue_follow": {
             "questions": 12,
-            "replies": 29,
+            "replies": 30,
             "chance": 0.25,
             "toward": 0.06666666666666667,
             "toward_ci": {
@@ -1276,6 +1276,12 @@
             }
           },
           "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            },
             "openai": {
               "questions": 1,
               "toward": 1,
@@ -1291,36 +1297,36 @@
           }
         },
         "nuanced-turn": {
-          "on_key": 37,
+          "on_key": 39,
           "on_distractors": 38,
-          "rate_key": 0.4625,
-          "rate_distractors": 0.15966386554621848,
-          "lift": 2.8967105263157897,
-          "rate_on_picked": 0.5125,
-          "rate_on_not_picked": 0.14285714285714285,
-          "lift_among_not_picked": 1.674937965260546,
+          "rate_key": 0.46987951807228917,
+          "rate_distractors": 0.15384615384615385,
+          "lift": 3.0542168674698793,
+          "rate_on_picked": 0.5180722891566265,
+          "rate_on_not_picked": 0.13765182186234817,
+          "lift_among_not_picked": 1.7419354838709677,
           "cue_follow": {
             "questions": 16,
-            "replies": 62,
+            "replies": 64,
             "chance": 0.25,
-            "toward": 0.45625,
+            "toward": 0.45937500000000003,
             "toward_ci": {
               "n": 16,
-              "lo": 0.2859375,
-              "hi": 0.6296875
+              "lo": 0.296875,
+              "hi": 0.634375
             },
-            "away": 0.159375,
+            "away": 0.15868055555555555,
             "away_ci": {
               "n": 16,
-              "lo": 0.10104166666666668,
-              "hi": 0.221875
+              "lo": 0.1,
+              "hi": 0.21874999999999997
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 2,
-              "toward": 0.25,
-              "away": 0.16666666666666666,
+              "questions": 4,
+              "toward": 0.625,
+              "away": 0.08333333333333333,
               "chance": 0.25
             },
             "openai": {
@@ -1340,11 +1346,11 @@
         "middle-ground": {
           "on_key": 8,
           "on_distractors": 42,
-          "rate_key": 0.1,
-          "rate_distractors": 0.17647058823529413,
-          "lift": 0.5666666666666667,
-          "rate_on_picked": 0.175,
-          "rate_on_not_picked": 0.15126050420168066,
+          "rate_key": 0.0963855421686747,
+          "rate_distractors": 0.1700404858299595,
+          "lift": 0.5668387837062536,
+          "rate_on_picked": 0.1686746987951807,
+          "rate_on_not_picked": 0.145748987854251,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 16,
@@ -1385,36 +1391,36 @@
           }
         },
         "textbook-voice": {
-          "on_key": 31,
-          "on_distractors": 43,
-          "rate_key": 0.3875,
-          "rate_distractors": 0.18067226890756302,
-          "lift": 2.1447674418604654,
-          "rate_on_picked": 0.4625,
-          "rate_on_not_picked": 0.15546218487394958,
+          "on_key": 34,
+          "on_distractors": 45,
+          "rate_key": 0.40963855421686746,
+          "rate_distractors": 0.18218623481781376,
+          "lift": 2.2484605087014726,
+          "rate_on_picked": 0.4819277108433735,
+          "rate_on_not_picked": 0.15789473684210525,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 16,
-            "replies": 61,
+            "replies": 64,
             "chance": 0.25,
-            "toward": 0.4552083333333334,
+            "toward": 0.48177083333333337,
             "toward_ci": {
               "n": 16,
-              "lo": 0.3041666666666667,
-              "hi": 0.6125
+              "lo": 0.34010416666666665,
+              "hi": 0.6328125
             },
-            "away": 0.17482638888888888,
+            "away": 0.16354166666666664,
             "away_ci": {
               "n": 16,
-              "lo": 0.1111111111111111,
-              "hi": 0.234375
+              "lo": 0.10416666666666667,
+              "hi": 0.22152777777777774
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.8,
-              "away": 0.06666666666666667,
+              "questions": 8,
+              "toward": 0.7916666666666666,
+              "away": 0.041666666666666664,
               "chance": 0.25
             },
             "openai": {
@@ -1434,12 +1440,12 @@
         "echoes-stem": {
           "on_key": 50,
           "on_distractors": 103,
-          "rate_key": 0.625,
-          "rate_distractors": 0.4327731092436975,
-          "lift": 1.4441747572815533,
-          "rate_on_picked": 0.675,
-          "rate_on_not_picked": 0.41596638655462187,
-          "lift_among_not_picked": 1.521555367709214,
+          "rate_key": 0.6024096385542169,
+          "rate_distractors": 0.41700404858299595,
+          "lift": 1.4446134050766173,
+          "rate_on_picked": 0.6506024096385542,
+          "rate_on_not_picked": 0.4008097165991903,
+          "lift_among_not_picked": 1.5824175824175826,
           "cue_follow": {
             "questions": 16,
             "replies": 72,
@@ -1475,12 +1481,12 @@
         "like-the-others": {
           "on_key": 6,
           "on_distractors": 26,
-          "rate_key": 0.075,
-          "rate_distractors": 0.1092436974789916,
-          "lift": 0.6865384615384615,
-          "rate_on_picked": 0.075,
-          "rate_on_not_picked": 0.1092436974789916,
-          "lift_among_not_picked": 0.6923076923076924,
+          "rate_key": 0.07228915662650602,
+          "rate_distractors": 0.10526315789473684,
+          "lift": 0.6867469879518072,
+          "rate_on_picked": 0.07228915662650602,
+          "rate_on_not_picked": 0.10526315789473684,
+          "lift_among_not_picked": 0.7200000000000001,
           "cue_follow": {
             "questions": 13,
             "replies": 31,
@@ -1520,36 +1526,36 @@
           }
         },
         "opposites": {
-          "on_key": 22,
-          "on_distractors": 49,
-          "rate_key": 0.275,
-          "rate_distractors": 0.20588235294117646,
-          "lift": 1.3357142857142859,
-          "rate_on_picked": 0.175,
-          "rate_on_not_picked": 0.23949579831932774,
-          "lift_among_not_picked": 3.2451923076923075,
+          "on_key": 23,
+          "on_distractors": 51,
+          "rate_key": 0.27710843373493976,
+          "rate_distractors": 0.20647773279352227,
+          "lift": 1.342074179069218,
+          "rate_on_picked": 0.18072289156626506,
+          "rate_on_not_picked": 0.2388663967611336,
+          "lift_among_not_picked": 3.24,
           "cue_follow": {
             "questions": 15,
-            "replies": 55,
+            "replies": 57,
             "chance": 0.25,
-            "toward": 0.22444444444444447,
+            "toward": 0.2188888888888889,
             "toward_ci": {
               "n": 15,
-              "lo": 0.08666666666666667,
-              "hi": 0.3833333333333334
+              "lo": 0.08333333333333334,
+              "hi": 0.3722222222222222
             },
-            "away": 0.25074074074074076,
+            "away": 0.2544444444444444,
             "away_ci": {
               "n": 15,
-              "lo": 0.1837037037037037,
-              "hi": 0.3174074074074074
+              "lo": 0.18925925925925924,
+              "hi": 0.31629629629629624
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
+              "questions": 7,
               "toward": 0.5,
-              "away": 0.06666666666666667,
+              "away": 0.11904761904761904,
               "chance": 0.25
             },
             "openai": {
@@ -1569,12 +1575,12 @@
         "surprising": {
           "on_key": 18,
           "on_distractors": 41,
-          "rate_key": 0.225,
-          "rate_distractors": 0.1722689075630252,
-          "lift": 1.3060975609756098,
-          "rate_on_picked": 0.1875,
-          "rate_on_not_picked": 0.18487394957983194,
-          "lift_among_not_picked": 1.7307692307692308,
+          "rate_key": 0.21686746987951808,
+          "rate_distractors": 0.1659919028340081,
+          "lift": 1.3064942697619746,
+          "rate_on_picked": 0.18072289156626506,
+          "rate_on_not_picked": 0.17813765182186234,
+          "lift_among_not_picked": 1.8,
           "cue_follow": {
             "questions": 16,
             "replies": 53,
@@ -1609,16 +1615,16 @@
         },
         "too-obvious": {
           "on_key": 0,
-          "on_distractors": 34,
+          "on_distractors": 38,
           "rate_key": 0,
-          "rate_distractors": 0.14285714285714285,
+          "rate_distractors": 0.15384615384615385,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.14285714285714285,
+          "rate_on_not_picked": 0.15384615384615385,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 15,
-            "replies": 28,
+            "replies": 31,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -1626,18 +1632,18 @@
               "lo": 0,
               "hi": 0
             },
-            "away": 0.3648148148148148,
+            "away": 0.3666666666666666,
             "away_ci": {
               "n": 15,
-              "lo": 0.337037037037037,
-              "hi": 0.39814814814814803
+              "lo": 0.33888888888888885,
+              "hi": 0.39999999999999997
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 2,
+              "questions": 5,
               "toward": 0,
-              "away": 0.3333333333333333,
+              "away": 0.3666666666666666,
               "chance": 0.25
             },
             "openai": {
@@ -1656,35 +1662,35 @@
         },
         "absolute": {
           "on_key": 14,
-          "on_distractors": 115,
-          "rate_key": 0.175,
-          "rate_distractors": 0.4831932773109244,
-          "lift": 0.36217391304347823,
-          "rate_on_picked": 0.075,
-          "rate_on_not_picked": 0.5168067226890757,
-          "lift_among_not_picked": 1.3663967611336032,
+          "on_distractors": 117,
+          "rate_key": 0.1686746987951807,
+          "rate_distractors": 0.47368421052631576,
+          "lift": 0.35609103078982596,
+          "rate_on_picked": 0.07228915662650602,
+          "rate_on_not_picked": 0.5060728744939271,
+          "lift_among_not_picked": 1.396551724137931,
           "cue_follow": {
             "questions": 16,
-            "replies": 75,
+            "replies": 77,
             "chance": 0.25,
-            "toward": 0.09149305555555556,
+            "toward": 0.08836805555555556,
             "toward_ci": {
               "n": 16,
-              "lo": 0.0234375,
-              "hi": 0.1776041666666667
+              "lo": 0.026562500000000003,
+              "hi": 0.1713541666666667
             },
-            "away": 0.37343750000000003,
+            "away": 0.37378472222222225,
             "away_ci": {
               "n": 16,
-              "lo": 0.30208333333333337,
-              "hi": 0.43906249999999997
+              "lo": 0.3078125,
+              "hi": 0.4369791666666667
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.2,
-              "away": 0.29999999999999993,
+              "questions": 7,
+              "toward": 0.14285714285714285,
+              "away": 0.3095238095238095,
               "chance": 0.25
             },
             "openai": {
@@ -1705,10 +1711,10 @@
           "on_key": 0,
           "on_distractors": 56,
           "rate_key": 0,
-          "rate_distractors": 0.23529411764705882,
+          "rate_distractors": 0.22672064777327935,
           "lift": 0,
-          "rate_on_picked": 0.0125,
-          "rate_on_not_picked": 0.23109243697478993,
+          "rate_on_picked": 0.012048192771084338,
+          "rate_on_not_picked": 0.22267206477732793,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 15,
@@ -1752,10 +1758,10 @@
           "on_key": 0,
           "on_distractors": 31,
           "rate_key": 0,
-          "rate_distractors": 0.13025210084033614,
+          "rate_distractors": 0.12550607287449392,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.13025210084033614,
+          "rate_on_not_picked": 0.12550607287449392,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 14,
@@ -1793,10 +1799,10 @@
           "on_key": 0,
           "on_distractors": 26,
           "rate_key": 0,
-          "rate_distractors": 0.1092436974789916,
+          "rate_distractors": 0.10526315789473684,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.1092436974789916,
+          "rate_on_not_picked": 0.10526315789473684,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 12,
@@ -1833,12 +1839,12 @@
         "grammatical-fit": {
           "on_key": 28,
           "on_distractors": 57,
-          "rate_key": 0.35,
-          "rate_distractors": 0.23949579831932774,
-          "lift": 1.4614035087719297,
-          "rate_on_picked": 0.3625,
-          "rate_on_not_picked": 0.23529411764705882,
-          "lift_among_not_picked": 1.3313609467455623,
+          "rate_key": 0.3373493975903614,
+          "rate_distractors": 0.23076923076923078,
+          "lift": 1.4618473895582327,
+          "rate_on_picked": 0.3493975903614458,
+          "rate_on_not_picked": 0.22672064777327935,
+          "lift_among_not_picked": 1.3846153846153848,
           "cue_follow": {
             "questions": 16,
             "replies": 46,
@@ -1874,12 +1880,12 @@
         "odd-one-out": {
           "on_key": 13,
           "on_distractors": 54,
-          "rate_key": 0.1625,
-          "rate_distractors": 0.226890756302521,
-          "lift": 0.7162037037037038,
-          "rate_on_picked": 0.125,
-          "rate_on_not_picked": 0.23949579831932774,
-          "lift_among_not_picked": 1.6642011834319528,
+          "rate_key": 0.1566265060240964,
+          "rate_distractors": 0.21862348178137653,
+          "lift": 0.716421240517626,
+          "rate_on_picked": 0.12048192771084337,
+          "rate_on_not_picked": 0.23076923076923078,
+          "lift_among_not_picked": 1.730769230769231,
           "cue_follow": {
             "questions": 16,
             "replies": 54,
@@ -1915,11 +1921,11 @@
         "position": {
           "on_key": 8,
           "on_distractors": 25,
-          "rate_key": 0.1,
-          "rate_distractors": 0.10504201680672269,
-          "lift": 0.9520000000000001,
-          "rate_on_picked": 0.1,
-          "rate_on_not_picked": 0.10504201680672269,
+          "rate_key": 0.0963855421686747,
+          "rate_distractors": 0.10121457489878542,
+          "lift": 0.9522891566265062,
+          "rate_on_picked": 0.0963855421686747,
+          "rate_on_not_picked": 0.10121457489878542,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 10,
@@ -1956,12 +1962,12 @@
         "general-knowledge": {
           "on_key": 52,
           "on_distractors": 95,
-          "rate_key": 0.65,
-          "rate_distractors": 0.39915966386554624,
-          "lift": 1.628421052631579,
-          "rate_on_picked": 0.65,
-          "rate_on_not_picked": 0.39915966386554624,
-          "lift_among_not_picked": 1.5915119363395227,
+          "rate_key": 0.6265060240963856,
+          "rate_distractors": 0.38461538461538464,
+          "lift": 1.6289156626506023,
+          "rate_on_picked": 0.6265060240963856,
+          "rate_on_not_picked": 0.38461538461538464,
+          "lift_among_not_picked": 1.6551724137931034,
           "cue_follow": {
             "questions": 16,
             "replies": 48,
@@ -1996,25 +2002,33 @@
         },
         "no-tell": {
           "on_key": 0,
-          "on_distractors": 1,
+          "on_distractors": 2,
           "rate_key": 0,
-          "rate_distractors": 0.004201680672268907,
+          "rate_distractors": 0.008097165991902834,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.004201680672268907,
+          "rate_on_not_picked": 0.008097165991902834,
           "lift_among_not_picked": 0,
           "cue_follow": {
-            "questions": 1,
-            "replies": 1,
+            "questions": 2,
+            "replies": 2,
             "chance": 0.25,
             "toward": 0,
-            "toward_ci": null,
+            "toward_ci": {
+              "n": 2,
+              "lo": 0,
+              "hi": 0
+            },
             "away": 0.3333333333333333,
-            "away_ci": null
+            "away_ci": {
+              "n": 2,
+              "lo": 0.3333333333333333,
+              "hi": 0.3333333333333333
+            }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 2,
               "toward": 0,
               "away": 0.3333333333333333,
               "chance": 0.25
@@ -2024,10 +2038,10 @@
         "other": {
           "on_key": 1,
           "on_distractors": 0,
-          "rate_key": 0.0125,
+          "rate_key": 0.012048192771084338,
           "rate_distractors": 0,
           "lift": null,
-          "rate_on_picked": 0.0125,
+          "rate_on_picked": 0.012048192771084338,
           "rate_on_not_picked": 0,
           "lift_among_not_picked": null,
           "cue_follow": {
@@ -2049,35 +2063,35 @@
           }
         },
         "group:qualified": {
-          "on_key": 68,
-          "on_distractors": 98,
-          "rate_key": 0.85,
-          "rate_distractors": 0.4117647058823529,
-          "lift": 2.0642857142857145,
-          "rate_on_picked": 0.9375,
-          "rate_on_not_picked": 0.38235294117647056,
-          "lift_among_not_picked": 1.2217194570135748,
+          "on_key": 71,
+          "on_distractors": 100,
+          "rate_key": 0.8554216867469879,
+          "rate_distractors": 0.4048582995951417,
+          "lift": 2.11289156626506,
+          "rate_on_picked": 0.9397590361445783,
+          "rate_on_not_picked": 0.3765182186234818,
+          "lift_among_not_picked": 1.2413793103448276,
           "cue_follow": {
             "questions": 16,
-            "replies": 75,
+            "replies": 78,
             "chance": 0.25,
-            "toward": 0.4803819444444444,
+            "toward": 0.493923611111111,
             "toward_ci": {
               "n": 16,
-              "lo": 0.4053819444444444,
-              "hi": 0.5510416666666665
+              "lo": 0.41944444444444445,
+              "hi": 0.5635416666666667
             },
-            "away": 0.06753472222222222,
+            "away": 0.06527777777777777,
             "away_ci": {
               "n": 16,
-              "lo": 0.018229166666666668,
-              "hi": 0.12656249999999997
+              "lo": 0.018750000000000003,
+              "hi": 0.1236111111111111
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.7333333333333333,
+              "questions": 8,
+              "toward": 0.75,
               "away": 0,
               "chance": 0.25
             },
@@ -2097,34 +2111,34 @@
         },
         "group:dismissible": {
           "on_key": 14,
-          "on_distractors": 145,
-          "rate_key": 0.175,
-          "rate_distractors": 0.6092436974789915,
-          "lift": 0.2872413793103448,
-          "rate_on_picked": 0.075,
-          "rate_on_not_picked": 0.6428571428571429,
-          "lift_among_not_picked": 1.0817307692307692,
+          "on_distractors": 147,
+          "rate_key": 0.1686746987951807,
+          "rate_distractors": 0.5951417004048583,
+          "lift": 0.2834193918531268,
+          "rate_on_picked": 0.07228915662650602,
+          "rate_on_not_picked": 0.6275303643724697,
+          "lift_among_not_picked": 1.1095890410958904,
           "cue_follow": {
             "questions": 16,
-            "replies": 76,
+            "replies": 78,
             "chance": 0.25,
-            "toward": 0.07482638888888889,
+            "toward": 0.07204861111111112,
             "toward_ci": {
               "n": 16,
-              "lo": 0.022395833333333334,
-              "hi": 0.14184027777777777
+              "lo": 0.019791666666666666,
+              "hi": 0.13333333333333336
             },
-            "away": 0.4590277777777777,
+            "away": 0.4576388888888888,
             "away_ci": {
               "n": 16,
-              "lo": 0.37187499999999996,
-              "hi": 0.5331597222222222
+              "lo": 0.375173611111111,
+              "hi": 0.5289930555555555
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.1,
+              "questions": 7,
+              "toward": 0.07142857142857142,
               "away": 0.3333333333333333,
               "chance": 0.25
             },
@@ -2148,46 +2162,46 @@
   "faithfulness": {
     "longest": {
       "property": "length_rank",
-      "options": 628,
-      "tagged": 32,
-      "mean_rank_tagged": 0.5729166666666666,
-      "mean_rank_untagged": 0.49916107382550334
+      "options": 656,
+      "tagged": 35,
+      "mean_rank_tagged": 0.5904761904761904,
+      "mean_rank_untagged": 0.4978529253891573
     },
     "shortest": {
       "property": "shortness_rank",
-      "options": 628,
+      "options": 656,
       "tagged": 24,
       "mean_rank_tagged": 0.7222222222222222,
-      "mean_rank_untagged": 0.48813465783664445
+      "mean_rank_untagged": 0.4886603375527426
     },
     "most-detailed": {
       "property": "length_rank",
-      "options": 628,
-      "tagged": 167,
-      "mean_rank_tagged": 0.7704590818363273,
-      "mean_rank_untagged": 0.4060014461315979
+      "options": 656,
+      "tagged": 174,
+      "mean_rank_tagged": 0.7701149425287356,
+      "mean_rank_untagged": 0.40629322268326407
     },
     "echoes-stem": {
       "property": "stem_echo_rank",
-      "options": 310,
-      "tagged": 155,
-      "mean_rank_tagged": 0.46666666666666673,
-      "mean_rank_untagged": 0.5397849462365591
+      "options": 326,
+      "tagged": 157,
+      "mean_rank_tagged": 0.4713375796178344,
+      "mean_rank_untagged": 0.5325443786982249
     },
     "like-the-others": {
       "property": "centrality_rank",
-      "options": 628,
-      "tagged": 62,
-      "mean_rank_tagged": 0.314516129032258,
-      "mean_rank_untagged": 0.5244405182567727
+      "options": 656,
+      "tagged": 64,
+      "mean_rank_tagged": 0.33072916666666663,
+      "mean_rank_untagged": 0.5222409909909909
     },
     "absolute": {
       "property": "has an absolute word (checker list)",
-      "options": 628,
-      "tagged": 257,
-      "tagged_where_true": 0.2490272373540856,
-      "property_true": 82,
-      "true_and_tagged": 0.7804878048780488
+      "options": 656,
+      "tagged": 262,
+      "tagged_where_true": 0.2480916030534351,
+      "property_true": 84,
+      "true_and_tagged": 0.7738095238095238
     }
   },
   "per_voice": {
@@ -2199,41 +2213,41 @@
         "family": "google"
       },
       "statuses": {
-        "ok": 12
+        "ok": 19
       },
-      "replies": 12,
+      "replies": 19,
       "unusable": 0,
       "problems": {
-        "fenced": 12
+        "fenced": 19
       },
       "rungs": {
         "full-explain": {
-          "replies": 7,
+          "replies": 11,
           "pick_invalid": 0,
           "explain_hit_rate": 1,
-          "mean_p_key": 0.7571428571428571,
+          "mean_p_key": 0.7272727272727273,
           "letter_agreement": {
-            "n": 7,
+            "n": 11,
             "rate": 1
           },
-          "mean_reasoning_tokens": 1567
+          "mean_reasoning_tokens": 1389
         },
         "options-only-explain": {
-          "replies": 5,
+          "replies": 8,
           "pick_invalid": 0,
           "explain_hit_rate": 1,
-          "mean_p_key": 0.6699999999999999,
+          "mean_p_key": 0.6499999999999999,
           "letter_agreement": {
-            "n": 5,
+            "n": 8,
             "rate": 1
           },
-          "mean_reasoning_tokens": 1534
+          "mean_reasoning_tokens": 1425
         }
       },
       "unrated_option_share": 0,
       "invalid_code_option_share": 0,
       "other_share": 0,
-      "no_tell_share": 0.009433962264150943,
+      "no_tell_share": 0.012422360248447204,
       "excluded_from_pooled_tables": false
     },
     "gpt-luna": {
@@ -3148,19 +3162,21 @@
     "b02/sonnet/a08": {
       "rungs": {
         "full-explain": {
-          "replies": 5,
-          "picked_key": 5,
-          "mean_p_key": 0.6055555555555556,
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.6212962962962962,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
         },
         "options-only-explain": {
-          "replies": 5,
-          "picked_key": 4,
-          "mean_p_key": 0.4175,
+          "replies": 6,
+          "picked_key": 5,
+          "mean_p_key": 0.4640000000000001,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3171,21 +3187,21 @@
           "option": 0,
           "key": true,
           "text": "The cairn has become more readable at the cost of information: the uniform recant erases any hob that flagged a junction, and the reset stone gives a default reading.",
-          "ratings": 10,
-          "mean_p": 0.5219753086419753,
+          "ratings": 12,
+          "mean_p": 0.5497979797979797,
           "codes": {
+            "nuanced-turn": 9,
+            "most-detailed": 7,
+            "echoes-stem": 7,
             "general-knowledge": 7,
-            "nuanced-turn": 7,
-            "echoes-stem": 6,
-            "most-detailed": 5,
             "opposites": 5,
             "grammatical-fit": 4,
+            "longest": 3,
+            "textbook-voice": 3,
             "surprising": 3,
             "middle-ground": 2,
             "odd-one-out": 2,
-            "textbook-voice": 1,
             "position": 1,
-            "longest": 1,
             "other": 1
           }
         },
@@ -3193,11 +3209,11 @@
           "option": 1,
           "key": false,
           "text": "Since the conservators followed the standard convention carefully, the restoration should have preserved or even improved the cairn's original information.",
-          "ratings": 10,
-          "mean_p": 0.1761111111111111,
+          "ratings": 12,
+          "mean_p": 0.16342592592592592,
           "codes": {
+            "too-obvious": 7,
             "denies-question": 6,
-            "too-obvious": 5,
             "textbook-voice": 5,
             "echoes-stem": 5,
             "absolute": 5,
@@ -3206,6 +3222,8 @@
             "position": 2,
             "middle-ground": 2,
             "general-knowledge": 2,
+            "like-the-others": 1,
+            "hedged": 1,
             "off-target": 1,
             "shortest": 1
           }
@@ -3214,16 +3232,17 @@
           "option": 2,
           "key": false,
           "text": "The restoration succeeded on both counts: the cairn is now easier to read and at least as informative as the one it replaced, since careful rebuilding preserves intent.",
-          "ratings": 10,
-          "mean_p": 0.25861111111111107,
+          "ratings": 12,
+          "mean_p": 0.23634259259259258,
           "codes": {
             "textbook-voice": 7,
             "echoes-stem": 7,
+            "too-obvious": 5,
             "middle-ground": 5,
             "absolute": 4,
             "grammatical-fit": 4,
-            "too-obvious": 3,
             "most-detailed": 3,
+            "opposites": 2,
             "denies-question": 2,
             "general-knowledge": 2,
             "position": 1,
@@ -3235,23 +3254,23 @@
           "option": 3,
           "key": false,
           "text": "The reset pell stone is effectively broken until someone notices, since a stone placed upslope by conservators cannot carry a genuine reading of its own.",
-          "ratings": 10,
-          "mean_p": 0.0955,
+          "ratings": 12,
+          "mean_p": 0.09625,
           "codes": {
-            "absolute": 7,
+            "absolute": 8,
             "surprising": 6,
+            "off-target": 4,
             "implausible": 4,
             "hedged": 4,
             "echoes-stem": 4,
             "odd-one-out": 4,
-            "off-target": 3,
             "grammatical-fit": 3,
+            "most-detailed": 2,
+            "opposites": 2,
             "general-knowledge": 2,
             "position": 1,
             "denies-question": 1,
-            "nuanced-turn": 1,
-            "most-detailed": 1,
-            "opposites": 1
+            "nuanced-turn": 1
           }
         }
       ]
@@ -3259,19 +3278,21 @@
     "b02/sonnet/b01": {
       "rungs": {
         "full-explain": {
-          "replies": 5,
-          "picked_key": 5,
-          "mean_p_key": 0.5900000000000001,
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.6083333333333333,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
         },
         "options-only-explain": {
-          "replies": 5,
-          "picked_key": 2,
-          "mean_p_key": 0.35000000000000003,
+          "replies": 6,
+          "picked_key": 3,
+          "mean_p_key": 0.3916666666666666,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3282,17 +3303,17 @@
           "option": 0,
           "key": true,
           "text": "The lisk sense changed when the pell stone was turned; the dorran sense changed only because the courses were physically rebuilt, not because time had simply passed.",
-          "ratings": 10,
-          "mean_p": 0.4699999999999999,
+          "ratings": 12,
+          "mean_p": 0.49999999999999994,
           "codes": {
-            "echoes-stem": 9,
-            "most-detailed": 6,
+            "echoes-stem": 10,
+            "most-detailed": 7,
             "grammatical-fit": 6,
+            "opposites": 5,
+            "textbook-voice": 4,
             "nuanced-turn": 4,
-            "opposites": 4,
             "absolute": 3,
             "general-knowledge": 3,
-            "textbook-voice": 2,
             "middle-ground": 2,
             "odd-one-out": 2,
             "surprising": 1
@@ -3302,16 +3323,16 @@
           "option": 1,
           "key": false,
           "text": "Both registers drift with time on their own, so the rebuilt courses and the turned stone are really two instances of the same ordinary aging process.",
-          "ratings": 9,
-          "mean_p": 0.18888888888888888,
+          "ratings": 11,
+          "mean_p": 0.17727272727272728,
           "codes": {
             "general-knowledge": 6,
+            "too-obvious": 4,
             "absolute": 4,
             "surprising": 4,
-            "too-obvious": 3,
+            "denies-question": 3,
             "opposites": 3,
             "hedged": 3,
-            "denies-question": 2,
             "textbook-voice": 1,
             "implausible": 1,
             "longest": 1,
@@ -3326,10 +3347,10 @@
           "option": 2,
           "key": false,
           "text": "The pell stone alone carries both registers, so turning it also updated the dorran sense, and the rebuilt courses only mattered because they hold the stone.",
-          "ratings": 10,
-          "mean_p": 0.16799999999999998,
+          "ratings": 12,
+          "mean_p": 0.16916666666666666,
           "codes": {
-            "absolute": 9,
+            "absolute": 11,
             "echoes-stem": 8,
             "grammatical-fit": 6,
             "most-detailed": 3,
@@ -3348,8 +3369,8 @@
           "option": 3,
           "key": false,
           "text": "Brannagh's objection shows the dorran sense is not truly fixed either, since the builder's original course choices were themselves somewhat arbitrary.",
-          "ratings": 10,
-          "mean_p": 0.182,
+          "ratings": 12,
+          "mean_p": 0.15999999999999998,
           "codes": {
             "nuanced-turn": 8,
             "echoes-stem": 6,
@@ -3357,9 +3378,11 @@
             "middle-ground": 4,
             "textbook-voice": 3,
             "opposites": 3,
+            "off-target": 2,
             "most-detailed": 2,
             "general-knowledge": 2,
-            "off-target": 1,
+            "odd-one-out": 1,
+            "no-tell": 1,
             "other": 1,
             "like-the-others": 1,
             "position": 1,
@@ -3373,19 +3396,21 @@
     "b02/sonnet/b02": {
       "rungs": {
         "full-explain": {
-          "replies": 4,
-          "picked_key": 4,
-          "mean_p_key": 0.5599999999999999,
+          "replies": 5,
+          "picked_key": 5,
+          "mean_p_key": 0.568,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
         },
         "options-only-explain": {
-          "replies": 5,
-          "picked_key": 4,
-          "mean_p_key": 0.42000000000000004,
+          "replies": 6,
+          "picked_key": 5,
+          "mean_p_key": 0.44999999999999996,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3396,17 +3421,18 @@
           "option": 0,
           "key": true,
           "text": "It is a hob: the reversed course does not itself point a direction, but announces that a second route branches off before the next cairn.",
-          "ratings": 9,
-          "mean_p": 0.4822222222222222,
+          "ratings": 11,
+          "mean_p": 0.5036363636363637,
           "codes": {
-            "most-detailed": 7,
-            "nuanced-turn": 7,
+            "most-detailed": 9,
+            "nuanced-turn": 9,
             "general-knowledge": 7,
+            "textbook-voice": 6,
             "echoes-stem": 6,
-            "textbook-voice": 4,
             "surprising": 3,
             "grammatical-fit": 2,
             "odd-one-out": 2,
+            "longest": 1,
             "position": 1,
             "middle-ground": 1,
             "like-the-others": 1
@@ -3416,12 +3442,12 @@
           "option": 1,
           "key": false,
           "text": "The west cant is the message the builder intended: the route turns west immediately after this cairn.",
-          "ratings": 9,
-          "mean_p": 0.2111111111111111,
+          "ratings": 11,
+          "mean_p": 0.20454545454545456,
           "codes": {
+            "too-obvious": 6,
             "echoes-stem": 5,
             "grammatical-fit": 5,
-            "too-obvious": 4,
             "general-knowledge": 4,
             "position": 3,
             "textbook-voice": 3,
@@ -3438,16 +3464,17 @@
           "option": 2,
           "key": false,
           "text": "It is an accidental fault, the same kind of course-shift that strangers learn to recognise as unreadable and simply ignore.",
-          "ratings": 8,
-          "mean_p": 0.1625,
+          "ratings": 10,
+          "mean_p": 0.155,
           "codes": {
             "hedged": 6,
             "implausible": 5,
             "general-knowledge": 4,
+            "denies-question": 3,
             "middle-ground": 3,
             "opposites": 2,
-            "denies-question": 2,
             "like-the-others": 2,
+            "textbook-voice": 1,
             "too-obvious": 1,
             "position": 1,
             "off-target": 1,
@@ -3463,19 +3490,19 @@
           "option": 3,
           "key": false,
           "text": "The pattern's low resulting concord score means the cairn is unreliable and neither register on it should be trusted.",
-          "ratings": 9,
-          "mean_p": 0.1566666666666667,
+          "ratings": 11,
+          "mean_p": 0.14636363636363636,
           "codes": {
-            "absolute": 9,
+            "absolute": 10,
             "off-target": 5,
             "odd-one-out": 4,
+            "textbook-voice": 3,
             "denies-question": 3,
             "longest": 2,
             "opposites": 2,
             "surprising": 2,
             "echoes-stem": 2,
             "position": 1,
-            "textbook-voice": 1,
             "most-detailed": 1,
             "general-knowledge": 1,
             "grammatical-fit": 1,
@@ -3487,10 +3514,11 @@
     "b02/sonnet/b03": {
       "rungs": {
         "full-explain": {
-          "replies": 5,
-          "picked_key": 1,
-          "mean_p_key": 0.29000000000000004,
+          "replies": 6,
+          "picked_key": 2,
+          "mean_p_key": 0.3583333333333334,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3510,16 +3538,16 @@
           "option": 0,
           "key": true,
           "text": "The first is lean, caused by frost heave under the footing and carrying no meaning; the second is cant, the builder's deliberate offset that points the route's turn.",
-          "ratings": 10,
-          "mean_p": 0.345,
+          "ratings": 11,
+          "mean_p": 0.3772727272727272,
           "codes": {
             "general-knowledge": 10,
             "echoes-stem": 6,
             "grammatical-fit": 5,
             "absolute": 5,
+            "textbook-voice": 4,
             "opposites": 4,
-            "textbook-voice": 3,
-            "most-detailed": 2,
+            "most-detailed": 3,
             "nuanced-turn": 2,
             "surprising": 2,
             "longest": 1,
@@ -3530,18 +3558,18 @@
           "option": 1,
           "key": false,
           "text": "The first is cant, judged against true vertical the same way lean is; the second is lean, judged course against course rather than against the vertical.",
-          "ratings": 10,
-          "mean_p": 0.322,
+          "ratings": 11,
+          "mean_p": 0.2972727272727273,
           "codes": {
             "nuanced-turn": 8,
             "echoes-stem": 7,
             "general-knowledge": 5,
             "grammatical-fit": 5,
             "most-detailed": 4,
+            "surprising": 3,
+            "opposites": 3,
             "odd-one-out": 3,
-            "opposites": 2,
             "off-target": 2,
-            "surprising": 2,
             "like-the-others": 2,
             "implausible": 1,
             "textbook-voice": 1,
@@ -3552,11 +3580,11 @@
           "option": 2,
           "key": false,
           "text": "Both measurements are meaningful signals, since any offset a surveyor can measure on a built structure was placed there deliberately.",
-          "ratings": 10,
-          "mean_p": 0.10800000000000001,
+          "ratings": 11,
+          "mean_p": 0.10272727272727274,
           "codes": {
-            "denies-question": 10,
-            "absolute": 9,
+            "denies-question": 11,
+            "absolute": 10,
             "implausible": 3,
             "odd-one-out": 3,
             "general-knowledge": 3,
@@ -3573,16 +3601,17 @@
           "option": 3,
           "key": false,
           "text": "The first is lean, produced by deliberate builder choice or a heavy pell stone; the second is cant, produced by frost heave under the footing.",
-          "ratings": 10,
-          "mean_p": 0.225,
+          "ratings": 11,
+          "mean_p": 0.22272727272727275,
           "codes": {
             "general-knowledge": 9,
             "echoes-stem": 8,
-            "opposites": 6,
+            "opposites": 7,
             "grammatical-fit": 4,
             "absolute": 3,
             "textbook-voice": 2,
             "middle-ground": 2,
+            "like-the-others": 1,
             "surprising": 1,
             "too-obvious": 1,
             "most-detailed": 1,
@@ -4201,6 +4230,34 @@
     },
     {
       "voice": "gemma-31b",
+      "id": "b02/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I identified the classic academic trade-off pattern where increased readability (the hiker's experience) comes at the expense of nuanced information (the loss of original intent/markers), supported by the introduction of specific terminology that complements the stem."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I matched the two specific actions described in the stem to the two distinct terms provided in the options."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I chose the option that provided a specific technical term ('hob') and a non-obvious rule, which is characteristic of textbook-style questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/b03",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I chose the option that provided a specific functional purpose for the measurement, which is characteristic of correct answers in textbook-style questions."
+    },
+    {
+      "voice": "gemma-31b",
       "id": "b02/sonnet/a01",
       "rung": "options-only-explain",
       "hit": true,
@@ -4233,6 +4290,27 @@
       "rung": "options-only-explain",
       "hit": true,
       "strategy": "The presence of a specific named phenomenon ('the Marhaug pattern') and a nuanced distinction between two groups typically signals the correct answer in textbook-style questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I chose the most detailed option that presents a nuanced trade-off, which is a common pattern for correct answers in academic analysis questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I chose the option that provided a clear, symmetrical distinction between the two technical terms, which is a common pattern for correct answers in textbook-style conceptual questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b02/sonnet/b02",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "I chose the option that used a specific technical term ('hob') and a counterintuitive 'not X but Y' logic, which is a common hallmark of correct answers in technical textbooks."
     },
     {
       "voice": "gpt-luna",

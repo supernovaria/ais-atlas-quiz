@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/14",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "03a0159314461f2451a66d4bdd746b7f31fcc77e9eff215ae5d3666b2cf5a1c8",
+  "ts": "2026-09-27T18:00:51.294Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"opposites\"],\n      \"p\": 30,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"nuanced-turn\", \"absolute\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\", \"opposites\"],\n      \"p\": 50,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"D\",\n  \"strategy\": \"The phrase 'dominant, if underappreciated, cause' is a classic trope for the correct answer in reading comprehension tests, as it reveals a hidden or counter-intuitive truth.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 811,
+    "candidatesTokenCount": 218,
+    "totalTokenCount": 3420,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 811
+      }
+    ],
+    "thoughtsTokenCount": 2391,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 3,
+  "latency_ms": 114204
+}

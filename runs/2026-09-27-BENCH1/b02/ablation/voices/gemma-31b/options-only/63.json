@@ -1,0 +1,36 @@
+{
+  "file": "options-only/63",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "letter",
+  "prompt_sha256": "a2b4ff14d71abd5c71e0e732e511b7c8a96f339be15942063553238cf3bba690",
+  "ts": "2026-09-27T18:00:42.454Z",
+  "status": "ok",
+  "reply_text": "C",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 174,
+    "candidatesTokenCount": 1,
+    "totalTokenCount": 531,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 174
+      }
+    ],
+    "thoughtsTokenCount": 356,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 3,
+  "latency_ms": 91513
+}

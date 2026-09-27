@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/18",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "5976c5c60ae596d71a8b1b905a173ca0d972271c4105fff32184a00989a7b790",
+  "ts": "2026-09-27T18:03:10.829Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"absolute\", \"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\"],\n      \"p\": 60,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"textbook-voice\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I chose the option that used a specific technical term ('hob') and a counterintuitive 'not X but Y' logic, which is a common hallmark of correct answers in technical textbooks.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 787,
+    "candidatesTokenCount": 225,
+    "totalTokenCount": 2312,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 787
+      }
+    ],
+    "thoughtsTokenCount": 1300,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 79452
+}

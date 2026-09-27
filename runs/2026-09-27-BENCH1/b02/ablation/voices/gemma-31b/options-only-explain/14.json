@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/14",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "0e67989dd95f39c9fecc3f516de593587b5f5a4dda3cd62ce250027fba57c292",
+  "ts": "2026-09-27T17:50:39.379Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"most-detailed\", \"opposites\"],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\", \"opposites\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"longest\", \"most-detailed\", \"nuanced-turn\", \"textbook-voice\"],\n      \"p\": 65,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"hedged\", \"too-obvious\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I chose the most detailed option that presents a nuanced trade-off, which is a common pattern for correct answers in academic analysis questions.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 812,
+    "candidatesTokenCount": 223,
+    "totalTokenCount": 2212,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 812
+      }
+    ],
+    "thoughtsTokenCount": 1177,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 87910
+}

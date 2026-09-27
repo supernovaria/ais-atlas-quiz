@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/18",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "05499a74b397d91834a7288bdcc722fc94669c43121c19318513ceffc974c26e",
+  "ts": "2026-09-27T18:10:47.633Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"opposites\", \"echoes-stem\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"echoes-stem\", \"nuanced-turn\"],\n      \"p\": 80,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"shortest\", \"off-target\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"opposites\", \"too-obvious\"],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"B\",\n  \"strategy\": \"I chose the most detailed option that explains the specific mechanical difference between the two rules mentioned in the stem.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 857,
+    "candidatesTokenCount": 217,
+    "totalTokenCount": 1768,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 857
+      }
+    ],
+    "thoughtsTokenCount": 694,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 52129
+}

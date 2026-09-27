@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/18",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "a5a516f4afd86d5915de78be3d12f93a4f5c1e24b5748ae8fa6edf2eb55b0828",
+  "ts": "2026-09-27T18:01:51.375Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"textbook-voice\"],\n      \"p\": 10,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"too-obvious\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"nuanced-turn\"],\n      \"p\": 60,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\"],\n      \"p\": 10,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I chose the option that provided a specific technical term ('hob') and a non-obvious rule, which is characteristic of textbook-style questions.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 819,
+    "candidatesTokenCount": 212,
+    "totalTokenCount": 1689,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 819
+      }
+    ],
+    "thoughtsTokenCount": 658,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 3,
+  "latency_ms": 68919
+}

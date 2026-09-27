@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/12",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "45b5abd1000e00984f4d21a3b7eef4dd9e6f8eb31915d53589892f971bc15901",
+  "ts": "2026-09-27T17:52:20.072Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\n        \"longest\",\n        \"most-detailed\",\n        \"textbook-voice\",\n        \"surprising\",\n        \"opposites\"\n      ],\n      \"p\": 65,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\n        \"like-the-others\",\n        \"absolute\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\n        \"like-the-others\",\n        \"absolute\"\n      ],\n      \"p\": 15,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\n        \"too-obvious\",\n        \"opposites\"\n      ],\n      \"p\": 5,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"A\",\n  \"strategy\": \"Detailed, counter-intuitive options that contradict the common-sense answer (D) are typically the correct ones in textbook assessments.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 805,
+    "candidatesTokenCount": 261,
+    "totalTokenCount": 2322,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 805
+      }
+    ],
+    "thoughtsTokenCount": 1256,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 4,
+  "latency_ms": 199421
+}

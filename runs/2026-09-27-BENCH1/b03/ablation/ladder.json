@@ -108,7 +108,7 @@
       "full": "2/3",
       "options-only": "2/3",
       "panel": {
-        "full": "15/18",
+        "full": "16/19",
         "options-only": "11/18"
       },
       "key_centrality": -0.003
@@ -117,8 +117,8 @@
       "full": "3/3",
       "options-only": "3/3",
       "panel": {
-        "full": "18/18",
-        "options-only": "13/18"
+        "full": "19/19",
+        "options-only": "14/19"
       },
       "key_centrality": 0.133
     },
@@ -126,8 +126,8 @@
       "full": "3/3",
       "options-only": "3/3",
       "panel": {
-        "full": "14/18",
-        "options-only": "11/18"
+        "full": "15/19",
+        "options-only": "12/19"
       },
       "key_centrality": 0.25
     },
@@ -195,51 +195,51 @@
         "family": "google"
       },
       "statuses": {
-        "ok": 12
+        "ok": 17
       },
       "rungs": {
         "full": {
-          "questions": 5,
-          "trials": 5,
-          "hits": 4,
+          "questions": 8,
+          "trials": 8,
+          "hits": 7,
           "unparsed": 0,
           "unparsed_excluded": 0,
-          "hit_rate": 0.8,
+          "hit_rate": 0.875,
           "mean_chance": 0.25,
-          "excess_over_chance": 0.55,
+          "excess_over_chance": 0.625,
           "ci_question_unit": {
-            "n": 5,
-            "mean": 0.8,
-            "sd": 0.4472135954999579,
-            "lo": 0.4080000000000001,
+            "n": 8,
+            "mean": 0.875,
+            "sd": 0.3535533905932738,
+            "lo": 0.63,
             "hi": 1
           },
-          "coverage": "5/112",
-          "mean_reasoning_tokens": 624
+          "coverage": "8/112",
+          "mean_reasoning_tokens": 628
         },
         "options-only": {
-          "questions": 7,
-          "trials": 7,
-          "hits": 7,
+          "questions": 9,
+          "trials": 9,
+          "hits": 9,
           "unparsed": 0,
           "unparsed_excluded": 0,
           "hit_rate": 1,
           "mean_chance": 0.25,
           "excess_over_chance": 0.75,
           "ci_question_unit": {
-            "n": 7,
+            "n": 9,
             "mean": 1,
             "sd": 0,
             "lo": 1,
             "hi": 1
           },
-          "coverage": "7/112",
-          "mean_reasoning_tokens": 892
+          "coverage": "9/112",
+          "mean_reasoning_tokens": 827
         }
       },
       "paired_full_vs_options_only": {
-        "questions": 5,
-        "full": 0.8,
+        "questions": 7,
+        "full": 0.8571428571428571,
         "options_only": 1
       }
     },
@@ -432,13 +432,13 @@
         "voices": [
           "gemma-31b"
         ],
-        "questions": 5,
-        "rate": 0.8,
+        "questions": 8,
+        "rate": 0.875,
         "ci_question_unit": {
-          "n": 5,
-          "mean": 0.8,
-          "sd": 0.4472135954999579,
-          "lo": 0.4080000000000001,
+          "n": 8,
+          "mean": 0.875,
+          "sd": 0.3535533905932738,
+          "lo": 0.63,
           "hi": 1
         }
       },
@@ -491,10 +491,10 @@
         "voices": [
           "gemma-31b"
         ],
-        "questions": 7,
+        "questions": 9,
         "rate": 1,
         "ci_question_unit": {
-          "n": 7,
+          "n": 9,
           "mean": 1,
           "sd": 0,
           "lo": 1,
@@ -535,29 +535,29 @@
   "panel": {
     "full": {
       "families": 4,
-      "complete_questions": 5,
+      "complete_questions": 8,
       "family_rates_on_complete": {
-        "anthropic": 0.7333333333333333,
-        "google": 0.8,
+        "anthropic": 0.7916666666666666,
+        "google": 0.875,
         "openai": 1,
-        "mistral": 0.9571428571428571
+        "mistral": 0.9196428571428571
       },
-      "median_family_rate": 0.8785714285714286,
+      "median_family_rate": 0.8973214285714286,
       "pooled_trials": {
         "questions": 16,
-        "trials": 292,
-        "hits": 249,
+        "trials": 295,
+        "hits": 252,
         "unparsed": 0,
         "unparsed_excluded": 0,
-        "hit_rate": 0.8527397260273972,
+        "hit_rate": 0.8542372881355932,
         "mean_chance": 0.25,
-        "excess_over_chance": 0.6027397260273972,
+        "excess_over_chance": 0.6042372881355932,
         "ci_question_unit": {
           "n": 16,
-          "mean": 0.8521564327485381,
-          "sd": 0.21011701806468214,
-          "lo": 0.7491990938968439,
-          "hi": 0.9551137716002324
+          "mean": 0.8534356725146199,
+          "sd": 0.20981815865544287,
+          "lo": 0.7506247747734529,
+          "hi": 0.956246570255787
         }
       },
       "voices": [
@@ -570,29 +570,29 @@
     },
     "options-only": {
       "families": 4,
-      "complete_questions": 7,
+      "complete_questions": 9,
       "family_rates_on_complete": {
-        "anthropic": 0.4761904761904762,
+        "anthropic": 0.5925925925925927,
         "google": 1,
-        "openai": 0.5714285714285714,
-        "mistral": 0.5918367346938774
+        "openai": 0.6666666666666666,
+        "mistral": 0.5873015873015872
       },
-      "median_family_rate": 0.5816326530612244,
+      "median_family_rate": 0.6296296296296297,
       "pooled_trials": {
         "questions": 16,
-        "trials": 294,
-        "hits": 184,
+        "trials": 296,
+        "hits": 186,
         "unparsed": 0,
         "unparsed_excluded": 0,
-        "hit_rate": 0.6258503401360545,
+        "hit_rate": 0.6283783783783784,
         "mean_chance": 0.25,
-        "excess_over_chance": 0.37585034013605445,
+        "excess_over_chance": 0.3783783783783784,
         "ci_question_unit": {
           "n": 16,
-          "mean": 0.6269027347781216,
-          "sd": 0.19022160554434947,
-          "lo": 0.5336941480613904,
-          "hi": 0.7201113214948529
+          "mean": 0.6290957172342619,
+          "sd": 0.19069352262507386,
+          "lo": 0.5356558911479757,
+          "hi": 0.7225355433205481
         }
       },
       "voices": [
@@ -606,7 +606,7 @@
   },
   "warnings": [],
   "explain": {
-    "replies": 169,
+    "replies": 176,
     "unusable": 3,
     "voices": [
       "gemma-31b",
@@ -621,9 +621,9 @@
       "mistral"
     ],
     "excluded_voices": [],
-    "tags": 2749,
-    "other_share": 0.0007275372862859222,
-    "no_tell_share": 0,
+    "tags": 2818,
+    "other_share": 0.0007097232079489,
+    "no_tell_share": 0.0007097232079489,
     "impossible_stem_echo_tags": 181,
     "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
   },
@@ -662,11 +662,11 @@
       "directional": {
         "family_rates": {
           "anthropic": 0.7692307692307693,
-          "google": 0.6666666666666666,
+          "google": 0.8,
           "openai": 0.8333333333333334,
           "mistral": 0.8571428571428572
         },
-        "median_family_rate": 0.8012820512820513,
+        "median_family_rate": 0.8166666666666667,
         "floor": 0.6923076923076923
       },
       "passage-only": {

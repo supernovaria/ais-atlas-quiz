@@ -661,3 +661,15 @@
 {"ts":"2026-09-27T17:46:16.568Z","voice":"gemma-31b","file":"full/42","result":"skip","detail":"transient x4: Internal error encountered."}
 {"ts":"2026-09-27T17:47:18.574Z","voice":"gemma-31b","file":"options-only/42","result":"ok","detail":null}
 {"ts":"2026-09-27T17:49:00.649Z","voice":"gemma-31b","file":"full-explain/12","result":"ok","detail":null}
+{"ts":"2026-09-27T17:52:20.072Z","voice":"gemma-31b","file":"options-only-explain/12","result":"ok","detail":null}
+{"ts":"2026-09-27T17:54:59.616Z","voice":"gemma-31b","file":"full/49","result":"ok","detail":null}
+{"ts":"2026-09-27T17:57:36.909Z","voice":"gemma-31b","file":"options-only/49","result":"skip","detail":"transient x4: Internal error encountered."}
+{"ts":"2026-09-27T17:58:57.089Z","voice":"gemma-31b","file":"full-explain/14","result":"ok","detail":null}
+{"ts":"2026-09-27T18:00:51.294Z","voice":"gemma-31b","file":"options-only-explain/14","result":"ok","detail":null}
+{"ts":"2026-09-27T18:03:02.743Z","voice":"gemma-31b","file":"full/56","result":"ok","detail":null}
+{"ts":"2026-09-27T18:03:42.323Z","voice":"gemma-31b","file":"options-only/56","result":"ok","detail":null}
+{"ts":"2026-09-27T18:04:28.095Z","voice":"gemma-31b","file":"full-explain/16","result":"ok","detail":null}
+{"ts":"2026-09-27T18:06:25.755Z","voice":"gemma-31b","file":"options-only-explain/16","result":"ok","detail":null}
+{"ts":"2026-09-27T18:08:17.604Z","voice":"gemma-31b","file":"full/63","result":"ok","detail":null}
+{"ts":"2026-09-27T18:09:55.502Z","voice":"gemma-31b","file":"options-only/63","result":"ok","detail":null}
+{"ts":"2026-09-27T18:10:47.632Z","voice":"gemma-31b","file":"full-explain/18","result":"ok","detail":null}

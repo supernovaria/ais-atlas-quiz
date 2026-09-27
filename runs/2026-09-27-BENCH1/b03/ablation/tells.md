@@ -2,69 +2,71 @@
 
 Explain-mode replies are for diagnosis. They are not the score, and their hit rates are not comparable with the letter rungs.
 
-169 replies from 4 voice(s) in 3 famil(ies); 3 unusable. 2749 cue tags in the pooled tables; `other` 0%, `no-tell` 0%. Stem-echo tags on the options-only rung, where no stem was shown (claims that cannot be true): 181.
+176 replies from 4 voice(s) in 3 famil(ies); 3 unusable. 2818 cue tags in the pooled tables; `other` 0%, `no-tell` 0%. Stem-echo tags on the options-only rung, where no stem was shown (claims that cannot be true): 181.
 
 **How to read the tables.** *Follow → key* is the hit rate of a reader who used only this cue and picked among the options carrying it. *Follow → away* is the same for a reader who avoided those options. Compare both with *chance*. Each is averaged per question and then over questions, with a bootstrap interval over questions. *Lift among not-picked* compares key and distractor rates only among options the reader did NOT pick. A cue the reader cites just to justify its own pick shows a high *on picked* rate and a lift near 1 here. A real tell still leans toward the key. `position` is a placebo: options are shuffled, so it should sit at chance with a lift near 1.
 
 ## full-explain
 
-84 key ratings, 245 distractor ratings.
+88 key ratings, 257 distractor ratings.
 
 | code | follow → key (CI) | follow → away (CI) | chance | q | on picked / not picked | lift | lift among not-picked | by family (→ key) |
 |---|---|---|---|---|---|---|---|---|
-| `most-detailed` | 82% (71%–92%) | 4% (1%–8%) | 25% | 16 | 69% / 9% | 10.05 | 7.67 | google 100%, openai 93%, mistral 79% |
-| `textbook-voice` | 70% (56%–84%) | 8% (4%–14%) | 25% | 16 | 54% / 11% | 5.71 | 5.30 | google 89%, openai 89%, mistral 61% |
-| `longest` | 67% (44%–88%) | 11% (4%–19%) | 25% | 13 | 13% / 4% | 4.74 | 6.16 | google 100%, openai 100%, mistral 41% |
-| `group:qualified` | 56% (43%–67%) | 8% (3%–13%) | 25% | 16 | 88% / 30% | 2.65 | 1.74 | google 83%, openai 78%, mistral 47% |
-| `nuanced-turn` | 48% (29%–68%) | 17% (10%–24%) | 25% | 16 | 45% / 12% | 2.83 | 0.50 | google 67%, openai 60%, mistral 45% |
-| `group:dismissible` | 14% (7%–22%) | 46% (33%–61%) | 25% | 16 | 17% / 71% | 0.47 | 1.06 | google 0%, openai 6%, mistral 17% |
-| `position` | 46% (21%–71%) | 15% (7%–24%) | 25% | 12 | 16% / 9% | 1.81 | 2.40 | openai 50%, mistral 41% |
-| `echoes-stem` | 44% (35%–53%) | 7% (3%–12%) | 25% | 16 | 78% / 45% | 1.93 | 2.07 | google 40%, openai 43%, mistral 47% |
-| `grammatical-fit` | 43% (30%–56%) | 19% (13%–25%) | 25% | 16 | 48% / 24% | 1.57 | 0.50 | openai 54%, mistral 42% |
-| `general-knowledge` | 38% (23%–54%) | 14% (8%–22%) | 25% | 16 | 51% / 32% | 1.49 | 1.85 | openai 50%, mistral 37% |
-| `off-target` | 0% (0%–0%) | 38% (35%–42%) | 25% | 16 | 0% / 28% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
-| `middle-ground` | 36% (16%–60%) | 21% (13%–28%) | 25% | 13 | 22% / 10% | 1.41 | 0.60 | openai 0%, mistral 37% |
-| `like-the-others` | 0% (0%–0%) | 35% (33%–37%) | 25% | 13 | 0% / 15% | 0.08 | 0.40 | openai 0%, mistral 0% |
-| `too-obvious` | 0% (0%–0%) | 34% (33%–35%) | 25% | 16 | 2% / 25% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
-| `shortest` | 0% (0%–0%) | 33% (33%–33%) | 25% | 7 | 1% / 4% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
+| `most-detailed` | 83% (72%–92%) | 4% (1%–8%) | 25% | 16 | 69% / 10% | 9.49 | 7.12 | google 89%, openai 93%, mistral 79% |
+| `textbook-voice` | 73% (62%–85%) | 7% (3%–12%) | 25% | 16 | 56% / 10% | 6.21 | 5.57 | google 93%, openai 89%, mistral 61% |
+| `longest` | 72% (51%–90%) | 9% (3%–16%) | 25% | 14 | 16% / 4% | 5.84 | 6.48 | google 100%, openai 100%, mistral 41% |
+| `group:qualified` | 56% (44%–69%) | 8% (3%–13%) | 25% | 16 | 87% / 30% | 2.66 | 1.75 | google 75%, openai 78%, mistral 47% |
+| `nuanced-turn` | 48% (30%–67%) | 17% (10%–24%) | 25% | 16 | 45% / 12% | 2.92 | 0.50 | google 67%, openai 60%, mistral 45% |
+| `position` | 46% (21%–71%) | 15% (7%–24%) | 25% | 12 | 15% / 8% | 1.81 | 2.52 | openai 50%, mistral 41% |
+| `group:dismissible` | 14% (7%–22%) | 46% (32%–59%) | 25% | 16 | 16% / 69% | 0.45 | 1.09 | google 0%, openai 6%, mistral 17% |
+| `echoes-stem` | 44% (35%–53%) | 7% (3%–12%) | 25% | 16 | 77% / 44% | 1.95 | 2.14 | google 44%, openai 43%, mistral 47% |
+| `grammatical-fit` | 43% (30%–56%) | 19% (13%–25%) | 25% | 16 | 46% / 23% | 1.57 | 0.52 | openai 54%, mistral 42% |
+| `general-knowledge` | 38% (23%–54%) | 14% (8%–22%) | 25% | 16 | 48% / 31% | 1.50 | 1.94 | openai 50%, mistral 37% |
+| `off-target` | 0% (0%–0%) | 38% (35%–42%) | 25% | 16 | 0% / 27% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
+| `middle-ground` | 36% (16%–60%) | 21% (13%–28%) | 25% | 13 | 21% / 10% | 1.41 | 0.63 | openai 0%, mistral 37% |
+| `like-the-others` | 0% (0%–0%) | 35% (33%–37%) | 25% | 13 | 0% / 15% | 0.08 | 0.40 | google 0%, openai 0%, mistral 0% |
+| `too-obvious` | 0% (0%–0%) | 34% (33%–36%) | 25% | 16 | 2% / 26% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
+| `shortest` | 0% (0%–0%) | 33% (33%–33%) | 25% | 8 | 1% / 4% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
+| `no-tell` | 0% (n<2) | 33% (n<2) | 25% | 1 | 0% / 0% | 0.00 | 0.00 | google 0% |
 | `other` | 0% (n<2) | 33% (n<2) | 25% | 1 | 0% / 0% | 0.00 | 0.00 | openai 0% |
-| `implausible` | 3% (0%–8%) | 32% (31%–33%) | 25% | 13 | 0% / 13% | 0.09 | 0.46 | google 0%, openai 10%, mistral 0% |
-| `absolute` | 20% (10%–33%) | 32% (22%–42%) | 25% | 16 | 17% / 53% | 0.61 | 1.33 | google 0%, openai 5%, mistral 21% |
+| `implausible` | 3% (0%–8%) | 32% (31%–33%) | 25% | 13 | 0% / 12% | 0.09 | 0.49 | google 0%, openai 10%, mistral 0% |
+| `absolute` | 20% (9%–33%) | 32% (22%–42%) | 25% | 16 | 16% / 51% | 0.60 | 1.38 | google 0%, openai 5%, mistral 21% |
 | `denies-question` | 7% (0%–20%) | 32% (27%–35%) | 25% | 15 | 0% / 22% | 0.05 | 0.27 | google 0%, openai 0%, mistral 7% |
-| `odd-one-out` | 7% (0%–15%) | 31% (26%–34%) | 25% | 16 | 5% / 18% | 0.41 | 1.03 | google 0%, openai 0%, mistral 7% |
-| `hedged` | 12% (3%–22%) | 30% (26%–33%) | 25% | 15 | 11% / 14% | 0.65 | 0.42 | google 100%, openai 0%, mistral 11% |
-| `opposites` | 29% (14%–44%) | 22% (14%–31%) | 25% | 15 | 27% / 23% | 1.27 | 1.69 | google 50%, openai 15%, mistral 27% |
-| `surprising` | 24% (9%–41%) | 26% (20%–31%) | 25% | 16 | 17% / 14% | 0.84 | 0.00 | google 100%, openai 57%, mistral 15% |
+| `odd-one-out` | 7% (0%–15%) | 31% (26%–34%) | 25% | 16 | 5% / 17% | 0.41 | 1.08 | google 0%, openai 0%, mistral 7% |
+| `hedged` | 13% (3%–24%) | 29% (26%–33%) | 25% | 15 | 11% / 14% | 0.73 | 0.44 | google 100%, openai 0%, mistral 11% |
+| `opposites` | 29% (15%–45%) | 22% (14%–30%) | 25% | 15 | 28% / 23% | 1.31 | 1.68 | google 50%, openai 15%, mistral 27% |
+| `surprising` | 24% (10%–43%) | 26% (19%–31%) | 25% | 16 | 17% / 14% | 0.92 | 0.00 | google 100%, openai 57%, mistral 15% |
 
 ## options-only-explain
 
-82 key ratings, 242 distractor ratings.
+85 key ratings, 251 distractor ratings.
 
 | code | follow → key (CI) | follow → away (CI) | chance | q | on picked / not picked | lift | lift among not-picked | by family (→ key) |
 |---|---|---|---|---|---|---|---|---|
 | `other` | 100% (n<2) | 0% (n<2) | 25% | 1 | 1% / 0% | ∞ | — | mistral 100% |
-| `most-detailed` | 69% (56%–82%) | 6% (3%–11%) | 25% | 16 | 76% / 15% | 5.90 | 5.70 | google 100%, openai 73%, mistral 69% |
-| `longest` | 55% (38%–72%) | 15% (10%–21%) | 25% | 15 | 17% / 10% | 2.80 | 4.09 | google 100%, openai 63%, mistral 43% |
-| `group:qualified` | 47% (37%–58%) | 6% (2%–11%) | 25% | 16 | 88% / 43% | 2.16 | 1.94 | google 70%, openai 54%, mistral 44% |
-| `nuanced-turn` | 47% (31%–63%) | 16% (10%–21%) | 25% | 16 | 50% / 19% | 2.46 | 1.54 | google 63%, openai 63%, mistral 44% |
-| `textbook-voice` | 43% (31%–57%) | 17% (11%–22%) | 25% | 15 | 51% / 17% | 2.20 | 1.50 | google 87%, openai 74%, mistral 29% |
-| `group:dismissible` | 13% (7%–20%) | 41% (30%–52%) | 25% | 16 | 28% / 63% | 0.49 | 0.74 | google 0%, openai 0%, mistral 17% |
-| `surprising` | 40% (21%–61%) | 19% (11%–25%) | 25% | 16 | 21% / 15% | 1.39 | 1.32 | google 0%, openai 56%, mistral 32% |
-| `general-knowledge` | 39% (25%–52%) | 19% (11%–29%) | 25% | 16 | 54% / 40% | 1.22 | 1.36 | openai 67%, mistral 37% |
-| `hedged` | 37% (16%–62%) | 21% (13%–28%) | 25% | 14 | 20% / 15% | 1.52 | 1.64 | google 100%, openai 44%, mistral 30% |
-| `echoes-stem` | 35% (27%–44%) | 14% (6%–23%) | 25% | 16 | 68% / 51% | 1.40 | 1.23 | openai 54%, mistral 33% |
-| `grammatical-fit` | 35% (24%–47%) | 20% (12%–28%) | 25% | 16 | 28% / 29% | 1.25 | 1.93 | openai 50%, mistral 36% |
-| `implausible` | 0% (0%–0%) | 35% (33%–38%) | 25% | 12 | 0% / 11% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
-| `too-obvious` | 0% (0%–0%) | 35% (34%–36%) | 25% | 15 | 0% / 17% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
-| `absolute` | 17% (8%–27%) | 35% (25%–44%) | 25% | 16 | 27% / 50% | 0.59 | 0.94 | google 0%, openai 0%, mistral 20% |
-| `opposites` | 33% (15%–53%) | 21% (13%–28%) | 25% | 16 | 23% / 22% | 1.54 | 1.83 | google 25%, openai 39%, mistral 33% |
-| `like-the-others` | 2% (0%–7%) | 33% (31%–33%) | 25% | 14 | 6% / 11% | 0.20 | 0.40 | openai 0%, mistral 3% |
-| `off-target` | 5% (0%–12%) | 32% (30%–35%) | 25% | 16 | 1% / 14% | 0.18 | 0.33 | openai 0%, mistral 6% |
-| `denies-question` | 7% (0%–21%) | 32% (26%–35%) | 25% | 14 | 1% / 19% | 0.07 | 0.24 | google 0%, openai 0%, mistral 7% |
-| `shortest` | 10% (0%–30%) | 30% (23%–33%) | 25% | 10 | 4% / 6% | 0.18 | 0.00 | google 0%, openai 0%, mistral 14% |
-| `odd-one-out` | 18% (8%–30%) | 29% (25%–33%) | 25% | 16 | 10% / 19% | 0.52 | 0.24 | google 0%, openai 0%, mistral 18% |
-| `position` | 19% (7%–36%) | 26% (20%–31%) | 25% | 15 | 13% / 16% | 0.83 | 1.20 | openai 33%, mistral 17% |
-| `middle-ground` | 24% (9%–41%) | 26% (20%–31%) | 25% | 16 | 26% / 15% | 1.05 | 0.30 | openai 50%, mistral 23% |
+| `most-detailed` | 71% (59%–82%) | 6% (2%–10%) | 25% | 16 | 75% / 15% | 6.17 | 6.07 | google 100%, openai 73%, mistral 69% |
+| `longest` | 59% (41%–74%) | 14% (9%–20%) | 25% | 16 | 19% / 10% | 3.25 | 4.63 | google 100%, openai 63%, mistral 43% |
+| `group:qualified` | 49% (38%–59%) | 5% (1%–10%) | 25% | 16 | 87% / 42% | 2.23 | 2.01 | google 75%, openai 54%, mistral 44% |
+| `nuanced-turn` | 47% (30%–63%) | 16% (10%–22%) | 25% | 16 | 49% / 19% | 2.47 | 1.49 | google 58%, openai 63%, mistral 44% |
+| `textbook-voice` | 45% (32%–58%) | 16% (11%–22%) | 25% | 15 | 53% / 16% | 2.28 | 1.49 | google 79%, openai 74%, mistral 29% |
+| `group:dismissible` | 12% (7%–19%) | 42% (31%–53%) | 25% | 16 | 27% / 63% | 0.47 | 0.70 | google 0%, openai 0%, mistral 17% |
+| `surprising` | 40% (21%–61%) | 19% (11%–26%) | 25% | 16 | 21% / 14% | 1.48 | 1.30 | google 50%, openai 56%, mistral 32% |
+| `general-knowledge` | 39% (25%–52%) | 19% (11%–29%) | 25% | 16 | 52% / 38% | 1.22 | 1.35 | openai 67%, mistral 37% |
+| `hedged` | 38% (15%–62%) | 21% (13%–28%) | 25% | 14 | 20% / 15% | 1.60 | 1.63 | google 100%, openai 44%, mistral 30% |
+| `echoes-stem` | 35% (27%–44%) | 14% (6%–23%) | 25% | 16 | 66% / 49% | 1.40 | 1.22 | openai 54%, mistral 33% |
+| `grammatical-fit` | 35% (24%–47%) | 20% (12%–28%) | 25% | 16 | 27% / 28% | 1.25 | 1.91 | openai 50%, mistral 36% |
+| `absolute` | 16% (8%–26%) | 35% (25%–45%) | 25% | 16 | 26% / 51% | 0.57 | 0.89 | google 0%, openai 0%, mistral 20% |
+| `implausible` | 0% (0%–0%) | 35% (33%–38%) | 25% | 12 | 0% / 10% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
+| `too-obvious` | 0% (0%–0%) | 35% (33%–37%) | 25% | 15 | 0% / 18% | 0.00 | 0.00 | google 0%, openai 0%, mistral 0% |
+| `opposites` | 34% (17%–54%) | 20% (12%–27%) | 25% | 16 | 25% / 22% | 1.59 | 1.99 | google 38%, openai 39%, mistral 33% |
+| `no-tell` | 0% (n<2) | 33% (n<2) | 25% | 1 | 0% / 0% | 0.00 | 0.00 | google 0% |
+| `like-the-others` | 2% (0%–7%) | 33% (31%–34%) | 25% | 14 | 6% / 12% | 0.18 | 0.37 | google 0%, openai 0%, mistral 3% |
+| `off-target` | 5% (0%–12%) | 32% (30%–35%) | 25% | 16 | 1% / 13% | 0.18 | 0.33 | openai 0%, mistral 6% |
+| `denies-question` | 7% (0%–21%) | 31% (26%–34%) | 25% | 14 | 1% / 18% | 0.06 | 0.23 | google 0%, openai 0%, mistral 7% |
+| `shortest` | 9% (0%–27%) | 30% (24%–33%) | 25% | 11 | 4% / 6% | 0.17 | 0.00 | google 0%, openai 0%, mistral 14% |
+| `odd-one-out` | 18% (8%–30%) | 29% (25%–33%) | 25% | 16 | 9% / 18% | 0.52 | 0.24 | google 0%, openai 0%, mistral 18% |
+| `position` | 19% (7%–36%) | 26% (20%–31%) | 25% | 15 | 13% / 16% | 0.83 | 1.19 | openai 33%, mistral 17% |
+| `middle-ground` | 24% (9%–41%) | 26% (20%–31%) | 25% | 16 | 25% / 14% | 1.05 | 0.30 | openai 50%, mistral 23% |
 
 ## Do the claimed cues match the text?
 
@@ -72,18 +74,18 @@ Ranked properties: the mean percentile rank of options carrying the code, agains
 
 | code | property | tagged | tagged | untagged / true and tagged |
 |---|---|---|---|---|
-| `longest` | length_rank | 60 | rank 0.78 | rank 0.48 |
-| `shortest` | shortness_rank | 28 | rank 0.85 | rank 0.48 |
-| `most-detailed` | length_rank | 179 | rank 0.83 | rank 0.38 |
-| `echoes-stem` | stem_echo_rank | 176 | rank 0.46 | rank 0.54 |
-| `like-the-others` | centrality_rank | 69 | rank 0.53 | rank 0.50 |
-| `absolute` | has an absolute word (checker list) | 288 | 10% where true | 65% of 43 true |
+| `longest` | length_rank | 66 | rank 0.80 | rank 0.47 |
+| `shortest` | shortness_rank | 30 | rank 0.83 | rank 0.48 |
+| `most-detailed` | length_rank | 187 | rank 0.83 | rank 0.38 |
+| `echoes-stem` | stem_echo_rank | 180 | rank 0.46 | rank 0.54 |
+| `like-the-others` | centrality_rank | 73 | rank 0.55 | rank 0.50 |
+| `absolute` | has an absolute word (checker list) | 295 | 9% where true | 65% of 43 true |
 
 ## Per voice
 
 | voice | family | model | replies | unusable | unrated options | explain hit (full / opt-only) | agrees with own letter pick | reasoning tokens | other | no-tell |
 |---|---|---|---|---|---|---|---|---|---|---|
-| gemma-31b | google | gemma-4-31b-it | 11 | 0 | 0% | 83% / 80% | 100% of 5 / 80% of 5 | 1121 / 1190 | 0% | 0% |
+| gemma-31b | google | gemma-4-31b-it | 18 | 0 | 0% | 90% / 75% | 100% of 8 / 86% of 7 | 1118 / 1367 | 0% | 1% |
 | gpt-luna | openai | gpt-5.6-luna | 30 | 0 | 0% | 87% / 93% | 100% of 15 / 73% of 15 | 133 / 126 | 0% | 0% |
 | ministral-14b | mistral | ministral-14b-latest | 64 | 2 | 3% | 84% / 68% | 87% of 31 / 71% of 31 | — / — | 0% | 0% |
 | ministral-8b | mistral | ministral-8b-latest | 64 | 1 | 2% | 75% / 71% | 81% of 32 / 65% of 31 | — / — | 0% | 0% |
@@ -146,39 +148,39 @@ full-explain: key picked 3/6, mean p(key) 42% · options-only-explain: key picke
 
 ### b03/sonnet/a07
 
-full-explain: key picked 5/5, mean p(key) 62% · options-only-explain: key picked 3/5, mean p(key) 30%
+full-explain: key picked 6/6, mean p(key) 63% · options-only-explain: key picked 4/6, mean p(key) 36%
 
-- **KEY** p 46% — opposites×10, echoes-stem×6, surprising×6, absolute×6 — "The opposite holds: the higher a lattice hangs, the less likely it is to survive a flood s…"
-- distractor p 22% — too-obvious×8, denies-question×8, absolute×7, position×6 — "None — height above the water is exactly what protects a lattice from flood loss, so the c…"
-- distractor p 12% — general-knowledge×6, off-target×5, echoes-stem×5, absolute×5 — "The objection is that flood loss is mostly caused by silt film rather than by a lattice's …"
-- distractor p 19% — nuanced-turn×7, like-the-others×6, echoes-stem×6, general-knowledge×5 — "The objection is that a lattice's cant, not its height, determines flood survival, so heig…"
+- **KEY** p 50% — opposites×12, surprising×8, echoes-stem×7, absolute×6 — "The opposite holds: the higher a lattice hangs, the less likely it is to survive a flood s…"
+- distractor p 20% — too-obvious×10, denies-question×9, absolute×7, position×6 — "None — height above the water is exactly what protects a lattice from flood loss, so the c…"
+- distractor p 13% — absolute×6, general-knowledge×6, like-the-others×5, off-target×5 — "The objection is that flood loss is mostly caused by silt film rather than by a lattice's …"
+- distractor p 18% — like-the-others×8, nuanced-turn×7, echoes-stem×6, absolute×5 — "The objection is that a lattice's cant, not its height, determines flood survival, so heig…"
 
 ### b03/sonnet/a08
 
-full-explain: key picked 2/4, mean p(key) 41% · options-only-explain: key picked 3/5, mean p(key) 36%
+full-explain: key picked 3/5, mean p(key) 48% · options-only-explain: key picked 3/6, mean p(key) 35%
 
-- **KEY** p 38% — echoes-stem×9, absolute×7, general-knowledge×5, most-detailed×4 — "No — most lost lattices are lost to sudden violence, a flood or a fall of rock, and silt f…"
-- distractor p 37% — textbook-voice×8, echoes-stem×8, most-detailed×5, position×3 — "Yes — gradual threats like silt film accumulate unnoticed over many seasons, so they are t…"
-- distractor p 17% — nuanced-turn×7, opposites×5, hedged×5, position×4 — "No — but only because rockfalls specifically outpace silt film, not because sudden violenc…"
+- **KEY** p 41% — echoes-stem×9, absolute×7, most-detailed×6, opposites×5 — "No — most lost lattices are lost to sudden violence, a flood or a fall of rock, and silt f…"
+- distractor p 36% — echoes-stem×9, textbook-voice×9, most-detailed×5, opposites×3 — "Yes — gradual threats like silt film accumulate unnoticed over many seasons, so they are t…"
+- distractor p 15% — nuanced-turn×9, opposites×6, hedged×5, position×4 — "No — but only because rockfalls specifically outpace silt film, not because sudden violenc…"
 - distractor p 8% — general-knowledge×5, off-target×5, odd-one-out×4, absolute×3 — "Yes — since a high cant is what determines whether a lattice survives a flood, gradual sed…"
 
 ### b03/sonnet/b01
 
-full-explain: key picked 5/5, mean p(key) 81% · options-only-explain: key picked 5/5, mean p(key) 68%
+full-explain: key picked 6/6, mean p(key) 80% · options-only-explain: key picked 6/6, mean p(key) 70%
 
-- **KEY** p 74% — most-detailed×10, nuanced-turn×10, echoes-stem×9, grammatical-fit×6 — "Lattice A's wennets have linked into longer wennet-to-wennet chains, while Lattice B's wen…"
-- distractor p 7% — absolute×10, echoes-stem×7, too-obvious×6, general-knowledge×5 — "Lattice A must have received more wennet-work overall than Lattice B, since a longer pell …"
-- distractor p 9% — denies-question×9, middle-ground×5, hedged×5, surprising×4 — "Since the two lattices have equal cant, their pells should also be roughly equal, so the d…"
-- distractor p 10% — absolute×7, grammatical-fit×6, general-knowledge×6, echoes-stem×4 — "Lattice A must have more tharls than Lattice B, and that larger frame is what lets its cha…"
+- **KEY** p 75% — most-detailed×12, nuanced-turn×12, echoes-stem×9, hedged×6 — "Lattice A's wennets have linked into longer wennet-to-wennet chains, while Lattice B's wen…"
+- distractor p 7% — absolute×12, too-obvious×8, echoes-stem×7, general-knowledge×5 — "Lattice A must have received more wennet-work overall than Lattice B, since a longer pell …"
+- distractor p 9% — denies-question×11, middle-ground×5, hedged×5, surprising×4 — "Since the two lattices have equal cant, their pells should also be roughly equal, so the d…"
+- distractor p 10% — absolute×9, grammatical-fit×6, general-knowledge×6, echoes-stem×4 — "Lattice A must have more tharls than Lattice B, and that larger frame is what lets its cha…"
 
 ### b03/sonnet/b02
 
-full-explain: key picked 5/5, mean p(key) 70% · options-only-explain: key picked 5/5, mean p(key) 63%
+full-explain: key picked 6/6, mean p(key) 72% · options-only-explain: key picked 5/5, mean p(key) 63%
 
-- **KEY** p 66% — most-detailed×10, echoes-stem×9, general-knowledge×9, nuanced-turn×6 — "Ostral under Varrenby's original rule, because its single longest chain (9) exceeds twice …"
-- distractor p 11% — absolute×10, echoes-stem×7, too-obvious×6, general-knowledge×4 — "Ostral under both rules, since a chain of 9 is more than double a cant of 4 regardless of …"
-- distractor p 10% — echoes-stem×7, middle-ground×6, grammatical-fit×4, absolute×4 — "Calvine under both rules, since the mean of the three longest chains falls below twice the…"
-- distractor p 14% — opposites×10, surprising×4, general-knowledge×4, grammatical-fit×3 — "Ostral under current practice, but calvine under Varrenby's original rule."
+- **KEY** p 67% — most-detailed×11, echoes-stem×10, general-knowledge×9, nuanced-turn×7 — "Ostral under Varrenby's original rule, because its single longest chain (9) exceeds twice …"
+- distractor p 10% — absolute×10, too-obvious×7, echoes-stem×7, general-knowledge×4 — "Ostral under both rules, since a chain of 9 is more than double a cant of 4 regardless of …"
+- distractor p 10% — echoes-stem×8, middle-ground×6, grammatical-fit×4, absolute×4 — "Calvine under both rules, since the mean of the three longest chains falls below twice the…"
+- distractor p 13% — opposites×10, surprising×4, general-knowledge×4, grammatical-fit×3 — "Ostral under current practice, but calvine under Varrenby's original rule."
 
 ### b03/sonnet/b03
 
@@ -247,11 +249,18 @@ full-explain: key picked 3/4, mean p(key) 51% · options-only-explain: key picke
 - gemma-31b · a04 · full-explain · hit: Identified that the question distinguishes between cross-sectional and longitudinal observations, and selected the option that describes this distinction in a formal, textbook-like manner while contrasting with its opposite.
 - gemma-31b · a05 · full-explain · hit: The correct answer typically utilizes the specific constraint mentioned in the stem (the ends of the thread) rather than the general descriptors (thick and taut) or a 'rule of thumb'.
 - gemma-31b · a06 · full-explain · miss: I chose the option that creates a distinction between the specific diagnostic symptom and the general statistical prevalence, as this is a common pattern in academic test questions.
+- gemma-31b · a07 · full-explain · hit: The most likely answer in a textbook context is the counter-intuitive reversal of the character's common-sense assumption.
+- gemma-31b · a08 · full-explain · hit: The option that provides a comprehensive, specific contradiction (A) is typically the correct answer in reading comprehension tests, whereas narrow nuances (B) or generic logic (D) are often distractors.
+- gemma-31b · b01 · full-explain · hit: The most detailed option that explains a paradox via a specific mechanism is typically the correct answer in fabricated-terminology tests.
+- gemma-31b · b02 · full-explain · hit: I chose the most detailed option that explains the specific mechanical difference between the two rules mentioned in the stem.
 - gemma-31b · a01 · options-only-explain · hit: The most detailed option that provides a structural mechanism to explain a discrepancy is usually the correct one in these types of tests.
 - gemma-31b · a02 · options-only-explain · hit: Selected the longest, most conceptually complex option that provides a theoretical synthesis rather than a simple narrative or corrective detail.
 - gemma-31b · a03 · options-only-explain · hit: Selected the option that uses technical jargon to provide a nuanced, mechanical explanation rather than a simplistic or absolute one.
 - gemma-31b · a04 · options-only-explain · hit: I chose the longest and most detailed option that uses a nuanced-turn to explicitly distinguish between two patterns, which is a common trait of correct answers in complex reading comprehension tests.
 - gemma-31b · a06 · options-only-explain · miss: I prioritized the option that provided a distinction between a specific diagnostic sign and a general frequency, as this nuance is characteristic of correct answers in academic multiple-choice questions.
+- gemma-31b · a07 · options-only-explain · hit: Detailed, counter-intuitive options that contradict the common-sense answer (D) are typically the correct ones in textbook assessments.
+- gemma-31b · a08 · options-only-explain · miss: The phrase 'dominant, if underappreciated, cause' is a classic trope for the correct answer in reading comprehension tests, as it reveals a hidden or counter-intuitive truth.
+- gemma-31b · b01 · options-only-explain · hit: Selecting the longest, most nuanced, and most detailed option, which typically characterizes the correct answer in conceptual textbook questions.
 - gpt-luna · a01 · full-explain · hit: I relied mainly on A's detailed, textbook-like distinction between overall amount of work and the independence or chaining of that work.
 - gpt-luna · a02 · full-explain · hit: I focused on the explicit contrast between the two counting rules and on D's textbook-like, nuanced wording that explains the classification flip.
 - gpt-luna · a03 · full-explain · hit: I went mainly on A's specific causal explanation and its textbook-like correction of the colleague's intuitive claim.

@@ -39,7 +39,7 @@
     ]
   },
   "summary": {
-    "replies": 169,
+    "replies": 176,
     "unusable": 3,
     "voices": [
       "gemma-31b",
@@ -54,46 +54,46 @@
       "mistral"
     ],
     "excluded_voices": [],
-    "tags": 2749,
-    "other_share": 0.0007275372862859222,
-    "no_tell_share": 0,
+    "tags": 2818,
+    "other_share": 0.0007097232079489,
+    "no_tell_share": 0.0007097232079489,
     "impossible_stem_echo_tags": 181,
     "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
   },
   "code_table": {
     "full-explain": {
-      "key_options": 84,
-      "distractor_options": 245,
+      "key_options": 88,
+      "distractor_options": 257,
       "codes": {
         "longest": {
-          "on_key": 13,
+          "on_key": 16,
           "on_distractors": 8,
-          "rate_key": 0.15476190476190477,
-          "rate_distractors": 0.0326530612244898,
-          "lift": 4.739583333333333,
-          "rate_on_picked": 0.13253012048192772,
-          "rate_on_not_picked": 0.04065040650406504,
-          "lift_among_not_picked": 6.160714285714286,
+          "rate_key": 0.18181818181818182,
+          "rate_distractors": 0.0311284046692607,
+          "lift": 5.840909090909091,
+          "rate_on_picked": 0.16091954022988506,
+          "rate_on_not_picked": 0.03875968992248062,
+          "lift_among_not_picked": 6.482142857142857,
           "cue_follow": {
-            "questions": 13,
-            "replies": 20,
+            "questions": 14,
+            "replies": 23,
             "chance": 0.25,
-            "toward": 0.6730769230769231,
+            "toward": 0.7202380952380951,
             "toward_ci": {
-              "n": 13,
-              "lo": 0.4423076923076923,
-              "hi": 0.8846153846153846
+              "n": 14,
+              "lo": 0.505952380952381,
+              "hi": 0.9047619047619049
             },
-            "away": 0.10897435897435896,
+            "away": 0.09325396825396824,
             "away_ci": {
-              "n": 13,
-              "lo": 0.038461538461538464,
-              "hi": 0.18589743589743588
+              "n": 14,
+              "lo": 0.031746031746031744,
+              "hi": 0.16468253968253968
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 2,
+              "questions": 5,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -114,33 +114,33 @@
         },
         "shortest": {
           "on_key": 0,
-          "on_distractors": 11,
+          "on_distractors": 12,
           "rate_key": 0,
-          "rate_distractors": 0.044897959183673466,
+          "rate_distractors": 0.04669260700389105,
           "lift": 0,
-          "rate_on_picked": 0.012048192771084338,
-          "rate_on_not_picked": 0.04065040650406504,
+          "rate_on_picked": 0.011494252873563218,
+          "rate_on_not_picked": 0.04263565891472868,
           "lift_among_not_picked": 0,
           "cue_follow": {
-            "questions": 7,
-            "replies": 11,
+            "questions": 8,
+            "replies": 12,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
-              "n": 7,
+              "n": 8,
               "lo": 0,
               "hi": 0
             },
             "away": 0.3333333333333333,
             "away_ci": {
-              "n": 7,
+              "n": 8,
               "lo": 0.3333333333333333,
               "hi": 0.3333333333333333
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 2,
               "toward": 0,
               "away": 0.3333333333333333,
               "chance": 0.25
@@ -160,36 +160,36 @@
           }
         },
         "most-detailed": {
-          "on_key": 62,
-          "on_distractors": 18,
-          "rate_key": 0.7380952380952381,
-          "rate_distractors": 0.07346938775510205,
-          "lift": 10.046296296296296,
-          "rate_on_picked": 0.6867469879518072,
-          "rate_on_not_picked": 0.09349593495934959,
-          "lift_among_not_picked": 7.666666666666667,
+          "on_key": 65,
+          "on_distractors": 20,
+          "rate_key": 0.7386363636363636,
+          "rate_distractors": 0.07782101167315175,
+          "lift": 9.491477272727273,
+          "rate_on_picked": 0.6896551724137931,
+          "rate_on_not_picked": 0.09689922480620156,
+          "lift_among_not_picked": 7.117647058823529,
           "cue_follow": {
             "questions": 16,
-            "replies": 68,
+            "replies": 72,
             "chance": 0.25,
-            "toward": 0.8229166666666666,
+            "toward": 0.8255208333333333,
             "toward_ci": {
               "n": 16,
-              "lo": 0.7145833333333333,
-              "hi": 0.9203125
+              "lo": 0.7182291666666667,
+              "hi": 0.9161458333333333
             },
-            "away": 0.042361111111111106,
+            "away": 0.044444444444444446,
             "away_ci": {
               "n": 16,
-              "lo": 0.010416666666666666,
-              "hi": 0.08159722222222222
+              "lo": 0.0125,
+              "hi": 0.08402777777777777
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 1,
-              "away": 0,
+              "questions": 9,
+              "toward": 0.8888888888888888,
+              "away": 0.05555555555555555,
               "chance": 0.25
             },
             "openai": {
@@ -207,34 +207,34 @@
           }
         },
         "hedged": {
-          "on_key": 8,
+          "on_key": 9,
           "on_distractors": 36,
-          "rate_key": 0.09523809523809523,
-          "rate_distractors": 0.1469387755102041,
-          "lift": 0.648148148148148,
-          "rate_on_picked": 0.10843373493975904,
-          "rate_on_not_picked": 0.14227642276422764,
-          "lift_among_not_picked": 0.4227941176470588,
+          "rate_key": 0.10227272727272728,
+          "rate_distractors": 0.14007782101167315,
+          "lift": 0.7301136363636364,
+          "rate_on_picked": 0.11494252873563218,
+          "rate_on_not_picked": 0.13565891472868216,
+          "lift_among_not_picked": 0.44485294117647056,
           "cue_follow": {
             "questions": 15,
-            "replies": 40,
+            "replies": 41,
             "chance": 0.25,
-            "toward": 0.12222222222222222,
+            "toward": 0.1322222222222222,
             "toward_ci": {
               "n": 15,
               "lo": 0.03333333333333333,
-              "hi": 0.21666666666666667
+              "hi": 0.23666666666666666
             },
-            "away": 0.2962962962962962,
+            "away": 0.2929629629629629,
             "away_ci": {
               "n": 15,
-              "lo": 0.2648148148148148,
-              "hi": 0.32592592592592595
+              "lo": 0.2577777777777778,
+              "hi": 0.3277777777777778
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 2,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -254,34 +254,34 @@
           }
         },
         "nuanced-turn": {
-          "on_key": 33,
-          "on_distractors": 34,
-          "rate_key": 0.39285714285714285,
-          "rate_distractors": 0.13877551020408163,
-          "lift": 2.8308823529411766,
-          "rate_on_picked": 0.4457831325301205,
-          "rate_on_not_picked": 0.12195121951219512,
-          "lift_among_not_picked": 0.4956896551724138,
+          "on_key": 35,
+          "on_distractors": 35,
+          "rate_key": 0.3977272727272727,
+          "rate_distractors": 0.13618677042801555,
+          "lift": 2.9204545454545454,
+          "rate_on_picked": 0.4482758620689655,
+          "rate_on_not_picked": 0.12015503875968993,
+          "lift_among_not_picked": 0.5041666666666667,
           "cue_follow": {
             "questions": 16,
-            "replies": 57,
+            "replies": 60,
             "chance": 0.25,
-            "toward": 0.4791666666666667,
+            "toward": 0.484375,
             "toward_ci": {
               "n": 16,
-              "lo": 0.29166666666666663,
-              "hi": 0.6770833333333334
+              "lo": 0.296875,
+              "hi": 0.671875
             },
-            "away": 0.1690972222222222,
+            "away": 0.1673611111111111,
             "away_ci": {
               "n": 16,
-              "lo": 0.10069444444444443,
-              "hi": 0.24131944444444448
+              "lo": 0.10312499999999998,
+              "hi": 0.23750000000000004
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 3,
+              "questions": 6,
               "toward": 0.6666666666666666,
               "away": 0.1111111111111111,
               "chance": 0.25
@@ -303,12 +303,12 @@
         "middle-ground": {
           "on_key": 14,
           "on_distractors": 29,
-          "rate_key": 0.16666666666666666,
-          "rate_distractors": 0.11836734693877551,
-          "lift": 1.4080459770114941,
-          "rate_on_picked": 0.21686746987951808,
-          "rate_on_not_picked": 0.1016260162601626,
-          "lift_among_not_picked": 0.5989583333333334,
+          "rate_key": 0.1590909090909091,
+          "rate_distractors": 0.11284046692607004,
+          "lift": 1.4098746081504703,
+          "rate_on_picked": 0.20689655172413793,
+          "rate_on_not_picked": 0.09689922480620156,
+          "lift_among_not_picked": 0.6302083333333334,
           "cue_follow": {
             "questions": 13,
             "replies": 39,
@@ -342,35 +342,35 @@
           }
         },
         "textbook-voice": {
-          "on_key": 47,
+          "on_key": 51,
           "on_distractors": 24,
-          "rate_key": 0.5595238095238095,
-          "rate_distractors": 0.09795918367346938,
-          "lift": 5.711805555555556,
-          "rate_on_picked": 0.5421686746987951,
-          "rate_on_not_picked": 0.10569105691056911,
-          "lift_among_not_picked": 5.296052631578948,
+          "rate_key": 0.5795454545454546,
+          "rate_distractors": 0.0933852140077821,
+          "lift": 6.205965909090909,
+          "rate_on_picked": 0.5632183908045977,
+          "rate_on_not_picked": 0.10077519379844961,
+          "lift_among_not_picked": 5.572368421052632,
           "cue_follow": {
             "questions": 16,
-            "replies": 58,
+            "replies": 62,
             "chance": 0.25,
-            "toward": 0.701388888888889,
+            "toward": 0.7347222222222223,
             "toward_ci": {
               "n": 16,
-              "lo": 0.55625,
-              "hi": 0.8371527777777776
+              "lo": 0.6156249999999999,
+              "hi": 0.8493055555555554
             },
-            "away": 0.08472222222222223,
+            "away": 0.0736111111111111,
             "away_ci": {
               "n": 16,
-              "lo": 0.03958333333333333,
-              "hi": 0.13958333333333334
+              "lo": 0.034722222222222224,
+              "hi": 0.11875000000000001
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
-              "toward": 0.8888888888888888,
+              "questions": 10,
+              "toward": 0.9333333333333332,
               "away": 0,
               "chance": 0.25
             },
@@ -389,36 +389,36 @@
           }
         },
         "echoes-stem": {
-          "on_key": 70,
-          "on_distractors": 106,
-          "rate_key": 0.8333333333333334,
-          "rate_distractors": 0.4326530612244898,
-          "lift": 1.9261006289308176,
-          "rate_on_picked": 0.7831325301204819,
-          "rate_on_not_picked": 0.45121951219512196,
-          "lift_among_not_picked": 2.0747422680412373,
+          "on_key": 72,
+          "on_distractors": 108,
+          "rate_key": 0.8181818181818182,
+          "rate_distractors": 0.42023346303501946,
+          "lift": 1.946969696969697,
+          "rate_on_picked": 0.7701149425287356,
+          "rate_on_not_picked": 0.437984496124031,
+          "lift_among_not_picked": 2.138888888888889,
           "cue_follow": {
             "questions": 16,
-            "replies": 73,
+            "replies": 76,
             "chance": 0.25,
-            "toward": 0.4439236111111111,
+            "toward": 0.44236111111111115,
             "toward_ci": {
               "n": 16,
-              "lo": 0.35416666666666663,
-              "hi": 0.5345486111111111
+              "lo": 0.34913194444444445,
+              "hi": 0.5343749999999999
             },
-            "away": 0.07048611111111111,
+            "away": 0.07361111111111111,
             "away_ci": {
               "n": 16,
-              "lo": 0.028819444444444443,
-              "hi": 0.12013888888888889
+              "lo": 0.03298611111111111,
+              "hi": 0.12499999999999997
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.4,
-              "away": 0.2,
+              "questions": 8,
+              "toward": 0.4375,
+              "away": 0.16666666666666666,
               "chance": 0.25
             },
             "openai": {
@@ -437,16 +437,16 @@
         },
         "like-the-others": {
           "on_key": 1,
-          "on_distractors": 36,
-          "rate_key": 0.011904761904761904,
-          "rate_distractors": 0.1469387755102041,
-          "lift": 0.0810185185185185,
+          "on_distractors": 38,
+          "rate_key": 0.011363636363636364,
+          "rate_distractors": 0.14785992217898833,
+          "lift": 0.07685406698564594,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.15040650406504066,
-          "lift_among_not_picked": 0.3993055555555555,
+          "rate_on_not_picked": 0.1511627906976744,
+          "lift_among_not_picked": 0.3980263157894737,
           "cue_follow": {
             "questions": 13,
-            "replies": 29,
+            "replies": 30,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -454,14 +454,20 @@
               "lo": 0,
               "hi": 0
             },
-            "away": 0.3491452991452991,
+            "away": 0.3504273504273504,
             "away_ci": {
               "n": 13,
               "lo": 0.3333333333333333,
-              "hi": 0.3670940170940172
+              "hi": 0.36965811965811957
             }
           },
           "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.5,
+              "chance": 0.25
+            },
             "openai": {
               "questions": 3,
               "toward": 0,
@@ -477,36 +483,36 @@
           }
         },
         "opposites": {
-          "on_key": 24,
-          "on_distractors": 55,
-          "rate_key": 0.2857142857142857,
-          "rate_distractors": 0.22448979591836735,
-          "lift": 1.2727272727272727,
-          "rate_on_picked": 0.26506024096385544,
-          "rate_on_not_picked": 0.23170731707317074,
-          "lift_among_not_picked": 1.6911764705882353,
+          "on_key": 26,
+          "on_distractors": 58,
+          "rate_key": 0.29545454545454547,
+          "rate_distractors": 0.22568093385214008,
+          "lift": 1.3091692789968652,
+          "rate_on_picked": 0.27586206896551724,
+          "rate_on_not_picked": 0.23255813953488372,
+          "lift_among_not_picked": 1.6805555555555556,
           "cue_follow": {
             "questions": 15,
-            "replies": 51,
+            "replies": 54,
             "chance": 0.25,
-            "toward": 0.28740740740740744,
+            "toward": 0.28851851851851856,
             "toward_ci": {
               "n": 15,
-              "lo": 0.13907407407407407,
-              "hi": 0.4368518518518519
+              "lo": 0.14777777777777779,
+              "hi": 0.44870370370370366
             },
-            "away": 0.2175925925925926,
+            "away": 0.2198148148148148,
             "away_ci": {
               "n": 15,
-              "lo": 0.13796296296296295,
-              "hi": 0.30648148148148147
+              "lo": 0.13814814814814816,
+              "hi": 0.29907407407407405
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
+              "questions": 7,
               "toward": 0.5,
-              "away": 0.08333333333333333,
+              "away": 0.11904761904761904,
               "chance": 0.25
             },
             "openai": {
@@ -524,34 +530,34 @@
           }
         },
         "surprising": {
-          "on_key": 11,
+          "on_key": 12,
           "on_distractors": 38,
-          "rate_key": 0.13095238095238096,
-          "rate_distractors": 0.15510204081632653,
-          "lift": 0.8442982456140351,
-          "rate_on_picked": 0.1686746987951807,
-          "rate_on_not_picked": 0.14227642276422764,
+          "rate_key": 0.13636363636363635,
+          "rate_distractors": 0.14785992217898833,
+          "lift": 0.9222488038277511,
+          "rate_on_picked": 0.1724137931034483,
+          "rate_on_not_picked": 0.13565891472868216,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 16,
-            "replies": 45,
+            "replies": 46,
             "chance": 0.25,
-            "toward": 0.2390625,
+            "toward": 0.24375000000000002,
             "toward_ci": {
               "n": 16,
-              "lo": 0.09375,
-              "hi": 0.4140625
+              "lo": 0.09999999999999999,
+              "hi": 0.425
             },
-            "away": 0.25659722222222225,
+            "away": 0.2555555555555556,
             "away_ci": {
               "n": 16,
-              "lo": 0.19583333333333336,
-              "hi": 0.3107638888888889
+              "lo": 0.1916666666666667,
+              "hi": 0.30833333333333335
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 2,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -572,16 +578,16 @@
         },
         "too-obvious": {
           "on_key": 0,
-          "on_distractors": 64,
+          "on_distractors": 68,
           "rate_key": 0,
-          "rate_distractors": 0.2612244897959184,
+          "rate_distractors": 0.26459143968871596,
           "lift": 0,
-          "rate_on_picked": 0.024096385542168676,
-          "rate_on_not_picked": 0.25203252032520324,
+          "rate_on_picked": 0.022988505747126436,
+          "rate_on_not_picked": 0.2558139534883721,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 16,
-            "replies": 57,
+            "replies": 60,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -589,18 +595,18 @@
               "lo": 0,
               "hi": 0
             },
-            "away": 0.34236111111111106,
+            "away": 0.34409722222222217,
             "away_ci": {
               "n": 16,
               "lo": 0.33333333333333326,
-              "hi": 0.3541666666666666
+              "hi": 0.3583333333333332
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
+              "questions": 9,
               "toward": 0,
-              "away": 0.3333333333333333,
+              "away": 0.35185185185185186,
               "chance": 0.25
             },
             "openai": {
@@ -619,35 +625,35 @@
         },
         "absolute": {
           "on_key": 25,
-          "on_distractors": 119,
-          "rate_key": 0.2976190476190476,
-          "rate_distractors": 0.4857142857142857,
-          "lift": 0.6127450980392157,
-          "rate_on_picked": 0.1686746987951807,
-          "rate_on_not_picked": 0.5284552845528455,
-          "lift_among_not_picked": 1.328781512605042,
+          "on_distractors": 121,
+          "rate_key": 0.2840909090909091,
+          "rate_distractors": 0.4708171206225681,
+          "lift": 0.6033996994740797,
+          "rate_on_picked": 0.16091954022988506,
+          "rate_on_not_picked": 0.5116279069767442,
+          "lift_among_not_picked": 1.375,
           "cue_follow": {
             "questions": 16,
-            "replies": 68,
+            "replies": 69,
             "chance": 0.25,
             "toward": 0.19930555555555554,
             "toward_ci": {
               "n": 16,
-              "lo": 0.0965277777777778,
-              "hi": 0.3295138888888889
+              "lo": 0.09444444444444446,
+              "hi": 0.3263888888888889
             },
-            "away": 0.32274305555555555,
+            "away": 0.3217013888888889,
             "away_ci": {
               "n": 16,
-              "lo": 0.2164930555555555,
-              "hi": 0.42256944444444444
+              "lo": 0.22395833333333334,
+              "hi": 0.4215277777777777
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 3,
+              "questions": 4,
               "toward": 0,
-              "away": 0.38888888888888884,
+              "away": 0.41666666666666663,
               "chance": 0.25
             },
             "openai": {
@@ -666,16 +672,16 @@
         },
         "denies-question": {
           "on_key": 1,
-          "on_distractors": 54,
-          "rate_key": 0.011904761904761904,
-          "rate_distractors": 0.22040816326530613,
-          "lift": 0.05401234567901234,
+          "on_distractors": 56,
+          "rate_key": 0.011363636363636364,
+          "rate_distractors": 0.2178988326848249,
+          "lift": 0.052150974025974024,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.22357723577235772,
-          "lift_among_not_picked": 0.2662037037037037,
+          "rate_on_not_picked": 0.22093023255813954,
+          "lift_among_not_picked": 0.2700892857142857,
           "cue_follow": {
             "questions": 15,
-            "replies": 47,
+            "replies": 49,
             "chance": 0.25,
             "toward": 0.06666666666666667,
             "toward_ci": {
@@ -683,16 +689,16 @@
               "lo": 0,
               "hi": 0.2
             },
-            "away": 0.32111111111111107,
+            "away": 0.3207407407407407,
             "away_ci": {
               "n": 15,
-              "lo": 0.26888888888888896,
-              "hi": 0.35333333333333333
+              "lo": 0.2711111111111111,
+              "hi": 0.3525925925925925
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 3,
+              "questions": 5,
               "toward": 0,
               "away": 0.3333333333333333,
               "chance": 0.25
@@ -714,12 +720,12 @@
         "implausible": {
           "on_key": 1,
           "on_distractors": 31,
-          "rate_key": 0.011904761904761904,
-          "rate_distractors": 0.12653061224489795,
-          "lift": 0.09408602150537634,
+          "rate_key": 0.011363636363636364,
+          "rate_distractors": 0.12062256809338522,
+          "lift": 0.09420821114369501,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.13008130081300814,
-          "lift_among_not_picked": 0.4637096774193548,
+          "rate_on_not_picked": 0.12403100775193798,
+          "lift_among_not_picked": 0.4879032258064517,
           "cue_follow": {
             "questions": 13,
             "replies": 31,
@@ -760,16 +766,16 @@
         },
         "off-target": {
           "on_key": 0,
-          "on_distractors": 68,
+          "on_distractors": 69,
           "rate_key": 0,
-          "rate_distractors": 0.27755102040816326,
+          "rate_distractors": 0.26848249027237353,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.2764227642276423,
+          "rate_on_not_picked": 0.26744186046511625,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 16,
-            "replies": 50,
+            "replies": 51,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -780,15 +786,15 @@
             "away": 0.37968749999999996,
             "away_ci": {
               "n": 16,
-              "lo": 0.3479166666666666,
-              "hi": 0.42239583333333325
+              "lo": 0.34965277777777776,
+              "hi": 0.42048611111111106
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
+              "questions": 5,
               "toward": 0,
-              "away": 0.49999999999999994,
+              "away": 0.4666666666666666,
               "chance": 0.25
             },
             "openai": {
@@ -808,12 +814,12 @@
         "grammatical-fit": {
           "on_key": 35,
           "on_distractors": 65,
-          "rate_key": 0.4166666666666667,
-          "rate_distractors": 0.2653061224489796,
-          "lift": 1.5705128205128205,
-          "rate_on_picked": 0.4819277108433735,
-          "rate_on_not_picked": 0.24390243902439024,
-          "lift_among_not_picked": 0.4956896551724138,
+          "rate_key": 0.3977272727272727,
+          "rate_distractors": 0.2529182879377432,
+          "lift": 1.5725524475524475,
+          "rate_on_picked": 0.45977011494252873,
+          "rate_on_not_picked": 0.23255813953488372,
+          "lift_among_not_picked": 0.521551724137931,
           "cue_follow": {
             "questions": 16,
             "replies": 47,
@@ -849,12 +855,12 @@
         "odd-one-out": {
           "on_key": 6,
           "on_distractors": 43,
-          "rate_key": 0.07142857142857142,
-          "rate_distractors": 0.17551020408163265,
-          "lift": 0.4069767441860465,
-          "rate_on_picked": 0.04819277108433735,
-          "rate_on_not_picked": 0.18292682926829268,
-          "lift_among_not_picked": 1.0267857142857142,
+          "rate_key": 0.06818181818181818,
+          "rate_distractors": 0.16731517509727625,
+          "lift": 0.40750528541226216,
+          "rate_on_picked": 0.04597701149425287,
+          "rate_on_not_picked": 0.1744186046511628,
+          "lift_among_not_picked": 1.0803571428571428,
           "cue_follow": {
             "questions": 16,
             "replies": 41,
@@ -896,12 +902,12 @@
         "position": {
           "on_key": 13,
           "on_distractors": 21,
-          "rate_key": 0.15476190476190477,
-          "rate_distractors": 0.08571428571428572,
-          "lift": 1.8055555555555556,
-          "rate_on_picked": 0.1566265060240964,
-          "rate_on_not_picked": 0.08536585365853659,
-          "lift_among_not_picked": 2.395833333333333,
+          "rate_key": 0.14772727272727273,
+          "rate_distractors": 0.08171206225680934,
+          "lift": 1.807900432900433,
+          "rate_on_picked": 0.14942528735632185,
+          "rate_on_not_picked": 0.08139534883720931,
+          "lift_among_not_picked": 2.5208333333333335,
           "cue_follow": {
             "questions": 12,
             "replies": 18,
@@ -937,12 +943,12 @@
         "general-knowledge": {
           "on_key": 41,
           "on_distractors": 80,
-          "rate_key": 0.4880952380952381,
-          "rate_distractors": 0.32653061224489793,
-          "lift": 1.4947916666666667,
-          "rate_on_picked": 0.5060240963855421,
-          "rate_on_not_picked": 0.32113821138211385,
-          "lift_among_not_picked": 1.8482142857142856,
+          "rate_key": 0.4659090909090909,
+          "rate_distractors": 0.311284046692607,
+          "lift": 1.4967329545454544,
+          "rate_on_picked": 0.4827586206896552,
+          "rate_on_not_picked": 0.3062015503875969,
+          "lift_among_not_picked": 1.9446428571428573,
           "cue_follow": {
             "questions": 16,
             "replies": 43,
@@ -975,14 +981,41 @@
             }
           }
         },
+        "no-tell": {
+          "on_key": 0,
+          "on_distractors": 1,
+          "rate_key": 0,
+          "rate_distractors": 0.0038910505836575876,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.003875968992248062,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 1,
+            "replies": 1,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": null,
+            "away": 0.3333333333333333,
+            "away_ci": null
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
         "other": {
           "on_key": 0,
           "on_distractors": 1,
           "rate_key": 0,
-          "rate_distractors": 0.004081632653061225,
+          "rate_distractors": 0.0038910505836575876,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.0040650406504065045,
+          "rate_on_not_picked": 0.003875968992248062,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 1,
@@ -1003,36 +1036,36 @@
           }
         },
         "group:qualified": {
-          "on_key": 70,
-          "on_distractors": 77,
-          "rate_key": 0.8333333333333334,
-          "rate_distractors": 0.3142857142857143,
-          "lift": 2.651515151515152,
-          "rate_on_picked": 0.8795180722891566,
-          "rate_on_not_picked": 0.3008130081300813,
-          "lift_among_not_picked": 1.7424242424242424,
+          "on_key": 73,
+          "on_distractors": 80,
+          "rate_key": 0.8295454545454546,
+          "rate_distractors": 0.311284046692607,
+          "lift": 2.664914772727273,
+          "rate_on_picked": 0.8735632183908046,
+          "rate_on_not_picked": 0.29844961240310075,
+          "lift_among_not_picked": 1.7536231884057971,
           "cue_follow": {
             "questions": 16,
-            "replies": 77,
+            "replies": 81,
             "chance": 0.25,
-            "toward": 0.5550347222222223,
+            "toward": 0.5625,
             "toward_ci": {
               "n": 16,
-              "lo": 0.43454861111111115,
-              "hi": 0.6729166666666668
+              "lo": 0.4381944444444444,
+              "hi": 0.6850694444444445
             },
-            "away": 0.07725694444444445,
+            "away": 0.07569444444444445,
             "away_ci": {
               "n": 16,
-              "lo": 0.028125,
-              "hi": 0.13246527777777778
+              "lo": 0.028124999999999997,
+              "hi": 0.1277777777777778
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
-              "toward": 0.8333333333333334,
-              "away": 0.05555555555555555,
+              "questions": 10,
+              "toward": 0.75,
+              "away": 0.08333333333333333,
               "chance": 0.25
             },
             "openai": {
@@ -1051,35 +1084,35 @@
         },
         "group:dismissible": {
           "on_key": 26,
-          "on_distractors": 162,
-          "rate_key": 0.30952380952380953,
-          "rate_distractors": 0.6612244897959184,
-          "lift": 0.46810699588477367,
-          "rate_on_picked": 0.1686746987951807,
-          "rate_on_not_picked": 0.7073170731707317,
-          "lift_among_not_picked": 1.0648148148148147,
+          "on_distractors": 167,
+          "rate_key": 0.29545454545454547,
+          "rate_distractors": 0.6498054474708171,
+          "lift": 0.45468154599891125,
+          "rate_on_picked": 0.16091954022988506,
+          "rate_on_not_picked": 0.6937984496124031,
+          "lift_among_not_picked": 1.0868263473053892,
           "cue_follow": {
             "questions": 16,
-            "replies": 75,
+            "replies": 78,
             "chance": 0.25,
-            "toward": 0.1388888888888889,
+            "toward": 0.13524305555555555,
             "toward_ci": {
               "n": 16,
-              "lo": 0.06666666666666667,
-              "hi": 0.21805555555555559
+              "lo": 0.065625,
+              "hi": 0.21892361111111114
             },
-            "away": 0.45868055555555554,
+            "away": 0.4581597222222222,
             "away_ci": {
               "n": 16,
-              "lo": 0.3298611111111111,
-              "hi": 0.6059027777777777
+              "lo": 0.3204861111111111,
+              "hi": 0.5909722222222222
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 6,
+              "questions": 9,
               "toward": 0,
-              "away": 0.5,
+              "away": 0.5185185185185186,
               "chance": 0.25
             },
             "openai": {
@@ -1099,38 +1132,38 @@
       }
     },
     "options-only-explain": {
-      "key_options": 82,
-      "distractor_options": 242,
+      "key_options": 85,
+      "distractor_options": 251,
       "codes": {
         "longest": {
-          "on_key": 19,
+          "on_key": 22,
           "on_distractors": 20,
-          "rate_key": 0.23170731707317074,
-          "rate_distractors": 0.08264462809917356,
-          "lift": 2.803658536585366,
-          "rate_on_picked": 0.17073170731707318,
-          "rate_on_not_picked": 0.10330578512396695,
-          "lift_among_not_picked": 4.092592592592593,
+          "rate_key": 0.25882352941176473,
+          "rate_distractors": 0.0796812749003984,
+          "lift": 3.2482352941176473,
+          "rate_on_picked": 0.18823529411764706,
+          "rate_on_not_picked": 0.10358565737051793,
+          "lift_among_not_picked": 4.626262626262626,
           "cue_follow": {
-            "questions": 15,
-            "replies": 36,
+            "questions": 16,
+            "replies": 39,
             "chance": 0.25,
-            "toward": 0.5488888888888889,
+            "toward": 0.5875,
             "toward_ci": {
-              "n": 15,
-              "lo": 0.3777777777777777,
-              "hi": 0.7166666666666667
+              "n": 16,
+              "lo": 0.4083333333333334,
+              "hi": 0.7395833333333334
             },
-            "away": 0.15407407407407406,
+            "away": 0.1409722222222222,
             "away_ci": {
-              "n": 15,
-              "lo": 0.09814814814814814,
-              "hi": 0.21185185185185185
+              "n": 16,
+              "lo": 0.09027777777777778,
+              "hi": 0.2006944444444445
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
+              "questions": 7,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -1151,33 +1184,33 @@
         },
         "shortest": {
           "on_key": 1,
-          "on_distractors": 16,
-          "rate_key": 0.012195121951219513,
-          "rate_distractors": 0.06611570247933884,
-          "lift": 0.18445121951219512,
-          "rate_on_picked": 0.036585365853658534,
-          "rate_on_not_picked": 0.05785123966942149,
+          "on_distractors": 17,
+          "rate_key": 0.011764705882352941,
+          "rate_distractors": 0.06772908366533864,
+          "lift": 0.17370242214532872,
+          "rate_on_picked": 0.03529411764705882,
+          "rate_on_not_picked": 0.05976095617529881,
           "lift_among_not_picked": 0,
           "cue_follow": {
-            "questions": 10,
-            "replies": 17,
+            "questions": 11,
+            "replies": 18,
             "chance": 0.25,
-            "toward": 0.1,
+            "toward": 0.09090909090909091,
             "toward_ci": {
-              "n": 10,
+              "n": 11,
               "lo": 0,
-              "hi": 0.3
+              "hi": 0.2727272727272727
             },
-            "away": 0.3,
+            "away": 0.30303030303030304,
             "away_ci": {
-              "n": 10,
-              "lo": 0.2333333333333333,
+              "n": 11,
+              "lo": 0.2424242424242424,
               "hi": 0.33333333333333337
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 2,
+              "questions": 3,
               "toward": 0,
               "away": 0.3333333333333333,
               "chance": 0.25
@@ -1197,34 +1230,34 @@
           }
         },
         "most-detailed": {
-          "on_key": 66,
+          "on_key": 69,
           "on_distractors": 33,
-          "rate_key": 0.8048780487804879,
-          "rate_distractors": 0.13636363636363635,
-          "lift": 5.902439024390245,
-          "rate_on_picked": 0.7560975609756098,
-          "rate_on_not_picked": 0.15289256198347106,
-          "lift_among_not_picked": 5.700396825396825,
+          "rate_key": 0.8117647058823529,
+          "rate_distractors": 0.13147410358565736,
+          "lift": 6.1743315508021395,
+          "rate_on_picked": 0.7529411764705882,
+          "rate_on_not_picked": 0.15139442231075698,
+          "lift_among_not_picked": 6.071969696969697,
           "cue_follow": {
             "questions": 16,
-            "replies": 73,
+            "replies": 76,
             "chance": 0.25,
-            "toward": 0.6909722222222221,
+            "toward": 0.7097222222222221,
             "toward_ci": {
               "n": 16,
-              "lo": 0.5625,
-              "hi": 0.8159722222222222
+              "lo": 0.586111111111111,
+              "hi": 0.8222222222222222
             },
-            "away": 0.06440972222222222,
+            "away": 0.059375,
             "away_ci": {
               "n": 16,
-              "lo": 0.02552083333333333,
-              "hi": 0.10920138888888888
+              "lo": 0.024305555555555552,
+              "hi": 0.10451388888888888
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
+              "questions": 7,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -1244,34 +1277,34 @@
           }
         },
         "hedged": {
-          "on_key": 18,
+          "on_key": 19,
           "on_distractors": 35,
-          "rate_key": 0.21951219512195122,
-          "rate_distractors": 0.1446280991735537,
-          "lift": 1.5177700348432057,
-          "rate_on_picked": 0.1951219512195122,
-          "rate_on_not_picked": 0.15289256198347106,
-          "lift_among_not_picked": 1.644345238095238,
+          "rate_key": 0.2235294117647059,
+          "rate_distractors": 0.1394422310756972,
+          "lift": 1.6030252100840339,
+          "rate_on_picked": 0.2,
+          "rate_on_not_picked": 0.14741035856573706,
+          "lift_among_not_picked": 1.6264204545454546,
           "cue_follow": {
             "questions": 14,
-            "replies": 48,
+            "replies": 49,
             "chance": 0.25,
-            "toward": 0.37321428571428567,
+            "toward": 0.3779761904761904,
             "toward_ci": {
               "n": 14,
-              "lo": 0.15714285714285717,
-              "hi": 0.6160714285714286
+              "lo": 0.15178571428571427,
+              "hi": 0.6190476190476192
             },
-            "away": 0.20892857142857144,
+            "away": 0.20734126984126985,
             "away_ci": {
               "n": 14,
-              "lo": 0.12857142857142856,
-              "hi": 0.28273809523809523
+              "lo": 0.12698412698412698,
+              "hi": 0.2827380952380953
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 2,
               "toward": 1,
               "away": 0,
               "chance": 0.25
@@ -1291,36 +1324,36 @@
           }
         },
         "nuanced-turn": {
-          "on_key": 40,
-          "on_distractors": 48,
-          "rate_key": 0.4878048780487805,
-          "rate_distractors": 0.19834710743801653,
-          "lift": 2.4593495934959346,
-          "rate_on_picked": 0.5,
-          "rate_on_not_picked": 0.19421487603305784,
-          "lift_among_not_picked": 1.5400696864111496,
+          "on_key": 41,
+          "on_distractors": 49,
+          "rate_key": 0.4823529411764706,
+          "rate_distractors": 0.1952191235059761,
+          "lift": 2.470828331332533,
+          "rate_on_picked": 0.49411764705882355,
+          "rate_on_not_picked": 0.19123505976095617,
+          "lift_among_not_picked": 1.487012987012987,
           "cue_follow": {
             "questions": 16,
-            "replies": 68,
+            "replies": 70,
             "chance": 0.25,
-            "toward": 0.4661458333333333,
+            "toward": 0.46562499999999996,
             "toward_ci": {
               "n": 16,
-              "lo": 0.3104166666666667,
-              "hi": 0.6291666666666667
+              "lo": 0.30000000000000004,
+              "hi": 0.6322916666666668
             },
-            "away": 0.1572916666666667,
+            "away": 0.15833333333333335,
             "away_ci": {
               "n": 16,
-              "lo": 0.09930555555555555,
-              "hi": 0.21458333333333335
+              "lo": 0.09999999999999999,
+              "hi": 0.21875
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
-              "toward": 0.625,
-              "away": 0.125,
+              "questions": 6,
+              "toward": 0.5833333333333334,
+              "away": 0.13888888888888887,
               "chance": 0.25
             },
             "openai": {
@@ -1340,12 +1373,12 @@
         "middle-ground": {
           "on_key": 15,
           "on_distractors": 42,
-          "rate_key": 0.18292682926829268,
-          "rate_distractors": 0.17355371900826447,
-          "lift": 1.0540069686411149,
-          "rate_on_picked": 0.25609756097560976,
-          "rate_on_not_picked": 0.1487603305785124,
-          "lift_among_not_picked": 0.3006802721088435,
+          "rate_key": 0.17647058823529413,
+          "rate_distractors": 0.16733067729083664,
+          "lift": 1.0546218487394958,
+          "rate_on_picked": 0.24705882352941178,
+          "rate_on_not_picked": 0.14342629482071714,
+          "lift_among_not_picked": 0.29740259740259745,
           "cue_follow": {
             "questions": 16,
             "replies": 51,
@@ -1379,36 +1412,36 @@
           }
         },
         "textbook-voice": {
-          "on_key": 35,
-          "on_distractors": 47,
-          "rate_key": 0.4268292682926829,
-          "rate_distractors": 0.19421487603305784,
-          "lift": 2.197716658017644,
-          "rate_on_picked": 0.5121951219512195,
-          "rate_on_not_picked": 0.1652892561983471,
-          "lift_among_not_picked": 1.5034013605442176,
+          "on_key": 37,
+          "on_distractors": 48,
+          "rate_key": 0.43529411764705883,
+          "rate_distractors": 0.19123505976095617,
+          "lift": 2.2762254901960786,
+          "rate_on_picked": 0.5294117647058824,
+          "rate_on_not_picked": 0.1593625498007968,
+          "lift_among_not_picked": 1.487012987012987,
           "cue_follow": {
             "questions": 15,
-            "replies": 63,
+            "replies": 66,
             "chance": 0.25,
-            "toward": 0.4333333333333333,
+            "toward": 0.44999999999999996,
             "toward_ci": {
               "n": 15,
-              "lo": 0.3055555555555555,
-              "hi": 0.5711111111111111
+              "lo": 0.32111111111111107,
+              "hi": 0.5755555555555555
             },
-            "away": 0.16777777777777778,
+            "away": 0.16314814814814813,
             "away_ci": {
               "n": 15,
-              "lo": 0.11185185185185184,
-              "hi": 0.22481481481481477
+              "lo": 0.10999999999999997,
+              "hi": 0.21814814814814817
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.8666666666666666,
-              "away": 0,
+              "questions": 8,
+              "toward": 0.7916666666666666,
+              "away": 0.041666666666666664,
               "chance": 0.25
             },
             "openai": {
@@ -1428,12 +1461,12 @@
         "echoes-stem": {
           "on_key": 58,
           "on_distractors": 122,
-          "rate_key": 0.7073170731707317,
-          "rate_distractors": 0.5041322314049587,
-          "lift": 1.4030387844862056,
-          "rate_on_picked": 0.6829268292682927,
-          "rate_on_not_picked": 0.512396694214876,
-          "lift_among_not_picked": 1.2325182325182327,
+          "rate_key": 0.6823529411764706,
+          "rate_distractors": 0.4860557768924303,
+          "lift": 1.403857280617165,
+          "rate_on_picked": 0.6588235294117647,
+          "rate_on_not_picked": 0.4940239043824701,
+          "lift_among_not_picked": 1.2190827190827191,
           "cue_follow": {
             "questions": 16,
             "replies": 65,
@@ -1468,16 +1501,16 @@
         },
         "like-the-others": {
           "on_key": 2,
-          "on_distractors": 30,
-          "rate_key": 0.024390243902439025,
-          "rate_distractors": 0.12396694214876033,
-          "lift": 0.1967479674796748,
-          "rate_on_picked": 0.06097560975609756,
-          "rate_on_not_picked": 0.1115702479338843,
-          "lift_among_not_picked": 0.40476190476190477,
+          "on_distractors": 32,
+          "rate_key": 0.023529411764705882,
+          "rate_distractors": 0.12749003984063745,
+          "lift": 0.18455882352941178,
+          "rate_on_picked": 0.058823529411764705,
+          "rate_on_not_picked": 0.11553784860557768,
+          "lift_among_not_picked": 0.3717532467532468,
           "cue_follow": {
             "questions": 14,
-            "replies": 31,
+            "replies": 32,
             "chance": 0.25,
             "toward": 0.023809523809523808,
             "toward_ci": {
@@ -1485,14 +1518,20 @@
               "lo": 0,
               "hi": 0.07142857142857142
             },
-            "away": 0.3253968253968254,
+            "away": 0.3293650793650794,
             "away_ci": {
               "n": 14,
-              "lo": 0.3095238095238095,
-              "hi": 0.3333333333333333
+              "lo": 0.3095238095238096,
+              "hi": 0.34126984126984133
             }
           },
           "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.5,
+              "chance": 0.25
+            },
             "openai": {
               "questions": 2,
               "toward": 0,
@@ -1508,36 +1547,36 @@
           }
         },
         "opposites": {
-          "on_key": 25,
-          "on_distractors": 48,
-          "rate_key": 0.3048780487804878,
-          "rate_distractors": 0.19834710743801653,
-          "lift": 1.5370934959349594,
-          "rate_on_picked": 0.23170731707317074,
-          "rate_on_not_picked": 0.2231404958677686,
-          "lift_among_not_picked": 1.8302277432712213,
+          "on_key": 27,
+          "on_distractors": 50,
+          "rate_key": 0.3176470588235294,
+          "rate_distractors": 0.199203187250996,
+          "lift": 1.5945882352941176,
+          "rate_on_picked": 0.24705882352941178,
+          "rate_on_not_picked": 0.22310756972111553,
+          "lift_among_not_picked": 1.993230174081238,
           "cue_follow": {
             "questions": 16,
-            "replies": 50,
+            "replies": 52,
             "chance": 0.25,
-            "toward": 0.33229166666666665,
+            "toward": 0.34375,
             "toward_ci": {
               "n": 16,
-              "lo": 0.14791666666666667,
-              "hi": 0.5333333333333333
+              "lo": 0.16979166666666667,
+              "hi": 0.5375
             },
-            "away": 0.20868055555555556,
+            "away": 0.19826388888888888,
             "away_ci": {
               "n": 16,
-              "lo": 0.13333333333333333,
-              "hi": 0.2815972222222222
+              "lo": 0.12395833333333332,
+              "hi": 0.2670138888888889
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 2,
-              "toward": 0.25,
-              "away": 0.16666666666666666,
+              "questions": 4,
+              "toward": 0.375,
+              "away": 0.08333333333333333,
               "chance": 0.25
             },
             "openai": {
@@ -1555,36 +1594,36 @@
           }
         },
         "surprising": {
-          "on_key": 17,
+          "on_key": 18,
           "on_distractors": 36,
-          "rate_key": 0.2073170731707317,
-          "rate_distractors": 0.1487603305785124,
-          "lift": 1.393631436314363,
-          "rate_on_picked": 0.2073170731707317,
-          "rate_on_not_picked": 0.1487603305785124,
-          "lift_among_not_picked": 1.3154761904761902,
+          "rate_key": 0.21176470588235294,
+          "rate_distractors": 0.14342629482071714,
+          "lift": 1.476470588235294,
+          "rate_on_picked": 0.21176470588235294,
+          "rate_on_not_picked": 0.14342629482071714,
+          "lift_among_not_picked": 1.3011363636363638,
           "cue_follow": {
             "questions": 16,
-            "replies": 47,
+            "replies": 48,
             "chance": 0.25,
-            "toward": 0.40208333333333335,
+            "toward": 0.4046875,
             "toward_ci": {
               "n": 16,
               "lo": 0.21250000000000002,
-              "hi": 0.6104166666666666
+              "hi": 0.609375
             },
             "away": 0.18541666666666667,
             "away_ci": {
               "n": 16,
-              "lo": 0.11145833333333333,
-              "hi": 0.25416666666666665
+              "lo": 0.11458333333333331,
+              "hi": 0.25729166666666664
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
-              "toward": 0,
-              "away": 0.3333333333333333,
+              "questions": 2,
+              "toward": 0.5,
+              "away": 0.16666666666666666,
               "chance": 0.25
             },
             "openai": {
@@ -1603,16 +1642,16 @@
         },
         "too-obvious": {
           "on_key": 0,
-          "on_distractors": 42,
+          "on_distractors": 45,
           "rate_key": 0,
-          "rate_distractors": 0.17355371900826447,
+          "rate_distractors": 0.17928286852589642,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.17355371900826447,
+          "rate_on_not_picked": 0.17928286852589642,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 15,
-            "replies": 38,
+            "replies": 40,
             "chance": 0.25,
             "toward": 0,
             "toward_ci": {
@@ -1620,18 +1659,18 @@
               "lo": 0,
               "hi": 0
             },
-            "away": 0.34629629629629627,
+            "away": 0.3479629629629629,
             "away_ci": {
               "n": 15,
-              "lo": 0.3361111111111111,
-              "hi": 0.3638888888888889
+              "lo": 0.33333333333333326,
+              "hi": 0.3655555555555556
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
+              "questions": 6,
               "toward": 0,
-              "away": 0.37499999999999994,
+              "away": 0.38888888888888884,
               "chance": 0.25
             },
             "openai": {
@@ -1650,33 +1689,33 @@
         },
         "absolute": {
           "on_key": 24,
-          "on_distractors": 120,
-          "rate_key": 0.2926829268292683,
-          "rate_distractors": 0.49586776859504134,
-          "lift": 0.5902439024390244,
-          "rate_on_picked": 0.2682926829268293,
-          "rate_on_not_picked": 0.5041322314049587,
-          "lift_among_not_picked": 0.939625850340136,
+          "on_distractors": 125,
+          "rate_key": 0.2823529411764706,
+          "rate_distractors": 0.49800796812749004,
+          "lift": 0.5669647058823529,
+          "rate_on_picked": 0.25882352941176473,
+          "rate_on_not_picked": 0.5059760956175299,
+          "lift_among_not_picked": 0.8896658896658897,
           "cue_follow": {
             "questions": 16,
-            "replies": 72,
+            "replies": 75,
             "chance": 0.25,
-            "toward": 0.16874999999999998,
+            "toward": 0.16041666666666665,
             "toward_ci": {
               "n": 16,
-              "lo": 0.07916666666666668,
-              "hi": 0.2671875
+              "lo": 0.07552083333333333,
+              "hi": 0.26145833333333335
             },
-            "away": 0.34531249999999997,
+            "away": 0.35277777777777775,
             "away_ci": {
               "n": 16,
-              "lo": 0.24791666666666673,
-              "hi": 0.4432291666666667
+              "lo": 0.25364583333333335,
+              "hi": 0.44913194444444443
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 3,
+              "questions": 6,
               "toward": 0,
               "away": 0.4444444444444444,
               "chance": 0.25
@@ -1697,16 +1736,16 @@
         },
         "denies-question": {
           "on_key": 1,
-          "on_distractors": 45,
-          "rate_key": 0.012195121951219513,
-          "rate_distractors": 0.1859504132231405,
-          "lift": 0.06558265582655827,
-          "rate_on_picked": 0.012195121951219513,
-          "rate_on_not_picked": 0.1859504132231405,
-          "lift_among_not_picked": 0.23917748917748918,
+          "on_distractors": 46,
+          "rate_key": 0.011764705882352941,
+          "rate_distractors": 0.18326693227091634,
+          "lift": 0.06419437340153453,
+          "rate_on_picked": 0.011764705882352941,
+          "rate_on_not_picked": 0.18326693227091634,
+          "lift_among_not_picked": 0.23131313131313133,
           "cue_follow": {
             "questions": 14,
-            "replies": 41,
+            "replies": 42,
             "chance": 0.25,
             "toward": 0.07142857142857142,
             "toward_ci": {
@@ -1714,16 +1753,16 @@
               "lo": 0,
               "hi": 0.21428571428571427
             },
-            "away": 0.3154761904761905,
+            "away": 0.3148809523809524,
             "away_ci": {
               "n": 14,
-              "lo": 0.2648809523809524,
-              "hi": 0.3452380952380953
+              "lo": 0.26428571428571435,
+              "hi": 0.3446428571428571
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 1,
+              "questions": 2,
               "toward": 0,
               "away": 0.3333333333333333,
               "chance": 0.25
@@ -1746,10 +1785,10 @@
           "on_key": 0,
           "on_distractors": 26,
           "rate_key": 0,
-          "rate_distractors": 0.10743801652892562,
+          "rate_distractors": 0.10358565737051793,
           "lift": 0,
           "rate_on_picked": 0,
-          "rate_on_not_picked": 0.10743801652892562,
+          "rate_on_not_picked": 0.10358565737051793,
           "lift_among_not_picked": 0,
           "cue_follow": {
             "questions": 12,
@@ -1792,12 +1831,12 @@
         "off-target": {
           "on_key": 2,
           "on_distractors": 32,
-          "rate_key": 0.024390243902439025,
-          "rate_distractors": 0.1322314049586777,
-          "lift": 0.18445121951219512,
-          "rate_on_picked": 0.012195121951219513,
-          "rate_on_not_picked": 0.13636363636363635,
-          "lift_among_not_picked": 0.32886904761904756,
+          "rate_key": 0.023529411764705882,
+          "rate_distractors": 0.12749003984063745,
+          "lift": 0.18455882352941178,
+          "rate_on_picked": 0.011764705882352941,
+          "rate_on_not_picked": 0.13147410358565736,
+          "lift_among_not_picked": 0.32528409090909094,
           "cue_follow": {
             "questions": 16,
             "replies": 32,
@@ -1833,12 +1872,12 @@
         "grammatical-fit": {
           "on_key": 28,
           "on_distractors": 66,
-          "rate_key": 0.34146341463414637,
-          "rate_distractors": 0.2727272727272727,
-          "lift": 1.2520325203252034,
-          "rate_on_picked": 0.2804878048780488,
-          "rate_on_not_picked": 0.29338842975206614,
-          "lift_among_not_picked": 1.9293650793650796,
+          "rate_key": 0.32941176470588235,
+          "rate_distractors": 0.26294820717131473,
+          "lift": 1.2527629233511586,
+          "rate_on_picked": 0.27058823529411763,
+          "rate_on_not_picked": 0.28286852589641437,
+          "lift_among_not_picked": 1.9083333333333334,
           "cue_follow": {
             "questions": 16,
             "replies": 41,
@@ -1874,12 +1913,12 @@
         "odd-one-out": {
           "on_key": 8,
           "on_distractors": 45,
-          "rate_key": 0.0975609756097561,
-          "rate_distractors": 0.1859504132231405,
-          "lift": 0.5246612466124662,
-          "rate_on_picked": 0.0975609756097561,
-          "rate_on_not_picked": 0.1859504132231405,
-          "lift_among_not_picked": 0.23917748917748918,
+          "rate_key": 0.09411764705882353,
+          "rate_distractors": 0.17928286852589642,
+          "lift": 0.5249673202614379,
+          "rate_on_picked": 0.09411764705882353,
+          "rate_on_not_picked": 0.17928286852589642,
+          "lift_among_not_picked": 0.2365702479338843,
           "cue_follow": {
             "questions": 16,
             "replies": 47,
@@ -1921,12 +1960,12 @@
         "position": {
           "on_key": 11,
           "on_distractors": 39,
-          "rate_key": 0.13414634146341464,
-          "rate_distractors": 0.16115702479338842,
-          "lift": 0.8323952470293935,
-          "rate_on_picked": 0.13414634146341464,
-          "rate_on_not_picked": 0.16115702479338842,
-          "lift_among_not_picked": 1.202721088435374,
+          "rate_key": 0.12941176470588237,
+          "rate_distractors": 0.1553784860557769,
+          "lift": 0.8328808446455506,
+          "rate_on_picked": 0.12941176470588237,
+          "rate_on_not_picked": 0.1553784860557769,
+          "lift_among_not_picked": 1.1896103896103898,
           "cue_follow": {
             "questions": 15,
             "replies": 23,
@@ -1962,12 +2001,12 @@
         "general-knowledge": {
           "on_key": 41,
           "on_distractors": 99,
-          "rate_key": 0.5,
-          "rate_distractors": 0.4090909090909091,
-          "lift": 1.222222222222222,
-          "rate_on_picked": 0.5365853658536586,
-          "rate_on_not_picked": 0.39669421487603307,
-          "lift_among_not_picked": 1.361904761904762,
+          "rate_key": 0.4823529411764706,
+          "rate_distractors": 0.3944223107569721,
+          "lift": 1.2229352346999407,
+          "rate_on_picked": 0.5176470588235295,
+          "rate_on_not_picked": 0.38247011952191234,
+          "lift_among_not_picked": 1.3470588235294119,
           "cue_follow": {
             "questions": 16,
             "replies": 48,
@@ -2000,13 +2039,40 @@
             }
           }
         },
+        "no-tell": {
+          "on_key": 0,
+          "on_distractors": 1,
+          "rate_key": 0,
+          "rate_distractors": 0.00398406374501992,
+          "lift": 0,
+          "rate_on_picked": 0,
+          "rate_on_not_picked": 0.00398406374501992,
+          "lift_among_not_picked": 0,
+          "cue_follow": {
+            "questions": 1,
+            "replies": 1,
+            "chance": 0.25,
+            "toward": 0,
+            "toward_ci": null,
+            "away": 0.3333333333333333,
+            "away_ci": null
+          },
+          "cue_follow_by_family": {
+            "google": {
+              "questions": 1,
+              "toward": 0,
+              "away": 0.3333333333333333,
+              "chance": 0.25
+            }
+          }
+        },
         "other": {
           "on_key": 1,
           "on_distractors": 0,
-          "rate_key": 0.012195121951219513,
+          "rate_key": 0.011764705882352941,
           "rate_distractors": 0,
           "lift": null,
-          "rate_on_picked": 0.012195121951219513,
+          "rate_on_picked": 0.011764705882352941,
           "rate_on_not_picked": 0,
           "lift_among_not_picked": null,
           "cue_follow": {
@@ -2028,36 +2094,36 @@
           }
         },
         "group:qualified": {
-          "on_key": 74,
-          "on_distractors": 101,
-          "rate_key": 0.9024390243902439,
-          "rate_distractors": 0.41735537190082644,
-          "lift": 2.1622796425984063,
-          "rate_on_picked": 0.8780487804878049,
-          "rate_on_not_picked": 0.4256198347107438,
-          "lift_among_not_picked": 1.9354132457580733,
+          "on_key": 77,
+          "on_distractors": 102,
+          "rate_key": 0.9058823529411765,
+          "rate_distractors": 0.4063745019920319,
+          "lift": 2.2291810841983852,
+          "rate_on_picked": 0.8705882352941177,
+          "rate_on_not_picked": 0.41832669322709165,
+          "lift_among_not_picked": 2.0108471074380163,
           "cue_follow": {
             "questions": 16,
-            "replies": 73,
+            "replies": 76,
             "chance": 0.25,
-            "toward": 0.47065972222222224,
+            "toward": 0.48628472222222224,
             "toward_ci": {
               "n": 16,
-              "lo": 0.36874999999999997,
-              "hi": 0.5774305555555556
+              "lo": 0.3840277777777777,
+              "hi": 0.5887152777777778
             },
-            "away": 0.05520833333333333,
+            "away": 0.051215277777777776,
             "away_ci": {
               "n": 16,
-              "lo": 0.015625,
-              "hi": 0.10520833333333332
+              "lo": 0.013020833333333332,
+              "hi": 0.10069444444444443
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 5,
-              "toward": 0.7,
-              "away": 0.1,
+              "questions": 8,
+              "toward": 0.75,
+              "away": 0.0625,
               "chance": 0.25
             },
             "openai": {
@@ -2076,35 +2142,35 @@
         },
         "group:dismissible": {
           "on_key": 25,
-          "on_distractors": 151,
-          "rate_key": 0.3048780487804878,
-          "rate_distractors": 0.6239669421487604,
-          "lift": 0.48861250201905987,
-          "rate_on_picked": 0.2804878048780488,
-          "rate_on_not_picked": 0.6322314049586777,
-          "lift_among_not_picked": 0.7359307359307359,
+          "on_distractors": 157,
+          "rate_key": 0.29411764705882354,
+          "rate_distractors": 0.6254980079681275,
+          "lift": 0.4702135631322593,
+          "rate_on_picked": 0.27058823529411763,
+          "rate_on_not_picked": 0.6334661354581673,
+          "lift_among_not_picked": 0.6985967053081147,
           "cue_follow": {
             "questions": 16,
-            "replies": 76,
+            "replies": 79,
             "chance": 0.25,
-            "toward": 0.12951388888888887,
+            "toward": 0.12326388888888888,
             "toward_ci": {
               "n": 16,
-              "lo": 0.06666666666666667,
-              "hi": 0.1954861111111111
+              "lo": 0.065625,
+              "hi": 0.19201388888888893
             },
-            "away": 0.41128472222222223,
+            "away": 0.4206597222222222,
             "away_ci": {
               "n": 16,
-              "lo": 0.30225694444444434,
-              "hi": 0.5246527777777777
+              "lo": 0.3098958333333333,
+              "hi": 0.5309027777777777
             }
           },
           "cue_follow_by_family": {
             "google": {
-              "questions": 4,
+              "questions": 7,
               "toward": 0,
-              "away": 0.5416666666666666,
+              "away": 0.5714285714285714,
               "chance": 0.25
             },
             "openai": {
@@ -2127,44 +2193,44 @@
   "faithfulness": {
     "longest": {
       "property": "length_rank",
-      "options": 653,
-      "tagged": 60,
-      "mean_rank_tagged": 0.775,
-      "mean_rank_untagged": 0.4761101742551993
+      "options": 681,
+      "tagged": 66,
+      "mean_rank_tagged": 0.7954545454545454,
+      "mean_rank_untagged": 0.47208672086720854
     },
     "shortest": {
       "property": "shortness_rank",
-      "options": 653,
-      "tagged": 28,
-      "mean_rank_tagged": 0.8452380952380952,
-      "mean_rank_untagged": 0.4808000000000001
+      "options": 681,
+      "tagged": 30,
+      "mean_rank_tagged": 0.8333333333333334,
+      "mean_rank_untagged": 0.48105478750640024
     },
     "most-detailed": {
       "property": "length_rank",
-      "options": 653,
-      "tagged": 179,
-      "mean_rank_tagged": 0.8286778398510244,
-      "mean_rank_untagged": 0.380801687763713
+      "options": 681,
+      "tagged": 187,
+      "mean_rank_tagged": 0.8288770053475939,
+      "mean_rank_untagged": 0.38022941970310375
     },
     "echoes-stem": {
       "property": "stem_echo_rank",
-      "options": 329,
-      "tagged": 176,
-      "mean_rank_tagged": 0.4602272727272729,
-      "mean_rank_untagged": 0.5403050108932461
+      "options": 345,
+      "tagged": 180,
+      "mean_rank_tagged": 0.4592592592592594,
+      "mean_rank_untagged": 0.5393939393939392
     },
     "like-the-others": {
       "property": "centrality_rank",
-      "options": 653,
-      "tagged": 69,
-      "mean_rank_tagged": 0.5338164251207729,
-      "mean_rank_untagged": 0.49857305936073043
+      "options": 681,
+      "tagged": 73,
+      "mean_rank_tagged": 0.5502283105022829,
+      "mean_rank_untagged": 0.4964364035087717
     },
     "absolute": {
       "property": "has an absolute word (checker list)",
-      "options": 653,
-      "tagged": 288,
-      "tagged_where_true": 0.09722222222222222,
+      "options": 681,
+      "tagged": 295,
+      "tagged_where_true": 0.09491525423728814,
       "property_true": 43,
       "true_and_tagged": 0.6511627906976745
     }
@@ -2178,41 +2244,41 @@
         "family": "google"
       },
       "statuses": {
-        "ok": 11
+        "ok": 18
       },
-      "replies": 11,
+      "replies": 18,
       "unusable": 0,
       "problems": {
-        "fenced": 11
+        "fenced": 18
       },
       "rungs": {
         "full-explain": {
-          "replies": 6,
+          "replies": 10,
           "pick_invalid": 0,
-          "explain_hit_rate": 0.8333333333333334,
-          "mean_p_key": 0.6833333333333332,
+          "explain_hit_rate": 0.9,
+          "mean_p_key": 0.71,
           "letter_agreement": {
-            "n": 5,
+            "n": 8,
             "rate": 1
           },
-          "mean_reasoning_tokens": 1121
+          "mean_reasoning_tokens": 1118
         },
         "options-only-explain": {
-          "replies": 5,
+          "replies": 8,
           "pick_invalid": 0,
-          "explain_hit_rate": 0.8,
-          "mean_p_key": 0.6000000000000001,
+          "explain_hit_rate": 0.75,
+          "mean_p_key": 0.59375,
           "letter_agreement": {
-            "n": 5,
-            "rate": 0.8
+            "n": 7,
+            "rate": 0.8571428571428571
           },
-          "mean_reasoning_tokens": 1190
+          "mean_reasoning_tokens": 1367
         }
       },
       "unrated_option_share": 0,
       "invalid_code_option_share": 0,
       "other_share": 0,
-      "no_tell_share": 0,
+      "no_tell_share": 0.012121212121212121,
       "excluded_from_pooled_tables": false
     },
     "gpt-luna": {
@@ -3049,19 +3115,21 @@
     "b03/sonnet/a07": {
       "rungs": {
         "full-explain": {
-          "replies": 5,
-          "picked_key": 5,
-          "mean_p_key": 0.62,
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.6333333333333334,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
         },
         "options-only-explain": {
-          "replies": 5,
-          "picked_key": 3,
-          "mean_p_key": 0.3,
+          "replies": 6,
+          "picked_key": 4,
+          "mean_p_key": 0.35833333333333334,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3072,17 +3140,18 @@
           "option": 0,
           "key": true,
           "text": "The opposite holds: the higher a lattice hangs, the less likely it is to survive a flood season, and lattices close under the crown are lost most often of all.",
-          "ratings": 10,
-          "mean_p": 0.45999999999999996,
+          "ratings": 12,
+          "mean_p": 0.4958333333333334,
           "codes": {
-            "opposites": 10,
-            "echoes-stem": 6,
-            "surprising": 6,
+            "opposites": 12,
+            "surprising": 8,
+            "echoes-stem": 7,
             "absolute": 6,
+            "textbook-voice": 5,
+            "most-detailed": 5,
             "position": 5,
-            "most-detailed": 4,
             "grammatical-fit": 4,
-            "textbook-voice": 3,
+            "longest": 2,
             "general-knowledge": 2,
             "hedged": 1,
             "nuanced-turn": 1,
@@ -3093,16 +3162,16 @@
           "option": 1,
           "key": false,
           "text": "None — height above the water is exactly what protects a lattice from flood loss, so the colleague's reasoning is sound.",
-          "ratings": 10,
-          "mean_p": 0.221,
+          "ratings": 12,
+          "mean_p": 0.19666666666666666,
           "codes": {
-            "too-obvious": 8,
-            "denies-question": 8,
+            "too-obvious": 10,
+            "denies-question": 9,
             "absolute": 7,
             "position": 6,
             "grammatical-fit": 5,
+            "opposites": 3,
             "echoes-stem": 3,
-            "opposites": 2,
             "surprising": 2,
             "textbook-voice": 2,
             "odd-one-out": 1,
@@ -3113,17 +3182,17 @@
           "option": 2,
           "key": false,
           "text": "The objection is that flood loss is mostly caused by silt film rather than by a lattice's height at all, so height is irrelevant to survival.",
-          "ratings": 10,
-          "mean_p": 0.12499999999999997,
+          "ratings": 12,
+          "mean_p": 0.125,
           "codes": {
+            "absolute": 6,
             "general-knowledge": 6,
+            "like-the-others": 5,
             "off-target": 5,
             "echoes-stem": 5,
-            "absolute": 5,
+            "most-detailed": 4,
             "nuanced-turn": 3,
-            "like-the-others": 3,
             "position": 3,
-            "most-detailed": 3,
             "denies-question": 2,
             "middle-ground": 1,
             "hedged": 1,
@@ -3135,17 +3204,18 @@
           "option": 3,
           "key": false,
           "text": "The objection is that a lattice's cant, not its height, determines flood survival, so height plays no role either way.",
-          "ratings": 10,
-          "mean_p": 0.194,
+          "ratings": 12,
+          "mean_p": 0.1825,
           "codes": {
+            "like-the-others": 8,
             "nuanced-turn": 7,
-            "like-the-others": 6,
             "echoes-stem": 6,
+            "absolute": 5,
             "general-knowledge": 5,
-            "absolute": 4,
             "position": 3,
             "middle-ground": 3,
             "odd-one-out": 2,
+            "most-detailed": 1,
             "off-target": 1,
             "opposites": 1,
             "grammatical-fit": 1
@@ -3156,19 +3226,21 @@
     "b03/sonnet/a08": {
       "rungs": {
         "full-explain": {
-          "replies": 4,
-          "picked_key": 2,
-          "mean_p_key": 0.40750000000000003,
+          "replies": 5,
+          "picked_key": 3,
+          "mean_p_key": 0.476,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
         },
         "options-only-explain": {
-          "replies": 5,
+          "replies": 6,
           "picked_key": 3,
-          "mean_p_key": 0.36000000000000004,
+          "mean_p_key": 0.35000000000000003,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3179,19 +3251,20 @@
           "option": 0,
           "key": true,
           "text": "No — most lost lattices are lost to sudden violence, a flood or a fall of rock, and silt film accounts for only a small share of losses despite Varrenby's concern about it.",
-          "ratings": 9,
-          "mean_p": 0.3811111111111112,
+          "ratings": 11,
+          "mean_p": 0.4072727272727273,
           "codes": {
             "echoes-stem": 9,
             "absolute": 7,
+            "most-detailed": 6,
+            "opposites": 5,
             "general-knowledge": 5,
-            "most-detailed": 4,
-            "opposites": 3,
+            "longest": 4,
             "grammatical-fit": 3,
             "position": 3,
-            "longest": 2,
             "denies-question": 2,
             "surprising": 2,
+            "textbook-voice": 1,
             "nuanced-turn": 1,
             "like-the-others": 1,
             "middle-ground": 1,
@@ -3202,16 +3275,16 @@
           "option": 1,
           "key": false,
           "text": "Yes — gradual threats like silt film accumulate unnoticed over many seasons, so they are the dominant, if underappreciated, cause of loss.",
-          "ratings": 9,
-          "mean_p": 0.3722222222222222,
+          "ratings": 11,
+          "mean_p": 0.359090909090909,
           "codes": {
-            "textbook-voice": 8,
-            "echoes-stem": 8,
+            "echoes-stem": 9,
+            "textbook-voice": 9,
             "most-detailed": 5,
+            "opposites": 3,
             "position": 3,
             "hedged": 3,
             "general-knowledge": 3,
-            "opposites": 2,
             "too-obvious": 2,
             "absolute": 2,
             "longest": 2,
@@ -3223,34 +3296,35 @@
           "option": 2,
           "key": false,
           "text": "No — but only because rockfalls specifically outpace silt film, not because sudden violence in general is the dominant cause.",
-          "ratings": 9,
-          "mean_p": 0.16666666666666669,
+          "ratings": 11,
+          "mean_p": 0.15454545454545457,
           "codes": {
-            "nuanced-turn": 7,
-            "opposites": 5,
+            "nuanced-turn": 9,
+            "opposites": 6,
             "hedged": 5,
             "position": 4,
             "echoes-stem": 4,
             "middle-ground": 3,
+            "absolute": 2,
             "shortest": 2,
             "grammatical-fit": 2,
             "most-detailed": 2,
             "odd-one-out": 2,
-            "general-knowledge": 2,
-            "absolute": 1
+            "general-knowledge": 2
           }
         },
         {
           "option": 3,
           "key": false,
           "text": "Yes — since a high cant is what determines whether a lattice survives a flood, gradual sediment buildup must be the deciding factor in the seasons between floods.",
-          "ratings": 8,
-          "mean_p": 0.08374999999999999,
+          "ratings": 10,
+          "mean_p": 0.082,
           "codes": {
             "general-knowledge": 5,
             "off-target": 5,
             "odd-one-out": 4,
             "absolute": 3,
+            "no-tell": 2,
             "opposites": 2,
             "implausible": 2,
             "echoes-stem": 2,
@@ -3267,19 +3341,21 @@
     "b03/sonnet/b01": {
       "rungs": {
         "full-explain": {
-          "replies": 5,
-          "picked_key": 5,
-          "mean_p_key": 0.806,
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.7966666666666667,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
         },
         "options-only-explain": {
-          "replies": 5,
-          "picked_key": 5,
-          "mean_p_key": 0.68,
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.7000000000000001,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3290,19 +3366,19 @@
           "option": 0,
           "key": true,
           "text": "Lattice A's wennets have linked into longer wennet-to-wennet chains, while Lattice B's wennets more often run directly from tharl to tharl; both lattices have received the same amount of wennet-work relative to their frames.",
-          "ratings": 10,
-          "mean_p": 0.743,
+          "ratings": 12,
+          "mean_p": 0.7483333333333334,
           "codes": {
-            "most-detailed": 10,
-            "nuanced-turn": 10,
+            "most-detailed": 12,
+            "nuanced-turn": 12,
             "echoes-stem": 9,
+            "hedged": 6,
+            "textbook-voice": 6,
             "grammatical-fit": 6,
-            "textbook-voice": 4,
-            "hedged": 4,
+            "longest": 4,
             "general-knowledge": 4,
             "middle-ground": 4,
             "surprising": 3,
-            "longest": 2,
             "opposites": 1,
             "odd-one-out": 1
           }
@@ -3311,12 +3387,12 @@
           "option": 1,
           "key": false,
           "text": "Lattice A must have received more wennet-work overall than Lattice B, since a longer pell means more total wennets were laid on it.",
-          "ratings": 10,
-          "mean_p": 0.067,
+          "ratings": 12,
+          "mean_p": 0.06833333333333334,
           "codes": {
-            "absolute": 10,
+            "absolute": 12,
+            "too-obvious": 8,
             "echoes-stem": 7,
-            "too-obvious": 6,
             "general-knowledge": 5,
             "grammatical-fit": 5,
             "like-the-others": 4,
@@ -3331,10 +3407,10 @@
           "option": 2,
           "key": false,
           "text": "Since the two lattices have equal cant, their pells should also be roughly equal, so the difference is most likely a counting error.",
-          "ratings": 10,
-          "mean_p": 0.088,
+          "ratings": 12,
+          "mean_p": 0.08583333333333333,
           "codes": {
-            "denies-question": 9,
+            "denies-question": 11,
             "middle-ground": 5,
             "hedged": 5,
             "surprising": 4,
@@ -3343,6 +3419,7 @@
             "too-obvious": 2,
             "opposites": 2,
             "absolute": 2,
+            "shortest": 1,
             "textbook-voice": 1,
             "implausible": 1,
             "general-knowledge": 1,
@@ -3353,14 +3430,15 @@
           "option": 3,
           "key": false,
           "text": "Lattice A must have more tharls than Lattice B, and that larger frame is what lets its chains run longer.",
-          "ratings": 10,
-          "mean_p": 0.10200000000000001,
+          "ratings": 12,
+          "mean_p": 0.09749999999999999,
           "codes": {
-            "absolute": 7,
+            "absolute": 9,
             "grammatical-fit": 6,
             "general-knowledge": 6,
             "echoes-stem": 4,
             "off-target": 4,
+            "too-obvious": 2,
             "opposites": 2,
             "like-the-others": 2,
             "most-detailed": 2,
@@ -3378,10 +3456,11 @@
     "b03/sonnet/b02": {
       "rungs": {
         "full-explain": {
-          "replies": 5,
-          "picked_key": 5,
-          "mean_p_key": 0.6980000000000001,
+          "replies": 6,
+          "picked_key": 6,
+          "mean_p_key": 0.715,
           "families": [
+            "google",
             "openai",
             "mistral"
           ]
@@ -3401,14 +3480,14 @@
           "option": 0,
           "key": true,
           "text": "Ostral under Varrenby's original rule, because its single longest chain (9) exceeds twice its cant (8); calvine under current practice, because Emmerick's mean of the three longest chains (about 5.3) does not.",
-          "ratings": 10,
-          "mean_p": 0.662,
+          "ratings": 11,
+          "mean_p": 0.6745454545454546,
           "codes": {
-            "most-detailed": 10,
-            "echoes-stem": 9,
+            "most-detailed": 11,
+            "echoes-stem": 10,
             "general-knowledge": 9,
-            "nuanced-turn": 6,
-            "textbook-voice": 4,
+            "nuanced-turn": 7,
+            "textbook-voice": 5,
             "grammatical-fit": 3,
             "position": 3,
             "opposites": 2,
@@ -3421,18 +3500,18 @@
           "option": 1,
           "key": false,
           "text": "Ostral under both rules, since a chain of 9 is more than double a cant of 4 regardless of which method is used.",
-          "ratings": 10,
-          "mean_p": 0.10500000000000002,
+          "ratings": 11,
+          "mean_p": 0.10000000000000003,
           "codes": {
             "absolute": 10,
+            "too-obvious": 7,
             "echoes-stem": 7,
-            "too-obvious": 6,
             "general-knowledge": 4,
             "off-target": 3,
+            "opposites": 2,
             "like-the-others": 2,
             "grammatical-fit": 2,
             "odd-one-out": 2,
-            "opposites": 1,
             "denies-question": 1,
             "implausible": 1,
             "longest": 1,
@@ -3443,16 +3522,16 @@
           "option": 2,
           "key": false,
           "text": "Calvine under both rules, since the mean of the three longest chains falls below twice the cant either way.",
-          "ratings": 10,
-          "mean_p": 0.096,
+          "ratings": 11,
+          "mean_p": 0.09636363636363637,
           "codes": {
-            "echoes-stem": 7,
+            "echoes-stem": 8,
             "middle-ground": 6,
             "grammatical-fit": 4,
             "absolute": 4,
             "general-knowledge": 4,
+            "opposites": 3,
             "hedged": 3,
-            "opposites": 2,
             "nuanced-turn": 2,
             "textbook-voice": 2,
             "like-the-others": 2,
@@ -3466,8 +3545,8 @@
           "option": 3,
           "key": false,
           "text": "Ostral under current practice, but calvine under Varrenby's original rule.",
-          "ratings": 10,
-          "mean_p": 0.137,
+          "ratings": 11,
+          "mean_p": 0.12909090909090912,
           "codes": {
             "opposites": 10,
             "surprising": 4,
@@ -3475,9 +3554,10 @@
             "grammatical-fit": 3,
             "odd-one-out": 3,
             "nuanced-turn": 3,
+            "shortest": 2,
             "absolute": 2,
             "echoes-stem": 2,
-            "shortest": 1,
+            "off-target": 1,
             "implausible": 1,
             "position": 1
           }
@@ -4189,6 +4269,34 @@
     },
     {
       "voice": "gemma-31b",
+      "id": "b03/sonnet/a07",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The most likely answer in a textbook context is the counter-intuitive reversal of the character's common-sense assumption."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a08",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The option that provides a comprehensive, specific contradiction (A) is typically the correct answer in reading comprehension tests, whereas narrow nuances (B) or generic logic (D) are often distractors."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/b01",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "The most detailed option that explains a paradox via a specific mechanism is typically the correct answer in fabricated-terminology tests."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/b02",
+      "rung": "full-explain",
+      "hit": true,
+      "strategy": "I chose the most detailed option that explains the specific mechanical difference between the two rules mentioned in the stem."
+    },
+    {
+      "voice": "gemma-31b",
       "id": "b03/sonnet/a01",
       "rung": "options-only-explain",
       "hit": true,
@@ -4221,6 +4329,27 @@
       "rung": "options-only-explain",
       "hit": false,
       "strategy": "I prioritized the option that provided a distinction between a specific diagnostic sign and a general frequency, as this nuance is characteristic of correct answers in academic multiple-choice questions."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a07",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Detailed, counter-intuitive options that contradict the common-sense answer (D) are typically the correct ones in textbook assessments."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/a08",
+      "rung": "options-only-explain",
+      "hit": false,
+      "strategy": "The phrase 'dominant, if underappreciated, cause' is a classic trope for the correct answer in reading comprehension tests, as it reveals a hidden or counter-intuitive truth."
+    },
+    {
+      "voice": "gemma-31b",
+      "id": "b03/sonnet/b01",
+      "rung": "options-only-explain",
+      "hit": true,
+      "strategy": "Selecting the longest, most nuanced, and most detailed option, which typically characterizes the correct answer in conceptual textbook questions."
     },
     {
       "voice": "gpt-luna",

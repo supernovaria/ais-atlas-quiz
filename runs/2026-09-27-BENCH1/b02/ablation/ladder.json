@@ -117,8 +117,8 @@
       "full": "2/3",
       "options-only": "3/3",
       "panel": {
-        "full": "14/18",
-        "options-only": "13/18"
+        "full": "15/19",
+        "options-only": "14/19"
       },
       "key_centrality": 0.115
     },
@@ -126,8 +126,8 @@
       "full": "3/3",
       "options-only": "2/3",
       "panel": {
-        "full": "16/18",
-        "options-only": "11/18"
+        "full": "17/19",
+        "options-only": "12/19"
       },
       "key_centrality": 0.063
     },
@@ -135,8 +135,8 @@
       "full": "3/3",
       "options-only": "3/3",
       "panel": {
-        "full": "9/18",
-        "options-only": "9/18"
+        "full": "10/19",
+        "options-only": "10/19"
       },
       "key_centrality": 0.159
     },
@@ -229,50 +229,50 @@
         "family": "google"
       },
       "statuses": {
-        "ok": 15
+        "ok": 21
       },
       "rungs": {
         "full": {
-          "questions": 8,
-          "trials": 8,
-          "hits": 8,
+          "questions": 11,
+          "trials": 11,
+          "hits": 11,
           "unparsed": 0,
           "unparsed_excluded": 0,
           "hit_rate": 1,
           "mean_chance": 0.25,
           "excess_over_chance": 0.75,
           "ci_question_unit": {
-            "n": 8,
+            "n": 11,
             "mean": 1,
             "sd": 0,
             "lo": 1,
             "hi": 1
           },
-          "coverage": "8/112",
-          "mean_reasoning_tokens": 789
+          "coverage": "11/112",
+          "mean_reasoning_tokens": 855
         },
         "options-only": {
-          "questions": 7,
-          "trials": 7,
-          "hits": 7,
+          "questions": 10,
+          "trials": 10,
+          "hits": 10,
           "unparsed": 0,
           "unparsed_excluded": 0,
           "hit_rate": 1,
           "mean_chance": 0.25,
           "excess_over_chance": 0.75,
           "ci_question_unit": {
-            "n": 7,
+            "n": 10,
             "mean": 1,
             "sd": 0,
             "lo": 1,
             "hi": 1
           },
-          "coverage": "7/112",
-          "mean_reasoning_tokens": 456
+          "coverage": "10/112",
+          "mean_reasoning_tokens": 451
         }
       },
       "paired_full_vs_options_only": {
-        "questions": 7,
+        "questions": 10,
         "full": 1,
         "options_only": 1
       }
@@ -467,10 +467,10 @@
           "gemini-flash-36",
           "gemma-31b"
         ],
-        "questions": 8,
+        "questions": 11,
         "rate": 1,
         "ci_question_unit": {
-          "n": 8,
+          "n": 11,
           "mean": 1,
           "sd": 0,
           "lo": 1,
@@ -526,10 +526,10 @@
         "voices": [
           "gemma-31b"
         ],
-        "questions": 7,
+        "questions": 10,
         "rate": 1,
         "ci_question_unit": {
-          "n": 7,
+          "n": 10,
           "mean": 1,
           "sd": 0,
           "lo": 1,
@@ -570,29 +570,29 @@
   "panel": {
     "full": {
       "families": 4,
-      "complete_questions": 8,
+      "complete_questions": 11,
       "family_rates_on_complete": {
-        "anthropic": 0.8750000000000001,
+        "anthropic": 0.8787878787878789,
         "google": 1,
-        "openai": 0.875,
-        "mistral": 0.7678571428571429
+        "openai": 0.8181818181818182,
+        "mistral": 0.7467532467532468
       },
-      "median_family_rate": 0.875,
+      "median_family_rate": 0.8484848484848486,
       "pooled_trials": {
         "questions": 16,
-        "trials": 296,
-        "hits": 244,
+        "trials": 299,
+        "hits": 247,
         "unparsed": 0,
         "unparsed_excluded": 0,
-        "hit_rate": 0.8243243243243243,
+        "hit_rate": 0.8260869565217391,
         "mean_chance": 0.25,
-        "excess_over_chance": 0.5743243243243243,
+        "excess_over_chance": 0.5760869565217391,
         "ci_question_unit": {
           "n": 16,
-          "mean": 0.8249269005847955,
-          "sd": 0.2107181143859696,
-          "lo": 0.7216750245356703,
-          "hi": 0.9281787766339206
+          "mean": 0.827668128654971,
+          "sd": 0.20805751037742964,
+          "lo": 0.7257199485700304,
+          "hi": 0.9296163087399115
         }
       },
       "voices": [
@@ -606,29 +606,29 @@
     },
     "options-only": {
       "families": 4,
-      "complete_questions": 7,
+      "complete_questions": 10,
       "family_rates_on_complete": {
-        "anthropic": 0.8095238095238095,
+        "anthropic": 0.8333333333333334,
         "google": 1,
-        "openai": 1,
-        "mistral": 0.5204081632653061
+        "openai": 0.9,
+        "mistral": 0.5285714285714286
       },
-      "median_family_rate": 0.9047619047619048,
+      "median_family_rate": 0.8666666666666667,
       "pooled_trials": {
         "questions": 16,
-        "trials": 294,
-        "hits": 198,
+        "trials": 297,
+        "hits": 201,
         "unparsed": 0,
         "unparsed_excluded": 0,
-        "hit_rate": 0.673469387755102,
+        "hit_rate": 0.6767676767676768,
         "mean_chance": 0.25,
-        "excess_over_chance": 0.423469387755102,
+        "excess_over_chance": 0.4267676767676768,
         "ci_question_unit": {
           "n": 16,
-          "mean": 0.675374097007224,
-          "sd": 0.14864640636396115,
-          "lo": 0.602537357888883,
-          "hi": 0.7482108361255649
+          "mean": 0.6792118163054696,
+          "sd": 0.14652299491098333,
+          "lo": 0.6074155487990878,
+          "hi": 0.7510080838118514
         }
       },
       "voices": [
@@ -642,7 +642,7 @@
   },
   "warnings": [],
   "explain": {
-    "replies": 169,
+    "replies": 176,
     "unusable": 10,
     "voices": [
       "gemma-31b",
@@ -661,9 +661,9 @@
       "mistral"
     ],
     "excluded_voices": [],
-    "tags": 2495,
-    "other_share": 0.0012024048096192384,
-    "no_tell_share": 0.0004008016032064128,
+    "tags": 2550,
+    "other_share": 0.001176470588235294,
+    "no_tell_share": 0.000784313725490196,
     "impossible_stem_echo_tags": 153,
     "tell_codes_sha256": "ae54b73f6e023d15cc251a2eb707b863592bacd6de300b5df719dfbbc5bf2eb2"
   },

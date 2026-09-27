@@ -1,0 +1,36 @@
+{
+  "file": "full-explain/16",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "e233ee4bef80a62a4b9da01faf53572fbbfa84ece9c7eae27ba20928ba0dbcfb",
+  "ts": "2026-09-27T17:55:44.904Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"off-target\", \"odd-one-out\"],\n      \"p\": 5,\n      \"note\": \"Introduces an outside person not mentioned in the stem.\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\"],\n      \"p\": 15,\n      \"note\": \"Uses the restrictive 'alone' which often flags a distractor.\"\n    },\n    \"C\": {\n      \"codes\": [\"textbook-voice\", \"echoes-stem\"],\n      \"p\": 70,\n      \"note\": \"Cleanly maps the two distinct events in the stem to the two distinct registers.\"\n    },\n    \"D\": {\n      \"codes\": [\"denies-question\"],\n      \"p\": 10,\n      \"note\": \"Dismisses the specific actions as mere aging.\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I matched the two specific actions described in the stem to the two distinct terms provided in the options.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 855,
+    "candidatesTokenCount": 248,
+    "totalTokenCount": 1856,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 855
+      }
+    ],
+    "thoughtsTokenCount": 753,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 3,
+  "latency_ms": 135949
+}

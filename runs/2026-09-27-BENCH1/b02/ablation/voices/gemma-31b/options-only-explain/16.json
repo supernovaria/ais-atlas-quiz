@@ -1,0 +1,36 @@
+{
+  "file": "options-only-explain/16",
+  "voice": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google",
+  "mode": "explain",
+  "prompt_sha256": "a67820894c5a5cb6e4ae8f218c80e9c8f288cf02edc7bf67cd455f894d303344",
+  "ts": "2026-09-27T17:56:49.953Z",
+  "status": "ok",
+  "reply_text": "```json\n{\n  \"options\": {\n    \"A\": {\n      \"codes\": [\"no-tell\"],\n      \"p\": 5,\n      \"note\": \"\"\n    },\n    \"B\": {\n      \"codes\": [\"absolute\"],\n      \"p\": 20,\n      \"note\": \"\"\n    },\n    \"C\": {\n      \"codes\": [\"most-detailed\", \"textbook-voice\", \"opposites\"],\n      \"p\": 60,\n      \"note\": \"\"\n    },\n    \"D\": {\n      \"codes\": [\"too-obvious\"],\n      \"p\": 15,\n      \"note\": \"\"\n    }\n  },\n  \"pick\": \"C\",\n  \"strategy\": \"I chose the option that provided a clear, symmetrical distinction between the two technical terms, which is a common pattern for correct answers in textbook-style conceptual questions.\"\n}\n```",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 810,
+    "candidatesTokenCount": 207,
+    "totalTokenCount": 2267,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 810
+      }
+    ],
+    "thoughtsTokenCount": 1250,
+    "serviceTier": "standard"
+  },
+  "model_version": "gemma-4-31b-it",
+  "settings": {
+    "temperature": 1,
+    "thinking": null,
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 2,
+  "latency_ms": 65047
+}

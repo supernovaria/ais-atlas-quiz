@@ -9,10 +9,9 @@ Sonnet claim-map calls, pre-registration committed and registered before
 `ablate`. Haiku letter spawns: 192, all `tool_uses` 1, none voided (picks
 log: `claude-picks.tsv`). **Deviation:** the 32 Claude explain spawns were not
 run, for weekly usage; the explain rungs below come from the API voices only.
-Voices: Mistral 14B and 8B complete (288 each per passage); Luna 60 per
-passage (its per-invocation cap); Gemma 12–15 so far; Gemini Flash 3.6 one
-reply; Gemini, Qwen, Nemotron out of quota. `voices.mjs answer` is still
-running and needs re-scoring when it lands.
+Voices (stopped 18:10 UTC, scored as of then): Mistral 14B and 8B complete
+(288 each per passage); Luna 60 per passage (its per-invocation cap); Gemma
+40 / 34; Gemini Flash 3.6 one reply; Gemini, Qwen, Nemotron out of quota.
 
 **Caveats.** The two generator calls per passage wrote on the same claims
 (b02: every claim exactly twice), so 16 questions are closer to 8 × 2, and
@@ -26,8 +25,8 @@ calls the domain invented (KNOWLEDGE §5.2).
 | Haiku (3 seeds) | **90%** (82–97) | **79%** (62–96) | 30% / 37% |
 | Mistral family | 80% (67–93) | 87% (77–96) | 38% / 21% |
 | OpenAI (Luna, 15 q) | 87% (69–100) | 87% (69–100) | 43% / 40% |
-| Google (Gemma, 5–8 q) | 100% — thin | 80% — thin | 52% / — |
-| panel median | 88% (8 q complete-case) | 88% (5 q) | 38% / — |
+| Google (Gemma, 11 / 8 q) | 100% — thin | 88% — thin | 52% / — |
+| panel median | 85% (11 q complete-case) | 90% (8 q) | 38% / — |
 
 By claim type (Haiku, `full`): b02 directional 93% of 30 trials vs a floor of
 60%, passage-only 83% of 18 vs 40%; b03 directional 77% of 39 vs 69%,
@@ -43,8 +42,8 @@ passage-only 89% of 9 vs 40%. `options-only`: Haiku 85% / 58%, Mistral 61% /
 3. `options-only` within 10 points of `full`: **failed** for Haiku on b03
    (−21), Mistral on both (−19, −25) and Luna on b03 (−20). The stem carries
    more than predicted; the options still carry most of it.
-4. Claude family not > 10 points above the panel median: **held** (90 vs 88;
-   79 vs 88). No sign of Claude reading Claude.
+4. Claude family not > 10 points above the panel median: **held** (90 vs 85;
+   79 vs 90). No sign of Claude reading Claude.
 5. `longest` highest cue-follow: **partly**. See below.
 
 ## Cues (`tells.md`, API voices, `full-explain`)
@@ -71,7 +70,25 @@ prompts, where no stem was shown, so that code is unreliable.
 first. Equalise key and distractor length and specificity on 5–10 of these
 questions, hold everything else, and re-run the letter rung.
 
-## Next
+## Where everything is
 
-Re-score when the voices land (Gemini ~09:00, OpenRouter ~02:00). Then the
-length causal test with the `bench-rewrite-distractors` arm.
+- Questions: `<b>/candidates.json` (the two raw generator files in
+  `<b>/candidates/`), `measurements.json`, `claim-map.json`.
+- Prompts sent: `prompts/` and `<b>/ablation/{full,options-only,*-explain}/NN.txt`;
+  `manifest.json` maps each file to question, seed and key.
+- Haiku answers: `<b>/ablation/picks.json`, plus `claude-picks.tsv` (file,
+  letter, tool_uses) for all 192 spawns. Voice replies:
+  `<b>/ablation/voices/<voice>/`, call log `voices/calls.jsonl`.
+- Scores: `<b>/ablation/ladder.json`, `tells.json`, `tells.md`. Log: `run.log`.
+
+## To resume
+
+Both need `QUIZ_KEY_ROOT` only from a worktree. More voice replies (free;
+Gemini resets ~09:00, OpenRouter ~02:00 local), then re-score:
+
+    node scripts/voices.mjs answer --run 2026-09-27-BENCH1 --section b02
+    node scripts/voices.mjs answer --run 2026-09-27-BENCH1 --section b03
+    node scripts/pipeline.mjs ablate-score --run 2026-09-27-BENCH1 --section b02   (and b03)
+
+Next experiment: the length causal test with `bench-rewrite-distractors` and
+`pipeline.mjs arm` (HANDOFF §9.3), pre-registered first.
