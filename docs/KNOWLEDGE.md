@@ -43,7 +43,7 @@ the orchestrator's to edit. `public/questions/`, `README.md` and
 | **The adversary's 100% on the real AGI section is explained by knowledge; no leak is needed.** | Free recall, no options: 2 of the 3 AGI questions answered with the key's content. | n = 3. Shows a leak is not *needed*, not that the options are clean. |
 | **Uniform option length does not explain guessability.** | The AGI questions were clean on every tell the control priced (length, hedging, absolute words) and still scored 100%. | Solid. |
 | **The hand-authored floor on invented content is 40%, not 25%.** | `runs/tier4-control` clean group: 6/15. | n = 5 questions. Per-voice floors are being measured in `runs/2026-09-23-FLOORS` and `runs/2026-09-26-CONTROL`. |
-| **On the clean bench control items, Haiku's floor is about a third.** | `runs/2026-09-26-CONTROL`, `full` rung, 3 seeds: b02 30% (9–51%), b03 37% (14–59%). On b02 the panel median is 38%: Mistral 38%, Luna 43%, Nemotron 37%, Google 55% (thin coverage). | n = 10 questions per passage. b03's voices are still arriving. Haiku's `options-only` on b02 (57%) beat its `full`, against prediction: a lead on 10 q, not a result. |
+| **On the clean bench control items, Haiku's floor is about a third.** | `runs/2026-09-26-CONTROL`, `full` rung, 3 seeds: b02 30% (9–51%), b03 37% (14–59%). On b02 the panel median is 38%: Mistral 38%, Luna 43%, Nemotron 37%, Google 52%. On b03 (partial: no Gemini, Qwen or Nemotron; Gemma thin) Mistral 21%, Luna 40%. Side readers, one seed: Opus 60% on both; Sonnet 56% (b02, 9 q) and 33% (b03, 9 q). | n = 10 questions per passage. Stronger Claude models guessing more is a lead from one seed, not a result. Haiku's `options-only` on b02 (57%) beat its `full`, against prediction: a lead on 10 q. |
 | **On a balanced bench passage, directional items carry a floor of about 50%.** | Most directional claims are effectively binary, so a reader who always picks the sensible option scores the naive-right share. | Reasoning, accepted from review; **not yet measured**. It changes how every bench result must be read (§5.3). |
 | **Rules stated only in a brief hold roughly 60% of the time.** | The generator broke a plainly stated quoting rule on 13 of 21 candidates. | One rule, one run. Treat it as the default expectation for any brief-only rule. |
 | **Self-defeating wrong answers are real and lintable.** | Options like "there is no objection" answering "which objection…": the lint fires 3 times in 49 real candidates, all genuine. | Small n; precision looks good. |
@@ -252,6 +252,15 @@ Ablation rungs and who answers them (the manifest names the agent per file):
   P1 report as "where we left off" and re-ran P1 from scratch (34 Opus spawns)
   before noticing. Before resuming anything, run
   `git rev-list --count HEAD..main` and read `STATUS.md` on `main`.
+- **A CRLF checkout breaks prompt hashes.** The machine's git has
+  `core.autocrlf=true`, so files that arrive by merge or checkout land CRLF,
+  and `ablate-score` then refuses every voice reply (`prompt_sha256` no longer
+  matches). `.gitattributes` now pins `runs/**` and `bench/**` to LF
+  (2026-09-27). If the error appears anyway, check `git ls-files --eol`.
+- **Sonnet adversary spawns often hand back twice.** On 2026-09-27, 8 of 40
+  Sonnet side-reader spawns reported `tool_uses` 2, a second hand-back, which
+  voids the answer; 2 of the 8 did it again on re-spawn. Opus and Haiku did
+  not (0 of 40 Opus). Budget for voided Sonnet answers.
 - **From a worktree, set `QUIZ_CHAPTER_DIR`** to the absolute path of
   `atlas-audio-read-along/dist/chapters/v1/capabilities`. The default is
   relative to the repo root, and a worktree sits three levels deeper.

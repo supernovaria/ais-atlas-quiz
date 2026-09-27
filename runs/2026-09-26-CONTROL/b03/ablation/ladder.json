@@ -139,7 +139,8 @@
         "provider": "claude-code",
         "model": "opus",
         "family": "anthropic",
-        "side": true
+        "side": true,
+        "notes": "All 20 spawns reported tool_uses 1 (the exempt hand-back). Recorded 2026-09-27."
       },
       "statuses": {
         "ok": 20
@@ -197,7 +198,7 @@
         "model": "sonnet",
         "family": "anthropic",
         "side": true,
-        "notes": "full/56 unanswered: the API usage filter blocked it twice (2026-09-27, [bio] false positive). Its options-only twin was answered."
+        "notes": "full/56 unanswered: the API usage filter blocked it twice ([bio] false positive). full/14, full/28, full/35 and options-only/63 were voided for a second hand-back (tool_uses 2) and answered cleanly on one re-spawn with the identical prompt. Recorded 2026-09-27."
       },
       "statuses": {
         "ok": 19
@@ -206,18 +207,18 @@
         "full": {
           "questions": 9,
           "trials": 9,
-          "hits": 1,
+          "hits": 3,
           "unparsed": 0,
           "unparsed_excluded": 0,
-          "hit_rate": 0.1111111111111111,
+          "hit_rate": 0.3333333333333333,
           "mean_chance": 0.25,
-          "excess_over_chance": -0.1388888888888889,
+          "excess_over_chance": 0.08333333333333331,
           "ci_question_unit": {
             "n": 9,
-            "mean": 0.1111111111111111,
-            "sd": 0.33333333333333337,
-            "lo": 0,
-            "hi": 0.3288888888888889
+            "mean": 0.3333333333333333,
+            "sd": 0.5,
+            "lo": 0.006666666666666654,
+            "hi": 0.6599999999999999
           },
           "coverage": "9/70",
           "mean_reasoning_tokens": null
@@ -244,7 +245,7 @@
       },
       "paired_full_vs_options_only": {
         "questions": 9,
-        "full": 0.1111111111111111,
+        "full": 0.3333333333333333,
         "options_only": 0.1111111111111111
       }
     },

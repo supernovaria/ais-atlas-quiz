@@ -139,7 +139,8 @@
         "provider": "claude-code",
         "model": "opus",
         "family": "anthropic",
-        "side": true
+        "side": true,
+        "notes": "All 20 spawns reported tool_uses 1 (the exempt hand-back). Recorded 2026-09-27."
       },
       "statuses": {
         "ok": 20
@@ -196,55 +197,56 @@
         "provider": "claude-code",
         "model": "sonnet",
         "family": "anthropic",
-        "side": true
+        "side": true,
+        "notes": "Voided for a second hand-back (tool_uses 2), re-spawned once with the identical prompt: full/07 and options-only/35 handed back twice again and stay unanswered; full/56 and options-only/63 were answered cleanly on the re-spawn. Recorded 2026-09-27."
       },
       "statuses": {
-        "ok": 20
+        "ok": 18
       },
       "rungs": {
         "full": {
-          "questions": 10,
-          "trials": 10,
-          "hits": 6,
+          "questions": 9,
+          "trials": 9,
+          "hits": 5,
           "unparsed": 0,
           "unparsed_excluded": 0,
-          "hit_rate": 0.6,
+          "hit_rate": 0.5555555555555556,
           "mean_chance": 0.25,
-          "excess_over_chance": 0.35,
+          "excess_over_chance": 0.3055555555555556,
           "ci_question_unit": {
-            "n": 10,
-            "mean": 0.6,
-            "sd": 0.5163977794943222,
-            "lo": 0.27993334027633143,
-            "hi": 0.9200666597236685
+            "n": 9,
+            "mean": 0.5555555555555556,
+            "sd": 0.5270462766947299,
+            "lo": 0.2112186547816654,
+            "hi": 0.8998924563294457
           },
-          "coverage": "10/70",
+          "coverage": "9/70",
           "mean_reasoning_tokens": null
         },
         "options-only": {
-          "questions": 10,
-          "trials": 10,
-          "hits": 4,
+          "questions": 9,
+          "trials": 9,
+          "hits": 3,
           "unparsed": 0,
           "unparsed_excluded": 0,
-          "hit_rate": 0.4,
+          "hit_rate": 0.3333333333333333,
           "mean_chance": 0.25,
-          "excess_over_chance": 0.15000000000000002,
+          "excess_over_chance": 0.08333333333333331,
           "ci_question_unit": {
-            "n": 10,
-            "mean": 0.4,
-            "sd": 0.5163977794943223,
-            "lo": 0.07993334027633142,
-            "hi": 0.7200666597236687
+            "n": 9,
+            "mean": 0.3333333333333333,
+            "sd": 0.5,
+            "lo": 0.006666666666666654,
+            "hi": 0.6599999999999999
           },
-          "coverage": "10/70",
+          "coverage": "9/70",
           "mean_reasoning_tokens": null
         }
       },
       "paired_full_vs_options_only": {
-        "questions": 10,
-        "full": 0.6,
-        "options_only": 0.4
+        "questions": 8,
+        "full": 0.5,
+        "options_only": 0.25
       }
     },
     "gemini-flash-36": {
