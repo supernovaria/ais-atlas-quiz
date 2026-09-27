@@ -1,0 +1,6 @@
+{
+  "id": "gemma-31b",
+  "provider": "gemini",
+  "model": "gemma-4-31b-it",
+  "family": "google"
+}

@@ -1,6 +1,6 @@
 # AI Safety Atlas quiz — status
 
-*Last updated 2026-09-26. Rewritten, not appended: this page always describes now.*
+*Last updated 2026-09-27. Rewritten, not appended: this page always describes now.*
 
 ## What this is
 
@@ -22,10 +22,12 @@ guesser. There are two control sets:
 - **The old control set** (`runs/2026-09-23-FLOORS`): replies from the non-Claude
   readers are still coming in as free quotas allow. Some of them aren't
   committed yet.
-- **The new clean control items** (`runs/2026-09-26-CONTROL`): Opus has written
-  its half (5 items per invented passage), and they pass the checker. The
-  predictions are written down in advance. The GPT-6 Sol half is ready to go
-  and **waits for the Codex usage window**.
+- **The new clean control items** (`runs/2026-09-26-CONTROL`): both halves are
+  written (Opus and GPT-6 Sol, 10 items per invented passage), and all pass
+  the checker. Haiku has answered all of them: it gets about a third right by
+  guessing (30% and 37% on the two passages). On the first passage the other
+  reader families land at 37–55%. The second passage's non-Claude replies are
+  still coming in. See `runs/2026-09-26-CONTROL/REPORT.md`.
 
 ## Recently done
 

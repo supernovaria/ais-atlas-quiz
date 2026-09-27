@@ -1,0 +1,30 @@
+{
+  "file": "full/37",
+  "voice": "gpt-luna",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "family": "openai",
+  "mode": "letter",
+  "prompt_sha256": "b67aecc9fad9b5c23308fe4c3ba0fabd92a981d1582ccabbc4105d1b6edb3cf9",
+  "ts": "2026-09-27T14:33:53.812Z",
+  "status": "ok",
+  "reply_text": "B",
+  "finish": "stop",
+  "tool_uses": 0,
+  "usage": {
+    "input_tokens": 15190,
+    "cached_input_tokens": 14080,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 88,
+    "reasoning_output_tokens": 81
+  },
+  "model_version": "gpt-5.6-luna",
+  "settings": {
+    "temperature": null,
+    "thinking": "low",
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 9385
+}

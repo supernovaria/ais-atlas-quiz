@@ -1,0 +1,35 @@
+{
+  "file": "full/42",
+  "voice": "gemini-flash-36",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "family": "google",
+  "mode": "letter",
+  "prompt_sha256": "241c0e9ed9c20029bee104647f60d85db261e130a060e49e49cbbd480b3879de",
+  "ts": "2026-09-27T14:31:22.826Z",
+  "status": "ok",
+  "reply_text": "D",
+  "finish": "STOP",
+  "tool_uses": 0,
+  "usage": {
+    "promptTokenCount": 167,
+    "candidatesTokenCount": 1,
+    "totalTokenCount": 168,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 167
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "model_version": "gemini-3.6-flash",
+  "settings": {
+    "temperature": 1,
+    "thinking": "minimal",
+    "json": false
+  },
+  "settings_dropped": [],
+  "attempts": 1,
+  "latency_ms": 5777
+}

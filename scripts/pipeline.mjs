@@ -1396,7 +1396,9 @@ function readVoiceLetterRows(ad, man) {
 // question level first, so a family with two voices counts once (review #2).
 function familyRates(rowsWithVoice, metaOf) {
   const byFam = {};
-  for (const r of rowsWithVoice.filter((x) => !x.excludeFromRate)) (byFam[metaOf(r.voice).family ?? r.voice] ??= []).push(r);
+  // A side voice (voice.json `side: true`, e.g. a stronger Claude model run for comparison)
+  // is reported per voice but never enters a family rate or the panel median.
+  for (const r of rowsWithVoice.filter((x) => !x.excludeFromRate && !metaOf(x.voice).side)) (byFam[metaOf(r.voice).family ?? r.voice] ??= []).push(r);
   const out = {};
   for (const [f, rs] of Object.entries(byFam)) {
     const perQ = {};
@@ -1893,7 +1895,7 @@ function stageAblateScore(label, slug) {
         ladder.voices[v].rungs[rung] = rs.length
           ? { ...letterStats(rs).stats, coverage: `${rs.length}/${total}`, mean_reasoning_tokens: rt.length ? Math.round(mean(rt)) : null }
           : { coverage: `0/${total}` };
-        panel.push(...rs.map((r) => ({ ...r, voice: v })));
+        if (!vr.meta.side) panel.push(...rs.map((r) => ({ ...r, voice: v })));
       }
       // full vs options-only on the questions this voice answered in BOTH, so a
       // quota cut-off cannot turn coverage into a contrast (review #3).
