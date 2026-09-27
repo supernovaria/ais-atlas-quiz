@@ -3,5 +3,10 @@
   "b02/ctrl-opus/02": "P10",
   "b02/ctrl-opus/03": "P2",
   "b02/ctrl-opus/04": "C5",
-  "b02/ctrl-opus/05": "C7"
+  "b02/ctrl-opus/05": "C7",
+  "b02/ctrl-sol/01": "C9",
+  "b02/ctrl-sol/02": "C12",
+  "b02/ctrl-sol/03": "P5b",
+  "b02/ctrl-sol/04": "P7",
+  "b02/ctrl-sol/05": "P10"
 }

@@ -25,7 +25,7 @@
 //   node scripts/pipeline.mjs ablate-score --run <label> --section <slug>
 //   node scripts/pipeline.mjs arm      --run <new> --from <label>/<slug> --rewrite <file> --kind stem|distractors [--passage <p>]
 //   node scripts/pipeline.mjs preregister --run <label> --file <path>
-//   node scripts/pipeline.mjs canary   --run <label>      (then canary-record --tool-uses N --reply X)
+//   node scripts/pipeline.mjs canary   --run <label>      (then canary-record --tool-uses N [--handbacks H] --reply X)
 //   node scripts/pipeline.mjs bench-check --bench <id>
 //   node scripts/pipeline.mjs bench-run --run <label> --section <slug> --bench <id>
 //   node scripts/pipeline.mjs bench-map --bench <id> --from <label>/<slug>
@@ -2184,9 +2184,15 @@ function stageCanaryRecord(label) {
   const reply = flag('reply');
   if (!Number.isInteger(tu) || tu < 0) die('canary-record needs --tool-uses <non-negative integer, from the spawn result>');
   if (!reply) die('canary-record needs --reply <the letter the adversary returned>');
-  const pass = tu === 0;
-  logLine(label, { stage: 'canary-result', tool_uses: tu, reply, pass, note: pass ? 'isolation held' : 'ADVERSARY METRIC VOID for this run: the adversary used a tool', ok: pass });
-  console.log(`canary   ${label}: ${pass ? 'PASS' : 'FAIL'} — tool_uses ${tu}, reply ${reply}${reply === 'D' && pass ? ' (D by chance: 25%)' : ''}`);
+  // The harness returns a subagent's reply through one SubagentHandback call and
+  // counts it in tool_uses (user decision 2026-09-27). Exempt exactly that call,
+  // still recorded; any other tool call, or a second hand-back, voids the run.
+  const hb = Number(flag('handbacks', '0'));
+  if (!Number.isInteger(hb) || hb < 0 || hb > tu) die('canary-record --handbacks <n> must be an integer between 0 and --tool-uses');
+  const other = tu - hb;
+  const pass = other === 0 && hb <= 1;
+  logLine(label, { stage: 'canary-result', tool_uses: tu, handbacks: hb, other_tool_uses: other, reply, pass, note: pass ? 'isolation held' : 'ADVERSARY METRIC VOID for this run: the adversary used a tool', ok: pass });
+  console.log(`canary   ${label}: ${pass ? 'PASS' : 'FAIL'} — tool_uses ${tu} (hand-backs ${hb}, other ${other}), reply ${reply}${reply === 'D' && pass ? ' (D by chance: 25%)' : ''}`);
   if (!pass) process.exit(1);
 }
 

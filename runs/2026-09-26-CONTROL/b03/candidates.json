@@ -143,5 +143,150 @@
       }
     ],
     "explanation": "Independent observers' tharl counts agree more closely than their wennet counts, and cant inherits most of its measurement error from the wennet count."
+  },
+  {
+    "id": "b03/ctrl-sol/01",
+    "group": "clean",
+    "author": "sol",
+    "claim": "C2",
+    "stem": "An observer gets the same tharl and wennet totals by judging appearance as by tracing endpoints on several lattices. Why must the observer still trace endpoints on the next lattice?",
+    "options": [
+      {
+        "text": "Appearance gives the right count in most lattices, yet its exceptions are unpredictable before tracing.",
+        "key": true
+      },
+      {
+        "text": "Appearance gives the right count in young lattices, yet aging changes which threads touch rock.",
+        "key": false,
+        "misreading": "A reader who joins the discussion of slow thread decay to the field protocol might think aging changes the anchor-based classification."
+      },
+      {
+        "text": "Appearance sorts most threads, yet spurs form a third kind requiring separate counts.",
+        "key": false,
+        "misreading": "A reader who retains the older surveys' three-kind scheme could think the protocol exists to identify spurs separately."
+      },
+      {
+        "text": "Appearance distinguishes anchored threads, yet slack wennets must be traced to learn their full chains.",
+        "key": false,
+        "misreading": "A reader who conflates counting thread kinds with measuring pell could think endpoint tracing is required to recover chains."
+      }
+    ],
+    "explanation": "The account says the beginner's visual rule gives the right count in most lattices. The field protocol still requires tracing both ends because observers cannot identify in advance which lattices are exceptions."
+  },
+  {
+    "id": "b03/ctrl-sol/02",
+    "group": "clean",
+    "author": "sol",
+    "claim": "C31",
+    "stem": "Two otherwise comparable lattices hang at different heights above the water. Which account of their flood-season survival fits the field observations?",
+    "options": [
+      {
+        "text": "The higher one survives less often, despite hanging farther from the floodwater below.",
+        "key": true
+      },
+      {
+        "text": "The lower one survives less often, because floodwater reaches its threads sooner.",
+        "key": false,
+        "misreading": "A reader using the intuitive idea that proximity to floodwater increases damage would reverse the stated height pattern."
+      },
+      {
+        "text": "The higher one survives more often, because floodwater reaches its threads later.",
+        "key": false,
+        "misreading": "A reader who assumes vertical distance protects a lattice from flood loss would infer the opposite association."
+      },
+      {
+        "text": "The lower one survives less often, because its threads collect more damaging silt over time.",
+        "key": false,
+        "misreading": "A reader who takes Varrenby's concern about silt film as the chief loss process could misattribute the height pattern to sediment."
+      }
+    ],
+    "explanation": "In the discussion of lattice losses, the passage says higher lattices are less likely to survive a flood season. Those near the crown are lost most often, even though they are farther above the water."
+  },
+  {
+    "id": "b03/ctrl-sol/03",
+    "group": "clean",
+    "author": "sol",
+    "claim": "C4",
+    "stem": "Vesk A lays tharls on lattice X, which A began. Vesk B began lattice Y. Which later sequence of work by A fits the roles?",
+    "options": [
+      {
+        "text": "A lays wennets on Y and continues laying tharls, rather than wennets, on X.",
+        "key": true
+      },
+      {
+        "text": "A lays wennets on X and continues laying tharls, rather than wennets, on the lattice begun by B.",
+        "key": false,
+        "misreading": "A reader who thinks a vesk changes roles on its own lattice once the frame begins would allow A to lay wennets on X."
+      },
+      {
+        "text": "A lays wennets on both X and Y after their first tharls are anchored.",
+        "key": false,
+        "misreading": "A reader who remembers that orras begin early might overlook the rule barring A from laying wennets on a lattice A began."
+      },
+      {
+        "text": "A lays tharls on both X and Y before laying wennets on either lattice.",
+        "key": false,
+        "misreading": "A reader who treats vesk and orra as successive stages for one animal might have A switch roles on both lattices."
+      }
+    ],
+    "explanation": "The roles paragraph says a vesk does not return to lay wennets on a lattice it began, but may act as an orra on a lattice begun by another snail. A may therefore lay wennets on B's lattice Y while continuing tharl work on X."
+  },
+  {
+    "id": "b03/ctrl-sol/04",
+    "group": "clean",
+    "author": "sol",
+    "claim": "C19",
+    "stem": "Two sets of lattices have equal tharl counts but differ in whether one vesk or several began them. How does gallery temperature affect the difference in pell?",
+    "options": [
+      {
+        "text": "Several-vesk lattices have shorter pell in colder galleries; in warmer galleries the groups match.",
+        "key": true
+      },
+      {
+        "text": "Several-vesk lattices have shorter pell in warmer galleries; in colder galleries the groups match closely.",
+        "key": false,
+        "misreading": "A reader who remembers a temperature restriction but reverses which galleries show the Orrin pattern would choose this."
+      },
+      {
+        "text": "Several-vesk lattices have longer pell in colder galleries; in warmer galleries the groups match.",
+        "key": false,
+        "misreading": "A reader who assumes several builders produce a more connected lattice might reverse the cold-gallery difference while retaining its temperature limit."
+      },
+      {
+        "text": "Several-vesk lattices have shorter pell in colder galleries; in warmer galleries the gap persists.",
+        "key": false,
+        "misreading": "A reader who remembers the multi-vesk disadvantage but overlooks the warm-gallery exception would extend it across temperatures."
+      }
+    ],
+    "explanation": "The Orrin pattern says several-vesk lattices have shorter pell than single-vesk lattices with the same tharl count. The passage limits that difference to colder galleries and says the two groups have the same pell in warmer ones."
+  },
+  {
+    "id": "b03/ctrl-sol/05",
+    "group": "clean",
+    "author": "sol",
+    "claim": "C38",
+    "stem": "The Sellen lattice has three longest nonoverlapping chains of 7, 4 and 3 wennets, and twice its cant is 6. Under the classification used by most current surveys, what follows?",
+    "options": [
+      {
+        "text": "It is calvine, because the three-chain mean falls below the cant-based boundary.",
+        "key": true
+      },
+      {
+        "text": "It is ostral, because the seven-wennet chain crosses the cant-based boundary.",
+        "key": false,
+        "misreading": "A reader who keeps Varrenby's longest-chain rule instead of the adopted mean would classify Sellen from its chain of seven."
+      },
+      {
+        "text": "It is calvine, because the shortest of those chains falls below the boundary.",
+        "key": false,
+        "misreading": "A reader who knows the result but treats the shortest independent chain as decisive would use the wrong aggregation."
+      },
+      {
+        "text": "It is ostral, because the combined chain lengths exceed the cant-based boundary.",
+        "key": false,
+        "misreading": "A reader who remembers Emmerick's three chains but adds their lengths instead of averaging them would reach ostral."
+      }
+    ],
+    "explanation": "The worked example says current surveys use Emmerick's mean of the three longest chains that share no wennet. For Sellen, that mean is about 4.7, below twice cant at 6, so current practice assigns it calvine."
   }
 ]

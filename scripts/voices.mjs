@@ -325,14 +325,15 @@ async function callVoice(v, prompt, mode, state) {
     last = await attempt(v, prompt, mode, settings);
     // A reply cut off by a token limit is recorded but never scored: its text is
     // a fragment, and counting it would turn a delivery failure into a miss (#8).
-    if (last.ok && last.tool_uses) {
+    // Only readers must be toolless; an author or reviewer (workdir "repo") uses tools by design.
+    if (last.ok && last.tool_uses && v.workdir !== 'repo') {
       return { record: { status: 'tool-use', tool_uses: last.tool_uses, reply_text: last.text, usage: last.usage, model_version: last.model_version, settings, settings_dropped: dropped, attempts: i + 1, latency_ms: Date.now() - t0 } };
     }
     if (last.ok && !/^(stop|end_turn|STOP)$/.test(String(last.finish ?? 'stop'))) {
       return { record: { status: 'truncated', reply_text: last.text, finish: last.finish, usage: last.usage, model_version: last.model_version, settings, settings_dropped: dropped, attempts: i + 1, latency_ms: Date.now() - t0 } };
     }
     if (last.ok) {
-      return { record: { status: 'ok', reply_text: last.text, finish: last.finish, usage: last.usage, model_version: last.model_version, settings, settings_dropped: dropped, attempts: i + 1, latency_ms: Date.now() - t0 } };
+      return { record: { status: 'ok', reply_text: last.text, finish: last.finish, tool_uses: last.tool_uses ?? 0, usage: last.usage, model_version: last.model_version, settings, settings_dropped: dropped, attempts: i + 1, latency_ms: Date.now() - t0 } };
     }
     if (last.cls === 'window') {
       markDown(state, v, last.retryAt, `window: ${last.detail}`);

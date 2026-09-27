@@ -50,7 +50,7 @@ the orchestrator's to edit. `public/questions/`, `README.md` and
 | **On real sections, Opus generator output almost always trips R14.** | `runs/2026-09-27-P1`, all agents on Opus 5.5: `measure` found stem-word singletons in 53 of 58 candidates, and R14 was the cited failure in 7 of the 11 critic verdicts that ran. | One run, one model. Old code (see §8, stale base). The script already detects it, so it is a candidate generator self-check, not a critic job. |
 | **Opus generator output meets the length bands unaided.** | Same run: R8 + R9 + 1.6× passed on 58/58 before any critique. | One run, Opus only. Says nothing about sonnet or haiku. |
 | **The generator overclaims level.** | Same run: 6 of 11 critiqued candidates claimed a higher level than the critic assigned (three L4 → L2). | n = 11, one section. |
-| **The adversary's isolation is behavioural, not structural.** | The harness lists `quiz-adversary` and `quiz-recall` with "Tools: All tools" despite `tools: []`. ~70 adversary spawns and the canary (2026-09-23: `tool_uses` 0) have used no tool. | Solid on the facts. The structural fix is open (§7). |
+| **The adversary's isolation is behavioural, not structural.** | The harness lists `quiz-adversary` and `quiz-recall` with "Tools: All tools" despite `tools: []`. ~70 adversary spawns and the canary (2026-09-23: `tool_uses` 0) have used no tool. On 2026-09-27 two canary spawns each reported `tool_uses` 1, the hand-back that carried the reply, and both answered wrong (B, C; key D), so the planted file was not read. The transcript was empty, so the tool's name comes from the harness's own notice, not a log. | Solid on the facts. The structural fix is open (§7). |
 
 ## 3. Claims that were made and withdrawn — do not repeat them
 
@@ -94,8 +94,12 @@ Full text: `docs/HANDOFF-ORCHESTRATOR.md` §3, §6, §9 and
 - **Screen at one seed, confirm at three**, with `--seed-offset` for fresh seeds.
 - **Compare a manipulation arm with its paired control**, never with the screen
   that selected its ids (regression to the mean).
-- **Record `tool_uses` for every adversary and recall spawn.** Any non-zero value
-  voids that answer. Run `pipeline.mjs canary` at the start of a run.
+- **Record `tool_uses` for every adversary and recall spawn**, and how many of
+  them were `SubagentHandback`. Since 2026-09-27 the harness returns every reply
+  through one hand-back call and counts it, so a clean spawn reports 1. The user
+  exempted exactly that one call; any other tool call, or a second hand-back,
+  voids that answer. Run `pipeline.mjs canary` at the start of a run and record
+  it with `canary-record --tool-uses N --handbacks H`.
 - **Voice replies never reach a generator or critic prompt**, and a cue earns a
   brief change only after a causal test (ORCHESTRATOR-PROMPT, voice panel).
 - **Agent briefs are edited in `agents/quiz-*.md`**, then
