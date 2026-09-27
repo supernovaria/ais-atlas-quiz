@@ -69,7 +69,8 @@ function key(provider) {
   if (!pc) die(`unknown provider "${provider}"`);
   let k = process.env[pc.env]?.trim() || null;
   if (!k) {
-    const kf = resolve(ROOT, pc.key_file);
+    // QUIZ_KEY_ROOT: the main checkout, when running from a worktree (key paths are relative to it).
+    const kf = resolve(process.env.QUIZ_KEY_ROOT || ROOT, pc.key_file);
     // A key file inside the repository could be committed. Refuse it outright.
     if (!relative(ROOT, kf).startsWith('..')) die(`key file ${kf} is inside the repository — move it out`);
     k = existsSync(kf) ? readFileSync(kf, 'utf8').trim() || null : null;
